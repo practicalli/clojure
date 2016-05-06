@@ -1,4 +1,4 @@
-# DevSummer - Getting started with Clojure coding
+# Clojure, Practical.li
 
 ![Clojure logo](images/clojure-practicalli-banner.png)
 
@@ -8,27 +8,26 @@ In this workshop we take a hands on approach where everyone takes Clojure code a
 
 As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
-There are lots of examples to try, more than 3 hours worth, so you can try out the parts most relevant or continue the workshop in your own time.
-
-[![Join the conversation on Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/practicalli/devsummer-clojure?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Join the conversation on Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/practicalli/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
 ## Supporting Resources
 
 **Workshop**
-* [Clojure Webapp workshop](http://practicalli.github.io/clojure-webapps/)
 * [Getting started with Clojure](http://jr0cket.co.uk/slides/getting-started-with-clojure.html)
-* [Clojure through code](https://github.com/practicalli/clojure-through-code) - sample code to evaluate in LightTable
-* [Lighttable Koans](https://github.com/practicalli/lighttable-koans) - exercises to help you discover Clojure 
-* [Brave Clojure](http://www.braveclojure.com/)
-* [Clojure webapp sample](https://github.com/practicalli/clojure-webapp-sample) - hello world with Compojure
-* [Getting started with Clojure on Heroku](https://github.com/jr0cket/clojure-getting-started)
+* [Clojure through code](https://github.com/practicalli/clojure-through-code) - sample code to support this project
+* [Lighttable Koans](https://github.com/practicalli/lighttable-koans) - exercises to help you discover Clojure
+* [Clojure Webapp workshop](http://practicalli.github.io/clojure-webapps/) - building server-side webapps in Clojure
 
-**Clojure**
+**Learning Clojure**
 * [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)
 * [Clojure documentation](http://clojure.org/documentation)
 * [Clojure cheetsheet](http://clojure.org/cheatsheet)
 * [Official Google group](https://groups.google.com/forum/#!forum/clojure)
 * [CrossClj](http://crossclj.info/) - cross-referencing the Clojure ecosystem
+* [Brave Clojure](http://www.braveclojure.com/)
+
+> **Hint** There are over 20 excellent [books published on Clojure](reference/books.html) that go into detailed theory behind the language
+
 
 **Community**
 * [Clojure-docs](http://clojure-doc.org/) - community docs 
@@ -38,6 +37,4 @@ There are lots of examples to try, more than 3 hours worth, so you can try out t
 * [Uncle Bob presents Clojure](https://www.youtube.com/watch?v=SYeDxWKftfA)
 
 
-| Author | Date |
-| -- | -- |
-|John Stevenson | Wed 03 Jun 2015 14:29:16 BST |
+John Stevenson  2016-04-30 |
