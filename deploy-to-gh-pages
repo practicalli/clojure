@@ -10,4 +10,4 @@ rm -rf _book
 gitbook build .
 
 # Deploy new build
-cd _book && git init && git add . && git commit -m "initial commit" && git branch -m master gh-pages && git remote add devoxx-clojure git@github.com:practicalli/devsummer-clojure.git && git push -f devoxx-clojure gh-pages
+cd _book && git init && git add . && git commit -m "automated commit from gitbook.io" && git branch -m master gh-pages && git remote add practicalli git@github.com:practicalli/clojure.git && git push -f practicalli gh-pages
