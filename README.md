@@ -1,4 +1,4 @@
-# Clojure, Practical.li
+# Clojure.practical.li
 
 ![Clojure logo](images/clojure-practicalli-banner.png)
 
