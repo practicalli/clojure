@@ -1,5 +1,7 @@
 # More Java fun
 
+![Oracle Java](/images/java-banner.png)
+
   Lets try some more examples to show how easy it is to use Java methods and objects.  Remember that everything in [java.lang](https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html) is available in your Clojure project by default
 
 ## Returning specific types 
@@ -10,10 +12,12 @@
 
 > **Note** Return a string value as an integer 
 
-```clojure
-(. Integer "123)
+When you create a new `java.lang.Integer` object you can provide a default value by passing either a number or string type.
 
-;; Or the more common short-hand form
+```clojure
+(new Integer "123")
+
+;; Or the more common short-hand forms
 
 (Integer. "123")
 ```
@@ -24,7 +28,7 @@ This is the equivalent to the Java code:
  Integer myInt = new Integer("123");
 ```
  
-  The `.` function essentially instantiates a new object from the class, in this case `Integer`, passing any arguments to its constructor.  
+  The `.` function essentially instantiates a new object from the class, in this case `Integer`, passing any arguments to its constructor.
 
 > **Hint** Example: converting the port number read from an environment variable as a string which needs to be passed to the Jetty server as a number.  See the [Clojure Webapp workshop](http://practical.li/clojure-webapps) an example.
 
@@ -91,7 +95,7 @@ Or using the threading macro, we can make the code a little clearer
 > **Note**  Start with the `import` function to add the neccessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.
 
 
-
+```
 (import '(javax.swing JFrame JPanel JButton))
 (def button (JButton. "Click Me!"))
 (def panel (doto (JPanel.)
@@ -100,29 +104,36 @@ Or using the threading macro, we can make the code a little clearer
              (.setSize 200 200)
              (.setContentPane panel)
              (.setVisible true)))
+```
 
+Let’s make our button show a message using an JOptionPane/showMessageDialog widget
 
-;; Let’s make our button show a message using an JOptionPane/showMessageDialog widget
-
+```
 (import 'javax.swing.JOptionPane)
 (defn say-hello []
   (JOptionPane/showMessageDialog
     nil "Hello, World!" "Greeting"
     JOptionPane/INFORMATION_MESSAGE))
+```
 
-;; To connect this function to our button, write a class implementing the ActionListener interface.  Clojure’s proxy feature is the easiest way to do this:
+To connect this function to our button, write a class implementing the ActionListener interface.  Clojure’s proxy feature is the easiest way to do this:
 
+
+```
 (import 'java.awt.event.ActionListener)
 (def act (proxy [ActionListener] []
            (actionPerformed [event] (say-hello))))
+```
 
-;; `act` is an instance of an anonymous class implementing the actionPerformed method, so attach this class as a listener the button
+`act` is an instance of an anonymous class implementing the actionPerformed method, so attach this class as a listener the button
 
+```
 (.addActionListener button act)
+```
 
+Now evaluate the `say-hello` function to see the new button in action.
 
-;; Now evaluate the `say-hello` function to see the new button in action.
-
+```
 (say-hello)
 ```
 
@@ -130,9 +141,13 @@ Or using the threading macro, we can make the code a little clearer
 
 
 
+## Understanding the dot special form
+
+> **Fixme** This section onwards needs reworking
 
 All of these examples (except java.lang.Math/PI) use macros which expand to use the dot special form. In general, you won't need to use the dot special form unless you want to write your own macros to interact with Java objects and classes. Nevertheless, here is each example followed by its macroexpansion:
 
+```
 (macroexpand-1 '(.toUpperCase "By Bluebeard's bananas!"))
 ; => (. "By Bluebeard's bananas!" toUpperCase)
 
@@ -141,19 +156,21 @@ All of these examples (except java.lang.Math/PI) use macros which expand to use 
 
 (macroexpand-1 '(Math/abs -3))
 ; => (. Math abs -3)
+```
 
 You can think of the general form of the dot operator as:
 
+```
 (. object-expr-or-classname-symbol method-or-member-symbol optional-args*)
+```
 
 There are a few more details to the dot operator than that, and if you're interested in exploring it further you can look at clojure.org's documentation on Java interop.
-
-
 
 Input/output involves resources, be they files, sockets, buffers, or whatever. Java has separate classes for reading a resource's contents, writings its contents, and for interacting with the resource's properties.
 
 For example, the java.io.File class is used to interact with a file's properties. Among other things, you can use it to check whether a file exists, to get the file's read/write/execute permissions, and to get its filesystem path:
 
+```
 (let [file (java.io.File. "/")]
   (println (.exists file))
   (println (.canWrite file))
@@ -161,11 +178,13 @@ For example, the java.io.File class is used to interact with a file's properties
 ; => true
 ; => false
 ; => /
+```
 
 Noticeably missing from this list of capabilities are reading and writing. To read a file, you could use the java.io.BufferedReader class or perhaps java.io.FileReader. Likewise, you can use the java.io.BufferedWriter or java.io.FileWriter class for writing. There are other classes available for reading and writing as well, and which one you choose depends on your specific needs. Reader and Writer classes all have the same base set of methods for their interfaces; readers implement read, close, and more, while writers implement append, write, close, and flush. So, Java gives you a variety of tools for performing IO. A cynical person might say that Java gives you enough rope to hang yourself, and if you find such a person I hope you give them just enough arms to hug them.
 
 Either way, Clojure makes things easier for you. First, there's spit and slurp. Spit writes to a resource, and slurp reads from one. Here's an example of using them to write and read a file:
 
+```
 (spit "/tmp/hercules-todo-list"
 "- kill dat lion brov
 - chop up what nasty multi-headed snake thing")
@@ -174,46 +193,46 @@ Either way, Clojure makes things easier for you. First, there's spit and slurp. 
 
 ; => "- kill dat lion brov
 ; =>  - chop up what nasty multi-headed snake thing"
+```
 
 You can also use these functions with objects representing resources other than files. The next example uses a StringWriter, which allows you to perform IO operations on a string:
 
+```
 (let [s (java.io.StringWriter.)]
   (spit s "- capture cerynian hind like for real")
   (.toString s))
 ; => "- capture cerynian hind like for real"
+```
 
 Naturally, you can also read from a StringReader with slurp:
 
+```
 (let [s (java.io.StringReader. "- get erymanthian pig what with the tusks")]
   (slurp s))
 ; => "- get erymanthian pig what with the tusks"
+```
 
 Of course, you can also use the read and write methods for resources. It doesn't really make much of a difference which you use; spit and slurp are often convenient because they work with just a string representing a filesystem path or a URL.
 
 The with-open macro is another convenience: it implicitly closes a resource at the end of its body. There's also the reader function, a nice utility which, according to the clojure.java.io api docs, "attempts to coerce its argument to an open java.io.Reader." This is convenient when you don't want to use slurp because you don't want to try to read a resource in its entirety, and you don't want to figure out which Java class you need to use. You could use it along with with-open and the line-seq function if you're trying to read a file one line at a time:
 
+```
 (with-open [todo-list-rdr (clojure.java.io/reader "/tmp/hercules-todo-list")]
   (doseq [todo (line-seq todo-list-rdr)]
     (println todo)))
 ; => - kill dat lion brov
 ; => - chop up what nasty multi-headed snake thing
-
+```
 That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
 5. Summary
 
 In this chapter, you learned what it means for Clojure to be hosted on the JVM. Clojure programs get compiled to Java bytecode and executed within a JVM process. Clojure programs also have access to Java libraries, and you can easily interact with them using Clojure's interop facilities.
-6. Resources
-
-    The Java Virtual Machine and Compilers Explained
-    clojure.java.io
-    clojure.org Java interop documentation
+6. Resources    
     
-    
-
-
 
 ## From http://clojure.org/java_interop
 
+```
 (.instanceMember instance args*)
 (.instanceMember Classname args*)
 (.-instanceField instance)
@@ -228,19 +247,22 @@ In this chapter, you learned what it means for Clojure to be hosted on the JVM. 
 -> "1.6.0_07-b06-57"
 Math/PI
 -> 3.141592653589793
+```
 
 The preferred idiomatic forms for accessing field or method members are given above. The instance member form works for both fields and methods. The instanceField form is preferred for fields and required if both a field and a 0-argument method of the same name exist. They all expand into calls to the dot operator (described below) at macroexpansion time. The expansions are as follows:
 
+```
 (.instanceMember instance args*) ==> (. instance instanceMember args*)
 (.instanceMember Classname args*) ==>
     (. (identity Classname) instanceMember args*)
 (.-instanceField instance) ==> (. instance -instanceField)
 (Classname/staticMethod args*) ==> (. Classname staticMethod args*)
 Classname/staticField ==> (. Classname staticField)
+```
 
 The Dot special form
 
-
+```
 (. instance-expr member-symbol)
 (. Classname-symbol member-symbol)
 (. instance-expr -field-symbol)
@@ -248,6 +270,7 @@ The Dot special form
 (. instance-expr method-symbol args*)
 (. Classname-symbol (method-symbol args*)) or
 (. Classname-symbol method-symbol args*)
+```
 
 Special form.
 
@@ -263,36 +286,48 @@ Note that boolean return values will be turned into Booleans, chars will become 
 
 The member access forms given at the top of this section are preferred for use in all cases other than in macros.
 
+```
 (.. instance-expr member+)
 (.. Classname-symbol member+)
 member => fieldName-symbol or (instanceMethodName-symbol args*)
+```
 
 Macro. Expands into a member access (.) of the first member on the first argument, followed by the next member on the result, etc. For instance:
 
+```
 (.. System (getProperties) (get "os.name"))
+```
 
 expands to:
 
+```
 (. (. System (getProperties)) (get "os.name"))
+```
 
 but is easier to write, read, and understand. See also the -> macro which can be used similarly:
 
+```
 (-> (System/getProperties) (.get "os.name"))
-
+```
 (doto instance-expr (instanceMethodName-symbol args*)*)
 Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.
 
+```
 (doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))
 -> {a=1, b=2}
+```
 
 Note the above applies to the latest Clojure SVN revision. If you are using the 20080916 release only method calls are allowed, and the syntax is:
 
+```
 (doto (new java.util.HashMap) (put "a" 1) (put "b" 2))
 -> {a=1, b=2}
-
+```
 
 (Classname. args*)
 (new Classname args*)
+
+
 Special form.
 The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.
 
@@ -300,12 +335,15 @@ Alternative Macro Syntax
 
 As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing '.':
 
+```
 (new Classname args*)
-
+```
 can be written
 
-(Classname. args*) ;note trailing dot
-
+```
+(Classname. args*)
+;; note trailing dot
+```
 the latter expanding into the former at macro expansion time.
 
 (instance? Class expr)

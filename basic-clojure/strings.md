@@ -35,17 +35,23 @@
 ```clojure
 (str "I" "like" "to" "be" "close" "together"
 (str "Hello" ", " "Devoxx UK")
+(str "Hello "  "developers" ", " "welcome" " " "to" " " "HackTheTower UK")
 ```
 
-## Using Interpose with Strings
+  You can see that there are no side-effects when using `str` and the string is returned as the value of the function call.
+  
+
+
+# Using Interpose with Strings
+
+Its easy to join strings together with the `str` function, however `str` leaves no spaces between words.
+
+
+# Using Regex
 
 
 
-## Using Regex
-
-
-
-## Java Interop for Strings
+# Java Interop for Strings
 > **Note** Change the case of strings and other common actions using the String object methods, in the form `(.methodName object)`
 
 ```clojure
