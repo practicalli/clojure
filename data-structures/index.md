@@ -14,6 +14,19 @@ So far, we've dealt with discrete pieces of data: one number, one string, one va
   * Maps - key-value pair (hash map)
   * Sets - a unqiue set of values
 
+Clojure data structure share the following characteristics:
+* Immutable - once a data structure is defined it cannot be changed.  Any changes you ask for are created in a new data structure which is linked back to the original data structure 
+
+* Persistent 
+
+* Sequences
+
+* Shared 
+
+* contains any value, including functions (as they evaluate to a value) 
+* same conceptual functions 
+* behaviour - you can ask your data structure for values it contains
+
 
 ## Persistent data structures 
 
@@ -25,3 +38,37 @@ So far, we've dealt with discrete pieces of data: one number, one string, one va
 
 
 > **Hint** Read the InfoQ article on [An In-Depth Look at Clojure Collections](http://www.infoq.com/articles/in-depth-look-clojure-collections).
+
+## Everything is a List
+
+In Clojure everything is a list, after all Clojure is a language based on LISP (which stands for List Processing).
+
+As Clojure is _Homoiconic_ then there is no real distinction between behaviour and data.  Clojure can be thought of as a data driven language.
+
+
+# Evaluating Lists
+
+Lists are the data structure for the whole language and by default Clojure will use the first element as a function call.  
+
+So when you just have data in a list, then for all elements to be treated as data when evaluated you add the `quote` function or its syntactic sugar ' syntax.
+
+```
+(1 2 3 4) ;; => Error: 1 is not a function (Ifn)
+
+(quote (1 2 3 4))
+'(1 2 3 4)
+```
+
+Using the quote character is the most common practice.  
+
+#### Vectors are fast with indexed access 
+
+Vectors are similar to arrays in other languages in that its an indexed collection.  Therefore random access is fast.
+
+
+#### Maps to categorise the world in key value pairs 
+
+
+#### Sets when you want more order in your data structure 
+
+

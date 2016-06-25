@@ -1,5 +1,21 @@
 # Using data structures
 
+
+## Sequence abstractions
+
+There are functions that work on all the built in datastructures in Clojure.
+
+`first`
+`second`
+`rest`
+`cons`
+
+
+> **Fixme** This should be an introduction to this topic, with the content below being the different sections of that topic.
+
+
+# Giving a data structure a name
+
   We have seen that defining things is as simple as giving a name to a value using the `def` function.
 
 ```clojure
@@ -19,36 +35,57 @@ my-data
 
 ## Data structures are immutable, names are mutable
 
-  You can dynamically re-define a name to points to a different value.  
+  You can dynamically re-define a name to points to a different value.
+
+```
 (def my-data [1 2 3 4 5 "frog" person])
+```
 
-;; the original value that defined my-data remains unchanged (its immutable), so anything using that value remains unaffected.  Essentially we are re-mapping my-data to a new value.
+the original value that defined my-data remains unchanged (its immutable), so anything using that value remains unaffected.  Essentially we are re-mapping my-data to a new value.
 
+Lets define a name to point to a list of numbers
 
-;; Lets define a name to point to a list of numbers
+```
 (def my-list '(1 2 3))
+```
 
-;; We are returned that list of numbers when we evaluate the name
+We are returned that list of numbers when we evaluate the name
 
+```
 my-list
+```
 
-;; We can use the cons function to add a number to our list,
-;; however because lists are immutable, rather than changing the original list, a new one is returned
-;; So if we want to keep on refering to our "changed" list, we need to give it a name
+We can use the cons function to add a number to our list, however because lists are immutable, rather than changing the original list, a new one is returned.  So if we want to keep on refering to our "changed" list, we need to give it a name
+
+```
 (def my-list-updated (cons 4 my-list))
+```
 
-;; As you can see we have not changed the original list
+As you can see we have not changed the original list
+
+```
 my-list
+```
 
 ;; The new list does have the change though.
+
+```
 my-list-updated
+```
 
 You could therefore give the impression of mutable state by applying a function to data structure and redefining the original name to point to the resulting data structure.
 
+> **Hint** In practice, the ability to redifine functions and data structures live helps you develop your application quickly in the REPL.  
+
+> In production you typical do not redefine functions or data structures in a live running application.  That could be part of a new release of your application though.
+
 ```clojure
 (def my-list (cons 5 my-list))
+```
 
-;; so now when we evaluate the original name, we get the updated list
+So now when we evaluate the original name, we get the updated list
+
+```
 my-list
 ```
 
@@ -84,15 +121,22 @@ The details of each event (the value to go with the event name key) is itself a 
                   :event-type "hackday"
                   :number-of-attendees 60
                   :call-for-papers false}})
+```
 
-;; lets call the data structre and see what it evaluates too, it should not be a surprise
+Lets call the data structre and see what it evaluates too, it should not be a surprise
+```
 dev-event-details
+```
 
-;; We can ask for the value of a specific key, and just that value is returned
+We can ask for the value of a specific key, and just that value is returned
+
+```
 (dev-event-details :devoxxuk)
+```
 
-;; In our example, the value returned from the :devoxxuk key is also a map,
-;; so we can ask for a specific part of that map value by again using its key
+In our example, the value returned from the :devoxxuk key is also a map, so we can ask for a specific part of that map value by again using its key
+
+```
 (:URL (dev-event-details :devoxxuk))
 ```
 
@@ -136,9 +180,8 @@ portfolio
 (apply str (rest person))
 ```
 
+You can get the value of this map
 
-
-;; You can get the value of this map
 ```
 (def luke {:name "Luke Skywarker" :skill "Targeting Swamp Rats"})
 (def darth {:name "Darth Vader"    :skill "Crank phone calls"})
@@ -147,23 +190,25 @@ portfolio
 (get luke :skill)
 ```
 
-;; Set #{}
-;; a unique set of elements
-
+## Set #{}
+A Set is a collection that contains a unique set of elements.  As with all the other Clojure collections, a set can contain any valid types in Clojure.
 
 ```
 (#{:a :b :c} :c)
 (#{:a :b :c} :z)
 ```
-;; You can pull out data from a Vector
+You can pull out data from a Vector
+
+```
 ([1 2 3] 1)
 
 ;; ([1 2 3] 1 2)  ;; wrong number of arguments, vectors behaving as a function expect one parameter
 
 ;; ((1 2 3) 1) ;; you cant treat lists in the same way, there is another approach - assoc
+```
 
+and there are lots of functions that work on data structures
 
-;; and there are lots of functions that work on data structures
 ```
 (def evil-empire #{"Palpatine" "Darth Vader" "Boba Fett" "Darth Tyranus"})
 
@@ -171,118 +216,164 @@ portfolio
 ```
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Scope
+# Scope
 
-;; All def names are publicly available via their namespace.
-;; As def values are immutable, then keeping things private is of less concern than languages built around Object Oriented design.
+All def names are publicly available via their namespace.  As def values are immutable, then keeping things private is of less concern than languages built around Object Oriented design.
 
-;; Private definitions syntax can be used to limit the access to def names to the namespace they are declared in.
+Private definitions syntax can be used to limit the access to def names to the namespace they are declared in.
 
-;; To limit the scope of a def, add the :private true metadata key value pair.
+To limit the scope of a def, add the :private true metadata key value pair.
+
 ```
 (def ^{:private true} some-var :value)
 
-;; or
 (def ^:private some-var :value)
+```
 
-;; The second form is syntax sugar for the first one.
+The second form is syntax sugar for the first one.
 
+You could also define a macro for def-
 
-;; You can define a macro for def-
+```
 (defmacro def- [item value]
   `(def ^{:private true} ~item ~value)
 )
+```
 
-;; You can then use this macro as follows:
+You would then use this macro as follows:
 
+```
 (def- private-definition "This is only accessible in the namespace")
 ```
 
-;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Be Lazy and get more done
+# Be Lazy and get more done
 
-; Seqs are an interface for logical lists, which can be lazy.
-; "Lazy" means that a seq can define an infinite series, like so:
+Seqs are an interface for logical lists, which can be lazy.  "Lazy" means that a seq can define an infinite series, like so:
+
+```
 (range 4)
 
 (range) ; => (0 1 2 3 4 ...) (an infinite series)
+```
 
-;; So we dont blow up our memory, just get the values we want
+So we dont blow up our memory, just get the values we want
+
+```
 (take 4 (range)) ;  (0 1 2 3)
+```
 
-;; Clojure (and Lisps in general) tend to evaluate at the last possible moment
+Clojure (and Lisps in general) tend to evaluate at the last possible moment
 
-; Use cons to add an item to the beginning of a list or vector
+Use cons to add an item to the beginning of a list or vector
+
+```
 (cons 4 [1 2 3]) ; => (4 1 2 3)
 (cons 4 '(1 2 3)) ; => (4 1 2 3)
+```
 
-; Use conj to add an item to the beginning of a list,
-; or the end of a vector
+Use conj to add an item to the beginning of a list, or the end of a vector
+
+```
 (conj [1 2 3] 4) ; => [1 2 3 4]
 (conj '(1 2 3) 4) ; => (4 1 2 3)
+```
 
+## Changing data structures does not change the original data structure
 
-;; Showing how changing data structures does not change the original data structure
-;; Lets define a name for a data structure
+Lets define a name for a data structure
+
+```
 (def name1 [1 2 3 4])
+```
 
-;; when we evaluate that name we get the original data we set
+when we evaluate that name we get the original data we set
+
+```
 name1
+```
 
-;; Now we use a function called conj to adds (conjoin) another number to our data structure
+Now we use a function called conj to adds (conjoin) another number to our data structure
+
+```
 (conj name1 5)
+```
 
-;; This returns a new value without changing the original data structre
+This returns a new value without changing the original data structre
+
+```
 name1
+```
 
-;; We cant change the original data structure, it is immutable.  Once it is set it cant be changed.
-;; However, if we give a name to the resultl of changing the original data structure, we can refer to that new data structure
+We cant change the original data structure, it is immutable.  Once it is set it cant be changed. However, if we give a name to the resultl of changing the original data structure, we can refer to that new data structure
+
+```
 (def name2(conj name1 5))
+```
 
-;; Now name2 is the new data structure, but name1 remains unchanged
+Now name2 is the new data structure, but name1 remains unchanged
+
+```
 name2
 name1
+```
 
-;; So we cannot change the data structure, however we can achieve something that looks like we have changed it
-;; We can re-assign the original name to the result of changing the original data structure
+So we cannot change the data structure, however we can achieve something that looks like we have changed it.  We can re-assign the original name to the result of changing the original data structure
+
+```
 (def name2(conj name1 5))
+```
 
-;; Now name1 and name2 are the same result
+Now name1 and name2 are the same result
+
+```
 name2
 name1
+```
 
-;; Analogy (Chris Ford)
-;; You have the number 2.  If you add 1 to 2, what value is the number 2?
-;; The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return
+> **Hint** An analogy (thanks to Chris Ford) 
+
+> You have the number 2.  If you add 1 to 2, what value is the number 2?
+> The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return
 
 
-; Use concat to add lists or vectors together
+Use concat to add lists or vectors together
+```
 (concat [1 2] '(3 4)) ; => (1 2 3 4)
+```
 
-; Use filter, map to interact with collections
+Use filter, map to interact with collections
+
+```
 (map inc [1 2 3]) ; => (2 3 4)
 (filter even? [1 2 3]) ; => (2)
+```
 
-; Use reduce to reduce them
+Use reduce to reduce them
+
+```
 (reduce + [1 2 3 4])
 ; = (+ (+ (+ 1 2) 3) 4)
 ; => 10
+```
 
-; Reduce can take an initial-value argument too
+Reduce can take an initial-value argument too
+
+```
 (reduce conj [] '(3 2 1))
 ; = (conj (conj (conj [] 3) 2) 1)
 ; => [3 2 1]
+```
 
 
+# Destructuring
 
-;; Playing with data structures
+Destructuring is a form of pattern matching that is common in Clojure.  Destructuring allow you to pull out the specific elelments from a collection.
 
-;; Destructuring
+Destructuring is commonly used with the `let` method for creating local bindings (locally scoped names).
 
+```
 (let [[a b c & d :as e] [1 2 3 4 5 6 7]]
   [a b c d e])
-
 
 (let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]
   [x1 y1 x2 y2])
@@ -294,39 +385,32 @@ name1
 ;; with maps
 (let [{a :a, b :b, c :c, :as m :or {a 2 b 3}}  {:a 5 :c 6}]
   [a b c m])
+```
 
+It is often the case that you will want to bind same-named symbols to the map keys. The :keys directive allows you to avoid the redundancy:
 
-
-
-;; It is often the case that you will want to bind same-named symbols to the map keys. The :keys directive allows you to avoid the redundancy:
+```
 (let [{fred :fred ethel :ethel lucy :lucy} m] )
+```
 
-;; can be written:
+This can be written in a shorter form as follows:
 
+```
 (let [{:keys [fred ethel lucy]} m] )
+```
 
-;; As of Clojure 1.6, you can also use prefixed map keys in the map destructuring form:
+As of Clojure 1.6, you can also use prefixed map keys in the map destructuring form:
 
+```
 (let [m {:x/a 1, :y/b 2}
       {:keys [x/a y/b]} m]
   (+ a b))
+```
 
+As shown above, in the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the :keys directive:
 
-; As shown above, in the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the :keys directive:
-
+```
 (let [m {::x 42}
       {:keys [::x]} m]
   x)
-
-
-
-;; 4Clojure - exercise 65
-
-(= :map (if (keyword? (first(first {:a 1, :b 2}))) :map))
-
-(if (keyword? (first(first {:a 1 :b 2}))) :map )
-
-(first (first {:a 1 :b 2}))
-
-
-(if (keyword? (first(first %))) :map )
+```
