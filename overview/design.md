@@ -26,9 +26,13 @@
 
   Clojure has 4 built in persistent data structures (list, map, vector, set), however the most commonly used for specificaly manipulating data are `map` and `vector` or some combination of the two.
   
-  A vector is similar to an array in that its an indexed collection optomised for random access.
+Maps and vectors are two more built-in persistent data structures that are more commonly used to represent data within a Clojure application.
 
-  A map is a key value pair, with the keys typically represented with clojure keywords
+  A vector is similar to an array in that its an indexed collection optomised for random access.  Vectors are a catch all data structure that can hold any type of information, including other data structures and function calls.
+
+  A map is a key value pair, with the keys typically represented with clojure keywords.  
+Maps are a collection of key / value pairs that provide an easy way to reference data by keys.  Its common to use a Clojure `keyword` type as the keys as keywords are self-referential (they point to themselves).  Using keywords in a map means you can use a specific keyword as a function call on the map that returns its associated value.
+
 
   Some examples of using these data structures this are:
 
@@ -66,13 +70,22 @@
   
   (def my-function
     (fn [argument] (my-behaviour argument)))
-```    
- 
-## Special forms
+```
 
-  The following are the building blocks of Clojure, everything else is either a macro or a function
+## Special forms - the building blocks of Clojure 
+
+The following are the building blocks of Clojure, everything else is either a macro or a function
+
+The Clojure / LISP special forms
 
 ```
-  catch def do . finally fn if let loop new quote recur set! throw try 
-  monitor-enter monitor-exit var
+def, do, if, let, loop, fn, quote, recur, set!, var
 ```
+
+The forms added for Interoperability with the host platform (mainly Java / JVM)
+
+```
+monitor-enter, monitor-exit, 
+catch, dot ('.'), finally, new, throw, try
+```
+

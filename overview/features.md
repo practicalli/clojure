@@ -2,9 +2,9 @@
 
 ## Dynamic language 
 
-  A problem space can quickly be explored through code to test your assumptions.  The design of code is easy to change as you are not managing type changes, Clojure is very good at managing data that would otherwise lead to exceptions.  
+  A problem space can quickly be explored through code to test your assumptions.  The design of code is easy to change as you are not managing type changes, Clojure is very good at managing data that would otherwise lead to exceptions.
   
-  As a dynamic language the code is quite terse, therefore it is easy to refactor.
+  As a dynamic language the code is quite terse and developers are encouraged to write very modular code, therefore it is easy to refactor.
 
 ## Dynamic Development - REPL
 
@@ -23,18 +23,11 @@
 ## Immutability 
 
 - immutable data structures at its core, everything is immutable by default
-
 - in imperative programming, we change state where ever we like
 - in functional programming we avoid changing state as much as possible 
 - if a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments) - often returned as a pure function 
 - impure functions can affect other functions and therefore has to be very mindful of the changes it makes and when it makes them
 - pure functions are truely modular as they do not affect any other part of the system
-
-
-
-## Homoiconicity 
-  
-  One thing that keeps Clojure a small language is the fact that the same syntax is used to represent data and behaviour.  For example, a function call is defined using a list, data structures and functions are defined using a list.  In fact everything is a list, although we use a little syntatic sugar here and there to make the code quicker for a human to parse.
 
 ## Persistent Data Structures
 
@@ -42,23 +35,31 @@
   
   If you run a function that seems to change a data structure, its actually returning a new data structure.  Via a shared-memory model, new data structures are created cheaply as they share the common data elements from the original data structure and only include additional elements.
 
+## Homoiconicity 
+  
+  One thing that keeps Clojure a small language is the fact that the same syntax is used to represent data and behaviour.  For example, a function call is defined using a list, data structures and functions are defined using a list.  In fact everything is a list, although we use a little syntatic sugar here and there to make the code quicker for a human to parse.
+
+
 ## Clojure is an implementation of Lisp
 
   Lisp stands for LISt Processing, so its no surprise that all Clojure code is defined in a list. 
   
-  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everthing else in the list is data.  
-  
-  The evaluation of the first element of a list can be behaviour of `(` can be over-ridden using `quote` or its short form `'` so the list elements are all treated as data.
+  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everthing else in the list is data.
+
+  The evaluation of the first element of a list can be behaviour of `(` can be over-ridden using `quote` or its short form the quote character, **'**, so the list elements are all treated as data.
+
 
 ## Runtime Polymorphism
 
   See Clojure arity and multi-methods for more information
 
-## Concurrent Programming
 
-  Threads are much safe when you dont change state (eg. immutable state).  Clojure is stateless by default.
+## Concurrent Programming & Parallelism
+
+  Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Fuctions that are not affected by or cause side effects also make writing concurrent code trivial.
   
   Clojure helps you scale your applications by with a parrallel procssing approach, as you can run functions over immutable datastructures without conflict.
+
 
 ## Hosted on the JVM
 
@@ -75,11 +76,18 @@
 
   Using `atoms` or `refs` in clojure you can have mutable data.  Changes are done safely within Software Transactional Memory (STM), like having an in-memory ACID database managing access 
 
+
 ## Extend the langugage with Macros 
 
   Clojure uses macros 
 
 
+<hr />
+
+
+> **Fixme** Review the following content to see if its relevant ?
+
+<hr />
 
 
 
@@ -90,7 +98,7 @@
 ** Input & output with functional programming 
 - other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
 - Clojure doesnt try and enforce functional purity, so any function can include impure code 
-- most functoins should be pure though or you loose the benefits of functional programming
+- most functions should be pure though or you loose the benefits of functional programming
 - Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
 - Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM 
 
