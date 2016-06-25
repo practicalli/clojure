@@ -1,6 +1,8 @@
 # Leiningen Build tool
 
-[leiningen.org](http://leiningen.org/) (pronounced line-ing-en) is a very powerful build automation tool for Clojure projects.  With Leiningen you can:
+[![Leiningen - automating Clojure projects](/images/leiningen-banner.png)](http://leiningen.org/)
+
+[leiningen.org](http://leiningen.org/) (pronounced line-ing-en) is a very powerful build automation tool for automating Clojure projects.  With Leiningen you can:
 
 * Create Clojure Projects with templates
 * Define and manage dependencies
