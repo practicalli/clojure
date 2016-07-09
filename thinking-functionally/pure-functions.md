@@ -1,6 +1,6 @@
 # Pure functions
 
-A function is considered pure if it causes no side effects as well as not being affected by other functions.
+A function is considered pure if does not side effects or is affected by side causes.  A pure function does not change any other part of the system and is not affected by any other part of the system.
 
 When you pass arguments to a function and that function returns a value without interacting with any other part of the system, then that function is considered pure.
 
@@ -12,24 +12,23 @@ Should something from outside a function be allowed to affect the result of eval
 So lets look at a simple code example
 
 
-
 > **Note** Write a pure function that adds two numbers together ?
 
 <!--sec data-title="Add two numbers" data-id="answer001" data-collapse=true ces-->
 ```
-(defn increment-numbers [number1 number2]
+(defn add-numbers [number1 number2]
   (+ number1 number2))
 
-(increment-numbers 1 2)
+(add-numbers 1 2)
 ```
 
 Lets look at each line of this suggested answer
 
 ```
-(defn increment-numbers [number1 number2]   ;; function takes 2 arguments
-  (+ number1 number2))                      ;; function uses both arguments for result
+(defn add-numbers [number1 number2]     ;; function takes 2 arguments
+  (+ number1 number2))                  ;; function uses both arguments for result
 
-(increment-numbers 1 2)                     ;; specific values are passed as arguments
+(add-numbers 1 2)                       ;; specific values are passed as arguments
 ```
 <!--endsec-->
 
@@ -50,53 +49,23 @@ Impure function example.
 (defn increment-numbers []
   (map inc numbers))
 
-(impure-increment-numbers)
+(increment-numbers)
 
 ```
-The function takes no arguments and is pulling in a value from outside the function.  This is a trivial example, but if all your code is like this it would be more complex.
+The function takes no arguments and is pulling in a value from outside the function.  This is a trivial example, but if all your code is like this it would be more complex.  If the value pointed to by `numbers` is mutable and changes before the `increment-numbers` functiion is called then you will get different results.
 
 Here is a Pure function example
 
 ```
 (def numbers '(5 4 3 2 1))
 
-(defn impure-increment-numbers [number-collection]
+(defn increment-numbers [number-collection]
   (map inc number-collection))
 
-(impure-increment-numbers numbers)
+(increment-numbers numbers)
 
 ```
 
-In this example we are explicitly passing the number collection to the function.  The function works on passed value and returns a predictable result.
-
-
-```
-(def numbers '(5 4 3 2 1))
-
-(defn impure-increment-numbers [numbers]
-  (map inc numbers))
-
-(impure-increment-numbers numbers)
-
-```
-
-In this example we still have a pure function, as the name numbers in the `(map inc numbers)` expression uses the value of numbers taken from the argument and not the more global `(def numbers ...)`
-
-<!--endsec-->
-
-
-
-# Another example (not currently working, sorry)
-
-This example needs fixing, you could try with staff-salaries as just a vector [300 344 5000], but the code still needs tweeking a little
-
-<!--sec data-title="Update Salary" data-id="answer003" data-collapse=true ces-->
-
-(def staff-salaries {:bob 30000 :carol 34000 :jane 42000})
-
-(defn salary-updates [staff-pay]
-  (map #(+ % 5000)))
-
-(salary-updates staff-salaries)
+In this example we are explicitly passing the `numbers` collection to the function.  The function works on passed value and returns a predictable result.
 
 <!--endsec-->
