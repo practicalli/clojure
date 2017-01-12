@@ -33,7 +33,7 @@
 > **Note** Join strings together with the function str
 
 ```clojure
-(str "I" "like" "to" "be" "close" "together"
+(str "I" "like" "to" "be" "close" "together")
 (str "Hello" ", " "Devoxx UK")
 (str "Hello "  "developers" ", " "welcome" " " "to" " " "HackTheTower UK")
 ```
