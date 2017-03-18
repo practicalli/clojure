@@ -22,7 +22,7 @@ Funding Circle          | Adopting Clojure as their main language (from Ruby, et
 Braintree (Paypal)      | [Payment processing pipeline with Kafka](https://www.youtube.com/watch?v=0D3jev1E5ks)
 CitiGroup               | Financial Trading
 Netflix                 | Map-Reduce Languges for writing Apps for Hadoop Pig 
-Mastodon C              | Data centre analysis (Incanter, Storm)
+Mastodon C              | Data centre analysis ([Incanter](https://github.com/incanter/incanter), Storm)
 Thoughtworks            | Agile development for Client projects
 Vero Insurance          | Rebuilt policy management system in Clojure with Thoughworks
 Meta-X                  | Performance art (Overtone, Quil)
