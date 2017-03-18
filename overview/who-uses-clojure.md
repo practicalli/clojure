@@ -9,7 +9,7 @@ Here is just a small and diverse set of example companies that use Clojure for d
 Company | Type of applications
 ----------------------- | -------------------------------------
 Cisco                   | Malware analysis & threat intelligence platform (expert system with core.logic)
-Deuche Bank             | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)
+Deutsche Bank             | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)
 Atlassian               | Collaborative editing platform for all their products 
 Mail Online             | Publishing pipeline
 Circle CI               | [Frontend of CI server](https://github.com/circleci/frontend) in Clojurescript & [test suite](https://circleci.com/blog/rewriting-your-test-suite-in-clojure-in-24-hours/)
