@@ -9,7 +9,7 @@ Here is just a small and diverse set of example companies that use Clojure for d
 Company | Type of applications
 ----------------------- | -------------------------------------
 Cisco                   | Malware analysis & threat intelligence platform (expert system with core.logic)
-Deuche Bank             | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)
+Deutsche Bank             | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)
 Atlassian               | Collaborative editing platform for all their products 
 Mail Online             | Publishing pipeline
 Circle CI               | [Frontend of CI server](https://github.com/circleci/frontend) in Clojurescript & [test suite](https://circleci.com/blog/rewriting-your-test-suite-in-clojure-in-24-hours/)
@@ -22,7 +22,7 @@ Funding Circle          | Adopting Clojure as their main language (from Ruby, et
 Braintree (Paypal)      | [Payment processing pipeline with Kafka](https://www.youtube.com/watch?v=0D3jev1E5ks)
 CitiGroup               | Financial Trading
 Netflix                 | Map-Reduce Languges for writing Apps for Hadoop Pig 
-Mastodon C              | Data centre analysis (Incanta, Storm)
+Mastodon C              | Data centre analysis ([Incanter](https://github.com/incanter/incanter), Storm)
 Thoughtworks            | Agile development for Client projects
 Vero Insurance          | Rebuilt policy management system in Clojure with Thoughworks
 Meta-X                  | Performance art (Overtone, Quil)
