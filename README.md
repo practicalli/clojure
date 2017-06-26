@@ -31,12 +31,15 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 **Community**
 * [Clojure-docs](http://clojure-doc.org/) - community docs 
-* [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
+* [Clojars]() and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
+* [Clojure & ClojureScript Dependencies](https://clj-deps.herokuapp.com/)
 * [4Clojure](https://www.4clojure.com/) exercises & [4Clojure Google group](https://groups.google.com/forum/#!forum/4clojure)
+* [ClojureScript REPL](http://www.clojurescript.io/) - website REPL
+* [LambdaX](http://lambdax.io/blog/)
 * [London Clojurians]() and their [Google group](https://groups.google.com/forum/#!forum/london-clojurians)
 * [Uncle Bob presents Clojure](https://www.youtube.com/watch?v=SYeDxWKftfA)
-
-
+* [Snake Game in Clojure](https://fn-code.blogspot.co.uk/2015/08/a-clojure-snake-game.html)
+* [Clojure design patterns](http://mishadoff.com/blog/clojure-design-patterns/)
 
 This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
 
