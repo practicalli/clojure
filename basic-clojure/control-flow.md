@@ -1,86 +1,99 @@
 # Control Flow 
 
-The following section of functions gives examples of control flow.  Many of these functions will be familiar to other syntax in non-functional programming languages.
+The following section of functions gives examples of simple control flow.  As you gain more experience with Clojure, you will discover more functional ways to achieve the same (or better) results.
 
-As you gain more experience with Clojure, you will discover more functional ways to achieve the same (or better) results.
+> **Hint** Although these functions may seem similar to other non-functional languages, there are subtle differences
 
 
-## If this then that, else the other
+## If
 
   Using the `if` funtion you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
   
   Here is a simple example to see if one number is bigger that another
 
 ```clojure
-(if (> 3 2) "Higher" "Lower")
+(if (> 3 2)
+  "Higher"
+  "Lower")
 
 => "Higher"
 ```
 
+Here is an example of an condtion inside an anonymous fuction.
+
 ```clojure
-    (fn [x]
-      (if (even? x)
-        (inc x)
-        (dec x)))
+(defn even-number [number]
+  (if (odd? number)
+    (inc number)
+    number))
+
+(even-number 41)
+;; => 42
 ```
 
-```
-(doc if)
-(doc if-not)
-```
+## When
 
-## When 
+When a condition is true, then return the value of evaluating the next expression.  If the condition is false, then return `nil`
 
 ```clojure
     (when (> 3 2)
-      (println "3 is greater than 2")
       "Higher")
 
-=> 3 is greater than 2
 => "Higher"
 ```
-  You can use Lighttable to see the docs for a function by placing the cursor over the function name and pressing `Cntrl-d` - or search the Clojure docs in the command window 
-```
-(doc when)
-(doc when-not)
-```
 
 
-## Conditional - Case 
+## Case
+When one of these things is true, do this, else default 
 
 ```clojure
 (case (inc 3)
-         3 "Uh oh"
-         4 "Yep!"
-         "Not so sure...")
+  1 "Not even close"
+  2 "I wish I was that young"
+  3 "That was my previous value"
+  4 "You sunk my battleship"
+  "I dont think you understood the question")
+
+=> "You sunk my battleship"
 ```
-```
-"Yep!"
-```
+
+## Cond
+
+Return the assocated value of the first condition that is true, or return the default value specified by `:otherwise`
 
 ```clojure
 (cond
-         (= 4 (inc 2)) "(inc 2) is 4"
-         (= 4 (/ 8 2)) "Cond picks the first correct case"
-	 (zero? (- (* 4 2) 8) "This is true, but we won't get here"
-         :otherwise "None of the above."
-```
-```
-"Cond picks the first correct case"
+  (= 7 (inc 2)) "(inc 2) is not 7, so this condition is false"
+  (= 16 (* 8 2)) "This is the first correct condition so its associated expression is returned"
+  (zero? (- (* 8 8) 64)) "This is true but not returned as a previous condition is true"
+  :otherwise "None of the above are true")
+
+;; => "This is the first correct condition so its associated expression is returned"
 ```
 
+## For
+
+Using the `for` function you can Iterate through the values in a collection and evaluate each value in tern with  with a condition, using either `:when` or `:while`.
+
 ```
-(doc cond)
-(doc condp)
+(for [x (range 10) :when (odd? x)] x)
+
+(for [x (range 10) :while (even? x)] x)
+
+(for [x (range 10)
+      y (range 10)]
+  [x y])
 ```
 
 ## While
 
 Do something while the condition is true
 
+```clojure
 (while (condition) 
   (do something))
-  
+```
+
 Here is a simple while example that uses a (mutable) counter and prints out the results to the repl window.
 
 ```clojure
@@ -96,34 +109,5 @@ Here is a simple while example that uses a (mutable) counter and prints out the 
 
 > This example uses mutable state and causes a side effect by printing to the repl.  Both these kinds of things are typically kept to a minimum in Clojure.
 
+> **TODO** An alternative would be to use use the iteration over a collection to control the while condition
 
-## Loop & Recur 
-
-There are also `loop` and `recur` functions in Clojure that can be used for control flow, however they are considered low level operations and higher order functions are typically used.
-
-A common patter is to create a sequence of values (characters in a string, values in a map, vector, set or list) and apply one or more of clojure's sequence functions (doseq, dorun, take-while, etc.)
-
-The following example reads the first username from /etc/passwd on unix like systems.
-
-```clojure
-(require '[clojure.java [io :as io]])
-
-(defn char-seq
-  "create a lazy sequence of characters from an input stream"
-  [i-stream]
-  (map char 
-   (take-while
-    (partial not= -1)
-    (repeatedly #(.read i-stream)))))
-
-;; process the sequence one token at a time
-;; with-open will automatically close the stream for us 
-
-(with-open [is (io/input-stream "/etc/passwd")]
-  (doseq [c (take-while (partial not= \:) (char-seq is))]
-    ;; your processing is done here
-    (prn c)))
-
-```
-
-> Example taken from Stack Overflow http://stackoverflow.com/questions/1053926/clojure-while-loop
