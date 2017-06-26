@@ -30,3 +30,5 @@ It is also stated that higher order functions should return a function, usually 
 
 <!--endsec-->
 
+# References 
+* [Writing Elegant Clojure code using Higher Order functions](http://christophermaier.name/blog/2011/07/07/writing-elegant-clojure-code-using-higher-order-functions)
