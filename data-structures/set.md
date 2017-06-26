@@ -25,3 +25,17 @@
 (sort-by )
 ```
 
+# Looking up values in a set
+
+```clojure
+(#{:a :b :c} :c)
+(#{:a :b :c} :z)
+```
+
+Sets can also use the `contains?` function to see if a value exists in a set
+
+```clojure
+(contains? 
+  #{"Palpatine" "Darth Vader" "Boba Fett" "Darth Tyranus"}
+  "Darth Vader")
+```

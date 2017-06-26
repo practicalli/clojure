@@ -41,19 +41,27 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 (conj [5 10] 15)
 ```
 
+> **Hint** When a function is effectively asking if a value is true or false, its refered to as a _predicate function_.  Its common practice in Clojure to place a `?` at the end of that functions name.
 
-## Predicate functions 
 
-  When a function is effectively asking a question, its refered to as a _predicate function_.  Its common practice to place a `?` at the end of the function name.
+## Lookup data from a Vector
+
+
+```clojure
+([1 2 3] 1)
+
+;; ([1 2 3] 1 2)  ;; wrong number of arguments, vectors behaving as a function expect one parameter
+
+;; ((1 2 3) 1) ;; you cant treat lists in the same way, there is another approach - assoc
+```
   
-The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector.
-
 
 ## Changing vectors 
+
+The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector.
 
  `conj` takes a vector and an item and returns a new vector with that item added to the end. The function name is taken from the verb "conjugate", meaning "to join together.
 
 Remember that  collections in Clojure are _immutable_, so when we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
-
 
 > **Note** Using one or more vectors, create a data structure of the high temperatues for the next 7 days in your area. Use the `nth` function to get the high temperature for next Friday

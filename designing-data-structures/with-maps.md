@@ -2,11 +2,26 @@
 
 Maps allow you to model data with its contextual meaning.  The keys of a map can give the context and the values are the specific data.
 
+> **Note** Define a shopping list of items you want, including how many of each item you want to buy
+
+<!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
+
+```clojure
+(def shopping-list
+  {"cat food"  10
+   "soya milk" 4
+   "bread"     1
+   "cheese"    2})
+```
+
+<!--endsec-->
+
+
 > **Note** Define a starwars characters, eg. luke skywalker, jarjar binks.  The starwars character should include a name and a skill (it doesnt matter what these are).
 
 > Use the 'get' function to return the value of a given key, eg. name.  Use keyworks to return a given value if you used keywords for the map keys.
 
-<!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
+<!--sec data-title="Reveal answer" data-id="answer002" data-collapse=true ces-->
 
 In this answer we have defined three different starwars characters, all using the same map keys.
 

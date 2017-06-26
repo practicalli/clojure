@@ -8,12 +8,11 @@ Vectors
 * can contain any types
 * are immutable
 
-> **Fixme** create a simple exercise
+> Define a data structure for a simple shopping list with any items you would typically want to buy.
 
+<!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 
 ```clojure 
-
-;; Duplicate elements ?
-[1 2 3 4 1]
-
+(def shopping-list ["Cerial" "Baked Beans" "Cat food" "Quorn chicken pieces" ])
 ```
+<!--endsec-->
