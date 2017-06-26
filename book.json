@@ -11,17 +11,25 @@
     "plugins": [
         "toggle-chapters",
         "codeblock-disable-glossary",
-        "richquotes",
         "disqus",
         "exercises",
+        "gist",
         "quizzes",
         "ga",
         "toolbar",
-        "sectionx"
+        "sectionx",
+        "-highlight",
+        "sunlight-highlighter",
+        "callouts",
+        "klipse"
     ],
     "pluginsConfig": {
-        "richquotes": {
-            "todos": true
+        "callouts": {
+            "showTypeInHeader": false,
+            "star": {
+                "alert": "warning",
+                "picto": "fa-star"
+            }
         },
         "disqus": {
             "shortName": "clojure-practicalli"
