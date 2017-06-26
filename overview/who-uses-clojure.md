@@ -4,29 +4,34 @@
 
 A quick scan of various job sites shows Clojure positions at companies like Walmart, Facebook, Staples, Consumer Reports, Salesforce, and Amazon. It doesn't get much more mainstream than that. 
 
-Here is just a small and diverse set of example companies that use Clojure for development.
+If you are looking for a new role using Clojure or other functional programming languages, visit [Functional Works](http://functionalworks.com), the only Functional Recruiters in the world.
 
-Company | Type of applications
------------------------ | -------------------------------------
-Cisco                   | Malware analysis & threat intelligence platform (expert system with core.logic)
-Deuche Bank             | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)
-Atlassian               | Collaborative editing platform for all their products 
-Mail Online             | Publishing pipeline
-Circle CI               | [Frontend of CI server](https://github.com/circleci/frontend) in Clojurescript & [test suite](https://circleci.com/blog/rewriting-your-test-suite-in-clojure-in-24-hours/)
-LinkedIn                | Powers the LinkedIn social graph
-Walmart                 | eReceipts project to process every purchase from 5,000+ stores 
-SwiftKey                | Predictive intelligence platform (possibly used with Microsoft Cortana)
-Roomkey.com             | [Hotel booking system to rival Expedia](http://www.colinsteele.org/post/23103789647/against-the-grain-aws-clojure-startup) (with a tiny development team)
-USwitch                 | Creating meaningful data from multiple sources
-Funding Circle          | Adopting Clojure as their main language (from Ruby, etc)
-Braintree (Paypal)      | [Payment processing pipeline with Kafka](https://www.youtube.com/watch?v=0D3jev1E5ks)
-CitiGroup               | Financial Trading
-Netflix                 | Map-Reduce Languges for writing Apps for Hadoop Pig 
-Mastodon C              | Data centre analysis (Incanta, Storm)
-Thoughtworks            | Agile development for Client projects
-Vero Insurance          | Rebuilt policy management system in Clojure with Thoughworks
-Meta-X                  | Performance art (Overtone, Quil)
-Salesforce              | Build & deployment with [Puppet](https://github.com/puppetlabs/puppetserver) & Application Routing with [nginx-clojure](https://nginx-clojure.github.io)
+Here is just a small and diverse set of example companies that I am aware of that use Clojure for development.
+
+| Company                    | Type of applications                                                                                                                                                       |
+| -----------------------    | -------------------------------------                                                                                                                                      |
+| Boeing                     | [Boeing 737 MAX - onboard maintainance](https://www.youtube.com/watch?v=iUC7noGU1mQ)                                                                                       |
+| Puppet Labs                | DevOps apps & services eg. trapperkeeper                                                                                                                                                                           |
+| Cisco                      | Malware analysis & threat intelligence platform (expert system with core.logic)                                                                                            |
+| Deuche Bank (UK)           | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)                                                                  |
+| Atlassian                  | Collaborative editing platform for all their products                                                                                                                      |
+| Netflix                    | Map-Reduce languages for writing apps for Hadoop / Pig                                                                                                                     |
+| USwitch (UK)               | Creating meaningful data from multiple sources                                                                                                                             |
+| Daily Mail Online (UK)     | Publishing pipeline                                                                                                                                                        |
+| Circle CI (USA)            | [Frontend of CI server](https://github.com/circleci/frontend) in Clojurescript & [test suite](https://circleci.com/blog/rewriting-your-test-suite-in-clojure-in-24-hours/) |
+| CitiGroup                  | Financial Trading                                                                                                                                                          |
+| Student Loans company (UK) | Loans management system written in Clojure                                                                                                                                 |
+| LinkedIn                   | Powers the LinkedIn social graph                                                                                                                                           |
+| Walmart (USA)              | eReceipts project to process every purchase from 5,000+ stores                                                                                                             |
+| SwiftKey (UK)              | Predictive intelligence platform (possibly used with Microsoft Cortana)                                                                                                    |
+| Roomkey.co.uk              | [Hotel booking system to rival Expedia](http://www.colinsteele.org/post/23103789647/against-the-grain-aws-clojure-startup) (with a tiny development team)                  |
+| Funding Circle (UK & USA)  | Adopting Clojure as their main language (from Ruby, etc)                                                                                                                   |
+| Braintree                  | [Payment processing pipeline with Kafka](https://www.youtube.com/watch?v=0D3jev1E5ks)                                                                                      |
+| Mastodon C                 | Data centre analysis (Incanta, Storm)                                                                                                                                      |
+| Thoughtworks               | Agile development for Client projects world wide                                                                                                                           |
+| Vero Insurance (AUS)       | Rebuilt policy management system in Clojure with Thoughworks                                                                                                               |
+| Meta-X                     | Performance art (Overtone, Quil)                                                                                                                                           |
+| Salesforce (USA)           | Build & deployment with [Puppet](https://github.com/puppetlabs/puppetserver) & Application Routing with [nginx-clojure](https://nginx-clojure.github.io)                   |
 
 There are many more examples of projects on the HackerNews thread: [Ask HN: Who's using Clojure in Production](https://news.ycombinator.com/item?id=8549823)
 
@@ -36,3 +41,5 @@ There are many more examples of projects on the HackerNews thread: [Ask HN: Who'
 Clojure is also defined as a technology that can be adopted since 2014, according to the [Thoughtworks technology radar](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure).
 
 [![Thoughtworks Technology Radar](/images/thoughtworks-tech-radar.png)](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure)
+
+JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompasing ecosystem of libraries and services.

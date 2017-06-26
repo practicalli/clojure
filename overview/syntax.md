@@ -35,3 +35,6 @@
     x*=y; 
     x/=y;
 ```
+
+# References
+* [Clojure Style Guide](https://github.com/bbatsov/clojure-style-guide)
