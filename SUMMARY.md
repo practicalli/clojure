@@ -9,6 +9,7 @@
     * [Leiningen](development-environments/leiningen.md)
     * [LightTable](development-environments/lighttable.md)
     * [Other tools](development-environments/other-tools.md)
+* [Virtual Study Guide](study-guide.md)
 * [Overview of Clojure](overview/index.md)
     * [When to use Clojure](overview/purpose.md)
     * [Who uses Clojure](overview/who-uses-clojure.md)
