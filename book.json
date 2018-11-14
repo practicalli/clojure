@@ -1,6 +1,7 @@
 {
-    "gitbook": ">=2.0.0",
+    "gitbook": ">=3.0.0",
     "title": "Clojure, Practicalli",
+    "description": "Introducing Clojure development and the essence of functional programming",
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",
@@ -12,16 +13,15 @@
         "toggle-chapters",
         "codeblock-disable-glossary",
         "disqus",
-        "exercises",
         "gist",
-        "quizzes",
         "ga",
         "toolbar",
-        "sectionx",
-        "-highlight",
-        "sunlight-highlighter",
         "callouts",
-        "klipse"
+        "sectionx",
+        "simpletabs",
+        "youtube",
+        "klipse",
+        "wide-page"
     ],
     "pluginsConfig": {
         "callouts": {
@@ -30,6 +30,9 @@
                 "alert": "warning",
                 "picto": "fa-star"
             }
+        },
+        "sectionx": {
+            "tag": "b"
         },
         "disqus": {
             "shortName": "clojure-practicalli"
