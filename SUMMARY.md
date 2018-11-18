@@ -10,6 +10,7 @@
     * [LightTable](development-environments/lighttable.md)
     * [Other tools](development-environments/other-tools.md)
 * [Virtual Study Guide](study-guide.md)
+* [Clojure Big Ideas](ten-big-ideas.md)
 * [Development Tools](development-tools/index.md)
     * [Java](development-tools/java.md)
     * [Leiningen](development-tools/leiningen.md)
