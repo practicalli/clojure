@@ -35,7 +35,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 
 **Community**
-* [Clojure-docs](http://clojure-doc.org/) - community docs 
+* [Clojure-docs](http://clojure-doc.org/) - community docs
 * [Clojars]() and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
 * [Clojure & ClojureScript Dependencies](https://clj-deps.herokuapp.com/)
 * [4Clojure](https://www.4clojure.com/) exercises & [4Clojure Google group](https://groups.google.com/forum/#!forum/4clojure)
