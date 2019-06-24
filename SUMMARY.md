@@ -162,6 +162,10 @@
 * [Lighttable](lighttable/index.md)
     * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md)
 
+## Puzzles
+* [Puzzles](puzzles/index.md)
+    * [Random Seat Assignment](puzzles/random-seat-assignment.md)
+
 # Deprecated Content
 * [How to use the workshop](using-the-workshop/index.md)
     * [Technical Requirements](using-the-workshop/requirements.md)
