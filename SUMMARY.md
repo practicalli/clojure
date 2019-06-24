@@ -156,6 +156,9 @@
     * [Core.async](reference/core-async.md)
     * [Prasmatic Schema](reference/prasmatic-schema.md)
     * [Books on Clojure](reference/books.md)
+    * [Performance](performance/index.md)
+        * [Testing functions](performance/testing-functions.md)
+        * [Performance](performance/load-testing.md)
 * [Lighttable](lighttable/index.md)
     * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md)
 
