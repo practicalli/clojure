@@ -1,4 +1,9 @@
-# Clojure.practical.li
+# Practicalli Clojure
+
+> #### Warning::Book refresh in progress - Summer 2019
+> A refresh of the contents of this book is currently underway, so things will change around quite a lot.  Please use the search box in the top left corner to find topics if they are not obvious from the left hand navigation.
+>
+> Only the sections up to Development Tools are mostly complete, consider everything else a work in progress.
 
 ![Clojure logo](images/clojure-practicalli-banner.png)
 
