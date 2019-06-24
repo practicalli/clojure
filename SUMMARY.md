@@ -132,6 +132,7 @@
         * [Simple palindrome test](project-palindrome/simple-palindrome-test.md)
     * [Libraries](libraries/index.md)
         * [clojure.core](libraries/clojure-core.md)
+        * [clojure.core](libraries/clojure-core-lisp-comprehension.md)
         * [Clojars](libraries/clojars.md)
         * [om](libraries/om.md)
         * [edn](libraries/edn.md)
