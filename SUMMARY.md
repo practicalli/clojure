@@ -152,6 +152,7 @@
     * [Control Flow](reference/control-flow.md)
     * [Persistent Data Structures](reference/persistent-data-structures.md)
     * [Changing State](reference/changing-state.md)
+    * [Recursion](reference/recursion.md)
     * [Reader Macros](reference/reader-macros.md)
     * [Core.async](reference/core-async.md)
     * [Prasmatic Schema](reference/prasmatic-schema.md)
