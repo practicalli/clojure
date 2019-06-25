@@ -163,9 +163,10 @@
         * [Performance](performance/load-testing.md)
 * [Lighttable](lighttable/index.md)
     * [Configure Keyboard mappings](lighttable/configure-keyboard-mappings.md)
-* [Clojure Standard Library](standard-library/index.md)
+* [Standard Library](standard-library/index.md)
+    * [Sequences](standard-library/sequences.md)
     * [Collections](standard-library/collections.md)
-    * [](standard-library/.md)
+    * [Iteration](standard-library/iteration.md)
 
 ## Puzzles
 * [Puzzles](puzzles/index.md)
