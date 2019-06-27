@@ -6,26 +6,52 @@ As with other unit testing libraries you use `clojure.test` to write test.  Thes
 
 As a general guideline, a Clojure test function should test a specific Clojure function.
 
+
 > #### Hint::What to test
-> Your unit tests should cover at least all of the public functions within each namespace, so the contract / api for each namespace is testable and will highlight obvious regressions.
+> Define a `deftest` for every public functions within a namespace, so the contract / api for each namespace is testable and will highlight obvious regressions.
+> The `testing` function can be used to group assertions for a particular `deftest`, so different aspects of the tests can be grouped together.
 >
-> As `clojure.spec` becomes mature, you should also consider using generative testing approach to broaden the test data used to test your functions.
+> Test reports contain only the names of the `deftest` functions, as there are no names with `testing`
+>
+> `clojure.spec` provides another way to define a contract around your functions and data structures.  It also includes generative testing approach to broaden the test data used to test your functions.
+
+
+## Test namespaces
+
+`clojure.test` needs to be included in the namespace in order to use the functions that namespace provides.
+
+The recommended syntax is to `:refer` the specific functions which makes those functions available as if they were defined in the current namespace.
+
+The namespace that is under test also needs to be included and and its recommended that you use the alias `SUT` for system under test.  The test namespace matches the namespace you are testing, with the addition of `-test` to the name.
+
+```clojure
+(ns my-clojure-app.core-test
+  (:require [clojure.test :refer [deftest deftest- testing is]]
+            [my-clojure-app.core :as SUT ]))
+```
+
 
 ## Writing an assertion
 
-```clojure
-(is
-   (= 42 (* 6 7)))
-```
+An assertion is where you compare an expected result with the result of calling a function.  If the assertion is true, then then it is a pass.  If the assertion is false, then its a fail.
 
-Assertions use the `is` function with an expression that returns true (assertion passed) or false (assertion failed)
+The form of an assertion takes a form `(is (comparitor expected-value fuction-call))`
+
+Some simple examples include
+```clojure
+(is (= 42 (* 6 7)))
+
+(is (not= 24 (* 6 7)))
+```
 
 
 ## Defining a test
 
-`deftest` is used to define a function that will test a similarly named function from the `src` tree.  By convention, the function name and namespaces should be the same, except for adding `-test` to the namespace and testing function.
+`deftest` is used to define a function that will test a similarly named function from the `src` tree.  The test function name should match the function it is testing with `-test` added to the end.
 
-The `testing` function allows you to group one or more assertions
+`testing` function allows you to group one or more assertions
+
+`is` defines an assertion
 
 ```clojure
 (deftest adder-test
@@ -36,18 +62,4 @@ The `testing` function allows you to group one or more assertions
     #_(is (not (= (+ 1 2)) (adder "a" "b")) "Adding strings as negative test")
     (is (false? (= 0 1)) "A simple failing test")
     (is (false? (= 0 (adder 3 4))) "Purposefully using failing data")))
-
-```
-
-
-## Including namespaces
-
-`clojure.test` needs to be included in the namespace in order to use the functions that namespace provides.  Its common to specify `[clojure.test :refer :all]` which makes all the functions available as if they were defined in the current namespace.
-
-The namespace that is under test also needs to be included and again is typically just pulled in completely into the testing namespace.  The testing namespace typically matches the namespace you are testing, with just the addition of `-test` to the name.
-
-```clojure
-(ns my-clojure-app.core-test
-  (:require [clojure.test :refer :all]
-            [my-clojure-app.core :refer :all]))
 ```
