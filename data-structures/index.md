@@ -13,7 +13,7 @@ Clojure's built in persistent data structures:
 * **Lists** - a linked list, sequential access
 * **Vectors** - an indexed array
 * **Maps** - key-value pair (hash map)
-* **Sets** - a unqiue set of values
+* **Sets** - a unique set of values
 
 Clojure data structure share the following characteristics:
 
