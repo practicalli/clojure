@@ -1,8 +1,6 @@
 # Thinking Functionally
 
-Please ask about functional programming and thinking functionally in the Practicalli gitter chat
-
-[![Join the conversation on Gitter](/images/gitter-chat-badge-practicalli.png)](https://gitter.im/practicalli/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+In this section I cover some simple examples of Clojure code to help you think about the concepts involved in functional programming.
 
 An overview of thinking functionally is also covered in the presentation entitled [Getting into Functional Programming with Clojure](http://www.slideshare.net/jr0cket/cebit-get-into-functional-programming-with-clojure) on slideshare and its accompanying [youtube video](https://www.youtube.com/watch?v=mEfqULqChZs)
 
@@ -11,3 +9,8 @@ An overview of thinking functionally is also covered in the presentation entitle
 <hr >
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mEfqULqChZs" frameborder="0" allowfullscreen></iframe>
+
+
+[![Join the conversation on Clojurians Slack](/images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
+
+Get a [free Clojurians slack community account](https://clojurians.net/)
