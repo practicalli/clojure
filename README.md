@@ -1,11 +1,4 @@
-# Practicalli Clojure
-
-> #### Warning::Book refresh in progress - Summer 2019
-> A refresh of the contents of this book is currently underway, so things will change around quite a lot.  Please use the search box in the top left corner to find topics if they are not obvious from the left hand navigation.
->
-> Only the sections up to Development Tools are mostly complete, consider everything else a work in progress.
-
-![Clojure logo](images/clojure-practicalli-banner.png)
+![Practicalli Clojure Book Cover](images/practicalli-clojure-book-cover.png)
 
   Clojure is a simple, powerful and fun language to develop any and all applications. It has a simple syntax that is quick to learn and a wide range of Clojure libraries to build any kind of apps and services. Its also easy to use any existing Java / JVM Language code or libraries as part of your Clojure apps.
 
@@ -13,7 +6,13 @@ In this workshop we take a hands on approach where everyone takes Clojure code a
 
 As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
-[![Join the conversation on Gitter](images/gitter-chat-badge-practicalli.png)](https://gitter.im/practicalli/chat?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
+
+Get a [free Clojurians slack community account](https://clojurians.net/)
+
+> #### Warning::Book refresh in progress
+> A refresh of the contents of this book is currently underway, so things may.
+
 
 ## Supporting Resources
 
@@ -27,7 +26,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 * [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)
 * [Clojure documentation](http://clojure.org/documentation)
 * [Clojure cheetsheet](http://clojure.org/cheatsheet)
-* [Official Google group](https://groups.google.com/forum/#!forum/clojure)
+* [Official Clojure Google group](https://groups.google.com/forum/#!forum/clojure)
 * [CrossClj](http://crossclj.info/) - cross-referencing the Clojure ecosystem
 * [Brave Clojure](http://www.braveclojure.com/)
 
