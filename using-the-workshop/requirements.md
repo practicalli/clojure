@@ -1,5 +1,7 @@
 # Requirements
 
+> #### TODO::Update to using Clojure CLI tools
+
 Many of the exercises in this book can be done in the pages of the website, reducing the need to set up an environment for Clojure development.
 
 [repl.it](https://repl.it) gives you a web based Clojure environment that can be used to save answers to exercises and other Clojure experiments.
