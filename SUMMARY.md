@@ -46,6 +46,7 @@
     * [Defining Functions](basic-clojure/defining-functions.md)
     * [Namespace](basic-clojure/namespace.md)
     * [Control flow](basic-clojure/control-flow.md)
+    * [Comments](basic-clojure/comments.md)
 * [Data structures](data-structures/index.md)
     * [List](data-structures/list.md)
     * [Map](data-structures/map.md)
