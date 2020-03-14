@@ -36,6 +36,7 @@ Get a [free Clojurians slack community account](https://clojurians.net/)
 **Community**
 * [Clojure-docs](http://clojure-doc.org/) - community docs
 * [Clojars]() and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
+* [re-find (borkdude)](https://borkdude.github.io/re-find.web/) - find functions from arguments and return values
 * [Clojure & ClojureScript Dependencies](https://clj-deps.herokuapp.com/)
 * [4Clojure](https://www.4clojure.com/) exercises & [4Clojure Google group](https://groups.google.com/forum/#!forum/4clojure)
 * [ClojureScript REPL](http://www.clojurescript.io/) - website REPL
