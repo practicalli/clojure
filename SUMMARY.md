@@ -2,6 +2,7 @@
 
 * [Introduction](introduction.md)
     * [Quick start](quickstart/index.md)
+    * [Quick reference](quickstart/quick-reference.md)
 <!-- * [Virtual Study Guide](study-guide.md) -->
 * [Getting Started](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
