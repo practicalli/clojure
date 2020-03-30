@@ -9,5 +9,8 @@ rm -rf _book
 # Trigger a clean and new build
 gitbook build .
 
+# Prevent Jekyll processing when pushing commits to GitHub
+touch _book/.nojekyll
+
 # Deploy new build
 cd _book && git init && git add . && git commit -m "automated commit from gitbook.io" && git branch -m master gh-pages && git remote add practicalli git@github.com:practicalli/clojure.git && git push -f practicalli gh-pages
