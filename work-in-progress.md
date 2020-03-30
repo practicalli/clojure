@@ -403,3 +403,42 @@ answered Jun 9 '10 at 20:38
 
 Michał Marczyk
 65.8k7148171
+
+
+
+<!-- Work in progress -->
+
+Caves of clojure
+================
+Shows a terminal in either text or swing
+
+http://stevelosh.com/blog/2012/07/caves-of-clojure-01/
+
+
+Quil
+===
+Coloured-balls - lein run - displays coloured balls
+CljBoids - lein run - follows the mouse around - uses atoms, quite involved code
+
+
+Coin toss
+=========
+
+(defn coin-toss []
+  (= 1 (rand-int 2)))
+
+(defn toss-score [toss]
+  (if toss 1 -1))
+
+
+user=> (toss-score true)
+1
+user=> (toss-score false)
+-1
+user=> (toss-score (coin-toss))
+-1
+user=> (toss-score (coin-toss))
+1
+
+(repeatedly 5 coin-toss)
+(true true false false true)
