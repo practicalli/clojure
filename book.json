@@ -2,6 +2,9 @@
     "gitbook": ">=3.0.0",
     "title": "Clojure, Practicalli",
     "description": "Introducing Clojure development and the essence of functional programming",
+    "structure": {
+        "readme": "introduction.md"
+    },
     "styles": {
         "website": "styles/website.css",
         "ebook": "styles/ebook.css",

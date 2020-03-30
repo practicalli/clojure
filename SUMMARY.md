@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
+* [Introduction](introduction.md)
     * [Quick start](quickstart/index.md)
 <!-- * [Virtual Study Guide](study-guide.md) -->
 * [Getting Started](getting-started/index.md)
