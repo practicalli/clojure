@@ -3,6 +3,10 @@
 * [Introduction](README.md)
     * [Quick start](quickstart/index.md)
 <!-- * [Virtual Study Guide](study-guide.md) -->
+* [Clojure](install-clojure/index.md)
+    * [Install Java](install-clojure/install-java.md)
+    * [Install Clojure](install-clojure/install-clojure.md)
+    * [Editors/IDEs](install-clojure/install-editors.md)
 * [Clojure Concepts](concepts/index.md)
     * [Learning Clojure](concepts/learning-clojure.md)
     * [Clojure Big Ideas](concepts/ten-big-ideas.md)
