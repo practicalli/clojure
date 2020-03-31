@@ -8,6 +8,13 @@ Practicalli recommends [OpenJDK 11 (LTS) from AdoptOpenJDK](https://adoptopenjdk
 
 
 ## [Install Clojure](install-clojure.html)
-Practicalli recommends using [the Clojure CLI tools and using deps.edn for projects](https://clojure.org/guides/getting_started).  The guide will also uses [clj-new](https://github.com/seancorfield/clj-new) to create Clojure projects and [rebel readline](https://github.com/bhauman/rebel-readline) for an enhanced REPL experience.
+Practicalli recommends using [the Clojure CLI tools and using deps.edn for projects](https://clojure.org/guides/getting_started).  The guide will also uses [clj-new](https://github.com/seancorfield/clj-new) to create Clojure projects.
 
-Previously this guide used [Leiningen](https://leiningen.org) as the project automation tool for Clojure.  Leiningen is a very common tool that will help you create and run projects, as well as create build assets (jars) for deployment.  All the code in this guide should still work with Leiningen when a correctly configured `project.clj` file is created.  This guide should also work for [boot build tools](http://boot-clj.com/), although contains no specific details.
+## [Using the REPL](using-the-repl.md)
+A brief guide in how to use the Clojure REPL and enhance the REPL experience with [rebel readline](https://github.com/bhauman/rebel-readline).
+
+## [Editors for Clojure](install-guides/)
+Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too.
+
+> #### Hint::Other tools
+> [Leiningen](https://leiningen.org) has been a very common tool to create and run projects, as well as create build assets (jars) for deployment.  All the code in this guide should still work with Leiningen when a correctly configured `project.clj` file is created.  This guide should also work for [boot build tools](http://boot-clj.com/), although contains no specific details.
