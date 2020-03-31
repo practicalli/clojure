@@ -1,6 +1,8 @@
 # Clojure Quick Reference
 The basic Clojure syntax and a few common functions you should probably learn first.
 
+Also see the [Clojure.org cheetsheet](https://clojure.org/api/cheatsheet)
+
 ## Calling functions
 The first element in a list, `()`, is treated as a call to a function. This is known as prefix notation which greatly simplifies Clojure syntax and makes mathematical expressions completely deterministic, eliminating the need for [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations).
  fs
