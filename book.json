@@ -63,5 +63,14 @@
                 }
             ]
         }
+    },
+    "links": {
+        "sidebar": {
+            "Clojure.org": "https://clojure.org/",
+            "re-find": "https://borkdude.github.io/re-find.web/"
+        }
+    },
+    "variables": {
+        "host": "practical.li"
     }
 }
