@@ -12,3 +12,8 @@ Get a [free Clojurians slack community account](https://clojurians.net/)
 
 > #### Warning::Book re-write in progress
 > A re-write of this book is currently underway, so things may change and move around.
+
+---
+
+> #### Hint::Quote: Adrian Cockcroft. Cloud Architect, Netflix
+> "A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters." Adrian Cockcroft - Battery ventures, formally Cloud Architect, Netflix
