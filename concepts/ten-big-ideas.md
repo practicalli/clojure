@@ -16,7 +16,7 @@ Each of these ideas is valuable by itself, not only in Clojure. Taken together, 
 * [Logic query](http://docs.datomic.com/query.html) / [Logic Programming](https://github.com/clojure/core.logic)
 * [Atomic Succession Model](https://clojure.org/about/concurrent_programming)
 
-Stuart halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720) (eleven actually). [Slides](https://github.com/stuarthalloway/presentations/wiki/Clojure-in-10-Big-Ideas
+Stuart halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720) (eleven actually). [Slides](https://github.com/stuarthalloway/presentations/wiki/Clojure-in-10-Big-Ideas)
 
 <iframe src="https://player.vimeo.com/video/223240720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 <p><a href="https://vimeo.com/223240720">CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas</a> from <a href="https://vimeo.com/spantree">Spantree Technology Group, LLC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>

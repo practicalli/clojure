@@ -1,28 +1,26 @@
 # Clojure Concepts
+> #### Hint::content refactor
+> This page is being reviewed and updated
 
   I love Clojure because its **powerful**, **flexible** and **fun**.
 
-  Clojure encourages the design of simple software systems, avoiding complexity. This is not an easy thing to do and takes practice.
+  Clojure encourages the creation of simple software systems by being immutable by default and encouraging pragmatic approach to pure functional design.
 
 > #### Hint::Come back to concepts as you learn the language
 > If you are eager to try Clojure, you can come back to this section and get a deeper understanding of the design and phylosophy of the Clojure approach to functional programming.
 > These concepts will be easier to relate to as you practice Clojure and build software solutions.
 
 
-## Clojure is
+## Clojure is ...
 
-* a **general purpose language** that compiles code that runs on the Java Virtual Machine (JVM).
-* a **functional programming language** with a data centric approach (mostly pure)
-* a **very small syntax** (12 primitives, 4 of which were added for Java interoperability)
-* a **dynamic language** in terms of type inference and runtime (REPL)
-* a **fast-feedback** approach for development, helping you quickly explore a problem domain
+* a **general purpose language** that compiles code to the platform its hosted upon (Java, JavaScript, Microsoft)
+* a **functional programming language** with a data centric approach, pragmatically pure
+* a **very small syntax** comprised of only 16 primitives, 8 of which were added for host interoperability
+* a **dynamic strongly typed language** type inference simplifies syntax and code base
+* a **REPL fast-feedback** evaluate code as you write it for instant feedback, helping you quickly explore a problem domain
 * a modern implementation of **LISP**
-* a highly extensible language via **macros**
+* highly extensible language via **macros**
 * an efficient way to manage state changes via **persistent data structures** & **software transactional memory**
-
-> **Hint** In functional programming we avoid changing state as much as possible.  If a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments).  These are refered to as Pure Functions.  Pure functions are truely modular as they do not affect any other part of the system and do not require complex threading for scalability.
-
-
 
 ## Clojure in a little more detail
 
@@ -31,8 +29,6 @@
 * quickly explore your problem domain by evaluating code on the fly in the REPL
 * new code is compiled as evaluated, no seperate compile cycle or wait time
 * very small language syntax, extensible via macros
-
-> A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters. Adrian Cockcroft - Battery ventures, formally Cloud Architect, Netflix
 
 ### Pragmatic Functional Programming ###
 
@@ -45,6 +41,12 @@
 
 * Reference types `atoms` & `refs` for mutable state
 * Changes are done safely within Software Transactional Memory (STM), like having an in-memory ACID database managing all state changes under the covers.
+
+> #### Hint::Avoid changing state
+> In functional programming we avoid changing state as much as possible.  If a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments).  These are refered to as Pure Functions.  Pure functions are truely modular as they do not affect any other part of the system and do not require complex threading for scalability.
+
+
+
 
 ### Hosted language with consise interoperabilty ###
 
