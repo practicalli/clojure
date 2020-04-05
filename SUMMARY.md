@@ -18,9 +18,6 @@
 * [Getting Started](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
-    * [Using the REPL](getting-started/using-the-repl.md)
-        * [rebel readline](getting-started/rebel-readline.md)
-    * [Create a project](getting-started/create-a-project.md)
     * [Editor Install Guides](getting-started/editor-install-guides/index.md)
         * [Atom ProtoREPL](getting-started/editor-install-guides/atom-protorepl.md)
         * [Atom Proton](getting-started/editor-install-guides/atom-proton.md)
@@ -33,6 +30,13 @@
         * [Emacs Spacemacs](getting-started/editor-user-guides/emacs-spacemacs.md)
         * [VSCode Calva](getting-started/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](getting-started/editor-user-guides/intellij-cursive.md)
+* [REPL driven development](repl-driven-development/index.md)
+    * [Using the REPL](repl-driven-development/using-the-repl.md)
+    * [rebel readline](repl-driven-development/rebel-readline.md)
+    * [REPL uncovered](repl-driven-development/repl-uncovered.md)
+    * [Create a project](repl-driven-development/create-a-project.md)
+    <!-- Introductor Clojure examples that work well in the command line REPL -->
+    <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
 * [Basic Clojure](basic-clojure/index.md)
     * [Whats my environment](basic-clojure/whats-my-environment.md)
     * [Reading project file](basic-clojure/reading-project-file.md)
