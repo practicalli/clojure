@@ -1,5 +1,4 @@
 Clojure quick guide
-====================
 
 Simple clojure stuff
 ====================

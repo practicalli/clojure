@@ -3,8 +3,10 @@
 Establish a Clojure environment by installing the following:
 
 * rlwrap, a read line tool for an interactive command line
-* Clojure CLI tools (Leiningen and Boot should also work)
+* Clojure CLI tools - runs Clojure projects and the REPL
 * clj-new to create projects
+
+A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](editor-install-guides) is recommended when developing Clojure projects.
 
 ## Clojure CLI tools
 

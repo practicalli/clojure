@@ -14,7 +14,10 @@ Practicalli recommends using [the Clojure CLI tools and using deps.edn for proje
 A brief guide in how to use the Clojure REPL and enhance the REPL experience with [rebel readline](https://github.com/bhauman/rebel-readline).
 
 ## [Editors for Clojure](install-guides/)
+A command line REPL can be used to start learning Clojure, however, when you start working on projects a Clojure aware editor is highly recommended.
+
 Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too.
+
 
 > #### Hint::Other tools
 > [Leiningen](https://leiningen.org) has been a very common tool to create and run projects, as well as create build assets (jars) for deployment.  All the code in this guide should still work with Leiningen when a correctly configured `project.clj` file is created.  This guide should also work for [boot build tools](http://boot-clj.com/), although contains no specific details.
