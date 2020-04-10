@@ -10,7 +10,7 @@
 > If you are eager to try Clojure, you can come back to this section and get a deeper understanding of the design and phylosophy of the Clojure approach to functional programming.
 > These concepts will be easier to relate to as you practice Clojure and build software solutions.
 
-
+<!--
 ## Clojure is ...
 
 * a **general purpose language** that compiles code to the platform its hosted upon (Java, JavaScript, Microsoft)
@@ -76,3 +76,5 @@ There is a vibrant and highly active community around Clojure.  In London alone 
 ## Community resources
 
 [Clojure. tv](https://www.youtube.com/channel/UCaLlzGqiPE2QRj6sSOawJRg) and [Planet Clojure](http://planet.clojure.in/) are the tip of the iceburg to a large amount of Clojure resources available via the Internet.
+
+ -->
