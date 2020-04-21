@@ -1,5 +1,19 @@
 # Explaining Macros
 
+<!-- When to write a macro
+Extending the clojure language, such as a dsl in a library
+Something you will used time and time again over multiple projects
+
+
+When not to write a macro
+just because you want tool
+When a function is just fine
+its only used in this project
+where you want it to be composable (macros are not composable, eg (apply my-macro data) does not work - `apply and` is a good example here)
+you dont have time to learn the macro syntax properly and you dont want to write a bad macro
+your macro doest do anything you cant do with a funciton.
+-->
+
 The macro system allows you to extend the design of the Clojure language, without waiting for the language designers.
 
 > #### Hint::Clojure macros are quite unique
@@ -34,3 +48,5 @@ It is possible to wrap a macro in a function and then that macro can be used as 
 (reduce #(and %1 %2) [true true false true])
 ;;=> false
 ```
+
+If you are doing this, then its more probably that a simple function would be a better approach.
