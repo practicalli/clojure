@@ -37,7 +37,6 @@
 ## Clojure core library
 <!-- Basic syntax and calling functions -->
 * [Show me the docs](basic-clojure/show-me-the-docs.md)
-* [Quick look at Types](basic-clojure/quick-look-at-types.md)
 <!-- * [Threading Macros](thinking-functionally/threading-macros.md) -->
 
 <!-- Simple values numbers, strings ratios -->
@@ -46,6 +45,7 @@
     * [Ratios](basic-clojure/ratios.md)
     * [Control flow](basic-clojure/control-flow.md)
     * [Comments](basic-clojure/comments.md)
+<!--     * [Naming Conventions](reference/naming-conventions.md) -->
 
 <!-- Persistent data structures list vector map set -->
 <!-- Introducing the most common function families from clojure.core -->
@@ -160,69 +160,59 @@
     * [TicTacToe CLI](games/tictactoe-cli/index.md)
         * [Create Project](games/tictactoe-cli/create-project.md)
 
-## Reference
-* [Reference](reference/index.md)
-    * [Basic Syntax](reference/basic-syntax.md)
-    * [Naming](reference/naming.md)
-    * [Naming Conventions](reference/naming-conventions.md)
-    * [Functions](reference/functions.md)
-    * [Sequences](reference/sequences.md)
-    * [Control Flow](reference/control-flow.md)
-    * [Persistent Data Structures](reference/persistent-data-structures.md)
-    * [Changing State](reference/changing-state.md)
-    * [Recursion](reference/recursion.md)
-    * [Reader Macros](reference/reader-macros.md)
-    * [Regular Expressions](reference/regular-expressions.md)
-    * [Core.async](reference/core-async.md)
-    * [Prasmatic Schema](reference/prasmatic-schema.md)
-    * [Books on Clojure](reference/books.md)
-    * [Performance](performance/index.md)
-        * [Testing functions](performance/testing-functions.md)
-        * [Performance](performance/load-testing.md)
-* [Standard Library](standard-library/index.md)
-    * [Sequences](standard-library/sequences.md)
-    * [Collections](standard-library/collections.md)
-    * [Iteration](standard-library/iteration.md)
-* [Development Tools](development-tools/index.md)
-    * [Editor Install Guides](getting-started/editor-install-guides/index.md)
-        * [Atom ProtoREPL](getting-started/editor-install-guides/atom-protorepl.md)
-        * [Atom Proton](getting-started/editor-install-guides/atom-proton.md)
-        * [Emacs Spacemacs](getting-started/editor-install-guides/emacs-spacemacs.md)
-        * [VSCode Calva](getting-started/editor-install-guides/vscode-calva.md)
-        * [IntelliJ Cursive](getting-started/editor-install-guides/intellij-cursive.md)
-    * [Editor User Guides](getting-started/editor-user-guides/index.md)
-        * [Atom ProtoREPL](getting-started/editor-user-guides/atom-protorepl.md)
-        * [Atom Proton](getting-started/editor-user-guides/atom-proton.md)
-        * [Emacs Spacemacs](getting-started/editor-user-guides/emacs-spacemacs.md)
-        * [VSCode Calva](getting-started/editor-user-guides/vscode-calva.md)
-        * [IntelliJ Cursive](getting-started/editor-user-guides/intellij-cursive.md)
+
+## Performance testing
+<!--     * [Performance](performance/index.md) -->
+<!--         * [Testing functions](performance/testing-functions.md) -->
+<!--         * [Performance](performance/load-testing.md) -->
 
 
-## To organise
-* [Work in Progress](work-in-progress.md)
-    * [core.async](core.async/index.md)
-        * [Bike Assembly Line](core.async/bike-assembly-line/index.md)
-        * [Toy Car assembly line](core.async/toy-car-assembly-line/index.md)
-        * [Clacks Messages](core.async/clacks-messages/index.md)
-    * [Managing state changes](thinking-functionally/managing-state-changes.md)
-    * [Project Palindrome](project-palindrome/index.md)
-        * [Simple palindrome test](project-palindrome/simple-palindrome-test.md)
-    * [Libraries](libraries/index.md)
-        * [clojure.core](libraries/clojure-core.md)
-        * [clojure.core](libraries/clojure-core-lisp-comprehension.md)
-        * [Clojars](libraries/clojars.md)
-        * [om](libraries/om.md)
-        * [edn](libraries/edn.md)
-    * [Leiningen Configuration](leiningen/index.md)
-        * [Create a project](leiningen/create-a-project.md)
-        * [Run the REPL](leiningen/run-the-repl.md)
-        * [Profiles overview](leiningen/profile.md)
-        * [Adding a dev profile](leiningen/adding-a-dev-profile.md)
-        * [Templates](leiningen/templates.md)
-        * [Create a template](leiningen/create-a-template.md)
-        * [Plugins](leiningen/plugins.md)
-    * [Explaining Macros](explaining-macros.md)
-* [Where next](where-next.md)
+<!-- ## Reference -->
+<!-- * [Reference](reference/index.md) -->
+<!--     * [Basic Syntax](reference/basic-syntax.md) -->
+<!--     <\!-- * [Naming](reference/naming.md) -\-> -->
+<!--     * [Functions](reference/functions.md) -->
+<!--     * [Sequences](reference/sequences.md) -->
+<!--     * [Control Flow](reference/control-flow.md) -->
+<!--     * [Persistent Data Structures](reference/persistent-data-structures.md) -->
+<!--     * [Quick look at Types](basic-clojure/quick-look-at-types.md) -->
+<!--     * [Changing State](reference/changing-state.md) -->
+<!--     * [Recursion](reference/recursion.md) -->
+<!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
+<!--     * [Regular Expressions](reference/regular-expressions.md) -->
+<!--     * [Core.async](reference/core-async.md) -->
+<!--     * [Prasmatic Schema](reference/prasmatic-schema.md) -->
+<!--     * [Books on Clojure](reference/books.md) -->
+<!-- * [Standard Library](standard-library/index.md) -->
+<!--     * [Sequences](standard-library/sequences.md) -->
+<!--     * [Collections](standard-library/collections.md) -->
+<!--     * [Iteration](standard-library/iteration.md) -->
+
+<!-- ## To organise -->
+<!-- * [Work in Progress](work-in-progress.md) -->
+<!--     * [core.async](core.async/index.md) -->
+<!--         * [Bike Assembly Line](core.async/bike-assembly-line/index.md) -->
+<!--         * [Toy Car assembly line](core.async/toy-car-assembly-line/index.md) -->
+<!--         * [Clacks Messages](core.async/clacks-messages/index.md) -->
+<!--     * [Managing state changes](thinking-functionally/managing-state-changes.md) -->
+<!--     * [Project Palindrome](project-palindrome/index.md) -->
+<!--         * [Simple palindrome test](project-palindrome/simple-palindrome-test.md) -->
+<!--     * [Libraries](libraries/index.md) -->
+<!--         * [clojure.core](libraries/clojure-core.md) -->
+<!--         * [clojure.core](libraries/clojure-core-lisp-comprehension.md) -->
+<!--         * [Clojars](libraries/clojars.md) -->
+<!--         * [om](libraries/om.md) -->
+<!--         * [edn](libraries/edn.md) -->
+<!--     * [Leiningen Configuration](leiningen/index.md) -->
+<!--         * [Create a project](leiningen/create-a-project.md) -->
+<!--         * [Run the REPL](leiningen/run-the-repl.md) -->
+<!--         * [Profiles overview](leiningen/profile.md) -->
+<!--         * [Adding a dev profile](leiningen/adding-a-dev-profile.md) -->
+<!--         * [Templates](leiningen/templates.md) -->
+<!--         * [Create a template](leiningen/create-a-template.md) -->
+<!--         * [Plugins](leiningen/plugins.md) -->
+<!--     * [Explaining Macros](explaining-macros.md) -->
+<!-- * [Where next](where-next.md) -->
 
 <!-- ## Development tools -->
 
