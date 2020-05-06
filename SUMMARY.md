@@ -6,20 +6,19 @@
 <!-- * [Quick start](quickstart/index.md) -->
 <!-- * [Quick reference](quickstart/quick-reference.md) -->
 <!-- * [Virtual Study Guide](study-guide.md) -->
-    * [Concepts](concepts/index.md)
-        * [What is Functional Programming](concepts/what-is-functional-programming.md)
-        * [Clojure Big Ideas](concepts/ten-big-ideas.md)
-        * [Clojure made Simple](concepts/clojure-made-simple.md)
-        * [Learning Clojure](concepts/learning-clojure.md)
-        * [When to use Clojure](concepts/purpose.md)
-        * [Who uses Clojure](concepts/who-uses-clojure.md)
-        <!-- * [The syntax](concepts/syntax.md) -->
-        * [Design](concepts/design.md)
-        * [All bytecode in the end](concepts/all-bytecode-in-the-end.md)
-        * [Features in more depth](concepts/features.md)
 
-
-* [Getting Started](getting-started/index.md)
+* [Clojure concepts](concepts/index.md)
+    * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
+    * [Clojure Big Ideas](concepts/ten-big-ideas.md)
+    * [Clojure from the Author](concepts/clojure-made-simple.md)
+    <!-- * [Learning Clojure](concepts/learning-clojure.md) -->
+    * [When to use Clojure](concepts/purpose.md)
+    * [Who uses Clojure](concepts/who-uses-clojure.md)
+            <!-- * [The syntax](concepts/syntax.md) -->
+    * [Design with Clojure](concepts/design.md)
+            <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
+            <!-- * [Features in more depth](concepts/features.md) -->
+            <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
 
