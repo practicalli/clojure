@@ -1,8 +1,10 @@
-# Reader Macros 
+# Reader Macros
 
-This is a collection of reader macros (think syntactic sugar) that are valid in Clojure.  These macros are useful for commenting out expressions, defining sets, ... 
+> #### Todo::Re-write
 
-All reader macros start with the character **#**, which is infact the _Dispatch macro_ that tells the Clojure reader (the thing that takes a file of Clojure text and parses it for consumption in the compiler) to go and look at another read table for the definition of the next character - in essence this allows extending default reader behaviour.
+This is a collection of reader macros (think syntactic sugar) that are valid in Clojure.  These macros are useful for commenting out expressions, defining sets, ...
+
+Many reader macros start with the character **#**, which is infact the _Dispatch macro_ that tells the Clojure reader (the thing that takes a file of Clojure text and parses it for consumption in the compiler) to go and look at another read table for the definition of the next character - in essence this allows extending default reader behaviour.
 
 
 * **#_** - Discard macro - ignore the next expression.  Often used to comment out code, especially when nested inside other expressions
