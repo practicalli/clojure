@@ -1,8 +1,10 @@
 # Summary
 
 * [Introduction](introduction.md)
-    * [Quick start](quickstart/index.md)
-    * [Quick reference](quickstart/quick-reference.md)
+* [First taste of Clojure](first-taste-of-clojure.md)
+<!-- replace repl.it with klipse - repl.it loads very slowly -->
+<!-- * [Quick start](quickstart/index.md) -->
+<!-- * [Quick reference](quickstart/quick-reference.md) -->
 <!-- * [Virtual Study Guide](study-guide.md) -->
     * [Concepts](concepts/index.md)
         * [What is Functional Programming](concepts/what-is-functional-programming.md)
