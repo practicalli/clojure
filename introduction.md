@@ -1,8 +1,10 @@
 ![Practicalli Clojure banner](images/practicalli-clojure-banner.png)
 
-  Clojure is a simple, powerful and fun language to develop any and all applications. It has a simple syntax that is quick to learn and a wide range of Clojure libraries to build any kind of apps and services. Its also easy to use any existing Java / JVM Language code or libraries as part of your Clojure apps.
+  Clojure is a simple, powerful and fun language to develop any and all applications. It has a simple syntax that is quick to learn and a wide range of libraries to build any kind of apps and services.
 
-In this workshop we take a hands on approach where everyone takes Clojure code and experiments with it using the REPL (interactive runtime environment). You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
+  Clojure is a hosted language and runs on many platforms including Java Virtual Machine, GraalVM, Microsoft.Net, JavaScript engines.  Simle host language interoperability provides access to libraries from a wide range of programming languages.
+
+Practicalli Clojure takes a hands on approach to learning to code with Clojure.  The REPL is the Clojure interactive environment used to create an run all code.  You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
 
 As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
