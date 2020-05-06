@@ -48,6 +48,22 @@ img, div, table {
 }
 
 
+/* Klipse styles */
+/* ------------- */
+/* Examples: https://github.com/viebel/klipse/blob/master/demos/styling/theme.css */
+
+/* Hide div's that create large grey border
+   on the bottom of each Klipse box */
+
+div.klipse-container {
+    display: none;
+}
+
+div.klipse-separator {
+    display: none;
+}
+
+
 /* Deprecated styles */
 
 /* Add a border around a code block, but not inline code */
