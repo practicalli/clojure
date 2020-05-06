@@ -20,7 +20,7 @@ The `range` function generates a sequence of numbers and when given arguments it
 Unfortunately we cant just add the result of a range, because it returns a [lazy sequence](lazy-evaluation.html)  So `(range)` by itself will create an error
 
 ```eval-clojure
-(+ 1 (range))
+(+ 1 (range 1 11))
 ```
 
 Using a function called `reduce` we can calculate a single total value from all the numbers in the collection.
