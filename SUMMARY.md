@@ -19,8 +19,25 @@
             <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
             <!-- * [Features in more depth](concepts/features.md) -->
             <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
+
+## Getting Started
+
+* [Development tools](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
+* [Clojure Aware Editors](development-tools/index.md)
+    * [Editor Install Guides](getting-started/editor-install-guides/index.md)
+        * [Atom ProtoREPL](getting-started/editor-install-guides/atom-protorepl.md)
+        * [Atom Proton](getting-started/editor-install-guides/atom-proton.md)
+        * [Emacs Spacemacs](getting-started/editor-install-guides/emacs-spacemacs.md)
+        * [VSCode Calva](getting-started/editor-install-guides/vscode-calva.md)
+        * [IntelliJ Cursive](getting-started/editor-install-guides/intellij-cursive.md)
+    * [Editor User Guides](getting-started/editor-user-guides/index.md)
+        * [Atom ProtoREPL](getting-started/editor-user-guides/atom-protorepl.md)
+        * [Atom Proton](getting-started/editor-user-guides/atom-proton.md)
+        * [Emacs Spacemacs](getting-started/editor-user-guides/emacs-spacemacs.md)
+        * [VSCode Calva](getting-started/editor-user-guides/vscode-calva.md)
+        * [IntelliJ Cursive](getting-started/editor-user-guides/intellij-cursive.md)
 
 
 * [REPL driven development](repl-driven-development/index.md)
