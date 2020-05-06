@@ -67,6 +67,7 @@
     "links": {
         "sidebar": {
             "Clojure.org": "https://clojure.org/",
+            "Replete REPL": "https://repl.replete-web.io/",
             "re-find": "https://borkdude.github.io/re-find.web/"
         }
     },
