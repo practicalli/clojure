@@ -25,6 +25,7 @@
 * [Development tools](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
+    * [rebel readline](repl-driven-development/rebel-readline/index.md)
     * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
 * [Clojure Aware Editors](development-tools/index.md)
     * [Editor Install Guides](getting-started/editor-install-guides/index.md)
@@ -43,7 +44,6 @@
 
 * [REPL driven development](repl-driven-development/index.md)
     * [Using the REPL](repl-driven-development/using-the-repl.md)
-    * [rebel readline](repl-driven-development/rebel-readline.md)
     * [REPL uncovered](repl-driven-development/repl-uncovered.md)
     * [Create a project](repl-driven-development/create-a-project.md)
     <!-- Introductor Clojure examples that work well in the command line REPL -->

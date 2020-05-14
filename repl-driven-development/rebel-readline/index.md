@@ -1,5 +1,4 @@
 # Rebel Readline
-
 Start a Clojure REPL with Rebel Readline
 
 ```shell
@@ -8,15 +7,20 @@ clojure -A:rebel
 
 A REPL prompt displays and will evaluate code entered.
 
+![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
 
-> #### Hint::Add configuration to `~/.clojure/deps.edn`
-> Add an alias called `:rebel`
+
+## Install rebel readline
+Add an alias called `:rebel` to the `~/.clojure/deps.edn` configuration to make rebel readline available to all `deps.edn` projects.
+
 ```clojure
 :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                    :main-opts  ["-m" "rebel-readline.main"]}
 ```
 
-## Commands
+* [`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.
+
+## rebel commands
 Type `:repl/help` or `:repl` TAB to see a list of available commands.
 
 | Keybinding                | Description                                                       |
@@ -48,7 +52,7 @@ Type `:repl/help` or `:repl` TAB to see a list of available commands.
 Examine key-bindings with the `:repl/key-bindings` command.
 
 
-## Config
+## Configure rebel readline
 
 In `~/.clojure/rebel_readline.edn` you can provide a map with the
 following options:
