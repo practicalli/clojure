@@ -6,7 +6,6 @@
 <!-- * [Quick start](quickstart/index.md) -->
 <!-- * [Quick reference](quickstart/quick-reference.md) -->
 <!-- * [Virtual Study Guide](study-guide.md) -->
-
 * [Clojure concepts](concepts/index.md)
     * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
     * [Clojure Big Ideas](concepts/ten-big-ideas.md)
@@ -58,71 +57,80 @@
 
 * [Create projects](repl-driven-development/create-a-project.md)
 
-
-## Clojure core library
+## Clojure Syntax
 <!-- Basic syntax and calling functions -->
-<!-- * [Threading Macros](thinking-functionally/threading-macros.md) -->
+* [Syntax](basic-clojure/syntax.md)
+
 * [Code documentation](basic-clojure/code-documentation.md)
+* [Comments](basic-clojure/comments.md)
 
 <!-- Simple values numbers, strings ratios -->
-    * [Strings](basic-clojure/strings.md)
-    * [Numbers & Maths](basic-clojure/numbers-maths.md)
-    * [Ratios](basic-clojure/ratios.md)
-    * [Control flow](basic-clojure/control-flow.md)
-    * [Comments](basic-clojure/comments.md)
+* [Strings](basic-clojure/strings.md)
+* [Numbers & Maths](basic-clojure/numbers-maths.md)
+* [Ratios](basic-clojure/ratios.md)
+
+* [Control flow](basic-clojure/control-flow.md)
+
+* [Assigning Names](basic-clojure/assigning-names.md)
+<!-- * [Naming](basic-clojure/naming.md) -->
+<!--     * [Global definitions](basic-clojure/global-definitions.md) -->
+<!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
+<!--     * [Private functions](basic-clojure/private-functions.md) -->
 <!--     * [Naming Conventions](reference/naming-conventions.md) -->
 
 <!-- Persistent data structures list vector map set -->
-<!-- Introducing the most common function families from clojure.core -->
-<!-- map reduce apply -->
-<!-- group-by sort-by -->
-<!-- partition partiion-all partition... -->
-
 * [Data structures](data-structures/index.md)
     * [List](data-structures/list.md)
     * [Map](data-structures/map.md)
     * [Vector](data-structures/vector.md)
     * [Set](data-structures/set.md)
     * [Naming data structures](data-structures/naming.md)
-    * [Shared Memory](data-structures/shared-memory.md)
-    * [Using data](using-data-structures/index.md)
-        * [Sequences](using-data-structures/sequences.md)
-        * [Lazy Sequences](using-data-structures/lazy-sequences.md)
-        * [Destructuring](using-data-structures/destructuring.md)
-        * [Applying functions](using-data-structures/applying-functions.md)
-        * [Mapping functions](using-data-structures/mapping-data-structures.md)
-    * [Modifying data](modifying-data-structures/index.md)
-        * [Lists](modifying-data-structures/lists.md)
-        * [Maps](modifying-data-structures/maps.md)
-        * [Vectors](modifying-data-structures/vectors.md)
-        * [Sets](modifying-data-structures/sets.md)
-    * [Iterate over data](iterate-over-data/index.md)
-        * [map](iterate-over-data/map.md)
-            * [partial](iterate-over-data/map-partial.md)
-            * [fn](iterate-over-data/map-fn.md)
-        * [filter](iterate-over-data/filter-remove.md)
-        * [apply](iterate-over-data/apply.md)
-        * [reduce](iterate-over-data/reduce.md)
-        * [comp](iterate-over-data/reduce.md)
-        * [transduce](iterate-over-data/reduce.md)
-    * [Designing Data Structures](designing-data-structures/index.md)
-        * [With Vectors](designing-data-structures/with-vectors.md)
-        * [With Vectors of Vectors](designing-data-structures/with-vectors-of-vectors.md)
-        * [With Maps](designing-data-structures/with-maps.md)
-        * [With Maps of Maps](designing-data-structures/with-maps-of-maps.md)
-        * [With Vectors of Maps](designing-data-structures/with-vectors-of-maps.md)
-        * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
-        * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
 
-## Custom code
+## clojure.core
+<!-- Introducing the most common function families from clojure.core -->
+<!-- map reduce apply -->
+<!-- group-by sort-by -->
+<!-- partition partiion-all partition... -->
+
+
+
+## Modelling with Data
+
+* [Using data](using-data-structures/index.md)
+    * [Sequences](using-data-structures/sequences.md)
+    * [Lazy Sequences](using-data-structures/lazy-sequences.md)
+    * [Destructuring](using-data-structures/destructuring.md)
+    * [Applying functions](using-data-structures/applying-functions.md)
+    * [Mapping functions](using-data-structures/mapping-data-structures.md)
+* [Modifying data](modifying-data-structures/index.md)
+    * [Lists](modifying-data-structures/lists.md)
+    * [Maps](modifying-data-structures/maps.md)
+    * [Vectors](modifying-data-structures/vectors.md)
+    * [Sets](modifying-data-structures/sets.md)
+* [Iterate over data](iterate-over-data/index.md)
+    * [map](iterate-over-data/map.md)
+        * [partial](iterate-over-data/map-partial.md)
+        * [fn](iterate-over-data/map-fn.md)
+    * [filter](iterate-over-data/filter-remove.md)
+    * [apply](iterate-over-data/apply.md)
+    * [reduce](iterate-over-data/reduce.md)
+    * [comp](iterate-over-data/reduce.md)
+    * [transduce](iterate-over-data/reduce.md)
+* [Designing Data Structures](designing-data-structures/index.md)
+    * [With Vectors](designing-data-structures/with-vectors.md)
+    * [With Vectors of Vectors](designing-data-structures/with-vectors-of-vectors.md)
+    * [With Maps](designing-data-structures/with-maps.md)
+    * [With Maps of Maps](designing-data-structures/with-maps-of-maps.md)
+    * [With Vectors of Maps](designing-data-structures/with-vectors-of-maps.md)
+    * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
+    * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
+
+* [Shared Memory](data-structures/shared-memory.md)
+
+## Defining Functions
 <!-- Definging names for data and expressions -->
 <!-- Defining custom functions -->
 <!-- reducting functions -->
-* [Assigning Names](basic-clojure/assigning-names.md)
-<!-- * [Naming](basic-clojure/naming.md) -->
-<!--     * [Global definitions](basic-clojure/global-definitions.md) -->
-<!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
-<!--     * [Private functions](basic-clojure/private-functions.md) -->
 * [Defining Functions](basic-clojure/defining-functions.md)
 * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md)
     * [Syntax](defining-behaviour-with-functions/syntax.md)
@@ -130,14 +138,43 @@
     <!-- * [Examples](defining-behaviour-with-functions/examples.md) -->
     <!-- * [Parameters](defining-behaviour-with-functions/parameters.md) -->
     * [Anonymous Functions](defining-behaviour-with-functions/anonymous-functions.md)
+* [Threading Macros](thinking-functionally/threading-macros.md)
+
+## Unit Testing
+* [Testing Clojure](testing/index.md)
+<!-- * [Unit testing](testing/unit/index.md) -->
+<!--     * [clojure.test](testing/unit/clojure.test.md) -->
+<!--     * [midje](testing/unit/midje.md) -->
+<!--     * [speclj](testing/unit/midje.md) -->
+<!-- * [Test runners](testing/test-runners/index.md) -->
+<!--     * [Cognitect-labs](testing/test-runners/cognitect-labs-test-runner.md) -->
+<!--     * [eftest](testing/test-runners/eftest-runner.md) -->
+<!--     * [koacha](testing/test-runners/koacha-runner.md) -->
 
 
-## Unit testing
-* [Testing](testing/index.md)
-    * [clojure.test](testing/clojure.test.md)
+## Functional design
 
+<!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
+<!-- Abstrction mountain
+     - functions
+     - function composition
+     - recursion - loop/recur recursive functions with recur
+     - clojure.core recursive functions
+     - clojure.core sequences and related functions
+     - reduce and reducing functions
+     - comp juxt
+     - transducers teep-->
 
-## Pure functional design
+<!-- Or draw the analyogy of riding across the Clojure landscape
+     -- riding up and down hills as you learn major milestones of Clojure,
+     climbing and reaching various platos.
+     Showing the effort of climbs as an overall effort of brain power with
+     decents being growth in confidence
+
+     This example can then be used in one of the exercises to judge the effort
+     a reader has exerted so far and how much more effort is still required.
+-->
+
 * [Thinking Functionally](thinking-functionally/index.md)
     * [Side effects](thinking-functionally/side-effects.md)
     * [Pure functions](thinking-functionally/pure-functions.md)
@@ -165,6 +202,8 @@
     * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
     * [Tail recursion](thinking-functionally/tail-recursion.md)
 
+## clojure.spec
+
 ## Host Interoperability
 
 * [Java Interoperability](basic-clojure/java-interop.md)
@@ -179,7 +218,7 @@
     * [Whats my environment](basic-clojure/whats-my-environment.md)
     * [Reading project file](basic-clojure/reading-project-file.md)
 
-## Command Line Games
+<!-- Games -->
 * [Games](games/index.md)
     <!-- Convert to deps.edn -->
     * [TicTacToe CLI](games/tictactoe-cli/index.md)
@@ -190,13 +229,19 @@
 <!--     * [Performance](performance/index.md) -->
 <!--         * [Testing functions](performance/testing-functions.md) -->
 <!--         * [Performance](performance/load-testing.md) -->
+<!-- * [Performance Testing](testing/performance/index.md) -->
+<!--     * [time](testing/performance/time.md) -->
+<!--     * [Gatling](testing/performance/gatling.md) -->
+<!--     * [clj-gatling](testing/performance/clj-gatling.md) -->
 
 
-<!-- ## Reference -->
-<!-- * [Reference](reference/index.md) -->
+
+## Reference
+* [Reference](reference/index.md)
 <!--     * [Basic Syntax](reference/basic-syntax.md) -->
 <!--     <\!-- * [Naming](reference/naming.md) -\-> -->
 <!--     * [Functions](reference/functions.md) -->
+    * [Predicate functions](reference/predicate-functions.md)
     * [doc / source functions](reference/doc-and-source-functions.md)
 <!--     * [Sequences](reference/sequences.md) -->
 <!--     * [Control Flow](reference/control-flow.md) -->
@@ -207,12 +252,14 @@
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
 <!--     * [Regular Expressions](reference/regular-expressions.md) -->
 <!--     * [Core.async](reference/core-async.md) -->
-<!--     * [Prasmatic Schema](reference/prasmatic-schema.md) -->
+<!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
 <!--     * [Books on Clojure](reference/books.md) -->
 <!-- * [Standard Library](standard-library/index.md) -->
 <!--     * [Sequences](standard-library/sequences.md) -->
 <!--     * [Collections](standard-library/collections.md) -->
 <!--     * [Iteration](standard-library/iteration.md) -->
+
+    * [threading macros](reference/threading-macros.md)
 
 <!-- ## To organise -->
 <!-- * [Work in Progress](work-in-progress.md) -->
