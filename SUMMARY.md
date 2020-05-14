@@ -25,8 +25,20 @@
 * [Development tools](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
+
+* [REPL driven development](repl-driven-development/index.md)
+    * [Using the REPL](repl-driven-development/using-the-repl.md)
+        * [REPL uncovered](repl-driven-development/repl-uncovered.md)
     * [rebel readline](repl-driven-development/rebel-readline/index.md)
         * [rebel readline](repl-driven-development/rebel-readline/help.md)
+    <!-- Introduce Clojure examples that work well in the command line REPL -->
+    <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
+
+    * [Add Libraries](repl-driven-development/add-libraries.md)
+    * [Namespaces](repl-driven-development/namespace.md)
+        * [Namespace refactor](repl-driven-development/namespace-refactoring.md)
+
+    <!-- * [Design Journal](repl-driven-development/design-journal.md) -->
     * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
     * [REBL data browser](repl-driven-development/rebl-data-browser.md)
 
@@ -44,17 +56,8 @@
         * [VSCode Calva](getting-started/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](getting-started/editor-user-guides/intellij-cursive.md)
 
+* [Create projects](repl-driven-development/create-a-project.md)
 
-* [REPL driven development](repl-driven-development/index.md)
-    * [Using the REPL](repl-driven-development/using-the-repl.md)
-    * [REPL uncovered](repl-driven-development/repl-uncovered.md)
-    * [Create a project](repl-driven-development/create-a-project.md)
-    <!-- Introductor Clojure examples that work well in the command line REPL -->
-    <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-
-    * [Add Libraries](repl-driven-development/add-libraries.md)
-    * [Namespaces](repl-driven-development/namespace.md)
-        * [Namespace refactor](repl-driven-development/namespace-refactoring.md)
 
 ## Clojure core library
 <!-- Basic syntax and calling functions -->
