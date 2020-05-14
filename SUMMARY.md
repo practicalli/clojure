@@ -28,6 +28,8 @@
     * [rebel readline](repl-driven-development/rebel-readline/index.md)
         * [rebel readline](repl-driven-development/rebel-readline/help.md)
     * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
+    * [REBL data browser](repl-driven-development/rebl-data-browser.md)
+
 * [Clojure Aware Editors](development-tools/index.md)
     * [Editor Install Guides](getting-started/editor-install-guides/index.md)
         * [Atom ProtoREPL](getting-started/editor-install-guides/atom-protorepl.md)
