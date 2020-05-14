@@ -26,6 +26,7 @@
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
     * [rebel readline](repl-driven-development/rebel-readline/index.md)
+        * [rebel readline](repl-driven-development/rebel-readline/help.md)
     * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
 * [Clojure Aware Editors](development-tools/index.md)
     * [Editor Install Guides](getting-started/editor-install-guides/index.md)
