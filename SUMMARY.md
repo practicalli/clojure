@@ -61,8 +61,8 @@
 
 ## Clojure core library
 <!-- Basic syntax and calling functions -->
-* [Show me the docs](basic-clojure/show-me-the-docs.md)
 <!-- * [Threading Macros](thinking-functionally/threading-macros.md) -->
+* [Code documentation](basic-clojure/code-documentation.md)
 
 <!-- Simple values numbers, strings ratios -->
     * [Strings](basic-clojure/strings.md)
@@ -197,6 +197,7 @@
 <!--     * [Basic Syntax](reference/basic-syntax.md) -->
 <!--     <\!-- * [Naming](reference/naming.md) -\-> -->
 <!--     * [Functions](reference/functions.md) -->
+    * [doc / source functions](reference/doc-and-source-functions.md)
 <!--     * [Sequences](reference/sequences.md) -->
 <!--     * [Control Flow](reference/control-flow.md) -->
 <!--     * [Persistent Data Structures](reference/persistent-data-structures.md) -->
