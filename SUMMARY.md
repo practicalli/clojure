@@ -25,6 +25,7 @@
 * [Development tools](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
+    * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
 * [Clojure Aware Editors](development-tools/index.md)
     * [Editor Install Guides](getting-started/editor-install-guides/index.md)
         * [Atom ProtoREPL](getting-started/editor-install-guides/atom-protorepl.md)
