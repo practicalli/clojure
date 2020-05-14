@@ -1,7 +1,7 @@
 # Testing in Clojure
-
 Testing is well supported in Clojure and there are numerous testing libraries and test runners you can use.
 
+> #### TODO::work in progress, sorry
 
 ## Unit Test style frameworks
 
@@ -14,21 +14,16 @@ Testing is well supported in Clojure and there are numerous testing libraries an
 
 * [Scenari](https://github.com/jgrodziski/scenari) - executable specification / BDD in Clojure
 * [kaocha-cucumber](https://github.com/lambdaisland/kaocha-cucumber) - support for Cucumber tests in the gerkin format
+* [speclj](https://github.com/slagyr/speclj) - TDD/BDD framework for Clojure and ClojureScript based on RSpec.
 
- some other BDD libraries are discussed at https://github.com/gphilipp/bdd-guide-clojure
+Alternative BDD libraries are discussed at https://github.com/gphilipp/bdd-guide-clojure
 
 
-## Test runners and related plugins
-
-Leiningen and book build tools provide test runners and also have plugins to add more features.  There are also standalone test runners available as libraries.
-
-* [eftest](https://github.com/weavejester/eftest) - James Reeves fast and pretty test runner for clojure.test and compatable test libraries (midge, etc)
-* [Kaocha](https://github.com/lambdaisland/kaocha) - full featured next gen test runner for Clojure
-* [cljs-test-display](https://github.com/bhauman/cljs-test-display) - visual display of in-browser ClojureScript test run
-* [lein-test-refresh](https://github.com/jakemcc/lein-test-refresh) - Leiningen plugin to run tests on file changes
-* [humane-test-output](https://github.com/pjstadig/humane-test-output) - Leiningen plugin for more human readable test output with equality assertions diffed.
-* [Bolth](https://github.com/yeller/bolth) - a more humane test runner
-* [bat-test](https://github.com/metosin/bat-test) - test runner for boot projects
+## Performance testing
+* time - simple results of evaluating an expression
+* criterion - a realistic measure of performance for clojure expressions
+* [Gatling](https://gatling.io/) - open source & commercial load test tool for web applications
+* [clj-gatling](https://github.com/mhjort/clj-gatling) - wrapper around Gatling which enables tests to be expressed in Clojure.
 
 
 ## Articles on testing in Clojure
@@ -37,3 +32,5 @@ Leiningen and book build tools provide test runners and also have plugins to add
 * [TDD in Clojure at Funding Circle](https://engineering.fundingcircle.com/blog/2016/01/11/tdd-in-clojure/)
 * [Bolth - a more humane test runner](http://yellerapp.com/posts/2015-04-23-bolth.html)
 * [Announcing kaocha a new and improved clojure test runner](https://clojureverse.org/t/announcing-kaocha-a-new-and-improved-clojure-test-runner/2903)
+* [Scenarios as code](https://www.youtube.com/watch?v=RMgd9nc0yoA) - Clojure Remote presentation
+* [Load testing with Gatling and Clojure](https://juxt.pro/blog/posts/load-testing-gatling-clojure.html) - JUXT.pro
