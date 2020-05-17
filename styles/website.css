@@ -63,6 +63,27 @@ div.klipse-separator {
     display: none;
 }
 
+/* Embedding YouTube videos as IFrames */
+/* The tab block does not allow nested youtube blocks */
+.iframe-container{
+    margin: 0 auto;
+    max-width:100%;
+    width:840px;
+    height:520px;
+}
+@media only screen and (max-width: 992px) {
+    .iframe-container{
+        width: 92%;
+        height:400px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .iframe-container{
+        width: 100%;
+        height:500px;
+    }
+}
+
 
 /* Deprecated styles */
 
