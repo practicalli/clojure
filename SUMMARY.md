@@ -203,6 +203,8 @@
     * [Tail recursion](thinking-functionally/tail-recursion.md)
 
 ## clojure.spec
+* [Introducing Spec](clojure-spec/index.md)
+
 
 ## Host Interoperability
 
