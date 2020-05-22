@@ -263,6 +263,7 @@
 
     * [threading macros](reference/threading-macros.md)
     * [Tagged Literals](reference/tagged-literals/index.md)
+        * [uuid](reference/tagged-literals/uuid.md)
 
 <!-- ## To organise -->
 <!-- * [Work in Progress](work-in-progress.md) -->
