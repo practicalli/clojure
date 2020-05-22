@@ -262,6 +262,7 @@
 <!--     * [Iteration](standard-library/iteration.md) -->
 
     * [threading macros](reference/threading-macros.md)
+    * [Tagged Literals](reference/tagged-literals/index.md)
 
 <!-- ## To organise -->
 <!-- * [Work in Progress](work-in-progress.md) -->
