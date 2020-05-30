@@ -5,7 +5,7 @@ In general terms, list comprehensions should:
 * be distinct from (nested) for loops and the use of map & filter functions within the syntax of the language.
 * return either a list or an iterator (an iterating being something that returns successive members of a collection, in order),
 
-In Clojure, list comprehension is via the `for` function.  This is different to the for in other langauges as you will see.
+In Clojure, list comprehension is via the `for` function.  This is different to the for in other languages as you will see.
 
 ```
 (for [number [1 2 3]] (* number 2))
@@ -21,7 +21,7 @@ Couldnt we just do this with map?  Yes, we could.
 (map #(* % 2) [1 2 3])
 ```
 
-So why to we need `for` function?  It really shows its value when you are working with multiple collections
+So why do we need `for` function?  It really shows its value when you are working with multiple collections
 
 ```
 (for [number [1 2 3]
@@ -39,7 +39,7 @@ So with the `for` function we can do the same calculation with much easier code 
 
 ## Filtering results with predicates
 
-With the `for` funciton we can add a filter on the results by using a predicate, to test if a condition is true or false.  Any values that meet the condition as true are returned, values that are false are ommitted.
+With the `for` function we can add a filter on the results by using a predicate, to test if a condition is true or false.  Any values that meet the condition as true are returned, values that are false are ommitted.
 
 ```
 (for [x (range 10) :when (odd? x)] x)
@@ -47,7 +47,7 @@ With the `for` funciton we can add a filter on the results by using a predicate,
 (for [x (range 10) :while (even? x)] x)
 ```
 
-To do this kind of filtering with maps would be possible, however the code would be more harder for humans to parse and understand.
+To do this kind of filtering with maps would be possible, however the code would be harder for humans to parse and understand.
 
 
 > **Note** Create a 3-tumbler combination padlock, with each tumbler having a range of 0 to 9. Count the number of possible combinations.  Then add a predicate that filters out some of the combinations
@@ -87,7 +87,7 @@ Now add a predicate using `:when` to filter out the combinations that do not mat
 <!--endsec-->
 
 
-> **Note** Create a 2 character prefix for tickets, using capital letters from the English alphabet.  However, exclude I and O as they can be mistakend for numbers
+> **Note** Create a 2 character prefix for tickets, using capital letters from the English alphabet.  However, exclude I and O as they can be mistaken for numbers
 
 <!--sec data-title="Reveal answer" data-id="answer002" data-collapse=true ces-->
 
