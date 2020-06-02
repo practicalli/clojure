@@ -205,6 +205,7 @@
 ## clojure.spec
 * [Introducing Spec](clojure-spec/index.md)
     * [Spec in the REPL](clojure-spec/in-the-repl.md)
+    * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
 
 
 ## Host Interoperability
