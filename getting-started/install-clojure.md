@@ -44,10 +44,30 @@ Install the command line tools with brew from the clojure/tools tap:
 brew install clojure/tools/clojure
 ```
 
-<!-- Windows install -->
+<!-- Windows install with scoop.sh -->
 {% content "windows" %}
+For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are happy to use a Unix system on the command line.
 
-An early release version of [clj on Windows is available](https://github.com/clojure/tools.deps.alpha/wiki/clj-on-Windows).
+For earlier versions of Windows use [scoop.sh](https://scoop.sh/) is a command line installer for windows and is the recommended approach.  [Powershell 5](https://aka.ms/wmf5download) or greater is required.
+
+Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure), summarized here:
+
+```shell
+scoop install git
+scoop bucket add java
+scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
+scoop install adoptopenjdk-lts-hotspot
+scoop install clojure
+scoop update clojure
+```
+
+To also use scoop to install clj-kondo
+
+```shell
+scoop bucket add extras
+
+scoop install clj-kondo
+```
 
 
 {% endtabs %}
