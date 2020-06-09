@@ -18,6 +18,7 @@
             <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
             <!-- * [Features in more depth](concepts/features.md) -->
             <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
+* [Contributing](contributing.md)
 
 ## Getting Started
 
