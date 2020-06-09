@@ -1,6 +1,6 @@
 # Install Java
 
-## Check Java is working
+Before installing, check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
 
@@ -10,12 +10,16 @@ If Java is installed, you will see something like this in your terminal:
 
 ![Java version](/images/development-environment-java-check.png)
 
+If the version is `11` or above, then [jump to the Clojure install page](install-clojure.md)
+
+## Operating System specific install instructions
+For windows users, the scoop install is recommended.
 
 <!-- Operating System specific instructions -->
-{% tabs first="Debian/Ubuntu", second="Homebrew", third="Chocolatey", forth="Manual" %}
+{% tabs ubuntu="Debian/Ubuntu", homebrew="Homebrew", windows="Windows", manual="Manual" %}
 
 <!-- Ubuntu install -->
-{% content "first" %}
+{% content "ubuntu" %}
 
 Open a terminal and run the following command (you will be prompted for your login password to complete the install)
 
@@ -40,7 +44,7 @@ sudo update-alternatives --config java
 
 
 <!-- Homebrew (MacOSX) install -->
-{% content "second" %}
+{% content "homebrew" %}
 
 Using [Homebrew](https://brew.sh/), run the following command in a terminal to install Java 11:
 
@@ -62,19 +66,35 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 ```
 
 
-<!-- Choclatey (Windows) install -->
-{% content "third" %}
+<!-- Windows install -->
+{% content "windows" %}
+For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are happy to use a Unix system on the command line.
 
-[Chocolatey](https://chocolatey.org/) is a package manager for Windows (similar to Homebrew for MacOSX)
+Alternatively use [scoop.sh](https://scoop.sh/), a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download) or greater is required.
 
-Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime) using the following commands in a command window
+Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure), summarized here:
+
+```shell
+scoop install git
+scoop bucket add java
+scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
+scoop install adoptopenjdk-lts-hotspot
+```
+
+scoop can also be used to [install clojure](install-clojure.md)
+
+## Still having problems?
+If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/) package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime) using the following command in a command line window
 
 ```bash
 choco install javaruntime
 ```
 
+If Chocolatey does not work, then try the [manual Java install](install-java.html#manual).
+
+
 <!-- Manual Install -->
-{% content "forth" %}
+{% content "manual" %}
 
 [Download OpenJDK 11 Hotspot](https://adoptopenjdk.net/)
 
