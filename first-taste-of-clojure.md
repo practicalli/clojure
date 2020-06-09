@@ -3,6 +3,15 @@ The basic Clojure syntax and a few common functions you should probably learn fi
 
 Reload the page if you want to reset all the code back to the starting point.
 
+
+<!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
+<pre class="hidden">
+  <code class="lang-eval-clojure" data-preamble="(require '[reagent.core :as r])">
+  </code>
+</pre>
+
+
+
 ## Calling functions
 The first element in a list, `()`, is treated as a call to a function. The examples show how to call functions with multiple arguments.
 
@@ -163,25 +172,22 @@ In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 ()
 ```
 
-JavaScript libraries can be used with ClojureScript, such as React.js
+<!-- Klipse not rendering reagent code -->
+<!-- JavaScript libraries can be used with ClojureScript, such as React.js -->
 
-```reagent
-(defn concentric-circles []
-  [:svg {:style {:border "1px solid"
-                 :background "white"
-                 :width "150px"
-                 :height "150px"}}
-   [:circle {:r 50, :cx 75, :cy 75, :fill "green"}]
-   [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}]
-   [:path {:stroke-width 12
-           :stroke "white"
-           :fill "none"
-           :d "M 30,40 C 100,40 50,110 120,110"}]
-   [:path {:stroke-width 12
-           :stroke "white"
-           :fill "none"
-           :d "M 75,75 C 50,90 50,110 35,110"}]])
-```
+<!-- ```reagent -->
+<!-- (defn concentric-circles [] -->
+<!--   [:svg {:style {:border "1px solid" -->
+<!--                  :background "white" -->
+<!--                  :width "150px" -->
+<!--                  :height "150px"}} -->
+<!--    [:circle {:r 50, :cx 75, :cy 75, :fill "green"}] -->
+<!--    [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}] -->
+<!--    [:path {:stroke-width 12 -->
+<!--            :stroke "white" -->
+<!--            :fill "none" -->
+<!--            :d "M 30,40 C 100,40 50,110 120,110"}]]) -->
+<!-- ``` -->
 
 
 
