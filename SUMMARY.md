@@ -33,12 +33,11 @@
     * [rebel readline](repl-driven-development/rebel-readline/index.md)
         * [Help at the REPL](repl-driven-development/rebel-readline/help.md)
     <!-- Introduce Clojure examples that work well in the command line REPL -->
+    <!-- Run a repl in an example project, require, in-ns, run -->
     <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-
     * [Add Libraries](repl-driven-development/add-libraries.md)
     * [Namespaces](repl-driven-development/namespace.md)
         * [Namespace refactor](repl-driven-development/namespace-refactoring.md)
-
     <!-- * [Design Journal](repl-driven-development/design-journal.md) -->
     * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
     * [REBL data browser](repl-driven-development/rebl-data-browser.md)
@@ -206,8 +205,11 @@
 
 ## spec & generative tests
 * [Spec Overview](clojure-spec/index.md)
+    * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
     * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
-
+<!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
+<!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
+<!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
 
 ## Host Interoperability
 
