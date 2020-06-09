@@ -1,20 +1,26 @@
-# Create a project
+# Creating Clojure projects
+Creating Clojure projects save code as you are learning or developing applications.  Using a project is the quickest way to test development tools are configured correctly.
 
-We recommend creating a project to test our your development tools.  You can also use this project to save all your Clojure experiements from the workshop.
+Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and `clj-new` to create projects.
 
-1. Open a terminal window and change to a suitable folder
+> #### Hint::Install `clj-new` and other aliases
+> Follow the [install clojure guide](/getting-started/install-clojure.md) to install all the alias used in this guide
+
+
+## Create a project with `clj-new` and the app template
+Open a terminal window and change to a suitable folder
 
 ```shell
 cd projects/clojure
 ```
 
-2. Create a new project using clj-new.  Use your company name or GitHub name instead of `practicalli`
+Create a new project using `clj-new` and the `app` template.  If you prefer, use your company name or GitHub name instead of `practicalli`  and change `playground` to the name of the application.
 
 ```shell
-clojure -A:new practicalli/playground
+clojure -A:new app practicalli/playground
 ```
 
-3. Change into the directory and test the project runs
+Change into the directory and test the project runs by starting a REPL with [rebel readline](/repl-driven-development/rebel-readline/)
 
 ```shell
 cd playground
@@ -22,7 +28,14 @@ cd playground
 clj -A:rebel
 ```
 
-You should now see a prompt for your repl.  Try typing in some simple Clojure code, such as:
+> #### Hint::Install `rebel` and other aliases
+> Follow the [install clojure guide](/getting-started/install-clojure.md) to install all the alias used in this guide
+
+A repl prompt should appear.
+
+[Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
+
+Type code expressions at the repl prompt and press RETURN to evaluate them.
 
 ```clojure
 (+ 1 2 3 4 5)
@@ -30,3 +43,19 @@ You should now see a prompt for your repl.  Try typing in some simple Clojure co
 
 > ####NOTE::Try the project with your preferred editor
 > Go to the [Editor user guides](editor-guides/)
+
+
+## Other templates
+`clj-new` has 3 templates that create `deps.edn` based projects
+
+* `app` - a project that will run on the command line
+* `lib` - a project that will be used as a library (added to other projects as a dependency)
+* `template` - a project for creating your own custom templates.
+
+`clj-new` can create projects from `deps.edn`, Leiningen and Boot templates. A wide range of templates have been created by the Clojure community which can be found by searching on Clojars.org:
+
+* [deps.edn projects](https://clojars.org/search?q=artifact-id:clj-template)
+* [Leiningen projects](https://clojars.org/search?q=artifact-id:lein-template)
+* [Boot projects](https://clojars.org/search?q=artifact-id:boot-template).
+
+`clj-deps` does not change Leiningen or Boot templates into deps.edn projects.  If a deps.edn file is not part of the project it should be manually created.
