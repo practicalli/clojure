@@ -1,4 +1,8 @@
 # Rebel Readline
+A Clojure REPL that provides autocompletion, function syntax help, themes and key binding styles to enhance the development experience.
+
+![Clojure REPL rebel readline - example of autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png)
+
 Start a Clojure REPL with Rebel Readline
 
 ```shell
@@ -11,14 +15,16 @@ A REPL prompt displays and will evaluate code entered.
 
 
 ## Install rebel readline
-Add an alias called `:rebel` to the `~/.clojure/deps.edn` configuration to make rebel readline available to all `deps.edn` projects.
+[`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.  Fork and clone this repository to `~/.clojure` to include the `rebel` alias and many other useful aliases.
+
+If you are using your own `~/.clojure/deps.edn` configuration then dd an alias called `:rebel` to the  to make rebel readline available to all `deps.edn` projects.
 
 ```clojure
 :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                    :main-opts  ["-m" "rebel-readline.main"]}
 ```
 
-* [`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.
+
 
 ## rebel commands
 Type `:repl/help` or `:repl` TAB to see a list of available commands.
