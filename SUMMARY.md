@@ -204,9 +204,8 @@
     * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
     * [Tail recursion](thinking-functionally/tail-recursion.md)
 
-## clojure.spec
-* [Introducing Spec](clojure-spec/index.md)
-    * [Spec in the REPL](clojure-spec/in-the-repl.md)
+## spec & generative tests
+* [Spec Overview](clojure-spec/index.md)
     * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
 
 
