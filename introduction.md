@@ -11,6 +11,10 @@ As we work through code we will discuss the concepts behind Clojure, including f
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
 
+## References
+[Practicalli deps.edn with common aliases]({{ book.p9i-clojure-deps-edn }})
+
+
 ## Discussions and feedback
 [Contributions are welcome via GitHub issues and pull requests](contributions.md), or discuss the book on the Clojurians Slack community.
 
