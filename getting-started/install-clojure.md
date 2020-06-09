@@ -93,3 +93,8 @@ If you choose not to use the [practicalli/clojure-deps-edn](https://github.com/p
 Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) for your operating system.
 
 
+
+## Optional: rlwrap readline
+Install the `rlwrap` binary to support the `clj` wrapper, which launches a basic repl with command history.  This approach is not as useful as using [rebel readline](/repl-driven-development/rebel-readline/).
+
+`rlwrap` is available with most Linux systems and install instructions should be discoverable by searching for rlwrap in a web browser.
