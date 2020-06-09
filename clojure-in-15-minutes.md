@@ -111,7 +111,7 @@ Equality is =
 ; Seqs are an interface for logical lists, which can be lazy.
 ; "Lazy" means that a seq can define an infinite series, like so:
 (range 4) ; => (0 1 2 3)
-(range) ; => (0 1 2 3 4 ...) (an infinite series)
+;; (range) ; => (0 1 2 3 4 ...) (an infinite series)
 (take 4 (range)) ;  (0 1 2 3)
 
 ; Use cons to add an item to the beginning of a list or vector
