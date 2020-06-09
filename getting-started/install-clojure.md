@@ -1,21 +1,25 @@
 # Install Clojure
-
 Establish a Clojure environment by installing the following:
 
-* rlwrap, a read line tool for an interactive command line
-* Clojure CLI tools - runs Clojure projects and the REPL
-* clj-new to create projects
+| Tools                 | Required    | Purpose                                                    |
+|-----------------------|-------------|------------------------------------------------------------|
+| Clojure CLI tools     | Essential   | Run Clojure REPL for development and production            |
+| Aliases for CLI tools | Recommended | Additional tools to enhance Clojure development experience |
+| clj-kondo             | Recommended | Static analysis of code to find all those little bugs      |
+| rlwrap                | Optional    | A simple read line for command history, used by `clj`      |
 
-A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](editor-install-guides) is recommended when developing Clojure projects.
+> #### Hint::clj-kondo provides a permanent paring buddy
+> [Configuring clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) will greatly enhance the joy of coding in Clojure by keeping your code idiomatic and free from a wide range of syntax bugs.
+
 
 ## Clojure CLI tools
+A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](editor-install-guides/) is recommended when developing Clojure projects.
 
 <!-- Operating System specific instructions -->
 {% tabs linux="Linux", homebrew="Homebrew", windows="Windows" %}
 
 <!-- Ubuntu install -->
 {% content "linux" %}
-Install the `rlwrap` package to add readline support for the `clj` command line.
 
 Use the Linux script installer from [Clojure.org](https://clojure.org/guides/getting_started#_installation_on_linux)
 
