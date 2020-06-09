@@ -9,10 +9,9 @@ REBL is a interactive tool for browsing Clojure data, initially created for Dato
 ## Install REBL
 REBL is only available as a [direct download from rebel.cognitect.com](http://rebl.cognitect.com/download.html).  Download the .zip file and extract to a preferred location.
 
-Add an alias called `:rebel` to `~/.clojure/deps.edn` with the specific path to the extracted REBL jar
+Add an alias called `:cognitect-rebl-java11` to `~/.clojure/deps.edn` with the specific path to the extracted REBL jar
 ```clojure
-
-:rebl
+:cognitect-rebl-java11
  {:extra-deps
   {org.clojure/clojure {:mvn/version "1.10.0"}
    org.clojure/core.async {:mvn/version "0.4.490"}
@@ -25,18 +24,25 @@ Add an alias called `:rebel` to `~/.clojure/deps.edn` with the specific path to 
   :main-opts  ["-m" "cognitect.rebl"]}
 ```
 
+> #### Hint::REBL alias included in practicalli/clojure-deps-edn repository
+> Create a fork of the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) on GitHub
+>
+> Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development
+
 
 ## Running REBL with a project
 Run the project using the Clojure CLI tools rlwrap repl.
 
 ```shell
-clj -R:rebl -m cognitect.rebl
+clj -R:cognitect-rebl-java11 -m cognitect.rebl
 ```
 
-Or include rebel.readline as part of the REBL command
 
-```shell
-clojure -R:rebl -A:rebel -m cognitect.rebl
-```
+<!-- Or include rebel.readline as part of the REBL command -->
+<!-- This approach does not link rebel readline repl with the REBL browswer -->
 
-REBL is the main namespace.  Once the REPL starts, `require` the main namespace of the project and change to that namespace with `in-ns`
+<!-- ```shell -->
+<!-- clojure -R:rebl -A:rebel -m cognitect.rebl -->
+<!-- ``` -->
+
+<!-- REBL is the main namespace.  Once the REPL starts, `require` the main namespace of the project and change to that namespace with `in-ns` -->
