@@ -73,15 +73,16 @@ scoop install clj-kondo
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
 
+## Install Clojure CLI tools - common aliases
+Create a fork of the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) on GitHub
 
-## Install clj-new
+Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development
 
-Save the [practicalli/deps-edn-examples deps.edn file](https://github.com/practicalli/clojure-deps-edn/blob/master/deps.edn) to `~/.clojure/deps.edn`
-
-Or edit `~/.clojure/deps.edn` and add an alias called new that runs the `clj-new` project.
-
-```clojure
-  :new
-  {:extra-deps {seancorfield/clj-new {:mvn/version "0.8.6"}}
-   :main-opts  ["-m" "clj-new.create"]}
+```shell
+git clone git@github.com:your-fork/clojure-deps-edn.git
 ```
+
+All tools are provided via libraries and are only installed on first used.
+
+If you choose not to use the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) repository or wish to use your own `~/.clojure/deps.edn` then you should add an alias for the `clj-new` tool for creating projects as this is extensively used in this guide.
+
