@@ -24,6 +24,8 @@ Get a [free Clojurians slack community account](https://clojurians.net/)
 
 > #### Warning::Book re-write in progress
 > A re-write of this book is currently underway, so things may change and move around.
+>
+> Last published: {{ gitbook.time }}
 
 ---
 
