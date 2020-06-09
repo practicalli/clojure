@@ -86,3 +86,10 @@ All tools are provided via libraries and are only installed on first used.
 
 If you choose not to use the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) repository or wish to use your own `~/.clojure/deps.edn` then you should add an alias for the `clj-new` tool for creating projects as this is extensively used in this guide.
 
+
+## Install clj-kondo static analyser
+[clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) performs static analysis on Clojure, ClojureScript and EDN, without the need of a running REPL. It informs you about potential errors while you are typing when used with [supported editors](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md).
+
+Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) for your operating system.
+
+
