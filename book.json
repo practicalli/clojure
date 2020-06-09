@@ -68,6 +68,9 @@
         }
     },
     "variables": {
-        "host": "practical.li"
+        "website": "https://practical.github.io/clojure",
+        "p9i-clojure-deps-edn": "https://github.com/practicalli/clojure-deps-edn",
+        "p9i-four-clojure": "https://practical.github.io/clojure",
+        "p9i-clojure-through-code": "https://github.com/practicalli/clojure-through-code"
     }
 }
