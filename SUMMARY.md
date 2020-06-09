@@ -22,15 +22,15 @@
 
 ## Getting Started
 
-* [Development tools](getting-started/index.md)
+* [Install Clojure tools](getting-started/index.md)
     * [Install Java](getting-started/install-java.md)
     * [Install Clojure](getting-started/install-clojure.md)
-
 * [REPL driven development](repl-driven-development/index.md)
     * [Using the REPL](repl-driven-development/using-the-repl.md)
+    <!-- * [Evaluating code](repl-driven-development/evaluating-code.md) -->
         * [REPL uncovered](repl-driven-development/repl-uncovered.md)
     * [rebel readline](repl-driven-development/rebel-readline/index.md)
-        * [rebel readline](repl-driven-development/rebel-readline/help.md)
+        * [Help at the REPL](repl-driven-development/rebel-readline/help.md)
     <!-- Introduce Clojure examples that work well in the command line REPL -->
     <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
 
