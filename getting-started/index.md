@@ -4,14 +4,20 @@ Clojure is a hosted language  and requires a host platform to run upon (Java Vir
 This guide uses Clojure running on a JVM, although all of the code should run across all platforms except where that code includes interop with the host platform (e.g. calling Java objects)
 
 ## [Install Java](install-java.html)
-Practicalli recommends [OpenJDK 11 (LTS) from AdoptOpenJDK](https://adoptopenjdk.net/)
+Practicalli recommends [OpenJDK 11 (Long Term Support) from AdoptOpenJDK](install-java.md).
+
+Newer versions of Java should work well, although Long Term Support versions are recommended.
 
 
 ## [Install Clojure](install-clojure.html)
 Practicalli recommends using [the Clojure CLI tools and using deps.edn for projects](https://clojure.org/guides/getting_started).  The guide will also uses [clj-new](https://github.com/seancorfield/clj-new) to create Clojure projects.
 
+Additional Clojure CLI addons are provided in [practicalli/clojure-deps.edn repository]({{ p9i-clojure-deps-edn }})
+
+
 ## [Using the REPL](/repl-driven-development/)
-A brief guide in how to use the Clojure REPL and enhance the REPL experience with [rebel readline](https://github.com/bhauman/rebel-readline).
+A guide in [how to use the Clojure REPL](/repl-driven-development/) and enhance the REPL experience with [rebel readline](https://github.com/bhauman/rebel-readline).
+
 
 ## [Editors for Clojure](/development-tools/)
 A command line REPL can be used to start learning Clojure, however, when you start working on projects a Clojure aware editor is highly recommended.
