@@ -1,23 +1,24 @@
 # Summary
 
 * [Introduction](introduction.md)
-* [First taste of Clojure](first-taste-of-clojure.md)
-<!-- replace repl.it with klipse - repl.it loads very slowly -->
-<!-- * [Quick start](quickstart/index.md) -->
-<!-- * [Quick reference](quickstart/quick-reference.md) -->
-<!-- * [Virtual Study Guide](study-guide.md) -->
-* [Clojure concepts](concepts/index.md)
-    * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
-    * [Clojure Big Ideas](concepts/ten-big-ideas.md)
-    * [Clojure from the Author](concepts/clojure-made-simple.md)
-    <!-- * [Learning Clojure](concepts/learning-clojure.md) -->
-    * [When to use Clojure](concepts/purpose.md)
-    * [Who uses Clojure](concepts/who-uses-clojure.md)
-            <!-- * [The syntax](concepts/syntax.md) -->
-    * [Design with Clojure](concepts/design.md)
-            <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
-            <!-- * [Features in more depth](concepts/features.md) -->
-            <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
+    * [First taste of Clojure](first-taste-of-clojure.md)
+        <!-- * [reagent examples](reagent-examples.md) -->
+    <!-- replace repl.it with klipse - repl.it loads very slowly -->
+    <!-- * [Quick start](quickstart/index.md) -->
+    <!-- * [Quick reference](quickstart/quick-reference.md) -->
+    <!-- * [Virtual Study Guide](study-guide.md) -->
+    * [Clojure concepts](concepts/index.md)
+        * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
+        * [Clojure Big Ideas](concepts/ten-big-ideas.md)
+        * [Clojure from the Author](concepts/clojure-made-simple.md)
+        <!-- * [Learning Clojure](concepts/learning-clojure.md) -->
+        * [When to use Clojure](concepts/purpose.md)
+        * [Who uses Clojure](concepts/who-uses-clojure.md)
+                <!-- * [The syntax](concepts/syntax.md) -->
+        * [Design with Clojure](concepts/design.md)
+                <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
+                <!-- * [Features in more depth](concepts/features.md) -->
+                <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
 * [Contributing](contributing.md)
 
 ## Getting Started
