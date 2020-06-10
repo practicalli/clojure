@@ -3,7 +3,6 @@ Define flexible specifications around data and function definitions to test for 
 
 Spec is included in Clojure from [version 1.9](https://clojure.org/news/2017/12/08/clojure19) onward and can be used by requiring the `clojure.spec.alpha` in the REPL or in namespaces of a Clojure project.
 
-
 <!-- * Robust programs -->
 <!-- * communication - human (additional docs) and system to system (over the wire) -->
 <!-- * Error reporting (already used for many clojure.core functions) -->
@@ -23,6 +22,15 @@ A summary highlighting the common purposes that Clojure Spec is used for
 | Derive code from specifications | Specify a system of record for data structures, internal and external to the system.          |
 
 * [How do you use clojure.spec - Sean Corfield](https://corfield.org/blog/2019/09/13/using-spec/)
+
+## Example use cases
+
+API requests (schema is often used here, but so can spec)
+
+Checking data pulled from / pushed to message systems (e.g. Kafka, TIBCO)
+
+Data specifications (eg. Vega-lite)
+
 
 ## Example code
 * [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec) - basic examples of using spec, following the [Practicalli Spec broadcasts](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiBWGAuncfBRYhZtY5-Bp75s)
