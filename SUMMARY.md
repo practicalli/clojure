@@ -213,6 +213,7 @@
     * [valid?](clojure-spec/data/valid-q.md)
     * [explain](clojure-spec/data/explain.md)
     * [registry](clojure-spec/data/registry.md)
+    * [Map Literals](clojure-spec/data/map-literals.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 <!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
 <!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
