@@ -212,6 +212,7 @@
     * [conform](clojure-spec/data/conform.md)
     * [valid?](clojure-spec/data/valid-q.md)
     * [explain](clojure-spec/data/explain.md)
+    * [registry](clojure-spec/data/registry.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 <!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
 <!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
