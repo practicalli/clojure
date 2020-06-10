@@ -250,7 +250,7 @@
 <!--     * [Basic Syntax](reference/basic-syntax.md) -->
 <!--     <\!-- * [Naming](reference/naming.md) -\-> -->
 <!--     * [Functions](reference/functions.md) -->
-    * [Predicate functions](reference/predicate-functions.md)
+    * [Predicate functions](reference/clojure/predicate-functions.md)
     * [doc / source functions](reference/doc-and-source-functions.md)
 <!--     * [Sequences](reference/sequences.md) -->
 <!--     * [Control Flow](reference/control-flow.md) -->
