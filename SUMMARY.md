@@ -208,6 +208,7 @@
     * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
     * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
 * [Spec data](clojure-spec/data/index.md)
+    * [Predicate functions](clojure-spec/data/predicate-functions.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 <!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
 <!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
