@@ -69,8 +69,10 @@
     },
     "variables": {
         "website": "https://practical.github.io/clojure",
-        "p9i-clojure-deps-edn": "https://github.com/practicalli/clojure-deps-edn",
-        "p9i-four-clojure": "https://practical.github.io/clojure",
-        "p9i-clojure-through-code": "https://github.com/practicalli/clojure-through-code"
+        "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
+        "P9IFourClojure": "https://practical.github.io/clojure",
+        "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
+        "P9IIssuesUrl": "https://github.com/practicalli/clojure-practicalli-content/issues",
+        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-practicalli-content/pulls"
     }
 }

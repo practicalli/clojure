@@ -12,7 +12,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 
 ## References
-[Practicalli deps.edn with common aliases]({{ book.p9i-clojure-deps-edn }})
+[Practicalli deps.edn with common aliases]({{ book.P9IClojureDepsEdn }})
 
 
 ## Discussions and feedback

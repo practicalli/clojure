@@ -12,7 +12,7 @@ Newer versions of Java should work well, although Long Term Support versions are
 ## [Install Clojure](install-clojure.html)
 Practicalli recommends using [the Clojure CLI tools and using deps.edn for projects](https://clojure.org/guides/getting_started).  The guide will also uses [clj-new](https://github.com/seancorfield/clj-new) to create Clojure projects.
 
-Additional Clojure CLI addons are provided in [practicalli/clojure-deps.edn repository]({{ p9i-clojure-deps-edn }})
+Additional Clojure CLI addons are provided in [practicalli/clojure-deps.edn repository]({{ P9IClojureDepsEdn }})
 
 
 ## [Using the REPL](/repl-driven-development/)
