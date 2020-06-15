@@ -38,27 +38,6 @@ A string explaining where the value deviates from the specification is sent to s
 
 
 
-
-
-;; Literal values
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Sets can be used as predicate functions
-;; returning true if the value is within the set
-
-;; Checking valid playing cards
-
-(spec/valid? #{:club :diamond :heart :spade} :club) ;; true
-(spec/valid? #{:club :diamond :heart :spade} 42) ;; false
-
-;; Answer to the ultimate question?
-
-(spec/valid? #{42} 42)
-
-
-;; We have previously seen the `some` function comparing sets
-(some #{:club :diamond :heart :spade} #{:sheild})
-
-
 ;; Question: when use valid? rather than conform?
 
 
