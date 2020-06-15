@@ -207,6 +207,7 @@
 * [Spec Overview](clojure-spec/index.md)
     * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
     * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
+* [Organising Specs](clojure-spec/organising-specs.md)
 * [Spec data](clojure-spec/data/index.md)
     * [Predicate functions](clojure-spec/data/predicate-functions.md)
     * [literal values](clojure-spec/data/literal-values.md)

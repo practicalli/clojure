@@ -61,26 +61,6 @@ A string explaining where the value deviates from the specification is sent to s
 
 
 
-;; Discussion: Where to save spec code?
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; One of the interesting discussions is which file to save your spec definitions too.
-;; Are they part of the test namespaces, the application namespaces,
-;; or should they have their own.
-
-;; If there are only a few definitions, it seems to make sense to include them
-;; in the application code.
-
-;; If you are doing generative testing, then there is a case for adding specs
-;; to the testing namespaces.
-
-;; I like the idea of specs having their own namespace though,
-;; especially if used extensively.
-;; Perhaps adding relative conform / valid? examples to each namespace
-
-;; More thought required on this...
-
-
-
 ;; Composing specifications
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; No spec is an island
