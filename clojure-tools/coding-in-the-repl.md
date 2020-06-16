@@ -1,13 +1,9 @@
-# Using The REPL
-The `clojure` command will start a REPL. `clj` command is a wrapper around the `clojure` command that adds a readline which makes the REPL prompt more interactive.
+# Coding in the REPL
 
-```shell
-clj
-```
 
-A REPL prompt displays and will evaluate code entered.
+> #### Hint::Use an Editor for Clojure Development
+> Using an editor (or ide) is a more effective way to develop projects, although having a command line REPL is very fast and convienient way to experiment and discover Clojure.
 
-![Clojure REPL clj prompt](/images/clojure-repl-clj-prompt.png)
 
 ## Evaluating code
 Type Clojure code at the REPL prompt, not forgetting to ensure your parens are balanced.  Press `Enter` to evaluate the code and see the result.  The REPL evaluates one expression at a time, although it remembers all expressions that correctly evaluate.  This enables your own function definitons to be called, until you end the REPL session.

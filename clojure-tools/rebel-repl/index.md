@@ -1,8 +1,22 @@
-# Rebel Readline
-A Clojure REPL that provides autocompletion, function syntax help, themes and key binding styles to enhance the development experience.
+# Rebel - a command line REPL UI
+The REPL is the environment in which all Clojure code runs, whether that be during development, testing and production systems.
+
+rebel is a REPL UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](basic-repl.md) by default.
 
 ![Clojure REPL rebel readline - example of autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png)
 
+## Install rebel readline
+[`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.  Fork and clone this repository to `~/.clojure` to include the `rebel` alias and many other useful aliases.
+
+If using your own `~/.clojure/deps.edn` configuration, add an alias called `:rebel`
+
+```clojure
+:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+        :main-opts  ["-m" "rebel-readline.main"]}
+```
+
+
+## Starting a rebel REPL
 Start a Clojure REPL with Rebel Readline
 
 ```shell
@@ -13,16 +27,23 @@ A REPL prompt displays and will evaluate code entered.
 
 ![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
 
+# Help at the REPL
+rebel readline provides tools to help you discover and use functions from clojure.core and any other libraries you add to the REPL.
 
-## Install rebel readline
-[`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.  Fork and clone this repository to `~/.clojure` to include the `rebel` alias and many other useful aliases.
+`:repl/help` will show all the commands available for rebel readline
 
-If you are using your own `~/.clojure/deps.edn` configuration then dd an alias called `:rebel` to the  to make rebel readline available to all `deps.edn` projects.
+`TAB` to autocomplete the current characters into a function name.  All functions that match the characters will be show, allowing quick discovery of functions available.
+Typing in the first few characters of a function and press
 
-```clojure
-:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-                   :main-opts  ["-m" "rebel-readline.main"]}
-```
+![Clojure REPL rebel readling - autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png)
+
+Moving the cursor after the name of a function will show the signatures available, so the correct arguments can be used with the function call.
+
+![Clojure REPL rebel readline - function signature help](/images/clojure-repl-rebel-readline-function-signature-help.png)
+
+`Ctrl-x Ctrl-D` or using the function `clojure.repl/doc` function will show the documentation for functions, so you can understand the functions purpose.
+
+![Clojure REPL rebel readline - doc function showing a function docstring](/images/clojure-repl-repl-readline-doc-reduce.png)
 
 
 
@@ -56,40 +77,3 @@ Type `:repl/help` or `:repl` TAB to see a list of available commands.
 | `Ctrl-X_Ctrl-E` | Inline eval for SEXP before the point                                         |
 
 Examine key-bindings with the `:repl/key-bindings` command.
-
-
-## Configure rebel readline
-
-In `~/.clojure/rebel_readline.edn` you can provide a map with the
-following options:
-
-```
-:key-map         - either :viins or :emacs. Defaults to :emacs
-
-:color-theme     - either :light-screen-theme or :dark-screen-theme
-
-:highlight       - boolean, whether to syntax highlight or not. Defaults to true
-
-:completion      - boolean, whether to complete on tab. Defaults to true
-
-:eldoc           - boolean, whether to display function docs as you type.
-                   Defaults to true
-
-:indent          - boolean, whether to auto indent code on newline. Defaults to true
-
-:redirect-output - boolean, rebinds root *out* during read to protect linereader
-                   Defaults to true
-
-:key-bindings    - map of key-bindings that get applied after all other key
-                   bindings have been applied
-```
-
-
-For example, to change the default keybindings to vi, edit `~/.clojure/rebel_readline.edn` and add
-
-```
-{:key-map :viins}
-```
-
-
-[![asciicast](https://asciinema.org/a/160597.png)](https://asciinema.org/a/160597)

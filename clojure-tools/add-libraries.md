@@ -1,11 +1,14 @@
 # Add libraries to a project
-Libraries are added to project to use features already developed.  There are thousands of Clojure and ClojureScript libraries available via [clojars.org](https://clojars.org).
+Add library dependencies to specific project `deps.edn` files to make use of software that has already been developed.  There are thousands of Clojure and ClojureScript libraries available via [clojars.org](https://clojars.org).
 
 
 ## Adding libraries as project dependencies
 To use a namespace that is in a library which is not part of your project, that library should be included as a dependency.
 
-In deps.edn:
+{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+
+{% content "deps" %}
+In the project `deps.edn` file:
 ```clojure
 {:deps
  {org.clojure/clojure        {:mvn/version "1.10.1"}
@@ -16,6 +19,9 @@ In deps.edn:
   environ                    {:mvn/version "1.1.0"}}}
 ```
 
+
+
+{% content "lein" %}
 In Leiningen:
 ```clojure
 (defproject server-side-webapp "0.1.0-SNAPSHOT"
@@ -27,9 +33,13 @@ In Leiningen:
                  [environ "1.0.1"]])
 ```
 
+
+{% endtabs %}
+
+
 ## Excluding dependency depencencies
 Libraries may also contain their own library depencencies.  When several libraries are added as depencencies to a project, it is possible that the dependencies of included libraries conflict with each other.
 
 Adding `:exclude` when adding a library as a dependency will prevent the specified libraries dependancy from being included.
 
-> TODO: needs and example.
+> TODO: dependency :excludes examples required
