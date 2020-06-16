@@ -7,6 +7,7 @@
     <!-- * [Quick start](quickstart/index.md) -->
     <!-- * [Quick reference](quickstart/quick-reference.md) -->
     <!-- * [Virtual Study Guide](study-guide.md) -->
+    * [REPL driven development](repl-driven-devlopment.md)
     * [Clojure concepts](concepts/index.md)
         * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
         * [Clojure Big Ideas](concepts/ten-big-ideas.md)
