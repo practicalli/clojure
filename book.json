@@ -73,6 +73,12 @@
         "P9IFourClojure": "https://practical.github.io/clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
         "P9IIssuesUrl": "https://github.com/practicalli/clojure-practicalli-content/issues",
-        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-practicalli-content/pulls"
+        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-practicalli-content/pulls",
+        "Leiningen": "https://leiningen.org/",
+        "KeyCtrl": "<kbd>Ctrl</kbd>",
+        "KeyEnter": "<kbd>Enter</kbd>",
+        "KeyEsc": "<kbd>Esc</kbd>",
+        "KeyUpArrow": "<kbd>↑</kbd>",
+        "KeyDownArrow": "<kbd>↓</kbd>"
     }
 }
