@@ -23,27 +23,31 @@
 * [Contributing](contributing.md)
 
 ## Getting Started
-
-* [Install Clojure tools](getting-started/index.md)
-    * [Install Java](getting-started/install-java.md)
-    * [Install Clojure](getting-started/install-clojure.md)
-* [REPL driven development](repl-driven-development/index.md)
-    * [Using the REPL](repl-driven-development/using-the-repl.md)
-    <!-- * [Evaluating code](repl-driven-development/evaluating-code.md) -->
-        * [REPL uncovered](repl-driven-development/repl-uncovered.md)
-    * [rebel readline](repl-driven-development/rebel-readline/index.md)
-        * [Help at the REPL](repl-driven-development/rebel-readline/help.md)
+* [Clojure tools overview](clojure-tools/index.md)
+* [Install Clojure tools](clojure-tools/install/index.md)
+    * [Install Java](clojure-tools/install/install-java.md)
+    * [Install Clojure](clojure-tools/install/install-clojure.md)
+* [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
+    * [Evaluate an expression](clojure-tools/evaluate-an-expression.md)
+    * [Files and scripts](clojure-tools/files-and-scripts.md)
+    * [Configuration files](clojure-tools/configuration-files.md)
+    * [aliases](clojure-tools/aliases.md)
+    * [Clojure Inspector](clojure-tools/clojure-inspector.md)
+    * [REBL data browser](clojure-tools/rebl-data-browser.md)
+* [rebel REPL](clojure-tools/rebel-repl/index.md)
+    * [Configure rebel](clojure-tools/rebel-repl/configure-rebel.md)
+    * [Basic REPL](clojure-tools/basic-repl.md)
+    <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
+    * [Coding in the REPL](clojure-tools/coding-in-the-repl.md)
+* [Create projects](clojure-tools/create-projects.md)
     <!-- Introduce Clojure examples that work well in the command line REPL -->
     <!-- Run a repl in an example project, require, in-ns, run -->
     <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-    * [Add Libraries](repl-driven-development/add-libraries.md)
-    * [Namespaces](repl-driven-development/namespace.md)
-        * [Namespace refactor](repl-driven-development/namespace-refactoring.md)
-    <!-- * [Design Journal](repl-driven-development/design-journal.md) -->
-    * [Clojure Inspector](repl-driven-development/clojure-inspector.md)
-    * [REBL data browser](repl-driven-development/rebl-data-browser.md)
-
-* [Create projects](repl-driven-development/create-a-project.md)
+    * [Add Libraries](clojure-tools/add-libraries.md)
+    * [Namespaces](clojure-tools/namespace.md)
+        <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
+* [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
+    <!-- * [Design Journal](clojure-tools/design-journal.md) -->
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
