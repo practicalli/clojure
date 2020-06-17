@@ -1,24 +1,24 @@
-# Getting Started with Clojure development
-Clojure is a hosted language  and requires a host platform to run upon (Java Virtual Machine, JavaScript browser engine, Node.js, Graal, Microsoft CLR). The Java virtual machine (JVM) is the most common, especially for server-side applications.
+# Install Clojure Tools
+Clojure CLI tools provide a simple and configurable way to:
 
-This guide uses Clojure running on a JVM, although all code examples should run across all platforms except where that code includes interop with the host platform (e.g. calling Java objects)
+* Evaluate Clojure expressions
+* Run Clojure programs
+* Run an interactive REPL (Read-Eval-Print Loop)
+* Managing dependencies (via tools.deps) from Maven and Git repositories
 
-TODO use a table??
+Using community tools on top of Clojure tools can provides the essential features to create, develop, build and deploy Clojure applications and services
+
 
 | Tools                                | Description                                                                                                                                                                                                                         |
 |--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Java 11](install-java.md)           | The virtual machine which runs Clojure code.  Practicalli recommends Java 11, the current long term support version.                                                                                                                |
+| [Java 11](install-java.md)           | Clojure is a hosted language and Clojure tools runs on the Java virtual machine.  Java 11, the current long term support version is recommended.                                                                                    |
 | [Clojure 1.10.1](install-clojure.md) | Clojure CLI tools are used in this guide to start REPL's for development and run Clojure applications, usually packaged as (uber)jars.                                                                                              |
 | [practicalli/clojure-deps-edn](install-clojure.md) | Curated aliases for community tools and common configurations                                                                                                                                                                       |
 | [Editors](/clojure-editors/)         | Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too. |
 
 
-## [Using the REPL](/repl-driven-development/)
-A guide on [how to use the Clojure REPL](/repl-driven-development/) and enhance the REPL experience with [rebel readline](https://github.com/bhauman/rebel-readline).
-
-
-## [Editors for Clojure](/development-tools/)
-A command line REPL can be used to start learning Clojure, however, when you start working on projects a [Clojure aware editor](/clojure-editors/) is highly recommended.
+## Clojure aware editors
+A command line REPL can be used to start learning Clojure or for scripting. A [Clojure aware editor](/clojure-editors/) is highly recommended when working on Clojure projects.
 
 Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too.
 

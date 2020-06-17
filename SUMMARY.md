@@ -23,7 +23,6 @@
 * [Contributing](contributing.md)
 
 ## Getting Started
-* [Clojure tools overview](clojure-tools/index.md)
 * [Install Clojure tools](clojure-tools/install/index.md)
     * [Install Java](clojure-tools/install/install-java.md)
     * [Install Clojure](clojure-tools/install/install-clojure.md)
