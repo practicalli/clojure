@@ -220,6 +220,7 @@
     * [explain](clojure-spec/data/explain.md)
     * [registry](clojure-spec/data/registry.md)
     * [Map Literals](clojure-spec/data/map-literals.md)
+    * [Composite Specs](clojure-spec/data/composite-specifications.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 <!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
 <!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
