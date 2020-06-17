@@ -218,6 +218,7 @@
     * [conform](clojure-spec/data/conform.md)
     * [valid?](clojure-spec/data/valid-q.md)
     * [explain](clojure-spec/data/explain.md)
+    * [defining specs](clojure-spec/data/defining-specifications.md)
     * [registry](clojure-spec/data/registry.md)
     * [Map Literals](clojure-spec/data/map-literals.md)
     * [Composite Specs](clojure-spec/data/composite-specifications.md)
