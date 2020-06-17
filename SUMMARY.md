@@ -13,7 +13,7 @@
         * [Clojure Big Ideas](concepts/ten-big-ideas.md)
         * [Clojure from the Author](concepts/clojure-made-simple.md)
         <!-- * [Learning Clojure](concepts/learning-clojure.md) -->
-        * [When to use Clojure](concepts/purpose.md)
+        <!-- * [When to use Clojure](concepts/purpose.md) -->
         * [Who uses Clojure](concepts/who-uses-clojure.md)
                 <!-- * [The syntax](concepts/syntax.md) -->
         * [Design with Clojure](concepts/design.md)
