@@ -33,7 +33,7 @@ Include the `clojure.spec.alpha` namespace to access the spec functions.
 (spec/conform int? 42)
 ```
 ```eval-clojure
-(spec/conform seq? (range 42))
+(spec/conform seq? (range 4))
 ```
 
 
