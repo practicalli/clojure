@@ -221,12 +221,15 @@
     * [defining specs](clojure-spec/data/defining-specifications.md)
     * [registry](clojure-spec/data/registry.md)
     * [Map Literals](clojure-spec/data/map-literals.md)
+    <!-- * [Entity Maps](clojure-spec/data/entity-maps.md) -->
     * [Composite Specs](clojure-spec/data/composite-specifications.md)
     * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
+
 * [Spec functions](clojure-spec/functions/index.md)
     * [function definitions](clojure-spec/functions/function-definition-specifications.md)
     * [documentation](clojure-spec/functions/documentation.md)
     * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
+
 * [Testing Specifications](clojure-spec/testing/index.md)
     * [Checking arguments](clojure-spec/testing/checking arguments.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
@@ -235,6 +238,25 @@
         * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
 
     <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
+
+* [Spec Projects](clojure-spec/projects/index.md)
+    <!-- Checking for bad names in ns declarations, lets, etc. -->
+    <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
+
+    <!-- Playing cards -->
+    * [Card Game](clojure-spec/projects/card-game.md)
+
+    <!-- Bank account overview - functionality, reference complete project -->
+    * [Bank Account TDD style](clojure-spec/projects/bank-account.md)
+        <!-- Create from bank_account_design_journal  -->
+        * [Create project](clojure-spec/projects/customer-details.md)
+        * [Failing  test](clojure-spec/projects/failing-tests.md)
+        * [Spec: Customer details](clojure-spec/projects/customer-details.md)
+        * [Spec: Account holder](clojure-spec/projects/customer-details.md)
+        * [Spec Functions](clojure-spec/projects/customer-details.md)
+        * [Spec Function Arguments](clojure-spec/projects/customer-details.md)
+        * [Test Function against spec](clojure-spec/projects/customer-details.md)
+
 
 
 ## Host Interoperability
