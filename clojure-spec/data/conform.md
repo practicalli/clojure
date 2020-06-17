@@ -1,11 +1,20 @@
 ## Does a value conform to a specification?
+`clojure.spec.alpha/conform` takes two arguments
+- a specification
+- a value to test against the specification
 
-<!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
-<pre class="hidden">
-  <code class="lang-eval-clojure" data-preamble="(require '[clojure.spec.alpha :as spec])">
-  </code>
-</pre>
+`:clojure.spec.alpha/invalid` is returned when a value does not conform to a specification.
 
+If the value does conform to the specification, then the value is returned.  This value is referred to as a conformed value.
+
+## Require the Clojure spec library
+Set the namespace for the page and require clojure.spec.alpha library, setting the alias to `spec`
+```eval-clojure
+(ns practicalli.clojure.specifications
+  (:require [clojure.spec.alpha :as spec]))
+```
+
+## Using conform
 
 If the value conforms to the spec, a conformed value is returned
 ```eval-clojure

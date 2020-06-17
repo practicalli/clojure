@@ -9,13 +9,13 @@ Specification names should use fully qualified keywords, typically using the nam
 Define a namespace for the page and require Clojure Spec
 
 ```eval-clojure
-(ns practicalli.clojure
+(ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
 ```
 
 
 ```eval-clojure
-(spec/def :practicalli.clojure/number number?)
+(spec/def :practicalli.clojure.specifications/number number?)
 ```
 
 ## auto-resolve macro

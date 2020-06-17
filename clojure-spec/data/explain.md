@@ -1,34 +1,35 @@
 # Explaining non-conforming values
-`clojure.spec.alpha/explain` will detail why a value returns invalid or false against a specification.
+`clojure.spec.alpha/explain` describes why a value does not satisfy a specification.
+
+`clojure.spec.alpha/explain` takes two arguments
+- a specification
+- a value to test against the specification
+
+`Success` string is sent to standard out if the value meets the specification
+
+A string explaining where the value deviates from the specification is sent to standard out if the value does not meet the specification.
 
 There are several variations on the explain function for different situations
-* `explain`
-* `explain-str`
-* `explain-data`
+* `explain` - sents the return value to the standard out / REPL
+* `explain-str` - returns a human readable result.
+* `explain-data` - returns a data structure of the error to be processed by other code
 
-
-
-## What if my values fail to conform to the spec ?
-spec/explain will show why a value does not conform to a spec
-sends explination to system out (REPL, command line)
 
 ## Example of a failing value
 First define a namespace and require the Clojure Spec namespace
 
 ```eval-clojure
-(ns practicalli.clojure
+(ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
 
 (spec/def ::meaning-of-life #(= 42 %))
 ```
-
 
 Given the following specification
 
 ```eval-clojure
 (spec/explain ::meaning-of-life 24)
 ```
-
 
 Using the value `24` with that specification will fail.  Using explain we can see why
 
@@ -59,7 +60,6 @@ This shows the value of naming your specs descriptively
 
 ## Explain with a string
 rather than send information to the system out
-
 
 ```eval-clojure
 (spec/explain-str ::meaning-of-life 24)
