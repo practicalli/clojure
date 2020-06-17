@@ -226,6 +226,7 @@
 * [Spec functions](clojure-spec/functions/index.md)
     * [function definitions](clojure-spec/functions/function-definition-specifications.md)
     * [documentation](clojure-spec/functions/documentation.md)
+    * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 <!-- * [Testing Specifications](clojure-spec/testing/index.md) -->
 <!-- * [Generative Testing](clojure-spec/generative-testing/index.md) -->
