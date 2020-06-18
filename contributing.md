@@ -1,6 +1,8 @@
 # Contributing to Practicalli Clojure
 [practicalli/clojure-practicalli-content](https://github.com/practicalli/clojure-practicalli-content/) contains the markdown content used to generate the book.  Please raise all issues and pull requests on this website.
 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge)
+
 [![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues)
 
 [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls)
