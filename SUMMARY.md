@@ -243,7 +243,7 @@
     <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
 
     <!-- Playing cards -->
-    * [Card Game](clojure-spec/projects/card-game.md)
+    * [Card Game](clojure-spec/projects/card-game/index.md)
 
     <!-- Bank account overview - functionality, reference complete project -->
     * [Bank Account TDD style](clojure-spec/projects/bank-account.md)
