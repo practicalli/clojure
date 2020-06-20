@@ -1,6 +1,6 @@
 # map with partial
 
-Lets look at differrnt ways we can map functions over collections with `partial`
+Lets look at different ways we can map functions over collections with `partial`
 
 We can map over a collection of words and increment them by writing an anonymous function.
 
