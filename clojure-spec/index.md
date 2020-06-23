@@ -3,10 +3,6 @@ Define flexible specifications around data and function definitions to test for 
 
 Spec is included in Clojure from [version 1.9](https://clojure.org/news/2017/12/08/clojure19) onward and can be used by requiring the `clojure.spec.alpha` in the REPL or in namespaces of a Clojure project.
 
-<!-- * Robust programs -->
-<!-- * communication - human (additional docs) and system to system (over the wire) -->
-<!-- * Error reporting (already used for many clojure.core functions) -->
-<!-- * Wider scope in testing -->
 
 ## Purpose of Clojure spec
 A summary highlighting the common purposes that Clojure Spec is used for
@@ -23,17 +19,16 @@ A summary highlighting the common purposes that Clojure Spec is used for
 
 * [How do you use clojure.spec - Sean Corfield](https://corfield.org/blog/2019/09/13/using-spec/)
 
+
 ## Example use cases
-
-API requests (schema is often used here, but so can spec)
-
-Checking data pulled from / pushed to message systems (e.g. Kafka, TIBCO)
-
-Data specifications (eg. Vega-lite)
+* API requests (schema is often used here, but so can spec)
+* Checking data pulled from / pushed to message systems (e.g. Kafka, TIBCO)
+* Data specifications (eg. Vega-lite)
 
 
 ## Example code
 * [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec) - basic examples of using spec, following the [Practicalli Spec broadcasts](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiBWGAuncfBRYhZtY5-Bp75s)
+
 
 ## Understanding the basics of Clojure Spec
 {% youtube %}
@@ -60,8 +55,11 @@ There are some important changes being developed for spec version 2 and a few th
 
 
 ## References
+* [spec.alpha API reference](https://clojure.github.io/spec.alpha/)
 * [Introducing clojure.spec](https://clojure.org/news/2016/05/23/introducing-clojure-spec)
 * [clojure.spec - rational and overview](https://clojure.org/about/spec)
+* [Clojure Spec: Expressing Data Sonstraints without Types](https://www.infoq.com/presentations/clojure-spec/)
 * [spec guide - clojure.org](https://clojure.org/guides/spec)
+* [Specifications for `clojure.core`](https://github.com/clojure/core.specs.alpha)
 * [Leveraging clojure.spec - Stuart Halloway - YouTube](https://www.youtube.com/watch?v=nqY4nUMfus8)
 * [spec.test - Stuart Halloway - YouTube](https://www.youtube.com/watch?v=W6crrbF7s2s)

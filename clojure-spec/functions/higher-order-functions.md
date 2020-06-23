@@ -17,10 +17,10 @@ Define a namespace for the page and require Clojure Spec
 
 Declare a function spec for value-added-tax using `clojure.spec.alpha/fspec` for the return value:
 
-```eval-clojure```
+```eval-clojure
 (s/fdef value-added-tax
   :args (spec/cat :tax-rate number?)
   :ret (spec/fspec :args (s/cat :value number?)
                 :ret number?))
-
+```
 The `:ret` specification uses `fspec` to declare that the returning function takes and returns a number.

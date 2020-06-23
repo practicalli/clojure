@@ -1,22 +1,28 @@
 # Clojure Spec for data
-Specifications can be defined for any data in Clojure, be that simple values or complex data structures.
+Specifications can be defined for any data in Clojure, be that simple values or complex data structures. More complex specifications are composed of individual specifications, providing a flexible way to define specifications without building a brittle hierarchy.
 
-Specifications can be predicate functions, ,,, or custom functions that return true or false.
+## What is a specification
+Specifications can be [predicates](predicate-specifications.md) (return true or false), [literal values](literal-values.md) in sets and [entity maps](entity-maps.md).
 
-There three ways to work with data specifications
+There are many [predicate functions that come with Clojure](/reference/clojure/predicate-functions.md) which help speed the creation of specifications.  Clojure function definitions (`fn`, `defn`) can be used to define custom predicate functions too.
 
-* `conform` - test if data conforms to a specification
-* `valid?` - predicate to test if data conforms to a specification
+
+## Do values meet a specification
+The functions use to compare data with a specification are:
+
+* `conform` - test if data conforms to a specification, returning the conformed value
+* `valid?` - predicate to test if data conforms to a specification, returning true of false
 * `explain` - explain why a value is not conforming to a specification
+
+There are variations on explain, that present the results in different formats.
+
 
 ## Workflow for data specifications
 Using Clojure Specification is very flexible, they can be used as much or as little as required.
 
-Typically Specifications are created when data structures are being modelled, which can be done via experimenting in the repl or taking a test first approach.  Either way is viable.
+Typically Specifications are created when data structures are being modeled, which can be done via experimenting in the REPL or taking a test first approach.  Either way is viable.
 
 The generative tests section shows how specifications are used to generate mock data, so creating specifications earlier on in the development process will provide a wider range of data for unit tests and repl experimentation.
-
-## Explain
 
 <!--
 

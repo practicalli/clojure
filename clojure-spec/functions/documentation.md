@@ -1,9 +1,26 @@
 # clojure.spec adds documentation to function definitions
-Using doc to show the spec
+The Clojure `doc` function shows the doc string included in a function definition, eg. `defn` expressions.
 
+When a specification is defined for a function using `fdef` the specificaion is included in the output of the Clojure `doc` function.
+
+Including specification details clarifies the precise way to use the function and the information it expects.  When a function has a specification the doc string for that function can focus on the purpose of the function rather than the specific types of data used, as that is covered by the function specification.
+
+## Example
+
+```clojure
+(clojure.repl/doc ::rank)
+
+;; :practicalli.card-game-specifications/rank
+;; Spec
+;;   (into #{:king :queen :ace :jack} (range 2 11))
+```
+When adding a specification to a function definition, `doc` will also show the specification details along with the function doc-string.
+
+## Live example
+Define the namespace and include clojure spec and clojure.repl (which contains the doc funciton)
 ```eval-clojure
 (ns practicalli.clojure
-  (:require [clojure.repl :as repl]
+  (:require [cljs.repl :as repl]
             [clojure.spec.alpha :as spec]))
 ```
 
@@ -11,12 +28,9 @@ Using doc to show the spec
 (repl/doc map)
 ```
 
+```eval-clojure
 (clojure.repl/doc :playing-card/suit)
-
-prints in the REPL buffer:
-:playing-card/suit
-
-Spec
+```
 
 ```eval-clojure
  #{:spade :heart :diamond :club}
