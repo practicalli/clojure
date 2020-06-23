@@ -308,8 +308,10 @@
         * [Matching with groups](reference/clojure/regular-expressions/matching-with-groups.md)
         * [Matching sub-strings](reference/clojure/regular-expressions/matching-sub-strings.md)
         * [Matching sub-sequences](reference/clojure/regular-expressions/matching-sub-sequences.md)
+        * [Common Patterns](reference/clojure/regular-expressions/common-regex-patterns.md)
         * [String replace](reference/clojure/regular-expressions/string-replace-with-regex.md)
         * [String Split](reference/clojure/regular-expressions/string-split-with-regex.md)
+
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
 <!--     * [Books on Clojure](reference/books.md) -->
