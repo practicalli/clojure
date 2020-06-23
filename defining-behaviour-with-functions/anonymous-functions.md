@@ -1,31 +1,52 @@
-# Anonymous Functions 
+# Anonymous Functions
+`clojure.core/fn` is a function for defining custom functions.
 
-An anonymous function is a function that has not been bound to a name.  These anonymous functions are used in-line in your code to save on writing a named function.
+`fn` is called the anonymous function as it has no external name by which it can be referred by. They are used within the scope of another function call, as having no name they cannot be called from another part of the code.
 
-The value of using anonymous functions comes when there is a short, specific piece of behaviour required which is unlikely to be needed elsewwhere in the code.  
+```clojure
+(map (fn [args] ,,,) [1 2 3])
+((fn [args] ,,,))
+```
 
-Anonymous functions are used within the scope of another function or when using the REPL for testing & designing functions.
+The value of using anonymous functions comes when there is a short, specific piece of behaviour required which is unlikely to be needed elsewhere in the code.  An anonymous function can always be refactored into a `defn` expression if used in multiple places.
+
 
 ## Definition of an anonymous function
-
-```
+```clojure
 (fn [argument] (str "some behaviour, typically using the aguments passed:" argument ))
 ```
 
 This expression is a function call to `fn` which has the arguments called `argument`
 
 
-## Evaluating an anonymous function
-
+## Calling an anonymous function
 To get a value from evaluating this function you need to pass it a value (or anonther function) as an argument,  as well as calling it as a function by placing the anonymous function as the first element of a list.
 
 ```
 ((fn [arguments] (str "behaviour, typically using the aguments passed: " arguments )) "Is this the right room for an argument")
 ```
 
+## Binding a local names
+`fn` can have a local name which can be used to write a recursive function (a fn that calls itself).
+
+Adding a name also helps with debugging code, as the name will be used to identify that function call if it appears in a stack trace of an exception.
+
+A recursive function that counts the elements in a collection
+```clojure
+(fn -count [xs]
+  (if (empty? xs)
+    0
+    (inc (-count (rest xs)))))
+```
+
+```clojure
+(fn meaningful-name
+  []
+  (str "If I fail, you will know my name"))
+```
+
 
 ## Anonymous function Syntatic Sugar
-
 There is a short form of the function definition using the `#( ,,, )` syntax.
 
 For example, if we want to increment an argument we could start to define an anonymous function as follows:
@@ -46,7 +67,7 @@ To evaluate this anonymous function we need to give it an argument to work on.  
 
 The `%` placeholder can also refer to a specific argument by adding an index number.  The index numbers refer to the position of the arguments supplied to the anonymous function.
 
-Here we will add two different arguments together 
+Here we will add two different arguments together
 
 ```
 ( #(+ %1 %2) 20 22)
