@@ -233,10 +233,10 @@
     * [Checking arguments](clojure-spec/testing/checking arguments.md)
 <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
 * [Generative Testing](clojure-spec/generative-testing/index.md)
+    * [Predicate generators](clojure-spec/generative-testing/predicate-generators.md)
+    <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
     * [Example Projects](clojure-spec/generative-testing/example-projects/index.md)
         * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
-
-    <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
 
 * [Spec Projects](clojure-spec/projects/index.md)
     <!-- Checking for bad names in ns declarations, lets, etc. -->
