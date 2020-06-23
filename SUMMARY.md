@@ -221,6 +221,7 @@
     * [registry](clojure-spec/data/registry.md)
     * [Entity Maps](clojure-spec/data/entity-maps.md)
     * [Map Literals](clojure-spec/data/map-literals.md)
+    * [and/or specs](clojure-spec/data/and-or-specifications.md)
     * [Composite Specs](clojure-spec/data/composite-specifications.md)
     * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
 
