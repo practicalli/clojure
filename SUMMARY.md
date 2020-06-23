@@ -244,19 +244,20 @@
 
     <!-- Playing cards -->
     * [Card Game](clojure-spec/projects/card-game/index.md)
-
-    <!-- Bank account overview - functionality, reference complete project -->
-    * [Bank Account TDD style](clojure-spec/projects/bank-account.md)
-        <!-- Create from bank_account_design_journal  -->
-        * [Create project](clojure-spec/projects/customer-details.md)
-        * [Failing  test](clojure-spec/projects/failing-tests.md)
-        * [Spec: Customer details](clojure-spec/projects/customer-details.md)
-        * [Spec: Account holder](clojure-spec/projects/customer-details.md)
-        * [Spec Functions](clojure-spec/projects/customer-details.md)
-        * [Spec Function Arguments](clojure-spec/projects/customer-details.md)
-        * [Test Function against spec](clojure-spec/projects/customer-details.md)
-
-
+        * [Playing Card Specifications](clojure-spec/projects/card-game/playing-card-specifications.md)
+        * [Generating Data](clojure-spec/projects/card-game/generative-data-from-specifications.md)
+        * [Game Specifications](clojure-spec/projects/card-game/game-specifications.md)
+        * [Function Specifications](clojure-spec/projects/card-game/function-specifications.md)
+        * [Organizing Instrumentation](clojure-spec/projects/card-game/organising-instrumentation.md)
+    * [Bank Account TDD style](clojure-spec/projects/bank-account/index.md)
+        <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
+        * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
+        * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
+        * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
+        * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
+        * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
+        * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
+        * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
 
 ## Host Interoperability
 
