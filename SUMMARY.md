@@ -311,6 +311,7 @@
         * [Common Patterns](reference/clojure/regular-expressions/common-regex-patterns.md)
         * [String replace](reference/clojure/regular-expressions/string-replace-with-regex.md)
         * [String Split](reference/clojure/regular-expressions/string-split-with-regex.md)
+        * [Sub-expression matches](reference/clojure/regular-expressions/sub-expression-matches.md)
 
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
