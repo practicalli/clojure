@@ -219,8 +219,8 @@
     * [explain](clojure-spec/data/explain.md)
     * [defining specs](clojure-spec/data/defining-specifications.md)
     * [registry](clojure-spec/data/registry.md)
+    * [Entity Maps](clojure-spec/data/entity-maps.md)
     * [Map Literals](clojure-spec/data/map-literals.md)
-    <!-- * [Entity Maps](clojure-spec/data/entity-maps.md) -->
     * [Composite Specs](clojure-spec/data/composite-specifications.md)
     * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
 
