@@ -305,6 +305,9 @@
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
     * [Regular Expressions](reference/clojure/regular-expressions/index.md)
+        * [Matching with groups](reference/clojure/regular-expressions/matching-with-groups.md)
+        * [Matching sub-strings](reference/clojure/regular-expressions/matching-sub-strings.md)
+        * [Matching sub-sequences](reference/clojure/regular-expressions/matching-sub-sequences.md)
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
 <!--     * [Books on Clojure](reference/books.md) -->
