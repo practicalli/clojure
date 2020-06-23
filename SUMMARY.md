@@ -212,7 +212,7 @@
     * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
 * [Organising Specs](clojure-spec/organising-specs.md)
 * [Spec data](clojure-spec/data/index.md)
-    * [Predicate functions](clojure-spec/data/predicate-functions.md)
+    * [Predicates](clojure-spec/data/predicate-specifications.md)
     * [literal values](clojure-spec/data/literal-values.md)
     * [conform](clojure-spec/data/conform.md)
     * [valid?](clojure-spec/data/valid-q.md)
