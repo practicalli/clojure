@@ -304,7 +304,7 @@
 <!--     * [Changing State](reference/changing-state.md) -->
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
-<!--     * [Regular Expressions](reference/regular-expressions.md) -->
+    * [Regular Expressions](reference/clojure/regular-expressions/index.md)
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
 <!--     * [Books on Clojure](reference/books.md) -->
