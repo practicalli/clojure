@@ -75,7 +75,7 @@ The  domain starts with `A-Za-z0-9-`, follow by first level domain, e.g `.org`, 
 ```eval-clojure
 (re-matches
   #"^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"
-  "jenny@jetpack.com.au")
+  "jenny.jenn@jetpack.com.au")
 ```
 > Double escaping is not required in the Clojure syntax.
 
@@ -106,8 +106,12 @@ A file extension name is 1 or more characters without white space, follow by dot
 Change the combination `(jpg|png|gif|bmp)` for other file extension.
 
 ```eval-clojure
-(re-matches #"([^\s]+(\.(?i)(jpg|png|gif|bmp))$)")
+(re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)")
 ```
+
+> #### Hint::in-line modifiers not supported in JavaScript
+> The REPL above uses ClojureScript, hosted on JavaScript. JavaScript does not support in-line modifier flags such as `(?i)` for a case insensitive pattern.  In-line flags will be [converted by the ClojureScript reader if they are the first element in the literal regular expression pattern](https://stackoverflow.com/a/23187290/1762872), or if the `js/RegExp` function is used to create the regular expression.
+
 
 Breakdown the regex pattern:
 ```
@@ -167,9 +171,7 @@ $		#end of the line
 Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start beween 0-12, then a semi colon, `:`, follow by `00-59`.  The pattern ends with `am` or `pm`.
 
 ```eval-clojure
-(re-matches
-  #"(1[012]|[1-9]):[0-5][0-9](\s)?(?i)(am|pm)"
-  "8.59am")
+(re-matches #"(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)" "12:59am")
 ```
 
 Breakdown the regex pattern:
@@ -192,7 +194,7 @@ Breakdown the regex pattern:
 The 24-hour clock format start between 0-23 or 00-23, then a semi colon `:` and follow by 00-59.
 
 ```eval-clojure
-(re-matches #(([01]?[0-9]|2[0-3]):[0-5][0-9]) "23:58")
+(re-matches #"(([01]?[0-9]|2[0-3]):[0-5][0-9])" "23:58")
 ```
 
 Breakdown the regex pattern:
@@ -212,9 +214,7 @@ Breakdown the regex pattern:
 Date format in the form `dd/mm/yyyy`. Validating a leap year and if there is 30 or 31 days in a month is not simple though.
 
 ```eval-clojure
-(re-matches
-  #"(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)"
-  "20/02/2020")
+(re-matches #"(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)" "20/02/2020")
 ```
 
 Breakdown the regex pattern:
