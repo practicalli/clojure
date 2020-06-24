@@ -281,14 +281,23 @@
         * [Create Project](games/tictactoe-cli/create-project.md)
 
 
+<!-- ## Scripting with Clojure -->
+<!-- Section mostly covering Babashka and its pods -->
+
+
 ## Performance testing
-<!--     * [Performance](performance/index.md) -->
+<!-- * [Code Performance](performance/index.md) -->
 <!--         * [Testing functions](performance/testing-functions.md) -->
 <!--         * [Performance](performance/load-testing.md) -->
 <!-- * [Performance Testing](testing/performance/index.md) -->
 <!--     * [time](testing/performance/time.md) -->
 <!--     * [Gatling](testing/performance/gatling.md) -->
 <!--     * [clj-gatling](testing/performance/clj-gatling.md) -->
+
+
+## Deployment
+
+<!-- * [Observability](deployment/observability/index.md) -->
 
 
 
