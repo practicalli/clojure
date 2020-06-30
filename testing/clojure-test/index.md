@@ -1,4 +1,4 @@
-# Testing with `clojure.test`
+# Unit Testing with `clojure.test`
 
 `clojure.test` is a test library that is already part of Clojure and test package hierarchy is typically created (e.g. when generating Clojure projects with Leiningen).
 

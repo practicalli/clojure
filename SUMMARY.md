@@ -144,18 +144,6 @@
     * [Anonymous Functions](defining-behaviour-with-functions/anonymous-functions.md)
 * [Threading Macros](thinking-functionally/threading-macros.md)
 
-## Unit Testing
-* [Testing Clojure](testing/index.md)
-<!-- * [Unit testing](testing/unit/index.md) -->
-<!--     * [clojure.test](testing/unit/clojure.test.md) -->
-<!--     * [midje](testing/unit/midje.md) -->
-<!--     * [speclj](testing/unit/midje.md) -->
-<!-- * [Test runners](testing/test-runners/index.md) -->
-<!--     * [Cognitect-labs](testing/test-runners/cognitect-labs-test-runner.md) -->
-<!--     * [eftest](testing/test-runners/eftest-runner.md) -->
-<!--     * [koacha](testing/test-runners/koacha-runner.md) -->
-
-
 ## Functional design
 
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
@@ -206,59 +194,84 @@
     * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
     * [Tail recursion](thinking-functionally/tail-recursion.md)
 
-## spec & generative tests
-* [Spec Overview](clojure-spec/index.md)
-    * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
-    * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
-* [Organising Specs](clojure-spec/organising-specs.md)
-* [Spec data](clojure-spec/data/index.md)
-    * [Predicates](clojure-spec/data/predicate-specifications.md)
-    * [literal values](clojure-spec/data/literal-values.md)
-    * [conform](clojure-spec/data/conform.md)
-    * [valid?](clojure-spec/data/valid-q.md)
-    * [explain](clojure-spec/data/explain.md)
-    * [defining specs](clojure-spec/data/defining-specifications.md)
-    * [registry](clojure-spec/data/registry.md)
-    * [Entity Maps](clojure-spec/data/entity-maps.md)
-    * [Map Literals](clojure-spec/data/map-literals.md)
-    * [and/or specs](clojure-spec/data/and-or-specifications.md)
-    * [Composite Specs](clojure-spec/data/composite-specifications.md)
-    * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
+## Testing
+* [Testing Clojure](testing/index.md)
+    * [Unit testing](testing/unit-testing/index.md)
+        * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
+        * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
+        * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
+        <!-- * [Test report - re-run tests](testing/unit-testing/re-run-tests-from-test-report-buffer.md) -->
+        <!-- * [Refactor Tests](testing/unit-testing/refactor-unit-tests.md) -->
+        <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
 
-* [Spec functions](clojure-spec/functions/index.md)
-    * [function definitions](clojure-spec/functions/function-definition-specifications.md)
-    * [documentation](clojure-spec/functions/documentation.md)
-    * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
+    * [Test runners](testing/test-runners/index.md)
+        * [Cognitect-labs](testing/test-runners/congnitect-labs-test-runner.md)
+        <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
+        * [koacha](testing/test-runners/koacha-runner.md)
+        * [Example projects](testing/test-runners/example-projects.md)
 
-* [Testing Specifications](clojure-spec/testing/index.md)
-    * [Checking arguments](clojure-spec/testing/checking arguments.md)
-<!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
-* [Generative Testing](clojure-spec/generative-testing/index.md)
-    * [Predicate generators](clojure-spec/generative-testing/predicate-generators.md)
-    <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
-    * [Example Projects](clojure-spec/generative-testing/example-projects/index.md)
-        * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
+<!--     * [midje](testing/unit/midje.md) -->
+<!--     * [speclj](testing/unit/midje.md) -->
 
-* [Spec Projects](clojure-spec/projects/index.md)
-    <!-- Checking for bad names in ns declarations, lets, etc. -->
-    <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
+    <!-- * [Contract Testing](testing/contract-testing/index.md) -->
+    <!-- * [Generative Testing](testing/generative-testing/index.md) -->
+    <!-- * [Integration Testing](testing/integration-testing/index.md) -->
+    <!-- * [Performance Testing](testing/performance-testing/index.md) -->
+    <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
 
-    <!-- Playing cards -->
-    * [Card Game](clojure-spec/projects/card-game/index.md)
-        * [Playing Card Specifications](clojure-spec/projects/card-game/playing-card-specifications.md)
-        * [Generating Data](clojure-spec/projects/card-game/generative-data-from-specifications.md)
-        * [Game Specifications](clojure-spec/projects/card-game/game-specifications.md)
-        * [Function Specifications](clojure-spec/projects/card-game/function-specifications.md)
-        * [Organizing Instrumentation](clojure-spec/projects/card-game/organising-instrumentation.md)
-    * [Bank Account TDD style](clojure-spec/projects/bank-account/index.md)
-        <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
-        * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
-        * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
-        * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
-        * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
-        * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
-        * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
-        * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
+
+    * [Spec & Generative Testing](clojure-spec/index.md)
+        * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
+        * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
+        * [Organising Specs](clojure-spec/organising-specs.md)
+        * [Data Specifications](clojure-spec/data/index.md)
+            * [Predicates](clojure-spec/data/predicate-specifications.md)
+            * [literal values](clojure-spec/data/literal-values.md)
+            * [conform](clojure-spec/data/conform.md)
+            * [valid?](clojure-spec/data/valid-q.md)
+            * [explain](clojure-spec/data/explain.md)
+            * [defining specs](clojure-spec/data/defining-specifications.md)
+            * [registry](clojure-spec/data/registry.md)
+            * [Entity Maps](clojure-spec/data/entity-maps.md)
+            * [Map Literals](clojure-spec/data/map-literals.md)
+            * [and/or specs](clojure-spec/data/and-or-specifications.md)
+            * [Composite Specs](clojure-spec/data/composite-specifications.md)
+            * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
+
+        * [Spec functions](clojure-spec/functions/index.md)
+            * [function definitions](clojure-spec/functions/function-definition-specifications.md)
+            * [documentation](clojure-spec/functions/documentation.md)
+            * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
+
+        * [Testing Specifications](clojure-spec/testing/index.md)
+            * [Checking arguments](clojure-spec/testing/checking arguments.md)
+        <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
+        * [Generative Testing](clojure-spec/generative-testing/index.md)
+            * [Predicate generators](clojure-spec/generative-testing/predicate-generators.md)
+            <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
+            * [Example Projects](clojure-spec/generative-testing/example-projects/index.md)
+                * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
+
+        * [Spec Projects](clojure-spec/projects/index.md)
+            <!-- Checking for bad names in ns declarations, lets, etc. -->
+            <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
+
+            <!-- Playing cards -->
+            * [Card Game](clojure-spec/projects/card-game/index.md)
+                * [Playing Card Specifications](clojure-spec/projects/card-game/playing-card-specifications.md)
+                * [Generating Data](clojure-spec/projects/card-game/generative-data-from-specifications.md)
+                * [Game Specifications](clojure-spec/projects/card-game/game-specifications.md)
+                * [Function Specifications](clojure-spec/projects/card-game/function-specifications.md)
+                * [Organizing Instrumentation](clojure-spec/projects/card-game/organising-instrumentation.md)
+            * [Bank Account TDD style](clojure-spec/projects/bank-account/index.md)
+                <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
+                * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
+                * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
+                * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
+                * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
+                * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
+                * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
+                * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
 
 ## Host Interoperability
 
