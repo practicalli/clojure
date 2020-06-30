@@ -1,24 +1,23 @@
-
 # Arity
 
   The number of arguments a function takes.  This can be a fixed number or variable number of arguments.  Simple polymorphism can also be used to have one function take different numbers of arguments.
 
 ```clojure
 
-(defn single-arity [argument] 
+(defn single-arity [argument]
   (str "I take 1 argument only"))
 
-(defn triple-arity [argument1 argument2 argument3] 
+(defn triple-arity [argument1 argument2 argument3]
   (str "I take 3 arguments only"))
 
-(defn multi-arity 
- ([argument] 
+(defn multi-arity
+ ([argument]
    (str "I match 1 argument only"))
  ([argument1 argument2]
    (str "I match when 2 arguments are used")))
-   
+
 (defn variable-arity [argument & more-arguments]
-  (str "I assign the first argument to argument, 
+  (str "I assign the first argument to argument,
         all other arguments to more-arguments"))
 ```
 ---
@@ -102,9 +101,6 @@ executions with the the same input parameters.
 
 ---
 
-## Categories
-
----
 
 ## Functor
 > Structure that can be mapped over.
@@ -158,7 +154,7 @@ randIter.next(); // Each exectuion gives a random value, expression is evluated 
 
 ---
 
-##Comonad
+## Comonad
 ---
 
 ## Applicative Functor
