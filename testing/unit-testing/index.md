@@ -3,6 +3,8 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 
 `clojure.test` namespace provides a unit testing framework and is included in the Clojure library, so is available in all Clojure projects.
 
+[Test runners](/testing/test-runners/) are used to run one or more tests in a project.
+
 
 ## Principles for writing test code
 * One `test` namespace for each `src` namespace
