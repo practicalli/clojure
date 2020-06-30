@@ -23,30 +23,31 @@
     * [Contributing](contributing.md)
 
 ## Getting Started
-* [Install Clojure tools](clojure-tools/install/index.md)
+* [Clojure tools](clojure-tools/install/index.md)
     * [Install Java](clojure-tools/install/install-java.md)
     * [Install Clojure](clojure-tools/install/install-clojure.md)
-* [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
-    * [Evaluate an expression](clojure-tools/evaluate-an-expression.md)
-    * [Files and scripts](clojure-tools/files-and-scripts.md)
-    * [Configuration files](clojure-tools/configuration-files.md)
-    * [aliases](clojure-tools/aliases.md)
-    * [Clojure Inspector](clojure-tools/clojure-inspector.md)
-    * [REBL data browser](clojure-tools/rebl-data-browser.md)
-* [rebel REPL](clojure-tools/rebel-repl/index.md)
-    * [Configure rebel](clojure-tools/rebel-repl/configure-rebel.md)
-    * [Basic REPL](clojure-tools/basic-repl.md)
-    <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
-    * [Coding in the REPL](clojure-tools/coding-in-the-repl.md)
-* [Create projects](clojure-tools/create-projects.md)
-    <!-- Introduce Clojure examples that work well in the command line REPL -->
-    <!-- Run a repl in an example project, require, in-ns, run -->
-    <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-    * [Add Libraries](clojure-tools/add-libraries.md)
-    * [Namespaces](clojure-tools/namespace.md)
-        <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
-* [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
-    <!-- * [Design Journal](clojure-tools/design-journal.md) -->
+    * [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
+        * [Evaluate an expression](clojure-tools/evaluate-an-expression.md)
+        * [Files and scripts](clojure-tools/files-and-scripts.md)
+        * [Configuration files](clojure-tools/configuration-files.md)
+        * [aliases](clojure-tools/aliases.md)
+        * [Clojure Inspector](clojure-tools/clojure-inspector.md)
+        * [REBL data browser](clojure-tools/rebl-data-browser.md)
+        * [rebel REPL](clojure-tools/rebel-repl/index.md)
+            * [Configure rebel](clojure-tools/rebel-repl/configure-rebel.md)
+            * [Basic REPL](clojure-tools/basic-repl.md)
+            <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
+            * [Coding in the REPL](clojure-tools/coding-in-the-repl.md)
+    * [Create projects](clojure-tools/create-projects.md)
+        <!-- Introduce Clojure examples that work well in the command line REPL -->
+        <!-- Run a repl in an example project, require, in-ns, run -->
+        <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
+        * [Add Libraries](clojure-tools/add-libraries.md)
+        * [Namespaces](clojure-tools/namespace.md)
+            <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
+    * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
+
+        <!-- * [Design Journal](clojure-tools/design-journal.md) -->
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
@@ -61,28 +62,27 @@
         * [VSCode Calva](clojure-editors/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
 
-## Clojure Syntax
+## Clojure Standard Library
 <!-- Basic syntax and calling functions -->
 * [Syntax](basic-clojure/syntax.md)
+    * [Code documentation](basic-clojure/code-documentation.md)
+    * [Comments](basic-clojure/comments.md)
 
-* [Code documentation](basic-clojure/code-documentation.md)
-* [Comments](basic-clojure/comments.md)
+    <!-- Simple values numbers, strings ratios -->
+    * [Strings](basic-clojure/strings.md)
+    * [Numbers & Maths](basic-clojure/numbers-maths.md)
+    * [Ratios](basic-clojure/ratios.md)
 
-<!-- Simple values numbers, strings ratios -->
-* [Strings](basic-clojure/strings.md)
-* [Numbers & Maths](basic-clojure/numbers-maths.md)
-* [Ratios](basic-clojure/ratios.md)
+    * [Control flow](basic-clojure/control-flow.md)
 
-* [Control flow](basic-clojure/control-flow.md)
+    * [Assigning Names](basic-clojure/assigning-names.md)
+    <!-- * [Naming](basic-clojure/naming.md) -->
+    <!--     * [Global definitions](basic-clojure/global-definitions.md) -->
+    <!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
+    <!--     * [Private functions](basic-clojure/private-functions.md) -->
+    <!--     * [Naming Conventions](reference/naming-conventions.md) -->
 
-* [Assigning Names](basic-clojure/assigning-names.md)
-<!-- * [Naming](basic-clojure/naming.md) -->
-<!--     * [Global definitions](basic-clojure/global-definitions.md) -->
-<!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
-<!--     * [Private functions](basic-clojure/private-functions.md) -->
-<!--     * [Naming Conventions](reference/naming-conventions.md) -->
-
-<!-- Persistent data structures list vector map set -->
+    <!-- Persistent data structures list vector map set -->
 * [Data structures](data-structures/index.md)
     * [List](data-structures/list.md)
     * [Map](data-structures/map.md)
@@ -90,61 +90,54 @@
     * [Set](data-structures/set.md)
     * [Naming data structures](data-structures/naming.md)
 
-## clojure.core
-<!-- Introducing the most common function families from clojure.core -->
-<!-- map reduce apply -->
-<!-- group-by sort-by -->
-<!-- partition partiion-all partition... -->
+    <!-- Introducing the most common function families from clojure.core -->
+    <!-- map reduce apply -->
+    <!-- group-by sort-by -->
+    <!-- partition partiion-all partition... -->
 
+    * [Using data](using-data-structures/index.md)
+        * [Sequences](using-data-structures/sequences.md)
+        * [Lazy Sequences](using-data-structures/lazy-sequences.md)
+        * [Destructuring](using-data-structures/destructuring.md)
+        * [Applying functions](using-data-structures/applying-functions.md)
+        * [Mapping functions](using-data-structures/mapping-data-structures.md)
+    * [Modifying data](modifying-data-structures/index.md)
+        * [Lists](modifying-data-structures/lists.md)
+        * [Maps](modifying-data-structures/maps.md)
+        * [Vectors](modifying-data-structures/vectors.md)
+        * [Sets](modifying-data-structures/sets.md)
+    * [Iterate over data](iterate-over-data/index.md)
+        * [map](iterate-over-data/map.md)
+            * [partial](iterate-over-data/map-partial.md)
+            * [fn](iterate-over-data/map-fn.md)
+        * [filter](iterate-over-data/filter-remove.md)
+        * [apply](iterate-over-data/apply.md)
+        * [reduce](iterate-over-data/reduce.md)
+        * [comp](iterate-over-data/reduce.md)
+        * [transduce](iterate-over-data/reduce.md)
+    * [Designing Data Structures](designing-data-structures/index.md)
+        * [With Vectors](designing-data-structures/with-vectors.md)
+        * [With Vectors of Vectors](designing-data-structures/with-vectors-of-vectors.md)
+        * [With Maps](designing-data-structures/with-maps.md)
+        * [With Maps of Maps](designing-data-structures/with-maps-of-maps.md)
+        * [With Vectors of Maps](designing-data-structures/with-vectors-of-maps.md)
+        * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
+        * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
 
+    * [Shared Memory](data-structures/shared-memory.md)
 
-## Modelling with Data
-
-* [Using data](using-data-structures/index.md)
-    * [Sequences](using-data-structures/sequences.md)
-    * [Lazy Sequences](using-data-structures/lazy-sequences.md)
-    * [Destructuring](using-data-structures/destructuring.md)
-    * [Applying functions](using-data-structures/applying-functions.md)
-    * [Mapping functions](using-data-structures/mapping-data-structures.md)
-* [Modifying data](modifying-data-structures/index.md)
-    * [Lists](modifying-data-structures/lists.md)
-    * [Maps](modifying-data-structures/maps.md)
-    * [Vectors](modifying-data-structures/vectors.md)
-    * [Sets](modifying-data-structures/sets.md)
-* [Iterate over data](iterate-over-data/index.md)
-    * [map](iterate-over-data/map.md)
-        * [partial](iterate-over-data/map-partial.md)
-        * [fn](iterate-over-data/map-fn.md)
-    * [filter](iterate-over-data/filter-remove.md)
-    * [apply](iterate-over-data/apply.md)
-    * [reduce](iterate-over-data/reduce.md)
-    * [comp](iterate-over-data/reduce.md)
-    * [transduce](iterate-over-data/reduce.md)
-* [Designing Data Structures](designing-data-structures/index.md)
-    * [With Vectors](designing-data-structures/with-vectors.md)
-    * [With Vectors of Vectors](designing-data-structures/with-vectors-of-vectors.md)
-    * [With Maps](designing-data-structures/with-maps.md)
-    * [With Maps of Maps](designing-data-structures/with-maps-of-maps.md)
-    * [With Vectors of Maps](designing-data-structures/with-vectors-of-maps.md)
-    * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
-    * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
-
-* [Shared Memory](data-structures/shared-memory.md)
-
-## Defining Functions
 <!-- Definging names for data and expressions -->
 <!-- Defining custom functions -->
 <!-- reducting functions -->
 * [Defining Functions](basic-clojure/defining-functions.md)
-* [Defing behaviour with Functions](defining-behaviour-with-functions/index.md)
+    * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md)
     * [Syntax](defining-behaviour-with-functions/syntax.md)
     * [Calling functions](defining-behaviour-with-functions/calling-functions.md)
     <!-- * [Examples](defining-behaviour-with-functions/examples.md) -->
     <!-- * [Parameters](defining-behaviour-with-functions/parameters.md) -->
     * [Anonymous Functions](defining-behaviour-with-functions/anonymous-functions.md)
-* [Threading Macros](thinking-functionally/threading-macros.md)
+    * [Threading Macros](thinking-functionally/threading-macros.md)
 
-## Functional design
 
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
 <!-- Abstrction mountain
@@ -166,7 +159,7 @@
      This example can then be used in one of the exercises to judge the effort
      a reader has exerted so far and how much more effort is still required.
 -->
-
+<!-- Thinking Functionally -->
 * [Thinking Functionally](thinking-functionally/index.md)
     * [Side effects](thinking-functionally/side-effects.md)
     * [Pure functions](thinking-functionally/pure-functions.md)
@@ -194,14 +187,12 @@
     * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
     * [Tail recursion](thinking-functionally/tail-recursion.md)
 
-## Testing
+ <!-- Testing -->
 * [Testing Clojure](testing/index.md)
     * [Unit testing](testing/unit-testing/index.md)
         * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
         * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
         * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
-        <!-- * [Test report - re-run tests](testing/unit-testing/re-run-tests-from-test-report-buffer.md) -->
-        <!-- * [Refactor Tests](testing/unit-testing/refactor-unit-tests.md) -->
         <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
 
     * [Test runners](testing/test-runners/index.md)
@@ -209,16 +200,6 @@
         <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
         * [koacha](testing/test-runners/koacha-runner.md)
         * [Example projects](testing/test-runners/example-projects.md)
-
-<!--     * [midje](testing/unit/midje.md) -->
-<!--     * [speclj](testing/unit/midje.md) -->
-
-    <!-- * [Contract Testing](testing/contract-testing/index.md) -->
-    <!-- * [Generative Testing](testing/generative-testing/index.md) -->
-    <!-- * [Integration Testing](testing/integration-testing/index.md) -->
-    <!-- * [Performance Testing](testing/performance-testing/index.md) -->
-    <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
-
 
     * [Spec & Generative Testing](clojure-spec/index.md)
         * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
@@ -273,8 +254,11 @@
                 * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
                 * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
 
-## Host Interoperability
+    <!-- * [Integration Testing](testing/integration-testing/index.md) -->
+    <!-- * [Performance Testing](testing/performance-testing/index.md) -->
+    <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
 
+<!-- Host Interoperability -->
 * [Java Interoperability](basic-clojure/java-interop.md)
     * [More Java fun](basic-clojure/more-java-fun.md)
 
@@ -337,9 +321,13 @@
         * [String Split](reference/clojure/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/clojure/regular-expressions/sub-expression-matches.md)
 
+    * [threading macros](reference/threading-macros.md)
+    * [Tagged Literals](reference/tagged-literals/index.md)
+        * [uuid](reference/tagged-literals/uuid.md)
 
     * [alternative tools](alternative-tools/index.md)
         * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
+
 
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
@@ -348,10 +336,6 @@
 <!--     * [Sequences](standard-library/sequences.md) -->
 <!--     * [Collections](standard-library/collections.md) -->
 <!--     * [Iteration](standard-library/iteration.md) -->
-
-    * [threading macros](reference/threading-macros.md)
-    * [Tagged Literals](reference/tagged-literals/index.md)
-        * [uuid](reference/tagged-literals/uuid.md)
 
 <!-- ## To organise -->
 <!-- * [Work in Progress](work-in-progress.md) -->
