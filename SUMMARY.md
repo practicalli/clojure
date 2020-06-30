@@ -324,6 +324,10 @@
         * [String Split](reference/clojure/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/clojure/regular-expressions/sub-expression-matches.md)
 
+
+    * [alternative tools](alternative-tools/index.md)
+        * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
+
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
 <!--     * [Books on Clojure](reference/books.md) -->
