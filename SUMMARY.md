@@ -198,8 +198,8 @@
 * [Testing Clojure](testing/index.md)
     * [Unit testing](testing/unit-testing/index.md)
         * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
-        * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
         * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
+        * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
         <!-- * [Test report - re-run tests](testing/unit-testing/re-run-tests-from-test-report-buffer.md) -->
         <!-- * [Refactor Tests](testing/unit-testing/refactor-unit-tests.md) -->
         <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
