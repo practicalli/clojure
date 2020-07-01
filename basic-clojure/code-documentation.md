@@ -1,5 +1,5 @@
 # Code documentation
-  Clojure functions are documented by adding a string to the function definition.  This is refered to as the **doc string**.
+  Clojure functions are documented by adding a string to the function definition, after the function name.  This is refered to as the **doc string**.
 
 ```
 (defn example-function
