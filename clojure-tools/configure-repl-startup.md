@@ -2,12 +2,14 @@
 A Clojure REPL starts in the `user` namespace by default.  Clojure will automatically load code from a `user.clj` file into the REPL to carry out common startup tasks.
 
 * load project code into the REPL by requiring namespaces
-* set the default namespace with `in-ns`
+<!-- * set the default namespace with `in-ns` -->
 * call functions to run an application or service
 * start components (i.e for mount, component, integrant)
 
 > #### HINT:: Example project
 > [practicalli/clojure-configure-repl](https://github.com/practicalli/clojure-configure-repl) project contains example code for configuring the REPL start up
+>
+> [juxt/edge has example projects](https://github.com/juxt/edge/tree/master/examples) using the same technique.
 
 
 ## Create a `dev/user.clj` file and `:dev` alias
@@ -46,7 +48,7 @@ Add a require expression to the namespace definition in `dev/user.clj`
 
 ```clojure
 (ns user
-  :require [practicalli.project-namespace])
+  (:require [practicalli.project-namespace]))
 ```
 
 Require loads all the expressions into the REPL, so functions are immediately available.
@@ -57,22 +59,9 @@ Functions from the required namespace can be called, to start the application fo
 
 ```clojure
 (ns user
-  :require [practicalli.project-namespace])
+  (:require [practicalli.project-namespace]))
 
 (practicalli.project-namespace/-main)
-```
-
-## Changing Namespaces
-When using the REPL directly it can be changed into a specific namespace using the `in-ns` function.
-
-Changing to the project namespace allows the `-main` namespace to be called
-```clojure
-(ns user
-  :require [practicalli.project-namespace])
-
-(in-ns 'practicalli.project-namespace)
-
-(-main)
 ```
 
 
@@ -85,13 +74,13 @@ Example component lifecycle libraries included
 * [integrant](https://github.com/weavejester/integrant)
 * [component](https://github.com/stuartsierra/component)
 
-In Clojure it is idiomatic to define the component lifecyle services in a namespace called `dev`.  In the `def/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
+In Clojure it is idiomatic to define the component lifecyle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
 
 ```clojure
 (ns user
   (:require [dev]))
 
-(in-ns 'dev)
+(dev/go)
 ```
 Now define code in the `dev/dev.clj` file that controls the component lifecycle services library for the project.
 
