@@ -267,6 +267,7 @@
 * [Simple projects](simple-projects/index.md)
     * [Create a project](simple-projects/create-project.md)
     * [Run the REPL](simple-projects/run-the-repl.md)
+    * [Random function](simple-projects/random-clojure-function.md)
     <!-- Refactor or delete -->
     <!-- * [Reading Files](simple-projects/index.md) -->
     <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
