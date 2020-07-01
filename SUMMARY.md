@@ -67,7 +67,7 @@
 * [Syntax](basic-clojure/syntax.md)
     * [Code documentation](basic-clojure/code-documentation.md)
     * [Comments](basic-clojure/comments.md)
-
+    * [Whats my environment](basic-clojure/whats-my-environment.md)
     <!-- Simple values numbers, strings ratios -->
     * [Strings](basic-clojure/strings.md)
     * [Numbers & Maths](basic-clojure/numbers-maths.md)
@@ -264,12 +264,12 @@
 
 ## Projects
 <!-- Convert to deps.edn -->
-* [Simple project](simple-project/index.md)
-    * [Create a project](simple-project/create-project.md)
-    * [Run the REPL](simple-project/run-the-repl.md)
-* [Reading Files](basic-clojure/index.md)
-    * [Whats my environment](basic-clojure/whats-my-environment.md)
-    * [Reading project file](basic-clojure/reading-project-file.md)
+* [Simple projects](simple-projects/index.md)
+    * [Create a project](simple-projects/create-project.md)
+    * [Run the REPL](simple-projects/run-the-repl.md)
+    <!-- Refactor or delete -->
+    <!-- * [Reading Files](simple-projects/index.md) -->
+    <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
 
 <!-- Games -->
 * [Games](games/index.md)
