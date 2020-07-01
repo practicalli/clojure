@@ -328,7 +328,7 @@
 
     * [alternative tools](alternative-tools/index.md)
         * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
-
+        * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
 
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
