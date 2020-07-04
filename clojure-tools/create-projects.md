@@ -14,7 +14,7 @@ Open a terminal window and change to a suitable folder
 cd projects/clojure
 ```
 
-Create a new project using `clj-new` and the `app` template.  If you prefer, use your company name or GitHub name instead of `practicalli`  and change `playground` to the name of the application.
+Create a new project using `clj-new` and the `app` template.  If you prefer, use your company name or GitHub/GitLab/Bitbucket account name instead of `practicalli`  and change `playground` to the name of the application.
 
 ```shell
 clojure -A:new app practicalli/playground
