@@ -139,6 +139,24 @@
     * [Threading Macros](thinking-functionally/threading-macros.md)
 
 
+<!-- Convert to deps.edn -->
+* [Simple projects](simple-projects/index.md)
+    <!-- * [Create a project](simple-projects/create-project.md) -->
+    <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
+    * [Random function](simple-projects/random-clojure-function.md)
+    <!-- Refactor or delete -->
+    <!-- * [Reading Files](simple-projects/index.md) -->
+    <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
+
+<!-- Games -->
+* [Games](games/index.md)
+    <!-- Convert to deps.edn -->
+    * [TicTacToe CLI](games/tictactoe-cli/index.md)
+        * [Create Project](games/tictactoe-cli/create-project.md)
+
+
+
+
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
 <!-- Abstrction mountain
      - functions
@@ -261,22 +279,6 @@
 <!-- Host Interoperability -->
 * [Java Interoperability](basic-clojure/java-interop.md)
     * [More Java fun](basic-clojure/more-java-fun.md)
-
-## Projects
-<!-- Convert to deps.edn -->
-* [Simple projects](simple-projects/index.md)
-    * [Create a project](simple-projects/create-project.md)
-    * [Run the REPL](simple-projects/run-the-repl.md)
-    * [Random function](simple-projects/random-clojure-function.md)
-    <!-- Refactor or delete -->
-    <!-- * [Reading Files](simple-projects/index.md) -->
-    <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
-
-<!-- Games -->
-* [Games](games/index.md)
-    <!-- Convert to deps.edn -->
-    * [TicTacToe CLI](games/tictactoe-cli/index.md)
-        * [Create Project](games/tictactoe-cli/create-project.md)
 
 
 <!-- ## Scripting with Clojure -->
