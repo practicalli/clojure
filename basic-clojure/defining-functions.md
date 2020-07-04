@@ -63,4 +63,7 @@ Here is the same function if you typed it out in full
         (/ number 2)))
 ```
 
-> **fixme** is it too soon to show macroexpand ?
+> #### Hint::Macroexpand functions
+> The `macroexpand-1` function takes an expression that includes one or more macros and returns the expanded version of Clojure code. The `macroexpand-all` will also expand macros into Clojure code, doing so recursively for all macros it finds.
+>
+> Clojure editors also provide evaluation functions that will macroexpand.
