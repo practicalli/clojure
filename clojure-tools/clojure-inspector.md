@@ -1,5 +1,21 @@
 # Clojure Inspector
-A visual browser for Clojure data using the Java UI librariesdf465x.
+A visual browser for Clojure data using the Java UI libraries.
+
+Require the [`clojure.inspector` namespace](https://clojure.github.io/clojure/clojure.inspector-api.html) in the REPL or project namespace definitions to use the functions
+
+{% tabs repl="In the REPL", project="In a Clojure Project" %}
+
+{% content "repl" %}
+```clojure
+(require '[clojure.inspector :as inspector])
+```
+{% content "project" %}
+```clojure
+(ns practicalli.application
+  (:require [clojure.inspector :as inspector]))
+```
+{% endtabs %}
+
 
 * `inspect` for flat data structures
 * `inspect-tree` for deeply nested / hierarchically data
