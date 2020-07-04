@@ -273,6 +273,7 @@
                 * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
 
     * [Integration Testing](testing/integration-testing/index.md)
+        * [Circle CI](testing/integration-testing/circle-ci/index.md)
     <!-- * [Performance Testing](testing/performance-testing/index.md) -->
     <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
 
