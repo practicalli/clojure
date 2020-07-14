@@ -16,15 +16,19 @@ The bank legally requires specific information about a customer in order to add 
 ```clojure
 (spec/def ::first-name string?)
 (spec/def ::last-name string?)
+(spec/def ::email-address string?)
 ```
-Use a regular expression to define the syntax of an email address, eg. jenny@jetpack.org
 
+> #### INFO::A more detailed email specification
+> Use a regular expression to define the syntax of an email address, eg. jenny@jetpack.org
 ```clojure
 (spec/def ::email-address
   (spec/and string?
             #(re-matches #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$"
                          %)))
 ```
+> This specification will require a custom generator
+
 A residential address is made from several pieces of information and is defined as a composite specification, from several specifications.
 
 ```clojure
@@ -43,22 +47,22 @@ A residential address is made from several pieces of information and is defined 
 
 A social security number specification is also a candidate for a composite specification. Social security numbers may take different forms and even have different names in different countries, eg. the [USA SSN](https://en.wikipedia.org/wiki/Social_Security_number) is a nine-digit number in the format "AAA-GG-SSSS"
 
-```clojure
-(spec/def ::social-security-id-usa
-  (spec/and string?
-            #(= 11 (count %))))
-```
-
-> #### Hint::SSN specification library
-> [nikortel/ssn](https://github.com/nikortel/ssn) is a library for USA specific social-security number validation and generation via spec
-> Unfortunately the project is not on [clojars](https://clojars.org/), but could be copied into project as a separate namespace.
-
 In the UK the social security number is called the [National Insurance number](https://en.wikipedia.org/wiki/National_Insurance_number) and is of the form QQ123456C
 
 ```clojure
-(spec/def ::social-security-id-uk (spec/or :string string?
-                                           :count #(= 9 (count %))))
+(spec/def ::social-security-id-uk string?)
+(spec/def ::social-security-id-usa string?)
 ```
+
+> #### INFO::Detailed social security numbers would check the different forms
+> Predicate functions can be defined to check for the size of the different social security forms.
+```clojure
+(defn social-security-number-usa? [value] (= 9 (count value)))
+(defn social-security-number-uk? [value] (= 11 (count value)))
+(spec/def ::social-security-id-usa (spec/and string? social-security-number-usa?))
+(spec/def ::social-security-id-uk (spec/and string? social-security-number-uk?))
+```
+> These specifications required a custom generator in order to produce correct data each time.
 
 A general social security specification can now be defined, with one of any of the country specific specifications
 
@@ -66,6 +70,7 @@ A general social security specification can now be defined, with one of any of t
 (spec/def ::social-security-id (spec/or ::social-security-id-uk
                                         ::social-security-id-usa))
 ```
+
 
 ## Composing the customer details specification
 A customer details specification is a hash-map of key value pairs. The keys are the specifications that have just been defined.
@@ -76,73 +81,4 @@ A customer details specification is a hash-map of key value pairs. The keys are 
 (spec/def ::customer-details
   (spec/keys
     :req [::first-name ::last-name ::email-address ::residential-address ::social-security-id]))
-```
-
-## Validating the customer details specifications
-Check an example hash-map from our test conforms to the specification
-
-```clojure
-(spec/conform ::customer-details
-              {:first-name          "Jenny"
-               :last-name           "Jetpack"
-               :email-address       "jenny@jetpack.org"
-               :residential-address "42 meaning of life street"
-               :postal-code         "AB3 0EF"
-               :social-security-id  "123456789"})
-;; => :clojure.spec.alpha/invalid
-```
-
-The mock test data does not confirm to the specification, even though it has all the same keys as the map in the specification
-
-```clojure
-(spec/valid? ::customer-details
-             {:first-name          "Jenny"
-              :last-name           "Jetpack"
-              :email-address       "jenny@jetpack.org"
-              :residential-address "42 meaning of life street"
-              :postal-code         "AB3 0EF"
-              :social-security-id  "123456789"})
-;; => false
-```
-
-`spec/explain` will provide more information to help diagnose the issue
-
-```clojure
-(spec/explain ::customer-details
-              {:first-name          "Jenny"
-               :last-name           "Jetpack"
-               :email-address       "jenny@jetpack.org"
-               :residential-address "42 meaning of life street"
-               :postal-code         "AB3 0EF"
-               :social-security-id  "123456789"})
-
-;; {:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
-;; - failed: (contains? % :practicalli.bank-account-design-journal/first-name) spec: :practicalli.bank-account-design-journal/customer-details
-;; {:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
-;; - failed: (contains? % :practicalli.bank-account-design-journal/last-name) spec: :practicalli.bank-account-design-journal/customer-details
-;; {:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
-;; - failed: (contains? % :practicalli.bank-account-design-journal/email-address) spec: :practicalli.bank-account-design-journal/customer-details
-;; {:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
-;; - failed: (contains? % :practicalli.bank-account-design-journal/residential-address) spec: :practicalli.bank-account-design-journal/customer-details
-;; {:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
-;; - failed: (contains? % :practicalli.bank-account-design-journal/social-security-id) spec: :practicalli.bank-account-design-journal/customer-details
-```
-
-The `::customer-details` spec is given a map with unqualified keys and is failing the `:req` part of the `spec/keys` part of the specification
-
-
-## Qualifying keys with auto-resolve macro
-The auto-resolve macro, `#::` will add the current namespace to all the keys in a hash-map
-
-Change the test data to use qualified keys by adding the
-
-```clojure
-(spec/conform ::customer-details
-              #::{:first-name          "Jenny"
-                  :last-name           "Jetpack"
-                  :email-address       "jenny@jetpack.org"
-                  :residential-address "42 meaning of life street"
-                  :postal-code         "AB3 0EF"
-                  :social-security-id  "123456789"}  )
-;; => #:practicalli.bank-account-design-journal{:first-name "Jenny", :last-name "Jetpack", :email-address "jenny@jetpack.org", :residential-address "42 meaning of life street", :postal-code "AB3 0EF", :social-security-id "123456789"}
 ```
