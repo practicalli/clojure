@@ -265,6 +265,7 @@
                 <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
                 * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
                 * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
+                * [Spec: Customer details](clojure-spec/projects/bank-account/validate-customer-details-specification.md)
                 * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
                 * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
                 * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
