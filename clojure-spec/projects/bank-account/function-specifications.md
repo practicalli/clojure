@@ -16,8 +16,20 @@ Using regular expressions we can find the right arguments to give to the specifi
 
 The register-account-holder only takes one argument, so `spec/cat` is used to bind a local key to the specification.
 
+The function is defined in the `practicalli.banking-on-clojure` namespace.  Require that namespace in the current `ns` form.
+
 ```clojure
-(spec/fdef register-account-holder
+(ns practicalli.banking-specifications
+  (:require [clojure.spec.alpha :as spec]
+            [clojure.spec.gen.alpha :as spec-gen]
+            [clojure.spec.test.alpha :as spec-test]
+
+            [practicalli.banking-on-clojure :as SUT]))
+```
+The `SUT` alias is used for the banking-on-clojure namespace, as is done with `clojure.test` unit test namespaces.
+
+```clojure
+(spec/fdef SUT/register-account-holder
   :args (spec/cat :customer
                   :practicalli.bank-account-spec/customer-details))
 ```
@@ -40,9 +52,10 @@ Require the spect test library
 `spec/instrument` will add a run time check for the specification
 
 ```clojure
-(spec-test/instrument `register-account-holder)
+(spec-test/instrument `SUT/register-account-holder)
 ```
 
+No the function is instrumented, data used as arguments of a function call will be checked against the specification.
 
 ```clojure
 (register-account-holder {::bad "data"})
@@ -158,7 +171,7 @@ It still works as `spec-test/instrument` only checks the args value.
 ```
 
 ```clojure
-(spec-test/check `register-account-holder)
+(spec-test/check `SUT/register-account-holder)
 ```
 
 The result is 100 generated tests that all fail, because the function was changed to return integers, not uuids
