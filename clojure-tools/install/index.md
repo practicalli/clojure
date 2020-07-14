@@ -1,9 +1,8 @@
 # Install Clojure Tools
 Clojure CLI tools provide a simple and configurable way to:
 
-* Evaluate Clojure expressions
 * Run Clojure programs
-* Run an interactive REPL (Read-Eval-Print Loop)
+* Run an interactive REPL (Read-Eval-Print Loop) and evaluate Clojure expressions
 * Managing dependencies (via tools.deps) from Maven and Git repositories
 
 Using community tools on top of Clojure tools can provides the essential features to create, develop, build and deploy Clojure applications and services

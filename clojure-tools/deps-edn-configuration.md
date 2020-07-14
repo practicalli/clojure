@@ -11,8 +11,6 @@ Configuration is defined using a hash-map with top-level keys:
 
 > #### Hint::practicalli/clojure-deps-edn adds common aliases and tools
 > [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) provides aliases for a wide range of tools to support Clojure software development.
->
-> Tools are provided via libraries and are only downloaded on first use or if versions of libraries are updated.
 
 
 ## Scope of configuration files

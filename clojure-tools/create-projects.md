@@ -33,7 +33,7 @@ clj -A:rebel
 
 A repl prompt should appear.
 
-[Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
+![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
 
 Type code expressions at the repl prompt and press RETURN to evaluate them.
 

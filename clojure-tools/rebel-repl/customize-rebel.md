@@ -1,10 +1,5 @@
-# Configure Rebel Readline
-
-
-## Configure rebel readline
-
-In `~/.clojure/rebel_readline.edn` you can provide a map with the
-following options:
+# Customize Rebel Readline
+In `~/.clojure/rebel_readline.edn` you can provide a map with the following options:
 
 ```
 :key-map         - either :viins or :emacs. Defaults to :emacs

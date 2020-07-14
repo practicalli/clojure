@@ -27,27 +27,26 @@
     * [Install Java](clojure-tools/install/install-java.md)
     * [Install Clojure](clojure-tools/install/install-clojure.md)
     * [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
-        * [Evaluate an expression](clojure-tools/evaluate-an-expression.md)
-        * [Files and scripts](clojure-tools/files-and-scripts.md)
-        * [Configuration files](clojure-tools/configuration-files.md)
-        * [aliases](clojure-tools/aliases.md)
+        * [rebel REPL](clojure-tools/rebel-repl/index.md)
+            * [Coding in the REPL](clojure-tools/rebel-repl/coding-in-the-repl.md)
+            * [Help at the REPL](clojure-tools/rebel-repl/help-at-the-repl.md)
+            * [Customize rebel](clojure-tools/rebel-repl/customize-rebel.md)
+            <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
+        * [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
+        * [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
+        * [Create projects](clojure-tools/create-projects.md)
+            <!-- Introduce Clojure examples that work well in the command line REPL -->
+            <!-- Run a repl in an example project, require, in-ns, run -->
+            <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
+            * [Add Libraries](clojure-tools/add-libraries.md)
+            * [Namespaces](clojure-tools/namespace.md)
+            * [Using projects in REPL](clojure-tools/projects/using-projects.md)
+                <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
+        * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
+         <!-- * [Design Journal](clojure-tools/design-journal.md) -->
         * [Clojure Inspector](clojure-tools/clojure-inspector.md)
         * [REBL data browser](clojure-tools/rebl-data-browser.md)
-        * [rebel REPL](clojure-tools/rebel-repl/index.md)
-            * [Configure rebel](clojure-tools/rebel-repl/configure-rebel.md)
-            * [Basic REPL](clojure-tools/basic-repl.md)
-            <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
-            * [Coding in the REPL](clojure-tools/coding-in-the-repl.md)
-    * [Create projects](clojure-tools/create-projects.md)
-        <!-- Introduce Clojure examples that work well in the command line REPL -->
-        <!-- Run a repl in an example project, require, in-ns, run -->
-        <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-        * [Add Libraries](clojure-tools/add-libraries.md)
-        * [Namespaces](clojure-tools/namespace.md)
-            <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
-    * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
 
-        <!-- * [Design Journal](clojure-tools/design-journal.md) -->
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
@@ -330,6 +329,9 @@
         * [uuid](reference/tagged-literals/uuid.md)
 
     * [alternative tools](alternative-tools/index.md)
+        * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
+        * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
+        * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
         * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
         * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
 

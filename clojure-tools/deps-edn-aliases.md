@@ -64,9 +64,9 @@ The main namespace is set to that library and the `-main` function is called whe
 ```
 
 
-
-> You can use and legal Clojure keyword name for an alias and include multiple aliases with the `clojure` command.  For example in this command we are combining three aliases:
-> `clojure -A:my-task:my-build:my-prefs`
+> #### Hint::
+> Any legal Clojure keyword name can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
+> `clojure -A:task-path:task-deps:build-options`
 
 
 <!-- TODO content to add -->
