@@ -273,6 +273,9 @@
 
     * [Integration Testing](testing/integration-testing/index.md)
         * [Circle CI](testing/integration-testing/circle-ci/index.md)
+            * [Random Clojure Function](testing/integration-testing/circle-ci/random-clojure-function.md)
+            * [Status Monitor](testing/integration-testing/circle-ci/status-monitor.md)
+            * [Circle CI sample project](testing/integration-testing/circle-ci/circle-ci-sample-project.md)
     <!-- * [Performance Testing](testing/performance-testing/index.md) -->
     <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
 
