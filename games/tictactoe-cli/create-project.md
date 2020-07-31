@@ -1,8 +1,34 @@
-# Create a Leiningen project
+# Create a Clojure project
+> #### TODO::work in progress, sorry
 
 Create a project for our game.
 
-We are not using any particular libraries, so the default Leiningen template is just fine for our project.
+{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+
+{% content "deps" %}
+Create a new project using `clj-new` alias, found in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+
+```shell
+clojure -A:new practicalli/tictactoe-cli
+```
+
+Open the project in [a Clojure aware editor](/clojure-editors/) or run a rebel REPL
+
+```shell
+clojure -A:rebel
+```
+
+Once the rebel REPL is running, load the project and change to the main namespace
+
+```clojure
+(require 'practicalli/tictactoe-cli)
+
+(in-ns 'practicalli/tictactoe-cli)
+```
+
+
+{% content "lein" %}
+The default Leiningen template is suitable fine for the project as no additional libraries are used.
 
 ```
 lein new tictactoe-cli
@@ -29,7 +55,4 @@ In the `project.clj` file I have updated Clojure to version 1.10.0 and changed t
 
 I also removed the `license` file and added a brief description of the project to the `README.md` file
 
----
-
-> #### TODO::Add Clojure CLI project configuration
-> Add the relevant configuration to run this project from the Clojure CLI tools as well as Leiningen, to make it more future proof and give readers more options on how to run the project.
+{% endtabs %}
