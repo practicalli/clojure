@@ -25,7 +25,7 @@ Cognitect test runner is the defacto tool Clojure deps projects on the command l
 Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.  Kaocha takes a little bit more effort to learn due to the additional features it provides.
 
 > #### Hint::deps.edn aliases for test runners
-> Aliases for these test runners are provided the [practicalli/clojure-deps.edn]({{ P9IClojureDepsEdn }}) configuration.
+> Aliases for these test runners are provided the [practicalli/clojure-deps.edn]({{ book.P9IClojureDepsEdn }}) configuration.
 
 
 ## Other test runners

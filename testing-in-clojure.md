@@ -1,5 +1,6 @@
 My recommended Clojure testing setup
 
+[kaocha test runner](https://github.com/lambdaisland/kaocha) in [watch mode](https://cljdoc.org/d/lambdaisland/kaocha/1.0.629/doc/7-watch-mode)
 
 Occasionally, either on Stack Overflow or in the Clojurians Slack group, someone will ask what tools they should use to test Clojure code. Below is what I would currently recommend. I’ve come to this recommendation through observing teams using a variety of testing tools and through my own use them.
 
@@ -38,4 +39,3 @@ Quick feedback lets you make changes faster. If you’re going to write tests, a
 
 
 > I use test-refresh every day. Frankly I'm not sure how one can program effectively without it. I especially like being able to control the notifications
-
