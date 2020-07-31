@@ -1,15 +1,15 @@
 # Clojure Quick Reference
-The basic Clojure syntax and a few common functions you should probably learn first.  The examples are editable (using an embedded REPL) so feel free to experiment and watch as the return value changes as you change the code.
+The basic Clojure syntax and a few common functions you should probably learn first.
 
-Reload the page if you want to reset all the code back to the starting point.
+The examples are editable (using an embedded REPL) so feel free to experiment and watch as the return value changes as you change the code.  Reload the page if you want to reset all the code back to the starting point.
 
+[Install Clojure](/clojure-tools/install/) on your computer if you want to experiment even further.
 
 <!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
 <pre class="hidden">
   <code class="lang-eval-clojure" data-preamble="(require '[reagent.core :as r])">
   </code>
 </pre>
-
 
 
 ## Calling functions
@@ -46,20 +46,6 @@ Functions contain doc-strings describing what that function does. The `doc` func
 (doc doc)
 ```
 
-## Strongly typed under the covers
-Clojure is a dynamically typed language so types do not need to be explicitly defined, although type hints can be added for performance where required.
-
-Clojure is strongly typed and everything is a type underneath, relative to the host platform (Clojure uses Java types, ClojureScript uses JavaScript types).  The type of anything in Clojure can be returned using the `type` function.
-
-```eval-clojure
-(type 42)
-;; (type {:hash "data" :map "more data"})
-```
-```eval-clojure
-(type {:hash "data" :map "more data"})
-```
-
-
 ## Modeling data with Collection types
 Clojure has 4 main collection types, all immutable (cannot change once created) and can contain any Clojure types.
 
@@ -86,16 +72,15 @@ Names can be bound to any values, from simple values like numbers, collections o
 evaluating a name will return the value it is bound to.
 ```eval-clojure
 (def public-health-data
-  ({:date "2020-01-01" :confirmed-cases 23014 :recovery-percent 15}
-   {:date "2020-01-02" :confirmed-cases 23014 :recovery-percent 15}
-   {:date "2020-01-03" :confirmed-cases 23014 :recovery-percent 15}))
+  [{:date "2020-01-01" :confirmed-cases 23814 :recovery-percent 15}
+   {:date "2020-01-02" :confirmed-cases 24329 :recovery-percent 14}
+   {:date "2020-01-03" :confirmed-cases 25057 :recovery-percent 12}])
 
 public-health-data
 ```
 
 > #### Hint::def for shared values, let for locally scoped values
 > `let` function is used to bind names to values locally, such as within a function definition.  Names bound with `def` have namespace scope so can be used with any code in that namespace.
-
 
 
 # Using data structures
@@ -111,7 +96,6 @@ The above `map` function is roughly equivalent to the following expression
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
 The `conj` function creates a new collection by combining a collecion and one or more values.
-
 
 `map` `reduce` `filter` are common functions for iterating through a collection / sequence of values
 
@@ -172,23 +156,12 @@ In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 ()
 ```
 
-<!-- Klipse not rendering reagent code -->
-<!-- JavaScript libraries can be used with ClojureScript, such as React.js -->
+> #### Hint::Java libraries in Clojure
+> [java.lang library](https://docs.oracle.com/javase/8/docs/api/java/lang/compact2-package-summary.html) is available in Clojure by default and many other Java methods can be included by using their full name, e.g. `(java.lang.Date.)` will return the current date.
 
-<!-- ```reagent -->
-<!-- (defn concentric-circles [] -->
-<!--   [:svg {:style {:border "1px solid" -->
-<!--                  :background "white" -->
-<!--                  :width "150px" -->
-<!--                  :height "150px"}} -->
-<!--    [:circle {:r 50, :cx 75, :cy 75, :fill "green"}] -->
-<!--    [:circle {:r 25, :cx 75, :cy 75, :fill "blue"}] -->
-<!--    [:path {:stroke-width 12 -->
-<!--            :stroke "white" -->
-<!--            :fill "none" -->
-<!--            :d "M 30,40 C 100,40 50,110 120,110"}]]) -->
-<!-- ``` -->
 
+## Next steps
+[Install Clojure](/clojure-tools/install/) on your computer if you want to experiment even further or keep on reading more about Clojure.
 
 
 <!-- ## Recursion -->
@@ -206,3 +179,22 @@ In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 
 <!-- * TODO: loop-recur -->
 <!-- * TODO: reduce and reducing function -->
+
+
+
+
+
+<!-- ## Strongly typed under the covers -->
+<!-- Many programming languages use 'types' to define the shape of data in a program.  The right type of information is sometimes important for a program to work correctly. -->
+
+<!-- Clojure is a [dynamically typed language](https://en.wikipedia.org/wiki/Type_system#Dynamic_typing) so types are automatically inferred and do not need to be explicitly written in the code.  This helps make Clojure code easier to read. -->
+
+<!-- Clojure is [a strongly typed language](https://en.wikipedia.org/wiki/Strong_and_weak_typing) so everything is a type underneath, relative to the host platform (Clojure uses Java types, ClojureScript uses JavaScript types).  The type of anything in Clojure can be returned using the `type` function. -->
+
+<!-- ```eval-clojure -->
+<!-- (type 42) -->
+<!-- ``` -->
+
+<!-- ```eval-clojure -->
+<!-- (type {:hash "data" :map "more data"}) -->
+<!-- ``` -->
