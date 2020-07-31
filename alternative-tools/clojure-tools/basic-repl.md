@@ -8,7 +8,7 @@ Use `clj` when you want to run a repl (or preferably use [rebel readline](rebel-
 > #### Hint::rebel readline feature rich repl
 > [rebel readline](rebel-readline/) is a command line REPL UI that provides interactive help, function autocomplete, signature prompts and many other features to provide a very rich REPL experience.
 >
-> [practicalli/clojure-deps-edn]({{ P9IClojureDepsEdn }}) includes the `-A:rebel` alias to run rebel readline REPL.
+> [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) includes the `-A:rebel` alias to run rebel readline REPL.
 
 
 `clojure` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
