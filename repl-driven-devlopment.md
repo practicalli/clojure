@@ -3,6 +3,8 @@ REPL driven development is the foundation of working with Clojure.
 
 The REPL is an instant feedback workflow that continually runs your code without the need of a separate compile-build-run cycle. The REPL contains your live application to which you interact with by calling(evaluating) code.
 
+![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-rebel-readline.png)
+
 > #### Hint::Always run a REPL
 > Coding with a REPL provides fast feedback as design decisions are encoded, giving every opportunity to testing assumptions driving those design choices.
 
@@ -19,8 +21,7 @@ The REPL is an instant feedback workflow that continually runs your code without
 ## Evaluating source code
 A REPL is typically used from an editor with files that compose the project code base.  A Clojure aware editor can evaluate code from the source code files to and display the results inline.
 
-> #### TODO:: VSCode / Spacemacs examples
-> Evaluate the current form and show the result. Showing results as comments is a great way to demonstrate the design of your code, especially in a journal.
+![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
 
 ## Design Journal
@@ -43,7 +44,7 @@ Use Pretty Print to view data structures that are the result of evaluating your 
 
 Data inspectors (cider-inspect, [REBL](https://github.com/cognitect-labs/REBL-distro)) provide effective ways to navigate through a nested data structures and large data sets.
 
-> #### TODO::View large data sets screenshot/video
+![Clojure - viewing large data sets](/images/spacemace-clojure-inspect-java-lang-persistentvector.png)
 
 
 ## Code Style and idiomatic Clojure
@@ -58,28 +59,32 @@ Continuous linting with [clj-kondo](https://github.com/borkdude/clj-kondo)  sign
 
 
 ## Test Driven Development and REPL Driven Development
-Test Driven Development and REPL Driven Development work very well together.  There is a very natural merging of these approaches as they both encourage incremental changes and continuous feedback.
+Test Driven Development (TDD) and REPL Driven Development (RDD) complement each other as they both encourage incremental changes and continuous feedback.
 
-RDD is very useful for spikes and exploring different design approaches and tests focus the results of those experiments to guide delivery of the correct outcomes.
+RDD supports rapid design as different approaches can easily be explored and evaluated.   and tests focus the results of those experiments to guide delivery of the correct outcomes.
 
-Test Driven Development also works well with Hammock Time, as you should spend more time thinking about what you want to do than typing in code.  Tests provide an easy way to define and test your assumptions of your well considered design
+Tests provide an simple tool to define and test your assumptions from the evolving design and give you feedback when changes break that design.
 
-With the power of the REPL, it is easy to get feedback on exactly how your code works.  Tests provide the codification of your evolving design and give you feedback when you break that design.
+[Unit tests](/testing/unit-testing/) should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize that as an after thought.
 
-At some point before production you should have unit tests around the public API of each namespace in your project to catch regressions before committed.  It is much more efficient in terms of thinking time to create these tests as you stabilise the design that as an after thought.  So it makes sense to write these tests as part of the design process.
+`clojure.test` library is part of the Clojure standard library that provides a simple way to start writing unit tests.
 
-> #### Hint::Automate local test runner
-> Set up an automated test runner that will run on each file save
->
-> [kaocha test runner](https://github.com/lambdaisland/kaocha) in [watch mode](https://cljdoc.org/d/lambdaisland/kaocha/1.0.629/doc/7-watch-mode)
+Clojure has a number of [test runners](/testing/test-runners/) available.
 
 
 ## Continuous Integration and Deployment
-Wire up a continuous integration server that runs tests and builds code on every shared commit (or every commit if you run a CI server locally).
+Wire up a [continuous integration service](/testing/integration-testing/) that runs tests and builds code on every shared commit (or every commit if you run a CI server locally).
 
-Spin up testable deployments of your application or service based on pre-defined branch commits or every commit if you do not share branches (i.e. push to shared master or develop branch). .
+[CircleCI](/testing/integration-testing/circle-ci/) provides a simple to use service that supports Clojure projects.
 
-> #### Hint::Tools
+[Defining a deployment pipeline](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-pipeline.html) provides an efficient way to deploy applications and also get fast feedback from a wider range of stakeholders and users, especially when spin up testable deployments of your application based on commits  (i.e. push to shared develop or feature branch).
+
+Ideally the [deployment should run via continuous integration service](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-via-ci.html) to ensure all tests pass before deployment.
+
+![Git, CircleCI and Heroku continuous integration and deployment](https://practicalli.github.io/clojure-webapps/images/circleci-workflow-sequential-git-heroku.png)
+
+
+> #### Hint::Tools that support Clojure development
 > * [Circle CI](https://circleci.com/)
 > * [GitHub Actions](https://github.com/features/actions)
 > * [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci)
