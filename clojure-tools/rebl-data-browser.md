@@ -6,6 +6,11 @@ REBL is a interactive tool for browsing Clojure data, initially created for Dato
 > #### WARNING::Free for non-commercial use
 > Commercial use requires an active Datomic customer or subscriber to the [REBL patreon](https://www.patreon.com/cognitect)
 
+{% youtube %}
+https://www.youtube.com/watch?v=c52QhiXsmyI
+{% endyoutube %}
+
+
 ## Install REBL
 REBL is only available as a [direct download from rebel.cognitect.com](http://rebl.cognitect.com/download.html).  Download the .zip file and extract to a preferred location.
 
@@ -38,11 +43,13 @@ clj -R:cognitect-rebl-java11 -m cognitect.rebl
 ```
 
 
-<!-- Or include rebel.readline as part of the REBL command -->
-<!-- This approach does not link rebel readline repl with the REBL browswer -->
+## Running REBL with rebel readline
+Use rebel REPL UI with REBL for an enhanced REPL experience.
 
-<!-- ```shell -->
-<!-- clojure -R:rebl -A:rebel -m cognitect.rebl -->
-<!-- ``` -->
+```shell
+clojure -R:rebl -A:rebel -m cognitect.rebl
+```
+
+
 
 <!-- REBL is the main namespace.  Once the REPL starts, `require` the main namespace of the project and change to that namespace with `in-ns` -->

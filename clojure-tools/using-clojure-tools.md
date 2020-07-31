@@ -1,11 +1,9 @@
 # Using Clojure tools
 The `clojure` command provided by Clojure tools can be used to evaluate code, run Clojure applications and start a command line REPL.
 
-
 * [rebel REPL UI](rebel-repl/) a fully featured Clojure command line REPL user interface
 * [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
 * [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
-
 
 Clojure CLI tools can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluating-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
 
@@ -14,6 +12,8 @@ Clojure CLI tools can also be used for [evaluating an expressions](/alternative-
 Clojure code is developed using a [clojure aware editor](/clojure-editors/) which uses the `clojure` command to start a REPL session, so code can be written and evaluated from the editor.  Editors also provide features including structured editing, autocompletion, linting and running unit tests.
 
 The editor connects to the REPL (via nREPL or SocketREPL) which evaluates any code expressions sent to the REPL and returns the results instantly in the editor.
+
+![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
 <!-- Not sure this is the right place for these, but cant find anywhere better yet -->
 ## Other tools

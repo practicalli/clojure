@@ -6,10 +6,10 @@ Establish a Clojure environment by installing the following:
 | Clojure CLI tools     | Essential   | Run Clojure REPL for development and production            |
 | Aliases for CLI tools | Recommended | Additional tools to enhance Clojure development experience |
 | clj-kondo             | Recommended | Static analysis of code to find all those little bugs      |
-| rlwrap                | Optional    | A simple read line for command history, used by `clj`      |
+| rlwrap                | Optional    | A simple read line for command history, only used by `clj` |
 
-> #### Hint::clj-kondo provides a permanent paring buddy
-> [Configuring clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) will greatly enhance the joy of coding in Clojure by keeping your code idiomatic and free from a wide range of syntax bugs.
+> #### Hint::Aliases provided by practicalli/clojure-deps-edn
+> [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
 
 
 ## Clojure CLI tools
@@ -31,18 +31,19 @@ chmod +x linux-install-1.10.1.536.sh
 sudo ./linux-install-1.10.1.536.sh
 ```
 
-The installation creates `/usr/local/bin/clj`, `/usr/local/bin/clojure`, and `/usr/local/lib/clojure`
+The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
 <!-- Homebrew (MacOSX) install -->
 {% content "homebrew" %}
-
-Use [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
 
 Install the command line tools with brew from the clojure/tools tap:
 
 ```shell
 brew install clojure/tools/clojure
 ```
+
+Use [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
+
 
 <!-- Windows install with scoop.sh -->
 {% content "windows" %}
@@ -73,25 +74,27 @@ scoop install clj-kondo
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
 
-## Install Clojure CLI tools - common aliases
+## Clojure CLI tools common aliases
 Create a fork of the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) on GitHub
 
-Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development
+Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development across all projects.
 
 ```shell
-git clone git@github.com:your-fork/clojure-deps-edn.git
+git clone git@github.com:your-fork/clojure-deps-edn.git ~/.clojure/
 ```
 
-All tools are provided via libraries and are only installed on first used.
+All tools are provided via libraries and are only installed on first use.
 
-If you choose not to use the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) repository or wish to use your own `~/.clojure/deps.edn` then you should add an alias for the `clj-new` tool for creating projects as this is extensively used in this guide.
+If you choose to use your own `~/.clojure/deps.edn` then add an alias for the clj-new tool and rebel readline as this is extensively used in this guide.
 
 
-## Install clj-kondo static analyser
+## clj-kondo static analyser / linter
 [clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) performs static analysis on Clojure, ClojureScript and EDN, without the need of a running REPL. It informs you about potential errors while you are typing when used with [supported editors](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md).
 
 Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) for your operating system.
 
+> #### Hint::clj-kondo provides a paring buddy
+> [Configuring clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) will greatly enhance the joy of coding in Clojure by keeping your code idiomatic and free from a wide range of syntax bugs.
 
 
 ## Optional: rlwrap readline

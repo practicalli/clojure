@@ -21,7 +21,7 @@ Create a `dev/user.clj` file with a namespace called `user`.
 (ns user)
 ```
 
-[practicalli/clojure-deps-edn]({{ P9IClojureDepsEdn }}) includes a `:dev` alias which adds the `dev` directory to the project classpath.
+[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) includes a `:dev` alias which adds the `dev` directory to the project classpath.
   Alternatively, edit the `deps.edn` file and add the following code:
 
 ```clojure

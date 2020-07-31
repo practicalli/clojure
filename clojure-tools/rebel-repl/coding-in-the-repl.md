@@ -1,52 +1,56 @@
 # Coding in the REPL
-
-
-> #### Hint::Use an Editor for Clojure Development
-> Using an editor (or ide) is a more effective way to develop projects, although having a command line REPL is very fast and convienient way to experiment and discover Clojure.
-
+Starting a REPL is a fast way to start experimenting with Clojure.  Clojure code can be typed into the REPL directly and the result instantly returned.  Code can also be evaluated from a file, allowing
 
 ## Evaluating code
-Type Clojure code at the REPL prompt, not forgetting to ensure your parens are balanced.  Press `Enter` to evaluate the code and see the result.  The REPL evaluates one expression at a time, although it remembers all expressions that correctly evaluate.  This enables your own function definitons to be called, until you end the REPL session.
+Type Clojure code at the REPL prompt, e.g `(map inc [1 2 3 4 5])`.  Press `Enter` to evaluate the code and see the result.
 
 ![Clojure REPL clj evaluate map function](/images/clojure-repl-clj-eval-map-function.png)
 
-Up / down arrow keys navigate the REPL history, providing an efficient way to evaluate the same or similar code many times.
+{{ book.KeyUpArrow }} and {{ book.KeyDownArrow }} navigate the REPL history, providing an efficient way to evaluate the same code many times, ore .
 
 
 ## Including code from a file
-Clojure can be saved in files and loaded into the REPL
+Clojure code is usually saved in files and each file has a namespace definition that matches the file path, using the `ns` function. The file `src/practicalli/application.clj` has the namespace `practicalli.application`
+
 ```clojure
-(load-file "src/practicalli/core.clj")
+(ns practicalli.application)
 ```
 
-Once the file is loaded, the code it contains can be used by requiring the namespace that contains the code.  The namespace is the path to the file from under the `src` directory.  So the file `src/practicalli.core.clj` has the namespace `practicalli.core`
+Requiring the namespace of a file will evaluate the code from that file in the REPL.
+
 ```clojure
-(require 'practicalli.core)
+(require 'practicalli.application)
 ```
 
-Now the functions are available using their fully qualified names.  Assuming the namespace contains a function called `main`, that function can be called using `(practicalli.core/main)`.
+Functions from the file can be called using their fully qualified names.  Assuming the namespace contains a function called `main`, that function can be called using `(practicalli.application/main)`.
 
-If the default `user` namespace is change to `practicalli.core` then functions in that namespace can be called by just the function name, eg. `(main)`.
+
+## Changing namespaces
+If the default `user` namespace is change to `practicalli.application` then functions in that namespace can be called by just the function name, eg. `(main)`.
 
 `in-ns` will change change the current namespace to the one specified as an argument.
 ```clojure
-(in-ns 'practicalli.core)
+(in-ns 'practicalli.application)
 ```
 
 Now the `(main)` function can be called without having to include the full namespace name.
 
-The `:reload` option to `require` will load in any changes to a namespace that happened outside of the REPL, eg. change in the source code file.
-* reloading a namespace
+## Reloading code changes from a file
+The `:reload` option to `require` will load in any changes to a namespace that happened outside of the REPL, eg. using an editor to change the source code in the file.
+
 ```clojure
-(require 'namespace.name :reload)
+(require 'practicalli.application :reload)
 ```
 
+When using an editor that is not connected to the Clojure REPL, then reloading is an effective way of updating the code with all the changes saved in the file.
 
 > #### Hint::Workflow regardless of tooling
-> An editor is typically used rather than the command line repl, however, the above workflow is still the same.
+> An [editor connected a a Clojure REPL](/clojure-editors/) is typically used rather than typing into the command line REPL directly.  Regardless of tooling though, the above workflow is still the same.
 
 
 ## Clojure projects
-A REPL can start even without a Clojure project.
+A REPL can start without creating a Clojure project, however, libraries of code are easily added when a project is created.
 
-When a REPL starts from a Clojure project, the `deps.edn` configuration file is added to or over-rides the `~/.clojure/deps.edn` configuration for that project.
+[Clojure Tools - create projects](/create-projects.html) covers how to create projects.
+
+Or jump to [simple projects](/simple-projects) to start writing example applications.

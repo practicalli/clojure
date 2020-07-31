@@ -7,10 +7,10 @@ Aliases can be used to add:
 
 Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
 
-> #### Hint::practicalli/clojure-deps-edn adds common aliases and tools
-> Create a fork of the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) on GitHub. Clone that fork to instantly have access to dozens of tools for Clojure software development.
+> #### Hint::practicalli/clojure-deps-edn adds common aliases and tools for all projects
+> A configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
 >
-> All tools are provided via libraries and are only downloaded on first use or if versions of libraries are updated.
+> Recommend forking [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) and clone that fork to `~/.clojure/` to instantly have access to over 30 tools for Clojure software development. All tools are provided via libraries so are only downloaded on first use, or if versions of libraries are updated.
 
 
 ## Using an alias
@@ -24,6 +24,8 @@ clojure -A:test:test-runner
 ```
 
 > #### Hint::Only one main namespace
+> Use the `-R` option to included alias dependencies but not call a main namespace defined in that alias, e.g. `clojure -R:nrepl:cider-nrepl:cognitect-rebl-java11 -A:nrebl`.
+>
 > If multiple aliases set a main namespace, the first alias to do so will be used to start the `-main` function.  If that first alias never terminates or terminates the `clojure` command, then further `-main` functions from set main namespaces will not be run.
 
 

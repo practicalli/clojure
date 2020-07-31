@@ -4,7 +4,7 @@ Creating Clojure projects save code as you are learning or developing applicatio
 Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and `clj-new` to create projects.
 
 > #### Hint::Install `clj-new` and other aliases
-> Follow the [install clojure guide](/getting-started/install-clojure.md) to install all the alias used in this guide
+> Follow the [Clojure install guide](install/install-clojure.md) to install all the alias used in this guide
 
 
 ## Create a project with `clj-new` and the app template
@@ -28,8 +28,8 @@ cd playground
 clj -A:rebel
 ```
 
-> #### Hint::Install `rebel` and other aliases
-> Follow the [install clojure guide](/getting-started/install-clojure.md) to install all the alias used in this guide
+> #### Hint::Install Clojure CLI aliases
+> Follow the [Clojure install guide](install/install-clojure.md) to install all the alias used in this guide
 
 A repl prompt should appear.
 
@@ -42,7 +42,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 ```
 
 > ####NOTE::Try the project with your preferred editor
-> Go to the [Editor user guides](editor-guides/)
+> Using a [Clojure aware editor](/clojure-editors/editor-user-guides/), open the playground project and run the REPL.  Then write code expressions in the editor and evaluate them to see the result instantly.
 
 
 ## Other templates
@@ -58,4 +58,4 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 * [Leiningen projects](https://clojars.org/search?q=artifact-id:lein-template)
 * [Boot projects](https://clojars.org/search?q=artifact-id:boot-template).
 
-`clj-deps` does not change Leiningen or Boot templates into deps.edn projects.  If a deps.edn file is not part of the project it should be manually created.
+`clj-deps` does not change Leiningen or Boot templates into deps.edn projects.  If a `deps.edn` file is not part of the project it can be manually created.
