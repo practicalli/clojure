@@ -13,17 +13,18 @@
         "epub": "styles/epub.css"
     },
     "plugins": [
-        "toggle-chapters",
+        "callouts",
         "codeblock-disable-glossary",
         "disqus",
-        "gist",
         "ga",
-        "toolbar",
-        "callouts",
+        "gist",
+        "heading-anchors",
+        "klipse",
         "sectionx",
         "simpletabs",
+        "toggle-chapters",
+        "toolbar",
         "youtube",
-        "klipse",
         "wide-page"
     ],
     "pluginsConfig": {
@@ -33,6 +34,11 @@
                 "alert": "warning",
                 "picto": "fa-star"
             }
+        },
+        "anchors" : {
+            "options" : {
+                "icon" : "$",
+                "placement" : "left"}
         },
         "sectionx": {
             "tag": "b"
@@ -61,14 +67,12 @@
     },
     "links": {
         "sidebar": {
-            "Clojure.org": "https://clojure.org/",
-            "Replete REPL": "https://repl.replete-web.io/",
-            "re-find": "https://borkdude.github.io/re-find.web/",
-            "deps.edn aliases": "https://github.com/practicalli/clojure-deps-edn"
+            "Practicalli": "https://practicalli.github.io/"
         }
     },
     "variables": {
         "website": "https://practical.github.io/clojure",
+        "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
         "P9IFourClojure": "https://practical.github.io/clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
