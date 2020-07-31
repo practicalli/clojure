@@ -3,8 +3,13 @@ A simple application that returns a random function from the `clojure.core` name
 
 There are 659 functions in `clojure.core` namespace and 955 in the standard library (as of June 2020).  These functions are learned over time as experience is gained with Clojure.
 
-> #### Hint::Practicalli Live Coding Video walkthrough
-> A [Live coding video walkthrough of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
+
+## Live Coding Video walkthrough
+A [Live coding video walkthrough of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
+
+{% youtube %}
+https://youtu.be/sXZKrD4cAFk
+{% endyoutube %}
 
 
 ## Create a project
