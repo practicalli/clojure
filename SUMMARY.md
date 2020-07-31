@@ -2,15 +2,11 @@
 
 * [Introduction](introduction.md)
     * [First taste of Clojure](first-taste-of-clojure.md)
-        <!-- * [reagent examples](reagent-examples.md) -->
-    <!-- replace repl.it with klipse - repl.it loads very slowly -->
-    <!-- * [Quick start](quickstart/index.md) -->
-    <!-- * [Quick reference](quickstart/quick-reference.md) -->
+        * [Creative coding](graphics-with-clojure.md)
     <!-- * [Virtual Study Guide](study-guide.md) -->
     * [REPL driven development](repl-driven-devlopment.md)
     * [Clojure concepts](concepts/index.md)
         * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
-        * [Clojure Big Ideas](concepts/ten-big-ideas.md)
         * [Clojure from the Author](concepts/clojure-made-simple.md)
         <!-- * [Learning Clojure](concepts/learning-clojure.md) -->
         <!-- * [When to use Clojure](concepts/purpose.md) -->
@@ -23,29 +19,29 @@
     * [Contributing](contributing.md)
 
 ## Getting Started
-* [Clojure tools](clojure-tools/install/index.md)
+* [Install Clojure tools](clojure-tools/install/index.md)
     * [Install Java](clojure-tools/install/install-java.md)
     * [Install Clojure](clojure-tools/install/install-clojure.md)
-    * [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
-        * [rebel REPL](clojure-tools/rebel-repl/index.md)
-            * [Coding in the REPL](clojure-tools/rebel-repl/coding-in-the-repl.md)
-            * [Help at the REPL](clojure-tools/rebel-repl/help-at-the-repl.md)
-            * [Customize rebel](clojure-tools/rebel-repl/customize-rebel.md)
-            <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
-        * [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
-        * [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
-        * [Create projects](clojure-tools/create-projects.md)
-            <!-- Introduce Clojure examples that work well in the command line REPL -->
-            <!-- Run a repl in an example project, require, in-ns, run -->
-            <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-            * [Add Libraries](clojure-tools/add-libraries.md)
-            * [Namespaces](clojure-tools/namespace.md)
-            * [Using projects in REPL](clojure-tools/projects/using-projects.md)
-                <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
-        * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
-         <!-- * [Design Journal](clojure-tools/design-journal.md) -->
-        * [Clojure Inspector](clojure-tools/clojure-inspector.md)
-        * [REBL data browser](clojure-tools/rebl-data-browser.md)
+* [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
+    * [rebel REPL](clojure-tools/rebel-repl/index.md)
+        * [Coding in the REPL](clojure-tools/rebel-repl/coding-in-the-repl.md)
+        * [Help at the REPL](clojure-tools/rebel-repl/help-at-the-repl.md)
+        * [Customize rebel](clojure-tools/rebel-repl/customize-rebel.md)
+        <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
+    * [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
+    * [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
+    * [Create projects](clojure-tools/create-projects.md)
+        <!-- Introduce Clojure examples that work well in the command line REPL -->
+        <!-- Run a repl in an example project, require, in-ns, run -->
+        <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
+        * [Add Libraries](clojure-tools/add-libraries.md)
+        * [Namespaces](clojure-tools/namespace.md)
+        * [Using projects in REPL](clojure-tools/projects/using-projects.md)
+            <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
+    * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
+     <!-- * [Design Journal](clojure-tools/design-journal.md) -->
+    * [Clojure Inspector](clojure-tools/clojure-inspector.md)
+    * [REBL data browser](clojure-tools/rebl-data-browser.md)
 
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
@@ -61,7 +57,174 @@
         * [VSCode Calva](clojure-editors/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
 
-## Clojure Standard Library
+## Developing Clojure
+<!-- Convert to deps.edn -->
+* [Simple projects](simple-projects/index.md)
+    <!-- * [Create a project](simple-projects/create-project.md) -->
+    <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
+    * [Random function](simple-projects/random-clojure-function.md)
+    * [Salary Calculator](simple-projects/salary-calculator.md)
+    * [Encode & Decode](simple-projects/encode-decode/index.md)
+        * [RNA and DNA](simple-projects/encode-decode/rna-dna.md) <!-- Exercism -->
+        * [Clacks](simple-projects/encode-decode/clacks.md)
+    * [Data Transformation](simple-projects/data-transformation/index.md)
+        * [Most common word](simple-projects/data-transformation/most-common-word.md)
+
+    * [Kata - TDD](simple-projects/tdd-kata/index.md)
+        * [Recent Songlist](simple-projects/tdd-kata/recent-songlist.md)
+
+    <!-- Refactor or delete -->
+    <!-- * [Reading Files](simple-projects/index.md) -->
+    <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
+
+* [Games](games/index.md)
+    <!-- Convert to deps.edn -->
+    * [TicTacToe CLI](games/tictactoe-cli/index.md)
+        * [Create Project](games/tictactoe-cli/create-project.md)
+
+
+## Testing Clojure
+<!-- * [Testing Clojure](testing/index.md) -->
+* [Unit testing](testing/unit-testing/index.md)
+    * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
+    * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
+    * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
+    * [TDD Kata: Recent Songlist](testing/unit-testing/tdd-kata/recent-songlist.md)
+    <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
+
+* [Test runners](testing/test-runners/index.md)
+    * [Cognitect-labs](testing/test-runners/congnitect-labs-test-runner.md)
+    <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
+    * [koacha](testing/test-runners/koacha-runner.md)
+    * [Example projects](testing/test-runners/example-projects.md)
+
+* [Spec & Generative Testing](clojure-spec/index.md)
+    * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
+    * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
+    * [Organising Specs](clojure-spec/organising-specs.md)
+    * [Data Specifications](clojure-spec/data/index.md)
+        * [Predicates](clojure-spec/data/predicate-specifications.md)
+        * [literal values](clojure-spec/data/literal-values.md)
+        * [conform](clojure-spec/data/conform.md)
+        * [valid?](clojure-spec/data/valid-q.md)
+        * [explain](clojure-spec/data/explain.md)
+        * [defining specs](clojure-spec/data/defining-specifications.md)
+        * [registry](clojure-spec/data/registry.md)
+        * [Entity Maps](clojure-spec/data/entity-maps.md)
+        * [Map Literals](clojure-spec/data/map-literals.md)
+        * [and/or specs](clojure-spec/data/and-or-specifications.md)
+        * [Composite Specs](clojure-spec/data/composite-specifications.md)
+        * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
+
+    * [Spec functions](clojure-spec/functions/index.md)
+        * [function definitions](clojure-spec/functions/function-definition-specifications.md)
+        * [documentation](clojure-spec/functions/documentation.md)
+        * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
+
+    * [Testing Specifications](clojure-spec/testing/index.md)
+        * [Checking arguments](clojure-spec/testing/checking arguments.md)
+    <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
+    * [Generative Testing](clojure-spec/generative-testing/index.md)
+        * [Predicate generators](clojure-spec/generative-testing/predicate-generators.md)
+        <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
+        * [Example Projects](clojure-spec/generative-testing/example-projects/index.md)
+            * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
+
+    * [Spec Projects](clojure-spec/projects/index.md)
+        <!-- Checking for bad names in ns declarations, lets, etc. -->
+        <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
+
+        <!-- Playing cards -->
+        * [Card Game](clojure-spec/projects/card-game/index.md)
+            * [Playing Card Specifications](clojure-spec/projects/card-game/playing-card-specifications.md)
+            * [Generating Data](clojure-spec/projects/card-game/generative-data-from-specifications.md)
+            * [Game Specifications](clojure-spec/projects/card-game/game-specifications.md)
+            * [Function Specifications](clojure-spec/projects/card-game/function-specifications.md)
+            * [Organizing Instrumentation](clojure-spec/projects/card-game/organising-instrumentation.md)
+        * [Bank Account TDD style](clojure-spec/projects/bank-account/index.md)
+            <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
+            * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
+            * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
+            * [Spec: Customer details](clojure-spec/projects/bank-account/validate-customer-details-specification.md)
+            * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
+            * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
+            * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
+            * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
+            * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
+
+* [Integration Testing](testing/integration-testing/index.md)
+    * [Circle CI](testing/integration-testing/circle-ci/index.md)
+        * [Random Clojure Function](testing/integration-testing/circle-ci/random-clojure-function.md)
+        * [Status Monitor](testing/integration-testing/circle-ci/status-monitor.md)
+        * [Circle CI sample project](testing/integration-testing/circle-ci/circle-ci-sample-project.md)
+
+<!-- * [Performance Testing](testing/performance-testing/index.md) -->
+<!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
+
+<!-- ## Scripting with Clojure -->
+<!-- Section mostly covering Babashka and its pods -->
+
+
+ <!-- Performance testing -->
+<!-- * [Code Performance](code-performance/index.md) -->
+<!--         * [Testing functions](code-performance/testing-functions.md) -->
+<!--         * [Performance](code-performance/load-testing.md) -->
+<!-- * [Load Testing](testing/load/index.md) -->
+<!--     * [Gatling](testing/load/gatling.md) -->
+<!--     * [clj-gatling](testing/load/clj-gatling.md) -->
+
+
+ <!-- Deployment -->
+
+<!-- * [Packaging](deployment/packaging/index.md) -->
+<!-- * [Observability](deployment/observability/index.md) -->
+
+<!-- * [Heroku](deployment/heroku/index.md) -->
+    <!-- * [Deploy Source](deployment/heroku/deploy-source.md) -->
+    <!-- * [Deploy JAR](deployment/heroku/deploy-jar.md) -->
+    <!-- * [Pipelines](deployment/heroku/pipelines.md) -->
+<!-- * [CircleCI](deployment/circle-ci/index.md) -->
+<!-- * [GitHub](deployment/github/index.md) -->
+    <!-- * [GitHub Pipelines](deployment/github/pipelines.md) -->
+    <!-- * [GitHub Actions](deployment/github/actions.md) -->
+<!-- * [Docker](deployment/docker/index.md) -->
+<!-- * [Kubernettes](deployment/kubernettes/index.md) -->
+
+
+## Reference
+    <!-- replace repl.it with klipse - repl.it loads very slowly -->
+    <!-- * [Quick start](quickstart/index.md) -->
+* [Quick reference](quickstart/quick-reference.md)
+
+* [Thinking Functionally](thinking-functionally/index.md)
+    * [Side effects](thinking-functionally/side-effects.md)
+    * [Pure functions](thinking-functionally/pure-functions.md)
+    * [Impure functions](thinking-functionally/impure-functions.md)
+    * [First Class functions](thinking-functionally/first-class-functions.md)
+    * [Homoiconicity](thinking-functionally/homoiconicity.md)
+    * [Function Composition](thinking-functionally/function-composition.md)
+        * [Example: Hitchhikers Guide](thinking-functionally/example-hitchhikers-guide.md)
+    * [Higher Order functions](thinking-functionally/higher-order-functions.md)
+    * [Immutability](thinking-functionally/immutability.md)
+        * [Immutable values](thinking-functionally/immutable-values.md)
+        * [Immutable collections](thinking-functionally/immutable-collections.md)
+        * [Immutable Local Bindings](thinking-functionally/immutable-local-bindings.md)
+    * [Currying & Partial Functions](thinking-functionally/partial-functions.md)
+        * [map with partial](thinking-functionally/map-with-partial.md)
+    * [List Comprehension](thinking-functionally/list-comprehension.md)
+    * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md)
+    * [Sequences](thinking-functionally/sequences.md)
+    * [Sequence-abstraction](thinking-functionally/sequence-abstractions.md)
+    * [Functors](thinking-functionally/functors.md)
+    * [Arity](thinking-functionally/arity.md)
+    * [Pattern matching](thinking-functionally/pattern-matching.md)
+    * [Polymorphism](thinking-functionally/polymorphism.md)
+    * [Recursion](thinking-functionally/recursion.md)
+    * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
+    * [Tail recursion](thinking-functionally/tail-recursion.md)
+
+
+<!-- Move sytax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
 * [Syntax](basic-clojure/syntax.md)
     * [Code documentation](basic-clojure/code-documentation.md)
@@ -138,23 +301,6 @@
     * [Threading Macros](thinking-functionally/threading-macros.md)
 
 
-<!-- Convert to deps.edn -->
-* [Simple projects](simple-projects/index.md)
-    <!-- * [Create a project](simple-projects/create-project.md) -->
-    <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
-    * [Random function](simple-projects/random-clojure-function.md)
-    <!-- Refactor or delete -->
-    <!-- * [Reading Files](simple-projects/index.md) -->
-    <!--     * [Reading project file](simple-projects/reading-project-file.md) -->
-
-<!-- Games -->
-* [Games](games/index.md)
-    <!-- Convert to deps.edn -->
-    * [TicTacToe CLI](games/tictactoe-cli/index.md)
-        * [Create Project](games/tictactoe-cli/create-project.md)
-
-
-
 
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
 <!-- Abstrction mountain
@@ -176,137 +322,8 @@
      This example can then be used in one of the exercises to judge the effort
      a reader has exerted so far and how much more effort is still required.
 -->
-<!-- Thinking Functionally -->
-* [Thinking Functionally](thinking-functionally/index.md)
-    * [Side effects](thinking-functionally/side-effects.md)
-    * [Pure functions](thinking-functionally/pure-functions.md)
-    * [Impure functions](thinking-functionally/impure-functions.md)
-    * [First Class functions](thinking-functionally/first-class-functions.md)
-    * [Homoiconicity](thinking-functionally/homoiconicity.md)
-    * [Function Composition](thinking-functionally/function-composition.md)
-        * [Example: Hitchhikers Guide](thinking-functionally/example-hitchhikers-guide.md)
-    * [Higher Order functions](thinking-functionally/higher-order-functions.md)
-    * [Immutability](thinking-functionally/immutability.md)
-        * [Immutable values](thinking-functionally/immutable-values.md)
-        * [Immutable collections](thinking-functionally/immutable-collections.md)
-        * [Immutable Local Bindings](thinking-functionally/immutable-local-bindings.md)
-    * [Currying & Partial Functions](thinking-functionally/partial-functions.md)
-        * [map with partial](thinking-functionally/map-with-partial.md)
-    * [List Comprehension](thinking-functionally/list-comprehension.md)
-    * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md)
-    * [Sequences](thinking-functionally/sequences.md)
-    * [Sequence-abstraction](thinking-functionally/sequence-abstractions.md)
-    * [Functors](thinking-functionally/functors.md)
-    * [Arity](thinking-functionally/arity.md)
-    * [Pattern matching](thinking-functionally/pattern-matching.md)
-    * [Polymorphism](thinking-functionally/polymorphism.md)
-    * [Recursion](thinking-functionally/recursion.md)
-    * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
-    * [Tail recursion](thinking-functionally/tail-recursion.md)
-
- <!-- Testing -->
-* [Testing Clojure](testing/index.md)
-    * [Unit testing](testing/unit-testing/index.md)
-        * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
-        * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
-        * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
-        <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
-
-    * [Test runners](testing/test-runners/index.md)
-        * [Cognitect-labs](testing/test-runners/congnitect-labs-test-runner.md)
-        <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
-        * [koacha](testing/test-runners/koacha-runner.md)
-        * [Example projects](testing/test-runners/example-projects.md)
-
-    * [Spec & Generative Testing](clojure-spec/index.md)
-        * [Spec in the REPL](clojure-spec/using-spec-in-the-repl.md)
-        * [Add Spec to Projects](clojure-spec/add-spec-to-projects.md)
-        * [Organising Specs](clojure-spec/organising-specs.md)
-        * [Data Specifications](clojure-spec/data/index.md)
-            * [Predicates](clojure-spec/data/predicate-specifications.md)
-            * [literal values](clojure-spec/data/literal-values.md)
-            * [conform](clojure-spec/data/conform.md)
-            * [valid?](clojure-spec/data/valid-q.md)
-            * [explain](clojure-spec/data/explain.md)
-            * [defining specs](clojure-spec/data/defining-specifications.md)
-            * [registry](clojure-spec/data/registry.md)
-            * [Entity Maps](clojure-spec/data/entity-maps.md)
-            * [Map Literals](clojure-spec/data/map-literals.md)
-            * [and/or specs](clojure-spec/data/and-or-specifications.md)
-            * [Composite Specs](clojure-spec/data/composite-specifications.md)
-            * [Hierarchical Specs](clojure-spec/data/hierarchical-specifications.md)
-
-        * [Spec functions](clojure-spec/functions/index.md)
-            * [function definitions](clojure-spec/functions/function-definition-specifications.md)
-            * [documentation](clojure-spec/functions/documentation.md)
-            * [higher-order functions](clojure-spec/functions/higher-order-functions.md)
-
-        * [Testing Specifications](clojure-spec/testing/index.md)
-            * [Checking arguments](clojure-spec/testing/checking arguments.md)
-        <!-- * [Defining Specifications](clojure-spec/defining-specifications/index.md) -->
-        * [Generative Testing](clojure-spec/generative-testing/index.md)
-            * [Predicate generators](clojure-spec/generative-testing/predicate-generators.md)
-            <!-- * [Generating Generators](clojure-spec/generative-testing/generating-generators.md) -->
-            * [Example Projects](clojure-spec/generative-testing/example-projects/index.md)
-                * [next-jdbc](clojure-spec/generative-testing/example-projects/next-jdbc.md)
-
-        * [Spec Projects](clojure-spec/projects/index.md)
-            <!-- Checking for bad names in ns declarations, lets, etc. -->
-            <!-- * [Convention Checks](clojure-spec/projects/convention-checks.md) -->
-
-            <!-- Playing cards -->
-            * [Card Game](clojure-spec/projects/card-game/index.md)
-                * [Playing Card Specifications](clojure-spec/projects/card-game/playing-card-specifications.md)
-                * [Generating Data](clojure-spec/projects/card-game/generative-data-from-specifications.md)
-                * [Game Specifications](clojure-spec/projects/card-game/game-specifications.md)
-                * [Function Specifications](clojure-spec/projects/card-game/function-specifications.md)
-                * [Organizing Instrumentation](clojure-spec/projects/card-game/organising-instrumentation.md)
-            * [Bank Account TDD style](clojure-spec/projects/bank-account/index.md)
-                <!-- * [Create project](clojure-spec/projects/bank-account/create-project.md) -->
-                * [Write Failing test](clojure-spec/projects/bank-account/write-failing-tests.md)
-                * [Spec: Customer details](clojure-spec/projects/bank-account/customer-details-specification.md)
-                * [Spec: Customer details](clojure-spec/projects/bank-account/validate-customer-details-specification.md)
-                * [Spec: Account holder](clojure-spec/projects/bank-account/account-holder-specification.md)
-                * [Generate test data](clojure-spec/projects/bank-account/generate-test-data.md)
-                * [Unit Tests with spec](clojure-spec/projects/bank-account/unit-tests-with-spec.md)
-                * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
-                * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
-
-    * [Integration Testing](testing/integration-testing/index.md)
-        * [Circle CI](testing/integration-testing/circle-ci/index.md)
-            * [Random Clojure Function](testing/integration-testing/circle-ci/random-clojure-function.md)
-            * [Status Monitor](testing/integration-testing/circle-ci/status-monitor.md)
-            * [Circle CI sample project](testing/integration-testing/circle-ci/circle-ci-sample-project.md)
-    <!-- * [Performance Testing](testing/performance-testing/index.md) -->
-    <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
-
-<!-- Host Interoperability -->
-* [Java Interoperability](basic-clojure/java-interop.md)
-    * [More Java fun](basic-clojure/more-java-fun.md)
 
 
-<!-- ## Scripting with Clojure -->
-<!-- Section mostly covering Babashka and its pods -->
-
-
-## Performance testing
-<!-- * [Code Performance](performance/index.md) -->
-<!--         * [Testing functions](performance/testing-functions.md) -->
-<!--         * [Performance](performance/load-testing.md) -->
-<!-- * [Performance Testing](testing/performance/index.md) -->
-<!--     * [time](testing/performance/time.md) -->
-<!--     * [Gatling](testing/performance/gatling.md) -->
-<!--     * [clj-gatling](testing/performance/clj-gatling.md) -->
-
-
-## Deployment
-
-<!-- * [Observability](deployment/observability/index.md) -->
-
-
-
-## Reference
-* [Reference](reference/index.md)
 <!--     * [Basic Syntax](reference/basic-syntax.md) -->
 <!--     <\!-- * [Naming](reference/naming.md) -\-> -->
 <!--     * [Functions](reference/functions.md) -->
@@ -328,7 +345,11 @@
         * [String Split](reference/clojure/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/clojure/regular-expressions/sub-expression-matches.md)
 
-    * [threading macros](reference/threading-macros.md)
+    * [Java Interoperability](basic-clojure/java-interop.md)
+        * [More Java fun](basic-clojure/more-java-fun.md)
+
+
+    * [Threading macros](reference/threading-macros.md)
     * [Tagged Literals](reference/tagged-literals/index.md)
         * [uuid](reference/tagged-literals/uuid.md)
 
@@ -372,6 +393,11 @@
 <!--         * [Plugins](leiningen/plugins.md) -->
 <!--     * [Explaining Macros](explaining-macros.md) -->
 <!-- * [Where next](where-next.md) -->
+
+
+
+
+
 
 <!-- ## Development tools -->
 
