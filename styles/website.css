@@ -71,7 +71,9 @@ img, div, table {
    on the bottom of each Klipse box */
 
 div.klipse-container {
-    display: none;
+    font-size: 0.1em;
+    /* Hiding the container prevents reagent elements displaying */
+    /* display: none; */
 }
 
 div.klipse-separator {
