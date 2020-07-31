@@ -1,80 +1,34 @@
-# Clojure Concepts
-> #### Hint::content refactor
-> This page is being reviewed and updated
+# Clojure concepts
+Clojure is an elegant language for a more civilized development experience. Clojure encourages the creation of simple software systems by being immutable by default and encouraging pragmatic approach to pure functional design.
 
-  I love Clojure because its **powerful**, **flexible** and **fun**.
-
-  Clojure encourages the creation of simple software systems by being immutable by default and encouraging pragmatic approach to pure functional design.
-
-> #### Hint::Come back to concepts as you learn the language
-> If you are eager to try Clojure, you can come back to this section and get a deeper understanding of the design and phylosophy of the Clojure approach to functional programming.
+> #### Hint::Learn Clojure concepts as you experiment with the language
+> Revisit this section when you want to get a deeper understanding of the design and phylosophy of the Clojure approach to functional programming.
 > These concepts will be easier to relate to as you practice Clojure and build software solutions.
 
-<!--
-## Clojure is ...
+# Ten Big Ideas plus one
+The key to understanding Clojure is ideas, not language constructs but the concepts that shape the language.
 
-* a **general purpose language** that compiles code to the platform its hosted upon (Java, JavaScript, Microsoft)
-* a **functional programming language** with a data centric approach, pragmatically pure
-* a **very small syntax** comprised of only 16 primitives, 8 of which were added for host interoperability
-* a **dynamic strongly typed language** type inference simplifies syntax and code base
-* a **REPL fast-feedback** evaluate code as you write it for instant feedback, helping you quickly explore a problem domain
-* a modern implementation of **LISP**
-* highly extensible language via **macros**
-* an efficient way to manage state changes via **persistent data structures** & **software transactional memory**
+Each of these ideas is valuable by itself, not only in Clojure. Taken together, however, they beging to fill in the picture of why Clojure is changing the way many programmers think about software development.
 
-## Clojure in a little more detail
+* [Extensible Data Notation](https://github.com/edn-format/edn)
+* [Persistent Data Structures](https://clojure.org/reference/data_structures)
+* [Sequences](https://clojure.org/reference/sequences)
+* [Transducers](https://clojure.org/reference/transducers)
+* [Specification](https://clojure.org/about/spec)
+* [Dynamic Development](https://clojure.org/about/dynamic)
+* [Async Programming](http://clojure.com/blog/2013/06/28/clojure-core-async-channels.html)
+* [Protocols](https://clojure.org/reference/protocols)
+* [ClojureScript](https://clojurescript.org/)
+* [Logic query](http://docs.datomic.com/query.html) / [Logic Programming](https://github.com/clojure/core.logic)
+* [Atomic Succession Model](https://clojure.org/about/concurrent_programming)
 
-### Dynamic Language & runtime environment (REPL) ###
+Stuart halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720) (eleven actually). [Slides](https://github.com/stuarthalloway/presentations/wiki/Clojure-in-10-Big-Ideas)
 
-* quickly explore your problem domain by evaluating code on the fly in the REPL
-* new code is compiled as evaluated, no seperate compile cycle or wait time
-* very small language syntax, extensible via macros
-
-### Pragmatic Functional Programming ###
-
-* encourages an immutable approach that helps keep the code simple
-* minimising state changes makes scaling your application easy through parallelism
-* built-in persistent data structures (List, Map, Vector, Set) give an efficient way of modifying data without side effects
-* Concurrency becomes trivial with pure functions & immutable data
-
-### Managed State Changes ###
-
-* Reference types `atoms` & `refs` for mutable state
-* Changes are done safely within Software Transactional Memory (STM), like having an in-memory ACID database managing all state changes under the covers.
-
-> #### Hint::Avoid changing state
-> In functional programming we avoid changing state as much as possible.  If a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments).  These are refered to as Pure Functions.  Pure functions are truely modular as they do not affect any other part of the system and do not require complex threading for scalability.
+<iframe src="https://player.vimeo.com/video/223240720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<p><a href="https://vimeo.com/223240720">CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas</a> from <a href="https://vimeo.com/spantree">Spantree Technology Group, LLC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
+### Presentation slides (pdf format)
 
-
-### Hosted language with consise interoperabilty ###
-
-* Clojure can run on the Java Virtual Machine (JVM), Microsoft Common Language Runtime (CLR) or JavaScript engines via ClojureScript.
-* Clojure is compiled to bytecode, giving very high performance (close to Java, C++, etc.)
-* Simple syntax to call any other code that runs on the JVM (Java, Scala, JRuby, Jython, etc) or Microsoft CLR.
-
-### A modular / component approach to design ###
-
-  A typical approach with Clojure is to break a big problem space into small libraries, each with a specific perpose.  This helps deconstruct complex systems into smaller, easier to understand code.  This also helps make these Clojure libraries reusable in many other projects, reducing the development effort.
-
-
-
-## ClojureScript
-
-ClojureScript is Clojure that compiles to to JavaScript and runs in the browser (JavaScript Engine).  Most of the code and libraries available for Clojure works seamlessly when compiled to JavaScript.
-
-ClojureScript is based heavily on the work done for Google Closures and there is a strong focus on Reactive client side apps.
-
-There is a common file extension, `.cljc` that signifies Clojure code that will run on the JVM and JavaScript engines.
-
-
-## Clojure Community
-
-There is a vibrant and highly active community around Clojure.  In London alone there is a regular monthly talk and 3 or 4 coding dojo every month.
-
-## Community resources
-
-[Clojure. tv](https://www.youtube.com/channel/UCaLlzGqiPE2QRj6sSOawJRg) and [Planet Clojure](http://planet.clojure.in/) are the tip of the iceburg to a large amount of Clojure resources available via the Internet.
-
- -->
+* 2013 [RuPy slides](https://github.com/stuarthalloway/presentations/blob/master/Barnstorming_2013/ClojureInTenBigIdeas.pdf?raw=true)
+* 2017 [Chicago JUG slides](https://github.com/stuarthalloway/presentations/blob/master/ClojureInTenBigIdeas-Jun-2017.pdf?raw=true)
