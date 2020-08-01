@@ -4,7 +4,7 @@ Clojure is a very versatile language and can generate data visualizations and gr
 * [Quil](http://quil.info/) - generate 2D graphics and animations
 * [Thi.ng](http://thi.ng/) - computational design tools
 * [play.cljc](https://github.com/oakes/play-cljc) - making games (OpenGL and WebGL)
-* [Oz](https://github.com/metasoarous/oz) data visualization and scientific document processing library
+* [Oz](https://github.com/metasoarous/oz) - data visualization and scientific document processing library
 
 
 ## Scalable Vector Graphics
