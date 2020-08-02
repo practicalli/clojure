@@ -41,6 +41,7 @@
     * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
      <!-- * [Design Journal](clojure-tools/design-journal.md) -->
     * [Data browsers](clojure-tools/data-browsers/index.md)
+        * [Reveal](clojure-tools/data-browsers/reveal.md)
         * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
         * [REBL data browser](clojure-tools/data-browsers/rebl-data-browser.md)
 
