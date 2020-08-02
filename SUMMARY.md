@@ -40,8 +40,9 @@
             <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
     * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
      <!-- * [Design Journal](clojure-tools/design-journal.md) -->
-    * [Clojure Inspector](clojure-tools/clojure-inspector.md)
-    * [REBL data browser](clojure-tools/rebl-data-browser.md)
+    * [Data browsers](clojure-tools/data-browsers/index.md)
+        * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
+        * [REBL data browser](clojure-tools/data-browsers/rebl-data-browser.md)
 
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
