@@ -49,25 +49,20 @@ Use [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Lin
 {% content "windows" %}
 For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are happy to use a Unix system on the command line.
 
-For earlier versions of Windows use [scoop.sh](https://scoop.sh/) is a command line installer for windows and is the recommended approach.  [Powershell 5](https://aka.ms/wmf5download) or greater is required.
+Alternatively install [scoop.sh](https://scoop.sh/), a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download) or greater is required. Follow the [scoop-clojure getting started guide](https://github.com/littleli/scoop-clojure/wiki/Getting-started), summarized here:
 
-Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure), summarized here:
+Open "Windows PowerShell" and enter the following commands to configure the shell:
 
 ```shell
-scoop install git
-scoop bucket add java
-scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
-scoop install adoptopenjdk-lts-hotspot
-scoop install clojure
-scoop update clojure
+iwr -useb get.scoop.sh | iex
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 ```
-
-To also use scoop to install clj-kondo
-
+Then in the same PowerShell window, install the Clojure related tools using the following commands:
 ```shell
 scoop bucket add extras
-
-scoop install clj-kondo
+scoop bucket add java
+scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
+scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kondo vscode coreutils windows-terminal
 ```
 
 
