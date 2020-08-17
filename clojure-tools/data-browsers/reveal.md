@@ -3,6 +3,11 @@
 
 [Reveal](https://github.com/vlaaad/reveal) describes itself as a read evaluate visualize loop tool proving extra tools to explore data in Clojure visually.
 
+{% youtube %}
+https://youtu.be/1jy09_16EeY
+{% endyoutube %}
+
+
 ## Reveal as a deps.edn alias
 [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:repl-reveal` alias that run a Reveal repl with data browser.
 
@@ -16,7 +21,7 @@
 Run a REPL with Reveal
 
 ```shell
-clj -R:repl-reveal
+clj -A:repl-reveal
 ```
 > The `clj` command requires the `rlwrap` binary
 
