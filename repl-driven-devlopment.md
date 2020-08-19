@@ -65,6 +65,8 @@ RDD supports rapid design as different approaches can easily be explored and eva
 
 Tests provide an simple tool to define and test your assumptions from the evolving design and give you feedback when changes break that design.
 
+![Clojure REPL driven development (RDD) and Test Driven Development (TDD)](https://raw.githubusercontent.com/practicalli/graphic-design/master/repl-tdd-flow.png)
+
 [Unit tests](/testing/unit-testing/) should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize that as an after thought.
 
 `clojure.test` library is part of the Clojure standard library that provides a simple way to start writing unit tests.
