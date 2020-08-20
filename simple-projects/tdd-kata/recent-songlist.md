@@ -1,4 +1,7 @@
 # Recent songlist
+
+![Spotify song list](/images/spotify-playlist.png)
+
 Create a recent song list to hold a unique set of songs that have been played.
 
 The most recently played song is at the start of the list, the least recently played song is the last in the list.
@@ -13,8 +16,8 @@ Optional extras:
 * Add a limit to the number of songs the list contains, with the least recently added items dropped when that limit is reached.
 
 
-## Add two files to the playground project
-Create a new project using clj-new
+## Create a new Clojure project
+Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
 clojure -A:new app practicalli/recent-songlist
@@ -24,7 +27,6 @@ clojure -A:new app practicalli/recent-songlist
 We are writing our tests with the `clojure.test` library
 
 Open `test/playground/recent-song-list-test.clj` file in your editor and update the namespace definition to include `clojure.test`
-
 
 ```eval-clojure
 (ns practicalli.recent-songlist-test

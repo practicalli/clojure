@@ -15,7 +15,7 @@ The board game defines the alphabet as a 2 by 3 grid (although in the Discworld 
 ![Terry Pratchett - The Clacks Alphabet](/images/terry-pratchett-clacks-alphabet.png)
 
 ## Create a project
-Use `clj-new` to create a Clojure deps.edn project
+Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
 clojure -A:new app practicalli/clacks-messenger

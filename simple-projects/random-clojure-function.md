@@ -1,7 +1,10 @@
 # Random Clojure Function
+
+![Random numbers](/images/random-numbers.png)
+
 A simple application that returns a random function from the `clojure.core` namespace, along with the function argument list and its description (from the doc-string)
 
-There are 659 functions in `clojure.core` namespace and 955 in the standard library (as of June 2020).  These functions are learned over time as experience is gained with Clojure.
+There are 659 functions in [`clojure.core` namespace](https://clojuredocs.org/clojure.core) and 955 in the standard library (as of June 2020).  These functions are learned over time as experience is gained with Clojure.
 
 
 ## Live Coding Video walkthrough
@@ -13,7 +16,7 @@ https://youtu.be/sXZKrD4cAFk
 
 
 ## Create a project
-Using `clj-new`, create a Clojure deps.edn project
+Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
 clojure -A:new app practicalli/random-clojure-function

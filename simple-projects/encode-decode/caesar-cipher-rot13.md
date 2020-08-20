@@ -8,14 +8,12 @@ A dictionary can be generated to translate between the original alphabet and the
 
 
 ## Create a project
+Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
 clojure -A:new app practicalli.cypher-rot13
 ```
 
-```clojure
-(ns practicalli.cypher-rot13)
-```
 
 ## Define an alphabet
 Define an alphabet to use as a basis for conversion.  Take the string of all characters and convert to a sequence of character types.

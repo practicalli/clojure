@@ -20,7 +20,7 @@ A suggested approach to find the most common word:
 
 
 ## Create a project
-Create a new project using `clj-new` and the app template, so the project can be run from the command line.
+Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
 clojure -A:new app practicalli/common-words
