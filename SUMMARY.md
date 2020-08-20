@@ -66,13 +66,13 @@
     <!-- * [Create a project](simple-projects/create-project.md) -->
     <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
     * [Random function](simple-projects/random-clojure-function.md)
-    * [Salary Calculator](simple-projects/salary-calculator.md)
+    <!-- * [Salary Calculator](simple-projects/salary-calculator.md) -->
     * [Encode & Decode](simple-projects/encode-decode/index.md)
+        * [Caesar Cipher: ROT13](simple-projects/encode-decode/caesar-cipher-rot13.md) <!-- Exercism -->
         * [RNA and DNA](simple-projects/encode-decode/rna-dna.md) <!-- Exercism -->
         * [Clacks](simple-projects/encode-decode/clacks.md)
     * [Data Transformation](simple-projects/data-transformation/index.md)
         * [Most common word](simple-projects/data-transformation/most-common-word.md)
-
     * [Kata - TDD](simple-projects/tdd-kata/index.md)
         * [Recent Songlist](simple-projects/tdd-kata/recent-songlist.md)
 
