@@ -12,7 +12,7 @@ A Clojure REPL starts in the `user` namespace by default.  Clojure will automati
 > [juxt/edge has example projects](https://github.com/juxt/edge/tree/master/examples) using the same technique.
 
 
-## Create a `dev/user.clj` file and `:dev` alias
+## Create a `dev/user.clj` file and `:env/dev` alias
 Create a `dev/user.clj` file with a namespace called `user`.
 
 `user.clj` should include a namespace definition
@@ -21,24 +21,24 @@ Create a `dev/user.clj` file with a namespace called `user`.
 (ns user)
 ```
 
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) includes a `:dev` alias which adds the `dev` directory to the project classpath.
+[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) includes a `:env/dev` alias which adds the `dev` directory to the project classpath.
   Alternatively, edit the `deps.edn` file and add the following code:
 
 ```clojure
- :dev
+ :env/dev
   {:extra-paths ["dev"]}
 ```
 
-Running a Clojure REPL with the `-A:dev` alias will make the `dev/user.clj` file available to be loaded by the REPL.
+Running a Clojure REPL with the `-A:env/dev` alias will make the `dev/user.clj` file available to be loaded by the REPL.
 
 In this example the `dev/` path is added to the project and then the REPL is run using rebel readline.
 
 ```shell
-clojure -A:dev:rebel
+clojure -A:env/dev:repl/rebel
 ```
 
 > #### Hint::Using the `dev/` directory
-> The `user.clj` code should not be included in live deployments, such as jars and uberjars.  Including the `dev/` directory via the :dev alias keeps the `user.clj` and any other development only code separate from deployment actions.
+> The `user.clj` code should not be included in live deployments, such as jars and uberjars.  Including the `dev/` directory via the :env/dev alias keeps the `user.clj` and any other development only code separate from deployment actions.
 
 
 ## Requiring namespaces
