@@ -64,6 +64,36 @@ Functions from the required namespace can be called, to start the application fo
 (practicalli.project-namespace/-main)
 ```
 
+## Fuzzy searching for library dependencies - deps.edn
+The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
+
+Add the find-deps project to the `env/dev` alias as an `:extra-deps` (`:env/dev` is available in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}))
+
+```clojure
+  :env/dev
+  {:extra-paths ["dev"]
+   :extra-deps  {find-deps/find-deps
+                 {:git/url "https://github.com/hagmonk/find-deps"
+                  :sha     "6fc73813aafdd2288260abb2160ce0d4cdbac8be"}}}
+```
+
+Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
+
+```clojure
+(ns user
+  (:require [find-deps.core :as find-deps]))
+```
+
+Start a REPL using the `:env/dev` alias.
+
+To start a Rebel REPL with `:env/dev` use the following command in a terminal
+
+```shell
+cloure -A:env/dev:repl/rebel
+```
+
+In the REPL, call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
+
 
 ## Starting Component Lifecycle Services
 Clojure has several library to manage the lifecycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
