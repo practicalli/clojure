@@ -4,7 +4,7 @@
 /* Use Ubuntu font as default font for all content */
 body {
     font-family: Ubuntu;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
 }
 
 .book-body h1,.book-body h2,.book-body h3,.book-body h4,.book-body h5,.book-body h6 {
@@ -13,7 +13,7 @@ body {
 
 .book-body p, .book-body div, .book-body span, .summary, .book-body li, .summary li a  {
     font-family : "Ubuntu", "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.8rem;
+    /* font-size: 1.8rem; */
 }
 
 /* .book .book-body .page-wrapper .page-inner section.normal code { */
@@ -28,7 +28,7 @@ img, div, table {
 
 /* Over-ride the wide-page plugin  */
 .book .book-body .page-wrapper .page-inner {
-    max-width: 72%;
+    max-width: 84%;
 }
 
 
@@ -50,16 +50,16 @@ img, div, table {
 /* Style inline blocks  */
 .markdown-section p>code {
     font-family: "Ubuntu Mono", Consolas, Menlo, Courier, monospace;
-    background-color: #f7f7f7;
-    /* background-color: #fdf6e4; */
-    color: #702b70;            /* Spacemacs purple*/
-    font-size: 1.1em;
-    margin: 0;
-    padding: 0.1em 0.1em;
+    /* background-color: #f7f7f7; */
+    /* /\* background-color: #fdf6e4; *\/ */
+    /* color: #702b70;            /\* Spacemacs purple*\/ */
+    /* font-size: 1.1em; */
+    /* margin: 0; */
+    /* padding: 0.1em 0.1em; */
 }
 
 .CodeMirror pre {
-    font-size: 1.8em;
+    font-family: "Ubuntu Mono";
 }
 
 
