@@ -199,6 +199,7 @@
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
 * [Quick reference](quickstart/quick-reference.md)
+* [Kebab-case](reference/kebab-case.md)
 
 * [Thinking Functionally](thinking-functionally/index.md)
     * [Side effects](thinking-functionally/side-effects.md)
