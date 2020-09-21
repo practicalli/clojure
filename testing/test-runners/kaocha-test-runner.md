@@ -1,5 +1,5 @@
-# Kaocha
-Kaocha (cow-cha) is test runner taking a tool agnostic approch, therefore there is a little bit of configuration to get started.
+# Kaocha Test Runner from LambdaIsland
+[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is test runner taking a tool agnostic approch, therefore there is a little bit of configuration to get started.
 
 
 ## deps project alias for Kaocha
@@ -44,7 +44,7 @@ Use the default configuration as a basis for customizing any specific project.
 ## Aero
 [juxt/aero](https://github.com/juxt/aero) is used to read the kaocha configuration, so reader literals such as #env, #merge, #ref, and #include can be used.
 
-Set up [profiles for different stages of the development workflow](https://juxt.pro/blog/posts/aero.html), dev, test, prod, etc.  Each profile has a different configuration making it very easy to switch
+Set up [profiles for different stages of the development workflow](https://juxt.pro/blog/aero.html), dev, test, prod, etc.  Each profile has a different configuration making it very easy to switch
 
 ```clojure
 {:port 8000
@@ -68,7 +68,7 @@ With a `deps.edn` project with tests under the standard `test` directory and usi
 kaocha
 ```
 
-![Clojure Unit Test - kaocha test runner results](/image/clojure-unit-test-kaocha-run-restuls.png)
+![Clojure Unit Test - kaocha test runner results](/images/clojure-unit-test-kaocha-run-results.png)
 
 
 If one or more tests fail, then a detailed description of the failure is printed

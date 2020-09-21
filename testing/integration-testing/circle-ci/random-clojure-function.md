@@ -113,7 +113,7 @@ So the development of the project can continue with greater confidence
 ## Adding a Build Status badge
 [Generating a status badge documentation](https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge) describes how to add a build status badge for your project, usually at the top of the README.md file in the project
 
-```md
+```markdown
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/practicalli/random-clojure-function)
 ```
 

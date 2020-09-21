@@ -62,11 +62,12 @@ Refactor the assertions using are simplifies the code, making it simpler to chan
 ```
 
 
-## Project Examples: Code challenges with unit tests
-* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
-* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
-* [jr0cket/numbers-in-words](https://github.com/jr0cket/numbers-in-words)
-
-
 ## Reference
 For full details, visit the [API for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
+
+## Project Examples: Code challenges with unit tests
+* [TDD Kata: Recent Songlist](/simple-projects/tdd-kata/recent-songlist.md)
+* [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words)
+* [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors)
+* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
+* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects

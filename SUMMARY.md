@@ -89,16 +89,16 @@
 ## Testing Clojure
 <!-- * [Testing Clojure](testing/index.md) -->
 * [Unit testing](testing/unit-testing/index.md)
-    * [Testing deps.edn projects](testing/unit-testing/testing-deps.edn-projects.md)
+    * [Configure projects](testing/unit-testing/configure-projects-for-tests.md)
     * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
     * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
-    * [TDD Kata: Recent Songlist](testing/unit-testing/tdd-kata/recent-songlist.md)
+    <!-- * [TDD Kata: Recent Songlist](testing/unit-testing/tdd-kata/recent-songlist.md) -->
     <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
 
 * [Test runners](testing/test-runners/index.md)
     * [Cognitect-labs](testing/test-runners/congnitect-labs-test-runner.md)
     <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
-    * [koacha](testing/test-runners/koacha-runner.md)
+    * [LambdaIsland Kaocha](testing/test-runners/kaocha-test-runner.md)
     * [Example projects](testing/test-runners/example-projects.md)
 
 * [Spec & Generative Testing](clojure-spec/index.md)
