@@ -32,10 +32,8 @@ Add the following under docker: in your `config.yml`
 - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536
 ```
 
-> #### Hint::Ensure local tool version match docker image
+> #### Hint::Check Clojure version
 > `clojure -Sdescribe` shows configuration information for the Clojure CLI tool as a hash-map, with the :version key associated with the exact install version.
->
-> `java -version` shows the current version of the Java installation.
 
 
 {% content "lein" %}
@@ -49,7 +47,7 @@ Add the following under docker: in your `config.yml`
 - image: circleci/clojure:openjdk-11-lein-2.9.3
 ```
 
-> #### Hint::Ensure local tool version match docker image
+> #### Hint::Match Build tool version
 > `lein version` shows the current version of Leiningen install on your development environment.
 >
 > `java -version` shows the current version of the Java installation.

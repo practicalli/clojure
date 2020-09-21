@@ -9,11 +9,11 @@ Establish a Clojure environment by installing the following:
 | rlwrap                | Optional    | A simple read line for command history, only used by `clj` |
 
 > #### Hint::Aliases provided by practicalli/clojure-deps-edn
-> [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
+> [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
 
 
 ## Clojure CLI tools
-A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](editor-install-guides/) is recommended when developing Clojure projects.
+A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](/clojure-editors/) is recommended when developing Clojure projects.
 
 <!-- Operating System specific instructions -->
 {% tabs linux="Linux", homebrew="Homebrew", windows="Windows" %}
@@ -24,8 +24,6 @@ A command line REPL provides the essential tool for Clojure development.  [Insta
 Use the Linux script installer from [Clojure.org](https://clojure.org/guides/getting_started#_installation_on_linux)
 
 ```shell
-sudo apt install curl rlwrap
-
 curl -O https://download.clojure.org/install/linux-install-1.10.1.536.sh
 chmod +x linux-install-1.10.1.536.sh
 sudo ./linux-install-1.10.1.536.sh
@@ -70,7 +68,7 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 <!-- End of Operating System specific instructions -->
 
 ## Clojure CLI tools common aliases
-Create a fork of the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) on GitHub
+Create a fork of the [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) on GitHub
 
 Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development across all projects.
 
@@ -93,6 +91,8 @@ Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/
 
 
 ## Optional: rlwrap readline
-Install the `rlwrap` binary to support the `clj` wrapper, which launches a basic repl with command history.  This approach is not as useful as using [rebel readline](/repl-driven-development/rebel-readline/).
+Install the `rlwrap` binary to support the `clj` wrapper, which launches a Clojure REPL with command history.
 
 `rlwrap` is available with most Linux systems and install instructions should be discoverable by searching for rlwrap in a web browser.
+
+> [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL.

@@ -57,7 +57,7 @@ Using `:refer` in the `requre` expression provides a way to include specific var
 
 The idiom in Clojure is to include multiple namespaces with just one `:require` statement
 
-Here is an example namespace expression with multiple require statements from the [duct](https://github.com/weavejester/duct) web framework template
+Here is an example namespace expression with multiple require statements from the [duct](https://github.com/duct-framework/duct) web framework template
 
 ```clojure
 (ns duct-test.main

@@ -12,9 +12,8 @@ For Clojure deps.edn project libraries can be hot-loaded into a running REPL, re
 `clojure.tools.deps.alpha.repl/add-lib` is a function that provides hot-loading of library dependencies, although as mentioned this is likely to change soon as the design .
 
 
-
 ## Add alias for tools.deps.alpha
-Use the `deps.edn` configuration from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) which included a [`:hot-load-deps`](https://github.com/practicalli/clojure-deps-edn/blob/master/deps.edn#L324-L330) alias for the `clojure.tools.deps.alpha.repl` library.
+Use the `deps.edn` configuration from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) which included a `:hot-load-deps` alias for the `clojure.tools.deps.alpha.repl` library.
 
 Start a REPL session using the Clojure CLI tools, optionally including rebel readline for an enhance REPL UI.
 
@@ -25,7 +24,6 @@ clojure -A:hot-load-deps:rebel
 A REPL will start an will download the required libraries for the `:hot-load-deps` alias (added to the local `~/.m2` maven cache on first run).
 
 ![Clojure REPL - hot load library dependencies](/images/clojure-repl-hot-load-deps-rebel.png)
-
 
 
 ## Hot-loading library dependencies

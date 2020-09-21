@@ -42,7 +42,7 @@ The design journal can be used to create meaningful documentation for the projec
 ## Viewing data structures
 Use Pretty Print to view data structures that are the result of evaluating your code.  This makes those data structures easier to parse as a developer and more likely to notice incorrect results.
 
-Data inspectors (cider-inspect, [REBL](https://github.com/cognitect-labs/REBL-distro)) provide effective ways to navigate through a nested data structures and large data sets.
+[Clojure Data Browsers](/clojure-tools/data-browsers/reveal.md) ([cider-inspect](/clojure-tools/data-browsers/clojure-inspector.md), [REBL](/clojure-tools/data-browsers/rebl-data-visualization.md), [Reveal](/clojure-tools/data-browsers/reveal.md), [Portal](/clojure-tools/data-browsers/portal.md)) provide effective ways to navigate through a nested data structures and large data sets.
 
 ![Clojure - viewing large data sets](/images/spacemace-clojure-inspect-java-lang-persistentvector.png)
 

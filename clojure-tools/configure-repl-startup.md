@@ -191,7 +191,7 @@ TODO: [pull requests accepted]({{ book.P9IPullRequestsUrl }})
 * [Mount project on GitHub](https://github.com/tolitius/mount)
 * [Mount - collection of Clojure/Script mount apps](https://github.com/tolitius/stater)
 * [Component](https://github.com/stuartsierra/component)
-* [A tutorial to Stuart Sierra's Component](https://cb.codes/a-tutorial-of-stuart-sierras-component-for-clojure/)
+* [A tutorial to Stuart Sierra's Component](https://www.cbui.dev/a-tutorial-of-stuart-sierras-component-for-clojure/)
 * [Refactoring to Components](https://lacinia.readthedocs.io/en/latest/tutorial/component.html) - Walmart Labs Lacinia
 * [Integrant](https://github.com/weavejester/integrant)
 * [Compojure and Integrant](https://the-frey.github.io/2017/12/14/compojure-and-integrant)

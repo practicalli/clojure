@@ -12,7 +12,7 @@ clojure -A:new app practicalli/banking-on-clojure
 ```
 
 > #### Hint::practicalli/bancking-on-clojure repository
-> [practicalli/bancking-on-clojure repository](https://github.com/practicalli/banking-on-clojure) contains the latest code to date for this project.
+> [practicalli/bancking-on-clojure repository](https://github.com/practicalli/banking-on-clojure-spec) contains the latest code to date for this project.
 
 ## Outline design of project
 

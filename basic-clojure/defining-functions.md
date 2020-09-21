@@ -43,7 +43,7 @@ There is a second form of the `defn` function, one which responds differently ba
   ([params*] prepost-map? body) + attr-map?)
 ```
 
-[Thinking Functionally / Polymorphism](/thinking-functionally/ploymorphism.md) has examples of using defn to define polymorphic functions
+[Thinking Functionally - Polymorphism](/thinking-functionally/polymorphism.md) has examples of using defn to define polymorphic functions
 
 
 ## Breaking down the defn syntax

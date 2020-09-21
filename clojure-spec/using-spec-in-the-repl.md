@@ -8,7 +8,7 @@ clojure -A:rebel
 ```
 
 > #### Hint::Rebel Alias in practicalli/clojure-deps
-> Review or clone the [practicalli/clojure-deps](https://github.com/practicalli/clojure-deps-edn#repl-experience) repository to include the alias to run rebel readline powered Clojure REPL.  Alternative use `clj` if you have `rlwrap` installed or `clojure` to run a very basic Clojure REPL.
+> The [practicalli/clojure-deps]({{ book.P9IClojureDepsEdnInstall }}) repository includes the `:repl/rebel` alias to run a rebel readline powered Clojure REPL.  Alternative use `clj` if you have `rlwrap` installed or `clojure` to run a basic Clojure REPL UI.
 
 
 Require the `clojure.spec.alpha` using an alias called `spec` to use functions from that namespace.

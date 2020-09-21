@@ -12,7 +12,7 @@
 ## About the book
 Practicalli Clojure takes a hands on approach to learning to code with Clojure through the entire development workflow.
 
-The REPL is the [Clojure interactive environment](repl-driven-development.md) used to create an run all code.  You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
+The REPL is the [Clojure interactive environment](repl-driven-devlopment.md) used to create an run all code.  You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
 
 As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
@@ -27,7 +27,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 
 ## Discussions and feedback
-[Contributions are welcome via GitHub issues and pull requests](contributions.md), or discuss the book on the Clojurians Slack community.
+[Contributions are welcome via GitHub issues and pull requests](contributing.md), or discuss the book on the Clojurians Slack community.
 
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 

@@ -30,4 +30,4 @@ Refactoring the code may involve a number of changes benefit from instrumentatio
 ```
 
 > #### Hint::Koacha Test Runner
-> [Koacha test runner](https://cljdoc.org/d/lambdaisland/kaocha/1.0.632/doc/1-introduction) can manage the testing of function specifications and is especially useful for managing unit level testing with specifications.
+> [Koacha test runner](https://cljdoc.org/d/lambdaisland/kaocha/CURRENT/doc/1-introduction) can manage the testing of function specifications and is especially useful for managing unit level testing with specifications.

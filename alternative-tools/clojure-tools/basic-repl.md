@@ -20,7 +20,7 @@ Type in a Clojure expression at the `=> user` prompt and press `Return` to see t
 
 ![Clojure REPL clj prompt](/images/clojure-repl-clj-prompt.png)
 
-Clojure [code can now be run in the REPL](writing-code-in-the-repl.md) by typing the code and pressing the `ENTER` key.
+Clojure code can now be run in the REPL by typing the code and pressing the `ENTER` key.
 
 Exit the REPL by typing `Ctrl+D` (pressing the `Ctrl` and `D` keys at the same time).
 

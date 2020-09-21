@@ -2,10 +2,10 @@
 The `clojure` command provided by Clojure tools can be used to evaluate code, run Clojure applications and start a command line REPL.
 
 * [rebel REPL UI](rebel-repl/) a fully featured Clojure command line REPL user interface
-* [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
-* [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
+* [deps.edn configuration](deps-edn-configuration.md)
+* [deps.edn aliases](deps-edn-aliases.md)
 
-Clojure CLI tools can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluating-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
+Clojure CLI tools can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
 
 
 ## Editors and Clojure tools

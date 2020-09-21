@@ -41,7 +41,8 @@ The custom predicate function may also be written in the shorter form of a `fn` 
 
 Use `def` to bind names to custom predicate functions if they are used more than once in the code base.
 
-In this example a name is bound to a function that checks if a port is within the [range of IANA registered networking ports](https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers).
+In this example a name is bound to a function that checks if a port is within the [range of IANA registered networking ports][1].
+
 ```eval-clojure
 (def registered-port-range?
   "Network port number within IANA registered port range"
@@ -49,3 +50,6 @@ In this example a name is bound to a function that checks if a port is within th
 
 (spec/valid? registered-port-range? 8080)
 ```
+
+
+[1]: https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers
