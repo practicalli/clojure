@@ -1,12 +1,10 @@
 # Atom.io and ProtoREPL
-
 Proto REPL is a Clojure development environment and REPL for Atom.io.
 
 [![Atom and ProtoREPL](/images/atom-protorepl-demo.gif)](/images/atom-protorepl-demo.gif)
 
 
 ## Install Atom.io
-
 Follow the instructions for your operating system
 
 {% tabs debian="Debian/Ubuntu", mac="MacOSX", redhat="RedHat", windows="Windows" %}
@@ -40,7 +38,8 @@ Download the [`atom-mac.zip`](https://github.com/atom/atom/releases/latest) file
 
 Open the `atom-mac.zip` file (double click) and drag the Atom application into your "Applications" folder.
 
-See [Installing Atom](https://flight-manual.atom.io/getting-started/sections/installing-atom/#platform-mac) for troubleshooting and further details.
+See [Installing Atom](https://flight-manual.atom.io/getting-started/sections/installing-atom/) for troubleshooting and further details.
+
 
 {% content "redhat" %}
 Download the latest `.rpm` file from Atom.io

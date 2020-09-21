@@ -1,5 +1,7 @@
 # VSCode and Calva user guide
 
+The [Calva User Guide]() provides a detailed guide.  The following are a few highlights.
+
 Open the VSCode editor and open the root folder of your project.  Then add use let Calva start your project REPL and connect.
 
 > ####HINT::MacOSX Keys - Option or Alt
@@ -15,7 +17,7 @@ Select the top level of the folder, e.g. `playground` and click **OK**
 
 ## Start a REPL for the project
 
-`ctrl+alt+c ctrl+alt+j` to start a REPL.
+`ctrl+alt+c ctrl+alt+j` to start a REPL click on the nrepl name in the bottom left of VSCode UI.
 
 Select either `Clojure CLI` or `Leiningen` when prompted for the project type
 
@@ -86,7 +88,7 @@ Use the **Add Line Comment** command to place `;;` at the start of a line, which
 
 Once you get the basics of Clojure development, you can try structural editing which is a way to edit your code without breaking the structure of Clojure.  Structural editing ensures you dont have uneven parentheses, `()`, `[]`, `{}`, etc.
 
-Please look at the [documentation for Calva Paredit](https://calva.readthedocs.io/en/latest/paredit.html) to make use of Structural editing.
+The [Calva visual Guide to Paredit](https://calva.io/paredit/) includes lots of examples of using Structural editing.
 
 
 ---

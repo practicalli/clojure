@@ -7,7 +7,7 @@ Use the editor you are most familiar with, or if just starting to code then VSCo
 
 
 <!-- Clojure Editors -->
-{% tabs vscode="VSCode & Calva", spacemacs="Emacs & Spacemacs", vim="NeoVim & Conjure", atom="Atom & Chlorine", intellij="IntelliJ & Cursive" %}
+{% tabs vscode="VSCode & Calva", spacemacs="Emacs & Spacemacs", vimiced="vim-iced", vimconjure="NeoVim & Conjure", atom="Atom & Chlorine", intellij="IntelliJ & Cursive" %}
 
 
 <!-- VSCode and Calva -->
@@ -47,9 +47,17 @@ Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Cal
 </div>
 
 
+<!-- NeoVim and Conjure -->
+{% content "vimiced"%}
+Clojure Interactive Development Environment for Vim8/Neovim.
+
+* [vim-iced documentation](https://liquidz.github.io/vim-iced/)
+
+[![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced)
+
 
 <!-- NeoVim and Conjure -->
-{% content "vim"%}
+{% content "vimconjure"%}
 [Conjure](https://github.com/Olical/conjure) is a plugin for Neovim
 * [Conjure install guide](https://github.com/Olical/conjure)
 * [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/) - an introduction to using Conjure

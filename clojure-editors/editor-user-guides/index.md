@@ -11,8 +11,7 @@ We would like you to spend as much of your time at the workshop learning Clojure
 | [IntelliJ & Cursive](intellij-cursive.html)   (TODO) | [Cursive user guide](https://cursive-ide.com/userguide/)                |                                                                  |
 
 
-## Using Vim
+## Clojure development with Vim
+[vim-iced](https://github.com/liquidz/vim-iced) and [Conjure](https://github.com/Olical/conjure) both provide Clojure development tools for Vim and Neovim.
 
-We don't directly support Vim, although you can use it with the fireplace plugin.
-
-Both Spacemacs and Atom/Proton have great support for Vim style editing and so are a viable alternative.
+[Spacemacs](emacs-spacemacs.md) provides first class support for Vim style editing.
