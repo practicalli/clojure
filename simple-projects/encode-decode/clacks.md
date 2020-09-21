@@ -268,7 +268,9 @@ Also require `clojure.string` using the alias `string` to use the join function.
 
 
 ## Removing side effects
-Include the dictionary as an argument to each of the functions.  This ensures that each function is pure and does not experience side effects.
+Designing pure functions, those that receive all their data via arguments, is a common way to remove [side effects](/thinking-functionally/side-effects.html).
+
+Include the dictionary as an argument to each of the functions.  This ensures that each function is pure and prevents side effects (side causes).
 
 ```clojure
 (defn character->clack [char dictionary]

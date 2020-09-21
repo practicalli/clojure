@@ -65,6 +65,7 @@
 * [Simple projects](simple-projects/index.md)
     <!-- * [Create a project](simple-projects/create-project.md) -->
     <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
+    <!-- * [Generate web page](simple-projects/generate-web-page.md) -->
     * [Random function](simple-projects/random-clojure-function.md)
     <!-- * [Salary Calculator](simple-projects/salary-calculator.md) -->
     * [Encode & Decode](simple-projects/encode-decode/index.md)
