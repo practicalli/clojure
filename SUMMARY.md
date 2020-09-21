@@ -12,7 +12,7 @@
         <!-- * [When to use Clojure](concepts/purpose.md) -->
         * [Who uses Clojure](concepts/who-uses-clojure.md)
                 <!-- * [The syntax](concepts/syntax.md) -->
-        * [Design with Clojure](concepts/design.md)
+        <!-- * [Design with Clojure](concepts/design.md) -->
                 <!-- * [All bytecode in the end](concepts/all-bytecode-in-the-end.md) -->
                 <!-- * [Features in more depth](concepts/features.md) -->
                 <!-- * [Functional Reactive Programming](concepts/functional-programming.md) -->
@@ -357,12 +357,6 @@
     * [Tagged Literals](reference/tagged-literals/index.md)
         * [uuid](reference/tagged-literals/uuid.md)
 
-    * [alternative tools](alternative-tools/index.md)
-        * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
-        * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
-        * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
-        * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
-        * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
 
 <!--     * [Core.async](reference/core-async.md) -->
 <!--     * [Prasmatic  Schema](reference/prasmatic-schema.md) -->
@@ -399,6 +393,12 @@
 <!-- * [Where next](where-next.md) -->
 
 
+* [alternative tools](alternative-tools/index.md)
+    * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
+    * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
+    * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
+    * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
+    * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
 
 
 
