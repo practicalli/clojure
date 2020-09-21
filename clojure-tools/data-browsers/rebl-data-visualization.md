@@ -1,5 +1,5 @@
-# REBL data browser
-REBL is a interactive tool for capturing the results of evaluating expressions and visualizing that data for human consumption. REBL was initially created to support development with the Datomic database and is useful viewing and navigating data structures, especially nested data structures and large data sets.
+# Cognitect REBL data browser
+Cognitect REBL is a interactive tool for capturing the results of evaluating expressions and visualizing that data for human consumption. REBL was initially created to support development with the Datomic database and is useful viewing and navigating data structures, especially nested data structures and large data sets.
 
 ![Clojure REBL data browser](https://raw.githubusercontent.com/cognitect-labs/REBL-distro/master/screenshot.png)
 
@@ -116,19 +116,39 @@ Supporting aliases for nrebl.middleware
 {% endtabs %}
 
 
-## Run REBL with nREPL
+## Run REBL for nREPL based editors
+CIDER and Calva use the `nREPL` protocol to connect to the REBL REPL and have all the evaluated code in those editors automatically display the results in the REBL UI.
+
 In a terminal, run REBL listening to nREPL using the command
 ```shell
 clojure -R:nrepl:cider-nrepl:cognitect-rebl -A:nrebl
 ```
 
-`cider-connect-clj` in Spacemacs / Emacs and CIDER will connect to the nREPL port and results of evaluated code are sent to REBL UI.
+{% tabs cider="CIDER - Spacemacs/Emacs", calva="Calva - VSCode" %}
 
-To use `cider-jack-in-clj` to run REBL with nREPL, create a `.dir-locals.el` file in the root of the project with the REBL aliases set for `cider-clojure-cli-global-options`:
+{% content "cider" %}
+
+Then `cider-connect-clj` in Spacemacs / Emacs and CIDER will connect to the nREPL port and results of evaluated code are sent to REBL UI.
+
+
+To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options` and all other automatically injected configuration is disabled (to prevent those dependencies over-riding the nREBL aliases).
 ```
-((clojure-mode . ((cider-clojure-cli-global-options . "-R:nrepl:cider-nrepl:cognitect-rebl -A:nrebl"))))
+((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
+                  (cider-clojure-cli-global-options . "-R:nrepl:cider-nrepl:cognitect-rebl -A:nrebl")
+                  (cider-jack-in-dependencies . nil)
+                  (cider-jack-in-nrepl-middlewares . nil)
+                  (cider-jack-in-lein-plugins . nil)
+                  (cider-clojure-cli-parameters . ""))))
 ```
 
+> #### Hint::revert-buffer to load .dir-locals.el
+> `revert-buffer` will force Emacs to load in the .dir-locals.el configuration if it was added to a project with files already opened.
+
+{% content "calva" %}
+
+See the excellent guide on [using VSCode Calva with REBL](https://calva.io/rebl/)
+
+{% endtabs %}
 
 
 <!-- <\!-- ## Running REBL with rebel readline -\-> -->
@@ -140,3 +160,11 @@ To use `cider-jack-in-clj` to run REBL with nREPL, create a `.dir-locals.el` fil
 
 
 <!-- REBL is the main namespace.  Once the REPL starts, `require` the main namespace of the project and change to that namespace with `in-ns` -->
+
+## References
+* [Cognitect Labs REBL-distro repository](https://github.com/cognitect-labs/REBL-distro) and [issue tracker](https://github.com/cognitect-labs/REBL-distro/issues)
+* [Cognitect Local Dev and CI with dev-local](https://docs.datomic.com/cloud/dev-local.html)
+* [practicalli/clojure-deps-aliases common aliases for Clojure](http://practicalli.github.io/clojure/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases)
+* [nrebl.middleware project](https://github.com/RickMoynihan/nrebl.middleware) and [documentation](https://cljdoc.org/d/rickmoynihan/nrebl.middleware/CURRENT/doc/readme)
+* [#rebl channel on Clojurians Community](https://clojurians.slack.com/messages/rebl)
+* [nrepl-rebl](https://github.com/DaveWM/nrepl-rebl) alternative to nrebl.middleware
