@@ -24,6 +24,20 @@ A REPL is typically used from an editor with files that compose the project code
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
 
+## Rich Comment blocks - living documentation
+The `(comment ,,,)` function is used to included code that is only run by the developer directly. Unlike `;;` comments, specific expressions inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
+
+The expressions can represent example function for using the project, such as starting/restarting the system, updating the database, etc.
+
+![Practicalli Clojure Repl Driven Development - Rich comment blocks example](/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
+
+Expressions in rich comment blocks can also represent how to use a namespace API, providing examples of arguments to supply to further convey meaning to the code.
+
+These rich comment blocks make a project more accessible and easier to use.
+
+The "Rich" in the name also refers to Rich Hickey, the author and benevolent dictator of Clojure design.
+
+
 ## Design Journal
 It is highly recommended to journal your design process to make your code easier to understand and maintain.  Journals avoid the need for long hand-over or developer on-boarding processes as the journey through design decisions are already documented.
 
@@ -91,3 +105,15 @@ Ideally the [deployment should run via continuous integration service](https://p
 > * [GitHub Actions](https://github.com/features/actions)
 > * [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci)
 > * [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines)
+
+
+## Live Coding with Data - Stuart Halloway
+There are few novel features of programming languages, but each combination has different properties. The combination of dynamic, hosted, functional, extended Lisp in Clojure gives developers the tools for making effective programs. Less well understood are the ways in which Clojure's unique combination of features can yield a highly effective development process.
+
+Over more than a decade, we have developed an effective approach to writing code in Clojure whose power comes from composing many of its key features. As different as Clojure programs are from e.g. Java programs, so to can and should be the development experience. You are not in Kansas anymore!
+
+This talk presents a demonstration of the leverage you can get when writing programs in Clojure, with examples, based on my experiences as a core developer of Clojure and Datomic.
+
+{% youtube %}
+https://youtu.be/Qx0-pViyIDU
+{% endyoutube %}

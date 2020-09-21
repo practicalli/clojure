@@ -32,3 +32,13 @@ Stuart halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720)
 
 * 2013 [RuPy slides](https://github.com/stuarthalloway/presentations/blob/master/Barnstorming_2013/ClojureInTenBigIdeas.pdf?raw=true)
 * 2017 [Chicago JUG slides](https://github.com/stuarthalloway/presentations/blob/master/ClojureInTenBigIdeas-Jun-2017.pdf?raw=true)
+
+
+## Antithesis of Clojure and simple software design
+In Narcissistic Design by Stuart Halloway, the antithesis of the Clojure view of software development is presented as a description of how unproductive and valueless the software industry has been in the past.
+
+Its essentially a guide on what not to do if you are a responsible and professional software developer.
+
+{% youtube %}
+https://youtu.be/LEZv-kQUSi4
+{% endyoutube %}
