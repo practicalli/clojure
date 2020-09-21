@@ -35,7 +35,7 @@ A player is represented by a hash-map that contains their name, score and the ha
 ```
 
 
-## Game specifications
+## Card game deck specifications
 A card game has a deck of 52 cards, one card for each combination of suit and rank.
 
 The size of the card deck changes over the course of a game, so the deck can contain any number of cards.  The deck must contain only cards to be valid.
@@ -66,7 +66,16 @@ A game is represented by a hash-map with a collection of players and a card deck
 
 
 ## Generating random game data
+`clojure.spec.alpha/gen` returns a generator for the given specification.
+
+`clojure.spec.gen.alpha/generate` takes that generator and creates a random value that conforms to the specification.
 
 ```eval-clojure
 (spec-gen/generate (spec/gen ::game))
+```
+
+`clojure.spec.gen.alpha/sample` will generate a collection of random values that each conform to the specification.
+
+```eval-clojure
+(spec-gen/sample (spec/gen ::game))
 ```

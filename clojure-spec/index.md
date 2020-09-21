@@ -1,7 +1,15 @@
-# Clojure spec
-Define flexible specifications around data and function definitions to test for correctness and generate comprehensive test data.
+![Clojure specifications for next.jdbc](https://raw.githubusercontent.com/practicalli/graphic-design/master/clojure/spec/clojure-spec-blueprints-industrial.png)
 
-Spec is included in Clojure from [version 1.9](https://clojure.org/news/2017/12/08/clojure19) onward and can be used by requiring the `clojure.spec.alpha` in the REPL or in namespaces of a Clojure project.
+Clojure Spec is a library for defining specifications around data and functions to test for correctness.
+
+A spec defines the expected shape of specific values in Clojure and specs are intended to be used across multiple projects.  Specifications for more complex values are composed of specific value specifications, providing a flexible way to define what key parts of the system should look like.
+
+Clojure specs are used to generate comprehensive test data, identifying more scenarios and edge cases with less code.
+
+Spec is included in Clojure [version 1.9](https://clojure.org/news/2017/12/08/clojure19) onward and can be used by requiring the `clojure.spec.alpha` in the REPL or in namespaces of a Clojure project.
+
+## Recommended Reading
+* [What is Clojure spec - an illustrated guide](https://www.pixelated-noise.com/blog/2020/09/10/what-spec-is/)
 
 
 ## Purpose of Clojure spec
@@ -9,7 +17,7 @@ A summary highlighting the common purposes that Clojure Spec is used for
 
 | Purpose                         | Description                                                                                   |
 |---------------------------------|-----------------------------------------------------------------------------------------------|
-| Living documentation            | Use spec to include specifications in Function documentation (`fdef`)                           |
+| Living documentation            | Use spec to include specifications in Function documentation (`fdef`)                         |
 | Data Validation                 | Ensure the data entering and leaving the system or its key functions are of the correct form. |
 | Test Data Generation            | Provide extensive test data coverage with minimal code maintenance                            |
 | Generative testing of functions | Test functions using their spec defined contract (`fdef`)                                     |
