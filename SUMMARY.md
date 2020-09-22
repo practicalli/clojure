@@ -69,6 +69,7 @@
     * [Random function](simple-projects/random-clojure-function.md)
     <!-- * [Salary Calculator](simple-projects/salary-calculator.md) -->
     * [Encode & Decode](simple-projects/encode-decode/index.md)
+        * [Convert Boolean Values](simple-projects/encode-decode/convert-boolean-values.md) <!-- Exercism -->
         * [Caesar Cipher: ROT13](simple-projects/encode-decode/caesar-cipher-rot13.md) <!-- Exercism -->
         * [RNA and DNA](simple-projects/encode-decode/rna-dna.md) <!-- Exercism -->
         * [Clacks](simple-projects/encode-decode/clacks.md)
