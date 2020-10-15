@@ -12,8 +12,9 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 * Multiple `is` assertions for one function
 * Group assertions in `testing` and provide a meaningful description of that grouping, adding more information when reviewing test failures especially for larger code bases.
 * `are for testing similar functionality with different data sets
-* Test private functions indirectly through the public function API of each namespace (minimizes test churn and time to run all tests)
+* Test private functions (or don't use them) through public functions of each namespace (minimize test churn and time to run all tests)
 * Use [generative testing](/clojure-spec/) to create less code and yet test with more extensive range of data
+* Use [test selectors](test-selectors.md) to organize tests and optimize speed of test runs
 
 ## Project structure with tests
 By convention, separate `src` and `test` directories are used to hold the source code and the code that tests that source code.
