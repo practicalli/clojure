@@ -44,7 +44,6 @@
         * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
         * [Reveal](clojure-tools/data-browsers/reveal.md)
         * [Portal](clojure-tools/data-browsers/portal.md)
-        * [REBL data browser](clojure-tools/data-browsers/rebl-data-visualization.md)
 
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
@@ -397,6 +396,7 @@
 
 * [alternative tools](alternative-tools/index.md)
     * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
+    * [REBL data browser](alternative-tools/clojure-tools/cognitect-rebl.md)
     * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
     * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
     * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
