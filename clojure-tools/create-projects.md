@@ -17,19 +17,22 @@ cd projects/clojure
 Create a new project using `clj-new` and the `app` template.  If you prefer, use your company name or GitHub/GitLab/Bitbucket account name instead of `practicalli`  and change `playground` to the name of the application.
 
 ```shell
-clojure -A:new app practicalli/playground
+clojure -M:project/new app practicalli/playground
 ```
 
+> #### Hint::New Clojure Exec approach
+> clj-new also supports Clojure exec and the -X flag, using keywords to specify the options for creating the project.  This produces exactly the same project as the command above.
+>
+```shell
+clojure -X:project/new :template app :name practicalli/playground
+```
+
+## Running a REPL for the project
 Change into the directory and test the project runs by starting a REPL with [rebel readline](/repl-driven-development/rebel-readline/)
 
 ```shell
-cd playground
-
-clj -A:rebel
+cd playground && clojure -M:repl/rebel
 ```
-
-> #### Hint::Install Clojure CLI aliases
-> Follow the [Clojure install guide](install/install-clojure.md) to install all the alias used in this guide
 
 A repl prompt should appear.
 
@@ -41,7 +44,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 (+ 1 2 3 4 5)
 ```
 
-> ####NOTE::Try the project with your preferred editor
+> ####HINT::Try the project with your preferred editor
 > Using a [Clojure aware editor](/clojure-editors/editor-user-guides/), open the playground project and run the REPL.  Then write code expressions in the editor and evaluate them to see the result instantly.
 
 
@@ -54,6 +57,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 
 `clj-new` can create projects from `deps.edn`, Leiningen and Boot templates. A wide range of templates have been created by the Clojure community which can be found by searching on Clojars.org:
 
+* [clj-templates website](https://clj-templates.com/) - leiningen and boot templates
 * [deps.edn projects](https://clojars.org/search?q=artifact-id:clj-template)
 * [Leiningen projects](https://clojars.org/search?q=artifact-id:lein-template)
 * [Boot projects](https://clojars.org/search?q=artifact-id:boot-template).

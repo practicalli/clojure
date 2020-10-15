@@ -10,18 +10,18 @@ Portal is a new project that allows exploration of Clojure data, using a browser
 ![Portal - explore your Clojure data](https://raw.githubusercontent.com/djblue/portal/master/resources/screenshot.png)
 
 ## Portal as a deps.edn alias
-[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:inspector-portal` alias that run a Reveal repl with data browser.
+[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:inspect/portal` alias that run a Reveal repl with data browser.
 
-* `inspector-portal-cli` - Clojure CLI (simplest approach)
-* `inspector-portal-web` - Web ClojureScript REPL
-* `inspector-portal-node` - node ClojureScript REPL
+* `inspect/portal-cli` - Clojure CLI (simplest approach)
+* `inspect/portal-web` - Web ClojureScript REPL
+* `inspect/portal-node` - node ClojureScript REPL
 
 
 ## Run a REPL with Portal dependencies
 Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools
 
 ```shell
-clj -A:inspector-portal-cli
+clojure -M:inspect/portal-cli
 ```
 
 

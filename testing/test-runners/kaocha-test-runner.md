@@ -1,39 +1,42 @@
 # Kaocha Test Runner from LambdaIsland
-[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is test runner taking a tool agnostic approch, therefore there is a little bit of configuration to get started.
+[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and clojure.spe generative testing.  Clojure and ClojureScript languages are supported.
 
+## A minimal starting point
+Install the [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
-## deps project alias for Kaocha
-Add an alias to `./clojure/deps.edn` to make kaocha available to all projects, or add an alias directly to the project `deps.edn` file.  As this is a test runner tool, the `test` path is included to tests will be found in the standard test directory.
-
-
-```clojure
-  :test-runner-kaocha
-  {:extra-paths ["test"]
-   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0-612"}}
-   :main-opts   ["-m" "kaocha.runner"]}
+```shell
+clojure -M:test/kaocha
 ```
 
-Kaocha recommends adding a `bin/kaocha` script to the project being tested.  This provides a standard location from which to run kaocha and also include project specific command line options.
+
+## Add kaocha binary to the project project
+Kaocha recommends adding a `bin/kaocha` script to the project, providing a standard location from which to run kaocha and to include project command line options.  Command line options will over-ride the same options in the `tests.edn` file.
 
 ```shell
 #!/usr/bin/env bash
-clojure -A:test-runner-kaocha  "$@"
+clojure -M:test/runner "$@"
 ```
 
-> #### Hint::main namespace
-> The main namespace for kaocha can be defined in the alias or asa command line option, but not in both places at the same time.
->
-> For deps projects practicalli recommends putting the main namespace in the alias, that way it is not forgotten.
+
+## Continuous Integraion support
+For CI services such as CircleCI or GitLabs, add an alias for kaocha to the project `deps.edn` file.
+
+```clojure
+  :test/runner
+  {:extra-paths ["test"]
+   :extra-deps  {lambdaisland/kaocha {:mvn/version "1.0.700"}}
+   :main-opts   ["-m" "kaocha.runner"]}
+```
 
 
-## Configuring Tests with kaocha
-As kaocha is designed to be tool agnostic, it uses two ways to configure how tests are run.  A `test.edn` configuration file and command line options, usually added to the script for a specific project.
+## Configuring test runs
+Kaocha can be configure by options in a `test.edn` configuration file and options passed via the command line (typically added to the bin/kaocha script).
 
 Create a `test.edn` file in the root of the project directory.
 
 `#kaocha/v1 {}` is the minimum configuration, which will use a default configuration.
 
-The `test.edn` file and command line options combine to make the complete configuration for the projects in the test.
+The `tests.edn` file and command line options combine to make the complete configuration for the projects in the test.
 
 `kaocha --print-config` will print out the complete configuration.
 
@@ -41,24 +44,10 @@ The `test.edn` file and command line options combine to make the complete config
 
 Use the default configuration as a basis for customizing any specific project.
 
-## Aero
-[juxt/aero](https://github.com/juxt/aero) is used to read the kaocha configuration, so reader literals such as #env, #merge, #ref, and #include can be used.
-
-Set up [profiles for different stages of the development workflow](https://juxt.pro/blog/aero.html), dev, test, prod, etc.  Each profile has a different configuration making it very easy to switch
-
-```clojure
-{:port 8000
- :database #profile {:prod "datomic:dev://localhost:4334/my-prod-db2"
-                     :test "datomic:dev://localhost:4334/my-test-db"
-                     :default "datomic:dev://localhost:4334/my-db"}
- :known-users [{:name "Alice"} {:name "Betty"}]}
-```
-
-Then in application startup function or a component lifecycle library (mount, component, integrant) read in a specific profile
-
-```clojure
-(aero.core/read-config "config.edn" {:profile :prod})
-```
+> #### Hint::Alternative kaocha configuration with aero
+> [juxt/aero](https://github.com/juxt/aero) reader literals such as #env, #merge, #ref, and #include can be used to provide different options to the kaocha configuration. For example, a file change watcher can be configured to run unless kaocha is running in CI server environment.
+>
+> `:kaocha/watch #profile {:default true :ci false}`
 
 
 ## Running tests
@@ -116,3 +105,53 @@ or added to the `test.edn` configuration
 #kaocha/v1
 {:plugins [:kaocha.plugin/profiling]}
 ```
+
+## Example: banking-on-clojure project
+The practicalli/banking-on-clojure project is a web application backed by a relational database, using kaocha as the test runner.
+
+`:kaocha/tests` defines two types of tests.  The hash-map containing `:kaocha.testable/id :unit` defines the configuration for unit tests using `clojure.test`.  The hash-map containing `:kaocha.testable/id :generative-fdef-checks` are generative tests using clojure spec.
+
+`:kaocha/color?` and `:kaocha/watch` use a value dependent on the `#profile` kaocha is run under.
+
+```clojure
+#kaocha/v1
+{:kaocha/tests
+ [{:kaocha.testable/id      :unit
+   :kaocha.testable/type    :kaocha.type/clojure.test
+   :kaocha/ns-patterns      ["-test$"],
+   :kaocha/source-paths     ["src"],
+   :kaocha/test-paths       ["test"],
+   :kaocha.filter/skip-meta [:kaocha/skip]}
+
+  {:kaocha.testable/id            :generative-fdef-checks
+   :kaocha.testable/type          :kaocha.type/spec.test.check
+   :kaocha/source-paths           ["src"]
+   :kaocha.spec.test.check/checks [{:kaocha.spec.test.check/syms            :all-fdefs
+                                    :clojure.spec.test.check/instrument?    true
+                                    :clojure.spec.test.check/check-asserts? true
+                                    :clojure.spec.test.check/opts           {:num-tests 10}}]}
+  ]
+
+ :kaocha/reporter [kaocha.report/documentation]
+
+ :kaocha/color? #profile {:default true
+                          :ci      false}
+
+ ;; Run tests of file changes, unless running in CI server
+ :kaocha/watch #profile {:default true :ci false}
+
+ :kaocha/fail-fast? true
+
+ :kaocha.plugin.randomize/randomize? false
+
+ :kaocha/plugins
+ [:kaocha.plugin/randomize
+  :kaocha.plugin/filter
+  :kaocha.plugin/capture-output
+  :kaocha.plugin.alpha/spec-test-check]
+
+ :kaocha.plugin.capture-output/capture-output? true
+ }
+```
+
+> The above configuration could be streamlined and rely on more of the default values, but does show examples of how to configure different sections explicitly.

@@ -12,7 +12,7 @@
 Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
-clojure -A:new app practicalli/salary-calculator
+clojure -M:new app practicalli/salary-calculator
 ```
 
 ## Complete project also in Git

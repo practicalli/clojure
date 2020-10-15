@@ -13,7 +13,7 @@ Add a CSS library (bulma.io, bootstrap) to improve generation
 {% content "project" %}
 
 ```shell
-clojure -A:new app practicalli/generate-webpage
+clojure -M:new app practicalli/generate-webpage
 ```
 
 

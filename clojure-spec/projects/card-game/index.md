@@ -4,7 +4,7 @@ Specifications to represent the data that composes to create a deck of playing c
 ## Create a project
 Create a new Clojure project using `clj-new` tool for Clojure Tools.
 ```shell
-clojure -A:new app practicalli/card-game
+clojure -M:new app practicalli/card-game
 ```
 
 > #### Hint::Use practicalli/clojure-deps-edn to add common tools

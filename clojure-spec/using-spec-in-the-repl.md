@@ -4,7 +4,7 @@ Clojure 1.10.x or greater includes the clojure.spec.alpha library.  `clojure -Sd
 Run a Clojure REPL in a terminal window from your operating system using [rebel readline](https://github.com/bhauman/rebel-readline).
 
 ```shell
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 
 > #### Hint::Rebel Alias in practicalli/clojure-deps

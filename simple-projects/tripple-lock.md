@@ -8,7 +8,7 @@ You have just bought a new safe too keep all the richest you will gain from beco
 Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
-clojure -A:new app practicalli/triple-lock
+clojure -M:new app practicalli/triple-lock
 ```
 
 ## Designing the combination lock

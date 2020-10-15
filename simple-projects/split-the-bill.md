@@ -12,7 +12,7 @@ Start with the simplest possible approach, with everyone paying the same.
 Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
-clojure -A:new app practicalli/split-the-bill
+clojure -M:new app practicalli/split-the-bill
 ```
 
 

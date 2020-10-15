@@ -16,11 +16,11 @@ Aliases can be defined in a project `deps.edn` or be available to all projects v
 ## Using an alias
 An alias is used via the `-A` option to the `clojure` command:
 ```clojure
-clojure -A:my-task
+clojure -M:my-task
 ```
 Multiple aliases can be used together
 ```clojure
-clojure -A:test:test-runner
+clojure -M:test:test-runner
 ```
 
 > #### Hint::Only one main namespace
@@ -32,7 +32,7 @@ clojure -A:test:test-runner
 ## An alias for a community tool
 Use the rebel community tool by including its alias.
 ```clojure
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 
 This alias adds the library dependency for the rebel readline project and defines the main namespace.  The namespace is where the `-main` function is located that will start rebel readline.
@@ -68,7 +68,7 @@ The main namespace is set to that library and the `-main` function is called whe
 
 > #### Hint::
 > Any legal Clojure keyword name can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
-> `clojure -A:task-path:task-deps:build-options`
+> `clojure -M:task-path:task-deps:build-options`
 
 
 <!-- TODO content to add -->

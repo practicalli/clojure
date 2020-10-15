@@ -5,7 +5,7 @@
 Start the rebel REPL
 
 ```shell
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 
 Once rebel has started a prompt will be displayed.

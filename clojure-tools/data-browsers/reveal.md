@@ -7,12 +7,15 @@
 https://youtu.be/1jy09_16EeY
 {% endyoutube %}
 
+> #### Hint:: Aliases updated
+> The aliases from practicalli/clojure-deps-edn have been updated, so to run the command use `clojure -M:inspect/reveal` or `clojure -M:inspect/reveal-light` for a light theme with larger font.
+> To run Reveal with Rebel Readine, use the command `clojure -M:inspect/reveal:repl/rebel`
 
 ## Reveal as a deps.edn alias
-[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:repl-reveal` alias that run a Reveal repl with data browser.
+[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:inspect/reveal` alias that run a Reveal repl with data browser.
 
 ```clojure
-:repl-reveal
+:inspect/reveal
 {:extra-deps {vlaaad/reveal {:mvn/version "0.1.0-ea26"}}
  :main-opts  ["-m" "vlaaad.reveal" "repl"]}
 ```
@@ -21,7 +24,7 @@ https://youtu.be/1jy09_16EeY
 Run a REPL with Reveal
 
 ```shell
-clj -A:repl-reveal
+clojure -M:inspect/reveal
 ```
 > The `clj` command requires the `rlwrap` binary
 
@@ -49,10 +52,10 @@ The new value of the state atom is shown in the Reveal data browser.  Each Cloju
 
 
 ## Using Reveal with nrepl
-[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:repl-reveal-nrepl` alias that run a Reveal repl with data browser and nrepl server, allowing connections from [Clojure aware editors](/clojure-editors/) such as Emacs CIDER and VSCode Calva.
+[`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdn }}) contains the `:inspect/reveal-nrepl` alias that run a Reveal repl with data browser and nrepl server, allowing connections from [Clojure aware editors](/clojure-editors/) such as Emacs CIDER and VSCode Calva.
 
 ```clojure
-:repl-reveal-nrepl
+:inspect/reveal-nrepl
 {:extra-deps {vlaaad/reveal {:mvn/version "0.1.0-ea26"}
               nrepl/nrepl   {:mvn/version "0.7.0"}}
  :main-opts  ["-m" "nrepl.cmdline"
@@ -62,7 +65,7 @@ The new value of the state atom is shown in the Reveal data browser.  Each Cloju
 Start a Reveal REPL with nrepl server
 
 ```
-clj -A:repl-reveal-nrepl
+clojure -M:inspect/reveal-nrepl
 ```
 
 Connect to the Reveal repl from a [Clojure aware editor](/clojure-editors/), e.g `cider-connect`
@@ -74,7 +77,7 @@ Reveal can be used as a `tap>` target with the Rebel REPL, launching the Reveal 
 Start Rebel REPL with Reveal library as a dependency
 
 ```shell
-clojure -R:repl-reveal -A:rebel
+clojure -M:repl-reveal:repl/rebel
 ```
 
 Add reveal as a tap target that will receive all data from `tap>` function calls

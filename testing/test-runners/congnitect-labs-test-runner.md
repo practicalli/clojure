@@ -23,7 +23,7 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
 Then, invoke Clojure via the command line, invoking the test alias:
 
 ```shell
-clj -A:test-runner-cognitect
+clojure -M:test-runner-cognitect
 ```
 
 This calls the `cognitect.test-runner/-main` function which will scan the test directory of the current project for any tests defined using clojure.test and then run all the tests found.
@@ -51,7 +51,7 @@ TODO: screenshot of summary
 Options can be used multiple times in one command, for a logical OR effect. For example, the following command runs all tests in the `practicalli.data.survey` and `practicalli.services.survey-report` namespaces that are found in the `src` and `test` directories
 
 ```shell
-clj -A:test-runner-cognitect -d test -d src -n practicalli.data.survey -n practicalli.services.survey-report
+clojure -M:test-runner-cognitect -d test -d src -n practicalli.data.survey -n practicalli.services.survey-report
 ```
 
 ## Categorizing tests for selective test runs
@@ -68,14 +68,14 @@ Use Clojure metadata when defining test functions using `deftest`.
 Use the `i` inclusion flag with the test runner to specify specific categories of tests
 
 ```shell
-clj -A:test-runner-cognitect -i :integration
+clojure -M:test-runner-cognitect -i :integration
 
 ```
 
 Categories can be used together by using multiple flags. Assuming categories of develop, uat, integration and pre-prod,  use two `-i` inclusion flags to run only integration and pre-production tests:
 
 ```shell
-clj -A:test-runner-cognitect -i :integration -i :pre-prod
+clojure -M:test-runner-cognitect -i :integration -i :pre-prod
 ```
 
 [Clojure Unit Test - categories example integration and develop tests](/images/clojure-unit-test-categories-example-integration-develop.png)
@@ -83,7 +83,7 @@ clj -A:test-runner-cognitect -i :integration -i :pre-prod
 
 Use the `e` exclusion flag to run all tests except those in specific categories
 ```shell
-clj -A:test-runner-cognitect -e :integration
+clojure -M:test-runner-cognitect -e :integration
 ```
 
 Exclusions take priority over inclusions if both flags are included.

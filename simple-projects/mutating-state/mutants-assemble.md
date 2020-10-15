@@ -13,7 +13,7 @@ We will also introduce the following functions for the first time:
 Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
-clojure -A:new app practicalli/mutants-assemble
+clojure -M:new app practicalli/mutants-assemble
 ```
 
 Open the `src/practicalli/mutants-assemble.clj` file in a Clojure aware editor and start the REPL.

@@ -21,7 +21,7 @@ https://youtu.be/sXZKrD4cAFk
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration
 
 ```shell
-clojure -A:new app practicalli/random-clojure-function
+clojure -M:new app practicalli/random-clojure-function
 ```
 
 Version control the Clojure project using Git (or magit in Spacemacs)
@@ -64,14 +64,14 @@ jobs:    # basic units of work in a run
             - ~/.m2
             - ~/.gitlibs
           key: random-clojure-function-{{ checksum "deps.edn" }}
-      - run: clojure -A:test:runner
+      - run: clojure -M:test:runner
 ```
 
 This configuration uses a specific image that supports Clojure CLI tools and `deps.edn` projects
 
 The `run: clojure -R:test:runner -Spath` step downloads the dependencies for the project, including the specified aliases.  The `-Spath` part of the command echos the full classpath to standard out which can be useful for debugging builds, but more importantly stops the clojure command from running a repl.
 
-The `run: clojure -A:test:runner` adds the test directory to the class path and runs the unit tests using Cognitect Labs.
+The `run: clojure -M:test:runner` adds the test directory to the class path and runs the unit tests using Cognitect Labs.
 
 
 ## Connect Circle CI to the project

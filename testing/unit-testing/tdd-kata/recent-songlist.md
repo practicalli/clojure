@@ -20,7 +20,7 @@ Optional extras:
 Create a new project using clj-new
 
 ```shell
-clojure -A:new app practicalli/recent-songlist
+clojure -M:new app practicalli/recent-songlist
 ```
 
 ## Using `clojure.test`
@@ -46,7 +46,7 @@ At any time we can call the `run-tests` function in the REPL to get a report bac
 The Cognitect Labs test runner is included in the project by default and can be run from the command line in the root directory of the project.
 
 ```shell
-clojure -A:test:runner
+clojure -M:test:runner
 ```
 
 

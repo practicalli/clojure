@@ -3,12 +3,16 @@ The REPL is the environment in which all Clojure code runs, whether that be duri
 
 rebel is a REPL UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-tools/basic-repl.md) by default.
 
-![Clojure REPL rebel readline - example of autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png)
+{% youtube %}
+https://youtu.be/U19TWMsg0s0
+{% endyoutube %}
+
+<!-- ![Clojure REPL rebel readline - example of autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png) -->
 
 ## Install rebel readline
 [`practicalli/clojure-deps-edn` GitHub repository](https://github.com/practicalli/clojure-deps-edn) contains an alias for rebel readline.  Fork and clone this repository to `~/.clojure` to include the `rebel` alias and many other useful aliases.
 
-If using your own `~/.clojure/deps.edn` configuration, add an alias called `:rebel`
+If using your own `~/.clojure/deps.edn` configuration, add an alias called `:repl/rebel`
 
 ```clojure
 :rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
@@ -20,7 +24,7 @@ If using your own `~/.clojure/deps.edn` configuration, add an alias called `:reb
 Start a Clojure REPL with Rebel Readline
 
 ```shell
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 
 A REPL prompt displays and will evaluate code entered.

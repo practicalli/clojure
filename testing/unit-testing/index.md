@@ -34,7 +34,7 @@ As with file names, the namespaces for each test code file is the same as the so
 > #### Hint::Create Projects from templates
 > Templates typically include a parallel `test` and `src` directory structure.  The `clj-new` tool has build it templates (app, lib) and will create `src` and `test` directories in the projects it creates.
 >
-> `clojure -A:clj-new app practicalli/rock-paper-scissors-lizard-spock`
+> `clojure -M:clj-new app practicalli/rock-paper-scissors-lizard-spock`
 
 <!-- TODO: clj-new - does this add a test namespace if you add a src namesspace to an existing project? -->
 

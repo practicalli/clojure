@@ -34,7 +34,7 @@ Running a Clojure REPL with the `-A:env/dev` alias will make the `dev/user.clj` 
 In this example the `dev/` path is added to the project and then the REPL is run using rebel readline.
 
 ```shell
-clojure -A:env/dev:repl/rebel
+clojure -M:env/dev:repl/rebel
 ```
 
 > #### Hint::Using the `dev/` directory

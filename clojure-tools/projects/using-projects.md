@@ -7,12 +7,12 @@ Open a terminal and change to the root of the Clojure project directory, where t
 Start the REPL (in this example using rebel readline)
 
 ```shell
-clojure -A:rebel
+clojure -M:repl/rebel
 ```
 
 At the REPL prompt, require the main namespace of the project.
 
-If the project was created with the command `clojure -A:new app practicalli.status-monitor-service`, then the main namespace will be `practicalli.status-monitor-service`
+If the project was created with the command `clojure -M:new app practicalli.status-monitor-service`, then the main namespace will be `practicalli.status-monitor-service`
 
 ```clojure
 (require '[practicalli.status-monitor-service])

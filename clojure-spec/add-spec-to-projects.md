@@ -34,7 +34,7 @@ All functions from `clojure.spec.alpha` are accessible using the `spec` alias, e
 Create a new Clojure project using the `clj-new` tool or open an existing `deps.edn` based project.
 
 ```shell
-clojure -A:new lib practicalli/leveraging-spec
+clojure -M:new lib practicalli/leveraging-spec
 ```
 The `clj-new` tool will include Clojure 1.10.x as a project dependency, which in turn includes the `clojure.spec.alpha` library.
 

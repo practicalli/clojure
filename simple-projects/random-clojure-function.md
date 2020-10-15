@@ -19,7 +19,7 @@ https://youtu.be/sXZKrD4cAFk
 Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
 
 ```shell
-clojure -A:new app practicalli/random-clojure-function
+clojure -M:new app practicalli/random-clojure-function
 ```
 This project has a `deps.edn` file that includes the aliases
 - `:test` - includes the `test/` directory in the class path so unit test code is found
@@ -131,7 +131,7 @@ Edit the `src/practicalli/random-clojure-function.clj` file.  Change the `-main`
 Run the tests with the Cognitect Labs test runner from the aliases in the project
 
 ```shell
-clojure -A:test:runner
+clojure -M:test:runner
 ```
 
 The tests should pass.

@@ -18,7 +18,7 @@ Use the `deps.edn` configuration from [practicalli/clojure-deps-edn](https://git
 Start a REPL session using the Clojure CLI tools, optionally including rebel readline for an enhance REPL UI.
 
 ```shell
-clojure -A:hot-load-deps:rebel
+clojure -M:alpha/hot-load-deps:repl/rebel
 ```
 
 A REPL will start an will download the required libraries for the `:hot-load-deps` alias (added to the local `~/.m2` maven cache on first run).
