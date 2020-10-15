@@ -2,7 +2,7 @@
     "gitbook": ">=3.0.0",
     "title": "Practicalli Clojure",
     "author": "Practicalli",
-    "authorHomepage": "http://practicalli.gitbook.io",
+    "authorHomepage": "http://practicalli.github.io",
     "description": "Practical approach to learning Clojure functional programming",
     "structure": {
         "readme": "introduction.md"
