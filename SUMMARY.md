@@ -60,7 +60,14 @@
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
 
 ## Developing Clojure
-<!-- Convert to deps.edn -->
+
+* [Coding Challenges](coding-challenges/index.md)
+    * [4Clojure](coding-challenges/4clojure/index.md)
+    * [Exercism](coding-challenges/exercism/index.md)
+        * [RNA Transcription](coding-challenges/exercism/rna-transcription.md)
+    * [CodeWars](coding-challenges/codewars/index.md)
+    <!-- * [Koans](coding-challenges/koans.md) -->
+    * [Advent of Code](coding-challenges/advent-of-code.md)
 * [Simple projects](simple-projects/index.md)
     <!-- * [Create a project](simple-projects/create-project.md) -->
     <!-- * [Run the REPL](simple-projects/run-the-repl.md) -->
