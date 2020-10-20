@@ -214,7 +214,6 @@
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
 * [Quick reference](quickstart/quick-reference.md)
-* [Kebab-case](reference/kebab-case.md)
 * [Regular Expressions](reference/clojure/regular-expressions/index.md)
     * [Matching with groups](reference/clojure/regular-expressions/matching-with-groups.md)
     * [Matching sub-strings](reference/clojure/regular-expressions/matching-sub-strings.md)
@@ -256,20 +255,25 @@
 * [Syntax](basic-clojure/syntax.md)
     * [Code documentation](basic-clojure/code-documentation.md)
     * [Comments](basic-clojure/comments.md)
-    * [Whats my environment](basic-clojure/whats-my-environment.md)
-    <!-- Simple values numbers, strings ratios -->
     * [Strings](basic-clojure/strings.md)
     * [Numbers & Maths](basic-clojure/numbers-maths.md)
     * [Ratios](basic-clojure/ratios.md)
-
     * [Control flow](basic-clojure/control-flow.md)
-
+    * [Predicate functions](reference/clojure/predicate-functions.md)
+    * [doc / source functions](reference/doc-and-source-functions.md)
     * [Assigning Names](basic-clojure/assigning-names.md)
     <!-- * [Naming](basic-clojure/naming.md) -->
     <!--     * [Global definitions](basic-clojure/global-definitions.md) -->
     <!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
     <!--     * [Private functions](basic-clojure/private-functions.md) -->
     <!--     * [Naming Conventions](reference/naming-conventions.md) -->
+    * [Kebab-case](reference/kebab-case.md)
+    * [Threading macros](reference/threading-macros.md)
+    * [Tagged Literals](reference/tagged-literals/index.md)
+        * [uuid](reference/tagged-literals/uuid.md)
+
+    <!-- * [Whats my environment](basic-clojure/whats-my-environment.md) -->
+    <!-- Simple values numbers, strings ratios -->
 
     <!-- Persistent data structures list vector map set -->
 * [Data structures](data-structures/index.md)
@@ -312,7 +316,6 @@
         * [With Vectors of Maps](designing-data-structures/with-vectors-of-maps.md)
         * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
         * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
-
     * [Shared Memory](data-structures/shared-memory.md)
 
 <!-- Definging names for data and expressions -->
@@ -354,8 +357,6 @@
 <!--     * [Basic Syntax](reference/basic-syntax.md) -->
 <!--     <\!-- * [Naming](reference/naming.md) -\-> -->
 <!--     * [Functions](reference/functions.md) -->
-    * [Predicate functions](reference/clojure/predicate-functions.md)
-    * [doc / source functions](reference/doc-and-source-functions.md)
 <!--     * [Sequences](reference/sequences.md) -->
 <!--     * [Control Flow](reference/control-flow.md) -->
 <!--     * [Persistent Data Structures](reference/persistent-data-structures.md) -->
@@ -364,13 +365,9 @@
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
 
-    * [Java Interoperability](basic-clojure/java-interop.md)
-        * [More Java fun](basic-clojure/more-java-fun.md)
+* [Java Interoperability](basic-clojure/java-interop.md)
+    * [More Java fun](basic-clojure/more-java-fun.md)
 
-
-    * [Threading macros](reference/threading-macros.md)
-    * [Tagged Literals](reference/tagged-literals/index.md)
-        * [uuid](reference/tagged-literals/uuid.md)
 
 
 <!--     * [Core.async](reference/core-async.md) -->
