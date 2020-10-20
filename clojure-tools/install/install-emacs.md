@@ -32,7 +32,7 @@ For a self-contained install, download Emacs 26.3 or later from the [Emacs for O
 
 Alternative, if you use Homebrew, run the following command:
 
-```bash
+```shell
 brew cask install emacs
 ```
 

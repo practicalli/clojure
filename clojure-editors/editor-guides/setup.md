@@ -53,7 +53,7 @@ Create a new project to practice what you are learning about Clojure:
 
 Open a command line terminal and run the following command:
 
-```bash
+```shell
 lein new playground
 ```
 

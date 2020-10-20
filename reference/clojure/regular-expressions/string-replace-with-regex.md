@@ -1,6 +1,6 @@
 ## String replace with regex pattern
 `clojure.string/replace` takes a string, a pattern and a substring that will replace matching patterns.
-```eva-clojure
+```eval-clojure
 (clojure.string/replace "mississippi" #"i.." "obb")
 ```
 <!-- "mobbobbobbi" -->

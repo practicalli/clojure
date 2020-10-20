@@ -25,7 +25,7 @@ Once downloaded, double-click the `.deb` file to install.
 ### Via Package Manager
 Add the official Atom package repository to your system by running the following commands in a terminal window:
 
-```bash
+```shell
 curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
 sudo apt-get update
@@ -92,7 +92,7 @@ We have created an example Clojure project called "Welcome To ClojureBridge" to 
 {% content "sixth" %}
 If you are comfortable using the git version control tool and the command line, then you can clone the project using git
 
-```bash
+```shell
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 

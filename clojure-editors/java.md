@@ -13,13 +13,13 @@ Clojure is a hosted language, so we need to install a Java run-time environment 
 
 Open a terminal and run the following command (you will be prompted for your login password to complete the install)
 
-```bash
+```shell
 sudo apt-get install openjdk-8-jre
 ```
 
 > #### Hint:: openjdk-8 not available?
 > If openjdk-8 is not available, add the [WebUpd8 Java personal package archive](https://launchpad.net/~webupd8team/+archive/ubuntu/java)
-```bash
+```shell
 sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 ```
@@ -27,7 +27,7 @@ sudo apt-get update
 > #### Hint::Switching between Java versions
 > If you have more than one version of Java installed, set the version by opening a terminal and using the following command
 >
-```bash
+```shell
 sudo update-alternatives --config java
 ```
 > Available java versions will be listed.  Enter the list number for the version you wish to use.
@@ -38,7 +38,7 @@ sudo update-alternatives --config java
 
 If you use [Homebrew](https://brew.sh/), then run the following commands in a terminal:
 
-```bash
+```shell
 brew tap AdoptOpenJDK/openjdk
 brew install adoptopenjdk-openjdk8
 ```
@@ -47,17 +47,17 @@ brew install adoptopenjdk-openjdk8
 > You can run more than one version of Java on MacOS. Set the Java version by opening a terminal and using one of the following commands
 >
 > List Java versions installed
-```bash
+```shell
 /usr/libexec/java_home -V
 ```
 >
 > Switch to Java version 1.8 (recommended)
-```bash
+```shell
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 ```
 >
 > Change back to Java version 11 (not recommended)
-```bash
+```shell
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 ```
 
@@ -69,7 +69,7 @@ export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 
 Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime) using the following commands in a command window
 
-```bash
+```shell
 choco install javaruntime
 ```
 

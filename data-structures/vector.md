@@ -8,7 +8,7 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 > **Note** Experiment with creating vectors for your data structures
 
-```clj
+```clojure
 (vector 1 2 3 4)
 [1 2 3 4 5]
 [56.9 60.2 61.8 63.1 54.3 66.4 66.5 68.1 70.2 69.2 63.1 57.1]
@@ -28,7 +28,7 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 > **Note** What can you do with vectors? Vectors are easy to add more items to, delete items from, or pull arbitrary items out of. Here are some functions that operate on vectors.
 
-```clj
+```clojure
 (vector? [5 10 15])
 (= [] [])
 (= [] [1])

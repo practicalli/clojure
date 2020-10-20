@@ -82,7 +82,7 @@ The [`clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html) li
 
 We will start by creating a new project on the command line with Leiningen, which creates parallel source and test branches.
 
-```bash
+```shell
 lein new my-project
 ```
 
@@ -131,7 +131,7 @@ The project also used [Bootstrap](https://getbootstrap.com/) as a Cascading Styl
 
 The project was created with the [Leiningen figwheel template](https://github.com/bhauman/lein-figwheel), to give instant feedback in the web page as we update the code.
 
-```bash
+```shell
 lein new figwheel simple-website -- --reagent
 ```
 

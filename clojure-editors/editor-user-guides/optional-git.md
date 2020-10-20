@@ -7,7 +7,7 @@ To check if you already have Git installed open a terminal and use the command `
 
 Install Git with this command in the terminal:
 
-```bash
+```shell
 sudo apt-get install git`
 ```
 
@@ -24,7 +24,7 @@ To show who makes changes in a Git project you should set your `user.name` and `
 
 If this is the first time using Git, then use the following commands in a terminal:
 
-```bash
+```shell
 git config --global user.name "Your Name"
 git config --global user.email "Your Email address"
 ```

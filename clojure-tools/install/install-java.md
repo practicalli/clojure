@@ -4,7 +4,9 @@ Before installing, check to see if there is an appropriate version of Java alrea
 
 Open a terminal and run the command
 
-`java -version`
+```shell
+java -version
+```
 
 If Java is installed, you will see something like this in your terminal:
 
@@ -23,13 +25,13 @@ For windows users, the scoop install is recommended.
 
 Open a terminal and run the following command (you will be prompted for your login password to complete the install)
 
-```bash
+```shell
 sudo apt install openjdk-11-jdk
 ```
 
 > #### Hint:: openjdk-11 not available or not the right version?
 > If openjdk-11 is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
-```bash
+```shell
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 ```
@@ -37,7 +39,7 @@ sudo apt-get update
 > Switching between Java versions
 > If you have more than one version of Java installed, set the version by opening a terminal and using the following command
 >
-```bash
+```shell
 sudo update-alternatives --config java
 ```
 > Available java versions will be listed.  Enter the list number for the version you wish to use.
@@ -48,7 +50,7 @@ sudo update-alternatives --config java
 
 Using [Homebrew](https://brew.sh/), run the following command in a terminal to install Java 11:
 
-```bash
+```shell
 brew cask install adoptopenjdk11
 ```
 
@@ -56,12 +58,12 @@ brew cask install adoptopenjdk11
 > You can run more than one version of Java on MacOS. Set the Java version by opening a terminal and using one of the following commands
 >
 > Show the Java versions installed
-```bash
+```shell
 /usr/libexec/java_home -V
 ```
 >
 > Switch to Java version 11
-```bash
+```shell
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 ```
 
@@ -86,7 +88,7 @@ scoop can also be used to [install clojure](install-clojure.md)
 ## Still having problems?
 If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/) package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime) using the following command in a command line window
 
-```bash
+```shell
 choco install javaruntime
 ```
 

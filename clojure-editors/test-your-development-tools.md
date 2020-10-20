@@ -6,7 +6,7 @@ We have created an example Clojure project called "Welcome To ClojureBridge" to 
 
 Run a REPL in the project using your Clojure editor or on the command line
 
-```bash
+```shell
 cd welcometoclojurebridge
 lein repl
 ```
@@ -16,7 +16,7 @@ lein repl
 
 If you are comfortable using the git version control tool and the command line, then you can use the following to run the REPL
 
-```bash
+```shell
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 cd welcometoclojurebridge
 lein repl

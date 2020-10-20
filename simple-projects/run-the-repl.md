@@ -4,7 +4,7 @@
 
 >  **Note** From the root of your project directory, run the following command 
   
-```bash
+```shell
 lein repl
 ```
 
