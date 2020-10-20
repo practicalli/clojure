@@ -106,6 +106,8 @@
     * [Configure projects](testing/unit-testing/configure-projects-for-tests.md)
     * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
     * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
+    * [Fixtures](testing/unit-testing/fixtures.md)
+    * [Test Selectors](testing/unit-testing/test-selectors.md)
     <!-- * [TDD Kata: Recent Songlist](testing/unit-testing/tdd-kata/recent-songlist.md) -->
     <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
 
