@@ -1,9 +1,15 @@
-# Clojure development environment guides
-Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors / IDE's for Clojure and ClojureScript development.
+# Editors for Clojure development
+The best editor to use for learning Clojure is the editor you are already familiar with (or want to learn).  Ideally this will be an editor that supports clojure by providing:
+* syntax highlighting (colored parens can be useful too)
+* structural editing to ensure parens are balanced when writing and refactor code
+* running / connecting to a REPL process
+* evaluation results inline or in a repl window (fast feedback on what the code does)
+* data inspector / browser to visualise large and nested data ([external tools available](/clojure-tools/data-browsers/))
 
-Use the editor you are most familiar with, or if just starting to code then VSCode and Calva is a good choice.
+Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors for Clojure and ClojureScript development. **[Install guides](editor-install-guides)** are provided for these editors.
 
-**[Install guides](install-guides/index.html)** are provided for all these editors.
+> #### Hint::Just starting to code?
+> VSCode and Calva is a good choice for those just starting to write code.
 
 
 <!-- Clojure Editors -->
@@ -58,11 +64,36 @@ Clojure Interactive Development Environment for Vim8/Neovim.
 
 <!-- NeoVim and Conjure -->
 {% content "vimconjure"%}
-[Conjure](https://github.com/Olical/conjure) is a plugin for Neovim
+
+[![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)
+
+Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement of Vim, implemented in less coded, fully compatible with Vim's editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
+
+[Conjure](https://github.com/Olical/conjure) is an interactive environment for evaluating code within your running program, initially targeted at Lisp languages such as Clojure.
+
+#### Install and user guides
+* [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure.md)
+* [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure.md)
+
+
+#### Quick try tutorial
+Try the Conjure interactive `:ConjureSchool` tutorial without the need to install, only a recent version of neovim
+```shell
+curl -fL conjure.fun/school | sh
+```
+![Clojure editors - neovim and conjure tutorial](/images/clojure-editors-neovim-conjure-tutorial.png)
+
+`:q` to quit the tutorial.
+
+
+<!-- [![asciicast](https://asciinema.org/a/325517.svg)](https://asciinema.org/a/325517) -->
+
+#### References
+
+* [Getting started with Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)
+* [Neovim user guide](https://neovim.io/doc/user/)
 * [Conjure install guide](https://github.com/Olical/conjure)
 * [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/) - an introduction to using Conjure
-
-[![asciicast](https://asciinema.org/a/325517.svg)](https://asciinema.org/a/325517)
 
 <!-- Atom.io -->
 {% content "atom" %}
@@ -72,7 +103,7 @@ Clojure Interactive Development Environment for Vim8/Neovim.
 #### Chlorine
 * [Chlorine install guide](https://github.com/mauricioszabo/atom-chlorine)
 
-![Chlorine animated gif](https://github.com/mauricioszabo/atom-chlorine/blob/master/docs/eval-code.gif)
+![Chlorine animated gif](https://raw.githubusercontent.com/mauricioszabo/atom-chlorine/master/docs/eval-code.gif)
 
 #### ProtoREPL
 * [Atom & ProtoREPL install guide](install-guides/atom-protorepl.html)
