@@ -47,6 +47,25 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 > ####HINT::Try the project with your preferred editor
 > Using a [Clojure aware editor](/clojure-editors/editor-user-guides/), open the playground project and run the REPL.  Then write code expressions in the editor and evaluate them to see the result instantly.
 
+## Running the project
+Run project with or without an alias:
+
+```shell
+clojure -M:alias -m domain.app-name
+clojure -M -m domain.app-name
+```
+
+In the project `deps.edn` file it can be useful to define an alias to run the project, specifying the main namespace, the function to run and optionally any default arguments that are passed to that function.
+
+```clojure
+:project/run
+{:ns-default domain.main-namespace
+ :exec-fn -main
+ :exec-args {:port 8888}}
+```
+Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default aruments in `exec-args`.
+
+
 
 ## Other templates
 `clj-new` has 3 templates that create `deps.edn` based projects

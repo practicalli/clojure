@@ -1,9 +1,33 @@
 # Using Clojure tools
-The `clojure` command provided by Clojure tools can be used to evaluate code, run Clojure applications and start a command line REPL.
+The `clojure` command provided by Clojure CLI tools can be used to evaluate code, run Clojure applications and start a command line REPL.  The Clojure CLI tools are extended by adding aliases for community tools, eg. [as found in practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
 * [rebel REPL UI](rebel-repl/) a fully featured Clojure command line REPL user interface
 * [deps.edn configuration](deps-edn-configuration.md)
 * [deps.edn aliases](deps-edn-aliases.md)
+
+
+## Common tasks for Clojure development
+
+| Task                              | Command                                                   | Built-in  |
+|-----------------------------------|-----------------------------------------------------------|-----------|
+| Create project (clojure exec)     | `clojure -X:new :template app :name practicalli/my-app`   | Add alias |
+| Create project (clojure main)     | `clojure -M:new app practicalli/my-app`                   | Add alias |
+| Download dependencies             | `clojure -Spath` or `clojure -P`  (plus optional aliases) | Yes       |
+| Run the project                   | `clojure -M -m domain.main-namespace`                     | Yes       |
+| Run the project                   | `clojure -X:project/run -m domain.main-namespace`         | Add alias |
+| Find libraries (mvn & git)        | `clojure -M:project/find-deps library-name`               | Add alias |
+| Check for new dependency versions | `clojure -M:project/outdated`                             | Add alias |
+| Run tests                         | `clojure -M:test/runner`                                  | Add alias |
+| Package library                   | `clojure -X:project/jars`                                 | Add alias |
+| Deploy library locally            | `clojure -X:deps mvn-install`                             | Yes       |
+| Package application               | `clojure -X:project/uberjar`                              | Add alias |
+
+> #### Hint::Which flag to use?
+> The -M flag should work with all community tools, at they are typically support the Clojure.main approach with free-form string options as arguments.
+>
+> The `-X` flag should be used for the new built-in aliases and for any tools supporting Clojure exec approach, with arguments passed as key/value pairs.
+> More tools should start adopting the `-X` flag and supporting key/value arguments in future.
+
 
 Clojure CLI tools can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
 

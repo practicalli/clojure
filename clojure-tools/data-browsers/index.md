@@ -14,4 +14,13 @@ New tools are being created to capture and visualize results from evaluated expr
 * [Reveal](reveal.md) repl with data browser, also a `tap>` source (new project)
 * [Portal](https://github.com/djblue/portal) - tool to navigate your data (new project)
 * [Clojure inspector](clojure-inspector.md) (Java Swing based inspector)
-* [Cognitect REBL data browser](rebl-data-visualization.md) - originally developed to work with Datomic Clojure database
+
+## Specific cases
+[Cognitect REBL data browser](/alternative-tools/clojure-tools/cognitect-rebl.md) has been developed to assist with Datomic Clojure database development.
+
+Cognitect provides the REBL data browser as part of the [Cognitect dev-tools](https://cognitect.com/dev-tools)
+
+> #### WARNING::Sign-up and personal repository code required
+> Sign-up to the Cognitect dev-tools license which will email a user specific maven configuration, which must be added as a new server entry under servers in `~/.m2/settings.xml` and as a provider entry in `~/.clojure/deps.edn`
+
+*

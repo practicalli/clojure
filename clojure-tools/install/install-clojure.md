@@ -67,7 +67,9 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
 
+![Practicalli Clojure deps.edn banner](/images/practicalli-clojure-deps-edn-banner.png)
 ## Clojure CLI tools common aliases
+
 Create a fork of the [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) on GitHub
 
 Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development across all projects.
@@ -81,13 +83,16 @@ All tools are provided via libraries and are only installed on first use.
 If you choose to use your own `~/.clojure/deps.edn` then add an alias for the clj-new tool and rebel readline as this is extensively used in this guide.
 
 
-## clj-kondo static analyser / linter
-[clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) performs static analysis on Clojure, ClojureScript and EDN, without the need of a running REPL. It informs you about potential errors while you are typing when used with [supported editors](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md).
+![clj-kondo banner](/images/clj-kondo-banner.png)
+## clj-kondo linter
+
+[clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) is a lint tool that highlights syntactic errors and suggests idioms for Clojure, ClojureScript and EDN.
+
+[Use clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) to warning about errors as you type so issues can be fixed as soon as they occur and enhance the joy of coding.
 
 Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) for your operating system.
 
-> #### Hint::clj-kondo provides a paring buddy
-> [Configuring clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) will greatly enhance the joy of coding in Clojure by keeping your code idiomatic and free from a wide range of syntax bugs.
+**[Clj-kondo config](https://github.com/clj-kondo/config)** contains additional configuration for using clj-kondo with libraries that extend the Clojure language via macros.
 
 
 ## Optional: rlwrap readline
