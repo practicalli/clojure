@@ -1,9 +1,9 @@
 # Regular Expressions - regex
-Regular expressions are a powerful and compact way to find specific patterns in text strings. Clojure provides a syntax for literal Java regex patterns plus a few functions to help Java's regex capabilities fit better with the rest of Clojure. Java's regular-expression engine is reasonably powerful, supporting Unicode and features such as reluctant quantifiers and look-around clauses.
+Regular expressions are a powerful and compact way to find specific patterns in text strings. Clojure provides a simple syntax for Java regex patterns.
 
-`#"pattern"` is the literal representation used to define regular expressions in Clojure, where `pattern` is from the regular expression language.  `(re-pattern pattern)` will return the Clojure literal representation of a given regex pattern.
+`#"pattern"` is the literal representation of a regular expressions in Clojure, where `pattern` is the regular expression.  `(re-pattern pattern)` will return the Clojure literal representation of a given regex pattern.
 
-`(re-find pattern-literal string)`
+The **[regular expression syntax cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet)** by Mozilla is an excellent reference for regular expression patterns.
 
 ## Regular expressions overview
 Regular expressions in Clojure
