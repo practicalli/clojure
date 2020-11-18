@@ -455,7 +455,9 @@
 <!-- * [Puzzles](puzzles/index.md) -->
 <!--     * [Random Seat Assignment](puzzles/random-seat-assignment.md) -->
 
-<!-- ## Deprecated Content -->
+## Deprecated Content
+<!-- Link for renamed integration testing section -->
+* [Integration testing](testing/integration-testing/index.md)
 <!-- * [How to use the workshop](using-the-workshop/index.md) -->
 <!--     * [Technical Requirements](using-the-workshop/requirements.md) -->
 <!--     * [Code Examples](using-the-workshop/code-examples.md) -->
