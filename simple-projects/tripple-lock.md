@@ -5,7 +5,7 @@
 You have just bought a new safe too keep all the richest you will gain from becoming a Clojure developer (hopefully).  The safe has a 3 combination lock to protect your new found wealth, but just how safe is the safe?
 
 ## Create a new Clojure project
-Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
+Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
 ```shell
 clojure -M:new app practicalli/triple-lock

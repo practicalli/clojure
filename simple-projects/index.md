@@ -14,7 +14,7 @@ An effective way to get comfortable with Clojure is to start writing small proje
 
 
 ## Creating Clojure projects
-Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
+Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
 <!-- | Salary Calculator                                  | hash-map       | Calculate salaries for permanent and contract roles                                        | -->
 <!-- | Java Interoperability   | java lang, interop, java fx  | Using Java libraries to do more   | -->

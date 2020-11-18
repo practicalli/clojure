@@ -20,10 +20,12 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 > This project was inspired by the RNA Transcription exercise on Exercism.io.  Related exercises include Nucleotide Count and Hamming.
 
 ## Create a project
-Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
+The project is part of the [Exercism.io Clojure track](/coding-challenges/exercism/rna-transcription.html) and a project can be downloaded via the Exercsim command line tool.
+
+Alternatively, use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
 ```shell
-clojure -M:new app practicalli/rna-transcription
+clojure -M:project/new app practicalli/rna-transcription
 ```
 
 ## Define unit tests
@@ -149,6 +151,56 @@ Update `to-rna` to be a pure function by including the dictionary as an argument
     (string/join
            (map #(convert-nucleotide dictionary %) dna))))
 ```
+
+## Idiomatic improvements
+The `to-rna` function is not pure, as it relies on a shared value in the namespace, the `dictionary-dna-rna` transcription map.
+
+Passing `dictionary-dna-rna` as an argument to the `to-rna` function as well as the dna sequence would make `to-rna` a pure function.  It would also allow use of a range of transcription maps.
+
+```clojure
+(defn to-rna
+  "Transcribe each nucleotide from a DNA strand into its RNA complement
+  Arguments: string representing DNA strand
+  Return: string representing RNA strand"
+  [transcription dna]
+  (string/join
+    (map #(or (transcription %)
+              (throw (AssertionError. "Unknown nucleotide")))
+         dna )))
+```
+
+The change to the `to-rna` function will break all the tests.
+
+> #### Hint::Exercisim project and the pure function
+> If you wish to keep the Exercisim project passing, then add a new namspace to the project by create a new file called `rna-transcript-pure.clj`.  Add the new design of the `to-rna` function to that namespace.  Copy the tests into a new namespace by creating a file called `rna-transcription-pure.clj` and update the tests to use two arguments when calling `to-rna`
+
+Updated unit tests that call `to-rna` with both arguments
+
+```clojure
+(ns rna-transtription-pure-test
+  (:require [clojure.test :refer [deftest is]]
+            [rna-transcription-pure :as SUT]
+            [rna-transcription :as data]))
+
+(deftest transcribes-cytosine-to-guanine
+  (is (= "G" (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "C"))))
+
+(deftest transcribes-guanine-to-cytosine
+  (is (= "C" (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "G"))))
+
+(deftest transcribes-adenine-to-uracil
+  (is (= "U" (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "A"))))
+
+(deftest it-transcribes-thymine-to-adenine
+  (is (= "A" (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "T"))))
+
+(deftest it-transcribes-all-nucleotides
+  (is (= "UGCACCAGAAUU" (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "ACGTGGTCTTAA"))))
+
+(deftest it-validates-dna-strands
+  (is (thrown? AssertionError (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "XCGFGGTDTTAA"))))
+```
+
 
 ## Summary
 This exercise has covered the concept of using a Clojure hash-map structure as a dictionary lookup.

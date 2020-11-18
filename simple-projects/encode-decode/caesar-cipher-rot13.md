@@ -8,7 +8,7 @@ A dictionary can be generated to translate between the original alphabet and the
 
 
 ## Create a project
-Use [Clojure CLI tools and clj-new](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) to create a new Clojure project.
+Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
 ```shell
 clojure -M:new app practicalli.cypher-rot13

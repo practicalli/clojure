@@ -1,3 +1,5 @@
+![Clojure - Simple projects - Encoding and decoding](/images/simple-projects-encoding-true-false.png)
+
 # Convert boolean true false to 1 and 0
 A very simple example of encoding and decoding is converting the Clojure values of `true` and `false` to `1` and `0` respectively.
 
@@ -50,3 +52,16 @@ Example:
 ```eval-clojure
 (map {false 0 true 1} [true false false true true true false false true false true false false true])
 ```
+
+### How does this work?
+The `map` function takes two arguments, a function and a collection.  The `map` function calls the function given as an argument and calls it with each element of the collection in turn.  The result of each call is remembered by the `map` function and when the last element of the collection has been used, a new collection of all the results is returned.
+
+In the above example, the hash-map {false 0 true 1} acts as a function.
+
+```eval-clojure
+({false 0 true 1} true)
+```
+
+A hash-map acts as a function in that it can return an associated value when given a key as an argument.
+
+Calling `{false 0 true 1}` with `true` as an argument returns the value `1`.
