@@ -60,7 +60,7 @@ In the Maven provider section of `~/.clojure/deps.edn` add the Cognitect Maven r
 
 {% content "practicalli" %}
 
-A `:inspect/rebl` alias is included in [practicalli/clojure-deps-edn configuration](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases)
+A `:inspect/rebl` alias is included in [practicalli/clojure-deps-edn configuration]({{ book.P9IClojureDepsEdnInstall }})
 
 {% content "manual" %}
 
@@ -119,7 +119,7 @@ clj -M:inspect/rebl
 
 {% content "practicalli2" %}
 
-An `:middleware/nrebl` alias along with the supporting `:lib/cider-nrepl` aliases are included in [practicalli/clojure-deps-edn configuration](/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases)
+An `:middleware/nrebl` alias along with the supporting `:lib/cider-nrepl` aliases are included in [practicalli/clojure-deps-edn configuration]({{ book.P9IClojureDepsEdnInstall }})
 
 {% content "manual2" %}
 
@@ -183,7 +183,7 @@ See the excellent guide on [using VSCode Calva with REBL](https://calva.io/rebl/
 ## References
 * [Cognitect Labs REBL-distro repository](https://github.com/cognitect-labs/REBL-distro) and [issue tracker](https://github.com/cognitect-labs/REBL-distro/issues)
 * [Cognitect Local Dev and CI with dev-local](https://docs.datomic.com/cloud/dev-local.html)
-* [practicalli/clojure-deps-aliases common aliases for Clojure](http://practicalli.github.io/clojure/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases)
+* [practicalli/clojure-deps-aliases common aliases for Clojure]({{ book.P9IClojureDepsEdnInstall }})
 * [nrebl.middleware project](https://github.com/RickMoynihan/nrebl.middleware) and [documentation](https://cljdoc.org/d/rickmoynihan/nrebl.middleware/CURRENT/doc/readme)
 * [#rebl channel on Clojurians Community](https://clojurians.slack.com/messages/rebl)
 * [nrepl-rebl](https://github.com/DaveWM/nrepl-rebl) alternative to nrebl.middleware

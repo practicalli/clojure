@@ -420,6 +420,8 @@
 
 * [alternative tools](alternative-tools/index.md)
     * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
+    * [Compare with Leiningen](alternative-tools/clojure-tools/compare-with-leiningen.md)
+    * [Migrating from Leiningen](alternative-tools/clojure-tools/migrating-to-clojure-cli-tools.md)
     * [REBL data browser](alternative-tools/clojure-tools/cognitect-rebl.md)
     * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
     * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
