@@ -1,6 +1,4 @@
-# Neovim and Conjure user guide
-
-[![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)
+[![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
 
 ![Clojure editors - neovim and conjure with clojure project](/images/clojure-editors-neovim-conjure-clojure-project.png)
 
@@ -11,18 +9,16 @@
  `:ConjureSchool` command will start an interactive tutorial and introduce Conjure's workflow and key mappings
 
 ## Start a REPL on the command line
-Using [`practicalli/clojure-deps-edn`](http://practicalli.github.io/clojure/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases) aliases, run a REPL with `nrepl` and `cider-nrepl`
+Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts a headless nrepl server and starts the rebel readline terminal UI
 
 ```shell
-clojure -X:middleware/nrepl
+clojure -M:repl/repl
 ```
 
 Then open a Clojure file and Conjure will (magically) connect to the running REPL and pop-up a connect message in the top right corner.
 
 ## Starting a REPL from Vim
-Start neovim with a Clojure file, `nvim src/practialli/playground.clj` or run `nvim` and then open a file to edit `:e src/practicalli/playground.clj`.  A Clojure file is any ending in `*.clj`, `*.cljc` or `.edn`.
-
-Start a REPL from within neovim
+Start neovim with a Clojure file, e.g. `nvim src/practialli/playground.clj` or run `nvim` and open a Clojure file using `:NERDTree`.  A Clojure file has a name ending in `*.clj`, `*.cljc` or `.edn`.
 
 `:Clj` command to start a REPL using Clojure CLI Tools
 `:Lein` command to start a REPL using Leiningen
@@ -36,33 +32,40 @@ Start a REPL from within neovim
 A full screen REPL log is displayed.  `, l q` to close the log window and return to the Clojure file.
 `, l v` to create a vertical split between code and REPL log, `, l h` for a horizontal split.
 
-## Evaluating code
-With the maplocalleader key set to `,`
 
-`, e b` evaluates the current buffer
-`, e f` evaluate the code in the file (from the file system)
-`, e e` evaluate the current expression
-`, e r` evaluate top level form (root)
-`, e !` evaluate current form and replace with result
+## Evaluating code
+With the `maplocalleader` key set to `,`
+
+* `, e b` evaluates the current buffer
+* `, e f` evaluate the code in the file (from the file system)
+* `, e e` evaluate the current expression
+* `, e r` evaluate top level form (root)
+* `, e !` evaluate current form and replace with result
 
 > NOTE: Conjure results appear in a pop-up panel which displays until the cursor is moved.  Whilst the pop-up is displaying, it is not possible to quit a file with `:q`.  Move the cursor or use `g t` to change tabs to remove the popup.
 
-## Neovim commands
-`:` in Vim normal mode to start entering a command
+
+## Neovim commands and history
+`:` in Vim normal mode to start entering a command, type the start of a command and press `TAB` to use command completion.  `TAB` and `Shift-TAB` navigate the completion menu.
+
 `q:` to popup a list of recent commands
 
 
 ## File management
-https://neovim.io/doc/user/usr_07.html
+Multiple files can be opened in Neovim, either as split windows or tabs.
 
-`nvim src.clj deps.edn readme.org` will open three files
+`nvim src.clj deps.edn readme.org` will open three files in separate tabs
 
-`:n` or `:next` to switch to the next file, `:2next` to jump 2 files, `:last` for the last file.
-`:N` or `:previous` to switch to the previous file
+`:n` or `:next` to switch to the next tab, `:2next` to jump 2 tabs, `:last` for the last tab.
+`:N` or `:previous` to switch to the previous tab
 
-`C-^` to toggle to last shown file
+`C-^` to toggle to last shown tab
 
 `:NERDTree` or `:NERDTreeToggle` to show a graphical file manager in a left side split.
+
+NERDTree opens files as splits.  `C-w` followed by either `jkhl` will move the cursor to the split in that direction.
+
+* [Neovim reference: editing more than one file](https://neovim.io/doc/user/usr_07.html)
 
 
 ## Navigation within projects
@@ -96,16 +99,28 @@ Quit neovim to load the updted configuration (unless there is someway to reload 
 
 Run neovim and `:PlugInstall` to install all plugins defined in the `~/.config/nvim/init.vim` configuration
 
+* Alternative: [Conquer of Completion](https://github.com/neoclide/coc.nvim)
+
 
 ## Running tests
 `, t n` to test the current namespace
 
 
 ## Structural editing
-?
+`>)`, `<)`, `>(`, and `<(` to slurp and barf, where the angle bracket indicates the direction, and the parenthesis indicates which end to operate on.
+
+* See [vim-sexp mappings for regular people](https://github.com/tpope/vim-sexp-mappings-for-regular-people) for more structural editing
+
 
 ## Searching through projects
+TODO:
 
 
 ## Refactor code
-?
+TODO: find equivalents for narrowing, iedit and helm search results editing for vim
+
+
+## Code analysis and idom checking
+clj-kondo automatically checks Clojure code at it is typed, providing instant feedback on Clojure syntax and idioms
+
+Linting works continually once the dense/ale plugin and clj-kondo is installed via the 'w0rp/ale' plugin

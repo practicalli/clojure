@@ -57,6 +57,7 @@
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
         * [Atom Proton](clojure-editors/editor-install-guides/atom-proton.md)
         * [Emacs Spacemacs](clojure-editors/editor-install-guides/emacs-spacemacs.md)
+        * [Emacs](clojure-editors/editor-install-guides/emacs.md)
         * [Neovim Conjure](clojure-editors/editor-install-guides/neovim-conjure.md)
         * [VSCode Calva](clojure-editors/editor-install-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-install-guides/intellij-cursive.md)

@@ -1,10 +1,13 @@
 # Editors for Clojure development
 The best editor to use for learning Clojure is the editor you are already familiar with (or want to learn).  Ideally this will be an editor that supports clojure by providing:
+
 * syntax highlighting (colored parens can be useful too)
 * structural editing to ensure parens are balanced when writing and refactor code
 * running / connecting to a REPL process
 * evaluation results inline or in a repl window (fast feedback on what the code does)
 * data inspector / browser to visualise large and nested data ([external tools available](/clojure-tools/data-browsers/))
+
+![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
 Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors for Clojure and ClojureScript development. **[Install guides](editor-install-guides)** are provided for these editors.
 
@@ -13,7 +16,7 @@ Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors fo
 
 
 <!-- Clojure Editors -->
-{% tabs vscode="VSCode & Calva", spacemacs="Emacs & Spacemacs", vimiced="vim-iced", vimconjure="NeoVim & Conjure", atom="Atom & Chlorine", intellij="IntelliJ & Cursive" %}
+{% tabs vscode="VSCode & Calva", spacemacs="Emacs & Spacemacs", vimconjure="NeoVim & Conjure", spacevim="SppaceVim & Fireplace", vimiced="vim-iced", atom="Atom & Chlorine", intellij="IntelliJ & Cursive" %}
 
 
 <!-- VSCode and Calva -->
@@ -22,7 +25,8 @@ Use VSCode and Calva if you are familiar with VSCode or have no editor preferenc
 
 Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Calva is a very active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) is very supportive.
 
-* [VSCode & Calva install guide](install-guides/vscode-calva.html)
+* [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
+* [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
 * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
 
 <!-- The tabs code block does not support a nested youtube block -->
@@ -54,18 +58,9 @@ Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Cal
 
 
 <!-- NeoVim and Conjure -->
-{% content "vimiced"%}
-Clojure Interactive Development Environment for Vim8/Neovim.
-
-* [vim-iced documentation](https://liquidz.github.io/vim-iced/)
-
-[![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced)
-
-
-<!-- NeoVim and Conjure -->
 {% content "vimconjure"%}
 
-[![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/master/banners/neovim-conjure-banner.png)
+[![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
 
 Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement of Vim, implemented in less coded, fully compatible with Vim's editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
 
@@ -94,6 +89,28 @@ curl -fL conjure.fun/school | sh
 * [Neovim user guide](https://neovim.io/doc/user/)
 * [Conjure install guide](https://github.com/Olical/conjure)
 * [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/) - an introduction to using Conjure
+
+<!-- SpaceVim and vim-fireplace -->
+{% content "spacevim"%}
+[SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes a simple Clojure development environment based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
+
+* [Practicalli install guide](editor-install-guides/spacevim-fireplace.md)
+* [Practicalli user guide](editor-user-guides/spacevim-fireplace.md)
+* [SpaceVim quickstart guide](https://spacevim.org/quick-start-guide/)
+* [SpaceVim documentation](https://spacevim.org/documentation/)
+
+![SpaceVim start screen](/images/spacevim-start-screen.png)
+
+![SpaceVim and vim-fireplace - Clojure project and REPL](/images/spacevim-clojure-repl-gruvbox-light.png)
+
+<!-- vim-iced and vim-fireplace -->
+{% content "vimiced"%}
+Clojure Interactive Development Environment for Vim8/Neovim.
+
+* [vim-iced documentation](https://liquidz.github.io/vim-iced/)
+
+[![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced)
+
 
 <!-- Atom.io -->
 {% content "atom" %}
