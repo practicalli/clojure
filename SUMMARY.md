@@ -273,7 +273,6 @@
     * [Numbers & Maths](basic-clojure/numbers-maths.md)
     * [Ratios](basic-clojure/ratios.md)
     * [Control flow](basic-clojure/control-flow.md)
-    * [Predicate functions](reference/clojure/predicate-functions.md)
     * [doc / source functions](reference/doc-and-source-functions.md)
     * [Assigning Names](basic-clojure/assigning-names.md)
     <!-- * [Naming](basic-clojure/naming.md) -->
