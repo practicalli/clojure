@@ -1,12 +1,13 @@
 # Install Clojure
-Establish a Clojure environment by installing the following:
+Establish an effective Clojure development environment by installing the following:
 
-| Tools                 | Required    | Purpose                                                    |
-|-----------------------|-------------|------------------------------------------------------------|
-| Clojure CLI tools     | Essential   | Run Clojure REPL for development and production            |
-| Aliases for CLI tools | Recommended | Additional tools to enhance Clojure development experience |
-| clj-kondo             | Recommended | Static analysis of code to find all those little bugs      |
-| rlwrap                | Optional    | A simple read line for command history, only used by `clj` |
+| Tools                                                  | Required    | Purpose                                                    |
+|--------------------------------------------------------|-------------|------------------------------------------------------------|
+| [Clojure CLI tools](#clojure-cli-tools-common-aliases) | Essential   | Run Clojure REPL for development and production            |
+| [Community tools](community-tools.md)                  | Recommended | Additional tools to enhance Clojure development experience |
+| [Clojure aware editor](/clojure-editors/)              | Recommended | Complete Clojure development experience                    |
+| [Code analysis (clj-kondo)](code-analysis.md)          | Recommended | Static analysis of code to find all those little bugs      |
+| rlwrap                                                 | Optional    | A simple read line for command history, only used by `clj` |
 
 > #### Hint::Aliases provided by practicalli/clojure-deps-edn
 > [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
@@ -21,26 +22,20 @@ A command line REPL provides the essential tool for Clojure development.  [Insta
 <!-- Ubuntu install -->
 {% content "linux" %}
 
-Use the Linux script installer from [Clojure.org](https://clojure.org/guides/getting_started#_installation_on_linux)
-
-```shell
-curl -O https://download.clojure.org/install/linux-install-1.10.1.536.sh
-chmod +x linux-install-1.10.1.536.sh
-sudo ./linux-install-1.10.1.536.sh
-```
+Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux)
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
 <!-- Homebrew (MacOSX) install -->
 {% content "homebrew" %}
 
-Install the command line tools with brew from the clojure/tools tap:
+Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure/homebrew-tools), as defined in the [Clojure.org Getting started guide](https://clojure.org/guides/getting_started#_installation_on_linux)
 
 ```shell
 brew install clojure/tools/clojure
 ```
 
-Use [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
+> [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
 
 
 <!-- Windows install with scoop.sh -->
@@ -66,33 +61,6 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
-
-![Practicalli Clojure deps.edn banner](/images/practicalli-clojure-deps-edn-banner.png)
-## Clojure CLI tools common aliases
-
-Create a fork of the [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) on GitHub
-
-Clone that fork to `~/.clojure/` and instantly have access to dozens of tools for Clojure software development across all projects.
-
-```shell
-git clone git@github.com:your-fork/clojure-deps-edn.git ~/.clojure/
-```
-
-All tools are provided via libraries and are only installed on first use.
-
-If you choose to use your own `~/.clojure/deps.edn` then add an alias for the clj-new tool and rebel readline as this is extensively used in this guide.
-
-
-![clj-kondo banner](/images/clj-kondo-banner.png)
-## clj-kondo linter
-
-[clj-kondo](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) is a lint tool that highlights syntactic errors and suggests idioms for Clojure, ClojureScript and EDN.
-
-[Use clj-kondo with your preferred editor](https://github.com/borkdude/clj-kondo/blob/master/doc/editor-integration.md) to warning about errors as you type so issues can be fixed as soon as they occur and enhance the joy of coding.
-
-Follow the [clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) for your operating system.
-
-**[Clj-kondo config](https://github.com/clj-kondo/config)** contains additional configuration for using clj-kondo with libraries that extend the Clojure language via macros.
 
 
 ## Optional: rlwrap readline

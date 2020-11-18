@@ -1,26 +1,31 @@
-# Install Clojure Tools
+# Clojure CLI Tools
 Clojure CLI tools provide a simple and configurable way to:
 
-* Run Clojure programs
-* Run an interactive REPL (Read-Eval-Print Loop) and evaluate Clojure expressions
+* Run Clojure programs and tools
+* Run an interactive REPL (Read-Eval-Print Loop) and evaluate Clojure expressions, usually with a [Clojure aware editor](/clojure-editors/)
 * Managing dependencies (via tools.deps) from Maven and Git repositories
 
-Using community tools on top of Clojure tools can provides the essential features to create, develop, build and deploy Clojure applications and services
+Using community tools on top of Clojure CLI tools provides tasks to create, develop, build and deploy Clojure applications and services
 
 
-| Tools                                | Description                                                                                                                                                                                                                         |
-|--------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Java 11](install-java.md)           | Clojure is a hosted language and Clojure tools runs on the Java virtual machine.  Java 11, the current long term support version is recommended.                                                                                    |
-| [Clojure 1.10.1](install-clojure.md) | Clojure CLI tools are used in this guide to start REPL's for development and run Clojure applications, usually packaged as (uber)jars.                                                                                              |
-| [practicalli/clojure-deps-edn](install-clojure.md) | Curated aliases for community tools and common configurations                                                                                                                                                                       |
-| [Editors](/clojure-editors/)         | Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too. |
+# Install Clojure CLI Tools
+
+| Tools                                 | Description                                                                                                                                      |
+|---------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Java 11](java.md)                    | Clojure is a hosted language and Clojure tools runs on the Java virtual machine.  Java 11, the current long term support version is recommended. |
+| [Clojure CLI Tools](clojure.md)       | Essential tools for Clojure development and running Clojure applications                                                                         |
+| [Community tools](community-tools.md) | Curated aliases for community tools and common development tasks                                                                   |
+| [Code analysis](code-analysis.md)     | A lint tool for avoiding syntax bugs and supporting idiomatic code                                                                               |
+| [Editors](/clojure-editors/)          | Spacemacs (Emacs), Calva (VS Code), Conjure (vim), Chlorine (Atom.io) and Cursive (IntelliJ) provided a complete Clojure development environment |
 
 
-## Clojure aware editors
-A command line REPL can be used to start learning Clojure or for scripting. A [Clojure aware editor](/clojure-editors/) is highly recommended when working on Clojure projects.
 
-Spacemacs (Emacs), Calva (VS Code), Chlorine or ProtoREPL (Atom.io) and Cursive (IntelliJ) are commonly used editors that have great support for Clojure development.  Vim also has several plugins that provide great support too.
+<!-- Not sure this is the right place for these, but cant find anywhere better yet -->
+## Other tools
+The [Clojure Inspector](clojure-tools/clojure-inspector.md) provides a simple GUI tool to show to show the result from evaluating Clojure code.
+
+The [REBL data browser](clojure-tools/rebl-data-browser.md) show the results in a GUI of any Clojure code that is evaluated as you are developing.
 
 
-> #### Hint::Other tools
+> #### Hint::Other development tools
 > [Leiningen](https://leiningen.org) has been a very common tool to create and run projects, as well as building assets (jars) for deployment.  All the code examples in this book should work with Leiningen when a correctly configured `project.clj` file is created.  This guide should also work for [boot build tools](http://boot-clj.com/), although contains no specific details.

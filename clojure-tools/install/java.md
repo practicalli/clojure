@@ -1,6 +1,7 @@
-# Install Java
+![Java](/images/java-banner.png)
 
-Before installing, check to see if there is an appropriate version of Java already installed.
+# Install Java
+Check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
 
@@ -13,6 +14,7 @@ If Java is installed, you will see something like this in your terminal:
 ![Java version](/images/development-environment-java-check.png)
 
 If the version is `11` or above, then [jump to the Clojure install page](install-clojure.md)
+
 
 ## Operating System specific install instructions
 For windows users, the scoop install is recommended.
@@ -29,20 +31,21 @@ Open a terminal and run the following command (you will be prompted for your log
 sudo apt install openjdk-11-jdk
 ```
 
-> #### Hint:: openjdk-11 not available or not the right version?
-> If openjdk-11 is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
+## openjdk-11 not available or not the right version?
+ If openjdk-11 is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
+
 ```shell
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 ```
->
-> Switching between Java versions
-> If you have more than one version of Java installed, set the version by opening a terminal and using the following command
->
+
+If you have more than one version of Java installed, set the version by opening a terminal and using the following command
+
 ```shell
 sudo update-alternatives --config java
 ```
-> Available java versions will be listed.  Enter the list number for the version you wish to use.
+
+Available java versions will be listed.  Enter the list number for the version you wish to use.
 
 
 <!-- Homebrew (MacOSX) install -->

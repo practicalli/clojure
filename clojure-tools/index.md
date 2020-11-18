@@ -17,7 +17,3 @@ Clojure is a hosted language and requires a [Java runtime environment](https://a
 When Clojure expressions are evaluated, the Clojure code is turned into Java Bytecode and run in the Java Virtual Machine.  This process happens in the background and the developer is not exposed to a separate code-compile-run cycle.
 
 Installing Clojure guides cover how to install Java 11 for various operating systems, although it may already be installed.
-
-
-## Alternative tools
-[Leiningen]({{ Leiningen }}) is a build automation tool for Clojure that as been widely used and extended via plugins.  Many existing projects use [Leiningen]({{ Leiningen }}), although many new projects are created with Clojure tools.

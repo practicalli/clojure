@@ -1,13 +1,6 @@
-## deps.edn Configuration files
-`deps.edn` is a configuration file using extensible data notation (edn), the language that is used to define the structure of Clojure itself.
+# Practicalli user level deps.edn configuration
 
-The installation of Clojure CLI tools has a built-in configuration that contains a dependency for the Clojure standard library, effectively setting the default version of Clojure so the Clojure CLI tools can run.
 
-`.clojure/deps.edn` is a user level configuration that will apply to all projects used by the operating system user account.  [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) is an example configuration that contains a set of unique aliases to ensure that common tools are available in every Clojure project.
-
-`deps.edn` in the root of a Clojure project directory contains configuration specific to that project.
-
-![Clojure CLI Tools - deps.edn configuration order of precedence]({{ book.P9IDeveloperGuides }}clojure/clojure-cli-tools-deps-edn-configuration-precedence.png)
 
 ## Configuration sections
 Configuration is defined using a hash-map with the following top-level keys:

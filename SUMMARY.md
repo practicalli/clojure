@@ -19,9 +19,16 @@
     * [Contributing](contributing.md)
 
 ## Getting Started
-* [Install Clojure tools](clojure-tools/install/index.md)
-    * [Install Java](clojure-tools/install/install-java.md)
-    * [Install Clojure](clojure-tools/install/install-clojure.md)
+<!-- * [Clojure Tools](clojure-tools/index.md) -->
+* [Install Clojure Tools](clojure-tools/install/index.md)
+    * [Java](clojure-tools/install/java.md)
+    * [Clojure](clojure-tools/install/clojure.md)
+    * [Community tools](clojure-tools/install/community-tools.md)
+    * [Code Analysis](clojure-tools/install/code-analysis.md)
+* [Configure Clojure Tools](clojure-tools/configure/index.md)
+    * [deps.edn configuration](clojure-tools/configure/deps-edn-configuration.md)
+    * [deps.edn aliases](clojure-tools/configure/deps-edn-aliases.md)
+    * [Common Tasks](clojure-tools/configure/common-tasks.md)
 * [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
     * [Terminal REPL](clojure-tools/repl/index.md)
         * [Coding in the REPL](clojure-tools/repl/coding-in-the-repl.md)
