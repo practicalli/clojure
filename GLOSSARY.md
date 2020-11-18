@@ -1,5 +1,4 @@
-# Arity
-
+## Arity
   The number of arguments a function takes.  This can be a fixed number or variable number of arguments.  Simple polymorphism can also be used to have one function take different numbers of arguments.
 
 ```clojure
@@ -22,7 +21,7 @@
 ```
 ---
 
-# Higher Order Functions
+## Higher Order Functions
 > A function for which both the input and the output are functions.
 
 ```js
@@ -33,7 +32,7 @@ let greet = (name) => () => `Hello ${name}!`;
 greet("HOF")(); // Hello HOF!
 ```
 
-## Partial Application
+## Partial
 > The process of getting a function with lesser arity compared to the original
 function by fixing the number of arguments is known as partial application.
 
@@ -79,7 +78,7 @@ greet // yo;
 ```
 ---
 
-## Side effects
+<!-- ## Side effects -->
 
 ---
 
@@ -93,11 +92,11 @@ executions with the the same input parameters.
 
 ---
 
-## Contracts
+<!-- ## Contracts -->
 
 ---
 
-## Guarded Functions
+<!-- ## Guarded Functions -->
 
 ---
 
@@ -146,33 +145,33 @@ randIter.next(); // Each exectuion gives a random value, expression is evluated 
 ```
 ---
 
-## Monoid
+<!-- ## Monoid -->
 
 ---
 
-## Monad
+<!-- ## Monad -->
 
 ---
 
-## Comonad
+<!-- ## Comonad -->
 ---
 
-## Applicative Functor
-
----
-
-
-## Morphism
+<!-- ## Applicative Functor -->
 
 ---
 
-## Setoid
+
+<!-- ## Morphism -->
 
 ---
 
-## Semigroup
+<!-- ## Setoid -->
 
 ---
 
-## Chain
+<!-- ## Semigroup -->
+
+---
+
+<!-- ## Chain -->
 ---

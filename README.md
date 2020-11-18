@@ -20,7 +20,7 @@ Get a [free Clojurians slack community account](https://clojurians.net/)
 * [Getting started with Clojure](http://jr0cket.co.uk/slides/getting-started-with-clojure.html)
 * [Clojure through code](https://github.com/practicalli/clojure-through-code) - sample code to support this project
 * [Lighttable Koans](https://github.com/practicalli/lighttable-koans) - exercises to help you discover Clojure
-* [Clojure Webapp workshop](http://practicalli.github.io/clojure-webapps/) - building server-side webapps in Clojure
+* [Clojure Webapp workshop](https://practicalli.github.io/clojure-webapps/) - building server-side webapps in Clojure
 
 **Learning Clojure**
 * [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)

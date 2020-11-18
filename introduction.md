@@ -6,7 +6,7 @@
 
   Clojure runs in [a REPL process](repl-driven-devlopment.md) that provides instant feedback as code is written, encouraging experimentation and allowing designs to evolve rapidly and with confidence.
 
-![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
+[![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)
 
 
 ## About the book
@@ -33,9 +33,8 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 Get a [free Clojurians slack community account](https://clojurians.net/)
 
-> #### Warning::Book re-write in progress
-> A re-write of this book is currently underway, so things may change and move around.
->
+> #### Warning::Content regularly added to this book
+> Content is usually added daily, recommend using the search box at the top of the content navigation if you cant find what you are looking for.
 > Last published: {{ gitbook.time }}
 
 ---

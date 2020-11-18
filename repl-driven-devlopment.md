@@ -1,7 +1,9 @@
 # REPL Driven Development
 REPL driven development is the foundation of working with Clojure.
 
-The REPL is an instant feedback workflow that continually runs your code without the need of a separate compile-build-run cycle. The REPL contains your live application to which you interact with by calling(evaluating) code.
+The REPL is an instant feedback workflow that continually runs your code without the need to manually run a complete compile-build-run cycle.
+
+The REPL contains your live application to which you interact with by calling (evaluating) code.  A single expression can be called to focus in on its behavior and see the results.  Even when evaluating a whole namespace, each expression is evaluated by itself in turn, within the REPL process.
 
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-rebel-readline.png)
 
@@ -23,9 +25,23 @@ A REPL is typically used from an editor with files that compose the project code
 
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
+{% youtube %}
+https://youtu.be/rQ802kSaip4
+{% endyoutube %}
+
 
 ## Rich Comment blocks - living documentation
 The `(comment ,,,)` function is used to included code that is only run by the developer directly. Unlike `;;` comments, specific expressions inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
+
+Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-tools/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+
+```clojure
+;; Rich comment block with redefined vars ignored
+#_{:clj-kondo/ignore [:redefined-var]}
+(comment
+
+  ) ;; End of rich comment block
+```
 
 The expressions can represent example function for using the project, such as starting/restarting the system, updating the database, etc.
 
@@ -79,7 +95,7 @@ RDD supports rapid design as different approaches can easily be explored and eva
 
 Tests provide an simple tool to define and test your assumptions from the evolving design and give you feedback when changes break that design.
 
-![Clojure REPL driven development (RDD) and Test Driven Development (TDD)](https://raw.githubusercontent.com/practicalli/graphic-design/master/repl-tdd-flow.png)
+![Clojure REPL driven development (RDD) and Test Driven Development (TDD)](https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png)
 
 [Unit tests](/testing/unit-testing/) should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize that as an after thought.
 

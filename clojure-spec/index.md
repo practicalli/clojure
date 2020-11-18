@@ -1,4 +1,4 @@
-![Clojure specifications for next.jdbc](https://raw.githubusercontent.com/practicalli/graphic-design/master/clojure/spec/clojure-spec-blueprints-industrial.png)
+![Clojure specifications for next.jdbc](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/spec/clojure-spec-blueprints-industrial.png)
 
 Clojure Spec is a library for defining specifications around data and functions to test for correctness.
 
