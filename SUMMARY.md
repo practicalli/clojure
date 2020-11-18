@@ -36,14 +36,14 @@
         * [Help at the REPL](clojure-tools/repl/help-at-the-repl.md)
         * [Customize rebel](clojure-tools/repl/customize-rebel.md)
         <!-- * [REPL uncovered](clojure-tools/repl/repl-uncovered.md) --> <!-- TODO rewrite -->
+    * [Clojure projects](clojure-tools/projects/create.md)
         <!-- Introduce Clojure examples that work well in the command line REPL -->
         <!-- Run a repl in an example project, require, in-ns, run -->
         <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
         <!-- * [Manage dependencies](clojure-tools/managing-dependencies.md) -->
-        * [Add Libraries](clojure-tools/add-libraries.md)
-        * [Namespaces](clojure-tools/namespace.md)
-        * [Configure REPL Startup](clojure-tools/configure-repl-startup.md)
-        * [Using projects in REPL](clojure-tools/projects/using-projects.md)
+        * [Add Libraries](clojure-tools/projects/add-libraries.md)
+        * [Namespaces](clojure-tools/projects/namespace.md)
+        * [Configure REPL Startup](clojure-tools/projects/configure-repl-startup.md)
             <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
         <!-- * [Running projects](clojure-tools/projects/running-projects.md) -->
      <!-- * [Design Journal](clojure-tools/design-journal.md) -->
@@ -51,8 +51,6 @@
         * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
         * [Reveal](clojure-tools/data-browsers/reveal.md)
         * [Portal](clojure-tools/data-browsers/portal.md)
-    * [Compare with Leiningen](clojure-tools/compare-with-leiningen.md)
-    * [Migrating from Leiningen](clojure-tools/migrating-to-clojure-cli-tools.md)
 
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
