@@ -59,6 +59,9 @@
         * [Emacs Spacemacs](clojure-editors/editor-install-guides/emacs-spacemacs.md)
         * [Emacs](clojure-editors/editor-install-guides/emacs.md)
         * [Neovim Conjure](clojure-editors/editor-install-guides/neovim-conjure.md)
+            * [Neovim Plugins](clojure-editors/editor-install-guides/vim-plugins.md)
+        * [SpaceVim Fireplace](clojure-editors/editor-install-guides/spacevim-fireplace.md)
+            * [SpaceVim configuration](clojure-editors/editor-install-guides/spacevim-configuration.md)
         * [VSCode Calva](clojure-editors/editor-install-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-install-guides/intellij-cursive.md)
     * [Editor User Guides](clojure-editors/editor-user-guides/index.md)
@@ -66,6 +69,7 @@
         * [Atom Proton](clojure-editors/editor-user-guides/atom-proton.md)
         * [Emacs Spacemacs](clojure-editors/editor-user-guides/emacs-spacemacs.md)
         * [Neovim Conjure](clojure-editors/editor-user-guides/neovim-conjure.md)
+        * [SpaceVim Fireplace](clojure-editors/editor-user-guides/spacevim-fireplace.md)
         * [VSCode Calva](clojure-editors/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
 
