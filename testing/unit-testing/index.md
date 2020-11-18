@@ -1,4 +1,5 @@
-# Unit Testing
+![REPL Driven development and Unit testing in Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png)
+
 In Clojure the unit under test is the function.  Unit test coverage should test all public function that form the API of their respective namespace.
 
 `clojure.test` namespace provides a unit testing framework and is included in the Clojure library, so is available in all Clojure projects.
@@ -6,7 +7,7 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 [Test runners](/testing/test-runners/) are used to run one or more tests in a project.
 
 
-## Simple principles for writing test code
+## Simple principles for writing unit tests
 * One `test` namespace for each `src` namespace
 * One `deftest` function for each function under test
 * Multiple `is` assertions for one function
@@ -15,6 +16,7 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 * Test private functions (or don't use them) through public functions of each namespace (minimize test churn and time to run all tests)
 * Use [generative testing](/clojure-spec/) to create less code and yet test with more extensive range of data
 * Use [test selectors](test-selectors.md) to organize tests and optimize speed of test runs
+
 
 ## Project structure with tests
 By convention, separate `src` and `test` directories are used to hold the source code and the code that tests that source code.

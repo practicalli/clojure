@@ -51,7 +51,7 @@ jobs:    # basic units of work in a run
   build: # runs not using Workflows must have a `build` job as entry point
     working_directory: ~/random-clojure-function # directory where steps will run
     docker:                                                      # run the steps with Docker
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536 # image is primary container where `steps` are run
+      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727 # image is primary container where `steps` are run
     environment:            # environment variables for primary container
       JVM_OPTS: -Xmx3200m   # limit the maximum heap size to prevent out of memory errors
     steps:             # commands that comprise the `build` job

@@ -3,6 +3,10 @@
 
 Projects can be build, tests run, artifacts (uberjars) created and applications deployed to services such as Heroku.
 
+Integration will be supported by Git version control, a continuous integration service (CircleCI, GitLabs, GitHub Actions) and a deployment platform (Heroku).
+
+![Continuous integration workflow - simple concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/circleci-workflow-sequential-git-heroku.png)
+
 
 ## Getting Started
 Circle CI has a free plan with unlimited projects, so its easy to get started.
@@ -22,14 +26,14 @@ Pre-configured images are typically faster than installing software on top a mor
 
 {% content "deps" %}
 
-Recommended image for Clojure deps.edn projects is `openjdk-11-tools-deps-1.10.1.536`
+Recommended image for Clojure deps.edn projects is `openjdk-11-tools-deps-1.10.1.727`
 
-The image contains OpenJDK 11 and the latest Clojure CLI tools installed, 1.10.1.536.
+The image contains OpenJDK 11 and the latest Clojure CLI tools installed, 1.10.1.727.
 
 Add the following under docker: in your `config.yml`
 
 ```yaml
-- image: circleci/clojure:openjdk-11-tools-deps-1.10.1.536
+- image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727
 ```
 
 > #### Hint::Check Clojure version
