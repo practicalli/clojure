@@ -1,4 +1,4 @@
-![4Clojure banner](/images/4clojure-banner.png)
+![4Clojure banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/4clojure-banner.png)
 
 # Coding Challenges: 4Clojure
 [4Clojure.com](http://www.4clojure.com/) is an excellent website to help you discover and apply the common functions in the Clojure language.

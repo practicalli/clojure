@@ -78,7 +78,12 @@
 * [Coding Challenges](coding-challenges/index.md)
     * [4Clojure](coding-challenges/4clojure/index.md)
     * [Exercism](coding-challenges/exercism/index.md)
+        * [Bob Text Parser](coding-challenges/exercism/bob.md)
+            * [clojure.string approach](coding-challenges/exercism/bob-string-approach.md)
+            * [regular expression approach](coding-challenges/exercism/bob-regular-expression-approach.md)
         * [RNA Transcription](coding-challenges/exercism/rna-transcription.md)
+        * [Hamming](coding-challenges/exercism/hamming.md)
+        * [SpaceAge](coding-challenges/exercism/space-age.md)
     * [CodeWars](coding-challenges/codewars/index.md)
     <!-- * [Koans](coding-challenges/koans.md) -->
     * [Advent of Code](coding-challenges/advent-of-code.md)
@@ -179,12 +184,13 @@
             * [Spec Functions](clojure-spec/projects/bank-account/function-specifications.md)
             * [Test Function against spec](clojure-spec/projects/bank-account/test-functions-against-spec.md)
 
-* [Integration Testing](testing/integration-testing/index.md)
-    * [Circle CI](testing/integration-testing/circle-ci/index.md)
-        * [Random Clojure Function](testing/integration-testing/circle-ci/random-clojure-function.md)
-        * [Status Monitor](testing/integration-testing/circle-ci/status-monitor.md)
-        * [Circle CI sample project](testing/integration-testing/circle-ci/circle-ci-sample-project.md)
-
+* [Continuous Integration](continuous-integration/index.md)
+    * [Circle CI](continuous-integration/circle-ci/index.md)
+        * [Random Clojure Function](continuous-integration/circle-ci/random-clojure-function.md)
+        * [Status Monitor](continuous-integration/circle-ci/status-monitor.md)
+        * [Circle CI sample project](continuous-integration/circle-ci/circle-ci-sample-project.md)
+    * [GitHub Actions](continuous-integration/github-actions/index.md)
+        * [clj-kondo Lint](continuous-integration/github-actions/clj-kondo-lint.md)
 <!-- * [Performance Testing](testing/performance-testing/index.md) -->
 <!-- * [Load/Stress Testing](testing/load-stress-testing/index.md) -->
 

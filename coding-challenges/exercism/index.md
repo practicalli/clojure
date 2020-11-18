@@ -1,7 +1,9 @@
-# Exercism.io
-Exercism is a learning platform that combining coding challenges and mentors who review and advise on your solutions.
+![Exercism.io Clojure Track banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-clojure-track.png)
 
-Exercises are downloaded to your computer, so you can use your preferred development tools to create the solutions.
+[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leinigen project that includes code and unit tests, although Exercism itself doesnt run those tests.
+
+Use the [Exercism CLI tool](#getting-started-exercism-cli-tool) to download the Leinigen project for each challenge and use your preferred development tools to create the solutions.  When feedback is required or you wish to share a solution, submit the code using the [Exercism CLI tool](#getting-started-exercism-cli-tool).  If tests are changed as well as source code, both files should be submitted.
+
 
 ## Clojure Track
 All the challenges are groups into specific [language tracks](https://exercism.io/my/tracks), including the [Clojure track](https://exercism.io/my/tracks/clojure)
@@ -15,7 +17,7 @@ In mentored mode your solutions are added to the mentors dashboard for review fr
 ![Cloure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
 
 
-## Getting Started - exercism CLI
+## Getting Started: Exercism CLI tool
 Select an exercise and follow the **Get started** guide to download and install the exercism tool.  This tool will download the project code and submit solutions back to the Exercism web site.
 
 ![Clojure code challenges - Exercism getting started](/images/clojure-code-challenges-exercism-getting-started.png)
@@ -33,6 +35,17 @@ Once the tests pass and you are happy with the solution, submit it to the Exerci
 ```shell
 exercism submit /path/to/src-file
 ```
+
+## Using Clojure CLI tools
+With [Clojure CLI tools installed](/clojure-tools/install/), then simply add a `deps.edn` file to the root directory of the Leiningen project downloaded by the Exercism CLI tool.
+
+The `deps.edn` should contain the `:paths` for the `src` directory (and `test` if your test runner requires that path, eg. cider test runner).
+
+```clojure
+{:paths ["src"]}
+```
+
+To run tests, use an alias such as `:test/runner` from [practicalli/clojure-deps-edn](/clojure-tools/install/community-tools.md), an alias from your own `~/.clojure/deps.edn` or add an alias directly to the project `deps.edn` file just created.
 
 
 ## Support
