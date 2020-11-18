@@ -23,14 +23,12 @@
     * [Install Java](clojure-tools/install/install-java.md)
     * [Install Clojure](clojure-tools/install/install-clojure.md)
 * [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
-    * [rebel REPL](clojure-tools/rebel-repl/index.md)
-        * [Coding in the REPL](clojure-tools/rebel-repl/coding-in-the-repl.md)
-        * [Help at the REPL](clojure-tools/rebel-repl/help-at-the-repl.md)
-        * [Customize rebel](clojure-tools/rebel-repl/customize-rebel.md)
-        <!-- * [REPL uncovered](clojure-tools/repl-uncovered.md) --> <!-- TODO rewrite -->
-    * [deps.edn configuration](clojure-tools/deps-edn-configuration.md)
-    * [deps.edn aliases](clojure-tools/deps-edn-aliases.md)
-    * [Clojure projects](clojure-tools/create-projects.md)
+    * [Terminal REPL](clojure-tools/repl/index.md)
+        * [Coding in the REPL](clojure-tools/repl/coding-in-the-repl.md)
+        * [Using libraries in REPL](clojure-tools/repl/using-project-or-library.md)
+        * [Help at the REPL](clojure-tools/repl/help-at-the-repl.md)
+        * [Customize rebel](clojure-tools/repl/customize-rebel.md)
+        <!-- * [REPL uncovered](clojure-tools/repl/repl-uncovered.md) --> <!-- TODO rewrite -->
         <!-- Introduce Clojure examples that work well in the command line REPL -->
         <!-- Run a repl in an example project, require, in-ns, run -->
         <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
