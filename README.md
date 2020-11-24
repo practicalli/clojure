@@ -8,10 +8,36 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 
-Get a [free Clojurians slack community account](https://clojurians.net/)
+Get a [free Clojurians slack community account](https://clojurians.net/**
 
 > #### Warning::Book refresh in progress
 > A refresh of the contents of this book is currently underway, so things may.
+
+
+## Book written with gitbook/gitbook-cli
+
+**Gitbook plugins**
+
+* [anchor-headings-lambda](https://www.npmjs.com/package/gitbook-plugin-anchor-headings-lambda)
+* [callouts](https://www.npmjs.com/package/gitbook-plugin-callouts)
+* [codeblock-disable-glossary](https://www.npmjs.com/package/gitbook-plugin-codeblock-disable-glossary)
+* [disqus](https://github.com/GitbookIO/plugin-disqus)
+* [folding-chapters](https://www.npmjs.com/package/gitbook-plugin-folding-chapters-2) - fold navigation sections
+* [ga](https://www.npmjs.com/package/gitbook-plugin-ga) - Google analytics
+* -glossary - disable default glossary
+* [-highlight](https://www.npmjs.com/package/gitbook-plugin-highlight) - disable default highlight (prism)
+* [klipse](https://www.npmjs.com/package/gitbook-plugin-klipse) - embed Klipse code evaluation in pages
+* [newtabs](https://www.npmjs.com/package/gitbook-plugin-newtabs) - in-page tab sections
+[prism](https://www.npmjs.com/package/gitbook-plugin-prism) code block syntax highlighting (use jr0cket.css theme, added manually)
+* [sectionx-ex](https://www.npmjs.com/package/gitbook-plugin-sectionx-ex) - in-page sections that can be collapsed (klipse doesnt work inside a section)
+* [-sharing](https://www.npmjs.com/package/gitbook-plugin-sharing)  - buttons to share on social media (default plugin disabled)
+[splitter](https://www.npmjs.com/package/gitbook-plugin-splitter) - movable vertical bar between navigation and content, remembers position
+* [terminull-light](https://www.npmjs.com/package/gitbook-plugin-terminull-light) - fancy console - draws copy button on klipse elements
+* [theme-jr0cket](https://www.npmjs.com/package/gitbook-plugin-theme-jr0cket) - custom version of theme-code, removing numbering
+toggle-chapters
+* [toolbar](https://www.npmjs.com/package/gitbook-plugin-toolbar) - add toolbar of links to GitHub, Chat, etc.
+* [youtubex](https://www.npmjs.com/package/gitbook-plugin-youtubex) - embed YouTube videos by id, rending responsively to page size
+wide-page
 
 
 ## Supporting Resources

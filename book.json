@@ -2,7 +2,7 @@
     "gitbook": ">=3.0.0",
     "title": "Practicalli Clojure",
     "author": "Practicalli",
-    "authorHomepage": "http://practicalli.github.io",
+    "authorHomepage": "https://practicalli.github.io",
     "description": "Practical approach to learning Clojure functional programming",
     "structure": {
         "readme": "introduction.md"
@@ -15,21 +15,25 @@
         "epub": "styles/epub.css"
     },
     "plugins": [
-        "theme-jr0cket",
-        "splitter",
-        "prism",
-        "-highlight",
-        "folding-chapters",
-        "-sharing",
-        "callouts",
-        "disqus",
-        "ga",
         "anchor-headings-lambda",
+        "callouts",
+        "codeblock-disable-glossary",
+        "disqus",
+        "folding-chapters",
+        "ga",
+        "-glossary",
+        "-highlight",
         "klipse",
         "newtabs",
+        "prism",
         "sectionx",
         "simpletabs",
+        "-sharing",
+        "splitter",
+        "terminull-light",
+        "theme-jr0cket",
         "toggle-chapters",
+        "toolbar",
         "youtube",
         "wide-page"
     ],
@@ -66,7 +70,7 @@
                 {
                     "label": "GitHub",
                     "icon": "fa fa-github",
-                    "url": "https://github.com/practicalli/clojure-practicalli-content/projects/1"
+                    "url": "https://github.com/practicalli/clojure-content/issues"
                 }
             ]
         }
@@ -80,7 +84,7 @@
         "website": "https://practical.github.io/clojure",
         "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
-        "P9IClojureDepsEdnInstall": "/clojure-tools/install/install-clojure.html#clojure-cli-tools-common-aliases",
+        "P9IClojureDepsEdnInstall": "/clojure-tools/install/community-tools.md",
         "P9IFourClojure": "https://practical.github.io/clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
         "P9IIssuesUrl": "https://github.com/practicalli/clojure-practicalli-content/issues",
