@@ -16,6 +16,8 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 https://youtu.be/sXZKrD4cAFk
 {% endyoutube %}
 
+> #### Hint::Use -M flag instead of -A
+> The `-M` flag has replaced the `-A` flag for including aliases when running Clojure main, which is the approach that the cider jack-in command uses.
 
 ## Create a new project
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration

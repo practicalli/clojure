@@ -14,6 +14,9 @@ A [Live coding video walkthrough of this project](https://youtu.be/sXZKrD4cAFk) 
 https://youtu.be/sXZKrD4cAFk
 {% endyoutube %}
 
+> #### Hint::Use -M flag instead of -A
+> The `-M` flag has replaced the `-A` flag for including aliases when running Clojure main, which is the approach that the cider jack-in command uses.
+
 
 ## Create a project
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
@@ -139,7 +142,7 @@ The tests should pass.
 ## Running the application
 Use the clojure command with the main namepace of the application.  Clojure will look for the -main function and evaluate it.
 ```shell
-clojure -m practicalli.random-clojure-function
+clojure -M -m practicalli.random-clojure-function
 ```
 This should return a random function name and its description.  However, nothing is returned.  Time to refactor the code.
 
@@ -180,12 +183,12 @@ Update the main function to call this new function.
   (println (random-function standard-library-functions)))
 ```
 
-Run the tests
+Run the tests again.
 
-Run the application
+If the tests pass, then run the application again
 
 ```shell
- clojure -m practicalli.random-clojure-function
+ clojure -M -m practicalli.random-clojure-function
 ```
 A random function and its description are displayed.
 
