@@ -113,6 +113,35 @@
         * [Create Project](games/tictactoe-cli/create-project.md)
 
 
+* [Thinking Functionally](thinking-functionally/index.md)
+    * [Side effects](thinking-functionally/side-effects.md)
+    * [Pure functions](thinking-functionally/pure-functions.md)
+    * [Impure functions](thinking-functionally/impure-functions.md)
+    * [First Class functions](thinking-functionally/first-class-functions.md)
+    * [Homoiconicity](thinking-functionally/homoiconicity.md)
+    * [Function Composition](thinking-functionally/function-composition.md)
+        * [Example: Hitchhikers Guide](thinking-functionally/example-hitchhikers-guide.md)
+    <!-- TODO * [Iterate over values](thinking-functionally/iterate-over-values.md) -->
+    * [Higher Order functions](thinking-functionally/higher-order-functions.md)
+    * [Immutability](thinking-functionally/immutability.md)
+        * [Immutable values](thinking-functionally/immutable-values.md)
+        * [Immutable collections](thinking-functionally/immutable-collections.md)
+        * [Immutable Local Bindings](thinking-functionally/immutable-local-bindings.md)
+    * [Currying & Partial Functions](thinking-functionally/partial-functions.md)
+        * [map with partial](thinking-functionally/map-with-partial.md)
+    * [List Comprehension](thinking-functionally/list-comprehension.md)
+    * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md)
+    * [Sequences](thinking-functionally/sequences.md)
+    * [Sequence-abstraction](thinking-functionally/sequence-abstractions.md)
+    * [Functors](thinking-functionally/functors.md)
+    * [Arity](thinking-functionally/arity.md)
+    * [Pattern matching](thinking-functionally/pattern-matching.md)
+    * [Polymorphism](thinking-functionally/polymorphism.md)
+    * [Recursion](thinking-functionally/recursion.md)
+    * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
+    * [Tail recursion](thinking-functionally/tail-recursion.md)
+
+
 ## Testing Clojure
 <!-- * [Testing Clojure](testing/index.md) -->
 * [Unit testing](testing/unit-testing/index.md)
@@ -238,34 +267,6 @@
         * [String replace](reference/standard-library/regular-expressions/string-replace-with-regex.md)
         * [String Split](reference/standard-library/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/standard-library/regular-expressions/sub-expression-matches.md)
-* [Thinking Functionally](thinking-functionally/index.md)
-    * [Side effects](thinking-functionally/side-effects.md)
-    * [Pure functions](thinking-functionally/pure-functions.md)
-    * [Impure functions](thinking-functionally/impure-functions.md)
-    * [First Class functions](thinking-functionally/first-class-functions.md)
-    * [Homoiconicity](thinking-functionally/homoiconicity.md)
-    * [Function Composition](thinking-functionally/function-composition.md)
-        * [Example: Hitchhikers Guide](thinking-functionally/example-hitchhikers-guide.md)
-    <!-- TODO * [Iterate over values](thinking-functionally/iterate-over-values.md) -->
-    * [Higher Order functions](thinking-functionally/higher-order-functions.md)
-    * [Immutability](thinking-functionally/immutability.md)
-        * [Immutable values](thinking-functionally/immutable-values.md)
-        * [Immutable collections](thinking-functionally/immutable-collections.md)
-        * [Immutable Local Bindings](thinking-functionally/immutable-local-bindings.md)
-    * [Currying & Partial Functions](thinking-functionally/partial-functions.md)
-        * [map with partial](thinking-functionally/map-with-partial.md)
-    * [List Comprehension](thinking-functionally/list-comprehension.md)
-    * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md)
-    * [Sequences](thinking-functionally/sequences.md)
-    * [Sequence-abstraction](thinking-functionally/sequence-abstractions.md)
-    * [Functors](thinking-functionally/functors.md)
-    * [Arity](thinking-functionally/arity.md)
-    * [Pattern matching](thinking-functionally/pattern-matching.md)
-    * [Polymorphism](thinking-functionally/polymorphism.md)
-    * [Recursion](thinking-functionally/recursion.md)
-    * [Recursion & Polymorphism](thinking-functionally/recursion-polymorphism.md)
-    * [Tail recursion](thinking-functionally/tail-recursion.md)
-
 
 <!-- Move sytax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
