@@ -269,19 +269,20 @@
 
 <!-- Move sytax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
-* [Syntax](basic-clojure/syntax.md)
-    * [Code documentation](basic-clojure/code-documentation.md)
-    * [Comments](basic-clojure/comments.md)
-    * [Strings](basic-clojure/strings.md)
-    * [Numbers & Maths](basic-clojure/numbers-maths.md)
-    * [Ratios](basic-clojure/ratios.md)
-    * [Control flow](basic-clojure/control-flow.md)
+* [Syntax](reference/clojure-syntax/syntax.md)
+    * [Parentheses](reference/clojure-syntax/parenthesis.md)
+    * [Code documentation](reference/clojure-syntax/code-documentation.md)
+    * [Comments](reference/clojure-syntax/comments.md)
+    * [Strings](reference/clojure-syntax/strings.md)
+    * [Numbers & Maths](reference/clojure-syntax/numbers-maths.md)
+    * [Ratios](reference/clojure-syntax/ratios.md)
+    * [Control flow](reference/clojure-syntax/control-flow.md)
     * [doc / source functions](reference/doc-and-source-functions.md)
-    * [Assigning Names](basic-clojure/assigning-names.md)
-    <!-- * [Naming](basic-clojure/naming.md) -->
-    <!--     * [Global definitions](basic-clojure/global-definitions.md) -->
-    <!--     * [Local Bindings](basic-clojure/local-bindings.md) -->
-    <!--     * [Private functions](basic-clojure/private-functions.md) -->
+    * [Assigning Names](reference/clojure-syntax/assigning-names.md)
+    * [Naming](reference/clojure-syntax/naming.md)
+    <!--     * [Global definitions](reference/clojure-syntax/global-definitions.md) -->
+    <!--     * [Local Bindings](reference/clojure-syntax/local-bindings.md) -->
+    <!--     * [Private functions](reference/clojure-syntax/private-functions.md) -->
     <!--     * [Naming Conventions](reference/naming-conventions.md) -->
     * [Kebab-case](reference/kebab-case.md)
     * [Threading macros](reference/threading-macros.md)
