@@ -1,12 +1,20 @@
 ![Practicalli Clojure deps.edn banner](/images/practicalli-clojure-deps-edn-banner.png)
 
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) provides a user wide configuration, `~/.clojure/deps.edn` for Clojure CLI tools, providing a range of 30 community tools to support Clojure and ClojureScript development. Qualified keywords are used to provide descriptive alias names that group tools by their use and minimize the amount of cognitive load required to remember how to use them.
+[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) provides a user wide configuration for Clojure CLI tools, providing a range of community tools to support Clojure and ClojureScript development. Qualified keywords are used to provide descriptive alias names that group tools by their use and minimize the amount of cognitive load required to remember how to use them.
 
 
 ## Install
+Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.
+
+`XDG_CONFIG_HOME` may be set by your operating system and over-rides the default location, e.g. `$HOME/.config/.clojure`
+
+`CLJ_CONFIG` can be used to over-ride all other location settings
+
+> Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
+
 Practicalli recommends creating a fork of the [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) on GitHub, or you can simply clone the original repository.
 
-Clone the repository to `~/.clojure/`.  If you have run the `clojure` or `clj` commands, then a default `deps.edn` file was created and should be moved or deleted first.
+Clone the repository to the configuration directory, e.g `~/.clojure/`.  If you have run the `clojure` or `clj` commands, then a default `deps.edn` file was created and should be moved or deleted first.
 
 ```shell
 git clone git@github.com:your-fork/clojure-deps-edn.git ~/.clojure/
