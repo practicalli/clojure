@@ -1,27 +1,59 @@
 # Comments
+As well as the classic line comments, Clojure also can comment specific parts of the code structure, even when it run over multiple lines.
 
-You can use `;;` to comment a whole line (`;` is the comment but `;;` is Clojure convention).
+`;;` to comment a whole line and `;` to add a comment after the start of a line
 
-`(comment )` function can wrap other expressions to comment that code, returning `nil` when evaluated.
+`(comment )` wraps forms and returns `nil` when evaluated, used for rich comment blocks
 
-`#_` is the comment reader macro that comments out specific forms in Clojure, so you can get really specific with your comments.
+`#_` to ignore the next form as if it has not been written
 
 
-## `comment` function
+## comment function
+The `(comment ,,,)` function is used to included code that is only run by the developer directly. Unlike line comments, forms inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
 
-Wrap any Clojure code inside the `comment` function to prevent it from being executed.  Using your editor, you can manually evaluate the code inside a comment function.
+```clojure
+(comment
+  (map + [1 2 3] [1 2 3])
+)
+```
 
 The `comment` function returns `nil` so its advised not to use it inside another form.  For example:
 
 ```
-(map + [1 2 3] (comment [1 2 3]))
+(map + [1 2 3] (comment [1 2 3])) ; nil will be passed to map as the third argument
 ```
 
 This will fail as it tries to use the `+` function to add `1` to `nil`
 
-## Comment forms with the comment reader macro
+The `#_` is the appropriate comment style for this example
 
-`#_` is the comment reader macro and is used to comment a Clojure form (Clojure code that can be evaluated).  `#_` is not just a line comment.
+
+### Rich comment blocks
+Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-tools/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+
+```clojure
+;; Rich comment block with redefined vars ignored
+#_{:clj-kondo/ignore [:redefined-var]}
+(comment
+
+  ) ;; End of rich comment block
+```
+
+The expressions can represent example function for using the project, such as starting/restarting the system, updating the database, etc.
+
+![Practicalli Clojure Repl Driven Development - Rich comment blocks example](/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
+
+Expressions in rich comment blocks can also represent how to use a namespace API, providing examples of arguments to supply to further convey meaning to the code.
+
+These rich comment blocks make a project more accessible and easier to use.
+
+The "Rich" in the name also refers to Rich Hickey, the author and benevolent dictator of Clojure design.
+
+
+## Comment forms with the comment reader macro
+`#_` is the comment reader macro that instructs the Clojure reader to completely ignore the next form, as if it had never been written.
+
+No value is returned, so this comment is safe to use within an expression.
 
 You can place `#_` before the start of a form and everything inside that form will be commented
 
@@ -38,10 +70,32 @@ You can place `#_` before the start of a form and everything inside that form wi
         (str "I am an experiment, so not always needed"))
 ```
 
-`#_` can also be put on the line before the comment (possibly many lines - to test).  This approach can make your code more readable and keep alignment of your code consistent.
+`#_` can also be put on the line(s) before the Clojure form, which can make your code more readable and keep alignment of your code consistent.
 
-## comment nested forms
+### debugging with comment macro
+As the comment macro can be used without returning a value, it can safely be added to code to help with debugging.
 
+This code example finds the most common word in the text of a book.  Most of the lines of code in the threading macro have been commented to discover what the non-commented code does.
+
+As each expression in the threading macros is understood, by looking at its results, comments can be removed to understand more of the code.
+
+```clojure
+(defn most-common-words [book]
+  (->> book
+       (re-seq #"[a-zA-Z0-9|']+" ,,,)
+       #_(map #(clojure.string/lower-case %))
+       #_(remove common-english-words)
+       #_frequencies
+       #_(sort-by val)
+       #_reverse
+       ))
+```
+
+This is an effective way to deconstruct parts of a larger Clojure expression.
+
+Watch episode [#13 of Practicalli Clojure study group](https://youtu.be/ZkemmMgXT08?t=2015) to see this in practice.
+
+### comment nested forms
 `#_` tells the reader to ignore the next form, it is therefore never evaluated and neither is the `#_`.  This means that `#_` can be used inside a nested form to comment just a part of the expression
 
 In this example the third vector of values is not read by the Clojure reader and therefore is not passed as an argument to `+` function by `map`
@@ -61,20 +115,3 @@ We also do the same in the body of the let, so as to not include the evaluation 
        #_#_name2 "another-value]
    (str "First name is: " name1 #_#_" second name is: " name2
 ```
-
-
-## Comments in threading macros
-
-The comment reader macro can also be used in a threading macro, so provide a simple way to apply or skip a particular forms used within the threading macro.
-
-```clojure
-(->> book
-     (re-seq #"[a-zA-Z0-9|']+" ,,,)
-     (map #(clojure.string/lower-case %))
-     #_(remove common-english-words)
-     frequencies
-     #_(sort-by val)
-     #_reverse)
-```
-
-Watch episode [#13 of Practicalli Clojure study group](https://youtu.be/ZkemmMgXT08?t=2015) to see this in practice.
