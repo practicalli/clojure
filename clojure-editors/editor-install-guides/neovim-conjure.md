@@ -100,6 +100,8 @@ Use `:PlugUpgrade` to update the vim-plug package itself.
 
 
 ## Code analysis - ALE and clj-kondo
+[Install the clj-kondo lint and static analysis tool](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md) to give instant feedback on Clojure syntax and idiomatic code use.
+
 Add the [dense-analysis/ale](https://github.com/dense-analysis/ale) plugin to provide Linting with clj-kondo
 
 ```
@@ -214,7 +216,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'ncm2/float-preview.nvim'
 
 " Linting with clj-kondo
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 
 """""""""
 " Themes
