@@ -1,4 +1,4 @@
-![Practicalli Clojure deps.edn banner](/images/practicalli-clojure-deps-edn-banner.png)
+![Practicalli Clojure deps.edn banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/practicalli-clojure-deps.png)
 
 [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) provides a user wide configuration for Clojure CLI tools, providing a range of community tools to support Clojure and ClojureScript development. Qualified keywords are used to provide descriptive alias names that group tools by their use and minimize the amount of cognitive load required to remember how to use them.
 
