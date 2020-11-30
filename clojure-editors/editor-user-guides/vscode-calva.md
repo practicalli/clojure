@@ -73,15 +73,25 @@ You can run tests from Calva too...
 
 
 ## Commenting / uncommenting code
-
 Use the **Add Line Comment** command to place `;;` at the start of a line, which comments it out.
 
 > ####TODO::Comment keybindings ?
 
 
 ## Increase / decrease font size
-
 `Ctrl +` and `Ctrl -` will increase and decrease the size of the whole editor.
+
+`Ctrl Shift P` and type the command `Preference: Open Settings (JSON)` to open the `settings.json` configuration file.  Update the value for `editor.fontSize` and save the file.  The font should update immediately in the VS Code UI.
+
+Other useful options that can be added to the `settings.json` configuration
+
+```
+   "workbench.colorTheme": "Solarized Light",
+    "editor.fontSize": 14,
+    "editor.fontFamily": "'Fira Code', 'Ubuntu Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "window.zoomLevel": 1,
+    "calva.paredit.defaultKeyMap": "strict"
+```
 
 
 ## Structured editing - Paredit
