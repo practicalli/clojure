@@ -13,11 +13,11 @@ No other terminators or precedence rules are required to understand how to read 
 ## The Parenthesis hangup
 Some raise the concern that there are "too many brackets" in Clojure.
 
-Closure doesn't require any additional parens compared to other languages, it simply moves the open parens to the start of the expression giving a clearly defined structure to the code
+Clojure doesn't require any additional parens compared to other languages, it simply moves the open parens to the start of the expression giving a clearly defined structure to the code
 
 With support for higher order functions, functional composition and threading macros, Clojure code typically uses fewer parens than other languages especially as the scope of the problem space grows.
 
-All languages use parens to wrap a part of an expression, requiring additional syntax to identify the boundaries of each expression so it can be parsed by humans and computers alike.  Cloure uses a single way to express everything, homoiconicity, where as most other languages require additional syntax for differnt parts of the code.
+All languages use parens to wrap a part of an expression, requiring additional syntax to identify the boundaries of each expression so it can be parsed by humans and computers alike.  Clojure uses a single way to express everything, homoiconicity, where as most other languages require additional syntax for different parts of the code.
 
 Using parens, Clojure has a well defined structure that provides a clearly defined scope to every part of the code.  There is no requirement to remember a long list of ad-hoc precedence rules, e.g. [JavaScript operator precedence](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence).
 
@@ -42,7 +42,7 @@ Code can be pulled into parens (slurp) or pushed out of parens (barf).  Code can
 ## Homoiconicity and Macros
 Clojure is a dialect of LISP and naturally was designed to be a homoiconic language. This means the syntax for behavior and data is the same.  This greatly simplifies the syntax of Clojure and all LISP style languages.
 
-The Clojure Reader is a parser that reads in data structures as expression, rather than parsing of text required by other languages. The result of parsing is a collection of data structures that can bed traverse (asymmetric syntax tree - AST).  Compared to most languages the compiler does very little and you can consider Clojure really does not have a syntax.
+The Clojure Reader is a parser that reads in data structures as expression, rather than parsing of text required by other languages. The result of parsing is a collection of data structures that can be traversed (asymmetric syntax tree - AST).  Compared to most languages the compiler does very little and you can consider Clojure really does not have a syntax.
 
 Code is written as data structures that are accessible to the other parts of the code, providing a way to write code that manipulate those data structures and generate new code. In Clojure this type of code is called a macro, a piece of code that writes new code.
 
