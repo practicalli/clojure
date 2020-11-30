@@ -1,5 +1,4 @@
 # VSCode and Calva user guide
-
 The [Calva User Guide]() provides a detailed guide.  The following are a few highlights.
 
 Open the VSCode editor and open the root folder of your project.  Then add use let Calva start your project REPL and connect.
@@ -9,14 +8,12 @@ Open the VSCode editor and open the root folder of your project.  Then add use l
 > So `Ctrl+Alt+c e` would be `Ctrl+Option+c e`
 
 ## Open Project Folder in VSCode
-
 `Ctrl+k Ctrl+o` to open the Folder that contains your project.  Or using the menu **File** > **Open Folder**
 
 Select the top level of the folder, e.g. `playground` and click **OK**
 
 
 ## Start a REPL for the project
-
 `ctrl+alt+c ctrl+alt+j` to start a REPL click on the nrepl name in the bottom left of VSCode UI.
 
 Select either `Clojure CLI` or `Leiningen` when prompted for the project type
@@ -30,7 +27,6 @@ A new CLJ REPL tab will open when the Clojure REPL is ready
 ![VS Code - Calva - Start REPL - nREPL button](/images/vscode-calva-clojure-repl-connect-repl-tab.png)
 
 ### Troubleshooting
-
 If the REPL did not start, the nREPL link in the bottom blue bar will show the word "Disconnected".
 
 ![VS Code - Calva - Start REPL - nREPL button](/images/vscode-calva-clojure-repl-connect-nrepl-button.png)
@@ -43,7 +39,6 @@ Try running a REPL in the command line and connecting to it (details at bottom o
 
 
 ## Developing your project ##
-
 Once you have a running REPL, use these commands to help you develop your code.
 
 > ####HINT::MacOSX Keys - Option or Alt
