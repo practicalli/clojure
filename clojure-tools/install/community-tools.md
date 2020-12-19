@@ -1,6 +1,11 @@
 ![Practicalli Clojure deps.edn banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/practicalli-clojure-deps.png)
 
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) provides a user wide configuration for Clojure CLI tools, providing a range of community tools to support Clojure and ClojureScript development. Qualified keywords are used to provide descriptive alias names that group tools by their use and minimize the amount of cognitive load required to remember how to use them.
+[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) provides a user wide configuration for Clojure CLI tools, providing a range of community tools to support Clojure and ClojureScript development.
+
+Alias names are designed with qualified keywords which provides context for the use of an alias (project, repl, env, test, inspect). These keywords help with discovery and reduce cognitive load required to remember their purpose.
+
+This configuration supports all your local development projects.  For remote environments or [Continuous Integration services](/continuous-integration/), include practicalli/clojure-deps-edn in the environment build or copy specific aliases to the project `deps.edn` configuration of a project.
+
 
 
 ## Install
