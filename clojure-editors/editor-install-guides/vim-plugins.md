@@ -6,18 +6,24 @@ All plugins can be used with VimPlug (unless explicitly expressed otherwise).
 
 ## Clojure development tools
 
-| Plugin                                                                          | Dependencies | Description                           |
-|---------------------------------------------------------------------------------|--------------|---------------------------------------|
-| Olical/conjure                                                                  |              |                                       |
-| tpope/vim-dispatch                                                              |              |                                       |
-| clojure-vim/vim-jack-in                                                         |              |                                       |
-| radenling/vim-dispatch-neovim                                                   |              |                                       |
-| guns/vim-sexp                                                                   |              | Structural editing for lisp languages |
-| tpope/vim-sexp-mappings-for-regular-people                                      |              |                                       |
-| jiangmiao/auto-pairs                                                            |              | Auto-close parens                     |
-| w0rp/ale                                                                        |              | Linting with clj-kondo                |
-| [kien/rainbow_parentheses.vim](https://github.com/kien/rainbow_parentheses.vim) |              |                                       |
+| Plugin                                                                                                      | Dependencies | Description                                               |
+|-------------------------------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------|
+| Olical/conjure                                                                                              |              | Clojure development                                       |
+| [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch)                                                 |              | Asynchronous adapters for Vim plugins                     |
+| [radenling/vim-dispatch-neovim](https://github.com/radenling/vim-dispatch-neovim)                           | vim-dispatch | neovim terminal emulator and job control for dispatch.vim |
+| [clojure-vim/vim-jack-in](https://github.com/clojure-vim/vim-jack-in)                                       | vim-dispatch | Jack in to Boot, Clj & Leiningen                          |
+| guns/vim-sexp                                                                                               | vim-repeat   | Structural editing for lisp languages                     |
+| [tpope/vim-sexp-mappings-for-regular-people](https://github.com/tpope/vim-sexp-mappings-for-regular-people) | vim-sexp     |                                                           |
+| jiangmiao/auto-pairs                                                                                        |              | Auto-close parens                                         |
+| w0rp/ale                                                                                                    |              | Linting with clj-kondo                                    |
+| [kien/rainbow_parentheses.vim](https://github.com/kien/rainbow_parentheses.vim)                             |              |                                                           |
+| [tpope/vim-surround](https://github.com/tpope/vim-surround)                                                 |              |                                                           |
+| [svermeulen/vim-yoink](https://github.com/svermeulen/vim-yoink)                                             |              |                                                           |
 
+
+Fireplace specific plugins
+* https://github.com/clojure-vim/vim-cider - depends on cider-nrepl and refactor-nrepl libraries from the orchard
+*
 
 ## Completion frameworks
 
