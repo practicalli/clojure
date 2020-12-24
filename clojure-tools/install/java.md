@@ -1,5 +1,8 @@
 ![Java](/images/java-banner.png)
 
+Java is a host platform for Clojure, on which Clojure projects and tools run.  [No experience of Java or its platform is required](#what-you-need-to-know-about-java) for successful Clojure projects.
+
+
 # Install Java
 Check to see if there is an appropriate version of Java already installed.
 
@@ -110,3 +113,19 @@ Run the file once downloaded and follow the install instructions.
 
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
+
+
+## What you need to know about Java
+Actually very little knowledge is required.
+
+No knowledge of the Java programming language is required, although it is quite simple to call Java methods from Clojure.
+
+[Reading stack traces](https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html) may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.
+
+Clojure uses its own build tools (Leiningen, Clojure CLI tools) and so Java build tool knowledge is not required.
+
+When libraries are added to a project, they are downloaded to the `$HOME/.m2` directory.  This is the default Maven cache used by all JVM libraries.
+
+`clojure  -Spom` will generate a Maven pom.xml file used for deployment. Understanding of a [minimal Maven POM (pom.xml) file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#minimal-pom) is useful when managing issues with packaging and deployment.
+
+* [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html)
