@@ -9,11 +9,27 @@
  `:ConjureSchool` command will start an interactive tutorial and introduce Conjure's workflow and key mappings
 
 ## Start a REPL on the command line
-Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts a headless nrepl server and starts the rebel readline terminal UI
+{% tabs rebel="Rebel REPL with nREPL", basic="Basic REPL with nREPL" %}
+
+{% content "rebel" %}
+
+Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts a nrepl server and starts the rebel readline terminal UI
 
 ```shell
-clojure -M:repl/repl
+clojure -M:repl/rebel-nrepl
 ```
+
+
+{% content "basic" %}
+
+Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts an nrepl server
+
+```shell
+clojure -M:middleware/nrepl
+```
+
+{% endtabs %}
+
 
 Then open a Clojure file and Conjure will (magically) connect to the running REPL and pop-up a connect message in the top right corner.
 
@@ -27,7 +43,7 @@ Start neovim with a Clojure file, e.g. `nvim src/practialli/playground.clj` or r
 
 `, c f` to connect to the REPL from Conjure, or simply open a Clojure file.  Automated connection will be added in a future version on Conjure.
 
-> The vim-jack-in plugin enables Neovim to call out to Clojure tools or Leiningen to start a REPL and connect to it once its started.
+> The `vim-jack-in` plugin enables Neovim to call out to Clojure tools or Leiningen to start a REPL and connect to it once its started.
 
 A full screen REPL log is displayed.  `, l q` to close the log window and return to the Clojure file.
 `, l v` to create a vertical split between code and REPL log, `, l h` for a horizontal split.
@@ -99,7 +115,7 @@ Quit neovim to load the updted configuration (unless there is someway to reload 
 
 Run neovim and `:PlugInstall` to install all plugins defined in the `~/.config/nvim/init.vim` configuration
 
-* Alternative: [Conquer of Completion](https://github.com/neoclide/coc.nvim)
+> Alternative completion plugin: [Conquer of Completion](https://github.com/neoclide/coc.nvim) - required node.js install
 
 
 ## Running tests
