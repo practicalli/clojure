@@ -24,6 +24,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 * [Practicalli Spacemacs](https://practicalli.github.io/spacemacs) and [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d) for Vim style editing in Emacs for Clojure.
 * [Practicalli YouTube channel](https://youtube.co/c/+practicalli) - 80+ hours of Clojure related videos
 * [Practicalli website](https://practicalli.github.io/) books and videos to support your journey into Clojure
+* [Practicalli Graphic design](https://github.com/practicalli/graphic-design) - Creative Commons Attribution
 
 
 ## Discussions and feedback
