@@ -10,90 +10,13 @@ REBL is part of the [Cognitect dev-tools project](https://cognitect.com/dev-tool
 
 [Accept the Cognitect dev-tools license](https://cognitect.com/dev-tools/) to receive an email containing a link to download the latest version of Datomic local and a personal access token for access to the Cognitect Maven repository which contains the REBL library.
 
-Either install the REBL jar file using Maven directly, or [add the Cognitect Maven server](#add-congnitect-maven-server) and [Cognitect Provider](#add-cognitect-as-provider) configuration to access REBL as any other library dependency.
+Follow the maven configuration link in the email to configure your build tool (Clojure CLI tools or Leiningent) and the repository in the project pom.xml.
 
 
-## Install REBL jar via Maven locally
-Click the link in the email to download the .zip file and extract the .zip file.
+## Aliases for Cognitect REBL
+Follow the [REBL installation steps](https://docs.datomic.com/cloud/other-tools/REBL.html#installation) to create an alias in the user-wide deps.edn configuration.
 
-In a terminal, run the **install** file (requires maven installed and available via the command line)
-
-```
-./install
-```
-
-## Add Congnitect Maven Server
-The Cognitect REBL package is only available via the Cognitect Maven Repository via a personal token.  The token is provided when [signing up to Cognitect dev-tools license](https://www.cognitect.com/dev-tools/).
-
-Create or edit the `~/.m2/settings.xml` file and add the following configuration, replacing the `<value>` with your own personal token (which should not be shared).
-
-```
-<settings>
-  <servers>
-    <server>
-      <id>cognitect-dev-tools</id>
-      <configuration>
-        <httpHeaders>
-          <property>
-            <name>Private-Token</name>
-            <value>a-personal-token-from-cognitect</value>
-          </property>
-        </httpHeaders>
-      </configuration>
-    </server>
-  </servers>
-</settings>
-```
-
-## Add Cognitect as Provider
-In the Maven provider section of `~/.clojure/deps.edn` add the Cognitect Maven repository details
-
-```clojure
-:mvn/repos {"cognitect-dev-tools"
-             {:url "https://dev-tools.cognitect.com/maven/releases/"}}
-```
-
-
-## Create an alias for Cognitect REBL
-
-{% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
-
-{% content "practicalli" %}
-
-A `:inspect/rebl` alias is included in [practicalli/clojure-deps-edn configuration]({{ book.P9IClojureDepsEdnInstall }})
-
-{% content "manual" %}
-
-Add an alias called `:inspect/rebl` to `~/.clojure/deps.edn` or a `deps.edn` file in the root of a specific project
-
-> JavaFX library dependencies need to be explicitly added from Java 9 onward
-
-```clojure
-:inspect/rebl
-{:extra-deps {com.cognitect/rebl          {:mvn/version "0.9.241"}
-                org.clojure/core.async      {:mvn/version "1.3.610"}
-                org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
-                org.openjfx/javafx-controls {:mvn/version "11.0.1"}
-                org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
-                org.openjfx/javafx-base     {:mvn/version "11.0.1"}
-                org.openjfx/javafx-web      {:mvn/version "11.0.1"}
-                ;; deps for file datafication (REBL 0.9.149 or later)
-                org.clojure/data.csv        {:mvn/version "1.0.0"}
-                org.clojure/data.json       {:mvn/version "1.0.0"}
-                org.yaml/snakeyaml          {:mvn/version "1.27"}}
- :main-opts  ["-m" "cognitect.rebl"]}
-```
-
-Java8 contains JavaFX, so only the REBL library dependencies is required.
-
-```clojure
-  :inspect/rebl-java8
-  {:extra-deps {com.cognitect/rebl {:mvn/version "0.9.241"}}
-   :main-opts  ["-m" "cognitect.rebl"]}
-```
-
-{% endtabs %}
-
+Alternatively, use the [practicalli/clojure-deps-edn configuration]({{book.P9IClojureDepsEdnInstall}}) which contains the `:inspect/rebl` alias for use with Java 11.
 
 ## Running REBL with a project
 Run the project using the Clojure CLI tools
@@ -147,6 +70,12 @@ Supporting aliases for nrebl.middleware
 
 
 ## Run REBL for nREPL based editors
+The [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL, including [cider-repl](https://github.com/admiralbumblebee/cider-rebl) that has a configurable behavior to send evaluated forms to REBL.
+
+
+### Using nREBL middleware for CIDER and Calva
+nREBL middleware will send the results of all evaulated forms to Cognitect REBL via nREPL protocol.
+
 CIDER and Calva use the `nREPL` protocol to connect to the REBL REPL and have all the evaluated code in those editors automatically display the results in the REBL UI.
 
 In a terminal, run REBL listening to nREPL using the command
@@ -187,3 +116,4 @@ See the excellent guide on [using VSCode Calva with REBL](https://calva.io/rebl/
 * [nrebl.middleware project](https://github.com/RickMoynihan/nrebl.middleware) and [documentation](https://cljdoc.org/d/rickmoynihan/nrebl.middleware/CURRENT/doc/readme)
 * [#rebl channel on Clojurians Community](https://clojurians.slack.com/messages/rebl)
 * [nrepl-rebl](https://github.com/DaveWM/nrepl-rebl) alternative to nrebl.middleware
+* [cider-repl](https://github.com/admiralbumblebee/cider-rebl) - configurable form results with REBL
