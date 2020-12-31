@@ -48,7 +48,7 @@ However, by using partial we can take one collection at once and return the resu
 (map (partial reduce +) [[1 2 3 4] [5 6 7 8]])
 ```
 
-In the above example we mapp the partial reduce function over each element of the vector, each element being a collection.
+In the above example we map the partial reduce function over each element of the vector, each element being a collection.
 
 # Using partial to set a default value
 
