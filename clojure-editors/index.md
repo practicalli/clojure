@@ -56,6 +56,11 @@ Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Cal
 <iframe style="width:100%;height:100%;border:0px solid #000000" src="https://www.youtube.com/embed/NDrpclY54E0" scrolling="yes">This browser does not support Iframe</iframe>
 </div>
 
+> #### Warning::Calva with LSP adds 2Gb+ RAM
+> The current version of Calva runs clojure-lsp when ever a Clojure project is opened.  The `clojure-lsp` process will use a minimum of 2Gb RAM and over 3Gb if a significant number of dependencies are included in the project.
+>
+> Use Calva version 2.0.134 if RAM resources are constrained.  A specific version can be selected via *Extensions > Install Another Version...*
+
 
 <!-- NeoVim and Conjure -->
 {% content "vimconjure"%}
