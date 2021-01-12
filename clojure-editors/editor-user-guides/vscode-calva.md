@@ -1,7 +1,7 @@
 # VSCode and Calva user guide
 The [Calva User Guide]() provides a detailed guide.  The following are a few highlights.
 
-Open the VSCode editor and open the root folder of your project.  Then add use let Calva start your project REPL and connect.
+Open the VSCode editor and open the root folder of your project.  Then let Calva start your project REPL and connect.
 
 > ####HINT::MacOSX Keys - Option or Alt
 > Depending on the version of Mac computer you use, your Alt key may be called Option
