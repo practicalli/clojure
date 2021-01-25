@@ -36,10 +36,10 @@ To use those fixtures in a test run, include the `use-fixtures` function in the 
 ## When to run fixtures
 The `use-fixtures` function defines when a fixture should be called when running the unit tests in each namespace.  All Clojure unit test runners should support the `use-fixtures` definitions when running the tests.
 
-| When                                      | Description                                           |
-|-------------------------------------------|-------------------------------------------------------|
-| `(use-fixtures :once fixture1 fixture2)`  | Run the fixtures once for the namespace.              |
-| `(use-fixtures :every fixture1 fixture2)` | Run the fixtures for each `deftest** in the namespace |
+| When                                     | Description                                           |
+|------------------------------------------|-------------------------------------------------------|
+| `(use-fixtures :once fixture1 fixture2)` | Run the fixtures once for the namespace.              |
+| `(use-fixtures :each fixture1 fixture2)` | Run the fixtures for each `deftest** in the namespace |
 
 
 **Once**
@@ -49,7 +49,7 @@ The setup in the fixture is run, followed by all the `deftest` functions in the 
 Running a fixture once per namespace is useful for establishing a database connection or creating a particular state of data for all the unit tests to use.
 
 
-**Every**
+**Each**
 
 The fixture setup is run before each `deftest` function in the namespace. The fixture tear-down is run after each `deftest` function.
 
