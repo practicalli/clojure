@@ -28,7 +28,7 @@ rather than many data structures.
 
 You do need constraints with data however data does not need to be wrapped up in types and classification theory to do so.
 
-Phil Bagwell created immutabe data structures with data sharing in early 2000 and this is the basis
+Phil Bagwell created immutable data structures with data sharing in early 2000 and this is the basis
 for Clojure's persistent data structures (eg all of them)
 
 In OO languages the class is there to stop you doing things and accessing data in an unsafe way. 
