@@ -1,152 +1,4 @@
-# Defining aliases to do more with Clojure tools
-Aliases are used with Clojure tools to provide additional configuration when explicitly added to the `clojure` command.
-
-Aliases can be used to modify:
-* the classpath and dependencies included, by adding extra dependencies and paths or removing them
-* providing a simple way to configure community tools, such as rebel readline, clj-new, depstar, etc.
-
-Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
-
-> #### Hint::practicalli/clojure-deps-edn user level aliases and tools
-> [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
-
-
-# Clojure CLI tool options
-Clojure CLI tool has several options that determin how aliases and other configuration is used
-
-* add or remove dependencies
-* add or remove directories on the class path
-* define a function or main namespace to run, along with arguments
-
-## Clojure CLI main flag options
-| Flag            | Purpose                                                  | Config used                                          |
-|-----------------|----------------------------------------------------------|------------------------------------------------------|
-| `-M`            | Run Clojure project with clojure.main                    | deps, path, `:main-opts` & command line args         |
-| `-P`            | Prepare / dry run (CI servers, Containers)               | deps, path                                           |
-| `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-J`            | Java Virtual Machine specific options (menory size, etc) |                                                      |
-
-* deps = `:deps`, `:extra-deps`, `replace-deps`
-* path = `:path`, `:extra-paths`, `replace-paths`
-
-
-
-## Using an alias
-An alias is used via the `-M` option to the `clojure` command:
-
-```clojure
-clojure -M:qualified/alias-name
-```
-
-Multiple aliases can be used together
-```clojure
-clojure -M:env/test:test/runner
-```
-
-> #### Hint::Only one main namespace
-> If multiple aliases set a main namespace, only the last alias in the chain calls has its main namespace called, e.g. `clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl` will call the main namespace of `:middleware/nrebl`.
-
-
-## An alias for a community tool
-Use the rebel community tool by including its alias.
-
-```clojure
-clojure -M:repl/rebel
-```
-
-This alias adds the library dependency for the rebel readline project and defines the main namespace.  The namespace is where the `-main` function is located that will start rebel readline.
-
-```clojure
-{:aliases
-   :rebel
-     {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-      :main-opts  ["-m" "rebel-readline.main"]}
-} ;; End of aliases
-```
-
-
-## Including paths, deps and main-opts
-The Cognitect Lab test runner included the `test` directory in the class path, so test code will be included when run with this alias.
-
-The test runner dependency is pulled from a specific commit shared on GitHub (defined as a Git SHA).
-
-The main namespace is set to that library and the `-main` function is called when using this alias.
-
-```clojure
-{:aliases
-    :test-runner/cognitect
-    {:extra-paths ["test"]
-     :extra-deps  {com.cognitect/test-runner
-                  {:git/url "https://github.com/cognitect-labs/test-runner.git"
-                   :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
-     :main-opts   ["-m" "cognitect.test-runner"]}
-
-
-}
-```
-
-## Stand-alone tools
-When a community tool does not require any of the project paths or dependencies to operate, `:replace-paths` and `:replace-deps` should be used when defining an alias.  These configurations only used paths and dependencies defined within the alias itself, minimizing the resources used to run the tool, improving the speed of using these tools.
-
-```clojure
-  :project/new
-  {:replace-deps {seancorfield/clj-new {:mvn/version "1.1.226"}}
-   :main-opts    ["-m" "clj-new.create"]}
-```
-
-
-## Clojure Exec
-With Clojure CLI tools version 1.10.1.697 the `-X` flag was introduced using aliases with [Clojure exec](https://insideclojure.org/2020/07/28/clj-exec/).
-
-The configuration should define a fully qualified function that runs the tool.
-
-The function should take arguments as key/value pairs as with an Edn hash-map, rather than relying on positional arguments as strings.
-
-In this example, `:exec-fn` defines the fully qualified function name that will be called.  `:exec-args` defines default values for the arguments to the function.
-
-```clojure
-  :project/new
-  {:replace-deps {seancorfield/clj-new {:mvn/version "1.1.226"}}
-   :main-opts    ["-m" "clj-new.create"]    ;; deprecated
-   :exec-fn      clj-new/create
-   :exec-args    {:template lib :name practicalli/playground}
-   }
-```
-
-Arguments can be over-ridden on the command line, e.g. `clojure -X:project/new :template app :name practicalli/simple-appplication`
-
-`:ns-default` can also be used to qualify the function that will be executed in an alias.  `:ns-defaul` is especially useful when there are several functions that could be called from the specific namespace.
-
-The command line can over-ride the `:exec-fn` function configuration, allowing for a default configuration that can be easily over-ridden.
-
-```clojure
-  :project/new
-  {:replace-deps {seancorfield/clj-new {:mvn/version "1.1.226"}}
-   :main-opts    ["-m" "clj-new.create"]    ;; deprecated
-   :ns-default   clj-new
-   :exec-fn      create
-   :exec-args    {:template lib :name practicalli/playground}
-   }
-
-
-> #### Hint::
-> Any legal Clojure keyword name can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
-> `clojure -M:task/path:task/deps:build/options`
-
-
-## Resources
-* [clj-exec](https://insideclojure.org/2020/07/28/clj-exec/) - insideclojure.org
-* [clj-exec update](https://insideclojure.org/2020/09/04/clj-exec/) - insideclojure.org
-
-
-
-
-
-
-
-
+# Clojure Tools - Example alias definitions
 
 ## Task: Run a simple terminal REPL
 `clojure` and `clj` (requires rlwrap) will run a REPL if given no other arguments.
@@ -235,7 +87,7 @@ Arguments to the function are passed as a hash-map, defined in either an aliases
 
 `clojure -X:alias` runs the function specified by `:exec-fn` in the alias.  The function must include its namespace or have that namespace defined in `:ns-default`. If `:exec-args` is defined in the alias, its value is passed to the function, otherwise an empty hash-map is passed to the function as an argument.
 
-`clojure -X:alias namesapace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default** value if set.
+`clojure -X:alias namesapace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default` value if set.
 
 `clojure -X:alias :key1 val1 :key2 val2` will execute the function defined in `:exec-fn` and pass it the key value pairs from the command line as a hash map.  If the alias has `:exec-args` defined, command line args are merged into the `:exec-fn` hash-map, replacing the default values in `:exec-args` where keys match.
 
@@ -273,7 +125,7 @@ clojure -X:project/run server-start :port 8080
 ![Clojure CLI tools - using -P flag to download project dependencies](/images/clojure-cli-tools-dependencies-p-flag.png)
 
 > #### Hint::Qualified namespaces required
-> If an unqualified library name is used, eg. `compojure`, then a warning is sent to the standard out.  Change the name of the library to be fully qualified eg. `weavejester/compojure`
+> If an unqualified library name is used, e.g. `compojure`, then a warning is sent to the standard out.  Change the name of the library to be fully qualified e.g. `weavejester/compojure`
 >
 >In a future version of the Clojure CLI tools unqualified namespaces will not be downloaded.
 
@@ -301,7 +153,7 @@ clojure -M -m full.namespace.to.dash-main
 
 
 ## Task: Executing a project - using Edn style args
-Clojure CLI tools is encouraging a move to functions that take a hash-map for their arguments.  Passing arguments in as an edn data structure has more rigure than options and strings on the command line.
+Clojure CLI tools is encouraging a move to functions that take a hash-map for their arguments.  Passing arguments in as an edn data structure has more rigor than options and strings on the command line.
 
 The simplest form is to define an alias to run the project, specifying just the function to execute using `:exec-fn`
 ```clojure
@@ -394,7 +246,7 @@ clojure -M:deps mvn-install :jar '"/path/to.jar"'
 
 `mvn-install` uses the `.pom` file contained in the jar (if it exists) to determine the _groupId_, _artifactId_, and _version coordinates_ to use when the jar is installed.
 
-The `.pom` file can also be specifice using the  `:pom` argument.
+The `.pom` file can also be specified using the  `:pom` argument.
 
 The install argmap takes the following options:
 

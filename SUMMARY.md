@@ -26,7 +26,6 @@
     * [Clojure](clojure-tools/install/clojure.md)
     * [Community tools](clojure-tools/install/community-tools.md)
     * [Code Analysis](clojure-tools/install/code-analysis.md)
-<!-- * [Common Tasks](clojure-tools/configure/common-tasks.md) -->
 * [Configure Clojure Tools](clojure-tools/configure/index.md)
     * [deps.edn aliases](clojure-tools/configure/deps-edn-aliases.md)
 * [Terminal REPL](clojure-tools/repl/index.md)
@@ -257,7 +256,14 @@
 ## Reference
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
-* [Quick reference](quickstart/quick-reference.md)
+* [Clojure CLI Tools](reference/clojure-cli-tools/index.md)
+    * [Defining Aliases](reference/clojure-cli-tools/defining-aliases.md)
+    * [Example Alias definitions](reference/clojure-cli-tools/example-alias-definitions.md)
+    <!--
+        * [Common Tasks](clojure-tools/configure/common-tasks.md)
+        * [Defining aliases](clojure-tools/configure/defining-aliases.md)
+    -->
+* [Quick Clojure reference](quickstart/quick-reference.md)
 * [Standard Library](reference/standard-library/index.md)
     * [Predicate functions](reference/standard-library/predicate-functions.md)
     * [Regular Expressions](reference/standard-library/regular-expressions/index.md)
