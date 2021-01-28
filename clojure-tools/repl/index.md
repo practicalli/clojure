@@ -15,8 +15,8 @@ https://youtu.be/U19TWMsg0s0
 If using your own `~/.clojure/deps.edn` configuration, add an alias called `:repl/rebel`
 
 ```clojure
-:rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-        :main-opts  ["-m" "rebel-readline.main"]}
+:repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+             :main-opts  ["-m" "rebel-readline.main"]}
 ```
 
 
