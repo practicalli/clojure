@@ -712,7 +712,7 @@ hash-map
 sorted-map 
 
 **** Sets
-Although sets are backed by the same kind of algorytim as maps, they have a slightly different behaviours
+Although sets are backed by the same kind of algorithm as maps, they have a slightly different behaviours
 
 #
 
@@ -724,12 +724,12 @@ Although sets are backed by the same kind of algorytim as maps, they have a slig
 create a data representation of a hand of cards 
 
 *** Prefix notation 
-Parentesis were invented to solve the problem with operator precidence.  
+Parenthesis were invented to solve the problem with operator precedence.  
 
 For example, if you multiply something and add something, then without parentheses you have to remember
 to multiply first.
 
-By using prefix we elimanate any confusion in order precidence.
+By using prefix we eliminate any confusion in order precedence.
 Prefix notation is also easy to convert into a an abstract syntax tree without us getting fooled by the order.
 
 *** Function application 

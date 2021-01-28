@@ -140,7 +140,7 @@ clojure -M:test:runner
 The tests should pass.
 
 ## Running the application
-Use the clojure command with the main namepace of the application.  Clojure will look for the -main function and evaluate it.
+Use the clojure command with the main namespace of the application.  Clojure will look for the -main function and evaluate it.
 ```shell
 clojure -M -m practicalli.random-clojure-function
 ```
@@ -256,13 +256,13 @@ The `-main` function uses `[& args]` as a means to take multiple arguments. All 
 
 Use an anonymous function to convert the arguments to symbols and retrieve the list of public functions from each namespace.  This saves mapping over the arguments twice.
 
-`mapcat` the function-list function over all the namepaces, converting each namespace to a symbol.
+`mapcat` the function-list function over all the namespaces, converting each namespace to a symbol.
 
 ```clojure
 (mapcat #(function-list (symbol %)) args)
 ```
 
-Update the main function with an if statement.  Use `seq` as the condition to test if a sequence (the argument vector) has any elements (namepaces to use).
+Update the main function with an if statement.  Use `seq` as the condition to test if a sequence (the argument vector) has any elements (namespaces to use).
 
 If there are arguments, then get the functions for the specific namespaces.
 
@@ -333,7 +333,7 @@ Add functionality to list all functions from all namespaces or a specific namesp
 
 
 
-<!-- > #### Hint::Evaluating namepaces on REPL start -->
+<!-- > #### Hint::Evaluating namespaces on REPL start -->
 <!-- > The REPL does not evaluate project code on start-up.  If it did and that code had a error, it may prevent the REPL from starting. -->
 <!-- > -->
 <!-- > Standard practice is to required the main namespace for the project, then switch the REPL to that namespace.  The functions for the project are now available. -->

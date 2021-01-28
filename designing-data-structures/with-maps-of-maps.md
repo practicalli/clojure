@@ -1,6 +1,6 @@
 # With Maps of Maps
 
-> **Note** Define a collection of starwars characters using a map of maps.  Each character should have an name that they are typically refered to, along with their fullname and skill
+> **Note** Define a collection of starwars characters using a map of maps.  Each character should have an name that they are typically referred to, along with their fullname and skill
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 

@@ -144,7 +144,7 @@
 <!-- * [Testing Clojure](testing/index.md) -->
 * [Unit testing](testing/unit-testing/index.md)
     * [Configure projects](testing/unit-testing/configure-projects-for-tests.md)
-    * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
+    * [Requiring Test namespaces](testing/unit-testing/require-test-namespaces.md)
     * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
     * [Fixtures](testing/unit-testing/fixtures.md)
     * [Test Selectors](testing/unit-testing/test-selectors.md)

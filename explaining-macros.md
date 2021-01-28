@@ -11,7 +11,7 @@ When a function is just fine
 its only used in this project
 where you want it to be composable (macros are not composable, eg (apply my-macro data) does not work - `apply and` is a good example here)
 you dont have time to learn the macro syntax properly and you dont want to write a bad macro
-your macro doest do anything you cant do with a funciton.
+your macro doest do anything you cant do with a function.
 -->
 
 The macro system allows you to extend the design of the Clojure language, without waiting for the language designers.
