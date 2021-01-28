@@ -11,7 +11,7 @@ Dont try this example below
 ;; this will crash after a short while as it will use up all your heap space
 ```
 
-Using tail call optomisation (tail recursion) allows us to reuse a memory location when we call a function recursively.  This tail recursion is not part of the underlying Java Virtual Machine (JVM), so instead Clojure has a specific function called `recur`
+Using tail call optimisation (tail recursion) allows us to reuse a memory location when we call a function recursively.  This tail recursion is not part of the underlying Java Virtual Machine (JVM), so instead Clojure has a specific function called `recur`
 
 The `recur` function allows the processing of a very large data set without blowing the heap space because the memory space will be reused.
 

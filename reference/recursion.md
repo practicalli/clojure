@@ -18,14 +18,14 @@ On average it tends to give you clearer, more functional code whereas loop/recur
 
 ## Tail-call Optomisation with `recur`
 
-Tail-call optomisation is where a part of memory is over-written by additional calls during recursive calls.  By using the same memory segment each time, then the memory footprint of your code does not increase.
+Tail-call optimisation is where a part of memory is over-written by additional calls during recursive calls.  By using the same memory segment each time, then the memory footprint of your code does not increase.
 
 > ####Info::
-> Using the `recur` function as the last line of a `loop` or function will enable tail call optomisation.
+> Using the `recur` function as the last line of a `loop` or function will enable tail call optimisation.
 
 Therefore `recur` is good choice for deeply nested recursion or when manipulating larger (non-lazy) data structures.
 
-Without tail-call optomisation the code may otherwise cause a StackOverflow / Heap out of memory Error
+Without tail-call optimisation the code may otherwise cause a StackOverflow / Heap out of memory Error
 
 
 ## Fast
