@@ -162,7 +162,7 @@ Navigate data in the form of edn, json and transit
 | Command                          | Description                                            |
 |----------------------------------|--------------------------------------------------------|
 | `clojure -M:inspect/portal-cli`  | Clojure REPL with Portal dependency                    |
-| `clojure -M:inspect/portal-web`  | ClojureScript web browswer REPL with Portal dependency |
+| `clojure -M:inspect/portal-web`  | ClojureScript web browser REPL with Portal dependency  |
 | `clojure -M:inspect/portal-node** | ClojureScript node.js REPL with Portal dependency      |
 
 **Using Portal once running**
@@ -231,7 +231,7 @@ Visualize the results of each evaluation in the REPL in the REBL UI.  Navigate t
 ## Middleware
 Aliases for libraries that combine community tools and REPL protocols (nREPL, SocketREPL).
 
-Run a REPL on the command line for access by `cider-connect-` commands, providing the require cider middleware libraries that are auto-injected in `ccider-jack-in-` commands.
+Run a REPL on the command line for access by `cider-connect-` commands, providing the require cider middleware libraries that are auto-injected in `cider-jack-in-` commands.
 
 ### nREPL
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.

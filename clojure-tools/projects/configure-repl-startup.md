@@ -104,7 +104,7 @@ Example component lifecycle libraries included
 * [integrant](https://github.com/weavejester/integrant)
 * [component](https://github.com/stuartsierra/component)
 
-In Clojure it is idiomatic to define the component lifecyle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
+In Clojure it is idiomatic to define the component lifecycle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
 
 ```clojure
 (ns user

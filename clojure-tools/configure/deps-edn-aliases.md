@@ -115,9 +115,9 @@ In this example, `:exec-fn` defines the fully qualified function name that will 
    }
 ```
 
-Arguments can be over-ridden on the command line, e.g. `clojure -X:project/new :template app :name practicalli/simple-appplication`
+Arguments can be over-ridden on the command line, e.g. `clojure -X:project/new :template app :name practicalli/simple-application`
 
-`:ns-default` can also be used to qualify the function that will be executed in an alias.  `:ns-defaul` is especially useful when there are several functions that could be called from the specific namespace.
+`:ns-default` can also be used to qualify the function that will be executed in an alias.  `:ns-default` is especially useful when there are several functions that could be called from the specific namespace.
 
 The command line can over-ride the `:exec-fn` function configuration, allowing for a default configuration that can be easily over-ridden.
 
@@ -394,7 +394,7 @@ clojure -M:deps mvn-install :jar '"/path/to.jar"'
 
 `mvn-install` uses the `.pom` file contained in the jar (if it exists) to determine the _groupId_, _artifactId_, and _version coordinates_ to use when the jar is installed.
 
-The `.pom` file can also be specifice using the  `:pom` argument.
+The `.pom` file can also be specified using the  `:pom` argument.
 
 The install argmap takes the following options:
 
