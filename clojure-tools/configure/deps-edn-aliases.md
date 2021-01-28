@@ -26,7 +26,7 @@ Clojure CLI tool has several options that determin how aliases and other configu
 | `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-J`            | Java Virtual Machine specific options (menory size, etc) |                                                      |
+| `-J`            | Java Virtual Machine specific options (memory size, etc) |                                                      |
 
 * deps = `:deps`, `:extra-deps`, `replace-deps`
 * path = `:path`, `:extra-paths`, `replace-paths`

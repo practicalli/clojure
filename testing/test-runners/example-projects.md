@@ -15,7 +15,7 @@
 
 Cognitect Labs test runner included in the project `deps.edn` file as `:runner`
 
-`clojure -M:test:runner` will run the Cogitect Labs runner and include the dependecy to run the in-menory database used for the tests.
+`clojure -M:test:runner` will run the Cogitect Labs runner and include the dependecy to run the in-memory database used for the tests.
 
 
 ### Using koacha with Sean Corfield user manager
