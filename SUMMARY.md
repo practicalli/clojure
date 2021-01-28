@@ -431,7 +431,7 @@
     * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
     * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
     * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
-    * [Leiningen Build automation](alternative-tools/leiningen.md)
+    * [Leiningen Build automation](alternative-tools/leiningen/index.md)
 <!--     * [Leiningen Configuration](leiningen/index.md) -->
 <!--         * [Create a project](leiningen/create-a-project.md) -->
 <!--         * [Run the REPL](leiningen/run-the-repl.md) -->
