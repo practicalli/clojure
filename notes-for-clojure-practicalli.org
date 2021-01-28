@@ -868,7 +868,7 @@ A deck of cards starting at 2 assuming we are not counting Ace as 1.
 We could use range to create a range of number from 0 to 9,
 then apply a function to that range that incremented each number in turn by 2.
 
-(take 10 (range))  ;; generate an infinate number of integers and take just the first 10.
+(take 10 (range))  ;; generate an infinite number of integers and take just the first 10.
 
 As range is lazily evaluated, then this code is efficient.
 
@@ -907,7 +907,7 @@ The final number is exclusive, so in this case 11 is not included.
 **** Working over collections 
 map / apply 
 
-**** Examples of lazyness
+**** Examples of laziness
 take / drop / repeat / range / filter 
 
 **** Predicates - is something something...
@@ -933,7 +933,7 @@ Enter the following function call in the REPL to see the source code of the rang
 
 Lets review the different behaviour that is run based on the number of arguemnts used to call the function.
 
-  ;; The default behaviour when you call range without any arguments is to generate and infinate number of integers.  Actually this calls range with three aruguemnts, rather than any specific behaviour itself.  This version does however set the end number to be infinity, so the generation will go on forever.  As this is a lazy function then there are no performance issues so long as you set a constraint around this call (eg  (take 100 (range)) will constrain range to only generate the first 100 numbers.).  Without constraint you can blow the stack of the Java Virtual Machine.
+  ;; The default behaviour when you call range without any arguments is to generate and infinite number of integers.  Actually this calls range with three aruguemnts, rather than any specific behaviour itself.  This version does however set the end number to be infinity, so the generation will go on forever.  As this is a lazy function then there are no performance issues so long as you set a constraint around this call (eg  (take 100 (range)) will constrain range to only generate the first 100 numbers.).  Without constraint you can blow the stack of the Java Virtual Machine.
   ([] 
    (range 0 Double/POSITIVE_INFINITY 1))
 
