@@ -27,7 +27,7 @@ Evaluating these functions several times is a quick way to identifies specificat
 
 
 ## Validating the customer details specifications
-The specifications can be checked using the conform or vaild? functions with example data.
+The specifications can be checked using the conform or valid? functions with example data.
 
 Check an example hash-map from our test conforms to the specification
 

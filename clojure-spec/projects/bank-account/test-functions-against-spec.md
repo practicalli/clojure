@@ -9,7 +9,7 @@ Pass the name of the function definition that has a specification to the `check`
 
 
 ## Limiting the generated data
-1000 tests can take a noticable time to run, so check is not as often used during active development, as it would slow down the normal fast feedback cycle with Clojure.
+1000 tests can take a noticeable time to run, so check is not as often used during active development, as it would slow down the normal fast feedback cycle with Clojure.
 
 `check` takes an optional second argument which configures how the function operates.  Passing a hash-map as a second argument will set the number of data values generated `{:clojure.spec.test.check/opts {:num-tests 100}}`
 
