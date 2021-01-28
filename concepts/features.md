@@ -44,7 +44,7 @@
 
   Lisp stands for LISt Processing, so its no surprise that all Clojure code is defined in a list. 
   
-  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everthing else in the list is data.
+  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everything else in the list is data.
 
   The evaluation of the first element of a list can be behaviour of `(` can be over-ridden using `quote` or its short form the quote character, **'**, so the list elements are all treated as data.
 
@@ -96,7 +96,7 @@
 
 
 ** Input & output with functional programming 
-- other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
+- other fp languages like Haskell & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
 - Clojure doesnt try and enforce functional purity, so any function can include impure code 
 - most functions should be pure though or you loose the benefits of functional programming
 - Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small

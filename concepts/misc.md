@@ -20,7 +20,7 @@
 - rather than changing a data structure, fp instead creates a new data structure that contains the changes and copies of the existing data.
 - to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data) 
 ** Input & output with functional programming 
-- other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
+- other fp languages like Haskell & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
 - Clojure doesnt try and enforce functional purity, so any function can include impure code 
 - most functoins should be pure though or you loose the benefits of functional programming
 - Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small

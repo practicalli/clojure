@@ -2,13 +2,13 @@
 Clojure is an elegant language for a more civilized development experience. Clojure encourages the creation of simple software systems by being immutable by default and encouraging pragmatic approach to pure functional design.
 
 > #### Hint::Learn Clojure concepts as you experiment with the language
-> Revisit this section when you want to get a deeper understanding of the design and phylosophy of the Clojure approach to functional programming.
+> Revisit this section when you want to get a deeper understanding of the design and philosophy of the Clojure approach to functional programming.
 > These concepts will be easier to relate to as you practice Clojure and build software solutions.
 
 # Ten Big Ideas plus one
 The key to understanding Clojure is ideas, not language constructs but the concepts that shape the language.
 
-Each of these ideas is valuable by itself, not only in Clojure. Taken together, however, they beging to fill in the picture of why Clojure is changing the way many programmers think about software development.
+Each of these ideas is valuable by itself, not only in Clojure. Taken together, however, they begin to fill in the picture of why Clojure is changing the way many programmers think about software development.
 
 * [Extensible Data Notation](https://github.com/edn-format/edn)
 * [Persistent Data Structures](https://clojure.org/reference/data_structures)

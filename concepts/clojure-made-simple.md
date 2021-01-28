@@ -42,7 +42,7 @@ https://youtu.be/MCZ3YgeEUPg
 
 
 ## The value of values
-Rich Hickey provides analysis of the changing way we think about values (not the philosphoical kind) in light of the increasing complexity of information technology and the advent of Big Data
+Rich Hickey provides analysis of the changing way we think about values (not the philosophical kind) in light of the increasing complexity of information technology and the advent of Big Data
 
 {% youtube %}
 https://youtu.be/-6BsiVyC1kM
