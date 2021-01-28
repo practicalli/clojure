@@ -4,7 +4,7 @@
 As tests are defined in files inside the `test` directory, that directory should be included on the classpath for the project.
 
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+{% tabs deps="deps.edn projects", lein="Leiningen projects" %}
 
 {% content "deps" %}
 

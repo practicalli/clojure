@@ -22,7 +22,7 @@ There are a [range of container images](https://circleci.com/docs/2.0/circleci-i
 
 Pre-configured images are typically faster than installing software on top a more generic image.
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+{% tabs deps="deps.edn projects", lein="Leiningen projects" %}
 
 {% content "deps" %}
 

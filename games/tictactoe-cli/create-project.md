@@ -3,7 +3,7 @@
 
 Create a project for our game.
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+{% tabs deps="deps.edn projects", lein="Leiningen projects" %}
 
 {% content "deps" %}
 Create a new project using `clj-new` alias, found in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})

@@ -5,7 +5,7 @@ Add library dependencies to specific project `deps.edn` files to make use of sof
 ## Adding libraries as project dependencies
 To use a namespace that is in a library which is not part of your project, that library should be included as a dependency.
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+{% tabs deps="deps.edn projects", lein="Leiningen projects" %}
 
 {% content "deps" %}
 In the project `deps.edn` file:

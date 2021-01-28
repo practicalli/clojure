@@ -71,7 +71,7 @@ The projects that extend Clojure CLI tools are self-contained libraries and tool
 
 Although there are several plugins that were widely adopted, some plugins eventually caused more confusion than benefit or were simply trivial and in the main plugins seem to have become less important to the Clojure community.
 
-One of the limitations of Leiningnen plugin mechanism was not being able to exclude any configuration in a users `.lein/profles.clj` file, so there was greater potential for conflict.
+One of the limitations of Leiningen plugin mechanism was not being able to exclude any configuration in a users `.lein/profles.clj` file, so there was greater potential for conflict.
 
 The recommended way to extend Leiningen is to not write plugins, but to include aliases that define a qualified function to run when that alias is used with the Leiningen command.
 
