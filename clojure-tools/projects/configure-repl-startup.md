@@ -89,7 +89,7 @@ Start a REPL using the `:env/dev` alias.
 To start a Rebel REPL with `:env/dev` use the following command in a terminal
 
 ```shell
-cloure -A:env/dev:repl/rebel
+clojure -A:env/dev:repl/rebel
 ```
 
 In the REPL, call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.

@@ -187,7 +187,7 @@ Reveal - read evaluate visualize loop.  A REPL with data visualisation.  Also us
 
 | Command                                      | Description                                                                        |
 |----------------------------------------------|------------------------------------------------------------------------------------|
-| `clojure -M:inspect/reveal`                  | start a Reveal repl with data visualization window (cloure.main)                   |
+| `clojure -M:inspect/reveal`                  | start a Reveal repl with data visualization window (clojure.main)                  |
 | `clojure -M:inspect/reveal-light`            | as above with light theme and large font                                           |
 | `clojure -X:inspect/reveal`                  | start a Reveal repl with data visualization window (clojure exec)                  |
 | `clojure -X:inspect/reveal-light`            | as above with light theme and large font                                           |

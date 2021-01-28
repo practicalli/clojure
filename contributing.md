@@ -23,6 +23,6 @@ The Clojure community has been highly supportive of everyone using Clojure and I
 
 Thank you to everyone who sponsors the Practicalli websites and videos and for the recent [Clojurists Together sponsorship](https://www.clojuriststogether.org/), it helps me continue the work at a much faster pace.
 
-Special thanks to [Bruce Durling](https://twitter.com/otfrom) for getting me into Cloure in the first place.
+Special thanks to [Bruce Durling](https://twitter.com/otfrom) for getting me into Clojure in the first place.
 
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure-practicalli-content?style=for-the-badge&label=github%20contributors)

@@ -10,11 +10,11 @@ All the challenges are groups into specific [language tracks](https://exercism.i
 
 Join the language track and select either mentored mode or practice mode.
 
-![Cloure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-track-mentor-mode.png)
+![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-track-mentor-mode.png)
 
 In mentored mode your solutions are added to the mentors dashboard for review from any of the available mentors.  In practice mode you can complete as many solutions as you wish without waiting for a mentor.
 
-![Cloure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
+![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
 
 
 ## Getting Started: Exercism CLI tool
