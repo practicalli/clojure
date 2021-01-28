@@ -7,7 +7,7 @@ In the register-account-holder a uuid is generated for the account id, So a spec
 (spec/def ::account-id uuid?)
 ```
 
-## Design decision: hierachical or composite
+## Design decision: hierarchical or composite
 There are several approaches to combining, depending on the shape of the data used
 
 The account holder is a hash-map, so `spec/keys` will create the map from specification keys
@@ -15,7 +15,7 @@ The account holder is a hash-map, so `spec/keys` will create the map from specif
 Including the customer-details specification in `spec/keys` would include the customer details as a nested hash-map
 
 ```clojure
-(spec/def ::account-holder-hierachy
+(spec/def ::account-holder-hierarchy
   (spec/keys
     :req [::account-id ::customer-details]))
 ```
@@ -23,7 +23,7 @@ Including the customer-details specification in `spec/keys` would include the cu
 A valid data structure for this specification is a map with two keys, `account-id` and `customer-details`. `account-id` is a uuid value, customer-details is a hash-map of values that conform to the customer-details specification
 
 ```clojure
-(spec/valid? ::account-holder-hierachy
+(spec/valid? ::account-holder-hierarchy
              #::{:account-id       (java.util.UUID/randomUUID)
                  :customer-details #:: {:first-name          "Jenny"
                                         :last-name           "Jetpack"

@@ -8,7 +8,7 @@ Add the `clojure.spec.alpha` to any namespaces in the project that will directly
 
 Evaluate the namespace definition to start using the functions from the namespace.
 
-![Clojure project - reqiure namespace and evaluate](/images/clojure-editor-spec-require-evaluated.png)
+![Clojure project - require namespace and evaluate](/images/clojure-editor-spec-require-evaluated.png)
 
 
 ## Using Spec functions

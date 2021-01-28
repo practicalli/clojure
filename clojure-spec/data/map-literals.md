@@ -3,7 +3,7 @@
 
 `#::` map literal macro for keyword auto-resolve adds the current fully qualified namespace to all the keywords in the hash-map
 
-## Require clojure spec in the namepace of page.
+## Require clojure spec in the namespace definition
 
 ```eval-clojure
 (ns practicalli.clojure
