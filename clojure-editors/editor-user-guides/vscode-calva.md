@@ -13,7 +13,7 @@ Open the VSCode editor and open the root folder of your project.  Then add use l
 Select the top level of the folder, e.g. `playground` and click **OK**
 
 
-## Start a REPL for the project
+## Start a REPL for basic projects
 `ctrl+alt+c ctrl+alt+j` to start a REPL click on the nrepl name in the bottom left of VSCode UI.
 
 Select either `Clojure CLI` or `Leiningen` when prompted for the project type
@@ -38,6 +38,42 @@ Open the Output tab to see the progress of the REPL starting.  Ask your coach fo
 Try running a REPL in the command line and connecting to it (details at bottom of this page).
 
 
+## Start a REPL on the command line
+**Ctrl+`** toggles open the [VSCode Integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal).  Or open your operating system terminal.
+
+> ####INFO::Windows GitBash users
+> [Configure the VS Code internal terminal to use the GitBash shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
+
+In the terminal, change to the folder than contains your project, e.g. `cd projects/clojure/playground`
+
+To use Leiningen, type the command `lein repl` in the terminal.
+
+![VS Code Terminal - Clojure REPL running](/images/vscode-calva-terminal-repl-running.png)
+
+To use Clojure CLI tools, us the practicalli/clojure-deps-edn aliases and run a REPL that also starts an nREPL server
+
+```
+clojure -M:middleware/cider-clj
+```
+
+If you also wish to have an interactive terminal REPL, include rebel readline when starting the REPL
+
+```
+clojure -M:repl/rebel-nrepl
+```
+
+
+### Connecting to an external REPL from Calva
+
+`Ctrl+Alt+c Ctrl+Alt+c` will open a command pop-up asking you to enter **host** and **port**. These details were shown when the REPL was run in the terminal.
+
+![Calva - connect to running REPL](/images/vscode-calva-connect-host-and-port.png)
+
+In the bottom left of the VS Code window, check the status of the **nrepl** connection.  If you are connected, then the *disconnected* status should disappear
+
+![Calva - nrepl disconnected](/images/vscode-calva-nrepl-disconnected.png)
+
+
 ## Developing your project ##
 Once you have a running REPL, use these commands to help you develop your code.
 
@@ -45,15 +81,15 @@ Once you have a running REPL, use these commands to help you develop your code.
 > Depending on the version of Mac computer you use, your Alt key may be called Option
 > So `Ctrl+Alt+c e` would be `Ctrl+Option+c e`
 
-| Evaluate code             | Keybinding         | Description                                                          |
-|---------------------------|--------------------|----------------------------------------------------------------------|
-| Namespace/file            | `Ctrl+Alt+c ENTER` | Loead the current file/namespace and any namespaces it depends on    |
-| Top level expression      | `Ctrl+Alt+c SPACE` | Show the result of the top level expression                          |
-| Expression                | `Ctrl+Alt+c e`     | Show the result of the current expression                            |
-| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate the curret expression in the REPL Window                    |
-| Expression to comment     | `Ctrl+Alt+c c`     | Evaluate the current expression and paste as comment                 |
-| Replace expression        | `Ctrl+Alt+c r`     | Replace the expression with its result                               |
-| In the REPL               | `ALt+Enter`        | Evaluates the current line REPL window                               |
+| Evaluate code             | Keybinding         | Description                                             |
+|---------------------------|--------------------|---------------------------------------------------------|
+| Namespace/file            | `Ctrl+Alt+c ENTER` | Load current file/namespace and all required namespaces |
+| Top level expression      | `Ctrl+Alt+c SPACE` | Show the result of the top level expression             |
+| Expression                | `Ctrl+Alt+c e`     | Show the result of the current expression               |
+| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate current expression in the REPL Window          |
+| Expression to comment     | `Ctrl+Alt+c c`     | Evaluate current expression and paste as comment        |
+| Replace expression        | `Ctrl+Alt+c r`     | Replace the expression with its result                  |
+| In the REPL               | `ALt+Enter`        | Evaluates the current line REPL window                  |
 
 You can run tests from Calva too...
 
@@ -68,9 +104,10 @@ You can run tests from Calva too...
 
 
 ## Commenting / uncommenting code
-Use the **Add Line Comment** command to place `;;` at the start of a line, which comments it out.
+Use  `;;` at the start of a line, which comments it out.
 
-> ####TODO::Comment keybindings ?
+> ####WARNING::Line comments keybindings ?
+> The **Add Line Comment** command to place line comment command is broken in Calva, it only produces a single semi-colon
 
 
 ## Increase / decrease font size
@@ -97,26 +134,3 @@ The [Calva visual Guide to Paredit](https://calva.io/paredit/) includes lots of 
 
 
 ---
-
-## Start a REPL on the command line (alternate approach)
-**Ctrl+`** toggles open the [VSCode Integrated terminal](https://code.visualstudio.com/docs/editor/integrated-terminal).  Or open your operating system terminal.
-
-> ####INFO::Windows GitBash users
-> [Configure the VS Code internal terminal to use the GitBash shell](https://code.visualstudio.com/docs/editor/integrated-terminal#_configuration).
-
-In the terminal, change to the folder than contains your project, e.g. `cd projects/clojure/playground`
-
-Type the command `lein repl` in the terminal.
-
-![VS Code Terminal - Clojure REPL running](/images/vscode-calva-terminal-repl-running.png)
-
-
-### Connecting to an external REPL from Calva
-
-`Ctrl+Alt+c Ctrl+Alt+c` will open a command pop-up asking you to enter **host** and **port**. These details were shown when the REPL was run in the terminal.
-
-![Calva - connect to running REPL](/images/vscode-calva-connect-host-and-port.png)
-
-In the bottom left of the VS Code window, check the status of the **nrepl** connection.  If you are connected, then the *disconnected* status should disappear
-
-![Calva - nrepl disconnected](/images/vscode-calva-nrepl-disconnected.png)

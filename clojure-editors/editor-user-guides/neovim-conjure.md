@@ -111,7 +111,8 @@ https://github.com/Shougo/deoplete.nvim
 Plug 'Shougo/deoplete.nvim' | Plug 'ncm2/float-preview.nvim'
 "
 ```
-Quit neovim to load the updted configuration (unless there is someway to reload the configuration)
+
+`:wq` to quit neovim.
 
 Run neovim and `:PlugInstall` to install all plugins defined in the `~/.config/nvim/init.vim` configuration
 

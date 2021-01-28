@@ -132,13 +132,13 @@ Proton offers a simple mnemonic menu as an alternative to the multiple keys for 
 {% content "vscode" %}
 The Calva extension adds Clojure support to Microsoft VS Code editor.
 
-> #### Danger::Calva required high memory at times
-> Recommend using Calva version 2.0.136 unless several Gigabytes of free memory is available on your computer. A specific version can be selected via *Extensions > Install Another Version...*
+> #### Warning::Calva with LSP has moments of high memory use
+> The current version of Calva runs clojure-lsp when opening a Clojure project.  The `clojure-lsp` process will use a noticable amount of memory, especially with a large number of dependencies in a project.
 >
-> Calva has added clojure-lsp to provide refactoring features.  Since version 2.0.137 Calva will run a memory intensive process when a project is open.  Ensure you have several Gb of memory available to avoid issues.  Maintainers are actively working on this issue to make Calva more efficient.  The maintainers will not be providing a mechanism to disable LSP.
+> Use Calva version 2.0.136 if RAM resources are very constrained.  A specific version can be selected via *Extensions > Calva extension settings > Install Another Version...*
 
 
-Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) is very supportive.  New versions may break, so its advisable to only upgrade to new versions when there is time to resolve potential issues.
+Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.  New versions may break, so its advisable to only upgrade to new versions when there is time to resolve potential issues.
 
 * [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
 * [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
@@ -158,7 +158,7 @@ Calva is an active project and the [#calva channel on the Clojurians Slack commu
 
 <!-- IntelliJ and Cursive -->
 {% content "intellij" %}
-Developers from a Java background are usually familar with IDE"s such as IntelliJ, so [Cursive IDE for IntelliJ](https://cursive-ide.com/) may be an appropriate choice.  Cursive uses the static analysis of Clojure code as well as a REPL.
+[Cursive](https://cursive-ide.com/) may be an appropriate choice for people from a Java background who are already familiar with IntelliJ.  Cursive will run static analysis of Clojure code when opening a Clojure project, as IntelliJ does with other languages.
 
 > #### Hint::Requires license for commercial development
 > There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.
