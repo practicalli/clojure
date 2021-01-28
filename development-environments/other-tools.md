@@ -41,5 +41,5 @@ Counterclockwise is an Eclipse IDE plugin to provide an integrated development e
 
 ## Netbeans 
 
-Netbeans did have great support for Clojure, but unfortunately at the time of writing the Clojure plugin has been unmaintained for so long it is not a viable tool to use for Cojure development.
+Netbeans did have great support for Clojure, but unfortunately at the time of writing the Clojure plugin has been unmaintained for so long it is not a viable tool to use for Clojure development.
 

@@ -47,10 +47,10 @@ Once you have a running REPL, use these commands to help you develop your code.
 
 | Evaluate code             | Keybinding         | Description                                                          |
 |---------------------------|--------------------|----------------------------------------------------------------------|
-| Namespace/file            | `Ctrl+Alt+c ENTER` | Loead the current file/namespace and any namespaces it depends on    |
+| Namespace/file            | `Ctrl+Alt+c ENTER` | Load the current file/namespace and any namespaces it depends on     |
 | Top level expression      | `Ctrl+Alt+c SPACE` | Show the result of the top level expression                          |
 | Expression                | `Ctrl+Alt+c e`     | Show the result of the current expression                            |
-| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate the curret expression in the REPL Window                    |
+| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate the current expression in the REPL Window                   |
 | Expression to comment     | `Ctrl+Alt+c c`     | Evaluate the current expression and paste as comment                 |
 | Replace expression        | `Ctrl+Alt+c r`     | Replace the expression with its result                               |
 | In the REPL               | `ALt+Enter`        | Evaluates the current line REPL window                               |

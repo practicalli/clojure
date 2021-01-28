@@ -13,7 +13,7 @@ lein new playground
 
 ![New Clojure project called playground](../images/clojure-playground-lein-new.png)
 
-> **Note** Run a Clojure REPL to have the run-time enviroment for Clojure 
+> **Note** Run a Clojure REPL to have the run-time environment for Clojure
 
 ```
 lein repl
