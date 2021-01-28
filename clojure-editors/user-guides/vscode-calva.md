@@ -54,7 +54,7 @@ Demo: switch between clj and cljs repl sessions for cljc files:
 - When editing `cljc` files, easily choose if repl commands should go to the `clj` or `cljs` repl by clicking the `cljc/clj[s]` indicator in the status bar.
 - Selection of current form: `ctrl+alt+v s`. Auto-detected the same way as for evaluation. Will select the form preceding or following the cursor first, otherwise the form the cursor is inside. (Only when the cursor is directly adjacent to any bracket so far.)
 
-Demo: Peek at defintions, etcetera:
+Demo: Peek at definitions, etcetera:
 
 ![Features](/assets/howto/features.gif)
 
