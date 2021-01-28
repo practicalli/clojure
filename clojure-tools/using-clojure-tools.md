@@ -1,6 +1,9 @@
 # Using Clojure tools
 The `clojure` command provided by Clojure CLI tools can be used to evaluate code, run Clojure applications and start a [command line REPL UI](rebel-repl/).
 
+> #### Hint::Editor used for majority of developer workflows
+> A [REPL connected Editor](/clojure-editors/) provides the richest developer workflow for Clojure
+
 Clojure CLI tools are extended by adding aliases for community tools, eg. [as found in practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
 {% youtube %}
