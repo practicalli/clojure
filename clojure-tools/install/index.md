@@ -22,7 +22,7 @@ Using community tools on top of Clojure CLI tools provides tasks to create, deve
 
 <!-- Not sure this is the right place for these, but cant find anywhere better yet -->
 ## Other tools
-The [Clojure Inspector](clojure-tools/clojure-inspector.md) provides a simple GUI tool to show to show the result from evaluating Clojure code.
+The [Clojure Inspector](clojure-tools/clojure-inspector.md) provides a simple GUI tool to show the result from evaluating Clojure code.
 
 The [REBL data browser](clojure-tools/rebl-data-browser.md) show the results in a GUI of any Clojure code that is evaluated as you are developing.
 
