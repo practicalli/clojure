@@ -412,14 +412,6 @@
 <!--         * [Clojars](libraries/clojars.md) -->
 <!--         * [om](libraries/om.md) -->
 <!--         * [edn](libraries/edn.md) -->
-<!--     * [Leiningen Configuration](leiningen/index.md) -->
-<!--         * [Create a project](leiningen/create-a-project.md) -->
-<!--         * [Run the REPL](leiningen/run-the-repl.md) -->
-<!--         * [Profiles overview](leiningen/profile.md) -->
-<!--         * [Adding a dev profile](leiningen/adding-a-dev-profile.md) -->
-<!--         * [Templates](leiningen/templates.md) -->
-<!--         * [Create a template](leiningen/create-a-template.md) -->
-<!--         * [Plugins](leiningen/plugins.md) -->
 <!--     * [Explaining Macros](explaining-macros.md) -->
 <!-- * [Where next](where-next.md) -->
 
@@ -433,8 +425,15 @@
     * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
     * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
     * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
-
-
+    * [Leiningen Build automation](alternative-tools/leiningen.md)
+<!--     * [Leiningen Configuration](leiningen/index.md) -->
+<!--         * [Create a project](leiningen/create-a-project.md) -->
+<!--         * [Run the REPL](leiningen/run-the-repl.md) -->
+<!--         * [Profiles overview](leiningen/profile.md) -->
+<!--         * [Adding a dev profile](leiningen/adding-a-dev-profile.md) -->
+<!--         * [Templates](leiningen/templates.md) -->
+<!--         * [Create a template](leiningen/create-a-template.md) -->
+<!--         * [Plugins](leiningen/plugins.md) -->
 
 
 <!-- ## Development tools -->
