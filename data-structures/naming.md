@@ -44,7 +44,7 @@ We are returned that list of numbers when we evaluate the name
 my-list
 ```
 
-We can use the cons function to add a number to our list, however because lists are immutable, rather than changing the original list, a new one is returned.  So if we want to keep on refering to our "changed" list, we need to give it a name
+We can use the cons function to add a number to our list, however because lists are immutable, rather than changing the original list, a new one is returned.  So if we want to keep on referring to our "changed" list, we need to give it a name
 
 ```
 (def my-list-updated (cons 4 my-list))
@@ -64,7 +64,7 @@ my-list-updated
 
 You could therefore give the impression of mutable state by applying a function to data structure and redefining the original name to point to the resulting data structure.
 
-> **Hint** In practice, the ability to redifine functions and data structures live helps you develop your application quickly in the REPL.  
+> **Hint** In practice, the ability to redefine functions and data structures live helps you develop your application quickly in the REPL.  
 
 > In production you typical do not redefine functions or data structures in a live running application.  That could be part of a new release of your application though.
 

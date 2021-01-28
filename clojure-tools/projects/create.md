@@ -67,7 +67,7 @@ In the project `deps.edn` file it can be useful to define an alias to run the pr
  :exec-fn -main
  :exec-args {:port 8888}}
 ```
-Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default aruments in `exec-args`.
+Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
 
 
 

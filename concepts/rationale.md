@@ -15,7 +15,7 @@ Why Clojure?
 
 ## Motivating ideas behind Clojure.
 
-A LISP base language design is very effecitve
+A LISP base language design is very effective
 
 * Lambda calculus yields an extremely small core with very little syntax required
 
@@ -76,7 +76,7 @@ JVM has established track record and trust level
 Now also open source
 Interop with other code required
 C linkage insufficient these days
-Java/JVM islanguage + platform
+Java/JVM is language + platform
 Not the original story, but other languages for JVM always existed, now embraced by Sun
 Java can be tedious, insufficiently expressive
 Lack of first-class functions, no type inference, etc

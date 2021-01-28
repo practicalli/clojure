@@ -39,8 +39,8 @@ Demo: switch between clj and cljs repl sessions for cljc files:
 - Code evaluation
   - Evaluate code at cursor and show the results as annotation in the editor: `ctrl+alt+v e`
   - Evaluate code and replace it in the editor, inline: `ctrl+alt+v r`
-  - Pretty printing evaluation resuls: `ctrl+alt+v p`
-  - Evaluate current top level form (based on where the cursor is) and show resluts inline: `ctrl+alt+v space`
+  - Pretty printing evaluation results: `ctrl+alt+v p`
+  - Evaluate current top level form (based on where the cursor is) and show results inline: `ctrl+alt+v space`
     - Send the current top level form to the REPL terminal: `ctrl+alt+v alt+space`
   - Error information when evaluation fails (at least a hint)
   - Support for `cljc` files and you can choose if they should be evaluated by the `clj` or the `cljc` repl session.
@@ -54,7 +54,7 @@ Demo: switch between clj and cljs repl sessions for cljc files:
 - When editing `cljc` files, easily choose if repl commands should go to the `clj` or `cljs` repl by clicking the `cljc/clj[s]` indicator in the status bar.
 - Selection of current form: `ctrl+alt+v s`. Auto-detected the same way as for evaluation. Will select the form preceding or following the cursor first, otherwise the form the cursor is inside. (Only when the cursor is directly adjacent to any bracket so far.)
 
-Demo: Peek at defintions, etcetera:
+Demo: Peek at definitions, etcetera:
 
 ![Features](/assets/howto/features.gif)
 

@@ -27,7 +27,7 @@
 (list :fred :barney :fred)
 ```
 
-> **Commnet** As you read about the List data structure, remember that the first element of a list is evaluated as a function call. 
+> **Comment** As you read about the List data structure, remember that the first element of a list is evaluated as a function call. 
 
 We can create a list using the `list` function
 

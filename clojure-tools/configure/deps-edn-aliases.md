@@ -115,9 +115,9 @@ In this example, `:exec-fn` defines the fully qualified function name that will 
    }
 ```
 
-Arguments can be over-ridden on the command line, e.g. `clojure -X:project/new :template app :name practicalli/simple-appplication`
+Arguments can be over-ridden on the command line, e.g. `clojure -X:project/new :template app :name practicalli/simple-application`
 
-`:ns-default` can also be used to qualify the function that will be executed in an alias.  `:ns-defaul` is especially useful when there are several functions that could be called from the specific namespace.
+`:ns-default` can also be used to qualify the function that will be executed in an alias.  `:ns-default` is especially useful when there are several functions that could be called from the specific namespace.
 
 The command line can over-ride the `:exec-fn` function configuration, allowing for a default configuration that can be easily over-ridden.
 
@@ -235,7 +235,7 @@ Arguments to the function are passed as a hash-map, defined in either an aliases
 
 `clojure -X:alias` runs the function specified by `:exec-fn` in the alias.  The function must include its namespace or have that namespace defined in `:ns-default`. If `:exec-args` is defined in the alias, its value is passed to the function, otherwise an empty hash-map is passed to the function as an argument.
 
-`clojure -X:alias namesapace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default** value if set.
+`clojure -X:alias namespace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default** value if set.
 
 `clojure -X:alias :key1 val1 :key2 val2` will execute the function defined in `:exec-fn` and pass it the key value pairs from the command line as a hash map.  If the alias has `:exec-args` defined, command line args are merged into the `:exec-fn` hash-map, replacing the default values in `:exec-args` where keys match.
 
@@ -394,7 +394,7 @@ clojure -M:deps mvn-install :jar '"/path/to.jar"'
 
 `mvn-install` uses the `.pom` file contained in the jar (if it exists) to determine the _groupId_, _artifactId_, and _version coordinates_ to use when the jar is installed.
 
-The `.pom` file can also be specifice using the  `:pom` argument.
+The `.pom` file can also be specified using the  `:pom` argument.
 
 The install argmap takes the following options:
 

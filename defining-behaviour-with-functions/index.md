@@ -6,5 +6,5 @@ Clojure design at its most basic comprises:
  - one or more data structures
  - functions that process those datastructures
 
-There is a common saying in Clojure: "Its better to have one data structure and many functions, than many data structures and many funcitions"
+There is a common saying in Clojure: "Its better to have one data structure and many functions, than many data structures and many functions"
 

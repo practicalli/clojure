@@ -12,7 +12,7 @@
 
 * Symbols
 
-The names we give funcitons and data structures to have an easy way to refer to them
+The names we give functions and data structures to have an easy way to refer to them
 
 
 * Keywords
@@ -31,7 +31,7 @@ essentially hash maps
 
 * Vectors
 
-esentially an array, however its persistent and therefore immutable
+essentially an array, however its persistent and therefore immutable
 
 * Sets
 

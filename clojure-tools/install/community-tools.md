@@ -84,7 +84,7 @@ In the project deps.edn file it could be useful to define an alias to run the pr
  :exec-fn -main
  :exec-args {:port 8888}}
 ```
-Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default aruments in `exec-args`.
+Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
 
 ## Project dependencies
 
@@ -162,7 +162,7 @@ Navigate data in the form of edn, json and transit
 | Command                          | Description                                            |
 |----------------------------------|--------------------------------------------------------|
 | `clojure -M:inspect/portal-cli`  | Clojure REPL with Portal dependency                    |
-| `clojure -M:inspect/portal-web`  | ClojureScript web browswer REPL with Portal dependency |
+| `clojure -M:inspect/portal-web`  | ClojureScript web browser REPL with Portal dependency |
 | `clojure -M:inspect/portal-node** | ClojureScript node.js REPL with Portal dependency      |
 
 **Using Portal once running**
@@ -187,7 +187,7 @@ Reveal - read evaluate visualize loop.  A REPL with data visualisation.  Also us
 
 | Command                                      | Description                                                                        |
 |----------------------------------------------|------------------------------------------------------------------------------------|
-| `clojure -M:inspect/reveal`                  | start a Reveal repl with data visualization window (cloure.main)                   |
+| `clojure -M:inspect/reveal`                  | start a Reveal repl with data visualization window (clojure.main)                   |
 | `clojure -M:inspect/reveal-light`            | as above with light theme and large font                                           |
 | `clojure -X:inspect/reveal`                  | start a Reveal repl with data visualization window (clojure exec)                  |
 | `clojure -X:inspect/reveal-light`            | as above with light theme and large font                                           |
@@ -231,7 +231,7 @@ Visualize the results of each evaluation in the REPL in the REBL UI.  Navigate t
 ## Middleware
 Aliases for libraries that combine community tools and REPL protocols (nREPL, SocketREPL).
 
-Run a REPL on the command line for access by `cider-connect-` commands, providing the require cider middleware libraries that are auto-injected in `ccider-jack-in-` commands.
+Run a REPL on the command line for access by `cider-connect-` commands, providing the require cider middleware libraries that are auto-injected in `cider-jack-in-` commands.
 
 ### nREPL
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.

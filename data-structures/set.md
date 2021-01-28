@@ -1,6 +1,6 @@
 # Set
 
-  A Clojure set is a persistend data structure that holds a unqiue set of elements.  Again the elements can be of any type, however each element must be unique for a valid set.
+  A Clojure set is a persistent data structure that holds a unique set of elements.  Again the elements can be of any type, however each element must be unique for a valid set.
   
 > **Note** Explore creating sets from existing collections.  Notice what happens if you have duplicate values in the collection.  Define sets directly using the `#{}` notation and see what happens if there are duplicate values.
 

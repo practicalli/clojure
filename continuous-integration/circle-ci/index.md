@@ -18,7 +18,7 @@ In the CircleCI dashboard use **Add Project** to configure any of your shared Gi
 Every time changes are pushed to the shared code repository (GitHub, Bitbucket), CirceCI will run the pipeline for the project and show the results.
 
 ## Clojure images
-There are a [range of container images](https://circleci.com/docs/2.0/circleci-images/#clojure) available, including [Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure), on which to run continuous integration worflows with.
+There are a [range of container images](https://circleci.com/docs/2.0/circleci-images/#clojure) available, including [Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure), on which to run continuous integration workflows with.
 
 Pre-configured images are typically faster than installing software on top a more generic image.
 

@@ -1,7 +1,7 @@
 # Composing Specifications
 No spec is an island
 
-Composing individual specifications is an effective way to build larger abstractions in specifictions without creating fixed hierarchical structures that are harder to refactor.
+Composing individual specifications is an effective way to build larger abstractions in specifications without creating fixed hierarchical structures that are harder to refactor.
 
 Require specification namespace to the page
 ```eval-clojure
@@ -86,5 +86,5 @@ Use the composite specification with a value
 (spec/conform ::customer-details
   {::first-name "Jenny"
    ::last-name "Jetpack"
-   ::residential-address "42 meaining of life street, Earth"})
+   ::residential-address "42 meaning of life street, Earth"})
 ```

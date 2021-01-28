@@ -98,7 +98,7 @@ And finally we can also use the threading macro to minimise our code further
     :skill)
 ```
 
-This technique is called descructuring.  Find out [more on Destructuring](https://gist.github.com/john2x/e1dca953548bfdfb9844)
+This technique is called destructuring.  Find out [more on Destructuring](https://gist.github.com/john2x/e1dca953548bfdfb9844)
 
 
 Duplicate keys in a map are not allowed, so the following maps...
@@ -107,7 +107,7 @@ Duplicate keys in a map are not allowed, so the following maps...
 {"fish" "battered" "chips" "fried" "fish" "battered and fried"}
 {:fish "battered" :chips "fried" :fish "battered & fried"}
 
-;; ...throw dupicate key errors
+;; ...throw duplicate key errors
 
 ;; Duplicate values are okay though
 {"fish" "battered" "chips" "fried" "cod" "fried"}
@@ -126,7 +126,7 @@ Duplicate keys in a map are not allowed, so the following maps...
      (apply hash-map)
      (def project-configs))
 
-;; Evalute the new map defined as project
+;; Evaluate the new map defined as project
 project
 ```
 

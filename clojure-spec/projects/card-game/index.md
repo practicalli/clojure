@@ -19,4 +19,4 @@ Open the `src/practicalli/card_game.clj` file and require the `clojure.spec.alph
 ```
 
 > #### Hint::Hiding code
-> Each page in this guide runs a self contained REPL, so the `practicalli.card-game` namepace, require expressions and specifications needed for each page are included as a hidden section at the top of each page.  This approach removes the need to duplicate code from previous sections.
+> Each page in this guide runs a self contained REPL, so the `practicalli.card-game` namespace, require expressions and specifications needed for each page are included as a hidden section at the top of each page.  This approach removes the need to duplicate code from previous sections.

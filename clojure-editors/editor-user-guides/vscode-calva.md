@@ -47,10 +47,10 @@ Once you have a running REPL, use these commands to help you develop your code.
 
 | Evaluate code             | Keybinding         | Description                                                          |
 |---------------------------|--------------------|----------------------------------------------------------------------|
-| Namespace/file            | `Ctrl+Alt+c ENTER` | Loead the current file/namespace and any namespaces it depends on    |
+| Namespace/file            | `Ctrl+Alt+c ENTER` | Load the current file/namespace and any namespaces it depends on    |
 | Top level expression      | `Ctrl+Alt+c SPACE` | Show the result of the top level expression                          |
 | Expression                | `Ctrl+Alt+c e`     | Show the result of the current expression                            |
-| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate the curret expression in the REPL Window                    |
+| Expression (send to REPL) | `Ctrl+Alt+c alt+e` | Evaluate the current expression in the REPL Window                    |
 | Expression to comment     | `Ctrl+Alt+c c`     | Evaluate the current expression and paste as comment                 |
 | Replace expression        | `Ctrl+Alt+c r`     | Replace the expression with its result                               |
 | In the REPL               | `ALt+Enter`        | Evaluates the current line REPL window                               |
@@ -91,7 +91,7 @@ Other useful options that can be added to the `settings.json` configuration
 
 ## Structured editing - Paredit
 
-Once you get the basics of Clojure development, you can try structural editing which is a way to edit your code without breaking the structure of Clojure.  Structural editing ensures you dont have uneven parentheses, `()`, `[]`, `{}`, etc.
+Once you get the basics of Clojure development, you can try structural editing which is a way to edit your code without breaking the structure of Clojure.  Structural editing ensures you don't have uneven parentheses, `()`, `[]`, `{}`, etc.
 
 The [Calva visual Guide to Paredit](https://calva.io/paredit/) includes lots of examples of using Structural editing.
 

@@ -1,5 +1,5 @@
 # Specifications for function definitions
-Specifications for the function definitons can be defined, using the specifications previously defined where relevant.
+Specifications for the function definitions can be defined, using the specifications previously defined where relevant.
 
 A function specification can contain a specification for the arguments, the return values and the relationship between the two.
 
@@ -89,7 +89,7 @@ Instrumenting functions will wrap a function definition and check the arguments 
 > Ignore the Warning message in the result, this is an issue with the REPL implementation used in this page.
 
 
-Calling the `deal-cards` function with an incorrect argument will return an error, detailing where in the specification the error occured.
+Calling the `deal-cards` function with an incorrect argument will return an error, detailing where in the specification the error occurred.
 
 ```eval-clojure
 (deal-cards "fake game data")

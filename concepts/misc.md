@@ -20,17 +20,17 @@
 - rather than changing a data structure, fp instead creates a new data structure that contains the changes and copies of the existing data.
 - to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data) 
 ** Input & output with functional programming 
-- other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesnt try and enforce functional purity, so any function can include impure code 
-- most functoins should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
-- Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM 
+- other fp languages like Haskell & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
+- Clojure doesn't try and enforce functional purity, so any function can include impure code 
+- most functions should be pure though or you loose the benefits of functional programming
+- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
+- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM 
 
 * Hosted on the Java Virtual Machine 
-- writen for the JVM & heavily integrated, giving beautiful integratoin 
+- written for the JVM & heavily integrated, giving beautiful integratoin 
 - Clojure is compiled to Java byte code 
 - many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)
-- Clojure makes invoking Java very convieninet and provides special primative constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
+- Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
 
 * Supporting concurrency
 - atoms etc 

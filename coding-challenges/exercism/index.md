@@ -1,8 +1,8 @@
 ![Exercism.io Clojure Track banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-clojure-track.png)
 
-[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leinigen project that includes code and unit tests, although Exercism itself doesnt run those tests.
+[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leiningen project that includes code and unit tests, although Exercism itself doesnt run those tests.
 
-Use the [Exercism CLI tool](#getting-started-exercism-cli-tool) to download the Leinigen project for each challenge and use your preferred development tools to create the solutions.  When feedback is required or you wish to share a solution, submit the code using the [Exercism CLI tool](#getting-started-exercism-cli-tool).  If tests are changed as well as source code, both files should be submitted.
+Use the [Exercism CLI tool](#getting-started-exercism-cli-tool) to download the Leiningen project for each challenge and use your preferred development tools to create the solutions.  When feedback is required or you wish to share a solution, submit the code using the [Exercism CLI tool](#getting-started-exercism-cli-tool).  If tests are changed as well as source code, both files should be submitted.
 
 
 ## Clojure Track
@@ -10,11 +10,11 @@ All the challenges are groups into specific [language tracks](https://exercism.i
 
 Join the language track and select either mentored mode or practice mode.
 
-![Cloure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-track-mentor-mode.png)
+![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-track-mentor-mode.png)
 
 In mentored mode your solutions are added to the mentors dashboard for review from any of the available mentors.  In practice mode you can complete as many solutions as you wish without waiting for a mentor.
 
-![Cloure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
+![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
 
 
 ## Getting Started: Exercism CLI tool
@@ -22,7 +22,7 @@ Select an exercise and follow the **Get started** guide to download and install 
 
 ![Clojure code challenges - Exercism getting started](/images/clojure-code-challenges-exercism-getting-started.png)
 
-Use the Exercism tool to download a Leinignen project for the exercise
+Use the Exercism tool to download a Leiningnen project for the exercise
 
 ```shell
 exercism download --exercise=exercise-name --track=clojure

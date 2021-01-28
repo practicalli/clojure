@@ -10,7 +10,7 @@
 A string explaining where the value deviates from the specification is sent to standard out if the value does not meet the specification.
 
 There are several variations on the explain function for different situations
-* `explain` - sents the return value to the standard out / REPL
+* `explain` - sends the return value to the standard out / REPL
 * `explain-str` - returns a human readable result.
 * `explain-data` - returns a data structure of the error to be processed by other code
 

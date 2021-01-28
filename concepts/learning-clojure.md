@@ -12,7 +12,7 @@ Gaining an appreciation that systems should be simple is a crucial step truly un
 
 ## Experience the Clojure syntax
 
-Take a quick look at the Syntax of Clojure.  The syntax is very small, so this will take about 15 minutes to 1 hour (dependent on your own experiences with coding).  Don't try to remember all the syntax, it will come through practise.
+Take a quick look at the Syntax of Clojure.  The syntax is very small, so this will take about 15 minutes to 1 hour (dependent on your own experiences with coding).  Don't try to remember all the syntax, it will come through practice.
 - eg. [Clojure in 15 minutes](https://adambard.com/blog/clojure-in-15-minutes/)
 
 

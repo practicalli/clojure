@@ -11,8 +11,8 @@ Use Clojure CLI and `clj-new`
 clojure -M:new app practicalli/banking-on-clojure
 ```
 
-> #### Hint::practicalli/bancking-on-clojure repository
-> [practicalli/bancking-on-clojure repository](https://github.com/practicalli/banking-on-clojure-spec) contains the latest code to date for this project.
+> #### Hint::practicalli/banking-on-clojure repository
+> [practicalli/banking-on-clojure repository](https://github.com/practicalli/banking-on-clojure-spec) contains the latest code to date for this project.
 
 ## Outline design of project
 
@@ -22,7 +22,7 @@ Data Specifications are created for
 * Bank account
 * Multiple Bank accounts
 * Credit Card
-* Mortgate
+* Mortgage
 
 Functions and specifications are created for
 * register-account-holder &#10004;

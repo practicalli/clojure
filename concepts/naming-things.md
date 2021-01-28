@@ -1,4 +1,4 @@
-# Naming things - data structues and functions 
+# Naming things - data structures and functions 
 
 The `def` function is used to name data structures in Clojure.
 
@@ -7,9 +7,9 @@ You can also use `def` to name functions, however it is more common to use `defn
 
 ## Keeping things private 
 
-  There is less empasis on keeping functions and data structures private (compared to Java, C++, C#).  If you want to define a function name so that it is only accessible by other functions of the same namespace, you can use the `defn-` function.
+  There is less emphasis on keeping functions and data structures private (compared to Java, C++, C#).  If you want to define a function name so that it is only accessible by other functions of the same namespace, you can use the `defn-` function.
   
-  There is no private equivaltent for `def` (as of Clojure 1.6) however you can use metadata to specify this
+  There is no private equivalent for `def` (as of Clojure 1.6) however you can use metadata to specify this
 
 (def ^:private name data)
 
@@ -28,7 +28,7 @@ You can also use `def` to name functions, however it is more common to use `defn
 
 > There are no naming conventions for a private symbol name.  As its defined an used within the scope of that one namespace (file), then there is no real need to make a special convention.  Private functions will just be called as normal within the namespace and it will be quite clear from the function definition that it is private.
 
-[Clojure community style guilde](https://github.com/bbatsov/clojure-style-guide)
+[Clojure community style guide](https://github.com/bbatsov/clojure-style-guide)
 
 
 ## example

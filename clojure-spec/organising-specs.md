@@ -34,7 +34,7 @@ Specifications can be incorporated into the existing unit tests, so it is sensib
 ## Generative testing
 Using `spec-test/check` will generate 1000 data values for each expression, so by default these tests will take far longer that other tests.
 
-Configuring generative tests to only generate a small number of values will make `spec-test/check` expressions return almost instantatnously.  In this example, only 10 data values are generated
+Configuring generative tests to only generate a small number of values will make `spec-test/check` expressions return almost instantaneously.  In this example, only 10 data values are generated
 
 ```clojure
 (spec-test/check `deal-cards

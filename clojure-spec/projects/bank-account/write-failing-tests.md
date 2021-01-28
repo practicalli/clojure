@@ -46,7 +46,7 @@ Define some initial mock data to use with the unit tests
 account is a customer with a bank account id added
 
 (def account-holder-mock
-  {:acount-id           #uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
+  {:account-id           #uuid "97bda55b-6175-4c39-9e04-7c0205c709dc"
    :first-name          "Jenny"
    :last-name           "Jetpack"
    :email-address       "jenny@jetpack.org"

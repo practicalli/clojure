@@ -37,14 +37,14 @@
 
 ## Homoiconicity 
   
-  One thing that keeps Clojure a small language is the fact that the same syntax is used to represent data and behaviour.  For example, a function call is defined using a list, data structures and functions are defined using a list.  In fact everything is a list, although we use a little syntatic sugar here and there to make the code quicker for a human to parse.
+  One thing that keeps Clojure a small language is the fact that the same syntax is used to represent data and behaviour.  For example, a function call is defined using a list, data structures and functions are defined using a list.  In fact everything is a list, although we use a little syntactic sugar here and there to make the code quicker for a human to parse.
 
 
 ## Clojure is an implementation of Lisp
 
   Lisp stands for LISt Processing, so its no surprise that all Clojure code is defined in a list. 
   
-  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everthing else in the list is data.
+  The open Parenthesis `(` denotes the start of a list, the first element of that list is evaluated as a function call, everything else in the list is data.
 
   The evaluation of the first element of a list can be behaviour of `(` can be over-ridden using `quote` or its short form the quote character, **'**, so the list elements are all treated as data.
 
@@ -56,19 +56,19 @@
 
 ## Concurrent Programming & Parallelism
 
-  Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Fuctions that are not affected by or cause side effects also make writing concurrent code trivial.
+  Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Functions that are not affected by or cause side effects also make writing concurrent code trivial.
   
-  Clojure helps you scale your applications by with a parrallel procssing approach, as you can run functions over immutable datastructures without conflict.
+  Clojure helps you scale your applications by with a parallel processing approach, as you can run functions over immutable datastructures without conflict.
 
 
 ## Hosted on the JVM
 
   Clojure is compiled to bytecode that runs on the Java Virtual Machine.  This helps Clojure run at a very high performance (close to Java, C++, etc.)
   
-  Clojure has a consise and easy to use Java Interoperability, enabling you to use any libraries that run on the JVM (Java, Groovy, Scala, Jruby, Jython, etc).  
+  Clojure has a concise and easy to use Java Interoperability, enabling you to use any libraries that run on the JVM (Java, Groovy, Scala, Jruby, Jython, etc).  
 
 - many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)
-- Clojure makes invoking Java very convieninet and provides special primative constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
+- Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
 
 > ClojureScript generated JavaScript that will run in a browser.  ClojureCLR will compile to bytecode that runs on the Microsoft .Net platform.
 
@@ -77,7 +77,7 @@
   Using `atoms` or `refs` in clojure you can have mutable data.  Changes are done safely within Software Transactional Memory (STM), like having an in-memory ACID database managing access 
 
 
-## Extend the langugage with Macros 
+## Extend the language with Macros 
 
   Clojure uses macros 
 
@@ -96,11 +96,11 @@
 
 
 ** Input & output with functional programming 
-- other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesnt try and enforce functional purity, so any function can include impure code 
+- other fp languages like Haskell & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
+- Clojure doesn't try and enforce functional purity, so any function can include impure code 
 - most functions should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
-- Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM 
+- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
+- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM 
 
 * Supporting concurrency
 - atoms etc 

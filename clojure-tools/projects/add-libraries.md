@@ -37,9 +37,9 @@ In Leiningen:
 {% endtabs %}
 
 
-## Excluding dependency depencencies
-Libraries may also contain their own library depencencies.  When several libraries are added as depencencies to a project, it is possible that the dependencies of included libraries conflict with each other.
+## Excluding dependency dependencies
+Libraries may also contain their own library dependencies.  When several libraries are added as dependencies to a project, it is possible that the dependencies of included libraries conflict with each other.
 
-Adding `:exclude` when adding a library as a dependency will prevent the specified libraries dependancy from being included.
+Adding `:exclude` when adding a library as a dependency will prevent the specified libraries dependency from being included.
 
 > TODO: dependency :excludes examples required

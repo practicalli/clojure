@@ -7,7 +7,7 @@
 
 ### Example
 
-You can use the let function to define a simple expression, for which everyting will go out of scope once it has been evaluated
+You can use the let function to define a simple expression, for which everything will go out of scope once it has been evaluated
 
 ```
 (let [local-name "some value"])

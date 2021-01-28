@@ -143,7 +143,7 @@ Proton offers a simple mnemonic menu as an alternative to the multiple keys for 
 
 <!-- IntelliJ and Cursive -->
 {% content "intellij" %}
-Developers from a Java background are usually familar with IDE's such as IntelliJ, so [Cursive IDE for IntelliJ](https://cursive-ide.com/) may be an appropriate choice.  Cursive uses the static analysis of Clojure code as well as a REPL.
+Developers from a Java background are usually familiar with IDE's such as IntelliJ, so [Cursive IDE for IntelliJ](https://cursive-ide.com/) may be an appropriate choice.  Cursive uses the static analysis of Clojure code as well as a REPL.
 
 > #### Hint::Requires license for commercial development
 > There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.

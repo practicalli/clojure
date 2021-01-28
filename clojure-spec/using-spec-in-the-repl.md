@@ -28,7 +28,7 @@ Type `(spec /` and press `TAB` to list all the functions in the namespace.
 
 Typing a space character after the full name of a function shows the function signature with arguments that should be passed to that function.
 
-![Clojure REPL - reble readline spec funciton signature](/images/cloure-repl-rebel-readline-spec-function-help-conform.png)
+![Clojure REPL - reble readline spec function signature](/images/cloure-repl-rebel-readline-spec-function-help-conform.png)
 
 
 ## Check data conforms to the specification

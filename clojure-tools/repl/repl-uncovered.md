@@ -1,6 +1,6 @@
 # Read, Evaluate Print Loop (REPL)
 
-The REPL provides a fast, powerful and fun way to develop code and is the hard of the Clojure developers workflow.  The REPL allows you to quicky test out designs and your domain knowlege of the system you are building, easily accomodating multiple designs to help you evaluate the best approach.
+The REPL provides a fast, powerful and fun way to develop code and is the hard of the Clojure developers workflow.  The REPL allows you to quickly test out designs and your domain knowledge of the system you are building, easily accommodating multiple designs to help you evaluate the best approach.
 
 Starting a REPL is the first thing you do after creating or downloading a project.
 
@@ -9,7 +9,7 @@ The REPL allows you to run any existing code, write new code and change code.  E
 The REPL can run all of your code or simply get the result of an individual expression.  You can inspect runtime values and continually develop your code without having to restart each time.
 
 
-> **Hint** If you are not using the REPL for your Clojure development you are missing out on a highly productive workflow.  Once you start using a REPL as part of you developement cycle you will feel lost without one.
+> **Hint** If you are not using the REPL for your Clojure development you are missing out on a highly productive workflow.  Once you start using a REPL as part of you development cycle you will feel lost without one.
 
 
 

@@ -10,7 +10,7 @@ Establish an effective Clojure development environment by installing the followi
 | rlwrap                                                 | Optional    | A simple read line for command history, only used by `clj` |
 
 > #### Hint::Aliases provided by practicalli/clojure-deps-edn
-> [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
+> [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure development.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
 
 
 ## Clojure CLI tools
