@@ -7,7 +7,7 @@ The following section of functions gives examples of simple control flow.  As yo
 
 ## If
 
-  Using the `if` funtion you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
+  Using the `if` function you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
   
   Here is a simple example to see if one number is bigger that another
 
@@ -19,7 +19,7 @@ The following section of functions gives examples of simple control flow.  As yo
 => "Higher"
 ```
 
-Here is an example of an condtion inside an anonymous fuction.
+Here is an example of an condition inside an anonymous function.
 
 ```clojure
 (defn even-number [number]

@@ -6,7 +6,7 @@
 You are not alone in thinking Clojure feels weird when you write it, we all feel this at first
 
 David 
-Is it posible to come up wht an algorithm to prove we know everything in maths
+Is it possible to come up wht an algorithm to prove we know everything in maths
 
 Generated lambda calculus & the universal turing machine 
 
@@ -205,7 +205,7 @@ Tab   -- use tab anywhere on a like to line up your code
 ***** Clojure commands 
 nrepl-jack-in
 nrepl-close    ;; close your connection
-nrepl-interupt ;; stop your repl going crazy 
+nrepl-interrupt ;; stop your repl going crazy
 nrepl-restart
 nrepl-rotate-connection
 nrepl-return
@@ -300,7 +300,7 @@ The developer workflow would be to write Clojure in Sublime and run your Clojure
 REPL using Leiningen on the command line.  Alternatively you could write your Clojure code 
 in the REPL and copy/paste it into files using Sublime text.
 
-A simple approach, but quite limted in terms of developer experience.
+A simple approach, but quite limited in terms of developer experience.
  
 **** Netbeans
 Although there is a plugin for netbeans, at the time of writing that plugin was not being actively
@@ -320,11 +320,11 @@ Errors
 
 ** Namespaces
 
-When adding functions to your namespace, you need to choose if that function is addd to the current namespace or you shoould refer to it from its existing namespace (or an alias shorthand).
+When adding functions to your namespace, you need to choose if that function is addd to the current namespace or you should refer to it from its existing namespace (or an alias shorthand).
 
-If you are only going to uses a few functions, then you only need to mame them accessible.
+If you are only going to uses a few functions, then you only need to name them accessible.
 
-If you are using a framework (eg. overtone) then you may want to include the whole set of fuctions.
+If you are using a framework (eg. overtone) then you may want to include the whole set of functions.
 
 If you add a function to your namespace, then you can simply use its name to call it, no need for a fully qualified namespace as it is now part of the current namespace.
 
@@ -349,14 +349,14 @@ require fully-qualified.namespace :refer [function-name]
 -- call function by name only, does not include function if it is already defined in the namespace [TODO - check]   
 
 use fully-qualified.namespace
--- adds all functions from namespace to current namespace, over-writes if there are dubplicates already in the namespace
+-- adds all functions from namespace to current namespace, over-writes if there are duplicates already in the namespace
 
 use fully-qualified.namespace :only [function-name]
--- only pulls in the specific function name, over-writes if it exists already in the namespace [TYODO: check]
+-- only pulls in the specific function name, over-writes if it exists already in the namespace [TODO: check]
 
 :use [fully-qualified.namespace :rename {function-name alias-function-name]]
 [:use [clojure.contrib.math :rename {sqrt ccm-sqrt}]]
--- pulls in the named functio and changes its name... this 
+-- pulls in the named function and changes its name... this
 
 --- refer and rename example -- not sure about this one
 (ns foo
@@ -518,7 +518,7 @@ In the repl you can simply enter an expression using require or use function as 
 (use 'namespace.name)
 (:use [namespace.name])
 (:use [namespace.name
-       anonther-namespace.name])
+       another-namespace.name])
 
 
 Using require allows you to refer to external functions, although you still need to specify the 
@@ -542,7 +542,7 @@ In a project file, you can include other namespaces inside the namespace definit
 
 (ns namespace.name 
     :use [namespace.name
-          anonther-namespace.name])
+          another-namespace.name])
 
 
 
@@ -574,7 +574,7 @@ By adding the reload keyword to a Leiningen project, then ....
 
 (ns namespace.name 
     :use [namespace.name
-          anonther-namespace.name]
+          another-namespace.name]
     :reload)
      
 
@@ -593,7 +593,7 @@ lein repl
 Cover this later ??
 **** Use and require 
 Use pulls everything into the namespace automatically 
-- you can specifiy a namespace alias using :as if there are naming clashes with symbols (def, defn, etc) and keywords 
+- you can specify a namespace alias using :as if there are naming clashes with symbols (def, defn, etc) and keywords
 
 Require does what then ???  It tells your project about the libraries but only brings 
 them in if you specify ... 
@@ -768,15 +768,15 @@ Adding to a list
 *** Defining data structures
 *** Defining behaviours
 **** Defining a named function
-**** Definng an anonymous function
+**** Defining an anonymous function
 ***** Shorthand for anonymous functions
  Using the # character before a list is a simple shorthand for defining an anonymous function
 
  #(* 1 2 3 4 5)
 
-To pass a paramter into an anonymous function, use the % character
+To pass a parameter into an anonymous function, use the % character
 
-To specify individual paramters you can number the % characters like: 
+To specify individual parameters you can number the % characters like:
 
     #(* 10 %) 
     #(* 10 %1 %2 %3)
@@ -834,7 +834,7 @@ the for function and use of map in the example above are similar.  In many cases
                     (not (= tumbler-2 tumbler-3))
                     (not (= tumbler-3 tumbler-1)))]
       [tumbler-1 tumbler-2 tumbler-3])
-***** Genarating unique voucher codes
+***** Generating unique voucher codes
 ***** Generating WiFi passwords
 - for example you are at a venue where you need to trace what people have access to the WiFi and you do so by issuing a unique code to each person.  This is typically the case at places like Universities
   - use the :when filter to skip letters and number that could be confused with each other, eg, i+1, 0+O, etc.
@@ -849,8 +849,8 @@ Defining functions
 - group behaviour together 
 - define a function name,
   define a functions parameters - including any arity based polymorphism
-  define the behavior in the function 
-  -- from a simple expression, to multiple expressions, to functions as paramters of functions, to recursively calling the same function 
+  define the behaviour in the function
+  -- from a simple expression, to multiple expressions, to functions as parameters of functions, to recursively calling the same function
   -- using doto or threading macro to make code readable 
 
 ** Learning Clojure core
@@ -868,7 +868,7 @@ A deck of cards starting at 2 assuming we are not counting Ace as 1.
 We could use range to create a range of number from 0 to 9,
 then apply a function to that range that incremented each number in turn by 2.
 
-(take 10 (range))  ;; generate an infinate number of integers and take just the first 10.
+(take 10 (range))  ;; generate an infinite number of integers and take just the first 10.
 
 As range is lazily evaluated, then this code is efficient.
 
@@ -907,7 +907,7 @@ The final number is exclusive, so in this case 11 is not included.
 **** Working over collections 
 map / apply 
 
-**** Examples of lazyness
+**** Examples of laziness
 take / drop / repeat / range / filter 
 
 **** Predicates - is something something...
@@ -931,9 +931,9 @@ Enter the following function call in the REPL to see the source code of the rang
 
 (source range)
 
-Lets review the different behaviour that is run based on the number of arguemnts used to call the function.
+Lets review the different behaviour that is run based on the number of arguments used to call the function.
 
-  ;; The default behaviour when you call range without any arguments is to generate and infinate number of integers.  Actually this calls range with three aruguemnts, rather than any specific behaviour itself.  This version does however set the end number to be infinity, so the generation will go on forever.  As this is a lazy function then there are no performance issues so long as you set a constraint around this call (eg  (take 100 (range)) will constrain range to only generate the first 100 numbers.).  Without constraint you can blow the stack of the Java Virtual Machine.
+  ;; The default behaviour when you call range without any arguments is to generate and infinite number of integers.  Actually this calls range with three aruguemnts, rather than any specific behaviour itself.  This version does however set the end number to be infinity, so the generation will go on forever.  As this is a lazy function then there are no performance issues so long as you set a constraint around this call (eg  (take 100 (range)) will constrain range to only generate the first 100 numbers.).  Without constraint you can blow the stack of the Java Virtual Machine.
   ([] 
    (range 0 Double/POSITIVE_INFINITY 1))
 
@@ -979,7 +979,7 @@ In the following example I have written a test suite that contains a few tests.
   )
 
 
-Unfortunately I made an error with the code.  I didnt have paredit on and I missed
+Unfortunately I made an error with the code.  I didn't have paredit on and I missed
 off a closed bracket at the end.  Its an easy mistake to make, although
 the error produced is not that helpful in diagnosing the problem.
 
@@ -1059,7 +1059,7 @@ swap!
 ** Java Interoperability
 ** Interesting articles and videos to read
 **** [[http://www.infoq.com/presentations/music-functional-language][Chris Ford: Functional composition at Lambda Jam]]
-** Learing resources
+** Learning resources
 - [[http://www.4clojure.com/][4Clojure]]
 - [[https://github.com/ctford/cooking-with-clojure][Cooking with Clojure]] - Chris Ford
 - [[http://clojure.org/cheatsheet][Clojure Cheatsheet]]
@@ -1630,7 +1630,7 @@ pi evaluates to 3.144554504
 LISP stands for list processing, clojure is a LISP, so all the lists are processed
 
 *** evaluation 
-funtions evaluate their arguments first 
+functions evaluate their arguments first
 
 (+ (+3 3) (* 4 4))
 

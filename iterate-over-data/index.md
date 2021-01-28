@@ -21,7 +21,7 @@ If there are multiple collections, map returns a new collection with values crea
 ```
 
 ## apply
-Used to remove all the values from a collection so they are treated as individual arguemnts to the function given to apply.
+Used to remove all the values from a collection so they are treated as individual arguments to the function given to apply.
 
 ```clojure
 (= (apply + [1 2 3])

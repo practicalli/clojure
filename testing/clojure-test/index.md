@@ -35,7 +35,7 @@ The namespace that is under test also needs to be included and and its recommend
 
 An assertion is where you compare an expected result with the result of calling a function.  If the assertion is true, then then it is a pass.  If the assertion is false, then its a fail.
 
-The form of an assertion takes a form `(is (comparitor expected-value fuction-call))`
+The form of an assertion takes a form `(is (comparitor expected-value function-call))`
 
 Some simple examples include
 ```clojure

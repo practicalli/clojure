@@ -26,7 +26,7 @@ The `#` character tells the Clojure reader that this is the macro form of a func
 
 The `map` function returns a lazy sequence. This is very useful for large data sets.
 
-`mapv` is an eager version of map that returns the result as a vector.  This is useful when you require random access lookup in real time.  `mapv` can also be used to return an eager result if lazyness is not required.
+`mapv` is an eager version of map that returns the result as a vector.  This is useful when you require random access lookup in real time.  `mapv` can also be used to return an eager result if laziness is not required.
 
 ```
 (mapv #(str % "s") ["pig" "cow" "goat" "cat" "dog" "rabbit"])
