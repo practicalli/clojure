@@ -46,10 +46,6 @@
         <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
     <!-- * [Running projects](clojure-tools/projects/running-projects.md) -->
  <!-- * [Design Journal](clojure-tools/design-journal.md) -->
-* [Data browsers](clojure-tools/data-browsers/index.md)
-    * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
-    * [Reveal](clojure-tools/data-browsers/reveal.md)
-    * [Portal](clojure-tools/data-browsers/portal.md)
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
@@ -72,6 +68,11 @@
         * [VSpaceCode Calva](clojure-editors/editor-user-guides/vspacecode-calva.md)
         * [VSCode Calva](clojure-editors/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
+* [Data browsers](clojure-tools/data-browsers/index.md)
+    * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
+    * [Reveal](clojure-tools/data-browsers/reveal.md)
+    * [Portal](clojure-tools/data-browsers/portal.md)
+
 
 ## Developing Clojure
 
