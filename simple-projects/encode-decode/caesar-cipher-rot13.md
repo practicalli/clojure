@@ -81,7 +81,7 @@ An encrypted copy of the sentence is returned.
 
 In the `practicalli.cypher-rot13` solution `apply str` was used to join a sequence of characters into a string.  [`clojure.string/join`](https://clojuredocs.org/clojure.string/join) combines a sequence of characters into a string.
 
-Require the `clojure.string` namespace to use the functions contained within.  Add the require to the namepace definition of `practicalli.cypher-rot13`
+Require the `clojure.string` namespace to use the functions contained within.  Add the require to the namespace definition of `practicalli.cypher-rot13`
 
 ```clojure
 (ns practicalli.cypher-rot13

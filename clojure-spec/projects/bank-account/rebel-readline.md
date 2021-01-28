@@ -30,7 +30,7 @@ Now add the specifications for the project
 
 Testing the specifications
 
-First change into the specifications namepace so the fully qualified names of the specs are not required.
+First change into the specifications namespace so the fully qualified names of the specs are not required.
 
 ```clojure
 (in-ns 'practicalli.banking-specifications)
