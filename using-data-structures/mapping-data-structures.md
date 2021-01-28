@@ -25,7 +25,7 @@ If one data structure is smaller, then the function is only applied up to the la
 ;; => (1 2 3)
 ```
 
-Lets look at another example.  Here we have a pre-defined Fibonnacci sequence up to the first 12 values.
+Lets look at another example.  Here we have a pre-defined Fibonacci sequence up to the first 12 values.
 
 ```clojure
 (def fibonacci-sequence [1 2 3 5 8 13 21 34 55 89 144 278])

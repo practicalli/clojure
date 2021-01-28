@@ -583,7 +583,7 @@ ruby web_server.rb
 Extreme Startup Company Server - 1 per team
 For your Clojure product development you will need:
 Java runtime environment or SDK - version 6 preferably
-Leinigen - or some other Clojure tool
+Leiningen - or some other Clojure tool
 Emacs + Clojure-mode, Clojure-test, paredit - or some other development environment
 A repl - using lein repl or lein swank + emacs
 1) Download the basic server from Github to give you a head start - you will need it, trust me!

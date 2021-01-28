@@ -21,7 +21,7 @@ The macro system allows you to extend the design of the Clojure language, withou
 >
 > Clojure macros are a language within the Clojure language that generate Clojure code when the Clojure Reader parses a macro.  In fact the Clojure Reader will pass the macro to the macro reader which does the expansion.
 
-Use macros when functions alone lead to unneccessay complexity or to reduce repetition or you can achieve a higher abstraction that creates a simpler system.
+Use macros when functions alone lead to unnecessary complexity or to reduce repetition or you can achieve a higher abstraction that creates a simpler system.
 
 Expose as much of your API as possible as functions so that they can be stored in hash-maps, mapped over sequences of widgets, negated with complement, juxtaposed with juxt, and so on.
 
@@ -30,7 +30,7 @@ Expose as much of your API as possible as functions so that they can be stored i
 
 Macros are not values in themselves, as functions are, so marcos cannot be used as functional arguments in the same way that functions can.
 
-So marcros do not compose functionally
+So macros do not compose functionally
 
 Macros in Clojure aren't values. They can't be passed as arguments to other functions or macros, can't be returned as the result of computations, and can't be stored in data structures.
 

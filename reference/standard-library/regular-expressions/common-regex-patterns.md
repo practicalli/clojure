@@ -245,7 +245,7 @@ Breakdown the regex pattern:
 <!-- HTML code uses tags to define structure of content. HTML tag, start with an opening tag “<" , follow by double quotes "string", or single quotes 'string' but does not allow one double quotes (") "string, one single quote (') 'string or a closing tag > without single or double quotes enclosed. At last , end with a closing tag “>” -->
 
 
-<!-- ```eval-cloure -->
+<!-- ```eval-clojure -->
 <!-- (re-matches -->
 <!--   #"<("[^"]*"|'[^']*'|[^'">])*>" -->
 <!--   "<body><h1>Title</h1><p>Loreum ipsum</p></body>") -->

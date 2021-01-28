@@ -29,7 +29,7 @@ Search directly in [ClojureDocs](https://clojuredocs.org/core-library) for funct
 
 An Internet search of `clojure topic`, where `topic` is a name of the thing you want to do, should return many examples of functions that could be useful to solving the challenge.  Or
 
-* [Clojure community - getting help](https://practicalli.github.io/blog/posts/cloure-community-getting-help/) included several other sources of help.
+* [Clojure community - getting help](https://practicalli.github.io/blog/posts/clojure-community-getting-help/) included several other sources of help.
 
 
 ## Using let and anonymous functions

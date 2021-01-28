@@ -4,7 +4,7 @@
 
 kebab-case is a clean, human-readable way to combine the words that would otherwise have spaces.
 
-Cloure uses kebab-case to combines words with a dash, `-`, rather than a space. e.g. `rock-paper-scissors`,  `tic-tac-toe` or `(def db-spec-development {:db-type "h2" :db-name "banking-on-clojure"})`
+Clojure uses kebab-case to combines words with a dash, `-`, rather than a space. e.g. `rock-paper-scissors`,  `tic-tac-toe` or `(def db-spec-development {:db-type "h2" :db-name "banking-on-clojure"})`
 
 kebab-case is used throughout Clojure, including
 * Var names with `def` and function names with `defn`
