@@ -10,7 +10,7 @@ Here is just a small and diverse set of example companies that I am aware of tha
 
 | Company                    | Type of applications                                                                                                                                                       |
 | -----------------------    | -------------------------------------                                                                                                                                      |
-| Boeing                     | [Boeing 737 MAX - onboard maintainance](https://www.youtube.com/watch?v=iUC7noGU1mQ)                                                                                       |
+| Boeing                     | [Boeing 737 MAX - onboard maintenance](https://www.youtube.com/watch?v=iUC7noGU1mQ)                                                                                        |
 | Puppet Labs                | DevOps apps & services eg. trapperkeeper                                                                                                                                                                           |
 | Cisco                      | Malware analysis & threat intelligence platform (expert system with core.logic)                                                                                            |
 | Deuche Bank (UK)           | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)                                                                  |
@@ -42,4 +42,4 @@ Clojure is also defined as a technology that can be adopted since 2014, accordin
 
 [![Thoughtworks Technology Radar](/images/thoughtworks-tech-radar.png)](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure)
 
-JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompasing ecosystem of libraries and services.
+JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompassing ecosystem of libraries and services.

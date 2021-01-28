@@ -1661,7 +1661,7 @@ mutible statte needed for
 
 problem with encapsulation is that walls around objects are expensive as we have to write an api to use all of our objects 
 
-in distributed envrionemnts, we often work with immutable values - its an effecitve copy of the data between client and server
+in distributed envrionemnts, we often work with immutable values - its an effective copy of the data between client and server
 
 with immutable data structures in Clojure, you get an Api for free 
 - getters

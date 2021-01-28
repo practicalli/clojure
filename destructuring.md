@@ -39,7 +39,7 @@ Its quite common to take the first element as a specific name and use another na
 ;; => "The next item to get is: oranges"
 ```
 
-This example seems a little redundant at first, however if we add recursion then we can iterate through the shoping list and it should make more sence
+This example seems a little redundant at first, however if we add recursion then we can iterate through the shopping list and it should make more sense
 
 
  splitting a vector into a head and a tail. When defining a function with an arglist** you use an ampersand. The same is true in destructuring.
