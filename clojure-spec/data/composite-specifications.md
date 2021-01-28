@@ -86,5 +86,5 @@ Use the composite specification with a value
 (spec/conform ::customer-details
   {::first-name "Jenny"
    ::last-name "Jetpack"
-   ::residential-address "42 meaining of life street, Earth"})
+   ::residential-address "42 meaning of life street, Earth"})
 ```

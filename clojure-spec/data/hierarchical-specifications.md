@@ -10,7 +10,7 @@ Defining specifications for data that is hierarchical or nested in nature.
 ## Example hierarchical data
 
 ```clojure
-{:top-level-key {:netsted-key "value"}}
+{:top-level-key {:nested-key "value"}}
 ```
 
 ## Individual specifications
