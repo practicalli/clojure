@@ -18,7 +18,7 @@ Functions contain doc-strings and you can ask for a functions documentation, or 
 (source doc)
 ```
 
-Clojure is a dynamically typed language, it is also strongly typed (everything is a type, but you dont have to express the type in your code).  The type of anything in Clojure can be returned.
+Clojure is a dynamically typed language, it is also strongly typed (everything is a type, but you don't have to express the type in your code).  The type of anything in Clojure can be returned.
 
 ```clojure
 (type 42)
@@ -73,7 +73,7 @@ The above `map` function is roughly equivalent to the following expression
 ```
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collecion and one or more values.
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 
 ## Defining custom functions

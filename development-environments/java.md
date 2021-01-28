@@ -26,7 +26,7 @@ The OpenJDK is available as a package on Ubuntu and can be installed via the Ubu
 
 Clojure was designed as a hosted language, which means it is developed and run on top of Java's Virtual Machine (JVM).  However, _its not neccessary to learn the Java language to use Clojure_.
 
-Clojure is compiled into Java bytecode when you evaluate the code.  This compilation happens in the background so you dont usually see it happening.  For example, if you are using the Clojure REPL then each time you evaluate an expression it is compiled into Java bytecode and then injected into the running REPL and the results are then returned.  This all happens pretty instantaneously.
+Clojure is compiled into Java bytecode when you evaluate the code.  This compilation happens in the background so you don't usually see it happening.  For example, if you are using the Clojure REPL then each time you evaluate an expression it is compiled into Java bytecode and then injected into the running REPL and the results are then returned.  This all happens pretty instantaneously.
 
 Most of the current Clojure tooling was developed for Clojure on the JVM, for example Leiningen.
 

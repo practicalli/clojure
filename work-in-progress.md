@@ -10,11 +10,11 @@ Clojure is relatively quick to learn for several reasons
 1. A very small syntax that encourages pure functional programming in a pragmatic way.  Clojure allows you to focus on the problems you are solving rather than the language itself.
 2. Clojure encourages REPL driven development, giving you fast feedback as you craft your code.  You can evaluate any part of your system to see what it does.  Using a REPL makes it very easy to understand what code does.
 3. Built in unit test suite via clojure.test and writing unit tests is very simple.  TDD and BDD fits very well with REPL driven development.
-4. Clojure and its community of develpers tend toward creating simple systems (solving complex requirements by breaking them down into simple components).  Most Clojure systems are build from components that have a specific task, which are orchestrated to deliver compresensive systems.
-5. The community is friendly, knowlegable and very supportive
+4. Clojure and its community of developers tend toward creating simple systems (solving complex requirements by breaking them down into simple components).  Most Clojure systems are build from components that have a specific task, which are orchestrated to deliver comprehensive systems.
+5. The community is friendly, knowledgable and very supportive
 6. There are over 35 books on Clojure and lots of online resources and this is growing daily.
 7. Full stack development can be done in just one language (Clojure and ClojureScript are the same language syntax and run on the JVM and JavaScript platforms respectively)
-8. There are no moniods or other complex theories to understand in order to develop successful systems in Clojure.  However, you could add these kinds of things as libraries, using the powerful macro system in Clojure that allows you to extend the language cleanly.
+8. There are no monoids or other complex theories to understand in order to develop successful systems in Clojure.  However, you could add these kinds of things as libraries, using the powerful macro system in Clojure that allows you to extend the language cleanly.
 
 I have personally been involved in teach many hundreds of developers how create systems with Clojure and think in a functional way.  This has included those who have never programmed before as well as those programming for decades.  Clojure can feel hard at first because it is quite different in approach to what you are used to.  Those just starting coding often have fewer challenges picking up the language.
 
@@ -237,7 +237,7 @@ http://cognitect.com/
 - REPL - a fast way to explore your problem domain with code
 
 * Functional programming
-- in contrast to imperative programing
+- in contrast to imperative programming
 - immutable data structures at its core, everything is immutable by default
 - if any piece of data can be changed, that is mutable state
 - in imperative programming, we change state where ever we like
@@ -249,17 +249,17 @@ http://cognitect.com/
 - rather than changing a data structure, fp instead creates a new data structure that contains the changes and copies of the existing data.
 - to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data)
 ** Input & output with functional programming
-- other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesnt try and enforce functional purity, so any function can include impure code
-- most functoins should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
-- Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM
+- other fp languages like Haskell & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
+- Clojure doesn't try and enforce functional purity, so any function can include impure code
+- most functions should be pure though or you loose the benefits of functional programming
+- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
+- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM
 
 * Hosted on the Java Virtual Machine
-- writen for the JVM & heavily integrated, giving beautiful integratoin
+- written for the JVM & heavily integrated, giving beautiful integration
 - Clojure is compiled to Java byte code
 - many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)
-- Clojure makes invoking Java very convieninet and provides special primative constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
+- Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
 
 * Supporting concurrency
 - atoms etc
@@ -359,13 +359,13 @@ The above `map` function is roughly equivalent to the following expression
 ```
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collecion and one or more values.
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 <!--endsec-->
 
 
 
-# Persistent data stuctures
+# Persistent data structures
 
 Persistent data structures share memory, so even for large data structures the use of lists, maps, vectors & sets are efficient.
 

@@ -4,7 +4,7 @@
 
 If we generate a very large collection we run the risk of blowing our heap space.  For example we could use range to generate a very large collection, say a vector containing 10 billion values
 
-Dont try this example below
+Don't try this example below
 
 ```clojure
 (vec (range 0 9999999999))

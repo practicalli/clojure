@@ -52,7 +52,7 @@ When one of these things is true, do this, else default
   2 "I wish I was that young"
   3 "That was my previous value"
   4 "You sunk my battleship"
-  "I dont think you understood the question")
+  "I don't think you understood the question")
 
 => "You sunk my battleship"
 ```

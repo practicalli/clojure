@@ -1,6 +1,6 @@
 ![Exercism.io Clojure Track banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-clojure-track.png)
 
-[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leiningen project that includes code and unit tests, although Exercism itself doesnt run those tests.
+[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leiningen project that includes code and unit tests, although Exercism itself doesn't run those tests.
 
 Use the [Exercism CLI tool](#getting-started-exercism-cli-tool) to download the Leiningen project for each challenge and use your preferred development tools to create the solutions.  When feedback is required or you wish to share a solution, submit the code using the [Exercism CLI tool](#getting-started-exercism-cli-tool).  If tests are changed as well as source code, both files should be submitted.
 

@@ -6,7 +6,7 @@
 You are not alone in thinking Clojure feels weird when you write it, we all feel this at first
 
 David 
-Is it posible to come up wht an algorightm to prove we know everything in maths
+Is it posible to come up wht an algorithm to prove we know everything in maths
 
 Generated lambda calculus & the universal turing machine 
 
@@ -28,22 +28,22 @@ rather than many data structures.
 
 You do need constraints with data however data does not need to be wrappped up in types and classification theory to do so.
 
-Phil Bagwell created immutalbe data structures with data sharing in early 2000 and this is the basis
+Phil Bagwell created immutable data structures with data sharing in early 2000 and this is the basis
 for Clojure's persistent data structures (eg all of them)
 
 In OO languages the class is there to stop you doing things and accessing data in an unsafe way. 
-Clojure allows you to access data in a managed way so you dont need that protection.
+Clojure allows you to access data in a managed way so you don't need that protection.
 
 Data tends to arrive in bulk 
 
 Clojure is about expresivity and performance.
 Its a lisp for getting real world work done in.
-You dont have to go very deep to understand the core of clojure.  Simply use (source fn-name).
+You don't have to go very deep to understand the core of clojure.  Simply use (source fn-name).
 You are only one or two levels above the core library 
 
 
 ** Installing Clojure
-**** Pre-requisits 
+**** prerequisites
 Clojure runs on the Java virtual machine (although there are versions that run on the Microsoft CLR
 and JavaScript V8 engine)
 
@@ -72,7 +72,7 @@ sudo apt-get install oracle-java6-installer
 
 
 **** Clojure is a library
-- you dont need to install Clojure directly, it is used as a library in your Clojure projects.  
+- you don't need to install Clojure directly, it is used as a library in your Clojure projects.
 ** Developer tools
 **** Leinignen
 ***** Introduction
@@ -129,7 +129,7 @@ If the second command fails, you need to install or configur the Java SDK (link)
 Lein Install  
 - places jars into local repo and link check repo firs when doing dependency checking [TODO: needs reading up on]
 ***** Leiningen Plugins to consider
-******* lein-ancient - analyzes your project.clj and lets you know which dependencies are out of date
+******* lein-ancient - analyses your project.clj and lets you know which dependencies are out of date
 ******* lein-exec - directly execute Clojure code snippets, or write shell scripts in Clojure!
 ******* lein-try - start a REPL with various dependencies without needing a project. Great for exploring new libraries!
 ******* Eastwood - a lint tool for Clojure.
@@ -163,7 +163,7 @@ Lein Install
        INSTALLED: version 0.5.2 in apps folder on Lenovo from http://www.lighttable.com/ 
 ****** Read the built in Docs
 ****** Using LightTable
-******* Pre-requisits
+******* Prerequisites
 ******** Java 1.6 or greater
 
 Java SDK version 1.6 or higher required.
@@ -385,7 +385,7 @@ use fully-qualified.namespace :only [function-name]
   :require other-namespace.filename :refer :all)
 ;; external defs & defns do not need to be qualified, they become part of the current namespace
 ;; eg:  :require clojure.string :refer :all  - you can then use string without any qualifier
-;; Note: need to make sure you dont get namespace conflicts
+;; Note: need to make sure you don't get namespace conflicts
 
 ; alternative syntax for the above  
 (ns my-namespace.filename
@@ -613,7 +613,7 @@ Numerical operators such as + / * - are functions in Clojure
 
 
 *** Types
-Yes there are types in Clojure, even though its a dynamic language and you dont explicitly define
+Yes there are types in Clojure, even though its a dynamic language and you don't explicitly define
 types when you write code.
 
 ; my code does...   ; Comment
@@ -796,7 +796,7 @@ To specify individual paramters you can number the % characters like:
 use pulls everything in from the stated namespace and adds it all to the current namespace, 
 unless you define only.  Use is a shorthand for :require :refer :all
 
-Require makes available the functoins from the namespace, but does not pollute your current namespace.
+Require makes available the functions from the namespace, but does not pollute your current namespace.
 However, if you use the :refer :all keywords with :require then it will add everything to the namespace.
 
 You can us :as to map to the namespace to an alias, helping avoid any function name (symbol) clashes
@@ -886,7 +886,7 @@ To apply this function to the range we are generating, we can use the map functi
 (map (+ 2 %) (range 10))
 
 This will generate the numbers from 2 to 11 (range 10 gives 0-9 remember).  For representing cards
-then we dont need a number 11, so we can shorten the range by generating 1 less number with range.
+then we don't need a number 11, so we can shorten the range by generating 1 less number with range.
 
 (map (+ 2 %) (range 9))
 
@@ -1086,7 +1086,7 @@ and then creating your code from those tests you are getting the best of both wo
  
 * Learning Overtone at Music Hack Day
 
-** Pre-requisits
+** Prerequisites
 
 Overtone requires a professional music library called Jack.  If you really want to get the maximum 
 performance out of overtone a real time kernel is recommended too.
@@ -1210,7 +1210,7 @@ I’ve been having a blast with Clojure. It’s clearly the exactly right techno
 
 
 * WIP 
-;; doall -- dont be lazy, makes a lazy thing do what it does
+;; doall -- don't be lazy, makes a lazy thing do what it does
 ;; pr-str -- ???
 
 ;; Pretty Print - use instead of println
@@ -1598,7 +1598,7 @@ example
  :sex :femaile
  :job cryptographer}
 
-sex value is assumed a universal definition that we dont need to reference exernally, however we may want to qualify the details of the job descrtiption
+sex value is assumed a universal definition that we don't need to reference exernally, however we may want to qualify the details of the job descrtiption
 
 *** namespaces 
 

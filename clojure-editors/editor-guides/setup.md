@@ -93,7 +93,7 @@ Show line numbers on the left hand side of the editor
 
 **don't wrap lines**
 
-Dont wrap a line of text around if they are to long for the screen:
+Don't wrap a line of text around if they are to long for the screen:
 
 > `[:editor :lt.objs.editor/no-wrap]`
 

@@ -11,4 +11,4 @@ There are approximately 700 functions and macros available in the `clojure.core`
 ```shell
 lein new standard-library
 ```
-> Now I dont remember the function to get the functions in the current project... time to google when back online
+> Now I don't remember the function to get the functions in the current project... time to google when back online

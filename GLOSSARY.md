@@ -129,8 +129,8 @@ referential transparent.
 
 ---
 
-## Lazy evalution
-> aka call-by-need is an evaluation machanism which delays the evaluation of an expression until its value is needed.
+## Lazy evaluation
+> aka call-by-need is an evaluation mechanism which delays the evaluation of an expression until its value is needed.
 
 ```js
 let rand = function*() {
@@ -141,7 +141,7 @@ let rand = function*() {
 ```
 ```
 let randIter = random();
-randIter.next(); // Each exectuion gives a random value, expression is evluated on need.
+randIter.next(); // Each execution gives a random value, expression is evaluated on need.
 ```
 ---
 

@@ -8,7 +8,7 @@
 - REPL - a fast way to explore your problem domain with code
 
 * Functional programming
-- in contrast to imperative programing
+- in contrast to imperative programming
 - immutable data structures at its core, everything is immutable by default
 - if any piece of data can be changed, that is mutable state
 - in imperative programming, we change state where ever we like

@@ -10,7 +10,7 @@ just because you want tool
 When a function is just fine
 its only used in this project
 where you want it to be composable (macros are not composable, eg (apply my-macro data) does not work - `apply and` is a good example here)
-you dont have time to learn the macro syntax properly and you dont want to write a bad macro
+you don't have time to learn the macro syntax properly and you don't want to write a bad macro
 your macro doest do anything you cant do with a function.
 -->
 

@@ -8,7 +8,7 @@ Sequences are an interface for logical lists, which can be lazy.  "Lazy" means t
 
 If you evaluate `(range)` just by itself it will return an infinite number of integers, well at least until your computers memory space fills up.
 
-So we dont blow up our memory and just get the values we want we can use `range` in conjunction with other functions that define how many numbers we actually want.
+So we don't blow up our memory and just get the values we want we can use `range` in conjunction with other functions that define how many numbers we actually want.
 
 For example, if we just wanted the first four numbers from the infinite sequence of `range` we could specify that with the `take` function
 
