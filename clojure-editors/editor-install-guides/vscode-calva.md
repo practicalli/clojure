@@ -2,12 +2,13 @@
 
 VS Code supports Clojure and ClojureScript development through an extension called [Calva](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva).
 
-> #### Warning::Calva with LSP adds 2Gb+ RAM
-> The current version of Calva runs clojure-lsp when ever a Clojure project is opened.  The `clojure-lsp` process will use a minimum of 2Gb RAM and over 3Gb if a significant number of dependencies are included in the project.
+> #### Warning::Calva with LSP has moments of high memory use
+> The current version of Calva runs clojure-lsp when opening a Clojure project.  The `clojure-lsp` process will use a noticable amount of memory, especially with a large number of dependencies in a project.
 >
-> Use Calva version 2.0.134 if RAM resources are constrained.  A specific version can be selected via *Extensions > Install Another Version...*
+> Use Calva version 2.0.136 if RAM resources are very constrained.  A specific version can be selected via *Extensions > Calva extension settings > Install Another Version...*
 
 ![VSCode Calva extension for Clojure development](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/evaluate.gif)
+
 
 ## Install VS Code
 

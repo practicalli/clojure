@@ -11,35 +11,9 @@ The best editor to use for learning Clojure is the editor you are already famili
 
 Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors for Clojure and ClojureScript development. **[Install guides](editor-install-guides)** are provided for these editors.
 
-> #### Hint::Just starting to code?
-> VSCode and Calva is a good choice for those just starting to write code.
-
 
 <!-- Clojure Editors -->
-{% tabs vscode="VSCode & Calva", spacemacs="Emacs & Spacemacs", vimconjure="NeoVim & Conjure", spacevim="SppaceVim & Fireplace", vimiced="vim-iced", atom="Atom & Chlorine", intellij="IntelliJ & Cursive" %}
-
-
-<!-- VSCode and Calva -->
-{% content "vscode" %}
-Use VSCode and Calva if you are familiar with VSCode or have no editor preference.
-
-Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Calva is a very active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) is very supportive.
-
-* [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
-* [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
-* [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
-
-<!-- The tabs code block does not support a nested youtube block -->
-<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
-<div class="iframe-container">
-<iframe style="width:100%;height:100%;border:0px solid #000000" src="https://www.youtube.com/embed/a2vRDYXDAug" scrolling="yes">This browser does not support Iframe</iframe>
-</div>
-
-<br />
-
-![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
-
+{% tabs spacemacs="Emacs & Spacemacs", vimconjure="NeoVim & Conjure", vspacecode="VSpaceCode & Calva", spacevim="SpaceVim & Fireplace", vimiced="vim-iced", atom="Atom & Chlorine", vscode="VSCode & Calva", intellij="IntelliJ & Cursive" %}
 
 <!-- Spacemacs -->
 {% content "spacemacs" %}
@@ -56,18 +30,13 @@ Calva is inspired by CIDER, the most popular Clojure environment for Emacs.  Cal
 <iframe style="width:100%;height:100%;border:0px solid #000000" src="https://www.youtube.com/embed/NDrpclY54E0" scrolling="yes">This browser does not support Iframe</iframe>
 </div>
 
-> #### Warning::Calva with LSP adds 2Gb+ RAM
-> The current version of Calva runs clojure-lsp when ever a Clojure project is opened.  The `clojure-lsp` process will use a minimum of 2Gb RAM and over 3Gb if a significant number of dependencies are included in the project.
->
-> Use Calva version 2.0.134 if RAM resources are constrained.  A specific version can be selected via *Extensions > Install Another Version...*
-
 
 <!-- NeoVim and Conjure -->
 {% content "vimconjure"%}
 
 [![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
 
-Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement of Vim, implemented in less coded, fully compatible with Vim's editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
+Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement of Vim, implemented in less coded, fully compatible with Vim"s editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
 
 [Conjure](https://github.com/Olical/conjure) is an interactive environment for evaluating code within your running program, initially targeted at Lisp languages such as Clojure.
 
@@ -94,6 +63,24 @@ curl -fL conjure.fun/school | sh
 * [Neovim user guide](https://neovim.io/doc/user/)
 * [Conjure install guide](https://github.com/Olical/conjure)
 * [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/) - an introduction to using Conjure
+
+
+
+<!-- VSpaceCode and Calva -->
+
+{% content "vspacecode"%}
+
+[VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
+
+Also included edamagit, a sophisticated text based Git client (like magit for Emacs).
+
+> Currently there is a [pull request to add Clojure mode key bindings](https://github.com/VSpaceCode/VSpaceCode/pull/154) that call Calva functions
+
+* [Quick install guide](editor-install-guides/vspacecode-calva.md)
+* [Quick user guide](editor-user-guides/vspacecode-calva.md)
+
+![VSpaceCode in action](https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif)
+
 
 <!-- SpaceVim and vim-fireplace -->
 {% content "spacevim"%}
@@ -141,9 +128,37 @@ Proton offers a simple mnemonic menu as an alternative to the multiple keys for 
 ![Atom.io proton-mode demo](/images/atom-proton-mode-demo.gif)
 
 
+<!-- VSCode and Calva -->
+{% content "vscode" %}
+The Calva extension adds Clojure support to Microsoft VS Code editor.
+
+> #### Danger::Calva required high memory at times
+> Recommend using Calva version 2.0.136 unless several Gigabytes of free memory is available on your computer. A specific version can be selected via *Extensions > Install Another Version...*
+>
+> Calva has added clojure-lsp to provide refactoring features.  Since version 2.0.137 Calva will run a memory intensive process when a project is open.  Ensure you have several Gb of memory available to avoid issues.  Maintainers are actively working on this issue to make Calva more efficient.  The maintainers will not be providing a mechanism to disable LSP.
+
+
+Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) is very supportive.  New versions may break, so its advisable to only upgrade to new versions when there is time to resolve potential issues.
+
+* [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
+* [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
+* [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
+
+<!-- The tabs code block does not support a nested youtube block -->
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<div class="iframe-container">
+<iframe style="width:100%;height:100%;border:0px solid #000000" src="https://www.youtube.com/embed/a2vRDYXDAug" scrolling="yes">This browser does not support Iframe</iframe>
+</div>
+
+<br />
+
+![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
+
+
 <!-- IntelliJ and Cursive -->
 {% content "intellij" %}
-Developers from a Java background are usually familar with IDE's such as IntelliJ, so [Cursive IDE for IntelliJ](https://cursive-ide.com/) may be an appropriate choice.  Cursive uses the static analysis of Clojure code as well as a REPL.
+Developers from a Java background are usually familar with IDE"s such as IntelliJ, so [Cursive IDE for IntelliJ](https://cursive-ide.com/) may be an appropriate choice.  Cursive uses the static analysis of Clojure code as well as a REPL.
 
 > #### Hint::Requires license for commercial development
 > There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.
