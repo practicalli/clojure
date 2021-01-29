@@ -22,7 +22,7 @@ clj -e "(ns foo.bar) (alter-var-root #'*ns* (constantly 'foo.bar)) (clojure.main
 ```
 
 
-## Require and set namepace with Rebel Readline
+## Require and set namespace with Rebel Readline
 Set the namespace
 ```clojure
 clj -R:rebel -e "(ns foo.bar) (alter-var-root #'*ns* (constantly (find-ns 'foo.bar)))" -m rebel-readline.main
@@ -31,7 +31,7 @@ clj -R:rebel -e "(ns foo.bar) (alter-var-root #'*ns* (constantly (find-ns 'foo.b
 foo.bar=>
 ```
 
-Using the `-R` flag to pull in the rebel dependecies without running the main namespace.  Then run the expression to set the specific namespace.  Then set the main namespace for rebel which will run its -main function.
+Using the `-R` flag to pull in the rebel dependencies without running the main namespace.  Then run the expression to set the specific namespace.  Then set the main namespace for rebel which will run its -main function.
 
 
 <!-- ## Changing Namespaces using `dev/user.clj` -->

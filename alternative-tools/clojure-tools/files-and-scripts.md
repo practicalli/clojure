@@ -6,7 +6,7 @@ clojure script.clj
 ```
 
 > #### Hint::Babashka - scripting with Clojure
-> [Babashka](https://github.com/borkdude/babashka) is a alternative to Bash scripting, using the Clojure language for scripts.  Babashka is native compiled using Graal so is very fast.
+> [Babashka](https://github.com/borkdude/babashka) is a alternative to Bash scripting, using the Clojure language for scripts.  Babashka is native compiled using [GraalVM's native image builder](https://www.graalvm.org/reference-manual/native-image/) so is very fast.
 
 
 <!-- TODO add examples from a file / script -->

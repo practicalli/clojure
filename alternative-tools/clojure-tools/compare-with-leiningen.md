@@ -1,7 +1,7 @@
 # Compare Clojure CLI tools With Leiningen
 Leingingen, Boot and Clojure CLI tools are ways to configure Clojure projects and each have various ways of extending their basic functionality.
 
-Leiningen has been the main tool used for Clojure projects for the last decade, however, in the last few years many new projects have started with Clojure CLI tools.  Boot is a project designed to make far greater flexibiligy in configuring Clojure projects and initially was popular, however, it does require more thought to configuring a project than Leiningen.  Once Clojure CLI tools started to be adopted, it seems boot interest has diminished, as Clojure CLI tools provides a great deal of flexibility without the complexity of Boot.
+Leiningen has been the main tool used for Clojure projects for the last decade, however, in the last few years many new projects have started with Clojure CLI tools.  Boot is a project designed to make far greater flexibility in configuring Clojure projects and initially was popular, however, it does require more thought to configuring a project than Leiningen.  Once Clojure CLI tools started to be adopted, it seems boot interest has diminished, as Clojure CLI tools provides a great deal of flexibility without the complexity of Boot.
 
 > #### Hint::Clojure code is the same which ever tool is used
 > The Clojure code for the project will be the same regardless of which tool is used to configure and manage the Clojure project.

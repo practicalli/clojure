@@ -1,5 +1,5 @@
 # Migrating Projects To Clojure Cli Tools
-If you have an existing Leingingen or Boot project, is should be fairly straightforward to switch to Clojure CLI tools configuraition (deps.edn), especially when using a collection of community tools as defined in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+If you have an existing Leiningen or Boot project, is should be fairly straightforward to switch to Clojure CLI tools configuration (deps.edn), especially when using a collection of community tools as defined in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
 ## Simplest approach
 Create a `deps.edn` file in the root of the project directory, containing an empty hash-map, `{}`
