@@ -13,17 +13,17 @@ The value of using anonymous functions comes when there is a short, specific pie
 
 ## Definition of an anonymous function
 ```clojure
-(fn [argument] (str "some behaviour, typically using the aguments passed:" argument ))
+(fn [argument] (str "some behaviour, typically using the arguments passed:" argument ))
 ```
 
 This expression is a function call to `fn` which has the arguments called `argument`
 
 
 ## Calling an anonymous function
-To get a value from evaluating this function you need to pass it a value (or anonther function) as an argument,  as well as calling it as a function by placing the anonymous function as the first element of a list.
+To get a value from evaluating this function you need to pass it a value (or another function) as an argument,  as well as calling it as a function by placing the anonymous function as the first element of a list.
 
 ```
-((fn [arguments] (str "behaviour, typically using the aguments passed: " arguments )) "Is this the right room for an argument")
+((fn [arguments] (str "behaviour, typically using the arguments passed: " arguments )) "Is this the right room for an argument")
 ```
 
 ## Binding a local names
