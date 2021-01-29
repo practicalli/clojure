@@ -1,8 +1,8 @@
 # Who uses Clojure
 
-[Over 175 companies](http://clojure.org/community/companies) have actively advertised their Clojure adoption, and given the broad participation in user groups there are clearly many more organizations using Clojure at some level in their technology stack. 
+[Over 175 companies](http://clojure.org/community/companies) have actively advertised their Clojure adoption, and given the broad participation in user groups there are clearly many more organizations using Clojure at some level in their technology stack.
 
-A quick scan of various job sites shows Clojure positions at companies like Walmart, Facebook, Staples, Consumer Reports, Salesforce, and Amazon. It doesn't get much more mainstream than that. 
+A quick scan of various job sites shows Clojure positions at companies like Walmart, Facebook, Staples, Consumer Reports, Salesforce, and Amazon. It doesn't get much more mainstream than that.
 
 If you are looking for a new role using Clojure or other functional programming languages, visit [Functional Works](http://functionalworks.com), the only Functional Recruiters in the world.
 
@@ -10,8 +10,8 @@ Here is just a small and diverse set of example companies that I am aware of tha
 
 | Company                    | Type of applications                                                                                                                                                       |
 | -----------------------    | -------------------------------------                                                                                                                                      |
-| Boeing                     | [Boeing 737 MAX - onboard maintainance](https://www.youtube.com/watch?v=iUC7noGU1mQ)                                                                                       |
-| Puppet Labs                | DevOps apps & services eg. trapperkeeper                                                                                                                                                                           |
+| Boeing                     | [Boeing 737 MAX - onboard maintenance](https://www.youtube.com/watch?v=iUC7noGU1mQ)                                                                                       |
+| Puppet Labs                | DevOps apps & services eg. trapperkeeper                                                                                                                                   |
 | Cisco                      | Malware analysis & threat intelligence platform (expert system with core.logic)                                                                                            |
 | Deuche Bank (UK)           | [Processing event streams](http://blog.malcolmsparks.com/) from [Apache Storm](https://storm.apache.org/)                                                                  |
 | Atlassian                  | Collaborative editing platform for all their products                                                                                                                      |
@@ -42,4 +42,4 @@ Clojure is also defined as a technology that can be adopted since 2014, accordin
 
 [![Thoughtworks Technology Radar](/images/thoughtworks-tech-radar.png)](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure)
 
-JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompasing ecosystem of libraries and services.
+JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompassing ecosystem of libraries and services.

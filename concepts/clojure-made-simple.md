@@ -1,6 +1,6 @@
 # Clojure from the Author
 
-A series of important videos from Rich Hickey, the author of Clojure who spent over 2 years designing the fundamental design of Clojure around the concept of simplicity.  Since then Rich has stuarded the continued design and develpment of Clojure, ensuring it stays true to is founding principles.
+A series of important videos from Rich Hickey, the author of Clojure who spent over 2 years designing the fundamental design of Clojure around the concept of simplicity.  Since then Rich has stewarded the continued design and development of Clojure, ensuring it stays true to is founding principles.
 
 You do not need to watch these videos to start coding in Clojure, but they are very useful to adopt the approach and design idioms that make Clojure a highly effective language for software development.
 
@@ -42,7 +42,7 @@ https://youtu.be/MCZ3YgeEUPg
 
 
 ## The value of values
-Rich Hickey provides analysis of the changing way we think about values (not the philosphoical kind) in light of the increasing complexity of information technology and the advent of Big Data
+Rich Hickey provides analysis of the changing way we think about values (not the philosophical kind) in light of the increasing complexity of information technology and the advent of Big Data
 
 {% youtube %}
 https://youtu.be/-6BsiVyC1kM

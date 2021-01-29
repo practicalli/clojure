@@ -1,6 +1,10 @@
 # What is Functional Programming
 
-Functional programming is quite different from Imperative programming in languages like C, C++ and Java.
+Functional programming can seem quite different from imperative programming used in languages like C, C++ and Java.
+
+Although imperative languages may seem easier initially, definging one step after another, as the scale of a system grows, so does complexity.  Imperative languages have applied object oriented design to manage complexity with varied rates of success.
+
+Functional programing is actually simpler that the OO approach, although initially it is unfamiliar and not considered as easy.
 
 ## Imperative programming languages
 
@@ -14,12 +18,12 @@ Variables typically represent **memory addresses that are mutable** (can be chan
 
 In functional programming individual tasks are small and achieved by passing data to a function which returns a result.  This function typically does not change the state of the system or other functions.
 
-Functions are **composed** together to form more complex tasks and satify larger business logic.  These composed functions pass the result of their evaluation to the next function, until all functions in the composition have been evaluated.
+Functions are **composed** together to form more complex tasks and satisfy larger business logic.  These composed functions pass the result of their evaluation to the next function, until all functions in the composition have been evaluated.
 
 The entire functional program can be thought of as a single function defined in terms of smaller ones.
 
 Program execution is an **evaluation of expressions**, with the nesting structure of function composition determining program flow.
 
-Variables are typically **immutable** and represent values (in the mathematical sence).
+Data is **immutable** and cannot be change once created.   represent values (in the mathematical sense).
 
 ![Functional program - conceptual view](/images/functional-composition-illustrated.png)
