@@ -183,4 +183,4 @@ Demonstrate how to use the REPL in [Spacemacs](http://practicalli.github.io/cloj
 
 > #### Hint::Finding your own learning path
 > As there are many ways to study, please feel free to carve out your own learning path and share what you found useful if you wish.
-> [Learning Clojure section](learning-clojure.md) describes important steps you should take on your journy into Clojure.
+> [Learning Clojure section](learning-clojure.md) describes important steps you should take on your journey into Clojure.
