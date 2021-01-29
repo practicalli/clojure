@@ -44,7 +44,7 @@ We can also just express a value as a ratio.  This works because of the prefix n
 22/7
 ```
 
-The lazyness can be overridden by specifying a precision, eg coersing the result into a specific type
+The laziness can be overridden by specifying a precision, eg coercing the result into a specific type
 
 ```clojure
 (/  22 7.0)
