@@ -31,7 +31,7 @@ exercism download --exercise=rna-transcription --track=clojure
 
 
 ## Designing the solution
-To convert a collection of values, define a hash-map where the keys are the initial value and the values are the transformed value (conversion, encoding, etc).  This is often refered to as a dictionary.
+To convert a collection of values, define a hash-map where the keys are the initial DNA values and the hash-map values are the transformed RNA values.  Using a hash-map in this way is often termed as a dictionary.
 
 A string is used as a collection of character values by many of the functions in `clojure.core`.  The dictionary uses characters for its keys and values.
 

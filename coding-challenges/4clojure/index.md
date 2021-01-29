@@ -61,7 +61,7 @@ It is common to combine `fn` and `let` to solve the challenges as they grow in c
 
 * [fn - ClojureDocs](https://clojuredocs.org/clojure.core/fn)
 * [let - ClojureDocs](https://clojuredocs.org/clojure.core/let)
-* [fibbonacci sequence guide - practicalli](https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/026_fibonacci_sequence.clj)
+* [Fibonacci sequence guide - practicalli](https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/026_fibonacci_sequence.clj)
 
 
 ## My function is not working

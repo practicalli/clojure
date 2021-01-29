@@ -36,6 +36,6 @@ View your profile page to track your progress and revisit kata challenges alread
 
 
 ## References
-* [practicalli/codewars-guide](https://github.com/practicalli/codewars-guides) - a repository of code solutions to CodwWars challenges, each challenge is its own Clojure CLI (deps.edn) project.
+* [practicalli/codewars-guide](https://github.com/practicalli/codewars-guides) - a repository of code solutions to CodeWars challenges, each challenge is its own Clojure CLI (deps.edn) project.
 * [YouTube: CodeWars video guides](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiCsYNLH9Wlt6L6L4Wk5GcTS)
 * [Unofficial Free Code Camp Clojure Challenges](https://www.codewars.com/collections/unofficial-fcc-challenges-basic-algorithm-scripting)
