@@ -2,20 +2,20 @@
 
 > **Fixme** work in progress
 
-In the most basic way possible, laziness is the ability to evaluate an expression only when it's actually needed.  Taken further, lazyness is also evalating an expression only to the extent required.
+In the most basic way possible, laziness is the ability to evaluate an expression only when it's actually needed.  Taken further, laziness is also evaluating an expression only to the extent required.
 
 
 
-# Lazyness in definition 
+# Laziness in definition
 
 
 
 
-# Lazyness in evaluation
+# Laziness in evaluation
 
 
 
-# Lazyness in partial evaluation
+# Laziness in partial evaluation
 
 
 
@@ -30,7 +30,7 @@ If we define such list in Haskell or Clojure, then nothing is calculated just ye
 
 
 
-# Lazyness in number calculation - Ratio type 
+# Laziness in number calculation - Ratio type
 
 Dividing an integer value by another results in a Ratio type if the result would otherwise result in a decimal number.  Clojure only partially evaluates this expression.
 
@@ -54,9 +54,9 @@ The lazyness can be overridden by specifying a precision, eg coersing the result
 
 # Making something lazy 
 
-The `range` function returns a sequence of numbers limited by any arguents given when calling the range function.
+The `range` function returns a sequence of numbers limited by any arguments given when calling the range function.
 
-Calling the range function without arguments will force an infinate sequence of numbers to be generated, quickly resulting in an out of memory error in the heap.
+Calling the range function without arguments will force an infinite sequence of numbers to be generated, quickly resulting in an out of memory error in the heap.
 
 Instead, we can either pass arguments to the range function that limit the sequence size or wrap the range function in another function
 
