@@ -72,11 +72,11 @@ Supporting aliases for nrebl.middleware
 
 
 ## Run REBL for nREPL based editors
-The [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL, including [cider-repl](https://github.com/admiralbumblebee/cider-rebl) that has a configurable behavior to send evaluated forms to REBL.
+The [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL, including [cider-repl](https://github.com/admiralbumblebee/cider-rebl) that has a configurable behaviour to send evaluated forms to REBL.
 
 
 ### Using nREBL middleware for CIDER and Calva
-nREBL middleware will send the results of all evaulated forms to Cognitect REBL via nREPL protocol.
+nREBL middleware will send the results of all evaluated forms to Cognitect REBL via nREPL protocol.
 
 CIDER and Calva use the `nREPL` protocol to connect to the REBL REPL and have all the evaluated code in those editors automatically display the results in the REBL UI.
 
