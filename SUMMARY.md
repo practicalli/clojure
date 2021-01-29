@@ -275,7 +275,7 @@
         * [String Split](reference/standard-library/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/standard-library/regular-expressions/sub-expression-matches.md)
 
-<!-- Move sytax into a reference section and use projects to expose audience to Clojure syntax -->
+<!-- Move syntax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
 * [Syntax](reference/clojure-syntax/syntax.md)
     * [Parentheses](reference/clojure-syntax/parenthesis.md)
@@ -311,7 +311,7 @@
     <!-- Introducing the most common function families from clojure.core -->
     <!-- map reduce apply -->
     <!-- group-by sort-by -->
-    <!-- partition partiion-all partition... -->
+    <!-- partition partition-all partition... -->
 
     * [Using data](using-data-structures/index.md)
         * [Sequences](using-data-structures/sequences.md)
@@ -343,11 +343,11 @@
         * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
     * [Shared Memory](data-structures/shared-memory.md)
 
-<!-- Definging names for data and expressions -->
+<!-- Defining names for data and expressions -->
 <!-- Defining custom functions -->
 <!-- reducting functions -->
 * [Defining Functions](basic-clojure/defining-functions.md)
-    * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md)
+    * [Defining behaviour with Functions](defining-behaviour-with-functions/index.md)
     * [Syntax](defining-behaviour-with-functions/syntax.md)
     * [Calling functions](defining-behaviour-with-functions/calling-functions.md)
     <!-- * [Examples](defining-behaviour-with-functions/examples.md) -->
@@ -358,7 +358,7 @@
 
 
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
-<!-- Abstrction mountain
+<!-- Abstraction mountain
      - functions
      - function composition
      - recursion - loop/recur recursive functions with recur
@@ -368,7 +368,7 @@
      - comp juxt
      - transducers teep-->
 
-<!-- Or draw the analyogy of riding across the Clojure landscape
+<!-- Or draw the analogy of riding across the Clojure landscape
      -- riding up and down hills as you learn major milestones of Clojure,
      climbing and reaching various platos.
      Showing the effort of climbs as an overall effort of brain power with
