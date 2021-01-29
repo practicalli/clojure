@@ -18,22 +18,20 @@ In the CircleCI dashboard use **Add Project** to configure any of your shared Gi
 Every time changes are pushed to the shared code repository (GitHub, Bitbucket), CirceCI will run the pipeline for the project and show the results.
 
 ## Clojure images
-There are a [range of container images](https://circleci.com/docs/2.0/circleci-images/#clojure) available, including [Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure), on which to run continuous integration worflows with.
-
-Pre-configured images are typically faster than installing software on top a more generic image.
+[Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure) are available for several versions of Java, Clojure and build tools. Pre-configured images are typically faster than installing software on top a more generic image.
 
 {% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
 
 {% content "deps" %}
 
-Recommended image for Clojure deps.edn projects is `openjdk-11-tools-deps-1.10.1.727`
+Recommended image for Clojure deps.edn projects is `openjdk-11-tools-deps-1.10.1.763`
 
-The image contains OpenJDK 11 and the latest Clojure CLI tools installed, 1.10.1.727.
+The image contains OpenJDK 11 and the latest Clojure CLI tools installed, 1.10.1.763.
 
 Add the following under docker: in your `config.yml`
 
 ```yaml
-- image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727
+- image: circleci/clojure:openjdk-11-tools-deps-1.10.1.763
 ```
 
 > #### Hint::Check Clojure version
