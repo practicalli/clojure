@@ -60,7 +60,7 @@ Cut selection
 
 
 Notes
-When opening a file, use the backscape key to navigate to parent folder
+When opening a file, use the backspace key to navigate to parent folder
 
 
 
@@ -68,7 +68,7 @@ Themes
 M-x color-theme-select
 
 Interacting with the shell
-M-! shellcomand
+M-! shellcommand
 
 Running a shell in the buffer
 M+x shell
@@ -479,14 +479,14 @@ user=> ( ( ( house :rooms) :pantry ) :description )
 
 ( get-in house [ :room :pantry :description ] ) { :description }
 
-( update-in house [ :rooms ] #(assoc % :ktichen "Spooky kitchen" ) )
+( update-in house [ :rooms ] #(assoc % :kitchen "Spooky kitchen" ) )
 
 
 user=> ( get-in house [ :rooms :pantry :description ] ) { :description }
 "The pantry"
 java.lang.ArrayIndexOutOfBoundsException: 1
-user=> ( update-in house [ :rooms ] #(assoc % :ktichen "Spooky kitchen" ) )
-{:rooms {:ktichen "Spooky kitchen", :pantry {:description "The pantry"}}}
+user=> ( update-in house [ :rooms ] #(assoc % :kitchen "Spooky kitchen" ) )
+{:rooms {:kitchen "Spooky kitchen", :pantry {:description "The pantry"}}}
 user=> (println house)
 {:rooms {:pantry {:description The pantry}}}
 nil
@@ -500,7 +500,7 @@ References
 
 (  def  joe ( atom { :name "Joe" } ) )
 
-; atom guarantteed to have atomic changes on it - clojure will automatically retry changing a value if the atom is locked
+; atom guaranteed to have atomic changes on it - clojure will automatically retry changing a value if the atom is locked
 ; atoms are useful ways of looking at state
 
 ; change atoms
@@ -548,9 +548,9 @@ The namespace in clojure is a bit like the package keyword in Java.  The namespa
 
 # Using the clojure inspector
 
-Clojure uses parenthasis (()) through out its syntax as they represent the data structure of the language itself.  You can see this data structure clearly by using the Clojure Inspector.
+Clojure uses parenthesis (()) through out its syntax as they represent the data structure of the language itself.  You can see this data structure clearly by using the Clojure Inspector.
 
-The Clojoure inspector is a very simple Swing gui that you call from within clojure.  Start up the REPL, if using Leiningen you can use lein repl
+The Clojure inspector is a very simple Swing gui that you call from within clojure.  Start up the REPL, if using Leiningen you can use lein repl
 
 At the repl prompt, load the clojure inspector into the namespace
 user=> (use 'clojure.inspector)
@@ -583,7 +583,7 @@ ruby web_server.rb
 Extreme Startup Company Server - 1 per team
 For your Clojure product development you will need:
 Java runtime environment or SDK - version 6 preferably
-Leinigen - or some other Clojure tool
+Leiningen - or some other Clojure tool
 Emacs + Clojure-mode, Clojure-test, paredit - or some other development environment
 A repl - using lein repl or lein swank + emacs
 1) Download the basic server from Github to give you a head start - you will need it, trust me!
@@ -683,8 +683,7 @@ various ways:
 
 http://www.paulgraham.com/icad.html
 
-Lisp syntax also eliminates rules for operator precedence and associativity, with fully parenthesized expres-
-sions, there is no possible ambiguity.
+Lisp syntax also eliminates rules for operator precedence and associativity, with fully parenthesized expressions, there is no possible ambiguity.
 
 The downside of Lisp’s simple, regular syntax, at least for beginners, is Lisp’s fixation on parentheses and on lists as the core data type. Clojure offers an interesting combination of features that makes Lisp more approachable for non-Lispers.
 
@@ -795,7 +794,7 @@ this example is work in progress and will end up on my repository at: bitbucket.
 
 ; Now to have something that prints out the matching information - the process we will pass to process-lines
 
-(def print-matchiing 
+(def print-matching
      (fn [words]
           (println ... )
 
