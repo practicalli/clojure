@@ -1,16 +1,11 @@
-# VSCode and Calva user guide
-The [Calva User Guide]() provides a detailed guide.  The following are a few highlights.
+# VSCode and Calva quick start
+Run the command `code .` from the root of a Clojure project.
 
-Open the VSCode editor and open the root folder of your project.  Then add use let Calva start your project REPL and connect.
+Alternatively, run VS Code and use `Ctrl+k Ctrl+o` or the **File** > **Open Folder** menu to open the Folder that contains your Clojure project. Select the top level of the folder, e.g. `playground` and click **OK**
 
 > ####HINT::MacOSX Keys - Option or Alt
 > Depending on the version of Mac computer you use, your Alt key may be called Option
 > So `Ctrl+Alt+c e` would be `Ctrl+Option+c e`
-
-## Open Project Folder in VSCode
-`Ctrl+k Ctrl+o` to open the Folder that contains your project.  Or using the menu **File** > **Open Folder**
-
-Select the top level of the folder, e.g. `playground` and click **OK**
 
 
 ## Start a REPL for basic projects
