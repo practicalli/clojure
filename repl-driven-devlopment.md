@@ -3,7 +3,7 @@ REPL driven development is the foundation of working with Clojure.
 
 The REPL is an instant feedback workflow that continually runs your code without the need to manually run a complete compile-build-run cycle.
 
-The REPL contains your live application to which you interact with by calling (evaluating) code.  A single expression can be called to focus in on its behavior and see the results.  Even when evaluating a whole namespace, each expression is evaluated by itself in turn, within the REPL process.
+The REPL contains your live application to which you interact with by calling (evaluating) code.  A single expression can be called to focus in on its behaviour and see the results.  Even when evaluating a whole namespace, each expression is evaluated by itself in turn, within the REPL process.
 
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-rebel-readline.png)
 
