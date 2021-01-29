@@ -37,9 +37,35 @@ In Leiningen:
 {% endtabs %}
 
 
-## Excluding dependency depencencies
-Libraries may also contain their own library depencencies.  When several libraries are added as depencencies to a project, it is possible that the dependencies of included libraries conflict with each other.
+## Excluding dependencies
+Adding several libraries as dependencies to a project may cause conflicts. The `:exclusions`  key will prevent libraries within a library dependency from being included in the project
 
-Adding `:exclude` when adding a library as a dependency will prevent the specified libraries dependancy from being included.
+For example, library-a and library-b both have a dependency on library-c, as defined in the project configuration for library-a and library-b.  When including library-a and library-b in the project as dependencies, there could be a conflict if the both libraries use a different version of library-c.  Adding an exclude to library-a or library-b will stop library-c being included twice.
 
-> TODO: dependency :excludes examples required
+A Library that is self-contained and does not itself include any dependencies on any other libraries is unlikely to cause conflicts.  Using these self-contained libraries simplifies the overall application design.
+
+
+{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+
+{% content "deps" %}
+### Clojure CLI tools
+Top level dependencies
+
+```clojure
+{:deps {:org.clojure/clojure {:mvn/version "1.10.2"}
+        :cheshire/cheshire  {:mvn/version "5.10.0"
+            :exclusions "com.fasterxml.jackson.core/jackson-core"}}}
+```
+
+
+{% content "lein" %}
+### Leiningen
+
+```
+(defproject my-project "1.0.0"
+  :dependencies [[org.clojure/clojure "1.10.2"]
+                 [cheshire "5.10.0" :exclusions [com.fasterxml.jackson.core/jackson-core]]])
+```
+
+
+{% endtabs %}

@@ -10,7 +10,7 @@ Within a namespace a var (`def`, `defn`) can be called by its name.  Outside of 
 
 
 ## Including another namespace
-`(ns namespace.name (:require [domain/filename :as purpose]))` is used to enable access to the functions & named datastructures in another namespace than the current one.  The included namespace is given an alias so its clear which code comes from that namespace.
+`(ns namespace.name (:require [domain/filename :as purpose]))` is used to enable access to the functions & named data structures in another namespace than the current one.  The included namespace is given an alias so its clear which code comes from that namespace.
 
 Practicalli recommends using a meaningful alias that defines the purpose of the library you are including.  This helps with the understanding and maintainability of the code, especially if you wish to refactor and replace the included library with an alternative.  An alias name should be meaningful and you should avoid single character and cryptic aliases.
 
@@ -29,9 +29,9 @@ Practicalli recommends using a meaningful alias that defines the purpose of the 
 
 
 ## Including specific parts of a namespace
-If the library you are including is the predominant purpose of that namespace, a good example is clojure.test, then you can include specific functions from that namesapce.
+If the library you are including is the predominant purpose of that namespace, a good example is clojure.test, then you can include specific functions from that namespace.
 
-Using `:refer` in the `requre` expression provides a way to include specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.
+Using `:refer` in the `require` expression provides a way to include specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.
 
 ```clojure
 (ns my-namespace.core
@@ -48,9 +48,9 @@ Using `:refer` in the `requre` expression provides a way to include specific var
 >
 > `:exclude` will prevent a var from being used from a required namespace.
 >
-> `:only` will include only that var from the reqiured namespace.
+> `:only` will include only that var from the required namespace.
 >
-> `:rename` changes the name of the original fuction, if there conflicts
+> `:rename` changes the name of the original function, if there conflicts
 
 
 ## Adding multiple namespaces

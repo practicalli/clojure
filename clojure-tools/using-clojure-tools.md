@@ -4,7 +4,7 @@ The `clojure` command provided by Clojure CLI tools can be used to evaluate code
 > #### Hint::Editor used for majority of developer workflows
 > A [REPL connected Editor](/clojure-editors/) provides the richest developer workflow for Clojure
 
-Clojure CLI tools are extended by adding aliases for community tools, eg. [as found in practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+Clojure CLI tools are extended by adding aliases for community tools, e.g. [as found in practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
 {% youtube %}
 https://youtu.be/u5VoFpsntXc
@@ -12,6 +12,7 @@ https://youtu.be/u5VoFpsntXc
 
 
 ## Common tasks for Clojure development
+Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).
 
 | Task                               | Command                                                   | Built-in  |
 |------------------------------------|-----------------------------------------------------------|-----------|
@@ -42,7 +43,7 @@ The most used flags for the `clojure` command
 | `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-J`            | Java Virtual Machine specific options (menory size, etc) |                                                      |
+| `-J`            | Java Virtual Machine specific options (heap size, etc)   |                                                      |
 
 * deps = `:deps`, `:extra-deps`, `replace-deps`
 * path = `:path`, `:extra-paths`, `replace-paths`

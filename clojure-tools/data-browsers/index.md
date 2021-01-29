@@ -22,5 +22,3 @@ Cognitect provides the REBL data browser as part of the [Cognitect dev-tools](ht
 
 > #### WARNING::Sign-up and personal repository code required
 > Sign-up to the Cognitect dev-tools license which will email a user specific maven configuration, which must be added as a new server entry under servers in `~/.m2/settings.xml` and as a provider entry in `~/.clojure/deps.edn`
-
-*

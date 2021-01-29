@@ -89,22 +89,22 @@ Start a REPL using the `:env/dev` alias.
 To start a Rebel REPL with `:env/dev` use the following command in a terminal
 
 ```shell
-cloure -A:env/dev:repl/rebel
+clojure -A:env/dev:repl/rebel
 ```
 
 In the REPL, call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
 
 
-## Starting Component Lifecycle Services
-Clojure has several library to manage the lifecycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
+## Starting Component Life-cycle Services
+Clojure has several library to manage the life-cycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
 
-Example component lifecycle libraries included
+Example component life-cycle libraries included
 
 * [mount](https://github.com/tolitius/mount)
 * [integrant](https://github.com/weavejester/integrant)
 * [component](https://github.com/stuartsierra/component)
 
-In Clojure it is idiomatic to define the component lifecyle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
+In Clojure it is idiomatic to define the component life-cycle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
 
 ```clojure
 (ns user
@@ -112,15 +112,15 @@ In Clojure it is idiomatic to define the component lifecyle services in a namesp
 
 (dev/go)
 ```
-Now define code in the `dev/dev.clj` file that controls the component lifecycle services library for the project.
+Now define code in the `dev/dev.clj` file that controls the component life-cycle services library for the project.
 
 
-## Example project with component lifecycle
+## Example project with component life-cycle
 {% tabs mount="Mount", integrant="Integrant", component="Component" %}
 
 <!-- Mount example -->
 {% content "mount" %}
-Using mount, its common to define a `dev.clj` file with `go`, `stop` and `restart` functions that manage the lifecycle of mount components.  A `start` function contains the list of components with optional state.
+Using mount, its common to define a `dev.clj` file with `go`, `stop` and `restart` functions that manage the life-cycle of mount components.  A `start` function contains the list of components with optional state.
 
 Require the mount namespace and the main namespace for the project, which should contain all the code to start and stop services.
 
