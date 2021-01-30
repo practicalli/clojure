@@ -23,8 +23,8 @@ As we work through code we will discuss the concepts behind Clojure, including f
 * [practicalli/clojure-deps-edn - Clojure tools and common aliases]({{ book.P9IClojureDepsEdn }})
 * [Practicalli Spacemacs](https://practicalli.github.io/spacemacs) and [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d) for Vim style editing in Emacs for Clojure.
 * [Practicalli YouTube channel](https://youtube.co/c/+practicalli) - 80+ hours of Clojure related videos
-* [Practicalli website](https://practicalli.github.io/) books and videos to support your journey into Clojure
-* [Practicalli Graphic design](https://github.com/practicalli/graphic-design) - Creative Commons Attribution
+* [Practicalli website]({{ book.P9IWebsite }}) books and videos to support your journey into Clojure
+* [Practicalli Graphic design]({{book.P9IGraphicDesign}}) - Creative Commons Attribution
 
 
 ## Discussions and feedback
