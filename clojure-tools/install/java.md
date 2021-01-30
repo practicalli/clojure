@@ -61,7 +61,7 @@ brew cask install adoptopenjdk11
 ```
 
 > #### Hint::Switching between Java versions
-> You can run more than one version of Java on MacOS. Set the Java version by opening a terminal and using one of the following commands
+> You can run more than one version of Java on MacOSX. Set the Java version by opening a terminal and using one of the following commands
 >
 > Show the Java versions installed
 ```shell

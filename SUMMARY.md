@@ -24,9 +24,9 @@
     * [Java](clojure-tools/install/java.md)
     * [Clojure](clojure-tools/install/clojure.md)
     * [Community tools](clojure-tools/install/community-tools.md)
+        * [Available Community tools](clojure-tools/install/community-tools-available.md)
+        * [Configure Clojure Tools](clojure-tools/configure/index.md)
     * [Code Analysis](clojure-tools/install/code-analysis.md)
-* [Configure Clojure Tools](clojure-tools/configure/index.md)
-    * [deps.edn aliases](clojure-tools/configure/deps-edn-aliases.md)
 * [Terminal REPL](clojure-tools/repl/index.md)
     * [Coding in the REPL](clojure-tools/repl/coding-in-the-repl.md)
     * [Using libraries in REPL](clojure-tools/repl/using-project-or-library.md)
@@ -256,6 +256,7 @@
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
 * [Clojure CLI Tools](reference/clojure-cli-tools/index.md)
+    * [deps.edn aliases](clojure-tools/configure/deps-edn-aliases.md)
     * [Defining Aliases](reference/clojure-cli-tools/defining-aliases.md)
     * [Example Alias definitions](reference/clojure-cli-tools/example-alias-definitions.md)
     <!--

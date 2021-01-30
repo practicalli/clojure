@@ -3,8 +3,8 @@ Creating Clojure projects save code as you are learning or developing applicatio
 
 Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and `clj-new` to create projects.
 
-> #### Hint::Install `clj-new` and other aliases
-> Follow the [Clojure install guide](install/install-clojure.md) to install all the alias used in this guide
+> #### Hint::Install community tools`clj-new` and other aliases
+> [Install practicalli/clojure-deps-edn](install/community-tools.html) to provide aliases for the community tools used in this guide
 
 {% youtube %}
 https://youtu.be/7muHVkxzZcE
@@ -31,6 +31,7 @@ clojure -M:project/new app practicalli/playground
 clojure -X:project/new :template app :name practicalli/playground
 ```
 
+
 ## Running a REPL for the project
 Change into the directory and test the project runs by starting a REPL with [rebel readline](/repl-driven-development/rebel-readline/)
 
@@ -51,6 +52,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 > ####HINT::Try the project with your preferred editor
 > Using a [Clojure aware editor](/clojure-editors/editor-user-guides/), open the playground project and run the REPL.  Then write code expressions in the editor and evaluate them to see the result instantly.
 
+
 ## Running the project
 Run project with or without an alias:
 
@@ -68,7 +70,6 @@ In the project `deps.edn` file it can be useful to define an alias to run the pr
  :exec-args {:port 8888}}
 ```
 Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
-
 
 
 ## Other templates

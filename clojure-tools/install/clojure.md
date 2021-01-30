@@ -1,20 +1,8 @@
-# Install Clojure
-Establish an effective Clojure development environment by installing the following:
+![Install Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/cloure-install-package-banner.png)
+Clojure is a library meaning any version of Clojure can easily be used with a project.
 
-| Tools                                                  | Required    | Purpose                                                    |
-|--------------------------------------------------------|-------------|------------------------------------------------------------|
-| [Clojure CLI tools](#clojure-cli-tools-common-aliases) | Essential   | Run Clojure REPL for development and production            |
-| [Community tools](community-tools.md)                  | Recommended | Additional tools to enhance Clojure development experience |
-| [Clojure aware editor](/clojure-editors/)              | Recommended | Complete Clojure development experience                    |
-| [Code analysis (clj-kondo)](code-analysis.md)          | Recommended | Static analysis of code to find all those little bugs      |
-| rlwrap                                                 | Optional    | A simple read line for command history, only used by `clj` |
+The Clojure CLI tool will download the Clojure library and provides essential tools for Clojure development.
 
-> #### Hint::Aliases provided by practicalli/clojure-deps-edn
-> [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure devlopment.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
-
-
-## Clojure CLI tools
-A command line REPL provides the essential tool for Clojure development.  [Installing a Clojure aware editor](/clojure-editors/) is recommended when developing Clojure projects.
 
 <!-- Operating System specific instructions -->
 {% tabs linux="Linux", homebrew="Homebrew", windows="Windows" %}
@@ -23,6 +11,14 @@ A command line REPL provides the essential tool for Clojure development.  [Insta
 {% content "linux" %}
 
 Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux)
+
+The instructions should be as follows, possibly with a newer version
+
+```
+curl -O https://download.clojure.org/install/linux-install-1.10.2.774.sh
+chmod +x linux-install-1.10.2.774.sh
+sudo ./linux-install-1.10.2.774.sh
+```
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
@@ -62,10 +58,15 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
 
+## Check CLI tools version
+`clojure -Sdescribe` confirms that Clojure CLI tools are installed and will show the version of the tool.  Use the latest version of Clojure CLI tools, or at least version 1.10.1.697.
 
-## Optional: rlwrap readline
+
+---
+
+**Optional: rlwrap readline**
 Install the `rlwrap` binary to support the `clj` wrapper, which launches a Clojure REPL with command history.
 
-`rlwrap` is available with most Linux systems and install instructions should be discoverable by searching for rlwrap in a web browser.
+`rlwrap` is available with most Linux systems.  Look for  install instructions by searching for rlwrap in a web browser.
 
 > [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL.
