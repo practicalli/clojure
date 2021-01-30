@@ -28,7 +28,7 @@ Stuart Halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720)
 <p><a href="https://vimeo.com/223240720">CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas</a></p>
 
 
-### Presentation slides (pdf format)
+### Presentation slides
 * 2013 [RuPy slides](https://github.com/stuarthalloway/presentations/blob/master/Barnstorming_2013/ClojureInTenBigIdeas.pdf?raw=true)
 * 2017 [Chicago JUG slides](https://github.com/stuarthalloway/presentations/blob/master/ClojureInTenBigIdeas-Jun-2017.pdf?raw=true)
 
