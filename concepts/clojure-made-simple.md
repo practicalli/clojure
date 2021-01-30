@@ -1,6 +1,5 @@
 # Clojure from the Author
-
-A series of important videos from Rich Hickey, the author of Clojure who spent over 2 years designing the fundamental design of Clojure around the concept of simplicity.  Since then Rich has stewarded the continued design and development of Clojure, ensuring it stays true to is founding principles.
+A series of important videos from Rich Hickey, the author of Clojure who spent over 2 years designing core of Clojure around the concept of simplicity.  Since then Rich has stewarded the continued design and development of Clojure, ensuring it stays true to is founding principles.
 
 You do not need to watch these videos to start coding in Clojure, but they are very useful to adopt the approach and design idioms that make Clojure a highly effective language for software development.
 

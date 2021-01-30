@@ -1,5 +1,5 @@
 # Clojure concepts
-Clojure is an elegant language for a more civilized development experience. Clojure encourages the creation of simple software systems by being immutable by default and encouraging pragmatic approach to pure functional design.
+Clojure is an elegant language for a more civilized development experience. Clojure encourages the creation of simple software systems using immutable values and encouraging a pragmatic approach to pure functional design.
 
 > #### Hint::Learn Clojure concepts as you experiment with the language
 > Revisit this section when you want to get a deeper understanding of the design and philosophy of the Clojure approach to functional programming.
@@ -29,13 +29,12 @@ Stuart Halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720)
 
 
 ### Presentation slides (pdf format)
-
 * 2013 [RuPy slides](https://github.com/stuarthalloway/presentations/blob/master/Barnstorming_2013/ClojureInTenBigIdeas.pdf?raw=true)
 * 2017 [Chicago JUG slides](https://github.com/stuarthalloway/presentations/blob/master/ClojureInTenBigIdeas-Jun-2017.pdf?raw=true)
 
 
 ## Antithesis of Clojure and simple software design
-In Narcissistic Design by Stuart Halloway, the antithesis of the Clojure view of software development is presented as a description of how unproductive and valueless the software industry has been in the past.
+In Narcissistic Design by Stuart Halloway, the antithesis of the Clojure view of software development is presented as a description of how unproductive and valueless much of the software industry has been in the past.
 
 Its essentially a guide on what not to do if you are a responsible and professional software developer.
 
