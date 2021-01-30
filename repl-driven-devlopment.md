@@ -1,14 +1,14 @@
 # REPL Driven Development
-REPL driven development is the foundation of working with Clojure.
+REPL driven development is the foundation of working with Clojure effectively.
 
-The REPL is an instant feedback workflow that continually runs your code without the need to manually run a complete compile-build-run cycle.
+The REPL is an instant feedback workflow that continually runs your code without the need to manually run an explicit compile-build-run cycle.
 
-The REPL contains your live application to which you interact with by calling (evaluating) code.  A single expression can be called to focus in on its behavior and see the results.  Even when evaluating a whole namespace, each expression is evaluated by itself in turn, within the REPL process.
+The REPL contains the live application to which you interact with by calling (evaluating) code.  A single expression can be called to focus in on its behavior and see the results.  Even when evaluating a whole namespace, each expression is evaluated by itself in turn, within the REPL process.
 
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-rebel-readline.png)
 
 > #### Hint::Always run a REPL
-> Coding with a REPL provides fast feedback as design decisions are encoded, giving every opportunity to testing assumptions driving those design choices.
+> Coding with a REPL provides fast feedback as design decisions are encoded.  The REPL feedback tests the assumptions driving the design choices.  Important design choices should be codified in unit tests, optionally using spec.
 
 
 <!-- * Read - code is read by the Clojure reader, passing any macros to the macro reader which converts those macros into Clojure code. -->
@@ -21,7 +21,7 @@ The REPL contains your live application to which you interact with by calling (e
 
 
 ## Evaluating source code
-A REPL is typically used from an editor with files that compose the project code base.  A Clojure aware editor can evaluate code from the source code files to and display the results inline.
+A Clojure aware editor should be used to evaluate code in the REPL from source code files, displaying the results inline.
 
 ![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
@@ -31,7 +31,11 @@ https://youtu.be/rQ802kSaip4
 
 
 ## Rich Comment blocks - living documentation
-The `(comment ,,,)` function is used to included code that is only run by the developer directly. Unlike `;;` comments, specific expressions inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
+The `(comment ,,,)` function is used to included code that is only run by the developer directly.  Unlike `;;` comments, expressions inside a comment block can be evaluated using a [Clojure aware editor](/clojure-editors/).
+
+Expressions in rich comment blocks can represent how to use the functions that make up the namespace API.  For example, starting/restarting the system, updating the database, etc.  Expressions provide examples of calling functions with typical arguments and make a project more accessible and easier to work with.
+
+![Practicalli Clojure Repl Driven Development - Rich comment blocks example](/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
 
 Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-tools/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
 
@@ -39,88 +43,77 @@ Rich comment blocks are very useful for rapidly iterating over different design 
 ;; Rich comment block with redefined vars ignored
 #_{:clj-kondo/ignore [:redefined-var]}
 (comment
+  (defn value-added-tax []
+    ;; algorithm design - first try)
+
+  (defn value-added-tax []
+    ;; algorithm design - first try)
 
   ) ;; End of rich comment block
 ```
-
-The expressions can represent example function for using the project, such as starting/restarting the system, updating the database, etc.
-
-![Practicalli Clojure Repl Driven Development - Rich comment blocks example](/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
-
-Expressions in rich comment blocks can also represent how to use a namespace API, providing examples of arguments to supply to further convey meaning to the code.
-
-These rich comment blocks make a project more accessible and easier to use.
 
 The "Rich" in the name also refers to Rich Hickey, the author and benevolent dictator of Clojure design.
 
 
 ## Design Journal
-It is highly recommended to journal your design process to make your code easier to understand and maintain.  Journals avoid the need for long hand-over or developer on-boarding processes as the journey through design decisions are already documented.
+Creating a journal of the decisions made as code is designed makes the project easier to understand and maintain.  Journals avoid the need for long hand-over or painful developer on-boarding processes as the journey through design decisions are already documented.
 
-It is recommended to create a Design Journal section at the bottom of each namespace.  This journal should cover
+A design journal can be added as a `(comment ,,,)` section at the bottom of each namespace, or more typically in its own namespace.
 
-* All the important REPL experiments used to create the resulting namespace code.
-* Discussions of design choices, including those not taken and why.
-* Expressions that can be evaluated to explain how a function or parts of a function works
+A journal should cover the following aspects
 
-The design journal can be used to create meaningful documentation for the project very easily and should prevent time spent on repeating exactly the same conversations.
+* Relevant expressions use to test assumptions about design options.
+* Examples of design choices not taken and discussions why (saves repeating the same design discussions)
+* Expressions that can be evaluated to explain how a function or parts of a function work
+
+The design journal can be used to create meaningful documentation for the project very easily and should prevent time spent on repeating the same conversations.
 
 > #### HINT::Add example journal
-> [Design Journal for TicTacToe game using reagent, clojurescript and scalable vector graphics](https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124)
+> [Design journal for TicTacToe game using Reagent, ClojureScript and Scalable Vector Graphics](https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124)
 
 
 ## Viewing data structures
-Use Pretty Print to view data structures that are the result of evaluating your code.  This makes those data structures easier to parse as a developer and more likely to notice incorrect results.
+Pretty Print show results of function calls in a human-friendly form. When results are data structures, pretty print makes it easier for a developer to parse and more likely to notice incorrect results.
 
-[Clojure Data Browsers](/clojure-tools/data-browsers/reveal.md) ([cider-inspect](/clojure-tools/data-browsers/clojure-inspector.md), [REBL](/clojure-tools/data-browsers/rebl-data-visualization.md), [Reveal](/clojure-tools/data-browsers/reveal.md), [Portal](/clojure-tools/data-browsers/portal.md)) provide effective ways to navigate through a nested data structures and large data sets.
+[Clojure Data Browsers](/clojure-tools/data-browsers/reveal.md) ([cider-inspect](/clojure-tools/data-browsers/clojure-inspector.md), [Reveal](/clojure-tools/data-browsers/reveal.md), [Portal](/clojure-tools/data-browsers/portal.md)) provide effective ways to navigate through a nested data structures and large data sets.
 
-![Clojure - viewing large data sets](/images/spacemace-clojure-inspect-java-lang-persistentvector.png)
+![Clojure - viewing large data sets](/images/spacemacs-clojure-inspect-java-lang-persistent-vector.png)
 
 
 ## Code Style and idiomatic Clojure
-Your editor should automatically apply formatting that follows the [Clojure Style guide](https://github.com/bbatsov/clojure-style-guide).
+Clojure aware editors should automatically apply formatting that follows the [Clojure Style guide](https://github.com/bbatsov/clojure-style-guide).  For example, line comments as `;;`, 2 space indents and aligning forms.
 
-Continuous linting with [clj-kondo](https://github.com/borkdude/clj-kondo)  significantly reduces a wide range of bugs and syntax errors as they happen, speeding up the development process.
+Live linting with [clj-kondo](https://github.com/borkdude/clj-kondo) highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.
 
-> #### Hint::Additional code analysis tools
-> [Eastwood](https://github.com/jonase/eastwood) also provides linting and is typically used as a batch process before a code commit or as part of continuous integration.
->
-> Kibit provides suggestions to help ensure idiomatic Clojure.
+![clj-kondo static analysis for live linting of Clojure code](/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png)
 
 
 ## Test Driven Development and REPL Driven Development
 Test Driven Development (TDD) and REPL Driven Development (RDD) complement each other as they both encourage incremental changes and continuous feedback.
 
-RDD supports rapid design as different approaches can easily be explored and evaluated.   and tests focus the results of those experiments to guide delivery of the correct outcomes.
-
-Tests provide an simple tool to define and test your assumptions from the evolving design and give you feedback when changes break that design.
+RDD supports rapid design with different approaches easily explored and evaluated. Unit tests focus the results of those experiments to guide delivery of the correct outcomes. Tests also provide critical feedback when changes break that design.
 
 ![Clojure REPL driven development (RDD) and Test Driven Development (TDD)](https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png)
 
-[Unit tests](/testing/unit-testing/) should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize that as an after thought.
+[Unit tests](/testing/unit-testing/) should support the public API of each namespace in a project to help prevent regressions in the code.  Its far more efficient in terms of thinking time to define unit tests as the design starts to stabilize than as an after thought.
 
 `clojure.test` library is part of the Clojure standard library that provides a simple way to start writing unit tests.
 
-Clojure has a number of [test runners](/testing/test-runners/) available.
+[Clojure spec](/clojure-spec/) can also be used for generative testing, providing far greater scope in values used when running unit tests.  Specifications can be defined for values and functions.
+
+Clojure has a number of [test runners](/testing/test-runners/) available.  Kaocha is a test runner that will run unit tests and function specification checks.
 
 
 ## Continuous Integration and Deployment
-Wire up a [continuous integration service](/testing/integration-testing/) that runs tests and builds code on every shared commit (or every commit if you run a CI server locally).
+Add a [continuous integration service](/testing/integration-testing/) to run tests and builds code on every shared commit (or every commit if you run a CI server locally).
 
-[CircleCI](/testing/integration-testing/circle-ci/) provides a simple to use service that supports Clojure projects.
+[CircleCI](/testing/integration-testing/circle-ci/) provides a simple to use service that supports Clojure projects.  [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci), [GitHub actions](https://github.com/features/actions) and [GitLab](https://about.gitlab.com/) also provide CI services.
+
+[Deployment via continuous integration](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-via-ci.html) ensures all tests pass before deployment.
 
 [Defining a deployment pipeline](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-pipeline.html) provides an efficient way to deploy applications and also get fast feedback from a wider range of stakeholders and users, especially when spin up testable deployments of your application based on commits  (i.e. push to shared develop or feature branch).
 
-Ideally the [deployment should run via continuous integration service](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-via-ci.html) to ensure all tests pass before deployment.
-
 ![Git, CircleCI and Heroku continuous integration and deployment](https://practicalli.github.io/clojure-webapps/images/circleci-workflow-sequential-git-heroku.png)
-
-
-> #### Hint::Tools that support Clojure development
-> * [Circle CI](https://circleci.com/)
-> * [GitHub Actions](https://github.com/features/actions)
-> * [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci)
-> * [Heroku Pipelines](https://devcenter.heroku.com/articles/pipelines)
 
 
 ## Live Coding with Data - Stuart Halloway
