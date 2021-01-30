@@ -10,7 +10,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 
-Get a [free Clojurians slack community account](https://clojurians.net/**
+Get a [free Clojurians slack community account](https://clojurians.net/)
 
 > #### Warning::Book refresh in progress
 > A refresh of the contents of this book is currently underway, so things may.
@@ -63,13 +63,13 @@ wide-page
 
 **Community**
 * [Clojure-docs](http://clojure-doc.org/) - community docs
-* [Clojars]() and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
+* [Clojars](https://clojars.org/) and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
 * [re-find (borkdude)](https://borkdude.github.io/re-find.web/) - find functions from arguments and return values
 * [Clojure & ClojureScript Dependencies](https://clj-deps.herokuapp.com/)
 * [4Clojure](https://www.4clojure.com/) exercises & [4Clojure Google group](https://groups.google.com/forum/#!forum/4clojure)
 * [ClojureScript REPL](http://www.clojurescript.io/) - website REPL
 * [LambdaX](http://lambdax.io/blog/)
-* [London Clojurians]() and their [Google group](https://groups.google.com/forum/#!forum/london-clojurians)
+* [London Clojurians](https://www.meetup.com/London-Clojurians/) and their [Google group](https://groups.google.com/forum/#!forum/london-clojurians)
 * [Uncle Bob presents Clojure](https://www.youtube.com/watch?v=SYeDxWKftfA)
 * [Snake Game in Clojure](https://fn-code.blogspot.co.uk/2015/08/a-clojure-snake-game.html)
 * [Clojure design patterns](http://mishadoff.com/blog/clojure-design-patterns/)
