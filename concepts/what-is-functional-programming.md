@@ -1,7 +1,9 @@
 # What is Functional Programming
 Functional programming can seem quite different from imperative programming used in languages like C, C++ and Java.
 
-Imperative languages may seem easier initially, as defining one step after another is familiar approach to many things in live.  As the scale of a system grows, so does complexity.  Imperative languages have applied object oriented design to manage complexity with varied rates of success.  When shared mutable state is common in a design, then a system quickly becomes complex and very difficult to reason about.
+Imperative languages may seem easier initially, as defining one step after another is familiar approach to many things in live.  As the scale of a system grows, so does complexity.  Imperative languages applied object oriented design to manage complexity with varied rates of success.
+
+When shared mutable state is common in an OO design, then a system quickly becomes complex and very difficult to reason about.
 
 Functional programming is actually simpler that the OO approach, although initially it may be unfamiliar and not considered as easy.  As systems grow in complexity, the building blocks are still simple and deterministic, creating a system that is far easier to reason about.
 
