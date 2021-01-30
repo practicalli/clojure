@@ -25,7 +25,7 @@ Each of these ideas is valuable by itself, not only in Clojure. Taken together, 
 Stuart Halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720) (eleven actually). [Slides](https://github.com/stuarthalloway/presentations/wiki/Clojure-in-10-Big-Ideas)
 
 <iframe src="https://player.vimeo.com/video/223240720" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
-<p><a href="https://vimeo.com/223240720">CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas</a> from <a href="https://vimeo.com/spantree">Spantree Technology Group, LLC</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+<p><a href="https://vimeo.com/223240720">CJUG - 2017-06-20 - Stuart Halloway on Clojure in 10 Big Ideas</a></p>
 
 
 ### Presentation slides (pdf format)
@@ -36,7 +36,7 @@ Stuart Halloway discusses [Clojure in 10 big ideas](https://vimeo.com/223240720)
 ## Antithesis of Clojure and simple software design
 In Narcissistic Design by Stuart Halloway, the antithesis of the Clojure view of software development is presented as a description of how unproductive and valueless much of the software industry has been in the past.
 
-Its essentially a guide on what not to do if you are a responsible and professional software developer.
+Its essentially a guide on what to avoid if you are a responsible and professional software developer.
 
 {% youtube %}
 https://youtu.be/LEZv-kQUSi4
