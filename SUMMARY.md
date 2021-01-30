@@ -2,8 +2,6 @@
 
 * [Introduction](introduction.md)
     * [First taste of Clojure](first-taste-of-clojure.md)
-        * [Creative coding](graphics-with-clojure.md)
-    <!-- * [Virtual Study Guide](study-guide.md) -->
     * [REPL driven development](repl-driven-devlopment.md)
     * [Clojure concepts](concepts/index.md)
         * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
@@ -130,7 +128,7 @@
     * [Currying & Partial Functions](thinking-functionally/partial-functions.md)
         * [map with partial](thinking-functionally/map-with-partial.md)
     * [List Comprehension](thinking-functionally/list-comprehension.md)
-    * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md)
+    <!-- * [Lazy Evaluation](thinking-functionally/lazy-evaluation.md) -->
     * [Sequences](thinking-functionally/sequences.md)
     * [Sequence-abstraction](thinking-functionally/sequence-abstractions.md)
     * [Functors](thinking-functionally/functors.md)
@@ -346,14 +344,14 @@
 <!-- Definging names for data and expressions -->
 <!-- Defining custom functions -->
 <!-- reducting functions -->
-* [Defining Functions](basic-clojure/defining-functions.md)
-    * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md)
-    * [Syntax](defining-behaviour-with-functions/syntax.md)
-    * [Calling functions](defining-behaviour-with-functions/calling-functions.md)
-    <!-- * [Examples](defining-behaviour-with-functions/examples.md) -->
-    <!-- * [Parameters](defining-behaviour-with-functions/parameters.md) -->
-    * [Anonymous Functions](defining-behaviour-with-functions/anonymous-functions.md)
-    * [Threading Macros](thinking-functionally/threading-macros.md)
+<!-- * [Defining Functions](basic-clojure/defining-functions.md) -->
+<!--     * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md) -->
+<!--     * [Syntax](defining-behaviour-with-functions/syntax.md) -->
+<!--     * [Calling functions](defining-behaviour-with-functions/calling-functions.md) -->
+<!--     <\!-- * [Examples](defining-behaviour-with-functions/examples.md) -\-> -->
+<!--     <\!-- * [Parameters](defining-behaviour-with-functions/parameters.md) -\-> -->
+<!--     * [Anonymous Functions](defining-behaviour-with-functions/anonymous-functions.md) -->
+<!--     * [Threading Macros](thinking-functionally/threading-macros.md) -->
 
 
 
