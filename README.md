@@ -1,5 +1,7 @@
 ![Practicalli Clojure Book Cover](images/practicalli-clojure-book-cover.png)
 
+[![GitHub Super-Linter](https://github.com/practicalli/clojure-content/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+
   Clojure is a simple, powerful and fun language to develop any and all applications. It has a simple syntax that is quick to learn and a wide range of Clojure libraries to build any kind of apps and services. Its also easy to use any existing Java / JVM Language code or libraries as part of your Clojure apps.
 
 In this workshop we take a hands on approach where everyone takes Clojure code and experiments with it using the REPL (interactive runtime environment). You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
