@@ -1,7 +1,9 @@
 # Cognitect REBL data browser
-Cognitect REBL is a interactive tool for capturing the results of evaluating expressions and visualizing that data for human consumption. REBL was initially created to support development with the Datomic database and is useful viewing and navigating data structures, especially nested data structures and large data sets.
+Cognitect REBL captures the results of evaluating expressions and visualizes them in a human readable form.  REBL was initially created to support development with the Datomic database and is useful viewing and navigating data structures, especially nested data structures and large data sets.
 
-Alternatives include [Reveal](/clojure-tools/data-browsers/reveal.md) and [Portal](/clojure-tools/data-browsers/portal.md)
+REBL requires an end user license and a personal access token to obtain the packaged library.
+
+Open alternatives include [Reveal](/clojure-tools/data-browsers/reveal.md) and [Portal](/clojure-tools/data-browsers/portal.md), which are simpler to install.
 
 {% youtube %}
 https://www.youtube.com/watch?v=c52QhiXsmyI
@@ -12,13 +14,14 @@ REBL is part of the [Cognitect dev-tools project](https://cognitect.com/dev-tool
 
 [Accept the Cognitect dev-tools license](https://cognitect.com/dev-tools/) to receive an email containing a link to download the latest version of Datomic local and a personal access token for access to the Cognitect Maven repository which contains the REBL library.
 
-Follow the maven configuration link in the email to configure your build tool (Clojure CLI tools or Leiningent) and the repository in the project pom.xml.
+Follow the maven configuration link in the email to configure your build tool (Clojure CLI tools or Leiningen) and the repository in the project pom.xml.
 
 
 ## Aliases for Cognitect REBL
 Follow the [REBL installation steps](https://docs.datomic.com/cloud/other-tools/REBL.html#installation) to create an alias in the user-wide deps.edn configuration.
 
 Alternatively, use the [practicalli/clojure-deps-edn configuration]({{book.P9IClojureDepsEdnInstall}}) which contains the `:inspect/rebl` alias for use with Java 11.
+
 
 ## Running REBL with a project
 Run the project using the Clojure CLI tools
@@ -33,8 +36,8 @@ clj -M:inspect/rebl
 ```
 
 
-## Configure REBL with CIDER for Spacemacs / Emacs
-[nrebl.middleware](https://github.com/RickMoynihan/nrebl.middleware) is an nREPL middleware library that will spy on an nREPL connection and sent the results of every evaluation to Cognitect REBL.
+## Configure REBL with Clojure editors
+[nrebl.middleware](https://github.com/RickMoynihan/nrebl.middleware) is a middleware library that listens to the nREPL connection between editor and REPL, sending the results of every evaluation to Cognitect REBL.
 
 ![Cognitect REBL with CIDER in Spacemacs](/images/cognitect-rebl-and-spacemacs.png)
 
@@ -71,13 +74,8 @@ Supporting aliases for nrebl.middleware
 {% endtabs %}
 
 
-## Run REBL for nREPL based editors
-The [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL, including [cider-repl](https://github.com/admiralbumblebee/cider-rebl) that has a configurable behavior to send evaluated forms to REBL.
 
-
-### Using nREBL middleware for CIDER and Calva
-nREBL middleware will send the results of all evaulated forms to Cognitect REBL via nREPL protocol.
-
+### Using REBL with Clojure editors
 CIDER and Calva use the `nREPL` protocol to connect to the REBL REPL and have all the evaluated code in those editors automatically display the results in the REBL UI.
 
 In a terminal, run REBL listening to nREPL using the command
@@ -91,7 +89,9 @@ clojure -M:lib/cider-nrepl:inspect/rebl:middleware/nrebl
 
 Then `cider-connect-clj` in Spacemacs / Emacs and CIDER will connect to the nREPL port and results of evaluated code are sent to REBL UI.
 
-To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options` and all other automatically injected configuration is disabled (to prevent those dependencies over-riding the nREBL aliases).
+
+> #### Hint::Using cider-jack-in - not recommended
+> To use `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options`.  The automatically injected configuration must be disabled or the command will fail.
 ```
 ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
                   (cider-clojure-cli-global-options . "-M:lib/cider-nrepl:inspect/rebl:middleware/nrebl")
@@ -100,13 +100,12 @@ To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the
                   (cider-jack-in-lein-plugins . nil)
                   (cider-clojure-cli-parameters . ""))))
 ```
-
-> #### Hint::revert-buffer to load .dir-locals.el
+>
 > `revert-buffer` will force Emacs to load in the .dir-locals.el configuration if it was added to a project with files already opened.
 
 {% content "calva" %}
 
-See the excellent guide on [using VSCode Calva with REBL](https://calva.io/rebl/)
+See the guide on [using VSCode Calva with REBL](https://calva.io/rebl/)
 
 {% endtabs %}
 
@@ -114,6 +113,7 @@ See the excellent guide on [using VSCode Calva with REBL](https://calva.io/rebl/
 ## References
 * [Cognitect Labs REBL-distro repository](https://github.com/cognitect-labs/REBL-distro) and [issue tracker](https://github.com/cognitect-labs/REBL-distro/issues)
 * [Cognitect Local Dev and CI with dev-local](https://docs.datomic.com/cloud/dev-local.html)
+* [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL
 * [practicalli/clojure-deps-aliases common aliases for Clojure]({{ book.P9IClojureDepsEdnInstall }})
 * [nrebl.middleware project](https://github.com/RickMoynihan/nrebl.middleware) and [documentation](https://cljdoc.org/d/rickmoynihan/nrebl.middleware/CURRENT/doc/readme)
 * [#rebl channel on Clojurians Community](https://clojurians.slack.com/messages/rebl)
