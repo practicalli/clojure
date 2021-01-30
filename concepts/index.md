@@ -5,7 +5,7 @@ Clojure is an elegant language for a more civilized development experience. Cloj
 > Revisit this section when you want to get a deeper understanding of the design and philosophy of the Clojure approach to functional programming.
 > These concepts will be easier to relate to as you practice Clojure and build software solutions.
 
-# Ten Big Ideas plus one
+## Ten Big Ideas plus one
 The key to understanding Clojure is ideas, not language constructs but the concepts that shape the language.
 
 Each of these ideas is valuable by itself, not only in Clojure. Taken together, however, they Begin to fill in the picture of why Clojure is changing the way many programmers think about software development.
