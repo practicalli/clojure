@@ -4,11 +4,11 @@ Clojure is a very versatile language and can generate data visualizations and gr
 * [Quil](http://quil.info/) - generate 2D graphics and animations
 * [Thi.ng](http://thi.ng/) - computational design tools
 * [play.cljc](https://github.com/oakes/play-cljc) - making games (OpenGL and WebGL)
-* [Oz](https://github.com/metasoarous/oz) - data visualization and scientific document processing library
+* [Oz](https://github.com/metasoarous/oz) - data visualization and scientific document processing library (see [practicalli/oz-visualisations](https://github.com/practicalli/oz-visualisations) for examples)
 
 
 ## Scalable Vector Graphics
-Clojure can generate [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics), which are images _drawn_ from a collection of points and paths. SVG images keep their quality when made larger or smaller.  Using SVG images for the web and responsive design is highly recommended.
+Clojure can generate [Scalable Vector Graphics (SVG)](https://en.wikipedia.org/wiki/Scalable_Vector_Graphics) as they are represented as data.  SVG images are _drawn_ from a collection of points and paths. SVG images keep their quality when made larger or smaller.  Using SVG images for the web and responsive design is highly recommended.
 
 This example of an SVG image is made from:
 * a green circle and a smaller blue circle
