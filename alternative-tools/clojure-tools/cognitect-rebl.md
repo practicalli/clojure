@@ -92,7 +92,7 @@ Then `cider-connect-clj` in Spacemacs / Emacs and CIDER will connect to the nREP
 
 > #### Hint::Using cider-jack-in - not recommended
 > To use `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options`.  The automatically injected configuration must be disabled or the command will fail.
-```
+```elisp
 ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
                   (cider-clojure-cli-global-options . "-M:lib/cider-nrepl:inspect/rebl:middleware/nrebl")
                   (cider-jack-in-dependencies . nil)
