@@ -81,10 +81,11 @@
         }
     },
     "variables": {
-        "website": "https://practical.github.io/clojure",
+        "P9IWebsite": "https://practical.github.io/clojure",
         "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
         "P9IClojureDepsEdnInstall": "/clojure-tools/install/community-tools.md",
+        "P9IGraphicDesign": "https://github.com/practicalli/graphic-design",
         "P9IFourClojure": "https://practical.github.io/clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
         "P9IIssuesUrl": "https://github.com/practicalli/clojure-practicalli-content/issues",
