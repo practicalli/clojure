@@ -26,7 +26,7 @@ https://youtu.be/xZQ7p-YBHtE
 
 ## References
 * [Clojure.org guides: Spec - Generators](https://clojure.org/guides/spec#_generators)
-* [API reference: clojure.spec.test.alpha](https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html)
+* [API reference: clojure.spec.gen.alpha](https://clojure.github.io/spec.alpha/clojure.spec.gen.alpha-api.html)
 * [API reference: clojure.spec.test.alpha](https://clojure.github.io/spec.alpha/clojure.spec.test.alpha-api.html)
 * [Video: How to do Stateful Property Testing in Clojure?](https://www.youtube.com/watch?v=xw8ZFU8CGdA)
 
