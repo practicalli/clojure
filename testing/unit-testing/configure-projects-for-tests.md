@@ -1,76 +1,123 @@
-## Configuration for Unit Testing deps.edn projects
-[`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) is part of the Clojure standard library, so no additional dependencies are required.
+# Configuration for Unit Testing deps.edn projects
+[`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) is part of the Clojure standard library, so `org.clojure/clojure` is the only dependency required in the project configuration.
 
-As tests are defined in files inside the `test` directory, that directory should be included on the classpath for the project.
+```
+{:deps {org.clojure/cloure {:mvn/version "1.10.2"}}}
+```
 
+Unit tests code should reside under the `test` directory of a project.  Project configuration should include the `test` path only during development or specific test runs.  The `test` directory should not be part of the main classpath used to package a project for deployment.
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+{% tabs practicalli="practicalli/clojure-deps-edn", deps="Manual deps.edn projects" %}
+
+{% content "practicalli" %}
+
+## practicalli clojure-deps-edn user level configuration
+
+[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}) user-level configuration contains several aliases for Clojure and ClojureScript test runners, each alias includes the `test` directory as an `:extra-path`.
+
+`:env/test` alias is also provided, which simply adds the `test` directory to the class path. The `:env/test` alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).
+
 
 {% content "deps" %}
+Add the following aliases to the Clojure CLI tools user wide configuration, (e.g. `~/.clojure/deps.edn`), or to the project `deps.edn` file.
 
-To use the test runners with `deps.edn` projects, the `test` should be on the classpath.  Tests are not typically included when Clojure is deployed, so the `test` path is not included in the main `paths` configuration of `deps.edn`.
+## Alias to include the test directory
+To use a test runners with a `deps.edn` projects, the `test` should be on the classpath.
 
-The recommended approach is to include the test path as an alias, either by itself or with a test runner.
+The `test` path is not included in the main `paths` configuration of `deps.edn`.
 
 ```clojure
-{:paths ["src" "resource"]
-
 :aliases
-{:test-path
-  {:extra-paths ["test"]}}
+{
+  :env/test
+  {:extra-paths ["test"]}
 }
 ```
 
-
-## practicalli/clojure-deps-edn
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) contains several test runner tools that each include the `test` directory as an additional path.
-
-> #### Hint::Test runners for all projects
-> [Install practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}) to have access to test runners and many other development tools for `deps.edn` based projects.
-
-
-## Configure Emacs CIDER test runner
-Create a [`.dir-locals.el` file to configure default aliases](https://practicalli.github.io/spacemacs/testing/unit-testing/cider-test-deps-edn-projects.html) when running deps.edn projects from Emacs CIDER / Spacemacs.
-
-```lisp
-((clojure-mode . ((cider-clojure-cli-global-options . "-A:test"))))
-```
-
-[Project level configuration](https://practicalli.github.io/spacemacs/clojure-projects/project-configuration.html) section contains many example configurations that can be set via `.dir-locals.el` file.  Remember to `revert-buffer` an existing project buffer or open a new buffer to load in changes from the `.dir-locals.el` file.
-
-
-{% content "lein" %}
-Leiningen automatically includes the `test` directory when running, so no additional configuration is required if all tests reside inside the `test` directory.
-
-Run all the tests saved to file:
-
-```shell
-lein test
-```
-
-The following Leiningen plugins watch the file system and will run tests when a file change is detected in the project files.
-* [lein-test-refresh](https://github.com/jakemcc/lein-test-refresh)
-* [lein-auto](https://github.com/weavejester/lein-auto)
-
-### Using different paths
-`:test-paths` added as a top level key to the `defproject` configuration in the `project.clj` file will configure specific paths for tests
-
-For example, if the tests are defined under `project-name/clj/tests` then the project.clj file would look as follows:
+## Alias to run a REPL with nREPL support
+Run a REPL using nREPL server for access by cider-connect-clj
 
 ```clojure
-(defproject myproject "0.5.0-SNAPSHOT"
-  :description "A project for doing things."
-  :license "Creative Commons Zero"
-  :url "http://github.com/practicalli/myproject"
-
-  :dependencies [[org.clojure/clojure "1.10.1"]]
-  :test-paths   ["clj/test" "src/test/clojure"]
-  :plugins      [[lein-auto "0.1.3"]])
+  :middleware/cider-clj
+  {:extra-deps {nrepl/nrepl       {:mvn/version "0.8.3"}
+                cider/cider-nrepl {:mvn/version "0.25.7"}}
+   :main-opts  ["-m" "nrepl.cmdline"
+                "--middleware" "[cider.nrepl/cider-middleware]"]}
 ```
 
-> `:source-paths` can also be used to define the location of the source code files in the same manner.
+Start a REPL process with nREPL server and Cider support libraries for Cider and Calva
+
+```shell
+clojure -M:middleware/cider-clj
+```
+
+## Alias to run a Rebel REPL with nREPL support
+rebel readline with nrepl for editor connection to REPL
+
+CIDER: run `cider-connect-clj` and expressions evaluated in rebel
+are also available from CIDER/Emacs/Spacemacs
+
+```clojure
+  :repl/rebel-nrepl
+  {:extra-deps {nrepl/nrepl                {:mvn/version "0.8.3"}
+                cider/cider-nrepl          {:mvn/version "0.25.7"}
+                com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+   :main-opts  ["-m" "nrepl.cmdline"
+                "--middleware" "[cider.nrepl/cider-middleware]"
+                "-i"
+                "-f" "rebel-readline.main/-main"]}
+```
+
+Start a REPL process with Rebel terminal UI, with nREPL server and Cider support libraries for Cider and Calva.
+
+```shell
+clojure -M:repl/rebel-nrepl
+```
 
 {% endtabs %}
 
+## Cognitect labs Clojure test runner
+`:test-runner/cognitect` is a simple to use test runner for Clojure projects.
+
+```clojure
+clojure -M:test-runner/cognitect
+```
+
+## kaocha unit test and clojure spec runner
+`:test-runner/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
+```
+clojure -M:test-runner/kaocha
+```
+
+
+## Cider Test Runner
+Cider test runner is a convenient way to run Clojure unit tests using the REPL.  The `test` directory must be included in the classpath when running the REPL.
+
+`:env/test` alias will add the `test` directory, which Cider test runner requires to locate the test code.
+
+`:middleware/cider-clj` includes the nrepl and cider-nrepl libraries and starts an nREPL server connected to the REPL
+
+Use `cider-connect` to connect to the Clojure REPL process started in a terminal window with the following command:
+
+```
+clojure -M:env/test:middleware/cider-clj
+```
+
+Use the `:repl/rebel-nrepl` alias to also run a Rebel UI for the REPL in the terminal.
+
+```shell
+clojure -M:env/test:repl/rebel-nrepl
+```
+
+Alternatively, use `cider-jack-in` and create a [`.dir-locals.el` file to configure a default alias](https://practicalli.github.io/spacemacs/testing/unit-testing/cider-test-deps-edn-projects.html) when running deps.edn projects from Emacs CIDER / Spacemacs.
+
+```lisp
+((clojure-mode . ((cider-clojure-cli-global-options . "-M:env/test"))))
+```
+
+Ensure the `.dir-locals.el` file is loaded using `revert-buffer` on an existing project buffer or open a new file from the project.
+
+
 ## References
+* [Leiningen project configuration for unit testing](/alternative-tools/leiningen/testing/configure-project.md)
 * [lambdaisland/kaocha](/testing/test-runners/kaocha-test-runner.md) is a test runner that supports Clojure CLI, Leiningen and Boot project configuration.
