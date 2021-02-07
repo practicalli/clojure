@@ -1,7 +1,7 @@
 # Configuration for Unit Testing deps.edn projects
 [`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) is part of the Clojure standard library, so `org.clojure/clojure` is the only dependency required in the project configuration.
 
-```
+```clojure
 {:deps {org.clojure/cloure {:mvn/version "1.10.2"}}}
 ```
 
@@ -85,7 +85,7 @@ clojure -M:test-runner/cognitect
 
 ## kaocha unit test and clojure spec runner
 `:test-runner/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
-```
+```shell
 clojure -M:test-runner/kaocha
 ```
 
@@ -99,7 +99,7 @@ Cider test runner is a convenient way to run Clojure unit tests using the REPL. 
 
 Use `cider-connect` to connect to the Clojure REPL process started in a terminal window with the following command:
 
-```
+```shell
 clojure -M:env/test:middleware/cider-clj
 ```
 
