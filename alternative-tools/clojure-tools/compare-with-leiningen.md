@@ -15,7 +15,7 @@ Leiningen is a feature rich tool which is simple to get started with a plugin ex
 ## Boot overview
 Boot runs tasks written in Clojure on the command line, providing a flexible way to work with projects.  However, this approach does require expertise with Clojure and  Clojure scripts to work with projects.
 
-> #### Hint::Clojure code is the same which ever tool is used
+> ####Hint::Clojure code is the same which ever tool is used
 > The Clojure code for the project will be the same regardless of which tool is used to configure and manage the Clojure project.
 
 
