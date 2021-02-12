@@ -85,6 +85,8 @@ Enter an expression using the `hiccup/html` function to convert a clojure data s
 (hiccup/html [:div {:class "right-aligned"}])
 ```
 
+The hiccup expression returns a string of the html code.
+
 ![Clojure REPL hot load dependencies ](/images/clojure-repl-hotload-add-libs-hiccup-example.png)
 
 
