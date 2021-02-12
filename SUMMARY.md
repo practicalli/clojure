@@ -429,7 +429,7 @@
     * [REBL data browser](alternative-tools/clojure-tools/cognitect-rebl.md)
     * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
     * [Files and scripts](alternative-tools/clojure-tools/files-and-scripts.md)
-    * [Hot Load Dependencies](alternative-tools/clojure-tools/hot-load-dependencies.md)
+    * [Hotload Libraries](alternative-tools/clojure-tools/hotload-libraries.md)
     * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
     * [Leiningen Build automation](alternative-tools/leiningen/index.md)
 <!--     * [Leiningen Configuration](leiningen/index.md) -->
