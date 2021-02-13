@@ -44,7 +44,7 @@ The REPL process with start and the terminal will show the Rebel UI.
 
 ![Clojure REPL - hot load library dependencies](/images/clojure-repl-hot-load-deps-rebel.png)
 
-Require the `clojure.tools.deps.alpha` library and refer the add-lib function, making that function available to use in the code.
+Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
 
 ```clojure
 (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
