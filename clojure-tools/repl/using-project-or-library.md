@@ -54,7 +54,7 @@ When changes are made to a namespace in the source code file, those changes can 
 ## Hot-load libraries
 `add-libs` function from the `clojure.tools.deps.alpha` library is an unofficial approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
 
-See [hotload of libraries](alternative-tools/clojure-tools/hotload-libraries.md) for details.
+See [hotload of libraries](/alternative-tools/clojure-tools/hotload-libraries.md) for details.
 
 
 ## Troubleshooting
