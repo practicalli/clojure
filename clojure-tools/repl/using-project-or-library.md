@@ -12,7 +12,7 @@ Run the REPL in the root of the project with a `deps.edn` file
 A library needs to be included as a dependency in order to use it in the REPL.
 
 Using an alias
-```
+```shell
 clojure -A:database/next.jdbc:database/h2
 ```
 
