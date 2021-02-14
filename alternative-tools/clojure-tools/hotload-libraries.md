@@ -5,6 +5,8 @@ Avoid restarting the REPL when using a new library for a project by using the `a
 
 `add-libs` will "hotload" one or more libraries into a running REPL so that any namespace from those libraries can be required as if the dependency had been added to the project configuration before the REPL started.
 
+[practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
+
 > #### WARNING::WARNING: Not officially supported approach
 > The `add-libs` function is not officially part the Clojure CLI tools.  The code design may change so this approach should be used with caution and not relied upon in your workflow.
 
