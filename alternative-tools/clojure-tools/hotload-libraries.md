@@ -1,4 +1,6 @@
-# Hotload Libraries into a running REPL
+![Hotload libraries into a Clojure REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png)
+
+## Hotload Libraries into a running REPL
 Avoid restarting the REPL when using a new library for a project by using the `add-libs` function from `clojure.tools.deps.alpha`.
 
 `add-libs` will "hotload" one or more libraries into a running REPL so that any namespace from those libraries can be required as if the dependency had been added to the project configuration before the REPL started.
