@@ -121,10 +121,10 @@ Use a rich comment block to hold the code that hot-loads libraries so that code 
   (require '[org.httpkit.server :as app-server])
 
 
-  ;; What functions are ava
+  ;; What functions are available
   (ns-publics (find-ns 'org.httpkit.server))
 
-  ;; efine an entry point for the application
+  ;; Define an entry point for the application
   (defn welcome-page
     [request]
     {:status  200
