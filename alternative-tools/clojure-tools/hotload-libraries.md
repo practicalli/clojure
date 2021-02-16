@@ -171,6 +171,30 @@ Use a rich comment block to hold the code that hot-loads libraries so that code 
   )
 ```
 
+## Using add-libs with project configuration file
+
 Alternatively, add the `add-libs` expression to the `deps.edn` configuration file, using the comment reader macro `#_` to temporarily comment the `:deps` key when using add-libs and comment the `add-libs` expression once hotloading has finished.
 
-See the [REPL driven development video by Sean Corfield](https://youtu.be/gIoadGfm5T8) for this technique.
+See the [REPL driven development video by Sean Corfield](https://youtu.be/gIoadGfm5T8?t=1390) for this technique.
+
+```clojure
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Project Configuration with  Hotload
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Hotload requires
+#_(ns deps.edn
+    (:require [clojure.tools.deps.alpha.repl :refer [add-libs]]))
+
+;; Project configuration
+{:paths
+ ["src" "resources"]
+
+ :deps
+ #_ (add-libs)
+ {org.clojure/clojure {:mvn/version "1.10.1"}
+  http-kit/http-kit   {:mvn/version "2.5.1"}
+  hiccup/hiccup       {:mvn/version "2.0.0-alpha2"}}
+
+ :aliases {}
+```
