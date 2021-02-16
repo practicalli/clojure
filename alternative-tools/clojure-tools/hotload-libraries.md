@@ -172,8 +172,17 @@ Use a rich comment block to hold the code that hot-loads libraries so that code 
 ```
 
 ## Using add-libs with project configuration file
+A project `deps.edn` file can also be used to hotload libraries with `add-lib`.  This has the advantage that newly added libraries become part of the normal project dependency configuration.
 
-Alternatively, add the `add-libs` expression to the `deps.edn` configuration file, using the comment reader macro `#_` to temporarily comment the `:deps` key when using add-libs and comment the `add-libs` expression once hotloading has finished.
+Add a namespace definition to the `deps.edn` file to help editors understand the `deps.edn` file is being used for code.  Use the `#_` comment reader macro with the namespace definition to only evaluate this code manually as a developer.
+
+Add the `add-libs` expression after the `:deps` key so that it is easy to slurp in the existing and new dependencies as a single hash-map.  Use the comment reader macro `#_` to only evaluate this code manually.
+
+To hotload, remove the `#_` temporarily and slurp in the hash-map of dependencies, placing a `'` at the start of the hash-map.  Add the name and version of libraries to hotload in the hash-map.  Evaluate the `add-libs` expression which should return a list of new namespaces added.
+
+Once hotload has finished, barf the hash-maps of dependencies from the `add-libs` expression, removing the `'`.  Add the `#_` to the `add-libs` expression and save the file.
+
+The hotloaded libraries are now available by requiring their namespaces.  If the REPL is restarted, the new dependencies will be included in the Classpath as they are now part of the project configuration.
 
 See the [REPL driven development video by Sean Corfield](https://youtu.be/gIoadGfm5T8?t=1390) for this technique.
 
