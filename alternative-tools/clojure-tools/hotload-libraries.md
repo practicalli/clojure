@@ -118,20 +118,17 @@ Use a rich comment block to hold the code that hot-loads libraries so that code 
   ;; => (http-kit/http-kit)
 
 
+  ;; Require the namespace from the http-kit library
   (require '[org.httpkit.server :as app-server])
 
-
-  ;; What functions are ava
-  (ns-publics (find-ns 'org.httpkit.server))
-
-  ;; efine an entry point for the application
+   ;; Define a handler for http requests
   (defn welcome-page
     [request]
     {:status  200
      :body    "Welcome to the world of Clojure CLI hotloading"
      :headers {}})
 
-  ;; Start the application server
+  ;; Start the application server with the handler
   (app-server/run-server #'welcome-page {:port (or (System/getenv "PORT") 8888)})
 
   ;; Visit http://localhost:8888/ to see the welcome-page
