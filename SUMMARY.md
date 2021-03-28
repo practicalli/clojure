@@ -343,6 +343,11 @@
         * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
     * [Shared Memory](data-structures/shared-memory.md)
 
+
+* [Clojure SVG](reference/clojure-svg/index.md)
+
+
+
 <!-- Definging names for data and expressions -->
 <!-- Defining custom functions -->
 <!-- reducting functions -->
