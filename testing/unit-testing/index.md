@@ -18,6 +18,28 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 * Use [test selectors](test-selectors.md) to organize tests and optimize speed of test runs
 
 
+## Test with Development REPL and Command Line
+
+There is value in running unit tests via the REPL used to develop the code as well as using a test runner via the command line (optionally using a watcher).
+
+![Clojure unit testing approach - editor and command line](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png)
+
+Using the develop-time REPL provides fast selection of tests using editor commands and shows instant feedback  within the editor itself, helping maintain focus.
+
+Using the develop-time REPL to run tests does require evaluation of both test and source code to ensure changes are loaded into the REPL.  Stale definitions, especially stale tests should be removed from the REPL when using this approach, either `undef`-ing a `deftest` before renaming or re-evaluating other changes to a `deftest` expression.
+
+Running tests via a command like tool (i.e. koacha, Cognitect Labs runner) ensures tests are run from a known state, as all changes are captured in the source code files and a clean REPL state is established each time the tests. This clearly defined state is especially valuable for running integration tests.
+
+Using a watch process with a command line tool can also give fast feedback, especially if the test runner can be configure to run only selective tests (i.e kaocha)
+
+Run all tests (including integration tests) via the command line before pushing commits to ensure all changes to the code have been tested.
+
+If tests are not running in the REPL or are returning unexpected errors, a command line test runner is a useful way to diagnose if it is the test code or test tools causing the error.
+
+The CLI approach is also more robust for longer running tests than running within an editor.
+
+
+
 ## Project structure with tests
 By convention, separate `src` and `test` directories are used to hold the source code and the code that tests that source code.
 

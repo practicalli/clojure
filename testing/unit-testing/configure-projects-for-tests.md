@@ -2,7 +2,7 @@
 [`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) is part of the Clojure standard library, so `org.clojure/clojure` is the only dependency required in the project configuration.
 
 ```clojure
-{:deps {org.clojure/cloure {:mvn/version "1.10.2"}}}
+{:deps {org.clojure/cloure {:mvn/version "1.10.3"}}}
 ```
 
 Unit tests code should reside under the `test` directory of a project.  Project configuration should include the `test` path only during development or specific test runs.  The `test` directory should not be part of the main classpath used to package a project for deployment.
@@ -22,9 +22,11 @@ Unit tests code should reside under the `test` directory of a project.  Project 
 Add the following aliases to the Clojure CLI tools user wide configuration, (e.g. `~/.clojure/deps.edn`), or to the project `deps.edn` file.
 
 ## Alias to include the test directory
-To use a test runners with a `deps.edn` projects, the `test` should be on the classpath.
+To use a test runners with a `deps.edn` projects, the `test` directory should be on the classpath.
 
-The `test` path is not included in the main `paths` configuration of `deps.edn`.
+The `test` directory should be included as an alias.  If the `test` path were in the main `paths` configuration of `deps.edn` then the unit tests would be included in the packaged project, i.e jar or uberjar.
+
+practicalli/clojure-deps-edn defines an environment alias to include the test path.
 
 ```clojure
 :aliases
@@ -35,8 +37,10 @@ The `test` path is not included in the main `paths` configuration of `deps.edn`.
 ```
 
 ## Alias to run a REPL with nREPL support
-Run a REPL using nREPL server for access by cider-connect-clj
 
+Run a REPL using nREPL server for access by cider-connect-clj that also includes the `test` directory in the class path
+
+An alias to run a REPL with nREPL support
 ```clojure
   :middleware/cider-clj
   {:extra-deps {nrepl/nrepl       {:mvn/version "0.8.3"}
@@ -77,16 +81,16 @@ clojure -M:repl/rebel-nrepl
 {% endtabs %}
 
 ## Cognitect labs Clojure test runner
-`:test-runner/cognitect` is a simple to use test runner for Clojure projects.
+`:test/cognitect` is a simple to use test runner for Clojure projects.
 
 ```clojure
-clojure -M:test-runner/cognitect
+clojure -M:test/cognitect
 ```
 
 ## kaocha unit test and clojure spec runner
 `:test-runner/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
 ```shell
-clojure -M:test-runner/kaocha
+clojure -M:test/kaocha
 ```
 
 
@@ -112,7 +116,7 @@ clojure -M:env/test:repl/rebel-nrepl
 Alternatively, use `cider-jack-in` and create a [`.dir-locals.el` file to configure a default alias](https://practicalli.github.io/spacemacs/testing/unit-testing/cider-test-deps-edn-projects.html) when running deps.edn projects from Emacs CIDER / Spacemacs.
 
 ```lisp
-((clojure-mode . ((cider-clojure-cli-global-options . "-M:env/test"))))
+((clojure-mode . ((cider-clojure-cli-aliases . ":env/test"))))
 ```
 
 Ensure the `.dir-locals.el` file is loaded using `revert-buffer` on an existing project buffer or open a new file from the project.
