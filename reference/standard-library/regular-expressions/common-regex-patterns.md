@@ -77,7 +77,9 @@ The  domain starts with `A-Za-z0-9-`, follow by first level domain, e.g `.org`, 
   #"^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"
   "jenny.jenn@jetpack.com.au")
 ```
-> Double escaping is not required in the Clojure syntax.
+
+> ####Hint::Double escaping special characters
+> Double escaping of special characters is not required in the Clojure syntax.
 
 Breakdown the regex pattern:
 ```
@@ -106,7 +108,7 @@ A file extension name is 1 or more characters without white space, follow by dot
 Change the combination `(jpg|png|gif|bmp)` for other file extension.
 
 ```eval-clojure
-(re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)")
+(re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)" "clojure-logo.png")
 ```
 
 > #### Hint::in-line modifiers not supported in JavaScript
