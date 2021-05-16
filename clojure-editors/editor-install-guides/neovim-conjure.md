@@ -149,7 +149,7 @@ colorscheme solarized8
 ## Practicalli complete configuration
 The `~/.config/nvim/init.vim` configuration file used by Practicalli
 
-```vimscript
+```vim
 " Set leader key
 let maplocalleader = ","
 
