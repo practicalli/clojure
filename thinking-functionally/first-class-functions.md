@@ -1,6 +1,6 @@
 # First Class functions
 
-Idempot - given the same input you get the same output
+Idempotent - given the same input you get the same output
 
 > ####Note::
 > Write an expression to add up the numbers from 1 to 10 and return the overall total.
