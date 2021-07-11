@@ -11,7 +11,7 @@
 
 The website is self-contained so you do not need to install anything, simply paste in the missing code from the tests.  [One piece of code should solve all the tests](#using-let-and-anonymous-functions) for that challenge.
 
-The [Problem List](https://4clojure.oxal.com/) shows the challenges categorized by experience level required, (Elementary, Easy, Medium, Hard) to solve them.  Start with the easiest problem or work your way through the challenges in any order you wish.
+The [Problem List](https://4clojure.oxal.org/) shows the challenges categorized by experience level required, (Elementary, Easy, Medium, Hard) to solve them.  Start with the easiest problem or work your way through the challenges in any order you wish.
 
 Select the name of a challenge and a new page describes the challenge and presents one or more tests that must pass.
 
