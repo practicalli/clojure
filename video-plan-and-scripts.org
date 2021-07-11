@@ -1,0 +1,593 @@
+* Clojure CLI Tools Videos
+
+** Spacemacs and REPL driven development
+Welcome to my approach to repl driven development using Spacemacs.
+Spacemacs is a community configuration that brings together
+the highly customisable Emacs and its hundreds of package
+with the unmatched editing experience of vim
+
+*** Create a Clojure project
+    ~SPC '~ opens Emacs shell, eshell.
+
+    With the practicalli clojure deps.edn configuration
+    use the ~:project/new~ alias
+    to create a new project using clj-new
+
+    clojure -M:project/new :template app :name practicalli/simple-app
+
+*** Open a Clojure project
+    SPC l l to create a new layout for the project,
+    a useful way to manage all the files in the project
+
+    SPC f f to open a Clojure or ClojureScript file.
+    Type the path and filename of the file
+    (possible matches of existing files narrow as you type).
+
+    spc p t to open treemacs, showing the project structure
+
+
+
+*** Start a Clojure REPL
+Start a REPL and automatically connect to it using cider-jack-in
+a term from the William Gibson cyber punk novels where hackers plug their brains directly into cyberspace
+
+, ' calls the `sesman-start` command to start or connect to a REPL using the sesman session manager
+
+Select clojure-jack-in to start a REPL process and connect to it from the editor.
+
+
+
+*** Navigating around
+
+    % to jump to the start and end of the parens
+
+
+*** Evaluate code
+In the Clojure or ClojureScript file you opened, you can evaluate specific expressions (any parts of the code in ()) or symbols.
+
+, e f will evaluate the outer most expression and show the result inline.
+
+, e ; will evaluate the outer most expression and show the result as a comment.
+
+, e e  evaluates the expression before the cursor, to the left or previous line(s)
+
+
+*** Live linting with clj-kondo
+
+`SPC e l` to show the lint warnings
+
+
+*** Writing code
+
+ snippets
+ - defn
+ - deftest
+
+*** Structured editing - SPC k menu
+
+Smartparens global strict mode ensures that parens remain balanced
+
+slurping and barfing
+
+wrapping
+
+raising
+
+
+*** Running tests
+
+ Adding new files
+
+ clj-refactor will automatically add a namespace definition, based on the file name.
+ `, r a n` will also add the namespace, useful if the file name is changed
+
+ the `ns` snippet will also add a namespace definition, based on the file name
+
+
+
+** TODO Install Clojure cli tools
+ - cli tools install options, especially for windows
+ - where things are installed ?
+ - important flags option
+ - the =~/.clojure= directory
+ - adding aliases
+ - install practicalli/clojure.deps
+
+ The clojure command-line tools are a simple way to get started with clojure development.
+
+ Clojure command line tools run on top of Java
+ and a long-term support (LTS) release is recommended,
+ the latest being Java 11.
+
+ Check you have Java installed by typing java –version in a terminal window
+
+ The clojure.org website has instructions to install the Clojure command-line toolsA Linux script is provided as well as homebrew and there is an alpha script for Windows.
+ The install provides a command called clojure which is used to run run Clojure applications,  a REPL command line interface, and a range of additional tools from the Clojure community.
+ To provide history to the REPL CLI, a script called clj wraps the Clojure command with rlwrap binary.  The rlwrap script must be installed separately.
+ Alternatively you can use the rebel readline command line interface for a feature-packed experience.
+
+ Let's run the clojure help and see what's the command will do
+
+ Clojure --help
+
+ describe the main features of clojure like she don't describe them just actually use them.
+
+ We seen another videos that we can run application and we can wrap all tools like to read line
+
+ Check which version of clojure we have installed by using the describe flag
+
+
+
+** TODO Covering the key aliases in Practicalli Clojure deps.edn
+** TODO Run a REPL with REBEL Readline
+** TODO Clojure Projects and templates overview
+   Clojure projects are used to build applications, services, api's, web user interfaces, terminal user interfaces,
+   in fact anything you want to build in Clojure (or ClojureScript).
+
+   A template is a way to create a project with a particular structure,
+   include configuration, source code, unit tests and resources.
+
+   clj-new is a tool for use with the Clojure CLI tools, to create new projects
+   it provides templates which generate a project configured with deps.edn
+
+   Use the =app= template when you wish to create an application that can be run from the command line
+
+   the =lib= template when you want to create a library to be used with other projects
+
+   And the =template= template when you want to create your own custom template
+   This will be covered in the video "creating custom project templates with clj-new"
+
+
+   practicalli/clojure-deps-edn configuration provides a range of aliases
+   for use with Clojure CLI tools
+
+   The :project/new aliases is for using clj-new to create projects
+   This alias can be used with the -M flag using the Clojure main style of options
+   The -X flag can also be used which uses key value pairs for the options
+   and is using Clojure exec
+
+   When using the -X flag,
+   the alias uses the lib template and project name :practicalli/playground by default
+
+   Open a terminal window and lets create projects using these templates
+
+   clojure -X:project/new
+
+   Lets take a look at what this command has created
+
+   cd playground
+   nvim deps.edn
+
+   The deps.edn file is the configuration for the project
+
+   The deps.edn file defines the directory paths that contain clojure code,
+   in this case source and resources.
+
+   There is only one library dependency and that is Clojure itself.
+   Larger templates will include more libraries as dependencies
+
+   The deps.edn file contains several aliases
+   - :test sets the path of unit test code and a library for generative testing
+   - :runner runs the unit tests via the Cognitect Labs tool
+   - and the :jar install and :deploy aliases package and deploy the library
+
+   Lets look at the project structure
+
+   :NerdTree    <show structure using NERD tree in neovim >
+
+   The template created a project with a parallel src and test tree
+   This is a common approach used in Clojure.
+
+   Lets look at the source code
+
+   nvim src/practicalli/cli_app.clj
+
+   Each Clojure file has a namespace definition
+   composed of the directory path and file name
+   Namespaces help the development team organize the code logically.
+
+   The namespace definition is followed by a definition of a function called foo
+   The foo function takes one argument called x
+   and prints out that argument as a string followed by Hello world
+
+   This is not a very useful function, so it usually deleted or renamed.
+
+   The project has a matching test namespace containing a unit test for that function.
+   The unit test is written using the clojure.test library included with Clojure.
+
+ That covers the key aspects of this template
+
+   Lets create a new project with the app template and a specific name
+   by over-riding the default values in the :project/new alias
+
+   clojure -X:project/new :template app :name practicalli/rock-paper-scissors
+
+   This creates a project similar to the lib template,
+   however the source file includes a -main function
+   and the namespace definition includes a gen-class declaration
+   which creates a hook into the clojure code
+   so the project can be run as a Java package, a jar file.
+
+   Run the project by specifying the main namespace,
+   which calls the -main function within that namespace by convention
+
+   clojure -M -m practicalli.rock-paper-scissors
+
+   To save some typing when running the application,
+   we can add an alias to the deps.edn file to run the project
+
+   :project/run
+   {:ns-default practicalli.rock-paper-scissors
+    :exec-fn -main}
+
+   With the deps.edn file saved, run the project
+
+   clojure -X:project/run
+
+   This is a useful alias to add to your own custom templates.
+
+
+   A great number of templates have been created by the community,
+   for Clojure and ClojureScript projects.
+
+   clj-templates provides a searchable website to help you find many of these templates.
+   https://clj-templates.com/
+   For example, a commonly used template is called luminus
+
+   Templates can also be searched for on Clojars, the repository for clojure libraries
+
+   Links to some of the most common templates are in the description of this video
+
+   clj-new can use the community templates for Leiningen and Boot,
+   creating projects with configuration for those build tools.
+   A deps.edn configuration can be manually added to those project to run with Clojure CLI tools.
+
+
+   Lets try the figwheel-main template, which I've used to create websites such as
+   ClojureBridge London and Practicalli home page
+
+   clojure -M:project/new figwheel-main practicalli.landing-page -- --reagent
+
+   Lets take a look at this project
+
+
+ Now for much larger projects using the luminus template
+
+   clojure -X:project/new :template luminus :name practicalli/luminus-website +jetty +postgres
+
+   Lets take a look at what this template has created
+
+   cd luminus-website
+   nvim project.clj
+
+   The configuration is in a file called project.clj as this is a Leiningen template
+
+   This template creates a project that uses a number of libraries.
+   Adding different plus options will change which libraries are added when the project is created
+
+   The luminus template creates quite a lot of code and configuration to review,
+   so takes some investment in learning how to use it.
+   However, there are lots of useful concepts to learn even if you do not
+   use the template directly.
+
+   The clj-new project can also help you create custom templates
+   to include libraries, code and configuration that is common to all your projects
+   Custom templates can save time setting up new projects.
+
+   See the Practicalli video on creating custom templates with clj-new.
+
+   Thank you.
+
+
+ -------------------------------------------
+
+** TODO Writing the random functions project in the REPL
+** TODO Create a custom template for deps.edn projects
+** TODO Rebel REBL repl
+** TODO Reveal REPL
+** TODO Rebel and Reveal
+** TODO Rebel and Portal
+** TODO CIDER and Reveal
+** TODO CIDER and REBL
+** TODO CIDER and rebel
+** TODO CIDER and Portal
+** TODO Kaocha test runner
+
+
+** DONE Run the repl
+   CLOSED: [2020-10-05 Mon 02:11]
+ REPL driven development is the foundation to working successfully with Clojure.
+
+ The REPL is an instant feedback workflow that continually runs your code
+ The REPL contains a live application to interact with.
+
+ When developing Clojure,
+ the first step is to start a REPL process.
+ Then write a Clojure expression and send it to the REPL,
+ the repl then reads the expression and evaluates it
+ returning the result and giving instant feedback.
+
+ To start a repl,
+ Open a terminal application and run the clojure command,
+ specifying the main program to run
+
+ clojure -M:repl/rebel
+
+ This starts a REPL process and shows a prompt, waiting for your code
+ This REPL configuration is using the rebel readline project,
+ give a highly interactive development experience.
+
+ Clojure expressions are typed (or pasted) at the prompt
+ Lets add some numbers together
+
+ (+ 1 2 3 5 (* 2 4) 13)
+
+ This code calls the plus function with several arguments
+ Pressing RETURN show the result underneath
+
+ The repl saves the history of the code entered at the prompt.
+ Use the up and down arrows to navigate that history to run the same code again
+ or edit a previous code expression saving time typing it all out again.
+
+ Lets change the code to multiple its arguments
+
+ Process a collection of values
+
+ (map inc [1 3 5 7 9])
+
+ Rebel Readline shows signatures of functions once typed at the REPL prompt.
+ as a reminder of the arguments to pass to the function.
+
+ Generate all the combinations of a 3 tumbler lock.
+
+ (for [tumbler-1 (range 10)
+       tumbler-2 (range 10)
+       tumbler-3 (range 10)]
+  [tumbler-1 tumbler-2 tumbler-3])
+
+ Code can be typed on multiple lines, keeping it easy to read.
+ Once the code is a correct form, the code is evaluated.
+
+ This prints out a large result that is a little challenging to read.
+
+ Using the clojure pretty print library, the result will be printed in a human friendly form
+
+ (clojure.pprint/pprint
+   (for [tumbler-1 (range 10)
+         tumbler-2 (range 10)
+         tumbler-3 (range 10)]
+     [tumbler-1 tumbler-2 tumbler-3]))
+
+ Rather than show all the combinations, show how many combinations their are
+ Use the up arrow to save typing in all the code again
+ And wrap the code with the count function
+
+ <edit the for code - wrap with count>
+
+ (clojure.pprint/pprint
+   (for [tumbler-1 (range 10)
+         tumbler-2 (range 10)
+         tumbler-3 (range 10)]
+     [tumbler-1 tumbler-2 tumbler-3]))
+
+
+ Add a condition in the code to avoid repeating a number in the combination
+
+ (count
+  (for [tumbler-1 (range 10)
+       tumbler-2 (range 10)
+       tumbler-3 (range 10)
+       :when (and (not= tumbler-1 tumbler-2)
+                 (not= tumbler-2 tumbler-3)
+                 (not= tumbler-3 tumbler-1))]
+   [tumbler-1 tumbler-2 tumbler-3]))
+
+ Replacing count with pretty print to see all the combinations
+
+
+ (clojure.pprint/pprint
+  (for [tumbler-1 (range 10)
+       tumbler-2 (range 10)
+       tumbler-3 (range 10)
+       :when (and (not= tumbler-1 tumbler-2)
+                 (not= tumbler-2 tumbler-3)
+                 (not= tumbler-3 tumbler-1))]
+   [tumbler-1 tumbler-2 tumbler-3]))
+
+
+ See the video on Data browsers for more ways to visualize data with the Clojure REPL.
+
+
+ Ctrl-X Ctrl-D shows a description of a function, from that functions document string.
+
+ (map )
+
+ Not sure what a function is called, Ctrl-X Ctrl-A on a name runs a fuzzy search and shows functions with a similar name
+
+ TAB will allow selection of function names starting with the current name.
+
+ Ctrl-l will clear the REPL screen
+
+ :repl/help show other commands and configure options for rebel readline.
+
+ Thank you.
+
+** DONE Specific video to create a Clojure app project and use with REPL
+   CLOSED: [2020-10-07 Wed 02:11]
+ PUBLISHED:
+
+ Running a REPL on the command line is very quick way to get started with Clojure.
+ However, all the code is lost when the REPL is closed.
+ So Clojure development is usually done within a project
+ and code is saved to files.
+
+ cli-new is a community tool for Clojure CLI tools
+ which provides a quick way to create a Clojure (or ClojureScript) project
+
+ I have the latest Clojure CLI tools installed
+ and am using the :project/new alias,
+ defined in the practicalli clojure deps edn configuration
+ to run the clj-new tool.
+
+ Open a terminal window and create a new project,
+ using the app template and the project name pracicalli/cli-app
+
+ clojure -M:project/new app practicalli/cli-app
+
+ Lets take a look at what this command has created
+
+ cd cli-app
+ less deps.edn
+
+ The deps.edn file is the configuration for the project,
+ to be used with the Clojure CLI tool.
+
+ The deps.edn file defines the directory paths that contain clojure code,
+ in this case source and resource.
+
+ Libraries used with the project are defined as dependencies.
+ There is only one dependency and that is Clojure itself.
+ As Clojure is a dependency, its just a matter of changing the version number
+ to run a newer (or older) version of Clojure
+
+ The deps.edn file contains several aliases
+ - :test sets the path of the unit testing code and includes a library for generative testing
+ - :runner will run the unit tests with the Cognitect Labs tool
+ - :uberjar will create a deployable package of the application
+
+ Lets look at the project structure
+
+ tree
+
+ The app template created a project with a parallel src and test tree
+ This is a common approach used in Clojure.
+
+
+ Lets look at the source code
+
+ less src/practicalli/cli_app.clj
+
+ Each Clojure file has a namespace definition
+ composed of the directory path and file name
+ Namespaces help the development team organize the code logically.
+
+ The namespace definition is followed by a definition of a function called -main
+ The -main function takes any number of arguments
+ and prints out a string saying Hello world
+
+ Run the project by specifying the main namespace,
+ this will call the -main function within that namespace by convention
+
+ clojure -M -m practicalli.cli-app
+
+ To save some typing when running the application,
+ we can add an alias to the deps.edn file to run the project
+
+   :project/run
+   {:main-opts ["-m" "practicalli.cli-app"]}
+
+
+ To develop this project further, we can start a REPL and write some the code.
+
+ Typically you would open the project in your favorite Clojure editor and start a REPL from there.
+
+ Lets just keep it simple and start a repl with rebel readline
+
+ clojure -M:repl/rebel
+
+ Require the project namespace, which evaluates the all the code in that namespace within the REPL.
+ Think of this as loading the project into the REPL process.
+
+ (require '[practicalli.cli-app])
+
+ The -main function can now be called by specifying the fully qualified namespace
+
+ (practicalli.cli-app/-main)
+
+ Rather than type the fully qualified name in each time,
+ switch to that namespace using the in-ns function.
+
+ (in-ns 'practicalli.cli-app)
+
+ Now the function can be called just using its name
+
+ (-main)
+
+ If we want to change the behavior of the function
+ we can type a new function definition directly in the REPL
+
+ (defn -main
+   "Defined in the REPL directly"
+   [& args]
+   (println "Hello new World!"))
+
+
+ However, its more common to edit the code in your favorite editor.
+
+ Lets update the text of the message in the -main function
+ and save the changes
+
+ In the REPL, calling (-main) again shows the message hasnt changed,
+
+ (-main)
+
+ so we need to reload the namespace to use the changes
+
+ (require '[practicalli.cli-app] :reload)
+
+ Calling -main now shows the new message
+
+ (-main)
+
+ This covers the basics of creating a project
+ and using it with a REPL.
+
+ Using a Clojure aware editor connected to a REPL
+ is a more effective way of developing projects.
+ Code changes are evaluated in the editor,
+ which sends the code to the REPL.
+ The code sent can be a single expression,
+ or a number of changes from the namespace.
+ Watch the Editor specific videos to see this in action.
+
+ (show this in conjure ??)
+
+ Thank you.
+
+
+
+** BLOCKED Run repl with rebl.readline
+*** Using rebel features
+   - eldoc style function signatures
+   - doc and source support
+   - requiring namespaces
+   - create a simple project e.g random function
+
+
+
+** Less important
+
+ -  using borkdude tool
+
+** Clojure evaluation
+evaluate expressions quickly
+
+clojure -e ,,,
+
+clojure -e (+ 1 2 3 4)
+
+Put expressions into a make file
+
+clojure -e (+ 4 (* 4 7))
+
+clojure -e (map inc [1 2 3 4 5])
+
+clojure -e (partition
+             2
+             (clojure.string/split
+               "Mary had a little lamb whose fleece was white as snow"
+               #" "))
+
+
+
+** overview of most common options
