@@ -1,5 +1,11 @@
 ![4Clojure banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/4clojure-banner.png)
 
+> #### Hint::4ever-clojure replaces 4Clojure
+> [4Ever-Clojure](https://4clojure.oxal.org/) is a new implementation of 4Clojure.com which has now been decommissioned.
+>
+> TODO: This section we be updated with details of using 4Ever-Clojure soon.
+
+
 # Coding Challenges: 4Clojure
 [4Clojure.com](http://www.4clojure.com/) is an excellent website to help you discover and apply the common functions in the Clojure language.
 

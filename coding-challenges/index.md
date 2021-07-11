@@ -5,12 +5,12 @@ Coding challenges are an excellent way to start learning a new language.  The ch
 
 Challenges are there to explore a language and practice your understanding of how to assemble working code.  It is recommended to try different approaches to solving a challenges and even repeat the same challenges at a later date and see what additional approaches you have learned.
 
-**[4Clojure](http://4clojure.com/)** is a highly recommended starting point for learning Clojure and does not require any installation or setup.
+**[4Ever-Clojure](https://4clojure.oxal.org/)** is a highly recommended starting point for learning Clojure and does not require any installation or setup.  4Ever-Clojure is a new implementation of 4Clojure.com.
 
 
 | Challenge website                                     | Description                                                                                                       | Requirements                                                       |
 |-------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------|
-| [4Clojure.com](4clojure/)                             | Highly recommended for learning the core functions of the Clojure language                                        | Web Browser                                                        |
+| [4Ever-Clojure.com](4clojure/)                        | Highly recommended for learning the core functions of the Clojure language                                        | Web Browser                                                        |
 | [Exercism.io](exercism/)                              | Coding exercises with mentor support, using Leiningen and `clojure.test`                                          | Leiningen, Exercism CLI, [Clojure aware editor](/clojure-editors/) |
 | [CodeWars](https://www.codewars.com/)                 | General coding challenges with Clojure specific versions, using `clojure.test`. Tends toward math-base challenges | Web Browser                                                        |
 | [ClojureScript Koans](http://clojurescriptkoans.com/) | Interactive exercises in a web browser                                                                            | Web Browser                                                        |
