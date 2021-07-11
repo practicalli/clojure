@@ -36,7 +36,7 @@ practicalli/clojure-deps-edn defines an environment alias to include the test pa
 }
 ```
 
-## Alias to run a REPL with nREPL support
+## Alias to run a Terminal UI REPL with nREPL support
 
 Run a REPL using nREPL server for access by cider-connect-clj that also includes the `test` directory in the class path
 
@@ -58,8 +58,7 @@ clojure -M:middleware/cider-clj
 ## Alias to run a Rebel REPL with nREPL support
 rebel readline with nrepl for editor connection to REPL
 
-CIDER: run `cider-connect-clj` and expressions evaluated in rebel
-are also available from CIDER/Emacs/Spacemacs
+CIDER: run `cider-connect-clj` and expressions evaluated in rebel are also available from CIDER/Emacs/Spacemacs
 
 ```clojure
   :repl/rebel-nrepl
