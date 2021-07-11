@@ -7,24 +7,33 @@
 
 
 # Coding Challenges: 4Clojure
-[4Clojure.com](http://www.4clojure.com/) is an excellent website to help you discover and apply the common functions in the Clojure language.
+[4Ever-Clojure](https://4clojure.oxal.org/) is an excellent website to help you discover and apply the common functions in the Clojure language.
 
 The website is self-contained so you do not need to install anything, simply paste in the missing code from the tests.  [One piece of code should solve all the tests](#using-let-and-anonymous-functions) for that challenge.
 
-Press the **Run** button to see if the code satisfies the tests, turning green if successful and red if they fail.
+The [Problem List](https://4clojure.oxal.com/) shows the challenges categorized by experience level required, (Elementary, Easy, Medium, Hard) to solve them.  Start with the easiest problem or work your way through the challenges in any order you wish.
 
-The [Problem List](http://www.4clojure.com/problems) shows the challenges categorized by experience level required, (Elementary, Easy, Medium, Hard) to solve them.  Start with the easiest problem or work your way through the challenges in any order you wish.
+Select the name of a challenge and a new page describes the challenge and presents one or more tests that must pass.
+
+![4Ever-Clojure Challenge Example](/images/4ever-clojure-challenge-example.png)
+
+Enter the code that should be inserted where the `__` double underscore characters are.
+
+Press the **Run** button to see if the code satisfies the tests
+
+A dialog box is displayed showing how many tests have passed and failed
+
 
 > There are over 550 functions in the `clojure.core` namespace alone, with additional functions in many other namespaces that make up the Clojure Standard Library.  It is not required to learn all these functions to be productive in Clojure.
 
-## Before you start
-Create a free account to be able to track your progress through the challenges.
+<!-- ## Before you start -->
+<!-- Create a free account to be able to track your progress through the challenges. -->
 
-Login to your account and visit the [Top 100 users](http://www.4clojure.com/users).  Select the Following tick-box next to a number of the top users.  Once a challenge is solved you will be able to see the solutions of those users you follow.
+<!-- Login to your account and visit the [Top 100 users](http://www.4clojure.com/users).  Select the Following tick-box next to a number of the top users.  Once a challenge is solved you will be able to see the solutions of those users you follow. -->
 
-Alternatively, visit a specific user profile, e.g. [practicalli](www.4clojure.com/user/practicalli), and click follow so you can see their solutions.
+<!-- Alternatively, visit a specific user profile, e.g. [practicalli](www.4clojure.com/user/practicalli), and click follow so you can see their solutions. -->
 
-![Clojure code challenges - 4clojure.com top users](/images/clojure-code-challenges-4clojure-top-users.png)
+<!-- ![Clojure code challenges - 4clojure.com top users](/images/clojure-code-challenges-4clojure-top-users.png) -->
 
 
 ## Get help
@@ -76,9 +85,8 @@ It is common to combine `fn` and `let` to solve the challenges as they grow in c
 Try the code in a [Clojure REPL](/clojure-tools/rebel-repl/) or [create a Clojure project](/clojure-tools/create-projects.md) using the latest version of Clojure (1.10.1).
 
 
-
 ## References
-* [4Clojure.com](http://www.4clojure.com/)
+* [4Ever-Clojure](https://4clojure.oxal.com/)
 * [Practicalli profile on 4Clojure.com](http://www.4clojure.com/user/practicalli) - follow to see their solutions
 * [Clojure Cheatsheet](https://clojure.org/api/cheatsheet) - Clojure.org
 * [Clojure API](https://clojure.github.io/clojure/) - Clojure.org
