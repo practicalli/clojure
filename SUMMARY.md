@@ -32,7 +32,9 @@
     * [Using libraries in REPL](clojure-tools/repl/using-project-or-library.md)
     * [Help at the REPL](clojure-tools/repl/help-at-the-repl.md)
     * [Customize rebel](clojure-tools/repl/customize-rebel.md)
+    * [Troubleshooting](clojure-tools/repl/troubleshooting.md)
     <!-- * [REPL uncovered](clojure-tools/repl/repl-uncovered.md) --> <!-- TODO rewrite -->
+
 * [Clojure projects](clojure-tools/projects/create.md)
     <!-- Introduce Clojure examples that work well in the command line REPL -->
     <!-- Run a repl in an example project, require, in-ns, run -->
