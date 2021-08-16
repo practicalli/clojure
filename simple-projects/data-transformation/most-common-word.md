@@ -11,7 +11,7 @@ Copyright free books for use are available via Project Guttenburg, e.g. [“The 
 A suggested approach to find the most common word:
 
 * Pull the content of the book into a collection
-* Use a regular expression to create a collection of individual words - eg. `#”[a-zA-Z0-9’]+”`
+* Use a regular expression to create a collection of individual words - eg. `#”[a-zA-Z0-9|’]+”`
 * Remove the common English words used in the book
 * Convert all the words to lower case so they match with [common words source](common-english-words.csv)
 * Count the occurrences of the remaining words (eg. each word is associated with the number of times it appears in the book)
@@ -30,14 +30,25 @@ clojure -M:new app practicalli/common-words
 `clojure.core/slurp` will read in a local file or a remote resource (file, web page, etc) and return a single string of the contents.
 
 ```clojure
-(slurp "http://www.gutenberg.org/cache/epub/844/pg844.txt")
+(slurp "https://www.gutenberg.org/files/844/844-0.txt")
 ```
 
 Wrap the `slurp` expression in a `def` to bind a name to the book.
 
 ```clojure
-(def being-earnest (slurp "http://www.gutenberg.org/cache/epub/844/pg844.txt"))
+(def being-earnest (slurp "https://www.gutenberg.org/files/844/844-0.txt"))
 ```
+
+Project Gutenberg now compresses the books with GZip, so a stream can be created to read the file and decompress it.  Then slurp is used to read in the uncompressed text of the book into a string.
+
+```clojure
+(def being-earnest
+  (with-open [uncompress-text (java.util.zip.GZIPInputStream.
+                  (clojure.java.io/input-stream
+                   "https://www.gutenberg.org/cache/epub/844/pg844.txt"))]
+    (slurp uncompress-text)))
+ ```
+
 
 ## Individual words from the book
 The book contents should be broken down into individual words.
@@ -58,16 +69,16 @@ The result is a sequence of the individual words, however, the hyphenated words 
 
 Extending the regex pattern the results can be refined.
 ```clojure
-(re-seq #"[\w |'-]+" "Morning-room in Algernon's flat in Half-Moon Street.")
+(re-seq #"[\w|'-]+" "Morning-room in Algernon's flat in Half-Moon Street.")
 
 ;; => ("Morning-room in Algernon's flat in Half-Moon Street")
 ```
 
 ```clojure
-(re-seq #"[\w |'-]+" being-earnest)
+(re-seq #"[\w|'-]+" being-earnest)
 ```
 
-> The #"[\w |'-]+" is the same pattern as the more explicit pattern #"[a-zA-Z0-9|'-]+"
+> The #"[\w|'-]+" is the same pattern as the more explicit pattern #"[a-zA-Z0-9|'-]+"
 
 
 ## Removing common English words
@@ -109,7 +120,7 @@ This can also be written using the threading macro, to show the sequential natur
 The `common-english-words` set can now be used with the `being-earnest` book.
 
 ```clojure
-(remove common-english-words (re-seq #"[\w |'-]+" being-earnest))
+(remove common-english-words (re-seq #"[\w|'-]+" being-earnest))
 ```
 
 ## Counting Occurrences
@@ -117,19 +128,19 @@ The `common-english-words` set can now be used with the `being-earnest` book.
 
 
 ```clojure
-(filter (remove common-english-words (re-seq #"[\w |'-]+" being-earnest)))
+(filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest)))
 ```
 
 The resulting hash-map is not in any order.  `clojure.core/sort-by` will return the same results but sorted by a given function.  To sort a hash-map the `key` and `val` functions are function that will sort by key and value respectively.  As it is the value that has the number of occurances, then `val` is the function to use.
 
 ```clojure
-(sort-by val (filter (remove common-english-words (re-seq #"[\w |'-]+" being-earnest))))
+(sort-by val (filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest))))
 ```
 
-The result is sorted from smallest to largest value.  The result could be reversed using `clojure.core/reverse` or by supplying an extra function to the `sort-by` expression.  Using greater-than, `>`, or `dec` the result will be returned in descending order.
+The result is sorted from smallest to largest value.  The result could be reversed using `clojure.core/reverse` or by supplying an extra function to the `sort-by` expression.  Using greater-than, `>` the result will be returned in descending order.
 
 ```clojure
-(sort-by val dec (filter (remove common-english-words (re-seq #"[\w |'-]+" being-earnest))))
+(sort-by val dec (filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest))))
 ```
 
 ## Assembling the most-common-word function
@@ -138,11 +149,11 @@ Define a function called `most-comon-word` that assembles all the previous steps
 ```clojure
 (defn most-common-word
   [book common-words]
-  (sort-by val dec
+  (sort-by val >
     (frequencies
       (remove common-words
         (map #(clojure.string/lower-case %)
-             (re-seq #"[\w |'-]+" book))))))
+             (re-seq #"[\w|'-]+" book))))))
 ```
 
 This may seem a little hard to parse, so the function definition can be re-written using a threading macro.
@@ -151,11 +162,11 @@ This may seem a little hard to parse, so the function definition can be re-writt
 (defn most-common-word
   [book common-words]
   (->> book
-       (re-seq #"[\w |'-]+" ,,,)
+       (re-seq #"[\w|'-]+" ,,,)
        (map #(clojure.string/lower-case %))
        (remove common-words)
        frequencies
-       (sort-by val dec)))
+       (sort-by val >)))
 ```
 
 Call this function with the `being-earnest` book and the `common-english-words`
@@ -177,6 +188,13 @@ Add a `-main` function that takes a reference for the source of the book and the
 ```clojure
 (ns practicalli.common-word)
 
+(defn decode-book
+  [book-gzip]
+  (with-open
+    [uncompress-text (java.util.zip.GZIPInputStream.
+                      (clojure.java.io/input-stream book-gzip))]
+    (slurp uncompress-text)))
+
 (defn common-words
   [csv]
   (-> (slurp csv)
@@ -184,21 +202,21 @@ Add a `-main` function that takes a reference for the source of the book and the
       set))
 
 (defn most-common-word
-  [book common-words]
-  (->> (slurp book)
-       (re-seq #"[\w |'-]+" ,,,)
+  [book-gzip common-words]
+  (->> (decode book-gzip)
+       (re-seq #"[\w|'-]+")
        (map #(clojure.string/lower-case %))
        (remove common-words)
        frequencies
-       (sort-by val dec)))
+       (sort-by val >)))
 
 (defn -main
-  [book-text common-word-csv]
-  (most-common-word book-text (common-words common-word-csv)))
+  [book-gzip common-word-csv]
+  (most-common-word book-gzip (common-words common-word-csv)))
 ```
 
 Now call the code on the command line.
 
 ```shell
-clojure -m practicalli.common-word "http://www.gutenberg.org/cache/epub/844/pg844.txt" "common-english-words.csv"
+clojure -m practicalli.common-word "https://www.gutenberg.org/cache/epub/844/pg844.txt" "common-english-words.csv"
 ```
