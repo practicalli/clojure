@@ -137,7 +137,7 @@ TODO:
 TODO: find equivalents for narrowing, iedit and helm search results editing for vim
 
 
-## Code analysis and idom checking
+## Code analysis and idiom checking
 clj-kondo automatically checks Clojure code at it is typed, providing instant feedback on Clojure syntax and idioms
 
 Linting works continually once the dense/ale plugin and clj-kondo is installed via the 'w0rp/ale' plugin
