@@ -24,7 +24,7 @@ Select an exercise and follow the **Get started** guide to download and install 
 
 Use the Exercism tool to download a Leiningen project for the exercise
 
-```shell
+```bash
 exercism download --exercise=exercise-name --track=clojure
 ```
 
@@ -32,7 +32,7 @@ Open the project in your [preferred Clojure editor](/clojure-editors/) and write
 
 Once the tests pass and you are happy with the solution, submit it to the Exercism website
 
-```shell
+```bash
 exercism submit /path/to/src-file
 ```
 

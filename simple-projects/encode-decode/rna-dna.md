@@ -24,7 +24,7 @@ The project is part of the [Exercism.io Clojure track](/coding-challenges/exerci
 
 Alternatively, use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
-```shell
+```bash
 clojure -M:project/new app practicalli/rna-transcription
 ```
 

@@ -17,7 +17,7 @@ The board game defines the alphabet as a 2 by 3 grid (although in the Discworld 
 ## Create a project
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
-```shell
+```bash
 clojure -M:new app practicalli/clacks-messenger
 ```
 

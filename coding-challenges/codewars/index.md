@@ -18,7 +18,7 @@ Many of the challenges have only a very basic explanation, so always review the 
 
 The source and test code can be copied into a new project, as has been done with the [practicalli/codewars-guides solutions](https://github.com/practicalli/codewars-guides)
 
-```shell
+```bash
 clojure -M:new lib practicalli/readability-is-king
 ```
 

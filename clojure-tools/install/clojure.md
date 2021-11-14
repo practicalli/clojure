@@ -27,7 +27,7 @@ The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper 
 
 Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure/homebrew-tools), as defined in the [Clojure.org Getting started guide](https://clojure.org/guides/getting_started#_installation_on_linux)
 
-```shell
+```bash
 brew install clojure/tools/clojure
 ```
 
@@ -42,12 +42,12 @@ Alternatively install [scoop.sh](https://scoop.sh/), a command line installer fo
 
 Open "Windows PowerShell" and enter the following commands to configure the shell:
 
-```shell
+```bash
 iwr -useb get.scoop.sh | iex
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 ```
 Then in the same PowerShell window, install the Clojure related tools using the following commands:
-```shell
+```bash
 scoop bucket add extras
 scoop bucket add java
 scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure

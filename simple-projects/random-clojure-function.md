@@ -21,7 +21,7 @@ https://youtu.be/sXZKrD4cAFk
 ## Create a project
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
-```shell
+```bash
 clojure -M:new app practicalli/random-clojure-function
 ```
 This project has a `deps.edn` file that includes the aliases
@@ -133,7 +133,7 @@ Edit the `src/practicalli/random-clojure-function.clj` file.  Change the `-main`
 
 Run the tests with the Cognitect Labs test runner from the aliases in the project
 
-```shell
+```bash
 clojure -M:test:runner
 ```
 
@@ -141,7 +141,7 @@ The tests should pass.
 
 ## Running the application
 Use the clojure command with the main namepace of the application.  Clojure will look for the -main function and evaluate it.
-```shell
+```bash
 clojure -M -m practicalli.random-clojure-function
 ```
 This should return a random function name and its description.  However, nothing is returned.  Time to refactor the code.
@@ -187,7 +187,7 @@ Run the tests again.
 
 If the tests pass, then run the application again
 
-```shell
+```bash
  clojure -M -m practicalli.random-clojure-function
 ```
 A random function and its description are displayed.
@@ -338,7 +338,7 @@ Add functionality to list all functions from all namespaces or a specific namesp
 <!-- > -->
 <!-- > Standard practice is to required the main namespace for the project, then switch the REPL to that namespace.  The functions for the project are now available. -->
 <!-- > To require and switch to a namespace on startup, use the `clojure` or `clj` commands with the --eval option to run the specific commands.  The --repl option will ensure the repl starts. -->
-<!-- ```shell -->
+<!-- ```bash -->
 <!-- clj --eval "(require 'practicalli.random-clojure-core-function)" --eval "(in-ns 'practicalli.random-clojure-core-function)" --repl -->
 <!-- ``` -->
 <!-- > The --eval approach will be blocked if used with aliases that set the main namespace, such as `:rebel`. -->

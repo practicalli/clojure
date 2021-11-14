@@ -33,7 +33,7 @@ Running a Clojure REPL with the `-A:env/dev` alias will make the `dev/user.clj` 
 
 In this example the `dev/` path is added to the project and then the REPL is run using rebel readline.
 
-```shell
+```bash
 clojure -M:env/dev:repl/rebel
 ```
 
@@ -88,7 +88,7 @@ Start a REPL using the `:env/dev` alias.
 
 To start a Rebel REPL with `:env/dev` use the following command in a terminal
 
-```shell
+```bash
 clojure -A:env/dev:repl/rebel
 ```
 

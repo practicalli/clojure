@@ -8,13 +8,13 @@ Create a project for our game.
 {% content "deps" %}
 Create a new project using `clj-new` alias, found in [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
-```shell
+```bash
 clojure -M:new practicalli/tictactoe-cli
 ```
 
 Open the project in [a Clojure aware editor](/clojure-editors/) or run a rebel REPL
 
-```shell
+```bash
 clojure -M:repl/rebel
 ```
 
@@ -36,7 +36,7 @@ lein new tictactoe-cli
 
 > #### Hint::Alternatively clone the github repository
 > You can also clone the tictactoe-cli game from GitHub
-```shell
+```bash
 git clone https://github.com/practicalli/tictactoe-cli.git
 ```
 

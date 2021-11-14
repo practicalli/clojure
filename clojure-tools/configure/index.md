@@ -65,7 +65,7 @@ The project `deps.edn` is merged into the `~/.clojure/deps.edn`, replacing any k
 
 You can use the `-Sverbose` option to see all of the actual directory locations.
 
-```shell
+```bash
 clojure -Sverbose
 ```
 

@@ -23,7 +23,7 @@ If using your own `~/.clojure/deps.edn` configuration, add an alias called `:rep
 ## Running the rebel REPL
 Start a Clojure REPL with Rebel Readline
 
-```shell
+```bash
 clojure -M:repl/rebel
 ```
 

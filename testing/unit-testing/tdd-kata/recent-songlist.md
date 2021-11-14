@@ -19,7 +19,7 @@ Optional extras:
 ## Add two files to the playground project
 Create a new project using clj-new
 
-```shell
+```bash
 clojure -M:new app practicalli/recent-songlist
 ```
 
@@ -45,7 +45,7 @@ At any time we can call the `run-tests` function in the REPL to get a report bac
 
 The Cognitect Labs test runner is included in the project by default and can be run from the command line in the root directory of the project.
 
-```shell
+```bash
 clojure -M:test:runner
 ```
 

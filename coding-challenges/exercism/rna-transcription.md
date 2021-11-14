@@ -23,7 +23,7 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 ## Create the project
 Download the RNA transcription exercise using the exercism CLI tool
 
-```shell
+```bash
 exercism download --exercise=rna-transcription --track=clojure
 ```
 

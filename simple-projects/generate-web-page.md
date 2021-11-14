@@ -12,7 +12,7 @@ Add a CSS library (bulma.io, bootstrap) to improve generation
 
 {% content "project" %}
 
-```shell
+```bash
 clojure -M:new app practicalli/generate-webpage
 ```
 

@@ -60,7 +60,7 @@ Running kaocha will only run the `simple-test`, skipping the other two tests.
 
 Specifying `--skip-meta` on the command line gives the same results
 
-```shell
+```bash
 bin/kaocha --skip-meta :metadata-name
 ```
 

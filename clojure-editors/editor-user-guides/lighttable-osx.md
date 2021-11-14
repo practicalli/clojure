@@ -35,7 +35,7 @@ If not, visit [git-scm.com](http://git-scm.com/). Click "Downloads for Mac". The
 If you've used Git before then you should already have user.name and user.email configured.
 Otherwise, type this in the terminal:
 
-```shell
+```bash
 git config --global user.name "Your Actual Name"
 git config --global user.email "Your Actual Email"
 ```
@@ -75,19 +75,19 @@ Leiningen is a tool used on the command line to manage Clojure projects.
 
 To install `lein`, execute the following commands in your terminal; you will be prompted to enter your password for at least the first command starting with `sudo` (The `%` character is a typical commandline prompt, don't type it):
 
-```shell
+```bash
 % curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > lein
 % sudo mkdir -p /usr/local/bin/
 % sudo mv lein /usr/local/bin/lein
 % sudo chmod a+x /usr/local/bin/lein
 ```
 Check that you can now see the command:
-```shell
+```bash
 % which lein
 /usr/local/bin/lein
 ```
 If you don't see `/usr/local/bin/lein` as above, do this next:
-```shell
+```bash
 % export PATH=$PATH:/usr/local/bin
 ```
 Now run `which lein` and you should see the `lein` command.
@@ -125,7 +125,7 @@ You have set up Java, Leiningen, Light Table, and Git on your computer--all the 
 
 Go to your terminal and run the following command:
 
-```shell
+```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
@@ -139,13 +139,13 @@ Your terminal should look similar to this picture:
 
 Then run the command:
 
-```shell
+```bash
 cd welcometoclojurebridge
 ```
 
 This will take you to the directory with the source code. After that completes, run:
 
-```shell
+```bash
 lein repl
 ```
 

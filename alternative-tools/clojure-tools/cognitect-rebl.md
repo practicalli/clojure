@@ -26,12 +26,12 @@ Alternatively, use the [practicalli/clojure-deps-edn configuration]({{book.P9ICl
 ## Running REBL with a project
 Run the project using the Clojure CLI tools
 
-```shell
+```bash
 clojure -M:inspect/rebl
 ```
 
 If [rlwrap](/clojure-tools/install/install-clojure.html#optional-rlwrap-readline) is installed, then use:
-```shell
+```bash
 clj -M:inspect/rebl
 ```
 
@@ -79,7 +79,7 @@ Supporting aliases for nrebl.middleware
 CIDER and Calva use the `nREPL` protocol to connect to the REBL REPL and have all the evaluated code in those editors automatically display the results in the REBL UI.
 
 In a terminal, run REBL listening to nREPL using the command
-```shell
+```bash
 clojure -M:lib/cider-nrepl:inspect/rebl:middleware/nrebl
 ```
 

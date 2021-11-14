@@ -4,7 +4,7 @@
 ## A minimal starting point
 Install the [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
-```shell
+```bash
 clojure -M:test/kaocha
 ```
 
@@ -12,7 +12,7 @@ clojure -M:test/kaocha
 ## Add kaocha binary to the project project
 Kaocha recommends adding a `bin/kaocha` script to the project, providing a standard location from which to run kaocha and to include project command line options.  Command line options will over-ride the same options in the `tests.edn` file.
 
-```shell
+```bash
 #!/usr/bin/env bash
 clojure -M:test/runner "$@"
 ```
@@ -53,7 +53,7 @@ Use the default configuration as a basis for customizing any specific project.
 ## Running tests
 With a `deps.edn` project with tests under the standard `test` directory and using `-test` postfix on test names, then all that is required is the `kaocha` command
 
-```shell
+```bash
 kaocha
 ```
 
@@ -66,7 +66,7 @@ If one or more tests fail, then a detailed description of the failure is printed
 
 The report progress plugin gives visual feedback as the tests are running.
 
-```shell
+```bash
 kaocha --reporter kaocha.report.progress/report
 ```
 
@@ -74,7 +74,7 @@ kaocha --reporter kaocha.report.progress/report
 
 Stop testing on the first failure with the `--fail-fast` flag.  Especially useful when running larger numbers of tests or slower running tests.
 
-```shell
+```bash
 kaocha --fail-fast
 ```
 
@@ -97,7 +97,7 @@ Much of the functionality of Kaocha is provide by plugins
 Show the 3 slowest tests for each category of test, after the test results
 
 As a command line option:
-```shell
+```bash
 bin/kaocha --plugin kaocha.plugin/profiling
 ```
 or added to the `test.edn` configuration

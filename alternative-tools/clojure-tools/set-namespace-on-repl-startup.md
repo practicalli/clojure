@@ -9,14 +9,14 @@ Switching to a specific namespace in the REPL allows calling functions by name, 
 ### Set namespace via the command line
 To require and switch to a namespace on startup, use the `clojure` or `clj` commands with the --eval option to run the specific commands.  The --repl option will ensure the repl starts.
 
-```shell
+```bash
 clj --eval "(require 'practicalli.random-clojure-core-function)" --eval "(in-ns 'practicalli.random-clojure-core-function)" --repl
 ```
 
 
 `-r` or `(clojure.main/repl)` are the same as using the `--repl` option
 
-```shell
+```bash
 clj -e "(ns foo.bar) (alter-var-root #'*ns* (constantly 'foo.bar))" -r
 clj -e "(ns foo.bar) (alter-var-root #'*ns* (constantly 'foo.bar)) (clojure.main/repl)"
 ```

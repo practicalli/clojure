@@ -38,7 +38,7 @@ Create a new project using a wide range of templates from the community
 
 ### Running projects
 Run project with or without an alias:
-```shell
+```bash
 clojure -M:alias -m domain.app-name
 clojure -M -m domain.app-name
 ```
@@ -174,7 +174,7 @@ Using Clojure exec `-X` flag, the default repl function can be over-ridden on th
 
 Add a custom theme and font via the `-J` command line option or create an alias using `:insepct/reveal-light` as an example.
 
-```shell
+```bash
 clojure -M:inspect/reveal -J-Dvlaaad.reveal.prefs='{:theme :light :font-family "Ubuntu Mono" :font-size 32}'
 ```
 
@@ -205,7 +205,7 @@ Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 ### Cognitect REBL with CIDER
 Run the REBL REPL with nREPL server so editors such as CIDER and Calva can connect.
 
-```shell
+```bash
 clojure -M:lib/cider-nrepl:inspect/rebl:middleware/nrebl
 ```
 
