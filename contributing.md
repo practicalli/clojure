@@ -1,20 +1,26 @@
 # Contributing to Practicalli Clojure
-[practicalli/clojure-practicalli-content](https://github.com/practicalli/clojure-practicalli-content/) contains the markdown content used to generate the book.  Please raise all issues and pull requests on this website.
+[practicalli/clojure](https://github.com/practicalli/clojure/) is written in markdown and uses GitBook to generate the website via a GitHub action.
 
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge)
+By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 
-[![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues)
+All content and interaction with any persons or systems must be done so with respect and within the Practicalli Code of Conduct.
 
-[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls)
 
-## Pull requests
+## Book status
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge) [![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure/issues) [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure/pulls) [![GitHub Super-Linter](https://github.com/practicalli/clojure-content/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter) [![GitBook publish](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml)
+
+
+### Submit and issue or idea
+
+If something doesnt seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/clojure/issues) explaining in as much detail as you can.
+
+### Considering a Pull request?
 Before investing any time in a pull request, please raise an issue explaining the situation.  This can save you and the maintainer time and avoid rejected pull requests.
 
 Please keep pull requests small and focused, as they are much quicker to review and easier to accept.  Ideally PR's should be for a specific page or at most a section.
 
 A PR with a list of changes across different sections will not be merged, it will be reviewed eventually though.
 
-By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure-practicalli-content/graphs/contributors).
 
 <!-- TODO:  Add GitHub issue templates, similar to those on practicalli/blog-content -->
 
