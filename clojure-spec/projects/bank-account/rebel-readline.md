@@ -4,7 +4,7 @@
 
 Start the rebel REPL
 
-```shell
+```bash
 clojure -M:repl/rebel
 ```
 

@@ -27,7 +27,7 @@ https://youtu.be/opM7fU7IAV8
 ## Creating a project for the challenge
 I created [practcialli/advent-of-clojure-code-2019](https://github.com/practicalli/advent-of-clojure-code-2019), a `deps.edn` project created with [clj-new](https://github.com/seancorfield/clj-new).  I will be sharing any challenges I complete.
 
-```shell
+```bash
 clojure -M:new lib practicalli/advent-of-clojure-code-2019
 ```
 

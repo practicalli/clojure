@@ -11,7 +11,7 @@
 ## Create a new Clojure project
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
-```shell
+```bash
 clojure -M:new app practicalli/salary-calculator
 ```
 

@@ -20,7 +20,7 @@ Portal is a new project that allows exploration of Clojure data, using a browser
 ## Run a REPL with Portal dependencies
 Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools
 
-```shell
+```bash
 clojure -M:inspect/portal-cli
 ```
 

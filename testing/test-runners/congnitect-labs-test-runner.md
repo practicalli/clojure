@@ -22,7 +22,7 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
 ## Running the test runner
 Then, invoke Clojure via the command line, invoking the test alias:
 
-```shell
+```bash
 clojure -M:test-runner-cognitect
 ```
 
@@ -50,7 +50,7 @@ TODO: screenshot of summary
 
 Options can be used multiple times in one command, for a logical OR effect. For example, the following command runs all tests in the `practicalli.data.survey` and `practicalli.services.survey-report` namespaces that are found in the `src` and `test` directories
 
-```shell
+```bash
 clojure -M:test-runner-cognitect -d test -d src -n practicalli.data.survey -n practicalli.services.survey-report
 ```
 
@@ -67,14 +67,14 @@ Use Clojure metadata when defining test functions using `deftest`.
 
 Use the `i` inclusion flag with the test runner to specify specific categories of tests
 
-```shell
+```bash
 clojure -M:test-runner-cognitect -i :integration
 
 ```
 
 Categories can be used together by using multiple flags. Assuming categories of develop, uat, integration and pre-prod,  use two `-i` inclusion flags to run only integration and pre-production tests:
 
-```shell
+```bash
 clojure -M:test-runner-cognitect -i :integration -i :pre-prod
 ```
 
@@ -82,7 +82,7 @@ clojure -M:test-runner-cognitect -i :integration -i :pre-prod
 
 
 Use the `e` exclusion flag to run all tests except those in specific categories
-```shell
+```bash
 clojure -M:test-runner-cognitect -e :integration
 ```
 

@@ -17,7 +17,7 @@ It is important to also read through the supplied unit tests to elaborate on the
 ## Create the project
 Download the Bob transcription exercise using the exercism CLI tool
 
-```shell
+```bash
 exercism download --exercise=bob --track=clojure
 ```
 

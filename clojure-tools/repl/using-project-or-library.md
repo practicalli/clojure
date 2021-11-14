@@ -12,7 +12,7 @@ Run the REPL in the root of the project with a `deps.edn` file
 A library needs to be included as a dependency in order to use it in the REPL.
 
 Using an alias
-```shell
+```bash
 clojure -A:database/next.jdbc:database/h2
 ```
 
@@ -30,7 +30,7 @@ Open a terminal and change to the root of the Clojure project directory, where t
 
 Start the REPL (in this example using rebel readline)
 
-```shell
+```bash
 clojure -M:repl/rebel
 ```
 

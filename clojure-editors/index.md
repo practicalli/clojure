@@ -47,7 +47,7 @@ Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement 
 
 #### Quick try tutorial
 Try the Conjure interactive `:ConjureSchool` tutorial without the need to install, only a recent version of neovim
-```shell
+```bash
 curl -fL conjure.fun/school | sh
 ```
 ![Clojure editors - neovim and conjure tutorial](/images/clojure-editors-neovim-conjure-tutorial.png)

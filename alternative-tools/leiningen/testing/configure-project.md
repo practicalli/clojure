@@ -3,13 +3,13 @@ Leiningen automatically includes the `test` directory when running, so no additi
 
 Run all the tests saved to file:
 
-```shell
+```bash
 lein test
 ```
 
 Run just the unit tests in a specific namepsace.
 
-```shell
+```bash
 lein test :only domain.namespace-test
 ```
 

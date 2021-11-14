@@ -14,20 +14,20 @@ https://youtu.be/7muHVkxzZcE
 ## Create a project with `clj-new` and the app template
 Open a terminal window and change to a suitable folder
 
-```shell
+```bash
 cd projects/clojure
 ```
 
 Create a new project using `clj-new` and the `app` template.  If you prefer, use your company name or GitHub/GitLab/Bitbucket account name instead of `practicalli`  and change `playground` to the name of the application.
 
-```shell
+```bash
 clojure -M:project/new app practicalli/playground
 ```
 
 > #### Hint::New Clojure Exec approach
 > clj-new also supports Clojure exec and the -X flag, using keywords to specify the options for creating the project.  This produces exactly the same project as the command above.
 >
-```shell
+```bash
 clojure -X:project/new :template app :name practicalli/playground
 ```
 
@@ -35,7 +35,7 @@ clojure -X:project/new :template app :name practicalli/playground
 ## Running a REPL for the project
 Change into the directory and test the project runs by starting a REPL with [rebel readline](/repl-driven-development/rebel-readline/)
 
-```shell
+```bash
 cd playground && clojure -M:repl/rebel
 ```
 
@@ -56,7 +56,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 ## Running the project
 Run project with or without an alias:
 
-```shell
+```bash
 clojure -M:alias -m domain.app-name
 clojure -M -m domain.app-name
 ```

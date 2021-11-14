@@ -190,7 +190,7 @@ Here is an example of such a case:
 
 To see how a given profile affects your project map, use the [lein-pprint](https://clojars.org/lein-pprint) plugin:
 
-```shell
+```bash
 $ lein with-profile 1.4 pprint
 {:compile-path "/home/phil/src/leiningen/lein-pprint/classes",
  :group "lein-pprint",

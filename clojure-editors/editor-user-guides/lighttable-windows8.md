@@ -120,7 +120,7 @@ You have set up Java, Leiningen, Light Table, and Git on your computer--all the 
 Go to your command prompt and run the following command:
 
 
-```shell
+```bash
 git clone https://github.com/ClojureBridge/welcometoclojurebridge
 ```
 
@@ -131,13 +131,13 @@ Your command prompt should look similar to this picture:
 
 Then run the command:
 
-```shell
+```bash
 cd welcometoclojurebridge
 ```
 
 This will take you to the folder with the source code. After that completes, run:
 
-```shell
+```bash
 lein repl
 ```
 

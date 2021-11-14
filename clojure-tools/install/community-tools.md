@@ -20,7 +20,7 @@ Practicalli recommends creating a fork of the [practicalli/clojure-deps-edn]({{ 
 
 Clone the repository to the configuration directory, e.g `~/.clojure/`.  If you have run the `clojure` or `clj` commands, then a default `deps.edn` file was created and should be moved or deleted first.
 
-```shell
+```bash
 git clone git@github.com:your-fork/clojure-deps-edn.git ~/.clojure/
 ```
 

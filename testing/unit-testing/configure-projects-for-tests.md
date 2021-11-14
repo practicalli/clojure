@@ -51,7 +51,7 @@ An alias to run a REPL with nREPL support
 
 Start a REPL process with nREPL server and Cider support libraries for Cider and Calva
 
-```shell
+```bash
 clojure -M:middleware/cider-clj
 ```
 
@@ -73,7 +73,7 @@ CIDER: run `cider-connect-clj` and expressions evaluated in rebel are also avail
 
 Start a REPL process with Rebel terminal UI, with nREPL server and Cider support libraries for Cider and Calva.
 
-```shell
+```bash
 clojure -M:repl/rebel-nrepl
 ```
 
@@ -88,7 +88,7 @@ clojure -M:test/cognitect
 
 ## kaocha unit test and clojure spec runner
 `:test-runner/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
-```shell
+```bash
 clojure -M:test/kaocha
 ```
 
@@ -102,13 +102,13 @@ Cider test runner is a convenient way to run Clojure unit tests using the REPL. 
 
 Use `cider-connect` to connect to the Clojure REPL process started in a terminal window with the following command:
 
-```shell
+```bash
 clojure -M:env/test:middleware/cider-clj
 ```
 
 Use the `:repl/rebel-nrepl` alias to also run a Rebel UI for the REPL in the terminal.
 
-```shell
+```bash
 clojure -M:env/test:repl/rebel-nrepl
 ```
 

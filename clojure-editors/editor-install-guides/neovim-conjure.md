@@ -6,26 +6,26 @@
 ### Neovim (plugin) requirements
 Install `pip3` package manager for python3 (the default in Ubuntu 20.04)
 
-```shell
+```bash
 sudo apt install python-pip3
 ```
 
 Add msgpack package via pip3, [required for the deoplete plugin](https://github.com/Shougo/deoplete.nvim/issues/1073) for neovim)
 
-```shell
+```bash
 pip3 install --upgrade msgpack
 ```
 
 ### Install neovim package
 Use the apt command to install the neovim package
 
-```shell
+```bash
 sudo apt install neovim
 ```
 
 Set nvim as the default vim command
 
-```shell
+```bash
 sudo update-alternatives --config vim
 ```
 
@@ -62,11 +62,11 @@ This created the following tree structure under `~/.local/share/nvim`
 ## Create a neovim init file with essential configuration
 Create a directory for the neovim init file
 
-```shell
+```bash
 mkdir ~/.config/nvim
 ```
 Create a new init.vim file
-```shell
+```bash
 nvim ~/.config/nvim/init.vim
 ```
 

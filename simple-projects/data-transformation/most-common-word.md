@@ -22,7 +22,7 @@ A suggested approach to find the most common word:
 ## Create a project
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
-```shell
+```bash
 clojure -M:new app practicalli/common-words
 ```
 
@@ -217,6 +217,6 @@ Add a `-main` function that takes a reference for the source of the book and the
 
 Now call the code on the command line.
 
-```shell
+```bash
 clojure -m practicalli.common-word "https://www.gutenberg.org/cache/epub/844/pg844.txt" "common-english-words.csv"
 ```

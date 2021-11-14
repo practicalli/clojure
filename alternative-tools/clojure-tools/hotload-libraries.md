@@ -38,7 +38,7 @@ Edit the project `deps.edn` configuration and add an `:alpha/hotload-libs` alias
 ## Hotload libraries in a terminal REPL UI
 Start a REPL session using the Clojure CLI tools with the hot-load alias, including rebel readline for an enhance REPL UI.
 
-```shell
+```bash
 clojure -M:alpha/hotload-libs:repl/rebel
 ```
 
@@ -97,7 +97,7 @@ The hiccup expression returns a string of the html code.
 ## Hotload libraries in a Clojure editor
 Start a REPL in a terminal and use the connect command of the editor to connect the editor to the REPL process.  For example, run a Rebel UI repl in the terminal with the `clojure.tools.deps.alpha` library included
 
-```shell
+```bash
 clojure -M:alpha/hotload-libs:repl/rebel-nrepl
 ```
 

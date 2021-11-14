@@ -15,7 +15,7 @@ https://youtu.be/1jy09_16EeY
 
 Open a terminal and run the command:
 
-```shell
+```bash
 clojure -M:inspect/reveal
 ```
 > Use the `clj` command if the `rlwrap` binary is available
@@ -120,7 +120,7 @@ Reveal can be used as a `tap>` target with the Rebel REPL, launching the Reveal 
 
 Start Rebel REPL with Reveal library as a dependency
 
-```shell
+```bash
 clojure -M:repl-reveal:repl/rebel
 ```
 

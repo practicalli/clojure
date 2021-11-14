@@ -7,7 +7,7 @@ A relatively simple bank account application with data and function specificatio
 ## Create deps.edn project
 Use Clojure CLI and `clj-new`
 
-```shell
+```bash
 clojure -M:new app practicalli/banking-on-clojure
 ```
 

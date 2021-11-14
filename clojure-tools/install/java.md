@@ -8,7 +8,7 @@ Check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
 
-```shell
+```bash
 java -version
 ```
 
@@ -30,21 +30,21 @@ For windows users, the scoop install is recommended.
 
 Open a terminal and run the following command (you will be prompted for your login password to complete the install)
 
-```shell
+```bash
 sudo apt install openjdk-11-jdk
 ```
 
 ## openjdk-11 not available or not the right version?
  If openjdk-11 is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
 
-```shell
+```bash
 sudo add-apt-repository ppa:openjdk-r/ppa
 sudo apt-get update
 ```
 
 If you have more than one version of Java installed, set the version by opening a terminal and using the following command
 
-```shell
+```bash
 sudo update-alternatives --config java
 ```
 
@@ -56,7 +56,7 @@ Available java versions will be listed.  Enter the list number for the version y
 
 Using [Homebrew](https://brew.sh/), run the following command in a terminal to install Java 11:
 
-```shell
+```bash
 brew cask install adoptopenjdk11
 ```
 
@@ -64,12 +64,12 @@ brew cask install adoptopenjdk11
 > You can run more than one version of Java on MacOSX. Set the Java version by opening a terminal and using one of the following commands
 >
 > Show the Java versions installed
-```shell
+```bash
 /usr/libexec/java_home -V
 ```
 >
 > Switch to Java version 11
-```shell
+```bash
 export JAVA_HOME=$(/usr/libexec/java_home -v 11)
 ```
 
@@ -82,7 +82,7 @@ Alternatively use [scoop.sh](https://scoop.sh/), a command line installer for wi
 
 Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure), summarized here:
 
-```shell
+```bash
 scoop install git
 scoop bucket add java
 scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
@@ -94,7 +94,7 @@ scoop can also be used to [install clojure](install-clojure.md)
 ## Still having problems?
 If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/) package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime) using the following command in a command line window
 
-```shell
+```bash
 choco install javaruntime
 ```
 

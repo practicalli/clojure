@@ -22,7 +22,7 @@ https://youtu.be/sXZKrD4cAFk
 ## Create a new project
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration
 
-```shell
+```bash
 clojure -M:new app practicalli/random-clojure-function
 ```
 
@@ -35,7 +35,7 @@ Version control the Clojure project using Git (or magit in Spacemacs)
 
 Add the remote repository URL to the local Git repository.
 
-```shell
+```bash
 git remote add practicalli git@github.com:practicalli/random-clojure-function.git
 ```
 

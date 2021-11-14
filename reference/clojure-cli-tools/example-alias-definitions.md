@@ -43,7 +43,7 @@ The `clj-new` tool can be run using the `-M` flag, passing the template and proj
 
 To create a project as an application (to be run via the command line) for the practicalli domain with the application called banking-on-clojure
 
-```shell
+```bash
 clojure -M:new app practicalli/banking-on-clojure
 ```
 
@@ -58,7 +58,7 @@ Adding the `:exec-fn` to the `clj-new` alias, the `-X` flag can be used instead 
 ```
 Use this alias with the `-X` flag
 
-```shell
+```bash
 clojure -X:project/new :template template-name :name practicalli/banking-on-clojure
 ```
 
@@ -113,7 +113,7 @@ Assuming there is an alias called `database/migrate` defined in the project `dep
 ```
 Specific functions from the namespace can be called via the command line
 
-```shell
+```bash
 clojure -X:project/run migrate-db :db-type h2 :database banking-on-clojure
 clojure -X:project/run server-start :port 8080
 ```
@@ -144,7 +144,7 @@ The `-P` flag uses everything from an alias not related to execution.
 > The `-m` flag in the CLI tools pre-release returns a warning that `-M` should be used.
 
 Using `-M` and `-m` works, but seems redundant.  Using `-M` by itself runs the REPL.
-```shell
+```bash
 clojure -M -m full.namespace.to.dash-main
 ```
 
@@ -164,13 +164,13 @@ The simplest form is to define an alias to run the project, specifying just the 
 ```
 Then the project can be run using this alias.
 
-```shell
+```bash
 clojure -X:project/run
 ```
 
 Arguments can be passed to the function as key/value pairs on the command line.
 
-```shell
+```bash
 clojure -X:project/run  :port 8080 :host "localhost"
 ```
 
@@ -208,7 +208,7 @@ A project `deps.edn` file was created containing the dependency for clojure.java
 
 `clojure -m` hello runs the project and returns the time from running the -main function.
 However this gives a warning:
-```shell
+```bash
 WARNING: When invoking clojure.main, use -M
 ```
 
@@ -277,7 +277,7 @@ An alias can be defined in the project `deps.edn` file including default argumen
 ```
 Install the jar using the default arguments using the command:
 
-```shell
+```bash
 clojure -X:deploy/local-install
 ```
 
