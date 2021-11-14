@@ -1,8 +1,8 @@
 {
-    "gitbook": ">=3.0.0",
+    "gitbook": ">=3.2.3",
     "title": "Practicalli Clojure",
     "author": "Practicalli",
-    "authorHomepage": "https://practicalli.github.io",
+    "authorHomepage": "https://practical.li",
     "description": "Practical approach to learning Clojure functional programming",
     "structure": {
         "readme": "introduction.md"
@@ -46,9 +46,6 @@
             }
         },
         "prism": {
-            "css": [
-                "prismjs/themes/prism-jr0cket.css"
-            ],
             "ignore": [
                 "eval-clojure"
             ]
@@ -70,26 +67,26 @@
                 {
                     "label": "GitHub",
                     "icon": "fa fa-github",
-                    "url": "https://github.com/practicalli/clojure-content/issues"
+                    "url": "https://github.com/practicalli/clojure/issues"
                 }
             ]
         }
     },
     "links": {
         "sidebar": {
-            "Practicalli": "https://practicalli.github.io/"
+            "Practicalli": "https://practical.li/"
         }
     },
     "variables": {
-        "P9IWebsite": "https://practical.github.io/clojure",
+        "P9IWebsite": "https://practical.li/clojure",
         "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
         "P9IClojureDepsEdnInstall": "/clojure-tools/install/community-tools.md",
         "P9IGraphicDesign": "https://github.com/practicalli/graphic-design",
-        "P9IFourClojure": "https://practical.github.io/clojure",
+        "P9IFourClojure": "https://github.com/practicalli/four-clojure",
         "P9IClojureThroughCode": "https://github.com/practicalli/clojure-through-code",
-        "P9IIssuesUrl": "https://github.com/practicalli/clojure-practicalli-content/issues",
-        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure-practicalli-content/pulls",
+        "P9IIssuesUrl": "https://github.com/practicalli/clojure/issues",
+        "P9IPullRequestsUrl": "https://github.com/practicalli/clojure/pulls",
         "Leiningen": "https://leiningen.org/",
         "KeyCtrl": "<kbd>Ctrl</kbd>",
         "KeyEnter": "<kbd>Enter</kbd>",
