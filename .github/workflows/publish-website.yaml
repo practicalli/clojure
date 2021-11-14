@@ -1,8 +1,13 @@
 name: "GitBook publish"
 
 on:
+  # Manually trigger workflow
   workflow_dispatch:
-  push:
+
+  # Run work flow conditional on linter workflow success
+  workflow_run:
+    workflows:
+      - "Linter"
     paths-ignore:
       - README.md
       - CHANGELOG.md
@@ -10,6 +15,8 @@ on:
       - '_book/**'
     branches:
       - master
+    types:
+      - completed
 
 jobs:
   build:
