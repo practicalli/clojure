@@ -1,24 +1,77 @@
-![Practicalli Clojure Book Cover](images/practicalli-clojure-book-cover.png)
+```
+██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗
+██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║
+██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║
+██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║
+██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
 
-[![GitHub Super-Linter](https://github.com/practicalli/clojure-content/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+ ██████╗██╗      ██████╗      ██╗██╗   ██╗██████╗ ███████╗
+██╔════╝██║     ██╔═══██╗     ██║██║   ██║██╔══██╗██╔════╝
+██║     ██║     ██║   ██║     ██║██║   ██║██████╔╝█████╗
+██║     ██║     ██║   ██║██   ██║██║   ██║██╔══██╗██╔══╝
+╚██████╗███████╗╚██████╔╝╚█████╔╝╚██████╔╝██║  ██║███████╗
+ ╚═════╝╚══════╝ ╚═════╝  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+```
 
-  Clojure is a simple, powerful and fun language to develop any and all applications. It has a simple syntax that is quick to learn and a wide range of Clojure libraries to build any kind of apps and services. Its also easy to use any existing Java / JVM Language code or libraries as part of your Clojure apps.
+## Book status
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge) [![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues) [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls) [![GitHub Super-Linter](https://github.com/practicalli/clojure-content/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter) [![GitBook publish](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml)
 
-In this workshop we take a hands on approach where everyone takes Clojure code and experiments with it using the REPL (interactive runtime environment). You will quickly get a feel for Clojure by evaluating, breaking, fixing and extending code in the REPL, all the while getting instant feedback on what your code is doing.
+## Contributing
+Please [read the contributing section of the book](contributing.html) before raising an issue or pull request
 
-As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
+By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 
-[![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
+### GitHub Actions
 
-Get a [free Clojurians slack community account](https://clojurians.net/)
+The Linter GitHub actions will run when a pull request is created,checking basic markdown syntax.
 
-> #### Warning::Book refresh in progress
-> A refresh of the contents of this book is currently underway, so things may.
+A review of the change will be carried out by the Practicalli team and the PR merged if the change is acceptable.
 
+The Publish Website GitHub action will run when PR's are merged (or the Practicalli team pushes changes to the default branch).
 
-## Book written with gitbook/gitbook-cli
+## GitBook Static Site Generator
 
-**Gitbook plugins**
+GitBook open source tool is used to generate all the Practicalli books, as it provides a simple way to provide effective navigation across a guide or book with a large number of pages.
+
+### Install locally
+
+GitBook can be installed locally to support larger pieced of content development.  It provides a local server that should continually build the site when changes are saved.
+
+GitBook requires node.js version 11 (or version 10, or 8)
+
+Install GitBook using node package manager
+
+```bash
+npm install gitbook-cli -g
+```
+
+Fork the practicalli/clojure GitHub repository and clone that fork to your computer,
+
+```bash
+git clone https://github.com/<your-github-account>/clojure.git
+
+```
+
+Install the GitBook plugins used for this project (as defined in the [book.json](book.json) configuration)
+
+switch to the root directory of the cloned repository when complete.
+
+```bash
+cd clojure
+
+gitbook install
+```
+
+> If any plugins fail to install, ensure node version 11 (or 10) is being used
+
+Run a local server to generate the website from the markdown content, which also listens for changes
+
+```bash
+gitbook serve
+```
+
+**Gitbook plugins used**
 
 * [anchor-headings-lambda](https://www.npmjs.com/package/gitbook-plugin-anchor-headings-lambda)
 * [callouts](https://www.npmjs.com/package/gitbook-plugin-callouts)
@@ -41,38 +94,7 @@ toggle-chapters
 * [youtubex](https://www.npmjs.com/package/gitbook-plugin-youtubex) - embed YouTube videos by id, rending responsively to page size
 wide-page
 
-
-## Supporting Resources
-
-**Workshop**
-* [Getting started with Clojure](http://jr0cket.co.uk/slides/getting-started-with-clojure.html)
-* [Clojure through code](https://github.com/practicalli/clojure-through-code) - sample code to support this project
-* [Lighttable Koans](https://github.com/practicalli/lighttable-koans) - exercises to help you discover Clojure
-* [Clojure Webapp workshop](https://practicalli.github.io/clojure-webapps/) - building server-side webapps in Clojure
-
-**Learning Clojure**
-* [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)
-* [Clojure documentation](http://clojure.org/documentation)
-* [Clojure cheetsheet](http://clojure.org/cheatsheet)
-* [Official Clojure Google group](https://groups.google.com/forum/#!forum/clojure)
-* [CrossClj](http://crossclj.info/) - cross-referencing the Clojure ecosystem
-* [Brave Clojure](http://www.braveclojure.com/)
-
-> **Hint** There are over 20 excellent [books published on Clojure](reference/books.html) that go into detailed theory behind the language
-
-
-**Community**
-* [Clojure-docs](http://clojure-doc.org/) - community docs
-* [Clojars](https://clojars.org/) and [CrossCLJ](http://crossclj.info/) - cross-referencing the Clojure ecosystem
-* [re-find (borkdude)](https://borkdude.github.io/re-find.web/) - find functions from arguments and return values
-* [Clojure & ClojureScript Dependencies](https://clj-deps.herokuapp.com/)
-* [4Clojure](https://www.4clojure.com/) exercises & [4Clojure Google group](https://groups.google.com/forum/#!forum/4clojure)
-* [ClojureScript REPL](http://www.clojurescript.io/) - website REPL
-* [LambdaX](http://lambdax.io/blog/)
-* [London Clojurians](https://www.meetup.com/London-Clojurians/) and their [Google group](https://groups.google.com/forum/#!forum/london-clojurians)
-* [Uncle Bob presents Clojure](https://www.youtube.com/watch?v=SYeDxWKftfA)
-* [Snake Game in Clojure](https://fn-code.blogspot.co.uk/2015/08/a-clojure-snake-game.html)
-* [Clojure design patterns](http://mishadoff.com/blog/clojure-design-patterns/)
+---
 
 This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
 
