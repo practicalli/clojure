@@ -32,13 +32,13 @@ The Publish Website GitHub action will run when PR's are merged (or the Practica
 
 ## GitBook Static Site Generator
 
-GitBook open source tool is used to generate all the Practicalli books, as it provides a simple way to provide effective navigation across a guide or book with a large number of pages.
+[GitBook open source tool](https://github.com/GitbookIO/gitbook) is used to generate all the Practicalli books, as it provides a simple way to provide effective navigation across a guide or book with a large number of pages.
 
 ### Install locally
 
 GitBook can be installed locally to support larger pieced of content development.  It provides a local server that should continually build the site when changes are saved.
 
-GitBook requires node.js version 11 (or version 10, or 8)
+GitBook requires [node.js version 11](https://nodejs.org/dist/latest-v11.x/) (or version 10, or 8)
 
 Install GitBook using node package manager
 
@@ -71,7 +71,11 @@ Run a local server to generate the website from the markdown content, which also
 gitbook serve
 ```
 
-**Gitbook plugins used**
+### Gitbook plugins
+
+[GitBook has numerous community plugins](https://www.npmjs.com/search?q=gitbook%20plugin) to extend its functionality.
+
+The following plugins are currently used for Practicalli books.
 
 * [anchor-headings-lambda](https://www.npmjs.com/package/gitbook-plugin-anchor-headings-lambda)
 * [callouts](https://www.npmjs.com/package/gitbook-plugin-callouts)
@@ -83,16 +87,16 @@ gitbook serve
 * [-highlight](https://www.npmjs.com/package/gitbook-plugin-highlight) - disable default highlight (prism)
 * [klipse](https://www.npmjs.com/package/gitbook-plugin-klipse) - embed Klipse code evaluation in pages
 * [newtabs](https://www.npmjs.com/package/gitbook-plugin-newtabs) - in-page tab sections
-[prism](https://www.npmjs.com/package/gitbook-plugin-prism) code block syntax highlighting (use jr0cket.css theme, added manually)
+* [prism](https://www.npmjs.com/package/gitbook-plugin-prism) code block syntax highlighting (use jr0cket.css theme, added manually)
 * [sectionx-ex](https://www.npmjs.com/package/gitbook-plugin-sectionx-ex) - in-page sections that can be collapsed (klipse doesnt work inside a section)
 * [-sharing](https://www.npmjs.com/package/gitbook-plugin-sharing)  - buttons to share on social media (default plugin disabled)
-[splitter](https://www.npmjs.com/package/gitbook-plugin-splitter) - movable vertical bar between navigation and content, remembers position
+* [splitter](https://www.npmjs.com/package/gitbook-plugin-splitter) - movable vertical bar between navigation and content, remembers position
 * [terminull-light](https://www.npmjs.com/package/gitbook-plugin-terminull-light) - fancy console - draws copy button on klipse elements
 * [theme-jr0cket](https://www.npmjs.com/package/gitbook-plugin-theme-jr0cket) - custom version of theme-code, removing numbering
-toggle-chapters
+* [toggle-chapters](https://www.npmjs.com/package/gitbook-plugin-toggle-chapters) - collapsed and expand navigation sections
 * [toolbar](https://www.npmjs.com/package/gitbook-plugin-toolbar) - add toolbar of links to GitHub, Chat, etc.
 * [youtubex](https://www.npmjs.com/package/gitbook-plugin-youtubex) - embed YouTube videos by id, rending responsively to page size
-wide-page
+* [wide-page](https://github.com/ingoclaro/gitbook-plugin-wide-page) - gitbook plugin to have a fluid page width instead of fixed
 
 ---
 
