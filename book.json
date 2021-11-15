@@ -79,7 +79,7 @@
     },
     "variables": {
         "P9IWebsite": "https://practical.li/clojure",
-        "P9IDeveloperGuides": "https://github.com/jr0cket/developer-guides/raw/master/",
+        "P9IDeveloperGuides": "https://github.com/practicalli-john/developer-guides/raw/master/",
         "P9IClojureDepsEdn": "https://github.com/practicalli/clojure-deps-edn",
         "P9IClojureDepsEdnInstall": "/clojure-tools/install/community-tools.md",
         "P9IGraphicDesign": "https://github.com/practicalli/graphic-design",
