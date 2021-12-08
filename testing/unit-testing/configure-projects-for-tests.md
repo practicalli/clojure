@@ -2,7 +2,7 @@
 [`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) is part of the Clojure standard library, so `org.clojure/clojure` is the only dependency required in the project configuration.
 
 ```clojure
-{:deps {org.clojure/cloure {:mvn/version "1.10.3"}}}
+{:deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
 ```
 
 Unit tests code should reside under the `test` directory of a project.  Project configuration should include the `test` path only during development or specific test runs.  The `test` directory should not be part of the main classpath used to package a project for deployment.
