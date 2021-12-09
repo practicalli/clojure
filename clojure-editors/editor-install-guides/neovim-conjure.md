@@ -37,20 +37,20 @@ sudo update-alternatives --config vim
 {% tabs unix="Unix", powershell="Windows Powershell" %}
 
 {% content "unix" %}
-```
+```bash
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 ```
 
 {% content "powershell" %}
-```
+```bash
 iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
     ni "$env:LOCALAPPDATA/nvim-data/site/autoload/plug.vim" -Force
 ```
 {% endtabs %}
 
 This created the following tree structure under `~/.local/share/nvim`
-```
+```bash
 ├── shada
 │   └── main.shada
 ├── site
@@ -71,7 +71,7 @@ nvim ~/.config/nvim/init.vim
 ```
 
 Add plugins for conjure and a few supporting plugins
-```
+```bash
 call plug#begin(stdpath('data') . '/plugged')
 
 " Conjure
@@ -104,13 +104,13 @@ Use `:PlugUpgrade` to update the vim-plug package itself.
 
 Add the [dense-analysis/ale](https://github.com/dense-analysis/ale) plugin to provide Linting with clj-kondo
 
-```
+```bash
 Plug 'dense-analysis/ale'
 ```
 
 Add the following configuration to specify the binary for Clojure linting with ALE.
 
-```
+```bash
 " Lint configuration - clj-kondo
 " clj-kondo should be installed on operating system path
 let g:ale_linters = {
@@ -127,18 +127,18 @@ Matches the theme used for Spacemacs
 https://github.com/morhetz/gruvbox
 
 Add following to vim-plug section
-```
+```bash
 " Plug 'morhetz/gruvbox'
 ```
 After vim-plug section, configure the specific Gruvbox theme settings, in this case to use the light theme and use powerline fonts (not sure that makes a difference)
-```
+```bash
 let g:airline_solarized_bg='light'
 let g:airline_powerline_fonts = 1
 ```
 
 ### Solarized8
 https://github.com/lifepillar/vim-solarized8
-```
+```bash
 Plug 'lifepillar/vim-solarized8'
 
 set background=light
@@ -291,16 +291,12 @@ let g:spaceline_colorscheme = 'one'
 
 > #### TODO::work in progress, sorry
 
-## Spacemacs style keymappings to enhance the neovim experience
-
-Spacemacs like mappings for window interactions using `SPC w` prefix.
-
-https://github.com/Olical/dotfiles/blob/master/stowed/.config/nvim/fnl/dotfiles/module/mapping.fnl#L20
-stowed/.config/nvim/fnl/dotfiles/module/mapping.fnl:20
+## Additional configuration to try
+* [Spacemacs like mappings](https://github.com/Olical/dotfiles/blob/master/stowed/.config/nvim/fnl/dotfiles/module/mapping.fnl#L20) for window interactions using `SPC w` prefix.
 
 Configured with a combination of:
 * https://github.com/Olical/dotfiles/blob/master/stowed/.config/nvim/fnl/dotfiles/module/mapping.fnl
 * https://github.com/liuchengxu/vim-better-default
 
 Useful keybinding reference:
-https://github.com/liuchengxu/vim-better-default/wiki/a-brief-introduction-to-key-bindings
+* https://github.com/liuchengxu/vim-better-default/wiki/a-brief-introduction-to-key-bindings
