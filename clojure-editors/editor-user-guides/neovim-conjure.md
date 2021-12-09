@@ -36,8 +36,8 @@ Then open a Clojure file and Conjure will (magically) connect to the running REP
 ## Starting a REPL from Vim
 Start neovim with a Clojure file, e.g. `nvim src/practialli/playground.clj` or run `nvim` and open a Clojure file using `:NERDTree`.  A Clojure file has a name ending in `*.clj`, `*.cljc` or `.edn`.
 
-`:Clj` command to start a REPL using Clojure CLI Tools
-`:Lein` command to start a REPL using Leiningen
+* `:Clj` command to start a REPL using Clojure CLI Tools
+* `:Lein` command to start a REPL using Leiningen
 
 > Neovim switches to a terminal state, use `C-\ C-n` to leave the terminal state.  Use `:N` or `:previous` to switch back to the source code buffer
 
@@ -106,7 +106,7 @@ NERDTree opens files as splits.  `C-w` followed by either `jkhl` will move the c
 Install the Deoplete plugin (from Olical configuration)
 https://github.com/Shougo/deoplete.nvim
 
-```
+```vim
 " Completion support
 Plug 'Shougo/deoplete.nvim' | Plug 'ncm2/float-preview.nvim'
 "
