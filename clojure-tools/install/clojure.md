@@ -15,9 +15,9 @@ Use the Linux script installer from [Clojure.org - Getting Started](https://cloj
 The instructions should be as follows, possibly with a newer version
 
 ```
-curl -O https://download.clojure.org/install/linux-install-1.10.2.774.sh
-chmod +x linux-install-1.10.2.774.sh
-sudo ./linux-install-1.10.2.774.sh
+curl -O https://download.clojure.org/install/linux-install-1.10.3.1040.sh
+chmod +x linux-install-1.10.3.1040.sh
+sudo ./linux-install-1.10.3.1040.sh
 ```
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
@@ -31,12 +31,17 @@ Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure
 brew install clojure/tools/clojure
 ```
 
+Use Homebrew to update an install of Clojure CLI tools to the latest release
+```bash
+brew upgrade clojure/tools/clojure
+```
+
 > [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
 
 
 <!-- Windows install with scoop.sh -->
 {% content "windows" %}
-For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are happy to use a Unix system on the command line.
+For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are comfortable using a Unix system on the command line.
 
 Alternatively install [scoop.sh](https://scoop.sh/), a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download) or greater is required. Follow the [scoop-clojure getting started guide](https://github.com/littleli/scoop-clojure/wiki/Getting-started), summarized here:
 
