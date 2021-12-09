@@ -20,4 +20,6 @@ Follow the **[clj-kondo install guide](https://github.com/borkdude/clj-kondo/blo
 
 ## clj-kondo with GitHub actions
 
+Add [clj-kondo linting to continuous integration workflow](/continuous-integration/github-actions/clj-kondo-lint.md).
+
 ![clj-kondo with GitHub actions](https://rymndhng.github.io/assets/clj-kondo-1.png)
