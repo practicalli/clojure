@@ -67,6 +67,25 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 ## Check CLI tools version
 `clojure -Sdescribe` confirms that Clojure CLI tools are installed and will show the version of the tool.  Use the latest version of Clojure CLI tools, or at least version 1.10.1.697.
 
+```bash
+clojure -Sdescribe
+```
+
+The output of the command includes the version of Clojure in the `:version` key
+
+```bash
+{:version "1.10.3.1040"
+ :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.clojure/deps.edn" ]
+ :config-user "/home/practicalli/.clojure/deps.edn"
+ :config-project "deps.edn"
+ :install-dir "/usr/local/lib/clojure"
+ :config-dir "/home/practicalli/.clojure"
+ :cache-dir "/home/practicalli/.clojure/.cpcache"
+ :force false
+ :repro false
+ :main-aliases ""
+ :repl-aliases ""}
+```
 
 ---
 
