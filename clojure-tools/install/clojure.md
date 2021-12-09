@@ -14,7 +14,7 @@ Use the Linux script installer from [Clojure.org - Getting Started](https://cloj
 
 The instructions should be as follows, possibly with a newer version
 
-```
+```bash
 curl -O https://download.clojure.org/install/linux-install-1.10.3.1040.sh
 chmod +x linux-install-1.10.3.1040.sh
 sudo ./linux-install-1.10.3.1040.sh
@@ -52,6 +52,7 @@ iwr -useb get.scoop.sh | iex
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 ```
 Then in the same PowerShell window, install the Clojure related tools using the following commands:
+
 ```bash
 scoop bucket add extras
 scoop bucket add java
