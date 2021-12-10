@@ -1,8 +1,10 @@
 # Pretty Printing data structures
 
-Data structures containing small amounts of data are quite human readable, although can benefit from pretty printing
+Data structures containing small amounts of data are quite human readable, although can benefit from pretty printing to make them very easy for humans to read.
 
-Pretty print a hashmaps
+The larger a data structure becomes, or if a data structure is nested, then there are tools to print out ascii views of the data structures.
+
+## Pretty print hash-maps
 
 ```clojure
 (clojure.pprint/pprint
@@ -29,6 +31,11 @@ Clojure aware editors can also have an alighn option when formatting hash-maps, 
  :credit-score :aa}
 ```
 
+> #### Hint::Pretty Print evaluation results
+> Clojure aware editors should allow the pretty printing of the evaluation results.
+
+
+## Print Table of nested data structures
 
 Nested data structures can also be shown as a table, especially the common approach of using a vector of hash-maps where each map has the same keys
 
@@ -39,8 +46,15 @@ Nested data structures can also be shown as a table, especially the common appro
    {:location "England" :total-cases 5440876 :total-mortality 200202}])
 ```
 
-Clojure aware editors should allow the pretty printing of the evaluation results.
+```none
+| :location | :total-cases | :total-mortality |
+|-----------+--------------+------------------|
+|  Scotland |        42826 |             9202 |
+|     Wales |        50876 |             1202 |
+|   England |      5440876 |           200202 |
+```
 
 
+## References
 
 [Data browsers](/clojure-tools/data-browsers/) (Cider Inspector, Portal, Reveal Free) are very useful for larger and nested data structures.
