@@ -15,11 +15,11 @@ Clojure's built in persistent data structures:
 * **Maps** - key-value pair (hash map)
 * **Sets** - a unique set of values
 
+## Characters
 Clojure data structure share the following characteristics:
 
 * **Immutable** - once a data structure is defined it cannot be changed.
-* **Persistent** - changes to data structures are created in a new data structure which is linked back to the original data structure 
-* **Shared memory** - copies create during a change to a data structure share memory for the common elements
-* **Dynamically typed** - contains any value, including functions (as they evaluate to a value) 
+* **Persistent** - changes to data structures are created in a new data structure which is linked back to the original data structure (structural sharing)
+* **Dynamically typed** - a data structure can contain any value, including functions (as they evaluate to a value) and other data structures (nested data structures)
 
 This section will cover the Clojure built in persistent data structures in more detail.
