@@ -309,6 +309,7 @@
     * [Vector](data-structures/vector.md)
     * [Set](data-structures/set.md)
     * [Naming data structures](data-structures/naming.md)
+    * [Pretty Printing](data-structures/pretty-printing.md)
 
     <!-- Introducing the most common function families from clojure.core -->
     <!-- map reduce apply -->
