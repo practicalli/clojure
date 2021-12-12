@@ -5,7 +5,13 @@
 Install the [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
 ```bash
-clojure -M:test/kaocha
+clojure -M:test/run
+```
+
+Or continually run tests by watching for changes with Kaocha.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.
+
+```bash
+clojure -M:test/watch
 ```
 
 
