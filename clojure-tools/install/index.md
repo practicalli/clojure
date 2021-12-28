@@ -12,9 +12,9 @@ Using [community tools](community-tools.md) on top of Clojure CLI tools provides
 Establish an effective Clojure development environment by installing the following:
 
 | Tools                                         | Required    | Purpose                                                                                  |
-|-----------------------------------------------|-------------|------------------------------------------------------------------------------------------|
+|-----------------------------------------------+-------------+------------------------------------------------------------------------------------------|
 | [Java 11 LTS](java.md)                        | Essential   | Java virtual machine hosts Clojure. Java 11 is the Long Term Support version             |
-| [Clojure CLI Tools](clojure.md)               | Essential   | Run Clojure REPL and other tools for development and production                          |
+| [Clojure CLI](clojure-cli.md)                 | Essential   | Run Clojure REPL and other tools for development and production                          |
 | [Community tools](community-tools.md)         | Recommended | Curated aliases providing common development tasks and tools across all projects         |
 | [Clojure aware editors](/clojure-editors/)    | Recommended | Editors providing a complete Clojure development environment                             |
 | [Code analysis (clj-kondo)](code-analysis.md) | Recommended | Lint tool to detect syntax bugs and suggest idiomatic code                               |

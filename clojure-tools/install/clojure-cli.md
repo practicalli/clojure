@@ -1,7 +1,8 @@
-![Install Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/cloure-install-package-banner.png)
-Clojure is a library meaning any version of Clojure can easily be used with a project.
+![Install Clojure CLI](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/cloure-install-package-banner.png)
 
-The Clojure CLI tool will download the Clojure library and provides essential tools for Clojure development.
+Clojure is packaged as a library (Java ARchive), meaning any version of Clojure can easily be used with a project.
+
+The Clojure CLI will download the Clojure library and provides essential tools for Clojure development.
 
 
 <!-- Operating System specific instructions -->
@@ -21,7 +22,6 @@ sudo ./linux-install-1.10.3.1040.sh
 ```
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
-
 
 
 <!-- Homebrew (MacOSX) install -->
@@ -99,9 +99,8 @@ If `XDG_CONFIG_HOME` is set by your operating system then its value over-rides t
 
 > Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:config-user` value.
 
----
 
-**Optional: rlwrap readline**
+## Optional: rlwrap readline
 
 Install the `rlwrap` binary to support the `clj` wrapper, which launches a Clojure REPL with command history.
 
