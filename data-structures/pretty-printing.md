@@ -57,4 +57,4 @@ Nested data structures can also be shown as a table, especially the common appro
 
 ## References
 
-[Data browsers](/clojure-tools/data-browsers/) (Cider Inspector, Portal, Reveal Free) are very useful for larger and nested data structures.
+[Data browsers](/clojure-cli/data-browsers/) (Cider Inspector, Portal, Reveal Free) are very useful for larger and nested data structures.

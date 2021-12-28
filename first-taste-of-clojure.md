@@ -3,7 +3,7 @@ The basic Clojure syntax and a few common functions you should probably learn fi
 
 The examples are editable (using an embedded REPL) so feel free to experiment and watch as the return value changes as you change the code.  Reload the page if you want to reset all the code back to the starting point.
 
-[Install Clojure](/clojure-tools/install/) on your computer if you want to experiment even further.
+[Install Clojure](/clojure-cli/install/) on your computer if you want to experiment even further.
 
 > #### Hint::Want to go deeper already?
 > Watch [the Clojure language video series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) for a detailed introduction to key parts of the language.  Or discover Clojure core functions by completing challenges on [4Clojure.com](http://www.4clojure.com/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
@@ -217,7 +217,7 @@ In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 
 
 ## Next steps
-[Install Clojure](/clojure-tools/install/) on your computer if you want to experiment even further or keep on reading more about Clojure.
+[Install Clojure](/clojure-cli/install/) on your computer if you want to experiment even further or keep on reading more about Clojure.
 
 
 <!-- ## Recursion -->

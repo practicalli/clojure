@@ -66,7 +66,7 @@ Create a `dev/user.clj` source code file which requires the portal.api library, 
 > The rich comment block includes commands to clear and close the portal inspector window.
 
 
-Start a REPL using the `:env/dev` and `:inspect/portal-cli` aliases from [practicalli/clojure-deps-edn](/clojure-tools/install/community-tools.md), using the command:
+Start a REPL using the `:env/dev` and `:inspect/portal-cli` aliases from [practicalli/clojure-deps-edn](/clojure-cli/install/community-tools.md), using the command:
 
 ```clojure
 clojure -M:env/dev:inspect/portal-cli

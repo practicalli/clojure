@@ -25,7 +25,7 @@ Use the `:deps` key in `deps.edn` to specify a version of the `org.clojure/cloju
 ```
 
 > #### Hint::Hot loading dependencies
-> [add-lib](/alternative-tools/clojure-tools/hot-load-dependencies.md) can hot-load a Clojure dependency into a running REPL process, avoiding the need to restart.
+> [add-lib](/alternative-tools/clojure-cli/hot-load-dependencies.md) can hot-load a Clojure dependency into a running REPL process, avoiding the need to restart.
 
 
 ### Adding paths

@@ -5,7 +5,7 @@ The best editor to use for learning Clojure is the editor you are already famili
 * structural editing to ensure parens are balanced when writing and refactor code
 * running / connecting to a REPL process
 * evaluation results inline or in a repl window (fast feedback on what the code does)
-* data inspector / browser to visualise large and nested data ([external tools available](/clojure-tools/data-browsers/))
+* data inspector / browser to visualise large and nested data ([external tools available](/clojure-cli/data-browsers/))
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/jr0cket/developer-guides/master/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 

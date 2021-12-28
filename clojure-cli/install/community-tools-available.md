@@ -126,7 +126,7 @@ REPL driven data inspectors and `tap>` sources for visualizing data.
 
 ### [Portal](https://github.com/djblue/portal)
 Navigate data in the form of edn, json and transit
-[Practicalli Clojure -data browsers section - portal](https://practicalli.github.io/clojure/clojure-tools/data-browsers/portal.html)
+[Practicalli Clojure -data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html)
 
 | Command                          | Description                                           |
 |----------------------------------|-------------------------------------------------------|
@@ -182,7 +182,7 @@ clojure -M:inspect/reveal -J-Dvlaaad.reveal.prefs='{:theme :light :font-family "
 
 Evaluate `(add-tap ((requiring-resolve 'vlaaad.reveal/ui)))` when using Rebel Readline to add Reveal as a tap source, showing `(tap> ,,,)` expressions in the reveal window, eg. `(tap> (map inc [1 2 3 4 5]))`.
 
-[Practicalli Clojure - data browsers section](/clojure-tools/data-browsers/reveal.md) has more details on using reveal.
+[Practicalli Clojure - data browsers section](/clojure-cli/data-browsers/reveal.md) has more details on using reveal.
 
 
 
@@ -220,7 +220,7 @@ To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the
                   (cider-jack-in-lein-plugins . nil)
                   (cider-clojure-cli-parameters . ""))))
 ```
-* [REBL data visualization: run REBL with nREPL based editors](https://practicalli.github.io/clojure/clojure-tools/data-browsers/rebl-data-visualization.html#run-rebl-for-nrepl-based-editors)
+* [REBL data visualization: run REBL with nREPL based editors](https://practicalli.github.io/clojure/clojure-cli/data-browsers/rebl-data-visualization.html#run-rebl-for-nrepl-based-editors)
 
 
 ## Clojure Specification

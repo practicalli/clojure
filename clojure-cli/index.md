@@ -31,7 +31,7 @@ Commands to use for common tasks and where their aliases are included in Clojure
 | Deploy library locally                     | `clojure -X:deps mvn-install`                           | Yes       |
 | Package application                        | `clojure -X:project/uberjar`                            | Add alias |
 
-Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
+Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
 
 
 ## What version of Clojure CLI tools are installed?

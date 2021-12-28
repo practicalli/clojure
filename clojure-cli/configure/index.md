@@ -2,7 +2,7 @@
 Clojure CLI tools are configured using a `deps.edn` file, written using extensible data notation (edn), the language that is used to define the structure of Clojure itself.
 
 > #### Hint::Skip this section until you need to write your own aliases
-> If using practicalli/clojure-deps-edn this section can be skipped as it provides a collection of aliases that provide a wide range of community tools.  Take a look at the [Terminal REPL](/clojure-tools/repl/) or [creating projects](/clojure-tools/projects/create.md).
+> If using practicalli/clojure-deps-edn this section can be skipped as it provides a collection of aliases that provide a wide range of community tools.  Take a look at the [Terminal REPL](/clojure-cli/repl/) or [creating projects](/clojure-cli/projects/create.md).
 
 ## Levels of configuration
 

@@ -82,7 +82,7 @@ It is common to combine `fn` and `let` to solve the challenges as they grow in c
 ## My function is not working
 4Clojure uses Clojure 1.5 version and whilst the core of the Clojure language has not altered greatly since 4Clojure was created, there may be a few newer functions that are not supported.
 
-Try the code in a [Clojure REPL](/clojure-tools/rebel-repl/) or [create a Clojure project](/clojure-tools/create-projects.md) using the latest version of Clojure (1.10.1).
+Try the code in a [Clojure REPL](/clojure-cli/rebel-repl/) or [create a Clojure project](/clojure-cli/create-projects.md) using the latest version of Clojure (1.10.1).
 
 
 ## References

@@ -37,7 +37,7 @@ exercism submit /path/to/src-file
 ```
 
 ## Using Clojure CLI tools
-With [Clojure CLI tools installed](/clojure-tools/install/), then simply add a `deps.edn` file to the root directory of the Leiningen project downloaded by the Exercism CLI tool.
+With [Clojure CLI tools installed](/clojure-cli/install/), then simply add a `deps.edn` file to the root directory of the Leiningen project downloaded by the Exercism CLI tool.
 
 The `deps.edn` should contain the `:paths` for the `src` directory (and `test` if your test runner requires that path, e.g. cider test runner).
 
@@ -45,7 +45,7 @@ The `deps.edn` should contain the `:paths` for the `src` directory (and `test` i
 {:paths ["src"]}
 ```
 
-To run tests, use an alias such as `:test/runner` from [practicalli/clojure-deps-edn](/clojure-tools/install/community-tools.md), an alias from your own `~/.clojure/deps.edn` or add an alias directly to the project `deps.edn` file just created.
+To run tests, use an alias such as `:test/runner` from [practicalli/clojure-deps-edn](/clojure-cli/install/community-tools.md), an alias from your own `~/.clojure/deps.edn` or add an alias directly to the project `deps.edn` file just created.
 
 
 ## Support

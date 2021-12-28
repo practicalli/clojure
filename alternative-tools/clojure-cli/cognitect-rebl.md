@@ -3,7 +3,7 @@ Cognitect REBL captures the results of evaluating expressions and visualizes the
 
 REBL requires an end user license and a personal access token to obtain the packaged library.
 
-Open alternatives include [Reveal](/clojure-tools/data-browsers/reveal.md) and [Portal](/clojure-tools/data-browsers/portal.md), which are simpler to install.
+Open alternatives include [Reveal](/clojure-cli/data-browsers/reveal.md) and [Portal](/clojure-cli/data-browsers/portal.md), which are simpler to install.
 
 {% youtube %}
 https://www.youtube.com/watch?v=c52QhiXsmyI
@@ -30,7 +30,7 @@ Run the project using the Clojure CLI tools
 clojure -M:inspect/rebl
 ```
 
-If [rlwrap](/clojure-tools/install/install-clojure.html#optional-rlwrap-readline) is installed, then use:
+If [rlwrap](/clojure-cli/install/install-clojure.html#optional-rlwrap-readline) is installed, then use:
 ```bash
 clj -M:inspect/rebl
 ```
