@@ -16,7 +16,7 @@ https://youtu.be/u5VoFpsntXc
 Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).
 
 | Task                                       | Command                                                 | Built-in  |
-|--------------------------------------------+---------------------------------------------------------+-----------|
+|--------------------------------------------|---------------------------------------------------------|-----------|
 | Run Command Line REPL                      | `clojure` or `clj` if `rlwrap` binary installed         | Yes       |
 | Run Command Line REPL with Rebel and nREPL | `clojure -M:repl/rebel`                                 | Add alias |
 | Create project (clojure exec)              | `clojure -X:new :template app :name practicalli/my-app` | Add alias |
