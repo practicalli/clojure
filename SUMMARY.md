@@ -18,34 +18,34 @@
     * [Contributing](contributing.md)
 
 ## Getting Started
-<!-- * [Clojure Tools](clojure-tools/index.md) -->
-* [Using Clojure Tools](clojure-tools/using-clojure-tools.md)
-* [Install Clojure Tools](clojure-tools/install/index.md)
-    * [Java](clojure-tools/install/java.md)
-    * [Clojure](clojure-tools/install/clojure.md)
-    * [Community tools](clojure-tools/install/community-tools.md)
-        * [Available Community tools](clojure-tools/install/community-tools-available.md)
-        * [Configure Clojure Tools](clojure-tools/configure/index.md)
-    * [Code Analysis](clojure-tools/install/code-analysis.md)
-* [Terminal REPL](clojure-tools/repl/index.md)
-    * [Coding in the REPL](clojure-tools/repl/coding-in-the-repl.md)
-    * [Using libraries in REPL](clojure-tools/repl/using-project-or-library.md)
-    * [Help at the REPL](clojure-tools/repl/help-at-the-repl.md)
-    * [Customize rebel](clojure-tools/repl/customize-rebel.md)
-    * [Troubleshooting](clojure-tools/repl/troubleshooting.md)
-    <!-- * [REPL uncovered](clojure-tools/repl/repl-uncovered.md) --> <!-- TODO rewrite -->
+<!-- * [Clojure CLI](clojure-cli/index.md) -->
+* [Using Clojure](clojure-cli/using-clojure-tools.md)
+* [Install Clojure CLI](clojure-cli/install/index.md)
+    * [Java](clojure-cli/install/java.md)
+    * [Clojure](clojure-cli/install/clojure.md)
+    * [Community tools](clojure-cli/install/community-tools.md)
+        * [Available Community tools](clojure-cli/install/community-tools-available.md)
+        * [Configure Clojure Tools](clojure-cli/configure/index.md)
+    * [Code Analysis](clojure-cli/install/code-analysis.md)
+* [Terminal REPL](clojure-cli/repl/index.md)
+    * [Coding in the REPL](clojure-cli/repl/coding-in-the-repl.md)
+    * [Using libraries in REPL](clojure-cli/repl/using-project-or-library.md)
+    * [Help at the REPL](clojure-cli/repl/help-at-the-repl.md)
+    * [Customize rebel](clojure-cli/repl/customize-rebel.md)
+    * [Troubleshooting](clojure-cli/repl/troubleshooting.md)
+    <!-- * [REPL uncovered](clojure-cli/repl/repl-uncovered.md) --> <!-- TODO rewrite -->
 
-* [Clojure projects](clojure-tools/projects/create.md)
+* [Clojure projects](clojure-cli/projects/create.md)
     <!-- Introduce Clojure examples that work well in the command line REPL -->
     <!-- Run a repl in an example project, require, in-ns, run -->
     <!-- a simple tic-tac-toe game or similar command line challenges, kata -->
-    <!-- * [Manage dependencies](clojure-tools/managing-dependencies.md) -->
-    * [Add Libraries](clojure-tools/projects/add-libraries.md)
-    * [Namespaces](clojure-tools/projects/namespace.md)
-    * [Configure REPL Startup](clojure-tools/projects/configure-repl-startup.md)
-        <!-- * [Namespace refactor](clojure-tools/using/namespace-refactoring.md) -->
-    <!-- * [Running projects](clojure-tools/projects/running-projects.md) -->
- <!-- * [Design Journal](clojure-tools/design-journal.md) -->
+    <!-- * [Manage dependencies](clojure-cli/managing-dependencies.md) -->
+    * [Add Libraries](clojure-cli/projects/add-libraries.md)
+    * [Namespaces](clojure-cli/projects/namespace.md)
+    * [Configure REPL Startup](clojure-cli/projects/configure-repl-startup.md)
+        <!-- * [Namespace refactor](clojure-cli/using/namespace-refactoring.md) -->
+    <!-- * [Running projects](clojure-cli/projects/running-projects.md) -->
+ <!-- * [Design Journal](clojure-cli/design-journal.md) -->
 * [Clojure Aware Editors](clojure-editors/index.md)
     * [Editor Install Guides](clojure-editors/editor-install-guides/index.md)
         * [Atom ProtoREPL](clojure-editors/editor-install-guides/atom-protorepl.md)
@@ -68,10 +68,10 @@
         * [VSpaceCode Calva](clojure-editors/editor-user-guides/vspacecode-calva.md)
         * [VSCode Calva](clojure-editors/editor-user-guides/vscode-calva.md)
         * [IntelliJ Cursive](clojure-editors/editor-user-guides/intellij-cursive.md)
-* [Data browsers](clojure-tools/data-browsers/index.md)
-    * [Clojure Inspector](clojure-tools/data-browsers/clojure-inspector.md)
-    * [Reveal](clojure-tools/data-browsers/reveal.md)
-    * [Portal](clojure-tools/data-browsers/portal.md)
+* [Data browsers](clojure-cli/data-browsers/index.md)
+    * [Clojure Inspector](clojure-cli/data-browsers/clojure-inspector.md)
+    * [Reveal](clojure-cli/data-browsers/reveal.md)
+    * [Portal](clojure-cli/data-browsers/portal.md)
 
 
 ## Developing Clojure
@@ -258,12 +258,12 @@
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
 * [Clojure CLI Tools](reference/clojure-cli-tools/index.md)
-    * [deps.edn aliases](clojure-tools/configure/deps-edn-aliases.md)
+    * [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md)
     * [Defining Aliases](reference/clojure-cli-tools/defining-aliases.md)
     * [Example Alias definitions](reference/clojure-cli-tools/example-alias-definitions.md)
     <!--
-        * [Common Tasks](clojure-tools/configure/common-tasks.md)
-        * [Defining aliases](clojure-tools/configure/defining-aliases.md)
+        * [Common Tasks](clojure-cli/configure/common-tasks.md)
+        * [Defining aliases](clojure-cli/configure/defining-aliases.md)
     -->
 * [Quick Clojure reference](quickstart/quick-reference.md)
 * [Standard Library](reference/standard-library/index.md)
