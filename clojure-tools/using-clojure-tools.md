@@ -1,9 +1,9 @@
-# Using Clojure tools
-The `clojure` command provided by [installing Clojure CLI tools](install/clojure.md) can be used to evaluate code, run Clojure applications and start a REPL for a [Clojure editor](/clojure-editors/) or [a command line REPL UI](rebel-repl/).
+# Using Clojure CLI
+The `clojure` command provided by [installing the Clojure CLI](install/clojure.md) is used to evaluate code, run Clojure applications (and tools) and start a REPL for a [Clojure editor](/clojure-editors/) or [a command line REPL UI](rebel-repl/).
 
-Clojure CLI tools are extended by adding aliases for community tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
-> #### Hint::Editor used for majority of developer workflows
+> #### Hint::REPL connected editor used for majority of developer workflows
 > A [REPL connected Editor](/clojure-editors/) provides the richest developer workflow for Clojure
 
 
@@ -15,27 +15,24 @@ https://youtu.be/u5VoFpsntXc
 ## Common tasks for Clojure development
 Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).
 
-| Task                                       | Command                                                   | Built-in  |
-|--------------------------------------------|-----------------------------------------------------------|-----------|
-| Run Command Line REPL                      | `clojure` or `clj` if `rlwrap` binary installed           | Yes       |
-| Run Command Line REPL with Rebel           | `clojure -M:repl/rebel`                                   | Add alias |
-| Run REPL process with nREPL editor support | `clojure -M:middleware/cider-clj`                         | Add alias |
-| Create project (clojure exec)              | `clojure -X:new :template app :name practicalli/my-app`   | Add alias |
-| Create project (clojure main)              | `clojure -M:new app practicalli/my-app`                   | Add alias |
-| Download dependencies                      | `clojure -Spath` or `clojure -P`  (plus optional aliases) | Yes       |
-| Run the project                            | `clojure -M -m domain.main-namespace`                     | Yes       |
-| Run the project                            | `clojure -X:project/run -m domain.main-namespace`         | Add alias |
-| Find libraries (mvn & git)                 | `clojure -M:project/find-deps library-name`               | Add alias |
-| Check for new dependency versions          | `clojure -M:project/outdated`                             | Add alias |
-| Run tests                                  | `clojure -M:test/runner`                                  | Add alias |
-| Package library                            | `clojure -X:project/jars`                                 | Add alias |
-| Deploy library locally                     | `clojure -X:deps mvn-install`                             | Yes       |
-| Package application                        | `clojure -X:project/uberjar`                              | Add alias |
+| Task                                       | Command                                                 | Built-in  |
+|--------------------------------------------+---------------------------------------------------------+-----------|
+| Run Command Line REPL                      | `clojure` or `clj` if `rlwrap` binary installed         | Yes       |
+| Run Command Line REPL with Rebel and nREPL | `clojure -M:repl/rebel`                                 | Add alias |
+| Create project (clojure exec)              | `clojure -X:new :template app :name practicalli/my-app` | Add alias |
+| Download dependencies                      | `clojure -P`  (plus optional aliases)                   | Yes       |
+| Run the project (clojure.main)             | `clojure -M -m domain.main-namespace`                   | Yes       |
+| Run the project (clojure.exec)             | `clojure -X:project/run -m domain.main-namespace`       | Add alias |
+| Find libraries (mvn & git)                 | `clojure -M:project/find-deps library-name`             | Add alias |
+| Check for new dependency versions          | `clojure -T:project/outdated`                           | Add alias |
+| Run tests                                  | `clojure -M:test/runner`                                | Add alias |
+| Package library                            | `clojure -X:project/jars`                               | Add alias |
+| Deploy library locally                     | `clojure -X:deps mvn-install`                           | Yes       |
+| Package application                        | `clojure -X:project/uberjar`                            | Add alias |
 
-Clojure CLI tools can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
+Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-tools/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-tools/files-and-scripts.md), although these approaches are less common.
 
 ## What version of Clojure CLI tools are installed?
-The `deps.edn` file allows you to specify a particular version of the Clojure language the REPL and project use.  You can also evaluate `*clojure-version*` in a REPL to see which version of the Clojure language is being used.
 
 `clojure -Sdescribe` will show you the version of the Clojure CLI tools that is currently installed.
 
@@ -64,3 +61,9 @@ The most used flags for the `clojure` command
 >
 > The `-X` flag should be used for the new built-in aliases and for any tools supporting Clojure exec approach, with arguments passed as key/value pairs.
 > More tools should start adopting the `-X` flag and supporting key/value arguments in future.
+
+## Which version of Clojure
+
+Evaluate `*clojure-version*` in a REPL to see which version of the Clojure language is currently being used.
+
+Including `org.clojure/clojure` in either a project or user level `deps.edn` file allows specification of a particular version of the Clojure language to use.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
