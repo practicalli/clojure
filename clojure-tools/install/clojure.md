@@ -22,6 +22,8 @@ sudo ./linux-install-1.10.3.1040.sh
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
+
+
 <!-- Homebrew (MacOSX) install -->
 {% content "homebrew" %}
 
@@ -87,11 +89,22 @@ The output of the command includes the version of Clojure in the `:version` key
  :repl-aliases ""}
 ```
 
+## User Configuration files
+
+Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.
+
+If `XDG_CONFIG_HOME` is set by your operating system then its value over-rides the default location, e.g. `$HOME/.config/.clojure`
+
+`CLJ_CONFIG` can be used to over-ride all other location settings
+
+> Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:config-user` value.
+
 ---
 
 **Optional: rlwrap readline**
+
 Install the `rlwrap` binary to support the `clj` wrapper, which launches a Clojure REPL with command history.
 
 `rlwrap` is available with most Linux systems.  Look for  install instructions by searching for rlwrap in a web browser.
 
-> [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL.
+> [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL and does not require rlwrap.
