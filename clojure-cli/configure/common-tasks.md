@@ -1,5 +1,5 @@
 # Common Development Tasks
-Clojure CLI tools can be used for a number of tasks, especially when combined with the community tools available via [practicalli/clojure-deps-edn configuration](https://practicalli.github.io/clojure/clojure-tools/install/community-tools.html).
+Clojure CLI tools can be used for a number of tasks, especially when combined with the community tools available via [practicalli/clojure-deps-edn configuration](https://practicalli.github.io/clojure/clojure-cli/install/community-tools.html).
 
 - Run a REPL (clj, rebel, reveal)
 - Create a new project from a template

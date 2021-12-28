@@ -431,13 +431,13 @@
 
 
 * [alternative tools](alternative-tools/index.md)
-    * [Basic REPL](alternative-tools/clojure-tools/basic-repl.md)
-    * [Compare with Leiningen](alternative-tools/clojure-tools/compare-with-leiningen.md)
-    * [Migrating from Leiningen](alternative-tools/clojure-tools/migrating-to-clojure-cli-tools.md)
-    * [REBL data browser](alternative-tools/clojure-tools/cognitect-rebl.md)
-    * [Evaluate an expression](alternative-tools/clojure-tools/evaluate-an-expression.md)
-    * [Hotload Libraries](alternative-tools/clojure-tools/hotload-libraries.md)
-    * [REPL start namespace](alternative-tools/clojure-tools/set-namespace-on-repl-startup.md)
+    * [Basic REPL](alternative-tools/clojure-cli/basic-repl.md)
+    * [Compare with Leiningen](alternative-tools/clojure-cli/compare-with-leiningen.md)
+    * [Migrating from Leiningen](alternative-tools/clojure-cli/migrating-to-clojure-cli-tools.md)
+    * [REBL data browser](alternative-tools/clojure-cli/cognitect-rebl.md)
+    * [Evaluate an expression](alternative-tools/clojure-cli/evaluate-an-expression.md)
+    * [Hotload Libraries](alternative-tools/clojure-cli/hotload-libraries.md)
+    * [REPL start namespace](alternative-tools/clojure-cli/set-namespace-on-repl-startup.md)
     * [Leiningen Build automation](alternative-tools/leiningen/index.md)
 <!--     * [Leiningen Configuration](leiningen/index.md) -->
 <!--         * [Create a project](leiningen/create-a-project.md) -->

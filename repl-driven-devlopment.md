@@ -37,7 +37,7 @@ Expressions in rich comment blocks can represent how to use the functions that m
 
 ![Practicalli Clojure Repl Driven Development - Rich comment blocks example](/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
 
-Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-tools/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 ```clojure
 ;; Rich comment block with redefined vars ignored
@@ -75,7 +75,7 @@ The design journal can be used to create meaningful documentation for the projec
 ## Viewing data structures
 Pretty Print show results of function calls in a human-friendly form. When results are data structures, pretty print makes it easier for a developer to parse and more likely to notice incorrect results.
 
-[Clojure Data Browsers](/clojure-tools/data-browsers/reveal.md) ([cider-inspect](/clojure-tools/data-browsers/clojure-inspector.md), [Reveal](/clojure-tools/data-browsers/reveal.md), [Portal](/clojure-tools/data-browsers/portal.md)) provide effective ways to navigate through a nested data structures and large data sets.
+[Clojure Data Browsers](/clojure-cli/data-browsers/reveal.md) ([cider-inspect](/clojure-cli/data-browsers/clojure-inspector.md), [Reveal](/clojure-cli/data-browsers/reveal.md), [Portal](/clojure-cli/data-browsers/portal.md)) provide effective ways to navigate through a nested data structures and large data sets.
 
 ![Clojure - viewing large data sets](/images/spacemacs-clojure-inspect-java-lang-persistent-vector.png)
 

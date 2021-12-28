@@ -1,7 +1,7 @@
 # Rebel - a command line REPL UI
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing and production systems.
 
-rebel is a REPL UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-tools/basic-repl.md) by default.
+rebel is a REPL UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-cli/basic-repl.md) by default.
 
 {% youtube %}
 https://youtu.be/U19TWMsg0s0

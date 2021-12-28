@@ -16,7 +16,7 @@ New tools are being created to capture and visualize results from evaluated expr
 * [Clojure inspector](clojure-inspector.md) (Java Swing based inspector)
 
 ## Specific cases
-[Cognitect REBL data browser](/alternative-tools/clojure-tools/cognitect-rebl.md) has been developed to assist with Datomic Clojure database development.
+[Cognitect REBL data browser](/alternative-tools/clojure-cli/cognitect-rebl.md) has been developed to assist with Datomic Clojure database development.
 
 Cognitect provides the REBL data browser as part of the [Cognitect dev-tools](https://cognitect.com/dev-tools)
 
