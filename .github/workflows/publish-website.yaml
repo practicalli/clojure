@@ -14,7 +14,7 @@ on:
       - .gitignore
       - '_book/**'
     branches:
-      - master
+      - main
     types:
       - completed
 
