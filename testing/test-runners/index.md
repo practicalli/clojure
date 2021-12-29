@@ -3,7 +3,7 @@ A Test runner is a tool to run test in a project and report the results. During 
 
 Regularly running some or all of the tests in a project checks the design decisions made so far have not regressed by additional development.
 
-Test runners are highly recommeded step as part of continuous integration and should be used in conjunction with a CI Server for every project.
+Test runners are highly recommended step as part of continuous integration and should be used in conjunction with a CI Server for every project.
 
 > #### Hint::All code should compile
 > All the code in the project should be correct Clojure code and compiled unless commented with `;;`, a `(comment ,,,)` blocks or prefixed with the `#_` reader macro.  If code is know not to be correct, `;;` comment is recommended comment approach.
@@ -28,20 +28,22 @@ Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD sty
 > Aliases for these test runners are provided the [practicalli/clojure-deps.edn]({{ book.P9IClojureDepsEdn }}) configuration.
 
 
-## Other test runners
+## Improving test result readability
 
-* [eftest](https://github.com/weavejester/eftest) - James Reeves fast and pretty test runner for clojure.test and compatable test libraries (midge, etc)
+Include the `:env/test` alias when starting a REPL to include the Humane Test Output library, which will pretty print results
+
+Add the following code to a `user` namespace on the class path (i.e. a `dev/user.clj` file if including the `:env/dev` alias)
+
+```clojure
+(require '[pjstadig.humane-test-output :as humane-test-results])
+(humane-test-results/activate!)
+```
+
+* [humane-test-output](https://github.com/pjstadig/humane-test-output) - more human readable test output with equality assertions diffed
 
 
-<!-- ## Tools for Leiningen and Boot projects -->
 
-<!-- * [lein-test-refresh](https://github.com/jakemcc/lein-test-refresh) - Leiningen plugin to run tests on file changes -->
-<!-- * [humane-test-output](https://github.com/pjstadig/humane-test-output) - Leiningen plugin for more human readable test output with equality assertions diffed. -->
-<!-- * [bat-test](https://github.com/metosin/bat-test) - test runner for boot projects -->
-
-
-
-<!-- ClojureScrpt specific testing content -->
+<!-- ClojureScript specific testing content -->
 <!-- ## ClojureScript testing -->
 <!-- * [cljs-test-display](https://github.com/bhauman/cljs-test-display) - visual display of in-browser ClojureScript test run -->
 <!-- cljs-test-display is a ClojureScript library provide visual system feedback for web-based test runners.  It is already included in figwheel-main -->

@@ -24,7 +24,7 @@ Define an alphabet to use as a basis for conversion.  Take the string of all cha
 ```
 
 ## Generate a cypher
-To convert a character, first build up a cypher.  A cypher in this case is simply a hash-map that creates a dictionalry lookup defining what each character should be changed to.
+To convert a character, first build up a cypher.  A cypher in this case is simply a hash-map that creates a dictionary lookup defining what each character should be changed to.
 
 `cycle` creates a lazy sequence of the alphabet that continually cycles.  This provides an 'infinite' sequence from which we will take only the characters needed.
 
@@ -111,7 +111,7 @@ Update the `rot13` function to use [`clojure.string/join`](https://clojuredocs.o
 
 <!-- ``` -->
 
-<!-- Using the `clojure.comre/map` function -->
+<!-- Using the `clojure.core/map` function -->
 
 
 <!-- Create a Clojure set with the lower and uppercase characters of the English alphabet -->

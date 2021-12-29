@@ -4,8 +4,6 @@ Testing is supported in Clojure with a range of testing libraries and test runne
 ## Unit Test style frameworks
 Unit testing is part of the Clojure standard library and provides assertion based testing
 * `clojure.test`
-* [Midge](https://github.com/marick/Midje) - a more advanced version of clojure.test with mocking, nested checkers, etc.
-* [fudje](https://github.com/jimpil/fudje) - a lightweight version of Midge
 
 ## Clojure Spec and Generative testing
 Define specifications for data and functions, generating extensive test data from specifications and using that data to verify behavior of functions in generative testing.

@@ -7,8 +7,8 @@ A simple application that returns a random function from the `clojure.core` name
 There are 659 functions in [`clojure.core` namespace](https://clojuredocs.org/clojure.core) and 955 in the standard library (as of June 2020).  These functions are learned over time as experience is gained with Clojure.
 
 
-## Live Coding Video walkthrough
-A [Live coding video walkthrough of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
+## Live Coding Video walk-through
+A [Live coding video walk-through of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
 
 {% youtube %}
 https://youtu.be/sXZKrD4cAFk
@@ -230,7 +230,7 @@ This function can be mapped over all the namespaces to get a sequence of all fun
 (mapcat #(vals (ns-publics %)) (all-ns))
 ```
 
-Bind the results of this experession to the name `all-public-functions`.
+Bind the results of this expression to the name `all-public-functions`.
 
 ```clojure
 (def available-namespaces
@@ -256,13 +256,13 @@ The `-main` function uses `[& args]` as a means to take multiple arguments. All 
 
 Use an anonymous function to convert the arguments to symbols and retrieve the list of public functions from each namespace.  This saves mapping over the arguments twice.
 
-`mapcat` the function-list function over all the namepaces, converting each namespace to a symbol.
+`mapcat` the function-list function over all the namespaces, converting each namespace to a symbol.
 
 ```clojure
 (mapcat #(function-list (symbol %)) args)
 ```
 
-Update the main function with an if statement.  Use `seq` as the condition to test if a sequence (the argument vector) has any elements (namepaces to use).
+Update the main function with an if statement.  Use `seq` as the condition to test if a sequence (the argument vector) has any elements (namespaces to use).
 
 If there are arguments, then get the functions for the specific namespaces.
 
@@ -333,7 +333,7 @@ Add functionality to list all functions from all namespaces or a specific namesp
 
 
 
-<!-- > #### Hint::Evaluating namepaces on REPL start -->
+<!-- > #### Hint::Evaluating namespaces on REPL start -->
 <!-- > The REPL does not evaluate project code on start-up.  If it did and that code had a error, it may prevent the REPL from starting. -->
 <!-- > -->
 <!-- > Standard practice is to required the main namespace for the project, then switch the REPL to that namespace.  The functions for the project are now available. -->

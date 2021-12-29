@@ -1,7 +1,7 @@
 # Clojure Quick Reference
 The basic Clojure syntax and a few common functions you should probably learn first.
 
-Also see the [Clojure.org cheetsheet](https://clojure.org/api/cheatsheet)
+Also see the [Clojure.org cheat-sheet](https://clojure.org/api/cheatsheet)
 
 ## Calling functions
 The first element in a list, `()`, is treated as a call to a function. This is known as prefix notation which greatly simplifies Clojure syntax and makes mathematical expressions completely deterministic, eliminating the need for [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations).
@@ -73,7 +73,7 @@ The above `map` function is roughly equivalent to the following expression
 ```
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collecion and one or more values.
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 
 ## Defining custom functions
@@ -107,10 +107,11 @@ Function definitions can also be used within other expressions, useful for mappi
 (type (/ 22 7))
 ```
 
-;; Using a Ratio means that the mathmatical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
+;; Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
 
 
-## Java inteoperability
+## Java interoperability
+
 `.` and `new` are Clojure functions that create a Java object. This allows you to use values from Java constants, i.e. PI is a static double from the [java.lang.Math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) object
 
 ```clojure

@@ -3,7 +3,7 @@
 * [Introduction](introduction.md)
     * [First taste of Clojure](first-taste-of-clojure.md)
         * [Creative coding](creative-coding.md)
-    * [REPL driven development](repl-driven-devlopment.md)
+    * [REPL driven development](repl-driven-development.md)
     * [Clojure concepts](concepts/index.md)
         * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
         * [Clojure from the Author](concepts/clojure-made-simple.md)
@@ -102,7 +102,7 @@
     * [Data Transformation](simple-projects/data-transformation/index.md)
         * [Most common word](simple-projects/data-transformation/most-common-word.md)
     * [Kata - TDD](simple-projects/tdd-kata/index.md)
-        * [Recent Songlist](simple-projects/tdd-kata/recent-songlist.md)
+        * [Recent Song-list](simple-projects/tdd-kata/recent-song-list.md)
 
     <!-- Refactor or delete -->
     <!-- * [Reading Files](simple-projects/index.md) -->
@@ -147,11 +147,11 @@
 <!-- * [Testing Clojure](testing/index.md) -->
 * [Unit testing](testing/unit-testing/index.md)
     * [Configure projects](testing/unit-testing/configure-projects-for-tests.md)
-    * [Requiring Test namepaces](testing/unit-testing/require-test-namespaces.md)
+    * [Requiring Test namespaces](testing/unit-testing/require-test-namespaces.md)
     * [Writing Unit Tests](testing/unit-testing/writing-unit-tests.md)
     * [Fixtures](testing/unit-testing/fixtures.md)
     * [Test Selectors](testing/unit-testing/test-selectors.md)
-    <!-- * [TDD Kata: Recent Songlist](testing/unit-testing/tdd-kata/recent-songlist.md) -->
+    <!-- * [TDD Kata: Recent Song-list](testing/unit-testing/tdd-kata/recent-song-list.md) -->
     <!-- * [Expectations](testing/unit-testing/clojure-test-expectations.md) -->
 
 * [Test runners](testing/test-runners/index.md)
@@ -277,7 +277,7 @@
         * [String Split](reference/standard-library/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/standard-library/regular-expressions/sub-expression-matches.md)
 
-<!-- Move sytax into a reference section and use projects to expose audience to Clojure syntax -->
+<!-- Move syntax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
 * [Syntax](reference/clojure-syntax/syntax.md)
     * [Parentheses](reference/clojure-syntax/parenthesis.md)
@@ -314,7 +314,7 @@
     <!-- Introducing the most common function families from clojure.core -->
     <!-- map reduce apply -->
     <!-- group-by sort-by -->
-    <!-- partition partiion-all partition... -->
+    <!-- partition partition-all partition... -->
 
     * [Using data](using-data-structures/index.md)
         * [Sequences](using-data-structures/sequences.md)
@@ -351,11 +351,11 @@
 
 
 
-<!-- Definging names for data and expressions -->
+<!-- Defining names for data and expressions -->
 <!-- Defining custom functions -->
-<!-- reducting functions -->
+<!-- reducing functions -->
 <!-- * [Defining Functions](basic-clojure/defining-functions.md) -->
-<!--     * [Defing behaviour with Functions](defining-behaviour-with-functions/index.md) -->
+<!--     * [Defining behaviour with Functions](defining-behaviour-with-functions/index.md) -->
 <!--     * [Syntax](defining-behaviour-with-functions/syntax.md) -->
 <!--     * [Calling functions](defining-behaviour-with-functions/calling-functions.md) -->
 <!--     <\!-- * [Examples](defining-behaviour-with-functions/examples.md) -\-> -->
@@ -366,7 +366,7 @@
 
 
 <!-- Elegantly applying Clojure idiomatically and climbing up the Clojure abstraction mountain (kilimanjaro, eg. its tall but not a sheer face like the Eiger, as each layer builds upon previous layers, a refinement as it were) -->
-<!-- Abstrction mountain
+<!-- Abstraction mountain
      - functions
      - function composition
      - recursion - loop/recur recursive functions with recur
@@ -374,13 +374,13 @@
      - clojure.core sequences and related functions
      - reduce and reducing functions
      - comp juxt
-     - transducers teep-->
+     - transducers -->
 
-<!-- Or draw the analyogy of riding across the Clojure landscape
+<!-- Or draw the analogy of riding across the Clojure landscape
      -- riding up and down hills as you learn major milestones of Clojure,
-     climbing and reaching various platos.
+     climbing and reaching various plateaus.
      Showing the effort of climbs as an overall effort of brain power with
-     decents being growth in confidence
+     descents being growth in confidence
 
      This example can then be used in one of the exercises to judge the effort
      a reader has exerted so far and how much more effort is still required.
@@ -476,9 +476,6 @@
 ## Deprecated Content
 <!-- Link for renamed integration testing section -->
 * [Integration testing](testing/integration-testing/index.md)
-<!-- * [How to use the workshop](using-the-workshop/index.md) -->
-<!--     * [Technical Requirements](using-the-workshop/requirements.md) -->
-<!--     * [Code Examples](using-the-workshop/code-examples.md) -->
 <!-- * [Development Environments](development-environments/index.md) -->
 <!--     * [Java](development-environments/java.md) -->
 <!--     * [Leiningen](development-environments/leiningen.md) -->

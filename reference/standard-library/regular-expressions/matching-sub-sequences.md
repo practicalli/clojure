@@ -1,5 +1,5 @@
 ## Matching sub-sequences
-`re-seq` returns a lazy seq of all of the matches. The elements of the seq are the restults that `re-find` would return.
+`re-seq` returns a lazy seq of all of the matches. The elements of the seq are the results that `re-find` would return.
 
 ```eval-clojure
 (re-seq #"s+" "Helloween")

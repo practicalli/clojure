@@ -1,4 +1,4 @@
-# Control Flow 
+# Control Flow
 
 The following section of functions gives examples of simple control flow.  As you gain more experience with Clojure, you will discover more functional ways to achieve the same (or better) results.
 
@@ -7,8 +7,8 @@ The following section of functions gives examples of simple control flow.  As yo
 
 ## If
 
-  Using the `if` funtion you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
-  
+  Using the `if` function you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
+
   Here is a simple example to see if one number is bigger that another
 
 ```clojure
@@ -19,7 +19,7 @@ The following section of functions gives examples of simple control flow.  As yo
 => "Higher"
 ```
 
-Here is an example of an condtion inside an anonymous fuction.
+Here is an example of an condition inside an anonymous function.
 
 ```clojure
 (defn even-number [number]
@@ -44,7 +44,7 @@ When a condition is true, then return the value of evaluating the next expressio
 
 
 ## Case
-When one of these things is true, do this, else default 
+When one of these things is true, do this, else default
 
 ```clojure
 (case (inc 3)
@@ -59,7 +59,7 @@ When one of these things is true, do this, else default
 
 ## Cond
 
-Return the assocated value of the first condition that is true, or return the default value specified by `:otherwise`
+Return the associated value of the first condition that is true, or return the default value specified by `:otherwise`
 
 ```clojure
 (cond
@@ -90,7 +90,7 @@ Using the `for` function you can Iterate through the values in a collection and 
 Do something while the condition is true
 
 ```clojure
-(while (condition) 
+(while (condition)
   (do something))
 ```
 
@@ -110,4 +110,3 @@ Here is a simple while example that uses a (mutable) counter and prints out the 
 > This example uses mutable state and causes a side effect by printing to the repl.  Both these kinds of things are typically kept to a minimum in Clojure.
 
 > **TODO** An alternative would be to use use the iteration over a collection to control the while condition
-

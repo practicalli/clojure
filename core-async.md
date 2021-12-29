@@ -5,7 +5,7 @@
 
 recommendation / intro tutorial
 
-https://github.com/clojure/core.async/blob/master/examples/walkthrough.clj
+https://github.com/clojure/core.async/blob/master/examples/walk-through.clj
 
 
 EuroClojure talk about clojure otp library that built on top of core.async because they felt it was too low level
@@ -150,7 +150,7 @@ but what will consume the eventual record stream ?
 This makes the API into a smaller, custom dataset that can be interrogated via Kibana
 
 
-I am not saying I don’t want to add “[4] concatenate results from each of the page queries into a single record stream”, but I can’t think of why I would do that, and that is probably me being ignorant of the benfits etc.  Please could you explain to me why I would add this step - I really am asking, not being a prick, I promise :slightly_smiling_face:
+I am not saying I don’t want to add “[4] concatenate results from each of the page queries into a single record stream”, but I can’t think of why I would do that, and that is probably me being ignorant of the benefits etc.  Please could you explain to me why I would add this step - I really am asking, not being a prick, I promise :slightly_smiling_face:
 
 
 do you want to expose your downstream consumers to an additional level of structure (pages) which is an implementation feature of the upstream API  ?

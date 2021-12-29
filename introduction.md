@@ -10,9 +10,9 @@
 
 ## Clojure REPL Driven Development
 
-Clojure runs in [a REPL process](repl-driven-devlopment.md) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
+Clojure runs in [a REPL process](repl-driven-development.md) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
 
-The REPL is the [Clojure interactive environment](repl-driven-devlopment.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
+The REPL is the [Clojure interactive environment](repl-driven-development.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
 
 [![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)
 

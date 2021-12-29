@@ -87,7 +87,7 @@ Arguments to the function are passed as a hash-map, defined in either an aliases
 
 `clojure -X:alias` runs the function specified by `:exec-fn` in the alias.  The function must include its namespace or have that namespace defined in `:ns-default`. If `:exec-args` is defined in the alias, its value is passed to the function, otherwise an empty hash-map is passed to the function as an argument.
 
-`clojure -X:alias namesapace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default` value if set.
+`clojure -X:alias namespace/fn` will run the function specified on the command line, over-riding `:exec-fn` if it is defined in the alias.  `:exec-args` will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the `:ns-default` value if set.
 
 `clojure -X:alias :key1 val1 :key2 val2` will execute the function defined in `:exec-fn` and pass it the key value pairs from the command line as a hash map.  If the alias has `:exec-args` defined, command line args are merged into the `:exec-fn` hash-map, replacing the default values in `:exec-args` where keys match.
 

@@ -5,7 +5,7 @@ This is an example of using the threading macros and  a REPL to give fast feedba
 > #### NOTE::
 > Write functions that will give a list of the most used words used in a book, excluding the common English words like "the, and, it, I".  Join those functions with a threading macro.
 
-Suggest you use the assumed perfectly legal copy of the [Hitchhickers book text](http://clearwhitelight.org/hitch/hhgttg.txt) using the `slurp` function
+Suggest you use the assumed perfectly legal copy of the [Hitch-hickers book text](http://clearwhitelight.org/hitch/hhgttg.txt) using the `slurp` function
 
 
 **Approximate algorithm**
@@ -67,7 +67,7 @@ Now the `-main` function will only return the result of the `(get-book book-url)
 > **Hint** In Spacemacs / Emacs, the keybinding C-c C-p show the output in a seperate buffer.  Very useful when the function returns a large results set.
 
 
-## Off-line sources of Hitchhickers book and common English words
+## Off-line sources of Hitch-hickers book and common English words
 
 ```
 (def book (slurp "./hhgttg.txt"))

@@ -16,7 +16,7 @@ On average it tends to give you clearer, more functional code whereas loop/recur
 > ####Warning::Recursion can hit the limit of your heap/stack and cause a ... exception
 
 
-## Tail-call Optomisation with `recur`
+## Tail-call Optimisation with `recur`
 
 Tail-call optomisation is where a part of memory is over-written by additional calls during recursive calls.  By using the same memory segment each time, then the memory footprint of your code does not increase.
 

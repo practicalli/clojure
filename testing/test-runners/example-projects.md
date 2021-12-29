@@ -1,6 +1,6 @@
 # Example projects
 
-* [TDD Kata: Recent Songlist](/simple-projects/tdd-kata/recent-songlist.md) - simple tests examples
+* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
 * [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
 * [practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
 * [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
@@ -15,7 +15,7 @@
 
 Cognitect Labs test runner included in the project `deps.edn` file as `:runner`
 
-`clojure -M:test:runner` will run the Cogitect Labs runner and include the dependecy to run the in-menory database used for the tests.
+`clojure -M:test:runner` will run the Cognitect Labs runner and include the dependency to run the in-memory database used for the tests.
 
 
 ### Using koacha with Sean Corfield user manager

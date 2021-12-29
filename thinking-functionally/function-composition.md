@@ -34,8 +34,8 @@ This expression is common in the Lisp & Clojure languages.  Occasionally the cre
 ;; and generalise the function with arguments
 
 (defn common-data-calculation
-  [certanty-factor scope]
-  (* certanty-factor (reduce +  (map inc (range scope)))))
+  [certainty-factor scope]
+  (* certainty-factor (reduce +  (map inc (range scope)))))
 ```
 
 <!--endsec-->

@@ -20,7 +20,7 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 > This project was inspired by the RNA Transcription exercise on Exercism.io.  Related exercises include Nucleotide Count and Hamming.
 
 ## Create a project
-The project is part of the [Exercism.io Clojure track](/coding-challenges/exercism/rna-transcription.html) and a project can be downloaded via the Exercsim command line tool.
+The project is part of the [Exercism.io Clojure track](/coding-challenges/exercism/rna-transcription.html) and a project can be downloaded via the Exercisim command line tool.
 
 Alternatively, use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
@@ -172,12 +172,12 @@ Passing `dictionary-dna-rna` as an argument to the `to-rna` function as well as 
 The change to the `to-rna` function will break all the tests.
 
 > #### Hint::Exercisim project and the pure function
-> If you wish to keep the Exercisim project passing, then add a new namspace to the project by create a new file called `rna-transcript-pure.clj`.  Add the new design of the `to-rna` function to that namespace.  Copy the tests into a new namespace by creating a file called `rna-transcription-pure.clj` and update the tests to use two arguments when calling `to-rna`
+> If you wish to keep the Exercisim project passing, then add a new namespace to the project by create a new file called `rna-transcript-pure.clj`.  Add the new design of the `to-rna` function to that namespace.  Copy the tests into a new namespace by creating a file called `rna-transcription-pure.clj` and update the tests to use two arguments when calling `to-rna`
 
 Updated unit tests that call `to-rna` with both arguments
 
 ```clojure
-(ns rna-transtription-pure-test
+(ns rna-transcription-pure-test
   (:require [clojure.test :refer [deftest is]]
             [rna-transcription-pure :as SUT]
             [rna-transcription :as data]))

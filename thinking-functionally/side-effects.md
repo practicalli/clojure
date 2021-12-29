@@ -1,8 +1,8 @@
 # Side effects
 
-A side effect is something that creates a change outside of the currrent code scope, or something external that affects the behaviour or result of executing the code in the current scope.
+A side effect is something that creates a change outside of the current code scope, or something external that affects the behaviour or result of executing the code in the current scope.
 
-## Undeterministic - the complexity iceburg
+## Nondeterministic - the complexity iceberg
 
 When you have side effects, you cannot reason accurately about a piece of the code.
 
@@ -19,6 +19,7 @@ You can think about these effects is in two specific areas, **Side Causes** and 
 * **Side Effects** - are where the current code (function) affects the rest of the system
 
 
-[![Side Causes & Side Effects - Kris Jenkins](/images/functional-programmig-side-effects.png)](/images/functional-programmig-side-effects.png)
+[![Side Causes & Side Effects - Kris Jenkins](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/theory/side-causes-side-effects.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/theory/side-causes-side-effects.png)
 
-> **Hint** The term of side causes was coined by [Kris Jenkins](https://twitter.com/krisajenkins) in the supperb article [What is Functional Programming?](http://blog.jenkster.com/2015/12/what-is-functional-programming.html)
+> #### Hint::Side Causes term
+> The term of side causes was coined by [Kris Jenkins](https://twitter.com/krisajenkins) in the supperb article [What is Functional Programming?](http://blog.jenkster.com/2015/12/what-is-functional-programming.html)

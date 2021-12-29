@@ -4,7 +4,7 @@ This
 > #### Hint::Work in progress
 
 * loop recur
-* reducing fucntions
+* reducing functions
 * map apply reduce
 * partition group-by sort-by
 

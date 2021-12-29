@@ -5,7 +5,7 @@
    This project will create a simple salary calculator that has the following features:
 
   * Given an annual salary, show the hourly, daily weekly, monthly value
-  * Given an hourly rate, show the approximate perminat salary its equivalent to
+  * Given an hourly rate, show the approximate permanent salary its equivalent to
 
 
 ## Create a new Clojure project

@@ -3,13 +3,13 @@
 > **Fixme** Split this into sections ?
 
   Writing some simple mathematics helps you get used to the form of Clojure.  Unlike other languages, Clojure does not have operators for mathematics.  Instead `+ - * /` are all functions in their own right.
-  
+
   As Clojure uses pre-fix notation then mathematical expressions are always unambiguous.  There is no need for an operator precedence table in Clojure.
 
 > **Note** Write some simple math to help you get used to the form of Clojure
 
 ```clojure
-(+ 1 2 3 4 5 6 7) 
+(+ 1 2 3 4 5 6 7)
 (- 2 1)
 (* 3 7)
 (/ 12 4)
@@ -39,7 +39,7 @@
 
 ![](../images/clojure-playground-maths-variadic-functions.png)
 
-> **Note** Explore some number related functions 
+> **Note** Explore some number related functions
 
 ```clojure
 (rem 22 7)
@@ -66,8 +66,8 @@
 > **Note** Explore what equality means in Clojure.  Equality is very useful when your data structures are immutable
 
 ```clojure
-(= 1 1) 
-(= 2 1) 
+(= 1 1)
+(= 2 1)
 
 (identical? "foo" "bar")
 (identical? "foo" "foo")
@@ -81,7 +81,7 @@
 (false)
 (not true)
 (true? (= 1 1))
-(false (= 1 -1)) 
+(false (= 1 -1))
 ```
 
   Equality is very efficient when your data structures are immutable.  For example if you have very large data sets, you can simply compare a hash value to see if those data structures are the same.
@@ -89,12 +89,12 @@
   Of course you also have the `not` function for reversing logic too
 
 ```clojure
-(not true) 
+(not true)
 
 => false
 ```
 
-## Truethy experiments
+## Boolean - True and False
 
 ;; some truthiness with math functions for you to try
 
@@ -177,5 +177,3 @@ If you want to force Clojure to evaluate this then you can specify one of the nu
 ```clojure
 (class (/ 22 7.0))
 ```
-
-

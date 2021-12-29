@@ -13,7 +13,7 @@ It minimises the need to use complex concurrent constructs and worry less about 
 
 > #### Hint:: core.async resources
 * [core.async getting started](https://github.com/clojure/core.async/wiki/Getting-Started)
-* [Introduction to asyncronous programming](http://www.bradcypert.com/2016/07/15/clojure-async/)
+* [Introduction to asynchronous programming](http://www.bradcypert.com/2016/07/15/clojure-async/)
 * [ClojureScript core.async and todos](https://rigsomelight.com/drafts/clojurescript-core-async-todos.html) - Bruce Haurman
 * [core.async 101](https://medium.com/@loganpowell/cljs-core-async-101-f6522faf536d)
 * [Mastering concurrent processes](https://www.braveclojure.com/core-async/)

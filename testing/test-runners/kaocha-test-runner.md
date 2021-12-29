@@ -1,7 +1,9 @@
 # Kaocha Test Runner from LambdaIsland
+
 [lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and clojure.spe generative testing.  Clojure and ClojureScript languages are supported.
 
 ## A minimal starting point
+
 Install the [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
 ```bash
@@ -16,6 +18,7 @@ clojure -M:test/watch
 
 
 ## Add kaocha binary to the project project
+
 Kaocha recommends adding a `bin/kaocha` script to the project, providing a standard location from which to run kaocha and to include project command line options.  Command line options will over-ride the same options in the `tests.edn` file.
 
 ```bash
@@ -24,7 +27,8 @@ clojure -M:test/runner "$@"
 ```
 
 
-## Continuous Integraion support
+## Continuous Integration support
+
 For CI services such as CircleCI or GitLabs, add an alias for kaocha to the project `deps.edn` file.
 
 ```clojure
@@ -36,6 +40,7 @@ For CI services such as CircleCI or GitLabs, add an alias for kaocha to the proj
 
 
 ## Configuring test runs
+
 Kaocha can be configure by options in a `test.edn` configuration file and options passed via the command line (typically added to the bin/kaocha script).
 
 Create a `test.edn` file in the root of the project directory.
@@ -57,6 +62,7 @@ Use the default configuration as a basis for customizing any specific project.
 
 
 ## Running tests
+
 With a `deps.edn` project with tests under the standard `test` directory and using `-test` postfix on test names, then all that is required is the `kaocha` command
 
 ```bash
@@ -92,6 +98,7 @@ Tests are run in a random order, controlled by a seed in the test.edn configurat
 `--watch` flag enables watch mode which monitors file changes in source and test paths (from the kaocha configuration), loads in changes and runs tests again.  TODO: rerun just the tests that changed ??
 
 ## Plugins
+
 Much of the functionality of Kaocha is provide by plugins
 
 * profiling - lists the slowest tests for each test category
@@ -100,6 +107,7 @@ Much of the functionality of Kaocha is provide by plugins
 
 
 ### Profiling
+
 Show the 3 slowest tests for each category of test, after the test results
 
 As a command line option:
@@ -113,6 +121,7 @@ or added to the `test.edn` configuration
 ```
 
 ## Example: banking-on-clojure project
+
 The practicalli/banking-on-clojure project is a web application backed by a relational database, using kaocha as the test runner.
 
 `:kaocha/tests` defines two types of tests.  The hash-map containing `:kaocha.testable/id :unit` defines the configuration for unit tests using `clojure.test`.  The hash-map containing `:kaocha.testable/id :generative-fdef-checks` are generative tests using clojure spec.

@@ -29,6 +29,6 @@ If spaces were not used as a separator for the some other character would be req
 
 * camelCase - used in Java and C-style programming languages
 * PascalCase - used in the [Pascal programming language][1]
-* snake_case - used for `ENVIRONMENT_VARIABLES` and `datbase_table_names_and_columns`
+* snake_case - used for `ENVIRONMENT_VARIABLES` and `database_table_names_and_columns`
 
 [1]: https://en.wikipedia.org/wiki/Pascal_(programming_language)

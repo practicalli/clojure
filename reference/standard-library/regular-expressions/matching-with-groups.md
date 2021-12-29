@@ -24,4 +24,4 @@ If the pattern matches but there are groups, a vector of matching strings is ret
 <!-- (let [[_ fn ln] (re-matches #"(\w+)\s(\w+)" full-name)] -->
 <!--   (if fn ;; successful match -->
 <!--     (println fn ln) -->
-<!--     (println "Unparsable name"))) -->
+<!--     (println "Unable to parse name"))) -->

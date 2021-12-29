@@ -177,18 +177,18 @@ user=> (add 1 2)
 3
 Some functions can take any number of arguments. For that, Clojure provides &, which slurps up all remaining arguments as a list:
 
-user=> (defn vargs
+user=> (defn variable-arguments
          [x y & more-args]
          {:x    x
           :y    y
           :more more-args})
-#'user/vargs
-user=> (vargs 1)
+#'user/variable-arguments
+user=> (variable-arguments 1)
 
-ArityException Wrong number of args (1) passed to: user$vargs  clojure.lang.AFn.throwArity (AFn.java:437)
-user=> (vargs 1 2)
+ArityException Wrong number of args (1) passed to: user$variable-arguments  clojure.lang.AFn.throwArity (AFn.java:437)
+user=> (variable-arguments 1 2)
 {:x 1, :y 2, :more nil}
-user=> (vargs 1 2 3 4 5)
+user=> (variable-arguments 1 2 3 4 5)
 {:x 1, :y 2, :more (3 4 5)}
 Note that x and y are mandatory, though there don’t have to be any remaining arguments.
 
@@ -227,7 +227,7 @@ user=> type
 #<core$type clojure.core$type@39bda9b9>
 user=> (type type)
 clojure.core$type
-This tells us that type is a particular instance, at memory address 39bda9b9, of the type clojure.core$type. clojure.core is a namespace which defines the fundamentals of the Clojure language, and $type tells us that it’s named type in that namespace. None of this is particularly helpful, though. Maybe we can find out more about the clojure.core$type by asking what its supertypes are:
+This tells us that type is a particular instance, at memory address 39bda9b9, of the type clojure.core$type. clojure.core is a namespace which defines the fundamentals of the Clojure language, and $type tells us that it’s named type in that namespace. None of this is particularly helpful, though. Maybe we can find out more about the clojure.core$type by asking what its super types are:
 
 user=> (supers (type type))
 #{clojure.lang.AFunction clojure.lang.IMeta java.util.concurrent.Callable clojure.lang.Fn clojure.lang.AFn java.util.Comparator java.lang.Object clojure.lang.RestFn clojure.lang.IObj java.lang.Runnable java.io.Serializable clojure.lang.IFn}
@@ -250,7 +250,7 @@ user=> (meta #'type)
 Look at that! This function was first added to Clojure in version 1.0, and is defined in the file clojure/core.clj, on line 3109. We could go dig up the Clojure source code and read its definition there–or we could ask Clojure to do it for us:
 
 user=> (source type)
-(defn type 
+(defn type
   "Returns the :type metadata of x, or its Class if none"
   {:added "1.0"
    :static true}
@@ -263,7 +263,7 @@ We can delve into any function in Clojure using these tools:
 
 user=> (source +)
 (defn +
-  "Returns the sum of nums. (+) returns 0. Does not auto-promote
+  "Returns the sum of numbers. (+) returns 0. Does not auto-promote
   longs, will throw on overflow. See also: +'"
   {:inline (nary-inline 'add 'unchecked_add)
    :inline-arities >1?
@@ -292,4 +292,3 @@ Functions decompose programs into simpler pieces, expressed in terms of one anot
 Finally, we learned how to introspect Clojure functions with doc and source, and saw the definition of some basic Clojure functions. The Clojure cheatsheet gives a comprehensive list of the core functions in the language, and is a great starting point when you have to solve a problem but don’t know what functions to use.
 
 We’ll see a broad swath of those functions in Chapter 4: Sequences.
-

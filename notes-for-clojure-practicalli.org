@@ -5,16 +5,16 @@
 
 You are not alone in thinking Clojure feels weird when you write it, we all feel this at first
 
-David 
+David
 Is it posible to come up wht an algorightm to prove we know everything in maths
 
-Generated lambda calculus & the universal turing machine 
+Generated lambda calculus & the universal turing machine
 
 Lambda calculus begat
 - Lisp
 - ML
 - Haskell
-- Clojure 
+- Clojure
 
 Turning machine begat
 - COBOL
@@ -31,19 +31,19 @@ You do need constraints with data however data does not need to be wrappped up i
 Phil Bagwell created immutalbe data structures with data sharing in early 2000 and this is the basis
 for Clojure's persistent data structures (eg all of them)
 
-In OO languages the class is there to stop you doing things and accessing data in an unsafe way. 
+In OO languages the class is there to stop you doing things and accessing data in an unsafe way.
 Clojure allows you to access data in a managed way so you dont need that protection.
 
-Data tends to arrive in bulk 
+Data tends to arrive in bulk
 
 Clojure is about expresivity and performance.
 Its a lisp for getting real world work done in.
 You dont have to go very deep to understand the core of clojure.  Simply use (source fn-name).
-You are only one or two levels above the core library 
+You are only one or two levels above the core library
 
 
 ** Installing Clojure
-**** Pre-requisits 
+**** Pre-requisits
 Clojure runs on the Java virtual machine (although there are versions that run on the Microsoft CLR
 and JavaScript V8 engine)
 
@@ -72,9 +72,9 @@ sudo apt-get install oracle-java6-installer
 
 
 **** Clojure is a library
-- you dont need to install Clojure directly, it is used as a library in your Clojure projects.  
+- you dont need to install Clojure directly, it is used as a library in your Clojure projects.
 ** Developer tools
-**** Leinignen
+**** Leiningen
 ***** Introduction
 - Leiningen is a tool for Clojure projects, allowing you to:
 - create standard project structures
@@ -94,17 +94,17 @@ Leiningen is used to generate projects in a standard structure.  It can also pac
 a Jar file for distribution (or Uberjar if deploying to a Java environment without Clojure)
 
 On the command line you should be able to run the leiningen command and see the available tasks
-it can run for you. 
+it can run for you.
 
-    lein 
+    lein
 
-Leiningen requires Java software development kit (SDK) 1.6 or greater to be installed, 
+Leiningen requires Java software development kit (SDK) 1.6 or greater to be installed,
 the Java runtime edition (JRE) that comes with most operating systems is not enough.
 
-You should be able to run the following commands successfully in a command window 
+You should be able to run the following commands successfully in a command window
 
 java -version
-javac -version 
+javac -version
 
 If the first command fails, you need to install or configure the Java runtime edition (link)
 If the second command fails, you need to install or configur the Java SDK (link)
@@ -126,7 +126,7 @@ If the second command fails, you need to install or configur the Java SDK (link)
 - eg. testing frameworks
 ***** Using Local Repositories (eg. Maven)
 
-Lein Install  
+Lein Install
 - places jars into local repo and link check repo firs when doing dependency checking [TODO: needs reading up on]
 ***** Leiningen Plugins to consider
 ******* lein-ancient - analyzes your project.clj and lets you know which dependencies are out of date
@@ -134,7 +134,7 @@ Lein Install
 ******* lein-try - start a REPL with various dependencies without needing a project. Great for exploring new libraries!
 ******* Eastwood - a lint tool for Clojure.
 ******* [[https://github.com/juggler/lein-heroku-deploy][lein-heroku-deploy]] - simplify your Heroku deploy
-- The heroku deploy plugin will 
+- The heroku deploy plugin will
   - activate maintenance mode
   - push your app to heroku
   - restart app
@@ -152,7 +152,7 @@ Lein Install
 ******* [[https://github.com/cldwalker/lein-grep][lein-grep]] - renders meaningful search results in table format
 ******* [[https://github.com/tcw/lein-create-template][lein-create-template]] - creates a Leiningen project template from an existing skeleton projects
 ******* [[https://github.com/pyronicide/lein-autoreload][lein-autoreload]] - Keep the repl up to date with source changes
-***** Automatically set REPL settings to manage level of output 
+***** Automatically set REPL settings to manage level of output
       [2013-08-29 Thu]
       [[file:~/Dropbox/emacs-for-clojure-developers/manuscript/wip.md::<!--%20Do%20you%20have%20to%20set%20these%20each%20time%20you%20enter%20a%20repl?%20Is%20there%20a%20way%20to%20have%20these%20by%20default%20?%20-->][file:~/Dropbox/emacs-for-clojure-developers/manuscript/wip.md::<!-- Do you have to set these each time you enter a repl? Is there a way to have these by default ? -->]]
 
@@ -160,7 +160,7 @@ Lein Install
 **** Light Table 5.x
 ****** DONE Install latest 5.x version
        CLOSED: [2013-08-27 Tue 13:24]
-       INSTALLED: version 0.5.2 in apps folder on Lenovo from http://www.lighttable.com/ 
+       INSTALLED: version 0.5.2 in apps folder on Lenovo from http://www.lighttable.com/
 ****** Read the built in Docs
 ****** Using LightTable
 ******* Pre-requisits
@@ -174,8 +174,8 @@ In a terminal / Command window type:
 
     javac -version
 
-******** Leiningen - the Clojure project automation tool 
-See the previous section on Leiningen 
+******** Leiningen - the Clojure project automation tool
+See the previous section on Leiningen
 
 ******* Working with projects
 
@@ -194,83 +194,83 @@ Open the project folder
 - configure Emacs using eLisp helps you practice your Clojure
 - Emacs live gives you a comprehensive Clojure setup instantly
 
-***** Emacs commands 
+***** Emacs commands
 C-x C-f  -- open file or folder
-C-x f    -- open recent file 
+C-x f    -- open recent file
 M-x delete-frame -- close a frame window
 M-x 0 -- close buffer window
 M-x new-frame  -- opens a new frame window
-Tab   -- use tab anywhere on a like to line up your code 
+Tab   -- use tab anywhere on a like to line up your code
 
-***** Clojure commands 
+***** Clojure commands
 nrepl-jack-in
 nrepl-close    ;; close your connection
-nrepl-interupt ;; stop your repl going crazy 
+nrepl-interupt ;; stop your repl going crazy
 nrepl-restart
 nrepl-rotate-connection
 nrepl-return
 
-M-x nrepl --quit   -- not sure about this one 
-M-x nrepl-jack-in  -- start a new REPL and connect to it 
+M-x nrepl --quit   -- not sure about this one
+M-x nrepl-jack-in  -- start a new REPL and connect to it
 M-x nrepl          -- connect to an already running REPL
 M-x nrepl-close    -- close an existing REPL that the current buffer is connected to
 
-***** Running Clojure code 
+***** Running Clojure code
 When working with the REPL you can run your code by evaluating, either by individual expression or by the whole file of code.
 
-C-M-space   -- highlight the next expression, ahead of the current cursor position 
+C-M-space   -- highlight the next expression, ahead of the current cursor position
 C-x C-e     -- evaluate this expression (put cursor at end of line)
 C-c C-k     -- evaluate the whole buffer, this loads additional namespaces into the REPL (eg. loads in Overtone and starts the overtone.live server)
 
 
 
 
-***** ParEdit 
+***** ParEdit
 M-s delete surrounding brackets
 
-***** Emacs with Clojure & Overtone 
+***** Emacs with Clojure & Overtone
 
-Emacs uses nrepl to start and connect to a Clojure REPL.  Simply open a clojure file in the project 
+Emacs uses nrepl to start and connect to a Clojure REPL.  Simply open a clojure file in the project
 you wish to run the REPL in and run the command nrepl-jack-in
 
 M-x nrepl-jack-in
 
 Keyboard combo: C-c C-j  (this is one I configured myself)
 
-The nrepl-jack-in command calls leiningen, which then runs and reads in the project configuration 
-from the project.clj file.  Once leiningen creates the REPL then Emacs opens a buffer window 
+The nrepl-jack-in command calls leiningen, which then runs and reads in the project configuration
+from the project.clj file.  Once leiningen creates the REPL then Emacs opens a buffer window
 with the REPL prompt.  You can now run Clojure code in this REPL buffer.
 
-****** Starting Overtone 
+****** Starting Overtone
 Although the REPL is running, you are not ready to use overtone just yet.  First you need an overtone server.
 
-You can use a local overtone server or the remote Overtone supercollider (assuming you have an Internet connection).  
-We can tell the running REPL to use a local overtone server typing the following Clojure expression into 
-the REPL buffer 
+You can use a local overtone server or the remote Overtone supercollider (assuming you have an Internet connection).
+We can tell the running REPL to use a local overtone server typing the following Clojure expression into
+the REPL buffer
 
-    (use 'overtone.live) 
+    (use 'overtone.live)
 
-Alternatively, if you open a Clojure file for your Overtone code and  
+Alternatively, if you open a Clojure file for your Overtone code and
 add (:use [overtone.live]) to the namespace then you can evaluate that Clojure file
-and it will start a local overtone server.  To evaluate the Clojure file use the keyboard combo 
+and it will start a local overtone server.  To evaluate the Clojure file use the keyboard combo
 
-    C-c C-k 
+    C-c C-k
 
-****** Evaluate all code 
+****** Evaluate all code
 As you have just seen, you can evaluate all the code in a clojure file
-using the keyboard combo: 
-C-c C-k 
+using the keyboard combo:
+C-c C-k
 
 So when you are writing your clojure code to drive Overtone, you can use this keyboard combo
 to load in any new or updated function or data definitions (defn and def expressions).
 
- 
+
 ****** Evaluate code in-line
 If you just make a simple change to your code then you can evaluate a single expression.
 Place the cursor at the end of the expression and use the command ... or keyboard combo:
 
-M-x .... 
-C-x C-e 
+M-x ....
+C-x C-e
 
 This will read and evaluate the expression and update the REPL runtime environment with
 any changes.  So if you modify a def or defn expression, evaluating it makes it available
@@ -279,38 +279,38 @@ to use.
 If you just want to call a function you can also use this keyboard combo too.  For example,
 if you have a function called foo, you can define an expression that calls it
 
-(foo) 
+(foo)
 
 and then place your cursor at the end of that expression and use the C-x C-e combo to call
 the foo function and return any result (or side-effects).
 
-changing the font face on emacs to make it all bigger, rather than just the text in buffers 
+changing the font face on emacs to make it all bigger, rather than just the text in buffers
 -- TODO google this
 
-***** IRC in Emacs is erc 
+***** IRC in Emacs is erc
 
 
 **** Eclipse & Counterclockwise
 **** IntelliJ
 **** Sublime text
-Sublime Text is a popular text editor that runs on Linux, Mac and Windows.  It is a lightweight 
+Sublime Text is a popular text editor that runs on Linux, Mac and Windows.  It is a lightweight
 approach to writing Clojure and has basic syntax highlighting.
 
-The developer workflow would be to write Clojure in Sublime and run your Clojure code in the 
-REPL using Leiningen on the command line.  Alternatively you could write your Clojure code 
+The developer workflow would be to write Clojure in Sublime and run your Clojure code in the
+REPL using Leiningen on the command line.  Alternatively you could write your Clojure code
 in the REPL and copy/paste it into files using Sublime text.
 
 A simple approach, but quite limted in terms of developer experience.
- 
+
 **** Netbeans
 Although there is a plugin for netbeans, at the time of writing that plugin was not being actively
 supported or developed.
 
-** Learning via the REPL 
+** Learning via the REPL
 
 **** Special REPL stuff
 
-last three results 
+last three results
 *1
 *2
 *3
@@ -324,7 +324,7 @@ When adding functions to your namespace, you need to choose if that function is 
 
 If you are only going to uses a few functions, then you only need to mame them accessible.
 
-If you are using a framework (eg. overtone) then you may want to include the whole set of fuctions.
+If you are using a framework (eg. overtone) then you may want to include the whole set of functions.
 
 If you add a function to your namespace, then you can simply use its name to call it, no need for a fully qualified namespace as it is now part of the current namespace.
 
@@ -343,10 +343,10 @@ require fully-qualified.namespace
 -- allows you to call a function using its original fully qualified namespace
 
 require fully-qualified.namespace :as alias
--- call a function using alias/function-name rather than fully qualified namespace 
+-- call a function using alias/function-name rather than fully qualified namespace
 
-require fully-qualified.namespace :refer [function-name]  
--- call function by name only, does not include function if it is already defined in the namespace [TODO - check]   
+require fully-qualified.namespace :refer [function-name]
+-- call function by name only, does not include function if it is already defined in the namespace [TODO - check]
 
 use fully-qualified.namespace
 -- adds all functions from namespace to current namespace, over-writes if there are dubplicates already in the namespace
@@ -356,7 +356,7 @@ use fully-qualified.namespace :only [function-name]
 
 :use [fully-qualified.namespace :rename {function-name alias-function-name]]
 [:use [clojure.contrib.math :rename {sqrt ccm-sqrt}]]
--- pulls in the named functio and changes its name... this 
+-- pulls in the named functio and changes its name... this
 
 --- refer and rename example -- not sure about this one
 (ns foo
@@ -365,14 +365,14 @@ use fully-qualified.namespace :only [function-name]
                                      descendants xml-descendants})
 
 **** Quick fix
-; Define a new namespace  
+; Define a new namespace
 (ns my-namespace.filename)
 
 ; Define new namespace, your code will use functions & defs from another file / library
-; need to 
+; need to
 (ns my-namespace.filename
   : require other-namespace.filename)
-;; need to specify fully qualified names for any functions or defs 
+;; need to specify fully qualified names for any functions or defs
 
 
 ; as above but specifying an alias for the external namespace
@@ -387,21 +387,21 @@ use fully-qualified.namespace :only [function-name]
 ;; eg:  :require clojure.string :refer :all  - you can then use string without any qualifier
 ;; Note: need to make sure you dont get namespace conflicts
 
-; alternative syntax for the above  
+; alternative syntax for the above
 (ns my-namespace.filename
   :use other-namespace.filename)
 
 ;; refinements on what functions are pulled in from a library
-;; exclude 
-;; include-only 
+;; exclude
+;; include-only
 
 You can use clojure functions only if they are added to the namespace.
-By default, clojure.core and java.lang are included in the REPL or any new project 
+By default, clojure.core and java.lang are included in the REPL or any new project
 The require function is needed in this case.  For example:
 
 user=> (clojure.string/split "comma,seperated,values" #",")
 ["comma" "seperated" "values"]
-user=> 
+user=>
 
  user=> (use '[clojure.string :as str :only [join split]])
 2 nil
@@ -409,7 +409,7 @@ user=>
 4 "poobar"
 
 
-Difference between :use and :require 
+Difference between :use and :require
 Use will over-write any existing vars / symbols (def, defn) with any dupliace vars from the additional namespace.
 Require will not over-ride any vars, just ignore them?
 
@@ -432,8 +432,8 @@ Require will not over-ride any vars, just ignore them?
   (require '(clojure zip [set :as s]))
 
 
-Use 
-Convienience function instead of :require namespace :refer 
+Use
+Convienience function instead of :require namespace :refer
 
   :exclude list-of-symbols
   :only list-of-symbols
@@ -441,45 +441,45 @@ Convienience function instead of :require namespace :refer
 
 
 
-Namespaces in Clojure are a way to group related behaviour together.  Think of it as a logical 
+Namespaces in Clojure are a way to group related behaviour together.  Think of it as a logical
 grouping like packages in Java & C#. Each source code file in Clojure has its own namespace,
-which related to the filename and folder structure for that source code file. 
+which related to the filename and folder structure for that source code file.
 
-When clojure runs it does so within a specific namespace, even when you are in the REPL.  Using 
+When clojure runs it does so within a specific namespace, even when you are in the REPL.  Using
 a namespace allows you to call functions by name from within the namespace.
 
 When you run a REPL you will see that you are in the user namespace.
 
-You can change to a new namespace using 
+You can change to a new namespace using
 
 (ns 'namespace.name)
 
 where namespace.name is the name you want to call your new namespace.
 
-The namespace name should be quoted so that Clojure understands it is a piece of data rather than 
+The namespace name should be quoted so that Clojure understands it is a piece of data rather than
 something to evaluate.  By convention, the single quote character ' is used to quote the namespace name.
 
-Tip: 
+Tip:
 It is common practice to use the in-ns function rather than ns.  o change between namespaces.
 
 
 
-If you wish to use functions outside the current namespace, you need to tell Clojure to include them.  
-Including other namespaces is often used when writing unit tests, including existing libraries or 
+If you wish to use functions outside the current namespace, you need to tell Clojure to include them.
+Including other namespaces is often used when writing unit tests, including existing libraries or
 any application development that is bigger than one source code file.
 
 There are a few different approaches to including other namespaces
 
 
- 
+
 
 (ns namespace.name)
 
 This namespace definition relates to the way source code files are structured.
 
-The last part of the namespace is the name of the file the source code is saved in.  
+The last part of the namespace is the name of the file the source code is saved in.
 
-The rest of the namespace is the folder structure. 
+The rest of the namespace is the folder structure.
 
 (ns folder.filename)
 
@@ -507,11 +507,11 @@ Phil Hagelberg (Leinginen author) comment on namespace syntax
 
 
 
-*** Including libraries & other namespaces 
+*** Including libraries & other namespaces
 
 To use functions outside of the current namespace you are in, you need to refer to them first.
 
-In the repl you can simply enter an expression using require or use function as follows: 
+In the repl you can simply enter an expression using require or use function as follows:
 
 (require 'namespace.name)
 (require 'namespace.name :refer :all)
@@ -521,7 +521,7 @@ In the repl you can simply enter an expression using require or use function as 
        anonther-namespace.name])
 
 
-Using require allows you to refer to external functions, although you still need to specify the 
+Using require allows you to refer to external functions, although you still need to specify the
 full Namespaces
 
 
@@ -530,17 +530,17 @@ full Namespaces
 In a project file, you can include other namespaces inside the namespace definition for the Clojure file you are working on.
 
 
-(ns namespace.name 
+(ns namespace.name
     require 'namespace.name)
 
-(ns namespace.name 
+(ns namespace.name
     require 'namespace.name :refer :all)
 
-(ns namespace.name 
+(ns namespace.name
     use 'namespace.name)
 
 
-(ns namespace.name 
+(ns namespace.name
     :use [namespace.name
           anonther-namespace.name])
 
@@ -560,7 +560,7 @@ In a project file, you can include other namespaces inside the namespace definit
 As you work on your Clojure code you will add new namespaces and perhaps even change existing namespace names.
 
 In order for your REPL session to pick up these changes you can either restart the REPL (slow) or ask the REPL
-to reload a Namespaces.  If you are working with a Leiningen project you can also ask the REPL to 
+to reload a Namespaces.  If you are working with a Leiningen project you can also ask the REPL to
 reload all the Namespaces in the project.
 
 Simply add the :reload keyword to the require, us or ns functions we have previously seen.
@@ -569,14 +569,14 @@ Simply add the :reload keyword to the require, us or ns functions we have previo
 (use :reload 'namespace.name)
 
 
-By adding the reload keyword to a Leiningen project, then .... 
+By adding the reload keyword to a Leiningen project, then ....
 [TODO: how does reload work with projects?]
 
-(ns namespace.name 
+(ns namespace.name
     :use [namespace.name
           anonther-namespace.name]
     :reload)
-     
+
 
 
 ** Working with projects
@@ -585,29 +585,29 @@ By adding the reload keyword to a Leiningen project, then ....
 *** Running a REPL for the project
 Inside the top level folder of your Clojure project (where there should be a project.clj file), run
 
-lein repl 
+lein repl
 
 *** Running a project
 **** Defining an entry point to the app
 *** Namespaces
 Cover this later ??
-**** Use and require 
-Use pulls everything into the namespace automatically 
-- you can specifiy a namespace alias using :as if there are naming clashes with symbols (def, defn, etc) and keywords 
+**** Use and require
+Use pulls everything into the namespace automatically
+- you can specifiy a namespace alias using :as if there are naming clashes with symbols (def, defn, etc) and keywords
 
-Require does what then ???  It tells your project about the libraries but only brings 
-them in if you specify ... 
+Require does what then ???  It tells your project about the libraries but only brings
+them in if you specify ...
 
 ** Learning the language syntax
 *** Prefix notation
-Unlike other languages, Clojure uses prefix notation for everything.  Languages such as Java and C# 
-are predominantly prefix notation, but switch to infix notation for numerical calculations 
+Unlike other languages, Clojure uses prefix notation for everything.  Languages such as Java and C#
+are predominantly prefix notation, but switch to infix notation for numerical calculations
 
 Java / C#
 methodName(param, param)
 1 +  (2 * (3 * 3) / 2)
 
-Clojure 
+Clojure
 (function param, param)
 Numerical operators such as + / * - are functions in Clojure
 
@@ -632,10 +632,10 @@ nil                 ; Null
 
 **** Keywords
 First class citizens
-Its like an immutable string that refers to itself 
-When a keyword is compiled it is assigned a unique 
+Its like an immutable string that refers to itself
+When a keyword is compiled it is assigned a unique
 
-*** Sequences 
+*** Sequences
 Sequences are persistent data structures in Clojure and include List, Vector, Map and Set.
 
 All these types of data structures are immutable, meaning that once they are defined they cannot be altered (like using the keyword Final in other languages).
@@ -671,18 +671,18 @@ Construct a new sequence from the original and the additional values supplied
 
 
 ***** Creating Sequences
-****** range 
+****** range
 
 Create a sequence from a range of numbers (TODO: check if just for integer or also decimal, what about characters?)
 
 
 ;; Not sure what happend here.  Tried to create a sequence from 0 to 1 at 0.1 intervals
 ;; Is there some rounding going on?  not sure why its not
-;; 0 0.1 0.2 0.3 0.3 0.5 0.6 0.7 0.8 0.9 
+;; 0 0.1 0.2 0.3 0.3 0.5 0.6 0.7 0.8 0.9
 ;; output seems consistent when ran for second time
 user=> (range 0 1 0.1)
 (0 0.1 0.2 0.30000000000000004 0.4 0.5 0.6 0.7 0.7999999999999999 0.8999999999999999 0.9999999999999999)
-user=> 
+user=>
 
 **** Sequences in the REPL
 When you evaluate functions in the REPL that work on Vectors you may get a list displayed as a result.
@@ -690,26 +690,26 @@ When you evaluate functions in the REPL that work on Vectors you may get a list 
 This is because the result of the function is a sequence and the REPL displays all sequences as lists.  The actual result is still a vector and this can be checked using (class ...) around your function to check the type returned.
 
 *** Collections
-**** Lists 
+**** Lists
 (quote (:a :b :c))
 (list ...)
 
-**** Vector 
+**** Vector
 []
 
 Performance differences from lists - acts like an array, although its not an array
 
-Lists are a linked list 
-Vectors occupy a fixed set of memory 
+Lists are a linked list
+Vectors occupy a fixed set of memory
 
 **** Maps
-have a literal syntax and are easy to define 
+have a literal syntax and are easy to define
 
 small maps are array-map
 
 hash-map
 
-sorted-map 
+sorted-map
 
 **** Sets
 Although sets are backed by the same kind of algorytim as maps, they have a slightly different behaviours
@@ -721,10 +721,10 @@ Although sets are backed by the same kind of algorytim as maps, they have a slig
 {:inventory #{"axe" "key"} , :room {:name "Billard room"} , :exits [:North : South]}
 
 **** Exercises
-create a data representation of a hand of cards 
+create a data representation of a hand of cards
 
-*** Prefix notation 
-Parentesis were invented to solve the problem with operator precidence.  
+*** Prefix notation
+Parentesis were invented to solve the problem with operator precidence.
 
 For example, if you multiply something and add something, then without parentheses you have to remember
 to multiply first.
@@ -732,8 +732,8 @@ to multiply first.
 By using prefix we elimanate any confusion in order precidence.
 Prefix notation is also easy to convert into a an abstract syntax tree without us getting fooled by the order.
 
-*** Function application 
-The first item 
+*** Function application
+The first item
 
 
 
@@ -744,13 +744,13 @@ Clojure is defined using a list.  Each item in a list can be a list itself.
 
 The first item in a list is a function (unless you explicitly tell Clojure otherwise by using quote ')
 *** Clojure collections
-**** The List collection type 
-You have already seen that the list is the basis of the syntax for Clojure.  It is not surprising then that the list is 
+**** The List collection type
+You have already seen that the list is the basis of the syntax for Clojure.  It is not surprising then that the list is
 also a very common data structure in the language.
 
 The list data structure has the following properties
 
-Defining a list 
+Defining a list
 
 (list 1 2 3 4)
 (quote(1 2 3 4))
@@ -760,9 +760,9 @@ Adding to a list
 
 
 
-**** The Map data structure type 
-**** The Vector collection type  
-**** The Set collection type 
+**** The Map data structure type
+**** The Vector collection type
+**** The Set collection type
 
 
 *** Defining data structures
@@ -776,24 +776,24 @@ Adding to a list
 
 To pass a paramter into an anonymous function, use the % character
 
-To specify individual paramters you can number the % characters like: 
+To specify individual paramters you can number the % characters like:
 
-    #(* 10 %) 
+    #(* 10 %)
     #(* 10 %1 %2 %3)
 
 
-**** Calling functions 
+**** Calling functions
 **** Defining functions with different airities (runtime polymorphism)
 
 
-(defn hello-params 
+(defn hello-params
 ([] "Hello to no-one")
 ([name] (str "Hello " name)
 ([name & others])
 )
 
 *** namespaces
-use pulls everything in from the stated namespace and adds it all to the current namespace, 
+use pulls everything in from the stated namespace and adds it all to the current namespace,
 unless you define only.  Use is a shorthand for :require :refer :all
 
 Require makes available the functoins from the namespace, but does not pollute your current namespace.
@@ -802,7 +802,7 @@ However, if you use the :refer :all keywords with :require then it will add ever
 You can us :as to map to the namespace to an alias, helping avoid any function name (symbol) clashes
 
 
-*** Case 
+*** Case
 Should only use case with real constants as things are evaluated/interpreted/generated by the reader
 
 *** Sequence / List Comprehension
@@ -822,7 +822,7 @@ the for function and use of map in the example above are similar.  In many cases
 **** Filtering lists with :when
 **** Examples of List comprehension
 - Merging data structures
-  - (for [number [1 2 3] 
+  - (for [number [1 2 3]
          letter [:a :b :c]]
        (str number letter))
   - join each number and letter when iterating over each data set
@@ -838,20 +838,20 @@ the for function and use of map in the example above are similar.  In many cases
 ***** Generating WiFi passwords
 - for example you are at a venue where you need to trace what people have access to the WiFi and you do so by issuing a unique code to each person.  This is typically the case at places like Universities
   - use the :when filter to skip letters and number that could be confused with each other, eg, i+1, 0+O, etc.
-** Patterns of Clojure code 
+** Patterns of Clojure code
 
 Maps and functions
 -- including maps of maps and vectors of maps or perhaps vectors of vectors
 
-Defining data structures 
+Defining data structures
 
 Defining functions
-- group behaviour together 
+- group behaviour together
 - define a function name,
   define a functions parameters - including any arity based polymorphism
-  define the behavior in the function 
-  -- from a simple expression, to multiple expressions, to functions as paramters of functions, to recursively calling the same function 
-  -- using doto or threading macro to make code readable 
+  define the behavior in the function
+  -- from a simple expression, to multiple expressions, to functions as paramters of functions, to recursively calling the same function
+  -- using doto or threading macro to make code readable
 
 ** Learning Clojure core
 Learning the most common functions in Clojure core, organised by characteristics (take clues from Clojure Koans)
@@ -859,7 +859,7 @@ Learning the most common functions in Clojure core, organised by characteristics
 **** Working with simple data
 
 Range
-get a range of values 
+get a range of values
 http://clojuredocs.org/clojure_core/clojure.core/range
 
 Example, say we wanted a range that did not start at 0 to represent a deck of cards.
@@ -868,7 +868,7 @@ A deck of cards starting at 2 assuming we are not counting Ace as 1.
 We could use range to create a range of number from 0 to 9,
 then apply a function to that range that incremented each number in turn by 2.
 
-(take 10 (range))  ;; generate an infinate number of integers and take just the first 10.
+(take 10 (range))  ;; generate an infinite number of integers and take just the first 10.
 
 As range is lazily evaluated, then this code is efficient.
 
@@ -904,19 +904,19 @@ The final number is exclusive, so in this case 11 is not included.
 
 
 
-**** Working over collections 
-map / apply 
+**** Working over collections
+map / apply
 
-**** Examples of lazyness
-take / drop / repeat / range / filter 
+**** Examples of laziness
+take / drop / repeat / range / filter
 
 **** Predicates - is something something...
 odd? / even? / nil?
 
-identity 
+identity
 
 *** Recursion
-Using recur 
+Using recur
 
 
 
@@ -924,27 +924,27 @@ Using recur
 
 *** Polymorphism by Arity example
 
-Range is a function that shows how clojure can have polymorphic functions based on the number of 
+Range is a function that shows how clojure can have polymorphic functions based on the number of
 arguments (the arity) used to call the function.
 
 Enter the following function call in the REPL to see the source code of the range function:
 
 (source range)
 
-Lets review the different behaviour that is run based on the number of arguemnts used to call the function.
+Lets review the different behaviour that is run based on the number of arguments used to call the function.
 
-  ;; The default behaviour when you call range without any arguments is to generate and infinate number of integers.  Actually this calls range with three aruguemnts, rather than any specific behaviour itself.  This version does however set the end number to be infinity, so the generation will go on forever.  As this is a lazy function then there are no performance issues so long as you set a constraint around this call (eg  (take 100 (range)) will constrain range to only generate the first 100 numbers.).  Without constraint you can blow the stack of the Java Virtual Machine.
-  ([] 
+[Omitted long matching line]
+  ([]
    (range 0 Double/POSITIVE_INFINITY 1))
 
-  ;; Calling range with one or two argument also calls the version of range with three arguments, using default values for the missing arguments 
-  ([end] 
+  ;; Calling range with one or two argument also calls the version of range with three arguments, using default values for the missing arguments
+  ([end]
    (range 0 end 1))
 
-  ([start end] 
+  ([start end]
    (range start end 1))
 
-  ;; The version of range with three arguments defines the majority of the behaviour for range.  Notice that range uses recur to generate the integers without filling up memory (see the secion on recursion) as each new call to range overwrites the last one, however recur is not used when assembling the list of numbers, so if this list gets too big then that is when you get a JVM stack overflow (TODO: Check that this is correct)
+  ;; The version of range with three arguments defines the majority of the behaviour for range.  Notice that range uses recur to generate the integers without filling up memory (see the section on recursion) as each new call to range overwrites the last one, however recur is not used when assembling the list of numbers, so if this list gets too big then that is when you get a JVM stack overflow (TODO: Check that this is correct)
   ([start end step]
    (lazy-seq
     (let [b (chunk-buffer 32)
@@ -955,8 +955,8 @@ Lets review the different behaviour that is run based on the number of arguemnts
           (do
             (chunk-append b i)
             (recur (+ i step)))
-          (chunk-cons (chunk b) 
-                      (when (comp i end) 
+          (chunk-cons (chunk b)
+                      (when (comp i end)
                         (range i end step)))))))))
 
 
@@ -987,52 +987,52 @@ the error produced is not that helpful in diagnosing the problem.
 
 Testing...
 Exception in thread "main" java.lang.RuntimeException: EOF while reading, starting at line 5, compiling:(simple_console/core_test.clj:12:1)
-	at clojure.lang.Compiler.load(Compiler.java:7071)
-	at clojure.lang.RT.loadResourceScript(RT.java:370)
-	at clojure.lang.RT.loadResourceScript(RT.java:361)
-	at clojure.lang.RT.load(RT.java:440)
-	at clojure.lang.RT.load(RT.java:411)
-	at clojure.core$load$fn__5018.invoke(core.clj:5530)
-	at clojure.core$load.doInvoke(core.clj:5529)
-	at clojure.lang.RestFn.invoke(RestFn.java:408)
-	at clojure.core$load_one.invoke(core.clj:5336)
-	at clojure.core$load_lib$fn__4967.invoke(core.clj:5375)
-	at clojure.core$load_lib.doInvoke(core.clj:5374)
-	at clojure.lang.RestFn.applyTo(RestFn.java:142)
-	at clojure.core$apply.invoke(core.clj:619)
-	at clojure.core$load_libs.doInvoke(core.clj:5413)
-	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-	at clojure.core$apply.invoke(core.clj:619)
-	at clojure.core$require.doInvoke(core.clj:5496)
-	at clojure.lang.RestFn.applyTo(RestFn.java:137)
-	at clojure.core$apply.invoke(core.clj:619)
-	at user$eval85.invoke(form-init3548849407380774503.clj:1)
-	at clojure.lang.Compiler.eval(Compiler.java:6619)
-	at clojure.lang.Compiler.eval(Compiler.java:6609)
-	at clojure.lang.Compiler.load(Compiler.java:7064)
-	at clojure.lang.Compiler.loadFile(Compiler.java:7020)
-	at clojure.main$load_script.invoke(main.clj:294)
-	at clojure.main$init_opt.invoke(main.clj:299)
-	at clojure.main$initialize.invoke(main.clj:327)
-	at clojure.main$null_opt.invoke(main.clj:362)
-	at clojure.main$main.doInvoke(main.clj:440)
-	at clojure.lang.RestFn.invoke(RestFn.java:421)
-	at clojure.lang.Var.invoke(Var.java:419)
-	at clojure.lang.AFn.applyToHelper(AFn.java:163)
-	at clojure.lang.Var.applyTo(Var.java:532)
-	at clojure.main.main(main.java:37)
+  at clojure.lang.Compiler.load(Compiler.java:7071)
+  at clojure.lang.RT.loadResourceScript(RT.java:370)
+  at clojure.lang.RT.loadResourceScript(RT.java:361)
+  at clojure.lang.RT.load(RT.java:440)
+  at clojure.lang.RT.load(RT.java:411)
+  at clojure.core$load$fn__5018.invoke(core.clj:5530)
+  at clojure.core$load.doInvoke(core.clj:5529)
+  at clojure.lang.RestFn.invoke(RestFn.java:408)
+  at clojure.core$load_one.invoke(core.clj:5336)
+  at clojure.core$load_lib$fn__4967.invoke(core.clj:5375)
+  at clojure.core$load_lib.doInvoke(core.clj:5374)
+  at clojure.lang.RestFn.applyTo(RestFn.java:142)
+  at clojure.core$apply.invoke(core.clj:619)
+  at clojure.core$load_libs.doInvoke(core.clj:5413)
+  at clojure.lang.RestFn.applyTo(RestFn.java:137)
+  at clojure.core$apply.invoke(core.clj:619)
+  at clojure.core$require.doInvoke(core.clj:5496)
+  at clojure.lang.RestFn.applyTo(RestFn.java:137)
+  at clojure.core$apply.invoke(core.clj:619)
+  at user$eval85.invoke(form-init3548849407380774503.clj:1)
+  at clojure.lang.Compiler.eval(Compiler.java:6619)
+  at clojure.lang.Compiler.eval(Compiler.java:6609)
+  at clojure.lang.Compiler.load(Compiler.java:7064)
+  at clojure.lang.Compiler.loadFile(Compiler.java:7020)
+  at clojure.main$load_script.invoke(main.clj:294)
+  at clojure.main$init_opt.invoke(main.clj:299)
+  at clojure.main$initialize.invoke(main.clj:327)
+  at clojure.main$null_opt.invoke(main.clj:362)
+  at clojure.main$main.doInvoke(main.clj:440)
+  at clojure.lang.RestFn.invoke(RestFn.java:421)
+  at clojure.lang.Var.invoke(Var.java:419)
+  at clojure.lang.AFn.applyToHelper(AFn.java:163)
+  at clojure.lang.Var.applyTo(Var.java:532)
+  at clojure.main.main(main.java:37)
 Caused by: java.lang.RuntimeException: EOF while reading, starting at line 5
-	at clojure.lang.Util.runtimeException(Util.java:219)
-	at clojure.lang.LispReader.readDelimitedList(LispReader.java:1139)
-	at clojure.lang.LispReader$ListReader.invoke(LispReader.java:982)
-	at clojure.lang.LispReader.read(LispReader.java:185)
-	at clojure.lang.Compiler.load(Compiler.java:7060)
-	... 33 more
+  at clojure.lang.Util.runtimeException(Util.java:219)
+  at clojure.lang.LispReader.readDelimitedList(LispReader.java:1139)
+  at clojure.lang.LispReader$ListReader.invoke(LispReader.java:982)
+  at clojure.lang.LispReader.read(LispReader.java:185)
+  at clojure.lang.Compiler.load(Compiler.java:7060)
+  ... 33 more
 Tests failed.
 
 
 The End Of File exception was cased by trying to create the clojure code
-and at some point during the running of the code the Clojure code 
+and at some point during the running of the code the Clojure code
 trips up because of the missing close bracket.
 
 
@@ -1052,7 +1052,7 @@ Ask a question about every element in an arrays
 *** overview
 *** atoms
 *** refs
-*** changing state the Clojure way 
+*** changing state the Clojure way
 swap!
 
 ** Database access
@@ -1073,81 +1073,81 @@ swap!
 - [[http://www.learningclojure.com/][LearningClojure.com]] - blog on Clojure with examples
 - [[http://blackstag.com/blog.posting?id=5][Guide to Clojure for beginners]]
 - [[http://writingcoding.blogspot.co.uk/2008/06/clojure-series-table-of-contents.html][Clojure Series]] - 2008 - seems quite advanced
-- [[http://www.youtube.com/user/Misophistful?feature=watch][Misophistful YouTube channel]] - nicely done videos on specific topics, using Lighttable 
+- [[http://www.youtube.com/user/Misophistful?feature=watch][Misophistful YouTube channel]] - nicely done videos on specific topics, using Lighttable
 
 * Testing in Clojure
 People write tests to support design discovery as well as manage the codebase changes over time.
 
 In Clojure, many use the REPl to drive design discovery, so the need for tests to do that is potentially
-reduced.  However, it is very powerful to codify the results of the discovery in tests as you 
+reduced.  However, it is very powerful to codify the results of the discovery in tests as you
 are understanding the problem space.  By creating code in the REPL, turning them into tests
 and then creating your code from those tests you are getting the best of both worlds.
 
- 
+
 * Learning Overtone at Music Hack Day
 
 ** Pre-requisits
 
-Overtone requires a professional music library called Jack.  If you really want to get the maximum 
+Overtone requires a professional music library called Jack.  If you really want to get the maximum
 performance out of overtone a real time kernel is recommended too.
 
 *** mac
 ???
 
-*** Ubuntu / Debian based systems 
-From the Overtone instructions it suggests adding the following packages 
+*** Ubuntu / Debian based systems
+From the Overtone instructions it suggests adding the following packages
 sudo apt-get install jack-tools ant openjdk-6-jdk fftw3 qjackctl
 
 On Ubuntu 13.04 fftw3 called libfftw3-3 and this was already installed on my laptop.
 
-Earlier version is called fftw2, which was initially added and then removed when I realised that fftw2 
+Earlier version is called fftw2, which was initially added and then removed when I realised that fftw2
 
 
 
-** Emacs with Clojure & Overtone 
+** Emacs with Clojure & Overtone
 
-Emacs uses nrepl to start and connect to a Clojure REPL.  Simply open a clojure file in the project 
+Emacs uses nrepl to start and connect to a Clojure REPL.  Simply open a clojure file in the project
 you wish to run the REPL in and run the command nrepl-jack-in
 
     M-x nrepl-jack-in
 
 Keyboard combo: C-c C-j  (this is one I configured myself)
 
-The nrepl-jack-in command calls leiningen, which then runs and reads in the project configuration 
-from the project.clj file.  Once leiningen creates the REPL then Emacs opens a buffer window 
+The nrepl-jack-in command calls leiningen, which then runs and reads in the project configuration
+from the project.clj file.  Once leiningen creates the REPL then Emacs opens a buffer window
 with the REPL prompt.  You can now run Clojure code in this REPL buffer.
 
-*** Starting Overtone 
+*** Starting Overtone
 Although the REPL is running, you are not ready to use overtone just yet.  First you need an overtone server.
 
-You can use a local overtone server or the remote Overtone supercollider (assuming you have an Internet connection).  
-We can tell the running REPL to use a local overtone server typing the following Clojure expression into 
-the REPL buffer 
+You can use a local overtone server or the remote Overtone supercollider (assuming you have an Internet connection).
+We can tell the running REPL to use a local overtone server typing the following Clojure expression into
+the REPL buffer
 
-    (use 'overtone.live) 
+    (use 'overtone.live)
 
-Alternatively, if you open a Clojure file for your Overtone code and  
+Alternatively, if you open a Clojure file for your Overtone code and
 add (:use [overtone.live]) to the namespace then you can evaluate that Clojure file
-and it will start a local overtone server.  To evaluate the Clojure file use the keyboard combo 
+and it will start a local overtone server.  To evaluate the Clojure file use the keyboard combo
 
-    C-c C-k 
+    C-c C-k
 
-*** Evaluate all code 
+*** Evaluate all code
 As you have just seen, you can evaluate all the code in a clojure file
-using the keyboard combo: 
+using the keyboard combo:
 
-    C-c C-k 
+    C-c C-k
 
 So when you are writing your clojure code to drive Overtone, you can use this keyboard combo
 to load in any new or updated function or data definitions (defn and def expressions).
 
- 
+
 *** Evaluate code in-line
 If you just make a simple change to your code then you can evaluate a single expression.
 Place the cursor at the end of the expression and use the command ... or keyboard combo:
 
-M-x .... 
-C-x C-e 
+M-x ....
+C-x C-e
 
 This will read and evaluate the expression and update the REPL runtime environment with
 any changes.  So if you modify a def or defn expression, evaluating it makes it available
@@ -1156,13 +1156,13 @@ to use.
 If you just want to call a function you can also use this keyboard combo too.  For example,
 if you have a function called foo, you can define an expression that calls it
 
-(foo) 
+(foo)
 
 and then place your cursor at the end of that expression and use the C-x C-e combo to call
 the foo function and return any result (or side-effects).
 
 
-changing the font face on emacs to make it all bigger, rather than just the text in buffers 
+changing the font face on emacs to make it all bigger, rather than just the text in buffers
 -- TODO google this
 
 
@@ -1170,7 +1170,7 @@ changing the font face on emacs to make it all bigger, rather than just the text
 
 
 
-* 6 months with clojure 
+* 6 months with clojure
 
 I have spent the last 6 months on a project where Clojure was the main technology in use. I can’t really say much about the project itself, except that it’s a fairly complicated thing with lots of analytics and different kinds of data involved. We ended up with an environment that had a lot of Ruby and JavaScript/CoffeeScript as well as Clojure. We are using Neo4J for most of our data storage.
 In this blog post I wanted to basically talk about a few different things that has worked well or not so well with Clojure.
@@ -1189,7 +1189,7 @@ In order to get some dynamic things into our pages, we used Enlive. I really lik
 
 DSL with lots of data
 
-One of my less bright ideas was to create an internal DSL for some of our data. The core part of the DSL was a bunch of macros that knew how to create domain objects of themselves. This ended up being very clean and a nice model to work with. However, since the data was in the amounts of millions of entries the slowness of actually evaluating that code (and compiling it, and dealing with the permgen issues) ended up getting unbearable. We recently moved to a model that is quite similar, except we don’t evalute the code, instead using read-string on the individual entries to parse them.
+[Omitted long matching line]
 
 Dense functions
 
@@ -1209,7 +1209,7 @@ Summary
 I’ve been having a blast with Clojure. It’s clearly the exactly right technology for what I’m currently doing, and it’s got a lot of features that makes it very convenient to use. I’m really looking forward being able to use it more going forward.
 
 
-* WIP 
+* WIP
 ;; doall -- dont be lazy, makes a lazy thing do what it does
 ;; pr-str -- ???
 
@@ -1249,7 +1249,7 @@ I’ve been having a blast with Clojure. It’s clearly the exactly right techno
 
 ** Application design and architecture. One of the most common questions I get is "how do you organize your namespaces," which always surprises me because it's not something I think about much. But it definitely is a struggle for people who are used to class-oriented languages where much of the structure is enforced by the language.
 
-* Performace tips for clojure 
+* Performace tips for clojure
 
 http://www.fatvat.co.uk/2009/05/jvisualvm-and-clojure.html
 
@@ -1280,7 +1280,7 @@ Doing all the above should get pretty good performance out of Clojure code - wit
 
 
 
-* Require verses use 
+* Require verses use
 
 Clojure require vs. use
 
@@ -1428,7 +1428,7 @@ We've now seen the :as directive used for both vectors and maps. In both cases t
 For completeness I'll document the :or directive; however, I must admit that I've never used it in practice. The :or directive is used to assign default values when the map being destructured doesn't contain a specified key.
 user=> (def point {:y 7})
 #'user/point
- 
+
 user=> (let [{:keys [x y] :or {x 0 y 0}} point]
          (println "x:" x "y:" y))
 x: 0 y: 7
@@ -1444,7 +1444,7 @@ name: SICP pages: 657 isbn-10: 0262011530
 As you would expect, you can also use directives while destructuring nested maps.
 user=> (def book {:name "SICP" :details {:pages 657 :isbn-10 "0262011530"}})
 #'user/book
-user=> 
+user=>
 user=> (let [{name :name {:keys [pages isbn-10]} :details} book]
          (println "name:" name "pages:" pages "isbn-10:" isbn-10))
 name: SICP pages: 657 isbn-10: 0262011530
@@ -1460,11 +1460,11 @@ The following example destructures a map and a vector at the same time.
 user=> (def golfer {:name "Jim" :scores [3 5 4 5]})
 #'user/golfer
 
-user=> (let [{name :name [hole1 hole2] :scores} golfer] 
+user=> (let [{name :name [hole1 hole2] :scores} golfer]
          (println "name:" name "hole1:" hole1 "hole2:" hole2))
 name: Jim hole1: 3 hole2: 5
 The same example can be rewritten using a function definition to show the simplicity of using destructuring in parameter lists.
-user=> (defn print-status [{name :name [hole1 hole2] :scores}] 
+user=> (defn print-status [{name :name [hole1 hole2] :scores}]
   (println "name:" name "hole1:" hole1 "hole2:" hole2))
 #'user/print-status
 
@@ -1488,61 +1488,61 @@ There are other (less used) directives and deeper explanations available on http
 ;; * :refer-clojure affects availability of built-in (clojure.core)
 ;;   functions.
 ;;
- 
+
 (ns foo.bar
- 
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  
+
   ;; Refers clojure.contrib.math into current NS, e.g.:
   ;;   (clojure.contrib.math/sqrt 4)
   [:require [clojure.contrib math]]
-  
+
   ;; Refers math into current NS, e.g.:
   ;;   (math/sqrt 4)
   [:require [clojure.contrib [math :as math]]]
- 
+
   ;; Refers clojure.contrib.seq-utils and math into current NS, e.g.:
   ;;   (clojure.contrib.seq-utils/flatten [[1 2] 3])
   ;;   (math/sqrt 4)
   [:require [clojure.contrib seq-utils [math :as math]]]
- 
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  
+
   ;; Refers all functions from clojure.contrib.math and
   ;; clojure.contrib.seq-utils into current NS, e.g.:
   ;;   (sqrt 4)
   ;;   (flatten [[1 2] 3])
   [:use [clojure.contrib math seq-utils]]
-  
+
   ;; Refers only sqrt and flatten into current NS, e.g.:
   ;;   (sqrt 4)
   ;;   (flatten [[1 2] 3])
   [:use [clojure.contrib [math :only [sqrt]]
                          [seq-utils :only [flatten]]]]
- 
+
   ;; Refers all functions from clojure.contrib.math except sqrt into
   ;; current NS
   [:use [clojure.contrib.math :exclude [sqrt]]]
- 
+
   ;; Refers sqrt into current NS as ccm-sqrt, plus all other math
   ;; functions e.g.:
   ;;   (ccm-sqrt 4)
   ;;   (round 1.3)
   [:use [clojure.contrib.math :rename {sqrt ccm-sqrt}]]
- 
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-  
+
   ;; Refers ArrayList and HashMap into current NS:
   [:import [java.util ArrayList HashMap]]
- 
+
   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
- 
+
   ;; Excludes built-in print
   [:refer-clojure :exclude [print]]
-  
+
   ;; Excludes all built-ins except print
   [:refer-clojure :only [print]]
-  
+
   ;; Renames built-in print to core-print
   [:refer-clojure :rename {print core-print}])
 
@@ -1555,7 +1555,7 @@ http://stackoverflow.com/questions/15584553/clojure-delete-items-from-a-vector-t
 http://iloveponies.github.io/120-hour-epic-sax-marathon/p-p-p-pokerface.html
 
 
-* To Read 
+* To Read
 http://iloveponies.github.io/120-hour-epic-sax-marathon/index.html
 http://iloveponies.github.io/120-hour-epic-sax-marathon/predicates.html
 http://iloveponies.github.io/120-hour-epic-sax-marathon/recursion.html
@@ -1573,25 +1573,25 @@ https://github.com/jr0cket/rubyfuza2014
 
 
 * @weavejester
-functional programming 
-first releases september 2007 
-developed over 2 years 
+functional programming
+first releases september 2007
+developed over 2 years
 
-** EDN - extensible data notaition
+** EDN - extensible data notation
 data description language
 
-very similar to json 
+very similar to json
 
 json has only 1 ordered collection type
 
-edn has vector, list and set 
+edn has vector, list and set
 
 *** Identifiers
-json - string 
+json - string
 edn
 string - text data
 keyword - references itself
-symbol references something else 
+symbol references something else
 
 example
 {:name "Alice"
@@ -1600,12 +1600,12 @@ example
 
 sex value is assumed a universal definition that we dont need to reference exernally, however we may want to qualify the details of the job descrtiption
 
-*** namespaces 
+*** namespaces
 
 :status/ready
-mamal.canine/dog 
+mamal.canine/dog
 
-*** tags 
+*** tags
 #inst "<eg. timestamp>"
 #uuid "<eg. UUID>"
 
@@ -1616,67 +1616,66 @@ tags can have namespaces too
 #color/rgb "e8df76"
 
 
-** Clojure = edn + eval 
+** Clojure = edn + eval
 
-You can turn edn into a program by evaluating it, as clojure is a data driven language / syntax 
+You can turn edn into a program by evaluating it, as clojure is a data driven language / syntax
 
-symbols will evalutate to a bound value 
+symbols will evalutate to a bound value
 
 pi evaluates to 3.144554504
 
 (+ 1 1) evaluates to 2
-(and true false) evalutes to false 
+(and true false) evaluates to false
 
 LISP stands for list processing, clojure is a LISP, so all the lists are processed
 
-*** evaluation 
-funtions evaluate their arguments first 
+*** evaluation
+functions evaluate their arguments first
 
 (+ (+3 3) (* 4 4))
 
 
-**** macros 
-macros evalute their return value 
+**** macros
+macros evaluate their return value
 
 (postfix (9 16 +))
 
-homoniconic - treats code and data as equivical - the same representation 
+homoniconic - treats code and data as equivical - the same representation
 
 macros allo us to add new syntas through libraries
-core.async - async programming 
-core.logic - logic programming 
-core.typed - static typing - introducing a static typing support to a lanuguage that does not natively support that 
+core.async - async programming
+core.logic - logic programming
+core.typed - static typing - introducing a static typing support to a lanuguage that does not natively support that
 
-** Simple made easy 
+** Simple made easy
 
-OO takes a defensive approach to manage complexity, i.e. encapsulation 
+OO takes a defensive approach to manage complexity, i.e. encapsulation
 
-clojure takes an offencsive approach 
-- if something cannot change, it has zero complexity 
-- immutable values cannot change, but they can represent change 
+clojure takes an offencsive approach
+- if something cannot change, it has zero complexity
+- immutable values cannot change, but they can represent change
 
-mutible statte needed for 
+mutible statte needed for
 -- Performance
 -- sharing state across threads
 
-problem with encapsulation is that walls around objects are expensive as we have to write an api to use all of our objects 
+problem with encapsulation is that walls around objects are expensive as we have to write an api to use all of our objects
 
 in distributed envrionemnts, we often work with immutable values - its an effecitve copy of the data between client and server
 
-with immutable data structures in Clojure, you get an Api for free 
+with immutable data structures in Clojure, you get an Api for free
 - getters
-- setters 
+- setters
 - transformations
-- diffing 
+- diffing
 - traversal
-- serialisation 
+- serialisation
 euality
-merging 
+merging
 deceriilasition
-lensing 
+lensing
 auditing
 Concurrency
 
 In clojure, instead of managing the complexity, we remove it
-- agressively trying to simplify 
-
+- agressively trying to simplify

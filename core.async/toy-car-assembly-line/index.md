@@ -19,7 +19,7 @@ One worker picks out random parts of a car from the parts box until all the part
 
 ## The `time` macro
 
-We will use the time macro to see how long parts of our code takes to run and help find parts to optomise.
+We will use the time macro to see how long parts of our code takes to run and help find parts to optimise.
 
 A simple example would be:
 

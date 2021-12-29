@@ -111,7 +111,7 @@ The above `map` function is roughly equivalent to the following expression
 ```eval-clojure
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collecion and one or more values.
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 
 `map` `reduce` `filter` are common functions for iterating through a collection / sequence of values
