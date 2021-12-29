@@ -33,7 +33,7 @@ Lets look at some of the common functions that are used in Clojure with data str
 You can get the value of this map
 
 ```
-(def luke {:name "Luke Skywarker" :skill "Targeting Swamp Rats"})
+(def luke {:name "Luke Skywalker" :skill "Targeting Swamp Rats"})
 (def darth {:name "Darth Vader"    :skill "Crank phone calls"})
 (def jarjar {:name "JarJar Binks"   :skill "Upsetting a generation of fans"})
 

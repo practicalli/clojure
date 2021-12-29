@@ -37,11 +37,11 @@ If a key is not in the map, `assoc` will add both the key and the value.
 
 If there are multiple levels to the structure of your map, ie. the value of a key in the map is also a map 
 
-For example, the value of `:luke` in the `starwars-characters` map is represented as a map too `{:fullname "Luke Skywarker" :skill "Targeting Swamp Rats"}`
+For example, the value of `:luke` in the `starwars-characters` map is represented as a map too `{:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}`
 
 ```clojure
 (def starwars-characters
-   {:luke   {:fullname "Luke Skywarker" :skill "Targeting Swamp Rats"}
+   {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
     :vader  {:fullname "Darth Vader"    :skill "Crank phone calls"}
     :jarjar {:fullname "JarJar Binks"   :skill "Upsetting a generation of fans"}})
 ```
@@ -51,7 +51,7 @@ To update the skill of one of the characters we can use `assoc-in` to update the
 ```clojure
 (assoc-in starwars-characters [:vader :skill] "The Dark Side of the Force")
 
-;; => {:luke {:fullname "Luke Skywarker", :skill "Targeting Swamp Rats"}, 
+;; => {:luke {:fullname "Luke Skywalker", :skill "Targeting Swamp Rats"}, 
        :vader {:fullname "Darth Vader", :skill "The Dark Side of the Force"}, 
        :jarjar {:fullname "JarJar Binks", :skill "Upsetting a generation of fans"}}
 ```

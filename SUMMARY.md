@@ -3,7 +3,7 @@
 * [Introduction](introduction.md)
     * [First taste of Clojure](first-taste-of-clojure.md)
         * [Creative coding](creative-coding.md)
-    * [REPL driven development](repl-driven-devlopment.md)
+    * [REPL driven development](repl-driven-development.md)
     * [Clojure concepts](concepts/index.md)
         * [Functional Verses Imperative Programming](concepts/what-is-functional-programming.md)
         * [Clojure from the Author](concepts/clojure-made-simple.md)

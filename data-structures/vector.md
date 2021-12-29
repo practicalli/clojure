@@ -16,7 +16,7 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 (def pi 3.1435893)
 [1 2.4 pi 11/4 5.0 6 7]
-[:cat :dog :rabit :fish]
+[:cat :dog :rabbit :fish]
 [{:cat 1} "fish" "potatoes" "oil" (str "who ate my" "fish n chips")]
 
 ;; Include other data structures in vectors, in this example a list is an element of the vector
@@ -41,7 +41,7 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 (conj [5 10] 15)
 ```
 
-> **Hint** When a function is effectively asking if a value is true or false, its refered to as a _predicate function_.  Its common practice in Clojure to place a `?` at the end of that functions name.
+> **Hint** When a function is effectively asking if a value is true or false, its referred to as a _predicate function_.  Its common practice in Clojure to place a `?` at the end of that functions name.
 
 
 ## Lookup data from a Vector

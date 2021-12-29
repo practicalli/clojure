@@ -27,7 +27,7 @@ A PR with a list of changes across different sections will not be merged, it wil
 ## Thank you to everyone that has contributed
 A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.  Special thank you to Alex Miller who has provided excellent advice on working with Clojure and the CLI tooling.
 
-The Clojure community has been highly supportive of everyone using Clojure and I'd like to especially thank [Sean Corfield](https://github.com/seancorfield) for all the feedback and contributions made to the community.  I would also like to thank everyone that has joined in with the [London Clojurins community](https://www.meetup.com/London-Clojurians/), [ClojureBridgeLondon](https://clojurebridgelondon.github.io/), [Clojurians Slack community](http://clojurians.net/), [Clojurians Zulip](https://clojurians.zulipchat.com/) community and [Clojureverse community](https://clojureverse.org/).
+The Clojure community has been highly supportive of everyone using Clojure and I'd like to especially thank [Sean Corfield](https://github.com/seancorfield) for all the feedback and contributions made to the community.  I would also like to thank everyone that has joined in with the [London Clojurians community](https://www.meetup.com/London-Clojurians/), [ClojureBridgeLondon](https://clojurebridgelondon.github.io/), [Clojurians Slack community](http://clojurians.net/), [Clojurians Zulip](https://clojurians.zulipchat.com/) community and [Clojureverse community](https://clojureverse.org/).
 
 Thank you to everyone who sponsors the Practicalli websites and videos and for the recent [Clojurists Together sponsorship](https://www.clojuriststogether.org/), it helps me continue the work at a much faster pace.
 

@@ -1,12 +1,12 @@
 # With Maps of Maps
 
-> **Note** Define a collection of starwars characters using a map of maps.  Each character should have an name that they are typically refered to, along with their fullname and skill
+> **Note** Define a collection of starwars characters using a map of maps.  Each character should have an name that they are typically referred to, along with their fullname and skill
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 
 ```clojure
 (def starwars-characters
-   {:luke   {:fullname "Luke Skywarker" :skill "Targeting Swamp Rats"}
+   {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
     :vader  {:fullname "Darth Vader"    :skill "Crank phone calls"}
     :jarjar {:fullname "JarJar Binks"   :skill "Upsetting a generation of fans"}})
 ```

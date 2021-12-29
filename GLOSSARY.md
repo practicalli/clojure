@@ -33,8 +33,7 @@ greet("HOF")(); // Hello HOF!
 ```
 
 ## Partial
-> The process of getting a function with lesser arity compared to the original
-function by fixing the number of arguments is known as partial application.
+> The process of getting a function with lesser arity compared to the original function by fixing the number of arguments is known as partial application.
 
 ```js
 let sum = (a, b) => a + b;
@@ -66,8 +65,7 @@ curriedSum(40)(2) // 42.
 ---
 
 ## Purity
-> A function is said to be pure if the return value is only determined by its
-input values, without any side effects.
+> A function is said to be pure if the return value is only determined by its input values, without any side effects.
 
 ```js
 let greet = "yo";
@@ -82,9 +80,9 @@ greet // yo;
 
 ---
 
-## Idempotency
-> A function is said to be idempotent if it has no side-effects on multiple
-executions with the the same input parameters.
+## Idempotent
+
+> A function is said to be idempotent if it has no side-effects on multiple executions with the the same input parameters.
 
 `f(f(x)) = f(x)`
 
@@ -115,8 +113,7 @@ Simplest functor in javascript is an `Array`
 
 ## Referential Transparency
 
-> An expression that can be replaced with its value without changing the
-behaviour of the program is said to be referential transparent.
+> An expression that can be replaced with its value without changing the behaviour of the program is said to be referential transparent.
 
 Say we have function greet:
 
@@ -124,13 +121,12 @@ Say we have function greet:
 let greet = () => "Hello World!";
 ```
 
-Any invocation of `greet()` can be replaced with `Hello World!` hence greet is
-referential transparent.
+Any invocation of `greet()` can be replaced with `Hello World!` hence greet is referential transparent.
 
 ---
 
-## Lazy evalution
-> aka call-by-need is an evaluation machanism which delays the evaluation of an expression until its value is needed.
+## Lazy evaluation
+> a.k.a. call-by-need is an evaluation mechanism which delays the evaluation of an expression until its value is needed.
 
 ```js
 let rand = function*() {
@@ -141,7 +137,7 @@ let rand = function*() {
 ```
 ```
 let randIter = random();
-randIter.next(); // Each exectuion gives a random value, expression is evluated on need.
+randIter.next(); // Each execution gives a random value, expression is evaluated on need.
 ```
 ---
 
@@ -153,7 +149,7 @@ randIter.next(); // Each exectuion gives a random value, expression is evluated 
 
 ---
 
-<!-- ## Comonad -->
+<!-- ## Co-monad -->
 ---
 
 <!-- ## Applicative Functor -->
@@ -169,7 +165,7 @@ randIter.next(); // Each exectuion gives a random value, expression is evluated 
 
 ---
 
-<!-- ## Semigroup -->
+<!-- ## Semi-group -->
 
 ---
 

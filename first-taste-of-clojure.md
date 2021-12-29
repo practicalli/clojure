@@ -142,7 +142,7 @@ Use the `let` function as a simple way to experiment with code designs
 Define local names to remove duplication in function definitions, or to simplify algorithms
 
 ```eval-clojure
-(defn fibonacci-squence
+(defn square-of
   "Calculates the square of a given number"
   [number]
   (* number number))
