@@ -476,9 +476,6 @@
 ## Deprecated Content
 <!-- Link for renamed integration testing section -->
 * [Integration testing](testing/integration-testing/index.md)
-<!-- * [How to use the workshop](using-the-workshop/index.md) -->
-<!--     * [Technical Requirements](using-the-workshop/requirements.md) -->
-<!--     * [Code Examples](using-the-workshop/code-examples.md) -->
 <!-- * [Development Environments](development-environments/index.md) -->
 <!--     * [Java](development-environments/java.md) -->
 <!--     * [Leiningen](development-environments/leiningen.md) -->
