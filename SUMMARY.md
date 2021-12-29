@@ -19,7 +19,7 @@
 
 ## Getting Started
 <!-- * [Clojure CLI](clojure-cli/index.md) -->
-* [Clojure CLI Overview](clojure-cli/using-clojure-tools.md)
+* [Clojure CLI Overview](clojure-cli/index.md)
 * [Install Clojure CLI](clojure-cli/install/index.md)
     * [Java](clojure-cli/install/java.md)
     * [Clojure](clojure-cli/install/clojure.md)

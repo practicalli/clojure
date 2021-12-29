@@ -1,10 +1,10 @@
 # Clojure and Clojure CLI
 
-Clojure CLI is the latest approach to working with Clojure projects, libraries an tools.  Its main focus is on
+Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries an tools.  The Clojure CLI focuses on:
 
-* run Clojure code (applications and tools)
-* run a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure-editors/) or [a command line REPL UI](rebel-repl/).
-* managing dependencies (via tools.deps) and download from maven and git repositories
+* running Clojure code (applications and tools)
+* starting a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure-editors/) or [a command line REPL UI](rebel-repl/).
+* managing dependencies (via tools.deps) and downloads from Maven and Git repositories
 
 The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
 
@@ -16,20 +16,20 @@ https://youtu.be/u5VoFpsntXc
 ## Common tasks for Clojure development
 Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).
 
-| Task                                       | Command                                                 | Built-in  |
-|--------------------------------------------|---------------------------------------------------------|-----------|
-| Run Command Line REPL                      | `clojure` or `clj` if `rlwrap` binary installed         | Yes       |
-| Run Command Line REPL with Rebel and nREPL | `clojure -M:repl/rebel`                                 | Add alias |
-| Create project (clojure exec)              | `clojure -X:new :template app :name practicalli/my-app` | Add alias |
-| Download dependencies                      | `clojure -P`  (plus optional aliases)                   | Yes       |
-| Run the project (clojure.main)             | `clojure -M -m domain.main-namespace`                   | Yes       |
-| Run the project (clojure.exec)             | `clojure -X:project/run -m domain.main-namespace`       | Add alias |
-| Find libraries (mvn & git)                 | `clojure -M:project/find-deps library-name`             | Add alias |
-| Check for new dependency versions          | `clojure -T:project/outdated`                           | Add alias |
-| Run tests                                  | `clojure -M:test/runner`                                | Add alias |
-| Package library                            | `clojure -X:project/jars`                               | Add alias |
-| Deploy library locally                     | `clojure -X:deps mvn-install`                           | Yes       |
-| Package application                        | `clojure -X:project/uberjar`                            | Add alias |
+| Task                                        | Command                                                 | Definition  |
+|---------------------------------------------+---------------------------------------------------------+-------------|
+| Basic terminal UI REPL                      | `clojure` or `clj` if `rlwrap` binary installed         | Clojure CLI |
+| Enhanced terminal UI REPL (Rebel and nREPL) | `clojure -M:repl/rebel`                                 | Practicalli |
+| Create project (clojure exec)               | `clojure -T:new :template app :name practicalli/my-app` | Practicalli |
+| Run unit tests                              | `clojure -X:test/runner`                                | Practicalli |
+| Run the project (clojure.main)              | `clojure -M -m domain.main-namespace`                   | Clojure CLI |
+| Run the project (clojure.exec)              | `clojure -X:project/run -m domain.main-namespace`       | Project     |
+| Find libraries (mvn & git)                  | `clojure -M:project/find-deps library-name`             | Practicalli |
+| Download dependencies                       | `clojure -P`  (plus optional aliases)                   | CLojure CLI |
+| Check for new dependency versions           | `clojure -T:project/outdated`                           | Practicalli |
+| Package library                             | `clojure -X:project/jars`                               | Practicalli |
+| Deploy library locally                      | `clojure -X:deps mvn-install`                           | Clojure CLI |
+| Package application                         | `clojure -X:project/uberjar`                            | Project     |
 
 Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
 
