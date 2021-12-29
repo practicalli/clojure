@@ -19,14 +19,16 @@ on:
       - completed
 
 jobs:
-  build:
-    name: Build Gitbook
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+  on-success:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    build:
+      name: Build Gitbook
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout code
+          uses: actions/checkout@v2
 
-      - name: Publish Website
-        uses: tuliren/publish-gitbook@v1.0.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub generated token
+          - name: Publish Website
+            uses: tuliren/publish-gitbook@v1.0.0
+            with:
+              github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub generated token
