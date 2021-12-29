@@ -66,7 +66,7 @@ There are some important changes being developed for spec version 2 and a few th
 * [spec.alpha API reference](https://clojure.github.io/spec.alpha/)
 * [Introducing clojure.spec](https://clojure.org/news/2016/05/23/introducing-clojure-spec)
 * [clojure.spec - rational and overview](https://clojure.org/about/spec)
-* [Clojure Spec: Expressing Data Sonstraints without Types](https://www.infoq.com/presentations/clojure-spec/)
+* [Clojure Spec: Expressing Data Constraints without Types](https://www.infoq.com/presentations/clojure-spec/)
 * [spec guide - clojure.org](https://clojure.org/guides/spec)
 * [Specifications for `clojure.core`](https://github.com/clojure/core.specs.alpha)
 * [Leveraging clojure.spec - Stuart Halloway - YouTube](https://www.youtube.com/watch?v=nqY4nUMfus8)

@@ -21,7 +21,6 @@ Take a quick look at the Syntax of Clojure.  The syntax is very small, so this w
 Find how to use Clojure with your favourite editor or IDE.  Configure this tool so you can easily run a REPL and evaluate some expressions.
 - [repl.it](https://repl.it) - web based repl you can share / fork
 - [Spacemacs](https://spacemacs.org) - for the ultimate Emacs & Vim experience
-- [Atom](https://atom.io) & [Proto REPL](https://atom.io/packages/proto-repl)
 - [IntelliJ](https://www.jetbrains.com/idea/) and [Cursive](https://cursive-ide.com/)
 - [Leiningen](https://leiningen.org) & any editor you like
 

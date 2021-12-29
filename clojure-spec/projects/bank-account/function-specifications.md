@@ -43,7 +43,7 @@ The `SUT` alias is used for the banking-on-clojure namespace, as is done with `c
 ;; => {:account-id #uuid "3a6dddb7-dd87-485e-90f8-8c8975302845"}
 ```
 
-Require the spect test library
+Require the Clojure spec test library
 
 ```clojure
 (require '[clojure.spec.test.alpha :as spec-test])

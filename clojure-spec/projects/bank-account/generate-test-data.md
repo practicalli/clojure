@@ -38,7 +38,7 @@ With the simplified email specification, the customer-details specification can 
 ;; => #:practicalli.banking-specifications
 {:first-name "r7q9RFB202v7a69z",
  :last-name "6N5",
- :email-address "L6dsud946p680P0pIYZ33CGZd0",
+ :email-address "L6dd946p680P0pIYZ33CGZd0",
  :residential-address
    #:practicalli.banking-specifications{
       :house-name-number "gCuRMe0C8",
@@ -90,7 +90,7 @@ Generating multiple result is useful if a collection of customer details is requ
 
 
 
-## Excercising a specification
+## Exercising a specification
 `clojure.spec.test.alpha/exercise` returns pairs of generated and conformed values for a spec. exercise by default produces 10 samples (like sample) but you can pass both functions a number indicating the number of samples to produce.
 
 

@@ -109,11 +109,11 @@ Add a [continuous integration service](/testing/integration-testing/) to run tes
 
 [CircleCI](/testing/integration-testing/circle-ci/) provides a simple to use service that supports Clojure projects.  [Heroku CI](https://devcenter.heroku.com/articles/heroku-ci), [GitHub actions](https://github.com/features/actions) and [GitLab](https://about.gitlab.com/) also provide CI services.
 
-[Deployment via continuous integration](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-via-ci.html) ensures all tests pass before deployment.
+[Deployment via continuous integration](https://practical.li/clojure-web-services/projects/banking-on-clojure/deployment-via-ci.html) ensures all tests pass before deployment.
 
-[Defining a deployment pipeline](https://practicalli.github.io/clojure-webapps/projects/banking-on-clojure/deployment-pipeline.html) provides an efficient way to deploy applications and also get fast feedback from a wider range of stakeholders and users, especially when spin up testable deployments of your application based on commits  (i.e. push to shared develop or feature branch).
+[Defining a deployment pipeline](https://practical.li/clojure-web-services/projects/banking-on-clojure/deployment-pipeline.html) provides an efficient way to deploy applications and also get fast feedback from a wider range of stakeholders and users, especially when spin up testable deployments of your application based on commits  (i.e. push to shared develop or feature branch).
 
-![Git, CircleCI and Heroku continuous integration and deployment](https://practicalli.github.io/clojure-webapps/images/circleci-workflow-sequential-git-heroku.png)
+![Git, CircleCI and Heroku continuous integration and deployment](https://practical.li/clojure-web-services/images/circleci-workflow-sequential-git-heroku.png)
 
 
 ## Live Coding with Data - Stuart Halloway

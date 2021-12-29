@@ -116,7 +116,7 @@ Clojure map and filter create intermediate collections when nested. – noisesmi
 2
 And at least regarding Clojure's version of laziness, the issue of laziness is orthogonal here. Yes, map and filter are lazy, the also generate containers for lazy values when you chain them. If you don't hold onto the head, you don't build up large lazy sequences that aren't needed, but you still build those intermediate abstractions for each lazy element. – noisesmith Oct 12 '14 at 0:59
 
-An example woud be nice. – Zubair Oct 13 '14 at 6:56
+An example would be nice. – Zubair Oct 13 '14 at 6:56
 2
 @LyubomyrShaydariv By "intermediate collection", noisesmith doesn't mean "iterate/reify an entire collection, then iterate/reify another entire collection". He or she means that when you nest function calls that return sequentials, each function call results in the creation of a new sequential. The actual iteration still only happens once, but there is additional memory consumption and object allocation due to the nested sequentials
 
@@ -249,10 +249,4 @@ Besides, it is really powerful when taking subgroups in account as well. For ins
 
 ;; reduce to add up all the Brown children
 (r/reduce + 0 (ex2a-count-brown-family-children village))
-;;=>
-2
-I hope you can find helpful these examples. You can find more here
-
-Hope it helps.
-
-Clemencio Morales Lucas.
+;;=> 2

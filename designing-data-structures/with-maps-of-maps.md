@@ -1,58 +1,58 @@
 # With Maps of Maps
 
-> **Note** Define a collection of starwars characters using a map of maps.  Each character should have an name that they are typically referred to, along with their fullname and skill
+> **Note** Define a collection of star-wars characters using a map of maps.  Each character should have an name that they are typically referred to, along with their fullname and skill
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 
 ```clojure
-(def starwars-characters
+(def star-wars-characters
    {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
     :vader  {:fullname "Darth Vader"    :skill "Crank phone calls"}
     :jarjar {:fullname "JarJar Binks"   :skill "Upsetting a generation of fans"}})
 ```
 
-Now we can refer to the characters using keywords.  Using the get function we return all the informatoin about Luke
+Now we can refer to the characters using keywords.  Using the get function we return all the information about Luke
 
 ```clojure
-(get starwars-characters :luke)
+(get star-wars-characters :luke)
 ```
 
 By wrapping the get function around our first, we can get a specific piece of information about Luke
 
 ```clojure
-(get (get starwars-characters :luke) :fullname)
+(get (get star-wars-characters :luke) :fullname)
 ```
 
 There is also the get-in function that makes the syntax a little easier to read
 
 ```clojure
-(get-in starwars-characters [:luke :fullname])
-(get-in starwars-characters [:vader :fullname])
+(get-in star-wars-characters [:luke :fullname])
+(get-in star-wars-characters [:vader :fullname])
 ```
 
-Or you can get really Clojurey by just talking to the map directly
+Or you can get really concise by just talking to the map directly
 
 ```clojure
-(starwars-characters :luke)
-(:fullname (:luke starwars-characters))
-(:skill (:luke starwars-characters))
+(star-wars-characters :luke)
+(:fullname (:luke star-wars-characters))
+(:skill (:luke star-wars-characters))
 
-(starwars-characters :vader)
-(:skill (:vader starwars-characters))
-(:fullname (:vader starwars-characters))
+(star-wars-characters :vader)
+(:skill (:vader star-wars-characters))
+(:fullname (:vader star-wars-characters))
 ```
 
 And finally we can also use the threading macro to minimise our code further
 
 ```clojure
-(-> starwars-characters
+(-> star-wars-characters
     :luke)
 
-(-> starwars-characters
+(-> star-wars-characters
     :luke
     :fullname)
 
-(-> starwars-characters
+(-> star-wars-characters
     :luke
     :skill)
 ```
@@ -79,7 +79,7 @@ This data structure is just a map, with each key being the unique name of the de
 The details of each event (the value to go with the event name key) is itself a map as there are several pieces of data associated with each event name.
 So we have a map where each value is itself a map.
 
-Call the data structre and see what it evaluates too, it should not be a surprise
+Call the data structure and see what it evaluates too, it should not be a surprise
 
 ```clojure
 dev-event-details

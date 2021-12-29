@@ -45,7 +45,7 @@ There are two main approaches to solving this challenge.  The first is to use th
 
 Start by defining the rules as an expression that returns either true or false, using some of the example strings from the unit tests.
 
-Use a `let` expression to bind a name to each rule, e.g. `shouting?`, `question?`, `scilence?`.  Then these names can be used in a simple `cond` expression to return the appropriate phrase.  Regardless of if using `clojure.string` or regular expressions, the `cond` code should be simlar
+Use a `let` expression to bind a name to each rule, e.g. `shouting?`, `question?`, `silence?`.  Then these names can be used in a simple `cond` expression to return the appropriate phrase.  Regardless of if using `clojure.string` or regular expressions, the `cond` code should be similar
 
 Once you have tried this challenge for yourself, take a look at the design journal for the [clojure.string approach](bob-string-approach.md) and the [regular expression approach](bob-regular-expression-approach.md).
 

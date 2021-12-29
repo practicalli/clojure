@@ -57,31 +57,31 @@ Here’s another function that works like plus, but uses Clojure’s fnil functi
 
 Each stage in the recipe will be represented as a simple hash map. Some functional programming languages, like Haskell, have very sophisticated type systems that can tell the compiler when functions are invoked on the wrong kind of arguments. Such systems can be tremendously powerful, but they are not strictly necessary for doing functional programming. By using Clojure, we do not have to manage types or type annotations, but we must accept the burden of ensuring that we invoke our functions in the right way without strong compiler support.
 
-The following represents butterbeans with some water added (measured in grams):
+The following represents butter-beans with some water added (measured in grams):
 
-{:butterbeans 150, :water 300}
+{:butter-beans 150, :water 300}
 
 But we’re modelling a process, not a fixed state, so we also need a way to depict time and change. The following represents the same ingredients, five minutes into the recipe.
 
-{:time 5, :butterbeans 150, :water 300}
+{:time 5, :butter-beans 150, :water 300}
 
 The process of preparing a recipe can then be represented as a series of states:
 
 [{:time 0},
- {:time 1, :butterbeans 150},
- {:time 3, :butterbeans 150, :water 300}]
+ {:time 1, :butter-beans 150},
+ {:time 3, :butter-beans 150, :water 300}]
 
 But how do we get from one state to another? This is where the functions come in. Functions are just a way of representing a mapping from one state to another. Here is a simple function that represents mixing in a certain amount of an ingredient:
 
 (defn mix-in [dish ingredient quantity]
   (update-in dish [ingredient] (safe-plus quantity)))
 
-(mix-in {:time 1, :butterbeans 150} :water 300)
-  ;=> {:time 1, :butterbeans 150, :water 300} 
+(mix-in {:time 1, :butter-beans 150} :water 300)
+  ;=> {:time 1, :butter-beans 150, :water 300}
 
-There’s no need to overwrite the original state of the dish. Instead of having objects with identity that morph and mutate over time, functions take the original state and produce a new state. In the example above, mix-in takes a dish that has one minute of elapsed time and 150 grams of butterbeans, and produced a new state that had one minute of elapsed time, 150 grams of butterbeans and 300 grams of water.
+There’s no need to overwrite the original state of the dish. Instead of having objects with identity that morph and mutate over time, functions take the original state and produce a new state. In the example above, mix-in takes a dish that has one minute of elapsed time and 150 grams of butter-beans, and produced a new state that had one minute of elapsed time, 150 grams of butter-beans and 300 grams of water.
 
-Remember, functions are themselves values in a functional programming language, so we can represent the addition of a particular ingredient as a function. Note that add is a function that takes the ingredient and its quantity as arguments, and returns another function that represents the actual addition. Clojure has no good way to print functions, so it’s forced to use a somewhat cryptic identifier when dislaying a function to the screen:
+Remember, functions are themselves values in a functional programming language, so we can represent the addition of a particular ingredient as a function. Note that add is a function that takes the ingredient and its quantity as arguments, and returns another function that represents the actual addition. Clojure has no good way to print functions, so it’s forced to use a somewhat cryptic identifier when displaying a function to the screen:
 
 (defn add [ingredient quantity]
   (fn [dish] (mix-in (mix-in dish ingredient quantity) :time 1)))
@@ -93,8 +93,8 @@ Remember, functions are themselves values in a functional programming language, 
 
 add-some-water is now a function representing the addition of some water. The function also increments the time taken so far in the recipe. We can use it to transform one state into another:
 
-(add-some-water {:time 0, :butterbeans 100})
-  ;=> {:time 1, :butterbeans 100, :water 200}
+(add-some-water {:time 0, :butter-beans 100})
+  ;=> {:time 1, :butter-beans 100, :water 200}
 
 We can represent any step in our recipe as a function of one state to another. sit leaves the dish to sit for a certain number of minutes, cooling it if it’s warmer than room temperature. For the first time, we’ll use Clojure’s (let […]) form, which allows us to create local names:
 
@@ -105,7 +105,7 @@ We can represent any step in our recipe as a function of one state to another. s
     (let [temperature (max
                         (- (:temperature dish) (* 2 minutes))
                         room-temperature)]
-    (mix-in (assoc dish :temperature temperature) :time minutes)))) 
+    (mix-in (assoc dish :temperature temperature) :time minutes))))
 
 Sauteing heats up the dish, and evaporates away some of the water:
 
@@ -126,9 +126,9 @@ soak transfers mass from :water to another ingredient, representing the water be
 
 (defn soak [ingredient minutes]
   (fn [dish]
-    (let [absorbtion (/ (:water dish) 2)
-          swelling #(mix-in % ingredient absorbtion)
-          reduction #(mix-in % :water (- absorbtion))
+    (let [absorption (/ (:water dish) 2)
+          swelling #(mix-in % ingredient absorption)
+          reduction #(mix-in % :water (- absorption))
           absorb (comp swelling reduction)]
      (mix-in (absorb dish) :time minutes))))
 
@@ -167,7 +167,7 @@ To work out how the dish changes over the course of its preparation, we just nee
   ;    {:time 272, :temperature 30, :garlic 5, :water 35, :beans 300}
   ;    {:time 273, :temperature 30, :olive-oil 5, :garlic 5, :water 35, :beans 300, :time 258})
 
-To prepare a receipe, we just need to take the final state:
+To prepare a recipe, we just need to take the final state:
 
 (defn prepare [steps] (last (preparations steps)))
 

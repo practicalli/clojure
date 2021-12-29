@@ -92,7 +92,7 @@ Or using the threading macro, we can make the code a little clearer
 
   Swing GUI coding in Java feels quite messy to me, however using Swing in Clojure feels much cleaner.  Using the `doto` function allow you to chain function (Java method) calls together.
 
-> **Note**  Start with the `import` function to add the neccessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.
+> **Note**  Start with the `import` function to add the necessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.
 
 
 ```

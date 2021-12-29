@@ -1,6 +1,6 @@
 # Destructuring
 
-Destructuring is a form of pattern matching that is common in Clojure.  Destructuring allow you to pull out the specific elelments from a collection.
+Destructuring is a form of pattern matching that is common in Clojure.  Destructuring allow you to pull out the specific elements from a collection.
 
 Destructuring is commonly used with the `let` method for creating local bindings (locally scoped names).
 

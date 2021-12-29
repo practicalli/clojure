@@ -1,29 +1,29 @@
 # Profiles
 
   You can run your Clojure project with different profiles, establishing a different set of configuration options when run with Leiningen.
-  
+
   Profiles can be created in one of the following places:
-  
+
 | Profile name | Filename | Description |
 | -- | -- | -- |
 | **Project** | `project.clj` | project specific profiles used by all developers on the project.
-| **User** | `profiles.clj` | add or override individual configuration for the project, not typically shared as part of the project. 
-| **User-wide** | `~/.lein/profiles.clj` | common configuration a developer uses across all their Clojure projects.  
+| **User** | `profiles.clj` | add or override individual configuration for the project, not typically shared as part of the project.
+| **User-wide** | `~/.lein/profiles.clj` | common configuration a developer uses across all their Clojure projects.
 
-  
+
   Profiles defined with the same name in any of the above files are either merged or over-written in the following order of precedence to form a single configuration map:
 
 ![Leiningen profiles - order of precedence](../images/clojure-leiningen-configuration-precedence.png)
 
 
---- 
+---
 
 > **fixme** refactor the rest of the text on profiles to just cover the essentials and link to the official documentation for further details.
 
 > probably just need a few examples typically added to the different profile files
 
 
-#### Project profiles 
+#### Project profiles
 
   Define one or more profiles specific to the project.  Typically done to seperate configuration for different parts of the development lifecycle, eg. dev, test, production
 
@@ -40,17 +40,17 @@ Use the `lein show-profiles` task to list the project's profiles.
 
 
 
-#### User profiles 
-  
-  User specific configuration 
-  
+#### User profiles
+
+  User specific configuration
+
   Create / edit the file `profiles.clj` in the root of the specific Clojure project (the same directory as `project.clj`)
- 
+
 
 Use the `lein show-profiles` task to list the project's profiles.
 
 
-#### User-wide profiles 
+#### User-wide profiles
 
   Add  have common configuration you want in all your Clojure projects without having to modify the `project.clj` file each time.
 
@@ -69,10 +69,10 @@ Use the `lein show-profiles` task to list the project's profiles.
 #### Declaring Profiles
 
   Profiles specified in `~/.lein/profiles.clj` override profiles in a specific project configuration file, `project.clj`.
-  
+
   Override project configuration without having to change the project.clj file or adding those changes to version control.
-  
-  
+
+
 User-wide profiles can also be specified in ~/.lein/profiles.clj. These will be available in all projects managed by Leiningen, though those profiles will be overridden by profiles of the same name specified in the project. System-wide profiles can be placed in /etc/leiningen/profiles.clj. They are treated the same as user profiles, but with lower precedence.
 
 You can also define user-wide profiles within clj-files inside ~/.lein/profiles.d. The semantics within such files differ slightly from other profile files: rather than a map of maps, the profile map is the top-level within the file, and the name of the profile comes from the file itself (without the .clj part). Defining the same user-wide profile in both ~/.lein/profiles.clj and in ~/.lein/profiles.d is considered an error.
@@ -169,9 +169,9 @@ Sometimes it is useful to define a profile as a combination of other profiles. T
 
 ```clojure
 {:shared {:port 9229, :protocol "https"}
- :qa [:shared {:servers ["qa.mycorp.com"]}]
- :stage [:shared {:servers ["stage.mycorp.com"]}]
- :production [:shared {:servers ["prod1.mycorp.com", "prod1.mycorp.com"]}]}
+ :qa [:shared {:servers ["qa.my-corp.com"]}]
+ :stage [:shared {:servers ["stage.my-corp.com"]}]
+ :production [:shared {:servers ["prod1.my-corp.com", "prod1.my-corp.com"]}]}
 ```
 
 #### Dynamic Eval
@@ -209,6 +209,6 @@ In order to prevent profile settings from being propagated to other projects tha
 
 
 
-#### Production 
+#### Production
 
 Leiningen 2.1.0 onward get a speed boost by disabling optimized compilation (which only benefits long-running processes). This can negatively affect performance in the long run, or lead to inaccurate benchmarking results. If want the JVM to fully optimize, you can you can switch profiles with `lein with-profiles production run`

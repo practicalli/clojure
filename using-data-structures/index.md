@@ -65,13 +65,13 @@ Now we use a function called conj to adds (conjoin) another number to our data s
 (conj name1 5)
 ```
 
-This returns a new value without changing the original data structre
+This returns a new value without changing the original data structure
 
 ```
 name1
 ```
 
-We cant change the original data structure, it is immutable.  Once it is set it cant be changed. However, if we give a name to the resultl of changing the original data structure, we can refer to that new data structure
+We cant change the original data structure, it is immutable.  Once it is set it cant be changed. However, if we give a name to the result of changing the original data structure, we can refer to that new data structure
 
 ```
 (def name2(conj name1 5))
@@ -97,7 +97,7 @@ name2
 name1
 ```
 
-> **Hint** An analogy (thanks to Chris Ford) 
+> **Hint** An analogy (thanks to Chris Ford)
 
 > You have the number 2.  If you add 1 to 2, what value is the number 2?
 > The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return

@@ -67,7 +67,7 @@ Match if there are multiple space type characters after the ?
   ;; => "Okay if like my  spacebar  quite a bit?   "
 ```
 
-Dont match if a question mark character is not at the end of the string
+Don't match if a question mark character is not at the end of the string
 
 ```eval-clojure
   (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")

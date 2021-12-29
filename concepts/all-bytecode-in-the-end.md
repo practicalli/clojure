@@ -6,4 +6,4 @@
 
   As soon as you evaluate your code in the REPL it is also being compiled in the background into Java Bytecode.  So there is no need for a seperate build and run phase.
 
-  As you can inject code into the running environment you can easily bug fix or itteratively develop your application.
+  Injecting code into the running environment provides the means for fast iterative development of code.

@@ -140,7 +140,7 @@ clojure -M:test:runner
 The tests should pass.
 
 ## Running the application
-Use the clojure command with the main namepace of the application.  Clojure will look for the -main function and evaluate it.
+Use the clojure command with the main namespace of the application.  Clojure will look for the -main function and evaluate it.
 ```bash
 clojure -M -m practicalli.random-clojure-function
 ```

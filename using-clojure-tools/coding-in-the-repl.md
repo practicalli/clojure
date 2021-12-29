@@ -1,11 +1,11 @@
 # Coding in the REPL
 
 > #### Hint::Use an Editor for Clojure Projects
-> Using an editor (or ide) is a more effective way to develop projects, although having a command line REPL is very fast and convienient way to experiment and discover Clojure.
+> Using an editor (or ide) is a more effective way to develop projects, although having a command line REPL is very fast and convenient way to experiment and discover Clojure.
 
 
 ## Evaluating code
-Type Clojure code at the REPL prompt, not forgetting to ensure your parens are balanced.  Press `Enter` to evaluate the code and see the result.  The REPL evaluates one expression at a time, although it remembers all expressions that correctly evaluate.  This enables your own function definitons to be called, until you end the REPL session.
+Type Clojure code at the REPL prompt, not forgetting to ensure your parens are balanced.  Press `Enter` to evaluate the code and see the result.  The REPL evaluates one expression at a time, although it remembers all expressions that correctly evaluate.  This enables your own function definitions to be called, until you end the REPL session.
 
 ![Clojure REPL clj evaluate map function](/images/clojure-repl-clj-eval-map-function.png)
 

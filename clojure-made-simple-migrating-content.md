@@ -1,4 +1,3 @@
-
 # Why use Clojure
 
 Clojure is a dynamically typed functional programming language for the Java Virtual Machine (JVM).
@@ -7,10 +6,10 @@ Clojure is an open source project and has a compelling combination of features t
 
 * Clojure is elegant - a clean design allows you to write programs that get right to the essence of a problem, without clutter and ceremony
 * Clojure is Lisp reloaded - the power inherent in Lisp updated to make the language more accessible to developers.
-* Clojure encourages a pure functional approach - data structures are immutable keeping functions free from side effects, making it easier to write correct programs.	 
+* Clojure encourages a pure functional approach - data structures are immutable keeping functions free from side effects, making it easier to write correct programs.
 * Clojure simplifies concurrent programming - provides alternatives to locking using software transactional memory, agents, atoms, and dynamic variables.
 * Clojure embraces Java - calling Java code from Clojure is direct and fast, with no translation layer.
-* Clojure is fast - written to take advantage of the optimisations possible on the modern JVM. 
+* Clojure is fast - written to take advantage of the optimisations possible on the modern JVM.
 
 Many other languages on the JVM cover some of the features described, Ruby, Python, and JavaScript, Scala, and Groovy but none has such a core focus on functional programming as Clojure.
 
@@ -18,44 +17,44 @@ Many other languages on the JVM cover some of the features described, Ruby, Pyth
 
 
 
-# Emacs commands 
+# Emacs commands
 
 A quick crib sheet for Clojure development using Emacs (see setup guide).  You can repeat a command using Ctrl and up/down arrows.
 
 Meta is typically the Alt key on a PC keyboard.
 
- Files	 	 	 Buffers
- 
- Open	 Ctrl-X, Ctrl-F	 	 Close Window/Buffer	 Ctrl-X, K
+ Files           Buffers
+
+ Open	 Ctrl-X, Ctrl-F      Close Window/Buffer	 Ctrl-X, K
  Save current File
  Ctrl-X, Ctrl-S
- 	 Quit	 Ctrl-X, Ctrl-C
- Save As	 Ctrl-X, Ctrl-W	 	 Scroll through buffers	 Ctrl-X, B
- Save All	 Ctrl-X, S	 	 List buffers in window	 Ctrl-X, Ctrl-B
- Revert to File	 Ctrl-X, Ctrl-V	 	 Maximise	 Ctrl-X, 1 
- Revert Buffer	 Meta-X, revert-buffer	 	 Split Horizontally
- Ctrl-X, 2 
-Toggle buffer 
+     Quit	 Ctrl-X, Ctrl-C
+ Save As	 Ctrl-X, Ctrl-W      Scroll through buffers	 Ctrl-X, B
+ Save All	 Ctrl-X, S       List buffers in window	 Ctrl-X, Ctrl-B
+ Revert to File	 Ctrl-X, Ctrl-V      Maximise	 Ctrl-X, 1
+ Revert Buffer	 Meta-X, revert-buffer       Split Horizontally
+ Ctrl-X, 2
+Toggle buffer
  Ctrl-C, T
- 	 Split Vertically
+     Split Vertically
  Ctrl-X, 3
  Text management
- 	 	 Switch focus between windows
+         Switch focus between windows
  Ctrl-X, o
  Select all
- Ctrl-x, h	 	 	 
- Cut Line	 Ctrl-k	 	Close current buffer 
-Ctrl-X, 0 (zero)  
+ Ctrl-x, h
+ Cut Line	 Ctrl-k     Close current buffer
+Ctrl-X, 0 (zero)
  Paste (yank)
- Ctrl-y	 	Run tests 
-Ctrl-C, , 
- Undo	 Ctrl-_ 
- 	 Build management
-  
-Cut selection 
- Ctrl-w	 	Compile code 
- Ctrl-c, Ctrl-k 
- 	 	 	 Evaluate expression
+ Ctrl-y     Run tests
+Ctrl-C, ,
+ Undo	 Ctrl-_
+     Build management
+
+Cut selection
+ Ctrl-w     Compile code
+ Ctrl-c, Ctrl-k
+             Evaluate expression
  Ctrl-c Ctrl-e
 
 
@@ -84,18 +83,18 @@ Meta-x grep
 
 
 Alias for shell
-If you use shell often, you can create a alias or a keyboard shortcut, by placing the following in your emacs init file: 
+If you use shell often, you can create a alias or a keyboard shortcut, by placing the following in your emacs init file:
 
-(defalias 'sh 'shell) 
-  (global-set-key (kbd "<f5>") 'shell) 
-
-
+(defalias 'sh 'shell)
+  (global-set-key (kbd "<f5>") 'shell)
 
 
 
-# Emacs Paredit 
 
- Overview 
+
+# Emacs Paredit
+
+ Overview
 In paredit mode you cannot create unbalanced parenthesis or delete parens that contain content.  Paredit requires the learning of a few keyboard shortcuts to be really effective (cheatsheet), if you ever get stuck with Paredit you can turn it off with M-x paredit-mode
 
 
@@ -120,7 +119,7 @@ Say you start defining a function but forget to put the arguments in square brac
 
 Slurping & Barfing
 Pull in (slurp) or throw out (barf) a whole s-expression (something between parens)
- 
+
 Forward slurp
 C - )    or C - <right>
 
@@ -139,7 +138,7 @@ Type in your function definition or other expression and with the cursor at end 
 
 (def my-fn [args])                      ;Comment
 
-;; Or on an empty line, press M-; and you get 
+;; Or on an empty line, press M-; and you get
 
 ;;
 
@@ -178,7 +177,7 @@ General movement
 # Special Forms
 Special forms are recognized by the Clojure compiler and not implemented in Clojure source code. There are a relatively small number of special forms and new ones cannot be implemented.
 
-catch, def, do, dot ('.'), finally, fn, if, let, loop, monitor-enter, monitor-exit, new, quote, recur, set!, throw, try and var. 
+catch, def, do, dot ('.'), finally, fn, if, let, loop, monitor-enter, monitor-exit, new, quote, recur, set!, throw, try and var.
 
 # Sharing Mutable data
 Use mutable references to immutable data - Reference Types
@@ -192,34 +191,34 @@ Agents provide asynchronous access to a single piece of shared data.
 
 # Clojure core functions to get to know
 
-Creating macros: 
+Creating macros:
 defmacro definline macroexpand-1 macroexpand
 
-Branching: 
+Branching:
 and or when when-not when-let when-first if-not if-let cond condp
 
-Looping (see also Sequences): 
+Looping (see also Sequences):
 for doseq dotimes while
 
-Working with vars (see also Vars and Environment): 
+Working with vars (see also Vars and Environment):
 ns declare defn defmacro definline defmethod defmulti defn- defonce defstruct
 
-Arranging code differently: 
+Arranging code differently:
 .. doto ->
 
-Dynamic scopes (see also Vars and Environment): 
+Dynamic scopes (see also Vars and Environment):
 binding locking time with-in-str with-local-vars with-open with-out-str with-precision
 
-Creating lazy things (see also Sequences): 
+Creating lazy things (see also Sequences):
 lazy-cat lazy-cons delay
 
-Java interop macros: 
+Java interop macros:
 .. amap areduce gen-class gen-interface proxy proxy-super memfn
 
-Documenting code: 
+Documenting code:
 assert comment doc
 
-Transactions: 
+Transactions:
 dosync io!
 
 
@@ -253,10 +252,10 @@ A name space is not like a class definition, it is a single line definition like
 
 If you define your clojure code inside your namespace as follows...
 
-(ns cl1 
+(ns cl1
 (def s 1)
 (print s)
-) 
+)
 
 then you will get the error...
 
@@ -274,8 +273,8 @@ The usual way an additional namespace is added into your own is to use :require 
 
 (ns namespace
 :require my-other-namespace)
- 
-Run (doc require) in the repl to view the clojure documentation for more information 
+
+Run (doc require) in the repl to view the clojure documentation for more information
 
 Adding other name spaces using aliases...
 
@@ -338,7 +337,7 @@ you can conj with a map too...
 
 user=> (cons {:a 1} {:b 2})
 ({:a 1} [:b 2])
-user=> 
+user=>
 
 
 (seq {:a 1} {:b 2} )
@@ -371,7 +370,7 @@ clojure.core/sorted-set
 ([& keys])
   Returns a new sorted set with supplied keys.
 nil
-user=> 
+user=>
 
 
 (reverse [2 7 3] )
@@ -383,7 +382,7 @@ user=>
 
 user=> (sort ( seq "Hello World" ) )
 (\space \H \W \d \e \l \l \l \o \o \r)
-user=> 
+user=>
 
 
 
@@ -394,14 +393,14 @@ clojure.core/sorted-set
 ([& keys])
   Returns a new sorted set with supplied keys.
 nil
-user=> 
+user=>
 user=> (doc sorted-set)
 -------------------------
 clojure.core/sorted-set
 ([& keys])
   Returns a new sorted set with supplied keys.
 nil
-user=> 
+user=>
 
 
 ( -> "Hello world" (seq) (sort) (reverse))
@@ -417,7 +416,7 @@ user=> ( ->> "Hello" ( seq ) (interpose "_" ) )
 
 
 
-Predicates 
+Predicates
 
 return true or false based on the argument
 
@@ -469,10 +468,10 @@ user=> (dissoc house :rooms )
 ( ( ( house :rooms) : pantry ) : description ))
 
 
-user=> ( ( ( house :rooms) :pantry ) :description ))  
+user=> ( ( ( house :rooms) :pantry ) :description ))
 "The pantry"
 java.lang.Exception: Unmatched delimiter: )
-user=> ( ( ( house :rooms) :pantry ) :description ) 
+user=> ( ( ( house :rooms) :pantry ) :description )
 "The pantry"
 
 
@@ -490,7 +489,7 @@ user=> ( update-in house [ :rooms ] #(assoc % :ktichen "Spooky kitchen" ) )
 user=> (println house)
 {:rooms {:pantry {:description The pantry}}}
 nil
-user=> 
+user=>
 
 
 Changing state
@@ -514,14 +513,14 @@ user=> ( reset! joe { :name "Joelyn" } )
 user=> (println joe)
 #<Atom@32d35f5f: {:name Joelyn}>
 nil
-user=> 
+user=>
 
 
 ( swap! joe #(assoc % :age 33) )
 
 user=> ( swap! joe #(assoc % :age 33) )
 {:age 33, :name "Joelyn"}
-user=> 
+user=>
 
 
 ( def world ( ref { :continents [ "Europe", "Asia" ]}))
@@ -534,7 +533,7 @@ user=>
 
 # Common errors
 
-## Not an IFn 
+## Not an IFn
 Calling something that is not a function by putting it as the first element of a list.
 
 ## Putting code inside namespace definition
@@ -554,13 +553,13 @@ The Clojoure inspector is a very simple Swing gui that you call from within cloj
 
 At the repl prompt, load the clojure inspector into the namespace
 user=> (use 'clojure.inspector)
-Then enter your clojure expression you want to inspect 
+Then enter your clojure expression you want to inspect
 (inspect-tree {:a 1 :b 2 :c [1 2 3 {:d 4 :e 5 :f [6 7 8]}]})
 The inspector will evaluate the expression and show the data structure in a Swing gui.
 
 
 # Extreme Startup
-Extreme Startup NinjaExtreme startup is a practical workshop which simulates the excitement and insanity of working for a high pressure startup company, where every decision (or lack of) can make or loose you money.  
+Extreme Startup NinjaExtreme startup is a practical workshop which simulates the excitement and insanity of working for a high pressure startup company, where every decision (or lack of) can make or loose you money.
 
 Think of it as an extreme version of a coding dojo, where you are constantly challenged with new requirements and have to make quick decisions on what you should develop.  An extreme startup server is used to steadily grown requirements by asking you what seems to be simple questions at an increasing rate and complexity.  As these questions grow and change, as a normal project would, you are continually urged to develop your code to meet these changes.
 
@@ -602,14 +601,14 @@ Have a look at the code, the rules.clj is the most important file at this point.
 
     lein repl
 
-Running lein repl in the top level of the project directory should load the project code into the repl.  If not, then run (load-file 'src/extremestartup/server.clj)
+Running lein repl in the top level of the project directory should load the project code into the repl.  If not, then run (load-file 'src/extreme-startup/server.clj)
 
-    (server/start 3000) 
+    (server/start 3000)
 
 3000 is the port number to run your server on, you can use anything that is available on your machine
-    
+
 Open your browser at http://localhost:3000/ to see if it works
-                    
+
 4) Register your team as a player
 
 The facilitator should provide you a URL to connect to.  Select the "I want to play!" link and register your team.
@@ -620,7 +619,7 @@ The facilitator should provide you a URL to connect to.  Select the "I want to p
 
 5) Get coding
 
-Load the rules.clj file and extend the dispatcher function to your heart's content. Use the testrule macro to quickly unit test your dispatcher.
+Load the rules.clj file and extend the dispatcher function to your heart's content. Use the `test-rule` macro to quickly unit test your dispatcher.
 
 Hint: you may want to have a look at the questions you are getting asked, so you can answer them!!
 
@@ -636,7 +635,7 @@ Hint: you may want to have a look at the questions you are getting asked, so you
 
 Creator Rich Hickey has explained that building on top of the JVM grants Clojure automatic platform stability from a broad user and developer community, but that itself was not the goal of creating the language. Hickey's primary interest was concurrency — he wanted the ability to write multi-threaded applications, but increasingly found the mutable, stateful paradigm of object oriented programming to be part of the problem. "Discovering Common Lisp after over a decade of C++, I said to myself — 'What have I been doing with my life?', and resolved to at some point code in Lisp. Several years of trying to make that practical, with 'bridges' like jFli, Foil etc, made it clear that bridges weren't going to be sufficient for the commercial work I was doing."
 
-Hickey became less enamored of object oriented programming and started adopting a functional-programming style in his work, which he found to make the code more robust and easier for him and for his coworkers to understand. Eventually, maintaining that style in other languages like C# became more trouble than it was worth: 
+Hickey became less enamored of object oriented programming and started adopting a functional-programming style in his work, which he found to make the code more robust and easier for him and for his coworkers to understand. Eventually, maintaining that style in other languages like C# became more trouble than it was worth:
 
 The idea of a functional Lisp integrated with a commercially accepted host platform just seemed like chocolate and peanut butter. It can be hard to remember the exact time in which you decide to do the crazy thing that is designing a new language - you just find yourself doing it because you have to. Coming up with persistent data structures that were fast enough was the tipping point for my considering it viable.
 
@@ -692,10 +691,10 @@ The downside of Lisp’s simple, regular syntax, at least for beginners, is Lisp
 
 # Functional programming
 
-Functional programming is all about having simple datastructures and applying powerful functional abstractions on them
+Functional programming is all about having simple data-structures and applying powerful functional abstractions on them
 
-I. - immutable, very simple datastructures based on hashtables/maps 
-II. - the lisp syntax with all the parenthesis (code = data) 
+I. - immutable, very simple data-structures based on hash-maps
+II. - the lisp syntax with all the parenthesis (code = data)
 III. - the macro system.
 
 You pass simple data to functions, the functions return new data or new functions that you can pass on. You have small, but powerful building blocks. And the language makes folding, transforming and filtering of data very easy.
@@ -706,11 +705,11 @@ tight integration with Java through Iterable and Iterator, implementing Java int
 
 implementing STM in Clojure is genius – lots of people talk about STM and it could be the next big thing for sharing state in distributed applications - software transactional memory, an easy way to share data
 
-Well thought Seq concept, tightly integrated with Java 
+Well thought Seq concept, tightly integrated with Java
 
 Sequences in Clojure - Rich Hickey
 
-Java methods as functions in Clojure 
+Java methods as functions in Clojure
 (map (memfn charAt i) ["fred" "ethel" "lucy"] [1 2 3])
 
 Collections in Clojure implement Collection
@@ -723,7 +722,7 @@ Functions implement Callable and Runnable
 
 
 
-# Resources 
+# Resources
 
 * [Full Disclojure & video tutorials](https://vimeo.com/channels/fulldisclojure)
 * [Clojure Toolbox](http://www.clojure-toolbox.com/)
@@ -733,7 +732,7 @@ Functions implement Callable and Runnable
 * [Best In Class.dk](http://www.bestinclass.dk/best-class-blogposts) - various clojure articles
 
 
-# My talks on Clojure 
+# My talks on Clojure
 
 * <a href="http://skillsmatter.com/podcast/scala/clojure-made-simple-3135" target="_blank"><img border="0" src="https://sites.google.com/site/jr0cketwebclojure/getting-started/talks/Clojure-made-simple-talk-skillsmatter.png"></a>
 * <a href="http://skillsmatter.com/podcast/scala/perfect-clojure-environment" imageanchor="1" target="_blank"><img border="0" src="https://sites.google.com/site/jr0cketwebclojure/getting-started/talks/clojure-perfect-environment-talk-skillsmatter.png"></a>
@@ -785,9 +784,9 @@ this example is work in progress and will end up on my repository at: bitbucket.
 
 (def process-lines
      (fn [path file]
-          (with-open [ ( clojure.java.io/reader data-file ) ] 
+          (with-open [ ( clojure.java.io/reader data-file ) ]
                (file (line-sea reader) ) ) ) )
- 
+
 
 ; can we write the above as (defn process-lines [path file]
 
@@ -795,7 +794,7 @@ this example is work in progress and will end up on my repository at: bitbucket.
 
 ; Now to have something that prints out the matching information - the process we will pass to process-lines
 
-(def print-matchiing 
+(def print-matching
      (fn [words]
           (println ... )
 
@@ -816,14 +815,14 @@ Clojure an outside in approach - define what you want to achieve and delegate th
 
 
 -- JPS - my own programming efforts with my functional brain
-(defn length-ten? [words] 
+(defn length-ten? [words]
      (.length(10, words))
 )
 
 
 ;; a more functional approach would be...
 
-(defn length-ten? [words] 
+(defn length-ten? [words]
      ( = 10 ( count word) ) )
 
 ;; (count word) is the equivalent of java.string.length(word)
@@ -834,14 +833,14 @@ Clojure an outside in approach - define what you want to achieve and delegate th
 
 (def data-file "json.js")
 
-(defn process-data-file [file-path function] 
-     (with-open (clojure.java.io/reader file-path) ) 
+(defn process-data-file [file-path function]
+     (with-open (clojure.java.io/reader file-path) )
           (function (line-seq reader) ) )
 
-(defn length-ten? [words] 
+(defn length-ten? [words]
      ( = 10 (count words) ) )
 
-(defn print-matching [words] 
+(defn print-matching [words]
      (prn (filter length-ten? words) ) )
 
 (process-data-file data-file print-matching)
@@ -851,7 +850,5 @@ Clojure an outside in approach - define what you want to achieve and delegate th
 
 * a more specific example for twitter
 
-(defn filter-tweets-for-keyword [tweets-stream] 
+(defn filter-tweets-for-keyword [tweets-stream]
      () )
-
-     

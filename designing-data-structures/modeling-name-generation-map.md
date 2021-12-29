@@ -25,14 +25,14 @@ The following seems to be the simplest way to model the sloane names.  This foll
    "c" "Coutts"})
 ```
 
-The following alternative data structure design is very simple and more consise, however it does loose some of the semantic meaning.  The position of the names is not defined in terms of the contenxt of the problem.
+The following alternative data structure design is very simple and more concise, however it does loose some of the semantic meaning.  The position of the names is not defined in terms of the context of the problem.
 
 ```clojure
 (def slone-names
   {:a ["Ally-Pally" "Anstruther" "Arbuthnot"]})
 ```
 
-This next design removes some of the redundancy in defining each letter of the alphabet several times.  Apart from less typing and therefore reading by the development teeam, it also explicitly defines the semantic meaning of each name within the context of this problem.
+This next design removes some of the redundancy in defining each letter of the alphabet several times.  Apart from less typing and therefore reading by the development team, it also explicitly defines the semantic meaning of each name within the context of this problem.
 
 ```clojure
 (def slone-names

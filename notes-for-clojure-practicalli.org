@@ -399,8 +399,8 @@ You can use clojure functions only if they are added to the namespace.
 By default, clojure.core and java.lang are included in the REPL or any new project
 The require function is needed in this case.  For example:
 
-user=> (clojure.string/split "comma,seperated,values" #",")
-["comma" "seperated" "values"]
+user=> (clojure.string/split "comma,separated,values" #",")
+["comma" "separated" "values"]
 user=>
 
  user=> (use '[clojure.string :as str :only [join split]])
@@ -518,7 +518,7 @@ In the repl you can simply enter an expression using require or use function as 
 (use 'namespace.name)
 (:use [namespace.name])
 (:use [namespace.name
-       anonther-namespace.name])
+       another-namespace.name])
 
 
 Using require allows you to refer to external functions, although you still need to specify the
@@ -542,7 +542,7 @@ In a project file, you can include other namespaces inside the namespace definit
 
 (ns namespace.name
     :use [namespace.name
-          anonther-namespace.name])
+          another-namespace.name])
 
 
 
@@ -574,7 +574,7 @@ By adding the reload keyword to a Leiningen project, then ....
 
 (ns namespace.name
     :use [namespace.name
-          anonther-namespace.name]
+          another-namespace.name]
     :reload)
 
 
@@ -774,9 +774,9 @@ Adding to a list
 
  #(* 1 2 3 4 5)
 
-To pass a paramter into an anonymous function, use the % character
+To pass a parameter into an anonymous function, use the % character
 
-To specify individual paramters you can number the % characters like:
+To specify individual parameters you can number the % characters like:
 
     #(* 10 %)
     #(* 10 %1 %2 %3)
@@ -796,7 +796,7 @@ To specify individual paramters you can number the % characters like:
 use pulls everything in from the stated namespace and adds it all to the current namespace,
 unless you define only.  Use is a shorthand for :require :refer :all
 
-Require makes available the functoins from the namespace, but does not pollute your current namespace.
+Require makes available the functions from the namespace, but does not pollute your current namespace.
 However, if you use the :refer :all keywords with :require then it will add everything to the namespace.
 
 You can us :as to map to the namespace to an alias, helping avoid any function name (symbol) clashes
@@ -826,7 +826,7 @@ the for function and use of map in the example above are similar.  In many cases
          letter [:a :b :c]]
        (str number letter))
   - join each number and letter when iterating over each data set
-- three combination lock with filter, combinations produced should have 3 unqiue numbers
+- three combination lock with filter, combinations produced should have 3 unique numbers
   - (for [tumbler-1 (range 10)
           tumbler-2 (range 10)
           tumbler-3 (range 10)
@@ -850,7 +850,7 @@ Defining functions
 - define a function name,
   define a functions parameters - including any arity based polymorphism
   define the behavior in the function
-  -- from a simple expression, to multiple expressions, to functions as paramters of functions, to recursively calling the same function
+  -- from a simple expression, to multiple expressions, to functions as parameters of functions, to recursively calling the same function
   -- using doto or threading macro to make code readable
 
 ** Learning Clojure core
@@ -1217,7 +1217,7 @@ I’ve been having a blast with Clojure. It’s clearly the exactly right techno
 ;; (pprint (for [x (range 10)] (range x)))
 
 ;; Clojure Naming convention - Kebab case
-;; Taken from the idea of shish kebab, the naming convention in clojure uses hyphens between words use for namespaces, defs, defns, datastructures and
+;; Taken from the idea of shish kebab, the naming convention in clojure uses hyphens between words use for namespaces, defs, defns, data-structures and
 ;; anything else a developer gives a name to in Clojure.
 
 
@@ -1265,7 +1265,7 @@ Take advantage of nice features in Clojure, like the O(1) cost of copying a larg
 Choose among Clojure's core constructs wisely:
 An atom is great when you need some mutable data, e.g. updating some data in a loop
 If you are going to traverse some data in sequence, use a list rather than a vector or map since this will avoid creating temporary objects while traversing the sequence.
-Use deftype/defrecord/defprotocol where appropriate. These are heavily optimised, and in particular should be preferred to defstruct/multimethods as of Clojure 1.2 onwards.
+Use deftype/defrecord/defprotocol where appropriate. These are heavily optimised, and in particular should be preferred to defstruct/multi-methods as of Clojure 1.2 onwards.
 Take advantage of Clojure's concurrency capabilities:
 pmap and future are both relatively easy ways to take advantage of multiple cores when you are doing a number of independent computations at the same time.
 Remember that because of Clojure's immutable persistent data structures, making and working on multiple copies of data is very inexpensive. You also don't have to worry about locking when taking snapshots.....
@@ -1620,7 +1620,7 @@ tags can have namespaces too
 
 You can turn edn into a program by evaluating it, as clojure is a data driven language / syntax
 
-symbols will evalutate to a bound value
+symbols will evaluate to a bound value
 
 pi evaluates to 3.144554504
 
@@ -1661,7 +1661,7 @@ mutible statte needed for
 
 problem with encapsulation is that walls around objects are expensive as we have to write an api to use all of our objects
 
-in distributed envrionemnts, we often work with immutable values - its an effecitve copy of the data between client and server
+in distributed envrionemnts, we often work with immutable values - its an effective copy of the data between client and server
 
 with immutable data structures in Clojure, you get an Api for free
 - getters

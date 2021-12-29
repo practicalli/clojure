@@ -28,4 +28,4 @@ Although this kind of project is easy enough to just do in a REPL directly, usin
 
 Most Clojure developers use the REPL by evaluating code in the editor showing the source code from the project.
 
-[Practicalli WebApps book](https://practicalli.github.io/clojure-webapps/) shows how to build websites, create self-documented API's, manage Web Application servers and use databases to persist data.
+[Practicalli WebApps book](https://practical.li/clojure-web-services/) shows how to build websites, create self-documented API's, manage Web Application servers and use databases to persist data.

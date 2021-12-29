@@ -11,7 +11,7 @@ kebab-case is used throughout Clojure, including
 * Local names with `let`
 * Clojure spec names
 
-kebab-case is used in lisp languages including Clojure. The style is also used in website URLs, e.g. [practicalli.github.io/clojure-webapps](https://practicalli.github.io/clojure-webapps/)
+kebab-case is used in lisp languages including Clojure. The style is also used in website URLs, e.g. [practicalli.github.io/clojure-webapps](https://practical.li/clojure-web-services/)
 
 ## Using meaningful names
 To provide greater clarity to human developers, words may be combined for the names used when writing the code. Using multiple words can give greater context in to the purpose of that code.

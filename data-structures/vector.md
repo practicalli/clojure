@@ -1,10 +1,10 @@
 # Vector
 
-Vectors are an indexed sequential collections of data, basically the same as arrays in other languages.  However, there are several differences.  The index for a vector starts at 0, just like arrays in other languages. 
+Vectors are an indexed sequential collections of data, basically the same as arrays in other languages.  However, there are several differences.  The index for a vector starts at 0, just like arrays in other languages.
 
 ![Vector](../images/vector-concept.png)
 
-Vectors are written using square brackets `[]` with any number of pieces of data inside them, separated by spaces. 
+Vectors are written using square brackets `[]` with any number of pieces of data inside them, separated by spaces.
 
 > **Note** Experiment with creating vectors for your data structures
 
@@ -54,9 +54,9 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 ;; ((1 2 3) 1) ;; you cant treat lists in the same way, there is another approach - assoc
 ```
-  
 
-## Changing vectors 
+
+## Changing vectors
 
 The next two functions are used to make new vectors. The `vector` function takes any number of items and puts them in a new vector.
 
@@ -64,4 +64,4 @@ The next two functions are used to make new vectors. The `vector` function takes
 
 Remember that  collections in Clojure are _immutable_, so when we say that a function "adds to" or "removes from" a collection, what we mean is that the function returns a new collection with an item added or removed.
 
-> **Note** Using one or more vectors, create a data structure of the high temperatues for the next 7 days in your area. Use the `nth` function to get the high temperature for next Friday
+> **Note** Using one or more vectors, create a data structure of the high temperatures for the next 7 days in your area. Use the `nth` function to get the high temperature for next Friday

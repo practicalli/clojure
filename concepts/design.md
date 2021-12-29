@@ -9,10 +9,10 @@
 (ns name-space.name)
 
 ;; define one or more immutable data structures - the fewer the better typically
-(def my-data-struture [[{}{}]])
+(def my-data-structure [[{}{}]])
 
 ;; define behaviour that acts on data structures inside one or more functions
-(defn my-function [paramter]
+(defn my-function [parameter]
   (my-behaviour parameter))
 
 ;; Call those functions to make your application do something
@@ -38,7 +38,7 @@ Hash-maps are a collection of key / value pairs that provide an easy way to refe
 
 ;; A map of maps of maps with occasional vectors
 
-{:starwars {
+{:star-wars {
     :characters {
       :jedi   ["Luke Skywalker"
                "Obiwan Kenobi"]
@@ -47,9 +47,9 @@ Hash-maps are a collection of key / value pairs that provide an easy way to refe
       :droids ["C3P0"
                "R2D2"]}
     :ships {
-      :rebel-alliance  ["Millenium Falcon"
-                        "X-wing figher"]
-      :imperial-empire ["Intergalactic Cruser"
+      :rebel-alliance  ["Millennium Falcon"
+                        "X-wing fighter"]
+      :imperial-empire ["Intergalactic Cruiser"
                         "Destroyer"
                         "Im just making these up now"]}}}
 ```

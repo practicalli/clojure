@@ -20,7 +20,7 @@ The value hello is converted to lower case and that result is passed as the firs
 ```
 
 > #### Hint::Parens optional
-> function calls that only take one argument, the one passed by earlier expresssions, can be included in the threading macro code without the surrounding `()` parens.
+> function calls that only take one argument, the one passed by earlier expressions, can be included in the threading macro code without the surrounding `()` parens.
 
 
 ## Reading Clojure code
@@ -69,7 +69,7 @@ This takes a comma separated file of words and splits them.  The words are put i
 
 `frequencies` and `reverse` only take one argument, so they do not require surrounding `()` inside the threading macro.
 
-  The common-english-words var is fairly easy to read, so probably doesnt need to be written using a threading macro, however, for completeness here is a thread-first example.
+  The common-english-words var is fairly easy to read, so probably doesn't need to be written using a threading macro, however, for completeness here is a thread-first example.
 ```clojure
 (def common-english-words
   (-> (slurp "common-english-words.txt")

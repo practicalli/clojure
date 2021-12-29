@@ -39,7 +39,7 @@ Its quite common to take the first element as a specific name and use another na
 ;; => "The next item to get is: oranges"
 ```
 
-This example seems a little redundant at first, however if we add recursion then we can iterate through the shoping list and it should make more sence
+This example seems a little redundant at first, however if we add recursion then we can iterate through the shopping list and it should make more sense
 
 
  splitting a vector into a head and a tail. When defining a function with an arglist** you use an ampersand. The same is true in destructuring.
@@ -106,7 +106,7 @@ For completeness I'll document the :or directive; however, I must admit that I'v
 
 user=> (def point {:y 7})
 #'user/point
- 
+
 user=> (let [{:keys [x y] :or {x 0 y 0}} point]
          (println "x:" x "y:" y))
 x: 0 y: 7
@@ -126,7 +126,7 @@ As you would expect, you can also use directives while destructuring nested maps
 
 user=> (def book {:name "SICP" :details {:pages 657 :isbn-10 "0262011530"}})
 #'user/book
-user=> 
+user=>
 user=> (let [{name :name {:keys [pages isbn-10]} :details} book]
          (println "name:" name "pages:" pages "isbn-10:" isbn-10))
 name: SICP pages: 657 isbn-10: 0262011530
@@ -147,13 +147,13 @@ The following example destructures a map and a vector at the same time.
 user=> (def golfer {:name "Jim" :scores [3 5 4 5]})
 #'user/golfer
 
-user=> (let [{name :name [hole1 hole2] :scores} golfer] 
+user=> (let [{name :name [hole1 hole2] :scores} golfer]
          (println "name:" name "hole1:" hole1 "hole2:" hole2))
 name: Jim hole1: 3 hole2: 5
 
 The same example can be rewritten using a function definition to show the simplicity of using destructuring in parameter lists.
 
-user=> (defn print-status [{name :name [hole1 hole2] :scores}] 
+user=> (defn print-status [{name :name [hole1 hole2] :scores}]
   (println "name:" name "hole1:" hole1 "hole2:" hole2))
 #'user/print-status
 
@@ -217,9 +217,9 @@ Depending on the fact that the user may or may not be aware of the internals of 
 
 So I tend to think about the use of destructuring function arguments directly in the function signature, depending on whether the "layout" of the arguments of the function is part of the user API.
     Reply
-    
-    
-    
+
+
+
 ---
 
 Clojure Destructuring Tutorial and Cheat Sheet
@@ -227,7 +227,7 @@ Clojure Destructuring Tutorial and Cheat Sheet
 
 ([Related blog post](http://john2x.com/blog/clojure-destructuring))
 
-Simply put, destructuring in Clojure is a way extract values from a datastructure and bind them to symbols, without having to explicitly traverse the datstructure. It allows for elegant and concise Clojure code.
+Simply put, destructuring in Clojure is a way extract values from a data structure and bind them to symbols, without having to explicitly traverse the data structure. It allows for elegant and concise Clojure code.
 
 Vectors
 -------
@@ -255,7 +255,7 @@ You don't have to match the full vector.
 ;; => :a :b :c
 ```
 
-You can use `& the-rest` to bind the remaining part of the vector to `the-rest`. 
+You can use `& the-rest` to bind the remaining part of the vector to `the-rest`.
 
 ```clojure
 (let [[a b & the-rest] my-vector]

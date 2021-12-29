@@ -11,13 +11,13 @@ When a function is just fine
 its only used in this project
 where you want it to be composable (macros are not composable, eg (apply my-macro data) does not work - `apply and` is a good example here)
 you dont have time to learn the macro syntax properly and you dont want to write a bad macro
-your macro doest do anything you cant do with a funciton.
+your macro doest do anything you cant do with a function.
 -->
 
 The macro system allows you to extend the design of the Clojure language, without waiting for the language designers.
 
 > #### Hint::Clojure macros are quite unique
-> Many languages have macros, although most are more akin to templating systems.
+> Many languages have macros, although most are more akin to a template systems.
 >
 > Clojure macros are a language within the Clojure language that generate Clojure code when the Clojure Reader parses a macro.  In fact the Clojure Reader will pass the macro to the macro reader which does the expansion.
 

@@ -156,7 +156,6 @@
 
 * [Test runners](testing/test-runners/index.md)
     * [Cognitect-labs](testing/test-runners/congnitect-labs-test-runner.md)
-    <!-- * [eftest](testing/test-runners/eftest-runner.md) -->
     * [LambdaIsland Kaocha](testing/test-runners/kaocha-test-runner.md)
     * [Example projects](testing/test-runners/example-projects.md)
 
