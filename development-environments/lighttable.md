@@ -12,7 +12,7 @@ Download [lighttable.com](http://lighttable.com) and follow the suggested instru
   Install the `lighttable.dmg` file just as any other MacOSX package
 
 **Linux**
-  Extract the contents of the downloaded lighttable file to a suitable directory (`/usr/local` or `~/apps`).  Add `LightTable` to the system `$PATH`, or add the following script to the sytem `$PATH`.
+  Extract the contents of the downloaded lighttable file to a suitable directory (`/usr/local` or `~/apps`).  Add `LightTable` to the system `$PATH`, or add the following script to the system `$PATH`.
 
 <script src="https://gist.github.com/jr0cket/40988a6d6502883bbcf999ae545cbd0d.js"></script>
 
@@ -30,7 +30,7 @@ Here is a sample of user behaviours file for LightTable
 <script src="https://gist.github.com/jr0cket/80344ffed2562fc50102c2dade0b48a8.js"></script>
 
 
-## Using LightTable 
+## Using LightTable
 
   LightTable has an online tutorial entitled [Getting started with LightTable](http://docs.lighttable.com/tutorials/full/)
 

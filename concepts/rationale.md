@@ -2,9 +2,9 @@
 
   At the time Clojure was created there were no LISP based languages that ran on a widely adopted platform, that also made concurrency easier for the developer to manage.
 
-  Developers and the companies that hire them are comfortable with the performance, security and stability of the Java Virtual Machine. 
-  
-  While Java developers may envy the succinctness, flexibility and productivity of dynamic languages, they have concerns about running on customer-approved infrastructure, access to their existing code base and libraries, and performance. In addition, they face ongoing problems dealing with concurrency using native threads and locking. Clojure is an effort in pragmatic dynamic language design in this context. It endeavors to be a general-purpose language suitable in those areas where Java is suitable. It reflects the reality that, for the concurrent programming future, pervasive, unmoderated mutation simply has to go.
+  Developers and the companies that hire them are comfortable with the performance, security and stability of the Java Virtual Machine.
+
+  While Java developers may envy the succinctness, flexibility and productivity of dynamic languages, they have concerns about running on customer-approved infrastructure, access to their existing code base and libraries, and performance. In addition, they face ongoing problems dealing with concurrency using native threads and locking. Clojure is an effort in pragmatic dynamic language design in this context. It endeavors to be a general-purpose language suitable in those areas where Java is suitable. It reflects the reality that, for the concurrent programming future, pervasive, uncontrolled mutation simply has to go.
 
   Clojure meets its goals by: embracing an industry-standard, open platform - the JVM; modernizing a venerable language - Lisp; fostering functional programming with immutable persistent data structures; and providing built-in concurrency support via software transactional memory and asynchronous agents. The result is robust, practical, and fast.
 
@@ -31,7 +31,7 @@ Clojure extends the code-as-data paradigm to maps and vectors
 
 All data structures default to immutability
 
-Core data structures are extensible abstractions 
+Core data structures are extensible abstractions
 
 Embraces a platform (JVM)
 
@@ -76,7 +76,7 @@ JVM has established track record and trust level
 Now also open source
 Interop with other code required
 C linkage insufficient these days
-Java/JVM islanguage + platform
+Java/JVM is a language and platform
 Not the original story, but other languages for JVM always existed, now embraced by Sun
 Java can be tedious, insufficiently expressive
 Lack of first-class functions, no type inference, etc
@@ -96,7 +96,7 @@ Write Java in Java, consume and extend Java from Clojure.
 Polymorphism is a good thing
 Switch statements, structural matching etc yield brittle systems
 Polymorphism yields extensible, flexible systems
-Clojure multimethods decouple polymorphism from OO and types
+Clojure multi-methods decouple polymorphism from OO and types
 Supports multiple taxonomies
 Dispatches via static, dynamic or external properties, metadata, etc
 Concurrency and the multi-core future

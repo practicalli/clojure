@@ -8,7 +8,7 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Clojurescript Unraveled](https://funcool.github.io/clojurescript-unraveled/) - June 2016
 * [Clojure from the ground up](https://aphyr.com/tags/Clojure-from-the-ground-up)
 * [Practicalli Clojure](https://practicalli.github.io/clojure)
-* [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps)
+* [Practicalli Clojure WebApps](https://practical.li/clojure-web-services)
 
 ## Reference
 * [Clojure Programming Cookbook](https://www.packtpub.com/application-development/clojure-programming-cookbook), Packt August 2016

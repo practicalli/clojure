@@ -42,7 +42,7 @@ The [extensive documentation](https://vlaaad.github.io/reveal/) shows the many w
 <!-- ```clojure -->
 <!-- (swap! state * 12) -->
 <!-- ``` -->
-<!-- The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed inthe Reveal browser. -->
+<!-- The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser. -->
 
 
 

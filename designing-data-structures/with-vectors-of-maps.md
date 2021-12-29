@@ -17,7 +17,7 @@ This is a vector of maps, as there will be one or more company stocks to track. 
                  { :ticker "ORCL" :lastTrade 21.90  :open 21.83 }])
 ```
 
-We can get the value of the whole data structure by refering to it by name
+We can get the value of the whole data structure by referring to it by name
 
 ```clojure
 portfolio
@@ -55,7 +55,7 @@ We can get specific information about the share in our portfolio, or as the keys
 ;; => "CRM"
 ```
 
-If we want to get specificd share information across the whole portfolio, then we can simply `map` the `:ticker` keyword over each share in portfolio
+If we want to get specific share information across the whole portfolio, then we can simply `map` the `:ticker` keyword over each share in portfolio
 
 ```clojure
 (map :ticker portfolio)

@@ -25,10 +25,10 @@ The following Leiningen plugins watch the file system and will run tests when a 
 For example, if the tests are defined under `project-name/clj/tests` then the project.clj file would look as follows:
 
 ```clojure
-(defproject myproject "0.5.0-SNAPSHOT"
+(defproject my-project "0.5.0-SNAPSHOT"
   :description "A project for doing things."
   :license "Creative Commons Zero"
-  :url "http://github.com/practicalli/myproject"
+  :url "http://github.com/practicalli/my-project"
 
   :dependencies [[org.clojure/clojure "1.10.1"]]
   :test-paths   ["clj/test" "src/test/clojure"]

@@ -12,7 +12,7 @@ All content and interaction with any persons or systems must be done so with res
 
 ### Submit and issue or idea
 
-If something doesnt seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/clojure/issues) explaining in as much detail as you can.
+If something doesn't seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/clojure/issues) explaining in as much detail as you can.
 
 ### Considering a Pull request?
 Before investing any time in a pull request, please raise an issue explaining the situation.  This can save you and the maintainer time and avoid rejected pull requests.

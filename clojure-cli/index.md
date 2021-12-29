@@ -48,13 +48,13 @@ Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/
 The most used execution option flags for the `clojure` command
 
 | Flag            | Purpose                                                  | Config used                                          |
-|-----------------+----------------------------------------------------------+------------------------------------------------------|
+|-----------------|----------------------------------------------------------|------------------------------------------------------|
 | `-M`            | Run Clojure project with clojure.main                    | deps, path, `:main-opts` & command line args         |
 | `-P`            | Prepare / dry run (CI servers, Containers)               | deps, path                                           |
 | `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
 | `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-T`            | Run a tool independently from a project configurationnts | `:exec-fn`, `:exec-args` & :key val args             |
+| `-T`            | Run a tool independently from a project configurations   | `:exec-fn`, `:exec-args` & :key val args             |
 | `-J`            | Java Virtual Machine specific options (heap size, etc)   |                                                      |
 
 * deps = `:deps`, `:extra-deps`, `replace-deps`

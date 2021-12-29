@@ -10,11 +10,11 @@ Clojure is relatively quick to learn for several reasons
 1. A very small syntax that encourages pure functional programming in a pragmatic way.  Clojure allows you to focus on the problems you are solving rather than the language itself.
 2. Clojure encourages REPL driven development, giving you fast feedback as you craft your code.  You can evaluate any part of your system to see what it does.  Using a REPL makes it very easy to understand what code does.
 3. Built in unit test suite via clojure.test and writing unit tests is very simple.  TDD and BDD fits very well with REPL driven development.
-4. Clojure and its community of develpers tend toward creating simple systems (solving complex requirements by breaking them down into simple components).  Most Clojure systems are build from components that have a specific task, which are orchestrated to deliver compresensive systems.
-5. The community is friendly, knowlegable and very supportive
+4. Clojure and its community of developers tend toward creating simple systems (solving complex requirements by breaking them down into simple components).  Most Clojure systems are build from components that have a specific task, which are orchestrated to deliver comprehensive systems.
+5. The community is friendly, knowledgeable and very supportive
 6. There are over 35 books on Clojure and lots of online resources and this is growing daily.
 7. Full stack development can be done in just one language (Clojure and ClojureScript are the same language syntax and run on the JVM and JavaScript platforms respectively)
-8. There are no moniods or other complex theories to understand in order to develop successful systems in Clojure.  However, you could add these kinds of things as libraries, using the powerful macro system in Clojure that allows you to extend the language cleanly.
+8. There are no complex theories to understand in order to develop successful systems in Clojure.  Using the powerful macro system in Clojure, more complex features could be added if really required.
 
 I have personally been involved in teach many hundreds of developers how create systems with Clojure and think in a functional way.  This has included those who have never programmed before as well as those programming for decades.  Clojure can feel hard at first because it is quite different in approach to what you are used to.  Those just starting coding often have fewer challenges picking up the language.
 
@@ -59,7 +59,7 @@ Floats are lossy, giving you something that's almost accurate and often good eno
 
 A better question is why do you think it's better to not have the lossless format built-in? If you don't have ratios as a first-class number type, using fractional numbers can (and will) lead to silent data corruption, which undermines the usefulness of every operator that can use them.
 
-Using floats is often a recipe for disaster — try using them for currency sometime — so, eventually you or someone else will realise you really do need a lossless type after all. And, since it doesn't exist as a first-class number type, you'll go off to write your own. Of course, the existing operators don't work with your new, accurate number type, so you have to reimplement those, too. Now that you've got a competing set of functions to do basic arithmetic, you either need to override the existing ones (possibly confusing), or you have to namespace your operators, leading to arithmetic looking like (r/* (r/+ a b) c (r/- d e)).
+Using floats is often a recipe for disaster — try using them for currency sometime — so, eventually you or someone else will realise you really do need a lossless type after all. And, since it doesn't exist as a first-class number type, you'll go off to write your own. Of course, the existing operators don't work with your new, accurate number type, so you have to implement those, too. Now that you've got a competing set of functions to do basic arithmetic, you either need to override the existing ones (possibly confusing), or you have to namespace your operators, leading to arithmetic looking like (r/* (r/+ a b) c (r/- d e)).
 
 Of course, most people will shrug and go "eh, I don't need to do all that" and just keep using the lossy floats because they're built in and it's easier. Some might not even realise how big a mess it can be until it bites them in the ass. Then they write kludges (such as doing everything in ints and adding the decimal after-the-fact) or have to rewrite things to use someone's math library, all because someone decided that not providing an accurate fractional type was a good default.
 
@@ -184,7 +184,7 @@ http://www.clojuresphere.com/
 
 http://blog.jenkster.com/2013/12/a-cider-excursion.html
 
-clojure emacs metaprogramming trick https://www.youtube.com/watch?v=LXhWW1Yqpt0
+clojure emacs meta-programming trick https://www.youtube.com/watch?v=LXhWW1Yqpt0
 
 https://github.com/technomancy/mire
 
@@ -225,7 +225,7 @@ http://cognitect.com/
 
 
 
-#### Charicteristics
+#### Characteristics
 
 * Dynamic
 - typed - like Python, Ruby or Groovy
@@ -246,16 +246,16 @@ http://cognitect.com/
 - to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data)
 ** Input & output with functional programming
 - other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesnt try and enforce functional purity, so any function can include impure code
-- most functoins should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
-- Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM
+- Clojure doesn't try and enforce functional purity, so any function can include impure code
+- most functions should be pure though or you loose the benefits of functional programming
+- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
+- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM
 
 * Hosted on the Java Virtual Machine
-- writen for the JVM & heavily integrated, giving beautiful integratoin
+- written for the JVM & heavily integrated, giving beautiful integratoin
 - Clojure is compiled to Java byte code
 - many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)
-- Clojure makes invoking Java very convieninet and provides special primative constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
+- Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
 
 * Supporting concurrency
 - atoms etc
@@ -278,7 +278,7 @@ Macros
 
 > **fixme** concepts to explore
 
-Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multithreaded programs.
+Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs.
 
 Clojure is very concise, requiring very little code to express complex operations.
 
@@ -288,7 +288,7 @@ Modularity - Clojure and its community build things in modules / components that
 
 It offers a REPL and dynamic type system: ideal for beginners to experiment with, and well-suited for manipulating complex data structures.
 
-A consistently designed standard library and full-featured set of core datatypes rounds out the Clojure toolbox.
+A consistently designed standard library and full-featured set of core data types rounds out the Clojure toolbox.
 
 Clojure is close to the speed of Java
 
@@ -327,7 +327,7 @@ Evaluate each form and pass the result as the value of te name in the next form.
 <!--sec data-title="Update Salary" data-id="answer003" data-collapse=true ces-->
 # Another example (not currently working, sorry)
 
-This example needs fixing, you could try with staff-salaries as just a vector [300 344 5000], but the code still needs tweeking a little
+This example needs fixing, you could try with staff-salaries as just a vector [300 344 5000], but the code still needs tweaking a little
 
 
 
@@ -361,7 +361,7 @@ The `conj` function creates a new collection by combining a collection and one o
 
 
 
-# Persistent data stuctures
+# Persistent data structures
 
 Persistent data structures share memory, so even for large data structures the use of lists, maps, vectors & sets are efficient.
 
@@ -370,7 +370,7 @@ Persistent data structures share memory, so even for large data structures the u
 
 # cons and conj
 
-StackExchange explination
+StackExchange explanation
 https://stackoverflow.com/questions/3008411/clojure-consseq-vs-conjlist
 
 One difference is that conj accepts any number of arguments to insert into a collection, while cons takes just one:
@@ -391,21 +391,14 @@ Note that these are not really interchangeable; in particular, clojure.lang.Cons
 
 The intention behind the names is, I believe, that cons means to cons(truct a seq)1, whereas conj means to conj(oin an item onto a collection). The seq being constructed by cons starts with the element passed as its first argument and has as its next / rest part the thing resulting from the application of seq to the second argument; as displayed above, the whole thing is of class clojure.lang.Cons. In contrast, conj always returns a collection of roughly the same type as the collection passed to it. (Roughly, because a PersistentArrayMap will be turned into a PersistentHashMap as soon as it grows beyond 9 entries.)
 
-1 Traditionally, in the Lisp world, cons cons(tructs a pair), so Clojure departs from the Lisp tradition in having its cons function construct a seq which doesn't have a traditional cdr. The generalised usage of cons to mean "construct a record of some type or other to hold a number of values together" is currently ubiquitous in the study of programming languages and their implementation; that's what's meant when "avoiding consing" is mentioned.
-
-shareeditflag
-edited Jun 9 '10 at 20:46
-answered Jun 9 '10 at 20:38
-
-Michał Marczyk
-65.8k7148171
+1 Traditionally, in the Lisp world, cons (constructs a pair), so Clojure departs from the Lisp tradition in having its cons function construct a seq which doesn't have a traditional cdr. The generalised usage of cons to mean "construct a record of some type or other to hold a number of values together" is currently ubiquitous in the study of programming languages and their implementation; that's what's meant when "avoiding consing" is mentioned.
 
 
 
 <!-- Work in progress -->
 
-Caves of clojure
-================
+## Caves of clojure
+
 Shows a terminal in either text or swing
 
 http://stevelosh.com/blog/2012/07/caves-of-clojure-01/

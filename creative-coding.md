@@ -15,7 +15,7 @@ This example of an SVG image is made from:
 * a white curvy path
 
 <!-- Hide the reagent include - too much information at this point
-     This code doesnt seem to load without manually freshing the page
+     This code doesn't seem to load without manually freshing the page
      Perhaps there is some interference from the Hiccup library  -->
 <pre class="hidden">
   <code class="lang-eval-clojure" data-preamble="(require '[reagent.core :as r])">

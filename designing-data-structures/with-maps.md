@@ -17,13 +17,13 @@ Maps allow you to model data with its contextual meaning.  The keys of a map can
 <!--endsec-->
 
 
-> **Note** Define a starwars characters, eg. luke skywalker, jarjar binks.  The starwars character should include a name and a skill (it doesnt matter what these are).
+> **Note** Define a star-wars characters, eg. luke skywalker, jarjar binks.  The star-wars character should include a name and a skill (it doesn't matter what these are).
 
-> Use the 'get' function to return the value of a given key, eg. name.  Use keyworks to return a given value if you used keywords for the map keys.
+> Use the 'get' function to return the value of a given key, eg. name.  Use keywords to return a given value if you used keywords for the map keys.
 
 <!--sec data-title="Reveal answer" data-id="answer002" data-collapse=true ces-->
 
-In this answer we have defined three different starwars characters, all using the same map keys.
+In this answer we have defined three different star-wars characters, all using the same map keys.
 
 ```clojure
 (def luke   {:name "Luke Skywalker" :skill "Targeting Swamp Rats"})

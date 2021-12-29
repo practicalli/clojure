@@ -21,7 +21,7 @@ Each key is printed on a new line, making the hash-map easier to read, especiall
  :credit-score :aa}
 ```
 
-Clojure aware editors can also have an alighn option when formatting hash-maps, making the results easier to read
+Clojure aware editors can also have an align option when formatting hash-maps, making the results easier to read
 
 ```clojure
 {:account-id   232443344,

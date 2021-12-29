@@ -61,9 +61,9 @@ I look for things where there are arrows coming in from lots of different namesp
 
 
 single responsibility is usually the key.
-I think it’s worth mentioning there are two different styles of slicing functionality/responsibilities.  One is vertically, the other is horizontally.  I think vertically sliced usually belongs to applications; and it means that you want to slice namespaces per feature; not by layer; i.e. I consider it a bit of a smell to have in a web app `mywebapp.handlers`, `mywebapp.models`, `mywebapp.templates`… unfortunately as far as I’ve seen most getting started templates tend to slice apps this way… which I think scales poorly; and results in a mixing of concerns.
+I think it’s worth mentioning there are two different styles of slicing functionality/responsibilities.  One is vertically, the other is horizontally.  I think vertically sliced usually belongs to applications; and it means that you want to slice namespaces per feature; not by layer; i.e. I consider it a bit of a smell to have in a web app `my-web-service.handlers`, `my-web-service.models`, `my-web-service.templates`… unfortunately as far as I’ve seen most getting started templates tend to slice apps this way… which I think scales poorly; and results in a mixing of concerns.
 
-In apps I much prefer to see `mywebapp.blog`, `mywebapp.follow`, `mywebapp.product.search` `mywebapp.product.purchase` etc…  Things can then be split horizontally within those; if required.  Splitting this way makes it much easier to write tests; and much easier to verify where you have test coverage and where you don’t… as you should basically have at least 1 test ns per namespace.  If things are split horizontally different features get mixed up and split in weird ways that becomes harder to verify they’re tested etc.
+In apps I much prefer to see `my-web-service.blog`, `my-web-service.follow`, `my-web-service.product.search` `my-web-service.product.purchase` etc…  Things can then be split horizontally within those; if required.  Splitting this way makes it much easier to write tests; and much easier to verify where you have test coverage and where you don’t… as you should basically have at least 1 test ns per namespace.  If things are split horizontally different features get mixed up and split in weird ways that becomes harder to verify they’re tested etc.
 
 Libraries tend to be for more cross-cutting concerns; they’re by definition usually intended to be reusable.  So I think it’s more natural to split them horizontally… e.g. a library for database access, a library for async stuff, a library for string manipulation.  i.e. you expect a bucket of miscellaneous functions for doing X in a namespace.
 
@@ -92,7 +92,7 @@ Obviously you have the problem of where to put shared stuff… I typically like 
 ( got to go do some decorating - bbl) (edited)
 
 
-The django approach in python is supposed to be vertical slicing, but it tends toward a collection of monoliths, so you end up having to use e.g. flask to do microservices instead
+The django approach in python is supposed to be vertical slicing, but it tends toward a collection of monoliths, so you end up having to use e.g. flask to do micro-services instead
 
 By http semantics, I mean that you put together your counter and ring handler in one area. It's harder to have the layer split perhaps?
 

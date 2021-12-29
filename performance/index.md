@@ -6,7 +6,7 @@ There are several aspects to performance testing
 * time through a specific path in your application
 * response times under different loads
 
-The purpose of performance testing and bench-marking is to understand the expected behaviour of your application under various usage patterns.  This kind of testing can also suggest areas of the application that might benefit from optomisation
+The purpose of performance testing and bench-marking is to understand the expected behaviour of your application under various usage patterns.  This kind of testing can also suggest areas of the application that might benefit from optimisation
 
 
 ## Performance tools for Clojure

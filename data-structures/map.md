@@ -29,8 +29,8 @@ Its also quite common to have maps made up of other maps, maps of vectors or vec
    :sith   ["Darth Vader" "Darth Sideous"]
    :droids ["C3P0" "R2D2" "BB8"]}
  :ships
-   {:rebel-alliance  ["Millenium Falcon" "X-wing figher"]
-    :imperial-empire ["Intergalactic Cruser" "Destroyer"
+   {:rebel-alliance  ["Millennium Falcon" "X-wing fighter"]
+    :imperial-empire ["Intergalactic Cruiser" "Destroyer"
                       "Im just making these up now"]}}
 ```
 
@@ -46,7 +46,7 @@ Individual Star Wars characters can be defined using a map of maps
 To make the Star Wars character information easier to use, lets give the collection of characters a name using the def function
 
 ```clojure
-(def starwars-characters
+(def star-wars-characters
    {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
     :vader  {:fullname "Darth Vader"    :skill "Breaking the rules and peoples hearts"}
     :jarjar {:fullname "JarJar Binks"   :skill "Failing upwards"}})
@@ -55,40 +55,40 @@ To make the Star Wars character information easier to use, lets give the collect
 Now we can refer to the characters using keywords.  Using the get function we return all the information about Luke
 
 ```clojure
-(get starwars-characters :luke)
-(get (get starwars-characters :luke) :fullname)
+(get star-wars-characters :luke)
+(get (get star-wars-characters :luke) :fullname)
 ```
 
 By wrapping the get function around our first, we can get a specific piece of information about Luke.  There is also the get-in function that makes the syntax a little easier to read
 
 ```clojure
-(get-in starwars-characters [:luke :fullname])
-(get-in starwars-characters [:vader :fullname])
+(get-in star-wars-characters [:luke :fullname])
+(get-in star-wars-characters [:vader :fullname])
 ```
 
 Or if you want the data driven approach, just talk to the map directly
 
 ```clojure
-(starwars-characters :luke)
-(:fullname (:luke starwars-characters))
-(:skill (:luke starwars-characters))
+(star-wars-characters :luke)
+(:fullname (:luke star-wars-characters))
+(:skill (:luke star-wars-characters))
 
-(starwars-characters :vader)
-(:skill (:vader starwars-characters))
-(:fullname (:vader starwars-characters))
+(star-wars-characters :vader)
+(:skill (:vader star-wars-characters))
+(:fullname (:vader star-wars-characters))
 ```
 
 And finally we can also use the threading macro to minimise our code further
 
 ```clojure
-(-> starwars-characters
+(-> star-wars-characters
     :luke)
 
-(-> starwars-characters
+(-> star-wars-characters
     :luke
     :fullname)
 
-(-> starwars-characters
+(-> star-wars-characters
     :luke
     :skill)
 ```
@@ -102,7 +102,7 @@ Duplicate keys in a map are not allowed, so the following maps...
 {"fish" "battered" "chips" "fried" "fish" "battered and fried"}
 {:fish "battered" :chips "fried" :fish "battered & fried"}
 
-;; ...throw dupicate key errors
+;; ...throw duplicate key errors
 
 ;; Duplicate values are okay though
 {:fish "fried" :chips "fried" :peas "mushy"}

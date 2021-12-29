@@ -67,7 +67,7 @@ Use [let](https://clojuredocs.org/clojure.core/let) to bind a name to a value, s
 It is common to combine `fn` and `let` to solve the challenges as they grow in complexity
 
 ```clojure
-(fn fibbonacci [length-of-series]
+(fn fibonacci [length-of-series]
   (let [fib [1 1]]
     (if (< (count fib) length-of-series)
       "iterate... to implement"

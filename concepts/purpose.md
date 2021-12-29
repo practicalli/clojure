@@ -21,4 +21,4 @@ Clojure encourages a component design through functional composition, breaking d
 Clojure and its libraries are all great examples of well designed components and the community strongly encourages this approach.
 
 > #### Hint::Functional Reactive Programming
-> You can also use ClojureScript for Functional Reactive programming ofclient-side apps for browsers and mobile device.
+> You can also use ClojureScript for Functional Reactive programming of client-side apps for browsers and mobile device.

@@ -13,7 +13,7 @@
 In this example the keys in the map are unqualified.
 
 ```eval-clojure
-{:simplyfying      []
+{:simplifying      []
     :keyword-names    []
     :with-autoresolve []
     :map-literal      []}
@@ -25,7 +25,7 @@ Using the map literal macro for auto-resolve instructs Clojure to treat all keys
 The following hash-map has the map literal macro.
 
 ```eval-clojure
-#::{:simplyfying      []
+#::{:simplifying      []
     :keyword-names    []
     :with-autoresolve []
     :map-literal      []}
@@ -36,7 +36,7 @@ This is the same as explicitly writing out the fully qualified domain for each k
 However, if we move the map to another namespace, then the explicit namespaces would need to be updated.
 
 ```eval-clojure
-{:practicalli.clojure/simplyfying      []
+{:practicalli.clojure/simplifying      []
  :practicalli.clojure/keyword-names    []
  :practicalli.clojure/with-autoresolve []
  :practicalli.clojure/map-literal      []}
@@ -46,7 +46,7 @@ However, if we move the map to another namespace, then the explicit namespaces w
 Rather than take the name from the current namespace, an explicit name can be added to all the keys in the map
 
 ```eval-clojure
-#:practicalli.naming {:simplyfying      []
+#:practicalli.naming {:simplifying      []
                       :keyword-names    []
                       :with-autoresolve []
                       :map-literal      []}
@@ -56,7 +56,7 @@ Rather than take the name from the current namespace, an explicit name can be ad
 This is the same as explicitly writing that name in front of each of the keywords in the map.
 
 ```eval-clojure
-# {:practicalli.naming/simplyfying      []
+# {:practicalli.naming/simplifying      []
    :practicalli.naming/keyword-names    []
    :practicalli.naming/with-autoresolve []
    :practicalli.naming/map-literal      []}

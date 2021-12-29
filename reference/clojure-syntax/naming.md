@@ -23,7 +23,7 @@ A classic example is a test namespace that uses clojure core
 (ns practicalli.random-function-test
   (:require [clojure.test :refer [deftest is testing]]
             [practicalli.random-function :as sut]))
-Otherwise use a meaningful alias, ideally refering to what that library is doing (which makes it easer to swap out with a different library later on if required).  As Cheshire is a JSON related library, then
+Otherwise use a meaningful alias, ideally referring to what that library is doing (which makes it easer to swap out with a different library later on if required).  As Cheshire is a JSON related library, then
 (ns my.ns
   (:require [cheshire.core :as json]))
 This gives a context to all the functions called from that library and makes code easier for humans to understand.

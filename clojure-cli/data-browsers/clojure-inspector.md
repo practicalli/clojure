@@ -36,7 +36,7 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
 ## `inspect-tree`
 ```clojure
 (inspect
-  {:starwars
+  {:star-wars
     {:characters
       {:jedi ["obiwan kenobi" "Yoda" "Master Wendoo"]
        :sith ["Palpatine" "Count Dukoo"]}}})
@@ -46,7 +46,7 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
 
 
 ## `inspect-table`
-Inspect a sequence of data structures that share the same form, often found in data sets for machine learning and wider data scients, eg. daily weather records.
+Inspect a sequence of data structures that share the same form, often found in data sets for machine learning and wider data science, eg. daily weather records.
 
 This example generates mock data for a 20 day period for one or more locations.  Each day contains the day, location and cumulative number of cases reported.
 

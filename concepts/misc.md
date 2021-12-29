@@ -1,6 +1,6 @@
 
 
-#### Charicteristics
+#### Characteristics
 
 * Dynamic 
 - typed - like Python, Ruby or Groovy 
@@ -21,16 +21,16 @@
 - to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data) 
 ** Input & output with functional programming 
 - other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesnt try and enforce functional purity, so any function can include impure code 
-- most functoins should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutalble data small
-- Clojure uses reference types to manage threads and mutable state.  References provide syncronisation of threads without using locks (notoriusly cumbersome).  See STM 
+- Clojure doesn't try and enforce functional purity, so any function can include impure code 
+- most functions should be pure though or you loose the benefits of functional programming
+- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
+- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM 
 
 * Hosted on the Java Virtual Machine 
-- writen for the JVM & heavily integrated, giving beautiful integratoin 
+- written for the JVM & heavily integrated, giving beautiful integration 
 - Clojure is compiled to Java byte code 
 - many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)
-- Clojure makes invoking Java very convieninet and provides special primative constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
+- Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)
 
 * Supporting concurrency
 - atoms etc 
@@ -53,7 +53,7 @@ Macros
 
 > **fixme** concepts to explore 
 
-Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multithreaded programs. 
+Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs. 
 
 Clojure is very concise, requiring very little code to express complex operations.
 
@@ -63,7 +63,7 @@ Modularity - Clojure and its community build things in modules / components that
 
 It offers a REPL and dynamic type system: ideal for beginners to experiment with, and well-suited for manipulating complex data structures. 
 
-A consistently designed standard library and full-featured set of core datatypes rounds out the Clojure toolbox.
+A consistently designed standard library and full-featured set of core data types rounds out the Clojure toolbox.
 
 Clojure is close to the speed of Java 
 

@@ -15,7 +15,7 @@ Follow the **[clj-kondo install guide](https://github.com/borkdude/clj-kondo/blo
 
 ## clj-kondo in Spacemacs
 
-![clj-kondon in Spacemacs](https://practicalli.github.io/spacemacs/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png)
+![clj-kondo in Spacemacs](https://practicalli.github.io/spacemacs/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png)
 
 
 ## clj-kondo with GitHub actions

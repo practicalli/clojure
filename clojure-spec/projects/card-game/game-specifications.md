@@ -62,7 +62,7 @@ A game is represented by a hash-map with a collection of players and a card deck
 ```eval-clojure
 (spec-gen/generate (spec/gen ::player))
 ```
-<!-- ;; => #:practicalli.spec-generative-testing{:name "Yp34KE63vALOeriKN4cBt", :score 225, :delt-hand ([9 :hearts] [4 :clubs] [8 :hearts] [10 :clubs] [:queen :spades] [3 :clubs] [6 :hearts] [8 :hearts] [7 :diamonds] [:king :spades] [:ace :diamonds] [2 :hearts] [4 :spades] [2 :clubs] [6 :clubs] [8 :diamonds] [6 :spades] [5 :spades] [:queen :clubs] [:queen :hearts] [6 :spades])} -->
+<!-- ;; => #:practicalli.spec-generative-testing{:name "Yp34KE63vAL1eriKN4cBt", :score 225, :dealt-hand ([9 :hearts] [4 :clubs] [8 :hearts] [10 :clubs] [:queen :spades] [3 :clubs] [6 :hearts] [8 :hearts] [7 :diamonds] [:king :spades] [:ace :diamonds] [2 :hearts] [4 :spades] [2 :clubs] [6 :clubs] [8 :diamonds] [6 :spades] [5 :spades] [:queen :clubs] [:queen :hearts] [6 :spades])} -->
 
 
 ## Generating random game data

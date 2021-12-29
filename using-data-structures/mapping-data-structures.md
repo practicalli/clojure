@@ -1,7 +1,7 @@
-# Mapping functions over data structures 
+# Mapping functions over data structures
 
-  Map allows you to work over one or more data sets, appying the function to each element of each of the data structures.  
-  
+  Map allows you to work over one or more data sets, applying the function to each element of each of the data structures.
+
   When the data structures are of equal size, then the same sized data structure is returned.
 
 ```clojure
@@ -25,7 +25,7 @@ If one data structure is smaller, then the function is only applied up to the la
 ;; => (1 2 3)
 ```
 
-Lets look at another example.  Here we have a pre-defined Fibonnacci sequence up to the first 12 values.
+Lets look at another example.  Here we have a pre-defined Fibonacci sequence up to the first 12 values.
 
 ```clojure
 (def fibonacci-sequence [1 2 3 5 8 13 21 34 55 89 144 278])
@@ -45,9 +45,9 @@ If we want a calculation using the values of the fibonacci-sequence then we can 
 ;; => (0 2 6 15 32 65 126 238 440 801)
 ```
 
-  So, 
-  - 0 times 1 is 0, 
-  - 1, times 2 is 2, 
+  So,
+  - 0 times 1 is 0,
+  - 1, times 2 is 2,
   - 2 times 3 is 6, etc.
 
 If we evaluate the previous expression part by part, its easier to see what is going on.  First lets evaluate the `fibonacci-sequence`

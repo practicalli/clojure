@@ -25,7 +25,7 @@ Many built-in generators for `clojure.core` data predicates
 composite specifications can build generators upon predicate generators.
 
 Pass generator-returning functions to spec, supplying generators for things spec does not know about.
-Pass an override map to `gen` in order to supply alternative generators for one or more subpaths of a spec.
+Pass an override map to `gen` in order to supply alternative generators for one or more sub-paths of a spec.
 
 Define your own generators
 

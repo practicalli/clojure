@@ -54,4 +54,4 @@
 ---
 
 
-> **Hint** I created further customisations to the prompt in the article [add colour to your clojure repl](http://jr0cket.co.uk/2013/08/add-colour-to-your-clojure-repl-with.html.html)
+> **Hint** I created further customisation's to the prompt in the article [add colour to your clojure repl](http://jr0cket.co.uk/2013/08/add-colour-to-your-clojure-repl-with.html.html)
