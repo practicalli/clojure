@@ -15,7 +15,7 @@ The `for` function should be read as follows:
 
 "for each number in the collection [1 2 3], apply the function (* number 2)"
 
-Couldnt we just do this with map?  Yes, we could.
+Couldn't we just do this with map?  Yes, we could.
 
 ```
 (map #(* % 2) [1 2 3])
@@ -39,7 +39,7 @@ So with the `for` function we can do the same calculation with much easier code 
 
 ## Filtering results with predicates
 
-With the `for` function we can add a filter on the results by using a predicate, to test if a condition is true or false.  Any values that meet the condition as true are returned, values that are false are ommitted.
+With the `for` function we can add a filter on the results by using a predicate, to test if a condition is true or false.  Any values that meet the condition as true are returned, values that are false are omitted.
 
 ```
 (for [x (range 10) :when (odd? x)] x)
@@ -102,5 +102,3 @@ Lets just model all the possible combinations
 ```
 
 <!--endsec-->
-
-

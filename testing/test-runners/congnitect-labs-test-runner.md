@@ -91,4 +91,4 @@ Exclusions take priority over inclusions if both flags are included.
 > #### Hint::Category examples
 > On larger projects categories reduce the amount of time spent running tests to ensure regressions have not taken place.
 >
-> During a project at a large financial institution, tests were oganised in the following categories `:develop`, `:integration`, `data-loading`, `:data-migration`, and `:pre-production`.
+> During a project at a large financial institution, tests were organised in the following categories `:develop`, `:integration`, `data-loading`, `:data-migration`, and `:pre-production`.

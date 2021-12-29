@@ -1,5 +1,5 @@
 ## The doc & source functions
-If you are not using a Clojure aware editor or spend a lot of time in the REPL you can also view the documenation of a function by calling the `doc` function and see the source by calling the `source` function.
+If you are not using a Clojure aware editor or spend a lot of time in the REPL you can also view the documentation of a function by calling the `doc` function and see the source by calling the `source` function.
 
 To use the `doc` & `source` functions in the REPL you should be in the `user` namespace.
 
@@ -26,12 +26,12 @@ Make sure you are in the `user` namespace before calling the `doc` function.  If
 
 ![Source code for the function source](../images/clojure-playground-source-source.png)
 
- > **Hint** As the documentaiton for a function is part of its definition, by looking at the source of a function you also get the documentation.
+ > **Hint** As the documentation for a function is part of its definition, by looking at the source of a function you also get the documentation.
 
 
 ## Using doc & source function from another namespace
 
-  The `doc` and `source` functions are only included in the `user` namespace. If you switch to another namespace or your editor places you in the current namespace of your project, these funcitons will not be available unless you including `core.repl` in the current namespace.
+  The `doc` and `source` functions are only included in the `user` namespace. If you switch to another namespace or your editor places you in the current namespace of your project, these functions will not be available unless you including `core.repl` in the current namespace.
 
 
 From the REPL, evaluate the expression:
@@ -40,7 +40,7 @@ From the REPL, evaluate the expression:
 (use 'clojure.repl)
 ```
 
-You could also `require` the `clojure.repl` library in your own code, however if you have a good editor it should provide these features without including this library.  Therefore the following code is shown only as an example and not a recommended approch.
+You could also `require` the `clojure.repl` library in your own code, however if you have a good editor it should provide these features without including this library.  Therefore the following code is shown only as an example and not a recommended approach.
 
 ```
 (ns foobar

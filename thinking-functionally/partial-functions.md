@@ -73,12 +73,12 @@ We can simply call this function with all the words of the message.
 ;; ⇒ "Hello Clojure world"
 ```
 
-Now we define a name called `wrap-message` that can be used to wrap the start of our message.  This name binds to a partial function call to `join-strings` wich send that function the default message and any custom message you add when evaluationg wrap-message
+Now we define a name called `wrap-message` that can be used to wrap the start of our message.  This name binds to a partial function call to `join-strings` which send that function the default message and any custom message you add when evaluate `wrap-message`
 
 ```clojure
 (def wrap-message (partial join-strings "Hello Clojurians in "))
 
-(wrap-message) 
+(wrap-message)
 ;; ⇒ "Hello Clojurians in "
 
 (wrap-message "London")
@@ -92,12 +92,12 @@ Currying is the process of taking some function that accepts multiple arguments,
 
 Currying relies on having fixed argument sizes, whereas Clojure gets a lot of flexibility from variable argument lengths (variable arity).
 
-Clojure therefore has the partial function gives results similar to currying, however the partical function also works with variable functions.
+Clojure therefore has the partial function gives results similar to currying, however the `partial` function also works with variable functions.
 
-Partial refers to supplying some number of arguments to a function, and getting back a new function that takes the rest of the arguments and returns the final result
+`partial` refers to supplying some number of arguments to a function, and getting back a new function that takes the rest of the arguments and returns the final result
 
-One advantage of partial is to avoid having to write your own anonymous functions
+One advantage of `partial` is to avoid having to write your own anonymous functions
 
 #  Useful references
 
-* [Partial function applications for humans](http://andrewberls.com/blog/post/partial-function-application-for-humans) 
+* [Partial function applications for humans](http://andrewberls.com/blog/post/partial-function-application-for-humans)

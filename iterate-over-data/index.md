@@ -39,7 +39,7 @@ A function used with reduce is called a reducing function and is a more abstract
 ## threading macros
 Write code that reads as a sequential series of function calls, rather that the nested function calls typical in lisp.
 
-A threaing macro is often used to thread a collection through a number of function calls and expressions.
+A threading macro is often used to thread a collection through a number of function calls and expressions.
 
 
 ## comp

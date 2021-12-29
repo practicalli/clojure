@@ -10,7 +10,7 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Practicalli Clojure](https://practicalli.github.io/clojure)
 * [Practicalli Clojure WebApps](https://practicalli.github.io/clojure-webapps)
 
-## Reference 
+## Reference
 * [Clojure Programming Cookbook](https://www.packtpub.com/application-development/clojure-programming-cookbook), Packt August 2016
 * [Clojure Cookbook](http://clojure-cookbook.com/), O'Reilly March 2014 - hundreds of real-world problems and solutions, ranging from basic utilities to rich web services to heavy data processing
 
@@ -19,7 +19,7 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Mastering Clojure](https://www.packtpub.com/application-development/mastering-clojure), Packt March 2016
 * [Clojure in Action](https://www.manning.com/books/clojure-in-action-second-edition), Manning December 2015
 * [Programming Clojure](https://pragprog.com/book/shcloj2/programming-clojure), Pragmatic October 2015
-* [Clojure Applied: From Practice to Practitoner](https://pragprog.com/book/vmclojeco/clojure-applied), Pragmatic September 2015
+* [Clojure Applied: From Practice to Practitioner](https://pragprog.com/book/vmclojeco/clojure-applied), Pragmatic September 2015
 * [Joy of Clojure](https://www.manning.com/books/the-joy-of-clojure-second-edition), Manning May 2014
 * [Clojure Programming](http://shop.oreilly.com/product/0636920013754.do), O'Reilly March 2012
 
@@ -30,7 +30,7 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Clojure for Finance](https://www.packtpub.com/big-data-and-business-intelligence/clojure-finance), January 2016
 * [Clojure Recipes](http://clojurerecipes.net/), Addison-Wesley October 2015
 * [Clojure for Data Science](https://www.packtpub.com/big-data-and-business-intelligence/clojure-data-science), Packt September 2015
-* [Clojure High Performance Programming](https://www.packtpub.com/application-development/clojure-high-performance-programming), Packt Septermber 2015
+* [Clojure High Performance Programming](https://www.packtpub.com/application-development/clojure-high-performance-programming), Packt September 2015
 * [Clojure Data Structures & Algorithms](https://www.packtpub.com/application-development/clojure-data-structures-and-algorithms-cookbook), Packt August 2015
 * [Mastering Clojure Data Analysis](https://www.packtpub.com/big-data-and-business-intelligence/mastering-clojure-data-analysis), Packt
 * [Clojure Reactive Programming](https://www.packtpub.com/web-development/clojure-reactive-programming), Packt March 2015

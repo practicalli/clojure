@@ -113,5 +113,5 @@ The Cognitect Labs test runner uses command line options to specify test selecto
 ## References
 * [Kaocha - Focus and skipping tests with test selectors](https://cljdoc.org/d/lambdaisland/kaocha/1.0.700/doc/6-focusing-and-skipping)
 * [Convoluted Magic of Leiningen Test Selectors](https://medium.com/helpshift-engineering/the-convoluted-magic-of-leiningen-test-selectors-2eb6c452dfcf)
-* [How to use Leinignen test selctors to filter by test name](https://jakemccrary.com/blog/2019/01/28/how-to-use-leiningen-test-selectors-to-filter-by-test-name/)
+* [How to use Leiningen test selectors to filter by test name](https://jakemccrary.com/blog/2019/01/28/how-to-use-leiningen-test-selectors-to-filter-by-test-name/)
 * [Stack overflow - Lein test with Selectors - how to specify a test for multiple conditions](https://stackoverflow.com/questions/53839076/lein-test-with-selectors-how-to-specify-a-test-for-multiple-conditions)

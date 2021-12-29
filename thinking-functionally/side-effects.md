@@ -1,6 +1,6 @@
 # Side effects
 
-A side effect is something that creates a change outside of the currrent code scope, or something external that affects the behaviour or result of executing the code in the current scope.
+A side effect is something that creates a change outside of the current code scope, or something external that affects the behaviour or result of executing the code in the current scope.
 
 ## Undeterministic - the complexity iceburg
 

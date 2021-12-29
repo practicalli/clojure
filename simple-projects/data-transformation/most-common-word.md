@@ -131,7 +131,7 @@ The `common-english-words` set can now be used with the `being-earnest` book.
 (filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest)))
 ```
 
-The resulting hash-map is not in any order.  `clojure.core/sort-by` will return the same results but sorted by a given function.  To sort a hash-map the `key` and `val` functions are function that will sort by key and value respectively.  As it is the value that has the number of occurances, then `val` is the function to use.
+The resulting hash-map is not in any order.  `clojure.core/sort-by` will return the same results but sorted by a given function.  To sort a hash-map the `key` and `val` functions are function that will sort by key and value respectively.  As it is the value that has the number of occurrences, then `val` is the function to use.
 
 ```clojure
 (sort-by val (filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest))))
@@ -144,7 +144,7 @@ The result is sorted from smallest to largest value.  The result could be revers
 ```
 
 ## Assembling the most-common-word function
-Define a function called `most-comon-word` that assembles all the previous steps.  The function should take all the values it needs for the calculation as arguments, creating a pure function without side effects.
+Define a function called `most-common-word` that assembles all the previous steps.  The function should take all the values it needs for the calculation as arguments, creating a pure function without side effects.
 
 ```clojure
 (defn most-common-word

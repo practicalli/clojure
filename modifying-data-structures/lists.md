@@ -33,7 +33,7 @@ list-one
 ;; and we get the result we want
 list-two
 
-;; we can also assing the original name we used for the list to the new list
+;; we can also pass the original name we used for the list to the new list
 (def list-one (cons 4 list-one))
 
 ;; If we re-evaluate the definition above, then each time we will get an extra

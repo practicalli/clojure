@@ -50,7 +50,7 @@ i think our largest namespaces are unit-test namespaces now, because they are co
 for me it’s usually ease of comprehension
 i think the single-concern thing is right - i need to be able to forget about as much as possible to focus on what’s important, and it’s much easier to forget about simple stuff
 
-lein var-graph useful as a way of visualising if I can/should break up a nampespace
+lein var-graph useful as a way of visualising if I can/should break up a namespace
 
 btw, this is the one I'm breaking up atm https://gist.github.com/otfrom/92ac4d4f1c175f017380b6ef2dbb4853
 it is looking at this repo: https://github.com/MastodonC/witan.send

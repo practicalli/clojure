@@ -13,39 +13,53 @@ Up / down arrow keys navigate the REPL history, providing an efficient way to ev
 
 
 ## Including code from a file
-Clojure can be saved in files and loaded into the REPL
+
+Clojure code is typically saved in files, with each file representing a specific namespace in the project.
+
+A namespace is a collection of expressions that have a logical grouping within the project.
+
+Any namespace on the class path can be included in the REPL using the [clojure.core/require](https://clojuredocs.org/clojure.core/require) function.
+
 ```clojure
-(load-file "src/practicalli/core.clj")
+(require 'practicalli.playground)
 ```
 
-Once the file is loaded, the code it contains can be used by requiring the namespace that contains the code.  The namespace is the path to the file from under the `src` directory.  So the file `src/practicalli.core.clj` has the namespace `practicalli.core`
-```clojure
-(require 'practicalli.core)
-```
+The `'` character is a short-cut for the quote function that wraps the namespace name, ensuring that only the symbol name of the namespace is passed to `require`.  The `require` function will take the symbol name and read in all the code from that namespace and evaluate each expression.
 
-Now the functions are available using their fully qualified names.  Assuming the namespace contains a function called `main`, that function can be called using `(practicalli.core/main)`.
+Functions defined in the required namespace are available using their fully qualified names.  Assuming the namespace contains a function called `greet`, that function can be called using `(practicalli.playground/greet)`.
 
-If the default `user` namespace is change to `practicalli.core` then functions in that namespace can be called by just the function name, eg. `(main)`.
+
+> #### Hint::Loading a file into the REPL
+> The [load-file](https://clojuredocs.org/clojure.core/load-file) function will read and evaluate the code in a given file, e.g. (load-file "src/practicalli/playground.clj")
+
+
+### Changing to a namespace
+
+Change the default `user` namespace to `practicalli.playground` and functions defined in that namespace can be called by just the function name, eg. `(greet)`.
 
 `in-ns` will change change the current namespace to the one specified as an argument.
+
 ```clojure
-(in-ns 'practicalli.core)
+(in-ns 'practicalli.playground)
 ```
 
-Now the `(main)` function can be called without having to include the full namespace name.
+Now the `(greet)` function can be called without having to include the full namespace name.
+
+## Including changes from a file
 
 The `:reload` option to `require` will load in any changes to a namespace that happened outside of the REPL, eg. change in the source code file.
-* reloading a namespace
+
 ```clojure
-(require 'namespace.name :reload)
+(require 'practicalli.playground :reload)
 ```
 
 
 > #### Hint::Workflow regardless of tooling
-> An editor is typically used rather than the command line repl, however, the above workflow is still the same.
+> It is more effective to connect an editor to a REPL process, however, the above workflow is still the same.
 
 
 ## Clojure projects
-A REPL can start even without a Clojure project.
 
-When a REPL starts from a Clojure project, the `deps.edn` configuration file is added to or over-rides the `~/.clojure/deps.edn` configuration for that project.
+A terminal UI REPL can start even without a Clojure project, e.g. `clojure -M:repl/rebel`.  In this case only the user level `deps.edn` and Clojure CLI configuration is used.
+
+When a REPL starts from a Clojure project, the `deps.edn` configuration file in the root of the project directory is added to or over-rides the user level configuration.

@@ -3,7 +3,7 @@ A Test runner is a tool to run test in a project and report the results. During 
 
 Regularly running some or all of the tests in a project checks the design decisions made so far have not regressed by additional development.
 
-Test runners are highly recommeded step as part of continuous integration and should be used in conjunction with a CI Server for every project.
+Test runners are highly recommended step as part of continuous integration and should be used in conjunction with a CI Server for every project.
 
 > #### Hint::All code should compile
 > All the code in the project should be correct Clojure code and compiled unless commented with `;;`, a `(comment ,,,)` blocks or prefixed with the `#_` reader macro.  If code is know not to be correct, `;;` comment is recommended comment approach.

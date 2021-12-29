@@ -122,7 +122,7 @@ Duplicate keys in a map are not allowed, so the following maps...
 <!--      (apply hash-map) -->
 <!--      (def project-configs)) -->
 
-<!-- ;; Evalute the new map defined as project -->
+<!-- ;; Evaluate the new map defined as project -->
 <!-- project -->
 <!-- ``` -->
 

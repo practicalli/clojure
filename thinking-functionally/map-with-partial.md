@@ -26,7 +26,7 @@ The `#` character tells the Clojure reader that this is the macro form of a func
 
 The `map` function returns a lazy sequence. This is very useful for large data sets.
 
-`mapv` is an eager version of map that returns the result as a vector.  This is useful when you require random access lookup in real time.  `mapv` can also be used to return an eager result if lazyness is not required.
+`mapv` is an eager version of map that returns the result as a vector.  This is useful when you require random access lookup in real time.  `mapv` can also be used to return an eager result if laziness is not required.
 
 ```
 (mapv #(str % "s") ["pig" "cow" "goat" "cat" "dog" "rabbit"])
@@ -128,7 +128,7 @@ The argument that is the non-plural-words is constant, its the individual elemen
 Using partial here is like calling `(pluralise non-plural-words ,,,)` but each time including an element from animals where the `,,,` is.
 
 ## Learning at the REPL
-At first I was getting incorrect output, `["deer" "sheep" "shrimp"]`, then I realised that it was returning the non-plural-words instead of pluralised animals.  The arguements from the partial function were being sent in the wrong order.  So I simply changed the order in the pluralise function and it worked.
+At first I was getting incorrect output, `["deer" "sheep" "shrimp"]`, then I realised that it was returning the non-plural-words instead of pluralised animals.  The arguments from the partial function were being sent in the wrong order.  So I simply changed the order in the pluralise function and it worked.
 
 I checked this by adding some old-fashioned print statement.
 

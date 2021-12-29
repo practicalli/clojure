@@ -57,7 +57,7 @@ Breakdown the regex pattern:
 ^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$
 
 ^		 #start of the line
- #		 #  must constains a "#" symbols
+ #		 #  must contain a "#" symbols
  (		 #  start of group #1
   [A-Fa-f0-9]{3} #    any strings in the list, with length of 3
   |		 #    ..or
@@ -170,7 +170,7 @@ $		#end of the line
 ```
 
 ## Time Format Regular Expression Pattern
-Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start beween 0-12, then a semi colon, `:`, follow by `00-59`.  The pattern ends with `am` or `pm`.
+Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start between 0-12, then a semi colon, `:`, follow by `00-59`.  The pattern ends with `am` or `pm`.
 
 ```eval-clojure
 (re-matches #"(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)" "12:59am")
@@ -275,7 +275,7 @@ Breakdown the regex pattern:
 <!-- (?i)<a([^>]+)>(.+?)</a> -->
 
 <!-- (		#start of group #1 -->
-<!--  ?i		#  all checking are case insensive -->
+<!--  ?i		#  all checking are case insensitive -->
 <!-- )		#end of group #1 -->
 <!-- <a              #start with "<a" -->
 <!--   (		#  start of group #2 -->

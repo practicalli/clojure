@@ -7,7 +7,6 @@ Some interesting plugins to look at include:
 * [lein-ancient](https://github.com/xsc/lein-ancient) - check your project for outdated dependencies
 * [lein-annotations](https://github.com/bbatsov/lein-annotations) - display TODO's and other notes added to your code
 * [lein-auto](https://github.com/weavejester/lein-auto) - automatically runs a task on file system change
-* [lein-checkall](https://github.com/itang/lein-checkall) - runs lint & other code checks
 * [lein-heroku-deploy](https://github.com/maxprokopiev/lein-heroku-deploy) - use maintenance mode whilst deploying to [Heroku](https://heroku.com)
 
 
@@ -52,7 +51,7 @@ Ancient tells you which project dependencies have newer versions and will update
 
 
 > #### Hint::Test dependency updates
-> Extensively test dependency changing and check the logs for any messages about conficts of functions and namespaces.
+> Extensively test dependency changing and check the logs for any messages about conflicts of functions and namespaces.
 
 ### Add Lein Ancient to every project
 
@@ -63,7 +62,7 @@ Edit `~/.lein/profiles.clj` and include the following plugin in the `:user` `:pl
 
 ## Eastwood
 
-Eastwod is a linter that will help you maintain code quality and ensure you are following Clojure style rules
+Eastwood is a linter that will help you maintain code quality and ensure you are following Clojure style rules
 
 `lein eastwood {:linters [:all]}` produces a list of violations found.
 
@@ -73,7 +72,7 @@ An Eastwood report looks similar to:
 == Eastwood 0.2.3 Clojure 1.8.0 JVM 1.8.0_77
 Directories scanned for source files:
   env/dev/clj test/clj src/clj src/cljc test
-Entering directory `/Users/kevingreene/programming/daily-cider'
+Entering directory `/Users/name/programming/daily-cider'
 src/cljc/daily_cider/validation.cljc:1:1: non-clojure-file: Non-Clojure file 'src/cljc/daily_cider/validation.cljc'.  It will not be linted.
 test/cljs/daily_cider/core_test.cljs:1:1: non-clojure-file: Non-Clojure file 'test/cljs/daily_cider/core_test.cljs'.  It will not be linted.
 test/cljs/daily_cider/doo_runner.cljs:1:1: non-clojure-file: Non-Clojure file 'test/cljs/daily_cider/doo_runner.cljs'.  It will not be linted.

@@ -17,7 +17,7 @@ The purpose of performance testing and bench-marking is to understand the expect
 
 ## Gatling
 
-The Gatling Project is another free and open source performance testing tool, primarily developed and maintained by Stephane Landelle. Gatling has a basic GUI that's limited to test recorder only. However, the tests can be developed in easily readable/writable domain-specific language (DSL).
+The Gatling Project is a free and open source performance testing tool. Gatling has a basic GUI that's limited to test recorder only. However, the tests can be developed in easily readable/writable domain-specific language (DSL).
 
 Key Features of Gatling:
 

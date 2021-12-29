@@ -13,7 +13,7 @@ Simple clojure stuff
 
 **Prefix Notation**
 
-; Basic prefix notaition examples
+; Basic prefix notation examples
 (* 2 2)
 (+ 1 2 3)
 (\ 24 4 3 2)
@@ -28,7 +28,7 @@ Simple clojure stuff
 (- 2 3)
 (+ 1 2 3 4 5 6)
 
-; showing the advantage of prefix notaition for helping you
+; showing the advantage of prefix notation for helping you
 ; follow the values of the expression
 
 (+ 1 2 (+ 1 2) (* 2 2) (/ 25 5) (- (- 12 18)))
@@ -36,7 +36,7 @@ Simple clojure stuff
 
 ;; Prefix makes understanding the evaluation order much simpler and consistent than infix notation used in languages such as Java, C++ and C#.
 
-;; Prefix notation is one example where clojure can minimise the amount of cerimony (typing) involved in coding.
+;; Prefix notation is one example where clojure can minimise the amount of ceremony (typing) involved in coding.
 
 
 
@@ -64,7 +64,7 @@ Simple clojure stuff
 (/ 1.0 3)
 (class (/ 1 3)
 
-;; Using a Ratio means that the mathmatical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
+;; Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
 
 
 ;; example of Java integration - PI is a static double from the java.lang.Math object
@@ -95,7 +95,7 @@ defining functions
 
 (def square (fn [x] (* x x)))
 
-(fn [x] (* x x))  ;; annonymous function
+(fn [x] (* x x))  ;; anonymous function
 
 
 
@@ -170,8 +170,8 @@ Whats my salary
 ===============
 ;; really bad example of Clojure code
 
-(whats-my-monthly-takehome 60000)
-(whats-my-yearly-takehome 60000)
+(whats-my-monthly-net-pay 60000)
+(whats-my-yearly-net-pay 60000)
 
 
 Interesting stuff
@@ -218,8 +218,8 @@ Recursion
 To Sort
 =======
 
-(whats-my-monthly-takehome 60000)
-(whats-my-yearly-takehome 60000)
+(whats-my-monthly-net-pay 60000)
+(whats-my-yearly-net-pay 60000)
 
 
 (type rand-int)
@@ -278,11 +278,11 @@ Code to show off LightTable
 
 (use 'whats-my-salary.core)
 
-(yearly-takehome? 35000)
+(yearly-net-pay? 35000)
 
-(source yearly-takehome?)
+(source yearly-net-pay?)
 
-(class yearly-takehome?)
+(class yearly-net-pay?)
 
 
 (def random-data [1 2 3 (rand-int 5)])

@@ -5,7 +5,7 @@
 
 recommendation / intro tutorial
 
-https://github.com/clojure/core.async/blob/master/examples/walkthrough.clj
+https://github.com/clojure/core.async/blob/master/examples/walk-through.clj
 
 
 EuroClojure talk about clojure otp library that built on top of core.async because they felt it was too low level

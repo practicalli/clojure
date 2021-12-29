@@ -5,7 +5,7 @@ Mutating state should be used carefully and sparingly in Clojure (and all other 
 
 As the atom is mutable in that the value it manages can be changed, however, this must be done with special commands (swap!, reset!, compare-and-set!, swap-vals!).
 
-Even though the atom is mutable, the values it manages are not.  They are normal immutable (unchangable) Clojure values.
+Even though the atom is mutable, the values it manages are not.  They are normal immutable (unchangeable) Clojure values.
 
 `ref` is similar to `atom` and can manage transactions, ensuring that all changes happen or no changes happen.
 

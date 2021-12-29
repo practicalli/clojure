@@ -1,5 +1,5 @@
 # Clojure syntax
-  Clojure is percieved as having an abundance of `()`, the symbols that represent a list.
+  Clojure is perceived as having an abundance of `()`, the symbols that represent a list.
 
   As Clojure is a LISP (List Processing) language then everything is written in the form of a list.  This makes Clojure very powerful and also easier to read.
 
@@ -25,7 +25,7 @@
 ```java
     (1 + 2 + 3 + 5 + 8 + 13 + 21);
     (1 + 2 + (- 4 1) + 5 + (* 2 4) + 13 + (/ 42 2));
-    StringBuffer mystring = new StringBuffer("C-based languages" + " mix " + "notation");
+    StringBuffer description = new StringBuffer("C-based languages" + " mix " + "notation");
     x+=1;
     x++;
     x--;

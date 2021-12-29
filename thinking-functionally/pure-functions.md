@@ -49,7 +49,7 @@ Lets look at each line of this suggested answer
 (increment-numbers)
 ```
 
-The function takes no arguments and is pulling in a value from outside the function.  This is a trivial example, but if all your code is like this it would be more complex.  If the value pointed to by `numbers` is mutable and changes before the `increment-numbers` functiion is called then you will get different results.
+The function takes no arguments and is pulling in a value from outside the function.  This is a trivial example, but if all your code is like this it would be more complex.  If the value pointed to by `numbers` is mutable and changes before the `increment-numbers` function is called then you will get different results.
 
 Here is a Pure function example
 

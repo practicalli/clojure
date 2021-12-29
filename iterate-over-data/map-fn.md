@@ -19,6 +19,9 @@ Adding this into our previous expression we can see that its still quite readabl
 
 
 
-> #### Hint::anonymous function naming
-> Anonymous functions can not be referred to by name and must be used in-line with an expression.
-> The `fn` function can be given a name, however, this is only available in the scope of that function definition, it cannot be used to refer to that function definintion outside of that defninition.  The name assingment within a `fn` definition enables the function to call itself, therefore creating an anonymous recursive function.
+> #### Hint::Anonymous function name
+> Anonymous functions do not have an externally referable name, so must be used in-line with an expression.
+>
+> The `fn` function can be defined with a name, however, this is only available in the scope of that function definition, the name cannot be used to refer to that function outside of its definition.
+>
+> Including a name within a `fn` definition enables the function to call itself, therefore creating an anonymous recursive function.

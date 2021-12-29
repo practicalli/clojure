@@ -9,7 +9,7 @@
 
 **Clojure**
 * [Clojure.org](http://clojure.org), [features](http://clojure.org/features) and [rational](http://clojure.org/rationale)
-* [Clojure cheetsheet](http://clojure.org/cheatsheet)
+* [Clojure cheat-sheet](http://clojure.org/cheatsheet)
 
 **Tooling**
 * [Leiningen](http://leiningen.org/), [tutorial](https://github.com/technomancy/leiningen/blob/stable/doc/TUTORIAL.md), [faq](https://github.com/technomancy/leiningen/blob/stable/doc/FAQ.md), [plugins list](https://github.com/technomancy/leiningen/wiki/Plugins) & [sample project file](https://github.com/technomancy/leiningen/blob/stable/sample.project.clj)

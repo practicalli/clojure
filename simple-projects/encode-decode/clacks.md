@@ -302,7 +302,7 @@ Test the updated functions by calling them via the REPL
 (message->clacks "cab cab" dictionary/english->clacks)
 ;; => ([0 1 1 0 0 0 1 1] [0 1 1 0 0 0 0 1] [0 1 1 0 0 0 1 0] [0 0 0 0 0 0 0 0] [0 1 1 0 0 0 1 1] [0 1 1 0 0 0 0 1] [0 1 1 0 0 0 1 0])
 
-;; Create a charater from a clack code
+;; Create a character from a clack code
 
 ;; test data
 (clacks->message '([0 1 1 0 0 0 1 1] [0 1 1 0 0 0 0 1] [0 1 1 0 0 0 1 0]) dictionary/english->clacks)

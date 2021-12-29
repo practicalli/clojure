@@ -176,7 +176,7 @@ edn is an extensible data notation. A superset of edn is used by Clojure to repr
 
 https://github.com/edn-format/edn
 
-http://www.compoundtheory.com/clojure-edn-walkthrough/
+http://www.compoundtheory.com/clojure-edn-walk-through/
 
 
 
@@ -355,7 +355,7 @@ The above `map` function is roughly equivalent to the following expression
 ```
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collecion and one or more values.
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 <!--endsec-->
 

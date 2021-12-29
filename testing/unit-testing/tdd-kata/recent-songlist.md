@@ -1,4 +1,4 @@
-# Test Driven Development Kata - Recent Songlist
+# Test Driven Development Kata - Recent Song-list
 
 > #### TODO::work in progress, sorry
 
@@ -20,7 +20,7 @@ Optional extras:
 Create a new project using clj-new
 
 ```bash
-clojure -M:new app practicalli/recent-songlist
+clojure -M:new app practicalli/recent-song-list
 ```
 
 ## Using `clojure.test`
@@ -30,7 +30,7 @@ Open `test/playground/recent-song-list-test.clj` file in your editor and update 
 
 
 ```eval-clojure
-(ns practicalli.recent-songlist-test
+(ns practicalli.recent-song-list-test
   (:require [clojure.test :refer [deftest is testing]]
             [playground.recent-song-list :as SUT]))
 ```

@@ -12,8 +12,8 @@ Can we rewrite our Clojure code to fit the way we think?
 ## Thread first macro
 
   Using the thread-first macro **->** we can chain Clojure functions together with a terser syntax, passing the result of the first evaluation as the first argument to the next function and so on.  Using this style, we can write code that matches the algorithm in our head.
-  
-To make this really simple lets create a contrived example of the threading macro.  Here we use the `str` function to join strings together.  Each individual `str` function joins its own strings together, passing the resuting string as the first argument to the next function.
+
+To make this really simple lets create a contrived example of the threading macro.  Here we use the `str` function to join strings together.  Each individual `str` function joins its own strings together, passing the resulting string as the first argument to the next function.
 
 ```clojure
 (->
@@ -33,13 +33,13 @@ To make this really simple lets create a contrived example of the threading macr
  (str " This")
  (str " is")
  (str " backwards"))
- 
+
 ;; => backwards is This"
 ```
 
-## 
+##
 
-> **Note** Refactor the Clojure code using the thread-first macro 
+> **Note** Refactor the Clojure code using the thread-first macro
 
 <!--sec data-title="Reveal the answer" data-id="answer001" data-collapse=true ces-->
 
@@ -51,9 +51,9 @@ To make this really simple lets create a contrived example of the threading macr
  (nth 2))
 ```
 
-> **Hint** The "project.clj" is a string, so when you evalute it as an expression, it simply returns the same string.  That string is then passed as an argument to any following functions.
+> **Hint** The "project.clj" is a string, so when you evaluate it as an expression, it simply returns the same string.  That string is then passed as an argument to any following functions.
 
- Using the threading macro, the result of every function is passed onto the next function in the list.  This can be seen very clearly usng ,,, to denote where the value is passed to the next function
+ Using the threading macro, the result of every function is passed onto the next function in the list.  This can be seen very clearly using ,,, to denote where the value is passed to the next function
 
 ```clojure
 (->
@@ -63,7 +63,7 @@ To make this really simple lets create a contrived example of the threading macr
  (nth ,,, 2))
 ```
 
-> **Hint** Commas in clojure are treated as whitespace, they are simply ignored when it comes to evaluating code.  Typically commas are rarely used and only to help human readabilty of the code
+> **Hint** Commas in clojure are treated as whitespace, they are simply ignored when it comes to evaluating code.  Typically commas are rarely used and only to help human readability of the code
 
 <!--endsec-->
 
@@ -82,7 +82,7 @@ To make this really simple lets create a contrived example of the threading macr
      (apply hash-map)
      (def project-configs))
 
-;; Evalute the new map defined as project
+;; Evaluate the new map defined as project
 project
 ```
 

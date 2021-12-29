@@ -57,9 +57,9 @@ user=> (cons 1 [2 3 4])
 (1 2 3 4)
 OK so we can split up a sequence, increment the first part, and join them back together. Not so hard, right?
 
-(defn inc-first [nums]
-  (cons (inc (first nums))
-        (rest nums)))
+(defn inc-first [numbers]
+  (cons (inc (first numbers))
+        (rest numbers)))
 user=> (inc-first [1 2 3 4])
 (2 2 3 4)
 Hey, there we go! First element changed. Will it work with any length list?
@@ -76,7 +76,7 @@ nil
 user=> (inc nil)
 
 NullPointerException   clojure.lang.Numbers.ops (Numbers.java:942)
-So there are really two cases for this function. If there is a first element in nums, we’ll increment it as normal. If there’s no such element, we’ll return an empty list. To express this kind of conditional behavior, we’ll use a Clojure special form called if:
+So there are really two cases for this function. If there is a first element in numbers, we’ll increment it as normal. If there’s no such element, we’ll return an empty list. To express this kind of conditional behavior, we’ll use a Clojure special form called if:
 
 user=> (doc if)
 -------------------------
@@ -96,11 +96,11 @@ user=> (if false :a :b)
 :b
 Seems straightforward enough.
 
-(defn inc-first [nums]
-  (if (first nums)
+(defn inc-first [numbers]
+  (if (first numbers)
     ; If there's a first number, build a new list with cons
-    (cons (inc (first nums))
-          (rest nums))
+    (cons (inc (first numbers))
+          (rest numbers))
     ; If there's no first number, just return an empty list
     (list)))
 
@@ -110,13 +110,13 @@ user=> (inc-first [1 2 3])
 (2 2 3)
 Success! Now we can handle both cases: empty sequences, and sequences with things in them. Now how about incrementing that second number? Let’s stare at that code for a bit.
 
-(rest nums)
-Hang on. That list–(rest nums)–that’s a list of numbers too. What if we… used our inc-first function on that list, to increment its first number? Then we’d have incremented both the first and the second element.
+(rest numbers)
+Hang on. That list–(rest numbers)–that’s a list of numbers too. What if we… used our inc-first function on that list, to increment its first number? Then we’d have incremented both the first and the second element.
 
-(defn inc-more [nums]
-  (if (first nums)
-    (cons (inc (first nums))
-          (inc-more (rest nums)))
+(defn inc-more [numbers]
+  (if (first numbers)
+    (cons (inc (first numbers))
+          (inc-more (rest numbers)))
     (list)))
 user=> (inc-more [1 2 3 4])
 (2 3 4 5)
@@ -403,7 +403,7 @@ We’re using a special function here, reduced, to indicate that we’ve complet
 
 user=> (my-take-while pos? [2 1 0 -1 0 1 2])
 [2 1]
-reduce really is the uberfunction over sequences. Almost any operation on a sequence can be expressed in terms of a reduce–though for various reasons, many of the Clojure sequence functions are not written this way. For instance, take-while is actually defined like so:
+reduce really is the uber function over sequences. Almost any operation on a sequence can be expressed in terms of a reduce–though for various reasons, many of the Clojure sequence functions are not written this way. For instance, take-while is actually defined like so:
 
 user=> (source take-while)
 (defn take-while
@@ -420,15 +420,15 @@ There’s a few new pieces here, but the structure is essentially the same as ou
 
 Most of Clojure’s sequence functions are lazy. They don’t do anything until needed. For instance, we can increment every number from zero to infinity:
 
-user=> (def infseq (map inc (iterate inc 0)))
-#'user/infseq
-user=> (realized? infseq)
+user=> (def infinite-sequence (map inc (iterate inc 0)))
+#'user/infinite-sequence
+user=> (realized? infinite-sequence)
 false
 That function returned immediately. Because it hasn’t done any work yet, we say the sequence is unrealized. It doesn’t increment any numbers at all until we ask for them:
 
-user=> (take 10 infseq)
+user=> (take 10 infinite-sequence)
 (1 2 3 4 5 6 7 8 9 10)
-user=> (realized? infseq)
+user=> (realized? infinite-sequence)
 true
 Lazy sequences also remember their contents, once evaluated, for faster access.
 
@@ -489,4 +489,3 @@ Write a function to find out if a string is a palindrome–that is, if it looks 
 Find the number of ‘c’s in “abracadabra”.
 Write your own version of filter.
 Find the first 100 prime numbers: 2, 3, 5, 7, 11, 13, 17, ….
-

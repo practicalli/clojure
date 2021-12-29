@@ -3,11 +3,11 @@ A test namespace has a singular purpose to test a matching application namespace
 
 The namespace to be tested is referred using the alias `SUT` meaning system under test.
 
-![Clojure Unit Testining - require software under testa using SUT alias](/images/clojure-unit-test-require-sut.png)
+![Clojure Unit Testing - require software under testa using SUT alias](/images/clojure-unit-test-require-sut.png)
 
 The alias highlight the exact functions being tested in the body of the code.  This provides a visual way to separate functions under test with other test functions, especially if there are helper functions or vars used for test data.
 
-![Clojure Unit Testining - using SUT alias](/images/clojure-unit-test-alias-sut.png)
+![Clojure Unit Testing - using SUT alias](/images/clojure-unit-test-alias-sut.png)
 
 In the above example it is easy to see which namespaces the functions being tested are from.  The `dictionary` namespace is a source of data for those tests.
 

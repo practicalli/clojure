@@ -56,7 +56,7 @@
 
 ## Concurrent Programming & Parallelism
 
-  Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Fuctions that are not affected by or cause side effects also make writing concurrent code trivial.
+  Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Functions that are not affected by or cause side effects also make writing concurrent code trivial.
   
   Clojure helps you scale your applications by with a parrallel procssing approach, as you can run functions over immutable datastructures without conflict.
 

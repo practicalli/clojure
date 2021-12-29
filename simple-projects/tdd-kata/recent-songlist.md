@@ -1,4 +1,4 @@
-# Recent songlist
+# Recent song-list
 
 ![Spotify song list](/images/spotify-playlist.png)
 
@@ -20,7 +20,7 @@ Optional extras:
 Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
 
 ```bash
-clojure -M:new app practicalli/recent-songlist
+clojure -M:new app practicalli/recent-song-list
 ```
 
 ## Using `clojure.test`
@@ -29,7 +29,7 @@ We are writing our tests with the `clojure.test` library
 Open `test/playground/recent-song-list-test.clj` file in your editor and update the namespace definition to include `clojure.test`
 
 ```eval-clojure
-(ns practicalli.recent-songlist-test
+(ns practicalli.recent-song-list-test
   (:require [clojure.test :refer [deftest is testing]]
             [playground.recent-song-list :as SUT]))
 ```

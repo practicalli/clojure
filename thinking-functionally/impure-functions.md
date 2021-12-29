@@ -39,7 +39,7 @@ To demonstrate a side causes form of impure functions, lets create a task-comple
 (task-complete "hack clojure" (java.util.Date.))
 ```
 
-> ####Hint:: The function `(java.util.Date.)` is actually a call to instantiate a java.util.Date object.  The fullstop character at the end of the name makes it a function call and is the short form of `(new java.util.Date)`
+> ####Hint:: The function `(java.util.Date.)` is actually a call to instantiate a java.util.Date object.  The full-stop character at the end of the name makes it a function call and is the short form of `(new java.util.Date)`
 
 In this example we have called to the outside world to generate a value for us.  The above example is fairly simple, however by calling the outside world rather than passing in a date it makes the functions purpose far less clear.
 

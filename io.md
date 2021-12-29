@@ -1,4 +1,4 @@
-# IO in Clojure 
+# IO in Clojure
 
 
 From http://blog.isaachodes.io/p/clojure-io-p1/
@@ -18,19 +18,19 @@ slurp
 
 Clojure comes with a handy little function called slurp that takes in a string representing a filename (or, really, pretty much anything; a File, a stream, a byte array, URL, etc) and returns a string containing the contents of your file. It’s pretty handy if you just need to get some information from a file that’s relatively small, and you’ll be parsing it yourself.
 
-(slurp "/Users/ihodes/Desktop/afile.txt")
+(slurp "/home/user/file.txt")
 => "A little bit\nof information here."
 
 A nice thing about slurp is that you can easily build up file paths with str. For example, say you want to output to a file based on information you find at runtime:
 
-(slurp (str "/Users/" username "/Desktop/" filename))
+(slurp (str "/home/" username "/projects/" filename))
 
 But slurp is pretty basic, and once your files get large enough, totally impractical. Nonetheless, it’s a handy function to know about.
 
 As a useful and comical aside, the function spit is the counterpart to slurp, except that instead of reading input, spit does output. More on this in a future article, though.
 line-seq
 
-One of my favorite IO functions has got to be line-seq; line-seq takes a reader object (which must implement BufferedReader) and returns a lazy sequence of the lines of the text the reader supplies. This is handy when you’re dealing with files (if this offends you, let’s be Unixy here for now and say that everything is a file) that are too big to merely slurp, but that are \newline delimited (or CR/LF delimited, if you’re of the Windows persuasion).
+One of my favorite IO functions has got to be line-seq; line-seq takes a reader object (which must implement BufferedReader) and returns a lazy sequence of the lines of the text the reader supplies. This is handy when you’re dealing with files (if this offends you, taking a Unix approach here for now and say that everything is a file) that are too big to merely slurp, but that are \newline delimited (or CR/LF delimited, if you’re of the Windows persuasion).
 
 (use '[clojure.java.io '(reader)])
 (take 2
@@ -119,19 +119,19 @@ slurp
 
 Clojure comes with a handy little function called slurp that takes in a string representing a filename (or, really, pretty much anything; a File, a stream, a byte array, URL, etc) and returns a string containing the contents of your file. It’s pretty handy if you just need to get some information from a file that’s relatively small, and you’ll be parsing it yourself.
 
-(slurp "/Users/ihodes/Desktop/afile.txt")
+(slurp "/home/account/projects/config.txt")
 => "A little bit\nof information here."
 
 A nice thing about slurp is that you can easily build up file paths with str. For example, say you want to output to a file based on information you find at runtime:
 
-(slurp (str "/Users/" username "/Desktop/" filename))
+(slurp (str "/home/" username "/projects/" filename))
 
 But slurp is pretty basic, and once your files get large enough, totally impractical. Nonetheless, it’s a handy function to know about.
 
 As a useful and comical aside, the function spit is the counterpart to slurp, except that instead of reading input, spit does output. More on this in a future article, though.
 line-seq
 
-One of my favorite IO functions has got to be line-seq; line-seq takes a reader object (which must implement BufferedReader) and returns a lazy sequence of the lines of the text the reader supplies. This is handy when you’re dealing with files (if this offends you, let’s be Unixy here for now and say that everything is a file) that are too big to merely slurp, but that are \newline delimited (or CR/LF delimited, if you’re of the Windows persuasion).
+One of my favorite IO functions has got to be line-seq; line-seq takes a reader object (which must implement BufferedReader) and returns a lazy sequence of the lines of the text the reader supplies. This is handy when you’re dealing with files (if this offends you, taking a Unix approach here for now and say that everything is a file) that are too big to merely slurp, but that are \newline delimited (or CR/LF delimited, if you’re of the Windows persuasion).
 
 (use '[clojure.java.io '(reader)])
 (take 2

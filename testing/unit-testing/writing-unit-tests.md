@@ -66,7 +66,7 @@ Refactor the assertions using are simplifies the code, making it simpler to chan
 For full details, visit the [API for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
 
 ## Project Examples: Code challenges with unit tests
-* [TDD Kata: Recent Songlist](/simple-projects/tdd-kata/recent-songlist.md)
+* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md)
 * [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words)
 * [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors)
 * [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects

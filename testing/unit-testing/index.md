@@ -61,10 +61,10 @@ As with file names, the namespaces for each test code file is the same as the so
 >
 > `clojure -X:project/new :template app :name practicalli/rock-paper-scissors-lizard-spock`
 
-<!-- TODO: clj-new - does this add a test namespace if you add a src namesspace to an existing project? -->
+<!-- TODO: clj-new - does this add a test namespace if you add a src namespace to an existing project? -->
 
 ## Project Examples: Code challenges with unit tests
-* [TDD Kata: Recent Songlist](/simple-projects/tdd-kata/recent-songlist.md) - simple tests examples
+* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
 * [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
 * [practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
 * [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects

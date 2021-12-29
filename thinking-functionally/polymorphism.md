@@ -1,4 +1,8 @@
-# Ploymorphism
+# Polymorphic function definitions
+
+Polymorphic means many forms.
+
+The simplest example of polymorphism in Clojure is a function definition that acts differently based on the number of arguments passed.
 
 Usually you define a function with one set of arguments, either none `[]`, one `[one]` or many `[any number of args]`, using the basic syntax
 
@@ -14,7 +18,7 @@ Instead of writing multiple functions with the same name that each take differen
 ```clojure
 (defn name
   "I am the doc string to describe the function"
-  ([] 
+  ([]
     (str "behaviour with no args"))
   ([one]
     (str "behaviour with one arg"))
@@ -32,7 +36,7 @@ Instead of writing multiple functions with the same name that each take differen
   ([message] (str message)))
 
 (i-am-polly)
-(i-am-polly "I call different behaviour depeding on arguments sent")
+(i-am-polly "I call different behaviour depending on arguments sent")
 ```
 
 <!--endsec-->

@@ -4,13 +4,13 @@
 
   Lets try some more examples to show how easy it is to use Java methods and objects.  Remember that everything in [java.lang](https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html) is available in your Clojure project by default
 
-## Returning specific types 
+## Returning specific types
 
-  Clojure has types, after all it runs on the JVM and included `java.lang` library in ever project.  Types are infered at runtime, saving you the need to design types yourself.  
-  
+  Clojure has types, after all it runs on the JVM and included `java.lang` library in ever project.  Types are inferred at runtime, saving you the need to design types yourself.
+
   Sometimes you want to ensure a value is of a particular type and you can use Java to do this.
 
-> **Note** Return a string value as an integer 
+> **Note** Return a string value as an integer
 
 When you create a new `java.lang.Integer` object you can provide a default value by passing either a number or string type.
 
@@ -27,7 +27,7 @@ This is the equivalent to the Java code:
 ```java
  Integer myInt = new Integer("123");
 ```
- 
+
   The `.` function essentially instantiates a new object from the class, in this case `Integer`, passing any arguments to its constructor.
 
 > **Hint** Example: converting the port number read from an environment variable as a string which needs to be passed to the Jetty server as a number.  See the [Clojure Webapp workshop](http://practical.li/clojure-webapps) an example.
@@ -65,12 +65,12 @@ This is the equivalent to the Java code:
 Or using the threading macro, we can make the code a little clearer
 
 ```
-(-> 
+(->
    (java.util.Date.)
    (.getHours))
 ```
 
-## Its Joda Time 
+## Its Joda Time
 
   `clj-time` is a Clojure wrapper for Joda time.  As this is an external library, you need to add it to your project.clj file as a dependency.  To find the latest version, check the [clj-time library on Clojars.org]()
 
@@ -80,18 +80,18 @@ Or using the threading macro, we can make the code a little clearer
 (require '[clj-time.core :as time])
 (require '[clj-time.format :as time-format])
 
-(time/now)  
+(time/now)
 
 ;; ISO 8601 UTC format
-(def time-formatter (time-format/formatters :basic-date-time))  
-(time-format/unparse custom-formatter (date-time 2010 10 3))  
+(def time-formatter (time-format/formatters :basic-date-time))
+(time-format/unparse custom-formatter (date-time 2010 10 3))
 ```
 
 
 ## Swing coding
 
   Swing GUI coding in Java feels quite messy to me, however using Swing in Clojure feels much cleaner.  Using the `doto` function allow you to chain function (Java method) calls together.
-  
+
 > **Note**  Start with the `import` function to add the neccessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.
 
 
@@ -151,8 +151,8 @@ All of these examples (except java.lang.Math/PI) use macros which expand to use 
 (macroexpand-1 '(.toUpperCase "By Bluebeard's bananas!"))
 ; => (. "By Bluebeard's bananas!" toUpperCase)
 
-(macroexpand-1 '(.indexOf "Let's synergize our bleeding edges" "y"))
-; => (. "Let's synergize our bleeding edges" indexOf "y")
+(macroexpand-1 '(.indexOf "Synergism of our bleeding edges" "y"))
+; => (. "Synergism of our bleeding edges" indexOf "y")
 
 (macroexpand-1 '(Math/abs -3))
 ; => (. Math abs -3)
@@ -186,30 +186,30 @@ Either way, Clojure makes things easier for you. First, there's spit and slurp. 
 
 ```
 (spit "/tmp/hercules-todo-list"
-"- kill dat lion brov
-- chop up what nasty multi-headed snake thing")
+"- wash hair
+ - charm the multi-headed snake")
 
 (slurp "/tmp/hercules-todo-list")
 
-; => "- kill dat lion brov
-; =>  - chop up what nasty multi-headed snake thing"
+; => "- wash hair
+; =>  - charm the multi-headed snake"
 ```
 
 You can also use these functions with objects representing resources other than files. The next example uses a StringWriter, which allows you to perform IO operations on a string:
 
 ```
 (let [s (java.io.StringWriter.)]
-  (spit s "- capture cerynian hind like for real")
+  (spit s "- charm the multi-headed snake")
   (.toString s))
-; => "- capture cerynian hind like for real"
+; => "- charm the multi-headed snake"
 ```
 
 Naturally, you can also read from a StringReader with slurp:
 
 ```
-(let [s (java.io.StringReader. "- get erymanthian pig what with the tusks")]
+(let [s (java.io.StringReader. "- charm the multi-headed snake")]
   (slurp s))
-; => "- get erymanthian pig what with the tusks"
+; => "- charm the multi-headed snake"
 ```
 
 Of course, you can also use the read and write methods for resources. It doesn't really make much of a difference which you use; spit and slurp are often convenient because they work with just a string representing a filesystem path or a URL.
@@ -220,15 +220,15 @@ The with-open macro is another convenience: it implicitly closes a resource at t
 (with-open [todo-list-rdr (clojure.java.io/reader "/tmp/hercules-todo-list")]
   (doseq [todo (line-seq todo-list-rdr)]
     (println todo)))
-; => - kill dat lion brov
-; => - chop up what nasty multi-headed snake thing
+; => "- wash hair
+; =>  - charm the multi-headed snake"
 ```
 That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
 5. Summary
 
 In this chapter, you learned what it means for Clojure to be hosted on the JVM. Clojure programs get compiled to Java bytecode and executed within a JVM process. Clojure programs also have access to Java libraries, and you can easily interact with them using Clojure's interop facilities.
-6. Resources    
-    
+6. Resources
+
 
 ## From http://clojure.org/java_interop
 
@@ -394,7 +394,17 @@ f => (name [params*] body) or (name ([params*] body) ([params+] body) ...)
 
 Macro
 
-Expands to code which creates a instance of a proxy class that implements the named class/interface(s) by calling the supplied fns. A single class, if provided, must be first. If not provided it defaults to Object. The interfaces names must be valid interface types. If a method fn is not provided for a class method, the superclass method will be called. If a method fn is not provided for an interface method, an UnsupportedOperationException will be thrown should it be called. Method fns are closures and can capture the environment in which proxy is called. Each method fn takes an additional implicit first arg, which is bound to this. Note that while method fns can be provided to override protected methods, they have no other access to protected members, nor to super, as these capabilities cannot be proxied.
+Expands to code which creates a instance of a proxy class that implements the named class/interface(s) by calling the supplied fns.
+
+A single class, if provided, must be first. If not provided it defaults to Object.
+
+The interfaces names must be valid interface types. If a method fn is not provided for a class method, the superclass method will be called.
+
+If a method fn is not provided for an interface method, an UnsupportedOperationException will be thrown should it be called.
+
+Method fns are closures and can capture the environment in which proxy is called. Each method fn takes an additional implicit first argument, which is bound to this.
+
+Note that while method fns can be provided to override protected methods, they have no other access to protected members, nor to super, as these capabilities cannot be a proxy.
 
 Arrays
 
@@ -415,10 +425,10 @@ Clojure supports the use of type hints to assist the compiler in avoiding reflec
 
 (defn len [x]
   (.length x))
- 
+
 (defn len2 [^String x]
   (.length x))
- 
+
 user=> (time (reduce + (map len (repeat 1000000 "asdf"))))
 "Elapsed time: 3007.198 msecs"
 4000000
@@ -432,11 +442,11 @@ There is a *warn-on-reflection* flag (defaults to false) which will cause the co
 
 (set! *warn-on-reflection* true)
 -> true
- 
+
 (defn foo [s] (.charAt s 1))
 -> Reflection warning, line: 2 - call to charAt can't be resolved.
 -> #user/foo
- 
+
 (defn foo [^String s] (.charAt s 1))
 -> #user/foo
 
@@ -446,7 +456,7 @@ For function return values, the type hint can be placed before the arguments vec
   (^String [])
   (^Integer [a])
   (^java.util.List [a & args]))
- 
+
 -> #user/hinted
 
 Aliases
@@ -516,18 +526,18 @@ The best aspect of this is that you need not do anything special in your initial
     (if (< i n)
       (recur (inc i))
       i)))
- 
+
 (time (foo 100000))
 "Elapsed time: 0.391 msecs"
 100000
- 
+
 (defn foo2 [n]
   (let [n (int n)]
     (loop [i (int 0)]
       (if (< i n)
         (recur (inc i))
         i))))
- 
+
 (time (foo2 100000))
 "Elapsed time: 0.084 msecs"
 100000
