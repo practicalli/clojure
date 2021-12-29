@@ -186,10 +186,6 @@ http://blog.jenkster.com/2013/12/a-cider-excursion.html
 
 clojure emacs metaprogramming trick https://www.youtube.com/watch?v=LXhWW1Yqpt0
 
-http://eigenhombre.com/clojure/2014/07/05/emacs-customization-for-clojure/
-
-http://martintrojer.github.io/clojure/2014/10/02/clojure-and-emacs-without-cider/
-
 https://github.com/technomancy/mire
 
 https://github.com/cemerick/drawbridge
