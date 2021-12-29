@@ -176,7 +176,7 @@ edn is an extensible data notation. A superset of edn is used by Clojure to repr
 
 https://github.com/edn-format/edn
 
-http://www.compoundtheory.com/clojure-edn-walk-through/
+https://www.compoundtheory.com/clojure-edn-walkthrough/
 
 
 
