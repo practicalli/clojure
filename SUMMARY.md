@@ -22,7 +22,7 @@
 * [Clojure CLI Overview](clojure-cli/index.md)
 * [Install Clojure CLI](clojure-cli/install/index.md)
     * [Java](clojure-cli/install/java.md)
-    * [Clojure](clojure-cli/install/clojure.md)
+    * [Clojure](clojure-cli/install/clojure-cli.md)
     * [Community tools](clojure-cli/install/community-tools.md)
         * [Available Community tools](clojure-cli/install/community-tools-available.md)
         * [Configure Clojure Tools](clojure-cli/configure/index.md)
