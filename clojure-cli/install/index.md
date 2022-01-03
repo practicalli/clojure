@@ -12,7 +12,7 @@ Using [community tools](community-tools.md) on top of Clojure CLI tools provides
 Establish an effective Clojure development environment by installing the following:
 
 | Tools                                         | Required    | Purpose                                                                                  |
-|-----------------------------------------------+-------------+------------------------------------------------------------------------------------------|
+|-----------------------------------------------|-------------|------------------------------------------------------------------------------------------|
 | [Java 11 LTS](java.md)                        | Essential   | Java virtual machine hosts Clojure. Java 11 is the Long Term Support version             |
 | [Clojure CLI](clojure-cli.md)                 | Essential   | Run Clojure REPL and other tools for development and production                          |
 | [Community tools](community-tools.md)         | Recommended | Curated aliases providing common development tasks and tools across all projects         |
