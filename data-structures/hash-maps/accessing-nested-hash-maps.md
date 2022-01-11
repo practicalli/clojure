@@ -1,56 +1,6 @@
-# Map
-
-A map is a key / value pair data structure.  Keys are usually defined using a keyword, although they can be strings or anything else.
-
-Keywords point to themselves, so using them for the keys makes it very easy to get values out of the map, or for updating existing values in the map.
-
-> **Note** Explore creating maps
-
-```clojure
-{:key "value"}
-(:key 42)
-{:key :value}
-{"key" "value"}
-("key" :value)
-{:a 1 :b 2 :c 3}
-{:monday 1 :tuesday 2 :wednesday 3 :thursday 4 :friday 5 :saturday 6 :sunday 7}
-```
-
-## Maps of other collections
+# Accessing Nested Hash-maps
 
 Its also quite common to have maps made up of other maps, maps of vectors or vectors of maps.
-
-> #### NOTE::Create a map to represent the world of Star Wars
-> include various characters & ships, indicating the factions that characters and ships belong to.
-
-```clojure
-{:characters
-  {:jedi   ["Luke Skywalker" "Obiwan Kenobi"]
-   :sith   ["Darth Vader" "Darth Sideous"]
-   :droids ["C3P0" "R2D2" "BB8"]}
- :ships
-   {:rebel-alliance  ["Millennium Falcon" "X-wing fighter"]
-    :imperial-empire ["Intergalactic Cruiser" "Destroyer"
-                      "Im just making these up now"]}}
-```
-
-
-Individual Star Wars characters can be defined using a map of maps
-
-```clojure
- {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
-  :vader  {:fullname "Darth Vader"    :skill "Breaking the rules and peoples hearts"}
-  :jarjar {:fullname "JarJar Binks"   :skill "Failing upwards"}}
-```
-
-To make the Star Wars character information easier to use, lets give the collection of characters a name using the def function
-
-```clojure
-(def star-wars-characters
-   {:luke   {:fullname "Luke Skywalker" :skill "Targeting Swamp Rats"}
-    :vader  {:fullname "Darth Vader"    :skill "Breaking the rules and peoples hearts"}
-    :jarjar {:fullname "JarJar Binks"   :skill "Failing upwards"}})
-```
 
 Now we can refer to the characters using keywords.  Using the get function we return all the information about Luke
 

@@ -266,6 +266,7 @@
     -->
 * [Quick Clojure reference](quickstart/quick-reference.md)
 * [Standard Library](reference/standard-library/index.md)
+    * [Data Structures](reference/standard-library/data-structures/index.md)
     * [Predicate functions](reference/standard-library/predicate-functions.md)
     * [Regular Expressions](reference/standard-library/regular-expressions/index.md)
         * [Matching with groups](reference/standard-library/regular-expressions/matching-with-groups.md)
@@ -303,9 +304,12 @@
 
     <!-- Persistent data structures list vector map set -->
 * [Data structures](data-structures/index.md)
-    * [List](data-structures/list.md)
-    * [Map](data-structures/map.md)
-    * [Vector](data-structures/vector.md)
+    * [Lists](data-structures/list.md)
+    * [Hash-maps](data-structures/hash-maps/index.md)
+        * [Create](data-structures/hash-maps/create.md)
+        * [Access](data-structures/hash-maps/access.md)
+        <!-- * [Update](data-structures/hash-maps/update.md) -->
+    * [Vectors](data-structures/vector.md)
     * [Set](data-structures/set.md)
     * [Naming data structures](data-structures/naming.md)
     * [Pretty Printing](data-structures/pretty-printing.md)
@@ -344,6 +348,7 @@
         * [Model alphabet codes](designing-data-structures/modeling-alphabet-codes.md)
         * [Model name generation map](designing-data-structures/modeling-name-generation-map.md)
     * [Shared Memory](data-structures/shared-memory.md)
+    <!-- * [Alternative Data Structures](data-structures/alternatives.md) -->
 
 
 * [Clojure SVG](reference/clojure-svg/index.md)
