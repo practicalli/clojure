@@ -4,6 +4,7 @@ Java is a host platform for Clojure, on which Clojure projects and tools run.  [
 
 
 # Install Java
+
 Check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
@@ -16,10 +17,11 @@ If Java is installed, you will see something like this in your terminal:
 
 ![Java version](/images/development-environment-java-check.png)
 
-If the version is `11` or above, then [jump to the Clojure install page](install-clojure.md)
+If the version is `17` or above, then [jump to the Clojure install page](install-clojure.md)
 
 
 ## Operating System specific install instructions
+
 For windows users, the scoop install is recommended.
 
 <!-- Operating System specific instructions -->
@@ -31,11 +33,17 @@ For windows users, the scoop install is recommended.
 Open a terminal and run the following command (you will be prompted for your login password to complete the install)
 
 ```bash
-sudo apt install openjdk-11-jdk
+sudo apt install openjdk-17-jdk
 ```
 
-## openjdk-11 not available or not the right version?
- If openjdk-11 is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
+> #### Hint::Optionally add Java sources
+> Install the `openjdk-17-sources` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
+>
+> [practicalli/clojure-deps-edn](community-tools.md) provides the [`:lib/java17-source alias](https://github.com/practicalli/clojure-deps-edn#java-sources) to include the installed package in the classpath when running a REPL.`
+
+## openjdk-17 not available or not the right version?
+
+ If openjdk-17-jdk package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa)
 
 ```bash
 sudo add-apt-repository ppa:openjdk-r/ppa
@@ -57,7 +65,7 @@ Available java versions will be listed.  Enter the list number for the version y
 Using [Homebrew](https://brew.sh/), run the following command in a terminal to install Java 11:
 
 ```bash
-brew cask install adoptopenjdk11
+brew cask install adoptopenjdk17
 ```
 
 > #### Hint::Switching between Java versions
@@ -70,7 +78,7 @@ brew cask install adoptopenjdk11
 >
 > Switch to Java version 11
 ```bash
-export JAVA_HOME=$(/usr/libexec/java_home -v 11)
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 ```
 
 
@@ -116,6 +124,7 @@ Run the file once downloaded and follow the install instructions.
 
 
 ## What you need to know about Java
+
 Actually very little knowledge is required.
 
 No knowledge of the Java programming language is required, although it is quite simple to call Java methods from Clojure.
