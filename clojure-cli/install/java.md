@@ -37,7 +37,7 @@ sudo apt install openjdk-17-jdk
 ```
 
 > #### Hint::Optionally add Java sources
-> Install the `openjdk-17-sources` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
+> Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
 >
 > [practicalli/clojure-deps-edn](community-tools.md) provides the [`:lib/java17-source alias](https://github.com/practicalli/clojure-deps-edn#java-sources) to include the installed package in the classpath when running a REPL.`
 
