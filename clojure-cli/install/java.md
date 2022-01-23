@@ -112,11 +112,11 @@ If Chocolatey does not work, then try the [manual Java install](install-java.htm
 <!-- Manual Install -->
 {% content "manual" %}
 
-[Download OpenJDK 11 Hotspot](https://adoptopenjdk.net/)
-
-[![Adopt OpenJDK webpage](/images/adoptopenjdk-install.png)](https://adoptopenjdk.net/)
+[Download OpenJDK 17 Hotspot from Adoptium](https://adoptium.net/) - prebuild OpenJDK binaries freely available for multiple operating systems.
 
 Run the file once downloaded and follow the install instructions.
+
+![Adoptium Prebuilt OpenJDK Binaries - web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png)
 
 
 {% endtabs %}
