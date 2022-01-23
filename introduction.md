@@ -1,8 +1,8 @@
 ![Practicalli Clojure banner](images/practicalli-clojure-banner.png)
 
-  **Clojure is an elegant language for a more civilized development experience**.
+## Clojure - an elegant language for a more civilised development experience
 
-  A simple syntax means Clojure is quick to learn and a wide range of open source libraries provides a rapid way to build any kind of software. Designed as a hosted language, Clojure runs on many platforms including the Java Virtual Machine, GraalVM, Microsoft.Net, JavaScript engines.  Simple host language interoperability provides access to libraries from a wide range of programming languages, further extending the reach of Clojure.
+A simple syntax means Clojure is quick to learn and a wide range of open source libraries provides a rapid way to build any kind of software. Designed as a hosted language, Clojure runs on many platforms including the Java Virtual Machine, GraalVM, Microsoft.Net, JavaScript engines.  Simple host language interoperability provides access to libraries from a wide range of programming languages, further extending the reach of Clojure.
 
 > #### Hint::Quote: Adrian Cockcroft. Cloud Architect, Netflix
 > "A lot of the best programmers and the most productive programmers I know are writing everything in Clojure and swearing by it, and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters." Adrian Cockcroft - Battery ventures, formally Cloud Architect, Netflix
@@ -26,14 +26,16 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 
 ## Resources
+
 * [practicalli/clojure-deps-edn - Clojure tools and common aliases]({{ book.P9IClojureDepsEdn }})
 * [Practicalli Spacemacs](https://practical.li/spacemacs) and [practicalli/spacemacs.d](https://github.com/practicalli/spacemacs.d) for Vim style editing in Emacs for Clojure.
-* [Practicalli YouTube channel](https://youtube.co/c/+practicalli) - 80+ hours of Clojure related videos
+* [Practicalli YouTube channel](https://youtube.co/c/+practicalli) - 100+ hours of Clojure related videos
 * [Practicalli website]({{ book.P9IWebsite }}) books and videos to support your journey into Clojure
 * [Practicalli Graphic design]({{ book.P9IGraphicDesign }}) - Creative Commons Attribution
 
 
 ## Discussions and feedback
+
 [Contributions are welcome via GitHub issues and pull requests](contributing.md), or discuss the book on the Clojurians Slack community.
 
 [![Join the conversation on Clojurians Slack](images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
