@@ -42,8 +42,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 Get a [free Clojurians slack community account](https://clojurians.net/)
 
-> #### Warning::Content regularly added to this book
-> Content is usually added daily, recommend using the search box at the top of the content navigation if you cant find what you are looking for.
+> #### NOTE::Book updated regularly
 > Last published: {{ gitbook.time }}
 
 
