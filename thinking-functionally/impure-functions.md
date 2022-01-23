@@ -66,7 +66,7 @@ In this example we have called to the outside world to generate a value for us. 
 Required values should be generated outside a function where possible.  In this case in the `(js/Date)` function is first evaluated and replaced by its value, then that date value is passed to the function as an argument, keeping the function pure.
 
 
-<!--sec data-title="Clojure version using java.util.Date" data-id="java-util-date-impure" data-collapse=true ces-->
+<!--sec data-title="Clojure version using java.util.Date" data-id="java-util-date-pure" data-collapse=true ces-->
 
 The pure version of the function in Clojure, using the java.util.Date function.
 
