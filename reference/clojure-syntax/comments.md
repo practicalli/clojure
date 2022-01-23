@@ -3,18 +3,24 @@ As well as the classic line comments, Clojure also can comment specific parts of
 
 `;;` to comment a whole line and `;` to add a comment after the start of a line
 
-`(comment )` wraps forms and returns `nil` when evaluated, used for rich comment blocks
+`(comment )` wraps forms and returns `nil` when evaluated, referred to as [rich comments](#rich-comments)
 
-`#_` to ignore the next form as if it has not been written
+`#_` to ignore the next form as if it has not been written, commonly used for debugging
+
+
+## Line comments
+
+Add general documentation for a namespace, such as a comment header that describes the overall purpose of a namespace.
+
+Separate a namespace into logical sections to aid navigation and help identify opportunities to refactor a namespace as it grows.
 
 
 ## comment function
-The `(comment ,,,)` function is used to included code that is only run by the developer directly. Unlike line comments, forms inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
+
+The `(comment ,,,)` function is used to included code that is only run by the developer directly.
 
 ```clojure
-(comment
-  (map + [1 2 3] [1 2 3])
-)
+(comment (map + [1 2 3] [1 2 3]))
 ```
 
 The `comment` function returns `nil` so its advised not to use it inside another form.  For example:
@@ -28,8 +34,13 @@ This will fail as it tries to use the `+` function to add `1` to `nil`
 The `#_` is the appropriate comment style for this example
 
 
-### Rich comment blocks
-Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+### Rich comment
+
+The `comment` expression is referred to a a rich comment, as it is often used to evaluate expressions it contains as part of a [REPL driven development workflow](/repl-driven-development.md).
+
+Unlike line comments, forms inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
+
+Rich comment are useful for rapidly iterating over different design decisions by including the same function but with different implementations. Hide clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 ```clojure
 ;; Rich comment block with redefined vars ignored
@@ -51,6 +62,7 @@ The "Rich" in the name also refers to Rich Hickey, the author and benevolent dic
 
 
 ## Comment forms with the comment reader macro
+
 `#_` is the comment reader macro that instructs the Clojure reader to completely ignore the next form, as if it had never been written.
 
 No value is returned, so this comment is safe to use within an expression.
@@ -73,6 +85,7 @@ You can place `#_` before the start of a form and everything inside that form wi
 `#_` can also be put on the line(s) before the Clojure form, which can make your code more readable and keep alignment of your code consistent.
 
 ### debugging with comment macro
+
 As the comment macro can be used without returning a value, it can safely be added to code to help with debugging.
 
 This code example finds the most common word in the text of a book.  Most of the lines of code in the threading macro have been commented to discover what the non-commented code does.
@@ -96,6 +109,7 @@ This is an effective way to deconstruct parts of a larger Clojure expression.
 Watch episode [#13 of Practicalli Clojure study group](https://youtu.be/ZkemmMgXT08?t=2015) to see this in practice.
 
 ### comment nested forms
+
 `#_` tells the reader to ignore the next form, it is therefore never evaluated and neither is the `#_`.  This means that `#_` can be used inside a nested form to comment just a part of the expression
 
 In this example the third vector of values is not read by the Clojure reader and therefore is not passed as an argument to `+` function by `map`
@@ -103,7 +117,7 @@ In this example the third vector of values is not read by the Clojure reader and
 `(map + [1 2 3] [4 5 6] #_[7 8 9])`
 
 
-## Stacking comments
+### Stacking comments
 
 The comment reader macro has the ability to stack these comments on forms, so using `#_#_` will comment out two successive forms.
 
