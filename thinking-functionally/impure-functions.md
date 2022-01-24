@@ -37,7 +37,7 @@ To demonstrate a side causes form of impure functions, lets create a task-comple
 (task-complete "hack clojure")
 ```
 
-<!--sec data-title="Clojure version using java.util.Date" data-id="section1-util-date-impure" data-collapse=true ces-->
+<!--sec data-title="Clojure version java.util.Date" data-id="section1" data-collapse=true ces-->
 ```clojure
 (:import java.util.Date)
 
@@ -54,8 +54,10 @@ In this example we have called to the outside world to generate a value for us. 
 <!--endsec-->
 
 
-> ####Note:: Re-write as a pure function
-> Change the task-complete function definition and function call to take both the task-name and completed-date as arguments.
+## Re-write as a pure function
+
+Change the task-complete function definition and function call to take both the task-name and completed-date as arguments.
+
 ```eval-clojure
 (defn task-complete [task-name completed-date]
   (str "Setting task " task-name " completed on " completed-date))
@@ -78,4 +80,5 @@ The pure version of the function in Clojure, using the java.util.Date function.
 
 (task-complete "hack clojure" (java.util.Date.))
 ```
+
 <!--endsec-->
