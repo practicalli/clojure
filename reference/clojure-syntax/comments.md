@@ -56,9 +56,9 @@ The expressions can represent example function for using the project, such as st
 
 Expressions in rich comment blocks can also represent how to use a namespace API, providing examples of arguments to supply to further convey meaning to the code.
 
-These rich comment blocks make a project more accessible and easier to use.
+These rich comments make a project more accessible and easier to use.
 
-The "Rich" in the name also refers to Rich Hickey, the author and benevolent dictator of Clojure design.
+The "Rich" in the name also refers to Rich Hickey, the author and benevolent leader of the Clojure language.
 
 
 ## Comment forms with the comment reader macro

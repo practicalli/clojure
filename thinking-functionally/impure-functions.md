@@ -37,7 +37,7 @@ To demonstrate a side causes form of impure functions, lets create a task-comple
 (task-complete "hack clojure")
 ```
 
-<!--sec data-title="Clojure version using java.util.Date" data-id="section1-util-date-impure" data-collapse=true ces-->
+<!--sec data-title="Clojure version java.util.Date" data-id="section1" data-collapse=true ces-->
 ```clojure
 (:import java.util.Date)
 
