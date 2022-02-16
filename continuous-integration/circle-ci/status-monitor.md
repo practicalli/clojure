@@ -1,4 +1,5 @@
-# Status Monitor
+# Status Monitor Circle CI Continuous Integration
+
 [practicalli/webapp-status-monitor](https://github.com/jr0cket/webapp-status-monitor/) is a Leiningen project create in October 2018.
 
 The project uses ring and compojure as the basis of a web application.
@@ -24,26 +25,17 @@ Configured with a project.clj file.
 
 
 ## CircleCI Configuration
-This configuration uses a docker image with Leiningen version 2.8.1
+
+This configuration uses the CircleCI specific docker image with Java 17 and the latest version of Leiningen.
 
 The configuration defines that the code will be check out, Leiningen will download the dependencies and then run unit tests.
 
 ```yaml
-# Clojure CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-clojure/ for more details
-#
 version: 2
 jobs:
   build:
     docker:
-      # specify the version you desire here
-      - image: circleci/clojure:lein-2.8.1
-
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
+      - image: cimg/clojure:1.10
 
     working_directory: ~/repo
 
@@ -75,6 +67,7 @@ jobs:
 
 
 ## Caching dependencies
+
 CircleCI create a cache of downloaded dependencies, to help speed up the running of the project.
 
 The config.yml defines the path where the dependencies are saved.  A unique key is used to identify the dependencies cache.

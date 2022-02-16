@@ -48,35 +48,35 @@ Create a new file called `.circleci/config.yml` in the root of the project.
 Edit the file and add the following configuration.
 
 ```yml
-version: 2 # use CircleCI 2.0
-jobs:    # basic units of work in a run
-  build: # runs not using Workflows must have a `build` job as entry point
-    working_directory: ~/random-clojure-function # directory where steps will run
-    docker:                                                      # run the steps with Docker
-      - image: circleci/clojure:openjdk-11-tools-deps-1.10.1.727 # image is primary container where `steps` are run
-    environment:            # environment variables for primary container
-      JVM_OPTS: -Xmx3200m   # limit the maximum heap size to prevent out of memory errors
-    steps:             # commands that comprise the `build` job
-      - checkout       # check out source code to working directory
-      - restore_cache: # restores saved cache if checksum hasn't changed since the last run
+version: 2.1
+jobs:                                               # basic units of work in a run
+  build:                                            # runs without Workflows must have a `build` job as entry point
+    working_directory: ~/random-clojure-function    # directory where steps will run
+    docker:                                         # run the steps with Docker
+      - image:  cimg/clojure:1.10                   # image is primary container where `steps` are run
+    environment:                                    # environment variables for primary container
+      JVM_OPTS: -Xmx3200m                           # limit maximum JVM heap size to prevent out of memory errors
+    steps:                                          # commands that comprise the `build` job
+      - checkout                                    # check out source code to working directory
+      - restore_cache:                              # restores cache if checksum unchanged from last run
           key: random-clojure-function-{{ checksum "deps.edn" }}
-      - run: clojure -R:test:runner -Spath
-      - save_cache:    # generate and store cache in the .m2 directory using a key template
+      - run: clojure -P
+      - save_cache:                                 # generate / update cache in the .m2 directory using a key template
           paths:
             - ~/.m2
             - ~/.gitlibs
           key: random-clojure-function-{{ checksum "deps.edn" }}
-      - run: clojure -M:test:runner
+      - run: clojure -X:test/run
 ```
 
-This configuration uses a specific image that supports Clojure CLI tools and `deps.edn` projects
 
-The `run: clojure -R:test:runner -Spath` step downloads the dependencies for the project, including the specified aliases.  The `-Spath` part of the command echos the full classpath to standard out which can be useful for debugging builds, but more importantly stops the clojure command from running a repl.
+The `run: clojure -P` step downloads dependencies for the project, including the `:extra-deps` if aliases are also included.
 
-The `run: clojure -M:test:runner` adds the test directory to the class path and runs the unit tests using Cognitect Labs.
+The `run: clojure -X:test/runner` adds the test directory to the class path and runs the kaocha unit tests runner defined in the alias.
 
 
 ## Connect Circle CI to the project
+
 Commit and push the `.circleci/config.yml` file to the GitHub repository.
 
 Open the CircleCI dashboard and select **Add Project**.  If your GitHub account has multiple organizations, choose the appropriate organization first.
@@ -113,6 +113,7 @@ The continuous integration is now working and tests are automatically run as soo
 So the development of the project can continue with greater confidence
 
 ## Adding a Build Status badge
+
 [Generating a status badge documentation](https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge) describes how to add a build status badge for your project, usually at the top of the README.md file in the project
 
 ```markdown

@@ -1,4 +1,6 @@
 # Circle CI example project
+<!-- TODO: review the CircleCI example Clojure project -->
+
 [The Circle CI language guide for Clojure](https://circleci.com/docs/2.0/language-clojure/) provides an [example project](https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork) that is managed by the [Leiningen build automation tool](https://leiningen.org/) and based on the [Luminus micro-framework template](https://luminusweb.com/).
 
 The project runs on the Undertow web server (wrapped by immutant), using ring to manage web requests and responses, with compojure for server-side routing.  The application uses mount to manage the application lifecycle.
