@@ -217,7 +217,7 @@
     * [Circle CI](continuous-integration/circle-ci/index.md)
         * [Random Clojure Function](continuous-integration/circle-ci/random-clojure-function.md)
         * [Status Monitor](continuous-integration/circle-ci/status-monitor.md)
-        * [Circle CI sample project](continuous-integration/circle-ci/circle-ci-sample-project.md)
+        <!-- * [Circle CI sample project](continuous-integration/circle-ci/circle-ci-sample-project.md) -->
     * [GitHub Actions](continuous-integration/github-actions/index.md)
         * [clj-kondo Lint](continuous-integration/github-actions/clj-kondo-lint.md)
 <!-- * [Performance Testing](testing/performance-testing/index.md) -->

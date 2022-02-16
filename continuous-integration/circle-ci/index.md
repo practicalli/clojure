@@ -1,4 +1,5 @@
 # Circle CI continuous integration service
+
 [Circle CI](https://circleci.com/product/) is a service to build, test and deploy projects.  CircleCI uses docker images to run its workflow, either in the cloud or locally.
 
 Projects can be build, tests run, artifacts (uberjars) created and applications deployed to services such as Heroku.
@@ -9,6 +10,7 @@ Integration will be supported by Git version control, a continuous integration s
 
 
 ## Getting Started
+
 Circle CI has a free plan with unlimited projects, so its easy to get started.
 
 [Sign up](https://circleci.com/signup/) using an existing GitHub or Bitbucket account and login to the CircleCI dashboard.
@@ -17,47 +19,34 @@ In the CircleCI dashboard use **Add Project** to configure any of your shared Gi
 
 Every time changes are pushed to the shared code repository (GitHub, Bitbucket), CirceCI will run the pipeline for the project and show the results.
 
+
 ## Clojure images
-[Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure) are available for several versions of Java, Clojure and build tools. Pre-configured images are typically faster than installing software on top a more generic image.
 
-{% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
+[Clojure specific container images](https://circleci.com/docs/2.0/circleci-images/#clojure) are available for several versions of Java and Clojure.  Pre-configured images are typically faster than installing software on top a more generic image.
 
-{% content "deps" %}
+ `cimg/clojure:1.10` is the recommended image for Clojure projects. The image contains OpenJDK 17 and the latest version of Clojure CLI, Leiningen and Babashka
 
-Recommended image for Clojure deps.edn projects is `openjdk-11-tools-deps-1.10.1.763`
-
-The image contains OpenJDK 11 and the latest Clojure CLI tools installed, 1.10.1.763.
-
-Add the following under docker: in your `config.yml`
+Add the following under the `docker:` key in the `config.yml`
 
 ```yaml
-- image: circleci/clojure:openjdk-11-tools-deps-1.10.1.763
+- image: cimg/clojure:1.10
 ```
+
+The [CircleCI Clojure Language guide](https://circleci.com/docs/2.0/language-clojure/) walks through the sections of the yaml configuration in detail.
+
 
 > #### Hint::Check Clojure version
 > `clojure -Sdescribe` shows configuration information for the Clojure CLI tool as a hash-map, with the :version key associated with the exact install version.
-
-
-{% content "lein" %}
-Recommended image for [Leinginen](https://leiningen.org/) projects is `openjdk-11-lein-2.9.3`
-
-The image contains OpenJDK 11 and the latest [Leiningen](https://leiningen.org/) installed, 2.9.3.
-
-Add the following under docker: in your `config.yml`
-
-```yaml
-- image: circleci/clojure:openjdk-11-lein-2.9.3
-```
-
-> #### Hint::Match Build tool version
+>
 > `lein version` shows the current version of Leiningen install on your development environment.
 >
 > `java -version` shows the current version of the Java installation.
 
-{% endtabs %}
 
 
 ## References
+
+* [CircleCI Clojure Language guide](https://circleci.com/docs/2.0/language-clojure/)
+* [CircleCI Clojure image tags - json](https://circleci.com/docs/2.0/docker-image-tags.json) - programmatically process names of Clojure docker images
 * [Dockerhub: CircleCI Clojure images](https://hub.docker.com/r/circleci/clojure)
 * [GitHub: CircleCI-Public/cicleci-dockerfiles repository](https://hub.docker.com/r/circleci/clojure) - review how docker images are constructed
-* [CircleCI Clojure image tags - json](https://circleci.com/docs/2.0/docker-image-tags.json) - programmatically process names of Clojure docker images
