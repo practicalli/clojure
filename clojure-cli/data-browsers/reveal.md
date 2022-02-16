@@ -152,3 +152,24 @@ Create an atom for debugging purposes
 ```
 
 Use `tap>` to capture intermediate values in the middle of code that requires debugging, inspecting or watching the atom value (deref the atom and watch:latest or watch:all).  This approach complements an editor debugging process
+
+
+
+### Running different types of repl
+
+Using Clojure exec `-X` flag, the default repl function can be over-ridden on the command line, supplying the `io-prepl` or `remote-prepl` functions.
+
+* `clojure -X:inspect/reveal io-prepl :title '"I am a prepl repl"`
+* `clojure -X:inspect/reveal remote-prepl :title '"I am a remote prepl repl"'`
+
+### Configure theme & font
+
+Add a custom theme and font via the `-J` command line option or create an alias using `:inspect/reveal-light` as an example.
+
+```shell
+clojure -M:inspect/reveal -J-Dvlaaad.reveal.prefs='{:theme :light :font-family "Ubuntu Mono" :font-size 32}'
+```
+
+### Rebel Readline & Reveal: Add Reveal as tap> source
+
+Evaluate `(add-tap ((requiring-resolve 'vlaaad.reveal/ui)))` when using Rebel Readline to add Reveal as a tap source, showing `(tap> ,,,)` expressions in the reveal window, eg. `(tap> (map inc [1 2 3 4 5]))`.
