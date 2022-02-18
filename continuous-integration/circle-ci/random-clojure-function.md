@@ -16,18 +16,32 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 https://youtu.be/sXZKrD4cAFk
 {% endyoutube %}
 
-> #### Hint::Use -M flag instead of -A
-> The `-M` flag has replaced the `-A` flag for including aliases when running Clojure main, which is the approach that the cider jack-in command uses.
+> #### Hint::Use the -T execution flag rather than -M or -A
+> `:project/new` runs the clj-new tool which does not require paths or dependencies from a project (no Clojure project exists yet anyway).  The recommended approach is to use the `-T` execution option, i.e. `clojure -T:project/new`.
 
 ## Create a new project
+
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration
 
 ```bash
-clojure -M:new app practicalli/random-clojure-function
+clojure -T:project/new :template app :name practicalli/random-clojure-function
 ```
 
-Version control the Clojure project using Git (or magit in Spacemacs)
+Version control the Clojure project using Git (or [magit in Spacemacs](https://practical.li/spacemacs/source-control/))
 
+
+## Add a test run alias
+
+Edit the `deps.edn` file in the root of the project and add a `:test/run` alias, to run the kaocha test runner which will stop if a failing test is detected.  Stopping on a failed test saves running the full test suite and make the CI workflow more effective.
+
+```clojure
+:test/run
+{:extra-paths ["test"]
+ :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
+ :exec-fn kaocha.runner/exec-fn
+ :exec-args {:randomize? false
+             :fail-fast? true}}
+```
 
 ## Create a remote repository
 
@@ -41,7 +55,8 @@ git remote add practicalli git@github.com:practicalli/random-clojure-function.gi
 
 
 ## Add CircleCI configuration
-Adding Circle CIl (or another CI service) early in the project maximizes the benefit gained from continuous integration.  CircleCI should be connected as soon as unit or generative tests are added to the project.
+
+Adding CircleCI early in the project development cycle ensures testing from the saved source code is successful and testing is consistently repeatable.
 
 Create a new file called `.circleci/config.yml` in the root of the project.
 
@@ -72,7 +87,7 @@ jobs:                                               # basic units of work in a r
 
 The `run: clojure -P` step downloads dependencies for the project, including the `:extra-deps` if aliases are also included.
 
-The `run: clojure -X:test/runner` adds the test directory to the class path and runs the kaocha unit tests runner defined in the alias.
+The `run: clojure -X:test/run` adds the test directory to the class path and runs the Kaocha runner defined in the alias.
 
 
 ## Connect Circle CI to the project
