@@ -19,20 +19,55 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 | Runner   | A GitHub Actions server, listening for available jobs                                                                                                                                  |
 
 
-## Defining a workflow
+## Example GitHub Action
 
-.github/workflows/workflow-name.yml
+`.github/workflows/workflow-name.yaml` is a file that contains the workflow definition.
 
+[Setup Java](https://github.com/actions/setup-java) adds an OpenJDK distribution, i.e. Eclipse Temurin, at a specified version (Java 17 recommended).
+
+[Setup Clojure](https://github.com/DeLaGuardo/setup-clojure) provides Clojure via Clojure CLI, Leiningen or Boot.  Clojure CLI is recommended.
+
+The example workflow runs on Ubuntu.
+
+The project code is checked out from the Git repository.
+
+Java and Clojure are added to the environment
+
+Unit tests are run using the `:test/run` alias (this alias should run Kaocha or similar test runner)
+
+The Clojure project is packaged into an Uberjar for deployment
 
 ```yml
-name: learn-github-actions
+name: Test and Package project
 on: [push]
 jobs:
-  check-bats-version:
+  clojure:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Prepare java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@3.7
+        with:
+          cli: 1.10.3.1075 # Clojure CLI based on tools.deps
+
+      - name: Run Unit tests
+        run: clojure -X:test/run
+
+      - name: Package Clojure project
+        run: clojure -X:project/uberjar
 ```
+
+## References
+
+* [Practicalli Blog](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog.yml) - build publish a Cryogen project with Clojure CLI and publish the generated website with GitHub pages (also [a Staging workflow that runs on pull requests](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog-staging.yml))
+* [Practicalli Landing Page](https://github.com/practicalli/practicalli.github.io/blob/live/.github/workflows/deploy.yml) - build a ClojureScript & Figwheel project with Clojure CLI and publish the generated site to GitHub pages
+* [Practicalli Clojure CLI user level configuration](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) - lint the `deps.edn` file with clj-kondo

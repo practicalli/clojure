@@ -8,17 +8,22 @@
 
 
 ## Lint a specific file on push or pr
-The practicalli/clojure-deps-edn contains a  `deps.edn` file that should be checked when ever there is a push to the `live` branch or a pull request is raised.
+
+The [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) contains [`.github/workflows/lint-with-clj-kondo.yaml`](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) action which checks the `deps.edn` file when ever there is a push to the `live` branch or a pull request is created.
 
 The configuration runs clj-kondo lint command using the [DeLaGuardo/setup-clj-kondo@v1](https://github.com/marketplace/actions/setup-clj-kondo) GitHub action.
 
-The jobs run on a GitHub Actions Ubuntu server.  The first step installs clj-kondo on the runner.  Then next step checks out the practicalli/clojure-deps-edn repository.  The final step runs the lint command.
+The jobs run on the Ubuntu operating system.  The first step installs clj-kondo on the runner.  Then next step checks out the practicalli/clojure-deps-edn repository.  The final step runs the lint command.
 
 ```yml
 name: "Lint with clj-kondo"
 on:
   pull_request:
+    paths:
+      - 'deps.edn'
   push:
+    paths:
+      - 'deps.edn'
     branches:
       - live
 
@@ -26,18 +31,19 @@ jobs:
   lint:
     runs-on: ubuntu-20.04
     steps:
-    - uses: DeLaGuardo/setup-clj-kondo@v1
-      with:
-        version: '2020.04.05'
+      - uses: DeLaGuardo/setup-clj-kondo@master
+        with:
+          version: '2021.12.16'
 
-    - uses: actions/checkout@v2.3.3
+      - uses: actions/checkout@v2
 
-    - name: Run clj-kondo on ubuntu
-      run: clj-kondo --lint deps.edn
+      - name: Run on Ubuntu
+        run: clj-kondo --lint deps.edn --config '{:output {:pattern "::{{level}} file={{filename}},line={{row}},col={{col}}::{{message}}"}}'
 ```
 
 
 ## Example run of GitHub Actions
+
 Pushing a commit will automatically trigger the workflow and lint the `deps.edn` file.
 
 ![GitHub Actions: Linting run passing](/images/github-actions-linting-run-pass.png)
@@ -46,3 +52,6 @@ Pushing a commit will automatically trigger the workflow and lint the `deps.edn`
 When a pull request is created, the workflow is triggered and the results shown in the pull request page.
 
 <!-- TODO: screenshot of a pull request -->
+
+
+* [Practicalli Clojure CLI user level configuration] - lint the `deps.edn` file with clj-kondo
