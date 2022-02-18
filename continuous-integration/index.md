@@ -2,11 +2,11 @@
 
 Topics to be covered in this section include:
 * Continuous Integration servers
-  * Circle CI
-  * GitLabs
-* configuring pipelines
-* Managing environment variables
-* Github hooks and actions
+  * Circle CI (recommended)
+  * GitHub Actions
+ <!-- * GitHub  TODO: research GitLab continuous integration services -->
+* Configure deployment pipelines
+* Manage environment variables
 * Deployment and services on Heroku
 
 > #### Hint::CircleCI example in Practicalli Clojure Web Services
