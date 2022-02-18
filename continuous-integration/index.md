@@ -2,8 +2,8 @@
 
 Topics to be covered in this section include:
 * Continuous Integration servers
-  * Circle CI (recommended)
-  * GitHub Actions
+  * [Circle CI](circle-ci/) (recommended)
+  * [GitHub Actions](github-actions/)
  <!-- * GitHub  TODO: research GitLab continuous integration services -->
 * Configure deployment pipelines
 * Manage environment variables
