@@ -48,7 +48,7 @@ The `require` function loads all the vars (def, defn, etc) definitions from the 
 ## Reloading the namespace
 When changes are made to a namespace in the source code file, those changes can be loaded into the repl by reloading the namespace the change was made in.
 
-`(:require '[fully.qualified.namespace] :reload)`
+`(require '[fully.qualified.namespace] :reload)`
 
 
 ## Hot-load libraries
@@ -58,8 +58,9 @@ See [hotload of libraries](/alternative-tools/clojure-cli/hotload-libraries.md) 
 
 
 ## Troubleshooting
+
 If errors occur when loading the namespace with require, the `:verbose` option will show all the namespaces that are loaded.  This may show issues or help track down conflicting namespaces or functions.
 
 ```clojure
-(require '[practicalli.status-monitor-service] :verbose)
+(require '[practicalli.status-monitor-service] :reload :verbose)
 ```
