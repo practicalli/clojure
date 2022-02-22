@@ -1,25 +1,10 @@
-# Using Clojure libraries and projects in the REPL
-A Clojure library or project can be used in the REPL, by requiring the main namespace
-
-{% tabs project="Project", library="Library" %}
-
-{% content "practicalli" %}
-
-Run the REPL in the root of the project with a `deps.edn` file
-
-
-{% content "library" %}
+# Using Clojure libraries in the REPL
 
 A library needs to be included as a dependency in order to use it in the REPL.
 
-Using an alias
-```bash
-clojure -A:database/h2
-```
+A dependency can be added to a user level configuration (e.g. [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn)) as an alias, which can then be used with any Clojure project.
 
-Alternatively, specify the library names on the command line using the `--deps` argument
-
-Or add libraries to the `deps.edn` configuration file in the root of the project.  Add the library to the `:deps` key or as an alias if use only for development.
+Or libraries are added to the `deps.edn` configuration file in the root of the project.  Add the library to the `:deps` key if its part of the application or as an alias if use only for development.
 
 ```clojure
 {:paths ["src" "resources"]
@@ -35,46 +20,63 @@ Or add libraries to the `deps.edn` configuration file in the root of the project
  #_()}
 ```
 
-{% endtabs %}
 
+## Start a REPL with a library
 
-## Start the REPL and load the project
 Open a terminal and change to the root of the Clojure project directory, where the `deps.edn` file can be found.
 
-Start the REPL (in this example using rebel readline)
+Start the REPL (in this example using rebel readline rich terminal UI)
 
 ```bash
 clojure -M:repl/rebel
 ```
 
-At the REPL prompt, require the main namespace of the project.
+This command will include every library defined in the `:deps` key of the `deps.end` file.
 
-If the project was created with the command `clojure -M:new app practicalli.status-monitor-service`, then the main namespace will be `practicalli.status-monitor-service`
+Add aliases to include optional libraries, such as those used for development.  In this example, the H2 database and next.jdbc libraries are included along with those libraries in the `:deps` key of `deps.edn`
+
+```bash
+clojure -M:database/h2:repl/rebel
+```
+
+
+## Load a namespace in the REPL
+
+At the REPL prompt, require the main namespace of the project to load all the code from that namespace.
+
+If the project was created with the command `clojure -T:project/new :template app :name practicalli.status-monitor-service`, then the main namespace will be `practicalli.status-monitor-service`
 
 ```clojure
 (require '[practicalli.status-monitor-service])
 ```
 
-The `require` function loads all the vars (def, defn, etc) definitions from the main namespace.  The `ns` form is also read and any required namespaces that are in the `ns` form are loaded.
+The `require` function loads all the code from the main namespace.  When an `ns` form is read, required namespaces in the `ns` form are also loaded.
 
 
 ## Reloading the namespace
-When changes are made to a namespace in the source code file, those changes can be loaded into the repl by reloading the namespace the change was made in.
+
+Clojure is a dynamic environment, so changes to function definitions (`defn`) and shared symbol names (`def`) can be updated without restarting the REPL.
+
+`require` loads the code from the specified namespace.  Using the `:reload` option forces the namespace to be loaded again, even if it was already loaded.
+
+When changes are made to a namespace in the source code file, `:reload` ensures those changes become the code running in the REPL
 
 ```clojure
 (require '[fully.qualified.namespace] :reload)
 ```
 
-## Hot-load libraries
-`add-libs` function from the `clojure.tools.deps.alpha` library is an unofficial approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
-
-See [hotload of libraries](/alternative-tools/clojure-cli/hotload-libraries.md) for details.
-
 
 ## Troubleshooting
 
-If errors occur when loading the namespace with require, the `:verbose` option will show all the namespaces that are loaded.  This may show issues or help track down conflicting namespaces or functions.
+If errors occur when loading or reloading the namespace with require, the `:verbose` option will show all the namespaces that are loaded.  This may show issues or help track down conflicting namespaces or functions.
 
 ```clojure
 (require '[practicalli.status-monitor-service] :reload :verbose)
 ```
+
+
+## Hotload libraries
+
+`add-libs` function from the `clojure.tools.deps.alpha` library is an unofficial approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
+
+See [hotload of libraries](/alternative-tools/clojure-cli/hotload-libraries.md) for details.
