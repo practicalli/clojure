@@ -48,8 +48,9 @@ The `require` function loads all the vars (def, defn, etc) definitions from the 
 ## Reloading the namespace
 When changes are made to a namespace in the source code file, those changes can be loaded into the repl by reloading the namespace the change was made in.
 
-`(require '[fully.qualified.namespace] :reload)`
-
+```clojure
+(require '[fully.qualified.namespace] :reload)
+```
 
 ## Hot-load libraries
 `add-libs` function from the `clojure.tools.deps.alpha` library is an unofficial approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
