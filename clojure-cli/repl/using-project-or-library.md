@@ -9,20 +9,33 @@ Run the REPL in the root of the project with a `deps.edn` file
 
 
 {% content "library" %}
+
 A library needs to be included as a dependency in order to use it in the REPL.
 
 Using an alias
 ```bash
-clojure -A:database/next.jdbc:database/h2
+clojure -A:database/h2
 ```
 
 Alternatively, specify the library names on the command line using the `--deps` argument
 
-Or add the library as a dependency to a project and run the REPL from the root of that project.
+Or add libraries to the `deps.edn` configuration file in the root of the project.  Add the library to the `:deps` key or as an alias if use only for development.
+
+```clojure
+{:paths ["src" "resources"]
+
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.3"}}
+
+ :aliases
+ {
+  :database/h2
+  {:extra-deps {com.h2database/h2                 {:mvn/version "2.1.210"}
+                com.github.seancorfield/next.jdbc {:mvn/version "1.2.772"}}}
+ #_()}
+```
 
 {% endtabs %}
-
-
 
 
 ## Start the REPL and load the project
