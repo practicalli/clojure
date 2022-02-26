@@ -1,30 +1,34 @@
 # Data structures
 
-  Clojure is a very data centric language.  It has many functions for manipulating data structures and has some very powerful built in data structures, referred to generically as collections.
+Clojure is a very data-centric language.  `clojure.core` contains a great number of functions for manipulating data structures, especially the immutable built in data structures, referred to generically as collections.
 
-  Collections can take any types of elements and types can be mixed.  Collections can even have other collections as an element.
+Collections can take any types of elements and types can be mixed.  Collections can even have other collections as an element.
 
-  Data structures are passed as arguments to function (either in part or in full) and functions often return data structures as a result.
-
-## Built-in data structures
-
-So far, we've dealt with discrete pieces of data: one number, one string, one value. When programming, it is more often the case that you want to work with groups of data. Clojure has great facilities for working with these groups, or _collections_, of data. Not only does it provide four different types of data structures, but it also provides a uniform way to use all of these data structures together.
-
-Clojure's built in persistent data structures:
+Collections are passed as arguments to function (either in part or in full) and functions often return collections as a result.
 
 
-There are 4 commonly used built-in data structures which are used to model information with Clojure
+## Built-in collections
 
-| Name     | syntax           | Description                                                                                               |
-| :-----   | :-------         | :------------                                                                                             |
-| list     | `()`             | A linked list, optomised for sequential access from the front (head), first element read as function call |
-| vector   | `[]`             | An indexed array optimised for random access                                                              |
-| hash-map | `{:key "value"}` | Associative collection of key / value pairs, keys must be unique                                          |
-| set      | `#{}`            |  a unique set of values                                                                                                         |
+Values can be represented as a collection of discrete pieces of data: number, string, boolean value.
+
+Clojure has great facilities for working with collections of data, providing many types of data structures and a uniform way to use all of these data structures.
+
+The 4 commonly used built-in data structures
+
+| Name     | syntax           | Description                                                                          |
+|:---------|:-----------------|:-------------------------------------------------------------------------------------|
+| list     | `()`             | A linked list, optomised for sequential access from the front (head)                 |
+| vector   | `[]`             | An indexed array optimised for random access                                         |
+| hash-map | `{:key "value"}` | Associative collection of key / value pairs, keys must be unique. Keys are the index |
+| set      | `#{}`            | A unique set of values                                                               |
+
+Vector and hash-map are the most commonly collections used to model information with Clojure.
+
+Lists are not explicitly used to model data, although data may be returned by a function as a list (referred to as a sequence)
 
 
+## Collection Characteristics
 
-## Characters
 Clojure data structure share the following characteristics:
 
 * **Immutable** - once a data structure is defined it cannot be changed
