@@ -405,6 +405,7 @@
 * [Java Interoperability](basic-clojure/java-interop.md)
     * [More Java fun](basic-clojure/more-java-fun.md)
 
+* [Java Virtual Machine](reference/jvm/index.md)
 
 
 <!--     * [Core.async](reference/core-async.md) -->
