@@ -407,6 +407,8 @@
 
 * [Java Virtual Machine](reference/jvm/index.md)
     * [Common Options](reference/jvm/common-options.md)
+    * [Profile tools](reference/jvm/profile-tools.md)
+
 
 
 <!--     * [Core.async](reference/core-async.md) -->
