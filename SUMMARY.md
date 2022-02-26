@@ -406,6 +406,7 @@
     * [More Java fun](basic-clojure/more-java-fun.md)
 
 * [Java Virtual Machine](reference/jvm/index.md)
+    * [Common Options](reference/jvm/common-options.md)
 
 
 <!--     * [Core.async](reference/core-async.md) -->
