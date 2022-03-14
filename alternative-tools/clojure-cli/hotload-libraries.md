@@ -1,30 +1,33 @@
 ![Hotload libraries into a Clojure REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png)
 
 ## Hotload Libraries into a running REPL
+
 Avoid restarting the REPL when using a new library for a project by using the `add-libs` function from `clojure.tools.deps.alpha`.
 
 `add-libs` will "hotload" one or more libraries into a running REPL so that any namespace from those libraries can be required as if the dependency had been added to the project configuration before the REPL started.
 
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
-> #### WARNING::WARNING: Not officially supported approach
-> The `add-libs` function is not officially part the Clojure CLI tools.  The code design may change so this approach should be used with caution and not relied upon in your workflow.
+> #### WARNING:: Add-libs is an experimental feature
+> The `add-libs` function is regarded as an experimental feature of Clojure tools.deps.alpha. The add-libs implementation and function signature may change in future.
 
 {% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
 
 {% content "practicalli" %}
 
 ## Use alias for tools.deps.alpha dependency
-[Install practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) which included the `:alpha/hotload-libs` alias which adds the `clojure.tools.deps.alpha.repl` library as an extra dependency.
+
+[Install practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) which included the `:lib/hotload` alias which adds the `clojure.tools.deps.alpha.repl` library as an extra dependency.
 
 
 {% content "manual" %}
 
 ## Add alias for tools.deps.alpha
-Edit the project `deps.edn` configuration and add an `:alpha/hotload-libs` alias for the `clojure.tools.deps.alpha.repl` library.
+
+Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.
 
 ```clojure
-  :alpha/hotload-libs
+  :lib/hotload
   {:extra-deps {org.clojure/tools.deps.alpha
                {:git/url "https://github.com/clojure/tools.deps.alpha"
                 :sha     "d77476f3d5f624249462e275ae62d26da89f320b"}}}
@@ -36,10 +39,11 @@ Edit the project `deps.edn` configuration and add an `:alpha/hotload-libs` alias
 
 
 ## Hotload libraries in a terminal REPL UI
+
 Start a REPL session using the Clojure CLI tools with the hot-load alias, including rebel readline for an enhance REPL UI.
 
 ```bash
-clojure -M:alpha/hotload-libs:repl/rebel
+clojure -M:lib/hotload:repl/rebel
 ```
 
 The required libraries for the `:hotload-libs` alias are downloaded (if not already available locally in `~/.m2` maven cache on first run).
@@ -98,7 +102,7 @@ The hiccup expression returns a string of the html code.
 Start a REPL in a terminal and use the connect command of the editor to connect the editor to the REPL process.  For example, run a Rebel UI repl in the terminal with the `clojure.tools.deps.alpha` library included
 
 ```bash
-clojure -M:alpha/hotload-libs:repl/rebel-nrepl
+clojure -M:lib/hotload:repl/rebel-nrepl
 ```
 
 Alternatively, use the editors jack-in function to start a REPL process and connect, ensuring that an alias is loading the `clojure.tools.deps.alpha` library.
@@ -109,7 +113,7 @@ Use a rich comment block to hold the code that hot-loads libraries so that code 
 
 ```clojure
 (comment
-  ;; run REPL with :alpha/hotload-libs alias
+  ;; run REPL with :lib/hotload alias
   (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
 
   ;; hotload the libraries required for the server
