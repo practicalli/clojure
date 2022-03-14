@@ -276,6 +276,8 @@
         * [String replace](reference/standard-library/regular-expressions/string-replace-with-regex.md)
         * [String Split](reference/standard-library/regular-expressions/string-split-with-regex.md)
         * [Sub-expression matches](reference/standard-library/regular-expressions/sub-expression-matches.md)
+    * [Java Interoperability](reference/clojure-syntax/java-interop.md)
+        * [More Java fun](reference/clojure-syntax/more-java-fun.md)
 
 <!-- Move syntax into a reference section and use projects to expose audience to Clojure syntax -->
 <!-- Basic syntax and calling functions -->
@@ -402,8 +404,6 @@
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
 
-* [Java Interoperability](basic-clojure/java-interop.md)
-    * [More Java fun](basic-clojure/more-java-fun.md)
 
 * [Java Virtual Machine](reference/jvm/index.md)
     * [Common Options](reference/jvm/common-options.md)
