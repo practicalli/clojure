@@ -1,3 +1,6 @@
+![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-terminal-ui.png)
+
+
 # Hotload libraries in a terminal REPL UI
 
 Start a REPL session using the Clojure CLI tools with the hot-load alias, including rebel readline for an enhance REPL UI.
