@@ -1,3 +1,5 @@
+![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png)
+
 # Hotload libraries in a Clojure editor
 
 Connect or jack-in to a Clojure REPL that has tools.deps.alpha added as a dependencies, preferably via an alias.
