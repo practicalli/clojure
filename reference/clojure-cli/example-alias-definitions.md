@@ -1,4 +1,7 @@
-# Clojure Tools - Example alias definitions
+# Clojure Tools - Common alias definitions
+
+
+<!-- TODO: refactor clojure CLI example aliases  -->
 
 ## Task: Run a simple terminal REPL
 `clojure` and `clj` (requires rlwrap) will run a REPL if given no other arguments.
@@ -29,7 +32,7 @@ The dependencies and paths will be merged from the alias from left to right, wit
 ## Task: Create a new project from template
 The `clj-new` community tool can be used to create a Clojure / ClojureScript project, using a template to provide a project structure and example source code and tests.
 
-Using the `-main-opts` approach, an alias for `clj-new` would be defined as follows
+Using the `:main-opts` approach, an alias for `clj-new` would be defined as follows
 
 ```clojure
   :project/new

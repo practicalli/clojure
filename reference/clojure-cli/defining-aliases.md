@@ -1,9 +1,15 @@
-# Defining aliases to do more with Clojure tools
+# Clojure CLI: Defining aliases
+<!-- TODO: refactor Clojure CLI defining aliases -->
+
+Clojure CLI tools provide a very flexible way to run Clojure, using aliases to include community libraries and tools to enhance clojure projects and provide independent tools. Understand the execution options (exec-opts) on the command line options ensures an effective use of Clojure CLI tools.
+
+Aliases are used to add (or remove) configuration from the
+
 Aliases are used with Clojure tools to provide additional configuration when explicitly added to the `clojure` command.
 
 Aliases can be used to modify:
 
-* the classpath and dependencies included, by adding extra dependencies and paths or removing them
+* the classpath and dependencies included, by adding or removing dependencies and paths
 * providing a simple way to configure community tools, such as rebel readline, clj-new, depstar, etc.
 
 Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
@@ -20,21 +26,33 @@ Clojure CLI tool has several options that determine how aliases and other config
 * define a function or main namespace to run, along with arguments
 
 ## Clojure CLI main flag options
-| Flag            | Purpose                                                  | Config used                                          |
-|-----------------|----------------------------------------------------------|------------------------------------------------------|
-| `-M`            | Run Clojure project with clojure.main                    | deps, path, `:main-opts` & command line args         |
-| `-P`            | Prepare / dry run (CI servers, Containers)               | deps, path                                           |
-| `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-J`            | Java Virtual Machine specific options (memory size, etc) |                                                      |
+
+| Flag | Purpose                                                                             |
+|------|-------------------------------------------------------------------------------------|
+| `-A` | add paths and dependencies when running a REPL (do not include :main-opts in alias) |
+| `-M` | Run `-main` function from a specified namespace with clojure.main                                               |
+| `-P` | Prepare / dry run (CI servers, Containers)                                          |
+| `-X` | Execute a qualified function, optional default arguments                            |
+| `-T` | Install / Run a tool by name (or use alias)                                         |
+| `-J` | Java Virtual Machine specific options (memory size, etc)                            |
+
+
 
 * deps = `:deps`, `:extra-deps`, `replace-deps`
 * path = `:path`, `:extra-paths`, `replace-paths`
 
+-A to configure paths and dependencies when running the Clojure CLI tools REPL
 
+-M using clojure.main to run the -main function of a Clojure project or tool, using the -m flag to specify the namespace containing -main (clojure.main has other features too)
+
+-X for running any fully qualified function from a Clojure project or tool
+
+-P a dry run, downloading all dependencies (must use flag in first position)
+
+-T running a tool separate from a Clojure project (class path)
 
 ## Using an alias
+
 An alias is used via the `-M` option to the `clojure` command:
 
 ```clojure
@@ -42,15 +60,17 @@ clojure -M:qualified/alias-name
 ```
 
 Multiple aliases can be used together
+
 ```clojure
 clojure -M:env/test:test/runner
 ```
 
 > #### Hint::Only one main namespace
-> If multiple aliases set a main namespace, only the last alias in the chain calls has its main namespace called, e.g. `clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl` will call the main namespace of `:middleware/nrebl`.
+> If multiple aliases set a main namespace, only the last alias in the chain has its main namespace called, e.g. `clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl` will call the main namespace of `:middleware/nrebl`.
 
 
 ## An alias for a community tool
+
 Use the rebel community tool by including its alias.
 
 ```clojure
@@ -69,6 +89,7 @@ This alias adds the library dependency for the rebel readline project and define
 
 
 ## Including paths, deps and main-opts
+
 The Cognitect Lab test runner included the `test` directory in the class path, so test code will be included when run with this alias.
 
 The test runner dependency is pulled from a specific commit shared on GitHub (defined as a Git SHA).
@@ -89,6 +110,7 @@ The main namespace is set to that library and the `-main` function is called whe
 ```
 
 ## Stand-alone tools
+
 When a community tool does not require any of the project paths or dependencies to operate, `:replace-paths` and `:replace-deps` should be used when defining an alias.  These configurations only used paths and dependencies defined within the alias itself, minimizing the resources used to run the tool, improving the speed of using these tools.
 
 ```clojure
@@ -97,8 +119,10 @@ When a community tool does not require any of the project paths or dependencies 
    :main-opts    ["-m" "clj-new.create"]}
 ```
 
+<!-- TODO: Clojure CLI defining aliases: updated project/new alias definition -->
 
 ## Clojure Exec
+
 With Clojure CLI tools version 1.10.1.697 the `-X` flag was introduced using aliases with [Clojure exec](https://insideclojure.org/2020/07/28/clj-exec/).
 
 The configuration should define a fully qualified function that runs the tool.
