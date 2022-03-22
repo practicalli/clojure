@@ -256,10 +256,10 @@
 ## Reference
     <!-- replace repl.it with klipse - repl.it loads very slowly -->
     <!-- * [Quick start](quickstart/index.md) -->
-* [Clojure CLI Tools](reference/clojure-cli-tools/index.md)
-    * [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md)
-    * [Defining Aliases](reference/clojure-cli-tools/defining-aliases.md)
-    * [Example Alias definitions](reference/clojure-cli-tools/example-alias-definitions.md)
+* [Clojure CLI](reference/clojure-cli/index.md)
+    <!-- * [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md) -->
+    * [Defining Aliases](reference/clojure-cli/defining-aliases.md)
+    * [Example Alias definitions](reference/clojure-cli/example-alias-definitions.md)
     <!--
         * [Common Tasks](clojure-cli/configure/common-tasks.md)
         * [Defining aliases](clojure-cli/configure/defining-aliases.md)

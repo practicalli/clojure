@@ -14,60 +14,65 @@ https://youtu.be/u5VoFpsntXc
 
 
 ## Common tasks for Clojure development
+
 Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).
 
-| Task                                        | Command                                                 | Definition  |
-|---------------------------------------------+---------------------------------------------------------+-------------|
-| Basic terminal UI REPL                      | `clojure` or `clj` if `rlwrap` binary installed         | Clojure CLI |
-| Enhanced terminal UI REPL (Rebel and nREPL) | `clojure -M:repl/rebel`                                 | Practicalli |
-| Create project (clojure exec)               | `clojure -T:new :template app :name practicalli/my-app` | Practicalli |
-| Run unit tests                              | `clojure -X:test/runner`                                | Practicalli |
-| Run the project (clojure.main)              | `clojure -M -m domain.main-namespace`                   | Clojure CLI |
-| Run the project (clojure.exec)              | `clojure -X:project/run -m domain.main-namespace`       | Project     |
-| Find libraries (mvn & git)                  | `clojure -M:project/find-deps library-name`             | Practicalli |
-| Download dependencies                       | `clojure -P`  (plus optional aliases)                   | CLojure CLI |
-| Check for new dependency versions           | `clojure -T:project/outdated`                           | Practicalli |
-| Package library                             | `clojure -X:project/jars`                               | Practicalli |
-| Deploy library locally                      | `clojure -X:deps mvn-install`                           | Clojure CLI |
-| Package application                         | `clojure -X:project/uberjar`                            | Project     |
+| Task                                           | Command                                                                     | Defined In  |
+|------------------------------------------------|-----------------------------------------------------------------------------|-------------|
+| Basic terminal UI REPL                         | `clojure` or `clj` if `rlwrap` binary installed                             | Clojure CLI |
+| Enhanced terminal UI REPL (Rebel and nREPL)    | `clojure -M:repl/rebel`                                                     | Practicalli |
+| Create project (clojure exec)                  | `clojure -T:project/new :template app :name domain/appname :args '["+h2"]'` | Practicalli |
+| Run unit tests / watch for changes             | `clojure -X:test/run` or `clojure -X:test/watch`                            | Practicalli |
+| Run the project (clojure.main)                 | `clojure -M -m domain.main-namespace`                                       | *No Alias*  |
+| Run a function from the project (clojure.exec) | `clojure -X:run/greet`                                                      | Project     |
+| Find libraries (mvn & git)                     | `clojure -M:search/library library-name`                                    | Practicalli |
+| Download dependencies                          | `clojure -P`  (plus optional execution flags with aliases)                  | CLojure CLI |
+| Check for new dependency versions              | `clojure -T:search/outdated`                                                | Practicalli |
+| Package library                                | `clojure -X:build/jars`                                                     | Practicalli |
+| Deploy library locally                         | `clojure -X:deps mvn-install`                                               | Clojure CLI |
+| Package application                            | `clojure -X:build/uberjar`                                                  | Project     |
+| Check code for unused vars                     | `clojure -X:search/unused`                                                  | Practicalli |
 
 Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
 
+`clojure -M:lib/hotload:repl/rebel` runs a rich terminal UI REPL which can [use add-libs to hotload dependencies into a running REPL process](/alternative-tools/clojure-cli/hotload-libraries.md).
 
-## What version of Clojure CLI tools are installed?
 
-`clojure -Sdescribe` will show you the version of the Clojure CLI tools that is currently installed.
+## Clojure CLI version
+
+`clojure -Sdescribe` shows the version of Clojure CLI currently installed.
 
 ![clojure cli tools - describe install version](/images/clojure-cli-tools-install-version-describe.png)
 
-> `clojure -Sverbose` will also show the version of Clojure CLI tools used and then run a REPL
+The `-Sverbose` flag shows the Clojure CLI version and basic configuration before running any task, e.g. `clojure -Sverbose -M:repl/rebel` will show the Clojure CLI details and then run Rebel terminal UI.
 
 
 ## Clojure CLI execution option flags
 
-The most used execution option flags for the `clojure` command
+The execution option flags for the `clojure` command define how to run Clojure code.
 
-| Flag            | Purpose                                                  | Config used                                          |
-|-----------------|----------------------------------------------------------|------------------------------------------------------|
-| `-M`            | Run Clojure project with clojure.main                    | deps, path, `:main-opts` & command line args         |
-| `-P`            | Prepare / dry run (CI servers, Containers)               | deps, path                                           |
-| `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-T`            | Run a tool independently from a project configurations   | `:exec-fn`, `:exec-args` & :key val args             |
-| `-J`            | Java Virtual Machine specific options (heap size, etc)   |                                                      |
+| Flag | Purpose                                                        |
+|------|----------------------------------------------------------------|
+| `-A` | Pass alias to built-in terminal UI REPL (`clojure` or `clj`)   |
+| `-M` | Run Clojure project with clojure.main                          |
+| `-P` | Prepare / dry run (Build scripts, CI servers, Containers)      |
+| `-X` | Execute a fully qualified function, optional default arguments |
+| `-T` | Run a tool independently from a project configurations         |
+| `-J` | Java Virtual Machine specific options (heap size, etc)         |
 
-* deps = `:deps`, `:extra-deps`, `replace-deps`
-* path = `:path`, `:extra-paths`, `replace-paths`
 
 > #### Hint::Which flag to use?
-> The -M flag should work with all community tools, at they are typically support the Clojure.main approach with free-form string options as arguments.
+> The `-M` flag is used when calling a `-main` function from a specified namespace. Arguments can be passed as free-form string options.
 >
-> The `-X` flag should be used for the new built-in aliases and for any tools supporting Clojure exec approach, with arguments passed as key/value pairs.
-> More tools should start adopting the `-X` flag and supporting key/value arguments in future.
+> The `-X` flag is used to call a fully qualified function, which can be any function on the command line. Arguments are passed as key/value pairs and strings / collection syntax should be escaped with single quotes.  `-X` can use `:replace-deps` and `:replace-paths` values to remove project `:deps` and `:paths`
+>
+> `-T` flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.
+>
+> Read the article: [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/)
+
 
 ## Which version of Clojure
 
-Evaluate `*clojure-version*` in a REPL to see which version of the Clojure language is currently being used.
+Evaluate `*clojure-version*` in a REPL shows which version of the Clojure language is currently being used.
 
-Including `org.clojure/clojure` in either a project or user level `deps.edn` file allows specification of a particular version of the Clojure language to use.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
+Including `org.clojure/clojure` in the project `deps.edn` file allows specification of a particular version of the Clojure language.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
