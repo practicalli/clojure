@@ -73,6 +73,6 @@ The execution option flags for the `clojure` command define how to run Clojure c
 
 ## Which version of Clojure
 
-Evaluate `*clojure-version*` in a REPL to see which version of the Clojure language is currently being used.
+Evaluate `*clojure-version*` in a REPL shows which version of the Clojure language is currently being used.
 
-Including `org.clojure/clojure` in either a project or user level `deps.edn` file allows specification of a particular version of the Clojure language to use.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
+Including `org.clojure/clojure` in the project `deps.edn` file allows specification of a particular version of the Clojure language.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
