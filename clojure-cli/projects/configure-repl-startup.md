@@ -151,7 +151,8 @@ Now define code in the `dev/dev.clj` file that controls the component life-cycle
 
 
 ## Example project with component life-cycle
-{% tabs mount="Mount", integrant="Integrant", component="Component" %}
+
+{% tabs mount="Mount", integrant="Integrant REPL", component="Component" %}
 
 <!-- Mount example -->
 {% content "mount" %}
@@ -165,7 +166,7 @@ Require the mount namespace and the main namespace for the project, which should
            [practicalli.app.main])
 ```
 
-
+Define a start function to start all services
 
 ```clojure
 (defn start []
@@ -192,6 +193,7 @@ The `stop` function stops all components, removing all non-persistent state.
 ```
 
 The reset function that calls `stop`, refreshes the namespaces so that stale definitions are removed and starts all components (loading in any new code).
+
 ```clojure
 (defn reset
   "Stop all states defined by defstate.
@@ -210,7 +212,8 @@ The reset function that calls `stop`, refreshes the namespaces so that stale def
 <!-- Integrant example -->
 {% content "integrant" %}
 
-TODO: [pull requests accepted]({{ book.P9IPullRequestsUrl }})
+See the [detailed example of Integrant REPL in Practicalli Clojure Web Services](https://practical.li/clojure-web-services/repl-driven-development/integrant-repl/)
+
 
 <!-- Component example -->
 {% content "component" %}
