@@ -18,6 +18,7 @@ The `user.clj` is typically placed in a `dev` folder within the root of the proj
 
 
 ## Create a `dev/user.clj` file and `:env/dev` alias
+
 Create a `dev/user.clj` file with a namespace called `user`.
 
 `user.clj` should include a namespace definition
@@ -47,6 +48,7 @@ clojure -M:env/dev:repl/rebel
 
 
 ## Requiring namespaces
+
 By requiring a namespace in the `dev/user.clj` file, the code defined in that namespace will be loaded into the REPL once started.
 
 Add a require expression to the namespace definition in `dev/user.clj`
@@ -81,6 +83,7 @@ An alias can be used in the require expression, useful if multiple functions fro
 
 
 ## Fuzzy searching for library dependencies - deps.edn
+
 The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
 
 {% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
@@ -131,6 +134,7 @@ Call the `(find-deps/deps "library-name")` to return a map of the matching depen
 
 
 ## Starting Component Life-cycle Services
+
 Clojure has several library to manage the life-cycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
 
 Example component life-cycle libraries included
@@ -178,6 +182,7 @@ Define a start function to start all services
 ```
 
 The `go` function calls `start` and marks all components as ready.
+
 ```clojure
 (defn go
   "Start all states defined by defstate"
