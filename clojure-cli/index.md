@@ -49,26 +49,27 @@ The `-Sverbose` flag shows the Clojure CLI version and basic configuration befor
 
 ## Clojure CLI execution option flags
 
-The most used execution option flags for the `clojure` command
+The execution option flags for the `clojure` command define how to run Clojure code.
 
-| Flag            | Purpose                                                  | Config used                                          |
-|-----------------|----------------------------------------------------------|------------------------------------------------------|
-| `-M`            | Run Clojure project with clojure.main                    | deps, path, `:main-opts` & command line args         |
-| `-P`            | Prepare / dry run (CI servers, Containers)               | deps, path                                           |
-| `-P -M:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-P -X:aliases` | Prepare / dry run including alias deps and paths         | deps, path                                           |
-| `-X`            | Execute a qualified function, optional default arguments | deps, path, `:exec-fn`, `:exec-args` & :key val args |
-| `-T`            | Run a tool independently from a project configurations   | `:exec-fn`, `:exec-args` & :key val args             |
-| `-J`            | Java Virtual Machine specific options (heap size, etc)   |                                                      |
+| Flag | Purpose                                                        |
+|------|----------------------------------------------------------------|
+| `-A` | Pass alias to built-in terminal UI REPL (`clojure` or `clj`)   |
+| `-M` | Run Clojure project with clojure.main                          |
+| `-P` | Prepare / dry run (Build scripts, CI servers, Containers)      |
+| `-X` | Execute a fully qualified function, optional default arguments |
+| `-T` | Run a tool independently from a project configurations         |
+| `-J` | Java Virtual Machine specific options (heap size, etc)         |
 
-* deps = `:deps`, `:extra-deps`, `replace-deps`
-* path = `:path`, `:extra-paths`, `replace-paths`
 
 > #### Hint::Which flag to use?
-> The -M flag should work with all community tools, at they are typically support the Clojure.main approach with free-form string options as arguments.
+> The `-M` flag is used when calling a `-main` function from a specified namespace. Arguments can be passed as free-form string options.
 >
-> The `-X` flag should be used for the new built-in aliases and for any tools supporting Clojure exec approach, with arguments passed as key/value pairs.
-> More tools should start adopting the `-X` flag and supporting key/value arguments in future.
+> The `-X` flag is used to call a fully qualified function, which can be any function on the command line. Arguments are passed as key/value pairs and strings / collection syntax should be escaped with single quotes.  `-X` can use `:replace-deps` and `:replace-paths` values to remove project `:deps` and `:paths`
+>
+> `-T` flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.
+>
+> Read the article: [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/)
+
 
 ## Which version of Clojure
 
