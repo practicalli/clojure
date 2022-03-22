@@ -2,8 +2,10 @@
 
 Clojure is packaged as a library (Java ARchive), meaning any version of Clojure can easily be used with a project.
 
-The Clojure CLI will download the Clojure library and provides essential tools for Clojure development.
+The Clojure CLI will download the Clojure library and provide essential tools for Clojure development.
 
+
+## Install Clojure CLI
 
 <!-- Operating System specific instructions -->
 {% tabs linux="Linux", homebrew="Homebrew", windows="Windows" %}
@@ -11,14 +13,15 @@ The Clojure CLI will download the Clojure library and provides essential tools f
 <!-- Ubuntu install -->
 {% content "linux" %}
 
+
 Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux)
 
 The instructions should be as follows, possibly with a newer version
 
 ```bash
-curl -O https://download.clojure.org/install/linux-install-1.10.3.1040.sh
-chmod +x linux-install-1.10.3.1040.sh
-sudo ./linux-install-1.10.3.1040.sh
+curl -O https://download.clojure.org/install/linux-install-1.10.3.1087.sh
+chmod +x linux-install-1.10.3.1087.sh
+sudo ./linux-install-1.10.3.1087.sh
 ```
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
@@ -33,7 +36,7 @@ Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure
 brew install clojure/tools/clojure
 ```
 
-Use Homebrew to update an install of Clojure CLI tools to the latest release
+Use Homebrew to update an install of Clojure CLI to the latest release
 ```bash
 brew upgrade clojure/tools/clojure
 ```
@@ -43,6 +46,7 @@ brew upgrade clojure/tools/clojure
 
 <!-- Windows install with scoop.sh -->
 {% content "windows" %}
+
 For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are comfortable using a Unix system on the command line.
 
 Alternatively install [scoop.sh](https://scoop.sh/), a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download) or greater is required. Follow the [scoop-clojure getting started guide](https://github.com/littleli/scoop-clojure/wiki/Getting-started), summarized here:
@@ -62,12 +66,12 @@ scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
 scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kondo vscode coreutils windows-terminal
 ```
 
-
 {% endtabs %}
 <!-- End of Operating System specific instructions -->
 
-## Check CLI tools version
-`clojure -Sdescribe` confirms that Clojure CLI tools are installed and will show the version of the tool.  Use the latest version of Clojure CLI tools, or at least version 1.10.1.697.
+## Check CLI version
+
+`clojure -Sdescribe` confirms Clojure CLI is installed and will show the version of the tool.  Use the latest version of Clojure CLI tools, or at least version 1.10.1.697.
 
 ```bash
 clojure -Sdescribe
@@ -76,7 +80,7 @@ clojure -Sdescribe
 The output of the command includes the version of Clojure in the `:version` key
 
 ```bash
-{:version "1.10.3.1040"
+{:version "1.10.3.1087"
  :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.clojure/deps.edn" ]
  :config-user "/home/practicalli/.clojure/deps.edn"
  :config-project "deps.edn"
@@ -89,13 +93,14 @@ The output of the command includes the version of Clojure in the `:version` key
  :repl-aliases ""}
 ```
 
+> `clojure -Sversion` will also show the version of Clojure CLI being used, before running a REPL or other Clojure code specified.
+
+
 ## User Configuration files
 
-Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.
+Clojure CLI creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g.  `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure`.
 
-If `XDG_CONFIG_HOME` is set by your operating system then its value over-rides the default location, e.g. `$HOME/.config/.clojure`
-
-`CLJ_CONFIG` can be used to over-ride all other location settings
+`CLJ_CONFIG` can be used to over-ride the location the path.
 
 > Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:config-user` value.
 
