@@ -73,15 +73,27 @@ Use the fully quallified function name from the required namespace can be called
 ## Fuzzy searching for library dependencies - deps.edn
 The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
 
-Add the find-deps project to the `env/dev` alias as an `:extra-deps` (`:env/dev` is available in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}))
+{% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
+
+{% content "practicalli" %}
+
+The `:search/libraries` in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }})) will add the find-deps library.
+
+{% content "manual" %}
+
+Add the find-deps project to and alias called `:search/libraries`, either in the project or user level `deps.edn` file.
 
 ```clojure
-  :env/dev
-  {:extra-paths ["dev"]
-   :extra-deps  {find-deps/find-deps
-                 {:git/url "https://github.com/hagmonk/find-deps"
-                  :sha     "6fc73813aafdd2288260abb2160ce0d4cdbac8be"}}}
+  :search/libraries
+  {:extra-deps
+   {find-deps/find-deps {:git/url "https://github.com/hagmonk/find-deps"
+                         :git/sha "9bf23a52cb0a8190c9c2c7ad1d796da802f8ce7a"}}
+   :main-opts ["-m" "find-deps.core"]}
 ```
+
+{% endtabs %}
+
+
 
 Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
 
@@ -90,15 +102,22 @@ Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `de
   (:require [find-deps.core :as find-deps]))
 ```
 
-Start a REPL using the `:env/dev` alias.
+Start a REPL using the `:env/dev` and `:search/libraries` aliases.
 
-To start a Rebel REPL with `:env/dev` use the following command in a terminal
+To start a Rebel REPL, use the following command in a terminal
 
 ```bash
-clojure -A:env/dev:repl/rebel
+clojure -A:env/dev:search/libraries:repl/rebel
 ```
 
-In the REPL, call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
+Call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
+
+```clojure
+(comment
+  (find-deps/deps "library-name")
+  (find-deps/print-deps "library name")
+)
+```
 
 
 ## Starting Component Life-cycle Services
