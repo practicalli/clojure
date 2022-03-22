@@ -70,6 +70,16 @@ Use the fully quallified function name from the required namespace can be called
 (practicalli.project-namespace/-main)
 ```
 
+An alias can be used in the require expression, useful if multiple functions from a namespace are to be called
+
+```clojure
+(ns user
+  (:require [practicalli.service :as service]))
+
+(service/-main)
+```
+
+
 ## Fuzzy searching for library dependencies - deps.edn
 The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
 
