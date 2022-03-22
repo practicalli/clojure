@@ -38,13 +38,13 @@ Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/
 `clojure -M:lib/hotload:repl/rebel` runs a rich terminal UI REPL which can [use add-libs to hotload dependencies into a running REPL process](/alternative-tools/clojure-cli/hotload-libraries.md).
 
 
-## What version of Clojure CLI tools are installed?
+## Clojure CLI version
 
-`clojure -Sdescribe` will show you the version of the Clojure CLI tools that is currently installed.
+`clojure -Sdescribe` shows the version of Clojure CLI currently installed.
 
 ![clojure cli tools - describe install version](/images/clojure-cli-tools-install-version-describe.png)
 
-> `clojure -Sverbose` will also show the version of Clojure CLI tools used and then run a REPL
+The `-Sverbose` flag shows the Clojure CLI version and basic configuration before running any task, e.g. `clojure -Sverbose -M:repl/rebel` will show the Clojure CLI details and then run Rebel terminal UI.
 
 
 ## Clojure CLI execution option flags
