@@ -63,7 +63,7 @@ Require loads all the expressions into the REPL, so functions are immediately av
 
 ## Calling functions
 
-Use the fully quallified function name from the required namespace can be called, to start the application for example.
+Use the fully qualified function name from the required namespace can be called, to start the application for example.
 
 ```clojure
 (ns user
