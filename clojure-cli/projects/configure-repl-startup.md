@@ -1,10 +1,15 @@
 # Configure REPL on Startup
-A Clojure REPL starts in the `user` namespace by default.  Clojure will automatically load code from a `user.clj` file into the REPL to carry out common startup tasks.
 
-* load project code into the REPL by requiring namespaces
+A Clojure REPL starts in the `user` namespace by default.  Clojure automatically loads code from a `user.clj` file when found on the class path.
+
+The `user.clj` file typically contains tools to support development, such as:
+
+* loading project code into the REPL by requiring namespaces
 <!-- * set the default namespace with `in-ns` -->
 * call functions to run an application or service
 * start components (i.e for mount, component, integrant)
+
+The `user.clj` is typically placed in a `dev` folder within the root of the project, to keep it separated from production code.
 
 > #### HINT:: Example project
 > [practicalli/clojure-configure-repl](https://github.com/practicalli/clojure-configure-repl) project contains example code for configuring the REPL start up
@@ -13,6 +18,7 @@ A Clojure REPL starts in the `user` namespace by default.  Clojure will automati
 
 
 ## Create a `dev/user.clj` file and `:env/dev` alias
+
 Create a `dev/user.clj` file with a namespace called `user`.
 
 `user.clj` should include a namespace definition
@@ -29,9 +35,9 @@ Create a `dev/user.clj` file with a namespace called `user`.
   {:extra-paths ["dev"]}
 ```
 
-Running a Clojure REPL with the `-A:env/dev` alias will make the `dev/user.clj` file available to be loaded by the REPL.
+Running a Clojure REPL with the `:env/dev` alias will add the `dev/user.clj` file to the class path and be loaded by the REPL.
 
-In this example the `dev/` path is added to the project and then the REPL is run using rebel readline.
+In this example the `dev/` path is added to the project and then the REPL is run using Rebel.
 
 ```bash
 clojure -M:env/dev:repl/rebel
@@ -42,6 +48,7 @@ clojure -M:env/dev:repl/rebel
 
 
 ## Requiring namespaces
+
 By requiring a namespace in the `dev/user.clj` file, the code defined in that namespace will be loaded into the REPL once started.
 
 Add a require expression to the namespace definition in `dev/user.clj`
@@ -55,7 +62,8 @@ Require loads all the expressions into the REPL, so functions are immediately av
 
 
 ## Calling functions
-Functions from the required namespace can be called, to start the application for example.
+
+Use the fully quallified function name from the required namespace can be called, to start the application for example.
 
 ```clojure
 (ns user
@@ -64,18 +72,41 @@ Functions from the required namespace can be called, to start the application fo
 (practicalli.project-namespace/-main)
 ```
 
-## Fuzzy searching for library dependencies - deps.edn
-The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
-
-Add the find-deps project to the `env/dev` alias as an `:extra-deps` (`:env/dev` is available in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }}))
+An alias can be used in the require expression, useful if multiple functions from a namespace are to be called
 
 ```clojure
-  :env/dev
-  {:extra-paths ["dev"]
-   :extra-deps  {find-deps/find-deps
-                 {:git/url "https://github.com/hagmonk/find-deps"
-                  :sha     "6fc73813aafdd2288260abb2160ce0d4cdbac8be"}}}
+(ns user
+  (:require [practicalli.service :as service]))
+
+(service/-main)
 ```
+
+
+## Fuzzy searching for library dependencies - deps.edn
+
+The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
+
+{% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
+
+{% content "practicalli" %}
+
+The `:search/libraries` in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }})) will add the find-deps library.
+
+{% content "manual" %}
+
+Add the find-deps project to and alias called `:search/libraries`, either in the project or user level `deps.edn` file.
+
+```clojure
+  :search/libraries
+  {:extra-deps
+   {find-deps/find-deps {:git/url "https://github.com/hagmonk/find-deps"
+                         :git/sha "9bf23a52cb0a8190c9c2c7ad1d796da802f8ce7a"}}
+   :main-opts ["-m" "find-deps.core"]}
+```
+
+{% endtabs %}
+
+
 
 Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
 
@@ -84,18 +115,26 @@ Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `de
   (:require [find-deps.core :as find-deps]))
 ```
 
-Start a REPL using the `:env/dev` alias.
+Start a REPL using the `:env/dev` and `:search/libraries` aliases.
 
-To start a Rebel REPL with `:env/dev` use the following command in a terminal
+To start a Rebel REPL, use the following command in a terminal
 
 ```bash
-clojure -A:env/dev:repl/rebel
+clojure -A:env/dev:search/libraries:repl/rebel
 ```
 
-In the REPL, call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
+Call the `(find-deps/deps "library-name")` to return a map of the matching dependency, or `(find-deps/print-deps "library name")` to print dependencies in a table.
+
+```clojure
+(comment
+  (find-deps/deps "library-name")
+  (find-deps/print-deps "library name")
+)
+```
 
 
 ## Starting Component Life-cycle Services
+
 Clojure has several library to manage the life-cycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
 
 Example component life-cycle libraries included
@@ -116,7 +155,8 @@ Now define code in the `dev/dev.clj` file that controls the component life-cycle
 
 
 ## Example project with component life-cycle
-{% tabs mount="Mount", integrant="Integrant", component="Component" %}
+
+{% tabs mount="Mount", integrant="Integrant REPL", component="Component" %}
 
 <!-- Mount example -->
 {% content "mount" %}
@@ -130,7 +170,7 @@ Require the mount namespace and the main namespace for the project, which should
            [practicalli.app.main])
 ```
 
-
+Define a start function to start all services
 
 ```clojure
 (defn start []
@@ -142,6 +182,7 @@ Require the mount namespace and the main namespace for the project, which should
 ```
 
 The `go` function calls `start` and marks all components as ready.
+
 ```clojure
 (defn go
   "Start all states defined by defstate"
@@ -157,6 +198,7 @@ The `stop` function stops all components, removing all non-persistent state.
 ```
 
 The reset function that calls `stop`, refreshes the namespaces so that stale definitions are removed and starts all components (loading in any new code).
+
 ```clojure
 (defn reset
   "Stop all states defined by defstate.
@@ -175,7 +217,8 @@ The reset function that calls `stop`, refreshes the namespaces so that stale def
 <!-- Integrant example -->
 {% content "integrant" %}
 
-TODO: [pull requests accepted]({{ book.P9IPullRequestsUrl }})
+See the [detailed example of Integrant REPL in Practicalli Clojure Web Services](https://practical.li/clojure-web-services/repl-driven-development/integrant-repl/)
+
 
 <!-- Component example -->
 {% content "component" %}
