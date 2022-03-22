@@ -8,6 +8,7 @@ The `user.clj` file typically contains tools to support development, such as:
 <!-- * set the default namespace with `in-ns` -->
 * call functions to run an application or service
 * start components (i.e for mount, component, integrant)
+* adding development tools - [portal data inspector](/clojure-cli/data-browsers/portal.html#starting-portal-on-repl-startup)
 
 The `user.clj` is typically placed in a `dev` folder within the root of the project, to keep it separated from production code.
 
@@ -63,7 +64,7 @@ Require loads all the expressions into the REPL, so functions are immediately av
 
 ## Calling functions
 
-Use the fully quallified function name from the required namespace can be called, to start the application for example.
+Use the fully qualified function name from the required namespace can be called, to start the application for example.
 
 ```clojure
 (ns user
