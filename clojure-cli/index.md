@@ -35,6 +35,8 @@ Commands to use for common tasks and where their aliases are included in Clojure
 
 Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
 
+`clojure -M:lib/hotload:repl/rebel` runs a rich terminal UI REPL which can [use add-libs to hotload dependencies into a running REPL process](/alternative-tools/clojure-cli/hotload-libraries.md).
+
 
 ## What version of Clojure CLI tools are installed?
 
