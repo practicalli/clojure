@@ -1,10 +1,15 @@
 # Configure REPL on Startup
-A Clojure REPL starts in the `user` namespace by default.  Clojure will automatically load code from a `user.clj` file into the REPL to carry out common startup tasks.
 
-* load project code into the REPL by requiring namespaces
+A Clojure REPL starts in the `user` namespace by default.  Clojure automatically loads code from a `user.clj` file when found on the class path.
+
+The `user.clj` file typically contains tools to support development, such as:
+
+* loading project code into the REPL by requiring namespaces
 <!-- * set the default namespace with `in-ns` -->
 * call functions to run an application or service
 * start components (i.e for mount, component, integrant)
+
+The `user.clj` is typically placed in a `dev` folder within the root of the project, to keep it separated from production code.
 
 > #### HINT:: Example project
 > [practicalli/clojure-configure-repl](https://github.com/practicalli/clojure-configure-repl) project contains example code for configuring the REPL start up
@@ -29,9 +34,9 @@ Create a `dev/user.clj` file with a namespace called `user`.
   {:extra-paths ["dev"]}
 ```
 
-Running a Clojure REPL with the `-A:env/dev` alias will make the `dev/user.clj` file available to be loaded by the REPL.
+Running a Clojure REPL with the `:env/dev` alias will add the `dev/user.clj` file to the class path and be loaded by the REPL.
 
-In this example the `dev/` path is added to the project and then the REPL is run using rebel readline.
+In this example the `dev/` path is added to the project and then the REPL is run using Rebel.
 
 ```bash
 clojure -M:env/dev:repl/rebel
@@ -55,7 +60,8 @@ Require loads all the expressions into the REPL, so functions are immediately av
 
 
 ## Calling functions
-Functions from the required namespace can be called, to start the application for example.
+
+Use the fully quallified function name from the required namespace can be called, to start the application for example.
 
 ```clojure
 (ns user
