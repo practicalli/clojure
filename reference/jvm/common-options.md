@@ -2,6 +2,9 @@
 
 Examples of commonly used options for any language on the Java Virtual Machine (JVM).
 
+> [Understanding memory usage](understanding-memory-usage.md) has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation
+
+
 ## Java heap size
 
 `-Xms` – start heap size for JVM, e.g. `-Xms2048m` sets an initial heap size of 2 GB

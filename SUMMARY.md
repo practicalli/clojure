@@ -353,11 +353,15 @@
     <!-- * [Alternative Data Structures](data-structures/alternatives.md) -->
 
 
+
 * [Clojure SVG](reference/clojure-svg/index.md)
 
 
 * [Java Virtual Machine](reference/jvm/index.md)
+    * [Understand Memory Usage](reference/jvm/understanding-memory-usage.md)
     * [Common Options](reference/jvm/common-options.md)
+    * [Java 17 Options](reference/jvm/java-17-flags.md)
+    * [Experimental Options](reference/jvm/experimental-options.md)
     * [Profile tools](reference/jvm/profile-tools.md)
 
 
