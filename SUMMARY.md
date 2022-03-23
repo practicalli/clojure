@@ -356,6 +356,11 @@
 * [Clojure SVG](reference/clojure-svg/index.md)
 
 
+* [Java Virtual Machine](reference/jvm/index.md)
+    * [Common Options](reference/jvm/common-options.md)
+    * [Profile tools](reference/jvm/profile-tools.md)
+
+
 
 <!-- Defining names for data and expressions -->
 <!-- Defining custom functions -->
@@ -404,10 +409,6 @@
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
 
-
-* [Java Virtual Machine](reference/jvm/index.md)
-    * [Common Options](reference/jvm/common-options.md)
-    * [Profile tools](reference/jvm/profile-tools.md)
 
 
 
