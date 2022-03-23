@@ -2,11 +2,22 @@
 
 Examples of commonly used options for any language on the Java Virtual Machine (JVM).
 
+> [Understanding memory usage](understanding-memory-usage.md) has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation
+
+
 ## Java heap size
+
+Set the initial heap size if memory usage will quickly grow
 
 `-Xms` – start heap size for JVM, e.g. `-Xms2048m` sets an initial heap size of 2 GB
 
+`-XX:InitialRAMPercentage=n` sets the initial heap as `n` percentage of total RAM
+
+Set the maximum heap size if usage is relatively high under normal conditions
+
 `-Xmx` – maximum heap size of JVM, e.g. `-Xmx2048m`
+
+`-XX:MaxRAMPercentage=n` sets the maximum heap as `n` percentage of total RAM
 
 `-Xss` - set java thread stack size
 
@@ -14,7 +25,7 @@ Examples of commonly used options for any language on the Java Virtual Machine (
 
 <!-- TODO: JVM options: example JVM thread stack size -->
 
-## Set Percentage of the heap
+### Set heap with respect to garbage collection
 
 `-XX:MaxHeapFreeRatio` – maximum percentage of heap free after garbage collection to avoid shrinking.
 

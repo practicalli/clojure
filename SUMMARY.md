@@ -260,6 +260,7 @@
     <!-- * [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md) -->
     * [Defining Aliases](reference/clojure-cli/defining-aliases.md)
     * [Example Alias definitions](reference/clojure-cli/example-alias-definitions.md)
+    * [JVM options](reference/clojure-cli/jvm-options.md)
     <!--
         * [Common Tasks](clojure-cli/configure/common-tasks.md)
         * [Defining aliases](clojure-cli/configure/defining-aliases.md)
@@ -353,7 +354,16 @@
     <!-- * [Alternative Data Structures](data-structures/alternatives.md) -->
 
 
+
 * [Clojure SVG](reference/clojure-svg/index.md)
+
+
+* [Java Virtual Machine](reference/jvm/index.md)
+    * [Understand Memory Usage](reference/jvm/understanding-memory-usage.md)
+    * [Common Options](reference/jvm/common-options.md)
+    * [Java 17 Options](reference/jvm/java-17-flags.md)
+    * [Experimental Options](reference/jvm/experimental-options.md)
+    * [Profile tools](reference/jvm/profile-tools.md)
 
 
 
@@ -404,10 +414,6 @@
 <!--     * [Recursion](reference/recursion.md) -->
 <!--     <\!-- * [Reader Macros](reference/reader-macros.md) -\-> -->
 
-
-* [Java Virtual Machine](reference/jvm/index.md)
-    * [Common Options](reference/jvm/common-options.md)
-    * [Profile tools](reference/jvm/profile-tools.md)
 
 
 
