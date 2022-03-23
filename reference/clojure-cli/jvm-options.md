@@ -4,6 +4,7 @@
 
 <!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
 
+> #### Hint::Java Virtual Machine configuration and reporting
 > [Java Virtual Machine section](/reference/jvm/index.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
 
 
@@ -12,13 +13,13 @@
 Clojure CLI `-J` flag passes configuration options to the JVM. When there are multiple, each must be prefixed with `-J`.
 
 ```
-clojure -J--add-modules -Jjava.xml.bind
+clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
 ```
 
 
 ## Clojure CLI deps.edn configuration
 
-`:jvm-opts` adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key can be used as a top-level key or alias key, which has a value that is a collection of string JVM options `["--add-modules" "]`
+`:jvm-opts` key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key has a value that is a collection of string JVM options `["-Xms2048m" "-Xmx4096"]`
 
 Alias to set a large heap size
 
@@ -26,19 +27,27 @@ Alias to set a large heap size
 :jvm/heap-max-2g {:jvm-opts ["-Xmx2G"]}
 ```
 
+Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:
+
+```clojure
+:jvm/report {:jvm-opts ["-XX:+UnlockDiagnosticVMOptions"
+                        "‑XX:NativeMemoryTracking=summary"
+                        "‑XX:+PrintNMTStatistics"]}
+```
+
 Add a Java module
 
 ```clojure
-:jvm/xml-bind {:jvm-opts ["–add-modules java.module.name"]}
+:jvm/xml-bind {:jvm-opts ["–add-modules java.xml.bind"]}
 ```
 
 Ignoring unrecognised options
 
 ```clojure
-:jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions" "--add-modules java.xml.bind"]
+:jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions"]
 ```
 
-The aliases can be used with any of the Clojure CLI execution options, `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
+The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
 
 > `-J` JVM options specified on the command line are concatenated after the alias options
 
@@ -70,7 +79,7 @@ Specify options or system properties to set up the Clojure service
 
 `-XX:MaxJavaStackTraceDepth=1000000` - prevents trivial Stack Overflow errors
 
-`-Xmx24G` - set a generous limit as the maximum that can be allocated, preventing certain types of Out Of Memory errors
+`-Xmx24G` - set high maximum heap, preventing certain types of Out Of Memory errors (ideally high memory usage should be profiled if cause not known)
 
 `-Xss6144k` - increase stack size x6 to prevent Stack Overflow errors
 
@@ -84,7 +93,6 @@ Specify options or system properties to set up the Clojure service
 ```clojure
 :jvm/mem-max1g {:jvm-opts ["-Xmx1G"]}
 ```
-
 
 
 ### Stack traces
