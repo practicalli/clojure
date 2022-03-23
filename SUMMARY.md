@@ -260,6 +260,7 @@
     <!-- * [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md) -->
     * [Defining Aliases](reference/clojure-cli/defining-aliases.md)
     * [Example Alias definitions](reference/clojure-cli/example-alias-definitions.md)
+    * [JVM options](reference/clojure-cli/jvm-options.md)
     <!--
         * [Common Tasks](clojure-cli/configure/common-tasks.md)
         * [Defining aliases](clojure-cli/configure/defining-aliases.md)
