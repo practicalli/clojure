@@ -13,13 +13,13 @@
 Clojure CLI `-J` flag passes configuration options to the JVM. When there are multiple, each must be prefixed with `-J`.
 
 ```
-clojure -J--add-modules -Jjava.xml.bind
+clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
 ```
 
 
 ## Clojure CLI deps.edn configuration
 
-`:jvm-opts` key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key has a value that is a collection of string JVM options `["--add-modules" "]`
+`:jvm-opts` key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key has a value that is a collection of string JVM options `["-Xms2048m" "-Xmx4096"]`
 
 Alias to set a large heap size
 
@@ -38,7 +38,7 @@ Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the 
 Add a Java module
 
 ```clojure
-:jvm/xml-bind {:jvm-opts ["–add-modules java.module.name"]}
+:jvm/xml-bind {:jvm-opts ["–add-modules java.xml.bind"]}
 ```
 
 Ignoring unrecognised options
