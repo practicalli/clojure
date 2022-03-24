@@ -4,6 +4,7 @@
 
 <!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
 
+> #### Hint::Java Virtual Machine configuration and reporting
 > [Java Virtual Machine section](/reference/jvm/index.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
 
 
@@ -18,7 +19,7 @@ clojure -J--add-modules -Jjava.xml.bind
 
 ## Clojure CLI deps.edn configuration
 
-`:jvm-opts` adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key can be used as a top-level key or alias key, which has a value that is a collection of string JVM options `["--add-modules" "]`
+`:jvm-opts` key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key has a value that is a collection of string JVM options `["--add-modules" "]`
 
 Alias to set a large heap size
 
@@ -35,10 +36,10 @@ Add a Java module
 Ignoring unrecognised options
 
 ```clojure
-:jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions" "--add-modules java.xml.bind"]
+:jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions"]
 ```
 
-The aliases can be used with any of the Clojure CLI execution options, `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
+The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
 
 > `-J` JVM options specified on the command line are concatenated after the alias options
 
