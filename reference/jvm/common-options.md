@@ -7,6 +7,8 @@ Examples of commonly used options for any language on the Java Virtual Machine (
 
 ## Java heap size
 
+Java Ergonomics should provide sensible default options.  Performance analysis of the running code may show advantages of manually setting memory sizes.
+
 Set the initial heap size if memory usage will quickly grow
 
 `-Xms` – start heap size for JVM, e.g. `-Xms2048m` sets an initial heap size of 2 GB
@@ -32,6 +34,23 @@ Set the maximum heap size if usage is relatively high under normal conditions
 `-XX:MinHeapFreeRatio` – minimum percentage of heap free after GC to avoid expansion
 
 > VisualVM or JConsole can monitor the heap usage
+
+
+## Stack traces
+
+`-XX:-OmitStackTraceInFastThrow` no StackTrace for implicit exceptions thrown by JVM, e.g. NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ArrayStoreException or ClassCastException.
+
+
+## Reflection
+
+`--illegal-access` option controls how deep reflection warnings are handled.
+
+* permit (default) - generates warning only when the first illegal access was detected
+* warn - emit warning after each illegal access detection
+* debug - add stack trace to warning
+* deny - like debug for the first detection, then killing the program.
+
+> Java 16 deprecates `--illegal-access` flag, via work done for [JEP403](https://openjdk.java.net/jeps/403) - may still be useful for 3rd party Java libraries.
 
 
 ## Enable class data sharing
