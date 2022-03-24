@@ -27,6 +27,14 @@ Alias to set a large heap size
 :jvm/heap-max-2g {:jvm-opts ["-Xmx2G"]}
 ```
 
+Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:
+
+```clojure
+:jvm/report {:jvm-opts ["-XX:+UnlockDiagnosticVMOptions"
+                        "‑XX:NativeMemoryTracking=summary"
+                        "‑XX:+PrintNMTStatistics"]}
+```
+
 Add a Java module
 
 ```clojure
@@ -71,7 +79,7 @@ Specify options or system properties to set up the Clojure service
 
 `-XX:MaxJavaStackTraceDepth=1000000` - prevents trivial Stack Overflow errors
 
-`-Xmx24G` - set a generous limit as the maximum that can be allocated, preventing certain types of Out Of Memory errors
+`-Xmx24G` - set high maximum heap, preventing certain types of Out Of Memory errors (ideally high memory usage should be profiled if cause not known)
 
 `-Xss6144k` - increase stack size x6 to prevent Stack Overflow errors
 
@@ -85,7 +93,6 @@ Specify options or system properties to set up the Clojure service
 ```clojure
 :jvm/mem-max1g {:jvm-opts ["-Xmx1G"]}
 ```
-
 
 
 ### Stack traces
