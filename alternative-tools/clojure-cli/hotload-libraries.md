@@ -9,7 +9,7 @@ The `add-libs` function from `clojure.tools.deps.alpha` avoids the need to resta
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
 > #### WARNING:: Add-libs is an experimental feature
-> The `add-libs` function is regarded as an experimental feature of Clojure tools.deps.alpha. The add-libs implementation and function signature may change in future.
+> The `add-libs` function is regarded as an experimental feature of Clojure tools.deps.alpha and is currently part of the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3). The add-libs implementation and function signature may change in future.
 
 {% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
 
@@ -26,11 +26,13 @@ The `add-libs` function from `clojure.tools.deps.alpha` avoids the need to resta
 
 Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.
 
+The `add-libs` code is on a separate [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3), so requires the SHA from the head of add-libs3 branch
+
 ```clojure
   :lib/hotload
   {:extra-deps {org.clojure/tools.deps.alpha
                {:git/url "https://github.com/clojure/tools.deps.alpha"
-                :sha     "d77476f3d5f624249462e275ae62d26da89f320b"}}}
+                :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
 ```
 
 > Alias example from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/)
