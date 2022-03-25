@@ -2,9 +2,13 @@
 
 ## Hotload Libraries into a running REPL
 
-The `add-libs` function from `clojure.tools.deps.alpha` avoids the need to restart the REPL when adding a new library to a project.
+The function can load
 
-`add-libs` "hotloads" one or more libraries into a running REPL, typically called from a rich comment block or `dev/user.clj` file.  The namespace from the hotloaded libraries can be required as if the dependency had been added to the project configuration before the REPL started.
+`add-libs` "hotloads" one or more libraries into a running REPL, avoiding the need to restart the REPL.
+
+`add-libs` is typically called from a rich comment block or `dev/user.clj` file.
+
+Once hotloaded, library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
 
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
@@ -17,7 +21,9 @@ The `add-libs` function from `clojure.tools.deps.alpha` avoids the need to resta
 
 ## Use alias for tools.deps.alpha dependency
 
-[Install practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) which included the `:lib/hotload` alias which adds the `clojure.tools.deps.alpha.repl` library as an extra dependency.
+`:lib/hotload` alias defined in [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) adds the `clojure.tools.deps.alpha` library as an extra dependency.
+
+Include the `:lib/hotload` alias when starting the REPL.
 
 
 {% content "manual" %}
