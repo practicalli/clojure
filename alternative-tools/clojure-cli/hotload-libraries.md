@@ -2,35 +2,36 @@
 
 ## Hotload Libraries into a running REPL
 
-The function can load
+`add-libs` "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL each time a dependency is required.
 
-`add-libs` "hotloads" one or more libraries into a running REPL, avoiding the need to restart the REPL.
+`add-libs` is typically called from a rich comment block or `dev/user.clj` file, to avoid being loaded with application code.
 
-`add-libs` is typically called from a rich comment block or `dev/user.clj` file.
-
-Once hotloaded, library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
+Once hot-loaded, a library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
 
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
 > #### WARNING:: Add-libs is an experimental feature
-> The `add-libs` function is regarded as an experimental feature of Clojure tools.deps.alpha and is currently part of the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3). The add-libs implementation and function signature may change in future.
+> The `add-libs` function is regarded as an experimental feature of `clojure.tools.deps.alpha` library and is currently part of the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3). The add-libs implementation and function signature may change in future.
 
-{% tabs practicalli="practicalli/clojure-deps-edn", manual="Manually add Alias" %}
+
+## Include add-libs library dependency
+
+To use add-libs, its library must be included as a dependency when starting the REPL.  As add-libs is a development tool, it should be added via an alias, either in the project `deps.edn` or [user level configuration](/clojure-cli/install/clojure-cli.md#user-configuration-files) to use with all projects.
+
+{% tabs practicalli="Using practicalli/clojure-deps-edn alias", manual="Manually add Alias" %}
 
 {% content "practicalli" %}
 
-## Use alias for tools.deps.alpha dependency
 
-`:lib/hotload` alias defined in [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) adds the `clojure.tools.deps.alpha` library as an extra dependency.
+`:lib/hotload` alias defined in [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) adds the latest SHA commit from the `add-libs3` branch of `clojure.tools.deps.alpha` library as an extra dependency.
 
-Include the `:lib/hotload` alias when starting the REPL.
+Include the `:lib/hotload` alias when starting the REPL, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
 
+See [Terminal REPL](hotload-libraries-terminal-ui.md) and [Clojure Editor](hotload-libraries-editor.md) pages for examples.
 
 {% content "manual" %}
 
-## Add alias for tools.deps.alpha
-
-Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.
+Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
 
 The `add-libs` code is on a separate [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3), so requires the SHA from the head of add-libs3 branch
 
