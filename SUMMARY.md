@@ -366,6 +366,8 @@
     * [Experimental Options](reference/jvm/experimental-options.md)
     * [Profile tools](reference/jvm/profile-tools.md)
 
+* [Performance](reference/performance/index.md)
+
 
 
 <!-- Defining names for data and expressions -->
