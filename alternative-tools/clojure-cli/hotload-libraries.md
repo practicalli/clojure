@@ -2,7 +2,9 @@
 
 ## Hotload Libraries into a running REPL
 
-`add-libs` "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL each time a dependency is required.
+`add-libs` "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL just to use a new library with the project.
+
+Although restarting a REPL is usually very quick, it will loose all application state too.  This loss of state be mitigated by [using rich comments](/clojure-cli/projects/rich-comments.md), evaluating data structures that set useful application states.
 
 `add-libs` is typically called from a rich comment block or [a separate `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md#create-a-devuserclj-file-and-envdev-alias), to avoid being loaded with application code.
 
