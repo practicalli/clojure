@@ -42,6 +42,7 @@
     <!-- * [Manage dependencies](clojure-cli/managing-dependencies.md) -->
     * [Add Libraries](clojure-cli/projects/add-libraries.md)
     * [Namespaces](clojure-cli/projects/namespace.md)
+    * [Rich Comments](clojure-cli/projects/rich-comments.md)
     * [Configure REPL Startup](clojure-cli/projects/configure-repl-startup.md)
         <!-- * [Namespace refactor](clojure-cli/using/namespace-refactoring.md) -->
     <!-- * [Running projects](clojure-cli/projects/running-projects.md) -->
