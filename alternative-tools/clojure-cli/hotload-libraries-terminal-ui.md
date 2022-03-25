@@ -3,7 +3,7 @@
 
 # Hotload libraries in a terminal REPL UI
 
-Start a REPL session using the Clojure CLI tools with the hot-load alias, including rebel readline for an enhance REPL UI.
+Start a REPL session using the Clojure CLI tools with the [hotload alias](hotload-libraries.md), including rebel readline for an enhance REPL UI.
 
 ```bash
 clojure -M:lib/hotload:repl/rebel
