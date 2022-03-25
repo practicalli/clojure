@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Rich Comment Blocks · Practicalli Clojure</title>
+        <title>Rich Comments · Practicalli Clojure</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -535,12 +535,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="2.4.3" data-path="rich-comment-blocks.html">
+        <li class="chapter active" data-level="2.4.3" data-path="rich-comments.html">
             
-                <a href="rich-comment-blocks.html">
+                <a href="rich-comments.html">
             
                   <!--  -->
-                    Rich Comment Blocks
+                    Rich Comments
             
                 </a>
             
@@ -3891,7 +3891,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >Rich Comment Blocks</a>
+        <a href="../.." >Rich Comments</a>
     </h1>
 </div>
 
@@ -3918,11 +3918,16 @@
 <pre class="language-"><code class="lang-clojure"><span class="token comment">;; Rich comment block with redefined vars ignored</span>
 <span class="token operator">#</span>_<span class="token punctuation">{</span><span class="token symbol">:clj-kondo/ignore</span> <span class="token punctuation">[</span><span class="token symbol">:redefined-var</span><span class="token punctuation">]</span><span class="token punctuation">}</span>
 <span class="token punctuation">(</span><span class="token keyword">comment</span>
-  <span class="token punctuation">(</span><span class="token keyword">defn</span> value-added-tax <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token comment">;; algorithm design - first try)</span>
+
+  <span class="token punctuation">(</span><span class="token keyword">def</span> data-model <span class="token punctuation">{</span><span class="token symbol">:nested</span> <span class="token punctuation">{</span><span class="token symbol">:hash</span> <span class="token string">&quot;map&quot;</span> <span class="token symbol">:design</span> <span class="token string">&quot;choice&quot;</span><span class="token punctuation">}</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">(</span><span class="token keyword">def</span> data-model <span class="token punctuation">[</span><span class="token punctuation">{</span><span class="token symbol">:collection</span> <span class="token string">&quot;of&quot;</span> <span class="token symbol">:hash</span> <span class="token string">&quot;maps&quot;</span> <span class="token symbol">:design</span> <span class="token string">&quot;choice&quot;</span><span class="token punctuation">}</span>
+                   <span class="token punctuation">{</span><span class="token symbol">:collection</span> <span class="token string">&quot;of&quot;</span> <span class="token symbol">:hash</span> <span class="token string">&quot;maps&quot;</span> <span class="token symbol">:design</span> <span class="token string">&quot;choice&quot;</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 
   <span class="token punctuation">(</span><span class="token keyword">defn</span> value-added-tax <span class="token punctuation">[</span><span class="token punctuation">]</span>
-    <span class="token comment">;; algorithm design - first try)</span>
+    <span class="token comment">;; algorithm - initial design)</span>
+
+  <span class="token punctuation">(</span><span class="token keyword">defn</span> value-added-tax <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token comment">;; algorithm - alternate design)</span>
 
   <span class="token punctuation">)</span> <span class="token comment">;; End of rich comment block</span>
 </code></pre>
@@ -3994,7 +3999,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Rich Comment Blocks","level":"2.4.3","depth":2,"next":{"title":"Configure REPL Startup","level":"2.4.4","depth":2,"path":"clojure-cli/projects/configure-repl-startup.md","ref":"clojure-cli/projects/configure-repl-startup.md","articles":[]},"previous":{"title":"Namespaces","level":"2.4.2","depth":2,"path":"clojure-cli/projects/namespace.md","ref":"clojure-cli/projects/namespace.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-7"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/practicalli-john/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-cli/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure","authorHomepage":"https://practical.li","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Practical approach to learning Clojure functional programming"},"file":{"path":"clojure-cli/projects/rich-comment-blocks.md","mtime":"2022-03-25T16:17:17.476Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-25T16:18:32.260Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Rich Comments","level":"2.4.3","depth":2,"next":{"title":"Configure REPL Startup","level":"2.4.4","depth":2,"path":"clojure-cli/projects/configure-repl-startup.md","ref":"clojure-cli/projects/configure-repl-startup.md","articles":[]},"previous":{"title":"Namespaces","level":"2.4.2","depth":2,"path":"clojure-cli/projects/namespace.md","ref":"clojure-cli/projects/namespace.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["eval-clojure"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-7"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/practicalli-john/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-cli/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure","authorHomepage":"https://practical.li","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Practical approach to learning Clojure functional programming"},"file":{"path":"clojure-cli/projects/rich-comments.md","mtime":"2022-03-25T16:40:05.382Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-03-25T16:41:26.565Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

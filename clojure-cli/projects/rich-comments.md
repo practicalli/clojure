@@ -20,11 +20,16 @@ Rich comment blocks are very useful for rapidly iterating over different design 
 ;; Rich comment block with redefined vars ignored
 #_{:clj-kondo/ignore [:redefined-var]}
 (comment
-  (defn value-added-tax []
-    ;; algorithm design - first try)
+
+  (def data-model {:nested {:hash "map" :design "choice"}})
+  (def data-model [{:collection "of" :hash "maps" :design "choice"}
+                   {:collection "of" :hash "maps" :design "choice"}])
 
   (defn value-added-tax []
-    ;; algorithm design - first try)
+    ;; algorithm - initial design)
+
+  (defn value-added-tax []
+    ;; algorithm - alternate design)
 
   ) ;; End of rich comment block
 ```
