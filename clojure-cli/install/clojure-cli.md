@@ -13,6 +13,11 @@ The Clojure CLI will download the Clojure library and provide essential tools fo
 <!-- Ubuntu install -->
 {% content "linux" %}
 
+Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  Add the following to `~/.bashrc` for the bash shell or `~/.zshenv` for Zsh.
+
+```
+export XDG_CONFIG_HOME="$HOME/.config"
+```
 
 Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux)
 
@@ -29,6 +34,12 @@ The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper 
 
 <!-- Homebrew (MacOSX) install -->
 {% content "homebrew" %}
+
+Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  Add the following to `~/.bashrc` for the bash shell or `~/.zshenv` for Zsh.
+
+```
+export XDG_CONFIG_HOME="$HOME/.config"
+```
 
 Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure/homebrew-tools), as defined in the [Clojure.org Getting started guide](https://clojure.org/guides/getting_started#_installation_on_linux)
 
@@ -82,7 +93,7 @@ The output of the command includes the version of Clojure in the `:version` key
 ```bash
 {:version "1.10.3.1087"
  :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.clojure/deps.edn" ]
- :config-user "/home/practicalli/.clojure/deps.edn"
+ :config-user "/home/practicalli/.config/clojure/deps.edn"
  :config-project "deps.edn"
  :install-dir "/usr/local/lib/clojure"
  :config-dir "/home/practicalli/.clojure"
@@ -98,12 +109,17 @@ The output of the command includes the version of Clojure in the `:version` key
 
 ## User Configuration files
 
-Clojure CLI creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g.  `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure`.
+When Clojure CLI is first run, a configuration directory is created containing a basic deps.edn file.  The configuration in this `deps.edn` file can be used with any Clojure CLI projects by the current user.
 
-`CLJ_CONFIG` can be used to over-ride the location the path.
+[The default location](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is `$XDG_CONFIG_HOME/clojure` (if `XDG_CONFIG_HOME` has a value) or `$HOME/.clojure`. `CLJ_CONFIG` can be used to over-ride the location the path.
 
-> Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:config-user` value.
+Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and looking at the `:config-user` value.
 
+```clojure
+{,,,
+ :config-user "/home/practicalli/.config/clojure/deps.edn"
+ ,,,}
+```
 
 ## Optional: rlwrap readline
 
