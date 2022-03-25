@@ -2,13 +2,13 @@
 
 # Hotload libraries in a Clojure editor
 
-Connect or jack-in to a Clojure REPL that has tools.deps.alpha added as a dependencies, preferably via an alias.
+Connect or jack-in to a Clojure REPL which is configured with the [add-libs branch of tools.deps.alpha added as a dependencies via an alias](hotload-libraries.md).
 
-Using either a rich comment block or a `dev/user.clj` file, require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hotload libraries.
+Use a rich comment block or [a `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md) to require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hot-load libraries.
 
 ## Rich Comment Block
 
-Using a rich comment block ensures the add-libs code is only evaluated manually by a developer.
+A rich comment block ensures `add-libs` code is only evaluated manually by a developer.
 
 ```clojure
 (comment
