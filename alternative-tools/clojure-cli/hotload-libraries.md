@@ -4,7 +4,7 @@
 
 `add-libs` "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL each time a dependency is required.
 
-`add-libs` is typically called from a rich comment block or `dev/user.clj` file, to avoid being loaded with application code.
+`add-libs` is typically called from a rich comment block or [a separate `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md#create-a-devuserclj-file-and-envdev-alias), to avoid being loaded with application code.
 
 Once hot-loaded, a library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
 
