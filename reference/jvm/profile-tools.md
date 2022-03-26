@@ -69,7 +69,7 @@ Java Mission Control demo - 2014 outated but might be useful if nothing newer
 https://youtu.be/aJH_aZNQ-G4
 {% endyoutube %}
 
-![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png)
+<!-- ![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png) -->
 
 
 ## Profiling guides
