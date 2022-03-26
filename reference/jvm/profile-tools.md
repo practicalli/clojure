@@ -15,10 +15,19 @@ A simplified and robust profiling tool for Java applications, bundled with the J
 
 ![Java VisualVM screenshot](https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png)
 
-Ubuntu
+{% tabs ubuntu="Ubuntu/Debian", manual="Manually add Alias" %}
+
+{% content "ubuntu" %}
+
+Ubuntu / Debian includes VisualVM in the software center
+
 ```bash
 sudo apt install visualvm
 ```
+
+{% endtabs %}
+
+
 
 
 ## JDK Flight Recorder
@@ -60,7 +69,7 @@ Java Mission Control demo - 2014 outated but might be useful if nothing newer
 https://youtu.be/aJH_aZNQ-G4
 {% endyoutube %}
 
-![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png)
+<!-- ![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png) -->
 
 
 ## Profiling guides
