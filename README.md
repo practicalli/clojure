@@ -17,6 +17,12 @@
 ## Book status
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge) [![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues) [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls) [![GitHub Super-Linter](https://github.com/practicalli/clojure-content/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter) [![GitBook publish](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml)
 
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/">
+<a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+<img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1"><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1"></a>
+ <a property="dct:title" rel="cc:attributionURL" href="https://github.com/practicalli/clojure">Practicalli Clojure</a> by <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://practical.li">Practicalli</a> is licensed under <a href="http://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0 </a></p>
+
+
 ## Contributing
 Please [read the contributing section of the book](contributing.html) before raising an issue or pull request
 
@@ -97,19 +103,3 @@ The following plugins are currently used for Practicalli books.
 * [toolbar](https://www.npmjs.com/package/gitbook-plugin-toolbar) - add toolbar of links to GitHub, Chat, etc.
 * [youtubex](https://www.npmjs.com/package/gitbook-plugin-youtubex) - embed YouTube videos by id, rending responsively to page size
 * [wide-page](https://github.com/ingoclaro/gitbook-plugin-wide-page) - gitbook plugin to have a fluid page width instead of fixed
-
----
-
-This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
-
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
-  <img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
-</a>
-<br />
-<span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Practicalli Clojure</span> by
-  <a xmlns:cc="http://creativecommons.org/ns#" href="clojure.practical.li" property="cc:attributionName" rel="cc:attributionURL">Practicalli</a>
-  is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-<br />
-Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/practicalli/clojure" rel="dct:source">Clojure, Practicalli on GitHub</a>.
-<br />
-Permissions beyond the scope of this license may be available at <a xmlns:cc="http://creativecommons.org/ns#" href="https://twitter.com/practical_li" rel="cc:morePermissions">@practical_li</a>.
