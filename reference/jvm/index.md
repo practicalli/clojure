@@ -53,3 +53,48 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
 * [Command Line Options - IBM SDK documentation](https://www.ibm.com/docs/en/sdk-java-technology/7.1?topic=reference-command-line-options)
 * [Best HotSpot JVM Options and switches for Java 11 through Java 17](https://blogs.oracle.com/javamagazine/post/the-best-hotspot-jvm-options-and-switches-for-java-11-through-java-17)
 
+
+<!-- TODO: review IBM Java documentation JVM options -->
+
+<!-- [IBM SDK Java Documentation - JVM -XX command line options](https://www.ibm.com/docs/en/sdk-java-technology/7.1?topic=options-jvm-xx-command-line) -->
+
+<!-- -XXallowvmshutdown:[false|true] (default:true) -->
+<!--     This option is provided as a workaround for customer applications that cannot shut down cleanly, as described in APAR IZ59734. -->
+
+<!-- -XX:codecachetotal=<size> -->
+<!--     Use this option to set the maximum size limit for the JIT code cache. This option also affects the size of the JIT data cache. -->
+<!--     Start of changes for service refresh 3 fix pack 20-XX:[+|-]EnableCPUMonitorEnd of changes for service refresh 3 fix pack 20 -->
+<!--     This option relates to the information about the CPU usage of thread categories that is available with the com.ibm.lang.management.JvmCpuMonitorMXBean application programming interface. CPU monitoring is enabled by default, and can be disabled by the command line option -XX:-EnableCPUMonitor. This option might not be supported in subsequent releases. -->
+
+<!-- -XX:MaxDirectMemorySize -->
+<!--     This option sets a limit on the amount of memory that can be reserved for all Direct Byte Buffers. -->
+
+<!-- -XX:[+|-]PackedObject -->
+<!--     The -XX:+PackedObject option enables packed object support. -->
+
+<!-- -XX:[+|-]PageAlignDirectMemory -->
+<!--     This option affects the alignment of direct byte buffer allocation. -->
+
+<!-- -XX:[+|-]ReduceCPUMonitorOverhead -->
+<!--     This option relates to the information about the CPU usage of thread categories that is available with the com.ibm.lang.management.JvmCpuMonitorMXBean application programming interface. This option affects the way that the JVM records the amount of CPU usage of non-Garbage Collection (GC) threads that do work on behalf of GC. -->
+
+<!-- -XXsetHWPrefetch -->
+<!--     This option enables or disables hardware prefetch. -->
+
+<!-- -XX:ShareClassesEnableBCI -->
+<!--     This option is equivalent to -Xshareclasses:enableBCI. -->
+
+<!-- -XX:ShareClassesDisableBCI -->
+<!--     The option -Xshareclasses:enableBCI is set by default. You can turn off this option by specifying -XX:ShareClassesDisableBCI when you start Java. -->
+
+<!-- -XX:-StackTraceInThrowable -->
+<!--     This option removes stack traces from exceptions. -->
+
+<!-- -XX:[+|-]UseCompressedOops (64-bit only) -->
+<!--     This option enables or disables compressed references in 64-bit JVMs, and is provided to help when porting applications from the Oracle JVM to the IBM JVM. This option might not be supported in subsequent releases. -->
+
+<!-- -XX:[+|-]VerboseVerification -->
+<!--     You can use this option to control the output of verbose diagnostic data that relates to verification. -->
+
+<!-- -XX:[+|-]VMLockClassLoader -->
+<!--     This option affects synchronization on class loaders that are not parallel-capable class loaders, during class loading. -->
