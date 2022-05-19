@@ -22,7 +22,10 @@ Establish an effective Clojure development environment by installing the followi
 
 > #### Hint::Aliases provided by practicalli/clojure-deps-edn
 > [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure development.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
+>
+> If you choose to use your own user wide `deps.edn`, then adding an alias for the clj-new tool and rebel readline is recommended as they are used extensively in this guide.
 
 
 ## Other development tools
+
 [Leiningen](https://leiningen.org) is the classic development tool for Clojure.  All the code examples in this book should work with Leiningen when a correctly configured `project.clj` file is created.
