@@ -1,4 +1,5 @@
 ![Install Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/cloure-install-package-banner.png)
+
 Clojure is a library meaning any version of Clojure can easily be used with a project.
 
 The Clojure CLI tool will download the Clojure library and provides essential tools for Clojure development.
@@ -15,9 +16,9 @@ Use the Linux script installer from [Clojure.org - Getting Started](https://cloj
 The instructions should be as follows, possibly with a newer version
 
 ```bash
-curl -O https://download.clojure.org/install/linux-install-1.10.3.1040.sh
-chmod +x linux-install-1.10.3.1040.sh
-sudo ./linux-install-1.10.3.1040.sh
+curl -O https://download.clojure.org/install/linux-install-1.11.1.1113.sh
+chmod +x linux-install-1.11.1.1113.sh
+sudo ./linux-install-1.11.1.1113.sh
 ```
 
 The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
@@ -65,7 +66,10 @@ scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kon
 <!-- End of Operating System specific instructions -->
 
 ## Check CLI tools version
-`clojure -Sdescribe` confirms that Clojure CLI tools are installed and will show the version of the tool.  Use the latest version of Clojure CLI tools, or at least version 1.10.1.697.
+
+`clojure --version` will print out the version of Clojure CLI
+
+`clojure -Sdescribe` also shows the version of installed as well as the configuration that tool uses.
 
 ```bash
 clojure -Sdescribe
@@ -74,13 +78,13 @@ clojure -Sdescribe
 The output of the command includes the version of Clojure in the `:version` key
 
 ```bash
-{:version "1.10.3.1040"
- :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.clojure/deps.edn" ]
- :config-user "/home/practicalli/.clojure/deps.edn"
+{:version "1.11.1.1113"
+ :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.config/clojure/deps.edn" "deps.edn" ]
+ :config-user "/home/practicalli/.config/clojure/deps.edn"
  :config-project "deps.edn"
  :install-dir "/usr/local/lib/clojure"
- :config-dir "/home/practicalli/.clojure"
- :cache-dir "/home/practicalli/.clojure/.cpcache"
+ :config-dir "/home/practicalli/.config/clojure"
+ :cache-dir ".cpcache"
  :force false
  :repro false
  :main-aliases ""
@@ -89,9 +93,10 @@ The output of the command includes the version of Clojure in the `:version` key
 
 ---
 
-**Optional: rlwrap readline**
+## Optional: rlwrap readline
+
 Install the `rlwrap` binary to support the `clj` wrapper, which launches a Clojure REPL with command history.
 
 `rlwrap` is available with most Linux systems.  Look for  install instructions by searching for rlwrap in a web browser.
 
-> [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL.
+> [rebel readline](/repl-driven-development/rebel-readline/) provides even more features in the command line REPL and does not require `rlwrap`.  Rebel Readline is part of the [Practicalli Clojure community tools install](community-tools.md).
