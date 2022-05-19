@@ -27,6 +27,7 @@
         * [Available Community tools](clojure-tools/install/community-tools-available.md)
         * [Configure Clojure Tools](clojure-tools/configure/index.md)
     * [Code Analysis](clojure-tools/install/code-analysis.md)
+    * [Clojure LSP](clojure-tools/install/clojure-lsp.md)
 * [Terminal REPL](clojure-tools/repl/index.md)
     * [Coding in the REPL](clojure-tools/repl/coding-in-the-repl.md)
     * [Using libraries in REPL](clojure-tools/repl/using-project-or-library.md)
