@@ -7,7 +7,12 @@
 clj-kondo can also be used as a command line tool for checking projects in development environments and continuous integration service.
 
 
+> #### Hint::Clojure LSP includes clj-kondo
+> If using Clojure LSP, then a separate local install of clj-kondo is not required.
+
+
 ## Install
+
 Follow the **[clj-kondo install guide](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md)** for your operating system.
 
 **[Clj-kondo config](https://github.com/clj-kondo/config)** contains additional configuration for using clj-kondo with libraries that extend the Clojure language via macros.
@@ -16,6 +21,8 @@ Follow the **[clj-kondo install guide](https://github.com/borkdude/clj-kondo/blo
 ## clj-kondo in Spacemacs
 
 ![clj-kondon in Spacemacs](https://practicalli.github.io/spacemacs/images/spacemacs-clojure-linting-code-marks-and-flycheck-list-errors.png)
+
+> clj-kondo configuration should not be enabled if using the lsp layer, unless cider is configured as the backend server in the clojure layer.
 
 
 ## clj-kondo with GitHub actions
