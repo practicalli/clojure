@@ -14,9 +14,9 @@ Select the top level of the folder, e.g. `playground` and type `Ctrl-l`
 
 > Alternative, use `, '` to connect to an external REPL process that has already started.
 
-Select either `Clojure CLI` or `Leiningen` when prompted for the project type
+Select either `deps.edn` for Clojure CLI or `Leiningen` when prompted for the project type
 
-![VS Code - Calva - Start REPL - nREPL button](/images/vscode-calva-clojure-repl-connect-project-type.png)
+![VS Code - Calva - Start REPL - nREPL button](https://raw.githubusercontent.com/practicalli/graphic-design/live/vspacecode/screenshots/vspacecode-clojure-repl-jack-in-leiningen.png)
 
 Wait a few moments for the REPL to start.
 
