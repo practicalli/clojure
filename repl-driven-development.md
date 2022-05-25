@@ -103,7 +103,6 @@ RDD supports rapid design with different approaches easily explored and evaluate
 
 Clojure has a number of [test runners](/testing/test-runners/) available.  Kaocha is a test runner that will run unit tests and function specification checks.
 
-
 ## Continuous Integration and Deployment
 Add a [continuous integration service](/testing/integration-testing/) to run tests and builds code on every shared commit (or every commit if you run a CI server locally).
 
