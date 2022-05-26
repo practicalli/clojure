@@ -6,7 +6,7 @@ The examples are editable (using an embedded REPL) so feel free to experiment an
 [Install Clojure](/clojure-cli/install/) on your computer if you want to experiment even further.
 
 > #### Hint::Want to go deeper already?
-> Watch [the Clojure language video series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) for a detailed introduction to key parts of the language.  Or discover Clojure core functions by completing challenges on [4Clojure.com](http://www.4clojure.com/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
+> Watch [the Clojure language video series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) for a detailed introduction to key parts of the language.  Or discover Clojure core functions by completing challenges on [4Clojure.org](https://4clojure.oxal.org/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
 
 <!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
 <pre class="hidden">
