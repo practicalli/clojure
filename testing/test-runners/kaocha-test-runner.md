@@ -1,6 +1,6 @@
 # Kaocha Test Runner from LambdaIsland
 
-[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and clojure.spe generative testing.  Clojure and ClojureScript languages are supported.
+[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and `clojure.spec` generative testing.  Clojure and ClojureScript languages are supported.
 
 ## A minimal starting point
 
@@ -41,15 +41,15 @@ For CI services such as CircleCI or GitLabs, add an alias for kaocha to the proj
 
 ## Configuring test runs
 
-Kaocha can be configure by options in a `test.edn` configuration file and options passed via the command line (typically added to the bin/kaocha script).
+Kaocha can be configure by options in a `tests.edn` configuration file and options passed via the command line (typically added to the `bin/kaocha` script).
 
-Create a `test.edn` file in the root of the project directory.
+Create a `tests.edn` file in the root of the project directory.
 
 `#kaocha/v1 {}` is the minimum configuration, which will use a default configuration.
 
 The `tests.edn` file and command line options combine to make the complete configuration for the projects in the test.
 
-`kaocha --print-config` will print out the complete configuration.
+`bin/kaocha --print-config` will print out the complete configuration.
 
 ![Clojure Unit Test - kaocha print configuration](/images/clojure-unit-test-kaocha-config-print.png)
 
@@ -66,7 +66,7 @@ Use the default configuration as a basis for customizing any specific project.
 With a `deps.edn` project with tests under the standard `test` directory and using `-test` postfix on test names, then all that is required is the `kaocha` command
 
 ```bash
-kaocha
+bin/kaocha
 ```
 
 ![Clojure Unit Test - kaocha test runner results](/images/clojure-unit-test-kaocha-run-results.png)
@@ -79,7 +79,7 @@ If one or more tests fail, then a detailed description of the failure is printed
 The report progress plugin gives visual feedback as the tests are running.
 
 ```bash
-kaocha --reporter kaocha.report.progress/report
+bin/kaocha --reporter kaocha.report.progress/report
 ```
 
 ![Clojure Unit Test - kaocha test runner plugin report progress](/images/clojure-unit-test-kaocha-plugin-report-progress-results.png)
@@ -92,8 +92,7 @@ kaocha --fail-fast
 
 Tests are run in a random order, controlled by a seed in the test.edn configuration.  This helps find dependencies between tests where a test is only passing because of another test (or more likely the setup stage or lack of tear down from another test).  The `--no-randomize` flag will run the tests in the same order each time.
 
-`--print-results` will return a hash-map of the test results.  This is a very detailed output, so I assume its more suitable for diagnostic tools or viewing in a data browser (eg. Clojure inspector, REBL, etc.)
-
+`--print-result` will return a hash-map of the test results.  This is a very detailed output, so I assume its more suitable for diagnostic tools or viewing in a data browser (eg. Clojure inspector, REBL, etc.)
 
 `--watch` flag enables watch mode which monitors file changes in source and test paths (from the kaocha configuration), loads in changes and runs tests again.  TODO: rerun just the tests that changed ??
 
