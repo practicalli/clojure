@@ -1,8 +1,14 @@
 # Commonly used JVM Options
 
+> The JVM is excellent at self-optimising its performance.  Introducing specific options should only be done if specific resource or performance issues have been identified.
+
+
 Examples of commonly used options for any language on the Java Virtual Machine (JVM).
 
-> [Understanding memory usage](understanding-memory-usage.md) has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation
+[Understanding memory usage](understanding-memory-usage.md) has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation
+
+> #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
+> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
 
 
 ## Java heap size
@@ -23,9 +29,10 @@ Set the maximum heap size if usage is relatively high under normal conditions
 
 `-Xss` - set java thread stack size
 
-`-Xms` and `-Xmx` are commonly used together.
+`-Xms` and `-Xmx` are commonly used together (where there is a know fixed value for memory resources).
 
 <!-- TODO: JVM options: example JVM thread stack size -->
+
 
 ### Set heap with respect to garbage collection
 
@@ -34,6 +41,13 @@ Set the maximum heap size if usage is relatively high under normal conditions
 `-XX:MinHeapFreeRatio` – minimum percentage of heap free after GC to avoid expansion
 
 > VisualVM or JConsole can monitor the heap usage
+
+
+### Container Environments
+
+`-XX:InitialRAMPercentage` and `-XX:MaxRAMPercentage` options should be used to set relative limits to the resources available from the host.
+
+Setting specific heap sizes with `-Xms` and `-Xmx` is strongly discouraged in Container environments, as resources available to the container from the host could change between deployments (e.g. a change in operational configuration in Kubernettes, etc.)
 
 
 ## Stack traces

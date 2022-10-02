@@ -9,7 +9,33 @@ Overview of tools for monitoring and profiling Clojure applications running on t
 * [JVM Profiling tools](profile-tools.md) - understand resources and help diagnose run-time problems
 
 
-# JVM option types
+> #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
+> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
+
+
+## Display resources available to the JVM
+
+`-XshowSettings:system` displays the resources the JVM believes it has access too when running any Java command and is a very simple diagnostic tool to start with.
+
+See the environment resources available to the JVM without running a Clojure or Java application:
+
+```bash
+java -XshowSettings:system -version
+```
+
+![Java Virtual Machine - show system settings without running an application](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-command-options-showsettings-system-version.png)
+
+Include `-XshowSettings:system` when running any Java command to provide simple diagnostics, e.g. when running a Clojure Uberjar
+
+```bash
+java -XshowSettings:system -jar practicalli-service.jar
+```
+
+> #### Hint::Print resources in Container systems
+> `-XshowSettings:system` is especially useful for environments which may vary in resources available, such as containers (Docker, Kubernettes, etc.)
+
+
+## JVM option types
 
 `-X` - nonstandard VM options
 
