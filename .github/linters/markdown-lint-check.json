@@ -1,5 +1,5 @@
 {
-  "projectBaseUrl": "https://practical.li/spacemacs",
+  "projectBaseUrl": "https://practical.li/clojure",
   "replacementPatterns": [
     {
     "pattern": "^/",
