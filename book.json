@@ -46,7 +46,11 @@
         },
         "prism": {
             "ignore": [
-                "eval-clojure"
+                "elisp",
+                "eval-clojure",
+                "none",
+                "reagent",
+                "shell"
             ]
         },
         "ga": {
