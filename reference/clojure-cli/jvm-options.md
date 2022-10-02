@@ -1,5 +1,9 @@
 # Reference: Clojure CLI JVM Options
 
+> #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
+> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
+
+
 [Java Virtual Machine options can be passed using the Clojure CLI](https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment), either via the `-J` command line flag or `:jvm-opts` in a `deps.edn` alias.
 
 <!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
@@ -47,19 +51,28 @@ Ignoring unrecognised options
 :jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions"]
 ```
 
-The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
+The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` and `-T` (for clojure.exec function execution), or `-M` (for clojure.main execution).
 
 > `-J` JVM options specified on the command line are concatenated after the alias options
 
 
+<!-- ## Optimising JVM for a container -->
+
+<!-- TODO: JVM options useful when running in a container, e.g. docker -->
+
 
 ## Calling A Clojure Uberjar
 
-JVM options must be specified when calling an uberjar with the Java command, as the project `deps.edn` file is not used by Java.
+JVM options must be specified when calling an uberjar with the `java` command, `:jvm-opts` in the project `deps.edn` are not used with the `java` command
 
 ```
 java -jar project-uberjar.jar -J...
 ```
+
+> #### Hint::Use `JDK_JAVA_OPTIONS` to define JVM options
+> `JDK_JAVA_OPTIONS` environment variable is used to define options that are used whenever the `java` command is called, greatly simplifying `java` commands.
+>
+> The `JDK_JAVA_OPTIONS` environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.
 
 
 ## Clojure related JVM options
@@ -92,6 +105,36 @@ Specify options or system properties to set up the Clojure service
 
 ```clojure
 :jvm/mem-max1g {:jvm-opts ["-Xmx1G"]}
+```
+
+## Container Memory Management
+
+`JDK_JAVA_OPTIONS` environment variable should be used for setting JVM options within a container or in the provisioning service (e.g. Kubernettes / Argo CD) that deploys containers.
+
+Use JVM options that optimise running in a container
+
+* `-XshowSettings:system` to output the resources the JVM believes it has access too, a very simple diagnostic tool to include
+
+* `-XX:+UseContainerSupport` instruct the JVM that it is running in a container environment, disabling the checks the JVM would otherwise carry out to determine if it was running in a container.  Can save a very small amount of start up time, though mainly used to ensure the JVM knows its in a container.
+
+* `-XX:MaxRAMPercentage=90` to set a relative maximum percentage of heap to use, based on the memory available from the host, e.g. `-XX:MaxRAMPercentage=80` will use a heap size of 80% of the available host memory
+
+
+### Dockerfile example with JDK_JAVA_OPTIONS environment variable
+
+In this `Dockerfile` excerpt the `JDK_JAVA_OPTIONS` environment variable is used to print out the resources the JVM believes it has access to at startup. The JVM is instructed that it is running in a container environment and should use a maximum 90% heap size of the hosts memory resource.
+
+```yaml
+ENV JDK_JAVA_OPTIONS "-XshowSettings:system -XX:+UseContainerSupport -XX:MaxRAMPercentage=90"
+CMD ["java", "-jar", "/opt/practicalli-service.jar"]
+```
+
+## Low latency systems
+
+For systems that require very low latency, use the Z Garbage collector
+
+```
+"-XX:+UnlockExperimentalVMOptions -XX:+UseZGC"
 ```
 
 
