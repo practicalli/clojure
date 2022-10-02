@@ -27,6 +27,8 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 
 [Setup Clojure](https://github.com/DeLaGuardo/setup-clojure) provides Clojure via Clojure CLI, Leiningen or Boot.  Clojure CLI is recommended.
 
+[Cache](https://github.com/actions/cache) is used to cache Clojure and Java libraries (dependencies or 'deps').
+
 The example workflow runs on Ubuntu.
 
 The project code is checked out from the Git repository.
@@ -58,6 +60,14 @@ jobs:
         uses: DeLaGuardo/setup-clojure@3.7
         with:
           cli: 1.10.3.1075 # Clojure CLI based on tools.deps
+
+      - name: Cache Clojure and Java deps
+        uses: actions/cache@v3
+        with:
+          path:
+            - ~/.m2
+            - ~/.gitlibs
+          key: cache-${{ hashFiles('**/deps.edn') }}
 
       - name: Run Unit tests
         run: clojure -X:test/run
