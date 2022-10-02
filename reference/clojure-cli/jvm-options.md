@@ -1,7 +1,7 @@
 # Reference: Clojure CLI JVM Options
 
 > #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
-> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when running a Java Virtual Machine (Java version 9 onward).
+> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
 
 
 [Java Virtual Machine options can be passed using the Clojure CLI](https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment), either via the `-J` command line flag or `:jvm-opts` in a `deps.edn` alias.
@@ -51,7 +51,7 @@ Ignoring unrecognised options
 :jvm-opts ["-XX:+IgnoreUnrecognizedVMOptions"]
 ```
 
-The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` (for function execution), or `-M` (for clojure.main execution).
+The aliases can be used with the Clojure CLI execution options: `-A` (for built-in REPL invocation), `-X` and `-T` (for clojure.exec function execution), or `-M` (for clojure.main execution).
 
 > `-J` JVM options specified on the command line are concatenated after the alias options
 
