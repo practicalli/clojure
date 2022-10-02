@@ -27,6 +27,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Node Cache
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: cache-${{ hashFiles('**/book.json') }}
+
       - name: Publish Website
         uses: tuliren/publish-gitbook@v1.0.0
         with:
