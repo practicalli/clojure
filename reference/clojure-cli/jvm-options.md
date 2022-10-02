@@ -109,9 +109,9 @@ Specify options or system properties to set up the Clojure service
 
 ## Container Memory Management
 
-`JDK_JAVA_OPTIONS` environment variable should be used for setting JVM options within a container or in the provisioner service (e.g. Kubernettes / Argo CD) that deploys containers.
+`JDK_JAVA_OPTIONS` environment variable should be used for setting JVM options within a container or in the provisioning service (e.g. Kubernettes / Argo CD) that deploys containers.
 
-Use JVM options that optomise running in a container
+Use JVM options that optimise running in a container
 
 * `-XshowSettings:system` to output the resources the JVM believes it has access too, a very simple diagnostic tool to include
 
