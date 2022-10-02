@@ -8,14 +8,18 @@ In Clojure the unit under test is the function.  Unit test coverage should test 
 
 
 ## Simple principles for writing unit tests
-* One `test` namespace for each `src` namespace
-* One `deftest` function for each function under test
-* Multiple `is` assertions for one function
-* Group assertions in `testing` and provide a meaningful description of that grouping, adding more information when reviewing test failures especially for larger code bases.
-* `are` for testing similar functionality with different data sets
-* Test private functions (or don't use them) through public functions of each namespace (minimize test churn and time to run all tests)
+
+* A `test` namespace for each `src` namespace under test
+* A `deftest` function for each function under test
+* Multiple assertions (`is` `are`) for one function
+    * `are` to testing similar functionality with different data sets (or use generative testing)
+* `testing` to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)
+* Test API rather than implementation (or add metadata to easily skip them)
+    * test generic helper or private functions through public functions of each namespace (minimize test churn and time to run all tests)
+    * `^:helper` on tests for more generic functions, to skip those tests via a test selector
 * Use [generative testing](/clojure-spec/) to create less code and yet test with more extensive range of data
 * Use [test selectors](test-selectors.md) to organize tests and optimize speed of test runs
+* Limit mocking of systems to integration tests (although mocking data is good)
 
 
 ## Test with Development REPL and Command Line
