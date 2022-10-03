@@ -28,6 +28,8 @@
         * [Configure Clojure Tools](clojure-cli/configure/index.md)
     * [Code Analysis](clojure-cli/install/code-analysis.md)
     * [Clojure LSP](clojure-cli/install/clojure-lsp.md)
+        * [Snippets](clojure-cli/install/clojure-lsp-snippets.md)
+        * [P9I Snippets](clojure-cli/install/clojure-lsp-snippets-practicalli.md)
 * [Terminal REPL](clojure-cli/repl/index.md)
     * [Coding in the REPL](clojure-cli/repl/coding-in-the-repl.md)
     * [Using libraries in REPL](clojure-cli/repl/using-project-or-library.md)
