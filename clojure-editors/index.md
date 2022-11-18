@@ -36,11 +36,18 @@ Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors fo
 
 [![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
 
-Neovim is a hyperextensible Vim-based text editor that is a drop-in replacement of Vim, implemented in less coded, fully compatible with Vim"s editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
+Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim also allows configuration in Lua.
+
+Using the aniseed plugin, configuration can be written in Fennel.
 
 [Conjure](https://github.com/Olical/conjure) is an interactive environment for evaluating code within your running program, initially targeted at Lisp languages such as Clojure.
 
 #### Install and user guides
+
+[Practicalli Neovim](https://practical.li/neovim/) covers installation and basic use of Neovim for Clojure development.
+
+Older Neovim guides include:
+
 * [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure.md)
 * [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure.md)
 
