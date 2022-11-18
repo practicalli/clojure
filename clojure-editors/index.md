@@ -13,7 +13,7 @@ Emacs (Spacemacs), VSCode, Atom, Vim and IntelliJ are the most common Editors fo
 
 
 <!-- Clojure Editors -->
-{% tabs spacemacs="Emacs & Spacemacs", vimconjure="NeoVim & Conjure", vspacecode="VSpaceCode & Calva", spacevim="SpaceVim & Fireplace", vimiced="vim-iced", atom="Atom & Chlorine", vscode="VSCode & Calva", intellij="IntelliJ & Cursive" %}
+{% tabs spacemacs="Emacs & Spacemacs", vimconjure="NeoVim & Conjure", vspacecode="VSpaceCode & Calva", spacevim="SpaceVim & Fireplace", vimiced="vim-iced", atomchlorine="Atom & Chlorine", vscode="VSCode & Calva", intellij="IntelliJ & Cursive" %}
 
 <!-- Spacemacs -->
 {% content "spacemacs" %}
@@ -105,9 +105,14 @@ Clojure Interactive Development Environment for Vim8/Neovim.
 
 
 <!-- Atom.io -->
-{% content "atom" %}
+{% content "atom-chlorine" %}
 
-[Atom.io](https://atom.io/) is flexible and simple to use editor.  [Chlorine](https://github.com/mauricioszabo/atom-chlorine) is the recommended plugin for Atom.io. [ProtoREPL](https://atom.io/packages/proto-repl) is not actively maintained at present. The [Chlorine plugin for Atom](https://github.com/mauricioszabo/atom-chlorine) is especially recommended for ClojureScript shadow-cljs projects.
+> ####WARNING::Atom not actively developed
+> Atom will be archived on December 15 2022 and no further updates from GitHub team, although it may continue in open source.
+>
+> Consider using VSCode with Clover or Calva plugins instead
+
+[Atom.io](https://atom.io/) is flexible and simple to use editor .  [Chlorine](https://github.com/mauricioszabo/atom-chlorine) is the recommended plugin for Atom.io. [ProtoREPL](https://atom.io/packages/proto-repl) is not actively maintained at present. The [Chlorine plugin for Atom](https://github.com/mauricioszabo/atom-chlorine) is especially recommended for ClojureScript shadow-cljs projects.
 
 #### Chlorine
 * [Chlorine install guide](https://github.com/mauricioszabo/atom-chlorine)
@@ -115,6 +120,9 @@ Clojure Interactive Development Environment for Vim8/Neovim.
 ![Chlorine animated gif](https://raw.githubusercontent.com/mauricioszabo/atom-chlorine/master/docs/eval-code.gif)
 
 #### ProtoREPL
+
+ProtoREPL
+
 * [Atom & ProtoREPL install guide](install-guides/atom-protorepl.html)
 
 ![Atom.io and ProtoREPL](/images/atom-protorepl-demo.gif)
@@ -130,13 +138,8 @@ Proton offers a simple mnemonic menu as an alternative to the multiple keys for 
 
 <!-- VSCode and Calva -->
 {% content "vscode" %}
+
 The Calva extension adds Clojure support to Microsoft VS Code editor.
-
-> #### Warning::Calva with LSP has moments of high memory use
-> The current version of Calva runs clojure-lsp when opening a Clojure project.  The `clojure-lsp` process will use a noticable amount of memory, especially with a large number of dependencies in a project.
->
-> Use Calva version 2.0.136 if RAM resources are very constrained.  A specific version can be selected via *Extensions > Calva extension settings > Install Another Version...*
-
 
 Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.  New versions may break, so its advisable to only upgrade to new versions when there is time to resolve potential issues.
 
