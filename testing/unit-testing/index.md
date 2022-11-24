@@ -2,13 +2,12 @@
 
 The function is the unit under test in Clojure.  All public functions that form the API of their respective namespace should have a matching test, i.e. `(deftest)` definition.
 
-`clojure.test` namespace provides a unit testing framework and is included in the Clojure library, so is available in all Clojure projects.
+[`clojure.test` namespace](https://clojure.github.io/clojure/clojure.test-api.html) provides functions for defining and running unit tests and is available in the Clojure library for any project to use.
 
-[Test runners](/testing/test-runners/) can run one or more unit tests in a project.
+![Clojure test unit test example - status monitor dashboard function and unit test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png "Example Clojure test - web service handler namespace - dashboard function")
 
-![Clojure test unit test example - status monitor dashboard function and unit test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png)
 
-## Simple principles for writing unit tests
+## Principles for writing unit tests
 
 * A `test` namespace for each `src` namespace under test
 * A `deftest` function for each function under test, named after the function its testing with `-test` at the end of the name
@@ -16,6 +15,7 @@ The function is the unit under test in Clojure.  All public functions that form 
     * `is` defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call
     * `are` to testing similar functionality with different data sets (or use generative testing)
 * `testing` to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)
+* `use-fixtures` to call [fixture functions](fixtures.md "Define and run functions that set up and tear down state required for a test or collection of tests") that setup and tear down any state required for test(s) to run
 * Test API rather than implementation
     * test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)
     * `^:helper` meta-data on `deftest` for more generic functions, to skip those tests via a test selector
@@ -23,6 +23,10 @@ The function is the unit under test in Clojure.  All public functions that form 
 * Use [test selectors](test-selectors.md) with a [test runner](/testing/test-runners/) to selectively run tests and optimise speed of test runs
 * Limit mocking of systems to integration tests (although mocking data is good everywhere)
 
+
+## Running tests
+
+[Test runners](/testing/test-runners/) can run be run in the REPL used for development or run separately via the command line and continuous integration tasks.
 
 ![Clojure unit testing approach - editor and command line](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png)
 
@@ -48,7 +52,7 @@ The original name can also be removed using Clojure `(ns-unmap 'namespace 'name)
 (undef 'practicalli.system-monitor 'dashboard) ; remove original function name
 ```
 
-> Stop and start the REPL to ensure all function and tests are correctly loaded
+> Stop and start the REPL process ensures all function and tests are correctly loaded
 
 
 ## Command line test runners
@@ -67,6 +71,19 @@ The CLI approach is also more robust for longer running tests than running withi
 
 > ####HINT::Avoid stale tests
 > Running tests via a command line test runner will never experience stale tests, as long as all relevant changes are saved to the source code files.
+
+
+## Run tests in the REPL
+
+`clojure.test` includes the `run-tests` function that runs tests (`deftest` definitions) in given namespaces and `run-all-tests` which runs all tests in all namespaces.
+
+```clojure
+(run-all-tests)  ; run all tests in all namespaces
+
+(run-tests 'practicalli.system-monitor-test) ; run all tests in practicalli.system-monitor-test
+```
+
+> `run-tests` and `run-all-tests` are a less common approach as the command line and editor driven test runners provide a rich set of features
 
 
 ## Project structure with tests
