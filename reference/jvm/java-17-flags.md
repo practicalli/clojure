@@ -6,6 +6,20 @@ A complete list of all flags available for the JVM, created using the `-XX:+Prin
 java -XX:+PrintFlagsFinal > java-flags.md
 ```
 
+Find specific flags by using grep on the output with a name
+
+```shell
+java -XX:+PrintFlagsFinal -version | grep MaxHeap
+```
+
+| Type   | Name             | Units      | ?            | ?           |
+|--------|------------------|------------|--------------|-------------|
+| uintx  | MaxHeapFreeRatio | 70         | {manageable} | {default}   |
+| size_t | MaxHeapSize      | 8342470656 | {product}    | {ergonomic} |
+| size_t | SoftMaxHeapSize  | 8342470656 | {manageable} | {ergonomic} |
+
+
+## Full list of JVM flags
 
 | Type      | Option Name                                      | Default value        | Product                | Category       |
 |:----------|:-------------------------------------------------|---------------------:|:-----------------------|:---------------|
