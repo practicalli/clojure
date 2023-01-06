@@ -1,0 +1,38 @@
+---
+name: Publish Book
+on:
+  # Manually trigger workflow
+  workflow_dispatch:
+
+  # Run work flow conditional on linter workflow success
+  workflow_run:
+    workflows:
+      - "MegaLinter"
+    paths-ignore:
+      - README.md
+      - CHANGELOG.md
+      - .gitignore
+    branches:
+      - main
+    types:
+      - completed
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - uses: actions/cache@v2
+        with:
+          key: ${{ github.ref }}
+          path: .cache
+      - run: pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin pillow cairosvg
+      - run: mkdocs gh-deploy --force
