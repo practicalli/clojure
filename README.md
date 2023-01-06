@@ -15,7 +15,15 @@
 ```
 
 ## Book status
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge) [![Content ideas and other issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues) [![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls) [![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml) [![GitBook publish](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge)
+[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues)
+[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls) [![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml) [![GitBook publish](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-website.yaml)
+
+
+![GitHub issues](https://img.shields.io/github/issues/practicalli/clojure?label=content%20ideas&logo=github)
+![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/practicalli/clojure?label=pull%20requests&logo=github)
+[![Publish Book](https://github.com/practicalli/spacemacs/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml)
+[![MegaLinter](https://github.com/practicalli/spacemacs/actions/workflows/megalinter.yml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yml)
 
 
 ## License
@@ -41,79 +49,57 @@ Please [see the detailed contributing section of the book](contributing.html) be
 By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 
 
-### GitHub Actions
+## Sponsor Practicalli
 
-The Linter GitHub actions will run when a pull request is created, checking basic markdown syntax.
+[![Sponsor practicalli-john](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png)](https://github.com/sponsors/practicalli-john/)
+
+The majority of my work is focused on the [Practicalli series of books and videos](https://practical.li/) and an advisory role with several communities
+
+Thank you to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors) for your continued support
+
+
+## GitHub Actions
+
+The megalinter GitHub actions will run when a pull request is created,checking basic markdown syntax.
 
 A review of the change will be carried out by the Practicalli team and the PR merged if the change is acceptable.
 
-The Publish Website GitHub action will run when PR's are merged (or the Practicalli team cherry picks changes to the default branch).
+The Publish Book GitHub action will run when PR's are merged into main (or the Practicalli team pushes changes to the default branch).
 
 
-## GitBook Static Site Generator
+## Local development
 
-[GitBook open source tool](https://github.com/GitbookIO/gitbook) is used to generate all the Practicalli books, as it provides a simple way to provide effective navigation across a guide or book with a large number of pages.
-
-### Install locally
-
-GitBook can be installed locally to support larger pieced of content development.  It provides a local server that should continually build the site when changes are saved.
-
-GitBook requires [node.js version 11](https://nodejs.org/dist/latest-v11.x/) (or version 10, or 8).  GitBook plugins will fail with node versions higher than 11.
-
-Install GitBook using node package manager
+Install mkdocs using the Operating system package manager
 
 ```bash
-npm install gitbook-cli -g
+sudo apt install mkdocs
 ```
 
-Fork the practicalli/clojure GitHub repository and clone that fork to your computer,
+Or via Python pip
 
 ```bash
-git clone https://github.com/<your-github-account>/clojure.git
-
+pip install mkdocs
 ```
 
-Switch to the root directory of the cloned repository when complete.
-
-Install the GitBook plugins used for this project (as defined in the [book.json](book.json) configuration)
+Install the plugins used by the Practicalli site using Pip (these are also installed in the GitHub Action workflow)
 
 ```bash
-cd clojure
-
-gitbook install
+pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin pillow cairosvg
 ```
 
-> If any plugins fail to install, ensure node version 11 (or 10) is being used
+> pillow and cairosvg python packages are required for [Social Cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/)
 
-Run a local server to generate the website from the markdown content, which also listens for changes
+Fork the practicalli/spacemacs GitHub repository and clone that fork to your computer,
 
 ```bash
-gitbook serve
+git clone https://github.com/<your-github-account>/spacemacs.git
+
 ```
 
-### Gitbook plugins
+Run a local server from the root of the cloned project
 
-[GitBook has numerous community plugins](https://www.npmjs.com/search?q=gitbook%20plugin) to extend its functionality.
+```bash
+mkdocs serve
+```
 
-The following plugins are currently used for Practicalli books.
-
-* [anchor-headings-lambda](https://www.npmjs.com/package/gitbook-plugin-anchor-headings-lambda)
-* [callouts](https://www.npmjs.com/package/gitbook-plugin-callouts)
-* [codeblock-disable-glossary](https://www.npmjs.com/package/gitbook-plugin-codeblock-disable-glossary)
-* [disqus](https://github.com/GitbookIO/plugin-disqus)
-* [folding-chapters](https://www.npmjs.com/package/gitbook-plugin-folding-chapters-2) - fold navigation sections
-* [ga](https://www.npmjs.com/package/gitbook-plugin-ga) - Google analytics
-* -glossary - disable default glossary
-* [-highlight](https://www.npmjs.com/package/gitbook-plugin-highlight) - disable default highlight (prism)
-* [klipse](https://www.npmjs.com/package/gitbook-plugin-klipse) - embed Klipse code evaluation in pages
-* [newtabs](https://www.npmjs.com/package/gitbook-plugin-newtabs) - in-page tab sections
-* [prism](https://www.npmjs.com/package/gitbook-plugin-prism) code block syntax highlighting (use jr0cket.css theme, added manually)
-* [sectionx-ex](https://www.npmjs.com/package/gitbook-plugin-sectionx-ex) - in-page sections that can be collapsed (klipse doesn't work inside a section)
-* [-sharing](https://www.npmjs.com/package/gitbook-plugin-sharing)  - buttons to share on social media (default plugin disabled)
-* [splitter](https://www.npmjs.com/package/gitbook-plugin-splitter) - movable vertical bar between navigation and content, remembers position
-* [terminull-light](https://www.npmjs.com/package/gitbook-plugin-terminull-light) - fancy console - draws copy button on klipse elements
-* [theme-jr0cket](https://www.npmjs.com/package/gitbook-plugin-theme-jr0cket) - custom version of theme-code, removing numbering
-* [toggle-chapters](https://www.npmjs.com/package/gitbook-plugin-toggle-chapters) - collapsed and expand navigation sections
-* [toolbar](https://www.npmjs.com/package/gitbook-plugin-toolbar) - add toolbar of links to GitHub, Chat, etc.
-* [youtubex](https://www.npmjs.com/package/gitbook-plugin-youtubex) - embed YouTube videos by id, rending responsively to page size
-* [wide-page](https://github.com/ingoclaro/gitbook-plugin-wide-page) - gitbook plugin to have a fluid page width instead of fixed
+The website will open at http://localhost:8000
