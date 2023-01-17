@@ -91,7 +91,7 @@ The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Mav
 
 {% content "practicalli" %}
 
-The `:search/libraries` in [practicalli/clojure-deps-edn]( {{ book.P9IClojureDepsEdnInstall }})) will add the find-deps library.
+The `:search/libraries` in [practicalli/clojure-deps-edn]( /clojure/clojure-cli/install/community-tools.md)) will add the find-deps library.
 
 {% content "manual" %}
 

@@ -22,7 +22,7 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 ## Create a project
 The project is part of the [Exercism.io Clojure track](/coding-challenges/exercism/rna-transcription.html) and a project can be downloaded via the Exercisim command line tool.
 
-Alternatively, use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
+Alternatively, use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
 
 ```bash
 clojure -M:project/new app practicalli/rna-transcription

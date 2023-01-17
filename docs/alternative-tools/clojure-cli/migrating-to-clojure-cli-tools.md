@@ -40,9 +40,9 @@ Edit the `deps.edn` file in the root of the project directory and add source dir
 
 
 ### Adding a test runner
-Tests can be run locally using a test runner alias from the [user wide configuration]({{ book.P9IClojureDepsEdnInstall }}).
+Tests can be run locally using a test runner alias from the [user wide configuration](/clojure/clojure-cli/install/community-tools.md).
 
-A Continuous Integration server requires an alias in the project `deps.edn` file to define a test runner. A selection of test runners are provided by [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}).  Copy a [test runner alias](https://github.com/practicalli/clojure-deps-edn#test-runners-and-test-coverage-tools) to the project `deps.edn` file.
+A Continuous Integration server requires an alias in the project `deps.edn` file to define a test runner. A selection of test runners are provided by [practicalli/clojure-deps-edn](/clojure/clojure-cli/install/community-tools.md).  Copy a [test runner alias](https://github.com/practicalli/clojure-deps-edn#test-runners-and-test-coverage-tools) to the project `deps.edn` file.
 
 
 ### Building a jar or uberjar from the project

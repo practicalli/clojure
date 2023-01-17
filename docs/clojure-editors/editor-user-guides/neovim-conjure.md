@@ -13,7 +13,7 @@
 
 {% content "rebel" %}
 
-Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts a nrepl server and starts the rebel readline terminal UI
+Using [`practicalli/clojure-deps-edn`](/clojure/clojure-cli/install/community-tools.md) aliases, run a command line REPL that starts a nrepl server and starts the rebel readline terminal UI
 
 ```bash
 clojure -M:repl/rebel-nrepl
@@ -22,7 +22,7 @@ clojure -M:repl/rebel-nrepl
 
 {% content "basic" %}
 
-Using [`practicalli/clojure-deps-edn`]({{ book.P9IClojureDepsEdnInstall }}) aliases, run a command line REPL that starts an nrepl server
+Using [`practicalli/clojure-deps-edn`](/clojure/clojure-cli/install/community-tools.md) aliases, run a command line REPL that starts an nrepl server
 
 ```bash
 clojure -M:middleware/nrepl

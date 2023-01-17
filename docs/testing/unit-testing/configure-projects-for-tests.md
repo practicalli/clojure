@@ -16,7 +16,7 @@ Use an alias to add the `test` directory, either from a user level configuration
 
 ## Adding test path
 
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdnInstall }}) user-level configuration contains several aliases for Clojure and ClojureScript test runners, each alias includes the `test` directory as an `:extra-path`.
+[practicalli/clojure-deps-edn](/clojure/clojure-cli/install/community-tools.md) user-level configuration contains several aliases for Clojure and ClojureScript test runners, each alias includes the `test` directory as an `:extra-path`.
 
 `:env/test` alias is also provided, which simply adds the `test` directory to the class path. The `:env/test` alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).
 

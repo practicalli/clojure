@@ -9,7 +9,7 @@ Once the meal comes to an end, its time to pay the bill.  So how would you write
 Start with the simplest possible approach, with everyone paying the same.
 
 ## Create a new Clojure project
-Use [Clojure CLI tools and clj-new]({{ book.P9IClojureDepsEdnInstall }}) to create a new Clojure project.
+Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
 
 ```bash
 clojure -M:new app practicalli/split-the-bill
