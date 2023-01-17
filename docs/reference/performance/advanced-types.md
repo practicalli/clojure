@@ -1,7 +1,8 @@
 # Advanced types 
 
 
-> **Hint** Clojure has support for Java PrimitiveClojure has support for high-performance with Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.  In the extremely rare occasions where this is needed, it is added via metadata and therefore only adds to the existing code without rewriting it.
+!!! HINT "Clojure support for Java Primitives"
+    Clojure has support for high-performance with Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.  In the extremely rare occasions where this is needed, it is added via metadata and therefore only adds to the existing code without rewriting it.
 
 Rather than write this Java:
 
@@ -23,7 +24,7 @@ you can write this Clojure:
 and the resulting code is exactly the same speed (when run with java -server).
 
 
-### Some optimization tips for types
+## Optimization tips for types
 
   All arguments are passed to Clojure fns as objects, so there's no point to putting non-array primitive type hints on fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.
    (let [foo (int bar)] ...) is the correct way to get a primitive local. Do not use ^Integer etc.
