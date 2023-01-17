@@ -23,7 +23,7 @@ clj -e "(ns foo.bar) (alter-var-root #'*ns* (constantly 'foo.bar)) (clojure.main
 
 
 ## Set namespace with Rebel Readline
-Set the namespace using Rebel Readline alias from [practicalli/clojure-deps-edn]({{book.P9IClojureDepsEdnInstall}})
+Set the namespace using Rebel Readline alias from [practicalli/clojure-deps-edn](/clojure/clojure-cli/install/community-tools.md)
 
 ```clojure
 clj -M:lib/rebel -e "(ns foo.bar) (alter-var-root #'*ns* (constantly (find-ns 'foo.bar)))" -m rebel-readline.main

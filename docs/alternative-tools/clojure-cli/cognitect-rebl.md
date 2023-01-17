@@ -20,7 +20,7 @@ Follow the maven configuration link in the email to configure your build tool (C
 ## Aliases for Cognitect REBL
 Follow the [REBL installation steps](https://docs.datomic.com/cloud/other-tools/REBL.html#installation) to create an alias in the user-wide deps.edn configuration.
 
-Alternatively, use the [practicalli/clojure-deps-edn configuration]({{book.P9IClojureDepsEdnInstall}}) which contains the `:inspect/rebl` alias for use with Java 11.
+Alternatively, use the [practicalli/clojure-deps-edn configuration](/clojure/clojure-cli/install/community-tools.md) which contains the `:inspect/rebl` alias for use with Java 11.
 
 
 ## Running REBL with a project
@@ -47,7 +47,7 @@ clj -M:inspect/rebl
 
 {% content "practicalli2" %}
 
-An `:middleware/nrebl` alias along with the supporting `:lib/cider-nrepl` aliases are included in [practicalli/clojure-deps-edn configuration]({{ book.P9IClojureDepsEdnInstall }})
+An `:middleware/nrebl` alias along with the supporting `:lib/cider-nrepl` aliases are included in [practicalli/clojure-deps-edn configuration](/clojure/clojure-cli/install/community-tools.md)
 
 {% content "manual2" %}
 
@@ -114,7 +114,7 @@ See the guide on [using VSCode Calva with REBL](https://calva.io/rebl/)
 * [Cognitect Labs REBL-distro repository](https://github.com/cognitect-labs/REBL-distro) and [issue tracker](https://github.com/cognitect-labs/REBL-distro/issues)
 * [Cognitect Local Dev and CI with dev-local](https://docs.datomic.com/cloud/dev-local.html)
 * [Cognitect REBL documentation](https://docs.datomic.com/cloud/other-tools/REBL.html#nRPEL) shows how to use nREPL with REBL
-* [practicalli/clojure-deps-aliases common aliases for Clojure]({{ book.P9IClojureDepsEdnInstall }})
+* [practicalli/clojure-deps-aliases common aliases for Clojure](/clojure/clojure-cli/install/community-tools.md)
 * [nrebl.middleware project](https://github.com/RickMoynihan/nrebl.middleware) and [documentation](https://cljdoc.org/d/rickmoynihan/nrebl.middleware/CURRENT/doc/readme)
 * [#rebl channel on Clojurians Community](https://clojurians.slack.com/messages/rebl)
 * [nrepl-rebl](https://github.com/DaveWM/nrepl-rebl) alternative to nrebl.middleware
