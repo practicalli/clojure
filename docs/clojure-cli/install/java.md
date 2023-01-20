@@ -104,11 +104,11 @@ If the version is `17` or above, then [jump to the Clojure install page](install
     ![Adoptium Prebuilt OpenJDK Binaries - web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png)
 
 
-## What you need to know about Java
+## Java Knowldege required?
 
-Actually very little knowledge is required.
+Very little knowledge of the Java lanaguage or the Java Virtual Machine is required.
 
-No knowledge of the Java programming language is required, although it is quite simple to call Java methods from Clojure.
+It is quite simple to call Java methods from Clojure, although there are a wealth of functions and libraries provided by Clojure and its community to minimise the need for Java Interoperability.
 
 [Reading stack traces](https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html){target=_blank} may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.
 
@@ -119,3 +119,5 @@ When libraries are added to a project, they are downloaded to the `$HOME/.m2` di
 `clojure  -Spom` will generate a Maven pom.xml file used for deployment. Understanding of a [minimal Maven POM (pom.xml) file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#minimal-pom){target=_blank} is useful when managing issues with packaging and deployment.
 
 * [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html){target=_blank}
+
+The Java Virtual Machine is highly optimised and does not usually require any options to enhance its performance. The most likely configuration to supply to the JVM are to manage the amount of memory assigned, specifically for resource constrained environments.
