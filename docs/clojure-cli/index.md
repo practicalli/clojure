@@ -3,7 +3,7 @@
 Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries an tools.  The Clojure CLI focuses on:
 
 * running Clojure code (applications and tools)
-* starting a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure-editors/) or [a command line REPL UI](rebel-repl/).
+* starting a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure/clojure-editors/) or [a command line REPL UI](rebel-repl/).
 * managing dependencies (via tools.deps) and downloads from Maven and Git repositories
 
 The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
@@ -20,9 +20,9 @@ The Clojure CLI is extended by adding aliases for community libraries and tools,
 <!-- - clojure -X:deps find-versions -->
 <!-- - clojure -T:project/outdated - check dependencies are at most recent version -->
 
-{% youtube %}
-https://youtu.be/u5VoFpsntXc
-{% endyoutube %}
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## Common tasks for Clojure development
@@ -45,9 +45,9 @@ Commands to use for common tasks and where their aliases are included in Clojure
 | Package application                            | `clojure -X:build/uberjar`                                                  | Project     |
 | Check code for unused vars                     | `clojure -X:search/unused`                                                  | Practicalli |
 
-Clojure CLI can also be used for [evaluating an expressions](/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
+Clojure CLI can also be used for [evaluating an expressions](/clojure/alternative-tools/clojure-cli/evaluate-an-expression.md) or [running Clojure from files as scripts](/clojure/alternative-tools/clojure-cli/files-and-scripts.md), although these approaches are less common.
 
-`clojure -M:lib/hotload:repl/rebel` runs a rich terminal UI REPL which can [use add-libs to hotload dependencies into a running REPL process](/alternative-tools/clojure-cli/hotload-libraries.md).
+`clojure -M:lib/hotload:repl/rebel` runs a rich terminal UI REPL which can [use add-libs to hotload dependencies into a running REPL process](/clojure/alternative-tools/clojure-cli/hotload-libraries.md).
 
 
 ## Clojure CLI version
@@ -73,14 +73,14 @@ The execution option flags for the `clojure` command define how to run Clojure c
 | `-J` | Java Virtual Machine specific options (heap size, etc)         |
 
 
-> #### Hint::Which flag to use?
-> The `-M` flag is used when calling a `-main` function from a specified namespace. Arguments can be passed as free-form string options.
->
-> The `-X` flag is used to call a fully qualified function, which can be any function on the command line. Arguments are passed as key/value pairs and strings / collection syntax should be escaped with single quotes.  `-X` can use `:replace-deps` and `:replace-paths` values to remove project `:deps` and `:paths`
->
-> `-T` flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.
->
-> Read the article: [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/)
+!!! HINT "Which flag to use?"
+    The `-M` flag is used when calling a `-main` function from a specified namespace. Arguments can be passed as free-form string options.
+   
+      The `-X` flag is used to call a fully qualified function, which can be any function on the command line. Arguments are passed as key/value pairs and strings / collection syntax should be escaped with single quotes.  `-X` can use `:replace-deps` and `:replace-paths` values to remove project `:deps` and `:paths`
+   
+    `-T` flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.
+   
+    Read the article: [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/)
 
 
 ## Which version of Clojure
