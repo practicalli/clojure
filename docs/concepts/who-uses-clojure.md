@@ -1,4 +1,5 @@
 # Who uses Clojure
+
 [Hundreds of companies](http://clojure.org/community/companies) actively advertised their Clojure adoption. Given the broad participation in user groups there are clearly many more organizations using Clojure at some level in their technology stack.
 
 A quick scan of various job sites shows Clojure positions at companies like Walmart, Facebook, Staples, Consumer Reports, Salesforce, and Amazon. It doesn't get much more mainstream than that.
@@ -36,8 +37,9 @@ There are many more examples of projects on the HackerNews thread: [Ask HN: Who'
 
 
 ## Tech Radar
-Clojure is also defined as a technology that can be adopted since 2014, according to the [Thoughtworks technology radar](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure).
 
-[![Thoughtworks Technology Radar](/images/thoughtworks-tech-radar.png)](https://www.thoughtworks.com/radar/languages-and-frameworks/clojure)
+Clojure is also defined as a technology that can be adopted since 2014, according to the Thoughtworks technology radar.
+
+![Thoughtworks Technology Radar](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/thoughtworks-tech-radar.png)
 
 JUXT also created its own [Clojure specific technology radar](https://juxt.pro/radar.html) as there is such an encompassing ecosystem of libraries and services.
