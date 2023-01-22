@@ -23,10 +23,12 @@ Establish an effective Clojure development environment by installing the followi
 | [Clojure LSP server](clojure-lsp.md)              | Recommended | Lint tool to detect syntax bugs and suggest idiomatic code                               |
 | [Data browsers](data-browsers/)                   | Recommend   | Visualize results of Clojure code, navigate nested data and page through large data sets |
 
-> #### Hint::Aliases provided by practicalli/clojure-deps-edn
-> [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure development.  These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
->
-> If you choose to use your own user wide `deps.edn`, then adding an alias for the clj-new tool and rebel readline is recommended as they are used extensively in this guide.
+!!! Hint "Aliases provided by practicalli/clojure-deps-edn"
+    [practicalli/clojure-deps-edn](#clojure-cli-tools-common-aliases) provides a user wide configuration of over 30 aliases to support Clojure development.
+
+    These aliases use meaningful names to avoid clashes with project specific aliases, ensuring that the user wide aliases remain available in all projects.
+
+    If Practicalli alaises are not used, adding aliases for the clj-new tool and rebel readline as they are extensively used in this guide.
 
 
 ## Other development tools
