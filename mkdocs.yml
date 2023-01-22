@@ -133,3 +133,5 @@ nav:
           # - concepts/who-uses-clojure.md
   - Clojure CLI:
       - clojure-cli/index.md
+      - Install:
+          - clojure-cli/install/index.md
