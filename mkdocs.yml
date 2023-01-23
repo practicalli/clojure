@@ -119,7 +119,7 @@ nav:
       - Clojure in Fifteen Mins: introduction/clojure-in-15-minutes.md
       - REPL Workflow: introduction/repl-workflow.md
       - Contributing: introduction/contributing.md
-      - Writing Tips: introduction/riting-tips.md
+      - Writing Tips: introduction/writing-tips.md
       - Concepts:
           - concepts/index.md
           - Functional vs Imperative: concepts/what-is-functional-programming.md
