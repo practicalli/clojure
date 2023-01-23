@@ -29,7 +29,7 @@ theme:
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: blue
-      accent: deep purple
+      accent: teal
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
