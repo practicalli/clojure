@@ -1,10 +1,53 @@
-## Community tools available
-Once practicalli/clojure-deps-edn user wide configuration is installed, the following tools and aliases are available.
+# Practicalli Community Tools for Clojure CLI
 
-[REPL experience](#repl-experience) | [Projects](#clojure-projects) | [Java sources](#java-sources) | [Databases](#databases-and-drivers) | [Data Inspectors](#data-inspectors) | [Middleware](#middleware) | [Clojure Spec](#clojure-specification) | [Unit Testing](#unit-testing-frameworks) | [Test runners](#test-runners-and-test-coverage-tools) | [Lint tools](#lint-tools) | [Visualize vars and deps](#visualizing-project-vars-and-library-dependencies) | [Performance testing](#performance-testing)
+[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
+
+[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank} is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.
+
+Alias names are designed with qualified keywords that provide context for the use of an alias (`project`, `repl`, `env`, `test`, `inspect`). These keywords help with discovery and reduce cognitive load required to remember their purpose.
+
+Commonly used arguments are included in many alias via `:main-opts` or `:exec-args` which can be overridden on the command line.
+
+??? INFO "Minimum Clojure CLI Version - 1.10.3.1040"
+    Clojure CLI version 1.10.3.1040 is the minimum version, although the latest available version is recommended.
+
+    Check the version of Clojure CLI currently installed via `clojure --version` or `clojure -Sdescribe`
 
 
-## REPL experience
+??? HINT "Remote Environments or Continuous Integration"
+    For remote environments or [Continuous Integration services](/continuous-integration/), include [practicalli/clojure-deps-edn]([practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank}) in the environment build or copy specific aliases to the Clojure project `deps.edn` configuration.
+
+
+## Install
+
+Fork or clone [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+
+??? HINT "Check Clojure CLI configuration location"
+    Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
+
+
+=== "Free Desktop XDG CONFIG"
+    If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
+
+    ```
+    https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
+    ```
+
+=== "Classic Config"
+    Clojure CLI will look for its configuration in `$HOME/.clojure` directory if `$XDG_CONFIG_HOME` and `CLJ_CONFIG` environment variables not set.
+
+    ```
+    https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
+    ```
+
+## Community Tools available
+
+The Clojure configuration directory contains a `deps.edn` file containing a substantial `:aliases` section with a long list of aliases.  These aliases are described in the [README of the project](https://github.com/practicalli/clojure-deps-edn/blob/live/README.md).
+
+All tools are provided via libraries and are only installed on first use.  Unused aliases will therefore not install their libraries.
+
+### REPL experience
+
 [Rebel readline](https://github.com/bhauman/rebel-readline) provides a feature rich REPL experience, far beyond the basic `clojure` and `clj` commands.
 
 | Command                            | Description                                                                                                    |
@@ -19,13 +62,13 @@ Once practicalli/clojure-deps-edn user wide configuration is installed, the foll
 `:repl/help` in the REPL for help and available commands.  `:repl/quit` to close the REPL.
 
 
-## Clojure Projects
+### Clojure Projects
+
 - Create projects from deps, leiningen and boot templates with [clj-new](https://github.com/seancorfield/clj-new)
 - Check and update project dependencies
 - Package projects as jar and uberjars
 - Deploy projects locally and to Clojars
 
-### Create new projects from templates
 Create a new project using a wide range of templates from the community
 
 | Command                                                                                   | Description                                          |
@@ -36,7 +79,8 @@ Create a new project using a wide range of templates from the community
 | `clojure -X:project/new :template luminus :name practicalli/full-stack-app +http-kit +h2` | Luminus project with given name and template options |
 
 
-### Running projects
+#### Run projects
+
 Run project with or without an alias:
 ```bash
 clojure -M:alias -m domain.app-name
@@ -55,7 +99,7 @@ In the project deps.edn file it could be useful to define an alias to run the pr
 ```
 Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
 
-## Project dependencies
+#### Project dependencies
 
 | Command                                              | Description                                               |
 |------------------------------------------------------|-----------------------------------------------------------|
@@ -66,7 +110,8 @@ Then the project can be run using `clojure -X:project/run` and arguments can opt
 | `clojure -M:project/outdated-mvn`                    | check for newer dependencies (maven only)                 |
 
 
-### Project packaging
+#### Project packaging
+
 Build a project archive file for deployment
 
 | Command                                                  | Description                                                  |
@@ -81,7 +126,8 @@ clojure -X:project/jar :jar '"practicalli.app.jar"' :aot false :main-class domai
 ```
 
 
-### Project Deployment
+#### Project Deployment
+
 Deploy a project archive file locally or to Clojars.org
 
 | Command                                         | Description                                                              |
@@ -99,7 +145,8 @@ Path to project.jar can also be set in alias to simplify the Clojure command.
 > `clojure -X:deps mvn-install project.jar` for local deployment of jars is part of the 1.10.1.697 release of the [Clojure CLI tools](https://clojure.org/guides/getting_started) in September 2020.
 
 
-## Java Sources
+#### Java Sources
+
 Include Java source on the  classpath to [look up Java Class and method definitions, e.g. `cider-find-var` in Emacs](https://practicalli.github.io/spacemacs/navigating-code/java-definitions.html)
 Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.zip")
 
@@ -109,7 +156,8 @@ Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
-## Databases and drivers
+#### Databases and drivers
+
 Databases and drivers, typically for development time inclusion such as embedded databases
 
 * `:database/h2` - H2 embedded database library and next.jdbc
@@ -120,11 +168,40 @@ https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/getting-started#create--
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
-## Data Inspectors
+
+#### Visualizing projects
+
+Create [Graphviz](https://www.graphviz.org/) graphs of project and library dependencies
+
+Morpheus creates grahps of project vars and their relationships
+
+* [`:graph/vars`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .dot file
+* [`:graph/vars-png`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .png file using `src` and `test` paths
+* [`:graph/vars-svg`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .svg file using `src` and `test` paths
+
+> Install [Graphviz](https://www.graphviz.org/) to generate PNG and SVG images.  Or use the [Edotor website](https://edotor.net/) to convert .dot files to PNG or SVG images and select different graph layout engines.
+
+
+[Vizns](https://github.com/SevereOverfl0w/vizns) creates graphs of relationships between library dependencies and project namespaces
+
+* `:graph/deps`
+* `:graph/deps-png` - generate a single deps-graph png image
+
+Other options:
+* `clojure -M:graph/deps navigate`  # navigable folder of SVGs
+* `clojure -M:graph/deps single`    # deps-graph.dot file
+* `clojure -M:graph/deps single -o deps-graph.png -f png`
+* `clojure -M:graph/deps single -o deps-graph.svg -f svg`
+* `clojure -M:graph/deps single --show `  # View graph without saving
+
+
+### Data Inspectors
+
 REPL driven data inspectors and `tap>` sources for visualizing data.
 
 
-### [Portal](https://github.com/djblue/portal)
+#### [Portal](https://github.com/djblue/portal)
+
 Navigate data in the form of edn, json and transit
 [Practicalli Clojure -data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html)
 
@@ -148,8 +225,9 @@ Navigate data in the form of edn, json and transit
 `(portal/close)` to close the inspector window.
 
 
-### [Reveal](https://vlaaad.github.io/reveal/) is a repl and data visualization tool
-Reveal - read evaluate visualize loop.  A REPL with data visualisation.  Also used as a tap> source
+#### Reveal
+
+[Reveal](https://vlaaad.github.io/reveal/) is a semi-commercial data visualization tool which includes its own REPL and can also be used as a `tap>` source
 
 * `inspector/reveal` - repl and data visualization tool
 * `inspector/reveal-nrepl` - repl and data visualization tool with nrepl server, for connection from [Clojure aware editors](https://practicalli.github.io/clojure/clojure-editors/)
@@ -185,13 +263,14 @@ Evaluate `(add-tap ((requiring-resolve 'vlaaad.reveal/ui)))` when using Rebel Re
 [Practicalli Clojure - data browsers section](/clojure-cli/data-browsers/reveal.md) has more details on using reveal.
 
 
+### Middleware
 
-## Middleware
 Aliases for libraries that combine community tools and REPL protocols (nREPL, SocketREPL).
 
 Run a REPL on the command line for access by `cider-connect-` commands, providing the require cider middleware libraries that are auto-injected in `cider-jack-in-` commands.
 
-### nREPL
+#### nREPL
+
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 | Command                             | Description                                                                           |
@@ -202,7 +281,8 @@ Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
 
-### Cognitect REBL with CIDER
+#### Cognitect REBL with CIDER
+
 Run the REBL REPL with nREPL server so editors such as CIDER and Calva can connect.
 
 ```bash
@@ -223,14 +303,16 @@ To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the
 * [REBL data visualization: run REBL with nREPL based editors](https://practicalli.github.io/clojure/clojure-cli/data-browsers/rebl-data-visualization.html#run-rebl-for-nrepl-based-editors)
 
 
-## Clojure Specification
+### Clojure Specification
+
 Clojure spec, generators and test.check
 
 * `:lib/spec-test` - generative testing with Clojure test.check
 * `:lib/spec2` - experiment with the next version of Clojure spec - alpha: design may change
 
 
-## Unit Testing frameworks
+### Unit Testing frameworks
+
 Unit test libraries and configuration.  The Clojure standard library includes the `clojure.test` namespace, so no alias is required.
 
 * `:env/test` - add `test` directory to classpath
@@ -240,7 +322,8 @@ Unit test libraries and configuration.  The Clojure standard library includes th
 Use expectations in a project `clojure -M:test:expectations` or from the command line with a test runner, e.g. `clojure -M:lib/expectations:test/runner`
 
 
-## Test runners and Test Coverage tools
+### Test runners and Test Coverage
+
 Tools to run unit tests in a project which are defined under `test` path.
 
 Run clojure with the specific test runner alias: `clojure -M:test-runner-alias`
@@ -260,7 +343,8 @@ Run clojure with the specific test runner alias: `clojure -M:test-runner-alias`
 | `clojure -M:test/coverage`         | Cloverage clojure.test coverage report                                            |
 
 
-## Lint tools
+### Lint tools
+
 Static analysis tools to help maintain code quality and suggest Clojure idioms.
 
 | Command                    | Description                                      |
@@ -270,33 +354,10 @@ Static analysis tools to help maintain code quality and suggest Clojure idioms.
 | `clojure -M:lint/idiom`    | Suggest idiomatic Clojure code                   |
 
 
-## Visualizing project vars and library dependencies
-Create [Graphviz](https://www.graphviz.org/) graphs of project and library dependencies
-
-Morpheus creates grahps of project vars and their relationships
-
-* [`:graph/vars`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .dot file
-* [`:graph/vars-png`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .png file using `src` and `test` paths
-* [`:graph/vars-svg`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .svg file using `src` and `test` paths
-
-> Install [Graphviz](https://www.graphviz.org/) to generate PNG and SVG images.  Or use the [Edotor website](https://edotor.net/) to convert .dot files to PNG or SVG images and select different graph layout engines.
 
 
-[Vizns](https://github.com/SevereOverfl0w/vizns) creates graphs of relationships between library dependencies and project namespaces
+### Performance testing
 
-* `:graph/deps`
-* `:graph/deps-png` - generate a single deps-graph png image
-
-Other options:
-* `clojure -M:graph/deps navigate`  # navigable folder of SVGs
-* `clojure -M:graph/deps single`    # deps-graph.dot file
-* `clojure -M:graph/deps single -o deps-graph.png -f png`
-* `clojure -M:graph/deps single -o deps-graph.svg -f svg`
-* `clojure -M:graph/deps single --show `  # View graph without saving
-
-
-
-## Performance testing
 Performance testing tools for the REPL
 
 * [:performance/benchmark](https://github.com/hugoduncan/criterium/)
