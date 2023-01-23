@@ -119,15 +119,74 @@ nav:
       - Clojure in Fifteen Mins: introduction/clojure-in-15-minutes.md
       - REPL Workflow: introduction/repl-workflow.md
       - Concepts:
-          - concepts/index.md
-          - Functional vs Imperative: concepts/what-is-functional-programming.md
-          - From The Author: concepts/clojure-made-simple.md
-          # - concepts/learning-clojure.md
-          # - concepts/purpose.md
-          # - concepts/who-uses-clojure.md
+          - introduction/concepts/index.md
+          - Functional vs Imperative: introduction/concepts/what-is-functional-programming.md
+          - From The Author: introduction/concepts/clojure-made-simple.md
+          # - introduction/concepts/purpose.md
+      # - introduction/learning-clojure.md
+      # - introduction/who-uses-clojure.md
       - Contributing: introduction/contributing.md
       - Writing Tips: introduction/writing-tips.md
+  - Install:
+      - install/index.md
+      - Java Host: install/java.md
+      - Clojure CLI: install/clojure-cli.md
+      - Code Analysis: install/code-analysis.md
   - Clojure CLI:
       - clojure-cli/index.md
-      - Install:
-          - clojure-cli/install/index.md
+      - Configure: clojure-cli/configure.md
+      - Community Tools: clojure-cli/community-tools.md
+  - REPL:
+      - clojure-cli/repl/index.md
+      - clojure-cli/repl/coding-in-the-repl.md
+      - clojure-cli/repl/using-project-or-library.md
+      - clojure-cli/repl/help-at-the-repl.md
+      - clojure-cli/repl/customize-rebel.md
+      - clojure-cli/repl/troubleshooting.md
+      # <!-- - clojure-cli/repl/repl-uncovered.md --> <!-- TODO rewrite -->
+  - Clojure Projects:
+      - clojure-cli/projects/index.md
+      - clojure-cli/projects/create.md
+      - clojure-cli/projects/add-libraries.md
+      - clojure-cli/projects/namespace.md
+      - clojure-cli/projects/rich-comments.md
+      - REPL Startup: clojure-cli/projects/configure-repl-startup.md
+
+  - Clojure Editors:
+      - clojure-editors/index.md
+      - Clojure LSP:
+          - clojure-cli/install/clojure-lsp/index.md
+          - Clojure LSP Snippets: clojure-cli/install/clojure-lsp/snippets.md
+          - Practicalli Snippets: clojure-cli/install/clojure-lsp/practicalli-snippets.md
+      - Editor Install Guides:
+          - clojure-editors/editor-install-guides/index.md
+          - clojure-editors/editor-install-guides/atom-protorepl.md
+          # - clojure-editors/editor-install-guides/atom-proton.md
+          - clojure-editors/editor-install-guides/emacs-spacemacs.md
+          - clojure-editors/editor-install-guides/emacs.md
+          - clojure-editors/editor-install-guides/neovim-conjure.md
+          - clojure-editors/editor-install-guides/vim-plugins.md
+          - clojure-editors/editor-install-guides/spacevim-fireplace.md
+          - clojure-editors/editor-install-guides/spacevim-configuration.md
+          - clojure-editors/editor-install-guides/vspacecode-calva.md
+          - clojure-editors/editor-install-guides/vscode-calva.md
+          - clojure-editors/editor-install-guides/intellij-cursive.md
+      - Editor User Guides:
+          - clojure-editors/editor-user-guides/index.md
+          - clojure-editors/editor-user-guides/atom-protorepl.md
+          # - clojure-editors/editor-user-guides/atom-proton.md
+          - clojure-editors/editor-user-guides/emacs-spacemacs.md
+          - clojure-editors/editor-user-guides/neovim-conjure.md
+          - clojure-editors/editor-user-guides/spacevim-fireplace.md
+          - clojure-editors/editor-user-guides/vspacecode-calva.md
+          - clojure-editors/editor-user-guides/vscode-calva.md
+          - clojure-editors/editor-user-guides/intellij-cursive.md
+  - Data Inspectors:
+      - clojure-cli/data-browsers/index.md
+      - clojure-cli/data-browsers/clojure-inspector.md
+      - Portal: clojure-cli/data-browsers/portal.md
+      # - clojure-cli/data-browsers/reveal.md
+
+  - Reference:
+      - Crreative Coding:
+          - reference/creative-coding/index.md

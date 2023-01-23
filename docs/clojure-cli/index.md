@@ -54,7 +54,8 @@ Clojure CLI can also be used for [evaluating an expressions](/clojure/alternativ
 
 `clojure -Sdescribe` shows the version of Clojure CLI currently installed.
 
-![clojure cli tools - describe install version](/images/clojure-cli-tools-install-version-describe.png)
+![clojure cli - show version with describe - light](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-light.png#only-light)
+![clojure cli - show version with describe - dark](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-dark.png#only-dark)
 
 The `-Sverbose` flag shows the Clojure CLI version and basic configuration before running any task, e.g. `clojure -Sverbose -M:repl/rebel` will show the Clojure CLI details and then run Rebel terminal UI.
 
