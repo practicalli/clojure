@@ -6,9 +6,15 @@
 {:additional-snippets [{} {} {} ,,,]}
 ```
 
-> #### Hint::Install Practicalli Custom Snippets
-> [Install practicalli/clojure-lsp-snippets guide](https://practical.li/spacemacs/install-spacemacs/clojure-lsp/snippets.md)
-
+??? HINT "Practicalli Snippets available in practicalli/clojure-lsp-config"
+    === Via SSH
+        ```bash
+        git@github.com:practicalli/clojure-lsp-config.git
+        ```
+    === Via HTTPS
+        ```bash
+        git clone https://github.com/practicalli/clojure-lsp-config
+        ```
 
 ## Documentation
 
