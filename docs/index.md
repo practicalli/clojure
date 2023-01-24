@@ -37,13 +37,13 @@ As we work through code we will discuss the concepts behind Clojure, including f
 [Practicalli YouTube channel](https://youtube.co/practicalli){target=_blank .md-button}
 
 
-## Discussions and feedback
+## Sponsor my work
 
-[Contributions are welcome via GitHub issues and pull requests](contributing.md), or discuss the book on the Clojurians Slack community.
+[![Sponsor practicalli-john](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png){ align=left loading=lazy }](https://github.com/sponsors/practicalli-john/)
 
-[Ask Questions - Clojurians Slack](https://clojurians.slack.com/messages/practicalli){target=_blank .md-button}
+The majority of my work is now focused on the [Practicalli series of books and videos](https://practical.li/){target=_blank} and an advisory role with several communities
 
-Get a [free Clojurians slack community account](https://clojurians.net/)
+Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors){target=_blank} from the Clojure community for your continued support
 
 
 ## Creative commons license
