@@ -39,7 +39,7 @@ Unit tests are run using the `:test/run` alias (this alias should run Kaocha or 
 
 The Clojure project is packaged into an Uberjar for deployment
 
-```yml
+```yaml
 name: Test and Package project
 on: [push]
 jobs:

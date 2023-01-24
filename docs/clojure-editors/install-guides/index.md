@@ -26,6 +26,7 @@ All these editors support Clojure development.  Use an editor you are familiar w
 
 ![Atom.io and ProtoREPL](/images/atom-protorepl-demo.gif)
 
+
 ### Simplified menu and configuration approach
 
 Proton offers a simple mnemonic menu as an alternative to the somewhat cumbersome keybindings in Atom.io.  Proton also gives you a simple text configuration to manage all your packages quickly.
