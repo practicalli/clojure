@@ -35,7 +35,7 @@ jobs:
         with:
           version: '2021.12.16'
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: Run on Ubuntu
         run: clj-kondo --lint deps.edn --config '{:output {:pattern "::{{level}} file={{filename}},line={{row}},col={{col}}::{{message}}"}}'
