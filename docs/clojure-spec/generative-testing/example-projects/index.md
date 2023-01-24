@@ -1,7 +1,7 @@
 # Example projects using Clojure Spec
 
-| Project                   | How the project uses Spec                                                         |
-|---------------------------|-----------------------------------------------------------------------------------|
+| Project                                | How the project uses Spec                                                         |
+|----------------------------------------|-----------------------------------------------------------------------------------|
 | [seancorfield/next-jdbc](next-jdbc.md) | Data specifications using predicates, function definition argument specifications |
 
 

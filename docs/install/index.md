@@ -22,7 +22,7 @@ Establish an effective Clojure development environment by installing the followi
 | [Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) | Recommended | Curated aliases providing common development tasks and tools across all projects (used heavily in this guide)                |
 | [Clojure aware editors](clojure-editors/)                                     | Recommended | Editors providing a complete Clojure development environment                                                                 |
 | [Clojure LSP server](clojure-lsp.md)                                          | Recommended | Lint tool to detect syntax bugs and suggest idiomatic code                                                                   |
-| [Code analysis (clj-kondo)](code-analysis.md)                                 | Optional    | (included in Clojure-lsp) Lint tool to detect syntax bugs and suggest idiomatic code                                          |
+| [Code analysis (clj-kondo)](code-analysis.md)                                 | Optional    | (included in Clojure-lsp) Lint tool to detect syntax bugs and suggest idiomatic code                                         |
 | [Data browsers](data-browsers/)                                               | Recommend   | Visualize results of Clojure code, navigate nested data and page through large data sets                                     |
 
 !!! Hint "Aliases provided by Practicalli Clojure CLI config"
