@@ -29,34 +29,40 @@ A summary highlighting the common purposes that Clojure Spec is used for
 
 
 ## Example use cases
+
 * API requests (schema is often used here, but so can spec)
 * Checking data pulled from / pushed to message systems (e.g. Kafka, TIBCO)
 * Data specifications (eg. Vega-lite)
 
 
 ## Example code
+
 * [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec) - basic examples of using spec, following the [Practicalli Spec broadcasts](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiBWGAuncfBRYhZtY5-Bp75s)
 
 
 ## Understanding the basics of Clojure Spec
-{% youtube %}
-https://youtu.be/rj7Wsw4VFI0
-{% endyoutube %}
+
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/rj7Wsw4VFI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## Trying clojure.spec
+
 Follow the examples in these two excellent videos
 
-{% youtube %}
-https://www.youtube.com/watch?v=nqY4nUMfus8
-{% endyoutube %}
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nqY4nUMfus8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
-{% youtube %}
-https://www.youtube.com/watch?v=W6crrbF7s2s
-{% endyoutube %}
+
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W6crrbF7s2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## Why is the spec library called alpha?
+
 The library is called `clojure.spec.alpha` as the design of spec is still evolving and there may be some changes to the design in later versions.  Clojure aims for backwards compatibility, so new versions typically do not break existing use of libraries.
 
 There are some important changes being developed for spec version 2 and a few things may change, however, the large majority of Spec will remain the same and is safe to use.
