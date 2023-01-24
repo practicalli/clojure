@@ -187,6 +187,37 @@ nav:
       - Portal: clojure-cli/data-browsers/portal.md
       # - clojure-cli/data-browsers/reveal.md
 
+  - Code Challenges:
+      - coding-challenges/index.md
+      - 4 Ever Clojure:
+          - coding-challenges/4clojure/index.md
+      - Exercism:
+          - coding-challenges/exercism/index.md
+          - coding-challenges/exercism/rna-transcription.md
+          - coding-challenges/exercism/hamming.md
+          - coding-challenges/exercism/space-age.md
+          - Bob: coding-challenges/exercism/bob.md
+            # - coding-challenges/exercism/bob-string-approach.md
+            # - coding-challenges/exercism/bob-regular-expression-approach.md
+      - CodeWars: coding-challenges/codewars/index.md
+      - Advent Of Code: coding-challenges/advent-of-code.md
+      - Simple projects:
+          - simple-projects/index.md
+          - Random Function: simple-projects/random-clojure-function.md
+          - Salary Calculator: simple-projects/salary-calculator.md -->
+          - Encoder Decode:
+              - simple-projects/encode-decode/index.md
+              - simple-projects/encode-decode/convert-boolean-values.md
+              - simple-projects/encode-decode/caesar-cipher-rot13.md
+              - simple-projects/encode-decode/rna-dna.md
+              - simple-projects/encode-decode/clacks.md
+          - Data Transform:
+              - simple-projects/data-transformation/index.md
+              - simple-projects/data-transformation/most-common-word.md
+          - Kata:
+              - simple-projects/tdd-kata/index.md
+              - Recent Song list: simple-projects/tdd-kata/recent-song-list.md
+
   - Reference:
       - Crreative Coding:
           - reference/creative-coding/index.md
