@@ -1,4008 +1,658 @@
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Simple projects · Practicalli Clojure</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="Practicalli">
-        
-        
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-callouts/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-folding-chapters/folding-chapters.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-newtabs/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-newtabs/tabs.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-sectionx/sectionx.css">
-                
-            
-                
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-simpletabs/tabs.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-terminull-light/terminull.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-toggle-chapters/toggle.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-wide-page/wide.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-        
-
-    
-
-    
-        
-        <link rel="stylesheet" href="../styles/website.css">
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-        
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="random-clojure-function.html" />
-    
-    
-    <link rel="prev" href="../coding-challenges/advent-of-code.html" />
-    
-
-    </head>
-    <body>
-        
-
-
-<div class="book">
-    <div class="book-summary">
-        
-      <!-- <div class="theme-code-header">
-           <a href="" class="link">
-           <h1 class="title">Practicalli Clojure</h1>
-           </a>
-           </div> -->
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-
-<ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://practical.li/" target="_blank" class="custom-link">Practicalli</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                  <!--  -->
-                    Introduction
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.1" data-path="../first-taste-of-clojure.html">
-            
-                <a href="../first-taste-of-clojure.html">
-            
-                  <!--  -->
-                    First taste of Clojure
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.1.1" data-path="../creative-coding.html">
-            
-                <a href="../creative-coding.html">
-            
-                  <!--  -->
-                    Creative coding
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.2" data-path="../repl-driven-development.html">
-            
-                <a href="../repl-driven-development.html">
-            
-                  <!--  -->
-                    REPL driven development
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.3" data-path="../concepts/">
-            
-                <a href="../concepts/">
-            
-                  <!--  -->
-                    Clojure concepts
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.1.3.1" data-path="../concepts/what-is-functional-programming.html">
-            
-                <a href="../concepts/what-is-functional-programming.html">
-            
-                  <!--  -->
-                    Functional Verses Imperative Programming
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.3.2" data-path="../concepts/clojure-made-simple.html">
-            
-                <a href="../concepts/clojure-made-simple.html">
-            
-                  <!--  -->
-                    Clojure from the Author
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.3.3" data-path="../concepts/who-uses-clojure.html">
-            
-                <a href="../concepts/who-uses-clojure.html">
-            
-                  <!--  -->
-                    Who uses Clojure
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.4" data-path="../contributing.html">
-            
-                <a href="../contributing.html">
-            
-                  <!--  -->
-                    Contributing
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Getting Started</li>
-        
-        
-    
-        <li class="chapter " data-level="2.1" data-path="../clojure-cli/">
-            
-                <a href="../clojure-cli/">
-            
-                  <!--  -->
-                    Clojure CLI Overview
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2" data-path="../clojure-cli/install/">
-            
-                <a href="../clojure-cli/install/">
-            
-                  <!--  -->
-                    Install Clojure CLI
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.1" data-path="../clojure-cli/install/java.html">
-            
-                <a href="../clojure-cli/install/java.html">
-            
-                  <!--  -->
-                    Java
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.2" data-path="../clojure-cli/install/clojure-cli.html">
-            
-                <a href="../clojure-cli/install/clojure-cli.html">
-            
-                  <!--  -->
-                    Clojure
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.3" data-path="../clojure-cli/install/community-tools.html">
-            
-                <a href="../clojure-cli/install/community-tools.html">
-            
-                  <!--  -->
-                    Community tools
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.3.1" data-path="../clojure-cli/install/community-tools-available.html">
-            
-                <a href="../clojure-cli/install/community-tools-available.html">
-            
-                  <!--  -->
-                    Available Community tools
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.3.2" data-path="../clojure-cli/configure/">
-            
-                <a href="../clojure-cli/configure/">
-            
-                  <!--  -->
-                    Configure Clojure Tools
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.4" data-path="../clojure-cli/install/code-analysis.html">
-            
-                <a href="../clojure-cli/install/code-analysis.html">
-            
-                  <!--  -->
-                    Code Analysis
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.5" data-path="../clojure-cli/install/clojure-lsp.html">
-            
-                <a href="../clojure-cli/install/clojure-lsp.html">
-            
-                  <!--  -->
-                    Clojure LSP
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.2.5.1" data-path="../clojure-cli/install/clojure-lsp-snippets.html">
-            
-                <a href="../clojure-cli/install/clojure-lsp-snippets.html">
-            
-                  <!--  -->
-                    Snippets
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.2.5.2" data-path="../clojure-cli/install/clojure-lsp-snippets.html">
-            
-                <a href="../clojure-cli/install/clojure-lsp-snippets.html">
-            
-                  <!--  -->
-                    P9I Snippets
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3" data-path="../clojure-cli/repl/">
-            
-                <a href="../clojure-cli/repl/">
-            
-                  <!--  -->
-                    Terminal REPL
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.3.1" data-path="../clojure-cli/repl/coding-in-the-repl.html">
-            
-                <a href="../clojure-cli/repl/coding-in-the-repl.html">
-            
-                  <!--  -->
-                    Coding in the REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.2" data-path="../clojure-cli/repl/using-project-or-library.html">
-            
-                <a href="../clojure-cli/repl/using-project-or-library.html">
-            
-                  <!--  -->
-                    Using libraries in REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.3" data-path="../clojure-cli/repl/help-at-the-repl.html">
-            
-                <a href="../clojure-cli/repl/help-at-the-repl.html">
-            
-                  <!--  -->
-                    Help at the REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.4" data-path="../clojure-cli/repl/customize-rebel.html">
-            
-                <a href="../clojure-cli/repl/customize-rebel.html">
-            
-                  <!--  -->
-                    Customize rebel
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.3.5" data-path="../clojure-cli/repl/troubleshooting.html">
-            
-                <a href="../clojure-cli/repl/troubleshooting.html">
-            
-                  <!--  -->
-                    Troubleshooting
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4" data-path="../clojure-cli/projects/create.html">
-            
-                <a href="../clojure-cli/projects/create.html">
-            
-                  <!--  -->
-                    Clojure projects
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.4.1" data-path="../clojure-cli/projects/add-libraries.html">
-            
-                <a href="../clojure-cli/projects/add-libraries.html">
-            
-                  <!--  -->
-                    Add Libraries
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.2" data-path="../clojure-cli/projects/namespace.html">
-            
-                <a href="../clojure-cli/projects/namespace.html">
-            
-                  <!--  -->
-                    Namespaces
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.3" data-path="../clojure-cli/projects/rich-comments.html">
-            
-                <a href="../clojure-cli/projects/rich-comments.html">
-            
-                  <!--  -->
-                    Rich Comments
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.4.4" data-path="../clojure-cli/projects/configure-repl-startup.html">
-            
-                <a href="../clojure-cli/projects/configure-repl-startup.html">
-            
-                  <!--  -->
-                    Configure REPL Startup
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5" data-path="../clojure-editors/">
-            
-                <a href="../clojure-editors/">
-            
-                  <!--  -->
-                    Clojure Aware Editors
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.5.1" data-path="../clojure-editors/editor-install-guides/">
-            
-                <a href="../clojure-editors/editor-install-guides/">
-            
-                  <!--  -->
-                    Editor Install Guides
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.5.1.1" data-path="../clojure-editors/editor-install-guides/atom-protorepl.html">
-            
-                <a href="../clojure-editors/editor-install-guides/atom-protorepl.html">
-            
-                  <!--  -->
-                    Atom ProtoREPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.2" data-path="../clojure-editors/editor-install-guides/atom-proton.html">
-            
-                <a href="../clojure-editors/editor-install-guides/atom-proton.html">
-            
-                  <!--  -->
-                    Atom Proton
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.3" data-path="../clojure-editors/editor-install-guides/emacs-spacemacs.html">
-            
-                <a href="../clojure-editors/editor-install-guides/emacs-spacemacs.html">
-            
-                  <!--  -->
-                    Emacs Spacemacs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.4" data-path="../clojure-editors/editor-install-guides/emacs.html">
-            
-                <a href="../clojure-editors/editor-install-guides/emacs.html">
-            
-                  <!--  -->
-                    Emacs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.5" data-path="../clojure-editors/editor-install-guides/neovim-conjure.html">
-            
-                <a href="../clojure-editors/editor-install-guides/neovim-conjure.html">
-            
-                  <!--  -->
-                    Neovim Conjure
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.5.1.5.1" data-path="../clojure-editors/editor-install-guides/vim-plugins.html">
-            
-                <a href="../clojure-editors/editor-install-guides/vim-plugins.html">
-            
-                  <!--  -->
-                    Neovim Plugins
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.6" data-path="../clojure-editors/editor-install-guides/spacevim-fireplace.html">
-            
-                <a href="../clojure-editors/editor-install-guides/spacevim-fireplace.html">
-            
-                  <!--  -->
-                    SpaceVim Fireplace
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.5.1.6.1" data-path="../clojure-editors/editor-install-guides/spacevim-configuration.html">
-            
-                <a href="../clojure-editors/editor-install-guides/spacevim-configuration.html">
-            
-                  <!--  -->
-                    SpaceVim configuration
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.7" data-path="../clojure-editors/editor-install-guides/vspacecode-calva.html">
-            
-                <a href="../clojure-editors/editor-install-guides/vspacecode-calva.html">
-            
-                  <!--  -->
-                    VSpaceCode Calva
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.8" data-path="../clojure-editors/editor-install-guides/vscode-calva.html">
-            
-                <a href="../clojure-editors/editor-install-guides/vscode-calva.html">
-            
-                  <!--  -->
-                    VSCode Calva
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.1.9" data-path="../clojure-editors/editor-install-guides/intellij-cursive.html">
-            
-                <a href="../clojure-editors/editor-install-guides/intellij-cursive.html">
-            
-                  <!--  -->
-                    IntelliJ Cursive
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2" data-path="../clojure-editors/editor-user-guides/">
-            
-                <a href="../clojure-editors/editor-user-guides/">
-            
-                  <!--  -->
-                    Editor User Guides
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.5.2.1" data-path="../clojure-editors/editor-user-guides/atom-protorepl.html">
-            
-                <a href="../clojure-editors/editor-user-guides/atom-protorepl.html">
-            
-                  <!--  -->
-                    Atom ProtoREPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.2" data-path="../clojure-editors/editor-user-guides/atom-proton.html">
-            
-                <a href="../clojure-editors/editor-user-guides/atom-proton.html">
-            
-                  <!--  -->
-                    Atom Proton
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.3" data-path="../clojure-editors/editor-user-guides/emacs-spacemacs.html">
-            
-                <a href="../clojure-editors/editor-user-guides/emacs-spacemacs.html">
-            
-                  <!--  -->
-                    Emacs Spacemacs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.4" data-path="../clojure-editors/editor-user-guides/neovim-conjure.html">
-            
-                <a href="../clojure-editors/editor-user-guides/neovim-conjure.html">
-            
-                  <!--  -->
-                    Neovim Conjure
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.5" data-path="../clojure-editors/editor-user-guides/spacevim-fireplace.html">
-            
-                <a href="../clojure-editors/editor-user-guides/spacevim-fireplace.html">
-            
-                  <!--  -->
-                    SpaceVim Fireplace
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.6" data-path="../clojure-editors/editor-user-guides/vspacecode-calva.html">
-            
-                <a href="../clojure-editors/editor-user-guides/vspacecode-calva.html">
-            
-                  <!--  -->
-                    VSpaceCode Calva
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.7" data-path="../clojure-editors/editor-user-guides/vscode-calva.html">
-            
-                <a href="../clojure-editors/editor-user-guides/vscode-calva.html">
-            
-                  <!--  -->
-                    VSCode Calva
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.5.2.8" data-path="../clojure-editors/editor-user-guides/intellij-cursive.html">
-            
-                <a href="../clojure-editors/editor-user-guides/intellij-cursive.html">
-            
-                  <!--  -->
-                    IntelliJ Cursive
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="2.6" data-path="../clojure-cli/data-browsers/">
-            
-                <a href="../clojure-cli/data-browsers/">
-            
-                  <!--  -->
-                    Data browsers
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="2.6.1" data-path="../clojure-cli/data-browsers/clojure-inspector.html">
-            
-                <a href="../clojure-cli/data-browsers/clojure-inspector.html">
-            
-                  <!--  -->
-                    Clojure Inspector
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.6.2" data-path="../clojure-cli/data-browsers/reveal.html">
-            
-                <a href="../clojure-cli/data-browsers/reveal.html">
-            
-                  <!--  -->
-                    Reveal
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="2.6.3" data-path="../clojure-cli/data-browsers/portal.html">
-            
-                <a href="../clojure-cli/data-browsers/portal.html">
-            
-                  <!--  -->
-                    Portal
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Developing Clojure</li>
-        
-        
-    
-        <li class="chapter " data-level="3.1" data-path="../coding-challenges/">
-            
-                <a href="../coding-challenges/">
-            
-                  <!--  -->
-                    Coding Challenges
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.1" data-path="../coding-challenges/4clojure/">
-            
-                <a href="../coding-challenges/4clojure/">
-            
-                  <!--  -->
-                    4Clojure
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2" data-path="../coding-challenges/exercism/">
-            
-                <a href="../coding-challenges/exercism/">
-            
-                  <!--  -->
-                    Exercism
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.2.1" data-path="../coding-challenges/exercism/bob.html">
-            
-                <a href="../coding-challenges/exercism/bob.html">
-            
-                  <!--  -->
-                    Bob Text Parser
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.1.2.1.1" data-path="../coding-challenges/exercism/bob-string-approach.html">
-            
-                <a href="../coding-challenges/exercism/bob-string-approach.html">
-            
-                  <!--  -->
-                    clojure.string approach
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2.1.2" data-path="../coding-challenges/exercism/bob-regular-expression-approach.html">
-            
-                <a href="../coding-challenges/exercism/bob-regular-expression-approach.html">
-            
-                  <!--  -->
-                    regular expression approach
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2.2" data-path="../coding-challenges/exercism/rna-transcription.html">
-            
-                <a href="../coding-challenges/exercism/rna-transcription.html">
-            
-                  <!--  -->
-                    RNA Transcription
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2.3" data-path="../coding-challenges/exercism/hamming.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Hamming
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.2.4" data-path="../coding-challenges/exercism/space-age.html">
-            
-                <a href="../coding-challenges/exercism/space-age.html">
-            
-                  <!--  -->
-                    SpaceAge
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.3" data-path="../coding-challenges/codewars/">
-            
-                <a href="../coding-challenges/codewars/">
-            
-                  <!--  -->
-                    CodeWars
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.1.4" data-path="../coding-challenges/advent-of-code.html">
-            
-                <a href="../coding-challenges/advent-of-code.html">
-            
-                  <!--  -->
-                    Advent of Code
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter active" data-level="3.2" data-path="./">
-            
-                <a href="./">
-            
-                  <!--  -->
-                    Simple projects
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.1" data-path="random-clojure-function.html">
-            
-                <a href="random-clojure-function.html">
-            
-                  <!--  -->
-                    Random function
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.2" data-path="encode-decode/">
-            
-                <a href="encode-decode/">
-            
-                  <!--  -->
-                    Encode & Decode
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.2.1" data-path="encode-decode/convert-boolean-values.html">
-            
-                <a href="encode-decode/convert-boolean-values.html">
-            
-                  <!--  -->
-                    Convert Boolean Values
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.2.2" data-path="encode-decode/caesar-cipher-rot13.html">
-            
-                <a href="encode-decode/caesar-cipher-rot13.html">
-            
-                  <!--  -->
-                    Caesar Cipher: ROT13
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.2.3" data-path="encode-decode/rna-dna.html">
-            
-                <a href="encode-decode/rna-dna.html">
-            
-                  <!--  -->
-                    RNA and DNA
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.2.4" data-path="encode-decode/clacks.html">
-            
-                <a href="encode-decode/clacks.html">
-            
-                  <!--  -->
-                    Clacks
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.3" data-path="data-transformation/">
-            
-                <a href="data-transformation/">
-            
-                  <!--  -->
-                    Data Transformation
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.3.1" data-path="data-transformation/most-common-word.html">
-            
-                <a href="data-transformation/most-common-word.html">
-            
-                  <!--  -->
-                    Most common word
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.2.4" data-path="tdd-kata/">
-            
-                <a href="tdd-kata/">
-            
-                  <!--  -->
-                    Kata - TDD
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.2.4.1" data-path="tdd-kata/recent-song-list.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Recent Song-list
-            
-                </span>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="3.3" data-path="../games/">
-            
-                <a href="../games/">
-            
-                  <!--  -->
-                    Games
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.3.1" data-path="../games/tictactoe-cli/">
-            
-                <a href="../games/tictactoe-cli/">
-            
-                  <!--  -->
-                    TicTacToe CLI
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="3.3.1.1" data-path="../games/tictactoe-cli/create-project.html">
-            
-                <a href="../games/tictactoe-cli/create-project.html">
-            
-                  <!--  -->
-                    Create Project
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="4.1" data-path="../thinking-functionally/">
-            
-                <a href="../thinking-functionally/">
-            
-                  <!--  -->
-                    Thinking Functionally
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.1" data-path="../thinking-functionally/side-effects.html">
-            
-                <a href="../thinking-functionally/side-effects.html">
-            
-                  <!--  -->
-                    Side effects
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.2" data-path="../thinking-functionally/pure-functions.html">
-            
-                <a href="../thinking-functionally/pure-functions.html">
-            
-                  <!--  -->
-                    Pure functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.3" data-path="../thinking-functionally/impure-functions.html">
-            
-                <a href="../thinking-functionally/impure-functions.html">
-            
-                  <!--  -->
-                    Impure functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.4" data-path="../thinking-functionally/first-class-functions.html">
-            
-                <a href="../thinking-functionally/first-class-functions.html">
-            
-                  <!--  -->
-                    First Class functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.5" data-path="../thinking-functionally/homoiconicity.html">
-            
-                <a href="../thinking-functionally/homoiconicity.html">
-            
-                  <!--  -->
-                    Homoiconicity
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.6" data-path="../thinking-functionally/function-composition.html">
-            
-                <a href="../thinking-functionally/function-composition.html">
-            
-                  <!--  -->
-                    Function Composition
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.6.1" data-path="../thinking-functionally/example-hitchhikers-guide.html">
-            
-                <a href="../thinking-functionally/example-hitchhikers-guide.html">
-            
-                  <!--  -->
-                    Example: Hitchhikers Guide
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.7" data-path="../thinking-functionally/higher-order-functions.html">
-            
-                <a href="../thinking-functionally/higher-order-functions.html">
-            
-                  <!--  -->
-                    Higher Order functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.8" data-path="../thinking-functionally/immutability.html">
-            
-                <a href="../thinking-functionally/immutability.html">
-            
-                  <!--  -->
-                    Immutability
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.8.1" data-path="../thinking-functionally/immutable-values.html">
-            
-                <a href="../thinking-functionally/immutable-values.html">
-            
-                  <!--  -->
-                    Immutable values
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.8.2" data-path="../thinking-functionally/immutable-collections.html">
-            
-                <a href="../thinking-functionally/immutable-collections.html">
-            
-                  <!--  -->
-                    Immutable collections
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.8.3" data-path="../thinking-functionally/immutable-local-bindings.html">
-            
-                <a href="../thinking-functionally/immutable-local-bindings.html">
-            
-                  <!--  -->
-                    Immutable Local Bindings
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.9" data-path="../thinking-functionally/partial-functions.html">
-            
-                <a href="../thinking-functionally/partial-functions.html">
-            
-                  <!--  -->
-                    Currying & Partial Functions
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="4.1.9.1" data-path="../thinking-functionally/map-with-partial.html">
-            
-                <a href="../thinking-functionally/map-with-partial.html">
-            
-                  <!--  -->
-                    map with partial
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.10" data-path="../thinking-functionally/list-comprehension.html">
-            
-                <a href="../thinking-functionally/list-comprehension.html">
-            
-                  <!--  -->
-                    List Comprehension
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.11" data-path="../thinking-functionally/sequences.html">
-            
-                <a href="../thinking-functionally/sequences.html">
-            
-                  <!--  -->
-                    Sequences
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.12" data-path="../thinking-functionally/sequence-abstractions.html">
-            
-                <a href="../thinking-functionally/sequence-abstractions.html">
-            
-                  <!--  -->
-                    Sequence-abstraction
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.13" data-path="../thinking-functionally/functors.html">
-            
-                <a href="../thinking-functionally/functors.html">
-            
-                  <!--  -->
-                    Functors
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.14" data-path="../thinking-functionally/arity.html">
-            
-                <a href="../thinking-functionally/arity.html">
-            
-                  <!--  -->
-                    Arity
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.15" data-path="../thinking-functionally/pattern-matching.html">
-            
-                <a href="../thinking-functionally/pattern-matching.html">
-            
-                  <!--  -->
-                    Pattern matching
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.16" data-path="../thinking-functionally/polymorphism.html">
-            
-                <a href="../thinking-functionally/polymorphism.html">
-            
-                  <!--  -->
-                    Polymorphism
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.17" data-path="../thinking-functionally/recursion.html">
-            
-                <a href="../thinking-functionally/recursion.html">
-            
-                  <!--  -->
-                    Recursion
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.18" data-path="../thinking-functionally/recursion-polymorphism.html">
-            
-                <a href="../thinking-functionally/recursion-polymorphism.html">
-            
-                  <!--  -->
-                    Recursion & Polymorphism
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="4.1.19" data-path="../thinking-functionally/tail-recursion.html">
-            
-                <a href="../thinking-functionally/tail-recursion.html">
-            
-                  <!--  -->
-                    Tail recursion
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Testing Clojure</li>
-        
-        
-    
-        <li class="chapter " data-level="5.1" data-path="../testing/unit-testing/">
-            
-                <a href="../testing/unit-testing/">
-            
-                  <!--  -->
-                    Unit testing
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.1.1" data-path="../testing/unit-testing/configure-projects-for-tests.html">
-            
-                <a href="../testing/unit-testing/configure-projects-for-tests.html">
-            
-                  <!--  -->
-                    Configure projects
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.2" data-path="../testing/unit-testing/require-test-namespaces.html">
-            
-                <a href="../testing/unit-testing/require-test-namespaces.html">
-            
-                  <!--  -->
-                    Requiring Test namespaces
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.3" data-path="../testing/unit-testing/writing-unit-tests.html">
-            
-                <a href="../testing/unit-testing/writing-unit-tests.html">
-            
-                  <!--  -->
-                    Writing Unit Tests
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.4" data-path="../testing/unit-testing/fixtures.html">
-            
-                <a href="../testing/unit-testing/fixtures.html">
-            
-                  <!--  -->
-                    Fixtures
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.1.5" data-path="../testing/unit-testing/test-selectors.html">
-            
-                <a href="../testing/unit-testing/test-selectors.html">
-            
-                  <!--  -->
-                    Test Selectors
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2" data-path="../testing/test-runners/">
-            
-                <a href="../testing/test-runners/">
-            
-                  <!--  -->
-                    Test runners
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.2.1" data-path="../testing/test-runners/congnitect-labs-test-runner.html">
-            
-                <a href="../testing/test-runners/congnitect-labs-test-runner.html">
-            
-                  <!--  -->
-                    Cognitect-labs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2.2" data-path="../testing/test-runners/kaocha-test-runner.html">
-            
-                <a href="../testing/test-runners/kaocha-test-runner.html">
-            
-                  <!--  -->
-                    LambdaIsland Kaocha
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.2.3" data-path="../testing/test-runners/example-projects.html">
-            
-                <a href="../testing/test-runners/example-projects.html">
-            
-                  <!--  -->
-                    Example projects
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3" data-path="../clojure-spec/">
-            
-                <a href="../clojure-spec/">
-            
-                  <!--  -->
-                    Spec & Generative Testing
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.1" data-path="../clojure-spec/using-spec-in-the-repl.html">
-            
-                <a href="../clojure-spec/using-spec-in-the-repl.html">
-            
-                  <!--  -->
-                    Spec in the REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.2" data-path="../clojure-spec/add-spec-to-projects.html">
-            
-                <a href="../clojure-spec/add-spec-to-projects.html">
-            
-                  <!--  -->
-                    Add Spec to Projects
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.3" data-path="../clojure-spec/organising-specs.html">
-            
-                <a href="../clojure-spec/organising-specs.html">
-            
-                  <!--  -->
-                    Organising Specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4" data-path="../clojure-spec/data/">
-            
-                <a href="../clojure-spec/data/">
-            
-                  <!--  -->
-                    Data Specifications
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.4.1" data-path="../clojure-spec/data/predicate-specifications.html">
-            
-                <a href="../clojure-spec/data/predicate-specifications.html">
-            
-                  <!--  -->
-                    Predicates
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.2" data-path="../clojure-spec/data/literal-values.html">
-            
-                <a href="../clojure-spec/data/literal-values.html">
-            
-                  <!--  -->
-                    literal values
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.3" data-path="../clojure-spec/data/conform.html">
-            
-                <a href="../clojure-spec/data/conform.html">
-            
-                  <!--  -->
-                    conform
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.4" data-path="../clojure-spec/data/valid-q.html">
-            
-                <a href="../clojure-spec/data/valid-q.html">
-            
-                  <!--  -->
-                    valid?
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.5" data-path="../clojure-spec/data/explain.html">
-            
-                <a href="../clojure-spec/data/explain.html">
-            
-                  <!--  -->
-                    explain
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.6" data-path="../clojure-spec/data/defining-specifications.html">
-            
-                <a href="../clojure-spec/data/defining-specifications.html">
-            
-                  <!--  -->
-                    defining specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.7" data-path="../clojure-spec/data/registry.html">
-            
-                <a href="../clojure-spec/data/registry.html">
-            
-                  <!--  -->
-                    registry
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.8" data-path="../clojure-spec/data/entity-maps.html">
-            
-                <a href="../clojure-spec/data/entity-maps.html">
-            
-                  <!--  -->
-                    Entity Maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.9" data-path="../clojure-spec/data/map-literals.html">
-            
-                <a href="../clojure-spec/data/map-literals.html">
-            
-                  <!--  -->
-                    Map Literals
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.10" data-path="../clojure-spec/data/and-or-specifications.html">
-            
-                <a href="../clojure-spec/data/and-or-specifications.html">
-            
-                  <!--  -->
-                    and/or specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.11" data-path="../clojure-spec/data/composite-specifications.html">
-            
-                <a href="../clojure-spec/data/composite-specifications.html">
-            
-                  <!--  -->
-                    Composite Specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.4.12" data-path="../clojure-spec/data/hierarchical-specifications.html">
-            
-                <a href="../clojure-spec/data/hierarchical-specifications.html">
-            
-                  <!--  -->
-                    Hierarchical Specs
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.5" data-path="../clojure-spec/functions/">
-            
-                <a href="../clojure-spec/functions/">
-            
-                  <!--  -->
-                    Spec functions
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.5.1" data-path="../clojure-spec/functions/function-definition-specifications.html">
-            
-                <a href="../clojure-spec/functions/function-definition-specifications.html">
-            
-                  <!--  -->
-                    function definitions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.5.2" data-path="../clojure-spec/functions/documentation.html">
-            
-                <a href="../clojure-spec/functions/documentation.html">
-            
-                  <!--  -->
-                    documentation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.5.3" data-path="../clojure-spec/functions/higher-order-functions.html">
-            
-                <a href="../clojure-spec/functions/higher-order-functions.html">
-            
-                  <!--  -->
-                    higher-order functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.6" data-path="../clojure-spec/testing/">
-            
-                <a href="../clojure-spec/testing/">
-            
-                  <!--  -->
-                    Testing Specifications
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.6.1" data-path="../clojure-spec/testing/checking arguments.html">
-            
-                <a href="../clojure-spec/testing/checking arguments.html">
-            
-                  <!--  -->
-                    Checking arguments
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.7" data-path="../clojure-spec/generative-testing/">
-            
-                <a href="../clojure-spec/generative-testing/">
-            
-                  <!--  -->
-                    Generative Testing
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.7.1" data-path="../clojure-spec/generative-testing/predicate-generators.html">
-            
-                <a href="../clojure-spec/generative-testing/predicate-generators.html">
-            
-                  <!--  -->
-                    Predicate generators
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.7.2" data-path="../clojure-spec/generative-testing/example-projects/">
-            
-                <a href="../clojure-spec/generative-testing/example-projects/">
-            
-                  <!--  -->
-                    Example Projects
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.7.2.1" data-path="../clojure-spec/generative-testing/example-projects/next-jdbc.html">
-            
-                <a href="../clojure-spec/generative-testing/example-projects/next-jdbc.html">
-            
-                  <!--  -->
-                    next-jdbc
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8" data-path="../clojure-spec/projects/">
-            
-                <a href="../clojure-spec/projects/">
-            
-                  <!--  -->
-                    Spec Projects
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.8.1" data-path="../clojure-spec/projects/card-game/">
-            
-                <a href="../clojure-spec/projects/card-game/">
-            
-                  <!--  -->
-                    Card Game
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.8.1.1" data-path="../clojure-spec/projects/card-game/playing-card-specifications.html">
-            
-                <a href="../clojure-spec/projects/card-game/playing-card-specifications.html">
-            
-                  <!--  -->
-                    Playing Card Specifications
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.1.2" data-path="../clojure-spec/projects/card-game/generative-data-from-specifications.html">
-            
-                <a href="../clojure-spec/projects/card-game/generative-data-from-specifications.html">
-            
-                  <!--  -->
-                    Generating Data
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.1.3" data-path="../clojure-spec/projects/card-game/game-specifications.html">
-            
-                <a href="../clojure-spec/projects/card-game/game-specifications.html">
-            
-                  <!--  -->
-                    Game Specifications
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.1.4" data-path="../clojure-spec/projects/card-game/function-specifications.html">
-            
-                <a href="../clojure-spec/projects/card-game/function-specifications.html">
-            
-                  <!--  -->
-                    Function Specifications
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.1.5" data-path="../clojure-spec/projects/card-game/organising-instrumentation.html">
-            
-                <a href="../clojure-spec/projects/card-game/organising-instrumentation.html">
-            
-                  <!--  -->
-                    Organizing Instrumentation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2" data-path="../clojure-spec/projects/bank-account/">
-            
-                <a href="../clojure-spec/projects/bank-account/">
-            
-                  <!--  -->
-                    Bank Account TDD style
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.3.8.2.1" data-path="../clojure-spec/projects/bank-account/write-failing-tests.html">
-            
-                <a href="../clojure-spec/projects/bank-account/write-failing-tests.html">
-            
-                  <!--  -->
-                    Write Failing test
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.2" data-path="../clojure-spec/projects/bank-account/customer-details-specification.html">
-            
-                <a href="../clojure-spec/projects/bank-account/customer-details-specification.html">
-            
-                  <!--  -->
-                    Spec: Customer details
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.3" data-path="../clojure-spec/projects/bank-account/validate-customer-details-specification.html">
-            
-                <a href="../clojure-spec/projects/bank-account/validate-customer-details-specification.html">
-            
-                  <!--  -->
-                    Spec: Customer details
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.4" data-path="../clojure-spec/projects/bank-account/account-holder-specification.html">
-            
-                <a href="../clojure-spec/projects/bank-account/account-holder-specification.html">
-            
-                  <!--  -->
-                    Spec: Account holder
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.5" data-path="../clojure-spec/projects/bank-account/generate-test-data.html">
-            
-                <a href="../clojure-spec/projects/bank-account/generate-test-data.html">
-            
-                  <!--  -->
-                    Generate test data
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.6" data-path="../clojure-spec/projects/bank-account/unit-tests-with-spec.html">
-            
-                <a href="../clojure-spec/projects/bank-account/unit-tests-with-spec.html">
-            
-                  <!--  -->
-                    Unit Tests with spec
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.7" data-path="../clojure-spec/projects/bank-account/function-specifications.html">
-            
-                <a href="../clojure-spec/projects/bank-account/function-specifications.html">
-            
-                  <!--  -->
-                    Spec Functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.3.8.2.8" data-path="../clojure-spec/projects/bank-account/test-functions-against-spec.html">
-            
-                <a href="../clojure-spec/projects/bank-account/test-functions-against-spec.html">
-            
-                  <!--  -->
-                    Test Function against spec
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4" data-path="../continuous-integration/">
-            
-                <a href="../continuous-integration/">
-            
-                  <!--  -->
-                    Continuous Integration
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.4.1" data-path="../continuous-integration/circle-ci/">
-            
-                <a href="../continuous-integration/circle-ci/">
-            
-                  <!--  -->
-                    Circle CI
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.4.1.1" data-path="../continuous-integration/circle-ci/random-clojure-function.html">
-            
-                <a href="../continuous-integration/circle-ci/random-clojure-function.html">
-            
-                  <!--  -->
-                    Random Clojure Function
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4.1.2" data-path="../continuous-integration/circle-ci/status-monitor.html">
-            
-                <a href="../continuous-integration/circle-ci/status-monitor.html">
-            
-                  <!--  -->
-                    Status Monitor
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="5.4.2" data-path="../continuous-integration/github-actions/">
-            
-                <a href="../continuous-integration/github-actions/">
-            
-                  <!--  -->
-                    GitHub Actions
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="5.4.2.1" data-path="../continuous-integration/github-actions/clj-kondo-lint.html">
-            
-                <a href="../continuous-integration/github-actions/clj-kondo-lint.html">
-            
-                  <!--  -->
-                    clj-kondo Lint
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Reference</li>
-        
-        
-    
-        <li class="chapter " data-level="6.1" data-path="../reference/clojure-cli/">
-            
-                <a href="../reference/clojure-cli/">
-            
-                  <!--  -->
-                    Clojure CLI
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.1.1" data-path="../reference/clojure-cli/defining-aliases.html">
-            
-                <a href="../reference/clojure-cli/defining-aliases.html">
-            
-                  <!--  -->
-                    Defining Aliases
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.2" data-path="../reference/clojure-cli/example-alias-definitions.html">
-            
-                <a href="../reference/clojure-cli/example-alias-definitions.html">
-            
-                  <!--  -->
-                    Example Alias definitions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.1.3" data-path="../reference/clojure-cli/jvm-options.html">
-            
-                <a href="../reference/clojure-cli/jvm-options.html">
-            
-                  <!--  -->
-                    JVM options
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6.2" data-path="../quickstart/quick-reference.html">
-            
-                <a href="../quickstart/quick-reference.html">
-            
-                  <!--  -->
-                    Quick Clojure reference
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3" data-path="../reference/standard-library/">
-            
-                <a href="../reference/standard-library/">
-            
-                  <!--  -->
-                    Standard Library
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.3.1" data-path="../reference/standard-library/data-structures/index.md">
-            
-                <span>
-            
-                  <!--  -->
-                    Data Structures
-            
-                </span>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.2" data-path="../reference/standard-library/predicate-functions.html">
-            
-                <a href="../reference/standard-library/predicate-functions.html">
-            
-                  <!--  -->
-                    Predicate functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3" data-path="../reference/standard-library/regular-expressions/">
-            
-                <a href="../reference/standard-library/regular-expressions/">
-            
-                  <!--  -->
-                    Regular Expressions
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.3.3.1" data-path="../reference/standard-library/regular-expressions/matching-with-groups.html">
-            
-                <a href="../reference/standard-library/regular-expressions/matching-with-groups.html">
-            
-                  <!--  -->
-                    Matching with groups
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.2" data-path="../reference/standard-library/regular-expressions/matching-sub-strings.html">
-            
-                <a href="../reference/standard-library/regular-expressions/matching-sub-strings.html">
-            
-                  <!--  -->
-                    Matching sub-strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.3" data-path="../reference/standard-library/regular-expressions/matching-sub-sequences.html">
-            
-                <a href="../reference/standard-library/regular-expressions/matching-sub-sequences.html">
-            
-                  <!--  -->
-                    Matching sub-sequences
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.4" data-path="../reference/standard-library/regular-expressions/common-regex-patterns.html">
-            
-                <a href="../reference/standard-library/regular-expressions/common-regex-patterns.html">
-            
-                  <!--  -->
-                    Common Patterns
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.5" data-path="../reference/standard-library/regular-expressions/string-replace-with-regex.html">
-            
-                <a href="../reference/standard-library/regular-expressions/string-replace-with-regex.html">
-            
-                  <!--  -->
-                    String replace
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.6" data-path="../reference/standard-library/regular-expressions/string-split-with-regex.html">
-            
-                <a href="../reference/standard-library/regular-expressions/string-split-with-regex.html">
-            
-                  <!--  -->
-                    String Split
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.3.7" data-path="../reference/standard-library/regular-expressions/sub-expression-matches.html">
-            
-                <a href="../reference/standard-library/regular-expressions/sub-expression-matches.html">
-            
-                  <!--  -->
-                    Sub-expression matches
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="6.3.4" data-path="../reference/clojure-syntax/java-interop.html">
-            
-                <a href="../reference/clojure-syntax/java-interop.html">
-            
-                  <!--  -->
-                    Java Interoperability
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="6.3.4.1" data-path="../reference/clojure-syntax/more-java-fun.html">
-            
-                <a href="../reference/clojure-syntax/more-java-fun.html">
-            
-                  <!--  -->
-                    More Java fun
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="7.1" data-path="../reference/clojure-syntax/syntax.html">
-            
-                <a href="../reference/clojure-syntax/syntax.html">
-            
-                  <!--  -->
-                    Syntax
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.1" data-path="../reference/clojure-syntax/parenthesis.html">
-            
-                <a href="../reference/clojure-syntax/parenthesis.html">
-            
-                  <!--  -->
-                    Parentheses
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.2" data-path="../reference/clojure-syntax/code-documentation.html">
-            
-                <a href="../reference/clojure-syntax/code-documentation.html">
-            
-                  <!--  -->
-                    Code documentation
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.3" data-path="../reference/clojure-syntax/comments.html">
-            
-                <a href="../reference/clojure-syntax/comments.html">
-            
-                  <!--  -->
-                    Comments
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.4" data-path="../reference/clojure-syntax/strings.html">
-            
-                <a href="../reference/clojure-syntax/strings.html">
-            
-                  <!--  -->
-                    Strings
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.5" data-path="../reference/clojure-syntax/numbers-maths.html">
-            
-                <a href="../reference/clojure-syntax/numbers-maths.html">
-            
-                  <!--  -->
-                    Numbers & Maths
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.6" data-path="../reference/clojure-syntax/ratios.html">
-            
-                <a href="../reference/clojure-syntax/ratios.html">
-            
-                  <!--  -->
-                    Ratios
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.7" data-path="../reference/clojure-syntax/control-flow.html">
-            
-                <a href="../reference/clojure-syntax/control-flow.html">
-            
-                  <!--  -->
-                    Control flow
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.8" data-path="../reference/doc-and-source-functions.html">
-            
-                <a href="../reference/doc-and-source-functions.html">
-            
-                  <!--  -->
-                    doc / source functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.9" data-path="../reference/clojure-syntax/assigning-names.html">
-            
-                <a href="../reference/clojure-syntax/assigning-names.html">
-            
-                  <!--  -->
-                    Assigning Names
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.10" data-path="../reference/clojure-syntax/naming.html">
-            
-                <a href="../reference/clojure-syntax/naming.html">
-            
-                  <!--  -->
-                    Naming
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.11" data-path="../reference/kebab-case.html">
-            
-                <a href="../reference/kebab-case.html">
-            
-                  <!--  -->
-                    Kebab-case
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.12" data-path="../reference/threading-macros.html">
-            
-                <a href="../reference/threading-macros.html">
-            
-                  <!--  -->
-                    Threading macros
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.1.13" data-path="../reference/tagged-literals/">
-            
-                <a href="../reference/tagged-literals/">
-            
-                  <!--  -->
-                    Tagged Literals
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.1.13.1" data-path="../reference/tagged-literals/uuid.html">
-            
-                <a href="../reference/tagged-literals/uuid.html">
-            
-                  <!--  -->
-                    uuid
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2" data-path="../data-structures/">
-            
-                <a href="../data-structures/">
-            
-                  <!--  -->
-                    Data structures
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.1" data-path="../data-structures/list.html">
-            
-                <a href="../data-structures/list.html">
-            
-                  <!--  -->
-                    Lists
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.2" data-path="../data-structures/hash-maps/">
-            
-                <a href="../data-structures/hash-maps/">
-            
-                  <!--  -->
-                    Hash-maps
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.2.1" data-path="../data-structures/hash-maps/create.html">
-            
-                <a href="../data-structures/hash-maps/create.html">
-            
-                  <!--  -->
-                    Create
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.2.2" data-path="../data-structures/hash-maps/access.html">
-            
-                <a href="../data-structures/hash-maps/access.html">
-            
-                  <!--  -->
-                    Access
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.3" data-path="../data-structures/vector.html">
-            
-                <a href="../data-structures/vector.html">
-            
-                  <!--  -->
-                    Vectors
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.4" data-path="../data-structures/set.html">
-            
-                <a href="../data-structures/set.html">
-            
-                  <!--  -->
-                    Set
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.5" data-path="../data-structures/naming.html">
-            
-                <a href="../data-structures/naming.html">
-            
-                  <!--  -->
-                    Naming data structures
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.6" data-path="../data-structures/pretty-printing.html">
-            
-                <a href="../data-structures/pretty-printing.html">
-            
-                  <!--  -->
-                    Pretty Printing
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.7" data-path="../using-data-structures/">
-            
-                <a href="../using-data-structures/">
-            
-                  <!--  -->
-                    Using data
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.7.1" data-path="../using-data-structures/sequences.html">
-            
-                <a href="../using-data-structures/sequences.html">
-            
-                  <!--  -->
-                    Sequences
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.7.2" data-path="../using-data-structures/lazy-sequences.html">
-            
-                <a href="../using-data-structures/lazy-sequences.html">
-            
-                  <!--  -->
-                    Lazy Sequences
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.7.3" data-path="../using-data-structures/destructuring.html">
-            
-                <a href="../using-data-structures/destructuring.html">
-            
-                  <!--  -->
-                    Destructuring
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.7.4" data-path="../using-data-structures/applying-functions.html">
-            
-                <a href="../using-data-structures/applying-functions.html">
-            
-                  <!--  -->
-                    Applying functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.7.5" data-path="../using-data-structures/mapping-data-structures.html">
-            
-                <a href="../using-data-structures/mapping-data-structures.html">
-            
-                  <!--  -->
-                    Mapping functions
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.8" data-path="../modifying-data-structures/">
-            
-                <a href="../modifying-data-structures/">
-            
-                  <!--  -->
-                    Modifying data
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.8.1" data-path="../modifying-data-structures/lists.html">
-            
-                <a href="../modifying-data-structures/lists.html">
-            
-                  <!--  -->
-                    Lists
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.8.2" data-path="../modifying-data-structures/maps.html">
-            
-                <a href="../modifying-data-structures/maps.html">
-            
-                  <!--  -->
-                    Maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.8.3" data-path="../modifying-data-structures/vectors.html">
-            
-                <a href="../modifying-data-structures/vectors.html">
-            
-                  <!--  -->
-                    Vectors
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.8.4" data-path="../modifying-data-structures/sets.html">
-            
-                <a href="../modifying-data-structures/sets.html">
-            
-                  <!--  -->
-                    Sets
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9" data-path="../iterate-over-data/">
-            
-                <a href="../iterate-over-data/">
-            
-                  <!--  -->
-                    Iterate over data
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.9.1" data-path="../iterate-over-data/map.html">
-            
-                <a href="../iterate-over-data/map.html">
-            
-                  <!--  -->
-                    map
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.9.1.1" data-path="../iterate-over-data/map-partial.html">
-            
-                <a href="../iterate-over-data/map-partial.html">
-            
-                  <!--  -->
-                    partial
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.1.2" data-path="../iterate-over-data/map-fn.html">
-            
-                <a href="../iterate-over-data/map-fn.html">
-            
-                  <!--  -->
-                    fn
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.2" data-path="../iterate-over-data/filter-remove.html">
-            
-                <a href="../iterate-over-data/filter-remove.html">
-            
-                  <!--  -->
-                    filter
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.3" data-path="../iterate-over-data/apply.html">
-            
-                <a href="../iterate-over-data/apply.html">
-            
-                  <!--  -->
-                    apply
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.4" data-path="../iterate-over-data/reduce.html">
-            
-                <a href="../iterate-over-data/reduce.html">
-            
-                  <!--  -->
-                    reduce
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.5" data-path="../iterate-over-data/reduce.html">
-            
-                <a href="../iterate-over-data/reduce.html">
-            
-                  <!--  -->
-                    comp
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.9.6" data-path="../iterate-over-data/reduce.html">
-            
-                <a href="../iterate-over-data/reduce.html">
-            
-                  <!--  -->
-                    transduce
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10" data-path="../designing-data-structures/">
-            
-                <a href="../designing-data-structures/">
-            
-                  <!--  -->
-                    Designing Data Structures
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="7.2.10.1" data-path="../designing-data-structures/with-vectors.html">
-            
-                <a href="../designing-data-structures/with-vectors.html">
-            
-                  <!--  -->
-                    With Vectors
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.2" data-path="../designing-data-structures/with-vectors-of-vectors.html">
-            
-                <a href="../designing-data-structures/with-vectors-of-vectors.html">
-            
-                  <!--  -->
-                    With Vectors of Vectors
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.3" data-path="../designing-data-structures/with-maps.html">
-            
-                <a href="../designing-data-structures/with-maps.html">
-            
-                  <!--  -->
-                    With Maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.4" data-path="../designing-data-structures/with-maps-of-maps.html">
-            
-                <a href="../designing-data-structures/with-maps-of-maps.html">
-            
-                  <!--  -->
-                    With Maps of Maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.5" data-path="../designing-data-structures/with-vectors-of-maps.html">
-            
-                <a href="../designing-data-structures/with-vectors-of-maps.html">
-            
-                  <!--  -->
-                    With Vectors of Maps
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.6" data-path="../designing-data-structures/modeling-alphabet-codes.html">
-            
-                <a href="../designing-data-structures/modeling-alphabet-codes.html">
-            
-                  <!--  -->
-                    Model alphabet codes
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.10.7" data-path="../designing-data-structures/modeling-name-generation-map.html">
-            
-                <a href="../designing-data-structures/modeling-name-generation-map.html">
-            
-                  <!--  -->
-                    Model name generation map
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="7.2.11" data-path="../data-structures/shared-memory.html">
-            
-                <a href="../data-structures/shared-memory.html">
-            
-                  <!--  -->
-                    Shared Memory
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="8.1" data-path="../reference/clojure-svg/">
-            
-                <a href="../reference/clojure-svg/">
-            
-                  <!--  -->
-                    Clojure SVG
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="9.1" data-path="../reference/jvm/">
-            
-                <a href="../reference/jvm/">
-            
-                  <!--  -->
-                    Java Virtual Machine
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="9.1.1" data-path="../reference/jvm/understanding-memory-usage.html">
-            
-                <a href="../reference/jvm/understanding-memory-usage.html">
-            
-                  <!--  -->
-                    Understand Memory Usage
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.1.2" data-path="../reference/jvm/common-options.html">
-            
-                <a href="../reference/jvm/common-options.html">
-            
-                  <!--  -->
-                    Common Options
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.1.3" data-path="../reference/jvm/java-17-flags.html">
-            
-                <a href="../reference/jvm/java-17-flags.html">
-            
-                  <!--  -->
-                    Java 17 Options
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.1.4" data-path="../reference/jvm/experimental-options.html">
-            
-                <a href="../reference/jvm/experimental-options.html">
-            
-                  <!--  -->
-                    Experimental Options
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="9.1.5" data-path="../reference/jvm/profile-tools.html">
-            
-                <a href="../reference/jvm/profile-tools.html">
-            
-                  <!--  -->
-                    Profile tools
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="9.2" data-path="../reference/performance/">
-            
-                <a href="../reference/performance/">
-            
-                  <!--  -->
-                    Performance
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-        
-        <li class="divider"></li>
-        
-        
-    
-        <li class="chapter " data-level="10.1" data-path="../alternative-tools/">
-            
-                <a href="../alternative-tools/">
-            
-                  <!--  -->
-                    alternative tools
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="10.1.1" data-path="../alternative-tools/clojure-cli/basic-repl.html">
-            
-                <a href="../alternative-tools/clojure-cli/basic-repl.html">
-            
-                  <!--  -->
-                    Basic REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.2" data-path="../alternative-tools/clojure-cli/compare-with-leiningen.html">
-            
-                <a href="../alternative-tools/clojure-cli/compare-with-leiningen.html">
-            
-                  <!--  -->
-                    Compare with Leiningen
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.3" data-path="../alternative-tools/clojure-cli/migrating-to-clojure-cli-tools.html">
-            
-                <a href="../alternative-tools/clojure-cli/migrating-to-clojure-cli-tools.html">
-            
-                  <!--  -->
-                    Migrating from Leiningen
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.4" data-path="../alternative-tools/clojure-cli/cognitect-rebl.html">
-            
-                <a href="../alternative-tools/clojure-cli/cognitect-rebl.html">
-            
-                  <!--  -->
-                    REBL data browser
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.5" data-path="../alternative-tools/clojure-cli/evaluate-an-expression.html">
-            
-                <a href="../alternative-tools/clojure-cli/evaluate-an-expression.html">
-            
-                  <!--  -->
-                    Evaluate an expression
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.6" data-path="../alternative-tools/clojure-cli/hotload-libraries.html">
-            
-                <a href="../alternative-tools/clojure-cli/hotload-libraries.html">
-            
-                  <!--  -->
-                    Hotload Libraries
-            
-                </a>
-            
-
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="10.1.6.1" data-path="../alternative-tools/clojure-cli/hotload-libraries-terminal-ui.html">
-            
-                <a href="../alternative-tools/clojure-cli/hotload-libraries-terminal-ui.html">
-            
-                  <!--  -->
-                    Terminal REPL
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.6.2" data-path="../alternative-tools/clojure-cli/hotload-libraries-editor.html">
-            
-                <a href="../alternative-tools/clojure-cli/hotload-libraries-editor.html">
-            
-                  <!--  -->
-                    Clojure Editor
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.6.3" data-path="../alternative-tools/clojure-cli/hotload-libraries-deps-edn-configuration.html">
-            
-                <a href="../alternative-tools/clojure-cli/hotload-libraries-deps-edn-configuration.html">
-            
-                  <!--  -->
-                    deps.edn config
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.7" data-path="../alternative-tools/clojure-cli/set-namespace-on-repl-startup.html">
-            
-                <a href="../alternative-tools/clojure-cli/set-namespace-on-repl-startup.html">
-            
-                  <!--  -->
-                    REPL start namespace
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="10.1.8" data-path="../alternative-tools/leiningen/">
-            
-                <a href="../alternative-tools/leiningen/">
-            
-                  <!--  -->
-                    Leiningen Build automation
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-
-    
-        
-        <li class="header">Deprecated Content</li>
-        
-        
-    
-        <li class="chapter " data-level="11.1" data-path="../testing/integration-testing/">
-            
-                <a href="../testing/integration-testing/">
-            
-                  <!--  -->
-                    Integration testing
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://practical.li" target="_blank" class="gitbook-link">
-            Author: Practicalli
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure-test/simple-projects/" rel="canonical"/>
+<link href="../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Small Projects - Practicalli Clojure</title>
+<link href="../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#small-projects">
+          Skip to content
         </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Simple projects</a>
-    </h1>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <h1 id="small-projects">Small Projects</h1>
-<p><img src="../images/projects.png" alt="Projects"></p>
-<p><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>An<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>effective<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>way<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>to<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>get<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>comfortable<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>with<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Clojure<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>is<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>to<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>start<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>writing<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>small<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>projects<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>.  <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>In<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>this<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>section<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>several<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>small<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>projects<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>are<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>used<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>to<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>walk<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>the<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>audience<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>through<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>how<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>to<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>create<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>and<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>develop<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>a<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>project<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>, <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>as<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>well<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>as<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>learn<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>some<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Clojure<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>functions<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>and<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>functional<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>programming<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>techniques<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>along<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>the<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>way<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>.</p>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure">
+<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Small Projects
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure">
+<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Introduction" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/clojure-in-15-minutes/">
+        Clojure in Fifteen Mins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../introduction/concepts/">Concepts</a>
+<label for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/concepts/what-is-functional-programming/">
+        Functional vs Imperative
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/concepts/clojure-made-simple/">
+        From The Author
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../introduction/writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../install/">Install</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Install" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../install/java/">
+        Java Host
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../install/clojure-cli/">
+        Clojure CLI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../install/code-analysis/">
+        Code Analysis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-cli/">Clojure CLI</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/configure/">
+        Configure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/community-tools/">
+        Community Tools
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-cli/repl/">REPL</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="REPL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          REPL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/repl/coding-in-the-repl/">
+        Coding in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/repl/using-project-or-library/">
+        Using Clojure libraries in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/repl/help-at-the-repl/">
+        Help at the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/repl/customize-rebel/">
+        Customize Rebel Readline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/repl/troubleshooting/">
+        Troubleshooting the REPL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Clojure Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/create/">
+        Creating Clojure projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/add-libraries/">
+        Add libraries to a project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/namespace/">
+        Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/rich-comments/">
+        Rich Comments for REPL Driven Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/projects/configure-repl-startup/">
+        REPL Startup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-editors/">Clojure Editors</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Editors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2">
+          Clojure LSP
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Clojure LSP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/install/clojure-lsp/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/install/clojure-lsp/snippets.md">
+        Clojure LSP Snippets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+        Practicalli Snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+          Editor Install Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/atom-protorepl/">
+        Atom.io and ProtoREPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/emacs-spacemacs/">
+        Emacs and Spacemacs Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/emacs/">
+        Emacs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/vim-plugins/">
+        NeoVim Plugins - a smorgasbord of functionality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace: Install guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/spacevim-configuration/">
+        Understanding the SpaceVim configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/vspacecode-calva/">
+        VSpaceCode configuration for VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/vscode-calva/">
+        Microsoft VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-install-guides/intellij-cursive/">
+        IntelliJ / Cursive
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Editor User Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/atom-protorepl/">
+        Atom and ProtoREPL user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/emacs-spacemacs/">
+        Emacs and Spacemacs user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/vspacecode-calva/">
+        Vspacecode calva
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/vscode-calva/">
+        VSCode and Calva quick start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-editors/editor-user-guides/intellij-cursive/">
+        IntelliJ and Cursive user guide
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../clojure-cli/data-browsers/">Data Inspectors</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Data Inspectors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/data-browsers/clojure-inspector/">
+        Clojure Inspector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-cli/data-browsers/portal/">
+        Portal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" id="__nav_8_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../reference/creative-coding/">Crreative Coding</a>
+</div>
+<nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+          Crreative Coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#creating-clojure-projects">
+    Creating Clojure projects
+  </a>
+<nav aria-label="Creating Clojure projects" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hinttodo-add-more-small-projects">
+    Hint::TODO: Add more small projects
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-test/edit/main/docs/simple-projects/index.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="small-projects">Small Projects<a class="headerlink" href="#small-projects" title="Permanent link">λ︎</a></h1>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/projects.png"><img alt="Projects" src="/images/projects.png"/></a></p>
+<p>An effective way to get comfortable with Clojure is to start writing small projects.  In this section several small projects are used to walk the audience through how to create and develop a project, as well as learn some Clojure functions and functional programming techniques along the way.</p>
 <table>
 <thead>
 <tr>
-<th><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Project<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></th>
-<th><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Topics<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></th>
-<th><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Description<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></th>
+<th>Project</th>
+<th>Topics</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="random-clojure-function.html">Random Clojure Function</a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>namespace<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>vars<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>command<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>line<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>application<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>that<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>displays<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>a<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>random<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>function<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>from<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>the<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Clojure<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>standard<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>library<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
+<td><a href="random-clojure-function/">Random Clojure Function</a></td>
+<td>namespace vars</td>
+<td>command line application that displays a random function from the Clojure standard library</td>
 </tr>
 <tr>
-<td><a href="encode-decode">Encoding and decoding projects</a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>hash<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>-<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>map<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>dictionaries<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>transforming<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>messages<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>between<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>one<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>form<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>and<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>another<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
+<td><a href="encode-decode/">Encoding and decoding projects</a></td>
+<td>hash-map dictionaries</td>
+<td>transforming messages between one form and another</td>
 </tr>
 <tr>
-<td><a href="data-transformation">Data Transformation</a></td>
+<td><a href="data-transformation/">Data Transformation</a></td>
 <td></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>transforming<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>larger<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>and<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>larger<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>data<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>sets<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
+<td>transforming larger and larger data sets</td>
 </tr>
 <tr>
-<td><a href="tdd-kata">Test Driven Development and Kata</a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Unit<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>testing<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
-<td><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Unit<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>testing<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>and<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>solving<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>challenges<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>using<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>different<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>approaches<a href="../GLOSSARY.html#" class="glossary-term" title=""></a></td>
+<td><a href="tdd-kata/">Test Driven Development and Kata</a></td>
+<td>Unit testing</td>
+<td>Unit testing and solving challenges using different approaches</td>
 </tr>
 </tbody>
 </table>
-<h2 id="creating-clojure-projects">Creating Clojure projects</h2>
-<p><a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Use<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../clojure-cli/install/community-tools.html">Clojure CLI tools and clj-new</a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>to<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>create<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>a<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>new<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>Clojure<a href="../GLOSSARY.html#" class="glossary-term" title=""></a> <a href="../GLOSSARY.html#" class="glossary-term" title=""></a>project<a href="../GLOSSARY.html#" class="glossary-term" title=""></a>.</p>
+<h2 id="creating-clojure-projects">Creating Clojure projects<a class="headerlink" href="#creating-clojure-projects" title="Permanent link">λ︎</a></h2>
+<p>Use <a href="/clojure/clojure-cli/install/community-tools.md">Clojure CLI tools and clj-new</a> to create a new Clojure project.</p>
 <!-- | Salary Calculator                                  | hash-map       | Calculate salaries for permanent and contract roles                                        | -->
 <!-- | Java Interoperability   | java lang, interop, java fx  | Using Java libraries to do more   | -->
-<div class="panel panel-success"><div class="panel-heading"><h3 class="panel-title" id="todo-add-more-small-projects"><i class="fa fa-lightbulb-o"></i> TODO: Add more small projects</h3></div><div class="panel-body"></div></div>
+<blockquote>
+<h4 id="hinttodo-add-more-small-projects">Hint::TODO: Add more small projects<a class="headerlink" href="#hinttodo-add-more-small-projects" title="Permanent link">λ︎</a></h4>
+</blockquote>
 <!-- Topics to cover -->
 <!-- Families of functions, e.g. reducing functions, filters, groupings, ??? -->
 <!-- Tag Literals
@@ -4012,141 +662,62 @@
 <!-- TODO: banner logos with link for -->
 <!-- * Practicalli Clojure WebApps and API's -->
 <!-- * Practicalli ClojureScript -->
- <link rel="stylesheet" type="text/css" href="https://storage.googleapis.com/app.klipse.tech/css/codemirror.css"> <script>     window.klipse_settings = {         selector: ".language-klipse, .lang-eval-clojure",         selector_eval_js: ".lang-eval-js",         selector_eval_python_client: ".lang-eval-python",         selector_eval_php: ".lang-eval-php",         selector_eval_scheme: ".lang-eval-scheme",         selector_eval_ruby: ".lang-eval-ruby",         selector_reagent: ".lang-reagent",        selector_google_charts: ".lang-google-chart",        selector_es2017: ".lang-eval-es2017",        selector_jsx: ".lang-eval-jsx",        selector_transpile_jsx: ".lang-transpile-jsx",        selector_render_jsx: ".lang-render-jsx",        selector_react: ".lang-react",        selector_eval_markdown: ".lang-render-markdown",        selector_eval_lambdaway: ".lang-render-lambdaway",        selector_eval_cpp: ".lang-eval-cpp",        selector_eval_html: ".lang-render-html",        selector_sql: ".lang-eval-sql",        selector_brainfuck: "lang-eval-brainfuck",        selector_js: ".lang-transpile-cljs"    }; </script> <script src="https://storage.googleapis.com/app.klipse.tech/plugin/js/klipse_plugin.js"></script>
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+</small>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="../coding-challenges/advent-of-code.html" class="navigation navigation-prev " aria-label="Previous page: Advent of Code">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="random-clojure-function.html" class="navigation navigation-next " aria-label="Next page: Random function">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Simple projects","level":"3.2","depth":1,"next":{"title":"Random function","level":"3.2.1","depth":2,"path":"simple-projects/random-clojure-function.md","ref":"simple-projects/random-clojure-function.md","articles":[]},"previous":{"title":"Advent of Code","level":"3.1.4","depth":2,"path":"coding-challenges/advent-of-code.md","ref":"coding-challenges/advent-of-code.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchor-headings-lambda","callouts","codeblock-disable-glossary","folding-chapters","ga","-glossary","-highlight","klipse","newtabs","prism","sectionx","simpletabs","-sharing","splitter","terminull-light","theme-jr0cket","toggle-chapters","toolbar","youtube","wide-page"],"styles":{"website":"styles/website.css","ebook":"styles/ebook.css","pdf":"styles/pdf.css","mobi":"styles/mobi.css","epub":"styles/epub.css"},"pluginsConfig":{"prism":{"ignore":["elisp","eval-clojure","none","reagent","shell"]},"callouts":{"showTypeInHeader":false,"star":{"alert":"warning","picto":"fa-star"}},"youtube":{},"splitter":{},"search":{},"wide-page":{},"anchor-headings-lambda":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"terminull-light":{},"simpletabs":{},"codeblock-disable-glossary":{},"fontsettings":{"theme":"white","family":"sans","size":2},"folding-chapters":{},"sectionx":{},"ga":{"configuration":"auto","token":"UA-28030709-7"},"klipse":{"myConfigKey":"it's the default value"},"theme-jr0cket":{"showLevel":false,"styles":{"ebook":"styles/ebook.css","epub":"styles/epub.css","mobi":"styles/mobi.css","pdf":"styles/pdf.css","print":"styles/print.css","website":"styles/website.css"}},"toolbar":{"buttons":[{"label":"Clojurians Slack","icon":"fa fa-comments-o","url":"http://clojurians.slack.com/messages/practicalli"},{"label":"GitHub","icon":"fa fa-github","url":"https://github.com/practicalli/clojure/issues"}]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"newtabs":{},"toggle-chapters":{}},"theme":"default","author":"Practicalli","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"introduction.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"P9IDeveloperGuides":"https://github.com/practicalli-john/developer-guides/raw/master/","P9IGraphicDesign":"https://github.com/practicalli/graphic-design","P9IPullRequestsUrl":"https://github.com/practicalli/clojure/pulls","P9IClojureDepsEdn":"https://github.com/practicalli/clojure-deps-edn","KeyDownArrow":"<kbd>↓</kbd>","KeyCtrl":"<kbd>Ctrl</kbd>","Leiningen":"https://leiningen.org/","P9IClojureThroughCode":"https://github.com/practicalli/clojure-through-code","KeyUpArrow":"<kbd>↑</kbd>","P9IClojureDepsEdnInstall":"/clojure-cli/install/community-tools.md","P9IIssuesUrl":"https://github.com/practicalli/clojure/issues","KeyEsc":"<kbd>Esc</kbd>","KeyEnter":"<kbd>Enter</kbd>","P9IWebsite":"https://practical.li/clojure","P9IFourClojure":"https://github.com/practicalli/four-clojure"},"title":"Practicalli Clojure","authorHomepage":"https://practical.li","links":{"sidebar":{"Practicalli":"https://practical.li/"}},"gitbook":">=3.2.3","description":"Practical approach to learning Clojure functional programming"},"file":{"path":"simple-projects/index.md","mtime":"2023-01-05T23:48:31.326Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-01-05T23:50:14.421Z"},"basePath":"..","book":{"language":""}});
-        });
-    </script>
+</article>
 </div>
-
-
-        
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.2.2/anchor.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-anchor-headings-lambda/anchor-style.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-codeblock-disable-glossary/disable-glossary.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-folding-chapters/folding-chapters.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-newtabs/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-newtabs/tabs.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sectionx/sectionx.js"></script>
-        
-    
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-simpletabs/tabs.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-terminull-light/terminull.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-toggle-chapters/toggle.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-toolbar/buttons.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-
-        
-    </body>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
-

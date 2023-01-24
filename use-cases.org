@@ -1,7 +1,0 @@
-* Complex use cases
-** Cycle race management and predictions
-   Design and build a system to calculate and manage the rankings of cyclists.
-
-   Include prediction system for winners of races based on ranking.  Also for Champion of the mountains predictions
-
-   System should report on its own accuracy of predictions based on results of cycling events

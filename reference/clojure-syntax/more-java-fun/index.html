@@ -1,0 +1,1102 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure-test/reference/clojure-syntax/more-java-fun/" rel="canonical"/>
+<link href="../../../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>More Java fun - Practicalli Clojure</title>
+<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#more-java-fun">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
+<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              More Java fun
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
+<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Introduction" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/clojure-in-15-minutes/">
+        Clojure in Fifteen Mins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../introduction/concepts/">Concepts</a>
+<label for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/concepts/what-is-functional-programming/">
+        Functional vs Imperative
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/concepts/clojure-made-simple/">
+        From The Author
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../introduction/writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../install/">Install</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Install" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../install/java/">
+        Java Host
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../install/clojure-cli/">
+        Clojure CLI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../install/code-analysis/">
+        Code Analysis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-cli/">Clojure CLI</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/configure/">
+        Configure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/community-tools/">
+        Community Tools
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-cli/repl/">REPL</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="REPL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          REPL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/repl/coding-in-the-repl/">
+        Coding in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/repl/using-project-or-library/">
+        Using Clojure libraries in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/repl/help-at-the-repl/">
+        Help at the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/repl/customize-rebel/">
+        Customize Rebel Readline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/repl/troubleshooting/">
+        Troubleshooting the REPL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Clojure Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/create/">
+        Creating Clojure projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/add-libraries/">
+        Add libraries to a project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/namespace/">
+        Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/rich-comments/">
+        Rich Comments for REPL Driven Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/projects/configure-repl-startup/">
+        REPL Startup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-editors/">Clojure Editors</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Editors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2">
+          Clojure LSP
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Clojure LSP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/snippets.md">
+        Clojure LSP Snippets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+        Practicalli Snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+          Editor Install Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/atom-protorepl/">
+        Atom.io and ProtoREPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/emacs-spacemacs/">
+        Emacs and Spacemacs Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/emacs/">
+        Emacs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vim-plugins/">
+        NeoVim Plugins - a smorgasbord of functionality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace: Install guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/spacevim-configuration/">
+        Understanding the SpaceVim configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vspacecode-calva/">
+        VSpaceCode configuration for VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vscode-calva/">
+        Microsoft VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/intellij-cursive/">
+        IntelliJ / Cursive
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Editor User Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/atom-protorepl/">
+        Atom and ProtoREPL user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/emacs-spacemacs/">
+        Emacs and Spacemacs user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/vspacecode-calva/">
+        Vspacecode calva
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/vscode-calva/">
+        VSCode and Calva quick start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/intellij-cursive/">
+        IntelliJ and Cursive user guide
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../clojure-cli/data-browsers/">Data Inspectors</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Data Inspectors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/data-browsers/clojure-inspector/">
+        Clojure Inspector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../clojure-cli/data-browsers/portal/">
+        Portal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" id="__nav_8_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../creative-coding/">Crreative Coding</a>
+</div>
+<nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+          Crreative Coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#returning-specific-types">
+    Returning specific types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#using-java-date">
+    Using Java date
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#its-joda-time">
+    Its Joda Time
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#swing-coding">
+    Swing coding
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#understanding-the-dot-special-form">
+    Understanding the dot special form
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#from-httpclojureorgjava_interop">
+    From http://clojure.org/java_interop
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-test/edit/main/docs/reference/clojure-syntax/more-java-fun.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="more-java-fun">More Java fun<a class="headerlink" href="#more-java-fun" title="Permanent link">λ︎</a></h1>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/java-banner.png"><img alt="Oracle Java" src="/images/java-banner.png"/></a></p>
+<p>Lets try some more examples to show how easy it is to use Java methods and objects.  Remember that everything in <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/package-summary.html">java.lang</a> is available in your Clojure project by default</p>
+<h2 id="returning-specific-types">Returning specific types<a class="headerlink" href="#returning-specific-types" title="Permanent link">λ︎</a></h2>
+<p>Clojure has types, after all it runs on the JVM and included <code>java.lang</code> library in ever project.  Types are inferred at runtime, saving you the need to design types yourself.</p>
+<p>Sometimes you want to ensure a value is of a particular type and you can use Java to do this.</p>
+<blockquote>
+<p><strong>Note</strong> Return a string value as an integer</p>
+</blockquote>
+<p>When you create a new <code>java.lang.Integer</code> object you can provide a default value by passing either a number or string type.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="k">new </span><span class="nv">Integer</span><span class="w"> </span><span class="s">"123"</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">;; Or the more common short-hand forms</span><span class="w"></span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">(</span><span class="nf">Integer.</span><span class="w"> </span><span class="s">"123"</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>This is the equivalent to the Java code:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">myInt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Integer</span><span class="p">(</span><span class="s">"123"</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+<p>The <code>.</code> function essentially instantiates a new object from the class, in this case <code>Integer</code>, passing any arguments to its constructor.</p>
+<blockquote>
+<p><strong>Hint</strong> Example: converting the port number read from an environment variable as a string which needs to be passed to the Jetty server as a number.  See the <a href="http://practical.li/clojure-webapps">Clojure Webapp workshop</a> an example.</p>
+<p>More on types in the section <a href="a-quick-look-at-types.html">a quick look at types</a></p>
+<p><strong>fixme</strong> The following is work in progress</p>
+</blockquote>
+<h2 id="using-java-date">Using Java date<a class="headerlink" href="#using-java-date" title="Permanent link">λ︎</a></h2>
+<blockquote>
+<p><strong>Note</strong> Use <code>java.util.Date</code> to explore date and time</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">import </span><span class="nv">java.util.Date</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">(</span><span class="nf">Date.</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="p">(</span><span class="k">def </span><span class="nv">now</span><span class="w"> </span><span class="p">(</span><span class="nf">Date.</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="p">(</span><span class="nb">str </span><span class="nv">now</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="../images/clojure-playground-java-util-date.png"><img alt="Using java.util.Date" src="../images/clojure-playground-java-util-date.png"/></a></p>
+<p>Its easy to create a local reference to a Java Date object instance and then call methods on that date object</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">date</span><span class="w"> </span><span class="p">(</span><span class="nf">java.util.Date.</span><span class="p">)]</span><span class="w"> </span><span class="p">(</span><span class="nf">.getHours</span><span class="w"> </span><span class="nv">date</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+<p>Or using the threading macro, we can make the code a little clearer</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(-&gt;
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>   (java.util.Date.)
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>   (.getHours))
+</code></pre></div>
+<h2 id="its-joda-time">Its Joda Time<a class="headerlink" href="#its-joda-time" title="Permanent link">λ︎</a></h2>
+<p><code>clj-time</code> is a Clojure wrapper for Joda time.  As this is an external library, you need to add it to your project.clj file as a dependency.  To find the latest version, check the <a href="">clj-time library on Clojars.org</a></p>
+<blockquote>
+<p><strong>Note</strong> Add the clj-time dependency to your project (restart needed), require the clj-time library in your code and use the functions <code>now</code>, <code>formatters</code>&amp; <code>unparse</code></p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(require '[clj-time.core :as time])
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>(require '[clj-time.format :as time-format])
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>(time/now)
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>;; ISO 8601 UTC format
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a>(def time-formatter (time-format/formatters :basic-date-time))
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a>(time-format/unparse custom-formatter (date-time 2010 10 3))
+</code></pre></div>
+<h2 id="swing-coding">Swing coding<a class="headerlink" href="#swing-coding" title="Permanent link">λ︎</a></h2>
+<p>Swing GUI coding in Java feels quite messy to me, however using Swing in Clojure feels much cleaner.  Using the <code>doto</code> function allow you to chain function (Java method) calls together.</p>
+<blockquote>
+<p><strong>Note</strong>  Start with the <code>import</code> function to add the necessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(import '(javax.swing JFrame JPanel JButton))
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>(def button (JButton. "Click Me!"))
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>(def panel (doto (JPanel.)
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>             (.add button)))
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>(def frame (doto (JFrame. "Hello Frame")
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a>             (.setSize 200 200)
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a>             (.setContentPane panel)
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>             (.setVisible true)))
+</code></pre></div>
+<p>Let’s make our button show a message using an JOptionPane/showMessageDialog widget</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>(import 'javax.swing.JOptionPane)
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>(defn say-hello []
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>  (JOptionPane/showMessageDialog
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>    nil "Hello, World!" "Greeting"
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>    JOptionPane/INFORMATION_MESSAGE))
+</code></pre></div>
+<p>To connect this function to our button, write a class implementing the ActionListener interface.  Clojure’s proxy feature is the easiest way to do this:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>(import 'java.awt.event.ActionListener)
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>(def act (proxy [ActionListener] []
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>           (actionPerformed [event] (say-hello))))
+</code></pre></div>
+<p><code>act</code> is an instance of an anonymous class implementing the actionPerformed method, so attach this class as a listener the button</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>(.addActionListener button act)
+</code></pre></div>
+<p>Now evaluate the <code>say-hello</code> function to see the new button in action.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>(say-hello)
+</code></pre></div>
+<blockquote>
+<p><strong>Hint</strong> <a href="https://github.com/daveray/seesaw">Seesaw</a> is a really nice library for swing development.  Also talk a look at the <a href="http://nathanwilliams.github.io/2013/05/15/seesaw-gui-programming-the-clojure-way/">Seesaw minesweeper</a> series.</p>
+</blockquote>
+<h2 id="understanding-the-dot-special-form">Understanding the dot special form<a class="headerlink" href="#understanding-the-dot-special-form" title="Permanent link">λ︎</a></h2>
+<blockquote>
+<p><strong>Fixme</strong> This section onwards needs reworking</p>
+</blockquote>
+<p>All of these examples (except java.lang.Math/PI) use macros which expand to use the dot special form. In general, you won't need to use the dot special form unless you want to write your own macros to interact with Java objects and classes. Nevertheless, here is each example followed by its macroexpansion:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>(macroexpand-1 '(.toUpperCase "By Bluebeard's bananas!"))
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>; =&gt; (. "By Bluebeard's bananas!" toUpperCase)
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>(macroexpand-1 '(.indexOf "Synergism of our bleeding edges" "y"))
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>; =&gt; (. "Synergism of our bleeding edges" indexOf "y")
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>(macroexpand-1 '(Math/abs -3))
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>; =&gt; (. Math abs -3)
+</code></pre></div>
+<p>You can think of the general form of the dot operator as:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>(. object-expr-or-classname-symbol method-or-member-symbol optional-args*)
+</code></pre></div>
+<p>There are a few more details to the dot operator than that, and if you're interested in exploring it further you can look at clojure.org's documentation on Java interop.</p>
+<p>Input/output involves resources, be they files, sockets, buffers, or whatever. Java has separate classes for reading a resource's contents, writings its contents, and for interacting with the resource's properties.</p>
+<p>For example, the java.io.File class is used to interact with a file's properties. Among other things, you can use it to check whether a file exists, to get the file's read/write/execute permissions, and to get its filesystem path:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>(let [file (java.io.File. "/")]
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>  (println (.exists file))
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>  (println (.canWrite file))
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>  (println (.getPath file)))
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>; =&gt; true
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>; =&gt; false
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>; =&gt; /
+</code></pre></div>
+<p>Noticeably missing from this list of capabilities are reading and writing. To read a file, you could use the java.io.BufferedReader class or perhaps java.io.FileReader. Likewise, you can use the java.io.BufferedWriter or java.io.FileWriter class for writing. There are other classes available for reading and writing as well, and which one you choose depends on your specific needs. Reader and Writer classes all have the same base set of methods for their interfaces; readers implement read, close, and more, while writers implement append, write, close, and flush. So, Java gives you a variety of tools for performing IO. A cynical person might say that Java gives you enough rope to hang yourself, and if you find such a person I hope you give them just enough arms to hug them.</p>
+<p>Either way, Clojure makes things easier for you. First, there's spit and slurp. Spit writes to a resource, and slurp reads from one. Here's an example of using them to write and read a file:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>(spit "/tmp/hercules-todo-list"
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a>"- wash hair
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a> - charm the multi-headed snake")
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a>(slurp "/tmp/hercules-todo-list")
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a>
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a>; =&gt; "- wash hair
+<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a>; =&gt;  - charm the multi-headed snake"
+</code></pre></div>
+<p>You can also use these functions with objects representing resources other than files. The next example uses a StringWriter, which allows you to perform IO operations on a string:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>(let [s (java.io.StringWriter.)]
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a>  (spit s "- charm the multi-headed snake")
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a>  (.toString s))
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a>; =&gt; "- charm the multi-headed snake"
+</code></pre></div>
+<p>Naturally, you can also read from a StringReader with slurp:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>(let [s (java.io.StringReader. "- charm the multi-headed snake")]
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a>  (slurp s))
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a>; =&gt; "- charm the multi-headed snake"
+</code></pre></div>
+<p>Of course, you can also use the read and write methods for resources. It doesn't really make much of a difference which you use; spit and slurp are often convenient because they work with just a string representing a filesystem path or a URL.</p>
+<p>The with-open macro is another convenience: it implicitly closes a resource at the end of its body. There's also the reader function, a nice utility which, according to the clojure.java.io api docs, "attempts to coerce its argument to an open java.io.Reader." This is convenient when you don't want to use slurp because you don't want to try to read a resource in its entirety, and you don't want to figure out which Java class you need to use. You could use it along with with-open and the line-seq function if you're trying to read a file one line at a time:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>(with-open [todo-list-rdr (clojure.java.io/reader "/tmp/hercules-todo-list")]
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>  (doseq [todo (line-seq todo-list-rdr)]
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>    (println todo)))
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>; =&gt; "- wash hair
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>; =&gt;  - charm the multi-headed snake"
+</code></pre></div>
+That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
+5. Summary</p>
+<p>In this chapter, you learned what it means for Clojure to be hosted on the JVM. Clojure programs get compiled to Java bytecode and executed within a JVM process. Clojure programs also have access to Java libraries, and you can easily interact with them using Clojure's interop facilities.
+6. Resources</p>
+<h2 id="from-httpclojureorgjava_interop">From <a href="http://clojure.org/java_interop">http://clojure.org/java_interop</a><a class="headerlink" href="#from-httpclojureorgjava_interop" title="Permanent link">λ︎</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>(.instanceMember instance args*)
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a>(.instanceMember Classname args*)
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a>(.-instanceField instance)
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a>(.toUpperCase "fred")
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a>-&gt; "FRED"
+<a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a>(.getName String)
+<a href="#__codelineno-18-8" id="__codelineno-18-8" name="__codelineno-18-8"></a>-&gt; "java.lang.String"
+<a href="#__codelineno-18-9" id="__codelineno-18-9" name="__codelineno-18-9"></a>(.-x (java.awt.Point. 1 2))
+<a href="#__codelineno-18-10" id="__codelineno-18-10" name="__codelineno-18-10"></a>-&gt; 1
+<a href="#__codelineno-18-11" id="__codelineno-18-11" name="__codelineno-18-11"></a>(System/getProperty "java.vm.version")
+<a href="#__codelineno-18-12" id="__codelineno-18-12" name="__codelineno-18-12"></a>-&gt; "1.6.0_07-b06-57"
+<a href="#__codelineno-18-13" id="__codelineno-18-13" name="__codelineno-18-13"></a>Math/PI
+<a href="#__codelineno-18-14" id="__codelineno-18-14" name="__codelineno-18-14"></a>-&gt; 3.141592653589793
+</code></pre></div>
+<p>The preferred idiomatic forms for accessing field or method members are given above. The instance member form works for both fields and methods. The instanceField form is preferred for fields and required if both a field and a 0-argument method of the same name exist. They all expand into calls to the dot operator (described below) at macroexpansion time. The expansions are as follows:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>(.instanceMember instance args*) ==&gt; (. instance instanceMember args*)
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a>(.instanceMember Classname args*) ==&gt;
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a>    (. (identity Classname) instanceMember args*)
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a>(.-instanceField instance) ==&gt; (. instance -instanceField)
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a>(Classname/staticMethod args*) ==&gt; (. Classname staticMethod args*)
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a>Classname/staticField ==&gt; (. Classname staticField)
+</code></pre></div>
+<p>The Dot special form</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>(. instance-expr member-symbol)
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a>(. Classname-symbol member-symbol)
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a>(. instance-expr -field-symbol)
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a>(. instance-expr (method-symbol args*)) or
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a>(. instance-expr method-symbol args*)
+<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a>(. Classname-symbol (method-symbol args*)) or
+<a href="#__codelineno-20-7" id="__codelineno-20-7" name="__codelineno-20-7"></a>(. Classname-symbol method-symbol args*)
+</code></pre></div>
+<p>Special form.</p>
+<p>The '.' special form is the basis for access to Java. It can be considered a member-access operator, and/or read as 'in the scope of'.</p>
+<p>If the first operand is a symbol that resolves to a class name, the access is considered to be to a static member of the named class. Note that nested classes are named EnclosingClass$NestedClass, per the JVM spec. Otherwise it is presumed to be an instance member and the first argument is evaluated to produce the target object.</p>
+<p>If the second operand is a symbol and no args are supplied it is taken to be a field access - the name of the field is the name of the symbol, and the value of the expression is the value of the field, unless there is a no argument public method of the same name, in which case it resolves to a call to the method. If the second operand is a symbol starting with -, the member-symbol will resolve only as field access (never as a 0-arity method) and should be preferred when that is the intent.</p>
+<p>If the second operand is a list, or args are supplied, it is taken to be a method call. The first element of the list must be a simple symbol, and the name of the method is the name of the symbol. The args, if any, are evaluated from left to right, and passed to the matching method, which is called, and its value returned. If the method has a void return type, the value of the expression will be nil. Note that placing the method name in a list with any args is optional in the canonic form, but can be useful to gather args in macros built upon the form.</p>
+<p>Note that boolean return values will be turned into Booleans, chars will become Characters, and numeric primitives will become Numbers unless they are immediately consumed by a method taking a primitive.</p>
+<p>The member access forms given at the top of this section are preferred for use in all cases other than in macros.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>(.. instance-expr member+)
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a>(.. Classname-symbol member+)
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a>member =&gt; fieldName-symbol or (instanceMethodName-symbol args*)
+</code></pre></div>
+<p>Macro. Expands into a member access (.) of the first member on the first argument, followed by the next member on the result, etc. For instance:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a>(.. System (getProperties) (get "os.name"))
+</code></pre></div>
+<p>expands to:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a>(. (. System (getProperties)) (get "os.name"))
+</code></pre></div>
+<p>but is easier to write, read, and understand. See also the -&gt; macro which can be used similarly:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a>(-&gt; (System/getProperties) (.get "os.name"))
+</code></pre></div>
+(doto instance-expr (instanceMethodName-symbol args<em>)</em>)
+Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a>(doto (new java.util.HashMap) (.put "a" 1) (.put "b" 2))
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a>-&gt; {a=1, b=2}
+</code></pre></div>
+<p>Note the above applies to the latest Clojure SVN revision. If you are using the 20080916 release only method calls are allowed, and the syntax is:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a>(doto (new java.util.HashMap) (put "a" 1) (put "b" 2))
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a>-&gt; {a=1, b=2}
+</code></pre></div>
+<p>(Classname. args<em>)
+(new Classname args</em>)</p>
+<p>Special form.
+The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.</p>
+<p>Alternative Macro Syntax</p>
+<p>As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing '.':</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a>(new Classname args*)
+</code></pre></div>
+can be written</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a>(Classname. args*)
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a>;; note trailing dot
+</code></pre></div>
+the latter expanding into the former at macro expansion time.</p>
+<p>(instance? Class expr)
+Evaluates expr and tests if it is an instance of the class. Returns true or false</p>
+<p>(set! (. instance-expr instanceFieldName-symbol) expr)
+(set! (. Classname-symbol staticFieldName-symbol) expr)
+Assignment special form.
+When the first operand is a field member access form, the assignment is to the corresponding field. If it is an instance field, the instance expr will be evaluated, then the expr.</p>
+<p>In all cases the value of expr is returned.</p>
+<p>Note - you cannot assign to function params or local bindings. Only Java fields, Vars, Refs and Agents are mutable in Clojure.</p>
+<p>(memfn method-name arg-names*)
+Macro. Expands into code that creates a fn that expects to be passed an object and any args and calls the named instance method on the object passing the args. Use when you want to treat a Java method as a first-class fn.</p>
+<p>(map (memfn charAt i) ["fred" "ethel" "lucy"] [1 2 3])
+-&gt; (\r \h \y)</p>
+<p>Note it almost always preferable to do this directly now, with syntax like:</p>
+<p>(map #(.charAt %1 %2) ["fred" "ethel" "lucy"] [1 2 3])
+-&gt; (\r \h \y)</p>
+<p>(bean obj)
+Takes a Java object and returns a read-only implementation of the map abstraction based upon its JavaBean properties.</p>
+<p>(bean [[<a href="http://java.awt.Color/black|java.awt.Color/black">http://java.awt.Color/black|java.awt.Color/black</a>]])
+-&gt; {:RGB -16777216, :alpha 255, :transparency 1,
+    :class class java.awt.Color, :green 0, :blue 0,
+    :colorSpace java.awt.color.ICC_ColorSpace@c94b51, :red 0}</p>
+<p>Support for Java in Clojure Library Functions</p>
+<p>Many of the Clojure library functions have defined semantics for objects of Java types. contains? and get work on Java Maps, arrays, Strings, the latter two with integer keys. count works on Java Strings, Collections and arrays. nth works on Java Strings, Lists and arrays. seq works on Java reference arrays, Iterables and Strings. Since much of the rest of the library is built upon these functions, there is great support for using Java objects in Clojure algorithms.</p>
+<p>Implementing Interfaces and Extending Classes</p>
+<p>Clojure supports the dynamic creation of objects that implement one or more interfaces and/or extend a class with the proxy macro. The resulting objects are of an anonymous class. You can also generate statically-named classes and .class files with gen-class. As of Clojure 1.2, reify is also available for implementing interfaces.</p>
+<p>( proxy [class-and-interfaces] [args] fs+)
+class-and-interfaces - a vector of class names
+args - a (possibly empty) vector of arguments to the superclass constructor.
+f =&gt; (name [params<em>] body) or (name ([params</em>] body) ([params+] body) ...)</p>
+<p>Macro</p>
+<p>Expands to code which creates a instance of a proxy class that implements the named class/interface(s) by calling the supplied fns.</p>
+<p>A single class, if provided, must be first. If not provided it defaults to Object.</p>
+<p>The interfaces names must be valid interface types. If a method fn is not provided for a class method, the superclass method will be called.</p>
+<p>If a method fn is not provided for an interface method, an UnsupportedOperationException will be thrown should it be called.</p>
+<p>Method fns are closures and can capture the environment in which proxy is called. Each method fn takes an additional implicit first argument, which is bound to this.</p>
+<p>Note that while method fns can be provided to override protected methods, they have no other access to protected members, nor to super, as these capabilities cannot be a proxy.</p>
+<p>Arrays</p>
+<p>Clojure supports the creation, reading and modification of Java arrays. It is recommended that you limit use of arrays to interop with Java libraries that require them as arguments or use them as return values.</p>
+<p>Note that many other Clojure functions work with arrays such as via the seq library. The functions listed here exist for initial creation of arrays, or to support mutation or higher performance operations on arrays.</p>
+<p>Create array from existing collection: aclone amap to-array to-array-2d into-array
+Multi-dimensional array support: aget aset to-array-2d make-array
+Type-specific array constructors: boolean-array byte-array char-array double-array float-array int-array long-array object-array short-array
+Primitive array casts: booleans bytes chars doubles floats ints longs shorts
+Mutate an array: aset
+Process an existing array: aget alength amap areduce</p>
+<p>Type Hints</p>
+<p>Clojure supports the use of type hints to assist the compiler in avoiding reflection in performance-critical areas of code. Normally, one should avoid the use of type hints until there is a known performance bottleneck. Type hints are metadata tags placed on symbols or expressions that are consumed by the compiler. They can be placed on function parameters, let-bound names, var names (when defined), and expressions:</p>
+<p>(defn len [x]
+  (.length x))</p>
+<p>(defn len2 [^String x]
+  (.length x))</p>
+<p>user=&gt; (time (reduce + (map len (repeat 1000000 "asdf"))))
+"Elapsed time: 3007.198 msecs"
+4000000
+user=&gt; (time (reduce + (map len2 (repeat 1000000 "asdf"))))
+"Elapsed time: 308.045 msecs"
+4000000</p>
+<p>Once a type hint has been placed on an identifier or expression, the compiler will try to resolve any calls to methods thereupon at compile time. In addition, the compiler will track the use of any return values and infer types for their use and so on, so very few hints are needed to get a fully compile-time resolved series of calls. Note that type hints are not needed for static members (or their return values!) as the compiler always has the type for statics.</p>
+<p>There is a <em>warn-on-reflection</em> flag (defaults to false) which will cause the compiler to warn you when it can't resolve to a direct call:</p>
+<p>(set! <em>warn-on-reflection</em> true)
+-&gt; true</p>
+<p>(defn foo [s] (.charAt s 1))
+-&gt; Reflection warning, line: 2 - call to charAt can't be resolved.
+-&gt; #user/foo</p>
+<p>(defn foo [^String s] (.charAt s 1))
+-&gt; #user/foo</p>
+<p>For function return values, the type hint can be placed before the arguments vector:</p>
+<p>(defn hinted
+  (^String [])
+  (^Integer [a])
+  (^java.util.List [a &amp; args]))</p>
+<p>-&gt; #user/hinted</p>
+<p>Aliases</p>
+<p>Clojure provides aliases for primitive Java types and arrays which do not have typical representations as Java class names. For example, long arrays (long-array []) have a type of "[J".</p>
+<div class="highlight"><pre><span></span><code>int - A primitive int
+ints - An int array
+long - A primitive long
+longs - A long array
+float - A primitive float
+floats - A float array
+double - A primitive double
+doubles - A double array
+void - A void return
+short - A primitive short
+shorts - A short array
+boolean - A primitive boolean
+booleans - A boolean array
+byte - A primitive byte
+bytes - A byte array
+char - A primitive character
+chars - A character array
+</code></pre></div>
+<p>Support for Java Primitives</p>
+<p>Clojure has support for high-performance manipulation of, and arithmetic involving, Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.</p>
+<div class="highlight"><pre><span></span><code>let/loop-bound locals can be of primitive types, having the inferred, possibly primitive type of their init-form.
+recur forms that rebind primitive locals do so without boxing, and do type-checking for same primitive type.
+Arithmetic (+,-,*,/,inc,dec,&lt;,&lt;=,&gt;,&gt;= etc) is overloaded for primitive types where semantics are same.
+aget/aset are overloaded for arrays of primitives
+aclone, alength functions for arrays of primitives
+constructor functions for primitive arrays: float-array, int-array, etc.
+Type hints for primitive arrays - ^ints, ^floats, etc.
+Coercion ops int, float, etc. produce primitives when consumer can take primitive
+The num coercion function boxes primitives to force generic arithmetic
+Array cast functions ints longs, etc. which produce int[], long[], etc.
+A set of "unchecked" operations for utmost performing, but potentially unsafe, integer (int/long) ops: unchecked-multiply unchecked-dec unchecked-inc unchecked-negate unchecked-add unchecked-subtract unchecked-remainder unchecked-divide
+A dynamic var to automatically swap safe operations with unchecked operations: *unchecked-math*
+amap and areduce macros for functionally (i.e. non-destructively) processing one or more arrays in order to produce a new array or aggregate value respectively.
+</code></pre></div>
+<p>Rather than write this Java:</p>
+<p>static public float asum(float[] xs){
+  float ret = 0;
+  for(int i = 0; i &lt; xs.length; i++)
+    ret += xs[i];
+  return ret;
+}</p>
+<p>you can write this Clojure:</p>
+<p>(defn asum [^floats xs]
+  (areduce xs i ret (float 0)
+    (+ ret (aget xs i))))</p>
+<p>and the resulting code is exactly the same speed (when run with java -server).</p>
+<p>The best aspect of this is that you need not do anything special in your initial coding. Quite often these optimizations are unneeded. Should a bit of code be a bottleneck, you can speed it up with minor adornment:</p>
+<p>(defn foo [n]
+  (loop [i 0]
+    (if (&lt; i n)
+      (recur (inc i))
+      i)))</p>
+<p>(time (foo 100000))
+"Elapsed time: 0.391 msecs"
+100000</p>
+<p>(defn foo2 [n]
+  (let [n (int n)]
+    (loop [i (int 0)]
+      (if (&lt; i n)
+        (recur (inc i))
+        i))))</p>
+<p>(time (foo2 100000))
+"Elapsed time: 0.084 msecs"
+100000</p>
+<p>Coercions
+At times it is necessary to have a value of a particular primitive type. These coercion functions yield a value of the indicated type as long as such a coercion is possible: bigdec bigint boolean byte char double float int long num short</p>
+<p>Some optimization tips</p>
+<div class="highlight"><pre><span></span><code>All arguments are passed to Clojure fns as objects, so there's no point to putting non-array primitive type hints on fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.
+(let [foo (int bar)] ...) is the correct way to get a primitive local. Do not use ^Integer etc.
+Don't rush to unchecked math unless you want truncating operations. HotSpot does a good job at optimizing the overflow check, which will yield an exception instead of silent truncation. On a typical example, that has about a 5% difference in speed - well worth it. Also, people reading your code don't know if you are using unchecked for truncation or performance - best to reserve it for the former and comment if the latter.
+There's usually no point in trying to optimize an outer loop, in fact it can hurt you as you'll be representing things as primitives which just have to be re-boxed in order to become args to the inner call. The only exception is reflection warnings - you must get rid of them in any code that gets called frequently.
+Almost every time someone presents something they are trying to optimize with hints, the faster version has far fewer hints than the original. If a hint doesn't improve things in the end - take it out.
+Many people seem to presume only the unchecked- ops do primitive arithmetic - not so. When the args are primitive locals, regular + and * etc do primitive math with an overflow check - fast and safe.
+So, the simplest route to fast math is to leave the operators alone and just make sure the source literals and locals are primitive. Arithmetic on primitives yields primitives. If you've got a loop (which you probably do if you need to optimize) make sure the loop locals are primitives first - then if you accidentally are producing a boxed intermediate result you'll get an error on recur. Don't solve that error by coercing your intermediate result, instead, figure out what argument or local is not primitive.
+</code></pre></div>
+<p>Simple XML Support
+Included with the distribution is simple XML support, found in the src/xml.clj file. All names from this file are in the xml namespace.</p>
+<p>(parse source)
+Parses and loads the source, which can be a File, InputStream or String naming a URI. Returns a tree of the xml/element struct-map, which has the keys :tag, :attrs, and :content. and accessor fns tag, attrs, and content.</p>
+<p>(xml/parse "/Users/rich/dev/clojure/build.xml")
+-&gt; {:tag :project, :attrs {:name "clojure", :default "jar"}, :content [{:tag :description, ...</p>
+<p>Calling Clojure From Java
+The clojure.java.api package provides a minimal interface to bootstrap Clojure access from other JVM languages. It does this by providing:</p>
+<ol>
+<li>The ability to use Clojure's namespaces to locate an arbitrary var, returning the var's clojure.lang.IFn interface.</li>
+<li>A convenience method read for reading data using Clojure's edn reader</li>
+</ol>
+<p>IFns provide complete access to Clojure's APIs. You can also access any other library written in Clojure, after adding either its source or compiled form to the classpath.</p>
+<p>The public Java API for Clojure consists of the following classes and interfaces:</p>
+<div class="highlight"><pre><span></span><code>clojure.java.api.Clojure
+clojure.lang.IFn
+</code></pre></div>
+<p>All other Java classes should be treated as implementation details, and applications should avoid relying on them.</p>
+<p>To lookup and call a Clojure function:</p>
+<p>IFn plus = Clojure.var("clojure.core", "+");
+plus.invoke(1, 2);</p>
+<p>Functions in clojure.core are automatically loaded. Other namespaces can be loaded via require:</p>
+<p>IFn require = Clojure.var("clojure.core", "require");
+require.invoke(Clojure.read("clojure.set"));</p>
+<p>IFns can be passed to higher order functions, e.g. the example below passes plus to read:</p>
+<p>IFn map = Clojure.var("clojure.core", "map");
+IFn inc = Clojure.var("clojure.core", "inc");
+map.invoke(inc, Clojure.read("[1 2 3]"));</p>
+<p>Most IFns in Clojure refer to functions. A few, however, refer to non-function data values. To access these, use deref instead of fn:</p>
+<p>IFn printLength = Clojure.var("clojure.core", "<em>print-length</em>");
+IFn deref = Clojure.var("clojure.core", "deref");
+deref.invoke(printLength);</p>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

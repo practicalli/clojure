@@ -1,0 +1,1042 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure-test/reference/sequences/" rel="canonical"/>
+<link href="../../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Reference: Clojure from the ground up: sequences - Practicalli Clojure</title>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#reference-clojure-from-the-ground-up-sequences">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Reference: Clojure from the ground up: sequences
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Introduction" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/clojure-in-15-minutes/">
+        Clojure in Fifteen Mins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../introduction/concepts/">Concepts</a>
+<label for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/concepts/what-is-functional-programming/">
+        Functional vs Imperative
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/concepts/clojure-made-simple/">
+        From The Author
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../install/">Install</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Install" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/java/">
+        Java Host
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/clojure-cli/">
+        Clojure CLI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/code-analysis/">
+        Code Analysis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/">Clojure CLI</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/configure/">
+        Configure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/community-tools/">
+        Community Tools
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/repl/">REPL</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="REPL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          REPL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/coding-in-the-repl/">
+        Coding in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/using-project-or-library/">
+        Using Clojure libraries in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/help-at-the-repl/">
+        Help at the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/customize-rebel/">
+        Customize Rebel Readline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/troubleshooting/">
+        Troubleshooting the REPL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Clojure Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/create/">
+        Creating Clojure projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/add-libraries/">
+        Add libraries to a project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/namespace/">
+        Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/rich-comments/">
+        Rich Comments for REPL Driven Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/configure-repl-startup/">
+        REPL Startup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/">Clojure Editors</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Editors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2">
+          Clojure LSP
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Clojure LSP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/snippets.md">
+        Clojure LSP Snippets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+        Practicalli Snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+          Editor Install Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/atom-protorepl/">
+        Atom.io and ProtoREPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs-spacemacs/">
+        Emacs and Spacemacs Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs/">
+        Emacs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vim-plugins/">
+        NeoVim Plugins - a smorgasbord of functionality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace: Install guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-configuration/">
+        Understanding the SpaceVim configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vspacecode-calva/">
+        VSpaceCode configuration for VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vscode-calva/">
+        Microsoft VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/intellij-cursive/">
+        IntelliJ / Cursive
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Editor User Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/atom-protorepl/">
+        Atom and ProtoREPL user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/emacs-spacemacs/">
+        Emacs and Spacemacs user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vspacecode-calva/">
+        Vspacecode calva
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vscode-calva/">
+        VSCode and Calva quick start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/intellij-cursive/">
+        IntelliJ and Cursive user guide
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/data-browsers/">Data Inspectors</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Data Inspectors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/data-browsers/clojure-inspector/">
+        Clojure Inspector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/data-browsers/portal/">
+        Portal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" id="__nav_8_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../creative-coding/">Crreative Coding</a>
+</div>
+<nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+          Crreative Coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-test/edit/main/docs/reference/sequences.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="reference-clojure-from-the-ground-up-sequences">Reference: Clojure from the ground up: sequences<a class="headerlink" href="#reference-clojure-from-the-ground-up-sequences" title="Permanent link">λ︎</a></h1>
+<p>In Chapter 3, we discovered functions as a way to abstract expressions; to rephrase a particular computation with some parts missing. We used functions to transform a single value. But what if we want to apply a function to more than one value at once? What about sequences?</p>
+<p>For example, we know that (inc 2) increments the number 2. What if we wanted to increment every number in the vector [1 2 3], producing [2 3 4]?</p>
+<p>user=&gt; (inc [1 2 3])
+ClassCastException clojure.lang.PersistentVector cannot be cast to java.lang.Number  clojure.lang.Numbers.inc (Numbers.java:110)
+Clearly inc can only work on numbers, not on vectors. We need a different kind of tool.</p>
+<p>A direct approach
+Let’s think about the problem in concrete terms. We want to increment each of three elements: the first, second, and third. We know how to get an element from a sequence by using nth, so let’s start with the first number, at index 0:</p>
+<p>user=&gt; (def numbers [1 2 3])</p>
+<h1 id="usernumbers">'user/numbers<a class="headerlink" href="#usernumbers" title="Permanent link">λ︎</a></h1>
+<p>user=&gt; (nth numbers 0)
+1
+user=&gt; (inc (nth numbers 0))
+2
+So there’s the first element incremented. Now we can do the second:</p>
+<p>user=&gt; (inc (nth numbers 1))
+3
+user=&gt; (inc (nth numbers 2))
+4
+And it should be straightforward to combine these into a vector…</p>
+<p>user=&gt; [(inc (nth numbers 0)) (inc (nth numbers 1)) (inc (nth numbers 2))]
+[2 3 4]
+Success! We’ve incremented each of the numbers in the list! How about a list with only two elements?</p>
+<p>user=&gt; (def numbers [1 2])</p>
+<h1 id="usernumbers_1">'user/numbers<a class="headerlink" href="#usernumbers_1" title="Permanent link">λ︎</a></h1>
+<p>user=&gt; [(inc (nth numbers 0)) (inc (nth numbers 1)) (inc (nth numbers 2))]</p>
+<p>IndexOutOfBoundsException   clojure.lang.PersistentVector.arrayFor (PersistentVector.java:107)
+Shoot. We tried to get the element at index 2, but couldn’t, because numbers only has indices 0 and 1. Clojure calls that “index out of bounds”.</p>
+<p>We could just leave off the third expression in the vector; taking only elements 0 and 1. But the problem actually gets much worse, because we’d need to make this change every time we wanted to use a different sized vector. And what of a vector with 1000 elements? We’d need 1000 (inc (nth numbers ...)) expressions! Down this path lies madness.</p>
+<p>Let’s back up a bit, and try a slightly smaller problem.</p>
+<p>Recursion
+What if we just incremented the first number in the vector? How would that work? We know that first finds the first element in a sequence, and rest finds all the remaining ones.</p>
+<p>user=&gt; (first [1 2 3])
+1
+user=&gt; (rest [1 2 3])
+(2 3)
+So there’s the pieces we’d need. To glue them back together, we can use a function called cons, which says “make a list beginning with the first argument, followed by all the elements in the second argument”.</p>
+<p>user=&gt; (cons 1 [2])
+(1 2)
+user=&gt; (cons 1 [2 3])
+(1 2 3)
+user=&gt; (cons 1 [2 3 4])
+(1 2 3 4)
+OK so we can split up a sequence, increment the first part, and join them back together. Not so hard, right?</p>
+<p>(defn inc-first [numbers]
+  (cons (inc (first numbers))
+        (rest numbers)))
+user=&gt; (inc-first [1 2 3 4])
+(2 2 3 4)
+Hey, there we go! First element changed. Will it work with any length list?</p>
+<p>user=&gt; (inc-first [5])
+(6)
+user=&gt; (inc-first [])</p>
+<p>NullPointerException   clojure.lang.Numbers.ops (Numbers.java:942)
+Shoot. We can’t increment the first element of this empty vector, because it doesn’t have a first element.</p>
+<p>user=&gt; (first [])
+nil
+user=&gt; (inc nil)</p>
+<p>NullPointerException   clojure.lang.Numbers.ops (Numbers.java:942)
+So there are really two cases for this function. If there is a first element in numbers, we’ll increment it as normal. If there’s no such element, we’ll return an empty list. To express this kind of conditional behavior, we’ll use a Clojure special form called if:</p>
+<h2 id="user-doc-if">user=&gt; (doc if)<a class="headerlink" href="#user-doc-if" title="Permanent link">λ︎</a></h2>
+<p>if
+  (if test then else?)
+Special Form
+  Evaluates test. If not the singular values nil or false,
+  evaluates and yields then, otherwise, evaluates and yields else. If
+  else is not supplied it defaults to nil.</p>
+<p>Please see <a href="http://clojure.org/special_forms#if">http://clojure.org/special_forms#if</a>
+To confirm our intuition:</p>
+<p>user=&gt; (if true :a :b)
+:a
+user=&gt; (if false :a :b)
+:b
+Seems straightforward enough.</p>
+<p>(defn inc-first [numbers]
+  (if (first numbers)
+    ; If there's a first number, build a new list with cons
+    (cons (inc (first numbers))
+          (rest numbers))
+    ; If there's no first number, just return an empty list
+    (list)))</p>
+<p>user=&gt; (inc-first [])
+()
+user=&gt; (inc-first [1 2 3])
+(2 2 3)
+Success! Now we can handle both cases: empty sequences, and sequences with things in them. Now how about incrementing that second number? Let’s stare at that code for a bit.</p>
+<p>(rest numbers)
+Hang on. That list–(rest numbers)–that’s a list of numbers too. What if we… used our inc-first function on that list, to increment its first number? Then we’d have incremented both the first and the second element.</p>
+<p>(defn inc-more [numbers]
+  (if (first numbers)
+    (cons (inc (first numbers))
+          (inc-more (rest numbers)))
+    (list)))
+user=&gt; (inc-more [1 2 3 4])
+(2 3 4 5)
+Odd. That didn’t just increment the first two numbers. It incremented all the numbers. We fell into the complete solution entirely by accident. What happened here?</p>
+<p>Well first we… yes, we got the number one, and incremented it. Then we stuck that onto (inc-first [2 3 4]), which got two, and incremented it. Then we stuck that two onto (inc-first [3 4]), which got three, and then we did the same for four. Only that time around, at the very end of the list, (rest [4]) would have been empty. So when we went to get the first number of the empty list, we took the second branch of the if, and returned the empty list.</p>
+<p>Having reached the bottom of the function calls, so to speak, we zip back up the chain. We can imagine this function turning into a long string of cons calls, like so:</p>
+<p>(cons 2 (cons 3 (cons 4 (cons 5 '()))))
+(cons 2 (cons 3 (cons 4 '(5))))
+(cons 2 (cons 3 '(4 5)))
+(cons 2 '(3 4 5))
+'(2 3 4 5)
+This technique is called recursion, and it is a fundamental principle in working with collections, sequences, trees, or graphs… any problem which has small parts linked together. There are two key elements in a recursive program:</p>
+<p>Some part of the problem which has a known solution
+A relationship which connects one part of the problem to the next
+Incrementing the elements of an empty list returns the empty list. This is our base case: the ground to build on. Our inductive case, also called the recurrence relation, is how we broke the problem up into incrementing the first number in the sequence, and incrementing all the numbers in the rest of the sequence. The if expression bound these two cases together into a single function; a function defined in terms of itself.</p>
+<p>Once the initial step has been taken, every step can be taken.</p>
+<p>user=&gt; (inc-more [1 2 3 4 5 6 7 8 9 10 11 12])
+(2 3 4 5 6 7 8 9 10 11 12 13)
+This is the beauty of a recursive function; folding an unbounded stream of computation over and over, onto itself, until only a single step remains.</p>
+<p>Generalizing from inc
+We set out to increment every number in a vector, but nothing in our solution actually depended on inc. It just as well could have been dec, or str, or keyword. Let’s parameterize our inc-more function to use any transformation of its elements:</p>
+<p>(defn transform-all [f xs]
+  (if (first xs)
+    (cons (f (first xs))
+          (transform-all f (rest xs)))
+    (list)))
+Because we could be talking about any kind of sequence, not just numbers, we’ve named the sequence xs, and its first element x. We also take a function f as an argument, and that function will be applied to each x in turn. So not only can we increment numbers…</p>
+<p>user=&gt; (transform-all inc [1 2 3 4])
+(2 3 4 5)
+…but we can turn strings to keywords…</p>
+<p>user=&gt; (transform-all keyword ["bell" "hooks"])
+(:bell :hooks)
+…or wrap every element in a list:</p>
+<p>user=&gt; (transform-all list [:codex :book :manuscript])
+((:codex) (:book) (:manuscript))
+In short, this function expresses a sequence in which each element is some function applied to the corresponding element in the underlying sequence. This idea is so important that it has its own name, in mathematics, Clojure, and other languages. We call it map.</p>
+<p>user=&gt; (map inc [1 2 3 4])
+(2 3 4 5)
+You might remember maps as a datatype in Clojure, too–they’re dictionaries that relate keys to values.</p>
+<p>{:year  1969
+ :event "moon landing"}
+The function map relates one sequence to another. The type map relates keys to values. There is a deep symmetry between the two: maps are usually sparse, and the relationships between keys and values may be arbitrarily complex. The map function, on the other hand, usually expresses the same type of relationship, applied to a series of elements in fixed order.</p>
+<p>Building sequences
+Recursion can do more than just map. We can use it to expand a single value into a sequence of values, each related by some function. For instance:</p>
+<p>(defn expand [f x count]
+  (if (pos? count)
+    (cons x (expand f (f x) (dec count)))))
+Our base case is x itself, followed by the sequence beginning with (f x). That sequence in turn expands to (f (f x)), and then (f (f (f x))), and so on. Each time we call expand, we count down by one using dec. Once the count is zero, the if returns nil, and evaluation stops. If we start with the number 0 and use inc as our function:</p>
+<p>user=&gt; user=&gt; (expand inc 0 10)
+(0 1 2 3 4 5 6 7 8 9)
+Clojure has a more general form of this function, called iterate.</p>
+<p>user=&gt; (take 10 (iterate inc 0))
+(0 1 2 3 4 5 6 7 8 9)
+Since this sequence is infinitely long, we’re using take to select only the first 10 elements. We can construct more complex sequences by using more complex functions:</p>
+<p>user=&gt; (take 10 (iterate (fn [x] (if (odd? x) (+ 1 x) (/ x 2))) 10))
+(10 5 6 3 4 2 1 2 1 2)
+Or build up strings:</p>
+<p>user=&gt; (take 5 (iterate (fn [x] (str x "o")) "y"))
+("y" "yo" "yoo" "yooo" "yoooo")
+iterate is extremely handy for working with infinite sequences, and has some partners in crime. repeat, for instance, constructs a sequence where every element is the same.</p>
+<p>user=&gt; (take 10 (repeat :hi))
+(:hi :hi :hi :hi :hi :hi :hi :hi :hi :hi)
+user=&gt; (repeat 3 :echo)
+(:echo :echo :echo)
+And its close relative repeatedly simply calls a function (f) to generate an infinite sequence of values, over and over again, without any relationship between elements. For an infinite sequence of random numbers:</p>
+<p>user=&gt; (rand)
+0.9002678382322784
+user=&gt; (rand)
+0.12375594203332863
+user=&gt; (take 3 (repeatedly rand))
+(0.44442397843046755 0.33668691162169784 0.18244875487846746)
+Notice that calling (rand) returns a different number each time. We say that rand is an impure function, because it cannot simply be replaced by the same value every time. It does something different each time it’s called.</p>
+<p>There’s another very handy sequence function specifically for numbers: range, which generates a sequence of numbers between two points. (range n) gives n successive integers starting at 0. (range n m) returns integers from n to m-1. (range n m step) returns integers from n to m, but separated by step.</p>
+<p>user=&gt; (range 5)
+(0 1 2 3 4)
+user=&gt; (range 2 10)
+(2 3 4 5 6 7 8 9)
+user=&gt; (range 0 100 5)
+(0 5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95)
+To extend a sequence by repeating it forever, use cycle:</p>
+<p>user=&gt; (take 10 (cycle [1 2 3]))
+(1 2 3 1 2 3 1 2 3 1)
+Transforming sequences
+Given a sequence, we often want to find a related sequence. map, for instance, applies a function to each element–but has a few more tricks up its sleeve.</p>
+<p>user=&gt; (map (fn [n vehicle] (str "I've got " n " " vehicle "s"))
+         [0 200 9]
+         ["car" "train" "kiteboard"])
+("I've got 0 cars" "I've got 200 trains" "I've got 9 kiteboards")
+If given multiple sequences, map calls its function with one element from each sequence in turn. So the first value will be (f 0 "car"), the second (f 200 "train"), and so on. Like a zipper, map folds together corresponding elements from multiple collections. To sum three vectors, column-wise:</p>
+<p>user=&gt; (map + [1 2 3]
+              [4 5 6]
+              [7 8 9])
+(12 15 18)
+If one sequence is bigger than another, map stops at the end of the smaller one. We can exploit this to combine finite and infinite sequences. For example, to number the elements in a vector:</p>
+<p>user=&gt; (map (fn [index element] (str index ". " element))
+            (iterate inc 0)
+            ["erlang" "ruby" "haskell"])
+("0. erlang" "1. ruby" "2. haskell")
+Transforming elements together with their indices is so common that Clojure has a special function for it: map-indexed:</p>
+<p>user=&gt; (map-indexed (fn [index element] (str index ". " element))
+                    ["erlang" "ruby" "haskell"])
+("0. erlang" "1. ruby" "2. haskell")
+You can also tack one sequence onto the end of another, like so:</p>
+<p>user=&gt; (concat [1 2 3] [:a :b :c] [4 5 6])
+(1 2 3 :a :b :c 4 5 6)
+Another way to combine two sequences is to riffle them together, using interleave.</p>
+<p>user=&gt; (interleave [:a :b :c] [1 2 3])
+(:a 1 :b 2 :c 3)
+And if you want to insert a specific element between each successive pair in a sequence, try interpose:</p>
+<p>user=&gt; (interpose :and [1 2 3 4])
+(1 :and 2 :and 3 :and 4)
+To reverse a sequence, use reverse.</p>
+<p>user=&gt; (reverse [1 2 3])
+(3 2 1)
+user=&gt; (reverse "woolf")
+(\f \l \o \o \w)
+Strings are sequences too! Each element of a string is a character, written \f. You can rejoin those characters into a string with apply str:</p>
+<p>user=&gt; (apply str (reverse "woolf"))
+"floow"
+…and break strings up into sequences of chars with seq.</p>
+<p>user=&gt; (seq "sato")
+(\s \a \t \o)
+To randomize the order of a sequence, use shuffle.</p>
+<p>user=&gt; (shuffle [1 2 3 4])
+[3 1 2 4]
+user=&gt; (apply str (shuffle (seq "abracadabra")))
+"acaadabrrab"
+Subsequences
+We’ve already seen take, which selects the first n elements. There’s also drop, which removes the first n elements.</p>
+<p>user=&gt; (range 10)
+(0 1 2 3 4 5 6 7 8 9)
+user=&gt; (take 3 (range 10))
+(0 1 2)
+user=&gt; (drop 3 (range 10))
+(3 4 5 6 7 8 9)
+And for slicing apart the other end of the sequence, we have take-last and drop-last:</p>
+<p>user=&gt; (take-last 3 (range 10))
+(7 8 9)
+user=&gt; (drop-last 3 (range 10))
+(0 1 2 3 4 5 6)
+take-while and drop-while work just like take and drop, but use a function to decide when to cut.</p>
+<p>user=&gt; (take-while pos? [3 2 1 0 -1 -2 10])
+(3 2 1)
+In general, one can cut a sequence in twain by using split-at, and giving it a particular index. There’s also split-with, which uses a function to decide when to cut.</p>
+<p>(split-at 4 (range 10))
+[(0 1 2 3) (4 5 6 7 8 9)]
+user=&gt; (split-with number? [1 2 3 :mark 4 5 6 :mark 7])
+[(1 2 3) (:mark 4 5 6 :mark 7)]
+Notice that because indexes start at zero, sequence functions tend to have predictable numbers of elements. (split-at 4) yields four elements in the first collection, and ensures the second collection begins at index four. (range 10) has ten elements, corresponding to the first ten indices in a sequence. (range 3 5) has two (since 5 - 3 is two) elements. These choices simplify the definition of recursive functions as well.</p>
+<p>We can select particular elements from a sequence by applying a function. To find all positive numbers in a list, use filter:</p>
+<p>user=&gt; (filter pos? [1 5 -4 -7 3 0])
+(1 5 3)
+filter looks at each element in turn, and includes it in the resulting sequence only if (f element) returns a truthy value. Its complement is remove, which only includes those elements where (f element) is false or nil.</p>
+<p>user=&gt; (remove string? [1 "turing" :apple])
+(1 :apple)
+Finally, one can group a sequence into chunks using partition, partition-all, or partition-by. For instance, one might group alternating values into pairs:</p>
+<p>user=&gt; (partition 2 [:cats 5 :bats 27 :crocodiles 0])
+((:cats 5) (:bats 27) (:crocodiles 0))
+Or separate a series of numbers into negative and positive runs:</p>
+<p>(user=&gt; (partition-by neg? [1 2 3 2 1 -1 -2 -3 -2 -1 1 2])
+((1 2 3 2 1) (-1 -2 -3 -2 -1) (1 2))
+Collapsing sequences
+After transforming a sequence, we often want to collapse it in some way; to derive some smaller value. For instance, we might want the number of times each element appears in a sequence:</p>
+<p>user=&gt; (frequencies [:meow :mrrrow :meow :meow])
+{:meow 3, :mrrrow 1}
+Or to group elements by some function:</p>
+<p>user=&gt; (pprint (group-by :first [{:first "Li"    :last "Zhou"}
+                                 {:first "Sarah" :last "Lee"}
+                                 {:first "Sarah" :last "Dunn"}
+                                 {:first "Li"    :last "O'Toole"}]))
+{"Li"    [{:last "Zhou", :first "Li"}   {:last "O'Toole", :first "Li"}],
+ "Sarah" [{:last "Lee", :first "Sarah"} {:last "Dunn", :first "Sarah"}]}
+Here we’ve taken a sequence of people with first and last names, and used the :first keyword (which can act as a function!) to look up those first names. group-by used that function to produce a map of first names to lists of people–kind of like an index.</p>
+<p>In general, we want to combine elements together in some way, using a function. Where map treated each element independently, reducing a sequence requires that we bring some information along. The most general way to collapse a sequence is reduce.</p>
+<h2 id="user-doc-reduce">user=&gt; (doc reduce)<a class="headerlink" href="#user-doc-reduce" title="Permanent link">λ︎</a></h2>
+<p>clojure.core/reduce
+([f coll] [f val coll])
+  f should be a function of 2 arguments. If val is not supplied,
+  returns the result of applying f to the first 2 items in coll, then
+  applying f to that result and the 3rd item, etc. If coll contains no
+  items, f must accept no arguments as well, and reduce returns the
+  result of calling f with no arguments.  If coll has only 1 item, it
+  is returned and f is not called.  If val is supplied, returns the
+  result of applying f to val and the first item in coll, then
+  applying f to that result and the 2nd item, etc. If coll contains no
+  items, returns val and f is not called.
+That’s a little complicated, so we’ll start small. We need a function, f, which combines successive elements of the sequence. (f state element) will return the state for the next invocation of f. As f moves along the sequence, it carries some changing state with it. The final state is the return value of reduce.</p>
+<p>user=&gt; (reduce + [1 2 3 4])
+10
+reduce begins by calling (+ 1 2), which yields the state 3. Then it calls (+ 3 3), which yields 6. Then (+ 6 4), which returns 10. We’ve taken a function over two elements, and used it to combine all the elements. Mathematically, we could write:</p>
+<p>1 + 2 + 3 + 4
+    3 + 3 + 4
+        6 + 4
+           10
+So another way to look at reduce is like sticking a function between each pair of elements. To see the reducing process in action, we can use reductions, which returns a sequence of all the intermediate states.</p>
+<p>user=&gt; (reductions + [1 2 3 4])
+(1 3 6 10)
+Oftentimes we include a default state to start with. For instance, we could start with an empty set, and add each element to it as we go along:</p>
+<p>user=&gt; (reduce conj #{} [:a :b :b :b :a :a])</p>
+<h1 id="a-b">{:a :b}<a class="headerlink" href="#a-b" title="Permanent link">λ︎</a></h1>
+<p>Reducing elements into a collection has its own name: into. We can conj [key value] vectors into a map, for instance, or build up a list:</p>
+<p>user=&gt; (into {} [[:a 2] [:b 3]])
+{:a 2, :b 3}
+user=&gt; (into (list) [1 2 3 4])
+(4 3 2 1)
+Because elements added to a list appear at the beginning, not the end, this expression reverses the sequence. Vectors conj onto the end, so to emit the elements in order, using reduce, we might try:</p>
+<p>user=&gt; (reduce conj [] [1 2 3 4 5])
+(reduce conj [] [1 2 3 4 5])
+[1 2 3 4 5]
+Which brings up an interesting thought: this looks an awful lot like map. All that’s missing is some kind of transformation applied to each element.</p>
+<p>(defn my-map [f coll]
+  (reduce (fn [output element]
+            (conj output (f element)))
+          []
+          coll))
+user=&gt; (my-map inc [1 2 3 4])
+[2 3 4 5]
+Huh. map is just a special kind of reduce. What about, say, take-while?</p>
+<p>(defn my-take-while [f coll]
+  (reduce (fn [out elem]
+            (if (f elem)
+              (conj out elem)
+              (reduced out)))
+          []
+          coll))
+We’re using a special function here, reduced, to indicate that we’ve completed our reduction early and can skip the rest of the sequence.</p>
+<p>user=&gt; (my-take-while pos? [2 1 0 -1 0 1 2])
+[2 1]
+reduce really is the uber function over sequences. Almost any operation on a sequence can be expressed in terms of a reduce–though for various reasons, many of the Clojure sequence functions are not written this way. For instance, take-while is actually defined like so:</p>
+<p>user=&gt; (source take-while)
+(defn take-while
+  "Returns a lazy sequence of successive items from coll while
+  (pred item) returns true. pred must be free of side-effects."
+  {:added "1.0"
+   :static true}
+  [pred coll]
+  (lazy-seq
+   (when-let [s (seq coll)]
+       (when (pred (first s))
+         (cons (first s) (take-while pred (rest s)))))))
+There’s a few new pieces here, but the structure is essentially the same as our initial attempt at writing map. When the predicate matches the first element, cons the first element onto take-while, applied to the rest of the sequence. That lazy-seq construct allows Clojure to compute this sequence as required, instead of right away. It defers execution to a later time.</p>
+<p>Most of Clojure’s sequence functions are lazy. They don’t do anything until needed. For instance, we can increment every number from zero to infinity:</p>
+<p>user=&gt; (def infinite-sequence (map inc (iterate inc 0)))</p>
+<h1 id="userinfinite-sequence">'user/infinite-sequence<a class="headerlink" href="#userinfinite-sequence" title="Permanent link">λ︎</a></h1>
+<p>user=&gt; (realized? infinite-sequence)
+false
+That function returned immediately. Because it hasn’t done any work yet, we say the sequence is unrealized. It doesn’t increment any numbers at all until we ask for them:</p>
+<p>user=&gt; (take 10 infinite-sequence)
+(1 2 3 4 5 6 7 8 9 10)
+user=&gt; (realized? infinite-sequence)
+true
+Lazy sequences also remember their contents, once evaluated, for faster access.</p>
+<p>Putting it all together
+We’ve seen how recursion generalizes a function over one thing into a function over many things, and discovered a rich landscape of recursive functions over sequences. Now let’s use our knowledge of sequences to solve a more complex problem: find the sum of the products of consecutive pairs of the first 1000 odd integers.</p>
+<p>First, we’ll need the integers. We can start with 0, and work our way up to infinity. To save time printing an infinite number of integers, we’ll start with just the first 10.</p>
+<p>user=&gt; (take 10 (iterate inc 0))
+(0 1 2 3 4 5 6 7 8 9)
+Now we need to find only the ones which are odd. Remember, filter pares down a sequence to only those elements which pass a test.</p>
+<p>user=&gt; (take 10 (filter odd? (iterate inc 0)))
+(1 3 5 7 9 11 13 15 17 19)
+For consecutive pairs, we want to take [1 3 5 7 ...] and find a sequence like ([1 3] [3 5] [5 7] ...). That sounds like a job for partition:</p>
+<p>user=&gt; (take 3 (partition 2 (filter odd? (iterate inc 0))))
+((1 3) (5 7) (9 11))
+Not quite right–this gave us non-overlapping pairs, but we wanted overlapping ones too. A quick check of (doc partition) reveals the step parameter:</p>
+<p>user=&gt; (take 3 (partition 2 1 (filter odd? (iterate inc 0))))
+((1 3) (3 5) (5 7))
+Now we need to find the product for each pair. Given a pair, multiply the two pieces together… yes, that sounds like map:</p>
+<p>user=&gt; (take 3 (map (fn [pair] (* (first pair) (second pair)))
+                    (partition 2 1 (filter odd? (iterate inc 0)))))
+(3 15 35)
+Getting a bit unwieldy, isn’t it? Only one final step: sum all those products. We’ll adjust the take to include the first 1000, not the first 3, elements.</p>
+<p>user=&gt; (reduce +
+               (take 1000
+                     (map (fn [pair] (* (first pair) (second pair)))
+                          (partition 2 1
+                                    (filter odd?
+                                            (iterate inc 0)))))
+1335333000
+The sum of the first thousand products of consecutive pairs of the odd integers starting at 0. See how each part leads to the next? This expression looks a lot like the way we phrased the problem in English–but both English and Lisp expressions are sort of backwards, in a way. The part that happens first appears deepest, last, in the expression. In a chain of reasoning like this, it’d be nicer to write it in order.</p>
+<p>user=&gt; (-&gt;&gt; 0
+            (iterate inc)
+            (filter odd?)
+            (partition 2 1)
+            (map (fn [pair]
+                   (* (first pair) (second pair))))
+            (take 1000)
+            (reduce +))
+1335333000
+Much easier to read: now everything flows in order, from top to bottom, and we’ve flattened out the deeply nested expressions into a single level. This is how object-oriented languages structure their expressions: as a chain of function invocations, each acting on the previous value.</p>
+<p>But how is this possible? Which expression gets evaluated first? (take 1000) isn’t even a valid call–where’s its second argument? How are any of these forms evaluated?</p>
+<p>What kind of arcane function is -&gt;&gt;?</p>
+<p>All these mysteries, and more, in Chapter 5: Macros.</p>
+<p>Problems
+Write a function to find out if a string is a palindrome–that is, if it looks the same forwards and backwards.
+Find the number of ‘c’s in “abracadabra”.
+Write your own version of filter.
+Find the first 100 prime numbers: 2, 3, 5, 7, 11, 13, 17, ….</p>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

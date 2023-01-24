@@ -1,0 +1,1105 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure-test/introduction/clojure-in-15-minutes/" rel="canonical"/>
+<link href="../../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<title>Clojure in Fifteen Mins - Practicalli Clojure</title>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#clojure-in-15-minutes">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Clojure in Fifteen Mins
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure-test/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Introduction" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Clojure in Fifteen Mins
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Clojure in Fifteen Mins
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clojure-written-in-forms">
+    Clojure written in forms
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-manipulation">
+    String manipulation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#math-truth-prefix-notation">
+    Math, Truth &amp; prefix notation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types">
+    Types
+  </a>
+<nav aria-label="Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collections-sequences">
+    Collections &amp; Sequences
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functions">
+    Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-map-collections">
+    Hash-map collections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sets">
+    Sets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-forms">
+    Useful forms
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namespaces-and-libraries">
+    Namespaces and Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java">
+    Java
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../concepts/">Concepts</a>
+<label for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../concepts/what-is-functional-programming/">
+        Functional vs Imperative
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../concepts/clojure-made-simple/">
+        From The Author
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../install/">Install</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Install" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/java/">
+        Java Host
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/clojure-cli/">
+        Clojure CLI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/code-analysis/">
+        Code Analysis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/">Clojure CLI</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/configure/">
+        Configure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/community-tools/">
+        Community Tools
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/repl/">REPL</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="REPL" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          REPL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/coding-in-the-repl/">
+        Coding in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/using-project-or-library/">
+        Using Clojure libraries in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/help-at-the-repl/">
+        Help at the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/customize-rebel/">
+        Customize Rebel Readline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/repl/troubleshooting/">
+        Troubleshooting the REPL
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5">
+          Clojure Projects
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/create/">
+        Creating Clojure projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/add-libraries/">
+        Add libraries to a project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/namespace/">
+        Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/rich-comments/">
+        Rich Comments for REPL Driven Development
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/projects/configure-repl-startup/">
+        REPL Startup
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/">Clojure Editors</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Editors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" id="__nav_6_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6_2">
+          Clojure LSP
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_2">
+<span class="md-nav__icon md-icon"></span>
+          Clojure LSP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/snippets.md">
+        Clojure LSP Snippets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+        Practicalli Snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_3">
+<span class="md-nav__icon md-icon"></span>
+          Editor Install Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/atom-protorepl/">
+        Atom.io and ProtoREPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs-spacemacs/">
+        Emacs and Spacemacs Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs/">
+        Emacs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vim-plugins/">
+        NeoVim Plugins - a smorgasbord of functionality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace: Install guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-configuration/">
+        Understanding the SpaceVim configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vspacecode-calva/">
+        VSpaceCode configuration for VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vscode-calva/">
+        Microsoft VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/intellij-cursive/">
+        IntelliJ / Cursive
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Editor User Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/atom-protorepl/">
+        Atom and ProtoREPL user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/emacs-spacemacs/">
+        Emacs and Spacemacs user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vspacecode-calva/">
+        Vspacecode calva
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vscode-calva/">
+        VSCode and Calva quick start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/intellij-cursive/">
+        IntelliJ and Cursive user guide
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-cli/data-browsers/">Data Inspectors</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Data Inspectors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/data-browsers/clojure-inspector/">
+        Clojure Inspector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-cli/data-browsers/portal/">
+        Portal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8">
+          Reference
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_1" id="__nav_8_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/creative-coding/">Crreative Coding</a>
+</div>
+<nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_8_1">
+<span class="md-nav__icon md-icon"></span>
+          Crreative Coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#comments">
+    Comments
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clojure-written-in-forms">
+    Clojure written in forms
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#string-manipulation">
+    String manipulation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#math-truth-prefix-notation">
+    Math, Truth &amp; prefix notation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#types">
+    Types
+  </a>
+<nav aria-label="Types" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#collections-sequences">
+    Collections &amp; Sequences
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#functions">
+    Functions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hash-map-collections">
+    Hash-map collections
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#sets">
+    Sets
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#useful-forms">
+    Useful forms
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#namespaces-and-libraries">
+    Namespaces and Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#java">
+    Java
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure-test/edit/main/docs/introduction/clojure-in-15-minutes.md" title="Edit this page">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
+</a>
+<h1 id="clojure-in-15-minutes">Clojure in 15 minutes<a class="headerlink" href="#clojure-in-15-minutes" title="Permanent link">λ︎</a></h1>
+<p>A quick tour of the Clojure syntax, which is so terse you can read through this section in around 15 minutes (or less).</p>
+<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">λ︎</a></h2>
+<p><code>;;</code> two semi-colons for a line comment, <code>;</code> single semi-colon to comment the rest of the line</p>
+<p><code>#_</code> comment reader macro to comment out the next form</p>
+<p><code>(comment )</code> form to comment all the containing forms</p>
+<h2 id="clojure-written-in-forms">Clojure written in forms<a class="headerlink" href="#clojure-written-in-forms" title="Permanent link">λ︎</a></h2>
+<p>Clojure is written in "forms", which are just a lists of things inside parentheses, <code>()</code>, separated by whitespace.</p>
+<p>Clojure evaluates the first thing in a form as a function call.  Additional values in the form are passed as arguments to the called function.</p>
+<p>Clojure is organised into one or more namespaces. The namespace represents the directory path and file name that contains the code of the particular namespace.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">;; Define the namespace test</span><span class="w"></span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">test.code</span><span class="p">)</span><span class="w">  </span><span class="c1">;; src/test/code.clj</span><span class="w"></span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1">;; Define a longer namespace</span><span class="w"></span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">com.company.product.component.core</span><span class="p">)</span><span class="w">  </span><span class="c1">;; src/com/company/product/component/core.clj</span><span class="w"></span>
+</code></pre></div>
+<h2 id="string-manipulation">String manipulation<a class="headerlink" href="#string-manipulation" title="Permanent link">λ︎</a></h2>
+<p>The <code>str</code> function creates a new string from all the arguments passed</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nb">str </span><span class="s">"Hello"</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="s">"World"</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">; =&gt; "Hello World"</span><span class="w"></span>
+</code></pre></div>
+<p><code>clojure.string</code> returns string values (other functions my return characters as results)</p>
+<h2 id="math-truth-prefix-notation">Math, Truth &amp; prefix notation<a class="headerlink" href="#math-truth-prefix-notation" title="Permanent link">λ︎</a></h2>
+<p>Functions use prefix notation, so you can do math with multiple values very easily</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 40</span><span class="w"></span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">(</span><span class="nb">- </span><span class="mi">24</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 14</span><span class="w"></span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="p">(</span><span class="nb">* </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 2</span><span class="w"></span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">(</span><span class="nb">/ </span><span class="mi">27</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 22/7</span><span class="w"></span>
+</code></pre></div>
+<p>Math is very precise, no need for operator precedence rules (as there are no operators)</p>
+<p>Nesting forms defined a very precise calculation</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="c1">; = 1 + (3 - 2) =&gt; 2</span><span class="w"></span>
+</code></pre></div>
+<p>Equality is =</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; true</span><span class="w"></span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">(</span><span class="nb">= </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; false</span><span class="w"></span>
+</code></pre></div>
+<p>; You need not for logic, too
+(not true) ; =&gt; false</p>
+<p>(not= true false) ; =&gt; true</p>
+<h2 id="types">Types<a class="headerlink" href="#types" title="Permanent link">λ︎</a></h2>
+<p>Clojure is stronly typed, so everything is a type in Clojure.</p>
+<p>Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.</p>
+<p>As Clojure is a hosted language it uses the type system of its host where relevant.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.</p>
+<p>Use <code>class</code> or <code>type</code> functions to inspect the type of some code in Clojure.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nb">class </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; Integer literals are java.lang.Long by default</span><span class="w"></span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="p">(</span><span class="nb">class </span><span class="mi">1</span><span class="nv">.</span><span class="p">)</span><span class="c1">; Float literals are java.lang.Double</span><span class="w"></span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p">(</span><span class="nb">class </span><span class="s">""</span><span class="p">)</span><span class="c1">; Strings always double-quoted, and are java.lang.String</span><span class="w"></span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">(</span><span class="nb">class </span><span class="nv">false</span><span class="p">)</span><span class="w"> </span><span class="c1">; Booleans are java.lang.Boolean</span><span class="w"></span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">(</span><span class="nb">class </span><span class="nv">nil</span><span class="p">)</span><span class="c1">; The "null" value is called nil</span><span class="w"></span>
+</code></pre></div>
+<p>Vectors and Lists are java classes too!</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(class [1 2 3]); =&gt; clojure.lang.PersistentVector
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>(class '(1 2 3)); =&gt; clojure.lang.PersistentList
+</code></pre></div>
+<h3 id="collections-sequences">Collections &amp; Sequences<a class="headerlink" href="#collections-sequences" title="Permanent link">λ︎</a></h3>
+<p>The most common data collections in Clojure:</p>
+<ul>
+<li><code>(1 2 "three")</code> or <code>(list 1 2 "three")</code> - a list of values read from start to end (sequential access)</li>
+<li><code>[1 2 "three"]</code> or <code>(list 1 2 "three")</code> - a vector of values with index (random access)</li>
+<li><code>{:key "value"}</code> or <code>(hash-map :key "value")</code> - a hash-map with zero or more key value pairs (associative relation)</li>
+<li><code>#{1 2 "three"}</code> or <code>(set 1 2 "three")</code> - a unique set of values</li>
+</ul>
+<p>A list <code>()</code> is evaluated as a function call. The first element of the list the name of the function to call and additional values are arguments to the function.</p>
+<p>The <code>'</code> quote function informs the Clojure reader to treat the list as data only.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>Lists and vectors are collections
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nf">coll?</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; true</span><span class="w"></span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">(</span><span class="nf">coll?</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; true</span><span class="w"></span>
+</code></pre></div>
+Only lists are sequences
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">(</span><span class="nb">seq? </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; true</span><span class="w"></span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">(</span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; false</span><span class="w"></span>
+</code></pre></div></p>
+<p>Sequences are an interface for logical lists, which can be lazy. "Lazy" means that a sequence of valus are not evaluated until accessed.</p>
+<p>A lazy sequence enables the use of large or even an infinite series, like so:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w"> </span><span class="p">(</span><span class="nf">range</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; (0 1 2 3 4 ...) - an infinite series</span><span class="w"></span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">(</span><span class="nb">take </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nf">range</span><span class="p">))</span><span class="w"> </span><span class="c1">;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken</span><span class="w"></span>
+</code></pre></div>
+<p>Use cons to add an item to the beginning of a list or vector</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nb">cons </span><span class="mi">4</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; (4 1 2 3)</span><span class="w"></span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">(</span><span class="nb">cons </span><span class="mi">4</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; (4 1 2 3)</span><span class="w"></span>
+</code></pre></div>
+<p>Use conj to add an item relative to the type of collection, to the beginning of a list or the end of a vector</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; [1 2 3 4]</span><span class="w"></span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="p">(</span><span class="nb">conj </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; (4 1 2 3)</span><span class="w"></span>
+</code></pre></div>
+<p>Use concat to add lists or vectors together</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; (1 2 3 4)</span><span class="w"></span>
+</code></pre></div>
+<p>Use filter, map to interact with collections</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; (2 3 4)</span><span class="w"></span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">(</span><span class="nb">filter </span><span class="nv">even?</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; (2)</span><span class="w"></span>
+</code></pre></div>
+Use reduce to reduce them</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">(</span><span class="nb">reduce + </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span><span class="w"></span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="c1">; = (+ (+ (+ 1 2) 3) 4)</span><span class="w"></span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1">; =&gt; 10</span><span class="w"></span>
+</code></pre></div>
+<p>Reduce can take an initial-value argument too</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nb">reduce conj </span><span class="p">[]</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="c1">; =&gt; [3 2 1]</span><span class="w"></span>
+</code></pre></div>
+<p>Equivalent of <code>(conj (conj (conj [] 3) 2) 1)</code></p>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">λ︎</a></h2>
+<p>Use <code>fn</code> to create new functions that defines some behaviour. <code>fn</code> is referred to as an anonymous fuction as it has no external name to be referenced by and must be called within a list form.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">(</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">"Hello World"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; hello</span><span class="w"></span>
+</code></pre></div>
+<p>Wrap a <code>(fn ,,,)</code> form in parens to call it and return the result</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">((</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">"Hello World"</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; "Hello World"</span><span class="w"></span>
+</code></pre></div>
+<p>Create a reusable function using <code>def</code>, creating a name that is a <code>var</code>.  The function behaviour defined in <code>def</code> can be changed and the expression re-evaluated to use the new behaviour.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-world</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="s">"Hello World"</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="c1">;; =&gt; "Hello World"</span><span class="w"></span>
+</code></pre></div>
+<p>The [] is the list of arguments for the function.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Hello "</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="p">(</span><span class="nf">hello</span><span class="w"> </span><span class="s">"Steve"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "Hello Steve"</span><span class="w"></span>
+</code></pre></div>
+<p>Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello3</span><span class="w"></span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="s">"Hello World"</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">  </span><span class="p">([</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">str </span><span class="s">"Hello "</span><span class="w"> </span><span class="nv">name</span><span class="p">)))</span><span class="w"></span>
+<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="p">(</span><span class="nf">hello3</span><span class="w"> </span><span class="s">"Jake"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "Hello Jake"</span><span class="w"></span>
+<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="p">(</span><span class="nf">hello3</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "Hello World"</span><span class="w"></span>
+</code></pre></div>
+<p>Functions can pack extra arguments up in a seq for you</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">count-args</span><span class="w"> </span><span class="p">[</span><span class="o">&amp;</span><span class="w"> </span><span class="nv">args</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"You passed "</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">args</span><span class="p">)</span><span class="w"> </span><span class="s">" args: "</span><span class="w"> </span><span class="nv">args</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="p">(</span><span class="nf">count-args</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "You passed 3 args: (1 2 3)"</span><span class="w"></span>
+</code></pre></div>
+<p>You can mix regular and packed arguments</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-count</span><span class="w"> </span><span class="p">[</span><span class="nb">name </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">args</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Hello "</span><span class="w"> </span><span class="nb">name </span><span class="s">", you passed "</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">args</span><span class="p">)</span><span class="w"> </span><span class="s">" extra args"</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="p">(</span><span class="nf">hello-count</span><span class="w"> </span><span class="s">"Finn"</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-23-4" id="__codelineno-23-4" name="__codelineno-23-4"></a><span class="c1">; =&gt; "Hello Finn, you passed 3 extra args"</span><span class="w"></span>
+</code></pre></div>
+<h2 id="hash-map-collections">Hash-map collections<a class="headerlink" href="#hash-map-collections" title="Permanent link">λ︎</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="p">(</span><span class="nb">class </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ss">:c</span><span class="w"> </span><span class="mi">3</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; clojure.lang.PersistentArrayMap</span><span class="w"></span>
+</code></pre></div>
+<p>Keywords are like strings with some efficiency bonuses</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="p">(</span><span class="nb">class </span><span class="ss">:a</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; clojure.lang.Keyword</span><span class="w"></span>
+</code></pre></div>
+<p>Maps can use any type as a key, but usually keywords are best</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">stringmap</span><span class="w"> </span><span class="p">(</span><span class="nb">hash-map </span><span class="s">"a"</span><span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="s">"b"</span><span class="w"> </span><span class="mi">2</span>,<span class="w"> </span><span class="s">"c"</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="nv">stringmap</span><span class="w">  </span><span class="c1">; =&gt; {"a" 1, "b" 2, "c" 3}</span><span class="w"></span>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a>
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="p">(</span><span class="k">def </span><span class="nv">keymap</span><span class="w"> </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="ss">:c</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="nv">keymap</span><span class="w"> </span><span class="c1">; =&gt; {:a 1, :c 3, :b 2} (order is not guaranteed)</span><span class="w"></span>
+</code></pre></div>
+<details class="info">
+<summary>Commas are whitespace</summary>
+<p>commas are always treated as whitespace and are ignored by the Clojure reader</p>
+</details>
+<p>Retrieve a value from a map by calling it as a function</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="p">(</span><span class="nf">stringmap</span><span class="w"> </span><span class="s">"a"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 1</span><span class="w"></span>
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="p">(</span><span class="nf">keymap</span><span class="w"> </span><span class="ss">:a</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 1</span><span class="w"></span>
+</code></pre></div>
+<p>Keywords can be used to retrieve their value from a map.  Strings cannot be used.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="p">(</span><span class="ss">:b</span><span class="w"> </span><span class="nv">keymap</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 2</span><span class="w"></span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="p">(</span><span class="s">"a"</span><span class="w"> </span><span class="nv">stringmap</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="c1">; =&gt; Exception: java.lang.String cannot be cast to clojure.lang.IFn</span><span class="w"></span>
+</code></pre></div>
+<p>Retrieving a non-present value returns nil</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="p">(</span><span class="nf">stringmap</span><span class="w"> </span><span class="s">"d"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; nil</span><span class="w"></span>
+</code></pre></div>
+<p>Use assoc to add new keys to hash-maps</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="p">(</span><span class="nb">assoc </span><span class="nv">keymap</span><span class="w"> </span><span class="ss">:d</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; {:a 1, :b 2, :c 3, :d 4}</span><span class="w"></span>
+</code></pre></div>
+<p>But remember, clojure types are immutable!</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="nv">keymap</span><span class="w"> </span><span class="c1">; =&gt; {:a 1, :b 2, :c 3}</span><span class="w"></span>
+</code></pre></div>
+<p>Use dissoc to remove keys</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="p">(</span><span class="nb">dissoc </span><span class="nv">keymap</span><span class="w"> </span><span class="ss">:a</span><span class="w"> </span><span class="ss">:b</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; {:c 3}</span><span class="w"></span>
+</code></pre></div>
+<h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">λ︎</a></h2>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="p">(</span><span class="nb">class </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; clojure.lang.PersistentHashSet</span><span class="w"></span>
+<a href="#__codelineno-33-2" id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; #{1 2 3}</span><span class="w"></span>
+</code></pre></div>
+<p>Add a member with conj</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="p">(</span><span class="nb">conj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; #{1 2 3 4}</span><span class="w"></span>
+</code></pre></div>
+<p>Remove one with disj</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="p">(</span><span class="nb">disj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; #{2 3}</span><span class="w"></span>
+<a href="#__codelineno-35-2" id="__codelineno-35-2" name="__codelineno-35-2"></a><span class="o">````</span><span class="w"></span>
+<a href="#__codelineno-35-3" id="__codelineno-35-3" name="__codelineno-35-3"></a>
+<a href="#__codelineno-35-4" id="__codelineno-35-4" name="__codelineno-35-4"></a><span class="nv">Test</span><span class="w"> </span><span class="nb">for </span><span class="nv">existence</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">using</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nb">set </span><span class="nv">as</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">function</span><span class="err">:</span><span class="w"></span>
+<a href="#__codelineno-35-5" id="__codelineno-35-5" name="__codelineno-35-5"></a>
+<a href="#__codelineno-35-6" id="__codelineno-35-6" name="__codelineno-35-6"></a><span class="o">```</span><span class="nv">clojure</span><span class="w"></span>
+<a href="#__codelineno-35-7" id="__codelineno-35-7" name="__codelineno-35-7"></a><span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 1</span><span class="w"></span>
+<a href="#__codelineno-35-8" id="__codelineno-35-8" name="__codelineno-35-8"></a><span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; nil</span><span class="w"></span>
+</code></pre></div>
+<p>There are more functions in the clojure.sets namespace.</p>
+<h2 id="useful-forms">Useful forms<a class="headerlink" href="#useful-forms" title="Permanent link">λ︎</a></h2>
+<p>Logic constructs in clojure are just macros, and look like everything else</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="p">(</span><span class="k">if </span><span class="nv">false</span><span class="w"> </span><span class="s">"a"</span><span class="w"> </span><span class="s">"b"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "b"</span><span class="w"></span>
+<a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="p">(</span><span class="k">if </span><span class="nv">false</span><span class="w"> </span><span class="s">"a"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; nil</span><span class="w"></span>
+</code></pre></div>
+<p>Use let to create temporary bindings</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-37-2" id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; false</span><span class="w"></span>
+</code></pre></div>
+<p>Group statements together with do</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="p">(</span><span class="nf">do</span><span class="w"></span>
+<a href="#__codelineno-38-2" id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">"Hello"</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-38-3" id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="w">  </span><span class="s">"World"</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; "World" (prints "Hello")</span><span class="w"></span>
+</code></pre></div>
+<p>Functions have an implicit do</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">print-and-say-hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-39-2" id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">"Saying hello to "</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-39-3" id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Hello "</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span><span class="w"></span>
+<a href="#__codelineno-39-4" id="__codelineno-39-4" name="__codelineno-39-4"></a><span class="p">(</span><span class="nf">print-and-say-hello</span><span class="w"> </span><span class="s">"Jeff"</span><span class="p">)</span><span class="w"> </span><span class="c1">;=&gt; "Hello Jeff" (prints "Saying hello to Jeff")</span><span class="w"></span>
+</code></pre></div>
+<p>So does let</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-40-1" id="__codelineno-40-1" name="__codelineno-40-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nb">name </span><span class="s">"Urkel"</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-40-2" id="__codelineno-40-2" name="__codelineno-40-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">"Saying hello to "</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-40-3" id="__codelineno-40-3" name="__codelineno-40-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Hello "</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; "Hello Urkel" (prints "Saying hello to Urkel")</span><span class="w"></span>
+</code></pre></div>
+<h2 id="namespaces-and-libraries">Namespaces and Libraries<a class="headerlink" href="#namespaces-and-libraries" title="Permanent link">λ︎</a></h2>
+<p>Namespaces are used to organise code into logical groups.  The top of each Clojure file has an <code>ns</code> form that defines the namespace name.  The domain part of the namespace name is typically the organisation or community name (e.g. GitHub user/organisation)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-41-1" id="__codelineno-41-1" name="__codelineno-41-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">domain.namespace-name</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>All Practicalli projects have namespace domains of <code>practicalli</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-42-1" id="__codelineno-42-1" name="__codelineno-42-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.service-name</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p><code>require</code> allows code from one namespace to be accessed from another namespace, either from a the same Clojure project or from a library added to the project classpath.</p>
+<p>The <code>:as</code> directive with <code>require</code> is used to specify an alias name, a short-hand for the full library name</p>
+<p>Or <code>:refer [function-name var-name]</code> can be used to specify specific functions and data (vars) that are available directly</p>
+<p>A required directive is typically added to a namespace form</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-43-1" id="__codelineno-43-1" name="__codelineno-43-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.service-name</span><span class="w"></span>
+<a href="#__codelineno-43-2" id="__codelineno-43-2" name="__codelineno-43-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">]))</span><span class="w"></span>
+</code></pre></div>
+<p>The functions from clojure.set can be used via the alias name, rather than the fully qualified name, i.e. <code>clojure.set/intersection</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-44-1" id="__codelineno-44-1" name="__codelineno-44-1"></a><span class="p">(</span><span class="nf">set/intersection</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; #{2 3}</span><span class="w"></span>
+<a href="#__codelineno-44-2" id="__codelineno-44-2" name="__codelineno-44-2"></a><span class="p">(</span><span class="nf">set/difference</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; #{1}</span><span class="w"></span>
+</code></pre></div>
+<p><code>:require</code> directive can be used to include multiple library namespaces</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-45-1" id="__codelineno-45-1" name="__codelineno-45-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">test</span><span class="w"></span>
+<a href="#__codelineno-45-2" id="__codelineno-45-2" name="__codelineno-45-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"></span>
+<a href="#__codelineno-45-3" id="__codelineno-45-3" name="__codelineno-45-3"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.string</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">string</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-45-4" id="__codelineno-45-4" name="__codelineno-45-4"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">]))</span><span class="w"></span>
+</code></pre></div>
+<p><code>require</code> can be used by itself, usually within a rich code block</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-46-1" id="__codelineno-46-1" name="__codelineno-46-1"></a><span class="p">(</span><span class="nf">comment</span><span class="w"></span>
+<a href="#__codelineno-46-2" id="__codelineno-46-2" name="__codelineno-46-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+<h2 id="java">Java<a class="headerlink" href="#java" title="Permanent link">λ︎</a></h2>
+<p>Java has a huge and useful standard library, so you'll want to learn how to get at it.</p>
+<p>Use import to load a java package</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-47-1" id="__codelineno-47-1" name="__codelineno-47-1"></a><span class="p">(</span><span class="nb">import </span><span class="nv">java.util.Date</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>Or import from a java package name</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-48-1" id="__codelineno-48-1" name="__codelineno-48-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">test</span><span class="w"></span>
+<a href="#__codelineno-48-2" id="__codelineno-48-2" name="__codelineno-48-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:import</span><span class="w"></span>
+<a href="#__codelineno-48-3" id="__codelineno-48-3" name="__codelineno-48-3"></a><span class="w">    </span><span class="nv">java.util.Date</span><span class="w"></span>
+<a href="#__codelineno-48-4" id="__codelineno-48-4" name="__codelineno-48-4"></a><span class="w">    </span><span class="nv">java.util.Calendar</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+<p>Use the class name with a "." at the end to make a new instance</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-49-1" id="__codelineno-49-1" name="__codelineno-49-1"></a><span class="p">(</span><span class="nf">Date.</span><span class="p">)</span><span class="w"> </span><span class="c1">; &lt;a date object&gt;</span><span class="w"></span>
+</code></pre></div>
+<p>Use <code>.</code> to call methods. Or, use the ".method" shortcut</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-50-1" id="__codelineno-50-1" name="__codelineno-50-1"></a><span class="p">(</span><span class="k">. </span><span class="p">(</span><span class="nf">Date.</span><span class="p">)</span><span class="w"> </span><span class="nv">getTime</span><span class="p">)</span><span class="w"> </span><span class="c1">; &lt;a timestamp&gt;</span><span class="w"></span>
+<a href="#__codelineno-50-2" id="__codelineno-50-2" name="__codelineno-50-2"></a><span class="p">(</span><span class="nf">.getTime</span><span class="w"> </span><span class="p">(</span><span class="nf">Date.</span><span class="p">))</span><span class="w">  </span><span class="c1">; exactly the same thing.</span><span class="w"></span>
+</code></pre></div>
+<p>Use / to call static methods</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-51-1" id="__codelineno-51-1" name="__codelineno-51-1"></a><span class="p">(</span><span class="nf">System/currentTimeMillis</span><span class="p">)</span><span class="w"> </span><span class="c1">; &lt;a timestamp&gt; (system is always present)</span><span class="w"></span>
+</code></pre></div>
+<p>Use doto to make dealing with (mutable) classes more tolerable</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-52-1" id="__codelineno-52-1" name="__codelineno-52-1"></a><span class="p">(</span><span class="nb">import </span><span class="nv">java.util.Calendar</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-52-2" id="__codelineno-52-2" name="__codelineno-52-2"></a><span class="p">(</span><span class="nb">doto </span><span class="p">(</span><span class="nf">Calendar/getInstance</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-52-3" id="__codelineno-52-3" name="__codelineno-52-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">.set</span><span class="w"> </span><span class="mi">2000</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-52-4" id="__codelineno-52-4" name="__codelineno-52-4"></a><span class="w">  </span><span class="nv">.getTime</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; A Date. set to 2000-01-01 00:00:00</span><span class="w"></span>
+</code></pre></div>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Overview" class="md-footer__link md-footer__link--prev" href="../.." rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Overview
+            </div>
+</div>
+</a>
+<a aria-label="Next: REPL Workflow" class="md-footer__link md-footer__link--next" href="../repl-workflow/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              REPL Workflow
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
