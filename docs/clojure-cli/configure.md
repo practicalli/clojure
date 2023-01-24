@@ -24,7 +24,7 @@ clojure -M:repl/rebel
 Clojure CLI Configuration can be used from several different sources.
 
 | Configuration                                     | Description                                                                |
-|:--------------------------------------------------|:---------------------------------------------------------------------------|
+|---------------------------------------------------|----------------------------------------------------------------------------|
 | Command line arguments                            | string or edn (key value) arguments passed to the `clojure` command        |
 | project `deps.edn`                                | Project specific configuration: paths, dependencies, aliases               |
 | `.config/clojure/deps.edn` or `.clojure/deps.edn` | User level configuration for use with all projects                         |

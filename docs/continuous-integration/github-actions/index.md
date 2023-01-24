@@ -9,14 +9,14 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 * [Introduction to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions)
 * [Understanding the workflow file](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#understanding-the-workflow-file)
 
-| Term     | Description                                                                                                                                                                            |
-|----------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Event    | [Triggers a workflow](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows), e.g. Create pull request, push commit, etc.                    |
-| Workflow | Tope level configuration containing one or more jobs, [triggered by a specific event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows) |
-| Job      | Set of steps executed in the same runner, multiple jobs execute in parallel within their own instance of a runner                                                               |
-| Step     | Individual task that runs commands (actions), sharing data with other steps                                                                                                             |
-| Action   | Standalone commands defined within a step, custom commands or GitHub community                                                                                                          |
-| Runner   | A GitHub Actions server, listening for available jobs                                                                                                                                  |
+| Term     | Description                                                                                                                                                                           |
+|----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Event    | [Triggers a workflow](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows), e.g. Create pull request, push commit, etc.                   |
+| Workflow | Top level configuration containing one or more jobs, [triggered by a specific event](https://docs.github.com/en/free-pro-team@latest/actions/reference/events-that-trigger-workflows) |
+| Job      | Set of steps executed in the same runner, multiple jobs execute in parallel within their own instance of a runner                                                                     |
+| Step     | Individual task that runs commands (actions), sharing data with other steps                                                                                                           |
+| Action   | Standalone commands defined within a step, custom commands or GitHub community                                                                                                        |
+| Runner   | A GitHub Actions server, listening for available jobs                                                                                                                                 |
 
 
 ## Example GitHub Action
