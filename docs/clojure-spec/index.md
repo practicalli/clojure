@@ -1,3 +1,5 @@
+# Clojure Specifications
+
 ![Clojure specifications for next.jdbc](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/spec/clojure-spec-blueprints-industrial.png)
 
 Clojure Spec is a library for defining specifications around data and functions to test for correctness.
@@ -9,10 +11,12 @@ Clojure specs are used to generate comprehensive test data, identifying more sce
 Spec is included in Clojure [version 1.9](https://clojure.org/news/2017/12/08/clojure19) onward and can be used by requiring the `clojure.spec.alpha` in the REPL or in namespaces of a Clojure project.
 
 ## Recommended Reading
+
 * [What is Clojure spec - an illustrated guide](https://www.pixelated-noise.com/blog/2020/09/10/what-spec-is/)
 
 
 ## Purpose of Clojure spec
+
 A summary highlighting the common purposes that Clojure Spec is used for
 
 | Purpose                         | Description                                                                                   |

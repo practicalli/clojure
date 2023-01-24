@@ -29,15 +29,15 @@ Fork or clone [practicalli/clojure-deps-edn](https://github.com/practicalli/cloj
 === "Free Desktop XDG CONFIG"
     If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
 
-    ```
-    https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
+    ```shell
+    git clone https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
     ```
 
 === "Classic Config"
     Clojure CLI will look for its configuration in `$HOME/.clojure` directory if `$XDG_CONFIG_HOME` and `CLJ_CONFIG` environment variables not set.
 
-    ```
-    https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
+    ```shell
+    git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
     ```
 
 ## Community Tools available
@@ -45,6 +45,7 @@ Fork or clone [practicalli/clojure-deps-edn](https://github.com/practicalli/cloj
 The Clojure configuration directory contains a `deps.edn` file containing a substantial `:aliases` section with a long list of aliases.  These aliases are described in the [README of the project](https://github.com/practicalli/clojure-deps-edn/blob/live/README.md).
 
 All tools are provided via libraries and are only installed on first use.  Unused aliases will therefore not install their libraries.
+
 
 ### REPL experience
 
@@ -82,6 +83,7 @@ Create a new project using a wide range of templates from the community
 #### Run projects
 
 Run project with or without an alias:
+
 ```bash
 clojure -M:alias -m domain.app-name
 clojure -M -m domain.app-name
@@ -200,10 +202,11 @@ Other options:
 REPL driven data inspectors and `tap>` sources for visualizing data.
 
 
-#### [Portal](https://github.com/djblue/portal)
+#### Portal
 
-Navigate data in the form of edn, json and transit
-[Practicalli Clojure -data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html)
+[Portal](https://github.com/djblue/portal) Navigate data in the form of edn, json and transit
+
+[Practicalli Clojure - data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html)
 
 | Command                          | Description                                           |
 |----------------------------------|-------------------------------------------------------|
@@ -212,6 +215,7 @@ Navigate data in the form of edn, json and transit
 | `clojure -M:inspect/portal-node` | ClojureScript node.js REPL with Portal dependency     |
 
 **Using Portal once running**
+
 `(require '[portal.api :as portal])` once the REPL starts.  For `inspect/portal-web` use `(require '[portal.web :as portal])` instead
 
 `(portal/open)` to open the web based inspector window in a browser.
@@ -292,7 +296,8 @@ clojure -M:lib/cider-nrepl:inspect/rebl:middleware/nrebl
 `cider-connect-clj` in Spacemacs / Emacs and CIDER successfully connects to the nREPL port and evaluated code is sent to REBL.
 
 To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options` and all other automatically injected configuration is disabled (to prevent those dependencies over-riding the nREBL aliases).
-```
+
+```emacs
 ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
                   (cider-clojure-cli-global-options . "-M:lib/cider-nrepl:inspect/rebl:middleware/nrebl")
                   (cider-jack-in-dependencies . nil)
@@ -300,6 +305,7 @@ To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the
                   (cider-jack-in-lein-plugins . nil)
                   (cider-clojure-cli-parameters . ""))))
 ```
+
 * [REBL data visualization: run REBL with nREPL based editors](https://practicalli.github.io/clojure/clojure-cli/data-browsers/rebl-data-visualization.html#run-rebl-for-nrepl-based-editors)
 
 
@@ -365,7 +371,8 @@ Performance testing tools for the REPL
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 TODO: check these alias combinations are correct
-```
+
+```shell
 clojure -M:performance/benchmark:repl/rebel
 
 (require '[criterium.core :refer [bench quick-bench]])
@@ -375,7 +382,7 @@ clojure -M:performance/benchmark:repl/rebel
 
 TODO: check these alias combinations are correct
 Performance test a project in the REPL
-```
+```shell
 clojure -M:performance/benchmark:repl/rebel
 
 (require '[practicalli/namespace-name]) ; require project code
@@ -389,7 +396,7 @@ clojure -M:performance/benchmark:repl/rebel
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 In the REPL:
-```
+```clojure
   (require '[clj-memory-meter.core :as memory-meter])
    (memory-meter/measure (your-expression))
 ```
