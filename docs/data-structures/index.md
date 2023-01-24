@@ -36,3 +36,59 @@ Clojure data structure share the following characteristics:
 * **Dynamically typed** - a data structure can contain any value, including functions (as they evaluate to a value) and other data structures (nested data structures)
 
 This section will cover the Clojure built in persistent data structures in more detail.
+
+## Common Data Sturctures
+
+
+Simple data
+
+(def name value)
+
+
+Sequential data
+
+(list ...) sequence - always processed sequentially
+
+(vector) sequencw with randon access
+
+
+Dictionary
+
+(key value
+ key1 value
+ key2 value)
+
+ Connverting data, data decoder/encoder, state machine, etc
+
+
+ Data set
+
+```clojure
+(def name
+  [{:identical-keys "with evolving values"}
+   {:identical-keys "values differ from each other"}
+   {:identical-keys "values collectively provide meaning"}])
+```
+
+ Weather monitoring data, bank transactions, stock exchange rates, etc
+
+
+
+### Hierachical data
+
+```clojure
+(def name
+  {:simple-key value
+   :composite-key {:nested-key value}
+   :deeper-composite-key {:nested-key {:deeper-nested-key value}}})
+```
+
+representing state,
+structure of a website
+Starwars example,
+
+walk the hierachy to get the appropriate values
+
+extract only the values required by a function and pass as arguments
+
+hierachiecy can become too complex to manage, the flatest possible structure is usually simpler to work with (transform)
