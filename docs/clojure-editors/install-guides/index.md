@@ -47,7 +47,11 @@ Spacemacs is a community configuration bring Emacs and Vim together.  Spacemacs 
 
 [Spacemacs, Practicalli](https://practicalli.github.io/spacemacs) guides you through Clojure development, documenting with org-mode, Git version control with Magit, Vim editing modes and dozens of other features.
 
-<iframe width="780" height="480" src="https://www.youtube.com/embed/Uuwg-069NYE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Uuwg-069NYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 
 <!-- IntelliJ and Cursive -->
 {% content "forth" %}
