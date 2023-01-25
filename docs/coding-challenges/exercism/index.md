@@ -1,12 +1,24 @@
-![Exercism.io Clojure Track banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-clojure-track.png)
+# Exercism.io Challenges
 
-[Exercism.io](https://exercism.io/my/tracks) is a learning platform that combining coding challenges and mentors who review and advise on your solutions.  Each challenge comes with Leiningen project that includes code and unit tests, although Exercism itself does not run those tests.
+![Exercisim Clojure Track icon](https://dg8krxphbh767.cloudfront.net/tracks/clojure.svg){align=right loading=lazy style="height:150px;width:150px"}
 
-Use the [Exercism CLI tool](#getting-started-exercism-cli-tool) to download the Leiningen project for each challenge and use your preferred development tools to create the solutions.  When feedback is required or you wish to share a solution, submit the code using the [Exercism CLI tool](#getting-started-exercism-cli-tool).  If tests are changed as well as source code, both files should be submitted.
+[Exercism.io Clojure Track](https://exercism.io/tracks/clojure){target=_blank .md-button}
+
+[Exercism.io](https://exercism.io/tracks){target=_blank} is a learning platform for 12 programming languates which combines carefully crafted coding challenges and mentors who review and advise on solutions.
+
+Solve challenges via the built-in Exercism editor, so no install is reqiured.
+
+Or download each exercise locally using the [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank}, providing a [Clojure CLI](/clojure/clojure-cli/){target=_blank} configured project with a test runner.  Use the [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank} to submit a solution for metor feedback.
+
+
+??? INFO "Exercism embdedded Clojure editor"
+    The Exercisim Clojure editor is powered by [babashka/sci](https://github.com/babashka/SCI)
+    ![Exercism Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/exercism/exercism-editor-clojure-example-licians-luscious-lasagna.png)
 
 
 ## Clojure Track
-All the challenges are groups into specific [language tracks](https://exercism.io/my/tracks), including the [Clojure track](https://exercism.io/my/tracks/clojure)
+
+All the challenges are groups into specific [language tracks](https://exercism.io/my/tracks){target=_blank}, including the [Clojure track](https://exercism.io/tracks/clojure){target=_blank}
 
 Join the language track and select either mentored mode or practice mode.
 
@@ -17,18 +29,23 @@ In mentored mode your solutions are added to the mentors dashboard for review fr
 ![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
 
 
-## Getting Started: Exercism CLI tool
-Select an exercise and follow the **Get started** guide to download and install the exercism tool.  This tool will download the project code and submit solutions back to the Exercism web site.
+## Working Locally
 
-![Clojure code challenges - Exercism getting started](/images/clojure-code-challenges-exercism-getting-started.png)
+[Exercism Guide to working locally](https://exercism.org/docs/using/solving-exercises/working-locally){target=_blank .md-button}
 
-Use the Exercism tool to download a Leiningen project for the exercise
+Follow the [Practicalli Clojure CLI Install](/clojure/install/) steps (Exercism includes a similar [Clojure CLI install guide](https://exercism.org/docs/tracks/clojure/installation){target=_blank})
 
-```bash
-exercism download --exercise=exercise-name --track=clojure
-```
+The [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank} can download a Clojure project containing the code for a specific challeng and submit the code back to exercism to confirm if the tests have passed and complete the challenge (or get feedback from a mentor).
 
-Open the project in your [preferred Clojure editor](/clojure-editors/) and write a solution to solve the tests in the exercise.  Run the tests using Leiningen in the command line, using `lein test` or the test runner in your editor.
+??? HINT "Each challenge shows the download and submit commands"
+    Each Exercise page shows the command to download the code for that specific exercise, which is of the form
+    ```bash
+    exercism download --exercise=exercise-name --track=clojure
+    ```
+
+Open the project in your [preferred Clojure editor](/clojure/clojure-editors/) and write a solution to solve the exercise.
+
+`clojure -X:test` command in the root of the downloaded project will run the tests supplied by the exercise or use any [Clojure test runner](/clojure/testing/test-runner/), e.g. `clojure -X:test/run` or `clojure -X:test/watch`
 
 Once the tests pass and you are happy with the solution, submit it to the Exercism website
 
@@ -36,21 +53,11 @@ Once the tests pass and you are happy with the solution, submit it to the Exerci
 exercism submit /path/to/src-file
 ```
 
-## Using Clojure CLI tools
-With [Clojure CLI tools installed](/clojure-cli/install/), then simply add a `deps.edn` file to the root directory of the Leiningen project downloaded by the Exercism CLI tool.
-
-The `deps.edn` should contain the `:paths` for the `src` directory (and `test` if your test runner requires that path, e.g. cider test runner).
-
-```clojure
-{:paths ["src"]}
-```
-
-To run tests, use an alias such as `:test/runner` from [practicalli/clojure-deps-edn](/clojure-cli/install/community-tools.md), an alias from your own `~/.clojure/deps.edn` or add an alias directly to the project `deps.edn` file just created.
-
 
 ## Support
-The mentors on the Exercism website will provide a review of your submissions and you can switch between mentor and practice modes as you prefer.
 
-[practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to several Clojure exercises.
+Mentors on the Exercism website will provide a review of your submissions and you can switch between mentor and practice modes as you prefer.
+
+[practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains a design journal of solutions to several Clojure exercises.
 
 Ask for advice in the [#exercism](clojurians.slack.com/messages/exercism) or [#beginners](clojurians.slack.com/messages/beginners) channels of the Clojurians Slack community.
