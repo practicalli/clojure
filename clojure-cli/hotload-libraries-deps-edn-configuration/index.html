@@ -7,18 +7,18 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/install/clojure-lsp/snippets/" rel="canonical"/>
-<link href="../../../assets/favicon.svg" rel="icon"/>
+<link href="https://practical.li/clojure/clojure-cli/hotload-libraries-deps-edn-configuration/" rel="canonical"/>
+<link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Clojure LSP Snippets - Practicalli Clojure</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
-<link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<title>Using add-libs with project configuration file - Practicalli Clojure</title>
+<link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
-<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<link href="../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -29,14 +29,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#clojure-lsp-snippets">
+<a class="md-skip" href="#using-add-libs-with-project-configuration-file">
           Skip to content
         </a>
 </div>
@@ -44,8 +44,8 @@
 </div>
 <header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
-<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Clojure LSP Snippets
+              Using add-libs with project configuration file
             
           </span>
 </div>
@@ -126,8 +126,8 @@
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
-<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
 </a>
     Practicalli Clojure
   </label>
@@ -145,7 +145,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../..">Introduction</a>
+<a href="../..">Introduction</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -157,36 +157,83 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/clojure-in-15-minutes/">
+<a class="md-nav__link" href="../../introduction/clojure-in-15-minutes/">
         Clojure in Fifteen Mins
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/repl-workflow/">
+<a class="md-nav__link" href="../../introduction/repl-workflow/">
         REPL Workflow
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../introduction/concepts/">Concepts</a>
+<a href="../">Clojure CLI</a>
 <label for="__nav_1_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<nav aria-label="Clojure CLI" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../configure/">
+        Configure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../community-tools/">
+        Community Tools
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hotload-libraries/">
+        HotLoad Libraries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/hotload-libraries-terminal-ui.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/hotload-libraries-editor.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/hotload-libraries-deps-edn-configuration.md">
+        None
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_5" id="__nav_1_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../introduction/concepts/">Concepts</a>
+<label for="__nav_1_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_5">
 <span class="md-nav__icon md-icon"></span>
           Concepts
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/concepts/what-is-functional-programming/">
+<a class="md-nav__link" href="../../introduction/concepts/what-is-functional-programming/">
         Functional vs Imperative
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/concepts/clojure-made-simple/">
+<a class="md-nav__link" href="../../introduction/concepts/clojure-made-simple/">
         From The Author
       </a>
 </li>
@@ -194,12 +241,12 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/contributing/">
+<a class="md-nav__link" href="../../introduction/contributing/">
         Contributing
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../introduction/writing-tips/">
+<a class="md-nav__link" href="../../introduction/writing-tips/">
         Writing Tips
       </a>
 </li>
@@ -209,7 +256,7 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../">Install</a>
+<a href="../../install/">Install</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -221,18 +268,13 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../java/">
+<a class="md-nav__link" href="../../install/java/">
         Java Host
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clojure-cli/">
+<a class="md-nav__link" href="../../install/clojure-cli/">
         Clojure CLI
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../code-analysis/">
-        Code Analysis
       </a>
 </li>
 </ul>
@@ -241,25 +283,35 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-cli/">Clojure CLI</a>
+<a href="../repl/">Terminal REPL</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<nav aria-label="Terminal REPL" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Clojure CLI
+          Terminal REPL
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/configure/">
-        Configure
+<a class="md-nav__link" href="../repl/coding-in-the-repl/">
+        REPL Coding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/community-tools/">
-        Community Tools
+<a class="md-nav__link" href="../repl/using-libraries/">
+        REPL Libraries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/help-at-the-repl/">
+        REPL Help
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/troubleshooting/">
+        REPL troubleshoot
       </a>
 </li>
 </ul>
@@ -268,40 +320,50 @@
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-cli/repl/">REPL</a>
+<a href="../projects/">Clojure Projects</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="REPL" class="md-nav" data-md-level="1">
+<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
-          REPL
+          Clojure Projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/repl/coding-in-the-repl/">
-        Coding in the REPL
+<a class="md-nav__link" href="../projects/create-from-template/">
+        From Template
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/repl/using-project-or-library/">
-        Using Clojure libraries in the REPL
+<a class="md-nav__link" href="../projects/add-libraries/">
+        Add Libraries
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/repl/help-at-the-repl/">
-        Help at the REPL
+<a class="md-nav__link" href="../projects/namespace/">
+        Namespaces
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/repl/customize-rebel/">
-        Customize Rebel Readline
+<a class="md-nav__link" href="../projects/rich-comments/">
+        Rich Comment
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/repl/troubleshooting/">
-        Troubleshooting the REPL
+<a class="md-nav__link" href="../projects/configure-repl-startup/">
+        REPL Startup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/migrate-project/">
+        Migrate projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/tools-build/">
+        Package
       </a>
 </li>
 </ul>
@@ -309,87 +371,39 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" id="__nav_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_5">
-          Clojure Projects
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_5">
-<span class="md-nav__icon md-icon"></span>
-          Clojure Projects
-        </label>
-<ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/index.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/create/">
-        Creating Clojure projects
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/add-libraries/">
-        Add libraries to a project
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/namespace/">
-        Namespaces
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/rich-comments/">
-        Rich Comments for REPL Driven Development
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/projects/configure-repl-startup/">
-        REPL Startup
-      </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-editors/">Clojure Editors</a>
-<label for="__nav_6">
+<a href="../../clojure-editors/">Clojure Editors</a>
+<label for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_6">
+<label class="md-nav__title" for="__nav_5">
 <span class="md-nav__icon md-icon"></span>
           Clojure Editors
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" id="__nav_6_2" type="checkbox"/>
-<label class="md-nav__link" for="__nav_6_2">
-          Clojure LSP
-          <span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" id="__nav_5_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/clojure-lsp/">Clojure LSP</a>
+<label for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_2">
+<label class="md-nav__title" for="__nav_5_2">
 <span class="md-nav__icon md-icon"></span>
           Clojure LSP
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/index.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/snippets.md">
+<a class="md-nav__link" href="../install/clojure-lsp/snippets.md">
         Clojure LSP Snippets
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+<a class="md-nav__link" href="../install/clojure-lsp/practicalli-snippets.md">
         Practicalli Snippets
       </a>
 </li>
@@ -397,66 +411,66 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_3" id="__nav_6_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" id="__nav_5_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
-<label for="__nav_6_3">
+<a href="../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_5_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_3">
+<label class="md-nav__title" for="__nav_5_3">
 <span class="md-nav__icon md-icon"></span>
           Editor Install Guides
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/atom-protorepl/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/atom-protorepl/">
         Atom.io and ProtoREPL
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/emacs-spacemacs/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs-spacemacs/">
         Emacs and Spacemacs Install
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/emacs/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs/">
         Emacs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/neovim-conjure/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/neovim-conjure/">
         Neovim conjure
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vim-plugins/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vim-plugins/">
         NeoVim Plugins - a smorgasbord of functionality
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/spacevim-fireplace/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-fireplace/">
         SpaceVim and vim-fireplace: Install guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/spacevim-configuration/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-configuration/">
         Understanding the SpaceVim configuration
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vspacecode-calva/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vspacecode-calva/">
         VSpaceCode configuration for VSCode and Calva extension
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/vscode-calva/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vscode-calva/">
         Microsoft VSCode and Calva extension
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-install-guides/intellij-cursive/">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/intellij-cursive/">
         IntelliJ / Cursive
       </a>
 </li>
@@ -464,51 +478,51 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_4" id="__nav_6_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" id="__nav_5_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-editors/editor-user-guides/">Editor User Guides</a>
-<label for="__nav_6_4">
+<a href="../../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_5_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_6_4">
+<label class="md-nav__title" for="__nav_5_4">
 <span class="md-nav__icon md-icon"></span>
           Editor User Guides
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/atom-protorepl/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/atom-protorepl/">
         Atom and ProtoREPL user guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/emacs-spacemacs/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/emacs-spacemacs/">
         Emacs and Spacemacs user guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/neovim-conjure/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/neovim-conjure/">
         Neovim conjure
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/spacevim-fireplace/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/spacevim-fireplace/">
         SpaceVim and vim-fireplace
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/vspacecode-calva/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vspacecode-calva/">
         Vspacecode calva
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/vscode-calva/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vscode-calva/">
         VSCode and Calva quick start
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-editors/editor-user-guides/intellij-cursive/">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/intellij-cursive/">
         IntelliJ and Cursive user guide
       </a>
 </li>
@@ -519,26 +533,29 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-cli/data-browsers/">Data Inspectors</a>
-<label for="__nav_7">
-<span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6">
+          Data Inspectors
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
 <nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_7">
+<label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           Data Inspectors
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/data-browsers/clojure-inspector/">
-        Clojure Inspector
+<a class="md-nav__link" href="../data-browsers/index.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/data-browsers/portal/">
+<a class="md-nav__link" href="../data-browsers/clojure-inspector.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -546,26 +563,26 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../coding-challenges/">Code Challenges</a>
-<label for="__nav_8">
+<a href="../../coding-challenges/">Code Challenges</a>
+<label for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Code Challenges" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_8">
+<label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           Code Challenges
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" id="__nav_8_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" id="__nav_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../coding-challenges/4clojure/">4 Ever Clojure</a>
+<a href="../../coding-challenges/4clojure/">4 Ever Clojure</a>
 </div>
 <nav aria-label="4 Ever Clojure" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_8_2">
+<label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
           4 Ever Clojure
         </label>
@@ -574,36 +591,36 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" id="__nav_8_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" id="__nav_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../coding-challenges/exercism/">Exercism</a>
-<label for="__nav_8_3">
+<a href="../../coding-challenges/exercism/">Exercism</a>
+<label for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Exercism" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_8_3">
+<label class="md-nav__title" for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
           Exercism
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/exercism/rna-transcription/">
+<a class="md-nav__link" href="../../coding-challenges/exercism/rna-transcription/">
         Rna transcription
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/exercism/hamming.md">
+<a class="md-nav__link" href="../../coding-challenges/exercism/hamming.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/exercism/space-age/">
+<a class="md-nav__link" href="../../coding-challenges/exercism/space-age/">
         Space age
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/exercism/bob/">
+<a class="md-nav__link" href="../../coding-challenges/exercism/bob/">
         Bob
       </a>
 </li>
@@ -611,70 +628,70 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/codewars/">
+<a class="md-nav__link" href="../../coding-challenges/codewars/">
         CodeWars
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/advent-of-code/">
+<a class="md-nav__link" href="../../coding-challenges/advent-of-code/">
         Advent Of Code
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6" id="__nav_8_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6" id="__nav_7_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../simple-projects/">Simple projects</a>
-<label for="__nav_8_6">
+<a href="../../simple-projects/">Simple projects</a>
+<label for="__nav_7_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Simple projects" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_8_6">
+<label class="md-nav__title" for="__nav_7_6">
 <span class="md-nav__icon md-icon"></span>
           Simple projects
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/random-clojure-function/">
+<a class="md-nav__link" href="../../simple-projects/random-clojure-function/">
         Random Function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/salary-calculator.md --&gt;">
+<a class="md-nav__link" href="../../simple-projects/salary-calculator.md --&gt;">
         Salary Calculator
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6_4" id="__nav_8_6_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_4" id="__nav_7_6_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../simple-projects/encode-decode/">Encoder Decode</a>
-<label for="__nav_8_6_4">
+<a href="../../simple-projects/encode-decode/">Encoder Decode</a>
+<label for="__nav_7_6_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Encoder Decode" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_8_6_4">
+<label class="md-nav__title" for="__nav_7_6_4">
 <span class="md-nav__icon md-icon"></span>
           Encoder Decode
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/encode-decode/convert-boolean-values/">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/convert-boolean-values/">
         Convert boolean values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/encode-decode/caesar-cipher-rot13/">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/caesar-cipher-rot13/">
         Rotate by 13 (ROT13)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/encode-decode/rna-dna/">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/rna-dna/">
         RNA to DNA transcription
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/encode-decode/clacks/">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/clacks/">
         The Clacks - encoding and decoding messages
       </a>
 </li>
@@ -682,21 +699,21 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6_5" id="__nav_8_6_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_5" id="__nav_7_6_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../simple-projects/data-transformation/">Data Transform</a>
-<label for="__nav_8_6_5">
+<a href="../../simple-projects/data-transformation/">Data Transform</a>
+<label for="__nav_7_6_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Data Transform" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_8_6_5">
+<label class="md-nav__title" for="__nav_7_6_5">
 <span class="md-nav__icon md-icon"></span>
           Data Transform
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/data-transformation/most-common-word/">
+<a class="md-nav__link" href="../../simple-projects/data-transformation/most-common-word/">
         Most common word
       </a>
 </li>
@@ -704,21 +721,21 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_6_6" id="__nav_8_6_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_6_6" id="__nav_7_6_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../simple-projects/tdd-kata/">Kata</a>
-<label for="__nav_8_6_6">
+<a href="../../simple-projects/tdd-kata/">Kata</a>
+<label for="__nav_7_6_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Kata" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_8_6_6">
+<label class="md-nav__title" for="__nav_7_6_6">
 <span class="md-nav__icon md-icon"></span>
           Kata
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/tdd-kata/recent-song-list.md">
+<a class="md-nav__link" href="../../simple-projects/tdd-kata/recent-song-list.md">
         Recent Song list
       </a>
 </li>
@@ -729,26 +746,26 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7" id="__nav_8_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7" id="__nav_7_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../games/">Games</a>
-<label for="__nav_8_7">
+<a href="../../games/">Games</a>
+<label for="__nav_7_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Games" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_8_7">
+<label class="md-nav__title" for="__nav_7_7">
 <span class="md-nav__icon md-icon"></span>
           Games
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_7_2" id="__nav_8_7_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_7_2" id="__nav_7_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../games/tictactoe-cli/">TicTacToe</a>
+<a href="../../games/tictactoe-cli/">TicTacToe</a>
 </div>
 <nav aria-label="TicTacToe" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_8_7_2">
+<label class="md-nav__title" for="__nav_7_7_2">
 <span class="md-nav__icon md-icon"></span>
           TicTacToe
         </label>
@@ -763,55 +780,55 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../testing/">Testing</a>
-<label for="__nav_9">
+<a href="../../testing/">Testing</a>
+<label for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Testing" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_9">
+<label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           Testing
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_2" id="__nav_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../testing/unit-testing/">Unit Testing</a>
-<label for="__nav_9_2">
+<a href="../../testing/unit-testing/">Unit Testing</a>
+<label for="__nav_8_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Unit Testing" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_2">
+<label class="md-nav__title" for="__nav_8_2">
 <span class="md-nav__icon md-icon"></span>
           Unit Testing
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/unit-testing/configure-projects-for-tests/">
+<a class="md-nav__link" href="../../testing/unit-testing/configure-projects-for-tests/">
         Configure Unit Testing for deps.edn projects
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/unit-testing/require-test-namespaces/">
+<a class="md-nav__link" href="../../testing/unit-testing/require-test-namespaces/">
         Require test namespaces
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/unit-testing/writing-unit-tests/">
+<a class="md-nav__link" href="../../testing/unit-testing/writing-unit-tests/">
         Writing Unit Tests with clojure.test
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/unit-testing/fixtures/">
+<a class="md-nav__link" href="../../testing/unit-testing/fixtures/">
         Fixtures: setup and tear down for unit tests
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/unit-testing/test-selectors/">
+<a class="md-nav__link" href="../../testing/unit-testing/test-selectors/">
         Test Selectors
       </a>
 </li>
@@ -819,31 +836,31 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" id="__nav_9_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_3" id="__nav_8_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../testing/test-runners/">Test runners</a>
-<label for="__nav_9_3">
+<a href="../../testing/test-runners/">Test runners</a>
+<label for="__nav_8_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Test runners" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_9_3">
+<label class="md-nav__title" for="__nav_8_3">
 <span class="md-nav__icon md-icon"></span>
           Test runners
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/test-runners/congnitect-labs-test-runner/">
+<a class="md-nav__link" href="../../testing/test-runners/congnitect-labs-test-runner/">
         Cognitect Labs Test Runner
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/test-runners/kaocha-test-runner/">
+<a class="md-nav__link" href="../../testing/test-runners/kaocha-test-runner/">
         Kaocha Test Runner from LambdaIsland
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../testing/test-runners/example-projects/">
+<a class="md-nav__link" href="../../testing/test-runners/example-projects/">
         Example projects
       </a>
 </li>
@@ -854,105 +871,105 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/">Clojure Spec</a>
-<label for="__nav_10">
+<a href="../../clojure-spec/">Clojure Spec</a>
+<label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Clojure Spec" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_10">
+<label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           Clojure Spec
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/using-spec-in-the-repl/">
+<a class="md-nav__link" href="../../clojure-spec/using-spec-in-the-repl/">
         Using Clojure Spec in the REPL
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/add-spec-to-projects/">
+<a class="md-nav__link" href="../../clojure-spec/add-spec-to-projects/">
         Add Spec to Clojure Projects
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/organising-specs/">
+<a class="md-nav__link" href="../../clojure-spec/organising-specs/">
         Organizing Specifications
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_5" id="__nav_10_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_5" id="__nav_9_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/data/">Data Specs</a>
-<label for="__nav_10_5">
+<a href="../../clojure-spec/data/">Data Specs</a>
+<label for="__nav_9_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Data Specs" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_5">
+<label class="md-nav__title" for="__nav_9_5">
 <span class="md-nav__icon md-icon"></span>
           Data Specs
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/predicate-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/data/predicate-specifications/">
         Predicate functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/literal-values/">
+<a class="md-nav__link" href="../../clojure-spec/data/literal-values/">
         Literal values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/conform/">
+<a class="md-nav__link" href="../../clojure-spec/data/conform/">
         Conform
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/valid-q/">
+<a class="md-nav__link" href="../../clojure-spec/data/valid-q/">
         Is the value valid?
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/explain/">
+<a class="md-nav__link" href="../../clojure-spec/data/explain/">
         Explaining non-conforming values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/defining-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/data/defining-specifications/">
         Defining specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/registry/">
+<a class="md-nav__link" href="../../clojure-spec/data/registry/">
         Registry for unique and re-usable specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/entity-maps/">
+<a class="md-nav__link" href="../../clojure-spec/data/entity-maps/">
         Entity maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/map-literals/">
+<a class="md-nav__link" href="../../clojure-spec/data/map-literals/">
         Map literal syntax - `#:` and `#::`
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/and-or-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/data/and-or-specifications/">
         Combining specifications with and and or
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/composite-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/data/composite-specifications/">
         Composing Specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/data/hierarchical-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/data/hierarchical-specifications/">
         Hierarchical Specifications
       </a>
 </li>
@@ -960,31 +977,31 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_6" id="__nav_10_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" id="__nav_9_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/functions/">Function Specs</a>
-<label for="__nav_10_6">
+<a href="../../clojure-spec/functions/">Function Specs</a>
+<label for="__nav_9_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Function Specs" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_6">
+<label class="md-nav__title" for="__nav_9_6">
 <span class="md-nav__icon md-icon"></span>
           Function Specs
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/functions/function-definition-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/functions/function-definition-specifications/">
         Function definition specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/functions/documentation/">
+<a class="md-nav__link" href="../../clojure-spec/functions/documentation/">
         clojure.spec adds documentation to function definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/functions/higher-order-functions/">
+<a class="md-nav__link" href="../../clojure-spec/functions/higher-order-functions/">
         Higher order functions
       </a>
 </li>
@@ -992,50 +1009,50 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_7" id="__nav_10_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" id="__nav_9_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/testing/">Testing</a>
-<label for="__nav_10_7">
+<a href="../../clojure-spec/testing/">Testing</a>
+<label for="__nav_9_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Testing" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_7">
+<label class="md-nav__title" for="__nav_9_7">
 <span class="md-nav__icon md-icon"></span>
           Testing
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/testing/checking%20arguments/">
+<a class="md-nav__link" href="../../clojure-spec/testing/checking%20arguments/">
         Checking arguments in function calls with specifications
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_7_3" id="__nav_10_7_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7_3" id="__nav_9_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/generative-testing/">Generative Testing</a>
-<label for="__nav_10_7_3">
+<a href="../../clojure-spec/generative-testing/">Generative Testing</a>
+<label for="__nav_9_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Generative Testing" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_7_3">
+<label class="md-nav__title" for="__nav_9_7_3">
 <span class="md-nav__icon md-icon"></span>
           Generative Testing
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/generative-testing/predicate-generators/">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/predicate-generators/">
         Generators for predicate specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/generative-testing/example-projects/">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/example-projects/">
         Example projects using Clojure Spec
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/generative-testing/example-projects/next-jdbc/">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/example-projects/next-jdbc/">
         Projects using Clojure spec - next-jdbc
       </a>
 </li>
@@ -1046,55 +1063,55 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8" id="__nav_10_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8" id="__nav_9_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/projects/">Spec Project</a>
-<label for="__nav_10_8">
+<a href="../../clojure-spec/projects/">Spec Project</a>
+<label for="__nav_9_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Spec Project" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_8">
+<label class="md-nav__title" for="__nav_9_8">
 <span class="md-nav__icon md-icon"></span>
           Spec Project
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8_2" id="__nav_10_8_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_2" id="__nav_9_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/projects/card-game/">Playing Cards</a>
-<label for="__nav_10_8_2">
+<a href="../../clojure-spec/projects/card-game/">Playing Cards</a>
+<label for="__nav_9_8_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Playing Cards" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_8_2">
+<label class="md-nav__title" for="__nav_9_8_2">
 <span class="md-nav__icon md-icon"></span>
           Playing Cards
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/card-game/playing-card-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/projects/card-game/playing-card-specifications/">
         Representing playing cards as specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/card-game/generative-data-from-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/projects/card-game/generative-data-from-specifications/">
         Generative data from Specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/card-game/game-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/projects/card-game/game-specifications/">
         Game specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/card-game/function-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/projects/card-game/function-specifications/">
         Specifications for function definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/card-game/organising-instrumentation/">
+<a class="md-nav__link" href="../../clojure-spec/projects/card-game/organising-instrumentation/">
         Organizing the instrumentation of functions
       </a>
 </li>
@@ -1102,56 +1119,56 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_8_3" id="__nav_10_8_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_8_3" id="__nav_9_8_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../clojure-spec/projects/bank-account/">Bank Account</a>
-<label for="__nav_10_8_3">
+<a href="../../clojure-spec/projects/bank-account/">Bank Account</a>
+<label for="__nav_9_8_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Bank Account" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_8_3">
+<label class="md-nav__title" for="__nav_9_8_3">
 <span class="md-nav__icon md-icon"></span>
           Bank Account
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/write-failing-tests/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/write-failing-tests/">
         Write failing tests
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/customer-details-specification/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/customer-details-specification/">
         Customer details specification
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/validate-customer-details-specification/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/validate-customer-details-specification/">
         Testing data Specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/account-holder-specification/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/account-holder-specification/">
         Account holder specification
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/generate-test-data/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/generate-test-data/">
         Generate test data
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/unit-tests-with-spec/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/unit-tests-with-spec/">
         Unit tests with specs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/function-specifications/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/function-specifications/">
         Specifications for function definitions - `fdef`
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/test-functions-against-spec/">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/test-functions-against-spec/">
         Test functions against spec
       </a>
 </li>
@@ -1165,50 +1182,50 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" id="__nav_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../continuous-integration/">Continuous Integration</a>
-<label for="__nav_11">
+<a href="../../continuous-integration/">Continuous Integration</a>
+<label for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Continuous Integration" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_11">
+<label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           Continuous Integration
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_2" id="__nav_11_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" id="__nav_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../continuous-integration/circle-ci/">Circle CI</a>
-<label for="__nav_11_2">
+<a href="../../continuous-integration/circle-ci/">Circle CI</a>
+<label for="__nav_10_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Circle CI" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_11_2">
+<label class="md-nav__title" for="__nav_10_2">
 <span class="md-nav__icon md-icon"></span>
           Circle CI
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/circle-ci/random-clojure-function/">
+<a class="md-nav__link" href="../../continuous-integration/circle-ci/random-clojure-function/">
         Random Clojure Function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/circle-ci/status-monitor/">
+<a class="md-nav__link" href="../../continuous-integration/circle-ci/status-monitor/">
         Status Monitor Circle CI Continuous Integration
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/github-actions/">
+<a class="md-nav__link" href="../../continuous-integration/github-actions/">
         Index
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/github-actions/clj-kondo-lint/">
+<a class="md-nav__link" href="../../continuous-integration/github-actions/clj-kondo-lint/">
         Clj kondo lint
       </a>
 </li>
@@ -1219,127 +1236,132 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" id="__nav_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" id="__nav_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/">Reference</a>
-<label for="__nav_12">
+<a href="../../reference/">Reference</a>
+<label for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Reference" class="md-nav" data-md-level="1">
-<label class="md-nav__title" for="__nav_12">
+<label class="md-nav__title" for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
           Reference
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../quickstart/quick-reference/">
+<a class="md-nav__link" href="../../quickstart/quick-reference/">
         Clojure Quick Reference
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_3" id="__nav_12_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_3" id="__nav_11_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/clojure-cli/">Clojure CLI</a>
-<label for="__nav_12_3">
+<a href="../../reference/clojure-cli/">Clojure CLI</a>
+<label for="__nav_11_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Clojure CLI" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_3">
+<label class="md-nav__title" for="__nav_11_3">
 <span class="md-nav__icon md-icon"></span>
           Clojure CLI
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-cli/defining-aliases/">
+<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases/">
         Clojure CLI: Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-cli/example-alias-definitions/">
+<a class="md-nav__link" href="../../reference/clojure-cli/example-alias-definitions/">
         Clojure Tools - Common alias definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-cli/jvm-options/">
+<a class="md-nav__link" href="../../reference/clojure-cli/jvm-options/">
         Reference: Clojure CLI JVM Options
       </a>
 </li>
 </ul>
 </nav>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/code-analysis/">
+        Code Analysis
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_4" id="__nav_12_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_5" id="__nav_11_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/standard-library/">Standard Library</a>
-<label for="__nav_12_4">
+<a href="../../reference/standard-library/">Standard Library</a>
+<label for="__nav_11_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Standard Library" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_4">
+<label class="md-nav__title" for="__nav_11_5">
 <span class="md-nav__icon md-icon"></span>
           Standard Library
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/desructuring.md">
+<a class="md-nav__link" href="../../reference/standard-library/desructuring.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/data-structures/index.md">
+<a class="md-nav__link" href="../../reference/standard-library/data-structures/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/predicate-functions/">
+<a class="md-nav__link" href="../../reference/standard-library/predicate-functions/">
         Predicate functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/">
         Regular Expressions - regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/matching-with-groups/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-with-groups/">
         Matching with regex groups
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/matching-sub-strings/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-sub-strings/">
         Matching sub strings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/matching-sub-sequences/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-sub-sequences/">
         Matching sub sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/common-regex-patterns/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/common-regex-patterns/">
         Common Regular Expression patterns
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/string-replace-with-regex/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/string-replace-with-regex/">
         String replace with regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/string-split-with-regex/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/string-split-with-regex/">
         String split with regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/regular-expressions/sub-expression-matches/">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/sub-expression-matches/">
         Sub-expression Matches
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/standard-library/cond-thread-macro/">
+<a class="md-nav__link" href="../../reference/standard-library/cond-thread-macro/">
         Cond thread macro
       </a>
 </li>
@@ -1347,24 +1369,24 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_5" id="__nav_12_5" type="checkbox"/>
-<label class="md-nav__link" for="__nav_12_5">
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" id="__nav_11_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11_6">
           Java
           <span class="md-nav__icon md-icon"></span>
 </label>
 <nav aria-label="Java" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_5">
+<label class="md-nav__title" for="__nav_11_6">
 <span class="md-nav__icon md-icon"></span>
           Java
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/java-interop/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/java-interop/">
         Java Interoperability
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/more-java-fun/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/more-java-fun/">
         More Java fun
       </a>
 </li>
@@ -1372,86 +1394,86 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_6" id="__nav_12_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_7" id="__nav_11_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/tagged-literals/">Clojure Syntax</a>
-<label for="__nav_12_6">
+<a href="../../reference/tagged-literals/">Clojure Syntax</a>
+<label for="__nav_11_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Clojure Syntax" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_6">
+<label class="md-nav__title" for="__nav_11_7">
 <span class="md-nav__icon md-icon"></span>
           Clojure Syntax
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/syntax/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/syntax/">
         Clojure syntax
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/parenthesis/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/parenthesis/">
         Parenthesis - defining the structure of Clojure code
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/code-documentation/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/code-documentation/">
         Code documentation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/comments/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/comments/">
         Comments
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/strings/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/strings/">
         Strings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/numbers-maths/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/numbers-maths/">
         Maths
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/ratios/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/ratios/">
         Ratios
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/control-flow/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/control-flow/">
         Control Flow
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/doc-and-source-functions/">
+<a class="md-nav__link" href="../../reference/doc-and-source-functions/">
         Doc and source functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/assigning-names/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/assigning-names/">
         Assigning Names
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-syntax/naming/">
+<a class="md-nav__link" href="../../reference/clojure-syntax/naming/">
         Naming
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/kebab-case/">
+<a class="md-nav__link" href="../../reference/kebab-case/">
         Clojure names use kebab-case
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/threading-macros/">
+<a class="md-nav__link" href="../../reference/threading-macros/">
         Reference: Threading macros
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/tagged-literals/uuid/">
+<a class="md-nav__link" href="../../reference/tagged-literals/uuid/">
         uuid tag literal
       </a>
 </li>
@@ -1459,100 +1481,100 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_7" id="__nav_12_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8" id="__nav_11_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../data-structures/">Data Structures</a>
-<label for="__nav_12_7">
+<a href="../../data-structures/">Data Structures</a>
+<label for="__nav_11_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Data Structures" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_7">
+<label class="md-nav__title" for="__nav_11_8">
 <span class="md-nav__icon md-icon"></span>
           Data Structures
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/list/">
+<a class="md-nav__link" href="../../data-structures/list/">
         List
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/hash-maps/">
+<a class="md-nav__link" href="../../data-structures/hash-maps/">
         Data Structures: Hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/hash-maps/create/">
+<a class="md-nav__link" href="../../data-structures/hash-maps/create/">
         Creating Hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/hash-maps/access/">
+<a class="md-nav__link" href="../../data-structures/hash-maps/access/">
         Accessing hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/vector/">
+<a class="md-nav__link" href="../../data-structures/vector/">
         Vector
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/set/">
+<a class="md-nav__link" href="../../data-structures/set/">
         Set
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/naming/">
+<a class="md-nav__link" href="../../data-structures/naming/">
         Naming data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/shared-memory/">
+<a class="md-nav__link" href="../../data-structures/shared-memory/">
         Shared memory with Persistent data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../data-structures/pretty-printing/">
+<a class="md-nav__link" href="../../data-structures/pretty-printing/">
         Pretty Printing
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_7_11" id="__nav_12_7_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8_11" id="__nav_11_8_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../using-data-structures/">Using Data Structures</a>
-<label for="__nav_12_7_11">
+<a href="../../using-data-structures/">Using Data Structures</a>
+<label for="__nav_11_8_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Using Data Structures" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_12_7_11">
+<label class="md-nav__title" for="__nav_11_8_11">
 <span class="md-nav__icon md-icon"></span>
           Using Data Structures
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../using-data-structures/sequences/">
+<a class="md-nav__link" href="../../using-data-structures/sequences/">
         Sequence abstractions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../using-data-structures/lazy-sequences/">
+<a class="md-nav__link" href="../../using-data-structures/lazy-sequences/">
         Lazy Sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../using-data-structures/destructuring/">
+<a class="md-nav__link" href="../../using-data-structures/destructuring/">
         Destructuring
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../using-data-structures/applying-functions/">
+<a class="md-nav__link" href="../../using-data-structures/applying-functions/">
         Applying functions to data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../using-data-structures/mapping-data-structures/">
+<a class="md-nav__link" href="../../using-data-structures/mapping-data-structures/">
         Mapping functions over data structures
       </a>
 </li>
@@ -1560,36 +1582,36 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_7_12" id="__nav_12_7_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8_12" id="__nav_11_8_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../modifying-data-structures/">Modifying</a>
-<label for="__nav_12_7_12">
+<a href="../../modifying-data-structures/">Modifying</a>
+<label for="__nav_11_8_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Modifying" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_12_7_12">
+<label class="md-nav__title" for="__nav_11_8_12">
 <span class="md-nav__icon md-icon"></span>
           Modifying
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../modifying-data-structures/lists/">
+<a class="md-nav__link" href="../../modifying-data-structures/lists/">
         Lists
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../modifying-data-structures/maps/">
+<a class="md-nav__link" href="../../modifying-data-structures/maps/">
         Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../modifying-data-structures/vectors/">
+<a class="md-nav__link" href="../../modifying-data-structures/vectors/">
         Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../modifying-data-structures/sets/">
+<a class="md-nav__link" href="../../modifying-data-structures/sets/">
         Sets
       </a>
 </li>
@@ -1597,96 +1619,96 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/">
+<a class="md-nav__link" href="../../iterate-over-data/">
         Iterate over data
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/map/">
+<a class="md-nav__link" href="../../iterate-over-data/map/">
         map function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/map-partial/">
+<a class="md-nav__link" href="../../iterate-over-data/map-partial/">
         map with partial
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/map-fn/">
+<a class="md-nav__link" href="../../iterate-over-data/map-fn/">
         map with fn - anonymous function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/filter-remove/">
+<a class="md-nav__link" href="../../iterate-over-data/filter-remove/">
         filter and remove
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/apply/">
+<a class="md-nav__link" href="../../iterate-over-data/apply/">
         apply
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
         reduce
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_7_22" id="__nav_12_7_22" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8_22" id="__nav_11_8_22" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../designing-data-structures/">Design</a>
-<label for="__nav_12_7_22">
+<a href="../../designing-data-structures/">Design</a>
+<label for="__nav_11_8_22">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Design" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_12_7_22">
+<label class="md-nav__title" for="__nav_11_8_22">
 <span class="md-nav__icon md-icon"></span>
           Design
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/with-vectors/">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors/">
         With Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/with-vectors-of-vectors/">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors-of-vectors/">
         With Vectors of Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/with-maps/">
+<a class="md-nav__link" href="../../designing-data-structures/with-maps/">
         With Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/with-maps-of-maps/">
+<a class="md-nav__link" href="../../designing-data-structures/with-maps-of-maps/">
         With Maps of Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/with-vectors-of-maps/">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors-of-maps/">
         A Vector of Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/modeling-alphabet-codes/">
+<a class="md-nav__link" href="../../designing-data-structures/modeling-alphabet-codes/">
         Model alphabet codes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../designing-data-structures/modeling-name-generation-map/">
+<a class="md-nav__link" href="../../designing-data-structures/modeling-name-generation-map/">
         Design a map for name generation
       </a>
 </li>
@@ -1697,136 +1719,136 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_8" id="__nav_12_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_9" id="__nav_11_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../thinking-functionally/">Thinking Functionally</a>
-<label for="__nav_12_8">
+<a href="../../thinking-functionally/">Thinking Functionally</a>
+<label for="__nav_11_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Thinking Functionally" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_8">
+<label class="md-nav__title" for="__nav_11_9">
 <span class="md-nav__icon md-icon"></span>
           Thinking Functionally
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/side-effects/">
+<a class="md-nav__link" href="../../thinking-functionally/side-effects/">
         Side effects
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/pure-functions/">
+<a class="md-nav__link" href="../../thinking-functionally/pure-functions/">
         Pure functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/impure-functions/">
+<a class="md-nav__link" href="../../thinking-functionally/impure-functions/">
         Impure functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/first-class-functions/">
+<a class="md-nav__link" href="../../thinking-functionally/first-class-functions/">
         First Class functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/homoiconicity/">
+<a class="md-nav__link" href="../../thinking-functionally/homoiconicity/">
         Homoiconicity
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/function-composition/">
+<a class="md-nav__link" href="../../thinking-functionally/function-composition/">
         Function Composition
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/example-hitchhikers-guide/">
+<a class="md-nav__link" href="../../thinking-functionally/example-hitchhikers-guide/">
         Example: Hitchhikers Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/higher-order-functions/">
+<a class="md-nav__link" href="../../thinking-functionally/higher-order-functions/">
         Higher Order functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/immutability/">
+<a class="md-nav__link" href="../../thinking-functionally/immutability/">
         Immutability
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/immutable-values/">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-values/">
         Immutable values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/immutable-collections/">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-collections/">
         Immutable collections
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/immutable-local-bindings/">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-local-bindings/">
         Immutable Local Bindings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/partial-functions/">
+<a class="md-nav__link" href="../../thinking-functionally/partial-functions/">
         Currying &amp; Partial Functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/map-with-partial/">
+<a class="md-nav__link" href="../../thinking-functionally/map-with-partial/">
         map with partial
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/list-comprehension/">
+<a class="md-nav__link" href="../../thinking-functionally/list-comprehension/">
         List Comprehension
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/sequences/">
+<a class="md-nav__link" href="../../thinking-functionally/sequences/">
         Sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../sequence-abstractions.md">
+<a class="md-nav__link" href="../../sequence-abstractions.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/functors/">
+<a class="md-nav__link" href="../../thinking-functionally/functors/">
         Functors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/arity/">
+<a class="md-nav__link" href="../../thinking-functionally/arity/">
         Arity
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/pattern-matching/">
+<a class="md-nav__link" href="../../thinking-functionally/pattern-matching/">
         Pattern matching
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/polymorphism/">
+<a class="md-nav__link" href="../../thinking-functionally/polymorphism/">
         Polymorphic function definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/recursion/">
+<a class="md-nav__link" href="../../thinking-functionally/recursion/">
         Recursion
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/recursion-polymorphism/">
+<a class="md-nav__link" href="../../thinking-functionally/recursion-polymorphism/">
         Recursion &amp; Polymorphism
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../thinking-functionally/tail-recursion/">
+<a class="md-nav__link" href="../../thinking-functionally/tail-recursion/">
         Tail recursion
       </a>
 </li>
@@ -1834,26 +1856,26 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_9" id="__nav_12_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_10" id="__nav_11_10" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/creative-coding/">Crreative Coding</a>
-<label for="__nav_12_9">
+<a href="../../reference/creative-coding/">Crreative Coding</a>
+<label for="__nav_11_10">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_9">
+<label class="md-nav__title" for="__nav_11_10">
 <span class="md-nav__icon md-icon"></span>
           Crreative Coding
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_9_2" id="__nav_12_9_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_10_2" id="__nav_11_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/clojure-svg/">SVG</a>
+<a href="../../reference/clojure-svg/">SVG</a>
 </div>
 <nav aria-label="SVG" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_12_9_2">
+<label class="md-nav__title" for="__nav_11_10_2">
 <span class="md-nav__icon md-icon"></span>
           SVG
         </label>
@@ -1865,46 +1887,46 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_10" id="__nav_12_10" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_11" id="__nav_11_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../reference/jvm/">JVM</a>
-<label for="__nav_12_10">
+<a href="../../reference/jvm/">JVM</a>
+<label for="__nav_11_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="JVM" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_10">
+<label class="md-nav__title" for="__nav_11_11">
 <span class="md-nav__icon md-icon"></span>
           JVM
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/jvm/understanding-memory-usage/">
+<a class="md-nav__link" href="../../reference/jvm/understanding-memory-usage/">
         Understanding memory usage.
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/jvm/common-options/">
+<a class="md-nav__link" href="../../reference/jvm/common-options/">
         Commonly used JVM Options
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/jvm/java-17-flags/">
+<a class="md-nav__link" href="../../reference/jvm/java-17-flags/">
         Reference: Java 17 JVM flags
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/jvm/experimental-options/">
+<a class="md-nav__link" href="../../reference/jvm/experimental-options/">
         Reference: JVM Experimental Options
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/jvm/profile-tools/">
+<a class="md-nav__link" href="../../reference/jvm/profile-tools/">
         Profile tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/performance/">
+<a class="md-nav__link" href="../../reference/performance/">
         Clojure Performance
       </a>
 </li>
@@ -1912,71 +1934,46 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_11" id="__nav_12_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_12" id="__nav_11_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../alternative-tools/">Alternative Tools</a>
-<label for="__nav_12_11">
+<a href="../../alternative-tools/">Alternative Tools</a>
+<label for="__nav_11_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
 <nav aria-label="Alternative Tools" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_12_11">
+<label class="md-nav__title" for="__nav_11_12">
 <span class="md-nav__icon md-icon"></span>
           Alternative Tools
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/basic-repl/">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/basic-repl/">
         Basic Command Line REPL UI
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/compare-with-leiningen/">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/compare-with-leiningen/">
         Compare Clojure Project configuration tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/migrating-to-clojure-cli-tools/">
-        Migrating Projects To Clojure Cli Tools
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/cognitect-rebl/">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/cognitect-rebl/">
         Cognitect REBL data browser
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/evaluate-an-expression/">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/evaluate-an-expression/">
         Evaluating an expression with Clojure CLI tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/hotload-libraries/">
-        Hotload libraries
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/hotload-libraries-terminal-ui/">
-        Hotload libraries terminal ui
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/hotload-libraries-editor/">
-        Hotload libraries editor
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/hotload-libraries-deps-edn-configuration/">
-        Using add-libs with project configuration file
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/set-namespace-on-repl-startup/">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/set-namespace-on-repl-startup/">
         Set namespace on REPL startup
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../alternative-tools/leiningen/">
+<a class="md-nav__link" href="../../alternative-tools/leiningen/">
         Leiningen build automation tool for Clojure
       </a>
 </li>
@@ -2001,33 +1998,9 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#snippet-definition">
-    Snippet definition
+<a class="md-nav__link" href="#example-video">
+    Example video
   </a>
-<nav aria-label="Snippet definition" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#snippet-tab-stops">
-    Snippet Tab Stops
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#snippet-current-form">
-    Snippet current-form
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#placeholders">
-    Placeholders
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#code-driven-snippet">
-    Code driven snippet
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -2036,76 +2009,49 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/install/clojure-lsp/snippets.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/hotload-libraries-deps-edn-configuration.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="clojure-lsp-snippets">Clojure LSP Snippets<a class="headerlink" href="#clojure-lsp-snippets" title="Permanent link">λ︎</a></h1>
-<p><a href="https://clojure-lsp.io/settings/#snippets">Custom snippets</a> are defined in the Clojure LSP EDN configuration using the <code>:additional-snipets</code> key.  The snippet body uses the same tab stop and placeholder syntax as Yasnipets, although the body is contained within a string.</p>
-<p>Built-in snippets can include Clojure code for generating the text of the snippet when expanded.  Custom snippets do not currently support evaluation of code in the snippet.</p>
-<details class="info">
-<summary>Clojure LSP Configuration locations</summary>
-<p>Project specific configuration resides in <code>.lsp/config.edn</code></p>
-<p>User level configuration is either <code>$XDG_CONFIG_HOME/clojure-lsp/config.edn</code> or <code>$HOME/.lsp/config</code></p>
-</details>
-<h2 id="snippet-definition">Snippet definition<a class="headerlink" href="#snippet-definition" title="Permanent link">λ︎</a></h2>
-<p>The <code>:additional-snippets</code> key is associated with a vector or hash-maps, <code>[{}{},,,]</code> with each hash-map defining a snippet using the keys:</p>
-<p><code>:name</code> - name of the snippet, typed into the editor for completion</p>
-<p><code>:detail</code> - a meaningful description of the snippet</p>
-<p><code>:snippet</code> - the definition of the snippet, with tab stops and current-form syntax</p>
-<p>The <code>:snippet</code> can be any text, ideally with syntax that is correct for the particular language</p>
-<h3 id="snippet-tab-stops">Snippet Tab Stops<a class="headerlink" href="#snippet-tab-stops" title="Permanent link">λ︎</a></h3>
-<p>Include <code>$</code> with a number, e.g. <code>$1</code>,<code>$2</code>,<code>$3</code>,  to include tab stops in the snippet.  Once the snippet code has been generated, <code>TAB</code> key jumps through the tab stops in sequence, allowing customisation of a generic snippet.</p>
-<p><code>$0</code> marks the final position of the cursor, after which <code>TAB</code> has no more positions in the snippet to jump to.</p>
-<h3 id="snippet-current-form">Snippet current-form<a class="headerlink" href="#snippet-current-form" title="Permanent link">λ︎</a></h3>
-<p>When a Clojure LSP snipped includes <code>$current-form</code> then typing a snippet name in front of an existing Clojure form includes that form in the generated code.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:additional-snippets</span><span class="w"> </span><span class="p">[{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"wrap-let-sexpr"</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">                        </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Wrap current sexpr in let"</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">                        </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(let [$1 $current-form] $0)"</span><span class="p">}]}</span><span class="w"></span>
+<h1 id="using-add-libs-with-project-configuration-file">Using add-libs with project configuration file<a class="headerlink" href="#using-add-libs-with-project-configuration-file" title="Permanent link">λ︎</a></h1>
+<p>A project <code>deps.edn</code> file can also be used to hotload libraries with <code>add-lib</code>.  This has the advantage that newly added libraries become part of the normal project dependency configuration.</p>
+<p>Add a namespace definition to the <code>deps.edn</code> file to help editors understand the <code>deps.edn</code> file is being used for code.  Use the <code>#_</code> comment reader macro with the namespace definition to only evaluate this code manually as a developer.</p>
+<p>Add the <code>add-libs</code> expression after the <code>:deps</code> key so that it is easy to slurp in the existing and new dependencies as a single hash-map.  Use the comment reader macro <code>#_</code> to only evaluate this code manually.</p>
+<p>To hotload, remove the <code>#_</code> temporarily and slurp in the hash-map of dependencies, placing a <code>'</code> at the start of the hash-map.  Add the name and version of libraries to hotload in the hash-map.  Evaluate the <code>add-libs</code> expression which should return a list of new namespaces added.</p>
+<p>Once hotload has finished, barf the hash-maps of dependencies from the <code>add-libs</code> expression, removing the <code>'</code>.  Add the <code>#_</code> to the <code>add-libs</code> expression and save the file.</p>
+<p>The hotloaded libraries are now available by requiring their namespaces.  If the REPL is restarted, the new dependencies will be included in the Classpath as they are now part of the project configuration.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span><span class="w"></span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">;; Project Configuration with  Hotload</span><span class="w"></span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1">;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;</span><span class="w"></span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1">;; Hotload requires</span><span class="w"></span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">#</span><span class="nv">_</span><span class="p">(</span><span class="kd">ns </span><span class="nv">deps.edn</span><span class="w"></span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]]))</span><span class="w"></span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">;; Project configuration</span><span class="w"></span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"></span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w"> </span><span class="p">[</span><span class="s">"src"</span><span class="w"> </span><span class="s">"resources"</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w"> </span><span class="ss">:deps</span><span class="w"></span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w"> </span><span class="o">#</span><span class="nv">_</span><span class="w"> </span><span class="p">(</span><span class="nf">add-libs</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.10.1"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w">  </span><span class="nv">http-kit/http-kit</span><span class="w">   </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.5.1"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="nv">hiccup/hiccup</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0-alpha2"</span><span class="p">}}</span><span class="w"></span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w"> </span><span class="ss">:aliases</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 </code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">Limited scope with current-form</p>
-<p>A Snippet including <code>$current-form</code> is only active when typed in front of an existing expression.  A snippet is not recognised when typed at the top level.</p>
-</div>
-<h3 id="placeholders">Placeholders<a class="headerlink" href="#placeholders" title="Permanent link">λ︎</a></h3>
-<p>Tab Stops can also include default values or text used as hint on what each tab stop value is for.  These are referred to as placeholders.</p>
-<p><code>${1:default-value}</code> is the form of a placeholder for tab stop 1.  When the cursor tabs to tab stop 1, the default-value text is highlighted and replaces as soon as characters are typed.</p>
-<p>Placeholder text is not replaced for <code>$0</code> tab-stop, as the snippet interaction is effectively over at this point.</p>
-<p>The <code>deftest</code> custom snippet shows examples of placeholders for three tab stops.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deftest"</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w"> </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deftest clojure.test"</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w"> </span><span class="ss">:snippet</span><span class="w"></span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w"> </span><span class="s">"(deftest ${1:name}-test</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="s">    (testing \"${2:Context of the test assertions}\"</span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="s">      (is (= ${3:assertion-values}))$4))</span>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="s">  $0"</span><span class="p">}</span><span class="w"></span>
-</code></pre></div>
-<div class="admonition hint">
-<p class="admonition-title">Escape string quotes in snippet body</p>
-<p>Use <code>\</code> character before the <code>"</code> character within the snippet body.  For example, doc-strings in <code>defn</code> function definitions or the string in <code>testing</code> function.</p>
-</div>
-<h3 id="code-driven-snippet">Code driven snippet<a class="headerlink" href="#code-driven-snippet" title="Permanent link">λ︎</a></h3>
-<p>The built-in <code>defn</code> snippet uses Clojure code to help generate the snippet.</p>
-<p><code>%s</code> is a substitution point within a snippet, used by the standard Clojure <code>format</code> command, used to included either <code>defn ^:private</code> or <code>defn-</code>, depending on the value returned from the <code>if</code> expression.</p>
-<p><code>:use-metadata-for-privacy?</code> is a key from the Clojure LSP configuration</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w"> </span><span class="p">{</span><span class="ss">:label</span><span class="w"> </span><span class="s">"defn-"</span><span class="w"></span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create private function"</span><span class="w"></span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="ss">:insert-text</span><span class="w"> </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">"(defn%s ${1:name} [$2]\n  ${0:body})"</span><span class="w"></span>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">                       </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="ss">:use-metadata-for-privacy?</span><span class="w"> </span><span class="nv">settings</span><span class="p">)</span><span class="w"></span>
-<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">                         </span><span class="s">" ^:private"</span><span class="w"></span>
-<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">                         </span><span class="s">"-"</span><span class="p">))}</span><span class="w"></span>
-</code></pre></div>
-<p>The syntax for built-in snippets is slightly different that the <code>:additional-syntax</code> form.  The internal form uses <code>:label</code> for <code>:name</code> and <code>:insert-text</code> for <code>:snippet</code>.</p>
-<div class="admonition info">
-<p class="admonition-title">Code supported only in built-in snippets</p>
-<p>Clojure code only works for built-in snippets and not for <code>:additional-snippets</code>.</p>
-<p>Clojure LSP is compiled by Graal to a native binary, including the built-in snippets.  To include Clojure code in a snippet then consider submitting a pull request to the Clojure LSP project to add a built-in snippet.</p>
-</div>
+<h2 id="example-video">Example video<a class="headerlink" href="#example-video" title="Permanent link">λ︎</a></h2>
+<p>See the <a href="https://youtu.be/gIoadGfm5T8?t=1390">REPL driven development video by Sean Corfield</a> for this technique.</p>
+<p _="%" endyoutube="endyoutube">{% youtube %}
+<a href="https://youtu.be/gIoadGfm5T8">https://youtu.be/gIoadGfm5T8</a></p>
+<blockquote>
+<p>Jump to 23 minutes into the video to see this form of hotload in action.</p>
+</blockquote>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 26, 2023</span>
 </small>
 </div>
 </article>
@@ -2155,7 +2101,7 @@
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
