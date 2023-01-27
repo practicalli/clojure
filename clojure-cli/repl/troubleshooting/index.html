@@ -325,28 +325,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#editor-wont-start-a-repl">
-    Editor wont start a REPL
+<a class="md-nav__link" href="#code-expression-failing">
+    Code expression failing
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#terminal-ui-repl-is-not-working">
-    Terminal UI REPL is not working
+<a class="md-nav__link" href="#editor-repl-fails-to-start">
+    Editor REPL fails to start
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#create-a-new-project">
-    Create a new project
+<a class="md-nav__link" href="#terminal-ui-repl-fails-in-project">
+    Terminal UI REPL fails in project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repl-doesnt-start-in-any-project">
+    REPL doesnt start in any project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repl-starts-but-requiring-code-fails">
+    REPL starts but requiring code fails
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#dependency-issues">
     Dependency issues
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#code-expression-failing">
-    Code expression failing
   </a>
 </li>
 </ul>
@@ -2036,28 +2041,33 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#editor-wont-start-a-repl">
-    Editor wont start a REPL
+<a class="md-nav__link" href="#code-expression-failing">
+    Code expression failing
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#terminal-ui-repl-is-not-working">
-    Terminal UI REPL is not working
+<a class="md-nav__link" href="#editor-repl-fails-to-start">
+    Editor REPL fails to start
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#create-a-new-project">
-    Create a new project
+<a class="md-nav__link" href="#terminal-ui-repl-fails-in-project">
+    Terminal UI REPL fails in project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repl-doesnt-start-in-any-project">
+    REPL doesnt start in any project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#repl-starts-but-requiring-code-fails">
+    REPL starts but requiring code fails
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#dependency-issues">
     Dependency issues
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#code-expression-failing">
-    Code expression failing
   </a>
 </li>
 </ul>
@@ -2077,17 +2087,30 @@
 <li>Dependencies are not available</li>
 <li>Project (or editor) misconfigured</li>
 </ul>
-<h2 id="editor-wont-start-a-repl">Editor wont start a REPL<a class="headerlink" href="#editor-wont-start-a-repl" title="Permanent link">λ︎</a></h2>
-<p>Use the <code>clojure</code> command to start a terminal UI REPL with the same project, as a quick sanity check</p>
-<p>If the REPL runs correctly, it is likely the editor configuration is missing something or is incorrect.  Check the configuration for running a Clojure project with the editor.</p>
-<p>If using a <strong>jack-in</strong> approach with the editor, run a terminal UI REPL with an nREPL server and try connecting to that REPL from the editor.</p>
+<h2 id="code-expression-failing">Code expression failing<a class="headerlink" href="#code-expression-failing" title="Permanent link">λ︎</a></h2>
+<p>All code in the project must compile and be syntactically correct, even if that code is in a rich <code>(comment ,,,)</code> block.</p>
+<p>A Clojure expression following a Reader comment, <code>#_</code> does not have to compile, however it must be syntactically correct, i.e. balanced parentheses.</p>
+<p>Add a line comment, <code>;;</code>, to any code that is suspected of not compiling or being syntactically incorrect (or delete that code).</p>
+<h2 id="editor-repl-fails-to-start">Editor REPL fails to start<a class="headerlink" href="#editor-repl-fails-to-start" title="Permanent link">λ︎</a></h2>
+<p>If using a <strong>jack-in</strong> approach with the editor to start the repl, run a terminal UI REPL with an nREPL server and try connecting to that REPL from the editor.</p>
+<p><a class="md-button" href="/clojure/clojure-cli/repl/coding/" target="_blank">Clojure CLI repl - rebel terminal UI</a></p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -M:repl/rebel
 </code></pre></div>
-<h2 id="terminal-ui-repl-is-not-working">Terminal UI REPL is not working<a class="headerlink" href="#terminal-ui-repl-is-not-working" title="Permanent link">λ︎</a></h2>
+<p>Then require the main namespace and see if there are issues, optionally using :verbose to see which libraries are being loaded.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">practicalli.service</span><span class="p">]</span><span class="w"> </span><span class="ss">:verbose</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<p>If the REPL runs correctly, it is likely the editor configuration is missing something or is incorrect.  Check the configuration for running a Clojure project with the editor.</p>
+<h2 id="terminal-ui-repl-fails-in-project">Terminal UI REPL fails in project<a class="headerlink" href="#terminal-ui-repl-fails-in-project" title="Permanent link">λ︎</a></h2>
+<p>If the REPL does not run correctly or the namespace fails to load, run a repl without any extra development dependencies (tooling, dev libraries, etc) and load the main namespace</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clj
+</code></pre></div>
+<h2 id="repl-doesnt-start-in-any-project">REPL doesnt start in any project<a class="headerlink" href="#repl-doesnt-start-in-any-project" title="Permanent link">λ︎</a></h2>
 <p>Run the <code>clojure</code> command in a directory that is not part of any existing Clojure project.  This will run the REPL with only the <code>org.clojure/clojure</code> dependency</p>
-<p>If a REPL prompt appears, then Clojure CLI is working.  If a REPL prompt does not appear, then reinstall the Clojure CLI.</p>
-<h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">λ︎</a></h2>
-<p>Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with <code>clojure -T:project/new</code> (with practicalli/clojure-deps-edn installed)</p>
+<p>Run <code>clojure -Sdescribe</code> to check that the Clojure CLI is using the correct configuration files and is the expected version.</p>
+<p>If a REPL prompt appears, then Clojure CLI is working.  If a REPL prompt does not appear, then reinstall the Clojure CLI or upgrade to a newer version.</p>
+<p><a class="md-button" href="/clojure/install/clojure-cli.md" target="_blank">Clojure CLI install - Practicalli Guide</a></p>
+<h2 id="repl-starts-but-requiring-code-fails">REPL starts but requiring code fails<a class="headerlink" href="#repl-starts-but-requiring-code-fails" title="Permanent link">λ︎</a></h2>
+<p>Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with <code>clojure -T:project/create</code> (with <a href="/clojure/install/clojure-cli/">Practicalli Clojure CLI Config</a> installed)</p>
 <p>If a REPL process starts correctly for a new project but not the existing project, then its most likely one or more expressions in the existing project that are causing an error or the project <code>deps.edn</code> configuration.</p>
 <p>Copy the <code>deps.edn</code> configuration from the existing project to the root of the new project (or just the <code>:deps</code> section of the <code>deps.edn</code> configuration).  Run the REPL again using the <code>clojure</code> command.  If the REPL fails then it is likely an issue with the exiting projects <code>deps.edn</code> file or one of the dependencies</p>
 <h2 id="dependency-issues">Dependency issues<a class="headerlink" href="#dependency-issues" title="Permanent link">λ︎</a></h2>
@@ -2095,18 +2118,14 @@
 <p>When running the <code>clojure</code> command to run a terminal UI REPL, libraries are retrieved from remote repositories (Maven Central, Clojars.org) and stored in a local cache <code>~/.m2/repositories</code></p>
 <p>If a dependency is not available then a warning should state which library cannot be downloaded and from which repository</p>
 <p>Check the extent of the dependencies for the existing project:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure -Stree
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure -Stree
 </code></pre></div>
 <p>Use the antq tool to check for a newer version of a dependency</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure -T:project/outdated
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>clojure -T:project/outdated
 </code></pre></div>
 <blockquote>
 <p>If libraries are likely to become unavailable (i.e. old versions) then consider creating a local repository service with Artefactory or Nexus, which can share library depenencies between development teams of an organisation.</p>
 </blockquote>
-<h2 id="code-expression-failing">Code expression failing<a class="headerlink" href="#code-expression-failing" title="Permanent link">λ︎</a></h2>
-<p>All code in the project must compile and be syntactically correct, even if that code is in a rich <code>(comment ,,,)</code> block.</p>
-<p>A Clojure expression following a Reader comment, <code>#_</code> does not have to compile, however it must be syntactically correct, i.e. balanced parentheses.</p>
-<p>Add a line comment, <code>;;</code>, to any code that is suspected of not compiling or being syntactically incorrect (or delete that code).</p>
 <hr/>
 <div class="md-source-file">
 <small>
