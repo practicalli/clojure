@@ -2023,22 +2023,22 @@
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/U19TWMsg0s0" title="YouTube video player" width="560"></iframe>
 </p>
-<!-- ![Clojure REPL rebel readline - example of autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png) -->
 <h2 id="install-rebel-readline">Install rebel readline<a class="headerlink" href="#install-rebel-readline" title="Permanent link">λ︎</a></h2>
 <p><a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> contains an alias to run rebel readline.</p>
 <details class="info">
-<summary>Add a Rebel Readline alias</summary>
+<summary>Add a Rebel terminal UI alias</summary>
 <p>If not using <a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> then add an alias called <code>:repl/rebel</code>to your own user <code>deps.edn</code> configuration
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:repl/rebel</span><span class="w"> </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">com.bhauman/rebel-readline</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.1.4"</span><span class="p">}}</span><span class="w"></span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">             </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"rebel-readline.main"</span><span class="p">]}</span><span class="w"></span>
 </code></pre></div></p>
 </details>
 <h2 id="running-the-rebel-repl">Running the rebel REPL<a class="headerlink" href="#running-the-rebel-repl" title="Permanent link">λ︎</a></h2>
-<p>Start a Clojure REPL with Rebel Readline, optionally in the root of a Clojure project.</p>
+<p>Start a Clojure REPL with Rebel terminal UI, optionally in the root of a Clojure project.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure -M:repl/rebel
 </code></pre></div>
 <p>A REPL prompt displays and will evaluate code entered.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-rebel-readline.png"><img alt="Clojure REPL rebel readline" src="/images/clojure-repl-rebel-readline.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-dark.png#only-dark"><img alt="Clojure REPL rebel readline" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-dark.png#only-dark"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-light.png#only-light"><img alt="Clojure REPL rebel readline" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-light.png#only-light"/></a></p>
 <p>Evaluate Clojure code by typing at the <code>=&gt; user</code> prompt pressing <code>Return</code>, the results of evaluating the code are printed on the next line.</p>
 <p><code>:repl/quit</code> as the prompt will end the REPL session and all changes not saved to a file will be lost.</p>
 <blockquote>
@@ -2069,7 +2069,8 @@
 <p>For example, to change the default keybindings to vi:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>{:key-map :viins}
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/rebel-repl-help-menu.png"><img alt="Clojure Rebel REPL - repl/help" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/rebel-repl-help-menu.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark"><img alt="Clojure Rebel REPL - repl/help" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark"/></a>
+<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light"><img alt="Clojure Rebel REPL - repl/help" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>

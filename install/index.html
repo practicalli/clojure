@@ -2071,15 +2071,15 @@
 <div class="admonition hint">
 <p class="admonition-title">Aliases in Practicalli Clojure provided by Practicalli Clojure CLI config</p>
 <p><a href="clojure-cli/#practicalli-clojure-cli-config">practicalli/clojure-deps-edn</a> provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.</p>
-<p>If the Practicalli Clojure CLI config is not used, look at the <code>deps.edn</code> file in its GitHub repository and the relevant aliases configuration in your own Clojure CLI configuration.</p>
+<p>If the Practicalli Clojure CLI config is not used, review the <a href="https://github.com/practicalli/clojure-deps-edn/blob/live/deps.edn"><code>deps.edn</code> file</a> from the GitHub repository and add relevant aliases definitions to your own Clojure CLI configuration.</p>
 </div>
-<details class="info alternative development tools">
-<summary>Info</summary>
-<p><a href="https://leiningen.org">Leiningen</a> is the classic development tool for Clojure.  All the code examples in this book should work with Leiningen when a correctly configured <code>project.clj</code> file is created which includes all the neccessary library dependencies.</p>
-</details>
 <details class="info">
 <summary>optional: clj-kondo static analysis tool</summary>
 <p><a href="/clojure/reference/code-analysis.md">Code analysis (clj-kondo)</a> is a Clojure syntax analysis tool that can detect syntax bugs and suggest idiomatic code.  clj-kondo is included in Clojure-lsp so is an optional install</p>
+</details>
+<details class="info">
+<summary>Alternative development tools</summary>
+<p><a href="https://leiningen.org">Leiningen</a> is the classic development tool for Clojure.  All the code examples in this book should work with Leiningen when a correctly configured <code>project.clj</code> file is created which includes all the neccessary library dependencies.  Libraries included via aliases should be added as either <code>:dev-dependencies</code> or <code>:aliases</code> in the Leiningen <code>project.clj</code> file.</p>
 </details>
 <hr/>
 <div class="md-source-file">

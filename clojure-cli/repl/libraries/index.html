@@ -2103,10 +2103,10 @@
 </details>
 <h2 id="include-library">Include library<a class="headerlink" href="#include-library" title="Permanent link">λ︎</a></h2>
 <p>Open a terminal and change to the root of the Clojure project directory, where the <code>deps.edn</code> file can be found.</p>
-<p>Start the REPL (in this example using rebel readline rich terminal UI)</p>
+<p>Start the REPL including the <code>:database/h2</code> alias to include every library defined in the <code>:deps</code> key and libraries in the <code>:database/h2</code> alias.  This example is using rebel readline rich terminal UI</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure -M:repl/rebel
 </code></pre></div>
-<p>This command will include every library defined in the <code>:deps</code> key of the <code>deps.end</code> file.</p>
+<p>This command will include</p>
 <p>Add aliases to include optional libraries, such as those used for development.  In this example, the H2 database and next.jdbc libraries are included along with those libraries in the <code>:deps</code> key of <code>deps.edn</code></p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure -M:database/h2:repl/rebel
 </code></pre></div>
@@ -2129,7 +2129,7 @@
 <details class="info">
 <summary>Hotload Libraries in the REPL</summary>
 <p><code>add-libs</code> function from the <code>clojure.tools.deps.alpha</code> library is an experimental approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project <code>deps.edn</code>.  This provides a simple way to try out libraries.</p>
-<p><a href="/clojure/clojure-cli/hotload-libraries.md">hotload libraries secion</a> for more details and how to use with Clojure editors.</p>
+<p><a href="/clojure/clojure-cli/hotload-libraries/">hotload libraries secion</a> for more details and how to use with Clojure editors.</p>
 </details>
 <p>Start a REPL session using Clojure CLI with the <a href="/clojure/clojure-cli/hotload-libraries.md"><code>:lib/hotload alias</code></a>, including rebel readline for an enhance REPL terminal UI.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>clojure -M:lib/hotload:repl/rebel
