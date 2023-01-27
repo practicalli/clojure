@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/clojure-cli/repl/coding-in-the-repl/" rel="canonical"/>
+<link href="https://practical.li/clojure/clojure-cli/repl/help/" rel="canonical"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>REPL Coding - Practicalli Clojure</title>
+<title>REPL Help - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#coding-in-the-repl">
+<a class="md-skip" href="#help-at-the-repl">
           Skip to content
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              REPL Coding
+              REPL Help
             
           </span>
 </div>
@@ -294,14 +294,24 @@
           Terminal REPL
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../coding/">
+        REPL Coding
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../libraries/">
+        REPL Libraries
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          REPL Coding
+          REPL Help
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        REPL Coding
+        REPL Help
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -310,42 +320,17 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#evaluating-code">
-    Evaluating code
+<a class="md-nav__link" href="#rebel-commands">
+    rebel commands
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#including-code-from-a-file">
-    Including code from a file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changing-namespaces">
-    Changing namespaces
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reloading-code-changes-from-a-file">
-    Reloading code changes from a file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-projects">
-    Clojure projects
+<a class="md-nav__link" href="#key-bindings">
+    Key-bindings
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../using-libraries/">
-        REPL Libraries
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../help-at-the-repl/">
-        REPL Help
-      </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../troubleshooting/">
@@ -390,7 +375,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../projects/configure-repl-startup/">
+<a class="md-nav__link" href="../../projects/configure-repl-startup.md">
         REPL Startup
       </a>
 </li>
@@ -2036,28 +2021,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#evaluating-code">
-    Evaluating code
+<a class="md-nav__link" href="#rebel-commands">
+    rebel commands
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#including-code-from-a-file">
-    Including code from a file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#changing-namespaces">
-    Changing namespaces
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#reloading-code-changes-from-a-file">
-    Reloading code changes from a file
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-projects">
-    Clojure projects
+<a class="md-nav__link" href="#key-bindings">
+    Key-bindings
   </a>
 </li>
 </ul>
@@ -2067,48 +2037,117 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/repl/coding-in-the-repl.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/repl/help.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="coding-in-the-repl">Coding in the REPL<a class="headerlink" href="#coding-in-the-repl" title="Permanent link">λ︎</a></h1>
-<p>Starting a REPL is a fast way to start experimenting with Clojure.  Clojure code can be typed into the REPL directly and the result instantly returned.  Code can also be evaluated from a project allowing pre-written code to be run.</p>
-<div class="admonition hint">
-<p class="admonition-title">Clojure Editors are the main tool for writing code</p>
-<p>An <a href="/clojure-editors/">editor connected a a Clojure REPL</a> is far more effective for writing code than typing into the command line REPL directly.  Evaluating code in an editor will automatically use the correct namespace.</p>
-</div>
-<h2 id="evaluating-code">Evaluating code<a class="headerlink" href="#evaluating-code" title="Permanent link">λ︎</a></h2>
-<p>Type Clojure code at the REPL prompt, e.g <code>(map inc [1 2 3 4 5])</code>.  Press <code>Enter</code> to evaluate the code and see the result.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-clj-eval-map-function.png"><img alt="Clojure REPL clj evaluate map function" src="/images/clojure-repl-clj-eval-map-function.png"/></a></p>
-<p><span class="keys"><kbd class="key-arrow-up">Up</kbd></span> and <span class="keys"><kbd class="key-arrow-down">Down</kbd></span> navigate the REPL history, providing an efficient way to evaluate the same code many times.</p>
-<h2 id="including-code-from-a-file">Including code from a file<a class="headerlink" href="#including-code-from-a-file" title="Permanent link">λ︎</a></h2>
-<p>Clojure code is usually saved in files and each file has a namespace definition that matches the file path, using the <code>ns</code> function. The file <code>src/practicalli/playground.clj</code> has the namespace <code>practicalli.playground</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.playground</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>Requiring the namespace of a file will evaluate the code from that file in the REPL.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'practicalli.playground</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>Functions from the file can be called using their fully qualified names.  Assuming the namespace contains a function called <code>main</code>, that function can be called using <code>(practicalli.playground/main)</code>.</p>
-<h2 id="changing-namespaces">Changing namespaces<a class="headerlink" href="#changing-namespaces" title="Permanent link">λ︎</a></h2>
-<p>If the default <code>user</code> namespace is change to <code>practicalli.playground</code> then functions in that namespace can be called by just the function name, eg. <code>(main)</code>.</p>
-<p><code>in-ns</code> will change change the current namespace to the one specified as an argument.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">in-ns </span><span class="ss">'practicalli.playground</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>Now the <code>(main)</code> function can be called without having to include the full namespace name.</p>
-<h2 id="reloading-code-changes-from-a-file">Reloading code changes from a file<a class="headerlink" href="#reloading-code-changes-from-a-file" title="Permanent link">λ︎</a></h2>
-<p>The <code>:reload</code> option to <code>require</code> will load in any changes to a namespace that happened outside of the REPL, eg. using an editor to change the source code in the file.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">'practicalli.playground</span><span class="w"> </span><span class="ss">:reload</span><span class="p">)</span><span class="w"></span>
-</code></pre></div>
-<p>When using an editor that is not connected to the Clojure REPL, then reloading is an effective way of updating the code with all the changes saved in the file.</p>
-<h2 id="clojure-projects">Clojure projects<a class="headerlink" href="#clojure-projects" title="Permanent link">λ︎</a></h2>
-<p>A REPL can run without a Clojure project, however, libraries and code are simpler to manage within project source and configuration files.</p>
-<p><a class="md-button" href="/clojure/clojure-cli/projects.md">Clojure projects guide</a></p>
-<p>Or jump to <a href="/simple-projects">simple projects</a> to start writing example applications.</p>
+<h1 id="help-at-the-repl">Help at the REPL<a class="headerlink" href="#help-at-the-repl" title="Permanent link">λ︎</a></h1>
+<p>rebel readline provides tools to help you discover and use functions from clojure.core and any other libraries you add to the REPL.</p>
+<p><code>:repl/help</code> will show all the commands available for rebel readline</p>
+<p><code>TAB</code> to autocomplete the current characters into a function name.  All functions that match the characters will be show, allowing quick discovery of functions available.
+Typing in the first few characters of a function and press</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-rebel-readline-function-autocomplete.png"><img alt="Clojure REPL rebel readling - autocompletion" src="/images/clojure-repl-rebel-readline-function-autocomplete.png"/></a></p>
+<p>Moving the cursor after the name of a function will show the signatures available, so the correct arguments can be used with the function call.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-rebel-readline-function-signature-help.png"><img alt="Clojure REPL rebel readline - function signature help" src="/images/clojure-repl-rebel-readline-function-signature-help.png"/></a></p>
+<p><code>Ctrl-x Ctrl-D</code> or using the function <code>clojure.repl/doc</code> function will show the documentation for functions, so you can understand the functions purpose.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-repl-readline-doc-reduce.png"><img alt="Clojure REPL rebel readline - doc function showing a function docstring" src="/images/clojure-repl-repl-readline-doc-reduce.png"/></a></p>
+<h2 id="rebel-commands">rebel commands<a class="headerlink" href="#rebel-commands" title="Permanent link">λ︎</a></h2>
+<p>Type <code>:repl/help</code> or <code>:repl</code> TAB to see a list of available commands.</p>
+<table>
+<thead>
+<tr>
+<th>Keybinding</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>:repl/help</code></td>
+<td>Prints the documentation for all available commands.</td>
+</tr>
+<tr>
+<td><code>:repl/key-bindings</code></td>
+<td>search or list current key bindings</td>
+</tr>
+<tr>
+<td><code>:repl/quit</code></td>
+<td>Quits the REPL</td>
+</tr>
+<tr>
+<td><code>:repl/set-color-theme</code></td>
+<td>Change the color theme <code>:dark-screen-theme</code> <code>:light-screen-theme</code></td>
+</tr>
+<tr>
+<td><code>:repl/set-key-map</code></td>
+<td>Change key bindings to given key-map, <code>:emacs</code> <code>:vicmd</code> <code>:viins</code></td>
+</tr>
+<tr>
+<td><code>:repl/toggle-color</code></td>
+<td>Toggle ANSI text coloration on and off</td>
+</tr>
+<tr>
+<td><code>:repl/toggle-completion</code></td>
+<td>Toggle the completion functionality on and off</td>
+</tr>
+<tr>
+<td><code>:repl/toggle-eldoc</code></td>
+<td>Toggle the auto display of function signatures on and off</td>
+</tr>
+<tr>
+<td><code>:repl/toggle-highlight</code></td>
+<td>Toggle readline syntax highlighting on and off</td>
+</tr>
+<tr>
+<td><code>:repl/toggle-indent</code></td>
+<td>Toggle the automatic indenting of Clojure code on and off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="key-bindings">Key-bindings<a class="headerlink" href="#key-bindings" title="Permanent link">λ︎</a></h2>
+<table>
+<thead>
+<tr>
+<th>Keybinding</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Ctrl-C</code></td>
+<td>aborts editing the current line</td>
+</tr>
+<tr>
+<td><code>Ctrl-D</code></td>
+<td>at the start of a line =&gt; sends an end of stream message</td>
+</tr>
+<tr>
+<td><code>TAB</code></td>
+<td>word completion or code indent when cursor in whitespace at the start of line</td>
+</tr>
+<tr>
+<td><code>Ctrl-X_Ctrl-D</code></td>
+<td>Show documentation for word at point</td>
+</tr>
+<tr>
+<td><code>Ctrl-X_Ctrl-S</code></td>
+<td>Show source for word at point</td>
+</tr>
+<tr>
+<td><code>Ctrl-X_Ctrl-A</code></td>
+<td>Show apropos for word at point</td>
+</tr>
+<tr>
+<td><code>Ctrl-X_Ctrl-E</code></td>
+<td>Inline eval for SEXP before the point</td>
+</tr>
+</tbody>
+</table>
+<p>Examine key-bindings with the <code>:repl/key-bindings</code> command.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 27, 2023</span>
 </small>
 </div>
 </article>
@@ -2122,7 +2161,7 @@
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Rebel REPL Terminal UI" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<a aria-label="Previous: REPL Libraries" class="md-footer__link md-footer__link--prev" href="../libraries/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2131,17 +2170,17 @@
 <span class="md-footer__direction">
                 Previous
               </span>
-              Rebel REPL Terminal UI
+              REPL Libraries
             </div>
 </div>
 </a>
-<a aria-label="Next: REPL Libraries" class="md-footer__link md-footer__link--next" href="../using-libraries/" rel="next">
+<a aria-label="Next: REPL troubleshoot" class="md-footer__link md-footer__link--next" href="../troubleshooting/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              REPL Libraries
+              REPL troubleshoot
             </div>
 </div>
 <div class="md-footer__button md-icon">

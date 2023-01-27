@@ -295,17 +295,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../repl/coding-in-the-repl/">
+<a class="md-nav__link" href="../../repl/coding/">
         REPL Coding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../repl/using-libraries/">
+<a class="md-nav__link" href="../../repl/libraries/">
         REPL Libraries
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../repl/help-at-the-repl/">
+<a class="md-nav__link" href="../../repl/help/">
         REPL Help
       </a>
 </li>
@@ -352,9 +352,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#excluding-dependencies">
-    Excluding dependencies
+<a class="md-nav__link" href="#hotload-libraries">
+    Hotload libraries
   </a>
+<nav aria-label="Hotload libraries" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hotload-example">
+    Hotload Example
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -370,7 +379,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../configure-repl-startup/">
+<a class="md-nav__link" href="../configure-repl-startup.md">
         REPL Startup
       </a>
 </li>
@@ -2016,9 +2025,18 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#excluding-dependencies">
-    Excluding dependencies
+<a class="md-nav__link" href="#hotload-libraries">
+    Hotload libraries
   </a>
+<nav aria-label="Hotload libraries" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#hotload-example">
+    Hotload Example
+  </a>
+</li>
+</ul>
+</nav>
 </li>
 </ul>
 </nav>
@@ -2042,13 +2060,41 @@
 <p><code>clojure -M:search/libraries pattern</code> where pattern is the name of the library to search for.  Copy the relevant results into the project <code>deps.edn</code> file.</p>
 <p><code>clojure -M:search/libraries --format:merge pattern</code> will automatically add the library into the <code>deps.edn</code> file.</p>
 </details>
-<h2 id="excluding-dependencies">Excluding dependencies<a class="headerlink" href="#excluding-dependencies" title="Permanent link">λ︎</a></h2>
-<p>Adding several libraries as dependencies to a project may cause conflicts. The <code>:exclusions</code>  key will prevent libraries within a library dependency from being included in the project</p>
-<p>For example, library-a and library-b both have a dependency on library-c, as defined in the project configuration for library-a and library-b.  When including library-a and library-b in the project as dependencies, there could be a conflict if the both libraries use a different version of library-c.  Adding an exclude to library-a or library-b will stop library-c being included twice.</p>
-<p>A Library that is self-contained and does not itself include any dependencies on any other libraries is unlikely to cause conflicts.  Using these self-contained libraries simplifies the overall application design.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="ss">:org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.10.2"</span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">        </span><span class="ss">:cheshire/cheshire</span><span class="w">  </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"5.10.0"</span><span class="w"></span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">            </span><span class="ss">:exclusions</span><span class="w"> </span><span class="s">"com.fasterxml.jackson.core/jackson-core"</span><span class="p">}}}</span><span class="w"></span>
+<h2 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
+<p>Use a rich comment block or <a href="/clojure-cli/projects/configure-repl-startup.md">a <code>dev/user.clj</code> file</a> to require the <code>clojure.tools.deps.alpha.repl</code> namespace and write <code>add-libs</code> expressions to hot-load libraries.</p>
+<p>A rich comment block ensures <code>add-libs</code> code is only evaluated manually by a developer.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">comment</span><span class="w"></span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span><span class="w"></span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">add-libs</span><span class="w"> </span><span class="o">'</span><span class="p">{</span><span class="nv">http-kit/http-kit</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.5.1"</span><span class="p">}})</span><span class="w"></span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<details class="hint">
+<summary>Clojure LSP snippets</summary>
+<p><a href="https://clojure-lsp.io/features/#snippets">Snippets provided by Clojure LSP</a> include <code>rich-comment-hotload</code>, to add a rich comment block with a require for <code>clojure.tools.deps.alpha</code> and an <code>add-libs</code> expression, making it very quick to add this code.</p>
+<p><code>deps-maven</code> and <code>deps-git</code> snippets help ensure the correct syntax is used for the <code>add-libs</code> expression for each library dependency to be added.</p>
+</details>
+<h3 id="hotload-example">Hotload Example<a class="headerlink" href="#hotload-example" title="Permanent link">λ︎</a></h3>
+<p>Create a web server from scratch, serving pages generated from hiccup, with all libraries hot-loaded as the code is being written.  Demonstrates that it is possible to write an application when only starting the REPL once.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">comment</span><span class="w"></span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="c1">;; run REPL with :lib/hotload alias</span><span class="w"></span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span><span class="w"></span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">  </span><span class="c1">;; hotload the libraries required for the server</span><span class="w"></span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="o">##</span><span class="w"> </span><span class="nv">Excluding</span><span class="w"> </span><span class="nv">dependencies</span><span class="w"></span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="nv">Adding</span><span class="w"> </span><span class="nv">several</span><span class="w"> </span><span class="nv">libraries</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">dependencies</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nb">project </span><span class="nv">may</span><span class="w"> </span><span class="nv">cause</span><span class="w"> </span><span class="nv">conflicts.</span><span class="w"> </span><span class="nv">The</span><span class="w"> </span><span class="o">`</span><span class="ss">:exclusions</span><span class="o">`</span><span class="w">  </span><span class="nb">key </span><span class="nv">will</span><span class="w"> </span><span class="nv">prevent</span><span class="w"> </span><span class="nv">libraries</span><span class="w"> </span><span class="nv">within</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">library</span><span class="w"> </span><span class="nv">dependency</span><span class="w"> </span><span class="nv">from</span><span class="w"> </span><span class="nv">being</span><span class="w"> </span><span class="nv">included</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">project</span><span class="w"></span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nv">For</span><span class="w"> </span><span class="nv">example</span>,<span class="w"> </span><span class="nv">library-a</span><span class="w"> </span><span class="nb">and </span><span class="nv">library-b</span><span class="w"> </span><span class="nv">both</span><span class="w"> </span><span class="nv">have</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">dependency</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">library-c</span>,<span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">defined</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nb">project </span><span class="nv">configuration</span><span class="w"> </span><span class="nb">for </span><span class="nv">library-a</span><span class="w"> </span><span class="nb">and </span><span class="nv">library-b.</span><span class="w">  </span><span class="nv">When</span><span class="w"> </span><span class="nv">including</span><span class="w"> </span><span class="nv">library-a</span><span class="w"> </span><span class="nb">and </span><span class="nv">library-b</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nb">project </span><span class="nv">as</span><span class="w"> </span><span class="nv">dependencies</span>,<span class="w"> </span><span class="nv">there</span><span class="w"> </span><span class="nv">could</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">conflict</span><span class="w"> </span><span class="k">if </span><span class="nv">the</span><span class="w"> </span><span class="nv">both</span><span class="w"> </span><span class="nv">libraries</span><span class="w"> </span><span class="nv">use</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">different</span><span class="w"> </span><span class="nv">version</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">library-c.</span><span class="w">  </span><span class="nv">Adding</span><span class="w"> </span><span class="nv">an</span><span class="w"> </span><span class="nv">exclude</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">library-a</span><span class="w"> </span><span class="nb">or </span><span class="nv">library-b</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">stop</span><span class="w"> </span><span class="nv">library-c</span><span class="w"> </span><span class="nv">being</span><span class="w"> </span><span class="nv">included</span><span class="w"> </span><span class="nv">twice.</span><span class="w"></span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nv">A</span><span class="w"> </span><span class="nv">Library</span><span class="w"> </span><span class="nv">that</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">self-contained</span><span class="w"> </span><span class="nb">and </span><span class="nv">does</span><span class="w"> </span><span class="nb">not </span><span class="nv">itself</span><span class="w"> </span><span class="nv">include</span><span class="w"> </span><span class="nv">any</span><span class="w"> </span><span class="nv">dependencies</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">any</span><span class="w"> </span><span class="nv">other</span><span class="w"> </span><span class="nv">libraries</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">unlikely</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">cause</span><span class="w"> </span><span class="nv">conflicts.</span><span class="w">  </span><span class="nv">Using</span><span class="w"> </span><span class="nv">these</span><span class="w"> </span><span class="nv">self-contained</span><span class="w"> </span><span class="nv">libraries</span><span class="w"> </span><span class="nv">simplifies</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">overall</span><span class="w"> </span><span class="nv">application</span><span class="w"> </span><span class="nv">design.</span><span class="w"></span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="o">```</span><span class="nv">clojure</span><span class="w"></span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="ss">:org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.10.2"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">        </span><span class="ss">:cheshire/cheshire</span><span class="w">  </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"5.10.0"</span><span class="w"></span>
+<a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">            </span><span class="ss">:exclusions</span><span class="w"> </span><span class="s">"com.fasterxml.jackson.core/jackson-core"</span><span class="p">}}}</span><span class="w"></span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
