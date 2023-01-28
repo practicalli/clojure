@@ -565,7 +565,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../inspector-browsers/portal.md">
+<a class="md-nav__link" href="../portal/">
         Portal
       </a>
 </li>
@@ -1968,8 +1968,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../alternative-tools/clojure-cli/cognitect-rebl/">
-        Cognitect REBL data browser
+<a class="md-nav__link" href="../../alternative-tools/data-inspector/reveal/">
+        Reveal - REPL with visual data browser
       </a>
 </li>
 <li class="md-nav__item">
@@ -2035,14 +2035,19 @@
 <h1 id="clojure-inspector">Clojure Inspector<a class="headerlink" href="#clojure-inspector" title="Permanent link">λ︎</a></h1>
 <p>A visual browser for Clojure data using the Java UI libraries.</p>
 <p>Require the <a href="https://clojure.github.io/clojure/clojure.inspector-api.html"><code>clojure.inspector</code> namespace</a> in the REPL or project namespace definitions to use the functions</p>
-<p>{% tabs repl="In the REPL", project="In a Clojure Project" %}</p>
-<p _="%" endtabs="endtabs">{% content "repl" %}
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Repl</label><label for="__tabbed_1_2">Project</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.inspector</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">inspector</span><span class="p">])</span><span class="w"></span>
 </code></pre></div>
-{% content "project" %}
+</div>
+<div class="tabbed-block">
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.application</span><span class="w"></span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.inspector</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">inspector</span><span class="p">]))</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
 <ul>
 <li><code>inspect</code> for flat data structures</li>
 <li><code>inspect-tree</code> for deeply nested / hierarchically data</li>
@@ -2050,10 +2055,10 @@
 </ul>
 <h2 id="inspect"><code>inspect</code><a class="headerlink" href="#inspect" title="Permanent link">λ︎</a></h2>
 <p>View flat structures especially with non-trivial size data sets.</p>
-<p>This example generated 10,000 random numbers.  The Clojure inspector shows the values along with their index in the collection.
+<p>This example generated 10,000 random numbers.  The Clojure inspector shows the values along with their index in the collection.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">inspector/inspect</span><span class="w"></span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">repeatedly</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">rand-int </span><span class="mi">101</span><span class="p">)))</span><span class="w"></span>
-</code></pre></div></p>
+</code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-inspector-inspect-collection-with-index.png"><img alt="Clojure Inspector - inspect data elements with index" src="/images/clojure-inspector-inspect-collection-with-index.png"/></a></p>
 <h2 id="inspect-tree"><code>inspect-tree</code><a class="headerlink" href="#inspect-tree" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">inspect</span><span class="w"></span>
@@ -2114,13 +2119,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Coding Challenges for Clojure" class="md-footer__link md-footer__link--next" href="../../coding-challenges/" rel="next">
+<a aria-label="Next: Portal" class="md-footer__link md-footer__link--next" href="../portal/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Coding Challenges for Clojure
+              Portal
             </div>
 </div>
 <div class="md-footer__button md-icon">

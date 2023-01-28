@@ -537,7 +537,7 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../inspector-browsers/portal.md">
+<a class="md-nav__link" href="portal/">
         Portal
       </a>
 </li>
@@ -1940,8 +1940,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/clojure-cli/cognitect-rebl/">
-        Cognitect REBL data browser
+<a class="md-nav__link" href="../alternative-tools/data-inspector/reveal/">
+        Reveal - REPL with visual data browser
       </a>
 </li>
 <li class="md-nav__item">
@@ -1984,11 +1984,6 @@
     Common approaches
   </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#specific-cases">
-    Specific cases
-  </a>
-</li>
 </ul>
 </nav>
 </div>
@@ -2006,21 +2001,11 @@
 <p>New tools are being created to capture and visualize results from evaluated expressions (REBL, Reveal) as well as tools to specifically visualize <code>tap&gt;</code> expressions (Reveal, Portal).</p>
 <h2 id="common-approaches">Common approaches<a class="headerlink" href="#common-approaches" title="Permanent link">λ︎</a></h2>
 <ul>
-<li>Clojure functions (TODO)</li>
-<li>Editor data browsers (<code>cider-inspect</code>, etc.)</li>
-<li><a href="reveal/">Reveal</a> repl with data browser, also a <code>tap&gt;</code> source (new project)</li>
-<li><a href="https://github.com/djblue/portal">Portal</a> - tool to navigate your data (new project)</li>
-<li><a href="clojure-inspector/">Clojure inspector</a> (Java Swing based inspector)</li>
+<li>Editor data browsers - e.g. <a href="https://practical.li/spacemacs/evaluating-clojure/inspect/" target="_blank">cider-inspect</a></li>
+<li><a href="portal/">Portal</a> - tool to navigate and visualise data via <code>tap&gt;</code></li>
+<li><a href="clojure-inspector/">Clojure inspector</a> - built-in Java Swing based inspector</li>
+<li><a href="https://vlaaad.github.io/reveal/">Reveal</a> repl with data browser, also a <code>tap&gt;</code> source (semi-commercial project)</li>
 </ul>
-<h2 id="specific-cases">Specific cases<a class="headerlink" href="#specific-cases" title="Permanent link">λ︎</a></h2>
-<p><a href="/alternative-tools/clojure-cli/cognitect-rebl.md">Cognitect REBL data browser</a> has been developed to assist with Datomic Clojure database development.</p>
-<p>Cognitect provides the REBL data browser as part of the <a href="https://cognitect.com/dev-tools">Cognitect dev-tools</a></p>
-<div class="admonition warning">
-<p class="admonition-title">REBL requires singing of Licence Agreement</p>
-</div>
-<blockquote>
-<p>Sign-up to the Cognitect dev-tools license which will email a user specific maven configuration, which must be added as a new server entry under servers in <code>~/.m2/settings.xml</code> and as a provider entry in <code>~/.clojure/deps.edn</code></p>
-</blockquote>
 <hr/>
 <div class="md-source-file">
 <small>

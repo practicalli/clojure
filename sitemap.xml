@@ -51,11 +51,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/alternative-tools/clojure-cli/cognitect-rebl/</loc>
-         <lastmod>2023-01-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/alternative-tools/clojure-cli/compare-with-leiningen/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -67,6 +62,11 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/alternative-tools/clojure-cli/set-namespace-on-repl-startup/</loc>
+         <lastmod>2023-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure/alternative-tools/data-inspector/reveal/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -747,11 +747,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/data-inspector/portal/</loc>
-         <lastmod>2023-01-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/data-inspector/reveal/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
