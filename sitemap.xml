@@ -106,11 +106,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-cli/configure/</loc>
-         <lastmod>2023-01-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-cli/design-journal/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
