@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/clojure-cli/community-tools/" rel="canonical"/>
+<link href="https://practical.li/clojure/clojure-cli/practicalli-config/" rel="canonical"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Community Tools - Practicalli Clojure</title>
+<title>Practicalli Config - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#practicalli-community-tools-for-clojure-cli">
+<a class="md-skip" href="#practicalli-configuration-for-clojure-cli">
           Skip to content
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Community Tools
+              Practicalli Config
             
           </span>
 </div>
@@ -255,11 +255,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Community Tools
+          Practicalli Config
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Community Tools
+        Practicalli Config
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -674,17 +674,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/index.md">
+<a class="md-nav__link" href="../data-inspector/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/clojure-inspector.md">
+<a class="md-nav__link" href="../data-inspector/clojure-inspector.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/portal.md">
+<a class="md-nav__link" href="../inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -2259,12 +2259,12 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/community-tools.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/practicalli-config.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="practicalli-community-tools-for-clojure-cli">Practicalli Community Tools for Clojure CLI<a class="headerlink" href="#practicalli-community-tools-for-clojure-cli" title="Permanent link">λ︎</a></h1>
-<p><a class="md-button" href="https://github.com/practicalli/clojure-deps-edn" target="_blank">practicalli/clojure-deps-edn</a></p>
-<p><a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">practicalli/clojure-deps-edn</a> is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.</p>
+<h1 id="practicalli-configuration-for-clojure-cli">Practicalli Configuration for Clojure CLI<a class="headerlink" href="#practicalli-configuration-for-clojure-cli" title="Permanent link">λ︎</a></h1>
+<p><a class="md-button" href="https://github.com/practicalli/clojure-deps-edn" target="_blank">Practicalli Clojure CLI Config</a></p>
+<p><a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">Practicalli Clojure CLI Config</a> is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.</p>
 <p>Alias names are designed with qualified keywords that provide context for the use of an alias (<code>project</code>, <code>repl</code>, <code>env</code>, <code>test</code>, <code>inspect</code>). These keywords help with discovery and reduce cognitive load required to remember their purpose.</p>
 <p>Commonly used arguments are included in many alias via <code>:main-opts</code> or <code>:exec-args</code> which can be overridden on the command line.</p>
 <details class="info">
@@ -2274,10 +2274,10 @@
 </details>
 <details class="hint">
 <summary>Remote Environments or Continuous Integration</summary>
-<p>For remote environments or <a href="/continuous-integration/">Continuous Integration services</a>, include <a href="[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank}">practicalli/clojure-deps-edn</a> in the environment build or copy specific aliases to the Clojure project <code>deps.edn</code> configuration.</p>
+<p>For remote environments or <a href="/continuous-integration/">Continuous Integration services</a>, include <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">Practicalli Clojure CLI Config</a>) in the environment build or copy specific aliases to the Clojure project <code>deps.edn</code> configuration.</p>
 </details>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">λ︎</a></h2>
-<p>Fork or clone <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">practicalli/clojure-deps-edn</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> or <code>$HOME/.clojure</code> directory if they exist.</p>
+<p>Fork or clone <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank">Practicalli Clojure CLI Config</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> or <code>$HOME/.clojure</code> directory if they exist.</p>
 <details class="hint">
 <summary>Check Clojure CLI configuration location</summary>
 <p>Check the location of your Clojure configuration directory by running <code>clojure -Sdescribe</code> and checking the <code>:user-config</code> value.</p>
@@ -2765,7 +2765,7 @@ Performance test a project in the REPL
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2023</span>
 </small>
 </div>
 </article>

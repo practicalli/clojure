@@ -253,8 +253,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/community-tools/">
-        Community Tools
+<a class="md-nav__link" href="../../../clojure-cli/practicalli-config/">
+        Practicalli Config
       </a>
 </li>
 <li class="md-nav__item">
@@ -535,17 +535,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/data-browsers/index.md">
+<a class="md-nav__link" href="../../../clojure-cli/data-inspector/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/data-browsers/clojure-inspector.md">
+<a class="md-nav__link" href="../../../clojure-cli/data-inspector/clojure-inspector.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/data-browsers/portal.md">
+<a class="md-nav__link" href="../../../clojure-cli/inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -2038,7 +2038,7 @@
 <li><a href="https://github.com/marketplace/actions/checkout">GitHub Action: checkout</a></li>
 </ul>
 <h2 id="lint-a-specific-file-on-push-or-pr">Lint a specific file on push or pr<a class="headerlink" href="#lint-a-specific-file-on-push-or-pr" title="Permanent link">λ︎</a></h2>
-<p>The <a href="{{ book.P9IClojureDepsEdn }}">practicalli/clojure-deps-edn</a> contains <a href="https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml"><code>.github/workflows/lint-with-clj-kondo.yaml</code></a> action which checks the <code>deps.edn</code> file when ever there is a push to the <code>live</code> branch or a pull request is created.</p>
+<p>The <a href="{{ book.P9IClojureDepsEdn }}">Practicalli Clojure CLI Config</a> contains <a href="https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml"><code>.github/workflows/lint-with-clj-kondo.yaml</code></a> action which checks the <code>deps.edn</code> file when ever there is a push to the <code>live</code> branch or a pull request is created.</p>
 <p>The configuration runs clj-kondo lint command using the <a href="https://github.com/marketplace/actions/setup-clj-kondo">DeLaGuardo/setup-clj-kondo@v1</a> GitHub action.</p>
 <p>The jobs run on the Ubuntu operating system.  The first step installs clj-kondo on the runner.  Then next step checks out the practicalli/clojure-deps-edn repository.  The final step runs the lint command.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>name: "Lint with clj-kondo"

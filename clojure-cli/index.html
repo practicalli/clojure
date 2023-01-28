@@ -253,8 +253,8 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="community-tools/">
-        Community Tools
+<a class="md-nav__link" href="practicalli-config/">
+        Practicalli Config
       </a>
 </li>
 <li class="md-nav__item">
@@ -535,17 +535,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="data-browsers/index.md">
+<a class="md-nav__link" href="data-inspector/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="data-browsers/clojure-inspector.md">
+<a class="md-nav__link" href="data-inspector/clojure-inspector.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="data-browsers/portal.md">
+<a class="md-nav__link" href="inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -2003,8 +2003,37 @@
   </a>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="#configure-clojure-cli">
+    Configure Clojure CLI
+  </a>
+<nav aria-label="Configure Clojure CLI" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#precedence-order">
+    Precedence Order
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#clojure-cli-install-configuration">
+    Clojure CLI install configuration
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#user-depsedn-configuration">
+    User deps.edn configuration
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#which-version-of-clojure">
     Which version of Clojure
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
   </a>
 </li>
 </ul>
@@ -2025,7 +2054,7 @@
 <li>managing dependencies (via tools.deps) and downloads from Maven and Git repositories</li>
 <li>building Clojure projects (when including tools.build) to create deployable Clojure services</li>
 </ul>
-<p>The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. <a href="{{ book.P9IClojureDepsEdn }}">practicalli/clojure-deps-edn</a></p>
+<p>The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. <a href="{{ book.P9IClojureDepsEdn }}">Practicalli Clojure CLI Config</a></p>
 <!-- TODO: Clojure CLI overview - short video showing common aliases being used -->
 <!-- - clojure -T:project/new ,,, -->
 <!-- - clojure without an alias (basic repl) -->
@@ -2168,15 +2197,100 @@
 <p><code>-T</code> flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.</p>
 <p>Read the article: <a href="https://practical.li/blog/posts/clojure-which-execution-option-to-use/">Clojure CLI - which execution option to use</a></p>
 </div>
+<h2 id="configure-clojure-cli">Configure Clojure CLI<a class="headerlink" href="#configure-clojure-cli" title="Permanent link">λ︎</a></h2>
+<p>A <code>deps.edn</code> file configures the Clojure CLI, using extensible data notation (EDN), the underlying language for Clojure itself.</p>
+<p>Configuration is defined using a hash-map with the following top-level keys:</p>
+<ul>
+<li><code>:deps</code> - library dependencies</li>
+<li><code>:paths</code> - directories to search for code and resources (Java classpath)</li>
+<li><code>:aliases</code> - named configuration defining extra paths, extra deps and configuration to run Clojure</li>
+<li><code>:mvn/repos</code> - library dependency sources, remote and local (e.g. Clojars, Maven, Artifactory, etc).</li>
+</ul>
+<p><code>:aliases</code> configuration is only included when using the alias name with the Clojure CLI, e.g. <code>:repl/rebel</code> alias in <a href="clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> adds library dependencies only used during development to run a rich terminal UI REPL.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -M:repl/rebel
+</code></pre></div>
+<details class="hint">
+<summary>Install Practicalli Community Tool aliases</summary>
+<p><a href="practicalli-config/">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
+</details>
+<h3 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">λ︎</a></h3>
+<p>Clojure CLI Configuration can be used from several different sources.</p>
+<table>
+<thead>
+<tr>
+<th>Configuration</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command line arguments</td>
+<td>string or edn (key value) arguments passed to the <code>clojure</code> command</td>
+</tr>
+<tr>
+<td>project <code>deps.edn</code></td>
+<td>Project specific configuration: paths, dependencies, aliases</td>
+</tr>
+<tr>
+<td><code>$XDG_CONFIG_HOME/clojure/deps.edn</code> / <code>$HOME/.clojure/deps.edn</code></td>
+<td>User level configuration for use with all projects</td>
+</tr>
+<tr>
+<td>Clojure CLI install</td>
+<td>Includes Clojure standard library, <code>src</code> path and built-in <code>:deps</code> aliases</td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png"><img alt="Clojure CLI configuration order of precedence" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png"/></a></p>
+<p>Command line arguemnts take preceedence over the other configurations. When running the <code>clojure</code> command the configurations are merged, with key/values being added or replaces following the precedence order.</p>
+<h3 id="clojure-cli-install-configuration">Clojure CLI install configuration<a class="headerlink" href="#clojure-cli-install-configuration" title="Permanent link">λ︎</a></h3>
+<p>Clojure CLI install has a built-in configuration:</p>
+<ul>
+<li><code>org.clojure/clojure</code> library dependency, setting the default version of Clojure for the Clojure CLI</li>
+<li><code>src</code> set as the default path</li>
+</ul>
+<p>A Clojure CLI user configuration that will apply to all projects used by the operating system user account.  <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> is an example configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
+<details class="hint">
+<summary>Clojure CLI User Configuration Location</summary>
+<p>Clojure CLI tools creates a configuration directory called <code>.clojure</code>, which <a href="https://clojure.org/reference/deps_and_cli#_deps_edn_sources">by default</a> is placed in the root of the operating system user account directory, e.g. <code>$HOME/.clojure</code>.</p>
+<p><code>XDG_CONFIG_HOME</code> may be set by your operating system and over-rides the default location, e.g. <code>$HOME/.config/.clojure</code></p>
+<p><code>CLJ_CONFIG</code> can be used to over-ride all other location settings</p>
+<p>Run <code>clojure -Sdescribe</code> in a terminal and checking the <code>:user-config</code> value to see the location of your Clojure configuration directory</p>
+</details>
+<h3 id="user-depsedn-configuration">User deps.edn configuration<a class="headerlink" href="#user-depsedn-configuration" title="Permanent link">λ︎</a></h3>
+<p>A basic example of a user configuration for Clojure CLI</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:aliases</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="ss">:env/test</span><span class="w"> </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]}</span><span class="w"></span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="ss">:project/new</span><span class="w"></span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.0.199"</span><span class="p">}}</span><span class="w"></span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">     </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]}</span><span class="w"></span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">  </span><span class="ss">:mvn/repos</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">    </span><span class="s">"central"</span><span class="w"> </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"https://repo1.maven.org/maven2/"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="s">"clojars"</span><span class="w"> </span><span class="p">{</span><span class="ss">:url</span><span class="w"> </span><span class="s">"https://repo.clojars.org/"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="p">}</span><span class="w"></span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Clojure Tools install sets Clojure version</p>
+<p>A default version of Clojure is set by the Clojure tools install, enabling the <code>clojure</code> command to know what version of Clojure library to use.  This version will be over-ridden by the user or project specific deps.edn configuration files if set.</p>
+</div>
 <h2 id="which-version-of-clojure">Which version of Clojure<a class="headerlink" href="#which-version-of-clojure" title="Permanent link">λ︎</a></h2>
 <p>Evaluate <code>*clojure-version*</code> in a REPL shows which version of the Clojure language is currently being used.</p>
 <p>Including <code>org.clojure/clojure</code> in the project <code>deps.edn</code> file allows specification of a particular version of the Clojure language.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
+<ul>
+<li><a href="https://clojure.org/reference/deps_and_cli">deps and cli</a></li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2023</span>
 </small>
 </div>
 </article>

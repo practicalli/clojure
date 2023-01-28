@@ -286,8 +286,8 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../community-tools/">
-        Community Tools
+<a class="md-nav__link" href="../practicalli-config/">
+        Practicalli Config
       </a>
 </li>
 <li class="md-nav__item">
@@ -568,17 +568,17 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/index.md">
+<a class="md-nav__link" href="../data-inspector/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/clojure-inspector.md">
+<a class="md-nav__link" href="../data-inspector/clojure-inspector.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-browsers/portal.md">
+<a class="md-nav__link" href="../inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -2059,12 +2059,12 @@
 <li><code>:aliases</code> - named configuration defining extra paths, extra deps and configuration to run Clojure</li>
 <li><code>:mvn/repos</code> - library dependency sources, remote and local (e.g. Clojars, Maven, Artifactory, etc).</li>
 </ul>
-<p><code>:aliases</code> configuration is only included when using the alias name with the Clojure CLI, e.g. <code>:repl/rebel</code> alias in <a href="https://github.com/practicalli/clojure-deps-edn">practicalli/clojure-deps-edn</a> adds library dependencies only used during development to run a rich terminal UI REPL.</p>
+<p><code>:aliases</code> configuration is only included when using the alias name with the Clojure CLI, e.g. <code>:repl/rebel</code> alias in <a href="clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> adds library dependencies only used during development to run a rich terminal UI REPL.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -M:repl/rebel
 </code></pre></div>
 <details class="hint">
 <summary>Install Practicalli Community Tool aliases</summary>
-<p><a href="https://github.com/practicalli/clojure-deps-edn">practicalli/clojure-deps-edn</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
+<p><a href="clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
 </details>
 <h2 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI Configuration can be used from several different sources.</p>
@@ -2103,7 +2103,7 @@
 <p>Run <code>clojure -Sdescribe</code> in a terminal and checking the <code>:user-config</code> value to see the location of your Clojure configuration directory</p>
 </div>
 <p>The installation of Clojure CLI tools has a built-in configuration that contains a dependency for the Clojure standard library, effectively setting the default version of Clojure so the Clojure CLI tools can run.</p>
-<p><code>.clojure/deps.edn</code> is a user level configuration that will apply to all projects used by the operating system user account.  <a href="https://github.com/practicalli/clojure-deps-edn">practicalli/clojure-deps-edn</a> is an example configuration that contains a set of unique aliases to ensure that common tools are available in every Clojure project.</p>
+<p>A user level configuration that will apply to all projects used by the operating system user account.  <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> is an example configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
 <h2 id="scope-of-configuration-files">Scope of configuration files<a class="headerlink" href="#scope-of-configuration-files" title="Permanent link">λ︎</a></h2>
 <p><code>~/.clojure/deps.edn</code> is user scope and is available with all the projects a specific developer works with.</p>
 <p><code>project-directory/deps.edn</code> is for project specific configuration, shared by anyone using the project.</p>
@@ -2168,13 +2168,13 @@
             </div>
 </div>
 </a>
-<a aria-label="Next: Community Tools" class="md-footer__link md-footer__link--next" href="../community-tools/" rel="next">
+<a aria-label="Next: Practicalli Config" class="md-footer__link md-footer__link--next" href="../practicalli-config/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                 Next
               </span>
-              Community Tools
+              Practicalli Config
             </div>
 </div>
 <div class="md-footer__button md-icon">

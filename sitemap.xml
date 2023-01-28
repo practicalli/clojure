@@ -106,11 +106,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-cli/community-tools/</loc>
-         <lastmod>2023-01-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-cli/configure/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -127,6 +122,11 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/hotload-libraries/</loc>
+         <lastmod>2023-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure/clojure-cli/practicalli-config/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
