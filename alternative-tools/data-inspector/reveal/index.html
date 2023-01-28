@@ -2171,9 +2171,9 @@ CIDER specific nrepl connection with the Cider middleware</p>
 </code></pre></div></p>
 <p><code>:inspect/reveal-nrepl-cider</code> is a light version of the above.</p>
 <h3 id="cider-jack-in-with-reveal-using-a-dir-localsel">Cider jack-in with reveal using a .dir-locals.el<a class="headerlink" href="#cider-jack-in-with-reveal-using-a-dir-localsel" title="Permanent link">λ︎</a></h3>
-<p>Add a <code>.dir-locals.el</code> file to the root of the Clojure project. The <code>.dir-locals.el</code> configuration adds the <code>:inspect/reveal-nrepl-cider</code> via <code>cider-clojure-cli-global-options</code> and all other automatically injected configuration is disabled to prevent those dependencies over-riding the alias.</p>
+<p>Add a <code>.dir-locals.el</code> file to the root of the Clojure project. The <code>.dir-locals.el</code> configuration adds the <code>:inspect/reveal-nrepl-cider</code> via <code>cider-clojure-cli-aliases</code> and all other automatically injected configuration is disabled to prevent those dependencies over-riding the alias.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>                  (cider-clojure-cli-global-options . "-M:inspect/reveal-nrepl-cider")
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>                  (cider-clojure-cli-aliases . ":inspect/reveal-nrepl-cider")
 <a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>                  (cider-jack-in-dependencies . nil)
 <a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>                  (cider-jack-in-nrepl-middlewares . nil)
 <a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>                  (cider-jack-in-lein-plugins . nil)
