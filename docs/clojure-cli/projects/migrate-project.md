@@ -1,18 +1,27 @@
-# Migrating Projects To Clojure Cli Tools
-Migrating to Clojure CLI tools only requires the addition of a `deps.edn` configuration to the project.  A [user level configuration containing a collection of community tools]([practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})) minimizes the project configuration required.
+# Migrating Project To Clojure CLI
 
-> #### Hint::Magic Leiningen plugins
-> A few Leiningen plugins inject code into a project to make it work.  For example, lein-ring injects clojure code into the project to run an application server.  These type of plugins may require updates to the Clojure code in the project.
+Migrating an existing project to Clojure CLI can be as simple as the addition of a `deps.edn` configuration file.
+
+A [user configuration containing a collection of community tools]([practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank}) minimizes the project configuration required.
+
+!!! WARNING "Leiningen plugins that change code"
+    Some Leiningen plugins inject code into a project to make it work.  For example, lein-ring injects clojure code into the project to run an application server.  These type of plugins may require updates to the Clojure code in the project.
 
 
 ## Minimal approach
+
 Create a `deps.edn` file in the root of the project directory, containing an empty hash-map, `{}`
 
 The Clojure version will be taken from the Clojure CLI tools install configuration.
 
-This configuration is enough to run a terminal REPL UI for the project, although requiring some namespaces from a project may require libraries to be added as dependencies first.
+This configuration is enough to run a terminal REPL UI for the project, although requiring namespaces from the project may require libraries to be added as dependencies first.
+
+??? HINT "Use addlibs to hotload dependencies"
+    addlibs will hotload libraries into the running REPL so can be used to determine which libraries are reqiured to make the project work.  This approach can be useful for diagnosing conflicts in dependencies by loading them in stages and narrowing down the conflict.
+
 
 ### Adding dependencies
+
 All Clojure projects require the `org.clojure/clojure` library and a specific version is defined in the configuration that comes with the Clojure CLI install.
 
 Use the `:deps` key in `deps.edn` to specify a version of the `org.clojure/clojure` library, along with any dependencies required for the Clojure code to run.
@@ -24,7 +33,7 @@ Use the `:deps` key in `deps.edn` to specify a version of the `org.clojure/cloju
   integrant/integrant {:mvn/version "0.8.0"}}}
 ```
 
-> #### Hint::Hot loading dependencies
+??? HINT "Hot loading dependencies"
 > [add-lib](/alternative-tools/clojure-cli/hot-load-dependencies.md) can hot-load a Clojure dependency into a running REPL process, avoiding the need to restart.
 
 
