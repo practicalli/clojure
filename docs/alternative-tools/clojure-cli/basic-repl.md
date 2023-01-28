@@ -1,4 +1,5 @@
 # Basic Command Line REPL UI
+
 The `clojure` command will start a REPL by default or if given the `--repl` argument.
 
 `clj` is a script that wraps the `clojure` command and uses `rlwrap`, an external readline command, to navigate REPL history via the <kbd>↑</kbd> and <kbd>↓</kbd> keys.

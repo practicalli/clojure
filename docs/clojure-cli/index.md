@@ -1,12 +1,15 @@
-# Clojure and Clojure CLI
+# Clojure CLI
 
 Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries an tools.  The Clojure CLI focuses on:
 
 * running Clojure code (applications and tools)
 * starting a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure/clojure-editors/) or [a command line REPL UI](rebel-repl/).
 * managing dependencies (via tools.deps) and downloads from Maven and Git repositories
+* building Clojure projects (when including tools.build) to create deployable Clojure services
 
 The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+
+
 
 <!-- TODO: Clojure CLI overview - short video showing common aliases being used -->
 <!-- - clojure -T:project/new ,,, -->

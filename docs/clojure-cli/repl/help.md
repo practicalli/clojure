@@ -1,24 +1,35 @@
 # Help at the REPL
+
 rebel readline provides tools to help you discover and use functions from clojure.core and any other libraries you add to the REPL.
 
 `:repl/help` will show all the commands available for rebel readline
 
-`TAB` to autocomplete the current characters into a function name.  All functions that match the characters will be show, allowing quick discovery of functions available.
+++tab++ to autocomplete the current characters into a function name.  All functions that match the characters will be show, allowing quick discovery of functions available.
 Typing in the first few characters of a function and press
 
-![Clojure REPL rebel readling - autocompletion](/images/clojure-repl-rebel-readline-function-autocomplete.png)
+![Clojure REPL rebel readling - autocompletion](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png#only-dark)
+![Clojure REPL rebel readling - autocompletion](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-light.png#only-light)
 
-Moving the cursor after the name of a function will show the signatures available, so the correct arguments can be used with the function call.
+Moving the cursor after the name of a function will show the signatures available, so a function can be called with the correct number and form of arguments.
 
-![Clojure REPL rebel readline - function signature help](/images/clojure-repl-rebel-readline-function-signature-help.png)
+![Clojure REPL rebel readline - function signature help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-signature-map-dark.png#only-dark)
+![Clojure REPL rebel readline - function signature help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-signature-map-light.png#only-light)
 
-`Ctrl-x Ctrl-D` or using the function `clojure.repl/doc` function will show the documentation for functions, so you can understand the functions purpose.
+++ctrl+c+ctrl+"d"++ on a function name shows the docstring to help understand the functions purpose.
 
-![Clojure REPL rebel readline - doc function showing a function docstring](/images/clojure-repl-repl-readline-doc-reduce.png)
+![Clojure REPL rebel readline - doc function showing a function docstring](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-doc-map-dark.png#only-dark)
+![Clojure REPL rebel readline - doc function showing a function docstring](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-doc-map-light.png#only-light)
+
+> `clojure.repl/doc` function also shows the docstring of a function `(clojure.repl/doc doc)`
 
 
+++ctrl+c+ctrl+"a"++ on a name shows all the possible matching functions to help you discover what is available.  ++tab++ through the list of matches, ++enter++ to select a function
 
-## rebel commands
+![clojure repl rebel - apropos on function showing all variations](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-apropos-map-dark.png#only-dark)
+
+
+## Rebel Commands
+
 Type `:repl/help` or `:repl` TAB to see a list of available commands.
 
 | Keybinding                | Description                                                       |

@@ -1,4 +1,5 @@
 # Cognitect REBL data browser
+
 Cognitect REBL captures the results of evaluating expressions and visualizes them in a human readable form.  REBL was initially created to support development with the Datomic database and is useful viewing and navigating data structures, especially nested data structures and large data sets.
 
 REBL requires an end user license and a personal access token to obtain the packaged library.
