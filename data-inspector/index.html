@@ -383,12 +383,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/install/clojure-lsp/snippets.md">
+<a class="md-nav__link" href="../clojure-editors/clojure-lsp/snippets/">
         Clojure LSP Snippets
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/install/clojure-lsp/practicalli-snippets.md">
+<a class="md-nav__link" href="../clojure-editors/clojure-lsp/practicalli-snippets/">
         Practicalli Snippets
       </a>
 </li>
@@ -517,12 +517,14 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
-          Data Inspectors
-          <span class="md-nav__icon md-icon"></span>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">Data Inspectors</a>
+<label for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
@@ -530,17 +532,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/data-inspector/index.md">
-        None
+<a class="md-nav__link" href="clojure-inspector/">
+        Clojure Inspector
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/data-inspector/clojure-inspector.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/inspector-browsers/portal.md">
+<a class="md-nav__link" href="../inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -1272,7 +1269,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../install/code-analysis/">
+<a class="md-nav__link" href="../reference/code-analysis/">
         Code Analysis
       </a>
 </li>
@@ -1991,15 +1988,6 @@
 <a class="md-nav__link" href="#specific-cases">
     Specific cases
   </a>
-<nav aria-label="Specific cases" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#warningsign-up-and-personal-repository-code-required">
-    WARNING::Sign-up and personal repository code required
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -2027,8 +2015,10 @@
 <h2 id="specific-cases">Specific cases<a class="headerlink" href="#specific-cases" title="Permanent link">λ︎</a></h2>
 <p><a href="/alternative-tools/clojure-cli/cognitect-rebl.md">Cognitect REBL data browser</a> has been developed to assist with Datomic Clojure database development.</p>
 <p>Cognitect provides the REBL data browser as part of the <a href="https://cognitect.com/dev-tools">Cognitect dev-tools</a></p>
+<div class="admonition warning">
+<p class="admonition-title">REBL requires singing of Licence Agreement</p>
+</div>
 <blockquote>
-<h4 id="warningsign-up-and-personal-repository-code-required">WARNING::Sign-up and personal repository code required<a class="headerlink" href="#warningsign-up-and-personal-repository-code-required" title="Permanent link">λ︎</a></h4>
 <p>Sign-up to the Cognitect dev-tools license which will email a user specific maven configuration, which must be added as a new server entry under servers in <code>~/.m2/settings.xml</code> and as a provider entry in <code>~/.clojure/deps.edn</code></p>
 </blockquote>
 <hr/>
@@ -2049,6 +2039,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: IntelliJ and Cursive user guide" class="md-footer__link md-footer__link--prev" href="../clojure-editors/editor-user-guides/intellij-cursive/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              IntelliJ and Cursive user guide
+            </div>
+</div>
+</a>
+<a aria-label="Next: Clojure Inspector" class="md-footer__link md-footer__link--next" href="clojure-inspector/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Clojure Inspector
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">

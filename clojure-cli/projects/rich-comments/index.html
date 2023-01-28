@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#rich-comments-for-repl-driven-development">
+<a class="md-skip" href="#rich-comments">
           Skip to content
         </a>
 </div>
@@ -355,15 +355,6 @@
 <a class="md-nav__link" href="#design-journal">
     Design Journal
   </a>
-<nav aria-label="Design Journal" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintpracticalli-example-journal">
-    HINT::Practicalli example journal
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#snippets">
@@ -430,12 +421,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../install/clojure-lsp/snippets.md">
+<a class="md-nav__link" href="../../../clojure-editors/clojure-lsp/snippets/">
         Clojure LSP Snippets
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../install/clojure-lsp/practicalli-snippets.md">
+<a class="md-nav__link" href="../../../clojure-editors/clojure-lsp/practicalli-snippets/">
         Practicalli Snippets
       </a>
 </li>
@@ -566,10 +557,12 @@
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
-<label class="md-nav__link" for="__nav_8">
-          Data Inspectors
-          <span class="md-nav__icon md-icon"></span>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../data-inspector/">Data Inspectors</a>
+<label for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
 </label>
+</div>
 <nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
@@ -577,17 +570,12 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../data-inspector/index.md">
-        None
+<a class="md-nav__link" href="../../../data-inspector/clojure-inspector/">
+        Clojure Inspector
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../data-inspector/clojure-inspector.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../inspector-browsers/portal.md">
+<a class="md-nav__link" href="../../../inspector-browsers/portal.md">
         Portal
       </a>
 </li>
@@ -1319,7 +1307,7 @@
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../install/code-analysis/">
+<a class="md-nav__link" href="../../../reference/code-analysis/">
         Code Analysis
       </a>
 </li>
@@ -2038,15 +2026,6 @@
 <a class="md-nav__link" href="#design-journal">
     Design Journal
   </a>
-<nav aria-label="Design Journal" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintpracticalli-example-journal">
-    HINT::Practicalli example journal
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#snippets">
@@ -2073,15 +2052,14 @@
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/projects/rich-comments.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="rich-comments-for-repl-driven-development">Rich Comments for REPL Driven Development<a class="headerlink" href="#rich-comments-for-repl-driven-development" title="Permanent link">λ︎</a></h1>
-<!-- TODO: rich comments for RDD examples required -->
+<h1 id="rich-comments">Rich Comments<a class="headerlink" href="#rich-comments" title="Permanent link">λ︎</a></h1>
 <p>The <code>(comment ,,,)</code> form is commonly used to contain living experimental code, so it is often referred to as a rich comment as its purpose is more than just commenting out code.</p>
 <h2 id="experimental-design">Experimental design<a class="headerlink" href="#experimental-design" title="Permanent link">λ︎</a></h2>
 <p>Whilst iterating through designs, much experimental code can be created which is not (yet) ready to be part of the main namespace.</p>
 <p>Experimental code can be written in a <code>(comment ,,,)</code> form to keep it separate from more finalised implementations.</p>
 <p>When a namespace is evaluted, code within the <code>(comment ,,,)</code> form is not automatically loaded.</p>
 <p>Most editors support evaluation of Clojure code within the <code>(comment ,,,)</code> form, allowing a range of design implementations to be evaluated against each other.</p>
-<p>Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide <a href="/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter">clj-kondo linter</a> warnings for redefined vars (<code>def</code>, <code>defn</code>) when using this approach.</p>
+<p>Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide <a href="/clojure/reference/code-analysis.md">clj-kondo linter</a> warnings for redefined vars (<code>def</code>, <code>defn</code>) when using this approach.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">;; Rich comment block with redefined vars ignored</span><span class="w"></span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:redefined-var</span><span class="p">]}</span><span class="w"></span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">(</span><span class="nf">comment</span><span class="w"></span>
@@ -2109,16 +2087,18 @@
 <li>Expressions that can be evaluated to explain how a function or parts of a function work</li>
 </ul>
 <p>The design journal can be used to create meaningful documentation for the project very easily and should prevent time spent on repeating the same conversations.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli example journal</p>
+</div>
 <blockquote>
-<h4 id="hintpracticalli-example-journal">HINT::Practicalli example journal<a class="headerlink" href="#hintpracticalli-example-journal" title="Permanent link">λ︎</a></h4>
-<p><a href="https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124">Design journal for TicTacToe game using Reagent, ClojureScript and Scalable Vector Graphics</a></p>
+<p><a href="https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124" target="_blank">Design journal for TicTacToe game using Reagent, ClojureScript and Scalable Vector Graphics</a></p>
 </blockquote>
 <h2 id="snippets">Snippets<a class="headerlink" href="#snippets" title="Permanent link">λ︎</a></h2>
 <p><a href="https://clojure-lsp.io/features/#snippets">clojure-lsp</a> contains a number of snippets to create variations of a comment form.</p>
 <ul>
 <li><code>rich-comment</code> a basic comment form</li>
 <li><code>rich-comment-rdd</code> comment form that informs clj-kondo to ignore duplicate function definitions, avoids warnings when testing multiple implementations of the same function</li>
-<li><code>rich-comment-hotload</code> - comment form with <a href="/alternative-tools/clojure-cli/hotload-libraries.html">Clojure CLI library dependency hotloading via add-libs</a></li>
+<li><code>rich-comment-hotload</code> - comment form with <a href="/clojure/clojure-cli/hotload-libraries.md">Clojure CLI library hotloading</a></li>
 </ul>
 <h2 id="migrating-design-to-tests">Migrating design to tests<a class="headerlink" href="#migrating-design-to-tests" title="Permanent link">λ︎</a></h2>
 <p>Code within rich comment blocks is often a good source of code that can be put into formal unit tests, using <code>clojure.test</code></p>

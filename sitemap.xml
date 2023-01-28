@@ -946,11 +946,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/install/code-analysis/</loc>
-         <lastmod>2023-01-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/install/java/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
@@ -1262,6 +1257,11 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/changing-state/</loc>
+         <lastmod>2023-01-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure/reference/code-analysis/</loc>
          <lastmod>2023-01-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
