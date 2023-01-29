@@ -1,5 +1,4 @@
-# Rich Comments for REPL Driven Development
-<!-- TODO: rich comments for RDD examples required -->
+# Rich Comments
 
 The `(comment ,,,)` form is commonly used to contain living experimental code, so it is often referred to as a rich comment as its purpose is more than just commenting out code.
 
@@ -14,7 +13,7 @@ When a namespace is evaluted, code within the `(comment ,,,)` form is not automa
 
 Most editors support evaluation of Clojure code within the `(comment ,,,)` form, allowing a range of design implementations to be evaluated against each other.
 
-Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure/reference/code-analysis.md) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 ```clojure
 ;; Rich comment block with redefined vars ignored
@@ -51,8 +50,8 @@ A journal should cover the following aspects
 
 The design journal can be used to create meaningful documentation for the project very easily and should prevent time spent on repeating the same conversations.
 
-> #### HINT::Practicalli example journal
-> [Design journal for TicTacToe game using Reagent, ClojureScript and Scalable Vector Graphics](https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124)
+!!! HINT "Practicalli example journal"
+> [Design journal for TicTacToe game using Reagent, ClojureScript and Scalable Vector Graphics](https://github.com/jr0cket/tictactoe-reagent/blob/master/src/tictactoe_reagent/core.cljs#L124){target=_blank}
 
 
 ## Snippets
@@ -61,7 +60,7 @@ The design journal can be used to create meaningful documentation for the projec
 
 * `rich-comment` a basic comment form
 * `rich-comment-rdd` comment form that informs clj-kondo to ignore duplicate function definitions, avoids warnings when testing multiple implementations of the same function
-* `rich-comment-hotload` - comment form with [Clojure CLI library dependency hotloading via add-libs](/alternative-tools/clojure-cli/hotload-libraries.html)
+* `rich-comment-hotload` - comment form with [Clojure CLI library hotloading](/clojure/clojure-cli/hotload-libraries.md)
 
 
 ## Migrating design to tests
