@@ -7,7 +7,7 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 * managing dependencies (via tools.deps) and downloads from Maven and Git repositories
 * building Clojure projects (when including tools.build) to create deployable Clojure services
 
-The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }})
 
 
 
@@ -87,8 +87,95 @@ The execution option flags for the `clojure` command define how to run Clojure c
     Read the article: [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/)
 
 
+
+## Configure Clojure CLI
+
+A `deps.edn` file configures the Clojure CLI, using extensible data notation (EDN), the underlying language for Clojure itself.
+
+Configuration is defined using a hash-map with the following top-level keys:
+
+* `:deps` - library dependencies
+* `:paths` - directories to search for code and resources (Java classpath)
+* `:aliases` - named configuration defining extra paths, extra deps and configuration to run Clojure
+* `:mvn/repos` - library dependency sources, remote and local (e.g. Clojars, Maven, Artifactory, etc).
+
+`:aliases` configuration is only included when using the alias name with the Clojure CLI, e.g. `:repl/rebel` alias in [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) adds library dependencies only used during development to run a rich terminal UI REPL.
+
+```shell
+clojure -M:repl/rebel
+```
+
+??? HINT "Install Practicalli Community Tool aliases"
+    [Practicalli Clojure CLI Config](practicalli-config.md) provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.
+
+
+### Precedence Order
+
+Clojure CLI Configuration can be used from several different sources.
+
+| Configuration                                                   | Description                                                                |
+|-----------------------------------------------------------------|----------------------------------------------------------------------------|
+| Command line arguments                                          | string or edn (key value) arguments passed to the `clojure` command        |
+| project `deps.edn`                                              | Project specific configuration: paths, dependencies, aliases               |
+| `$XDG_CONFIG_HOME/clojure/deps.edn` / `$HOME/.clojure/deps.edn` | User level configuration for use with all projects                         |
+| Clojure CLI install                                             | Includes Clojure standard library, `src` path and built-in `:deps` aliases |
+
+![Clojure CLI configuration order of precedence](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png)
+
+Command line arguemnts take preceedence over the other configurations. When running the `clojure` command the configurations are merged, with key/values being added or replaces following the precedence order.
+
+
+### Clojure CLI install configuration
+
+Clojure CLI install has a built-in configuration:
+
+* `org.clojure/clojure` library dependency, setting the default version of Clojure for the Clojure CLI
+* `src` set as the default path
+
+A Clojure CLI user configuration that will apply to all projects used by the operating system user account.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) is an example configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.
+
+??? Hint "Clojure CLI User Configuration Location"
+    Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.
+
+    `XDG_CONFIG_HOME` may be set by your operating system and over-rides the default location, e.g. `$HOME/.config/.clojure`
+
+    `CLJ_CONFIG` can be used to over-ride all other location settings
+
+    Run `clojure -Sdescribe` in a terminal and checking the `:user-config` value to see the location of your Clojure configuration directory
+
+
+### User deps.edn configuration
+
+A basic example of a user configuration for Clojure CLI
+
+```clojure
+{
+  :aliases {
+    :env/test {:extra-paths ["test"]}
+
+    :project/new
+    {:extra-deps {seancorfield/clj-new {:mvn/version "1.0.199"}}
+     :main-opts  ["-m" "clj-new.create"]}
+  }
+
+  :mvn/repos {
+    "central" {:url "https://repo1.maven.org/maven2/"}
+    "clojars" {:url "https://repo.clojars.org/"}
+  }
+}
+```
+
+!!! Hint "Clojure Tools install sets Clojure version"
+    A default version of Clojure is set by the Clojure tools install, enabling the `clojure` command to know what version of Clojure library to use.  This version will be over-ridden by the user or project specific deps.edn configuration files if set.
+
+
 ## Which version of Clojure
 
 Evaluate `*clojure-version*` in a REPL shows which version of the Clojure language is currently being used.
 
 Including `org.clojure/clojure` in the project `deps.edn` file allows specification of a particular version of the Clojure language.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.
+
+
+## References
+
+* [deps and cli](https://clojure.org/reference/deps_and_cli)
