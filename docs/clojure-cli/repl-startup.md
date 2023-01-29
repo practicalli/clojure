@@ -29,7 +29,7 @@ Create a `dev/user.clj` file with a namespace called `user`.
 Create an alias to include the `dev` path when running a REPL process
 
 === "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn) includes a `:env/dev` alias which adds the `dev` directory to the project classpath.
+    [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) includes a `:env/dev` alias which adds the `dev` directory to the project classpath.
 
 === "Manual"
     Add an alias to the user `deps.edn` configuration, i.e. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
@@ -156,7 +156,7 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
                     :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
     ```
 
-    > Alias example from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/)
+    > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
 
 Start a REPL session using Clojure CLI with the `:lib/hotload alias`, including rebel readline for an enhance REPL terminal UI.

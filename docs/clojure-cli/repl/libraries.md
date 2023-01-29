@@ -4,7 +4,7 @@ A library should be included as a dependency in order to use it within the REPL.
 
 Add library dependencies to the top level `:deps` key in a project `deps.edn` configuration file, or add via an alias if the library is use at development time.
 
-Aliases from a user configuration can also add optional libraries when running a REPL, e.g. [Practicalli Clojure CLI config](https://github.com/practicalli/clojure-deps-edn)
+Aliases from a user configuration can also add optional libraries when running a REPL, e.g. [Practicalli Clojure CLI config](clojure/clojure-cli/practicalli-config.md)
 
 
 ```clojure
