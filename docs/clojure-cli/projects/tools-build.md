@@ -105,4 +105,5 @@ Write functions to support common tasks `clean`, `jar`, `uberjar`
 
 ## Resources
 
-[tools.build - Clojure.org](https://clojure.org/guides/tools_build){target=_blank .md-button}
+[tools.build Guide](https://clojure.org/guides/tools_build){target=_blank .md-button}
+[tools.build API Docs](https://clojure.github.io/tools.build/){target=_blank .md-button}
