@@ -7,7 +7,7 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 * managing dependencies (via tools.deps) and downloads from Maven and Git repositories
 * building Clojure projects (when including tools.build) to create deployable Clojure services
 
-The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }})
+The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. [Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config)
 
 
 
