@@ -79,7 +79,7 @@ As Clojure itself is packages as a library (`.jar` Java ARchive), any version of
 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
-Fork or clone [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+Fork or clone [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.

@@ -47,4 +47,4 @@ The project is created with Clojure as a dependency, which in turn includes the 
 The [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec) project is a working example that includes `clojure.spec.alpha`.
 
 > #### Hint:: :project/new is an alias from practicalli/clojure-deps-edn
-> [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn#clojure-projects) repository includes the `:project/new` alias for creating new Clojure projects from a template using [`clj-new`](https://github.com/seancorfield/clj-new).
+> [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn#clojure-projects) repository includes the `:project/new` alias for creating new Clojure projects from a template using [`clj-new`](https://github.com/seancorfield/clj-new).

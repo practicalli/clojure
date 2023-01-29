@@ -5,7 +5,7 @@ Add expectation style unit testing to `clojure.test` based tests.
 
 ## Using a deps.edn alias
 
-[practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }})
+[Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }})
 
 ## Add dependency
 Edit the deps.edn file for the current project

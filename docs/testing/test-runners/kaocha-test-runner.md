@@ -4,7 +4,7 @@
 
 ## A minimal starting point
 
-Install the [practicalli/clojure-deps-edn]( /clojure/clojure-cli/install/community-tools.md) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
+Install the [Practicalli Clojure CLI Config]( /clojure/clojure-cli/install/community-tools.md) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
 ```bash
 clojure -M:test/run

@@ -9,7 +9,7 @@
 
 ## Lint a specific file on push or pr
 
-The [practicalli/clojure-deps-edn]({{ book.P9IClojureDepsEdn }}) contains [`.github/workflows/lint-with-clj-kondo.yaml`](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) action which checks the `deps.edn` file when ever there is a push to the `live` branch or a pull request is created.
+The [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }}) contains [`.github/workflows/lint-with-clj-kondo.yaml`](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) action which checks the `deps.edn` file when ever there is a push to the `live` branch or a pull request is created.
 
 The configuration runs clj-kondo lint command using the [DeLaGuardo/setup-clj-kondo@v1](https://github.com/marketplace/actions/setup-clj-kondo) GitHub action.
 
