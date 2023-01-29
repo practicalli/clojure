@@ -2236,42 +2236,39 @@
 <p>```</p>
 </div>
 <div class="tabbed-block">
-<p>Example key mappings for doom emacs
+<p>Use the <code>map!</code> macro to add keys to the <code>clojure-mode-map</code>, using <code>:after</code> to ensure cider is loaded before binding the keys 
 <div class="highlight"><span class="filename">Doom Configuration</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nv">map!</span><span class="w"> </span><span class="nb">:map</span><span class="w"> </span><span class="nv">clojure-mode-map</span><span class="w"></span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">      </span><span class="c1">;; cmd  + o</span><span class="w"></span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span><span class="w"></span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">      </span><span class="c1">;; ctrl + l</span><span class="w"></span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span><span class="w"></span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span><span class="w"></span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span><span class="w"></span>
 </code></pre></div></p>
 <div class="admonition example">
 <p class="admonition-title">Practicalli Doom Emacs configuration</p>
 <p><a href="https://practical.li/doom-emacs/install/">Practicalli Doom Emacs config</a> includes Portal key bindings in the Clojure major mode menu, under the debug menu.
 * <code>, d p o</code> to open portal
 * <code>, d p c</code> to clear results from portal</p>
-<p>```
-(map! :after cider
-      :map clojure-mode-map
-      :localleader
-      :desc "REPL session" "'" #'sesman-start</p>
-<div class="highlight"><pre><span></span><code>  ;; Debug Clojure
-  (:prefix ("d" . "debug/inspect")
-   :desc "debug" "d" #'cider-debug-defun-at-point
-   (:prefix ("i" . "inspect")
-    :desc "last expression" "e" #'cider-inspect-last-sexp
-    :desc "expression" "f" #'cider-inspect-defun-at-point
-    :desc "inspector" "i" #'cider-inspect
-    :desc "last result" "l" #'cider-inspect-last-result
-    (:prefix ("p" . "portal")
-     :desc "Clear" "c" #'portal.api/open
-     :desc "Open" "o" #'portal.api/open
-     :desc "Open" "p" #'portal.api/open)
-    :desc "value" "v" #'cider-inspect-expr))
-
-    ;; truncated...
-    )
-
-```
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>(map! :after cider
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>      :map clojure-mode-map
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a>      :localleader
+<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a>      :desc "REPL session" "'" #'sesman-start
+<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a>
+<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>      ;; Debug Clojure
+<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a>      (:prefix ("d" . "debug/inspect")
+<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a>       :desc "debug" "d" #'cider-debug-defun-at-point
+<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>       (:prefix ("i" . "inspect")
+<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>        :desc "last expression" "e" #'cider-inspect-last-sexp
+<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a>        :desc "expression" "f" #'cider-inspect-defun-at-point
+<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a>        :desc "inspector" "i" #'cider-inspect
+<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a>        :desc "last result" "l" #'cider-inspect-last-result
+<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a>        (:prefix ("p" . "portal")
+<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a>         :desc "Clear" "c" #'portal.api/open
+<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a>         :desc "Open" "o" #'portal.api/open
+<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a>         :desc "Open" "p" #'portal.api/open)
+<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a>        :desc "value" "v" #'cider-inspect-expr))
+<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a>
+<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a>        ;; truncated...
+<a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a>        )
 </code></pre></div>
+<p><a class="md-button" href="https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el" target="_blank">Practicalli Doom Emacs Config - +clojure.el</a></p>
 </div>
 </div>
 </div>
@@ -2283,7 +2280,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
 </small>
 </div>
 </article>
