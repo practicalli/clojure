@@ -21,7 +21,7 @@ The clojure/tools.deps.alpha library defines the add-libs function on the add-li
 
 
 === "Practicalli Clojure CLI Config"
-    `:lib/hotload` alias defined in [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/) adds the latest SHA commit from the `add-libs3` branch of `clojure.tools.deps.alpha` library as an extra dependency.
+    `:lib/hotload` alias defined in [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/) adds the latest SHA commit from the `add-libs3` branch of `clojure.tools.deps.alpha` library as an extra dependency.
 
     Include the `:lib/hotload` alias when starting the REPL, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
 
@@ -39,7 +39,7 @@ The clojure/tools.deps.alpha library defines the add-libs function on the add-li
                     :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
     ```
 
-    > Alias example from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn/)
+    > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
 
 ## Using add-libs to hotload libraries

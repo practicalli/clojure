@@ -134,9 +134,9 @@ nav:
       - Code Analysis: install/code-analysis.md
   - Clojure CLI:
       - clojure-cli/index.md
-      - Configure: clojure-cli/configure.md
-      - Community Tools: clojure-cli/community-tools.md
   - REPL:
+      - Practicalli Config: clojure-cli/practicalli-config.md
+      - HotLoad Libraries: clojure-cli/hotload-libraries.md
       - clojure-cli/repl/index.md
       - clojure-cli/repl/coding-in-the-repl.md
       - clojure-cli/repl/using-project-or-library.md

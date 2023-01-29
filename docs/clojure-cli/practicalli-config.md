@@ -1,8 +1,8 @@
-# Practicalli Community Tools for Clojure CLI
+# Practicalli Configuration for Clojure CLI
 
-[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
+[Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
 
-[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank} is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.
+[Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.
 
 Alias names are designed with qualified keywords that provide context for the use of an alias (`project`, `repl`, `env`, `test`, `inspect`). These keywords help with discovery and reduce cognitive load required to remember their purpose.
 
@@ -15,12 +15,12 @@ Commonly used arguments are included in many alias via `:main-opts` or `:exec-ar
 
 
 ??? HINT "Remote Environments or Continuous Integration"
-    For remote environments or [Continuous Integration services](/continuous-integration/), include [practicalli/clojure-deps-edn]([practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank}) in the environment build or copy specific aliases to the Clojure project `deps.edn` configuration.
+    For remote environments or [Continuous Integration services](/continuous-integration/), include [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank}) in the environment build or copy specific aliases to the Clojure project `deps.edn` configuration.
 
 
 ## Install
 
-Fork or clone [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
@@ -282,31 +282,6 @@ Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 | `clojure -M:middleware/nrepl`      | Run a Clojure REPL that includes nREPL server                                         |
 | `clojure -M:middleware/cider-clj`  | Run a Clojure REPL that includes nREPL server and CIDER connection dependencies       |
 | `clojure -M:middleware/cider-cljs` | Run a ClojureScript REPL that includes nREPL server and CIDER connection dependencies |
-
-
-
-#### Cognitect REBL with CIDER
-
-Run the REBL REPL with nREPL server so editors such as CIDER and Calva can connect.
-
-```bash
-clojure -M:lib/cider-nrepl:inspect/rebl:middleware/nrebl
-```
-
-`cider-connect-clj` in Spacemacs / Emacs and CIDER successfully connects to the nREPL port and evaluated code is sent to REBL.
-
-To start a REBL REPL from `cider-jack-in-clj` add a `.dir-locals.el` file to the root of a Clojure project. The `.dir-locals.el` configuration adds the nREBL aliases set via `cider-clojure-cli-global-options` and all other automatically injected configuration is disabled (to prevent those dependencies over-riding the nREBL aliases).
-
-```emacs
-((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
-                  (cider-clojure-cli-global-options . "-M:lib/cider-nrepl:inspect/rebl:middleware/nrebl")
-                  (cider-jack-in-dependencies . nil)
-                  (cider-jack-in-nrepl-middlewares . nil)
-                  (cider-jack-in-lein-plugins . nil)
-                  (cider-clojure-cli-parameters . ""))))
-```
-
-* [REBL data visualization: run REBL with nREPL based editors](https://practicalli.github.io/clojure/clojure-cli/data-browsers/rebl-data-visualization.html#run-rebl-for-nrepl-based-editors)
 
 
 ### Clojure Specification
