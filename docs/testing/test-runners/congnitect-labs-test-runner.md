@@ -16,7 +16,7 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
 ```
 
 > #### Hint::Use practicalli/clojure-deps-edn to add common tools
-> Fork and clone the [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) GitHub repository to instantly have access to dozens of tools for Clojure software development
+> Fork and clone the [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) GitHub repository to instantly have access to dozens of tools for Clojure software development
 
 
 ## Running the test runner

@@ -44,7 +44,7 @@ Please [see the detailed contributing section of the book](contributing.html) be
 * [Current Issues](https://github.com/practicalli/clojure/issues)
 * [Current pull requests](https://github.com/practicalli/clojure/pulls)
 
-[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) GitHub repository contains the Clojure CLI user level configuration used in this guide and issues and pull requests can also be made there.
+[Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) provides a user level configuration used in this guide and issues and pull requests can also be made there.
 
 By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 

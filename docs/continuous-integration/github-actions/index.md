@@ -78,6 +78,6 @@ jobs:
 
 ## References
 
-* [Practicalli Blog](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog.yml) - build publish a Cryogen project with Clojure CLI and publish the generated website with GitHub pages (also [a Staging workflow that runs on pull requests](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog-staging.yml))
-* [Practicalli Landing Page](https://github.com/practicalli/practicalli.github.io/blob/live/.github/workflows/deploy.yml) - build a ClojureScript & Figwheel project with Clojure CLI and publish the generated site to GitHub pages
-* [Practicalli Clojure CLI user level configuration](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) - lint the `deps.edn` file with clj-kondo
+* [Practicalli Blog - publish blog workflow](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog.yml) - build publish a Cryogen project with Clojure CLI and publish the generated website with GitHub pages (also [a Staging workflow that runs on pull requests](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog-staging.yml))
+* [Practicalli Landing Page GitHub workflow](https://github.com/practicalli/practicalli.github.io/blob/live/.github/workflows/deploy.yml) - build a ClojureScript & Figwheel project with Clojure CLI and publish the generated site to GitHub pages
+* [Practicalli Clojure CLI config - lint with clj-kondo workflow](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) - lint the `deps.edn` file with clj-kondo

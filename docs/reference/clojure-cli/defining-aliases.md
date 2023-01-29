@@ -15,7 +15,7 @@ Aliases can be used to modify:
 Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
 
 > #### Hint::practicalli/clojure-deps-edn user level aliases and tools
-> [practicalli/clojure-deps-edn](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
+> [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
 
 
 # Clojure CLI tool options

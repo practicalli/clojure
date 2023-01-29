@@ -101,7 +101,7 @@ Then prompts for the test selectors to exclude.  A warning displays if CIDER doe
 
 The Cognitect Labs test runner uses command line options to specify test selectors, `--include` and `--exclude`.
 
-> [practicalli/clojure-deps-edn]({{ P9IClojureDepsEdnInstall }}) configuration provides the `:test/congnitect` alias.
+> [Practicalli Clojure CLI Config]({{ P9IClojureDepsEdnInstall }}) configuration provides the `:test/congnitect` alias.
 
 `clojure -M:test/cognitect --include :database` only runs tests with the `^:database` test selector
 
