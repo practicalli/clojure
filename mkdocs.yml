@@ -97,6 +97,7 @@ plugins:
   - redirects:
       redirect_maps:
         repl-driven-development.md: introduction/repl-workflow.md
+        clojure-cli/data-browsers: data-inspector/
 
 # Footer / Social Media
 extra:
@@ -182,11 +183,9 @@ nav:
           - clojure-editors/editor-user-guides/vscode-calva.md
           - clojure-editors/editor-user-guides/intellij-cursive.md
   - Data Inspectors:
-      - clojure-cli/data-browsers/index.md
-      - clojure-cli/data-browsers/clojure-inspector.md
-      - Portal: clojure-cli/data-browsers/portal.md
-      # - clojure-cli/data-browsers/reveal.md
-
+      - data-inspector/index.md
+      - data-inspector/clojure-inspector.md
+      - Portal: data-inspector/portal.md
   - Code Challenges:
       - coding-challenges/index.md
       - 4 Ever Clojure:
