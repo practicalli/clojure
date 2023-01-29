@@ -30,7 +30,7 @@ As Clojure itself is packages as a library (`.jar` Java ARchive), any version of
     The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
 
-=== "homebrew"
+=== "Homebrew"
 
     Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  Add the following to `~/.bashrc` for the bash shell or `~/.zshenv` for Zsh.
     ```
@@ -50,7 +50,7 @@ As Clojure itself is packages as a library (`.jar` Java ARchive), any version of
 
     > [Homebrew on Linux or Windows with WSL](https://docs.brew.sh/Homebrew-on-Linux)
 
-=== "windows"
+=== "Windows"
 
     For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html) if you have administrative privileges and are comfortable using a Unix system on the command line.
 
