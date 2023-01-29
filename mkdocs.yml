@@ -131,33 +131,33 @@ nav:
       - install/index.md
       - Java Host: install/java.md
       - Clojure CLI: install/clojure-cli.md
-      - Code Analysis: install/code-analysis.md
   - Clojure CLI:
       - clojure-cli/index.md
-  - REPL:
       - Practicalli Config: clojure-cli/practicalli-config.md
       - HotLoad Libraries: clojure-cli/hotload-libraries.md
+  - Terminal REPL:
       - clojure-cli/repl/index.md
-      - clojure-cli/repl/coding-in-the-repl.md
-      - clojure-cli/repl/using-project-or-library.md
-      - clojure-cli/repl/help-at-the-repl.md
-      - clojure-cli/repl/customize-rebel.md
-      - clojure-cli/repl/troubleshooting.md
+      - REPL Coding: clojure-cli/repl/coding.md
+      - REPL Libraries: clojure-cli/repl/libraries.md
+      - REPL Help: clojure-cli/repl/help.md
+      - REPL troubleshoot: clojure-cli/repl/troubleshooting.md
       # <!-- - clojure-cli/repl/repl-uncovered.md --> <!-- TODO rewrite -->
+  - REPL Startup: clojure-cli/repl-startup.md
   - Clojure Projects:
       - clojure-cli/projects/index.md
-      - clojure-cli/projects/create.md
-      - clojure-cli/projects/add-libraries.md
-      - clojure-cli/projects/namespace.md
-      - clojure-cli/projects/rich-comments.md
-      - REPL Startup: clojure-cli/projects/configure-repl-startup.md
-
+      - From Template: clojure-cli/projects/create-from-template.md
+      - Add Libraries: clojure-cli/projects/add-libraries.md
+      - Namespaces: clojure-cli/projects/namespace.md
+      - Rich Comment: clojure-cli/projects/rich-comments.md
+      - Hotload in Project: clojure-cli/projects/hotload-in-project.md
+      - Migrate projects: clojure-cli/projects/migrate-project.md
+      - Package: clojure-cli/projects/tools-build.md
   - Clojure Editors:
       - clojure-editors/index.md
       - Clojure LSP:
-          - clojure-cli/install/clojure-lsp/index.md
-          - Clojure LSP Snippets: clojure-cli/install/clojure-lsp/snippets.md
-          - Practicalli Snippets: clojure-cli/install/clojure-lsp/practicalli-snippets.md
+          - clojure-editors/clojure-lsp/index.md
+          - Clojure LSP Snippets: clojure-editors/clojure-lsp/snippets.md
+          - Practicalli Snippets: clojure-editors/clojure-lsp/practicalli-snippets.md
       - Editor Install Guides:
           - clojure-editors/editor-install-guides/index.md
           - clojure-editors/editor-install-guides/atom-protorepl.md
@@ -219,5 +219,7 @@ nav:
               - Recent Song list: simple-projects/tdd-kata/recent-song-list.md
 
   - Reference:
+      - Clojure CLI:
+      - Code Analysis: reference/code-analysis.md
       - Crreative Coding:
           - reference/creative-coding/index.md
