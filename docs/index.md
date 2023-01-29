@@ -1,8 +1,8 @@
 # Practicalli Clojure
 
-Getting started with Clojure programming language, using the Clojure CLI and community tools.
+Getting started with Clojure programming language using [Clojure CLI](/clojure/clojure-cli/) and [community tools](/clojure/clojure-cli/community-tools.md).
 
-A practical guide to learning Clojure, with step by step explanations of code and design decisions.
+A practical guide to learning Clojure with step by step explanations of code and design decisions and live coding videos to demonstrate the Clojure REPL workflow.
 
 !!! QUOTE - "John Stevenson, Practical.li"
     Clojure - an elegant language for a more civilised development experience
@@ -12,9 +12,9 @@ A practical guide to learning Clojure, with step by step explanations of code an
 
 [![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)
 
-Clojure runs in [a REPL process](repl-driven-development.md) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
+Clojure runs in [a REPL process](/clojure/clojure-cli/repl/) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
 
-The REPL is the [Clojure interactive environment](repl-driven-development.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
+The REPL is [Clojure interactive environment](introduction/repl-workflow.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
 
 
 !!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
@@ -32,8 +32,8 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 ## Resources
 
-[practicalli/clojure-deps-edn - Clojure tools and common aliases](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
-[Clojure Aware Editors](https://practical.li/clojure/clojure-editors){target=_blank .md-button}
+[Practicalli Clojure CLI Config - additonal tools via aliases](clojure/clojure-cli/practicalli-config.md){target=_blank .md-button}
+[Clojure Aware Editors](/clojure/clojure-editors){target=_blank .md-button}
 [Practicalli YouTube channel](https://youtube.co/practicalli){target=_blank .md-button}
 
 
