@@ -1,6 +1,6 @@
 # Install Clojure
 
-Clojure CLI is the minimum Clojure environment, although a [Clojure aware editor](/clojure/clojure-editors/) with a and Clojure LSP server
+Clojure CLI is the minimum Clojure environment, although a [Clojure aware editor](/clojure/clojure-editors/) with Clojure LSP server is highly recommeded.
 
 Clojure CLI provide the foundation for Clojure development, providing a simple and configurable way to:
 
@@ -17,11 +17,11 @@ Clojure CLI provide the foundation for Clojure development, providing a simple a
 
 Establish an effective Clojure development environment by installing the following:
 
-| Fundamental Tools                                                             | Purpose                                                                                                                      |
-|-------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
-| [Java 17 LTS](java.md)                                                        | Java virtual machine hosts Clojure. Java 17 is the Long Term Support version which provides a stable platform to run Clojure |
-| [Clojure CLI](clojure-cli.md)                                                 | Run Clojure REPL and other tools for development and production                                                              |
-| [Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) | Curated aliases providing common development tasks and tools across all projects (used heavily in this guide)                |
+| Fundamental Tools                                                             | Purpose                                                                                                                         |
+|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| [Java 17 LTS](java.md)                                                        | Java virtual machine hosts Clojure. Java 17 is the current Long Term Support version providing a stable platform to run Clojure |
+| [Clojure CLI](clojure-cli.md)                                                 | Run Clojure REPL and other tools for development and production                                                                 |
+| [Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) | Curated aliases providing common development tasks and tools across all projects (used heavily in this guide)                   |
 
 
 | Recommended Tools                                             | Purpose                                                                                  |
@@ -32,7 +32,7 @@ Establish an effective Clojure development environment by installing the followi
 
 
 !!! HINT "Aliases in Practicalli Clojure provided by Practicalli Clojure CLI config"
-    [practicalli/clojure-deps-edn](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.
+    [Practicalli Clojure CLI Config](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.
 
     If the Practicalli Clojure CLI config is not used, review the [`deps.edn` file](https://github.com/practicalli/clojure-deps-edn/blob/live/deps.edn) from the GitHub repository and add relevant aliases definitions to your own Clojure CLI configuration.
 
