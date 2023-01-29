@@ -12,6 +12,8 @@ An ideal Clojure editor includes the these core features
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
+## Clojure aware editors
+
 Emacs (Spacemacs, Doom, Prelude), VSCode (Clover or Calva) and Neovim are the most common open source Editors for Clojure and ClojureScript development.
 
 SublimeText and IntelliJ are commercial editors (with free editions) that also provide Clojure support
@@ -127,7 +129,7 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
         ![SpaceVim and vim-fireplace - Clojure project and REPL](/images/spacevim-clojure-repl-gruvbox-light.png)
     
         <!-- vim-iced and vim-fireplace -->
-        {% content "vimiced"%}
+    === "vimiced"
         Clojure Interactive Development Environment for Vim8/Neovim.
     
         * [vim-iced documentation](https://liquidz.github.io/vim-iced/)
@@ -137,21 +139,27 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
 === "VSCode"
 
-    The Calva extension adds Clojure support to Microsoft VS Code editor.
+    === "Calva"
+        The Calva extension adds Clojure support to Microsoft VS Code editor.
 
-    Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
+        Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
 
-    * [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
-    * [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
-    * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
+        * [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
+        * [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
+        * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
 
-    <p style="text-align:center">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p>
+        <p style="text-align:center">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
 
-    ![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
+        ![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
 
+    === "Clover"
+        [Clover](https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover){target=_blank} is a Socket REPL based development tool for Clojure.
 
+        [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes useage details.
+
+        
     ### VSpaceCode
 
     [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
