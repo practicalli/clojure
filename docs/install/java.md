@@ -31,7 +31,7 @@ If the version is `17` or above, then [jump to the Clojure install page](install
     ??? HINT "Optionally add Java sources"
         Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
        
-        [practicalli/clojure-deps-edn](community-tools.md) provides the [`:lib/java17-source alias](https://github.com/practicalli/clojure-deps-edn#java-sources){target=_blank} to include the installed package in the classpath when running a REPL.`
+        [Practicalli Clojure CLI Config](community-tools.md) provides the [`:lib/java17-source alias](https://github.com/practicalli/clojure-deps-edn#java-sources){target=_blank} to include the installed package in the classpath when running a REPL.`
     
     
     If `openjdk-17-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
