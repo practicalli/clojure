@@ -11,18 +11,6 @@ The Clojure CLI is extended by adding aliases for community libraries and tools,
 
 
 
-<!-- TODO: Clojure CLI overview - short video showing common aliases being used -->
-<!-- - clojure -T:project/new ,,, -->
-<!-- - clojure without an alias (basic repl) -->
-<!-- - clojure -M:repl/rebel (rich terminal UI for the REPL) - require and write code & eval, function signature, docs, run tests - not found. - refer to detailed video of rebel readline -->
-<!-- - clojure -M:env/test:repl/rebel (include a test path) - run tests with (run-tests 'namespace.name) -->
-<!-- - clojure -M:env/dev:lib/hotload:env/test:repl/rebel (rich terminal UI with hotload libraries) -->
-<!-- - clojure -X:test/watch (Kaocha test runner in watch mode - edit unit tests) -->
-<!-- - clojure -X:deps list -->
-<!-- - clojure -M:project/find-deps library-name -->
-<!-- - clojure -X:deps find-versions -->
-<!-- - clojure -T:project/outdated - check dependencies are at most recent version -->
-
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
