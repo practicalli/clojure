@@ -1955,17 +1955,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-reveal-in-a-terminal">
-    Using Reveal in a terminal
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-reveal-with-nrepl-editors">
-    Using Reveal with nrepl Editors
-  </a>
-<nav aria-label="Using Reveal with nrepl Editors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#using-reveal-with-cider-jack-in">
     Using Reveal with Cider Jack-in
   </a>
@@ -1974,9 +1963,6 @@
 <a class="md-nav__link" href="#cider-jack-in-with-reveal-using-a-dir-localsel">
     Cider jack-in with reveal using a .dir-locals.el
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#using-reveal-with-rebel-and-tap">
@@ -1989,6 +1975,11 @@
   </a>
 <nav aria-label="Use atom to hold tapped value" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tracking-state-with-an-atom">
+    Tracking state with an atom
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#running-different-types-of-repl">
     Running different types of repl
@@ -2046,17 +2037,6 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-reveal-in-a-terminal">
-    Using Reveal in a terminal
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-reveal-with-nrepl-editors">
-    Using Reveal with nrepl Editors
-  </a>
-<nav aria-label="Using Reveal with nrepl Editors" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#using-reveal-with-cider-jack-in">
     Using Reveal with Cider Jack-in
   </a>
@@ -2065,9 +2045,6 @@
 <a class="md-nav__link" href="#cider-jack-in-with-reveal-using-a-dir-localsel">
     Cider jack-in with reveal using a .dir-locals.el
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#using-reveal-with-rebel-and-tap">
@@ -2080,6 +2057,11 @@
   </a>
 <nav aria-label="Use atom to hold tapped value" class="md-nav">
 <ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tracking-state-with-an-atom">
+    Tracking state with an atom
+  </a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#running-different-types-of-repl">
     Running different types of repl
@@ -2115,9 +2097,9 @@
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/1jy09_16EeY" title="YouTube video player" width="560"></iframe>
 </p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/">https://youtu.be/</a></p>
-<h2 id="using-reveal-in-a-terminal">Using Reveal in a terminal<a class="headerlink" href="#using-reveal-in-a-terminal" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">REPL Terminal UI</label><label for="__tabbed_1_2">nrepl Editors</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p><a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> contains the <code>:inspect/reveal</code> alias to run Reveal REPL in a terminal with the Reveal UI along-side.</p>
 <p>Open a terminal and run the command:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -M:inspect/reveal
@@ -2127,25 +2109,17 @@
 </blockquote>
 <p>Write Clojure code as normal in the REPL and result are also sent to the Reveal data browser window.</p>
 <p>The <a href="https://vlaaad.github.io/reveal/">extensive documentation</a> shows the many ways to use Reveal.</p>
-<!-- #### Tracking state with an atom -->
-<!-- Define the state as an atom, the state being a simple value in this case -->
-<!-- ```clojure -->
-<!-- (def state (atom 24)) -->
-<!-- ``` -->
-<!-- Select the reference created for the state in the Revel browser. -->
-<!-- `SPACE` or `ENTER` to open the menu and select `Deref`.  A tab opens with the value of the atom. -->
-<!-- `SPACE` or `ENTER` with the value selected and select `Watch:all`. -->
-<!-- In the REPL, update the value of the state atom. -->
-<!-- ```clojure -->
-<!-- (swap! state * 12) -->
-<!-- ``` -->
-<!-- The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser. -->
-<h2 id="using-reveal-with-nrepl-editors">Using Reveal with nrepl Editors<a class="headerlink" href="#using-reveal-with-nrepl-editors" title="Permanent link">λ︎</a></h2>
-<p><a href="{{ book.P9IClojureDepsEdn }}"><code>practicalli/clojure-deps-edn</code></a> contains the <code>:inspect/reveal-nrepl</code> alias that run a Reveal repl with data browser and nrepl server, allowing connections from <a href="/clojure-editors/">Clojure aware editors</a> such as Emacs CIDER and VSCode Calva.  <code>:inspect/reveal-light-nrepl</code> does the same and uses a light them with Ubuntu Mono 32 point font (good for demos, HiDPI screens)</p>
-<p>{% tabs practicalli="Using practicalli/clojure-deps-edn", manual="Manually add Alias" %}</p>
-<p>{% content "practicalli" %}</p>
-<p>{% content "manual" %}
-Add the following aliases to your user level <code>~/.clojure/deps.edn</code> configuration to make reveal available to all projects.</p>
+</div>
+<div class="tabbed-block">
+<p>Start reveal with an nREPL server to allow connection from <a href="/clojure/clojure-editors/">a Clojure aware editor</a></p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Alias Definition</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>:inspect/reveal-nrepl</code> alias provided by <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> runs a Reveal repl with data browser and nrepl server, allowing connections from <a href="/clojure/clojure-editors/">Clojure aware editors</a> such as Emacs CIDER and VSCode Calva.</p>
+<p><code>:inspect/reveal-light-nrepl</code> does the same and uses a light them with Ubuntu Mono 32 point font (good for demos, HiDPI screens)</p>
+</div>
+<div class="tabbed-block">
+<p>Add the following aliases to your user level <code>~/.clojure/deps.edn</code> configuration to make reveal available to all projects.</p>
 <p>Plain nrepl server with Reveal.</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">  </span><span class="ss">:inspect/reveal-nrepl</span><span class="w"></span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">vlaaad/reveal</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.159"</span><span class="p">}</span><span class="w"></span>
@@ -2162,7 +2136,6 @@ CIDER specific nrepl connection with the Cider middleware</p>
 <a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a>   :main-opts  ["-m" "nrepl.cmdline"
 <a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a>                "--middleware" "[vlaaad.reveal.nrepl/middleware,refactor-nrepl.middleware/wrap-refactor,cider.nrepl/cider-middleware]"]}
 </code></pre></div>
-<p>{% endtabs %}</p>
 <p>Start a Reveal REPL with nrepl server</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure -M:inspect/reveal-nrepl
 </code></pre></div>
@@ -2184,6 +2157,12 @@ CIDER specific nrepl connection with the Cider middleware</p>
 </code></pre></div>
 <p>Ensure the <code>.dir-locals.el</code> file is loaded by using <code>revert-buffer</code> on any open Clojure file from the project.</p>
 <p><code>cider-jack-in-clj</code> should now start the Reveal REPL and send evaluations from Cider to the Reveal visualization UI.</p>
+</div>
+</div>
+</input></input></div>
+</div>
+</div>
+</input></input></div>
 <h2 id="using-reveal-with-rebel-and-tap">Using Reveal with Rebel and <code>tap&gt;</code><a class="headerlink" href="#using-reveal-with-rebel-and-tap" title="Permanent link">λ︎</a></h2>
 <p>Reveal can be used as a <code>tap&gt;</code> target with the Rebel REPL, launching the Reveal data browser when added as a tap&gt; target.</p>
 <p>Start Rebel REPL with Reveal library as a dependency</p>
@@ -2197,17 +2176,26 @@ CIDER specific nrepl connection with the Cider middleware</p>
 <a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">(</span><span class="nf">tap&gt;</span><span class="w"> </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"Jenny"</span><span class="w"> </span><span class="ss">:skill</span><span class="w"> </span><span class="s">"Clojure"</span><span class="p">})</span><span class="w"></span>
 <a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="p">(</span><span class="nf">tap&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">zipmap </span><span class="p">[</span><span class="ss">:a</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="ss">:c</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">]))</span><span class="w"></span>
 </code></pre></div>
-<blockquote>
-<p>TODO: find more examples of using tap&gt;.
-It seems you can bind specific functions to a tap set, <code>(add-tap (bound-fn* clojure.pprint/pprint))</code> <code>(add-tap (bound-fn* prn))</code> so am assuming if a function is bound, where ever it is used its result is sent to reveal browser window.  Then functions can be removed from the tap.
-To stop reveal, shut down the REPL (is there another approach?)</p>
-</blockquote>
+<!-- > TODO: find more examples of using tap>. -->
+<!-- > It seems you can bind specific functions to a tap set, `(add-tap (bound-fn* clojure.pprint/pprint))` `(add-tap (bound-fn* prn))` so am assuming if a function is bound, where ever it is used its result is sent to reveal browser window.  Then functions can be removed from the tap. -->
+<!-- > To stop reveal, shut down the REPL (is there another approach?) -->
 <h2 id="use-atom-to-hold-tapped-value">Use atom to hold tapped value<a class="headerlink" href="#use-atom-to-hold-tapped-value" title="Permanent link">λ︎</a></h2>
 <p>Create an atom for debugging purposes</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">debug-state</span><span class="w"> </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span><span class="w"></span>
 <a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">(</span><span class="nf">add-tap</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nf">reset!</span><span class="w"> </span><span class="nv">debug-state</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span><span class="w"></span>
 </code></pre></div>
 <p>Use <code>tap&gt;</code> to capture intermediate values in the middle of code that requires debugging, inspecting or watching the atom value (deref the atom and watch:latest or watch:all).  This approach complements an editor debugging process</p>
+<h3 id="tracking-state-with-an-atom">Tracking state with an atom<a class="headerlink" href="#tracking-state-with-an-atom" title="Permanent link">λ︎</a></h3>
+<p>Define the state as an atom, the state being a simple value in this case</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">state</span><span class="w"> </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="mi">24</span><span class="p">))</span><span class="w"></span>
+</code></pre></div>
+<p>Select the reference created for the state in the Revel browser.</p>
+<p><code>SPACE</code> or <code>ENTER</code> to open the menu and select <code>Deref</code>.  A tab opens with the value of the atom.</p>
+<p><code>SPACE</code> or <code>ENTER</code> with the value selected and select <code>Watch:all</code>.</p>
+<p>In the REPL, update the value of the state atom.</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nf">swap!</span><span class="w"> </span><span class="nv">state</span><span class="w"> </span><span class="nb">* </span><span class="mi">12</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser.</p>
 <h3 id="running-different-types-of-repl">Running different types of repl<a class="headerlink" href="#running-different-types-of-repl" title="Permanent link">λ︎</a></h3>
 <p>Using Clojure exec <code>-X</code> flag, the default repl function can be over-ridden on the command line, supplying the <code>io-prepl</code> or <code>remote-prepl</code> functions.</p>
 <ul>
@@ -2216,7 +2204,7 @@ To stop reveal, shut down the REPL (is there another approach?)</p>
 </ul>
 <h3 id="configure-theme-font">Configure theme &amp; font<a class="headerlink" href="#configure-theme-font" title="Permanent link">λ︎</a></h3>
 <p>Add a custom theme and font via the <code>-J</code> command line option or create an alias using <code>:inspect/reveal-light</code> as an example.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure -M:inspect/reveal -J-Dvlaaad.reveal.prefs<span class="o">=</span><span class="s1">'{:theme :light :font-family "Ubuntu Mono" :font-size 32}'</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure -M:inspect/reveal -J-Dvlaaad.reveal.prefs<span class="o">=</span><span class="s1">'{:theme :light :font-family "Ubuntu Mono" :font-size 32}'</span>
 </code></pre></div>
 <h3 id="rebel-readline-reveal-add-reveal-as-tap-source">Rebel Readline &amp; Reveal: Add Reveal as tap&gt; source<a class="headerlink" href="#rebel-readline-reveal-add-reveal-as-tap-source" title="Permanent link">λ︎</a></h3>
 <p>Evaluate <code>(add-tap ((requiring-resolve 'vlaaad.reveal/ui)))</code> when using Rebel Readline to add Reveal as a tap source, showing <code>(tap&gt; ,,,)</code> expressions in the reveal window, eg. <code>(tap&gt; (map inc [1 2 3 4 5]))</code>.</p>
