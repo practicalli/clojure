@@ -32,7 +32,7 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 ## Resources
 
-[Practicalli Clojure CLI Config - additonal tools via aliases](/clojure/clojure-cli/practicalli-config.md){target=_blank .md-button}
+[Practicalli Clojure CLI Config - additonal tools via aliases](/clojure/clojure-cli/practicalli-config/){target=_blank .md-button}
 [Clojure Aware Editors](/clojure/clojure-editors){target=_blank .md-button}
 [Practicalli YouTube channel](https://youtube.co/practicalli){target=_blank .md-button}
 
