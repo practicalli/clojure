@@ -238,6 +238,63 @@ nav:
           - testing/test-runners/congnitect-labs-test-runner.md
           - testing/test-runners/kaocha-test-runner.md
           - testing/test-runners/example-projects.md
+  - Clojure Spec:
+      - clojure-spec/index.md
+      - clojure-spec/using-spec-in-the-repl.md
+      - clojure-spec/add-spec-to-projects.md
+      - clojure-spec/organising-specs.md
+      - Data Specs:
+          - clojure-spec/data/index.md
+          - clojure-spec/data/predicate-specifications.md
+          - clojure-spec/data/literal-values.md
+          - clojure-spec/data/conform.md
+          - clojure-spec/data/valid-q.md
+          - clojure-spec/data/explain.md
+          - clojure-spec/data/defining-specifications.md
+          - clojure-spec/data/registry.md
+          - clojure-spec/data/entity-maps.md
+          - clojure-spec/data/map-literals.md
+          - clojure-spec/data/and-or-specifications.md
+          - clojure-spec/data/composite-specifications.md
+          - clojure-spec/data/hierarchical-specifications.md
+      - Function Specs:
+          - clojure-spec/functions/index.md
+          - clojure-spec/functions/function-definition-specifications.md
+          - clojure-spec/functions/documentation.md
+          - clojure-spec/functions/higher-order-functions.md
+      - Testing:
+          - clojure-spec/testing/index.md
+          - clojure-spec/testing/checking arguments.md
+          # <!-- - clojure-spec/defining-specifications/index.md -->
+          - Generative Testing:
+              - clojure-spec/generative-testing/index.md
+              - clojure-spec/generative-testing/predicate-generators.md
+              # <!-- - clojure-spec/generative-testing/generating-generators.md -->
+              - clojure-spec/generative-testing/example-projects/index.md
+              - clojure-spec/generative-testing/example-projects/next-jdbc.md
+      - Spec Project:
+          - clojure-spec/projects/index.md
+          # <!-- Checking for bad names in ns declarations, lets, etc. -->
+          # <!-- - clojure-spec/projects/convention-checks.md -->
+          - Playing Cards:
+              - clojure-spec/projects/card-game/index.md
+              - clojure-spec/projects/card-game/playing-card-specifications.md
+              - clojure-spec/projects/card-game/generative-data-from-specifications.md
+              - clojure-spec/projects/card-game/game-specifications.md
+              - clojure-spec/projects/card-game/function-specifications.md
+              - clojure-spec/projects/card-game/organising-instrumentation.md
+          - Bank Account:
+              - clojure-spec/projects/bank-account/index.md
+              # <!-- - clojure-spec/projects/bank-account/create-project.md -->
+              - clojure-spec/projects/bank-account/write-failing-tests.md
+              - clojure-spec/projects/bank-account/customer-details-specification.md
+              - clojure-spec/projects/bank-account/validate-customer-details-specification.md
+              - clojure-spec/projects/bank-account/account-holder-specification.md
+              - clojure-spec/projects/bank-account/generate-test-data.md
+              - clojure-spec/projects/bank-account/unit-tests-with-spec.md
+              - clojure-spec/projects/bank-account/function-specifications.md
+              - clojure-spec/projects/bank-account/test-functions-against-spec.md
+
 
   - Reference:
       - Clojure CLI:
