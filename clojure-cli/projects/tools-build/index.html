@@ -2033,7 +2033,9 @@
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
 <h1 id="toolsbuild">tools.build<a class="headerlink" href="#toolsbuild" title="Permanent link">λ︎</a></h1>
-<p>Build jar files to deploy and run Clojure projects, defining custom tasks with Clojure code.</p>
+<p>The Clojure tools.build project is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).</p>
+<p>Tasks are writtend in Clojure code using the tools.build API, which provides a consistent interfact to the project configuration and common tasks that facilitate building and packaging projects.</p>
+<p>The following are created in each project that uses tools.build:</p>
 <ul>
 <li><code>build.clj</code> contains a namespace with tasks</li>
 <li><code>:project/build</code> alias containing tools.build library and sets the default namespace</li>
@@ -2042,7 +2044,7 @@
 <div class="admonition hint">
 <p class="admonition-title">Java ARchive - jar file</p>
 <p>A <code>.jar</code> file is a zip archive of the project containing all the files for running a Clojure project.  The archive should contain metatdata files such as Manifest and pom.xml and can contain Clojure sources or compiled class files from the project (or both).</p>
-<p>An ubjerjar is <code>.jar</code> file that also contains all the project dependencies (including Clojure).  The uberjar is a self-contained file that can be easily deployed and requiring only a Java run-time (Java Virtual Machine).</p>
+<p>An ubjerjar is <code>.jar</code> file that also contains all the project dependencies including Clojure.  The uberjar is a self-contained file that can be easily deployed and requires only a Java run-time (Java Virtual Machine), using the <code>java -jar project-uberjar.jar</code> command, with the option to pass arguments to the Uberjar also.</p>
 </div>
 <h2 id="define-a-build-alias">Define a build alias<a class="headerlink" href="#define-a-build-alias" title="Permanent link">λ︎</a></h2>
 <p>Add an alias to the project deps.edn file that includes the org.clojure/tools.build project.</p>
