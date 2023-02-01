@@ -222,6 +222,22 @@ nav:
           # Convert to deps.edn
           - TicTacToe:
               - games/tictactoe-cli/index.md
+  - Testing:
+      - testing/index.md
+      - Unit Testing:
+          - testing/unit-testing/index.md
+          - testing/unit-testing/configure-projects-for-tests.md
+          - testing/unit-testing/require-test-namespaces.md
+          - testing/unit-testing/writing-unit-tests.md
+          - testing/unit-testing/fixtures.md
+          - testing/unit-testing/test-selectors.md
+          # <!-- - [TDD Kata: Recent Song-ltesting/unit-testing/tdd-kata/recent-song-list.md -->
+          # <!-- - testing/unit-testing/clojure-test-expectations.md -->
+      - Test runners:
+          - testing/test-runners/index.md
+          - testing/test-runners/congnitect-labs-test-runner.md
+          - testing/test-runners/kaocha-test-runner.md
+          - testing/test-runners/example-projects.md
 
   - Reference:
       - Clojure CLI:
