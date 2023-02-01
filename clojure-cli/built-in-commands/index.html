@@ -7,10 +7,10 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/clojure-cli/built-in-aliases/" rel="canonical"/>
+<link href="https://practical.li/clojure/clojure-cli/built-in-commands/" rel="canonical"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
-<title>Clojure CLI Built-in alaises - Practicalli Clojure</title>
+<title>Clojure CLI Built-in commands - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#clojure-cli-built-in-alaises">
+<a class="md-skip" href="#clojure-cli-built-in-commands">
           Skip to content
         </a>
 </div>
@@ -60,7 +60,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Clojure CLI Built-in alaises
+              Clojure CLI Built-in commands
             
           </span>
 </div>
@@ -233,8 +233,8 @@
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">Clojure CLI</a>
 <label for="__nav_3">
@@ -247,6 +247,54 @@
           Clojure CLI
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Clojure CLI Built-in commands
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Clojure CLI Built-in commands
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#list-full-dependencies">
+    List full dependencies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#dependency-tree">
+    Dependency tree
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#local-library-install">
+    Local library install
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#find-library-versions">
+    Find Library Versions
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepare-source-dependencies">
+    Prepare Source dependencies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolve-git-tags">
+    Resolve Git tags
+  </a>
+</li>
+</ul>
+</nav>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../practicalli-config/">
         Practicalli Config
@@ -1980,18 +2028,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#list-full-dependencies">
+    List full dependencies
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#dependency-tree">
     Dependency tree
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#update-project-pomxml">
-    Update project pom.xml
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#resolve-git-tags">
-    Resolve Git tags
   </a>
 </li>
 <li class="md-nav__item">
@@ -2004,6 +2047,16 @@
     Find Library Versions
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepare-source-dependencies">
+    Prepare Source dependencies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#resolve-git-tags">
+    Resolve Git tags
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -2011,11 +2064,11 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/built-in-aliases.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/built-in-commands.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="clojure-cli-built-in-alaises">Clojure CLI Built-in alaises<a class="headerlink" href="#clojure-cli-built-in-alaises" title="Permanent link">λ︎</a></h1>
-<p>The <code>:deps</code> alias is used as the root of all built-in commands in the Clojure CLI tools.</p>
+<h1 id="clojure-cli-built-in-commands">Clojure CLI Built-in commands<a class="headerlink" href="#clojure-cli-built-in-commands" title="Permanent link">λ︎</a></h1>
+<p>The <code>:deps</code> alias is used as the root of all built-in commands in the Clojure CLI tools.  <code>clojure --help</code> list the available commands.</p>
 <p><code>-X</code> execution option is used for all built-in aliases, running them via <code>clojure.exec</code></p>
 <table>
 <thead>
@@ -2026,33 +2079,87 @@
 </thead>
 <tbody>
 <tr>
+<td align="left"><code>clojure -X:deps list</code></td>
+<td align="left">List full transitive deps set and licenses</td>
+</tr>
+<tr>
 <td align="left"><code>clojure -X:deps tree</code></td>
 <td align="left">download dependencies &amp; print dependency tree, indenting libraries that are dependencies of dependencies</td>
 </tr>
 <tr>
-<td align="left"><code>clojure -X:deps mvn-pom</code></td>
-<td align="left">generate / update <code>pom.xml</code> with the dependencies and class path for the current project</td>
+<td align="left"><code>clojure -X:deps find-versions</code></td>
+<td align="left">Find available versions of a given library (domain/name)</td>
 </tr>
 <tr>
-<td align="left"><code>clojure -X:deps git-resolve-tags</code></td>
-<td align="left">update <code>deps.edn</code> git based dependencies that used tags with the equivalent SHA commit values</td>
+<td align="left"><code>clojure -X:deps prep</code></td>
+<td align="left">Prepare all unprepped libs in the dep tree</td>
 </tr>
 <tr>
 <td align="left"><code>clojure -X:deps mvn-install :jar '"/path/to.jar"'</code></td>
 <td align="left">install a given jar file into the local maven repository, eg. <code>~/.m2/repository</code></td>
 </tr>
+<tr>
+<td align="left"><code>clojure -X:deps git-resolve-tags</code></td>
+<td align="left">update <code>deps.edn</code> git based dependencies that used tags with the equivalent SHA commit values</td>
+</tr>
 </tbody>
 </table>
+<h2 id="list-full-dependencies">List full dependencies<a class="headerlink" href="#list-full-dependencies" title="Permanent link">λ︎</a></h2>
+<p>Report on the depenencies of a project and any included aliases, including the transitive dependencies (dependencies of dependencies).</p>
+<p>Show the full dependencies for the project</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -X:deps list
+</code></pre></div>
+<p>Show the full dependencies for the project and the <code>:dev/reloaded</code> alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure -X:dev/reloaded:deps list
+</code></pre></div>
 <h2 id="dependency-tree">Dependency tree<a class="headerlink" href="#dependency-tree" title="Permanent link">λ︎</a></h2>
-<h2 id="update-project-pomxml">Update project pom.xml<a class="headerlink" href="#update-project-pomxml" title="Permanent link">λ︎</a></h2>
-<!-- TODO: Is this still part of :deps or should this be via tools.build -->
-<h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
+<p>Run the <code>:deps tree</code> command in the root of a Clojure project to see all the dependencies</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure -X:deps tree
+</code></pre></div>
+<blockquote>
+<p>Libraries to satisfy the dependencies are downloaded if they are not in the local Maven cache, i.e. <code>$HOME/.m2/repository</code>, so the command may take a little time.</p>
+</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Use Clojure CLI -P flag to download libraries</p>
+<p><code>clojure -P</code> is the recommended way to download libraries, which can also be used with aliases, e.g. <code>clojure -P -M:dev/reloaded:project/build</code></p>
+</div>
+<p>Show the full dependencies for the project and the <code>:dev/reloaded</code> alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure -X:dev/reloaded:deps tree
+</code></pre></div>
+<p>If run outside of a Clojure CLI project, then the user configuration and Clojure CLI install dependencies are shown (could be useful if there are development tool issues from the user configuration aliases used)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>❯ clojure -X:deps tree
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>org.clojure/clojure <span class="m">1</span>.11.1
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>  . org.clojure/spec.alpha <span class="m">0</span>.3.218
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>  . org.clojure/core.specs.alpha <span class="m">0</span>.2.62
+</code></pre></div>
 <h2 id="local-library-install">Local library install<a class="headerlink" href="#local-library-install" title="Permanent link">λ︎</a></h2>
 <p>Add a jar file for a library to the local Maven repository, e.g. <code>~/.m2/repository</code>, making that library accessible to all other local projects.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -X:deps mvn-install :jar <span class="s1">'"/path/to.jar"'</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>clojure -X:deps mvn-install :jar <span class="s1">'"/path/to.jar"'</span><span class="sb">`</span>
 </code></pre></div>
 <h2 id="find-library-versions">Find Library Versions<a class="headerlink" href="#find-library-versions" title="Permanent link">λ︎</a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span><span class="w"></span>
+<p>Find the available versions of a given library in the form domain/library-name (domain is typically the company name or Git Service user or organisation name).</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span><span class="w"></span>
+</code></pre></div>
+<h2 id="prepare-source-dependencies">Prepare Source dependencies<a class="headerlink" href="#prepare-source-dependencies" title="Permanent link">λ︎</a></h2>
+<p>Some dependencies will require a preparation step before they can be used on the classpath.</p>
+<p>Projects that require preparation would have a configuration of the form:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">"src"</span><span class="w"> </span><span class="s">"target/classes"</span><span class="p">]</span><span class="w"></span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w"> </span><span class="ss">:deps/prep-lib</span><span class="w"> </span><span class="p">{</span><span class="ss">:alias</span><span class="w"> </span><span class="ss">:build</span><span class="w"></span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">                 </span><span class="ss">:fn</span><span class="w"> </span><span class="nv">compile</span><span class="w"></span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">                 </span><span class="ss">:ensure</span><span class="w"> </span><span class="s">"target/classes"</span><span class="p">}}</span><span class="w"></span>
+</code></pre></div>
+<p>Including the top-level key <code>:deps/prep-lib</code> tells the tools.deps classpath construction that something extra is needed to prepare this lib and that can be performed by invoking the compile function in the :build alias. Once the prepare step has been done, it should create the path "target/classes" and that can be checked for completion.</p>
+<p>Add a library dependency as with any other library (git or local/root):</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">"../needs-prep"</span><span class="p">}</span><span class="w"></span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"../needs-prep"</span><span class="p">}}}</span><span class="w"></span>
+</code></pre></div>
+<p><code>:deps prep</code> will built the library of any dependency that requires it 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure -X:deps prep
+</code></pre></div></p>
+<h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
+<p>/<em> TODO: Clojure CLI resolve Git tags examples </em>/</p>
+<p><code>-X:deps git-resolve-tags</code> updates git based dependencies in the project <code>deps.edn</code> file which use :git/tags key to the equivalent SHA commit values in the <code>:git/sha</code> key</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure -X:deps git-resolve-tags
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
@@ -2072,6 +2179,34 @@
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Clojure CLI" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Previous
+              </span>
+              Clojure CLI
+            </div>
+</div>
+</a>
+<a aria-label="Next: Practicalli Config" class="md-footer__link md-footer__link--next" href="../practicalli-config/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                Next
+              </span>
+              Practicalli Config
+            </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
