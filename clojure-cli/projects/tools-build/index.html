@@ -36,7 +36,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#toolsbuild">
+<a class="md-skip" href="#clojure-toolsbuild">
           Skip to content
         </a>
 </div>
@@ -2032,9 +2032,9 @@
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/clojure-cli/projects/tools-build.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
 </a>
-<h1 id="toolsbuild">tools.build<a class="headerlink" href="#toolsbuild" title="Permanent link">λ︎</a></h1>
-<p>The Clojure tools.build project is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).</p>
-<p>Tasks are writtend in Clojure code using the tools.build API, which provides a consistent interfact to the project configuration and common tasks that facilitate building and packaging projects.</p>
+<h1 id="clojure-toolsbuild">Clojure tools.build<a class="headerlink" href="#clojure-toolsbuild" title="Permanent link">λ︎</a></h1>
+<p>The <a href="https://clojure.org/guides/tools_build">Clojure.org tools.build project</a> is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).</p>
+<p>Tasks are writtend in Clojure code using the <a href="https://clojure.github.io/tools.build/">tools.build API</a>, which provides a consistent interfact to the project configuration and common tasks that facilitate building and packaging projects.</p>
 <p>The following are created in each project that uses tools.build:</p>
 <ul>
 <li><code>build.clj</code> contains a namespace with tasks</li>
@@ -2053,7 +2053,7 @@
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">build</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <blockquote>
-<p>Release information shows the current values for <code>git/tag</code> and <code>:git/sha</code></p>
+<p><a href="https://github.com/clojure/tools.build#release-information">Clojure.org tools.build release information</a> shows the current values for <code>git/tag</code> and <code>:git/sha</code></p>
 </blockquote>
 <h2 id="build-tasks">Build tasks<a class="headerlink" href="#build-tasks" title="Permanent link">λ︎</a></h2>
 <p>Create a <code>build.clj</code> file to contain the build configuration and tasks.</p>
@@ -2118,8 +2118,9 @@
 <a href="#__codelineno-3-36" id="__codelineno-3-36" name="__codelineno-3-36"></a><span class="c1">;; ---------------------------------------------------------</span><span class="w"></span>
 </code></pre></div>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">λ︎</a></h2>
-<p><a class="md-button" href="https://clojure.org/guides/tools_build" target="_blank">tools.build Guide</a>
-<a class="md-button" href="https://clojure.github.io/tools.build/" target="_blank">tools.build API Docs</a></p>
+<p><a class="md-button" href="https://clojure.org/guides/tools_build" target="_blank">Clojure.org tools.build Guide</a>
+<a class="md-button" href="https://clojure.github.io/tools.build/" target="_blank">Clojure.org tools.build API Docs</a>
+<a href="https://github.com/clojure/tools.build#release-information">Clojure.org tools.build release information</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
