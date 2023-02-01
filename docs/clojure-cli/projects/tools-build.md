@@ -1,6 +1,10 @@
-# tools.build
+# Clojure tools.build
 
-Build jar files to deploy and run Clojure projects, defining custom tasks with Clojure code.
+The [Clojure.org tools.build project](https://clojure.org/guides/tools_build) is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).
+
+Tasks are writtend in Clojure code using the [tools.build API](https://clojure.github.io/tools.build/), which provides a consistent interfact to the project configuration and common tasks that facilitate building and packaging projects.
+
+The following are created in each project that uses tools.build:
 
 * `build.clj` contains a namespace with tasks
 * `:project/build` alias containing tools.build library and sets the default namespace
@@ -11,20 +15,20 @@ Build jar files to deploy and run Clojure projects, defining custom tasks with C
 !!! HINT "Java ARchive - jar file"
     A `.jar` file is a zip archive of the project containing all the files for running a Clojure project.  The archive should contain metatdata files such as Manifest and pom.xml and can contain Clojure sources or compiled class files from the project (or both).
 
-    An ubjerjar is `.jar` file that also contains all the project dependencies (including Clojure).  The uberjar is a self-contained file that can be easily deployed and requiring only a Java run-time (Java Virtual Machine).
+    An ubjerjar is `.jar` file that also contains all the project dependencies including Clojure.  The uberjar is a self-contained file that can be easily deployed and requires only a Java run-time (Java Virtual Machine), using the `java -jar project-uberjar.jar` command, with the option to pass arguments to the Uberjar also.
 
 
 ## Define a build alias
 
 Add an alias to the project deps.edn file that includes the org.clojure/tools.build project.
 
-```clojure
+```clojure title="Project deps.edn"
 :project/build
 {:replace-deps {io.github.clojure/tools.build {:git/tag "v0.9.2" :git/sha "fe6b140"}}
  :ns-default build}
 ```
 
-> Release information shows the current values for `git/tag` and `:git/sha`
+> [Clojure.org tools.build release information](https://github.com/clojure/tools.build#release-information) shows the current values for `git/tag` and `:git/sha`
 
 
 ## Build tasks
@@ -33,7 +37,7 @@ Create a `build.clj` file to contain the build configuration and tasks.
 
 Define the namespace and require the clojure.tools.build.api library
 
-```clojure
+```clojure title="build.clj"
 (ns build
   (:require [clojure.tools.build.api :as build-api]))
 ```
@@ -63,7 +67,7 @@ Define a configuration for the build with values used in the build tasks.
 
 Write functions to support common tasks `clean`, `jar`, `uberjar`
 
-```clojure
+```clojure title="build.clj"
 ;; ---------------------------------------------------------
 ;; Build tasks
 
@@ -105,5 +109,6 @@ Write functions to support common tasks `clean`, `jar`, `uberjar`
 
 ## Resources
 
-[tools.build Guide](https://clojure.org/guides/tools_build){target=_blank .md-button}
-[tools.build API Docs](https://clojure.github.io/tools.build/){target=_blank .md-button}
+[Clojure.org tools.build Guide](https://clojure.org/guides/tools_build){target=_blank .md-button}
+[Clojure.org tools.build API Docs](https://clojure.github.io/tools.build/){target=_blank .md-button}
+[Clojure.org tools.build release information](https://github.com/clojure/tools.build#release-information)
