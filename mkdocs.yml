@@ -308,7 +308,142 @@ nav:
   # <!-- - testing/load-stress-testing/index.md -->
 
   - Reference:
+      - reference/index.md
+      - quickstart/quick-reference.md
       - Clojure CLI:
+          - reference/clojure-cli/index.md
+          # <!-- - [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md) -->
+          - reference/clojure-cli/defining-aliases.md
+          - reference/clojure-cli/example-alias-definitions.md
+          - reference/clojure-cli/jvm-options.md
+          # - clojure-cli/configure/common-tasks.md
+          # - clojure-cli/configure/defining-aliases.md
       - Code Analysis: reference/code-analysis.md
+      - Standard Library:
+          - reference/standard-library/index.md
+          - reference/standard-library/desructuring.md
+          - reference/standard-library/data-structures/index.md
+          - reference/standard-library/predicate-functions.md
+          - reference/standard-library/regular-expressions/index.md
+          - reference/standard-library/regular-expressions/matching-with-groups.md
+          - reference/standard-library/regular-expressions/matching-sub-strings.md
+          - reference/standard-library/regular-expressions/matching-sub-sequences.md
+          - reference/standard-library/regular-expressions/common-regex-patterns.md
+          - reference/standard-library/regular-expressions/string-replace-with-regex.md
+          - reference/standard-library/regular-expressions/string-split-with-regex.md
+          - reference/standard-library/regular-expressions/sub-expression-matches.md
+          - reference/standard-library/cond-thread-macro.md
+      - Java:
+          - reference/clojure-syntax/java-interop.md
+          - More Java fun: reference/clojure-syntax/more-java-fun.md
+
+      # Move syntax into a reference section and use projects to expose audience to Clojure syntax
+      # Basic syntax and calling functions
+      - Clojure Syntax:
+          - reference/clojure-syntax/syntax.md
+          - reference/clojure-syntax/parenthesis.md
+          - reference/clojure-syntax/code-documentation.md
+          - reference/clojure-syntax/comments.md
+          - reference/clojure-syntax/strings.md
+          - reference/clojure-syntax/numbers-maths.md
+          - reference/clojure-syntax/ratios.md
+          - reference/clojure-syntax/control-flow.md
+          - reference/doc-and-source-functions.md
+          - reference/clojure-syntax/assigning-names.md
+          - reference/clojure-syntax/naming.md
+          - reference/kebab-case.md
+          - reference/threading-macros.md
+          - reference/tagged-literals/index.md
+          - reference/tagged-literals/uuid.md
+      # Persistent data structures list vector map set -->
+      - Data Structures:
+          - data-structures/index.md
+          - data-structures/list.md
+          - data-structures/hash-maps/index.md
+          - data-structures/hash-maps/create.md
+          - data-structures/hash-maps/access.md
+          # - data-structures/hash-maps/update.md
+          - data-structures/vector.md
+          - data-structures/set.md
+          - data-structures/naming.md
+          - data-structures/shared-memory.md
+          - Pretty Printing: data-structures/pretty-printing.md
+          - Using Data Structures:
+              - using-data-structures/index.md
+              - using-data-structures/sequences.md
+              - using-data-structures/lazy-sequences.md
+              - using-data-structures/destructuring.md
+              - using-data-structures/applying-functions.md
+              - using-data-structures/mapping-data-structures.md
+          - Modifying:
+              - modifying-data-structures/index.md
+              - modifying-data-structures/lists.md
+              - modifying-data-structures/maps.md
+              - modifying-data-structures/vectors.md
+              - modifying-data-structures/sets.md
+          - iterate-over-data/index.md
+          - iterate-over-data/map.md
+          - iterate-over-data/map-partial.md
+          - iterate-over-data/map-fn.md
+          - iterate-over-data/filter-remove.md
+          - iterate-over-data/apply.md
+          - iterate-over-data/reduce.md
+          - iterate-over-data/reduce.md
+          - iterate-over-data/reduce.md
+          - Design:
+              - designing-data-structures/index.md
+              - designing-data-structures/with-vectors.md
+              - designing-data-structures/with-vectors-of-vectors.md
+              - designing-data-structures/with-maps.md
+              - designing-data-structures/with-maps-of-maps.md
+              - designing-data-structures/with-vectors-of-maps.md
+              - designing-data-structures/modeling-alphabet-codes.md
+              - designing-data-structures/modeling-name-generation-map.md
+      - Thinking Functionally:
+          - thinking-functionally/index.md
+          - thinking-functionally/side-effects.md
+          - thinking-functionally/pure-functions.md
+          - thinking-functionally/impure-functions.md
+          - thinking-functionally/first-class-functions.md
+          - thinking-functionally/homoiconicity.md
+          - thinking-functionally/function-composition.md
+          - thinking-functionally/example-hitchhikers-guide.md
+          # <!-- TODO - thinking-functionally/iterate-over-values.md -->
+          - thinking-functionally/higher-order-functions.md
+          - thinking-functionally/immutability.md
+          - thinking-functionally/immutable-values.md
+          - thinking-functionally/immutable-collections.md
+          - thinking-functionally/immutable-local-bindings.md
+          - thinking-functionally/partial-functions.md
+          - thinking-functionally/map-with-partial.md
+          - thinking-functionally/list-comprehension.md
+          # <!-- - thinking-functionally/lazy-evaluation.md -->
+          - thinking-functionally/sequences.md
+          - sequence-abstractions.md
+          - thinking-functionally/functors.md
+          - thinking-functionally/arity.md
+          - thinking-functionally/pattern-matching.md
+          - thinking-functionally/polymorphism.md
+          - thinking-functionally/recursion.md
+          - thinking-functionally/recursion-polymorphism.md
+          - thinking-functionally/tail-recursion.md
       - Crreative Coding:
           - reference/creative-coding/index.md
+          - SVG:
+              - reference/clojure-svg/index.md
+      - JVM:
+          - reference/jvm/index.md
+          - reference/jvm/understanding-memory-usage.md
+          - reference/jvm/common-options.md
+          - reference/jvm/java-17-flags.md
+          - reference/jvm/experimental-options.md
+          - Profile tools: reference/jvm/profile-tools.md
+          - reference/performance/index.md
+      - Alternative Tools:
+          - alternative-tools/index.md
+          - alternative-tools/clojure-cli/basic-repl.md
+          - alternative-tools/clojure-cli/compare-with-leiningen.md
+          - alternative-tools/data-inspector/reveal.md
+          - alternative-tools/clojure-cli/evaluate-an-expression.md
+          - alternative-tools/clojure-cli/set-namespace-on-repl-startup.md
+          - alternative-tools/leiningen/index.md
