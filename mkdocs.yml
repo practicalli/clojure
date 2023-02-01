@@ -295,6 +295,17 @@ nav:
               - clojure-spec/projects/bank-account/function-specifications.md
               - clojure-spec/projects/bank-account/test-functions-against-spec.md
 
+  - Continuous Integration:
+      - continuous-integration/index.md
+      - Circle CI:
+          - continuous-integration/circle-ci/index.md
+          - continuous-integration/circle-ci/random-clojure-function.md
+          - continuous-integration/circle-ci/status-monitor.md
+          # <!-- - continuous-integration/circle-ci/circle-ci-sample-project.md -->
+          - continuous-integration/github-actions/index.md
+          - continuous-integration/github-actions/clj-kondo-lint.md
+  # <!-- - testing/performance-testing/index.md -->
+  # <!-- - testing/load-stress-testing/index.md -->
 
   - Reference:
       - Clojure CLI:
