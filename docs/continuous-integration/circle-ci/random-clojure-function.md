@@ -1,5 +1,8 @@
 # Random Clojure Function
+
 A Clojure command line application that shows a random function from the namespaces available in the Clojure Standard library, or a specific namespace from that library.
+
+[Random Clojure Function repository](https://github.com/practicalli/random-clojure-function){target=_blank .md-button}
 
 This guide shows how to develop this project alongside CircleCI as the continuous integration service.
 
@@ -12,12 +15,13 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 7. After each push to GitHub, check the build status
 8. Add a CircleCI badge to the project readme
 
-{% youtube %}
-https://youtu.be/sXZKrD4cAFk
-{% endyoutube %}
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sXZKrD4cAFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
-> #### Hint::Use the -T execution flag rather than -M or -A
-> `:project/new` runs the clj-new tool which does not require paths or dependencies from a project (no Clojure project exists yet anyway).  The recommended approach is to use the `-T` execution option, i.e. `clojure -T:project/new`.
+!!! HINT "Video uses an older command to create projects"
+> `clojure -T:project/new` is an updated approach to generate projects. Arguments are key value pairs and more specific in their purpose, e.g. `clojure -T:project/new :template app :name practicalli/playground`
+
 
 ## Create a new project
 
