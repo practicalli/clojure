@@ -13,8 +13,7 @@ All content and interaction with any persons or systems must be done so with res
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/y/practicalli/clojure?label=commits&logo=github)](https://img.shields.io/github/commit-activity/y/practicalli/clojure?label=commits&logo=github){target=_blank}
 [![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/practicalli/clojure?label=pull%20requests&logo=github)](https://img.shields.io/github/issues-pr-raw/practicalli/clojure?label=pull%20requests&logo=github){target=_blank}
 
-[![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml){target=_blank}
-[![Publish Book](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml){target=_blank}
+[![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml)[![Publish Book](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml){target=_blank}
 [![pages-build-deployment](https://github.com/practicalli/clojure/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/pages/pages-build-deployment){target=_blank}
 
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure?style=for-the-badge&label=github%20contributors)
