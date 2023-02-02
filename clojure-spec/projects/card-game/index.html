@@ -9,9 +9,9 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/clojure-spec/projects/card-game/" rel="canonical"/>
 <link href="../" rel="prev"/>
-<link href="playing-card-specifications/" rel="next"/>
+<link href="../bank-account/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.10" name="generator"/>
 <title>Card game: spec and generative testing - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -1081,9 +1081,6 @@
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_11_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index md-nav__link--active">
 <a href="./">Playing Cards</a>
-<label for="__nav_11_8_2">
-<span class="md-nav__icon md-icon"></span>
-</label>
 </div>
 <nav aria-expanded="true" aria-labelledby="__nav_11_8_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_11_8_2">
@@ -1091,31 +1088,6 @@
           Playing Cards
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="playing-card-specifications/">
-        Representing playing cards as specifications
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="generative-data-from-specifications/">
-        Generative data from Specifications
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="game-specifications/">
-        Game specifications
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="function-specifications/">
-        Specifications for function definitions
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="organising-instrumentation/">
-        Organizing the instrumentation of functions
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -2002,28 +1974,91 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#create-a-project">
-    Create a project
+<a class="md-nav__link" href="#create-a-new-project">
+    Create a new project
   </a>
-<nav aria-label="Create a project" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#playing-card-specifications">
+    Playing card specifications
+  </a>
+<nav aria-label="Playing card specifications" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintuse-practicalliclojure-deps-edn-to-add-common-tools">
-    Hint::Use practicalli/clojure-deps-edn to add common tools
+<a class="md-nav__link" href="#card-game-decks">
+    Card game decks
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#define-an-alias">
+    Define an alias
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#playing-card-rank">
+    Playing card rank
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#playing-card">
+    Playing Card
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#game-specs">
+    Game specs
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#game-deck-specs">
+    Game deck specs
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-the-clojure-spec-namespace">
-    Add the Clojure spec namespace
+<a class="md-nav__link" href="#generative-data-from-specifications">
+    Generative data from Specifications
   </a>
-<nav aria-label="Add the Clojure spec namespace" class="md-nav">
+<nav aria-label="Generative data from Specifications" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hinthiding-code">
-    Hint::Hiding code
+<a class="md-nav__link" href="#card-game-data">
+    Card Game data
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#function-specifications">
+    Function Specifications
+  </a>
+<nav aria-label="Function Specifications" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#function-definition">
+    Function definition
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#spec-definitions">
+    Spec definitions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#instrument-functions">
+    Instrument functions
+  </a>
+<nav aria-label="Instrument functions" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#organizing-function-instrumentation">
+    Organizing function instrumentation
   </a>
 </li>
 </ul>
@@ -2037,30 +2072,264 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="card-game-spec-and-generative-testing">Card game: spec and generative testing<a class="headerlink" href="#card-game-spec-and-generative-testing" title="Permanent link">λ︎</a></h1>
-<p>Specifications to represent the data that composes to create a deck of playing cards and functions that define a simple card game.  spec generators are used to return varied sample data from those specifications. Function definitions are instrumented and check for correct arguments when those functions are called.</p>
-<h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">λ︎</a></h2>
-<p>Create a new Clojure project using <code>clj-new</code> tool for Clojure Tools.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:new<span class="w"> </span>app<span class="w"> </span>practicalli/card-game
-</code></pre></div></p>
-<blockquote>
-<h4 id="hintuse-practicalliclojure-deps-edn-to-add-common-tools">Hint::Use practicalli/clojure-deps-edn to add common tools<a class="headerlink" href="#hintuse-practicalliclojure-deps-edn-to-add-common-tools" title="Permanent link">λ︎</a></h4>
-<p>fork and clone the <a href="https://github.com/practicalli/clojure-deps-edn">practicalli/clojure-deps-edn</a> GitHub repository to <code>~/.clojure/</code>  and instantly have access to dozens of tools for Clojure software development</p>
-</blockquote>
-<h2 id="add-the-clojure-spec-namespace">Add the Clojure spec namespace<a class="headerlink" href="#add-the-clojure-spec-namespace" title="Permanent link">λ︎</a></h2>
-<p>Open the <code>src/practicalli/card_game.clj</code> file and require the <code>clojure.spec.alpha</code> namespace</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(ns practicalli.card-game.clj
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<p>Define a data specification that represent a deck of playing cards, adding functional specifictations to check the values passed to the functions use to play a card game.</p>
+<p>spec generators are used to return varied sample data from those specifications. Function definitions are instrumented and check for correct arguments when those functions are called.</p>
+<h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">λ︎</a></h2>
+<p>Create a new Clojure project using <code>:project/create</code> from <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> or add an alias definition of your choosing to the Clojure CLI user configuration.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/create<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/card-game
 </code></pre></div>
-<blockquote>
-<h4 id="hinthiding-code">Hint::Hiding code<a class="headerlink" href="#hinthiding-code" title="Permanent link">λ︎</a></h4>
-<p>Each page in this guide runs a self contained REPL, so the <code>practicalli.card-game</code> namespace, require expressions and specifications needed for each page are included as a hidden section at the top of each page.  This approach removes the need to duplicate code from previous sections.</p>
-</blockquote>
+<p>Open the <code>src/practicalli/card_game.clj</code> file and require the <code>clojure.spec.alpha</code> namespace</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.card-game.clj</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
+</code></pre></div>
+<h2 id="playing-card-specifications">Playing card specifications<a class="headerlink" href="#playing-card-specifications" title="Permanent link">λ︎</a></h2>
+<p>A playing card has a face value and a suit. There are 4 suits in a card deck.</p>
+<p>A specification for the possible suits can be defined using literal values</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:diamonds</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:spades</span><span class="p">})</span>
+</code></pre></div>
+<p>Define a predicate function to check a value conforms to the spec using the pattern matching that is build-in to the Clojure <code>set</code> data type.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">suits?</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:diamonds</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:spades</span><span class="p">})</span>
+</code></pre></div>
+<h3 id="card-game-decks">Card game decks<a class="headerlink" href="#card-game-decks" title="Permanent link">λ︎</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Playing_card_suit">Suits from different regions</a> are called by different names.  Each of these suits can be their own spec.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits-french</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:tiles</span><span class="w"> </span><span class="ss">:clovers</span><span class="w"> </span><span class="ss">:pikes</span><span class="p">})</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits-german</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:bells</span><span class="w"> </span><span class="ss">:acorns</span><span class="w"> </span><span class="ss">:leaves</span><span class="p">})</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits-spanish</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:cups</span><span class="w"> </span><span class="ss">:coins</span><span class="w"> </span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:swords</span><span class="p">})</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits-italian</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:cups</span><span class="w"> </span><span class="ss">:coins</span><span class="w"> </span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:swords</span><span class="p">})</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits-swiss-german</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:roses</span><span class="w"> </span><span class="ss">:bells</span><span class="w"> </span><span class="ss">:acorns</span><span class="w"> </span><span class="ss">:shields</span><span class="p">})</span>
+</code></pre></div>
+<p>A composite specification called <code>::card-suits</code> provides a simple abstraction over all the variations of suits.  Using <code>::card-suits</code> will be satisfied with any region specific suits.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::card-suits</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/or</span><span class="w"> </span><span class="ss">:french</span><span class="w"> </span><span class="ss">::suits-french</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">           </span><span class="ss">:german</span><span class="w"> </span><span class="ss">::suits-german</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">           </span><span class="ss">:spanish</span><span class="w"> </span><span class="ss">::suits-spanish</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">           </span><span class="ss">:italian</span><span class="w"> </span><span class="ss">::suits-italian</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">           </span><span class="ss">:swiss-german</span><span class="w"> </span><span class="ss">::suits-swiss-german</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">           </span><span class="ss">:international</span><span class="w"> </span><span class="ss">::suits-international</span><span class="p">))</span>
+</code></pre></div>
+<!-- TODO: check if a deck contains 4 suits -->
+<!-- TODO: check if a deck is one of the regions above -->
+<h3 id="define-an-alias">Define an alias<a class="headerlink" href="#define-an-alias" title="Permanent link">λ︎</a></h3>
+<p>Jack queen king are called face cards in the USA and occasionally referred to as court cards in the UK.</p>
+<p>Define a spec for <code>::face-cards</code> and then define <code>:court-cards</code> and alias</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::face-cards</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="w"> </span><span class="ss">:ace</span><span class="p">})</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::court-cards</span><span class="w"> </span><span class="ss">::face-cards</span><span class="p">)</span>
+</code></pre></div>
+<p>Any value that conforms to the <code>::face-card</code> specification also conforms to the <code>::court-cards</code> specification.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="ss">::court-cards</span><span class="w"> </span><span class="ss">:ace</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="playing-card-rank">Playing card rank<a class="headerlink" href="#playing-card-rank" title="Permanent link">λ︎</a></h3>
+<p>Each suit in the deck has the same rank of cards explicitly defining a rank</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:ace</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="p">})</span>
+</code></pre></div>
+<p>Rank can be defined more succinctly with the <code>clojure.core/range</code> function.  The expression <code>(range 2 11)</code> will generates a sequence of integer numbers from 2 to 10 (the end number is exclusive, so 11 is not in the sequence).</p>
+<p>Using <code>clojure.core/into</code> this range of numbers can be added to the face card values.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">(</span><span class="nb">into </span><span class="o">#</span><span class="p">{</span><span class="ss">:ace</span><span class="w"> </span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">2</span><span class="w"> </span><span class="mi">11</span><span class="p">))</span>
+</code></pre></div>
+<p>The <code>::rank</code> specification now generates all the possible values for playing cards.</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="p">(</span><span class="nb">into </span><span class="o">#</span><span class="p">{</span><span class="ss">:ace</span><span class="w"> </span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">2</span><span class="w"> </span><span class="mi">11</span><span class="p">)))</span>
+</code></pre></div>
+The specification only checks to see if a value is in the set, the order of the values in the set is irrelevant.</p>
+<h3 id="playing-card">Playing Card<a class="headerlink" href="#playing-card" title="Permanent link">λ︎</a></h3>
+<p>A playing card is a combination of suit and face value, a pair of values, referred to as a tuple.</p>
+<p>Clojure spec has a <code>tuple</code> function, however, we need to define some predicates first</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::playing-card</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/tuple</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="ss">::suits</span><span class="w"> </span><span class="p">))</span>
+</code></pre></div>
+<p>Use the spec with values to see if they conform.  Try you own values for a playing card.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="ss">::playing-card</span><span class="w"> </span><span class="p">[</span><span class="ss">:ace</span><span class="w"> </span><span class="ss">:spades</span><span class="p">])</span>
+</code></pre></div></p>
+<h3 id="game-specs">Game specs<a class="headerlink" href="#game-specs" title="Permanent link">λ︎</a></h3>
+<p>Define specifications for data used to represent players and the overall card game.</p>
+<p>The player name is a very simple spec.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::name</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
+</code></pre></div>
+<p>Score will keep a running total of a player score across games, again a simple integer value.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::score</span><span class="w"> </span><span class="nv">int?</span><span class="p">)</span>
+</code></pre></div>
+<p>A player is represented by a hash-map that contains their name, score and the hand they are currently dealt.  The hand is a collection of tuples representing a playing card.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::player</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">          </span><span class="p">(</span><span class="nf">spec/keys</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">            </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::name</span><span class="w"> </span><span class="ss">::score</span><span class="w"> </span><span class="ss">::dealt-hand</span><span class="p">]))</span>
+</code></pre></div>
+<h3 id="game-deck-specs">Game deck specs<a class="headerlink" href="#game-deck-specs" title="Permanent link">λ︎</a></h3>
+<p>A card game has a deck of 52 cards, one card for each combination of suit and rank.</p>
+<p>The size of the card deck changes over the course of a game, so the deck can contain any number of cards.  The deck must contain only cards to be valid.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::card-deck</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/*</span><span class="w"> </span><span class="ss">::playing-card</span><span class="p">))</span>
+</code></pre></div>
+<p>At this stage in the design, a card game can have any number of players</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::players</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/*</span><span class="w"> </span><span class="ss">::player</span><span class="p">))</span>
+</code></pre></div>
+<p>A game is represented by a hash-map with a collection of players and a card deck</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::game</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/keys</span><span class="w"> </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::players</span><span class="w"> </span><span class="ss">::card-deck</span><span class="p">]))</span>
+</code></pre></div>
+<h2 id="generative-data-from-specifications">Generative data from Specifications<a class="headerlink" href="#generative-data-from-specifications" title="Permanent link">λ︎</a></h2>
+<p>Clojure spec can generate random data which conforms to a specification, highly useful in testing Clojure code with a wide variety of values.</p>
+<ul>
+<li><code>clojure.spec.alpha/gen</code> returns a generator for the given specification.</li>
+<li><code>clojure.spec.gen.alpha/generate</code> takes that generator and creates a random value that conforms to the specification.</li>
+<li><code>clojure.spec.gen.alpha/sample</code> will generate a collection of random values that each conform to the specification.</li>
+</ul>
+<p>Require the clojure spec namespaces to make use of their functions.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.card-game.clj</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">            </span><span class="p">[</span><span class="nv">clojure.spec.gen.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec-gen</span><span class="p">]</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">            </span><span class="p">[</span><span class="nv">clojure.spec.test.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec-test</span><span class="p">]))</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suits</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:diamonds</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:spades</span><span class="p">})</span>
+<a href="#__codelineno-19-7" id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:ace</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="p">})</span>
+</code></pre></div>
+<p>To generated data based on a specification, first get a generator for a given spec,</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::suits</span><span class="p">)</span>
+</code></pre></div>
+<p><code>generate</code> will return a value using the specific generator for the specification.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::suits</span><span class="p">))</span>
+</code></pre></div>
+<p><code>sample</code> will generate a number of values from the given specification</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">(</span><span class="nf">spec-gen/sample</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::rank</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="card-game-data">Card Game data<a class="headerlink" href="#card-game-data" title="Permanent link">λ︎</a></h3>
+<p>Generate a random value for the <code>::player</code> specification</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::player</span><span class="p">))</span>
+</code></pre></div>
+<details class="example">
+<summary>Example</summary>
+<p>Expected output from <code>generate</code>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="o">#</span><span class="ss">:practicalli.spec-generative-testing</span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"Yp34KE63vAL1eriKN4cBt"</span>,
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w"> </span><span class="ss">:score</span><span class="w"> </span><span class="mi">225</span>,
+<a href="#__codelineno-24-4" id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="w"> </span><span class="ss">:dealt-hand</span><span class="w"> </span><span class="p">([</span><span class="mi">9</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">7</span><span class="w"> </span><span class="ss">:diamonds</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:king</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:ace</span><span class="w"> </span><span class="ss">:diamonds</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="w"> </span><span class="ss">:diamonds</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">5</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">6</span><span class="w"> </span><span class="ss">:spades</span><span class="p">])}</span>
+</code></pre></div></p>
+</details>
+<p>Generate a random value for the <code>::game</code> specification</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::game</span><span class="p">))</span>
+</code></pre></div>
+<p>Generate a collection of random values that each conform to the specification.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">(</span><span class="nf">spec-gen/sample</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::game</span><span class="p">))</span>
+</code></pre></div>
+<h2 id="function-specifications">Function Specifications<a class="headerlink" href="#function-specifications" title="Permanent link">λ︎</a></h2>
+<p>A function specification can contain a specification for the arguments, the return values and the relationship between the two.</p>
+<p>The specifications for the function may be composed from previously defined data specifications.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.card-game</span>
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]</span>
+<a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">            </span><span class="p">[</span><span class="nv">clojure.spec.gen.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec-gen</span><span class="p">]</span>
+<a href="#__codelineno-27-4" id="__codelineno-27-4" name="__codelineno-27-4"></a><span class="w">            </span><span class="p">[</span><span class="nv">clojure.spec.test.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec-test</span><span class="p">]))</span>
+<a href="#__codelineno-27-5" id="__codelineno-27-5" name="__codelineno-27-5"></a>
+<a href="#__codelineno-27-6" id="__codelineno-27-6" name="__codelineno-27-6"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::suit</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:diamonds</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:spades</span><span class="p">})</span>
+<a href="#__codelineno-27-7" id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="p">(</span><span class="nb">into </span><span class="o">#</span><span class="p">{</span><span class="ss">:jack</span><span class="w"> </span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:king</span><span class="w"> </span><span class="ss">:ace</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">2</span><span class="w"> </span><span class="mi">11</span><span class="p">)))</span>
+<a href="#__codelineno-27-8" id="__codelineno-27-8" name="__codelineno-27-8"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::playing-card</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/tuple</span><span class="w"> </span><span class="ss">::rank</span><span class="w"> </span><span class="ss">::suit</span><span class="p">))</span>
+<a href="#__codelineno-27-9" id="__codelineno-27-9" name="__codelineno-27-9"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::dealt-hand</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/*</span><span class="w"> </span><span class="ss">::playing-card</span><span class="p">))</span>
+<a href="#__codelineno-27-10" id="__codelineno-27-10" name="__codelineno-27-10"></a>
+<a href="#__codelineno-27-11" id="__codelineno-27-11" name="__codelineno-27-11"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::name</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
+<a href="#__codelineno-27-12" id="__codelineno-27-12" name="__codelineno-27-12"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::score</span><span class="w"> </span><span class="nv">int?</span><span class="p">)</span>
+<a href="#__codelineno-27-13" id="__codelineno-27-13" name="__codelineno-27-13"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::player</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/keys</span><span class="w"> </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::name</span><span class="w"> </span><span class="ss">::score</span><span class="w"> </span><span class="ss">::dealt-hand</span><span class="p">]))</span>
+<a href="#__codelineno-27-14" id="__codelineno-27-14" name="__codelineno-27-14"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::card-deck</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/*</span><span class="w"> </span><span class="ss">::playing-card</span><span class="p">))</span>
+<a href="#__codelineno-27-15" id="__codelineno-27-15" name="__codelineno-27-15"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::players</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/*</span><span class="w"> </span><span class="ss">::player</span><span class="p">))</span>
+<a href="#__codelineno-27-16" id="__codelineno-27-16" name="__codelineno-27-16"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::game</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/keys</span><span class="w"> </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::players</span><span class="w"> </span><span class="ss">::card-deck</span><span class="p">]))</span>
+</code></pre></div>
+<h3 id="function-definition">Function definition<a class="headerlink" href="#function-definition" title="Permanent link">λ︎</a></h3>
+<p>The card game application has three functions to start with.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">regulation-card-deck</span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">  </span><span class="s">"Generate a complete deck of playing cards"</span>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="ss">::deck</span><span class="w"> </span><span class="ss">::players</span><span class="p">]</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">game</span><span class="p">}]</span>
+<a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w">  </span><span class="p">(</span><span class="nb">apply + </span><span class="p">(</span><span class="nb">count </span><span class="nv">deck</span><span class="p">)</span>
+<a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w">         </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">%</span><span class="w"> </span><span class="ss">::delt-hand</span><span class="w"> </span><span class="nv">count</span><span class="p">)</span><span class="w"> </span><span class="nv">players</span><span class="p">)))</span>
+</code></pre></div>
+<p>At the start of function design, the algorithm may still be undefined.  Using the specifications and generators mock data can be returned as a placeholder.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">deal-cards</span>
+<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">  </span><span class="s">"Deal cards to each of the players</span>
+<a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="s">   Returns updated game hash-map"</span>
+<a href="#__codelineno-29-4" id="__codelineno-29-4" name="__codelineno-29-4"></a><span class="w">  </span><span class="p">[</span><span class="nv">game</span><span class="p">]</span>
+<a href="#__codelineno-29-5" id="__codelineno-29-5" name="__codelineno-29-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::game</span><span class="p">)))</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">winning-player</span>
+<a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">  </span><span class="s">"Calculate winning hand by comparing each players hand</span>
+<a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="s">  Return winning player"</span>
+<a href="#__codelineno-30-4" id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">  </span><span class="p">[</span><span class="nv">players</span><span class="p">]</span>
+<a href="#__codelineno-30-5" id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">::player</span><span class="p">)))</span>
+</code></pre></div>
+<details class="example">
+<summary>Example</summary>
+<p>The expected form of a player won game:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-31-1" id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="w">  </span><span class="o">#</span><span class="ss">:practicalli.player-won</span>
+<a href="#__codelineno-31-2" id="__codelineno-31-2" name="__codelineno-31-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w">      </span><span class="s">"Jenny Nada"</span>,
+<a href="#__codelineno-31-3" id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w">   </span><span class="ss">:score</span><span class="w">     </span><span class="mi">225</span>,
+<a href="#__codelineno-31-4" id="__codelineno-31-4" name="__codelineno-31-4"></a><span class="w">   </span><span class="ss">:dealt-hand</span><span class="w"> </span><span class="p">[[</span><span class="mi">9</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">8</span><span class="w"> </span><span class="ss">:hearts</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">10</span><span class="w"> </span><span class="ss">:clubs</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="ss">:queen</span><span class="w"> </span><span class="ss">:spades</span><span class="p">]]}</span>
+</code></pre></div>
+</details>
+<h3 id="spec-definitions">Spec definitions<a class="headerlink" href="#spec-definitions" title="Permanent link">λ︎</a></h3>
+<p>Define a function specification for the <code>deal-cards</code> function</p>
+<ul>
+<li>argument must be of type <code>::game</code></li>
+<li>return type is <code>::game</code></li>
+<li>function applies arguments to a game and returns the game</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-32-1" id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="p">(</span><span class="nf">spec/fdef</span><span class="w"> </span><span class="nv">deal-cards</span>
+<a href="#__codelineno-32-2" id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="w">  </span><span class="ss">:args</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/cat</span><span class="w"> </span><span class="ss">:game</span><span class="w"> </span><span class="ss">::game</span><span class="p">)</span>
+<a href="#__codelineno-32-3" id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="w">  </span><span class="ss">:ret</span><span class="w"> </span><span class="ss">::game</span>
+<a href="#__codelineno-32-4" id="__codelineno-32-4" name="__codelineno-32-4"></a><span class="w">  </span><span class="ss">:fn</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">regulation-card-deck</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">%</span><span class="w"> </span><span class="ss">:args</span><span class="w"> </span><span class="ss">:game</span><span class="p">))</span>
+<a href="#__codelineno-32-5" id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="w">          </span><span class="p">(</span><span class="nf">regulation-card-deck</span><span class="w"> </span><span class="p">(</span><span class="nb">-&gt; </span><span class="nv">%</span><span class="w"> </span><span class="ss">:ret</span><span class="p">))))</span>
+</code></pre></div>
+<p>Define a function specification for the <code>winning-player</code> function</p>
+<ul>
+<li>argument must be of type <code>::players</code></li>
+<li>return type is <code>::players</code></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-33-1" id="__codelineno-33-1" name="__codelineno-33-1"></a><span class="p">(</span><span class="nf">spec/fdef</span><span class="w"> </span><span class="nv">winning-player</span>
+<a href="#__codelineno-33-2" id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="w">  </span><span class="ss">:args</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/cat</span><span class="w"> </span><span class="ss">:players</span><span class="w"> </span><span class="ss">::players</span><span class="p">)</span>
+<a href="#__codelineno-33-3" id="__codelineno-33-3" name="__codelineno-33-3"></a><span class="w">  </span><span class="ss">:ret</span><span class="w"> </span><span class="ss">::player</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="instrument-functions">Instrument functions<a class="headerlink" href="#instrument-functions" title="Permanent link">λ︎</a></h2>
+<p>Instrumenting functions will wrap a function definition and check the arguments of any call to the instrumented function.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-34-1" id="__codelineno-34-1" name="__codelineno-34-1"></a><span class="p">(</span><span class="nf">spec-test/instrument</span><span class="w"> </span><span class="o">`</span><span class="nv">deal-cards</span><span class="p">)</span>
+</code></pre></div>
+<p>Calling the <code>deal-cards</code> function with an incorrect argument returns an error that describes where in the specification the error occurred.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-35-1" id="__codelineno-35-1" name="__codelineno-35-1"></a><span class="p">(</span><span class="nf">deal-cards</span><span class="w"> </span><span class="s">"fake game data"</span><span class="p">)</span>
+</code></pre></div>
+<p>Error in an easier to read format</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-36-1" id="__codelineno-36-1" name="__codelineno-36-1"></a><span class="nv">ERROR</span><span class="err">:</span><span class="w"> </span><span class="o">#</span><span class="nv">error</span>
+<a href="#__codelineno-36-2" id="__codelineno-36-2" name="__codelineno-36-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:message</span><span class="w"> </span><span class="s">"Call to #'practicalli.card-game/deal-cards did not conform to spec:\n\</span>
+<a href="#__codelineno-36-3" id="__codelineno-36-3" name="__codelineno-36-3"></a><span class="s"> "</span><span class="nv">fake</span><span class="w"> </span><span class="nv">game</span><span class="w"> </span><span class="nv">data</span><span class="sc">\"</span><span class="w"> </span><span class="nb">- </span><span class="nv">failed</span><span class="err">:</span>
+<a href="#__codelineno-36-4" id="__codelineno-36-4" name="__codelineno-36-4"></a><span class="w"> </span><span class="nb">map? </span><span class="nv">in</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="nv">at</span><span class="err">:</span><span class="w"> </span><span class="p">[</span><span class="ss">:args</span><span class="w"> </span><span class="ss">:game</span><span class="p">]</span><span class="w"> </span><span class="nv">spec</span><span class="err">:</span><span class="w"> </span><span class="ss">:practicalli.card-game/game</span><span class="sc">\n</span><span class="s">",</span>
+<a href="#__codelineno-36-5" id="__codelineno-36-5" name="__codelineno-36-5"></a><span class="s"> :data {:cljs.spec.alpha/problems</span>
+<a href="#__codelineno-36-6" id="__codelineno-36-6" name="__codelineno-36-6"></a><span class="s"> [{:path [:args :game],</span>
+<a href="#__codelineno-36-7" id="__codelineno-36-7" name="__codelineno-36-7"></a><span class="s">   :pred cljs.core/map?,</span>
+<a href="#__codelineno-36-8" id="__codelineno-36-8" name="__codelineno-36-8"></a><span class="s">   :val "</span><span class="nv">fake</span><span class="w"> </span><span class="nv">game</span><span class="w"> </span><span class="nv">data</span><span class="s">",</span>
+<a href="#__codelineno-36-9" id="__codelineno-36-9" name="__codelineno-36-9"></a><span class="s">   :via [:practicalli.card-game/game :practicalli.card-game/game],</span>
+<a href="#__codelineno-36-10" id="__codelineno-36-10" name="__codelineno-36-10"></a><span class="s">   :in [0]}],</span>
+<a href="#__codelineno-36-11" id="__codelineno-36-11" name="__codelineno-36-11"></a><span class="s"> :cljs.spec.alpha/spec #object[cljs.spec.alpha.t_cljs$spec$alpha17968],</span>
+<a href="#__codelineno-36-12" id="__codelineno-36-12" name="__codelineno-36-12"></a><span class="s"> :cljs.spec.alpha/value ("</span><span class="nv">fake</span><span class="w"> </span><span class="nv">game</span><span class="w"> </span><span class="nv">data</span><span class="s">"),</span>
+<a href="#__codelineno-36-13" id="__codelineno-36-13" name="__codelineno-36-13"></a><span class="s"> :cljs.spec.alpha/args ("</span><span class="nv">fake</span><span class="w"> </span><span class="nv">game</span><span class="w"> </span><span class="nv">data</span><span class="err">"</span><span class="p">)</span>,
+<a href="#__codelineno-36-14" id="__codelineno-36-14" name="__codelineno-36-14"></a><span class="w"> </span><span class="ss">:cljs.spec.alpha/failure</span><span class="w"> </span><span class="ss">:instrument</span><span class="p">}}</span>
+</code></pre></div>
+<h3 id="organizing-function-instrumentation">Organizing function instrumentation<a class="headerlink" href="#organizing-function-instrumentation" title="Permanent link">λ︎</a></h3>
+<p>Instrumenting functions creates a wrapper around the original function definition.</p>
+<p>When you change the function definition and evaluate the new code, it replaces the instrumentation of the function.  Therefore each time a function is redefined it should be instrumented.</p>
+<p>There is no specific way to manage instrumenting a function, however, a common approach is to define a collection of functions to instrument, then use a helper function to instrument all the functions at once.</p>
+<p>Bind a name to the collection of function specifications.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-37-1" id="__codelineno-37-1" name="__codelineno-37-1"></a><span class="p">(</span><span class="k">def </span><span class="o">^</span><span class="ss">:private</span><span class="w"> </span><span class="nv">function-specifications</span>
+<a href="#__codelineno-37-2" id="__codelineno-37-2" name="__codelineno-37-2"></a><span class="w">  </span><span class="p">[</span><span class="o">`</span><span class="nv">card-game/deal-cards</span>
+<a href="#__codelineno-37-3" id="__codelineno-37-3" name="__codelineno-37-3"></a><span class="w">   </span><span class="o">`</span><span class="nv">card-game/winning-player</span><span class="p">])</span>
+</code></pre></div>
+<p>Define a simple helper function to instrument all the functions in the collection.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-38-1" id="__codelineno-38-1" name="__codelineno-38-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">instrument-all-functions</span>
+<a href="#__codelineno-38-2" id="__codelineno-38-2" name="__codelineno-38-2"></a><span class="w">  </span><span class="p">[]</span>
+<a href="#__codelineno-38-3" id="__codelineno-38-3" name="__codelineno-38-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec-test/instrument</span><span class="w"> </span><span class="nv">function-specifications</span><span class="p">))</span>
+</code></pre></div>
+<p>Refactoring the code may involve a number of changes benefit from instrumentation being switched off until its complete.  The <code>unstrument</code> function will remove instrumentation from all the functions in the collection.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-39-1" id="__codelineno-39-1" name="__codelineno-39-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">unstrument-all-functions</span>
+<a href="#__codelineno-39-2" id="__codelineno-39-2" name="__codelineno-39-2"></a><span class="w">  </span><span class="p">[]</span>
+<a href="#__codelineno-39-3" id="__codelineno-39-3" name="__codelineno-39-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec-test/unstrument</span><span class="w"> </span><span class="nv">function-specifications</span><span class="p">))</span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Koacha Test Runner can include functional specifications</p>
+<p><a href="https://cljdoc.org/d/lambdaisland/kaocha/CURRENT/doc/1-introduction">Koacha test runner</a> can manage the testing of function specifications and is especially useful for managing unit level testing with specifications.</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
 </small>
 </div>
 </article>
@@ -2111,6 +2380,6 @@
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
+<script src="../../../assets/javascripts/bundle.6df46069.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

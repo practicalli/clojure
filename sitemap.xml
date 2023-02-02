@@ -566,31 +566,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-spec/projects/card-game/function-specifications/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-spec/projects/card-game/game-specifications/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-spec/projects/card-game/generative-data-from-specifications/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-spec/projects/card-game/organising-instrumentation/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-spec/projects/card-game/playing-card-specifications/</loc>
-         <lastmod>2023-02-02</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-spec/testing/</loc>
          <lastmod>2023-02-02</lastmod>
          <changefreq>daily</changefreq>
