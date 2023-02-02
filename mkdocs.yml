@@ -278,11 +278,6 @@ nav:
           # <!-- - clojure-spec/projects/convention-checks.md -->
           - Playing Cards:
               - clojure-spec/projects/card-game/index.md
-              - clojure-spec/projects/card-game/playing-card-specifications.md
-              - clojure-spec/projects/card-game/generative-data-from-specifications.md
-              - clojure-spec/projects/card-game/game-specifications.md
-              - clojure-spec/projects/card-game/function-specifications.md
-              - clojure-spec/projects/card-game/organising-instrumentation.md
           - Bank Account:
               - clojure-spec/projects/bank-account/index.md
               # <!-- - clojure-spec/projects/bank-account/create-project.md -->
