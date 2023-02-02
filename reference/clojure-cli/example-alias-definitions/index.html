@@ -8,16 +8,30 @@
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/reference/clojure-cli/example-alias-definitions/" rel="canonical"/>
+<link href="../defining-aliases/" rel="prev"/>
+<link href="../jvm-options/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-8.5.10" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.9" name="generator"/>
 <title>Clojure Tools - Common alias definitions - Practicalli Clojure</title>
-<link href="../../../assets/stylesheets/main.975780f9.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<meta content="website" property="og:type"/>
+<meta content="Clojure Tools - Common alias definitions - Practicalli Clojure" property="og:title"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
+<meta content="https://practical.li/clojure/assets/images/social/reference/clojure-cli/example-alias-definitions.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://practical.li/clojure/reference/clojure-cli/example-alias-definitions/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Clojure Tools - Common alias definitions - Practicalli Clojure" name="twitter:title"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
+<meta content="https://practical.li/clojure/assets/images/social/reference/clojure-cli/example-alias-definitions.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -100,7 +114,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -143,14 +157,14 @@
 </div>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" id="__nav_1" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../..">Introduction</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Introduction" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
           Introduction
@@ -167,14 +181,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1_4" id="__nav_1_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_1_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../introduction/concepts/">Concepts</a>
 <label for="__nav_1_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Concepts" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_1_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_1_4">
 <span class="md-nav__icon md-icon"></span>
           Concepts
@@ -207,14 +221,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" id="__nav_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../install/">Install</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Install" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
           Install
@@ -234,14 +248,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" id="__nav_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-cli/">Clojure CLI</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure CLI" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
           Clojure CLI
@@ -266,14 +280,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" id="__nav_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-cli/repl/">Terminal REPL</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Terminal REPL" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
           Terminal REPL
@@ -308,14 +322,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" id="__nav_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-cli/projects/">Clojure Projects</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure Projects" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
           Clojure Projects
@@ -360,28 +374,28 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" id="__nav_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-editors/">Clojure Editors</a>
 <label for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure Editors" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
           Clojure Editors
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" id="__nav_7_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-editors/clojure-lsp/">Clojure LSP</a>
 <label for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure LSP" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
           Clojure LSP
@@ -401,14 +415,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" id="__nav_7_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
 <label for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Editor Install Guides" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
           Editor Install Guides
@@ -468,14 +482,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" id="__nav_7_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-editors/editor-user-guides/">Editor User Guides</a>
 <label for="__nav_7_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Editor User Guides" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_7_4">
 <span class="md-nav__icon md-icon"></span>
           Editor User Guides
@@ -523,14 +537,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" id="__nav_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../data-inspector/">Data Inspectors</a>
 <label for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Data Inspectors" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
           Data Inspectors
@@ -550,25 +564,25 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" id="__nav_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../coding-challenges/">Code Challenges</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Code Challenges" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
           Code Challenges
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_2" id="__nav_9_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../coding-challenges/4clojure/">4 Ever Clojure</a>
 </div>
-<nav aria-label="4 Ever Clojure" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_2">
 <span class="md-nav__icon md-icon"></span>
           4 Ever Clojure
@@ -578,14 +592,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_3" id="__nav_9_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../coding-challenges/exercism/">Exercism</a>
 <label for="__nav_9_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Exercism" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_3">
 <span class="md-nav__icon md-icon"></span>
           Exercism
@@ -625,14 +639,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6" id="__nav_9_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/">Simple projects</a>
 <label for="__nav_9_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Simple projects" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_6">
 <span class="md-nav__icon md-icon"></span>
           Simple projects
@@ -649,14 +663,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6_4" id="__nav_9_6_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/encode-decode/">Encoder Decode</a>
 <label for="__nav_9_6_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Encoder Decode" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_4_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_6_4">
 <span class="md-nav__icon md-icon"></span>
           Encoder Decode
@@ -686,14 +700,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6_5" id="__nav_9_6_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/data-transformation/">Data Transform</a>
 <label for="__nav_9_6_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Data Transform" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_5_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_6_5">
 <span class="md-nav__icon md-icon"></span>
           Data Transform
@@ -708,14 +722,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_6_6" id="__nav_9_6_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/tdd-kata/">Kata</a>
 <label for="__nav_9_6_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Kata" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_6_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_6_6">
 <span class="md-nav__icon md-icon"></span>
           Kata
@@ -733,25 +747,25 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7" id="__nav_9_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../games/">Games</a>
 <label for="__nav_9_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Games" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_9_7_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_7">
 <span class="md-nav__icon md-icon"></span>
           Games
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_7_2" id="__nav_9_7_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../games/tictactoe-cli/">TicTacToe</a>
 </div>
-<nav aria-label="TicTacToe" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_9_7_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_7_2">
 <span class="md-nav__icon md-icon"></span>
           TicTacToe
@@ -767,28 +781,28 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" id="__nav_10" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../testing/">Testing</a>
 <label for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Testing" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
           Testing
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_2" id="__nav_10_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../testing/unit-testing/">Unit Testing</a>
 <label for="__nav_10_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Unit Testing" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_10_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_10_2">
 <span class="md-nav__icon md-icon"></span>
           Unit Testing
@@ -823,14 +837,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10_3" id="__nav_10_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../testing/test-runners/">Test runners</a>
 <label for="__nav_10_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Test runners" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_10_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_10_3">
 <span class="md-nav__icon md-icon"></span>
           Test runners
@@ -858,14 +872,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" id="__nav_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/">Clojure Spec</a>
 <label for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure Spec" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
           Clojure Spec
@@ -887,14 +901,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_5" id="__nav_11_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/data/">Data Specs</a>
 <label for="__nav_11_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Data Specs" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_11_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_11_5">
 <span class="md-nav__icon md-icon"></span>
           Data Specs
@@ -964,14 +978,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_6" id="__nav_11_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/functions/">Function Specs</a>
 <label for="__nav_11_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Function Specs" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_11_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_11_6">
 <span class="md-nav__icon md-icon"></span>
           Function Specs
@@ -996,14 +1010,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_7" id="__nav_11_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/testing/">Testing</a>
 <label for="__nav_11_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Testing" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_11_7">
 <span class="md-nav__icon md-icon"></span>
           Testing
@@ -1015,14 +1029,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_7_3" id="__nav_11_7_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/generative-testing/">Generative Testing</a>
 <label for="__nav_11_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Generative Testing" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_11_7_3">
 <span class="md-nav__icon md-icon"></span>
           Generative Testing
@@ -1050,28 +1064,28 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8" id="__nav_11_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/projects/">Spec Project</a>
 <label for="__nav_11_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Spec Project" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_11_8">
 <span class="md-nav__icon md-icon"></span>
           Spec Project
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8_2" id="__nav_11_8_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/projects/card-game/">Playing Cards</a>
 <label for="__nav_11_8_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Playing Cards" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_11_8_2">
 <span class="md-nav__icon md-icon"></span>
           Playing Cards
@@ -1106,14 +1120,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11_8_3" id="__nav_11_8_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_11_8_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../clojure-spec/projects/bank-account/">Bank Account</a>
 <label for="__nav_11_8_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Bank Account" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_3_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_11_8_3">
 <span class="md-nav__icon md-icon"></span>
           Bank Account
@@ -1169,28 +1183,28 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" id="__nav_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../continuous-integration/">Continuous Integration</a>
 <label for="__nav_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Continuous Integration" class="md-nav" data-md-level="1">
+<nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_12">
 <span class="md-nav__icon md-icon"></span>
           Continuous Integration
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12_2" id="__nav_12_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_12_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../continuous-integration/circle-ci/">Circle CI</a>
 <label for="__nav_12_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Circle CI" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_12_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_12_2">
 <span class="md-nav__icon md-icon"></span>
           Circle CI
@@ -1223,14 +1237,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" id="__nav_13" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Reference</a>
 <label for="__nav_13">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Reference" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_13">
 <span class="md-nav__icon md-icon"></span>
           Reference
@@ -1242,14 +1256,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_3" id="__nav_13_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_13_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">Clojure CLI</a>
 <label for="__nav_13_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure CLI" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_13_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_3">
 <span class="md-nav__icon md-icon"></span>
           Clojure CLI
@@ -1261,7 +1275,7 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Clojure Tools - Common alias definitions
           <span class="md-nav__icon md-icon"></span>
@@ -1355,14 +1369,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_5" id="__nav_13_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../standard-library/">Standard Library</a>
 <label for="__nav_13_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Standard Library" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_5_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_5">
 <span class="md-nav__icon md-icon"></span>
           Standard Library
@@ -1432,12 +1446,12 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_6" id="__nav_13_6" type="checkbox"/>
-<label class="md-nav__link" for="__nav_13_6">
+<input class="md-nav__toggle md-toggle" id="__nav_13_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13_6" id="__nav_13_6_label" tabindex="0">
           Java
           <span class="md-nav__icon md-icon"></span>
 </label>
-<nav aria-label="Java" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_6_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_6">
 <span class="md-nav__icon md-icon"></span>
           Java
@@ -1457,14 +1471,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_7" id="__nav_13_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../tagged-literals/">Clojure Syntax</a>
 <label for="__nav_13_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Clojure Syntax" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_7_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_7">
 <span class="md-nav__icon md-icon"></span>
           Clojure Syntax
@@ -1544,14 +1558,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8" id="__nav_13_8" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../data-structures/">Data Structures</a>
 <label for="__nav_13_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Data Structures" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_8">
 <span class="md-nav__icon md-icon"></span>
           Data Structures
@@ -1603,14 +1617,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8_11" id="__nav_13_8_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../using-data-structures/">Using Data Structures</a>
 <label for="__nav_13_8_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Using Data Structures" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_11_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_13_8_11">
 <span class="md-nav__icon md-icon"></span>
           Using Data Structures
@@ -1645,14 +1659,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8_12" id="__nav_13_8_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../modifying-data-structures/">Modifying</a>
 <label for="__nav_13_8_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Modifying" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_12_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_13_8_12">
 <span class="md-nav__icon md-icon"></span>
           Modifying
@@ -1727,14 +1741,14 @@
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_8_22" id="__nav_13_8_22" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_22" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../designing-data-structures/">Design</a>
 <label for="__nav_13_8_22">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Design" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_22_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_13_8_22">
 <span class="md-nav__icon md-icon"></span>
           Design
@@ -1782,14 +1796,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_9" id="__nav_13_9" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../thinking-functionally/">Thinking Functionally</a>
 <label for="__nav_13_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Thinking Functionally" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_9_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_9">
 <span class="md-nav__icon md-icon"></span>
           Thinking Functionally
@@ -1919,25 +1933,28 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10" id="__nav_13_10" type="checkbox"/>
-<div class="md-nav__link md-nav__link--index">
-<a href="../../creative-coding/">Crreative Coding</a>
-<label for="__nav_13_10">
-<span class="md-nav__icon md-icon"></span>
+<input class="md-nav__toggle md-toggle" id="__nav_13_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13_10" id="__nav_13_10_label" tabindex="0">
+          Crreative Coding
+          <span class="md-nav__icon md-icon"></span>
 </label>
-</div>
-<nav aria-label="Crreative Coding" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_10_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_10">
 <span class="md-nav__icon md-icon"></span>
           Crreative Coding
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../creative-coding/index.md">
+        None
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_10_2" id="__nav_13_10_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../clojure-svg/">SVG</a>
 </div>
-<nav aria-label="SVG" class="md-nav" data-md-level="3">
+<nav aria-expanded="false" aria-labelledby="__nav_13_10_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_13_10_2">
 <span class="md-nav__icon md-icon"></span>
           SVG
@@ -1950,14 +1967,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_11" id="__nav_13_11" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../jvm/">JVM</a>
 <label for="__nav_13_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="JVM" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_11_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_11">
 <span class="md-nav__icon md-icon"></span>
           JVM
@@ -1997,14 +2014,14 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13_12" id="__nav_13_12" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_13_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../alternative-tools/">Alternative Tools</a>
 <label for="__nav_13_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-label="Alternative Tools" class="md-nav" data-md-level="2">
+<nav aria-expanded="false" aria-labelledby="__nav_13_12_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_12">
 <span class="md-nav__icon md-icon"></span>
           Alternative Tools
@@ -2130,9 +2147,6 @@
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/reference/clojure-cli/example-alias-definitions.md" title="Edit this page">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"></path></svg>
-</a>
 <h1 id="clojure-tools-common-alias-definitions">Clojure Tools - Common alias definitions<a class="headerlink" href="#clojure-tools-common-alias-definitions" title="Permanent link">λ︎</a></h1>
 <!-- TODO: refactor clojure CLI example aliases  -->
 <h2 id="task-run-a-simple-terminal-repl">Task: Run a simple terminal REPL<a class="headerlink" href="#task-run-a-simple-terminal-repl" title="Permanent link">λ︎</a></h2>
@@ -2141,41 +2155,41 @@
 <h2 id="task-run-a-repl-with-additional-dependencies-and-paths">Task: Run a REPL with additional dependencies and paths<a class="headerlink" href="#task-run-a-repl-with-additional-dependencies-and-paths" title="Permanent link">λ︎</a></h2>
 <p><code>clojure -M:alias</code> will run a repl if the alias does not contain a main namespace defined in <code>:main-opts</code>, e.g. <code>:main-opts ["-m" "namespace.main"]</code>.  The deps and path values are included from the alias.</p>
 <p>If the following alias is defined in the project <code>deps.edn</code> file</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:env/dev</span><span class="w"></span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"resources"</span><span class="p">]</span><span class="w"></span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">com.h2database/h2</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.4.200"</span><span class="p">}}}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:env/dev</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"resources"</span><span class="p">]</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">com.h2database/h2</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.4.200"</span><span class="p">}}}</span>
 </code></pre></div>
 <code>clojure -M:env/dev</code> will add <code>resources</code> directory to the path and the h2 database library to the dependencies, then runs a REPL.</p>
 <p>Including the <code>-r</code> option in the command line forces a REPL to run, even if a main namespace is provided via <code>:main-opts</code> or the command line.</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-r</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:alias1:alias2</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-r</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:alias1:alias2</span>
 </code></pre></div>
 The dependencies and paths will be merged from the alias from left to right, with each successive alias over-riding the value of any matching keys in the dependencies.</p>
 <h2 id="task-create-a-new-project-from-template">Task: Create a new project from template<a class="headerlink" href="#task-create-a-new-project-from-template" title="Permanent link">λ︎</a></h2>
 <p>The <code>clj-new</code> community tool can be used to create a Clojure / ClojureScript project, using a template to provide a project structure and example source code and tests.</p>
 <p>Using the <code>:main-opts</code> approach, an alias for <code>clj-new</code> would be defined as follows</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">  </span><span class="ss">:project/new</span><span class="w"></span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.0.215"</span><span class="p">}}</span><span class="w"></span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.0.215"</span><span class="p">}}</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]}</span>
 </code></pre></div>
 <p>The <code>clj-new</code> tool can be run using the <code>-M</code> flag, passing the template and project names as arguments.</p>
 <p><code>clojure -M:project/new template-name project-domain/application-name</code></p>
 <p>To create a project as an application (to be run via the command line) for the practicalli domain with the application called banking-on-clojure</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure -M:new app practicalli/banking-on-clojure
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure<span class="w"> </span>-M:new<span class="w"> </span>app<span class="w"> </span>practicalli/banking-on-clojure
 </code></pre></div>
 <p>The latest version of the <code>clj-new</code> project also supports using the <code>-X</code> flag and default arguments.</p>
 <p>Adding the <code>:exec-fn</code> to the <code>clj-new</code> alias, the <code>-X</code> flag can be used instead of the <code>-M</code>.  Arguments are supplied as key/value pairs</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w">  </span><span class="ss">:project/new</span><span class="w"></span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.215"</span><span class="p">}}</span><span class="w"></span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new/create</span><span class="p">}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.215"</span><span class="p">}}</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new/create</span><span class="p">}</span>
 </code></pre></div>
 Use this alias with the <code>-X</code> flag</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>clojure -X:project/new :template template-name :name practicalli/banking-on-clojure
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>clojure<span class="w"> </span>-X:project/new<span class="w"> </span>:template<span class="w"> </span>template-name<span class="w"> </span>:name<span class="w"> </span>practicalli/banking-on-clojure
 </code></pre></div>
 <p>Default values can be added using the <code>:exec-args</code> key to the alias</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ss">:project/new</span><span class="w"></span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.215"</span><span class="p">}}</span><span class="w"></span>
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new.create</span><span class="w"></span>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">lib</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ss">:project/new</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.215"</span><span class="p">}}</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new.create</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">lib</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}}</span>
 </code></pre></div>
 <code>clojure -M:project/new :name practicalli/awesome-webapp</code> will create a new project using the <code>{:template lib :name practicalli/awesome-webapp}</code> argument.</p>
 <h2 id="task-executing-a-specific-function">Task: Executing a specific function<a class="headerlink" href="#task-executing-a-specific-function" title="Permanent link">λ︎</a></h2>
@@ -2188,20 +2202,20 @@ Use this alias with the <code>-X</code> flag</p>
 <p><code>clojure -X:alias namespace/fn</code> will run the function specified on the command line, over-riding <code>:exec-fn</code> if it is defined in the alias.  <code>:exec-args</code> will be passed to the command line function if defined in the alias. Dependencies and paths will be used from the alias. Assumption: the command line namespace also overrides the <code>:ns-default</code> value if set.</p>
 <p><code>clojure -X:alias :key1 val1 :key2 val2</code> will execute the function defined in <code>:exec-fn</code> and pass it the key value pairs from the command line as a hash map.  If the alias has <code>:exec-args</code> defined, command line args are merged into the <code>:exec-fn</code> hash-map, replacing the default values in <code>:exec-args</code> where keys match.</p>
 <p>Assuming there is an alias called <code>database/migrate</code> defined in the project <code>deps.edn</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="ss">:database/migrate</span><span class="w"></span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure.database/migrate</span><span class="w"></span>
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:db-type</span><span class="w"> </span><span class="s">"h2"</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"banking-on-clojure"</span><span class="p">}}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="ss">:database/migrate</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure.database/migrate</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:db-type</span><span class="w"> </span><span class="s">"h2"</span><span class="w"> </span><span class="ss">:database</span><span class="w"> </span><span class="s">"banking-on-clojure"</span><span class="p">}}</span>
 </code></pre></div>
 <p><code>clojure -X:database/migrate :database "specs-repository"</code> would merge the command line args with <code>:exec-args</code> to create the hash-map <code>{:db-type "h2" :database "specs-repository"}</code> which is passed to the <code>practicalli.banking-on-clojure.database/migrate</code> function as an argument.</p>
 <h2 id="task-executing-a-range-of-functions">Task: Executing a range of functions<a class="headerlink" href="#task-executing-a-range-of-functions" title="Permanent link">λ︎</a></h2>
 <p><code>:ns-default</code> in an alias defines the namespace that contains the functions that could be executed.</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">{</span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:project/run</span><span class="w"></span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="p">{</span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">practicalli/banking-on-clojure</span><span class="p">}}}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">{</span><span class="ss">:aliases</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:project/run</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="p">{</span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">practicalli/banking-on-clojure</span><span class="p">}}}</span>
 </code></pre></div>
 Specific functions from the namespace can be called via the command line</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure -X:project/run migrate-db :db-type h2 :database banking-on-clojure
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>clojure -X:project/run server-start :port <span class="m">8080</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-X:project/run<span class="w"> </span>migrate-db<span class="w"> </span>:db-type<span class="w"> </span>h2<span class="w"> </span>:database<span class="w"> </span>banking-on-clojure
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a>clojure<span class="w"> </span>-X:project/run<span class="w"> </span>server-start<span class="w"> </span>:port<span class="w"> </span><span class="m">8080</span>
 </code></pre></div>
 <h2 id="task-dry-run-or-prepare-for-ci-containers">Task: Dry Run or Prepare for CI / Containers<a class="headerlink" href="#task-dry-run-or-prepare-for-ci-containers" title="Permanent link">λ︎</a></h2>
 <p><code>clojure -P</code> will download the libraries defined in <code>:deps</code> in the project <code>deps.edn</code> and do nothing else.  Standard out shows downloading of dependencies not already cached locally, including name and versions and repository downloaded from.</p>
@@ -2223,54 +2237,54 @@ Specific functions from the namespace can be called via the command line</p>
 <p>The <code>-m</code> flag in the CLI tools pre-release returns a warning that <code>-M</code> should be used.</p>
 </blockquote>
 <p>Using <code>-M</code> and <code>-m</code> works, but seems redundant.  Using <code>-M</code> by itself runs the REPL.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure -M -m full.namespace.to.dash-main
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure<span class="w"> </span>-M<span class="w"> </span>-m<span class="w"> </span>full.namespace.to.dash-main
 </code></pre></div></p>
 <p><code>-M</code> seems useful when including an alias with extra configuration (eg. <code>:extra-deps</code>, <code>:extra-paths</code>, <code>:main-opts</code>).  As <code>:main-opts</code> is no different to the <code>-m</code> option, creating an alias just to avoid the warning seems excessive.</p>
 <h2 id="task-executing-a-project-using-edn-style-args">Task: Executing a project - using Edn style args<a class="headerlink" href="#task-executing-a-project-using-edn-style-args" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI tools is encouraging a move to functions that take a hash-map for their arguments.  Passing arguments in as an edn data structure has more rigor than options and strings on the command line.</p>
 <p>The simplest form is to define an alias to run the project, specifying just the function to execute using <code>:exec-fn</code>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w"> </span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span><span class="w"></span>
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure/server-start</span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w"> </span><span class="ss">:aliases</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure/server-start</span><span class="p">}</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span>
 </code></pre></div>
 Then the project can be run using this alias.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure -X:project/run
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure<span class="w"> </span>-X:project/run
 </code></pre></div>
 <p>Arguments can be passed to the function as key/value pairs on the command line.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>clojure -X:project/run  :port <span class="m">8080</span> :host <span class="s2">"localhost"</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>clojure<span class="w"> </span>-X:project/run<span class="w">  </span>:port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>:host<span class="w"> </span><span class="s2">"localhost"</span>
 </code></pre></div>
 <p><code>:exec-args</code> provides a way to define default arguments for the function, regardless of if it is defined in <code>;:exec-fn</code> or passed via the command line.</p>
 <p><code>:exec-args</code> defines a hash-map of arguments so the function must support taking a hash-map as an argument.</p>
 <blockquote>
 <p>A function may take variable args, especially if it is supporting both hash-maps and strings as options.</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w"> </span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span><span class="w"></span>
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">fully.qualified/namespace</span><span class="w"></span>
-<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="s">"arguments"</span><span class="w"> </span><span class="ss">:can-be-over-ridden-by</span><span class="w"> </span><span class="s">"command-line-args"</span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w"> </span><span class="ss">:aliases</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">fully.qualified/namespace</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="s">"arguments"</span><span class="w"> </span><span class="ss">:can-be-over-ridden-by</span><span class="w"> </span><span class="s">"command-line-args"</span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span>
 </code></pre></div>
 <p>Adding <code>:exec-args</code> to the <code>:run-project</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w"> </span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span><span class="w"></span>
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure/server-start</span><span class="w"></span>
-<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="mi">8888</span><span class="w"> </span><span class="ss">:host</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">}}</span><span class="w"></span>
-<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w"> </span><span class="ss">:aliases</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure/server-start</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">    </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="mi">8888</span><span class="w"> </span><span class="ss">:host</span><span class="w"> </span><span class="s">"localhost"</span><span class="p">}}</span>
+<a href="#__codelineno-15-5" id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span>
 </code></pre></div>
 <h4 id="example-of-running-a-clojure-project-hello-world">Example of running a Clojure project - hello-world<a class="headerlink" href="#example-of-running-a-clojure-project-hello-world" title="Permanent link">λ︎</a></h4>
 <p>In this example I use the hello-world example from <a href="https://clojure.org/guides/deps_and_cli#_writing_a_program">https://clojure.org/guides/deps_and_cli#_writing_a_program</a>
 A project <code>deps.edn</code> file was created containing the dependency for clojure.java-time and the source code from that page copied into <code>src/hello.clj</code></p>
 <p><code>clojure -m</code> hello runs the project and returns the time from running the -main function.
 However this gives a warning:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>WARNING: When invoking clojure.main, use -M
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>WARNING:<span class="w"> </span>When<span class="w"> </span>invoking<span class="w"> </span>clojure.main,<span class="w"> </span>use<span class="w"> </span>-M
 </code></pre></div></p>
 <p><code>clojure -M</code> runs a REPL</p>
 <p><code>clojure -M -m hello</code> runs the project and returns the time.  But then I ask myself what is the purpose of -M</p>
 <p>Creating an alias to run the project seems an interesting idea, as I could also set default arguments.</p>
 <p>Adding an <code>:project-run</code> alias to the project <code>deps.edn</code> works when calling with clojure <code>-M:project-run</code>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w"> </span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project-run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"hello"</span><span class="p">]}}</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w"> </span><span class="ss">:aliases</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project-run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"hello"</span><span class="p">]}}</span>
 </code></pre></div></p>
 <p>Changing the <code>:project-run</code> alias to use <code>:exec-fn</code> and a fully qualified function (-main by default) should work when calling with <code>clojure -X:project-run</code>.
  :aliases
@@ -2280,7 +2294,7 @@ However this gives a warning:
 <p>Changing the <code>-main</code> function to <code>(defn -main [&amp; args] ,,,)</code> fixes the arity exception and calling <code>clojure -X:run-project</code> works.</p>
 <h2 id="local-maven-install">Local Maven install<a class="headerlink" href="#local-maven-install" title="Permanent link">λ︎</a></h2>
 <p>Install a jar into the local Maven cache, typically <code>~/.m2/repository/</code> directory, organised by groupId</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">mvn-install</span><span class="w"> </span><span class="ss">:jar</span><span class="w"> </span><span class="o">'</span><span class="s">"/path/to.jar"</span><span class="o">'</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">mvn-install</span><span class="w"> </span><span class="ss">:jar</span><span class="w"> </span><span class="o">'</span><span class="s">"/path/to.jar"</span><span class="o">'</span>
 </code></pre></div>
 <blockquote>
 <p>edn strings must be in double quotes, and then single-quoted for the shell</p>
@@ -2335,14 +2349,14 @@ Rather than pass details via the command line, use an alias to pass in default a
 <p>TODO: Is it possible to define <code>:exec-args</code> with the built-in <code>-X:deps mvn-install</code> command?</p>
 </blockquote>
 <p>An alias can be defined in the project <code>deps.edn</code> file including default arguments via <code>:exec-args</code></p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">{</span><span class="ss">:aliases</span><span class="w"></span>
-<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:deploy/local-install</span><span class="w"></span>
-<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clojure.tools.deps.alpha.tools.install/install</span><span class="w"></span>
-<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">  </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:jar</span><span class="w"> </span><span class="s">"./project-name.jar"</span><span class="w"> </span><span class="ss">:pom</span><span class="w"> </span><span class="s">"./project-name.pom"</span><span class="p">}</span><span class="w"></span>
-<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">  </span><span class="p">}}}</span><span class="w"></span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">{</span><span class="ss">:aliases</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:deploy/local-install</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clojure.tools.deps.alpha.tools.install/install</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">  </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:jar</span><span class="w"> </span><span class="s">"./project-name.jar"</span><span class="w"> </span><span class="ss">:pom</span><span class="w"> </span><span class="s">"./project-name.pom"</span><span class="p">}</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">  </span><span class="p">}}}</span>
 </code></pre></div>
 Install the jar using the default arguments using the command:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>clojure -X:deploy/local-install
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>clojure<span class="w"> </span>-X:deploy/local-install
 </code></pre></div>
 <p><strong>How it works</strong>
 <code>clojure.tools.deps.alpha.tools.install/install</code> is a function to install a jar into the local Maven cache, i.e. <code>~/.m2/repository</code>. An alias called <code>:deps</code> is built into Clojure CLI tools and includes the <code>tools.deps.alpha</code> library on the classpath,</p>
@@ -2365,34 +2379,6 @@ Install the jar using the default arguments using the command:</p>
           </a>
 </main>
 <footer class="md-footer">
-<nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Clojure CLI: Defining aliases" class="md-footer__link md-footer__link--prev" href="../defining-aliases/" rel="prev">
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
-</div>
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Previous
-              </span>
-              Clojure CLI: Defining aliases
-            </div>
-</div>
-</a>
-<a aria-label="Next: Reference: Clojure CLI JVM Options" class="md-footer__link md-footer__link--next" href="../jvm-options/" rel="next">
-<div class="md-footer__title">
-<div class="md-ellipsis">
-<span class="md-footer__direction">
-                Next
-              </span>
-              Reference: Clojure CLI JVM Options
-            </div>
-</div>
-<div class="md-footer__button md-icon">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
-</div>
-</a>
-</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -2430,7 +2416,7 @@ Install the jar using the default arguments using the command:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.5a2dcb6a.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.a00a7c5e.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
