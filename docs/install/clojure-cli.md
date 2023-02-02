@@ -79,7 +79,7 @@ As Clojure itself is packages as a library (`.jar` Java ARchive), any version of
 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
-Fork or clone [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
@@ -88,15 +88,26 @@ Fork or clone [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-c
 === "Free Desktop XDG CONFIG"
     If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
 
+    Via SSH
+    ```shell
+    git clone git@github.com:practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
     ```
-    https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
+
+    Via HTTPS:
+    ```shell
+    git clone https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
     ```
 
 === "Classic Config"
     Clojure CLI will look for its configuration in `$HOME/.clojure` directory if `$XDG_CONFIG_HOME` and `CLJ_CONFIG` environment variables not set.
-
+    Via SSH
+    ```shell
+    git clone git@github.com:practicalli/clojure-deps-edn.git $HOME/.clojure
     ```
-    https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
+
+    Via HTTPS
+    ```shell
+    git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
     ```
 
 
