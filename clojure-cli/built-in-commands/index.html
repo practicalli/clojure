@@ -12,7 +12,7 @@
 <link href="../practicalli-config/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.10" name="generator"/>
-<title>Clojure CLI Built-in commands - Practicalli Clojure</title>
+<title>Built-in Commands - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -21,7 +21,7 @@
 <link href="../../assets/stylesheets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <meta content="website" property="og:type"/>
-<meta content="Clojure CLI Built-in commands - Practicalli Clojure" property="og:title"/>
+<meta content="Built-in Commands - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/clojure-cli/built-in-commands.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -29,7 +29,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/clojure-cli/built-in-commands/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Clojure CLI Built-in commands - Practicalli Clojure" name="twitter:title"/>
+<meta content="Built-in Commands - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/clojure-cli/built-in-commands.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -74,7 +74,7 @@
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Clojure CLI Built-in commands
+              Built-in Commands
             
           </span>
 </div>
@@ -264,11 +264,11 @@
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Clojure CLI Built-in commands
+          Built-in Commands
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Clojure CLI Built-in commands
+        Built-in Commands
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -2054,8 +2054,9 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="clojure-cli-built-in-commands">Clojure CLI Built-in commands<a class="headerlink" href="#clojure-cli-built-in-commands" title="Permanent link">λ︎</a></h1>
-<p>The <code>:deps</code> alias is used as the root of all built-in commands in the Clojure CLI tools.  <code>clojure --help</code> list the available commands.</p>
-<p><code>-X</code> execution option is used for all built-in aliases, running them via <code>clojure.exec</code></p>
+<p><code>clojure</code> without any other arguments will run a REPL with a basic terminal prompt.  <code>clj</code> is a wrapper for the <code>clojure</code> command that uses <code>rlwrap</code> to add command history to the basic REPL prompt.</p>
+<p><code>clojure -T:deps</code> to run one of several built-in commands to help work with Clojure CLI projects and libraries.  <code>clojure --help</code> list the available commands.</p>
+<p><code>-X</code> execution option is used for the  <code>:deps</code> aliases, running them via <code>clojure.exec</code> and limiting the class path to the current directory.</p>
 <table>
 <thead>
 <tr>
@@ -2152,7 +2153,7 @@
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 3, 2023</span>
 </small>
 </div>
 </article>
