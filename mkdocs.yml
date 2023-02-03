@@ -134,7 +134,7 @@ nav:
       - Clojure CLI: install/clojure-cli.md
   - Clojure CLI:
       - clojure-cli/index.md
-      - clojure-cli/built-in-commands.md
+      - Built-in Commands: clojure-cli/built-in-commands.md
       - Practicalli Config: clojure-cli/practicalli-config.md
       - HotLoad Libraries: clojure-cli/hotload-libraries.md
   - Terminal REPL:
