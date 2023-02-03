@@ -1,8 +1,10 @@
 # Clojure CLI Built-in commands
 
-The `:deps` alias is used as the root of all built-in commands in the Clojure CLI tools.  `clojure --help` list the available commands.
+`clojure` without any other arguments will run a REPL with a basic terminal prompt.  `clj` is a wrapper for the `clojure` command that uses `rlwrap` to add command history to the basic REPL prompt.
 
-`-X` execution option is used for all built-in aliases, running them via `clojure.exec`
+`clojure -T:deps` to run one of several built-in commands to help work with Clojure CLI projects and libraries.  `clojure --help` list the available commands.
+
+`-X` execution option is used for the  `:deps` aliases, running them via `clojure.exec` and limiting the class path to the current directory.
 
 | aliases                                             | Description                                                                                              |
 |:----------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
