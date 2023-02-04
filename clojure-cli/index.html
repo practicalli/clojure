@@ -11,7 +11,7 @@
 <link href="../install/clojure-cli/" rel="prev"/>
 <link href="built-in-commands/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.10" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
 <title>Clojure CLI - Practicalli Clojure</title>
 <link href="../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -1979,11 +1979,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-cli-version">
-    Clojure CLI version
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-cli-execution-option-flags">
     Clojure CLI execution option flags
   </a>
@@ -2000,22 +1995,17 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-cli-install-configuration">
-    Clojure CLI install configuration
+<a class="md-nav__link" href="#install-configuration">
+    Install configuration
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#user-depsedn-configuration">
-    User deps.edn configuration
+<a class="md-nav__link" href="#user-configuration">
+    User configuration
   </a>
 </li>
 </ul>
 </nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#which-version-of-clojure">
-    Which version of Clojure
-  </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#references">
@@ -2034,15 +2024,20 @@
 <ul>
 <li>running Clojure code (applications and tools)</li>
 <li>starting a REPL process (Read-Eval-Print Loop) for interactive development with a <a href="/clojure/clojure-editors/">Clojure editor</a> or <a href="repl/">a command line REPL UI</a>.</li>
-<li>managing dependencies (via tools.deps) and downloads from Maven and Git repositories</li>
-<li>building Clojure projects (when including tools.build) to create deployable Clojure services</li>
+<li>managing dependencies (tools.deps) -downloading from Maven and Git repositories</li>
+<li><a href="/clojure/clojure-cli/projects/tools-build/">building Clojure projects (using tools.build)</a> to create deployable Clojure services</li>
 </ul>
-<p>The Clojure CLI is extended by adding aliases for community libraries and tools, e.g. <a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a></p>
+<p><a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.</p>
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" width="560"></iframe>
 </p>
+<p><a class="md-button" href="https://clojure.org/guides/deps_and_cli" target="_blank">Deps and CLI Guide - Clojure.org</a></p>
 <h2 id="common-tasks-for-clojure-development">Common tasks for Clojure development<a class="headerlink" href="#common-tasks-for-clojure-development" title="Permanent link">λ︎</a></h2>
-<p>Commands to use for common tasks and where their aliases are included in Clojure CLI tools or require an alias (either in a project or user-wide deps.edn file).</p>
+<p>The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. <a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a></p>
+<div class="admonition hint">
+<p class="admonition-title">REPL Reloaded</p>
+<p><code>clojure -M:repl/reloaded</code> runs a rich terminal UI REPL prompt that includes portal data inspector, namespace reloading and library hotload tools. <code>test</code> path is included to support editor test runners and <code>dev</code> path for custom user namespace for <a href="/clojure/clojure-cli/repl-startup/">custom REPL startup</a></p>
+</div>
 <table>
 <thead>
 <tr>
@@ -2058,12 +2053,12 @@
 <td>Clojure CLI</td>
 </tr>
 <tr>
-<td>Enhanced terminal UI REPL (Rebel and nREPL)</td>
-<td><code>clojure -M:repl/rebel</code></td>
+<td>Enhanced terminal UI REPL (Rebel &amp; nREPL)</td>
+<td><code>clojure -M:repl/rebel</code> or <code>clojure -M:repl/reloaded</code></td>
 <td>Practicalli</td>
 </tr>
 <tr>
-<td>Create project (clojure exec)</td>
+<td>Create project</td>
 <td><code>clojure -T:project/new :template app :name domain/appname :args '["+h2"]'</code></td>
 <td>Practicalli</td>
 </tr>
@@ -2078,14 +2073,14 @@
 <td><em>No Alias</em></td>
 </tr>
 <tr>
-<td>Run a function from the project (clojure.exec)</td>
-<td><code>clojure -X:run/greet</code></td>
-<td>Project</td>
-</tr>
-<tr>
-<td>Find libraries (mvn &amp; git)</td>
+<td>Find libraries (maven &amp; git)</td>
 <td><code>clojure -M:search/library library-name</code></td>
 <td>Practicalli</td>
+</tr>
+<tr>
+<td>Find library versions (maven)</td>
+<td><code>clojure -X:deps find-versions domain/library-name</code></td>
+<td>CLojure CLI</td>
 </tr>
 <tr>
 <td>Download dependencies</td>
@@ -2108,26 +2103,22 @@
 <td>Clojure CLI</td>
 </tr>
 <tr>
-<td>Package application</td>
-<td><code>clojure -X:build/uberjar</code></td>
-<td>Project</td>
-</tr>
-<tr>
 <td>Check code for unused vars</td>
 <td><code>clojure -X:search/unused</code></td>
 <td>Practicalli</td>
 </tr>
 </tbody>
 </table>
-<p>Clojure CLI can also be used for <a href="/clojure/alternative-tools/clojure-cli/evaluate-an-expression.md">evaluating an expressions</a> or <a href="/clojure/alternative-tools/clojure-cli/files-and-scripts.md">running Clojure from files as scripts</a>, although these approaches are less common.</p>
-<p><code>clojure -M:lib/hotload:repl/rebel</code> runs a rich terminal UI REPL which can <a href="/clojure/alternative-tools/clojure-cli/hotload-libraries.md">use add-libs to hotload dependencies into a running REPL process</a>.</p>
-<h2 id="clojure-cli-version">Clojure CLI version<a class="headerlink" href="#clojure-cli-version" title="Permanent link">λ︎</a></h2>
-<p><code>clojure -Sdescribe</code> shows the version of Clojure CLI currently installed.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-light.png#only-light"><img alt="clojure cli - show version with describe - light" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-light.png#only-light"/></a>
-<a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-dark.png#only-dark"><img alt="clojure cli - show version with describe - dark" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-version-describe-dark.png#only-dark"/></a></p>
-<p>The <code>-Sverbose</code> flag shows the Clojure CLI version and basic configuration before running any task, e.g. <code>clojure -Sverbose -M:repl/rebel</code> will show the Clojure CLI details and then run Rebel terminal UI.</p>
+<div class="admonition info">
+<p class="admonition-title">tools.build is recommended for packaging projects</p>
+<p><a href="/clojure/clojure-cli/projects/tools-build/">Package with tools.build</a> is the recommended approach to create jar and Uberjar packages of a Clojure project.</p>
+</div>
 <h2 id="clojure-cli-execution-option-flags">Clojure CLI execution option flags<a class="headerlink" href="#clojure-cli-execution-option-flags" title="Permanent link">λ︎</a></h2>
 <p>The execution option flags for the <code>clojure</code> command define how to run Clojure code.</p>
+<ul>
+<li><code>-A</code> and <code>-M</code> uses <a href="https://clojure.org/reference/repl_and_main">clojure.main</a> and calls the <code>-main</code> function of the given namespace, passing positional string arguments.</li>
+<li><code>-X</code> and <code>-T</code> uses <a href="https://clojure.org/reference/deps_and_cli#_execute_a_function">clojure.exec</a> to call a fully qualified function which has a map argument, passing key/value pair arguments.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -2142,7 +2133,7 @@
 </tr>
 <tr>
 <td><code>-M</code></td>
-<td>Run Clojure project with clojure.main</td>
+<td>Run Clojure with clojure.main</td>
 </tr>
 <tr>
 <td><code>-P</code></td>
@@ -2154,7 +2145,7 @@
 </tr>
 <tr>
 <td><code>-T</code></td>
-<td>Run a tool independently from a project configurations</td>
+<td>Run a tool independently from a project configuration</td>
 </tr>
 <tr>
 <td><code>-J</code></td>
@@ -2164,13 +2155,10 @@
 </table>
 <div class="admonition hint">
 <p class="admonition-title">Which flag to use?</p>
-<p>The <code>-M</code> flag is used when calling a <code>-main</code> function from a specified namespace. Arguments can be passed as free-form string options.</p>
-<p>The <code>-X</code> flag is used to call a fully qualified function, which can be any function on the command line. Arguments are passed as key/value pairs and strings / collection syntax should be escaped with single quotes.  <code>-X</code> can use <code>:replace-deps</code> and <code>:replace-paths</code> values to remove project <code>:deps</code> and <code>:paths</code></p>
-<p><code>-T</code> flag removes project paths and deps, so is run independent of a Clojure project configuration.  Tools can be installed and referred to by name, or used via an alias name and have default configuration attached.</p>
-<p>Read the article: <a href="https://practical.li/blog/posts/clojure-which-execution-option-to-use/">Clojure CLI - which execution option to use</a></p>
+<p><a href="https://practical.li/blog/posts/clojure-which-execution-option-to-use/">Clojure CLI - which execution option to use</a> expands on flag usage with numerous examples</p>
 </div>
 <h2 id="configure-clojure-cli">Configure Clojure CLI<a class="headerlink" href="#configure-clojure-cli" title="Permanent link">λ︎</a></h2>
-<p>A <code>deps.edn</code> file configures the Clojure CLI, using extensible data notation (EDN), the underlying language for Clojure itself.</p>
+<p>A <code>deps.edn</code> file configures the Clojure CLI, using extensible data notation (EDN), the underlying syntax of Clojure itself.</p>
 <p>Configuration is defined using a hash-map with the following top-level keys:</p>
 <ul>
 <li><code>:deps</code> - library dependencies</li>
@@ -2183,7 +2171,7 @@
 </code></pre></div>
 <details class="hint">
 <summary>Install Practicalli Community Tool aliases</summary>
-<p><a href="practicalli-config/">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
+<p><a href="">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
 </details>
 <h3 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI Configuration can be used from several different sources.</p>
@@ -2215,13 +2203,19 @@
 </table>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png"><img alt="Clojure CLI configuration order of precedence" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png"/></a></p>
 <p>Command line arguemnts take preceedence over the other configurations. When running the <code>clojure</code> command the configurations are merged, with key/values being added or replaces following the precedence order.</p>
-<h3 id="clojure-cli-install-configuration">Clojure CLI install configuration<a class="headerlink" href="#clojure-cli-install-configuration" title="Permanent link">λ︎</a></h3>
+<h3 id="install-configuration">Install configuration<a class="headerlink" href="#install-configuration" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI install has a built-in configuration:</p>
 <ul>
 <li><code>org.clojure/clojure</code> library dependency, setting the default version of Clojure for the Clojure CLI</li>
 <li><code>src</code> set as the default path</li>
 </ul>
-<p>A Clojure CLI user configuration that will apply to all projects used by the operating system user account.  <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> is an example configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
+<details class="info">
+<summary>Check version of Clojure</summary>
+<p>Evaluate <code>*clojure-version*</code> in a REPL shows which version of the Clojure language is currently being used.</p>
+<p>Including <code>org.clojure/clojure</code> as a dependency the project <code>deps.edn</code> file specifies a version of the Clojure language.  The Clojure CLI version is used if no other dependency is specified.</p>
+</details>
+<h3 id="user-configuration">User configuration<a class="headerlink" href="#user-configuration" title="Permanent link">λ︎</a></h3>
+<p>A Clojure CLI user configuration is available to all projects by the operating system user account.  <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
 <details class="hint">
 <summary>Clojure CLI User Configuration Location</summary>
 <p>Clojure CLI tools creates a configuration directory called <code>.clojure</code>, which <a href="https://clojure.org/reference/deps_and_cli#_deps_edn_sources">by default</a> is placed in the root of the operating system user account directory, e.g. <code>$HOME/.clojure</code>.</p>
@@ -2229,7 +2223,6 @@
 <p><code>CLJ_CONFIG</code> can be used to over-ride all other location settings</p>
 <p>Run <code>clojure -Sdescribe</code> in a terminal and checking the <code>:user-config</code> value to see the location of your Clojure configuration directory</p>
 </details>
-<h3 id="user-depsedn-configuration">User deps.edn configuration<a class="headerlink" href="#user-depsedn-configuration" title="Permanent link">λ︎</a></h3>
 <p>A basic example of a user configuration for Clojure CLI</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:aliases</span><span class="w"> </span><span class="p">{</span>
@@ -2250,19 +2243,16 @@
 <p class="admonition-title">Clojure Tools install sets Clojure version</p>
 <p>A default version of Clojure is set by the Clojure tools install, enabling the <code>clojure</code> command to know what version of Clojure library to use.  This version will be over-ridden by the user or project specific deps.edn configuration files if set.</p>
 </div>
-<h2 id="which-version-of-clojure">Which version of Clojure<a class="headerlink" href="#which-version-of-clojure" title="Permanent link">λ︎</a></h2>
-<p>Evaluate <code>*clojure-version*</code> in a REPL shows which version of the Clojure language is currently being used.</p>
-<p>Including <code>org.clojure/clojure</code> in the project <code>deps.edn</code> file allows specification of a particular version of the Clojure language.  The Clojure CLI also has a default version of the Clojure dependency, which is used if no other dependency is specified.</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
-<ul>
-<li><a href="https://clojure.org/reference/deps_and_cli">deps and cli</a></li>
-</ul>
+<p><a class="md-button" href="https://clojure.org/reference/deps_and_cli" target="_blank">tools.deps and cli guide</a>
+<a class="md-button" href="https://clojure.github.io/clojure/clojure.main-api.html" target="_blank">clojure.main API Reference</a>
+<a class="md-button" href="https://clojure.github.io/tools.deps.alpha/" target="_blank">tools.deps.alpha API Reference</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2023</span>
 </small>
 </div>
 </article>
