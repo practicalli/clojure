@@ -66,6 +66,6 @@ When using an editor that is not connected to the Clojure REPL, then reloading i
 
 A REPL can run without a Clojure project, however, libraries and code are simpler to manage within project source and configuration files.
 
-[Clojure projects guide](/clojure/clojure-cli/projects.md){.md-button}
+[Clojure projects guide](/clojure/clojure-cli/projects/){.md-button}
 
-Or jump to [simple projects](/clojure/simple-projects/) to start writing example applications.
+Or jump to [small projects](/clojure/simple-projects/) to start writing example applications.
