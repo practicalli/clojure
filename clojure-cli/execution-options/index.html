@@ -1,0 +1,2415 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
+<meta content="Practicalli" name="author"/>
+<link href="https://practical.li/clojure/clojure-cli/execution-options/" rel="canonical"/>
+<link href="../built-in-commands/" rel="prev"/>
+<link href="../hotload-libraries/" rel="next"/>
+<link href="../../assets/favicon.svg" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<title>Execution Options - Practicalli Clojure</title>
+<link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<meta content="website" property="og:type"/>
+<meta content="Execution Options - Practicalli Clojure" property="og:title"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
+<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/execution-options.png" property="og:image"/>
+<meta content="image/png" property="og:image:type"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="https://practical.li/clojure/clojure-cli/execution-options/" property="og:url"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Execution Options - Practicalli Clojure" name="twitter:title"/>
+<meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
+<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/execution-options.png" name="twitter:image"/>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#clojure-cli-execution-options">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Practicalli Clojure
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Execution Options
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="teal" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="indigo" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Practicalli Clojure">
+<img alt="logo" src="../../assets/images/practicalli-logo.png"/>
+</a>
+    Practicalli Clojure
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/practicalli/clojure/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"></path></svg>
+</div>
+<div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../..">Introduction</a>
+<label for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/clojure-in-15-minutes/">
+        Clojure in Fifteen Mins
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/repl-workflow/">
+        REPL Workflow
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../introduction/concepts/">Concepts</a>
+<label for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_1_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_1_4">
+<span class="md-nav__icon md-icon"></span>
+          Concepts
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/concepts/what-is-functional-programming/">
+        Functional vs Imperative
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/concepts/clojure-made-simple/">
+        From The Author
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/contributing/">
+        Contributing
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../introduction/writing-tips/">
+        Writing Tips
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../install/">Install</a>
+<label for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/java/">
+        Java Host
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../install/clojure-cli/">
+        Clojure CLI
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../">Clojure CLI</a>
+<label for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../practicalli-config/">
+        Practicalli Config
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../built-in-commands/">
+        Built-in Commands
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Execution Options
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Execution Options
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quick-summary">
+    Quick summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-clojure-project-with-clojuremain">
+    Run a Clojure project with clojure.main
+  </a>
+<nav aria-label="Run a Clojure project with clojure.main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-clojuremain-works">
+    How clojure.main works
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-rich-terminal-repl-with-clojuremain">
+    Run a rich terminal REPL with clojure.main
+  </a>
+<nav aria-label="Run a rich terminal REPL with clojure.main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaining-aliases-together-with-clojuremain">
+    Chaining aliases together with clojure.main
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-specific-function">
+    Run specific function
+  </a>
+<nav aria-label="Run specific function" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-clojureexec-functions">
+    Built in clojure.exec functions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-tool">
+    Run a Tool
+  </a>
+<nav aria-label="Run a Tool" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-install-or-aliases">
+    Tools install or aliases
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepare-dependencies">
+    Prepare dependencies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-terminal-ui-repl">
+    Built-in terminal UI REPL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../hotload-libraries/">
+        HotLoad Libraries
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../repl/">Terminal REPL</a>
+<label for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          Terminal REPL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/coding/">
+        REPL Coding
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/libraries/">
+        REPL Libraries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/help/">
+        REPL Help
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl/troubleshooting/">
+        REPL troubleshoot
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../repl-startup/">
+        REPL Startup
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../projects/">Clojure Projects</a>
+<label for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/create-from-template/">
+        From Template
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/add-libraries/">
+        Add Libraries
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/namespace/">
+        Namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/rich-comments/">
+        Rich Comment
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/hotload-in-project/">
+        Hotload in Project
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/migrate-project/">
+        Migrate projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../projects/tools-build/">
+        Package
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/">Clojure Editors</a>
+<label for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Editors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/clojure-lsp/">Clojure LSP</a>
+<label for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_2">
+<span class="md-nav__icon md-icon"></span>
+          Clojure LSP
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/clojure-lsp/snippets/">
+        Clojure LSP Snippets
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/clojure-lsp/practicalli-snippets/">
+        Practicalli Snippets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-install-guides/">Editor Install Guides</a>
+<label for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
+<span class="md-nav__icon md-icon"></span>
+          Editor Install Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/atom-protorepl/">
+        Atom.io and ProtoREPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs-spacemacs/">
+        Emacs and Spacemacs Install
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/emacs/">
+        Emacs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vim-plugins/">
+        NeoVim Plugins - a smorgasbord of functionality
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace: Install guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/spacevim-configuration/">
+        Understanding the SpaceVim configuration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vspacecode-calva/">
+        VSpaceCode configuration for VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/vscode-calva/">
+        Microsoft VSCode and Calva extension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-install-guides/intellij-cursive/">
+        IntelliJ / Cursive
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-editors/editor-user-guides/">Editor User Guides</a>
+<label for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
+<span class="md-nav__icon md-icon"></span>
+          Editor User Guides
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/atom-protorepl/">
+        Atom and ProtoREPL user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/emacs-spacemacs/">
+        Emacs and Spacemacs user guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/neovim-conjure/">
+        Neovim conjure
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/spacevim-fireplace/">
+        SpaceVim and vim-fireplace
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vspacecode-calva/">
+        Vspacecode calva
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/vscode-calva/">
+        VSCode and Calva quick start
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-editors/editor-user-guides/intellij-cursive/">
+        IntelliJ and Cursive user guide
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../data-inspector/">Data Inspectors</a>
+<label for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          Data Inspectors
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-inspector/clojure-inspector/">
+        Clojure Inspector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-inspector/portal/">
+        Portal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../coding-challenges/">Code Challenges</a>
+<label for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          Code Challenges
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../coding-challenges/4clojure/">4 Ever Clojure</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_2">
+<span class="md-nav__icon md-icon"></span>
+          4 Ever Clojure
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../coding-challenges/exercism/">Exercism</a>
+<label for="__nav_9_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_3">
+<span class="md-nav__icon md-icon"></span>
+          Exercism
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/exercism/rna-transcription/">
+        Rna transcription
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/exercism/hamming.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/exercism/space-age/">
+        Space age
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/exercism/bob/">
+        Bob
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/codewars/">
+        CodeWars
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../coding-challenges/advent-of-code/">
+        Advent Of Code
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../simple-projects/">Simple projects</a>
+<label for="__nav_9_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_6">
+<span class="md-nav__icon md-icon"></span>
+          Simple projects
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/random-clojure-function/">
+        Random Function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/salary-calculator.md --&gt;">
+        Salary Calculator
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../simple-projects/encode-decode/">Encoder Decode</a>
+<label for="__nav_9_6_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_4">
+<span class="md-nav__icon md-icon"></span>
+          Encoder Decode
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/convert-boolean-values/">
+        Convert boolean values
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/caesar-cipher-rot13/">
+        Rotate by 13 (ROT13)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/rna-dna/">
+        RNA to DNA transcription
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/encode-decode/clacks/">
+        The Clacks - encoding and decoding messages
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../simple-projects/data-transformation/">Data Transform</a>
+<label for="__nav_9_6_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_5">
+<span class="md-nav__icon md-icon"></span>
+          Data Transform
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/data-transformation/most-common-word/">
+        Most common word
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../simple-projects/tdd-kata/">Kata</a>
+<label for="__nav_9_6_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_6">
+<span class="md-nav__icon md-icon"></span>
+          Kata
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../simple-projects/tdd-kata/recent-song-list.md">
+        Recent Song list
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../games/">Games</a>
+<label for="__nav_9_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_9_7">
+<span class="md-nav__icon md-icon"></span>
+          Games
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9_7_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../games/tictactoe-cli/">TicTacToe</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_7_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_7_2">
+<span class="md-nav__icon md-icon"></span>
+          TicTacToe
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../testing/">Testing</a>
+<label for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          Testing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../testing/unit-testing/">Unit Testing</a>
+<label for="__nav_10_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_10_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_2">
+<span class="md-nav__icon md-icon"></span>
+          Unit Testing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/unit-testing/configure-projects-for-tests/">
+        Configure Unit Testing for deps.edn projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/unit-testing/require-test-namespaces/">
+        Require test namespaces
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/unit-testing/writing-unit-tests/">
+        Writing Unit Tests with clojure.test
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/unit-testing/fixtures/">
+        Fixtures: setup and tear down for unit tests
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/unit-testing/test-selectors/">
+        Test Selectors
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../testing/test-runners/">Test runners</a>
+<label for="__nav_10_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_10_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_3">
+<span class="md-nav__icon md-icon"></span>
+          Test runners
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/test-runners/congnitect-labs-test-runner/">
+        Cognitect Labs Test Runner
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/test-runners/kaocha-test-runner/">
+        Kaocha Test Runner from LambdaIsland
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../testing/test-runners/example-projects/">
+        Example projects
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/">Clojure Spec</a>
+<label for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Spec
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/using-spec-in-the-repl/">
+        Using Clojure Spec in the REPL
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/add-spec-to-projects/">
+        Add Spec to Clojure Projects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/organising-specs/">
+        Organizing Specifications
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/data/">Data Specs</a>
+<label for="__nav_11_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_5">
+<span class="md-nav__icon md-icon"></span>
+          Data Specs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/predicate-specifications/">
+        Predicate functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/literal-values/">
+        Literal values
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/conform/">
+        Conform
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/valid-q/">
+        Is the value valid?
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/explain/">
+        Explaining non-conforming values
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/defining-specifications/">
+        Defining specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/registry/">
+        Registry for unique and re-usable specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/entity-maps/">
+        Entity maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/map-literals/">
+        Map literal syntax - `#:` and `#::`
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/and-or-specifications/">
+        Combining specifications with and and or
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/composite-specifications/">
+        Composing Specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/data/hierarchical-specifications/">
+        Hierarchical Specifications
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_6" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/functions/">Function Specs</a>
+<label for="__nav_11_6">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_6">
+<span class="md-nav__icon md-icon"></span>
+          Function Specs
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/functions/function-definition-specifications/">
+        Function definition specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/functions/documentation/">
+        clojure.spec adds documentation to function definitions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/functions/higher-order-functions/">
+        Higher order functions
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/testing/">Testing</a>
+<label for="__nav_11_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_7">
+<span class="md-nav__icon md-icon"></span>
+          Testing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/testing/checking%20arguments/">
+        Checking arguments in function calls with specifications
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_7_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/generative-testing/">Generative Testing</a>
+<label for="__nav_11_7_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_7_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_11_7_3">
+<span class="md-nav__icon md-icon"></span>
+          Generative Testing
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/predicate-generators/">
+        Generators for predicate specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/example-projects/">
+        Example projects using Clojure Spec
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/generative-testing/example-projects/next-jdbc/">
+        Projects using Clojure spec - next-jdbc
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/projects/">Spec Project</a>
+<label for="__nav_11_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_11_8">
+<span class="md-nav__icon md-icon"></span>
+          Spec Project
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_8_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/projects/card-game/">Playing Cards</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_11_8_2">
+<span class="md-nav__icon md-icon"></span>
+          Playing Cards
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11_8_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../clojure-spec/projects/bank-account/">Bank Account</a>
+<label for="__nav_11_8_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_11_8_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_11_8_3">
+<span class="md-nav__icon md-icon"></span>
+          Bank Account
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/write-failing-tests/">
+        Write failing tests
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/customer-details-specification/">
+        Customer details specification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/validate-customer-details-specification/">
+        Testing data Specifications
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/account-holder-specification/">
+        Account holder specification
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/generate-test-data/">
+        Generate test data
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/unit-tests-with-spec/">
+        Unit tests with specs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/function-specifications/">
+        Specifications for function definitions - `fdef`
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../clojure-spec/projects/bank-account/test-functions-against-spec/">
+        Test functions against spec
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../continuous-integration/">Continuous Integration</a>
+<label for="__nav_12">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_12">
+<span class="md-nav__icon md-icon"></span>
+          Continuous Integration
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../continuous-integration/circle-ci/">Circle CI</a>
+<label for="__nav_12_2">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_12_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_12_2">
+<span class="md-nav__icon md-icon"></span>
+          Circle CI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../continuous-integration/circle-ci/random-clojure-function/">
+        Random Clojure Function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../continuous-integration/circle-ci/status-monitor/">
+        Status Monitor Circle CI Continuous Integration
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../continuous-integration/github-actions/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../continuous-integration/github-actions/clj-kondo-lint/">
+        Clj kondo lint
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/">Reference</a>
+<label for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
+          Reference
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../quickstart/quick-reference/">
+        Clojure Quick Reference
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/clojure-cli/">Clojure CLI</a>
+<label for="__nav_13_3">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_3">
+<span class="md-nav__icon md-icon"></span>
+          Clojure CLI
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases/">
+        Clojure CLI: Defining aliases
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-cli/example-alias-definitions/">
+        Clojure Tools - Common alias definitions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-cli/jvm-options/">
+        Reference: Clojure CLI JVM Options
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/code-analysis/">
+        Code Analysis
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_5" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/standard-library/">Standard Library</a>
+<label for="__nav_13_5">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_5">
+<span class="md-nav__icon md-icon"></span>
+          Standard Library
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/desructuring.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/data-structures/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/predicate-functions/">
+        Predicate functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/">
+        Regular Expressions - regex
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-with-groups/">
+        Matching with regex groups
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-sub-strings/">
+        Matching sub strings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/matching-sub-sequences/">
+        Matching sub sequences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/common-regex-patterns/">
+        Common Regular Expression patterns
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/string-replace-with-regex/">
+        String replace with regex
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/string-split-with-regex/">
+        String split with regex
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/regular-expressions/sub-expression-matches/">
+        Sub-expression Matches
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/standard-library/cond-thread-macro/">
+        Cond thread macro
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13_6" id="__nav_13_6_label" tabindex="0">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_6">
+<span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/java-interop/">
+        Java Interoperability
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/more-java-fun/">
+        More Java fun
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_7" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/tagged-literals/">Clojure Syntax</a>
+<label for="__nav_13_7">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_7">
+<span class="md-nav__icon md-icon"></span>
+          Clojure Syntax
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/syntax/">
+        Clojure syntax
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/parenthesis/">
+        Parenthesis - defining the structure of Clojure code
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/code-documentation/">
+        Code documentation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/comments/">
+        Comments
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/strings/">
+        Strings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/numbers-maths/">
+        Maths
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/ratios/">
+        Ratios
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/control-flow/">
+        Control Flow
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/doc-and-source-functions/">
+        Doc and source functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/assigning-names/">
+        Assigning Names
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/clojure-syntax/naming/">
+        Naming
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/kebab-case/">
+        Clojure names use kebab-case
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/threading-macros/">
+        Reference: Threading macros
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/tagged-literals/uuid/">
+        uuid tag literal
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../data-structures/">Data Structures</a>
+<label for="__nav_13_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_8">
+<span class="md-nav__icon md-icon"></span>
+          Data Structures
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/list/">
+        List
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/hash-maps/">
+        Data Structures: Hash-maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/hash-maps/create/">
+        Creating Hash-maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/hash-maps/access/">
+        Accessing hash-maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/vector/">
+        Vector
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/set/">
+        Set
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/naming/">
+        Naming data structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/shared-memory/">
+        Shared memory with Persistent data structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data-structures/pretty-printing/">
+        Pretty Printing
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../using-data-structures/">Using Data Structures</a>
+<label for="__nav_13_8_11">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_11_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_8_11">
+<span class="md-nav__icon md-icon"></span>
+          Using Data Structures
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../using-data-structures/sequences/">
+        Sequence abstractions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../using-data-structures/lazy-sequences/">
+        Lazy Sequences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../using-data-structures/destructuring/">
+        Destructuring
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../using-data-structures/applying-functions/">
+        Applying functions to data structures
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../using-data-structures/mapping-data-structures/">
+        Mapping functions over data structures
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_12" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../modifying-data-structures/">Modifying</a>
+<label for="__nav_13_8_12">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_12_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_8_12">
+<span class="md-nav__icon md-icon"></span>
+          Modifying
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modifying-data-structures/lists/">
+        Lists
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modifying-data-structures/maps/">
+        Maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modifying-data-structures/vectors/">
+        Vectors
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../modifying-data-structures/sets/">
+        Sets
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/">
+        Iterate over data
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/map/">
+        map function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/map-partial/">
+        map with partial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/map-fn/">
+        map with fn - anonymous function
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/filter-remove/">
+        filter and remove
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/apply/">
+        apply
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../iterate-over-data/reduce/">
+        reduce
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_8_22" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../designing-data-structures/">Design</a>
+<label for="__nav_13_8_22">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_8_22_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_8_22">
+<span class="md-nav__icon md-icon"></span>
+          Design
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors/">
+        With Vectors
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors-of-vectors/">
+        With Vectors of Vectors
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/with-maps/">
+        With Maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/with-maps-of-maps/">
+        With Maps of Maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/with-vectors-of-maps/">
+        A Vector of Maps
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/modeling-alphabet-codes/">
+        Model alphabet codes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../designing-data-structures/modeling-name-generation-map/">
+        Design a map for name generation
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_9" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../thinking-functionally/">Thinking Functionally</a>
+<label for="__nav_13_9">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_9">
+<span class="md-nav__icon md-icon"></span>
+          Thinking Functionally
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/side-effects/">
+        Side effects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/pure-functions/">
+        Pure functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/impure-functions/">
+        Impure functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/first-class-functions/">
+        First Class functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/homoiconicity/">
+        Homoiconicity
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/function-composition/">
+        Function Composition
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/example-hitchhikers-guide/">
+        Example: Hitchhikers Guide
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/higher-order-functions/">
+        Higher Order functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/immutability/">
+        Immutability
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-values/">
+        Immutable values
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-collections/">
+        Immutable collections
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/immutable-local-bindings/">
+        Immutable Local Bindings
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/partial-functions/">
+        Currying &amp; Partial Functions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/map-with-partial/">
+        map with partial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/list-comprehension/">
+        List Comprehension
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/sequences/">
+        Sequences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../sequence-abstractions.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/functors/">
+        Functors
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/arity/">
+        Arity
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/pattern-matching/">
+        Pattern matching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/polymorphism/">
+        Polymorphic function definitions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/recursion/">
+        Recursion
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/recursion-polymorphism/">
+        Recursion &amp; Polymorphism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../thinking-functionally/tail-recursion/">
+        Tail recursion
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13_10" id="__nav_13_10_label" tabindex="0">
+          Crreative Coding
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_10">
+<span class="md-nav__icon md-icon"></span>
+          Crreative Coding
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/creative-coding/index.md">
+        None
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_10_2" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/clojure-svg/">SVG</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_10_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_10_2">
+<span class="md-nav__icon md-icon"></span>
+          SVG
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_11" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../reference/jvm/">JVM</a>
+<label for="__nav_13_11">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_11">
+<span class="md-nav__icon md-icon"></span>
+          JVM
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/jvm/understanding-memory-usage/">
+        Understanding memory usage.
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/jvm/common-options/">
+        Commonly used JVM Options
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/jvm/java-17-flags/">
+        Reference: Java 17 JVM flags
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/jvm/experimental-options/">
+        Reference: JVM Experimental Options
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/jvm/profile-tools/">
+        Profile tools
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../reference/performance/">
+        Clojure Performance
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_12" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../alternative-tools/">Alternative Tools</a>
+<label for="__nav_13_12">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_12_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_13_12">
+<span class="md-nav__icon md-icon"></span>
+          Alternative Tools
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/basic-repl/">
+        Basic Command Line REPL UI
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/compare-with-leiningen/">
+        Compare Clojure Project configuration tools
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/data-inspector/reveal/">
+        Reveal - REPL with visual data browser
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/evaluate-an-expression/">
+        Evaluating an expression with Clojure CLI tools
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/clojure-cli/set-namespace-on-repl-startup/">
+        Set namespace on REPL startup
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../alternative-tools/leiningen/">
+        Leiningen build automation tool for Clojure
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#quick-summary">
+    Quick summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-clojure-project-with-clojuremain">
+    Run a Clojure project with clojure.main
+  </a>
+<nav aria-label="Run a Clojure project with clojure.main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#how-clojuremain-works">
+    How clojure.main works
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-rich-terminal-repl-with-clojuremain">
+    Run a rich terminal REPL with clojure.main
+  </a>
+<nav aria-label="Run a rich terminal REPL with clojure.main" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#chaining-aliases-together-with-clojuremain">
+    Chaining aliases together with clojure.main
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-specific-function">
+    Run specific function
+  </a>
+<nav aria-label="Run specific function" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-clojureexec-functions">
+    Built in clojure.exec functions
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-a-tool">
+    Run a Tool
+  </a>
+<nav aria-label="Run a Tool" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tools-install-or-aliases">
+    Tools install or aliases
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#prepare-dependencies">
+    Prepare dependencies
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#built-in-terminal-ui-repl">
+    Built-in terminal UI REPL
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#summary">
+    Summary
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#references">
+    References
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="clojure-cli-execution-options">Clojure CLI Execution options<a class="headerlink" href="#clojure-cli-execution-options" title="Permanent link">λ︎</a></h1>
+<p>Execution options (<code>-A</code> <code>-M</code> <code>-P</code> <code>-T</code> <code>-X</code>) define how aliases are used with the Clojure CLI. Aliases are included via one of these execution options and each option can affect how the alias is used.</p>
+<p>Since the <a href="https://clojure.org/releases/tools#v1.10.1.510">first documented released</a> which exclusively used the <code>-A</code> execution option to include aliases, the design has evolved to provide specific execution options to run code via clojure.main (<code>-M</code>) and clojure.exec (<code>-X</code>). In July 2021, the ability to run tools (<code>-T</code>) independent from the Clojure project classpath was also introduced.</p>
+<p>The exec-opts command line flags have evolved to enable these features, so lets explore those flags and show how each flag is typically used.</p>
+<details class="info">
+<summary>Understanding Aliases</summary>
+<p><a href="https://practical.li/blog/posts/clojure-cli-tools-understanding-aliases/">Understand aliases in more detail</a></p>
+</details>
+<h2 id="quick-summary">Quick summary<a class="headerlink" href="#quick-summary" title="Permanent link">λ︎</a></h2>
+<p>Use <code>-M</code> for code that should be called via the <code>-main</code> function in a specified namespace, passing string-based arguments.</p>
+<p>Use <code>-X</code> to run a specified function, passing arguments as key and value pairs (not hash-maps yet)</p>
+<p>Use <code>-T</code> to run a tool independently from any libraries defined in a project.  Only the libraries in the alias are included in the ClassPath.  The path is defined as <code>"."</code> by default.</p>
+<p>Use <code>-P</code> to download libraries on the class path, including those from specified aliases</p>
+<p>Use <code>-A</code> in the specific case of running a basic terminal UI REPL with the <code>clojure</code> command (or <code>clj</code> wrapper).</p>
+<p>Common aliases will be used to explain the use of these execution options in more detail.</p>
+<h2 id="run-a-clojure-project-with-clojuremain">Run a Clojure project with clojure.main<a class="headerlink" href="#run-a-clojure-project-with-clojuremain" title="Permanent link">λ︎</a></h2>
+<p><code>-M</code> execution option uses <code>clojure.main</code> to run Clojure code.</p>
+<p>Run a project with the main namespace <code>practicalli.sudoku-solver</code>, without any additional aliases on the command line</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M<span class="w"> </span>-m<span class="w"> </span>practicalli.sudoku-solver
+</code></pre></div>
+<p><code>-M</code> flag instructs Clojure CLI tools to use <code>clojure.main</code> to run the Clojure code.</p>
+<p><code>-m</code> flag is an argument to <code>clojure.main</code> which specifies the namespace to search for a <code>-main</code> function.</p>
+<p>Adding a <code>:project/run</code> alias to the project <code>deps.edn</code> file provides a simpler way to run the project on the command line</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ss">:project/run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"practicalli.sudoku-solver"</span><span class="p">]}</span>
+</code></pre></div>
+<p>Now the project code can be run using the simple command line form</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure<span class="w"> </span>-M:project/run
+</code></pre></div>
+<h3 id="how-clojuremain-works">How clojure.main works<a class="headerlink" href="#how-clojuremain-works" title="Permanent link">λ︎</a></h3>
+<p><code>clojure.main/main</code> function searches for a <code>-main</code> function in the given namespace (<code>-m fully-qualified.namespace</code>)</p>
+<p>If no -main function is found or the namespace is not specified, then a REPL session is run.  This is the approach Leiningen has always used and still uses today.</p>
+<blockquote>
+<p><a href="https://clojure.org/reference/repl_and_main"><code>clojure.main</code> namespace</a> has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of <a href="#clojure-exec--X">clojure.exec</a>.
+<a href="https://clojure.org/reference/repl_and_main">clojure.main has other features, as covered in the REPL and main entrypoints article</a>) on clojure.org.</p>
+</blockquote>
+<h2 id="run-a-rich-terminal-repl-with-clojuremain">Run a rich terminal REPL with clojure.main<a class="headerlink" href="#run-a-rich-terminal-repl-with-clojuremain" title="Permanent link">λ︎</a></h2>
+<p><a href="https://practical.li/clojure/clojure-cli/repl/">Rebel readline</a> provides a terminal UI REPL, providing auto-completion, function signatures, documentation, etc.</p>
+<p><code>:repl/rebel</code> is an alias that includes nrepl, cider-nrepl and rebel-readline libraries, with a <code>:main-opts</code> to run the <code>rebel-readline.main/-main</code> function via <code>clojure.main</code>.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ss">:repl/rebel</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">                </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.9.0"</span><span class="p">}</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">              </span><span class="nv">cider/cider-nrepl</span><span class="w">          </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.28.2"</span><span class="p">}</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">              </span><span class="nv">com.bhauman/rebel-readline</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.1.4"</span><span class="p">}}</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"nrepl.cmdline"</span>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">              </span><span class="s">"--middleware"</span><span class="w"> </span><span class="s">"[cider.nrepl/cider-middleware]"</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">              </span><span class="s">"--interactive"</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">              </span><span class="s">"-f"</span><span class="w"> </span><span class="s">"rebel-readline.main/-main"</span><span class="p">]}</span>
+</code></pre></div>
+<p>Use the <code>:repl/rebel</code> alias with the <code>-M</code> execution option</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+</code></pre></div>
+<p>Multiple aliases can be specified to include additional paths and libraries. Aliases chained together have their configuration merged</p>
+<p><code>:env/dev</code> adds "dev" as an extra path, with the <code>dev/user.clj</code> file automatically loading its code into the <code>user</code> namespace when the REPL starts</p>
+<p><code>:lib/hotload</code> alias adds the <code>org.clojure/tools.deps.alpha</code> library to <a href="https://practical.li/clojure/alternative-tools/clojure-tools/hotload-libraries.html">provide hotloading of dependencies into the running REPL</a></p>
+<p>Start a REPL process with this alias</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>clojure<span class="w"> </span>-M:env/dev:lib/hotload:repl/rebel
+</code></pre></div>
+<p>The Rebel REPL UI will start, include the dev directory on the class path and the <code>org.clojure/tools.deps.alpha</code> library loaded into the REPL</p>
+<h3 id="chaining-aliases-together-with-clojuremain">Chaining aliases together with clojure.main<a class="headerlink" href="#chaining-aliases-together-with-clojuremain" title="Permanent link">λ︎</a></h3>
+<p>Alises can be used together by chaining their names on the command line</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>clojure<span class="w"> </span>-M:env/dev:lib/hotload:repl/rebel
+</code></pre></div>
+<p>The <code>clojure</code> command will merge the <code>:extra-paths</code> and <code>:extra-deps</code> values from each alias in the chain.</p>
+<p>The <code>:main-opts</code> values from the aliases are not merged. Only the <code>:main-opts</code> value from the last alias in the chain is used with <code>clojure.main</code> to run the Clojure code.</p>
+<p>If the command line includes the <code>-m</code> flag with a namespace, then that namespace is passed to <code>clojure.main</code>, ignoring all <code>:main-opts</code> values from the aliases.  The <a href="https://clojure.org/reference/repl_and_main"><code>-i</code> and <code>-e</code> flags for clojure.main</a> also replace <code>:main-opts</code> values.</p>
+<h2 id="run-specific-function">Run specific function<a class="headerlink" href="#run-specific-function" title="Permanent link">λ︎</a></h2>
+<p><code>-X</code> flag provides the flexibility to call any fully qualified function, so Clojure code is no longer tied to <code>-main</code></p>
+<p>Any function on the class path can be called and is passed a hash-map as an argument.  The argument hash-map is either specified in an alias using <code>:exec-args</code> or assembled into a hash-map from key/value pairs on the command line.  Key/values from the command line are merged into the <code>:exec-args</code> map if it exists, with the command line key/values taking precedence.</p>
+<p>Call the <code>status</code> function from the namespace <code>practicalli.service</code>, which is on the classpath in the practicalli.service project</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>clojure<span class="w"> </span>-X<span class="w"> </span>practicalli.service/status
+</code></pre></div>
+<p>Pass arguments to a <code>start</code> function in the <code>practicalli.service</code> namespace</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>clojure<span class="w"> </span>-X<span class="w"> </span>practicalli.service/start<span class="w"> </span>:port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>:join?<span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
+<p>As the arguments are key/value pairs, it does not matter in which order the pairs are used in the command line.</p>
+<h3 id="built-in-clojureexec-functions">Built in clojure.exec functions<a class="headerlink" href="#built-in-clojureexec-functions" title="Permanent link">λ︎</a></h3>
+<p>Clojure CLI tools has some built in tools under the special <code>:deps</code> alias (not to be confused with the <code>:deps</code> configuration in a <code>deps.edn</code> file)</p>
+<ul>
+<li><code>-X:deps mvn-install</code> - install a maven jar to the local repository cache</li>
+<li><code>-X:deps find-versions</code> - Find available versions of a library</li>
+<li><code>-X:deps prep</code> - <a href="https://clojure.org/reference/deps_and_cli#prep">prepare source code libraries</a> in the dependency tree</li>
+</ul>
+<blockquote>
+<p>See <code>clojure --help</code> for an overview or <code>man clojure</code> for detailed descriptions</p>
+</blockquote>
+<h2 id="run-a-tool">Run a Tool<a class="headerlink" href="#run-a-tool" title="Permanent link">λ︎</a></h2>
+<p><code>-T</code> install, run and remove a tool, by the tool name or an alias.</p>
+<p>The <code>-T</code> execution option also uses the <code>clojure.exec</code> approach, although the <code>:deps</code> and <code>:path</code> values from a project <code>deps.edn</code> file are ignored.  This isolates the tool from the dependencies in a Clojure project.</p>
+<p>Calling Tools on the command line has the general form:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-Ttool-name<span class="w"> </span><span class="k">function</span>-name<span class="w"> </span>:key<span class="w"> </span><span class="s2">"value"</span><span class="w"> </span>,,,
+</code></pre></div>
+<p>A tool may provide many functions, so the specific function name is provided when calling the tool.</p>
+<p>key/value pairs can be passed as arguments to that function (as with the -X execution option)</p>
+<p><code>-Ttools</code> is a built-in tool to <code>install</code> and <code>remove</code> other tools, with the <code>:as</code> directive providing a specific name for the tool.</p>
+<p>In this example, the antq tool is installed using the name <code>antq</code></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure<span class="w"> </span>-Ttools<span class="w"> </span>install<span class="w"> </span>com.github.liquidz/antq<span class="w"> </span><span class="s1">'{:git/tag "1.3.1"}'</span><span class="w"> </span>:as<span class="w"> </span>antq
+</code></pre></div>
+<p>Installing a tool adds an EDN configuration file using the name of the tool in <code>$XDG_HOME/.clojure/tools/</code> or <code>$HOME/.clojure/tools/</code> directory.</p>
+<p>Once a tool is installed, run by using the name of the tool.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>clojure<span class="w"> </span>-Tantq<span class="w"> </span>outdated
+</code></pre></div>
+<p>Options to the tool are passed as key/value pairs (as the tool is called by clojure.exec)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure<span class="w"> </span>-Tantq<span class="w"> </span>outdated<span class="w"> </span>:upgrade<span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<p><code>-Ttools remove</code> will remove the configuration of the tool of the given name</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>clojure<span class="w"> </span>-Ttools<span class="w"> </span>remove<span class="w"> </span>:tool<span class="w"> </span>antq
+</code></pre></div>
+<h3 id="tools-install-or-aliases">Tools install or aliases<a class="headerlink" href="#tools-install-or-aliases" title="Permanent link">λ︎</a></h3>
+<p>Tools can also be defined in an alias with <code>:exec-fn</code> can be run via <code>-T:alias-name</code> as they are both executed using <code>clojure.exec</code>.</p>
+<blockquote>
+<p><code>-X</code> execution option can emulate <code>-T</code> behaviour when an alias uses <code>:replace-paths</code> and <code>:replace-deps</code> keys, instead of <code>:extra-paths</code> and <code>:extra-deps</code>, so project paths and dependencies are not included loaded by the alias.</p>
+</blockquote>
+<p>Using an alias for a tool has the advantage allowing a use to define their preferred default arguments that are passed to the <code>:exec-fn</code>, using the <code>:exec-args</code> key.</p>
+<p>Default arguments could be included in the <code>deps.edn</code> of the installed tool itself, although this is controlled by the developer of that tool project.</p>
+<p>The <code>:search/outdated</code> alias defined in the <code>practicalli/clojure-deps-edn</code> user level configuration is an example of a tool alias with default arguments</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w">  </span><span class="ss">:search/outdated</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"."</span><span class="p">]</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">   </span><span class="ss">:replace-deps</span><span class="w">  </span><span class="p">{</span><span class="nv">com.github.liquidz/antq</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.3.1"</span><span class="p">}</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">                   </span><span class="nv">org.slf4j/slf4j-nop</span><span class="w">     </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.7.32"</span><span class="p">}}</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">     </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"antq.core"</span><span class="p">]</span>
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">antq.tool/outdated</span>
+<a href="#__codelineno-14-7" id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">   </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:directory</span><span class="w"> </span><span class="p">[</span><span class="s">"."</span><span class="p">]</span><span class="w"> </span><span class="c1">; default</span>
+<a href="#__codelineno-14-8" id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">               </span><span class="ss">:exclude</span><span class="w"> </span><span class="p">[</span><span class="s">"com.cognitect/rebl"</span>
+<a href="#__codelineno-14-9" id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">                         </span><span class="s">"org.openjfx/javafx-base"</span>
+<a href="#__codelineno-14-10" id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">                         </span><span class="s">"org.openjfx/javafx-controls"</span>
+<a href="#__codelineno-14-11" id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">                         </span><span class="s">"org.openjfx/javafx-fxml"</span>
+<a href="#__codelineno-14-12" id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">                         </span><span class="s">"org.openjfx/javafx-swing"</span>
+<a href="#__codelineno-14-13" id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">                         </span><span class="s">"org.openjfx/javafx-web"</span><span class="p">]</span>
+<a href="#__codelineno-14-14" id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="w">               </span><span class="c1">;; :focus ["com.github.liquidz/antq"]</span>
+<a href="#__codelineno-14-15" id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="w">               </span><span class="ss">:skip</span><span class="w"> </span><span class="p">[</span><span class="s">"boot"</span><span class="w"> </span><span class="s">"leiningen"</span><span class="p">]</span>
+<a href="#__codelineno-14-16" id="__codelineno-14-16" name="__codelineno-14-16"></a><span class="w">               </span><span class="ss">:reporter</span><span class="w"> </span><span class="s">"table"</span><span class="w"> </span><span class="c1">; json edn format</span>
+<a href="#__codelineno-14-17" id="__codelineno-14-17" name="__codelineno-14-17"></a><span class="w">               </span><span class="ss">:verbose</span><span class="w"> </span><span class="nv">false</span>
+<a href="#__codelineno-14-18" id="__codelineno-14-18" name="__codelineno-14-18"></a><span class="w">               </span><span class="ss">:upgrade</span><span class="w"> </span><span class="nv">false</span>
+<a href="#__codelineno-14-19" id="__codelineno-14-19" name="__codelineno-14-19"></a><span class="w">               </span><span class="ss">:force</span><span class="w">   </span><span class="nv">false</span><span class="p">}}</span>
+</code></pre></div>
+<p>This alias is called using <code>clojure -T:search/outdated</code> and is the same as calling <code>clojure -Tantq outdated ,,, ,,,</code> with a long list of key value options that represent the arguments in the alias.</p>
+<p>As the output is a table of results, the command output is typically pushed to a file: <code>clojure -T:search/outdated &gt; outdated-2021-12-24.txt</code></p>
+<p>Example tools include</p>
+<ul>
+<li><a href="https://github.com/liquidz/antq">liquidz/antq</a> - search dependencies for newer library versions</li>
+<li><a href="https://github.com/seancorfield/deps-new">seancorfield/deps-new</a> - create new projects using templates</li>
+<li><a href="https://github.com/rm-hull/nvd-clojure">clojure-nvd</a> - check dependencies against National Vunerability Database</li>
+</ul>
+<h2 id="prepare-dependencies">Prepare dependencies<a class="headerlink" href="#prepare-dependencies" title="Permanent link">λ︎</a></h2>
+<p><code>-P</code> flag instructs the <code>clojure</code> command to download all library dependencies to the local cache and then stop without executing a function call.</p>
+<p>The <code>-P</code> flag is often used with Continuous Integration workflows and to create pre-populated Container images, to avoid repeatedly downloading the same library jar files.</p>
+<p>If used with just a project, then the Maven dependencies defined in the project <code>deps.edn</code> file will be downloaded, if not already in the users local cache (<code>~/.m2/repository/</code>).</p>
+<p>If <code>:git</code> or <code>:local/root</code> dependencies are defined, the respective code will be downloaded and added to the classpath.</p>
+<p>Prepare flag by itself download dependencies defined in the <code>:deps</code> section of the <code>deps.edn</code> file of the current project.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>clojure<span class="w"> </span>-P
+</code></pre></div>
+<p>Including one or more aliases will preparing all the dependencies from every alias specified</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>clojure<span class="w"> </span>-P<span class="w"> </span>-M:env/dev:lib/hotload:repl/cider
+</code></pre></div>
+<blockquote>
+<p><code>-P</code> flag must be used before any subsequent arguments, i.e. before <code>-M</code>, <code>-X</code>, <code>-T</code></p>
+</blockquote>
+<p>As prepare is essentially a dry run, then the <code>clojure</code> command does not call <code>:main-opts</code> or <code>:exec-fn</code> functions, even if they exist in an alias or on the command line.</p>
+<p><code>-P</code> will warn if a project has dependencies that <a href="https://clojure.org/reference/deps_and_cli#prep">require building from source</a> (i.e Java code) or resource file manipulation.  If so then <code>clojure -X:deps prep</code> will prepare these source based dependencies.</p>
+<h2 id="built-in-terminal-ui-repl">Built-in terminal UI REPL<a class="headerlink" href="#built-in-terminal-ui-repl" title="Permanent link">λ︎</a></h2>
+<p><code>-A</code> is stated as the official way to include an alias when running a REPL terminal UI <code>clojure</code> or <code>clj</code>.</p>
+<blockquote>
+<p><a href="https://practical.li/clojure/clojure-cli/repl/">Practicalli recommends using Rebel Readline</a> which uses -M execution option, so -A execution option is rarely used by Practicalli.</p>
+</blockquote>
+<p>The <code>:env/dev</code> alias adds "dev" directory to the class path, <a href="https://practical.li/clojure/clojure-cli/projects/configure-repl-startup.html">typically used to add a <code>user.clj</code> that will automatically load code from the <code>user</code> namespace defined in that file</a>.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>clojure<span class="w"> </span>-A:env/dev
+</code></pre></div>
+<p>The alias definition is <code>:env/dev {:extra-paths ["dev"]}</code></p>
+<p>Aliases can be chained together and their configuration will be merged</p>
+<p><code>:lib/hotload</code> adds a dependency to <a href="hotload-libraries.html">provide hotloading of other dependencies</a></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="ss">:lib/hotload</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">                </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">                 </span><span class="ss">:sha</span><span class="w">     </span><span class="s">"d77476f3d5f624249462e275ae62d26da89f320b"</span><span class="p">}</span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="w">              </span><span class="nv">org.slf4j/slf4j-nop</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.7.32"</span><span class="p">}}}</span>
+</code></pre></div>
+<p>Start a REPL process with this alias</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>clojure<span class="w"> </span>-A:env/dev:lib/hotload
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Use -M for alias definitions including :main-opts</p>
+<p>Using an alias that contains a <code>:main-opts</code> key with <code>-A</code> will fail to run a REPL and print a warning to use <code>-M</code> execution option
+The <code>:main-opts</code> configuration for <code>-A</code> execution option is deprecated (although currently works in 1.10.x). To run Clojure code via <code>clojure.main</code> the <code>-M</code> option should be with aliases that includes <code>:main-opts</code>.</p>
+</div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">λ︎</a></h2>
+<p>There are many options when it comes to running Clojure CLI tools that are not covered here, however, this guide gives you the most common options used so far.</p>
+<p>Practicalli recommends using the <code>-X</code> execution option where possible, as arguments follow the data approach of Clojure design.</p>
+<p>The <code>-J</code> and <code>:jvm-opts</code> are useful to configure the Java Virtual machine and deserve an article to themselves as there are many possible options.</p>
+<p>The <code>-T</code> tools is an exciting and evolving approach and it will be interesting to see how the Clojure community adopt this model.</p>
+<p>See the <a href="https://clojure.org/reference/deps_and_cli#prep">Deps and CLI Reference Rationale for more details and description of these options</a>.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
+<ul>
+<li><a href="https://insideclojure.org/2020/07/28/clj-exec/">Inside Clojure - clj exec</a></li>
+<li><a href="https://insideclojure.org/2020/09/04/clj-exec/">Inside Clojure - clj exec update</a></li>
+</ul>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 4, 2023</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<a class="md-top md-icon" data-md-component="top" hidden="" href="#">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </a>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://www.linkedin.com/in/jr0cket/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"></path></svg>
+</a>
+<a class="md-social__link" href="https://clojurians.slack.com/messages/practicalli" rel="noopener" target="_blank" title="clojurians.slack.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"></path></svg>
+</a>
+<a class="md-social__link" href="https://twitter.com/practical_li" rel="noopener" target="_blank" title="twitter.com">
+<svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>
+</a>
+<a class="md-social__link" href="https://github.com/practicalli" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="https://hub.docker.com/u/practicalli" rel="noopener" target="_blank" title="hub.docker.com">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.6df46069.min.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

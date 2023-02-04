@@ -9,7 +9,7 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/clojure-cli/" rel="canonical"/>
 <link href="../install/clojure-cli/" rel="prev"/>
-<link href="built-in-commands/" rel="next"/>
+<link href="practicalli-config/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
 <title>Clojure CLI - Practicalli Clojure</title>
@@ -262,13 +262,18 @@
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="practicalli-config/">
+        Practicalli Config
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="built-in-commands/">
         Built-in Commands
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="practicalli-config/">
-        Practicalli Config
+<a class="md-nav__link" href="execution-options/">
+        Execution Options
       </a>
 </li>
 <li class="md-nav__item">
@@ -1979,8 +1984,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-cli-execution-option-flags">
-    Clojure CLI execution option flags
+<a class="md-nav__link" href="#execution-option-flags">
+    Execution option flags
   </a>
 </li>
 <li class="md-nav__item">
@@ -2113,11 +2118,11 @@
 <p class="admonition-title">tools.build is recommended for packaging projects</p>
 <p><a href="/clojure/clojure-cli/projects/tools-build/">Package with tools.build</a> is the recommended approach to create jar and Uberjar packages of a Clojure project.</p>
 </div>
-<h2 id="clojure-cli-execution-option-flags">Clojure CLI execution option flags<a class="headerlink" href="#clojure-cli-execution-option-flags" title="Permanent link">λ︎</a></h2>
-<p>The execution option flags for the <code>clojure</code> command define how to run Clojure code.</p>
+<h2 id="execution-option-flags">Execution option flags<a class="headerlink" href="#execution-option-flags" title="Permanent link">λ︎</a></h2>
+<p>The execution option flags for the <code>clojure</code> command define how to run Clojure code.  The most commonly used options are:</p>
 <ul>
-<li><code>-A</code> and <code>-M</code> uses <a href="https://clojure.org/reference/repl_and_main">clojure.main</a> and calls the <code>-main</code> function of the given namespace, passing positional string arguments.</li>
-<li><code>-X</code> and <code>-T</code> uses <a href="https://clojure.org/reference/deps_and_cli#_execute_a_function">clojure.exec</a> to call a fully qualified function which has a map argument, passing key/value pair arguments.</li>
+<li><code>-M</code> uses <a href="https://clojure.org/reference/repl_and_main">clojure.main</a> and calls the <code>-main</code> function of the given namespace, passing positional string arguments.</li>
+<li><code>-X</code> uses <a href="https://clojure.org/reference/deps_and_cli#_execute_a_function">clojure.exec</a> to call a fully qualified function which has a map argument, passing key/value pair arguments. <code>-T</code> is the same as <code>-X</code> execpt setting the classpath to <code>.</code>, ignoring project dependencies not defined in a given alias.</li>
 </ul>
 <table>
 <thead>
@@ -2154,8 +2159,8 @@
 </tbody>
 </table>
 <div class="admonition hint">
-<p class="admonition-title">Which flag to use?</p>
-<p><a href="https://practical.li/blog/posts/clojure-which-execution-option-to-use/">Clojure CLI - which execution option to use</a> expands on flag usage with numerous examples</p>
+<p class="admonition-title">Examples of execution option flags</p>
+<p><a href="execution-options/">Execution option page</a> expands on flag usage with numerous examples</p>
 </div>
 <h2 id="configure-clojure-cli">Configure Clojure CLI<a class="headerlink" href="#configure-clojure-cli" title="Permanent link">λ︎</a></h2>
 <p>A <code>deps.edn</code> file configures the Clojure CLI, using extensible data notation (EDN), the underlying syntax of Clojure itself.</p>
@@ -2170,8 +2175,8 @@
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
 <details class="hint">
-<summary>Install Practicalli Community Tool aliases</summary>
-<p><a href="">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
+<summary>Add a wide range of aliases by installing Practicalli Clojure CLI Config</summary>
+<p><a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
 </details>
 <h3 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI Configuration can be used from several different sources.</p>
