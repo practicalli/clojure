@@ -15,6 +15,8 @@
 | `clojure -X:deps mvn-install :jar '"/path/to.jar"'` | install a given jar file into the local maven repository, eg. `~/.m2/repository`                         |
 | `clojure -X:deps git-resolve-tags`                  | update `deps.edn` git based dependencies that used tags with the equivalent SHA commit values            |
 
+[tools.deps.alpha API Reference](https://clojure.github.io/tools.deps.alpha/){target=_blank .md-button}
+
 
 ## List full dependencies
 
@@ -120,3 +122,11 @@ clojure -X:deps prep
 ```shell
 clojure -X:deps git-resolve-tags
 ```
+
+
+## References
+
+[tools.deps and cli guide](https://clojure.org/reference/deps_and_cli){target=_blank .md-button}
+[clojure.main guide](https://clojure.org/reference/repl_and_main){target=_blank .md-button}
+[clojure.main API Reference](https://clojure.github.io/clojure/clojure.main-api.html){target=_blank .md-button}
+[tools.deps.alpha API Reference](https://clojure.github.io/tools.deps.alpha/){target=_blank .md-button}
