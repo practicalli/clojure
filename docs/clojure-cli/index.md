@@ -47,7 +47,7 @@ The Clojure CLI has several built-in tasks.  Additional tasks are provided via a
 The execution option flags for the `clojure` command define how to run Clojure code.  The most commonly used options are:
 
 * `-M` uses [clojure.main](https://clojure.org/reference/repl_and_main) and calls the `-main` function of the given namespace, passing positional string arguments.
-* `-X` uses [clojure.exec](https://clojure.org/reference/deps_and_cli#_execute_a_function) to call a fully qualified function which has a map argument, passing key/value pair arguments. `-T` is the same as `-X` execpt it sets the classpath to `.`, ignoring any project dependencies not defined in a given alias.
+* `-X` uses [clojure.exec](https://clojure.org/reference/deps_and_cli#_execute_a_function) to call a fully qualified function which has a map argument, passing key/value pair arguments. `-T` is the same as `-X` execpt setting the classpath to `.`, ignoring project dependencies not defined in a given alias.
 
 | Flag | Purpose                                                        |
 |------|----------------------------------------------------------------|
@@ -60,7 +60,7 @@ The execution option flags for the `clojure` command define how to run Clojure c
 
 
 !!! HINT "Examples of execution option flags"
-    [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/) expands on flag usage with numerous examples
+    [Execution option page](execution-options.md) expands on flag usage with numerous examples
 
 
 ## Configure Clojure CLI
