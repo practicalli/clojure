@@ -49,6 +49,6 @@ Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](ht
 ## Creative commons license
 
 <div style="width:95%; margin:auto;">
-<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
-This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+  This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
 </div>
