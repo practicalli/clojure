@@ -13,8 +13,6 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-[Deps and CLI Guide - Clojure.org](https://clojure.org/guides/deps_and_cli){target=_blank .md-button}
-
 
 ## Common tasks for Clojure development
 
