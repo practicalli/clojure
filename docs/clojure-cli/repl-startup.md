@@ -217,7 +217,7 @@ Now define code in the `dev/dev.clj` file that controls the component life-cycle
 
 Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.
 
-    === "mount"
+=== "Mount"
     Define a `dev.clj` file with `go`, `stop` and `restart` functions that manage the life-cycle of mount components.  A `start` function contains the list of components with optional state.
 
     Require the mount namespace and the main namespace for the project, which should contain all the code to start and stop services.
@@ -279,8 +279,8 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 
 
 === "Component"
-
     [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
+
 
 === "Donut System"
     [donut.system](https://github.com/donut-party/system) is a dependency injection library for Clojure and ClojureScript using system and component abstractions to organise and manage startup & shutdown behaviour.
