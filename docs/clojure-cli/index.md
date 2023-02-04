@@ -42,24 +42,24 @@ The Clojure CLI has several built-in tasks.  Additional tasks are provided via a
     [Package with tools.build](/clojure/clojure-cli/projects/tools-build/) is the recommended approach to create jar and Uberjar packages of a Clojure project.
 
 
-## Clojure CLI execution option flags
+## Execution option flags
 
-The execution option flags for the `clojure` command define how to run Clojure code.
+The execution option flags for the `clojure` command define how to run Clojure code.  The most commonly used options are:
 
-* `-A` and `-M` uses [clojure.main](https://clojure.org/reference/repl_and_main) and calls the `-main` function of the given namespace, passing positional string arguments.
-* `-X` and `-T` uses [clojure.exec](https://clojure.org/reference/deps_and_cli#_execute_a_function) to call a fully qualified function which has a map argument, passing key/value pair arguments.
+* `-M` uses [clojure.main](https://clojure.org/reference/repl_and_main) and calls the `-main` function of the given namespace, passing positional string arguments.
+* `-X` uses [clojure.exec](https://clojure.org/reference/deps_and_cli#_execute_a_function) to call a fully qualified function which has a map argument, passing key/value pair arguments. `-T` is the same as `-X` execpt it sets the classpath to `.`, ignoring any project dependencies not defined in a given alias.
 
 | Flag | Purpose                                                        |
 |------|----------------------------------------------------------------|
 | `-A` | Pass alias to built-in terminal UI REPL (`clojure` or `clj`)   |
-| `-M` | Run Clojure with clojure.main                          |
+| `-M` | Run Clojure with clojure.main                                  |
 | `-P` | Prepare / dry run (Build scripts, CI servers, Containers)      |
 | `-X` | Execute a fully qualified function, optional default arguments |
-| `-T` | Run a tool independently from a project configuration         |
+| `-T` | Run a tool independently from a project configuration          |
 | `-J` | Java Virtual Machine specific options (heap size, etc)         |
 
 
-!!! HINT "Which flag to use?"
+!!! HINT "Examples of execution option flags"
     [Clojure CLI - which execution option to use](https://practical.li/blog/posts/clojure-which-execution-option-to-use/) expands on flag usage with numerous examples
 
 
@@ -80,8 +80,8 @@ Configuration is defined using a hash-map with the following top-level keys:
 clojure -M:repl/rebel
 ```
 
-??? HINT "Install Practicalli Community Tool aliases"
-    [Practicalli Clojure CLI Config]() provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.
+??? HINT "Add a wide range of aliases by installing Practicalli Clojure CLI Config"
+    [Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.
 
 
 ### Precedence Order
