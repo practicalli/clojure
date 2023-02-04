@@ -1886,11 +1886,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/using-clojure-tools/coding-in-the-repl/</loc>
-         <lastmod>2023-02-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/using-data-structures/</loc>
          <lastmod>2023-02-04</lastmod>
          <changefreq>daily</changefreq>
