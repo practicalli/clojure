@@ -9,6 +9,8 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 
 [Practicalli Clojure CLI Config](practicalli-config/) extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.
 
+??? WARNING "Video commands dated but concepts still"
+
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
