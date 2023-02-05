@@ -2,23 +2,24 @@
 
 A Clojure REPL starts in the `user` namespace by default.  Clojure automatically loads code from a `user.clj` file when found on the class path.
 
-The `user.clj` file typically contains tools to support development, such as:
+The `user.clj` file can be used for one or more of the following:
 
-* loading project code into the REPL by requiring namespaces
-* hotload libraries into the REPL process without restart
+* load code into the REPL by requiring namespaces
 * call functions to run an application or service
 * start components (i.e for mount, component, integrant)
-* adding development tools - [portal data inspector](/clojure-cli/data-browsers/portal.html#starting-portal-on-repl-startup)
-
-The `user.clj` is typically placed in a `dev` folder within the root of the project, to keep it separated from production code.
-
-!!! HINT "Example project"
-    [practicalli/clojure-configure-repl](https://github.com/practicalli/clojure-configure-repl) project contains example code for configuring the REPL start up
-
-    [juxt/edge has example projects](https://github.com/juxt/edge/tree/master/examples) using the same technique.
+* hotload libraries into the REPL process without restart
+* adding development tools - e.g. [portal data inspector](/clojure/data-inspector/portal/#configure-repl-startup)
 
 
-## `dev/user.clj` and `:env/dev` alias
+!!! WARNING "Clojure CLI cannot set the REPL to a different namespace"
+
+??? HINT "Example projects"
+    [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template){target=_blank} contains a `dev/user.clj` file for configuring the REPL at start up.
+
+
+## Custom user namespace
+
+A custom `user.clj` is typically placed in a `dev` folder within the root of the project, with the `dev` path defined in an alias to keep it separated from production code.
 
 Create a `dev/user.clj` file with a namespace called `user`.
 
@@ -29,7 +30,11 @@ Create a `dev/user.clj` file with a namespace called `user`.
 Create an alias to include the `dev` path when running a REPL process
 
 === "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) includes a `:env/dev` alias which adds the `dev` directory to the project classpath.
+    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) includes aliases that add `dev` directory to the class path
+
+    * `:env/dev` alias only adds the `dev` directory to the classpath
+    * `:dev/reloaded` adds library hotload, namespace reload, porta data inspector and testing libraries & `test`
+    * `:repl/reloaded` adds Rebel rich terminal UI to the tools provided by `:dev/reloaded`
 
 === "Manual"
     Add an alias to the user `deps.edn` configuration, i.e. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
@@ -53,7 +58,7 @@ clojure -M:env/dev:repl/rebel
 
 ## Requiring namespaces
 
-By requiring a namespace in the `dev/user.clj` file, the code defined in that namespace will be loaded into the REPL once started. Functions `(defn)` and data `(def)` are immediately available.
+By requiring a namespace in the `dev/user.clj` file, the code defined in that namespace will be loaded into the REPL during startup. Functions `(defn)` and data `(def)` are immediately available.  If a required namespace also requires namespace, they will also be loaded into the REPL during startup.
 
 Add a require expression to the namespace definition in `dev/user.clj`
 
@@ -62,7 +67,10 @@ Add a require expression to the namespace definition in `dev/user.clj`
   (:require [practicalli.project-namespace]))
 ```
 
-`(require '[practicalli.project-namespace])` form can also be used instead and placed in a `(comment ,,,)` form if the require is only to be called by the developer
+??? WARNING "Requiring many libraries may slow REPL start up time"
+
+
+`(require '[practicalli.project-namespace])` form can be used instead and placed in a `(comment ,,,)` form.  If the library is no always required this form can be  evaluated by the developer any time after REPL startup.
 
 ```clojure title="dev/user.clj"
 (ns user)
@@ -94,12 +102,12 @@ An alias can be used in the require expression, useful if multiple functions fro
 ```
 
 
-## Search for library dependencies
+## Search for libraries
 
 The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
 
 === "Practicalli Clojure CLI Config"
-    The `:search/libraries` in [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) will add the find-deps library.
+    The `:search/libraries` in [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/#project-dependencies) will add the find-deps library.
 
 === "Manual"
     Add the find-deps project to and alias called `:search/libraries` in the user level `deps.edn` file, i.e. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
@@ -142,7 +150,7 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
 
 
 === "Practicalli Clojure CLI Config"
-    `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
+    `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/hotload-libraries/) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
 
 === "Manual"
     Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
@@ -213,7 +221,7 @@ In Clojure it is idiomatic to define the component life-cycle services in a name
 Now define code in the `dev/dev.clj` file that controls the component life-cycle services library for the project.
 
 
-## Example project with component life-cycle
+### Example life-cycle code
 
 Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.
 
