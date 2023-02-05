@@ -46,6 +46,17 @@ The Clojure configuration directory contains a `deps.edn` file containing a subs
 
 All tools are provided via libraries and are only installed on first use.  Unused aliases will therefore not install their libraries.
 
+!!! HINT "Aliases to start with"
+    Start with the following aliases to keep things simple
+
+    `clojure -T:project/create :name domain/project-name` to create a new clojure project
+
+    `clojure -M:repl/reloaded` to run a fully loaded REPL and rich terminal UI (which can be connected to from Clojure editors)
+
+    `clojure -X:test/watch` to run tests on file save (or `:test/run` to manually run tests once)
+
+    Use [Clojure tools.build](/clojure/clojure-cli/projects/tools-build/) to create jar and uberjar packages of the project.
+
 
 ### REPL experience
 
