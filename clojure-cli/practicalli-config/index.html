@@ -2249,6 +2249,14 @@
 <h2 id="community-tools-available">Community Tools available<a class="headerlink" href="#community-tools-available" title="Permanent link">λ︎</a></h2>
 <p>The Clojure configuration directory contains a <code>deps.edn</code> file containing a substantial <code>:aliases</code> section with a long list of aliases.  These aliases are described in the <a href="https://github.com/practicalli/clojure-deps-edn/blob/live/README.md">README of the project</a>.</p>
 <p>All tools are provided via libraries and are only installed on first use.  Unused aliases will therefore not install their libraries.</p>
+<div class="admonition hint">
+<p class="admonition-title">Aliases to start with</p>
+<p>Start with the following aliases to keep things simple</p>
+<p><code>clojure -T:project/create :name domain/project-name</code> to create a new clojure project</p>
+<p><code>clojure -M:repl/reloaded</code> to run a fully loaded REPL and rich terminal UI (which can be connected to from Clojure editors)</p>
+<p><code>clojure -X:test/watch</code> to run tests on file save (or <code>:test/run</code> to manually run tests once)</p>
+<p>Use <a href="/clojure/clojure-cli/projects/tools-build/">Clojure tools.build</a> to create jar and uberjar packages of the project.</p>
+</div>
 <h3 id="repl-experience">REPL experience<a class="headerlink" href="#repl-experience" title="Permanent link">λ︎</a></h3>
 <p><a href="/clojure/clojure-cli/repl/">Rebel REPL terminal UI</a> provides a feature rich REPL prompt experience, far beyond the basic <code>clj</code> command.</p>
 <table>
