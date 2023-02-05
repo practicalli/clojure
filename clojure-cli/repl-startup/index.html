@@ -337,8 +337,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#devuserclj-and-envdev-alias">
-    dev/user.clj and :env/dev alias
+<a class="md-nav__link" href="#custom-user-namespace">
+    Custom user namespace
   </a>
 </li>
 <li class="md-nav__item">
@@ -352,8 +352,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#search-for-library-dependencies">
-    Search for library dependencies
+<a class="md-nav__link" href="#search-for-libraries">
+    Search for libraries
   </a>
 </li>
 <li class="md-nav__item">
@@ -365,11 +365,15 @@
 <a class="md-nav__link" href="#life-cycle-services">
     Life-cycle Services
   </a>
-</li>
+<nav aria-label="Life-cycle Services" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#example-project-with-component-life-cycle">
-    Example project with component life-cycle
+<a class="md-nav__link" href="#example-life-cycle-code">
+    Example life-cycle code
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#reference">
@@ -2032,8 +2036,8 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#devuserclj-and-envdev-alias">
-    dev/user.clj and :env/dev alias
+<a class="md-nav__link" href="#custom-user-namespace">
+    Custom user namespace
   </a>
 </li>
 <li class="md-nav__item">
@@ -2047,8 +2051,8 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#search-for-library-dependencies">
-    Search for library dependencies
+<a class="md-nav__link" href="#search-for-libraries">
+    Search for libraries
   </a>
 </li>
 <li class="md-nav__item">
@@ -2060,11 +2064,15 @@
 <a class="md-nav__link" href="#life-cycle-services">
     Life-cycle Services
   </a>
-</li>
+<nav aria-label="Life-cycle Services" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#example-project-with-component-life-cycle">
-    Example project with component life-cycle
+<a class="md-nav__link" href="#example-life-cycle-code">
+    Example life-cycle code
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#reference">
@@ -2080,21 +2088,23 @@
 <article class="md-content__inner md-typeset">
 <h1 id="configure-repl-on-startup">Configure REPL on Startup<a class="headerlink" href="#configure-repl-on-startup" title="Permanent link">λ︎</a></h1>
 <p>A Clojure REPL starts in the <code>user</code> namespace by default.  Clojure automatically loads code from a <code>user.clj</code> file when found on the class path.</p>
-<p>The <code>user.clj</code> file typically contains tools to support development, such as:</p>
+<p>The <code>user.clj</code> file can be used for one or more of the following:</p>
 <ul>
-<li>loading project code into the REPL by requiring namespaces</li>
-<li>hotload libraries into the REPL process without restart</li>
+<li>load code into the REPL by requiring namespaces</li>
 <li>call functions to run an application or service</li>
 <li>start components (i.e for mount, component, integrant)</li>
-<li>adding development tools - <a href="/clojure-cli/data-browsers/portal.html#starting-portal-on-repl-startup">portal data inspector</a></li>
+<li>hotload libraries into the REPL process without restart</li>
+<li>adding development tools - e.g. <a href="/clojure/data-inspector/portal/#configure-repl-startup">portal data inspector</a></li>
 </ul>
-<p>The <code>user.clj</code> is typically placed in a <code>dev</code> folder within the root of the project, to keep it separated from production code.</p>
-<div class="admonition hint">
-<p class="admonition-title">Example project</p>
-<p><a href="https://github.com/practicalli/clojure-configure-repl">practicalli/clojure-configure-repl</a> project contains example code for configuring the REPL start up</p>
-<p><a href="https://github.com/juxt/edge/tree/master/examples">juxt/edge has example projects</a> using the same technique.</p>
+<div class="admonition warning">
+<p class="admonition-title">Clojure CLI cannot set the REPL to a different namespace</p>
 </div>
-<h2 id="devuserclj-and-envdev-alias"><code>dev/user.clj</code> and <code>:env/dev</code> alias<a class="headerlink" href="#devuserclj-and-envdev-alias" title="Permanent link">λ︎</a></h2>
+<details class="hint">
+<summary>Example projects</summary>
+<p><a href="https://github.com/practicalli/clojure-app-template" target="_blank">practicalli/clojure-app-template</a> contains a <code>dev/user.clj</code> file for configuring the REPL at start up.</p>
+</details>
+<h2 id="custom-user-namespace">Custom user namespace<a class="headerlink" href="#custom-user-namespace" title="Permanent link">λ︎</a></h2>
+<p>A custom <code>user.clj</code> is typically placed in a <code>dev</code> folder within the root of the project, with the <code>dev</code> path defined in an alias to keep it separated from production code.</p>
 <p>Create a <code>dev/user.clj</code> file with a namespace called <code>user</code>.</p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span><span class="p">)</span>
 </code></pre></div>
@@ -2102,7 +2112,12 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label><label for="__tabbed_1_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> includes a <code>:env/dev</code> alias which adds the <code>dev</code> directory to the project classpath.</p>
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> includes aliases that add <code>dev</code> directory to the class path</p>
+<ul>
+<li><code>:env/dev</code> alias only adds the <code>dev</code> directory to the classpath</li>
+<li><code>:dev/reloaded</code> adds library hotload, namespace reload, porta data inspector and testing libraries &amp; <code>test</code></li>
+<li><code>:repl/reloaded</code> adds Rebel rich terminal UI to the tools provided by <code>:dev/reloaded</code></li>
+</ul>
 </div>
 <div class="tabbed-block">
 <p>Add an alias to the user <code>deps.edn</code> configuration, i.e. <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> or <code>$HOME/.clojure/deps.edn</code></p>
@@ -2121,12 +2136,15 @@
 <p>The <code>user.clj</code> code should not be included in live deployments, such as jars and uberjars.  Including the <code>dev/</code> directory via the <code>:env/dev</code> alias keeps the <code>user.clj</code> and any other development only code separate from deployment actions.</p>
 </div>
 <h2 id="requiring-namespaces">Requiring namespaces<a class="headerlink" href="#requiring-namespaces" title="Permanent link">λ︎</a></h2>
-<p>By requiring a namespace in the <code>dev/user.clj</code> file, the code defined in that namespace will be loaded into the REPL once started. Functions <code>(defn)</code> and data <code>(def)</code> are immediately available.</p>
+<p>By requiring a namespace in the <code>dev/user.clj</code> file, the code defined in that namespace will be loaded into the REPL during startup. Functions <code>(defn)</code> and data <code>(def)</code> are immediately available.  If a required namespace also requires namespace, they will also be loaded into the REPL during startup.</p>
 <p>Add a require expression to the namespace definition in <code>dev/user.clj</code></p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">practicalli.project-namespace</span><span class="p">]))</span>
 </code></pre></div>
-<p><code>(require '[practicalli.project-namespace])</code> form can also be used instead and placed in a <code>(comment ,,,)</code> form if the require is only to be called by the developer</p>
+<details class="warning">
+<summary>Requiring many libraries may slow REPL start up time</summary>
+</details>
+<p><code>(require '[practicalli.project-namespace])</code> form can be used instead and placed in a <code>(comment ,,,)</code> form.  If the library is no always required this form can be  evaluated by the developer any time after REPL startup.</p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span><span class="p">)</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p">(</span><span class="nf">comment</span>
@@ -2146,12 +2164,12 @@
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
 <a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">(</span><span class="nf">service/-main</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="search-for-library-dependencies">Search for library dependencies<a class="headerlink" href="#search-for-library-dependencies" title="Permanent link">λ︎</a></h2>
+<h2 id="search-for-libraries">Search for libraries<a class="headerlink" href="#search-for-libraries" title="Permanent link">λ︎</a></h2>
 <p>The <a href="https://github.com/hagmonk/find-deps">find-deps project</a> fuzzy searches Maven Central and Clojars for dependencies when given a name.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>The <code>:search/libraries</code> in <a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a> will add the find-deps library.</p>
+<p>The <code>:search/libraries</code> in <a href="/clojure/clojure-cli/practicalli-config/#project-dependencies">Practicalli Clojure CLI Config</a> will add the find-deps library.</p>
 </div>
 <div class="tabbed-block">
 <p>Add the find-deps project to and alias called <code>:search/libraries</code> in the user level <code>deps.edn</code> file, i.e. <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> or <code>$HOME/.clojure/deps.edn</code></p>
@@ -2183,7 +2201,7 @@
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>:lib/hotload</code> and <code>:lib/reloaded</code> aliases in <a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a> will add the add-libs3 branch of <code>tools.deps.alpha</code> which provides the <code>add-libs</code> function.</p>
+<p><code>:lib/hotload</code> and <code>:lib/reloaded</code> aliases in <a href="/clojure/clojure-cli/hotload-libraries/">Practicalli Clojure CLI Config</a> will add the add-libs3 branch of <code>tools.deps.alpha</code> which provides the <code>add-libs</code> function.</p>
 </div>
 <div class="tabbed-block">
 <p>Edit the project <code>deps.edn</code> configuration and add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library.  Or add an alias to the user level configuration for use with any Clojure CLI project.</p>
@@ -2230,64 +2248,51 @@
 <a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="p">(</span><span class="nf">dev/go</span><span class="p">)</span>
 </code></pre></div>
 Now define code in the <code>dev/dev.clj</code> file that controls the component life-cycle services library for the project.</p>
-<h2 id="example-project-with-component-life-cycle">Example project with component life-cycle<a class="headerlink" href="#example-project-with-component-life-cycle" title="Permanent link">λ︎</a></h2>
+<h3 id="example-life-cycle-code">Example life-cycle code<a class="headerlink" href="#example-life-cycle-code" title="Permanent link">λ︎</a></h3>
 <p>Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.</p>
-<div class="highlight"><pre><span></span><code>=== "mount"
-Define a `dev.clj` file with `go`, `stop` and `restart` functions that manage the life-cycle of mount components.  A `start` function contains the list of components with optional state.
-
-Require the mount namespace and the main namespace for the project, which should contain all the code to start and stop services.
-
-```clojure title="dev/user.clj"
-(ns user
-  :require [mount.core :refer [defstate]]
-           [practicalli.app.main])
-```
-
-Define a start function to start all services
-
-```clojure title="dev/user.clj"
-(defn start []
-  (with-logging-status)
-  (mount/start #'practicalli.app.conf/environment
-               #'practicalli.app.db/connection
-               #'practicalli.app.www/business-app
-               #'practicalli.app.service/nrepl))
-```
-
-The `go` function calls `start` and marks all components as ready.
-
-```clojure title="dev/user.clj"
-(defn go
-  "Start all states defined by defstate"
-  []
-  (start)
-  :ready)
-```
-
-The `stop` function stops all components, removing all non-persistent state.
-
-```clojure
-(defn stop [] (mount/stop))
-```
-
-The reset function that calls `stop`, refreshes the namespaces so that stale definitions are removed and starts all components (loading in any new code).
-
-```clojure title="dev/user.clj"
-(defn reset
-  "Stop all states defined by defstate.
-  Reload modified source files and restart all states"
-  []
-  (stop)
-  (namespace/refresh :after 'dev/go))
-```
-
-* [Example dev.clj file for mount](https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj)
-
-!!! Hint "Use `dev` namespace during development"
-    Require `practicalli.app.dev` namespace rather than main, to start components in a development environment.
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Integrant REPL</label><label for="__tabbed_4_2">Component</label><label for="__tabbed_4_3">Donut System</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Mount</label><label for="__tabbed_4_2">Integrant REPL</label><label for="__tabbed_4_3">Component</label><label for="__tabbed_4_4">Donut System</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<p>Define a <code>dev.clj</code> file with <code>go</code>, <code>stop</code> and <code>restart</code> functions that manage the life-cycle of mount components.  A <code>start</code> function contains the list of components with optional state.</p>
+<p>Require the mount namespace and the main namespace for the project, which should contain all the code to start and stop services.</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">mount.core</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">defstate</span><span class="p">]]</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">           </span><span class="p">[</span><span class="nv">practicalli.app.main</span><span class="p">])</span>
+</code></pre></div>
+<p>Define a start function to start all services</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">with-logging-status</span><span class="p">)</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">mount/start</span><span class="w"> </span><span class="o">#</span><span class="ss">'practicalli.app.conf/environment</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">               </span><span class="o">#</span><span class="ss">'practicalli.app.db/connection</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">               </span><span class="o">#</span><span class="ss">'practicalli.app.www/business-app</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="w">               </span><span class="o">#</span><span class="ss">'practicalli.app.service/nrepl</span><span class="p">))</span>
+</code></pre></div>
+<p>The <code>go</code> function calls <code>start</code> and marks all components as ready.</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">go</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">  </span><span class="s">"Start all states defined by defstate"</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">  </span><span class="p">[]</span>
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">start</span><span class="p">)</span>
+<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="w">  </span><span class="ss">:ready</span><span class="p">)</span>
+</code></pre></div>
+<p>The <code>stop</code> function stops all components, removing all non-persistent state.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nf">mount/stop</span><span class="p">))</span>
+</code></pre></div>
+<p>The reset function that calls <code>stop</code>, refreshes the namespaces so that stale definitions are removed and starts all components (loading in any new code).</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">reset</span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">  </span><span class="s">"Stop all states defined by defstate.</span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="s">  Reload modified source files and restart all states"</span>
+<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">  </span><span class="p">[]</span>
+<a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
+<a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">namespace/refresh</span><span class="w"> </span><span class="ss">:after</span><span class="w"> </span><span class="ss">'dev/go</span><span class="p">))</span>
+</code></pre></div>
+<ul>
+<li><a href="https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj">Example dev.clj file for mount</a></li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">Use <code>dev</code> namespace during development</p>
+<p>Require <code>practicalli.app.dev</code> namespace rather than main, to start components in a development environment.</p>
+</div>
+</div>
 <div class="tabbed-block">
 <p>See the <a href="https://practical.li/clojure-web-services/repl-driven-development/integrant-repl/">detailed example of Integrant REPL in Practicalli Clojure Web Services</a></p>
 <p><a href="https://github.com/prestancedesign/usermanager-reitit-example">Usermanager example project</a> using Integrant.</p>
@@ -2303,7 +2308,7 @@ The reset function that calls `stop`, refreshes the namespaces so that stale def
 </p></p>
 </div>
 </div>
-</input></input></input></div>
+</input></input></input></input></div>
 <h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://github.com/tolitius/mount">Mount project on GitHub</a></li>
@@ -2322,7 +2327,7 @@ The reset function that calls `stop`, refreshes the namespaces so that stale def
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2023</span>
 </small>
 </div>
 </article>

@@ -2032,12 +2032,12 @@
 <li>managing dependencies (tools.deps) -downloading from Maven and Git repositories</li>
 <li><a href="/clojure/clojure-cli/projects/tools-build/">building Clojure projects (using tools.build)</a> to create deployable Clojure services</li>
 </ul>
-<p><a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.</p>
+<p><a href="practicalli-config/">Practicalli Clojure CLI Config</a> extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.</p>
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" width="560"></iframe>
 </p>
 <h2 id="common-tasks-for-clojure-development">Common tasks for Clojure development<a class="headerlink" href="#common-tasks-for-clojure-development" title="Permanent link">λ︎</a></h2>
-<p>The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. <a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a></p>
+<p>The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. <a href="practicalli-config/">Practicalli Clojure CLI Config</a></p>
 <div class="admonition hint">
 <p class="admonition-title">REPL Reloaded</p>
 <p><code>clojure -M:repl/reloaded</code> runs a rich terminal UI REPL prompt that includes portal data inspector, namespace reloading and library hotload tools. <code>test</code> path is included to support editor test runners and <code>dev</code> path for custom user namespace for <a href="/clojure/clojure-cli/repl-startup/">custom REPL startup</a></p>
@@ -2170,12 +2170,12 @@
 <li><code>:aliases</code> - named configuration defining extra paths, extra deps and configuration to run Clojure</li>
 <li><code>:mvn/repos</code> - library dependency sources, remote and local (e.g. Clojars, Maven, Artifactory, etc).</li>
 </ul>
-<p><code>:aliases</code> configuration is only included when using the alias name with the Clojure CLI, e.g. <code>:repl/rebel</code> alias in <a href="clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> adds library dependencies only used during development to run a rich terminal UI REPL.</p>
+<p><code>:aliases</code> configuration is only included when using the alias name with the Clojure CLI, e.g. <code>:repl/rebel</code> alias in <a href="practicalli-config/">Practicalli Clojure CLI Config</a> adds library dependencies only used during development to run a rich terminal UI REPL.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
 <details class="hint">
 <summary>Add a wide range of aliases by installing Practicalli Clojure CLI Config</summary>
-<p><a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
+<p><a href="practicalli-config/">Practicalli Clojure CLI Config</a> provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.</p>
 </details>
 <h3 id="precedence-order">Precedence Order<a class="headerlink" href="#precedence-order" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI Configuration can be used from several different sources.</p>
@@ -2219,7 +2219,7 @@
 <p>Including <code>org.clojure/clojure</code> as a dependency the project <code>deps.edn</code> file specifies a version of the Clojure language.  The Clojure CLI version is used if no other dependency is specified.</p>
 </details>
 <h3 id="user-configuration">User configuration<a class="headerlink" href="#user-configuration" title="Permanent link">λ︎</a></h3>
-<p>A Clojure CLI user configuration is available to all projects by the operating system user account.  <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
+<p>A Clojure CLI user configuration is available to all projects by the operating system user account.  <a href="practicalli-config/">Practicalli Clojure CLI Config</a> is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
 <details class="hint">
 <summary>Clojure CLI User Configuration Location</summary>
 <p>Clojure CLI tools creates a configuration directory called <code>.clojure</code>, which <a href="https://clojure.org/reference/deps_and_cli#_deps_edn_sources">by default</a> is placed in the root of the operating system user account directory, e.g. <code>$HOME/.clojure</code>.</p>
