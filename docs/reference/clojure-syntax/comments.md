@@ -40,7 +40,7 @@ The `comment` expression is referred to a a rich comment, as it is often used to
 
 Unlike line comments, forms inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
 
-Rich comment are useful for rapidly iterating over different design decisions by including the same function but with different implementations. Hide clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+Rich comment are useful for rapidly iterating over different design decisions by including the same function but with different implementations. Hide clj-kondo linter](/clojure/reference/code-analysis.md) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 ```clojure
 ;; Rich comment block with redefined vars ignored

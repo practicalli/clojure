@@ -13,4 +13,4 @@ This section will contain several games that have been built using a functional 
 
 
 > #### Hint::Games in ClojureScript
-> There is a section on games in the Practicalli ClojureScript book, including [a TicTacToe game using Reagent](https://practicalli.github.io/clojurescript/reagent-projects/tic-tac-toe/index.html) (react.js style library) and Scalable Vector Graphics (SVG).
+> There is a section on games in the Practicalli ClojureScript book, including [a TicTacToe game using Reagent](https://practical.li/clojurescript/reagent-projects/tic-tac-toe/) (react.js style library) and Scalable Vector Graphics (SVG).

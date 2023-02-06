@@ -53,4 +53,4 @@ You can use the free Non-commercial license for this workshop, obtainable from h
 
 ## Using Cursive
 
-* [Cursive editor guide](../editor-guides/intellij-cursive.html)
+* [Cursive editor guide](../editor-guides/intellij-cursive.md)

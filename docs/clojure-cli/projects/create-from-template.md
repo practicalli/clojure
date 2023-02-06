@@ -5,7 +5,7 @@ Creating Clojure projects save code as you are learning or developing applicatio
 Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and `clj-new` to create projects.
 
 ??? HINT "Clojure Aliases for creating projects from templates"
-    [Practicalli Clojure CLI Config](install/community-tools.html) to provide aliases `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new) project and `:project/new` for [seancorfield/clj-new](https://github.com/seancorfield/clj-new)
+    [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to provide aliases `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new) project and `:project/new` for [seancorfield/clj-new](https://github.com/seancorfield/clj-new)
 
     ```clojure title="deps.edn"
     :project/create
@@ -32,7 +32,7 @@ Creating projects using a template is the quickest way to get started, as the te
     ```bash
     clojure -T:project/create :template app :name practicalli/playground
     ```
-    The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project. 
+    The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
 
 
 === "clj-new"
@@ -48,7 +48,7 @@ Creating projects using a template is the quickest way to get started, as the te
 
     === "Clojure.main"
         The `-M` execution option calls Clojure.main which takes string options of the form:
-        
+
         `clojure -M:project/new template-name domain/app-lib-name`
         ```bash
         clojure -M:project/new app practicalli/playground

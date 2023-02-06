@@ -56,7 +56,7 @@ See the [Atom guide for Fedora](https://flight-manual.atom.io/getting-started/se
 {% content "windows" %}
 
 > #### Danger::Leiningen in GitBash does not work with Atom
-> Recommend using [VSCode and Calva](vscode-calva.html) if you have installed Leiningen via GitBash method.
+> Recommend using [VSCode and Calva](vscode-calva.md) if you have installed Leiningen via GitBash method.
 
 Downloaded [`AtomSetup.exe`](https://github.com/atom/atom/releases/latest) Windows Installer.
 

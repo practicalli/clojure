@@ -47,7 +47,7 @@ For example, when Clojure reads the text (+ 1 2), the result is a list data stru
 
 The reader has syntax defined in terms of characters, and the Clojure language has syntax defined in terms of symbols, lists, vectors, maps etc. The reader is represented by the function [read](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read), which reads the next form (not character) from a stream, and returns the object represented by that form.
 
-There are also [Reader Macros](/resources/reader-macros.html) that define special rules on top of the Clojure syntax.  They give the language some additional syntax sugar, making your Clojure code compact.  See the [reference section on reader macros](/resources/reader-macros.html) for more information
+There are also [Reader Macros](/reference/reader-macros.md) that define special rules on top of the Clojure syntax.  They give the language some additional syntax sugar, making your Clojure code compact.  See the [reference section on reader macros](/reference/reader-macros.md) for more information
 
 
 

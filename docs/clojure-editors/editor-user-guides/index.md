@@ -12,7 +12,7 @@ User guides that cover the essential ways of using Clojure aware editors, to get
 | [NeoVim & Conjure quick start](neovim-conjure.md)                                                                   | [Conjure](https://github.com/Olical/conjure)                                   |
 | [SpaceVim & Fireplace User Guide](spacevim-fireplace.md)                                                            | [SpaceVim Documentation](https://spacevim.org/documentation/)                  |
 | vim-iced                                                                                                            | [Vim-iced quick-start](https://liquidz.github.io/vim-iced/#quick_start)        |
-| [IntelliJ & Cursive](intellij-cursive.html)                                                                         | [Cursive quick start](https://cursive-ide.com/userguide/)                      |
+| [IntelliJ & Cursive](intellij-cursive.md)                                                                         | [Cursive quick start](https://cursive-ide.com/userguide/)                      |
 
 
 

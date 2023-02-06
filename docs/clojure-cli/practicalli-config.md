@@ -144,7 +144,7 @@ Path to project.jar can also be set in alias to simplify the Clojure command.
 
 #### Java Sources
 
-Include Java source on the  classpath to [look up Java Class and method definitions, e.g. `cider-find-var` in Emacs](https://practicalli.github.io/spacemacs/navigating-code/java-definitions.html)
+Include Java source on the  classpath to [look up Java Class and method definitions, e.g. `cider-find-var` in Emacs](https://practicalli.github.io/spacemacs/navigating-code/java-definitions)
 Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.zip")
 
 * `:lib/java17-source`
@@ -220,7 +220,7 @@ REPL driven data inspectors and `tap>` sources for visualizing data.
 
 [Portal](https://github.com/djblue/portal) Navigate data in the form of edn, json and transit
 
-[Practicalli Clojure - data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html)
+[Practicalli Clojure - data browsers section - portal](https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal)
 
 | Command                          | Description                                           |
 |----------------------------------|-------------------------------------------------------|

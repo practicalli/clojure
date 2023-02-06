@@ -283,7 +283,7 @@ The alias definition is `:env/dev {:extra-paths ["dev"]}`
 
 Aliases can be chained together and their configuration will be merged
 
-`:lib/hotload` adds a dependency to [provide hotloading of other dependencies](hotload-libraries.html)
+`:lib/hotload` adds a dependency to [provide hotloading of other dependencies](hotload-libraries.md)
 
 ```clojure
 :lib/hotload

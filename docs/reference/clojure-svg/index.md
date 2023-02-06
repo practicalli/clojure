@@ -20,7 +20,7 @@ A [viewbox](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/viewBox) 
 
 A viewbox size should be selected to make the image as simple as possible to define within itself.
 
-Example: [tictactoe O's and X's and the grid that represents the board](https://practicalli.github.io/clojurescript/reagent-projects/tic-tac-toe/index.html).
+Example: [tictactoe O's and X's and the grid that represents the board](https://practical.li/clojurescript/reagent-projects/tic-tac-toe).
 
 tictactoe O's and X's and the grid that represents the board
 

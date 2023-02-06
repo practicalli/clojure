@@ -72,7 +72,7 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
 === "Neovim"
     Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package]() configuration and Neovim packages can be written in Fennel (a lisp dialect).
-    
+
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
     The Neovim community provides a large number of packages to add features.
@@ -83,32 +83,32 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
     === "Practicalli Neovim"
         [practicalli/neovim-config-redux]() is written in Fennel as it is very close to Clojure.
-        
-        A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier. 
-    
+
+        A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier.
+
         [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
-    
+
         [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
 
-        [Practicalli Neovim](https://practical.li/neovim/){target=_blank .md-button} 
-    
+        [Practicalli Neovim](https://practical.li/neovim/){target=_blank .md-button}
+
         Older Neovim guides include:
-    
+
         [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure.md){ .md-button }
         [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure.md){ .md-button }
-    
-    
+
+
         #### Quick try tutorial
         Try the Conjure interactive `:ConjureSchool` tutorial without the need to install, only a recent version of neovim
         ```bash
         curl -fL conjure.fun/school | sh
         ```
         ![Clojure editors - neovim and conjure tutorial](/images/clojure-editors-neovim-conjure-tutorial.png)
-    
+
         `:q` to quit the tutorial.
-    
+
         #### References
-    
+
         * [Getting started with Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)
         * [Neovim user guide](https://neovim.io/doc/user/)
         * [Conjure install guide](https://github.com/Olical/conjure)
@@ -118,22 +118,22 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
     === "SpaceVim"
         [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes a simple Clojure development environment based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
-    
+
         * [Practicalli install guide](editor-install-guides/spacevim-fireplace.md)
         * [Practicalli user guide](editor-user-guides/spacevim-fireplace.md)
         * [SpaceVim quickstart guide](https://spacevim.org/quick-start-guide/)
         * [SpaceVim documentation](https://spacevim.org/documentation/)
-    
+
         ![SpaceVim start screen](/images/spacevim-start-screen.png)
-    
+
         ![SpaceVim and vim-fireplace - Clojure project and REPL](/images/spacevim-clojure-repl-gruvbox-light.png)
-    
+
         <!-- vim-iced and vim-fireplace -->
     === "vimiced"
         Clojure Interactive Development Environment for Vim8/Neovim.
-    
+
         * [vim-iced documentation](https://liquidz.github.io/vim-iced/)
-    
+
         [![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced)
 
 
@@ -144,8 +144,8 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
         Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
 
-        * [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
-        * [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
+        * [VSCode & Calva install guide](editor-install-guides/vscode-calva.md)
+        * [VSCode & Calva user guide](editor-user-guides/vscode-calva.md)
         * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
 
         <p style="text-align:center">
@@ -159,7 +159,7 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
         [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes useage details.
 
-        
+
     ### VSpaceCode
 
     [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
@@ -189,7 +189,7 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
 
     ProtoREPL
 
-    [Atom & ProtoREPL install guide](install-guides/atom-protorepl.html){ .md-button }
+    [Atom & ProtoREPL install guide](install-guides/atom-protorepl.md){ .md-button }
 
     ![Atom.io and ProtoREPL](/images/atom-protorepl-demo.gif)
 
@@ -197,16 +197,16 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
     #### Proton - alternative menu and configuration approach
     Proton offers a simple mnemonic menu as an alternative to the multiple keys for shortcuts in Atom.io.  Proton also gives you a simple text configuration to manage all your packages quickly.  Unfortunately Proton is not complete replacement of all actions.
 
-    [Atom & Proton install guide](install-guides/atom-proton.html){ .md-button }
+    [Atom & Proton install guide](install-guides/atom-proton.md){ .md-button }
 
     ![Atom.io proton-mode demo](/images/atom-proton-mode-demo.gif)
 
 
 === "SublineText"
     [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
-    
+
     [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
-    
+
     [SublimeText install](https://www.sublimetext.com/download){target=_blank .md-button}
     [Clojure-Sublimed install](https://github.com/tonsky/Clojure-Sublimed#installation){target=_blank .md-button}
     [SublimeText Documentation](https://www.sublimetext.com/docs/index.html){target=_blank .md-button}
@@ -218,6 +218,6 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
     !!! HINT "Requires license for commercial development"
         There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.
 
-    [IntelliJ & Cursive install guide](install-guides/intellij-cursive.html){ .md-button }
+    [IntelliJ & Cursive install guide](install-guides/intellij-cursive.md){ .md-button }
 
     ![Cursive IDE](https://cursive-ide.com/images/cursive-screenshot.png)
