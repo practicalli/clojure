@@ -202,7 +202,7 @@ SublimeText and IntelliJ are commercial editors (with free editions) that also p
     ![Atom.io proton-mode demo](/images/atom-proton-mode-demo.gif)
 
 
-=== "SublineText"
+=== "SublimeText"
     [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
     
     [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
