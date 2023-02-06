@@ -5,14 +5,14 @@ Curated installation guides to get started with Clojure as quickly and simply as
 |-------------------------------------------------------------------|
 | [Spacemacs](emacs-spacemacs.md)                                   |
 | [NeoVim & Conjure](neovim-conjure.md)                             |
-| [Spacevim & Fireplace](spacevim-fireplace.md) |
+| [Spacevim & Fireplace](spacevim-fireplace.md)                     |
 | [vim-iced](https://liquidz.github.io/vim-iced/#installation)      |
 | [Atom & Chlorine](https://github.com/mauricioszabo/atom-chlorine) |
-| [Atom & ProtoREPL](atom-protorepl.html)                           |
-| [Atom & Proton](atom-proton.html)                                 |
-| [IntelliJ & Cursive](intellij-cursive.html)                       |
-| [VSpaceCode & Calva](vspacecode-calva.html)                   |
-| [VSCode & Calva](vscode-calva.html)                               |
+| [Atom & ProtoREPL](atom-protorepl.md)                             |
+| [Atom & Proton](atom-proton.md)                                   |
+| [IntelliJ & Cursive](intellij-cursive.md)                         |
+| [VSpaceCode & Calva](vspacecode-calva.md)                         |
+| [VSCode & Calva](vscode-calva.md)                                 |
 
 Once installed, take a look at the [quick user guides](../editor-user-guides/) for each editor.
 
