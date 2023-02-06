@@ -1,27 +1,31 @@
 # Contributing to Practicalli Clojure
 
-[practicalli/clojure](https://github.com/practicalli/clojure/){target=_blank} is written in markdown and uses GitBook to generate the website via a GitHub action.
+How to effectivley contribute to Practicalli Clojure
 
-By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors){target=_blank}.
+[practicalli/neovim](https://github.com/practicalli/clojure/){target=_blank} is written in markdown and uses MkDocs to generate the website via a GitHub action.
+
+By submitting content ideas and corrections you are agreeing they can be used in this book under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors){target=_blank}.
 
 All content and interaction with any persons or systems must be done so with respect and within the Practicalli Code of Conduct.
 
 
 ## Book status
 
-[![GitHub issues](https://img.shields.io/github/issues/practicalli/clojure?label=content%20ideas&logo=github)](https://img.shields.io/github/issues/practicalli/clojure?label=content%20ideas&logo=github){target=_blank}
-[![GitHub commit activity](https://img.shields.io/github/commit-activity/y/practicalli/clojure?label=commits&logo=github)](https://img.shields.io/github/commit-activity/y/practicalli/clojure?label=commits&logo=github){target=_blank}
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/practicalli/clojure?label=pull%20requests&logo=github)](https://img.shields.io/github/issues-pr-raw/practicalli/clojure?label=pull%20requests&logo=github){target=_blank}
-
 [![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml)[![Publish Book](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml){target=_blank}
 [![pages-build-deployment](https://github.com/practicalli/clojure/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/pages/pages-build-deployment){target=_blank}
 
+[![Ideas & Issues](https://img.shields.io/github/issues/practicalli/clojure-practicalli-content?label=content%20ideas%20and%20issues&logoColor=green&style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/issues){target=_blank}
+[![Pull requests](https://img.shields.io/github/issues-pr/practicalli/clojure-practicalli-content?style=for-the-badge)](https://github.com/practicalli/clojure-practicalli-content/pulls){target=_blank}
+
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure-practicalli-content?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure?style=for-the-badge&label=github%20contributors)
 
 
 ### Submit and issue or idea
 
 If something doesnt seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/clojure/issues){target=_blank} explaining in as much detail as you can.
+
+Raising an issue before creating a pull request will save you and the maintainer time.
 
 
 ### Considering a Pull request?
@@ -32,8 +36,6 @@ Please keep pull requests small and focused, as they are much quicker to review 
 
 A PR with a list of changes across different sections will not be merged, it will be reviewed eventually though.
 
-
-<!-- TODO:  Add GitHub issue templates, similar to those on practicalli/blog-content -->
 
 ## Thank you to everyone that has contributed
 
