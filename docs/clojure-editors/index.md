@@ -62,7 +62,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     === "Doom Emacs"
         [Doom Emacs](https://spacemacs.org/){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
-        [Doom Emacs](https://practical.li/doom-emacs/){.md-button}
+        [Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){.md-button}
 
         [practicalli/doom-emacs-config repository](https://github.com/practicalli/doom-emacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools. [Browse the repository online](https://github.com/practicalli/doom-emacs-config){target=_blank} or fork / clone the repository
 
