@@ -102,59 +102,63 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     [![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
 
     === "Practicalli Neovim"
-        [practicalli/neovim-config-redux]() is written in Fennel as it is very close to Clojure.
-        
-        A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier. 
-    
+        [practicalli/neovim-config-redux](https://github.com/practicalli/neovim-config-redux) is written in Fennel as it is very close to Clojure.
+
+        A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier.
+
         [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
-    
+
         [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
 
-        [Practicalli Neovim](https://practical.li/neovim/){target=_blank .md-button} 
-    
+        [Practicalli Neovim](https://practical.li/neovim/){target=_blank .md-button}
+
         Older Neovim guides include:
-    
-        [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure.md){ .md-button }
-        [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure.md){ .md-button }
-    
-    
+
+        [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure/){.md-button}
+        [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure/){.md-button}
+
+
         #### Quick try tutorial
         Try the Conjure interactive `:ConjureSchool` tutorial without the need to install, only a recent version of neovim
         ```bash
         curl -fL conjure.fun/school | sh
         ```
         ![Clojure editors - neovim and conjure tutorial](/images/clojure-editors-neovim-conjure-tutorial.png)
-    
+
         `:q` to quit the tutorial.
-    
+
         #### References
-    
-        * [Getting started with Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/)
-        * [Neovim user guide](https://neovim.io/doc/user/)
-        * [Conjure install guide](https://github.com/Olical/conjure)
-        * [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/) - an introduction to using Conjure
+
+        [Getting started with Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/){target=_blank .md-button}
+        [Neovim user guide](https://neovim.io/doc/user/){target=_blank .md-button}
+        [Conjure install guide](https://github.com/Olical/conjure){target=_blank .md-button}
+        [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/){target=_blank .md-button} - an introduction to using Conjure
 
 
 
     === "SpaceVim"
-        [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes a simple Clojure development environment based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
-    
-        * [Practicalli install guide](editor-install-guides/spacevim-fireplace.md)
-        * [Practicalli user guide](editor-user-guides/spacevim-fireplace.md)
-        * [SpaceVim quickstart guide](https://spacevim.org/quick-start-guide/)
-        * [SpaceVim documentation](https://spacevim.org/documentation/)
-    
-        ![SpaceVim start screen](/images/spacevim-start-screen.png)
-    
-        ![SpaceVim and vim-fireplace - Clojure project and REPL](/images/spacevim-clojure-repl-gruvbox-light.png)
-    
-        <!-- vim-iced and vim-fireplace -->
-    === "vimiced"
+        [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a simple Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
+
+        Follow the [Quick Start Guide to instal SpaceVim](https://spacevim.org/quick-start-guide/)
+
+        Add the Clojure layer to the SpaceVim custom configuration file
+        ```shell title="~/.SpaceVim.d/init.toml"
+        [[layers]]
+          name = "lang#clojure"
+        ```
+
+        [SpaceVim quick guide](neovim-guide.md)
+        [SpaceVim - Clojure Layer](https://spacevim.org/layers/lang/clojure/)
+        [SpaceVim quickstart guide](https://spacevim.org/quick-start-guide/){target=_blank .md-button}
+        [SpaceVim documentation](https://spacevim.org/documentation/){target=_blank .md-button}
+
+
+    === "VimIced"
         Clojure Interactive Development Environment for Vim8/Neovim.
-    
-        * [vim-iced documentation](https://liquidz.github.io/vim-iced/)
-    
-        [![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced)
+
+        [vim-iced documentation](https://liquidz.github.io/vim-iced/){target=_blank .md-button}
+
+        [![Clojure Interactive Development Environment for Vim8 / Neovim](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)](https://github.com/liquidz/vim-iced){target=_blank .md-button}
 
 
 === "VSCode"
