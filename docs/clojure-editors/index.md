@@ -212,17 +212,16 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes useage details.
 
-        
-    ### VSpaceCode
 
-    [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
 
-    Also included edamagit, a sophisticated text based Git client (like magit for Emacs).
+=== "SublimeText"
+    [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
 
-    * [Quick install guide](editor-install-guides/vspacecode-calva.md)
-    * [Quick user guide](editor-user-guides/vspacecode-calva.md)
+    [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
 
-    ![VSpaceCode in action](https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif)
+    [SublimeText install](https://www.sublimetext.com/download){target=_blank .md-button}
+    [Clojure-Sublimed install](https://github.com/tonsky/Clojure-Sublimed#installation){target=_blank .md-button}
+    [SublimeText Documentation](https://www.sublimetext.com/docs/index.html){target=_blank .md-button}
 
 
 === "Atom"
@@ -253,16 +252,6 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     [Atom & Proton install guide](install-guides/atom-proton.html){ .md-button }
 
     ![Atom.io proton-mode demo](/images/atom-proton-mode-demo.gif)
-
-
-=== "SublimeText"
-    [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
-    
-    [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
-    
-    [SublimeText install](https://www.sublimetext.com/download){target=_blank .md-button}
-    [Clojure-Sublimed install](https://github.com/tonsky/Clojure-Sublimed#installation){target=_blank .md-button}
-    [SublimeText Documentation](https://www.sublimetext.com/docs/index.html){target=_blank .md-button}
 
 
 === "Intellij"
