@@ -157,6 +157,7 @@ nav:
       - Package: clojure-cli/projects/tools-build.md
   - Clojure Editors:
       - clojure-editors/index.md
+      - VSCode Install: clojure-editors/vscode-install.md
       - Clojure LSP:
           - clojure-editors/clojure-lsp/index.md
           - Clojure LSP Snippets: clojure-editors/clojure-lsp/snippets.md
@@ -171,8 +172,6 @@ nav:
           - clojure-editors/editor-install-guides/vim-plugins.md
           - clojure-editors/editor-install-guides/spacevim-fireplace.md
           - clojure-editors/editor-install-guides/spacevim-configuration.md
-          - clojure-editors/editor-install-guides/vspacecode-calva.md
-          - clojure-editors/editor-install-guides/vscode-calva.md
           - clojure-editors/editor-install-guides/intellij-cursive.md
       - Editor User Guides:
           - clojure-editors/editor-user-guides/index.md
