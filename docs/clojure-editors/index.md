@@ -162,14 +162,26 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
 === "VSCode"
+    [VS Code](https://code.visualstudio.com/) is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.
+
+    VS Code has a large marketplace of extensions, proiding additional tools for a complete development environment.
+
+    Calva is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).
+
+    VSpaceCode provides a mnemonic menu (which-key) to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.
+
+    Clover provides a more mininal environment using Socket REPL.
+
 
     === "Calva"
         The Calva extension adds Clojure support to Microsoft VS Code editor.
 
-        Calva is an active project and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
+        [Calva - VS Code Marketplace](https://marketplace.visualstudio.com/VSCode){target=_blank .md-button}
 
-        * [VSCode & Calva install guide](editor-install-guides/vscode-calva.html)
-        * [VSCode & Calva user guide](editor-user-guides/vscode-calva.html)
+        Calva is under active development and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
+
+        * [VSCode & Calva install guide](editor-install-guides/vscode-calva/)
+        * [VSCode & Calva user guide](editor-user-guides/vscode-calva/)
         * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
 
         <p style="text-align:center">
@@ -178,8 +190,25 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         ![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
 
+
+    === "VSpaceCode"
+
+        [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
+
+        Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.
+
+        [Quick install guide](vspacecode-install/){.md-button}
+        [Quick user guide](vspacecode-guide/){.md-button}
+
+        ![VSpaceCode in action](https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif)
+
+        <p style="text-align:center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/1VNNtaUfHs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </p>
+
+
     === "Clover"
-        [Clover](https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover){target=_blank} is a Socket REPL based development tool for Clojure.
+        [Clover](https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover){target=_blank} is a Socket REPL based development tool for Clojure with some ClojureScript support (not including Figwheel).
 
         [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes useage details.
 
