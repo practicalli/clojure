@@ -17,13 +17,13 @@ An ideal Clojure editor includes the these core features
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
+
 ## Clojure aware editors
 
-Emacs (Spacemacs, Doom, Prelude), VSCode (Clover or Calva) and Neovim are the most common open source Editors for Clojure and ClojureScript development.
+Emacs (Spacemacs, Doom, Prelude), Neovim (Conjure) and VSCode (Calva) are the most common open source Editors for Clojure and ClojureScript development.
 
-SublimeText and IntelliJ are commercial editors (with free editions) that also provide Clojure support
+SublimeText and IntelliJ are commercial editors (with limited free editions) which also provide Clojure support
 
-[Install guides](editor-install-guides){target=_blank .md-button}
 
 === "Emacs"
     Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages.
