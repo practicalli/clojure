@@ -9,7 +9,7 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/clojure-editors/" rel="canonical"/>
 <link href="../clojure-cli/projects/tools-build/" rel="prev"/>
-<link href="clojure-lsp/" rel="next"/>
+<link href="vscode-install/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
 <title>Editors for Clojure development - Practicalli Clojure</title>
@@ -392,16 +392,21 @@
           Clojure Editors
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="vscode-install/">
+        VSCode Install
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="clojure-lsp/">Clojure LSP</a>
-<label for="__nav_7_2">
+<label for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_2_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_2">
+<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_3">
 <span class="md-nav__icon md-icon"></span>
           Clojure LSP
         </label>
@@ -420,15 +425,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_3" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="editor-install-guides/">Editor Install Guides</a>
-<label for="__nav_7_3">
+<label for="__nav_7_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_3_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_3">
+<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_4">
 <span class="md-nav__icon md-icon"></span>
           Editor Install Guides
         </label>
@@ -469,16 +474,6 @@
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="editor-install-guides/vspacecode-calva/">
-        VSpaceCode configuration for VSCode and Calva extension
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="editor-install-guides/vscode-calva/">
-        Microsoft VSCode and Calva extension
-      </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="editor-install-guides/intellij-cursive/">
         IntelliJ / Cursive
       </a>
@@ -487,15 +482,15 @@
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_7_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_7_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="editor-user-guides/">Editor User Guides</a>
-<label for="__nav_7_4">
+<label for="__nav_7_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_7_4_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_7_4">
+<nav aria-expanded="false" aria-labelledby="__nav_7_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_7_5">
 <span class="md-nav__icon md-icon"></span>
           Editor User Guides
         </label>
@@ -1979,6 +1974,11 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#clojure-editor-features">
+    Clojure editor features
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-aware-editors">
     Clojure aware editors
   </a>
@@ -1995,12 +1995,6 @@
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#vspacecode">
-    VSpaceCode
-  </a>
-<nav aria-label="VSpaceCode" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
 <a class="md-nav__link" href="#protorepl">
     ProtoREPL
   </a>
@@ -2015,9 +2009,6 @@
 </li>
 </ul>
 </nav>
-</li>
-</ul>
-</nav>
 </div>
 </div>
 </div>
@@ -2025,49 +2016,64 @@
 <article class="md-content__inner md-typeset">
 <h1 id="editors-for-clojure-development">Editors for Clojure development<a class="headerlink" href="#editors-for-clojure-development" title="Permanent link">λ︎</a></h1>
 <p>The best editor to use for learning Clojure is the editor already familiar with (or want to learn).</p>
+<p>Use SublimeText &amp; ClojureSublimed if unsure where to start as it will be the simplest tool to use.</p>
+<h2 id="clojure-editor-features">Clojure editor features<a class="headerlink" href="#clojure-editor-features" title="Permanent link">λ︎</a></h2>
 <p>An ideal Clojure editor includes the these core features</p>
 <ul>
 <li>running / connecting to a REPL process</li>
 <li>evaluation results inline or in a repl window (fast feedback on what the code does)</li>
 <li>syntax highlighting (including highlight of matching parens)</li>
 <li>structural editing to ensure parens are balanced when writing and refactor code</li>
-<li>data inspector to visualise large and nested data, or connection to (<a href="/clojure-cli/data-browsers/">external data inpector tools</a>)</li>
+<li>data inspector to visualise large and nested data, or connection to (<a href="/clojure/data-inspector/">external data inpector tools</a>)</li>
 </ul>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png"><img alt="Clojure REPL driven development with Clojure aware editors" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png"/></a></p>
 <h2 id="clojure-aware-editors">Clojure aware editors<a class="headerlink" href="#clojure-aware-editors" title="Permanent link">λ︎</a></h2>
-<p>Emacs (Spacemacs, Doom, Prelude), VSCode (Clover or Calva) and Neovim are the most common open source Editors for Clojure and ClojureScript development.</p>
-<p>SublimeText and IntelliJ are commercial editors (with free editions) that also provide Clojure support</p>
-<p><a class="md-button" href="editor-install-guides" target="_blank">Install guides</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Emacs</label><label for="__tabbed_1_2">Neovim</label><label for="__tabbed_1_3">VSCode</label><label for="__tabbed_1_4">Atom</label><label for="__tabbed_1_5">SublimeText</label><label for="__tabbed_1_6">Intellij</label></div>
+<p>Emacs (Spacemacs, Doom, Prelude), Neovim (Conjure) and VSCode (Calva) are the most common open source Editors for Clojure and ClojureScript development.</p>
+<p>SublimeText and IntelliJ are commercial editors (with limited free editions) which also provide Clojure support</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Emacs</label><label for="__tabbed_1_2">Neovim</label><label for="__tabbed_1_3">VSCode</label><label for="__tabbed_1_4">SublimeText</label><label for="__tabbed_1_5">Atom</label><label for="__tabbed_1_6">Intellij</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages.</p>
 <p>Use one of the popular community configurations for Emacs or visit the CIDER documentation to learn how to add Clojure support to Emacs.</p>
 <p>Emacs 28 onward uses Native Compilation of Emacs packages, dramatically speeding up many common tasks and keeping Emacs a valuable option for development (and everything else).</p>
 <p>Emacs uses CIDER and Clojure LSP for a feature rich clojure development experience.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Emacs Spacemacs</label><label for="__tabbed_2_2">Doom Emacs</label><label for="__tabbed_2_3">Prelude Emacs</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Spacemacs</label><label for="__tabbed_2_2">Doom Emacs</label><label for="__tabbed_2_3">Prelude Emacs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="https://spacemacs.org/" target="_blank">Spacemacs</a> is a community configuration bringing <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a> features and <a href="https://www.vim.org/" target="_blank">Vim</a> sytle editing together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.</p>
-<p><a href="https://practical.li/spacemacs" target="_blank">Spacemacs, Practicalli</a> guides you through Clojure development, documenting with org-mode, Git version control with Magit, Vim editing modes and dozens of other features.</p>
-<p><a class="md-button" href="https://practicalli.github.io/spacemacs/install-spacemacs/" target="_blank">Spacemacs install guide</a></p>
+<p><a href="https://spacemacs.org/" target="_blank">Spacemacs</a> is a community configuration bringing <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a> features and <a href="https://practical.li/spacemacs/spacemacs-basics/evil/" target="_blank">Vim sytle editing</a> together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.</p>
+<p><a href="https://practical.li/spacemacs" target="_blank">Practicalli Spacemacs</a> provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues &amp; Pull Requests with Forge and dozens of other features.</p>
+<p><a href="https://github.com/practicalli/spacemacs.d" target="_blank">practicalli/spacemacs.d repository</a> contains a customised configuration for Clojure development and supporting tools. <a href="https://github.com/practicalli/spacemacs.d" target="_blank">Browse the repository online</a> or fork / clone the repository</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Free Desktop XDG Config</label><label for="__tabbed_3_2">Classic Config</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/spacemacs.d.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/spacemacs<span class="sb">`</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/spacemacs.d.git<span class="w"> </span><span class="nv">$HOME</span>/.spacemacs.d<span class="sb">`</span>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
+<p>The Practicalli configuration should replace the <code>~/.spacemacs</code> file if it exists</p>
+<p><a class="md-button" href="https://practicalli.github.io/spacemacs/install-spacemacs/" target="_blank">Spacemacs install guide - Practicalli Spacemacs</a></p>
 <p><p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/NDrpclY54E0" title="YouTube video player" width="560"></iframe>
 </p></p>
 </div>
 <div class="tabbed-block">
 <p><a href="https://spacemacs.org/" target="_blank">Doom Emacs</a> is a community configuration for <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a> that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.</p>
-<p><a class="md-button" href="https://practical.li/doom-emacs/" target="_blank">Doom Emacs</a></p>
+<p><a class="md-button" href="https://practical.li/doom-emacs/">Practicalli Doom Emacs Book</a></p>
 <p><a href="https://github.com/practicalli/doom-emacs-config" target="_blank">practicalli/doom-emacs-config repository</a> contains a customised configuration for Clojure development and supporting tools. <a href="https://github.com/practicalli/doom-emacs-config" target="_blank">Browse the repository online</a> or fork / clone the repository</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Free Desktop XDG Config</label><label for="__tabbed_3_2">Classic Config</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Free Desktop XDG Config</label><label for="__tabbed_4_2">Classic Config</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/doom-emacs-config.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/doom<span class="sb">`</span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/doom-emacs-config.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/doom<span class="sb">`</span>
 </code></pre></div>
 The Practicalli configuration should replace the <code>~/.config/doom/</code> directory created by the <code>doom install</code> command.</p>
 </div>
 <div class="tabbed-block">
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/doom-emacs-config.git<span class="w"> </span><span class="nv">$HOME</span>/.doom.d<span class="sb">`</span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/doom-emacs-config.git<span class="w"> </span><span class="nv">$HOME</span>/.doom.d<span class="sb">`</span>
 </code></pre></div>
 The Practicalli configuration should replace the <code>~/.doom.d/</code> directory created by the <code>doom install</code> command.</p>
 </div>
@@ -2079,72 +2085,75 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <div class="tabbed-block">
 <p><a href="https://prelude.emacsredux.com/en/stable/">Emacs Prelude</a> is an easy to use Emacs configuration for Emacs newcomers and lots of additional power for Emacs power users, from the author of <a href="https://docs.cider.mx/">CIDER - the definitive Clojure IDE for Emacs</a>.</p>
 <p>Prelude uses the traditional chorded key bindings to drive Emacs, e.g. <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd>c</kbd></span> <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd>c</kbd></span> to evaluate the current top-level form.</p>
+<p><a href="https://prelude.emacsredux.com/en/stable/installation/">Prelude Install Guide</a></p>
 </div>
 </div>
 </input></input></input></div>
 </div>
 <div class="tabbed-block">
-<p>Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the <a href="">aniseed package</a> configuration and Neovim packages can be written in Fennel (a lisp dialect).</p>
+<p>Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the <a href="https://github.com/Olical/aniseed">aniseed package</a> configuration and Neovim packages can be written in Fennel (a lisp dialect).</p>
 <p>Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.</p>
 <p>The Neovim community provides a large number of packages to add features.</p>
 <p><a href="https://github.com/Olical/conjure">Conjure</a> is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)</p>
 <p><a href="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png"><img alt="Neovim and Conjure" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png"/></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:3"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Practicalli Neovim</label><label for="__tabbed_4_2">SpaceVim</label><label for="__tabbed_4_3">vimiced</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Practicalli Neovim</label><label for="__tabbed_5_2">SpaceVim</label><label for="__tabbed_5_3">VimIced</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="">practicalli/neovim-config-redux</a> is written in Fennel as it is very close to Clojure.</p>
-<p>A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier. </p>
+<p><a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> is written in Fennel as it is very close to Clojure.</p>
+<p>A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier.</p>
 <p><a href="https://github.com/Olical/conjure" target="_blank">Conjure</a> provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).</p>
 <p><a href="https://practical.li/neovim/" target="_blank">Practicalli Neovim</a> covers installation and basic use of Neovim for Clojure development.</p>
-<p><a class="md-button" href="https://practical.li/neovim/" target="_blank">Practicalli Neovim</a> </p>
+<p><a class="md-button" href="https://practical.li/neovim/" target="_blank">Practicalli Neovim</a></p>
 <p>Older Neovim guides include:</p>
-<p><a class="md-button" href="editor-install-guides/neovim-conjure/">Practicalli install guide for neovim and conjure</a>
-<a class="md-button" href="editor-user-guides/neovim-conjure/">Practicalli user guide for neovim and conjure</a></p>
+<p><a class="md-button" href="./editor-install-guides/neovim-conjure/">Practicalli install guide for neovim and conjure</a>
+<a class="md-button" href="./editor-user-guides/neovim-conjure/">Practicalli user guide for neovim and conjure</a></p>
 <h4 id="quick-try-tutorial">Quick try tutorial<a class="headerlink" href="#quick-try-tutorial" title="Permanent link">λ︎</a></h4>
 <p>Try the Conjure interactive <code>:ConjureSchool</code> tutorial without the need to install, only a recent version of neovim
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>curl<span class="w"> </span>-fL<span class="w"> </span>conjure.fun/school<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>curl<span class="w"> </span>-fL<span class="w"> </span>conjure.fun/school<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-editors-neovim-conjure-tutorial.png"><img alt="Clojure editors - neovim and conjure tutorial" src="/images/clojure-editors-neovim-conjure-tutorial.png"/></a></p>
 <p><code>:q</code> to quit the tutorial.</p>
 <h4 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h4>
-<ul>
-<li><a href="https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/">Getting started with Neovim and Conjure</a></li>
-<li><a href="https://neovim.io/doc/user/">Neovim user guide</a></li>
-<li><a href="https://github.com/Olical/conjure">Conjure install guide</a></li>
-<li><a href="https://blog.djy.io/conjuring-clojure-in-vim/">Conjuring Clojure in Vim</a> - an introduction to using Conjure</li>
-</ul>
+<p><a class="md-button" href="https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/" target="_blank">Getting started with Neovim and Conjure</a>
+<a class="md-button" href="https://neovim.io/doc/user/" target="_blank">Neovim user guide</a>
+<a class="md-button" href="https://github.com/Olical/conjure" target="_blank">Conjure install guide</a>
+<a class="md-button" href="https://blog.djy.io/conjuring-clojure-in-vim/" target="_blank">Conjuring Clojure in Vim</a> - an introduction to using Conjure</p>
 </div>
 <div class="tabbed-block">
-<p><a href="https://spacevim.org/">SpaceVim</a> is a fully featured vim experience that includes a simple Clojure development environment based around <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a></p>
-<ul>
-<li><a href="editor-install-guides/spacevim-fireplace/">Practicalli install guide</a></li>
-<li><a href="editor-user-guides/spacevim-fireplace/">Practicalli user guide</a></li>
-<li><a href="https://spacevim.org/quick-start-guide/">SpaceVim quickstart guide</a></li>
-<li><a href="https://spacevim.org/documentation/">SpaceVim documentation</a></li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacevim-start-screen.png"><img alt="SpaceVim start screen" src="/images/spacevim-start-screen.png"/></a></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacevim-clojure-repl-gruvbox-light.png"><img alt="SpaceVim and vim-fireplace - Clojure project and REPL" src="/images/spacevim-clojure-repl-gruvbox-light.png"/></a></p>
-<!-- vim-iced and vim-fireplace -->
+<p><a href="https://spacevim.org/">SpaceVim</a> is a fully featured vim experience that includes <a href="https://spacevim.org/layers/lang/clojure/">a simple Clojure development environment</a> based around <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a></p>
+<p>Follow the <a href="https://spacevim.org/quick-start-guide/">Quick Start Guide to instal SpaceVim</a></p>
+<p>Add the Clojure layer to the SpaceVim custom configuration file
+<div class="highlight"><span class="filename">~/.SpaceVim.d/init.toml</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[[</span>layers<span class="o">]]</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"lang#clojure"</span>
+</code></pre></div></p>
+<p><a href="neovim-guide.md">SpaceVim quick guide</a>
+<a href="https://spacevim.org/layers/lang/clojure/">SpaceVim - Clojure Layer</a>
+<a class="md-button" href="https://spacevim.org/quick-start-guide/" target="_blank">SpaceVim quickstart guide</a>
+<a class="md-button" href="https://spacevim.org/documentation/" target="_blank">SpaceVim documentation</a></p>
 </div>
 <div class="tabbed-block">
 <p>Clojure Interactive Development Environment for Vim8/Neovim.</p>
-<ul>
-<li><a href="https://liquidz.github.io/vim-iced/">vim-iced documentation</a></li>
-</ul>
-<p><a href="https://github.com/liquidz/vim-iced"><img alt="Clojure Interactive Development Environment for Vim8 / Neovim" src="https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg"/></a></p>
+<p><a class="md-button" href="https://liquidz.github.io/vim-iced/" target="_blank">vim-iced documentation</a></p>
+<p><a class="md-button" href="https://github.com/liquidz/vim-iced" target="_blank"><img alt="Clojure Interactive Development Environment for Vim8 / Neovim" src="https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg"/></a></p>
 </div>
 </div>
 </input></input></input></div>
 </div>
 <div class="tabbed-block">
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Calva</label><label for="__tabbed_5_2">Clover</label></div>
+<p><a href="https://code.visualstudio.com/">VS Code</a> is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.</p>
+<p>VS Code has a large marketplace of extensions, proiding additional tools for a complete development environment.</p>
+<p>Calva is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).</p>
+<p>VSpaceCode provides a mnemonic menu (which-key) to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.</p>
+<p>Clover provides a more mininal environment using Socket REPL.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Calva</label><label for="__tabbed_6_2">VSpaceCode</label><label for="__tabbed_6_3">Clover</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The Calva extension adds Clojure support to Microsoft VS Code editor.</p>
-<p>Calva is an active project and the <a href="clojurians.slack.com/messages/calva">#calva channel on the Clojurians Slack community</a> can be supportive.</p>
+<p><a class="md-button" href="https://marketplace.visualstudio.com/VSCode" target="_blank">Calva - VS Code Marketplace</a></p>
+<p>Calva is under active development and the <a href="clojurians.slack.com/messages/calva">#calva channel on the Clojurians Slack community</a> can be supportive.</p>
 <ul>
-<li><a href="editor-install-guides/vscode-calva.html">VSCode &amp; Calva install guide</a></li>
-<li><a href="editor-user-guides/vscode-calva.html">VSCode &amp; Calva user guide</a></li>
+<li><a href="editor-install-guides/vscode-calva/">VSCode &amp; Calva install guide</a></li>
+<li><a href="editor-user-guides/vscode-calva/">VSCode &amp; Calva user guide</a></li>
 <li><a href="https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva">VSCode Calva extension</a></li>
 </ul>
 <p><p style="text-align:center">
@@ -2153,19 +2162,28 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif"><img alt="VSCode Calva demo" src="https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif"/></a></p>
 </div>
 <div class="tabbed-block">
-<p><a href="https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover" target="_blank">Clover</a> is a Socket REPL based development tool for Clojure.</p>
+<p><a href="https://github.com/VSpaceCode/VSpaceCode">VSpaceCode</a> is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.</p>
+<p>Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.</p>
+<p><a class="md-button" href="vspacecode-install/">Quick install guide</a>
+<a class="md-button" href="vspacecode-guide/">Quick user guide</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif"><img alt="VSpaceCode in action" src="https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif"/></a></p>
+<p><p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/1VNNtaUfHs4" title="YouTube video player" width="560"></iframe>
+</p></p>
+</div>
+<div class="tabbed-block">
+<p><a href="https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover" target="_blank">Clover</a> is a Socket REPL based development tool for Clojure with some ClojureScript support (not including Figwheel).</p>
 <p><a href="https://gitlab.com/clj-editors/clover">Clojure GitLab repository</a> includes useage details.</p>
 </div>
 </div>
-</input></input></div>
-<h3 id="vspacecode">VSpaceCode<a class="headerlink" href="#vspacecode" title="Permanent link">λ︎</a></h3>
-<p><a href="https://github.com/VSpaceCode/VSpaceCode">VSpaceCode</a> is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.</p>
-<p>Also included edamagit, a sophisticated text based Git client (like magit for Emacs).</p>
-<ul>
-<li><a href="editor-install-guides/vspacecode-calva/">Quick install guide</a></li>
-<li><a href="editor-user-guides/vspacecode-calva/">Quick user guide</a></li>
-</ul>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif"><img alt="VSpaceCode in action" src="https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif"/></a></p>
+</input></input></input></div>
+</div>
+<div class="tabbed-block">
+<p><a href="https://www.sublimetext.com/">SublimeText 4</a> is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check <a href="https://www.sublimehq.com/store/text">conditions of use</a>).</p>
+<p><a href="https://github.com/tonsky/Clojure-Sublimed">Clojure-Sublimed</a> provides Clojure support for SublimeText 4, with support for Clojure &amp; Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.</p>
+<p><a class="md-button" href="https://www.sublimetext.com/download" target="_blank">SublimeText install</a>
+<a class="md-button" href="https://github.com/tonsky/Clojure-Sublimed#installation" target="_blank">Clojure-Sublimed install</a>
+<a class="md-button" href="https://www.sublimetext.com/docs/index.html" target="_blank">SublimeText Documentation</a></p>
 </div>
 <div class="tabbed-block">
 <div class="admonition warning">
@@ -2186,13 +2204,6 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/atom-proton-mode-demo.gif"><img alt="Atom.io proton-mode demo" src="/images/atom-proton-mode-demo.gif"/></a></p>
 </div>
 <div class="tabbed-block">
-<p><a href="https://www.sublimetext.com/">SublimeText 4</a> is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check <a href="https://www.sublimehq.com/store/text">conditions of use</a>).</p>
-<p><a href="https://github.com/tonsky/Clojure-Sublimed">Clojure-Sublimed</a> provides Clojure support for SublimeText 4, with support for Clojure &amp; Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.</p>
-<p><a class="md-button" href="https://www.sublimetext.com/download" target="_blank">SublimeText install</a>
-<a class="md-button" href="https://github.com/tonsky/Clojure-Sublimed#installation" target="_blank">Clojure-Sublimed install</a>
-<a class="md-button" href="https://www.sublimetext.com/docs/index.html" target="_blank">SublimeText Documentation</a></p>
-</div>
-<div class="tabbed-block">
 <p><a href="https://cursive-ide.com/">Cursive</a> may be an appropriate choice for people from a Java background who are already familiar with IntelliJ.  Cursive will run static analysis of Clojure code when opening a Clojure project, as IntelliJ does with other languages.</p>
 <div class="admonition hint">
 <p class="admonition-title">Requires license for commercial development</p>
@@ -2208,7 +2219,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 7, 2023</span>
 </small>
 </div>
 </article>
