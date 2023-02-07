@@ -2,6 +2,11 @@
 
 The best editor to use for learning Clojure is the editor already familiar with (or want to learn).
 
+Use SublimeText & ClojureSublimed if unsure where to start as it will be the simplest tool to use.
+
+
+## Clojure editor features
+
 An ideal Clojure editor includes the these core features
 
 * running / connecting to a REPL process
