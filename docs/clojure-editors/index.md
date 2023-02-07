@@ -34,22 +34,35 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     Emacs uses CIDER and Clojure LSP for a feature rich clojure development experience.
 
-    === "Emacs Spacemacs"
-        [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim](https://www.vim.org/){target=_blank} sytle editing together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
+    === "Spacemacs"
+        [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim sytle editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
 
-        [Spacemacs, Practicalli](https://practical.li/spacemacs){target=_blank} guides you through Clojure development, documenting with org-mode, Git version control with Magit, Vim editing modes and dozens of other features.
+        [Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
 
-        [Spacemacs install guide](https://practicalli.github.io/spacemacs/install-spacemacs/){target=_blank .md-button}
+        [practicalli/spacemacs.d repository](https://github.com/practicalli/spacemacs.d){target=_blank} contains a customised configuration for Clojure development and supporting tools. [Browse the repository online](https://github.com/practicalli/spacemacs.d){target=_blank} or fork / clone the repository
+
+        === "Free Desktop XDG Config"
+            ```bash
+            git clone https://github.com/practicalli/spacemacs.d.git $XDG_CONFIG_HOME/spacemacs`
+            ```
+
+        === "Classic Config"
+            ```bash
+            git clone https://github.com/practicalli/spacemacs.d.git $HOME/.spacemacs.d`
+            ```
+
+        The Practicalli configuration should replace the `~/.spacemacs` file if it exists
+
+        [Spacemacs install guide - Practicalli Spacemacs](https://practicalli.github.io/spacemacs/install-spacemacs/){target=_blank .md-button}
 
         <p style="text-align:center">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NDrpclY54E0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
-
     === "Doom Emacs"
         [Doom Emacs](https://spacemacs.org/){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
-        [Doom Emacs](https://practical.li/doom-emacs/){target=_blank .md-button}
+        [Doom Emacs](https://practical.li/doom-emacs/){.md-button}
 
         [practicalli/doom-emacs-config repository](https://github.com/practicalli/doom-emacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools. [Browse the repository online](https://github.com/practicalli/doom-emacs-config){target=_blank} or fork / clone the repository
 
@@ -75,9 +88,11 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
          Prelude uses the traditional chorded key bindings to drive Emacs, e.g. ++ctrl+"c"++ ++ctrl+"c"++ to evaluate the current top-level form.
 
+         [Prelude Install Guide](https://prelude.emacsredux.com/en/stable/installation/)
+
 === "Neovim"
-    Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package]() configuration and Neovim packages can be written in Fennel (a lisp dialect).
-    
+    Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package](https://github.com/Olical/aniseed) configuration and Neovim packages can be written in Fennel (a lisp dialect).
+
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
     The Neovim community provides a large number of packages to add features.
