@@ -161,7 +161,6 @@ nav:
       - Package: clojure-cli/projects/tools-build.md
   - Clojure Editors:
       - clojure-editors/index.md
-      - VSCode Install: clojure-editors/vscode-install.md
       - Clojure LSP:
           - clojure-editors/clojure-lsp/index.md
           - Clojure LSP Snippets: clojure-editors/clojure-lsp/snippets.md

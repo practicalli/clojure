@@ -180,9 +180,9 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         Calva is under active development and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
 
-        * [VSCode & Calva install guide](editor-install-guides/vscode-calva/)
-        * [VSCode & Calva user guide](editor-user-guides/vscode-calva/)
-        * [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva)
+        [Calva Getting Started Guide](https://calva.io/getting-started/){target=_blank .md-button}
+        [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva){target=_blank .md-button}
+        [VSCode Getting Started Guide](https://code.visualstudio.com/docs/introvideos/basics)
 
         <p style="text-align:center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -197,8 +197,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.
 
-        [Quick install guide](vspacecode-install/){.md-button}
-        [Quick user guide](vspacecode-guide/){.md-button}
+        [Practicalli VSpaceCode install guide](https://practical.li/vspacecode/install/){target=_blank .md-button}
+        [Practicalli VSpaceCode user guide](vspacecode-guide/){target=_blank .md-button}
 
         ![VSpaceCode in action](https://raw.githubusercontent.com/VSpaceCode/vspacecode.github.io/master/static/img/demo.gif)
 
