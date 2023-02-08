@@ -99,6 +99,8 @@ plugins:
       redirect_maps:
         repl-driven-development.md: introduction/repl-workflow.md
         clojure-cli/data-browsers: data-inspector/
+        clojure-editors/editor-install-guides/vspacecode-calva: clojure-editors
+        clojure-editors/editor-user-guides/vspacecode-calva: clojure-editors
 
 # Footer / Social Media
 extra:
@@ -183,7 +185,6 @@ nav:
           - clojure-editors/editor-user-guides/emacs-spacemacs.md
           - clojure-editors/editor-user-guides/neovim-conjure.md
           - clojure-editors/editor-user-guides/spacevim-fireplace.md
-          - clojure-editors/editor-user-guides/vspacecode-calva.md
           - clojure-editors/editor-user-guides/vscode-calva.md
           - clojure-editors/editor-user-guides/intellij-cursive.md
   - Data Inspectors:
