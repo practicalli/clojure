@@ -68,7 +68,7 @@ As Clojure itself is packages as a library (`.jar` Java ARchive), any version of
     scoop bucket add extras
     scoop bucket add java
     scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
-    scoop install git 7zip pshazz adoptopenjdk-lts-hotspot clojure leiningen clj-kondo vscode coreutils windows-terminal
+    scoop install git 7zip pshazz temurin-lts-jdk clj-deps leiningen clj-kondo vscode coreutils windows-terminal
     ```
 
 
