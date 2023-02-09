@@ -1941,11 +1941,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Emacs</label><label for="__tabbed_1_2">Neovim</label><label for="__tabbed_1_3">VSCode</label><label for="__tabbed_1_4">SublimeText</label><label for="__tabbed_1_5">Atom</label><label for="__tabbed_1_6">Intellij</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages.</p>
-<p>Use one of the popular community configurations for Emacs or visit the CIDER documentation to learn how to add Clojure support to Emacs.</p>
-<p>Emacs 28 onward uses Native Compilation of Emacs packages, dramatically speeding up many common tasks and keeping Emacs a valuable option for development (and everything else).</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg"><img align="right" alt="GNU Emacs logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg"/></a></p>
+<p>Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages. Emacs 28 onward uses Native Compilation of Emacs packages, dramatically speeding up many common tasks.</p>
 <p>Emacs uses CIDER and Clojure LSP for a feature rich clojure development experience.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Spacemacs</label><label for="__tabbed_2_2">Doom Emacs</label><label for="__tabbed_2_3">Prelude Emacs</label></div>
+<p>Use one of the popular community configurations for Emacs or visit the <a href="https://docs.cider.mx/">CIDER documentation</a> to learn how to add Clojure support to Emacs.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:4"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><input id="__tabbed_2_4" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Spacemacs</label><label for="__tabbed_2_2">Doom Emacs</label><label for="__tabbed_2_3">Prelude Emacs</label><label for="__tabbed_2_4">Vanilla Emacs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="https://spacemacs.org/" target="_blank">Spacemacs</a> is a community configuration bringing <a href="https://www.gnu.org/software/emacs/" target="_blank">Emacs</a> features and <a href="https://practical.li/spacemacs/spacemacs-basics/evil/" target="_blank">Vim sytle editing</a> together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.</p>
@@ -1993,10 +1993,59 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <div class="tabbed-block">
 <p><a href="https://prelude.emacsredux.com/en/stable/">Emacs Prelude</a> is an easy to use Emacs configuration for Emacs newcomers and lots of additional power for Emacs power users, from the author of <a href="https://docs.cider.mx/">CIDER - the definitive Clojure IDE for Emacs</a>.</p>
 <p>Prelude uses the traditional chorded key bindings to drive Emacs, e.g. <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd>c</kbd></span> <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd>c</kbd></span> to evaluate the current top-level form.</p>
-<p><a href="https://prelude.emacsredux.com/en/stable/installation/">Prelude Install Guide</a></p>
+<p><a class="md-button" href="https://prelude.emacsredux.com/en/stable/installation/" target="_blank">Prelude Install Guide</a></p>
+</div>
+<div class="tabbed-block">
+<p>Emacs 28 is recommended as it includes native compilation support and optomised JSON support which is valuable for Language Server Protocol servers.</p>
+<p>Emacs is available for Linux, MacOSX and Windows.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:4"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><input id="__tabbed_5_4" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Ubuntu / Debian</label><label for="__tabbed_5_2">Homebrew / MacOSX</label><label for="__tabbed_5_3">Windows</label><label for="__tabbed_5_4">Msys2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><code>apt-cache show emacs</code> to check available versions of Emacs in the Ubuntu package manager. If version 28 is available, install Emacs using the Ubuntu package manager.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>emacs
+</code></pre></div>
+<p>Additional versions of Emacs are available via the <a href="https://launchpad.net/~ubuntu-elisp/+archive/ubuntu/ppa">Ubuntu Emacs Team Personal Package Archive</a>.</p>
+<p><code>sudo apt install emacs-snapshot</code> package to use the latest nightly build of Emacs, although be aware that some things may break.</p>
+<details class="hint">
+<summary>Build Emacs 28 from source</summary>
+<p><a href="https://practical.li/blog/posts/build-emacs-28-on-ubuntu/">Building Emacs 28 from source code on Ubuntu</a> is relatively straight forward task, although it will take a little time to compile.  Building Emacs allows customisation of some features, such as native compilatin of elisp to enhance the performance of Emacs.</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p><a href="https://github.com/d12frosted/homebrew-emacs-plus">Emacs Plus</a> from Homebrew provides many options, including native compilation and Spacemacs Icon for application launchers.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>brew tap d12frosted/emacs-plus`
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>brew install emacs-plus@28 --with-native-comp --with-spacemacs-icon
+</code></pre></div>
+<p>Emacs.app is installed to: <code>/usr/local/opt/emacs-plus@28</code></p>
+<p>Optionally run Emacs plus as a service
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>brew services start d12frosted/emacs-plus/emacs-plus@28
+</code></pre></div></p>
+<p>Run <code>emacs</code></p>
+<p>Get a hot cup of something as Emacs native compilation compiles all the things.</p>
+<blockquote>
+<p>The <a href="https://github.com/syl20bnr/spacemacs#macos">Spacemacs README lists other options for MacOSX</a>.</p>
+</blockquote>
+</div>
+<div class="tabbed-block">
+<p>Download Emacs-28.2 from the <a href="http://ftp.gnu.org/gnu/emacs/windows/emacs-26">GNU repository</a> and extract the zip file to <code>%AppData%/local/Programs/emacs</code>.</p>
+<p>Alternatively, if you are using the <a href="https://chocolatey.org/" target="_blank">Chocolatey package manager</a> then install <a href="https://chocolatey.org/packages/emacs" target="_blank">Emacs version 28</a></p>
+<p>Add the Emacs directory to the <code>PATH</code> variable in your user account environment variables.</p>
+<p>To start Emacs run the command <code>runemacs.exe</code>.  You can also pin this to the start menu or task bar.</p>
+<details class="hint">
+<summary>Access to common Unix tools</summary>
+<p>Command line tools, such as <code>diff</code>, are used by Emacs.  To have these command line tools available in Windows, install Emacs as above but then run emacs from a Unix shell such as <a href="https://git-scm.com/" target="_blank">GitBash</a>.</p>
+</details>
+</div>
+<div class="tabbed-block">
+<p>Install Emacs (64bits build) with the following:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>pacman -S mingw-w64-x86_64-emacs
+</code></pre></div>
 </div>
 </div>
-</input></input></input></div>
+</input></input></input></input></div>
+</div>
+</div>
+</input></input></input></input></div>
 </div>
 <div class="tabbed-block">
 <p>Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the <a href="https://github.com/Olical/aniseed">aniseed package</a> configuration and Neovim packages can be written in Fennel (a lisp dialect).</p>
@@ -2004,7 +2053,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p>The Neovim community provides a large number of packages to add features.</p>
 <p><a href="https://github.com/Olical/conjure">Conjure</a> is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)</p>
 <p><a href="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png"><img alt="Neovim and Conjure" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png"/></a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:3"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><input id="__tabbed_5_3" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Practicalli Neovim</label><label for="__tabbed_5_2">SpaceVim</label><label for="__tabbed_5_3">VimIced</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Practicalli Neovim</label><label for="__tabbed_6_2">SpaceVim</label><label for="__tabbed_6_3">VimIced</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> is written in Fennel as it is very close to Clojure.</p>
@@ -2017,7 +2066,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <a class="md-button" href="./editor-user-guides/neovim-conjure/">Practicalli user guide for neovim and conjure</a></p>
 <h4 id="quick-try-tutorial">Quick try tutorial<a class="headerlink" href="#quick-try-tutorial" title="Permanent link">λ︎</a></h4>
 <p>Try the Conjure interactive <code>:ConjureSchool</code> tutorial without the need to install, only a recent version of neovim
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>curl<span class="w"> </span>-fL<span class="w"> </span>conjure.fun/school<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>curl<span class="w"> </span>-fL<span class="w"> </span>conjure.fun/school<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
 </code></pre></div>
 <a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-editors-neovim-conjure-tutorial.png"><img alt="Clojure editors - neovim and conjure tutorial" src="/images/clojure-editors-neovim-conjure-tutorial.png"/></a></p>
 <p><code>:q</code> to quit the tutorial.</p>
@@ -2031,8 +2080,8 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p><a href="https://spacevim.org/">SpaceVim</a> is a fully featured vim experience that includes <a href="https://spacevim.org/layers/lang/clojure/">a simple Clojure development environment</a> based around <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a></p>
 <p>Follow the <a href="https://spacevim.org/quick-start-guide/">Quick Start Guide to instal SpaceVim</a></p>
 <p>Add the Clojure layer to the SpaceVim custom configuration file
-<div class="highlight"><span class="filename">~/.SpaceVim.d/init.toml</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">[[</span>layers<span class="o">]]</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"lang#clojure"</span>
+<div class="highlight"><span class="filename">~/.SpaceVim.d/init.toml</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="o">[[</span>layers<span class="o">]]</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">  </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"lang#clojure"</span>
 </code></pre></div></p>
 <p><a href="neovim-guide.md">SpaceVim quick guide</a>
 <a href="https://spacevim.org/layers/lang/clojure/">SpaceVim - Clojure Layer</a>
@@ -2053,7 +2102,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p>Calva is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).</p>
 <p>VSpaceCode provides a mnemonic menu (which-key) to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.</p>
 <p>Clover provides a more mininal environment using Socket REPL.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Calva</label><label for="__tabbed_6_2">VSpaceCode</label><label for="__tabbed_6_3">Clover</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"><input id="__tabbed_7_2" name="__tabbed_7" type="radio"><input id="__tabbed_7_3" name="__tabbed_7" type="radio"><div class="tabbed-labels"><label for="__tabbed_7_1">Calva</label><label for="__tabbed_7_2">VSpaceCode</label><label for="__tabbed_7_3">Clover</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The Calva extension adds Clojure support to Microsoft VS Code editor.</p>
@@ -2125,7 +2174,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 8, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
 </small>
 </div>
 </article>

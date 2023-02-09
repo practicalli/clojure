@@ -246,16 +246,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/emacs-spacemacs/</loc>
-         <lastmod>2023-02-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/emacs/</loc>
-         <lastmod>2023-02-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/intellij-cursive/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
@@ -292,11 +282,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/atom-protorepl/</loc>
-         <lastmod>2023-02-09</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/emacs-spacemacs/</loc>
          <lastmod>2023-02-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
