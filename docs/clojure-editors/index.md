@@ -173,31 +173,18 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
 
-        [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
-
-        [Practicalli Neovim](https://practical.li/neovim/){target=_blank .md-button}
-
-        Older Neovim guides include:
-
-        [Practicalli install guide for neovim and conjure](./editor-install-guides/neovim-conjure/){.md-button}
-        [Practicalli user guide for neovim and conjure](./editor-user-guides/neovim-conjure/){.md-button}
-
-
-        #### Quick try tutorial
-        Try the Conjure interactive `:ConjureSchool` tutorial without the need to install, only a recent version of neovim
+        Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
         ```bash
         curl -fL conjure.fun/school | sh
         ```
-        ![Clojure editors - neovim and conjure tutorial](/images/clojure-editors-neovim-conjure-tutorial.png)
+        ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-light.png#only-light)
+        ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-dark.png#only-dark)
 
         `:q` to quit the tutorial.
 
-        #### References
+        [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
 
-        [Getting started with Neovim and Conjure](https://oli.me.uk/getting-started-with-clojure-neovim-and-conjure-in-minutes/){target=_blank .md-button}
-        [Neovim user guide](https://neovim.io/doc/user/){target=_blank .md-button}
-        [Conjure install guide](https://github.com/Olical/conjure){target=_blank .md-button}
-        [Conjuring Clojure in Vim](https://blog.djy.io/conjuring-clojure-in-vim/){target=_blank .md-button} - an introduction to using Conjure
+        [Practicalli Neovim - install Neovim & Conjure, plus user guide](https://practical.li/neovim/){target=_blank .md-button}
 
 
 
