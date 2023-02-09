@@ -38,7 +38,7 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: indigo
+      primary: blue
       accent: teal
       toggle:
         icon: material/brightness-4
