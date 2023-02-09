@@ -162,12 +162,11 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
-    The Neovim community provides a large number of packages to add features.
+    Neovim now includes Treesitter which understands the syntax of a great many programming and configuration languages, also providing a Langauge Sever Protocol (LSP) client.
 
     ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png){align=right loading=lazy style="height:128px;width:128px"}
 
     [Conjure](https://github.com/Olical/conjure) is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)
-
 
     Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
     ```bash
@@ -180,15 +179,22 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
     === "Practicalli Neovim"
-        [practicalli/neovim-config-redux](https://github.com/practicalli/neovim-config-redux) is written in Fennel as it is very close to Clojure.
 
-        A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier.
+        [Practicalli Neovim - install Neovim & Conjure, plus user guide](https://practical.li/neovim/){target=_blank .md-button}
+
+        [Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
+
+        [practicalli/neovim-config-redux](https://github.com/practicalli/neovim-config-redux) is provided as a configuration for Neovim which adds [a range of Neovim plugins](https://practical.li/neovim/install/packages/) for a rich development experience.
+
+        * mnemonic of key bindings to make adoptiong Neovim easier
+        * visual navigation for files, project, environment variables and any other list items
+        * version control and GitHub issue & pull request management
 
         [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
 
         [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
 
-        [Practicalli Neovim - install Neovim & Conjure, plus user guide](https://practical.li/neovim/){target=_blank .md-button}
+        ![Practicalli Neovim in action](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-clojure-development-tree-whichkey.png)
 
     === "SpaceVim"
         [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a simple Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
