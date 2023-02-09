@@ -79,10 +79,8 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure){target=_blank}, summarized here:
     
     ```bash
-    scoop install git
     scoop bucket add java
-    scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
-    scoop install adoptopenjdk-lts-hotspot
+    scoop install temurin-lts-jdk
     ```
     
     scoop can also be used to [install clojure](install-clojure.md)
