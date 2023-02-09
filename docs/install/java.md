@@ -83,7 +83,7 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     scoop install temurin-lts-jdk
     ```
     
-    scoop can also be used to [install clojure](install-clojure.md)
+    scoop can also be used to [install clojure](clojure-cli.md)
     
     If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/){target=_blank} package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime){target=_blank} using the following command in a command line window
     
