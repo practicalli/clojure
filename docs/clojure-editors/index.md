@@ -204,13 +204,13 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
     === "VimIced"
-        [vim-iced logo](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg)(https://github.com/liquidz/vim-iced){align=right loading=lazy style="height:150px;width:150px"}
+        ![vim-iced logo](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg){align=right loading=lazy style="height:150px;width:150px"}
 
         Interactive Clojure Environment for Vim8/Neovim, aimed at the more experienced Vim/Neovim user.
 
-        Vim-iced uses vim-sexp for structural editing
+        vim-iced uses vim-sexp for structural editing
 
-        [vim-plug](https://github.com/junegunn/vim-plug) is required to install the vim-iced packages.
+        vim-plug is required to install the vim-iced packages.
 
         [vim-iced documentation](https://liquidz.github.io/vim-iced/){target=_blank .md-button}
 
