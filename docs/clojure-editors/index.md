@@ -156,15 +156,28 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             ```
 
 === "Neovim"
+    ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy}
+
     Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package](https://github.com/Olical/aniseed) configuration and Neovim packages can be written in Fennel (a lisp dialect).
 
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
     The Neovim community provides a large number of packages to add features.
 
+    ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png){align=right loading=lazy style="height:128px;width:128px"}
+
     [Conjure](https://github.com/Olical/conjure) is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)
 
-    [![Neovim and Conjure](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/neovim-conjure-banner.png)
+
+    Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
+    ```bash
+    curl -fL conjure.fun/school | sh
+    ```
+    ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-light.png#only-light)
+    ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-dark.png#only-dark)
+
+    `:q` to quit the tutorial.
+
 
     === "Practicalli Neovim"
         [practicalli/neovim-config-redux](https://github.com/practicalli/neovim-config-redux) is written in Fennel as it is very close to Clojure.
@@ -173,20 +186,9 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
 
-        Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
-        ```bash
-        curl -fL conjure.fun/school | sh
-        ```
-        ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-light.png#only-light)
-        ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-dark.png#only-dark)
-
-        `:q` to quit the tutorial.
-
         [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
 
         [Practicalli Neovim - install Neovim & Conjure, plus user guide](https://practical.li/neovim/){target=_blank .md-button}
-
-
 
     === "SpaceVim"
         [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a simple Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
