@@ -16,7 +16,7 @@
 <link href="../clojure-cli/projects/tools-build/" rel="prev"/>
 <link href="clojure-lsp/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.11" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
 <title>Editors for Clojure development - Practicalli Clojure</title>
 <link href="../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
@@ -2041,7 +2041,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg"><img align="right" alt="Conjure logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg"/></a></p>
 <p>Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the <a href="https://github.com/Olical/aniseed">aniseed package</a> configuration and Neovim packages can be written in Fennel (a lisp dialect).</p>
 <p>Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.</p>
-<p>The Neovim community provides a large number of packages to add features.</p>
+<p>Neovim now includes Treesitter which understands the syntax of a great many programming and configuration languages, also providing a Langauge Sever Protocol (LSP) client.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png"><img align="right" alt="Conjure logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png" style="height:128px;width:128px"/></a></p>
 <p><a href="https://github.com/Olical/conjure">Conjure</a> is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)</p>
 <p>Try the Conjure interactive <code>:ConjureSchool</code> tutorial which only requires a recent version of neovim
@@ -2053,11 +2053,17 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <div class="tabbed-set tabbed-alternate" data-tabs="6:3"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"><input id="__tabbed_6_2" name="__tabbed_6" type="radio"><input id="__tabbed_6_3" name="__tabbed_6" type="radio"><div class="tabbed-labels"><label for="__tabbed_6_1">Practicalli Neovim</label><label for="__tabbed_6_2">SpaceVim</label><label for="__tabbed_6_3">VimIced</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> is written in Fennel as it is very close to Clojure.</p>
-<p>A Which-key menu can be used to drive Neovim, with a mnemonic set of key bindings to make adoptiong Neovim easier.</p>
+<p><a class="md-button" href="https://practical.li/neovim/" target="_blank">Practicalli Neovim - install Neovim &amp; Conjure, plus user guide</a></p>
+<p><a href="https://practical.li/neovim/">Practicalli Neovim</a> provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.</p>
+<p><a href="https://github.com/practicalli/neovim-config-redux">practicalli/neovim-config-redux</a> is provided as a configuration for Neovim which adds <a href="https://practical.li/neovim/install/packages/">a range of Neovim plugins</a> for a rich development experience.</p>
+<ul>
+<li>mnemonic of key bindings to make adoptiong Neovim easier</li>
+<li>visual navigation for files, project, environment variables and any other list items</li>
+<li>version control and GitHub issue &amp; pull request management</li>
+</ul>
 <p><a href="https://github.com/Olical/conjure" target="_blank">Conjure</a> provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).</p>
 <p><a href="https://practical.li/neovim/" target="_blank">Practicalli Neovim</a> covers installation and basic use of Neovim for Clojure development.</p>
-<p><a class="md-button" href="https://practical.li/neovim/" target="_blank">Practicalli Neovim - install Neovim &amp; Conjure, plus user guide</a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-clojure-development-tree-whichkey.png"><img alt="Practicalli Neovim in action" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-clojure-development-tree-whichkey.png"/></a></p>
 </div>
 <div class="tabbed-block">
 <p><a href="https://spacevim.org/">SpaceVim</a> is a fully featured vim experience that includes <a href="https://spacevim.org/layers/lang/clojure/">a simple Clojure development environment</a> based around <a href="https://github.com/tpope/vim-fireplace">vim-fireplace</a></p>
@@ -2208,6 +2214,6 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "navigation.instant", "navigation.tracking", "navigation.indexes"], "search": "../assets/javascripts/workers/search.db81ec45.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.6df46069.min.js"></script>
+<script src="../assets/javascripts/bundle.4b2c34cd.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
