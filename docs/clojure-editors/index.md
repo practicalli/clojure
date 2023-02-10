@@ -233,13 +233,15 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     
     [VS Code](https://code.visualstudio.com/) is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.
 
-    VS Code has a large marketplace of extensions, proiding additional tools for a complete development environment.
+    [VSCode Getting Started Guide](https://code.visualstudio.com/docs/introvideos/basics){target=_blank .md-button}
+
+    [VS Code has a large marketplace of extensions](https://marketplace.visualstudio.com/VSCode), proiding additional tools for a complete development environment.
 
     Calva is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).
 
-    VSpaceCode provides a mnemonic menu (which-key) to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.
+    VSpaceCode provides a mnemonic menu to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.
 
-    Clover provides a more mininal environment using Socket REPL.
+    Clover provides a mininal, highly customisable environment using Socket REPL.
 
 
     === "Calva"
