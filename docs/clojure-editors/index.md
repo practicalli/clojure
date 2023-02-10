@@ -250,20 +250,19 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         Calva is under active development and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
 
         [Calva Getting Started Guide](https://calva.io/getting-started/){target=_blank .md-button}
-        [VSCode Calva extension](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva){target=_blank .md-button}
-        [VSCode Getting Started Guide](https://code.visualstudio.com/docs/introvideos/basics)
+        [Calva - VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=betterthantomorrow.calva){target=_blank .md-button}
 
         <p style="text-align:center">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/a2vRDYXDAug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
-        ![VSCode Calva demo](https://github.com/BetterThanTomorrow/calva/raw/master/assets/howto/features.gif)
-
 
     === "VSpaceCode"
         ![VSpaceCode logo](https://vspacecode.github.io/img/logo.png){align=right loading=lazy style="height:128px;width:128px"}
 
-        [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
+        [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
+        
+        Calva is supported by VSpaceCode and Calva commands are included in the mneomic menu when a Clojure file is open. 
 
         Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.
 
