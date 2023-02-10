@@ -63,7 +63,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     === "Doom Emacs"
         ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px;width:128px"}
-        
+
         [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
         [Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){.md-button}
@@ -235,7 +235,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 === "VSCode"
     ![VS Code logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/vs-code.svg){align=right loading=lazy style="height:128px;width:128px"}
-    
+
     [VS Code](https://code.visualstudio.com/) is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.
 
     [VSCode Getting Started Guide](https://code.visualstudio.com/docs/introvideos/basics){target=_blank .md-button}
@@ -251,7 +251,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     === "Calva"
         ![Calva logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/calva-name-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
-    
+
         The Calva extension adds Clojure REPL support to VS Code editor, including Clojure LSP, formatting, structural editing and many other features.
 
         Calva is under active development and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
@@ -268,8 +268,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         ![VSpaceCode logo](https://vspacecode.github.io/img/logo.png){align=right loading=lazy style="height:128px;width:128px"}
 
         [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
-        
-        Calva is supported by VSpaceCode and Calva commands are included in the mneomic menu when a Clojure file is open. 
+
+        Calva is supported by VSpaceCode and Calva commands are included in the mneomic menu when a Clojure file is open.
 
         Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.
 
