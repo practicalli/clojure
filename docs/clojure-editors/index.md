@@ -13,7 +13,7 @@ An ideal Clojure editor includes the these core features
 * evaluation results inline or in a repl window (fast feedback on what the code does)
 * syntax highlighting (including highlight of matching parens)
 * structural editing to ensure parens are balanced when writing and refactor code
-* data inspector to visualise large and nested data, or connection to ([external data inpector tools](/clojure/data-inspector/))
+* data inspector to visualise large and nested data, or connection to [external data inpector tools](/clojure/data-inspector/)
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
