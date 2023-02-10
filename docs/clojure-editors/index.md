@@ -95,7 +95,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
          [Prelude Install Guide](https://prelude.emacsredux.com/en/stable/installation/){target=_blank .md-button}
 
 
-    === "Vanilla Emacs"
+    === "Vanilla Emacs & Cider"
         Emacs 28 is recommended as it includes native compilation support and optomised JSON support which is valuable for Language Server Protocol servers.
 
         Emacs is available for Linux, MacOSX and Windows.
@@ -158,6 +158,11 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             ```
             pacman -S mingw-w64-x86_64-emacs
             ```
+
+        Once Emacs is installed, add the cider package for essentail Clojure support.
+
+        [Cider Install Guide](https://docs.cider.mx/cider/basics/installation.html){target=_blank .md-button}
+
 
 === "Neovim"
     ![Neovim logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
