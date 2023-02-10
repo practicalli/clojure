@@ -1,6 +1,6 @@
 # REPL Driven Development
 
-![Clojure repl driven development](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png){ align=left loading=lazy }
+![Clojure repl driven development](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png){loading=lazy}
 
 
 !!! Quote "Always be REPL'ing"
@@ -8,16 +8,20 @@
      - John Stevenson, Practical.li
 
 
+Clojure is a powerful, fun and highly productive language for developing applications and services.
+ The clear language design is supported by a powerful development environment known as the REPL (read, evaluate, print, loop).  The REPL gives you instant feedback on what your code does and enables you to test either a single expression or run the whole application (including tests).
+
 **REPL driven development is the foundation of working with Clojure effectively**
 
-An effective Clojure workflow begins by running a REPL process.  Clojure expressions are written and evaluated immediately to provide instant feedback as design decisions are coded.
+An effective Clojure workflow begins by running a REPL process.  Clojure expressions are written and evaluated immediately to provide instant feedback. The REPL feedback helps test the assumptions that are driving the design choices.
 
-The REPL feedback tests the assumptions driving design choices.  Important design choices provide data which can be codified into unit tests, optionally using spec and generative testing.
+* Read - code is read by the Clojure reader, passing any macros to the macro reader which converts those macros into Clojure code.
+* Evaluate - code is compiled into the host language (e.g. Java bytecode) and executed
+* Print - results of the code are displayed, either in the REPL or as part of the application.
+* Loop - the REPL is a continuous process that evaluates code, either a single expression or the whole application.
 
-* **Read** - code is read by the Clojure reader, passing any macros to the macro reader which converts those macros into Clojure code.
-* **Evaluate** - code is compiled into the host language (e.g. Java bytecode) and executed
-* **Print** - results of the code are displayed, either in the REPL or as part of the application.
-* **Loop** - the REPL is a continuous process that evaluates code, either a single expression or the whole application.
+Design decisions and valuable data from REPL experiments can be codified as [specifications](#data-and-function-specifications) and [unit tests](#test-driven-development-and-repl-driven-development)
+
 
 
 ## Evaluating source code
@@ -32,10 +36,11 @@ Source code is automatically evaluated in its respective namespace, removing the
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rQ802kSaip4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-
 ??? HINT "Evaluate Clojure in a Terminal UI REPL"
     Entering expressions at the REPL prompt evaluates the expression immediately, returning the result directly underneath
-    ![Clojure Terminal UI REPL]()
+    ![Clojure Terminal UI REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-eval-map-function-dark.png#only-dark){loading=lazy}
+    ![Clojure Terminal UI REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-eval-map-function-light.png#only-light){loading=lazy}
+
 
 
 ## Rich Comment blocks - living documentation
@@ -116,6 +121,34 @@ Live linting with [clj-kondo](https://github.com/borkdude/clj-kondo){target=_bla
     The [Clojure Style guide](https://github.com/bbatsov/clojure-style-guide){target=_blank} provides examples of common formatting approaches, although the development team should decide which of these to adopt.  Emacs `clojure-mode` will automatically format code and so will Clojure LSP (via cljfmt).  These tools are configurable and should be tailored to the teams standard.
 
 
+## Data and Function specifications
+
+[Clojure spec](https://practical.li/clojure/clojure-spec/){target=_blank} is used to define a contract on incoming and outgoing data, to ensure it is of the correct form.
+
+As data structures are identified in REPL experiments, create data specification to validate the keys and value types of that data.
+
+```clojure
+;; ---------------------------------------------------
+;; Address specifications
+(spec/def ::house-number string?)
+(spec/def ::street string?)
+(spec/def ::postal-code string?)
+(spec/def ::city string?)
+(spec/def ::country string?)
+(spec/def ::additional string?)
+
+(spec/def ::address   ; Composite data specification
+  (spec/keys
+   :req-un [::street ::postal-code ::city ::country]
+   :opt-un [::house-number ::additional]))
+;; ---------------------------------------------------
+```
+
+As the public API is designed, specifications for each functions arguments are added to validate the correct data is used when calling those functions.
+
+[Generative testing](https://practical.li/clojure/clojure-spec/generative-testing/){target=_blank} provides a far greater scope of test values used incorporated into unit tests. Data uses clojure.spec to randomly generate data for testing on each test run.
+
+
 ## Test Driven Development and REPL Driven Development
 
 ![Clojure REPL driven development (RDD) and Test Driven Development (TDD)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png){ align=right loading=lazy }
@@ -140,6 +173,7 @@ Clojure has a number of [test runners](https://practical.li/clojure/testing/test
     ```bash
     clojure -X:test/watch
     ```
+
 
 ## Continuous Integration and Deployment
 
