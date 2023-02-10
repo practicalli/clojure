@@ -6,15 +6,8 @@
 {:additional-snippets [{} {} {} ,,,]}
 ```
 
-??? HINT "Practicalli Snippets available in practicalli/clojure-lsp-config"
-    === Via SSH
-        ```bash
-        git@github.com:practicalli/clojure-lsp-config.git
-        ```
-    === Via HTTPS
-        ```bash
-        git clone https://github.com/practicalli/clojure-lsp-config
-        ```
+!!! HINT "Practicalli Snippets available in practicalli/clojure-lsp-config"
+    Move or delete the clojure configuration directory and [clone the Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config)
 
 ## Documentation
 
