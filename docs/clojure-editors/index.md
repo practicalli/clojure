@@ -26,7 +26,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
 === "Emacs"
-    ![GNU Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg){align=right loading=lazy}
+    ![GNU Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
 
     Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages. Emacs 28 onward uses Native Compilation of Emacs packages, dramatically speeding up many common tasks.
 
@@ -35,6 +35,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     Use one of the popular community configurations for Emacs or visit the [CIDER documentation](https://docs.cider.mx/) to learn how to add Clojure support to Emacs.
 
     === "Spacemacs"
+        ![Spacemacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/spacemacs-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
+
         [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim sytle editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
 
         [Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
@@ -60,7 +62,9 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         </p>
 
     === "Doom Emacs"
-        [Doom Emacs](https://spacemacs.org/){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
+        ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px;width:128px"}
+        
+        [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
         [Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){.md-button}
 
@@ -156,7 +160,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             ```
 
 === "Neovim"
-    ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy}
+    ![Neovim logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
 
     Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package](https://github.com/Olical/aniseed) configuration and Neovim packages can be written in Fennel (a lisp dialect).
 
@@ -212,7 +216,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
     === "VimIced"
-        ![vim-iced logo](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg){align=right loading=lazy style="height:150px;width:150px"}
+        ![vim-iced logo](https://raw.githubusercontent.com/liquidz/vim-iced/master/doc/pages/assets/logo.svg){align=right loading=lazy style="height:128px;width:128px"}
 
         Interactive Clojure Environment for Vim8/Neovim, aimed at the more experienced Vim/Neovim user.
 
@@ -225,6 +229,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
 === "VSCode"
+    ![VS Code logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/vs-code.svg){align=right loading=lazy style="height:128px;width:128px"}
+    
     [VS Code](https://code.visualstudio.com/) is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.
 
     VS Code has a large marketplace of extensions, proiding additional tools for a complete development environment.
@@ -237,9 +243,9 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
     === "Calva"
-        The Calva extension adds Clojure support to Microsoft VS Code editor.
-
-        [Calva - VS Code Marketplace](https://marketplace.visualstudio.com/VSCode){target=_blank .md-button}
+        ![Calva logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/calva-name-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
+    
+        The Calva extension adds Clojure REPL support to VS Code editor, including Clojure LSP, formatting, structural editing and many other features.
 
         Calva is under active development and the [#calva channel on the Clojurians Slack community](clojurians.slack.com/messages/calva) can be supportive.
 
@@ -255,6 +261,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
     === "VSpaceCode"
+        ![VSpaceCode logo](https://vspacecode.github.io/img/logo.png){align=right loading=lazy style="height:128px;width:128px"}
 
         [VSpaceCode](https://github.com/VSpaceCode/VSpaceCode) is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code and Calva entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.
 
