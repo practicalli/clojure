@@ -62,7 +62,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         </p>
 
     === "Doom Emacs"
-        ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px;width:128px"}
+        ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px"}
 
         [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
