@@ -10,7 +10,7 @@ A practical guide to learning Clojure with step by step explanations of code and
 
 ## Clojure REPL Driven Development
 
-![Clojure repl driven development using Clojure aware editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-lifecycle-concept.png)
+![Clojure Repl workflow - concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png){loading=lazy}
 
 Clojure runs in [a REPL process](/clojure/clojure-cli/repl/) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
 
