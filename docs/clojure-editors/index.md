@@ -291,6 +291,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
 === "SublimeText"
+    ![Clojure Sublimed Text logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/clojure-sublimed-logo.png){align=right loading=lazy style="height:128px;width:128px"}
+
     [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
 
     [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
