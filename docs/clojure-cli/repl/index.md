@@ -82,3 +82,46 @@ For example, to change the default keybindings to vi:
 
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark)
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light)
+
+
+## Basic REPL
+
+When only using a [Clojure editor](/clojure/clojure-editor/) an external REPL can still be of use.   Separating the REPL process from the editor process allows the editor to be closed, upgraded or swapped for a different editor without having to end the REPL session.
+
+A REPL process can be long running, staying alive for days, weeks or months when working on larger projects.  Avoiding a REPL restart keeps the state of the REPL, keeping the flow in the Clojure workflow.
+
+Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process.
+
+[Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains aliases for a basic terminal UI and a headless (non-interactive) terminal UI, each starting an nREPL server for editor connection.
+
+??? INFO "Alias definitions for a basic terminal UI REPL"
+    Interactive client REPL with nREPL server for Clojure Editor support
+    ```clojure
+    :repl/basic
+    {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                  cider/cider-nrepl {:mvn/version "0.28.7"}}
+     :main-opts  ["-m" "nrepl.cmdline"
+                  "--middleware" "[cider.nrepl/cider-middleware]"
+                  "--interactive"]}
+    ```
+
+    Headless REPL with nREPL server for Clojure Editor support
+    ```clojure
+    :repl/headless
+    {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                  cider/cider-nrepl {:mvn/version "0.28.7"}}
+     :main-opts  ["-m" "nrepl.cmdline"
+                  "--middleware" "[cider.nrepl/cider-middleware]"]}
+    ```
+
+To have a basic terminal UI REPL prompt use the `:repl/basic` alias to start a REPL process with nREPL connection.
+
+```shell
+clj -M:repl/basic
+```
+
+To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.  This approach is useful to separate the REPL output from the editor whilst keeping all the interacting with the REPL via the editor.
+
+```shell
+clj -M:repl/headless
+```
