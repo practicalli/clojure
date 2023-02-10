@@ -2,6 +2,10 @@
 
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing or in production systems.
 
+A Terminal UI provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results.  A terminal UI is most useful for expressions for longer running processes or for a convienient way to interact with the REPL state and manage components.
+
+Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process, providing a more effective way to write and extend Clojure code.
+
 Rebel is a REPL terminal UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-cli/basic-repl.md) by default.
 
 <p style="text-align:center">
@@ -23,7 +27,7 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
 
 ## Running the rebel REPL
 
-Start a Clojure REPL with Rebel terminal UI, optionally in the root of a Clojure project.
+Start a Clojure REPL with Rebel terminal UI.  Use the command in the root of a Clojure project to include the project dependencies and source code.
 
 ```bash
 clojure -M:repl/rebel
