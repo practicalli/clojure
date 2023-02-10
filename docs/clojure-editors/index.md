@@ -303,33 +303,10 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 
 === "Atom"
-
     !!! WARNING "Atom not actively developed"
         Atom will be archived on December 15 2022 and no further updates from GitHub team, although it may continue in open source.
 
         Consider using VSCode with Clover or Calva plugins instead
-
-    [Atom.io](https://atom.io/) is flexible and simple to use editor .  [Chlorine](https://github.com/mauricioszabo/atom-chlorine) is the recommended plugin for Atom.io. [ProtoREPL](https://atom.io/packages/proto-repl) is not actively maintained at present. The [Chlorine plugin for Atom](https://github.com/mauricioszabo/atom-chlorine) is especially recommended for ClojureScript shadow-cljs projects.
-
-    [Chlorine install guide](https://github.com/mauricioszabo/atom-chlorine){target=_blank .md-button}
-
-    ![Chlorine animated gif](https://raw.githubusercontent.com/mauricioszabo/atom-chlorine/master/docs/eval-code.gif)
-
-    #### ProtoREPL
-
-    ProtoREPL
-
-    [Atom & ProtoREPL install guide](install-guides/atom-protorepl.html){ .md-button }
-
-    ![Atom.io and ProtoREPL](/images/atom-protorepl-demo.gif)
-
-
-    #### Proton - alternative menu and configuration approach
-    Proton offers a simple mnemonic menu as an alternative to the multiple keys for shortcuts in Atom.io.  Proton also gives you a simple text configuration to manage all your packages quickly.  Unfortunately Proton is not complete replacement of all actions.
-
-    [Atom & Proton install guide](install-guides/atom-proton.html){ .md-button }
-
-    ![Atom.io proton-mode demo](/images/atom-proton-mode-demo.gif)
 
 
 === "Intellij"
