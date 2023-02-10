@@ -180,7 +180,7 @@ https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/getting-started#create--
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
-#### Databases and drivers
+#### Data Science
 
 * `lib/clerk` - [Clerk Notebooks](https://github.com/nextjournal/clerk)
 
