@@ -14,11 +14,12 @@ Aliases can be used to modify:
 
 Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
 
-> #### Hint::practicalli/clojure-deps-edn user level aliases and tools
-> [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
+!!! HINT "Practicall Clojure CLI Config provides a wide range of aliases"
+    [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
 
 
 # Clojure CLI tool options
+
 Clojure CLI tool has several options that determine how aliases and other configuration is used
 
 * add or remove dependencies
@@ -41,7 +42,7 @@ Clojure CLI tool has several options that determine how aliases and other config
 * deps = `:deps`, `:extra-deps`, `replace-deps`
 * path = `:path`, `:extra-paths`, `replace-paths`
 
--A to configure paths and dependencies when running the Clojure CLI tools REPL
+-A to configure paths and dependencies when running the Clojure CLI build-in basic REPL
 
 -M using clojure.main to run the -main function of a Clojure project or tool, using the -m flag to specify the namespace containing -main (clojure.main has other features too)
 
@@ -65,8 +66,8 @@ Multiple aliases can be used together
 clojure -M:env/test:test/runner
 ```
 
-> #### Hint::Only one main namespace
-> If multiple aliases set a main namespace, only the last alias in the chain has its main namespace called, e.g. `clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl` will call the main namespace of `:middleware/nrebl`.
+!!! HINT "Only one main namespace"
+    If multiple aliases set a main namespace, only the last alias in the chain has its main namespace called, e.g. `clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl` will call the main namespace of `:middleware/nrebl`.
 
 
 ## An alias for a community tool
@@ -81,10 +82,10 @@ This alias adds the library dependency for the rebel readline project and define
 
 ```clojure
 {:aliases
-   :rebel
+   :repl/rebel
      {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
       :main-opts  ["-m" "rebel-readline.main"]}
-} ;; End of aliases
+} ; End of aliases
 ```
 
 
@@ -98,14 +99,12 @@ The main namespace is set to that library and the `-main` function is called whe
 
 ```clojure
 {:aliases
-    :test-runner/cognitect
+    :test/cognitect
     {:extra-paths ["test"]
      :extra-deps  {com.cognitect/test-runner
                   {:git/url "https://github.com/cognitect-labs/test-runner.git"
                    :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
      :main-opts   ["-m" "cognitect.test-runner"]}
-
-
 }
 ```
 
@@ -159,9 +158,9 @@ The command line can over-ride the `:exec-fn` function configuration, allowing f
    }
 ```
 
-> #### Hint::Keyword naming
-> Any legal Clojure keyword name can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
-> `clojure -M:task/path:task/deps:build/options`
+!!! HINT "Keyword naming"
+    Legal Clojure keyword names can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
+    `clojure -M:task/path:task/deps:build/options`
 
 
 ## Resources

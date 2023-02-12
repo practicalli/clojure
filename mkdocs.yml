@@ -142,6 +142,7 @@ nav:
       - clojure-cli/index.md
       - Practicalli Config: clojure-cli/practicalli-config.md
       - Built-in Commands: clojure-cli/built-in-commands.md
+      - Defining aliases: clojure-cli/defining-aliases.md
       - Execution Options: clojure-cli/execution-options.md
       - HotLoad Libraries: clojure-cli/hotload-libraries.md
   - Terminal REPL:
