@@ -1,6 +1,12 @@
 # Add libraries to a project
 
-Add dependencies to the project `deps.edn` file to make use of software libraries developed by the Clojure community or organisations engineering teams.  There are thousands of community Clojure and ClojureScript libraries available via [clojars.org](https://clojars.org).
+The project `deps.edn` file is used to add specific versions of libraries to a project.
+
+The `:deps` top-level key defines libraries that are always included, e.g when starting the REPL or packaging a project in an Uberjar.
+
+Aliases are defined to include libraries only when the alias name is included, e.g. `:dev/reloaded` alias includes several libraries only relevant during development of a Clojure project.
+
+There are thousands of community Clojure and ClojureScript libraries available via [clojars.org](https://clojars.org) and Maven Central.
 
 `:deps` top level key contains a hash-map of dependencies, each dependency of the form `domain/name {:mvn/version "version-number"}`
 
@@ -14,6 +20,35 @@ Add dependencies to the project `deps.edn` file to make use of software librarie
     `clojure -M:search/libraries pattern` where pattern is the name of the library to search for.  Copy the relevant results into the project `deps.edn` file.
 
     `clojure -M:search/libraries --format:merge pattern` will automatically add the library into the `deps.edn` file.
+
+    Or visit [the Clojure Toolbox](https://www.clojure-toolbox.com/) to browse some of the community libraries available
+
+
+## Alias libraries
+
+`:aliases` top-level key contains a hash-map of alias definitions.
+
+Each alias has a unique name with `:aliases` and is represented by a Clojure keyword associated with a Clojure hash-map, `{}`
+
+`:extra-deps` keyword is associated with hash-map that contains one or more fully qualified library names and the version of the library to use.  The version of the library is defined with the maven form `{:mvn/version "0.4.2"}` or Git form `{:git/url "https://github.com/clojure/tools.deps.alpha" :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}`
+
+The following example can be added to a project `deps.edn`, within the `:aliases {}` form.
+
+```clojure title="deps.edn alias definition with maven and git versions"
+:dev/reloaded
+{:extra-deps {djblue/portal {:mvn/version "0.34.2"}
+              lambdaisland/kaocha {:mvn/version "1.71.1119"}
+              org.clojure/test.check {:mvn/version "1.1.1"}
+              org.clojure/tools.namespace {:mvn/version "1.3.0"}
+              org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
+                                            :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
+```
+
+When the alias is included in the command to start the REPL, the libraries are placed on the class path and can be required for use.
+
+```shell
+clojure -M:dev/reloaded:repl/rebel
+```
 
 
 ## Hotload libraries
@@ -43,8 +78,7 @@ Create a web server from scratch, serving pages generated from hiccup, with all 
 (comment
   ;; run REPL with :lib/hotload alias
   (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-
-  ;; hotload the libraries required for the server
+```
 
 
 
