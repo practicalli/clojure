@@ -1975,213 +1975,208 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p><a href="https://github.com/practicalli/clojure-lsp-config">Custom snippets created by Practicalli</a> and added via the <code>:additional-snippets</code> key in the Clojure LSP configuration (<code>.lsp/config.edn</code> or user level configuration).  Snippets are defined as a vector of hash-maps</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:additional-snippets</span><span class="w"> </span><span class="p">[{}</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span>,,,<span class="p">]}</span>
 </code></pre></div>
-<details class="hint">
-<summary>Practicalli Snippets available in practicalli/clojure-lsp-config</summary>
-<p>=== Via SSH
-    <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>git@github.com:practicalli/clojure-lsp-config.git
-</code></pre></div>
-=== Via HTTPS
-    <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/clojure-lsp-config
-</code></pre></div></p>
-</details>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Snippets available in practicalli/clojure-lsp-config</p>
+<p>Move or delete the clojure configuration directory and <a href="/clojure/install/clojure-cli/#practicalli-clojure-cli-config">clone the Practicalli Clojure CLI Config</a></p>
+</div>
 <h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">λ︎</a></h2>
 <p>A comment heading to describe the purpose and important information about the current namesapce.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-heading"</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Header"</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------</span>
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="s">    ;; ${1:Heading summary title}</span>
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="s">    ;;</span>
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="s">    ;; ${2:Brief description}\n;; ---------------------------------------------------------\n\n$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-heading"</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Header"</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="s">    ;; ${1:Heading summary title}</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="s">    ;;</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="s">    ;; ${2:Brief description}\n;; ---------------------------------------------------------\n\n$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>A comment separator for marking logical sections within a namespace, useful for navigating code and identifying opportunities to refactor a namespace into multiple namespaces.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-separator"</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Separator"</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------\n;; ${1:Section title}\n\n$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-separator"</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Separator"</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------\n;; ${1:Section title}\n\n$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>A comment section with start and end titles for marking logical sections within a namespace, again for navigation and identifying opportunities to refactor a namespace.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-section"</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Section"</span>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------\n;; ${1:Section title}\n\n$0\n\n</span>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="s">    ;; End of $1\n;; ---------------------------------------------------------\n\n"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"comment-section"</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Comment Section"</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">   </span><span class="s">";; ---------------------------------------------------------\n;; ${1:Section title}\n\n$0\n\n</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="s">    ;; End of $1\n;; ---------------------------------------------------------\n\n"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="repl-driven-development">REPL Driven Development<a class="headerlink" href="#repl-driven-development" title="Permanent link">λ︎</a></h2>
 <p>A rich comment block typically used to hold function calls to show how to make use of the important aspects of the current namespace.  For example, calls to <code>start</code>, <code>restart</code>, <code>stop</code> functions in a namespace that defines the service life-cycle.</p>
 <p>This provides a live executable guide to using the namespace, without being called if the whole namespace is evaluated.</p>
 <p>A commented expression is placed before the closing paren to ensure that closing paren is not folded up into the previous line.  This makes it easier to add further code to the rich comment block.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment"</span>
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create rich comment"</span>
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">   </span><span class="s">"(comment</span>
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="s">      $0</span>
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="s">  #_()) ;; End of rich comment"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment"</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create rich comment"</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">   </span><span class="s">"(comment</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="s">      $0</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="s">  #_()) ;; End of rich comment"</span><span class="p">}</span>
 </code></pre></div>
 <p>A modified rich comment block with clj-kondo configuration to suppress warnings for duplicate function definition names, supporting alternative function implementations as part of a REPL driven development workflow.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment-rdd"</span>
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create comment block"</span>
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">   </span><span class="s">"#_{:clj-kondo/ignore [:redefined-var]}</span>
-<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="s">   (comment</span>
-<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="s">     $0</span>
-<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="s">   #_()) ;; End of rich comment"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment-rdd"</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create comment block"</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">   </span><span class="s">"#_{:clj-kondo/ignore [:redefined-var]}</span>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="s">   (comment</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="s">     $0</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="s">   #_()) ;; End of rich comment"</span><span class="p">}</span>
 </code></pre></div>
 <p>Wrap an existing form in a rich comment</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"wrap-rich-comment"</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Wrap current expression with rich comment form"</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">   </span><span class="s">"(comment</span>
-<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="s">      $current-form</span>
-<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="s">      $0</span>
-<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="s">   #_()) ;; End of rich comment"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"wrap-rich-comment"</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Wrap current expression with rich comment form"</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">   </span><span class="s">"(comment</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="s">      $current-form</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="s">      $0</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="s">   #_()) ;; End of rich comment"</span><span class="p">}</span>
 </code></pre></div>
 <p>Comment an existing form with the Clojure Comment macro, <code>_#</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"wrap-reader-comment"</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Wrap current expression with Comment Reader macro"</span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"#_$current-form"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"wrap-reader-comment"</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Wrap current expression with Comment Reader macro"</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"#_$current-form"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="hot-loading-library-dependencies">Hot loading library dependencies<a class="headerlink" href="#hot-loading-library-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI projects can <a href="https://practical.li/clojure/alternative-tools/clojure-cli/hotload-libraries.html">hotload library dependencies into a running Clojure REPL using the tools.deps library</a>.  This requires starting a REPL with the <code>clojure.tools.deps.alpha</code> library as a dependency which can be done by including the <a href="https://github.com/practicalli/clojure-deps-edn#hotload-libraries-into-a-running-repl"><code>:lib/hotload</code> alias from practicalli/clojure-deps-edn</a>.  Note this library is alpha and the API could change in future.</p>
 <p>Create a rich comment block that requires the <code>clojure.tools.deps.alpha</code> namespace and an <code>add-libs</code> expression to hotload one or more libraries in a hash-map.  Tab stops with placeholders are included for adding the first library to hotload.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment-hotload"</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Rich comment library hotload"</span>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">   </span><span class="s">"#_{:clj-kondo/ignore [:redefined-var]}</span>
-<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="s">    (comment</span>
-<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="s">      ;; Add-lib library for hot-loading</span>
-<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="s">      (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])</span>
-<a href="#__codelineno-10-8" id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="s">      (add-libs '{${1:domain/library-name} {:mvn/version \"${2:1.0.0}\"}$3})</span>
-<a href="#__codelineno-10-9" id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="s">      $0</span>
-<a href="#__codelineno-10-10" id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="s">    #_()) ;; End of rich comment block"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"rich-comment-hotload"</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Rich comment library hotload"</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">   </span><span class="s">"#_{:clj-kondo/ignore [:redefined-var]}</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="s">    (comment</span>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="s">      ;; Add-lib library for hot-loading</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="s">      (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="s">      (add-libs '{${1:domain/library-name} {:mvn/version \"${2:1.0.0}\"}$3})</span>
+<a href="#__codelineno-8-9" id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="s">      $0</span>
+<a href="#__codelineno-8-10" id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="s">    #_()) ;; End of rich comment block"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="core-functions">Core functions<a class="headerlink" href="#core-functions" title="Permanent link">λ︎</a></h2>
 <p>Create a public var using a <code>def</code> form with a doc-string, with placeholders for name and value.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"def"</span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"def with docstring"</span>
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(def ${1:name}\n  \"${2:docstring}\"\n  $0)"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"def"</span>
+<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"def with docstring"</span>
+<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(def ${1:name}\n  \"${2:docstring}\"\n  $0)"</span><span class="p">}</span>
 </code></pre></div>
 <p>Create a private var using a <code>def</code> form with <code>^:private</code> meta data and a doc-string, with placeholders for name and value.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"def-"</span>
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"def private"</span>
-<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(def ^:private ${1:name}\n  \"${2:doc-string}\"\n $0)"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"def-"</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"def private"</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(def ^:private ${1:name}\n  \"${2:doc-string}\"\n $0)"</span><span class="p">}</span>
 </code></pre></div>
 <p>A <code>defn</code> form with name, doc-string and args tab-stops</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"defn"</span>
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create public function"</span>
-<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(defn ${1:name}\n  \"${2:docstring}\"\n   [${3:args}]\n  $0)"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"defn"</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create public function"</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(defn ${1:name}\n  \"${2:docstring}\"\n   [${3:args}]\n  $0)"</span><span class="p">}</span>
 </code></pre></div>
 <p>A <code>defn</code> form with private metatdata. Including name, doc-string and args tab-stops</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"defn-"</span>
-<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create public function"</span>
-<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(defn ^:private ${1:name}\n  \"${2:docstring}\"\n   [${3:args}]\n  $0)"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"defn-"</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create public function"</span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(defn ^:private ${1:name}\n  \"${2:docstring}\"\n   [${3:args}]\n  $0)"</span><span class="p">}</span>
 </code></pre></div>
 <p>A namespace form with name, doc-string and require tab-stop.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"ns"</span>
-<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create ns"</span>
-<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(ns ${1:name}\n  \"${2:docstring}\"\n  ${3:require})"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"ns"</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Create ns"</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(ns ${1:name}\n  \"${2:docstring}\"\n  ${3:require})"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="clojure-cli-aliases-and-library-dependencies">Clojure CLI aliases and library dependencies<a class="headerlink" href="#clojure-cli-aliases-and-library-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Add Clojure CLI alias to <code>deps.edn</code>, with an <code>:extra-paths</code> and <code>:extra-deps</code> section</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-alias"</span>
-<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn alias with extra path &amp; deps"</span>
-<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">   </span><span class="s">":${1:category/name}</span>
-<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="s">    {:extra-paths [\"${2:path}\"]</span>
-<a href="#__codelineno-16-6" id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="s">     :extra-deps {${3:deps-maven or deps-git}}}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-alias"</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn alias with extra path &amp; deps"</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">   </span><span class="s">":${1:category/name}</span>
+<a href="#__codelineno-14-5" id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="s">    {:extra-paths [\"${2:path}\"]</span>
+<a href="#__codelineno-14-6" id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="s">     :extra-deps {${3:deps-maven or deps-git}}}$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>Add a Maven style dependency to a Clojure CLI <code>deps.edn</code> project.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-maven"</span>
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Maven dependency"</span>
-<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name} {:mvn/version \"${2:1.0.0}\"}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-maven"</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Maven dependency"</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name} {:mvn/version \"${2:1.0.0}\"}$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>Add a dependency from a Git repository, where the library is named after the remote Git repository, i.e io.github.user|org/library-name for the GitHub repository <a href="https://github.com/user|org/library-name">https://github.com/user|org/library-name</a>.</p>
 <p>The <code>:git/sha</code> defines a specific commit to use for the dependency.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git"</span>
-<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Git dependency"</span>
-<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
-<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="s">       {:git/sha \"${2:git-sha-value}\"}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git"</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Git dependency"</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-16-4" id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
+<a href="#__codelineno-16-5" id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="s">       {:git/sha \"${2:git-sha-value}\"}$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>Additionally a Git tag can be specified, enabling the use of the short SHA value for <code>:git/sha</code> (short sha is the first 7 characters of the 40 character SHA-1 value).</p>
 <p>A Git client can obtain the short form of a SHA from a Git repository</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>rev-parse<span class="w"> </span>--short<span class="w"> </span>1e872b59013425b7c404a91d16119e8452b983f2
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>rev-parse<span class="w"> </span>--short<span class="w"> </span>1e872b59013425b7c404a91d16119e8452b983f2
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git-tag"</span>
-<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Git dependency"</span>
-<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
-<a href="#__codelineno-20-5" id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="s">      {:git/tag \"${2:git-tag-value}\"</span>
-<a href="#__codelineno-20-6" id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="s">       :git/sha \"${3:git-sha-value}\"}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git-tag"</span>
+<a href="#__codelineno-18-2" id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Git dependency"</span>
+<a href="#__codelineno-18-3" id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-18-4" id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
+<a href="#__codelineno-18-5" id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="s">      {:git/tag \"${2:git-tag-value}\"</span>
+<a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="s">       :git/sha \"${3:git-sha-value}\"}$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>If a library is not named after the domain of the Git repository, the URL of the Git repository must be specified using the <code>:git/url</code> key.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git-url"</span>
-<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Git URL dependency"</span>
-<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-21-4" id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
-<a href="#__codelineno-21-5" id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="s">      {:git/url \"https://github.com/$1\"</span>
-<a href="#__codelineno-21-6" id="__codelineno-21-6" name="__codelineno-21-6"></a><span class="s">       :git/sha \"${2:git-sha-value}\"}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-git-url"</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"Git URL dependency"</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name}</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="s">      {:git/url \"https://github.com/$1\"</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a><span class="s">       :git/sha \"${2:git-sha-value}\"}$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>Add a library dependency that is a local Clojure project.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-local"</span>
-<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Maven dependency"</span>
-<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">   </span><span class="ss">:snippet</span>
-<a href="#__codelineno-22-4" id="__codelineno-22-4" name="__codelineno-22-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name} {:local/root \"${2:/path/to/project/root}\"}$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deps-local"</span>
+<a href="#__codelineno-20-2" id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deps.edn Maven dependency"</span>
+<a href="#__codelineno-20-3" id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="w">   </span><span class="ss">:snippet</span>
+<a href="#__codelineno-20-4" id="__codelineno-20-4" name="__codelineno-20-4"></a><span class="w">   </span><span class="s">"${1:domain/library-name} {:local/root \"${2:/path/to/project/root}\"}$0"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="require-library-dependencies">Require Library Dependencies<a class="headerlink" href="#require-library-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Require a library when using REPL driven development in a rich comment block, adding a <code>(require ,,,)</code> form when evaluating the use of a library without forcing it to be loaded when loading the namespace.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-rdd"</span>
-<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"require for rich comment experiments"</span>
-<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(require '[${1:namespace} :as ${2:alias}]$3)$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-rdd"</span>
+<a href="#__codelineno-21-2" id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"require for rich comment experiments"</span>
+<a href="#__codelineno-21-3" id="__codelineno-21-3" name="__codelineno-21-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(require '[${1:namespace} :as ${2:alias}]$3)$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>A basic <code>:require</code> expression for an <code>ns</code> form.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require"</span>
-<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require"</span>
-<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace}])$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-22-1" id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require"</span>
+<a href="#__codelineno-22-2" id="__codelineno-22-2" name="__codelineno-22-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require"</span>
+<a href="#__codelineno-22-3" id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace}])$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>A <code>:require</code> expression for an <code>ns</code> form, including a <code>:as</code> directive to define an alias for the required namespace.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-as"</span>
-<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require with :as alias"</span>
-<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :as ${2:alias}]$3)$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-23-1" id="__codelineno-23-1" name="__codelineno-23-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-as"</span>
+<a href="#__codelineno-23-2" id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require with :as alias"</span>
+<a href="#__codelineno-23-3" id="__codelineno-23-3" name="__codelineno-23-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :as ${2:alias}]$3)$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>A <code>:require</code> expression for an <code>ns</code> form, including a <code>:refer</code> directive to include specific function definitions and vars by name.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-refer"</span>
-<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require with :refer"</span>
-<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :refer [$2]]$3)$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-24-1" id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"require-refer"</span>
+<a href="#__codelineno-24-2" id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"ns require with :refer"</span>
+<a href="#__codelineno-24-3" id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :refer [$2]]$3)$0"</span><span class="p">}</span>
 </code></pre></div>
 <p>It is idiomatic to use require with refer to pull in specific functions and vars from another namespace.  The <code>use</code> function is not recommended as it can easily pull more transitive dependencies into the current namespace, causing unexpected results</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"use"</span>
-<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"require refer preferred over use"</span>
-<a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :refer [$2]])$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-25-1" id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"use"</span>
+<a href="#__codelineno-25-2" id="__codelineno-25-2" name="__codelineno-25-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"require refer preferred over use"</span>
+<a href="#__codelineno-25-3" id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(:require [${1:namespace} :refer [$2]])$0"</span><span class="p">}</span>
 </code></pre></div>
 <h2 id="clojuretest-snippets">Clojure.test snippets<a class="headerlink" href="#clojuretest-snippets" title="Permanent link">λ︎</a></h2>
 <p>When writing a <code>deftest</code>, a new assertion written may be better in a new group.  The <code>testing</code> snippet will create a new <code>testing</code> form and pull in the following assertion.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deftest"</span>
-<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w"> </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deftest clojure.test"</span>
-<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w"> </span><span class="ss">:snippet</span>
-<a href="#__codelineno-28-4" id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w"> </span><span class="s">"(deftest ${1:name}-test</span>
-<a href="#__codelineno-28-5" id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="s">    (testing \"${2:Context of the test assertions}\"</span>
-<a href="#__codelineno-28-6" id="__codelineno-28-6" name="__codelineno-28-6"></a><span class="s">      (is (= ${3:assertion-values}))$4))</span>
-<a href="#__codelineno-28-7" id="__codelineno-28-7" name="__codelineno-28-7"></a><span class="s">  $0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-26-1" id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"deftest"</span>
+<a href="#__codelineno-26-2" id="__codelineno-26-2" name="__codelineno-26-2"></a><span class="w"> </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"deftest clojure.test"</span>
+<a href="#__codelineno-26-3" id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="w"> </span><span class="ss">:snippet</span>
+<a href="#__codelineno-26-4" id="__codelineno-26-4" name="__codelineno-26-4"></a><span class="w"> </span><span class="s">"(deftest ${1:name}-test</span>
+<a href="#__codelineno-26-5" id="__codelineno-26-5" name="__codelineno-26-5"></a><span class="s">    (testing \"${2:Context of the test assertions}\"</span>
+<a href="#__codelineno-26-6" id="__codelineno-26-6" name="__codelineno-26-6"></a><span class="s">      (is (= ${3:assertion-values}))$4))</span>
+<a href="#__codelineno-26-7" id="__codelineno-26-7" name="__codelineno-26-7"></a><span class="s">  $0"</span><span class="p">}</span>
 </code></pre></div>
 <p>Create a new assertion group using the <code>clojure.test/testing</code> form.</p>
 <p>Using <code>testing</code> before an assertion form pull that assertion into the group</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-29-1" id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"testing"</span>
-<a href="#__codelineno-29-2" id="__codelineno-29-2" name="__codelineno-29-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"testing clojure.test"</span>
-<a href="#__codelineno-29-3" id="__codelineno-29-3" name="__codelineno-29-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(testing \"${1:description-of-assertion-group}\"\n $0)"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-27-1" id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"testing"</span>
+<a href="#__codelineno-27-2" id="__codelineno-27-2" name="__codelineno-27-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"testing clojure.test"</span>
+<a href="#__codelineno-27-3" id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(testing \"${1:description-of-assertion-group}\"\n $0)"</span><span class="p">}</span>
 </code></pre></div>
 <p>Define an <code>is</code> assertion for a <code>deftest</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-30-1" id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"is"</span>
-<a href="#__codelineno-30-2" id="__codelineno-30-2" name="__codelineno-30-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"assertion for clojure.test"</span>
-<a href="#__codelineno-30-3" id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(is (= ${1:function call} ${2:expected result}))$0"</span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-28-1" id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"is"</span>
+<a href="#__codelineno-28-2" id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w">   </span><span class="ss">:detail</span><span class="w"> </span><span class="s">"assertion for clojure.test"</span>
+<a href="#__codelineno-28-3" id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w">   </span><span class="ss">:snippet</span><span class="w"> </span><span class="s">"(is (= ${1:function call} ${2:expected result}))$0"</span><span class="p">}</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
 </small>
 </div>
 </article>

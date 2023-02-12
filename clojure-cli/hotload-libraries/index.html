@@ -1940,7 +1940,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p><a href="https://github.com/practicalli/clojure-webapp-hotload-libraries">practicalli/clojure-webapp-hotload-libraries</a> is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.</p>
 <div class="admonition warning">
 <p class="admonition-title">Add-libs is an experimental feature</p>
-<p>The <code>add-libs</code> function is regarded as an experimental feature of <code>clojure.tools.deps.alpha</code> library and is currently part of the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a>. The add-libs implementation and function signature may change in future.</p>
+<p>The <code>add-libs</code> function is regarded as an experimental feature and is only available in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  The add-libs implementation and function signature may change before it is packaged into a release feature (although the function hasn't changes significantly in the last year).</p>
+<p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library, although this does not (yet) include <code>add-libs</code></p>
 </div>
 <h2 id="add-libs-dependency">add-libs dependency<a class="headerlink" href="#add-libs-dependency" title="Permanent link">λ︎</a></h2>
 <p>The clojure/tools.deps.alpha library defines the add-libs function on the add-libs3 branch and the latest SHA must be included as a dependency when starting the REPL.  add-libs is a development tool which should be added via an alias, either in the project <code>deps.edn</code> or <a href="/clojure-cli/install/clojure-cli.md#user-configuration-files">user config</a> for use with all projects.</p>
@@ -1968,15 +1969,15 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <h2 id="using-add-libs-to-hotload-libraries">Using add-libs to hotload libraries<a class="headerlink" href="#using-add-libs-to-hotload-libraries" title="Permanent link">λ︎</a></h2>
 <p>There are several approaches taken for hotloading libraries, including:</p>
 <ul>
-<li><a href="hotload-libraries-terminal-ui.md">Rich terminal UI REPL</a></li>
-<li><a href="hotload-in-project.md">Hotload in a Project</a></li>
+<li><a href="repl/libraries/#hotload-libraries">Rich terminal UI REPL</a></li>
+<li><a href="projects/hotload-in-project/">Hotload in a Project</a></li>
 </ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2023</span>
 </small>
 </div>
 </article>
