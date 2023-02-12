@@ -48,5 +48,5 @@ The clojure/tools.deps.alpha library defines the add-libs function on the add-li
 
 There are several approaches taken for hotloading libraries, including:
 
-* [Rich terminal UI REPL](hotload-libraries-terminal-ui.md)
-* [Hotload in a Project](hotload-in-project.md)
+* [Rich terminal UI REPL](/clojure/clojure-cli/repl/libraries/#hotload-libraries)
+* [Hotload in a Project](/clojure/clojure-cli/projects/hotload-in-project/)
