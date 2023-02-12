@@ -6,6 +6,8 @@ Install the Clojure CLI which provides the essential tools for Clojure developme
 
 The Clojure CLI automatically downloads all library dependencies, including the Clojure Standard library. As Clojure itself is packages as a library (`.jar` Java ARchive), any version of Clojure can be used with a project.
 
+[Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
+
 
 === "Linux"
 

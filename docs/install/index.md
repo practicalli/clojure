@@ -8,7 +8,7 @@ Clojure CLI provide the foundation for Clojure development, providing a simple a
 * Run a REPL process (Read-Eval-Print Loop) and provides a basic interactive terminal UI
 * Manage packaged dependencies from Maven (jars) and use Git repositories as dependencies
 
-[Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) extends Clojure CLI with tasks to create, develop, build and deploy Clojure applications and services.
+[Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) extends Clojure CLI with tasks to create, develop, build and deploy Clojure applications and services. Configuration for [Clojure LSP](/clojure/clojure-editors/clojure-lsp/) and cljstyle are also included.
 
 [Clojure aware editors](/clojure-editors/) provide the most effective way to write and maintaine Clojure projects, connecting to (or even starting) a Clojure REPL and evaluating code as its typed and seeing the results instantly in line with the code.
 
