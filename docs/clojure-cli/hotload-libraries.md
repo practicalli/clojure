@@ -12,7 +12,9 @@ Once hot-loaded, a library namespace can be required as if the dependency had be
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
 !!! WARNING "Add-libs is an experimental feature"
-    The `add-libs` function is regarded as an experimental feature of `clojure.tools.deps.alpha` library and is currently part of the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3). The add-libs implementation and function signature may change in future.
+    The `add-libs` function is regarded as an experimental feature and is only available in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  The add-libs implementation and function signature may change before it is packaged into a release feature (although the function hasn't changes significantly in the last year).
+
+    [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library, although this does not (yet) include `add-libs`
 
 
 ## add-libs dependency
