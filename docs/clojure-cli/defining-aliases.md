@@ -14,7 +14,7 @@ Aliases can be used to modify:
 
 Aliases can be defined in a project `deps.edn` or be available to all projects via the `~/.clojure/deps.edn` configuration file.
 
-!!! HINT "Practicall Clojure CLI Config provides a wide range of aliases"
+!!! HINT "Practicalli Clojure CLI Config provides a wide range of aliases"
     [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
 
 
@@ -26,31 +26,6 @@ Clojure CLI tool has several options that determine how aliases and other config
 * add or remove directories on the class path
 * define a function or main namespace to run, along with arguments
 
-## Clojure CLI main flag options
-
-| Flag | Purpose                                                                             |
-|------|-------------------------------------------------------------------------------------|
-| `-A` | add paths and dependencies when running a REPL (do not include :main-opts in alias) |
-| `-M` | Run `-main` function from a specified namespace with clojure.main                                               |
-| `-P` | Prepare / dry run (CI servers, Containers)                                          |
-| `-X` | Execute a qualified function, optional default arguments                            |
-| `-T` | Install / Run a tool by name (or use alias)                                         |
-| `-J` | Java Virtual Machine specific options (memory size, etc)                            |
-
-
-
-* deps = `:deps`, `:extra-deps`, `replace-deps`
-* path = `:path`, `:extra-paths`, `replace-paths`
-
--A to configure paths and dependencies when running the Clojure CLI build-in basic REPL
-
--M using clojure.main to run the -main function of a Clojure project or tool, using the -m flag to specify the namespace containing -main (clojure.main has other features too)
-
--X for running any fully qualified function from a Clojure project or tool
-
--P a dry run, downloading all dependencies (must use flag in first position)
-
--T running a tool separate from a Clojure project (class path)
 
 ## Using an alias
 
