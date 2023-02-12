@@ -101,6 +101,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/clojure/clojure-cli/defining-aliases/</loc>
+         <lastmod>2023-02-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/clojure/clojure-cli/design-journal/</loc>
          <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
@@ -1262,11 +1267,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-cli/</loc>
-         <lastmod>2023-02-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/reference/clojure-cli/defining-aliases/</loc>
          <lastmod>2023-02-12</lastmod>
          <changefreq>daily</changefreq>
     </url>
