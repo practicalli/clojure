@@ -33,7 +33,7 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
   (repeatedly 10000 #(rand-int 101)))
 ```
 
-![Clojure Inspector - inspect data elements with index](/images/clojure-inspector-inspect-collection-with-index.png)
+![Clojure Inspector - inspect data elements with index](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png)
 
 
 ## `inspect-tree`
@@ -46,7 +46,7 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
        :sith ["Palpatine" "Count Dukoo"]}}})
 ```
 
-![Clojure - Inspector - inspect tree with hash-map](/images/clojure-inspector-inspect-tree-hash-map.png)
+![Clojure - Inspector - inspect tree with hash-map](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png)
 
 
 ## `inspect-table`
@@ -72,4 +72,4 @@ This example generates mock data for a 20 day period for one or more locations. 
   (mock-data-set "England" "Scotland" "Wales" "Northern Ireland"))
 ```
 
-![Cider Inspector - inspect table - medical cases mock data](/images/clojure-inspector-inspect-table-uk-cases-by-country.png)
+![Cider Inspector - inspect table - medical cases mock data](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-table-uk-cases-by-country.png)
