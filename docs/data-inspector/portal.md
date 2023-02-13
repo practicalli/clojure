@@ -22,13 +22,15 @@ Portal is registered as a tap source and recieves values send within a  `(tap> ,
 
 Define aliases in the Clojure CLI user configuration to use Portal with any Clojure or ClojureScript project.
 
-
 === "Practicalli Clojure CLI Config"
     [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) contains the `:inspect/portal` alias that run a Reveal repl with data browser.
 
-* `inspect/portal-cli` - Clojure CLI (simplest approach)
-* `inspect/portal-web` - Web ClojureScript REPL
-* `inspect/portal-node` - node ClojureScript REPL
+    * `inspect/portal-cli` - Clojure CLI (simplest approach)
+    * `inspect/portal-web` - Web ClojureScript REPL
+    * `inspect/portal-node` - node ClojureScript REPL
+
+    !!! HINT "REPL Reloaded aliases also include Portal Clojure CLI"
+        [REPL Reloaded](/clojure/clojure-cli/repl-reloaded/) aliases `:repl/reloaded` starts a rich terminal UI REPL with Portal. `:dev/reloaded` also includes Portal, for use with commands that start a REPL.
 
 === "Alias Definition"
     Create portal aliases to include the portal libraries for the Clojure, ClojureScript Web browser and ClojureScript Node server libraries
@@ -53,17 +55,27 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
 Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools
 
 === "REPL Starup"
-    Start the REPL with an alias used to add portal, e.g. `inspect/portal`
+    Start a REPL with namespace reloading, hotload libraries and portal data inspector
+    ```shell
+    clojure -M:repl/reloaded
+    ```
+    Or start the REPL with only portal
     ```shell
     clojure -M:inspect/portal:repl/rebel
     ```
 
 === "Emacs Project configuration"
-    Add `cider-clojure-cli-aliases` to a `.dir-locals.el` in the root of the Clojure project with an alias used to add portal, e.g. `inspect/portal`
+    Add `cider-clojure-cli-aliases` to a `.dir-locals.el` in the root of the Clojure project with an alias used to add portal
     ```emacs title=".dir-locals.el"
     ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
-                      (cider-clojure-cli-aliases . ":env/dev:env/test"))))
+                      (cider-clojure-cli-aliases . ":dev/reloaded"))))
     ```
+    Or include an alias with only portal data inspector
+    ```emacs title=".dir-locals.el"
+    ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
+                      (cider-clojure-cli-aliases . ":inspect/portal-cli"))))
+    ```
+
 
 === "Emacs variable"
     Set `cider-clojure-cli-aliases` to the alias used to add portal, e.g. `inspect/portal`
@@ -77,7 +89,9 @@ Run a REPL in a terminal and include the Portal library, using the Clojure CLI t
 
 ## Starting Portal 
 
-`(require '[portal.api :as portal])` once the REPL starts.  For `inspector-portal-web` use `(require '[portal.web :as portal])` instead
+`(require '[portal.api :as portal])` once the REPL starts.
+
+> For `inspector-portal-web` use `(require '[portal.web :as portal])` instead
 
 `(portal/open)` to open the web based inspector window in a browser.
 
@@ -175,7 +189,9 @@ Add key bindings to call the helper functions, ideally from the Clojure major mo
 === "Spacemacs"
 
     ```emacs title="Spacemacs Configuration
-
+    (spacemacs/set-leader-keys "opp" 'portal.api/open)
+    (spacemacs/set-leader-keys "opc" 'portal.api/clear)
+    (spacemacs/set-leader-keys "opD" 'portal.api/close)
     ```
 
 === "Doom Emacs"
@@ -206,12 +222,12 @@ Add key bindings to call the helper functions, ideally from the Clojure major mo
                 :desc "inspector" "i" #'cider-inspect
                 :desc "last result" "l" #'cider-inspect-last-result
                 (:prefix ("p" . "portal")
-                 :desc "Clear" "c" #'portal.api/open
-                 :desc "Open" "o" #'portal.api/open
+                 :desc "Clear" "c" #'portal.api/clear
+                 :desc "Open" "D" #'portal.api/close
                  :desc "Open" "p" #'portal.api/open)
                 :desc "value" "v" #'cider-inspect-expr))
     
-                ;; truncated...
+                ; truncated...
                 )
         ```
         
