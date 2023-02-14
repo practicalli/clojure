@@ -2146,43 +2146,51 @@ Or include an alias with only portal data inspector
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Spacemacs</label><label for="__tabbed_3_2">Doom Emacs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>emacs title="Spacemacs Configuration
-(spacemacs/set-leader-keys "opp" 'portal.api/open)
-(spacemacs/set-leader-keys "opc" 'portal.api/clear)
-(spacemacs/set-leader-keys "opD" 'portal.api/close)</code></p>
+<p>Add key bindings specifically for Clojure mode, available via the <code>, d p</code> debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
+<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix-for-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dp"</span><span class="w"> </span><span class="s">"Portal"</span><span class="p">)</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Or add user key bindings to the Spacemacs menu (possilbly less useful but will not clash with exisiting Spacemacs key bindings)
+<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix</span><span class="w"> </span><span class="s">"op"</span><span class="w"> </span><span class="s">"Clojure Portal"</span><span class="p">)</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
+</code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Use the <code>map!</code> macro to add keys to the <code>clojure-mode-map</code>, using <code>:after</code> to ensure cider is loaded before binding the keys 
-<div class="highlight"><span class="filename">Doom Configuration</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nv">map!</span><span class="w"> </span><span class="nb">:map</span><span class="w"> </span><span class="nv">clojure-mode-map</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span>
+<div class="highlight"><span class="filename">Doom Configuration</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nv">map!</span><span class="w"> </span><span class="nb">:map</span><span class="w"> </span><span class="nv">clojure-mode-map</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span>
 </code></pre></div></p>
 <div class="admonition example">
 <p class="admonition-title">Practicalli Doom Emacs configuration</p>
 <p><a href="https://practical.li/doom-emacs/install/">Practicalli Doom Emacs config</a> includes Portal key bindings in the Clojure major mode menu, under the debug menu.
 * <code>, d p o</code> to open portal
 * <code>, d p c</code> to clear results from portal</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>(map! :after cider
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>      :map clojure-mode-map
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>      :localleader
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>      :desc "REPL session" "'" #'sesman-start
-<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a>
-<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a>      ;; Debug Clojure
-<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a>      (:prefix ("d" . "debug/inspect")
-<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a>       :desc "debug" "d" #'cider-debug-defun-at-point
-<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>       (:prefix ("i" . "inspect")
-<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a>        :desc "last expression" "e" #'cider-inspect-last-sexp
-<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a>        :desc "expression" "f" #'cider-inspect-defun-at-point
-<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a>        :desc "inspector" "i" #'cider-inspect
-<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a>        :desc "last result" "l" #'cider-inspect-last-result
-<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a>        (:prefix ("p" . "portal")
-<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a>         :desc "Clear" "c" #'portal.api/clear
-<a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a>         :desc "Open" "D" #'portal.api/close
-<a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a>         :desc "Open" "p" #'portal.api/open)
-<a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a>        :desc "value" "v" #'cider-inspect-expr))
-<a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a>
-<a href="#__codelineno-11-20" id="__codelineno-11-20" name="__codelineno-11-20"></a>        ; truncated...
-<a href="#__codelineno-11-21" id="__codelineno-11-21" name="__codelineno-11-21"></a>        )
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>(map! :after cider
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>      :map clojure-mode-map
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>      :localleader
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>      :desc "REPL session" "'" #'sesman-start
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>      ;; Debug Clojure
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>      (:prefix ("d" . "debug/inspect")
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a>       :desc "debug" "d" #'cider-debug-defun-at-point
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a>       (:prefix ("i" . "inspect")
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a>        :desc "last expression" "e" #'cider-inspect-last-sexp
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a>        :desc "expression" "f" #'cider-inspect-defun-at-point
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a>        :desc "inspector" "i" #'cider-inspect
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a>        :desc "last result" "l" #'cider-inspect-last-result
+<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a>        (:prefix ("p" . "portal")
+<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a>         :desc "Clear" "c" #'portal.api/clear
+<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a>         :desc "Open" "D" #'portal.api/close
+<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a>         :desc "Open" "p" #'portal.api/open)
+<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a>        :desc "value" "v" #'cider-inspect-expr))
+<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a>
+<a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a>        ; truncated...
+<a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a>        )
 </code></pre></div>
 <p><a class="md-button" href="https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el" target="_blank">Practicalli Doom Emacs Config - +clojure.el</a></p>
 </div>
@@ -2196,7 +2204,7 @@ Or include an alias with only portal data inspector
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2023</span>
 </small>
 </div>
 </article>
