@@ -187,8 +187,17 @@ Add helper functions to the Emacs configuration and add key bindings to call the
 Add key bindings to call the helper functions, ideally from the Clojure major mode menu.
 
 === "Spacemacs"
+    Add key bindings specifically for Clojure mode, available via the `, d p` debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
+    ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+    (spacemacs/declare-prefix-for-mode 'clojure-mode "dp" "Portal")
+    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpp" 'portal.api/open)
+    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpc" 'portal.api/clear)
+    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpD" 'portal.api/close)
+    ```
 
-    ```emacs title="Spacemacs Configuration
+    Or add user key bindings to the Spacemacs menu (possilbly less useful but will not clash with exisiting Spacemacs key bindings)
+    ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+    (spacemacs/declare-prefix "op" "Clojure Portal")
     (spacemacs/set-leader-keys "opp" 'portal.api/open)
     (spacemacs/set-leader-keys "opc" 'portal.api/clear)
     (spacemacs/set-leader-keys "opD" 'portal.api/close)
