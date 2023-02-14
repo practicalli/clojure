@@ -1919,7 +1919,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <h2 id="clojure-aware-editors">Clojure aware editors<a class="headerlink" href="#clojure-aware-editors" title="Permanent link">λ︎</a></h2>
 <p>Emacs (Spacemacs, Doom, Prelude), Neovim (Conjure) and VSCode (Calva) are the most common open source Editors for Clojure and ClojureScript development.</p>
 <p>SublimeText and IntelliJ are commercial editors (with limited free editions) which also provide Clojure support</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Emacs</label><label for="__tabbed_1_2">Neovim</label><label for="__tabbed_1_3">VSCode</label><label for="__tabbed_1_4">SublimeText</label><label for="__tabbed_1_5">Atom</label><label for="__tabbed_1_6">Intellij</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:6"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><input id="__tabbed_1_6" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Emacs</label><label for="__tabbed_1_2">Neovim</label><label for="__tabbed_1_3">VSCode</label><label for="__tabbed_1_4">SublimeText</label><label for="__tabbed_1_5">Pulsar (Atom)</label><label for="__tabbed_1_6">Intellij</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg"><img align="right" alt="GNU Emacs logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg" style="height:128px;width:128px"/></a></p>
@@ -2121,17 +2121,34 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 </div>
 <div class="tabbed-block">
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/clojure-sublimed-logo.png"><img align="right" alt="Clojure Sublimed Text logo" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/clojure-sublimed-logo.png" style="height:128px;width:128px"/></a></p>
-<p><a href="https://www.sublimetext.com/">SublimeText 4</a> is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check <a href="https://www.sublimehq.com/store/text">conditions of use</a>).</p>
+<p><a href="https://www.sublimetext.com/">SublimeText 4</a> is a lightweight and feature rich text editor, especially of interest to those that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check <a href="https://www.sublimehq.com/store/text">conditions of use</a>).</p>
 <p><a href="https://github.com/tonsky/Clojure-Sublimed">Clojure-Sublimed</a> provides Clojure support for SublimeText 4, with support for Clojure &amp; Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.</p>
+<blockquote>
+<p><a href="https://tutkain.flowthing.me/">Tutkain</a> is an Sublime 4 package that supports Clojure development (self-described as alpha software).</p>
+</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Build configuration to start a REPL</p>
+<p>Clojure Sublime connects to a REPL via an nREPL server.  Run a <a href="/clojure/clojure-cli/repl/">terminal REPL using Clojure CLI</a>, Leinginen (<code>lein repl</code>) or Shadow-cljs (<code>shadow-cljs watch app</code>)</p>
+<p>Alternatively, configure Clojure Sublimed to run a REPL process by creating a new build system via <strong>Tools</strong> » <strong>Build System</strong> » <strong>New Build System</strong>. The following example starts a Clojure CLI REPL with nREPL server and assumes <a href="/clojure/install/">Java and Clojure CLI are installed</a>.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="o">{</span><span class="s2">"env"</span>:<span class="w"> </span><span class="o">{</span><span class="s2">"JAVA_HOME"</span>:<span class="w"> </span><span class="s2">"/path/to/java"</span><span class="o">}</span>,
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w"> </span><span class="s2">"cmd"</span>:<span class="w"> </span><span class="o">[</span><span class="s2">"/usr/local/bin/clojure"</span>,<span class="w"> </span><span class="s2">"-Sdeps"</span>,<span class="w"> </span><span class="s2">"{:deps {nrepl/nrepl {:mvn/version \"1.0.0\"}}}"</span>,<span class="w"> </span><span class="s2">"-M"</span>,<span class="w"> </span><span class="s2">"-m"</span>,<span class="w"> </span><span class="s2">"nrepl.cmdline"</span><span class="o">]}</span>
+</code></pre></div>
+Run a REPL process via <strong>Tools</strong> » <strong>Build With…</strong> and connect to the REPL using the command <strong>Clojure Sublimed: Connect</strong></p>
+</div>
 <p><a class="md-button" href="https://www.sublimetext.com/download" target="_blank">SublimeText install</a>
 <a class="md-button" href="https://github.com/tonsky/Clojure-Sublimed#installation" target="_blank">Clojure-Sublimed install</a>
 <a class="md-button" href="https://www.sublimetext.com/docs/index.html" target="_blank">SublimeText Documentation</a></p>
 </div>
 <div class="tabbed-block">
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://gitlab.com/clj-editors/atom-chlorine/raw/HEAD/docs/chlorine-logo.png"><img align="right" alt="Chlorine for Pulsar Editor" loading="lazy" src="https://gitlab.com/clj-editors/atom-chlorine/raw/HEAD/docs/chlorine-logo.png" style="height:128px;width:128px"/></a></p>
+<p><a href="https://pulsar-edit.dev/">Pulsar Community-led Hyper-Hackable Editor</a> is a very new project to create a community version of the Atom editor from GitHub.</p>
+<p><a href="https://web.pulsar-edit.dev/packages/chlorine">Chlorine plugin</a> provides a Clojure and ClojureScript development environment using Socket-REPL integration </p>
+<p><a class="md-button" href="https://pulsar-edit.dev/" target="_blank">Pulsar Community-led Hyper-Hackable Editor</a>
+<a class="md-button" href="https://web.pulsar-edit.dev/packages/chlorine" target="_blank">Pulsar Chlorine plugin</a></p>
 <div class="admonition warning">
 <p class="admonition-title">Atom not actively developed</p>
-<p>Atom will be archived on December 15 2022 and no further updates from GitHub team, although it may continue in open source.</p>
-<p>Consider using VSCode with Clover or Calva plugins instead</p>
+<p>Atom will be archived on December 15 2022 with no further updates from GitHub team</p>
+<p>Consider using VSCode with Clover or Calva plugin or help support the evolution of the Pulsar project</p>
 </div>
 </div>
 <div class="tabbed-block">
@@ -2150,7 +2167,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 10, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2023</span>
 </small>
 </div>
 </article>
