@@ -293,9 +293,20 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 === "SublimeText"
     ![Clojure Sublimed Text logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/clojure-sublimed-logo.png){align=right loading=lazy style="height:128px;width:128px"}
 
-    [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
+    [SublimeText 4](https://www.sublimetext.com/) is a lightweight and feature rich text editor, especially of interest to those that like a simple and uncluttered UI.  SublimeText is a commercial project although has free trial version available (check [conditions of use](https://www.sublimehq.com/store/text)).
 
     [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
+
+
+    !!! HINT "Build configuration to start a REPL"
+        Clojure Sublime connects to a REPL via an nREPL server.  Run a [terminal REPL using Clojure CLI](/clojure/clojure-cli/repl/), Leinginen (`lein repl`) or Shadow-cljs (`shadow-cljs watch app`)
+
+        Alternatively, configure Clojure Sublimed to run a REPL process by creating a new build system via **Tools** » **Build System** » **New Build System**. The following example starts a Clojure CLI REPL with nREPL server and assumes [Java and Clojure CLI are installed](/clojure/install/).
+        ```shell
+        {"env": {"JAVA_HOME": "/path/to/java"},
+         "cmd": ["/usr/local/bin/clojure", "-Sdeps", "{:deps {nrepl/nrepl {:mvn/version \"1.0.0\"}}}", "-M", "-m", "nrepl.cmdline"]}
+        ```
+        Run a REPL process via **Tools** » **Build With…** and connect to the REPL using the command **Clojure Sublimed: Connect**
 
     [SublimeText install](https://www.sublimetext.com/download){target=_blank .md-button}
     [Clojure-Sublimed install](https://github.com/tonsky/Clojure-Sublimed#installation){target=_blank .md-button}
