@@ -314,11 +314,20 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     [SublimeText Documentation](https://www.sublimetext.com/docs/index.html){target=_blank .md-button}
 
 
-=== "Atom"
-    !!! WARNING "Atom not actively developed"
-        Atom will be archived on December 15 2022 and no further updates from GitHub team, although it may continue in open source.
+=== "Pulsar (Atom)"
+    ![Chlorine for Pulsar Editor](https://gitlab.com/clj-editors/atom-chlorine/raw/HEAD/docs/chlorine-logo.png){align=right loading=lazy style="height:128px;width:128px"}
+    
+    [Pulsar Community-led Hyper-Hackable Editor](https://pulsar-edit.dev/) is a very new project to create a community version of the Atom editor from GitHub.
+    
+    [Chlorine plugin](https://web.pulsar-edit.dev/packages/chlorine) provides a Clojure and ClojureScript development environment using Socket-REPL integration 
 
-        Consider using VSCode with Clover or Calva plugins instead
+    [Pulsar Community-led Hyper-Hackable Editor](https://pulsar-edit.dev/){target=_blank .md-button}
+    [Pulsar Chlorine plugin](https://web.pulsar-edit.dev/packages/chlorine){target=_blank .md-button}
+
+    !!! WARNING "Atom not actively developed"
+        Atom will be archived on December 15 2022 with no further updates from GitHub team
+
+        Consider using VSCode with Clover or Calva plugin or help support the evolution of the Pulsar project
 
 
 === "Intellij"
