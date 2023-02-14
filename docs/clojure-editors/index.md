@@ -297,6 +297,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     [Clojure-Sublimed](https://github.com/tonsky/Clojure-Sublimed) provides Clojure support for SublimeText 4, with support for Clojure & Edn syntax, code formatting and an nREPL client to connect to a Clojure REPL process.
 
+    > [Tutkain](https://tutkain.flowthing.me/) is an Sublime 4 package that supports Clojure development (self-described as alpha software).
 
     !!! HINT "Build configuration to start a REPL"
         Clojure Sublime connects to a REPL via an nREPL server.  Run a [terminal REPL using Clojure CLI](/clojure/clojure-cli/repl/), Leinginen (`lein repl`) or Shadow-cljs (`shadow-cljs watch app`)
