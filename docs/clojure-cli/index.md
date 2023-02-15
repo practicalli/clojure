@@ -1,6 +1,6 @@
 # Clojure CLI
 
-Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries an tools.  The Clojure CLI focuses on:
+Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries and tools. Clojure CLI focuses on:
 
 * running Clojure code (applications and tools)
 * starting a REPL process (Read-Eval-Print Loop) for interactive development with a [Clojure editor](/clojure/clojure-editors/) or [a command line REPL UI](repl/).
