@@ -144,6 +144,7 @@ nav:
       - Built-in Commands: clojure-cli/built-in-commands.md
       - Defining aliases: clojure-cli/defining-aliases.md
       - Execution Options: clojure-cli/execution-options.md
+      - Clojure Style: clojure-cli/clojure-style.md
       - HotLoad Libraries: clojure-cli/hotload-libraries.md
   - Terminal REPL:
       - clojure-cli/repl/index.md
