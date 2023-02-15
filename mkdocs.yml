@@ -138,7 +138,7 @@ nav:
       - install/index.md
       - Java Host: install/java.md
       - Clojure CLI: install/clojure-cli.md
-  - Clojure CLI:
+  - Clojure CLI Overview:
       - clojure-cli/index.md
       - Practicalli Config: clojure-cli/practicalli-config.md
       - Built-in Commands: clojure-cli/built-in-commands.md
