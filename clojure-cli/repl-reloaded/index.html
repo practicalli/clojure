@@ -2013,26 +2013,17 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <details class="hint">
 <summary>Remove function definitions before renaming</summary>
 <p>To minimise the need to reload namespaces, undefine function definitions (unbind their name to the function) before changing the names of the function.</p>
-<p>-
-- <code>(ns-unmap ns sym)</code>
--</p>
-</details>
-<p>remove-ns`</p>
-<div class="highlight"><pre><span></span><code>Remove a symbol from the namespace, using `*ns*` which is dynamically bound to the current namespace
-```clojure
-(ns-unmap *ns* 'function-or-def-name)
-```
-Remove a specific namespace (any functions defined in the namespace are no longer accessible - illegalStateException - Attempting to call unbound function)
-```clojure
-(remove-ns 'practicalli.service.utils)
-```
-Remove an alias for a specific namespace
-```clojure
-(ns-unalias 'practicalli.service.utils 'utils)
-```
-
-Clojure editors may provide commands to undefine a function definition, e.g. Emacs CIDER includes `cider-undef` to remove the current symbol via nREPL commands
+<p>Remove a symbol from the namespace, using <code>*ns*</code> which is dynamically bound to the current namespace
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">ns-unmap </span><span class="nv">*ns*</span><span class="w"> </span><span class="ss">'function-or-def-name</span><span class="p">)</span>
 </code></pre></div>
+Remove a specific namespace (any functions defined in the namespace are no longer accessible - illegalStateException - Attempting to call unbound function)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">remove-ns </span><span class="ss">'practicalli.service.utils</span><span class="p">)</span>
+</code></pre></div>
+Remove an alias for a specific namespace
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">ns-unalias</span><span class="w"> </span><span class="ss">'practicalli.service.utils</span><span class="w"> </span><span class="ss">'utils</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Clojure editors may provide commands to undefine a function definition, e.g. Emacs CIDER includes <code>cider-undef</code> to remove the current symbol via nREPL commands</p>
+</details>
 <p><a href="https://clojure.github.io/tools.namespace/#clojure.tools.namespace.repl">clojure.tools.namespace.repl</a> contains the <code>refresh</code> function that compares source code files with the definitions in the REPL, removing and re-evaluating those namespaces containing changes.</p>
 <p>refresh will manage loading of namespaces with respect to their dependencies, ensuring each namespace can be loaded without error.</p>
 <p>Require the clojure.tools.namespace.repl refresh function</p>
