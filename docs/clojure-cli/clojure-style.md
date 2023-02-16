@@ -180,11 +180,11 @@ zprint has advanced features over cljstyle and cljfmt, although may require some
 
     A more detailed zprint report checking all the Clojure files a project, including files in the route directory and all sub-directories (i.e. `**/*.cjl` pattern)
     ```shell
-    zprint --list-formatted-summary-check **/*.clj *.edn *.clj
+    zprint --list-formatted-summary-check **/*.clj **/*.edn
     ```
     Or using short form flags
     ```shell
-    zprint -lfsc **/*.clj *.edn *.clj
+    zprint -lfsc **/*.clj **/*.edn 
     ```
 
     Update formatting for all the files in a projects, showing details of the files processed and changed
