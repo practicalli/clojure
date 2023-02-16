@@ -15,11 +15,12 @@ This command runs a Clojure REPL process and nREPL server which allows Clojure e
 Other features include:
 
 * `dev` directory for a [custom REPL startup](/clojure/clojure-cli/repl-startup/)
-* `add-libs` - hotload libraries without restarting the REPL (alpha software)
-* [`tools.namespace`](https://github.com/clojure/tools.namespace) to reload changed namespaces
-* [portal](/clojure/data-inspector/portal/) to visualise & inspect data
+* `add-libs` hotload libraries without restarting the REPL (alpha software)
+* [`tools.namespace`](https://github.com/clojure/tools.namespace){target'_blank} to reload changed namespaces
+* [portal](/clojure/data-inspector/portal/){target'_blank} to visualise & inspect data
 * `test` directory, test libraries & kaocha test runner
 * benchmark code with criterium
+* [mulog](https://github.com/BrunoBonacci/mulog){target'_blank} log and trace events
 
 ??? EXAMPLE "Alias Definitions"
     Start a REPL process with an nREPL server to connect Clojure editors. Providing a Rebel rich terminal UI with tools to hotload libraries, reload namespaces and run Portal data inspector.  The alias also includes a path for custom REPL startup and a path to access unit test code, along with a test runner.
