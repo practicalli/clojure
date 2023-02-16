@@ -272,7 +272,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">Clojure CLI</a>
+<a href="../">Clojure CLI Overview</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -280,7 +280,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Clojure CLI
+          Clojure CLI Overview
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -304,13 +304,13 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-style/">
-        Clojure Style
+<a class="md-nav__link" href="../repl-reloaded/">
+        REPL Reloaded
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../hotload-libraries/">
-        HotLoad Libraries
+<a class="md-nav__link" href="../clojure-style/">
+        Clojure Style
       </a>
 </li>
 </ul>
@@ -2011,6 +2011,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Clojure CLI cannot set the REPL to a different namespace</p>
+<p>Clojure CLI has no specific mechanism to start the REPL in a namespace other than <code>user</code>.</p>
+<p>Technically the <code>-e</code> option could be used to set a different namespace by calling <code>in-ns</code> with a different namespace, although this approach may affect the running of other tools or add extra complexity to the commands.</p>
+<p>Require functions into the <code>user</code> nameapace rather than use potentially complex commands to set the namespace.</p>
 </div>
 <details class="hint">
 <summary>Example projects</summary>
@@ -2110,11 +2113,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">find-lib/print-deps</span><span class="w"> </span><span class="s">"library name"</span><span class="p">))</span>
 </code></pre></div>
 <h2 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
-<p><a href="/clojure/clojure-cli/hotload-libraries.md">Hotload</a> is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.</p>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>:lib/hotload</code> and <code>:lib/reloaded</code> aliases in <a href="/clojure/clojure-cli/hotload-libraries/">Practicalli Clojure CLI Config</a> will add the add-libs3 branch of <code>tools.deps.alpha</code> which provides the <code>add-libs</code> function.</p>
+<p><code>:lib/hotload</code> and <code>:lib/reloaded</code> aliases in <a href="/clojure/clojure-cli/repl-reloaded/">Practicalli Clojure CLI Config</a> will add the add-libs3 branch of <code>tools.deps.alpha</code> which provides the <code>add-libs</code> function.</p>
 </div>
 <div class="tabbed-block">
 <p>Edit the project <code>deps.edn</code> configuration and add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library.  Or add an alias to the user level configuration for use with any Clojure CLI project.</p>
@@ -2240,7 +2243,7 @@ Now define code in the <code>dev/dev.clj</code> file that controls the component
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
 </small>
 </div>
 </article>

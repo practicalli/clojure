@@ -12,12 +12,12 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/clojure-cli/hotload-libraries/" rel="canonical"/>
-<link href="../clojure-style/" rel="prev"/>
-<link href="../repl/" rel="next"/>
+<link href="https://practical.li/clojure/clojure-cli/repl-reloaded/" rel="canonical"/>
+<link href="../execution-options/" rel="prev"/>
+<link href="../clojure-style/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.12" name="generator"/>
-<title>HotLoad Libraries - Practicalli Clojure</title>
+<title>REPL Reloaded - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.0d440cfe.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.2505c338.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,17 +28,17 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="HotLoad Libraries - Practicalli Clojure" property="og:title"/>
+<meta content="REPL Reloaded - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/hotload-libraries.png" property="og:image"/>
+<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/repl-reloaded.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://practical.li/clojure/clojure-cli/hotload-libraries/" property="og:url"/>
+<meta content="https://practical.li/clojure/clojure-cli/repl-reloaded/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="HotLoad Libraries - Practicalli Clojure" name="twitter:title"/>
+<meta content="REPL Reloaded - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/hotload-libraries.png" name="twitter:image"/>
+<meta content="https://practical.li/clojure/assets/images/social/clojure-cli/repl-reloaded.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#hotload-libraries-into-a-running-repl">
+<a class="md-skip" href="#custom-repl-startup">
           Skip to content
         </a>
 </div>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              HotLoad Libraries
+              REPL Reloaded
             
           </span>
 </div>
@@ -272,7 +272,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
 <input checked="" class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../">Clojure CLI</a>
+<a href="../">Clojure CLI Overview</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -280,7 +280,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <nav aria-expanded="true" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
-          Clojure CLI
+          Clojure CLI Overview
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
@@ -303,19 +303,14 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         Execution Options
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-style/">
-        Clojure Style
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          HotLoad Libraries
+          REPL Reloaded
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        HotLoad Libraries
+        REPL Reloaded
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -324,22 +319,37 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hotload-libraries-into-a-running-repl">
-    Hotload Libraries into a running REPL
+<a class="md-nav__link" href="#custom-repl-startup">
+    Custom REPL startup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-libs-dependency">
-    add-libs dependency
+<a class="md-nav__link" href="#reload-namespaces">
+    Reload namespaces
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-add-libs-to-hotload-libraries">
-    Using add-libs to hotload libraries
+<a class="md-nav__link" href="#hotload-libraries">
+    Hotload Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-test-runner">
+    Unit test runner
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-tests">
+    Performance tests
   </a>
 </li>
 </ul>
 </nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../clojure-style/">
+        Clojure Style
+      </a>
 </li>
 </ul>
 </nav>
@@ -1920,18 +1930,28 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hotload-libraries-into-a-running-repl">
-    Hotload Libraries into a running REPL
+<a class="md-nav__link" href="#custom-repl-startup">
+    Custom REPL startup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-libs-dependency">
-    add-libs dependency
+<a class="md-nav__link" href="#reload-namespaces">
+    Reload namespaces
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-add-libs-to-hotload-libraries">
-    Using add-libs to hotload libraries
+<a class="md-nav__link" href="#hotload-libraries">
+    Hotload Libraries
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-test-runner">
+    Unit test runner
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#performance-tests">
+    Performance tests
   </a>
 </li>
 </ul>
@@ -1941,31 +1961,123 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>HotLoad Libraries</h1>
-<h2 id="hotload-libraries-into-a-running-repl">Hotload Libraries into a running REPL<a class="headerlink" href="#hotload-libraries-into-a-running-repl" title="Permanent link">λ︎</a></h2>
+<h1>REPL Reloaded</h1>
+<p>The REPL is central to Clojure development and Practicalli REPL Reloaded enhances the experience further</p>
+<ul>
+<li>avoid restarting the REPL</li>
+<li>visualise and inspect data from evaluated functions</li>
+<li>run unit and performance tests to support design choices</li>
+</ul>
+<p>Start a Clojure REPL with the <code>:repl/reloaded</code> alias (or include <code>:dev/reloaded</code> alias in an Editor jack-in command or other REPL startup command)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+</code></pre></div>
+<p>This command runs a Clojure REPL process and nREPL server which allows Clojure editors connect to the REPL process. A <a href="/clojure/clojure-cli/repl/">Rebel rich terminal UI REPL prompt</a> is provides for direct evaluation in the REPL (with autocomplete, documentation, signature hints and multi-line editing)</p>
+<p>Other features include:</p>
+<ul>
+<li><code>dev</code> directory for a <a href="/clojure/clojure-cli/repl-startup/">custom REPL startup</a></li>
+<li><code>add-libs</code> - hotload libraries without restarting the REPL (alpha software)</li>
+<li><a href="https://github.com/clojure/tools.namespace"><code>tools.namespace</code></a> to reload changed namespaces</li>
+<li><a href="/clojure/data-inspector/portal/">portal</a> to visualise &amp; inspect data</li>
+<li><code>test</code> directory, test libraries &amp; kaocha test runner</li>
+<li>benchmark code with criterium</li>
+</ul>
+<details class="example">
+<summary>Alias Definitions</summary>
+<p>Start a REPL process with an nREPL server to connect Clojure editors. Providing a Rebel rich terminal UI with tools to hotload libraries, reload namespaces and run Portal data inspector.  The alias also includes a path for custom REPL startup and a path to access unit test code, along with a test runner.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ss">:repl/reloaded</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">                </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.0.0"</span><span class="p">}</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">              </span><span class="nv">cider/cider-nrepl</span><span class="w">          </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.28.7"</span><span class="p">}</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">              </span><span class="nv">com.bhauman/rebel-readline</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.1.4"</span><span class="p">}</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">              </span><span class="nv">djblue/portal</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.34.2"</span><span class="p">}</span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">              </span><span class="nv">org.clojure/tools.namespace</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.3.0"</span><span class="p">}</span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">              </span><span class="nv">org.clojure/tools.deps.alpha</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">                                            </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"e4fb92eef724fa39e29b39cc2b1a850567d490dd"</span><span class="p">}</span>
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">              </span><span class="nv">org.slf4j/slf4j-nop</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.5"</span><span class="p">}</span>
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">              </span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.71.1119"</span><span class="p">}</span>
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">              </span><span class="nv">org.clojure/test.check</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.1"</span><span class="p">}</span>
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">              </span><span class="nv">ring/ring-mock</span><span class="w">         </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.4.0"</span><span class="p">}</span>
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">              </span><span class="nv">criterium/criterium</span><span class="w">    </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.4.6"</span><span class="p">}}</span>
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"nrepl.cmdline"</span>
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">              </span><span class="s">"--middleware"</span><span class="w"> </span><span class="s">"[cider.nrepl/cider-middleware]"</span>
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">              </span><span class="s">"--interactive"</span>
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="w">              </span><span class="s">"-f"</span><span class="w"> </span><span class="s">"rebel-readline.main/-main"</span><span class="p">]}</span>
+</code></pre></div></p>
+<p><code>org.slf4j/slf4j-nop</code> is only included to surpress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.</p>
+</details>
+<h2 id="custom-repl-startup">Custom REPL startup<a class="headerlink" href="#custom-repl-startup" title="Permanent link">λ︎</a></h2>
+<p>A Clojure REPL starts in the <code>user</code> namespace. When a <code>user.clj</code> file is on the classpath its code is loaded (evaluated) into the REPl during startup.</p>
+<p>Create a <code>dev/user.clj</code> file with libraries and tools to support development and add the <code>dev</code> directory to the classpath.</p>
+<p><a class="md-button" href="/clojure/clojure-cli/repl-startup/" target="_blank">Create a custom REPL Startup with dev/user.clj</a></p>
+<h2 id="reload-namespaces">Reload namespaces<a class="headerlink" href="#reload-namespaces" title="Permanent link">λ︎</a></h2>
+<p>As code and design evolves, expressions evaluated in the REPL may become stale especially when the names (symbols, vars) bound to function definitions are renamed or deleted from the source code.  Rather than restart the REPL process and loose all the state, one or more namespaces can be refreshed.</p>
+<details class="hint">
+<summary>Remove function definitions before renaming</summary>
+<p>To minimise the need to reload namespaces, undefine function definitions (unbind their name to the function) before changing the names of the function.</p>
+<p><code>ns-unalias</code> <code>ns-unmap</code> <code>remove-ns</code></p>
+<p>Remove an alias for a specific namespace
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">ns-unalias</span><span class="w"> </span><span class="ss">'practicalli.service.utils</span><span class="w"> </span><span class="ss">'utils</span><span class="p">)</span>
+</code></pre></div></p>
+<p>Clojure editors may provide commands to undefine a function definition, e.g. Emacs CIDER includes <code>cider-undef</code> to remove the current symbol</p>
+</details>
+<p><a href="https://clojure.github.io/tools.namespace/#clojure.tools.namespace.repl">clojure.tools.namespace.repl</a> contains the <code>refresh</code> function that compares source code files with the definitions in the REPL, removing and re-evaluating those namespaces containing changes.</p>
+<p>refresh will manage loading of namespaces with respect to their dependencies, ensuring each namespace can be loaded without error.</p>
+<p>Require the clojure.tools.namespace.repl refresh function</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label><label for="__tabbed_1_2">Project</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]])</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Use an ns form for the namespace (often added to a custom <code>user</code> namespace)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+</code></pre></div>
+Or in a rich comment expression
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+</code></pre></div></p>
+</div>
+</div>
+</input></input></div>
+<p>Refresh the namespaces that have saved changes</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span>
+</code></pre></div>
+<p>A list of refreshed namespaces are printed.  If there are errors in the Clojure code, then a namespace cannot be loaded and error messages are printed. Check the individual code expressions in the namespace to ensure they are correctly formed.</p>
+<p><a class="md-button" href="/clojure/clojure-cli/repl-startup/" target="_blank">Reload namespaces with dev/user.clj</a></p>
+<details class="hint">
+<summary>Handling Errors</summary>
+<p>If an exception is thrown while loading a namespace, refresh stops and prints the namespace that caused the exception. (clojure.repl/pst) prints the rest of the stack trace</p>
+<p><code>*e</code> is bound to the exeception so will print the exeception when evaluated</p>
+</details>
+<details class="info">
+<summary>tools.namespace refactor</summary>
+<p><code>refresh</code> and other functions were moved to the <code>clojure.tools.namespace.repl</code> namespace. The original <code>clojure.tools.namespace</code> functions are deprecated, although the new <code>clojure.tools.namespace.repl</code> namespace is not deprecated.</p>
+</details>
+<p><a class="md-button" href="https://clojure.github.io/tools.namespace/" target="_blank">Clojure tools.namespace API reference</a>
+<a class="md-button" href="https://clojure.org/reference/namespaces" target="_blank">Namespaces Reference - Clojure.org</a></p>
+<h2 id="hotload-libraries">Hotload Libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
 <p><code>add-libs</code> "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL and loosing any state just to use a new library with the project.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png"><img alt="Hotload libraries into a Clojure REPL" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png"/></a></p>
 <p><code>add-libs</code> is typically called from a rich comment block or <a href="/clojure-cli/projects/configure-repl-startup.md#create-a-devuserclj-file-and-envdev-alias">a separate <code>dev/user.clj</code> file</a> to avoid being loaded with application code.</p>
 <p>Once hot-loaded, a library namespace can be required as if the dependency had been added to the project configuration before the REPL started.</p>
 <p><a href="https://github.com/practicalli/clojure-webapp-hotload-libraries">practicalli/clojure-webapp-hotload-libraries</a> is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.</p>
-<div class="admonition warning">
-<p class="admonition-title">Add-libs is an experimental feature</p>
-<p>The <code>add-libs</code> function is regarded as an experimental feature and is only available in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  The add-libs implementation and function signature may change before it is packaged into a release feature (although the function hasn't changes significantly in the last year).</p>
-<p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library, although this does not (yet) include <code>add-libs</code></p>
-</div>
-<h2 id="add-libs-dependency">add-libs dependency<a class="headerlink" href="#add-libs-dependency" title="Permanent link">λ︎</a></h2>
-<p>The clojure/tools.deps.alpha library defines the add-libs function on the add-libs3 branch and the latest SHA must be included as a dependency when starting the REPL.  add-libs is a development tool which should be added via an alias, either in the project <code>deps.edn</code> or <a href="/clojure-cli/install/clojure-cli.md#user-configuration-files">user config</a> for use with all projects.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label><label for="__tabbed_1_2">Alias Definition</label></div>
+<details class="warning">
+<summary>Add-libs is an experimental feature</summary>
+<p><code>add-libs</code> is not yet an official feature and currently available only in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  add-libs should become official release in 2023, although not in within <code>org.clojure/tools.deps</code> library.</p>
+<p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library for all released functions from the alpha library</p>
+</details>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Alias Definition</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="https://github.com/practicalli/clojure-deps-edn/">Practicalli Clojure CLI Config</a> defines several aliases which include the library that provides the <code>add-libs</code> function to the REPL:</p>
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> defines several aliases which include the library that provides the <code>add-libs</code> function to the REPL:</p>
 <ul>
 <li><code>:repl/reloaded</code> starts a rich terminal UI, REPL process, nREPL server for Clojure editors to connect, portal data inspector, namespace reloadeing and test libraries and path</li>
 <li><code>:dev/reloaded</code> - all the tools <code>:repl/reloaded</code> provides without the repl (compose with other aliases)</li>
 <li><code>:lib/hotload</code> - add the library that includes add-libs function to the path (compose with other aliases)</li>
 </ul>
 <p>Start a rich terminal UI repl:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
 <p>Or include the <code>:dev/reloaded</code> or <code>:lib/hotload</code> aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (<code>-A</code>,<code>-M</code>,<code>-X</code>,<code>-T</code>).</p>
 </div>
@@ -1973,10 +2085,10 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p>Create an alias definition in the user <code>deps.edn</code> configuration or in the current project <code>deps.edn</code> configuration.</p>
 <p>Add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library using the latest SHA commit from the<code>add-libs3</code> branch of <code>clojure.tools.deps.alpha</code> library as an extra dependency.</p>
 <p>The <code>add-libs</code> code is on a separate <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a>, so requires the SHA from the head of add-libs3 branch</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"e4fb92eef724fa39e29b39cc2b1a850567d490dd"</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"e4fb92eef724fa39e29b39cc2b1a850567d490dd"</span><span class="p">}}}</span>
 </code></pre></div>
 <blockquote>
 <p>Alias example from <a href="https://github.com/practicalli/clojure-deps-edn/">Practicalli Clojure CLI Config</a></p>
@@ -1984,18 +2096,68 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </div>
 </div>
 </input></input></div>
-<h2 id="using-add-libs-to-hotload-libraries">Using add-libs to hotload libraries<a class="headerlink" href="#using-add-libs-to-hotload-libraries" title="Permanent link">λ︎</a></h2>
 <p>There are several approaches to hotload libraries, including via a terminal REPL UI or in a project with a Clojure editor:</p>
 <ul>
 <li><a href="/clojure/clojure-cli/repl/libraries/#hotload-libraries">Rich terminal UI REPL</a></li>
 <li><a href="/clojure/clojure-cli/projects/hotload-in-project/">Hotload in a Project</a></li>
 </ul>
+<h2 id="unit-test-runner">Unit test runner<a class="headerlink" href="#unit-test-runner" title="Permanent link">λ︎</a></h2>
+<p>Unit tests are written with <code>clojure.test</code> and reside in a parallel <code>test</code> directory, creating matching <code>_test.clj</code> files for each relevant clojure file under <code>src</code>.</p>
+<p>Test runners are highly configurable and can run a very specific set of tests, although Clojure is usually fast enough to run all the tests each time.</p>
+<p>Run the tests in a project with the kaocha test runner by issuing the following command in the root of the project.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-X:test/run
+</code></pre></div>
+<p>Or continually watch for changes and run kaocha test runner each time a file is saved (typically in a separate terminal)</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure<span class="w"> </span>-X:test/watch
+</code></pre></div>
+<p>Test run will stop on the first failed test unless <code>:fail-fast? false</code> is passed as an argument to either command.</p>
+<details class="hint">
+<summary>Running Unit Tests in an Editor</summary>
+<p>Emacs and Neovim can run the kaocha test runner if one of the <code>:repl/reloaded</code>, <code>:dev/reloaded</code> or <code>:lib/kaocha</code> aliases are used to start the Clojure REPL.</p>
+<p>Emacs, Neovim and VS Code Calva also have their own editor.</p>
+<p>Test and source code must be evaluated in the REPL for the editor test runners to discover this code.  Editor test runners to not read code from the Clojure files in <code>src</code> or <code>test</code> directories.</p>
+</details>
+<p><a class="md-button" href="/clojure/testing/unit-testing/" target="_blank">Writing Unit Tests for Clojure</a>
+<a class="md-button" href="/clojure/testing/test-runners/" target="_blank">Using Test Runners with Projects</a></p>
+<h2 id="performance-tests">Performance tests<a class="headerlink" href="#performance-tests" title="Permanent link">λ︎</a></h2>
+<p><code>(time ,,,)</code> wrapped around an expression will print the duration that expression took to run.  This provides a very rough indicator of the performance of code, although as it only runs once then results may vary and are easily affected by the environment (Java Virtual Machine, Operating System, other concurrent processes).</p>
+<p><a href="http://hugoduncan.org/criterium/" target="_blank">Criterium</a> provides more realistic performance results which are less affected by the environment, providing a better indication of performance to inform design choices.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">REPL</label><label for="__tabbed_3_2">Project</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Require the criterium library
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">])</span>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Require the criterium library via the ns expression</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+</code></pre></div>
+Or require the criterium library in a rich comment expression
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+</code></pre></div></p>
+</div>
+</div>
+</input></input></div>
+<p>Wrap the <code>quick-bench</code> function around the expression to run performance testing upon</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nf">benchmark/quick-bench</span><span class="w"> </span>,,,<span class="p">)</span>
+</code></pre></div>
+<p>The expression being tested will be called multiple times and the duration and average times will be printed.</p>
+<p>Criterium automatically adjusts the benchmark run time according to the execution time of the measured expression. If the expression is fast, Criterium will run it plenty of times, but if a single iteration is quite slow, it will be executed fewer times</p>
+<div class="admonition hint">
+<p class="admonition-title">bench may be more accurate but far slower to test with</p>
+<p>The bench macro is claimed to be more accurate than quick-bench, but in practice, it runs for much longer and doesn't yield significantly different results most of the time</p>
+</div>
+<p><a class="md-button" href="http://hugoduncan.org/criterium/" target="_blank">Criterium API Documentation</a>
+<a class="md-button" href="http://clojure-goes-fast.com/blog/benchmarking-tool-criterium/" target="_blank">Benchmark with Criterium article</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
 </small>
 </div>
 </article>
