@@ -6,9 +6,9 @@ Code is easier to read and work with when it is consistent format that follows c
 
 A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other (although zprint defaults will require more customisation):
 
-* [cljfmt](https://github.com/weavejester/cljfmt) - library, also included in Clojure LSP
-* [cljstyle](https://github.com/greglook/cljstyle) - binary and library (re-write of cljfmt)
-* [zprint](https://github.com/kkinnear/zprint) - binary & library
+* [cljfmt](https://github.com/weavejester/cljfmt){target=_blank} - library, also included in Clojure LSP
+* [cljstyle](https://github.com/greglook/cljstyle){target=_blank} - binary and library (re-write of cljfmt)
+* [zprint](https://github.com/kkinnear/zprint){target=_blank} - binary & library
 
 
 ??? INFO "Tooling that uses the Clojure Style Guide"
@@ -33,9 +33,11 @@ Cljstyle will examine all files in the current directory and any sub-directories
 
 `.cljstyle` configuration file in the root of the project can override the default customisation, including indentation rules.
 
+!!! HINT "cljstyle config used by Practicalli"
+    [Clojure App template repository](https://github.com/practicalli/clojure-app-template/){target=_blank} contains the `.cljstyle` configuration file used for all Practicalli projects
 
 === "Binary"
-    Install the [latest binary release from the cljstyle GitHub repository](https://github.com/greglook/cljstyle/releases) onto the operating system path, e.g. `$HOME/.local/bin`
+    Install the [latest binary release from the cljstyle GitHub repository](https://github.com/greglook/cljstyle/releases){target=_blank} onto the operating system path, e.g. `$HOME/.local/bin`
 
     ```shell
     cljstyle check
@@ -78,7 +80,7 @@ Cljstyle will examine all files in the current directory and any sub-directories
 === "Makefile"
     Use a Makefile to run common commands such as checking style, running tests, building uberjars, etc.
 
-    [Practicalli Clojure App template repository](https://github.com/practicalli/clojure-app-template) contains an [example Makefile](https://github.com/practicalli/clojure-app-template/blob/main/Makefile) that contains common tasks for Clojure development
+    [Practicalli Clojure App template repository](https://github.com/practicalli/clojure-app-template){target=_blank} contains an [example Makefile](https://github.com/practicalli/clojure-app-template/blob/main/Makefile){target=_blank} that contains common tasks for Clojure development
 
     This example calls the cljstyle binary, but could be changed to call the `clojure -M:format/cljstyle check` and `clojure -M:format/cljstyle fix` aliases instead.
 
@@ -104,7 +106,7 @@ Practicalli updated the default cljstyle configuration with the following change
 
 Configure list indent to one character
 
-```clojure title=""
+```clojure title=".cljstyle"
   :indentation
   {:enabled? true,
    :list-indent 1,
@@ -114,7 +116,7 @@ Configure list indent to one character
 
 Do not warn about duplicate var names (def, defn names) - excluded to stop warning about REPL experiments and design journal rich comments that contain alternative designs.
 
-```clojure
+```clojure title=".cljstyle"
   :vars
   {:enabled? false}
 ```
@@ -150,15 +152,18 @@ zprint is a highly configurable format tool for both Clojure code and Clojure/ED
 
 zprint has advanced features over cljstyle and cljfmt, although may require some additional configuration work especially to format consistently with these tools.
 
-[Various styles](https://github.com/kkinnear/zprint/blob/main/doc/reference.md#style-and-style-map)
+[zprint available styles](https://github.com/kkinnear/zprint/blob/main/doc/reference.md#style-and-style-map){target=_blank .md-button}
 
-!!! WARNING "No built-in diff option"
-    zprint requires an external diff tool to see the formating changes it makes.  Changes can be written to another file and a file diff comparison made.  Or files can be staged / committed in a local Git repository and a Git client used to see the diff.
+
+??? WARNING "No built-in diff option"
+    zprint requires an external diff tool to see the format changes made, as zprint only reports on the files changed and not the content of those files that has changed. 
+    
+    zprint can write changes to a new file and a file comparison made.  Or files can be staged / committed in a local Git repository before running zprint and a Git client used to see the diff.
 
     Once the desirable styles and configuration are established there is less need for an external diff tool, although its always useful to have a quick way to check what format tools are doing.
 
 === "Binary"
-    Download zprint for Linux or MacOSX using the [latest binary released on the GitHub repository](https://github.com/kkinnear/zprint/releases/latest)
+    Download zprint for Linux or MacOSX using the [latest binary released on the GitHub repository](https://github.com/kkinnear/zprint/releases/latest){target=_blank}
 
     Move the binary to the executable path for the operating system, updating the name to `zprint` (or use a symbolic link)
 
