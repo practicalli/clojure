@@ -220,9 +220,7 @@ Test run will stop on the first failed test unless `:fail-fast? false` is passed
 ??? HINT "Running Unit Tests in an Editor"
     Emacs and Neovim can run the kaocha test runner if one of the `:repl/reloaded`, `:dev/reloaded` or `:lib/kaocha` aliases are used to start the Clojure REPL.
 
-    Emacs, Neovim and VS Code Calva also have their own editor.
-
-    Test and source code must be evaluated in the REPL for the editor test runners to discover this code.  Editor test runners to not read code from the Clojure files in `src` or `test` directories.
+    Emacs, Neovim and VS Code Calva also have their own built-in test runners. Test and source code must be evaluated in the REPL for the editor test runners to discover this code.  Editor test runners to not read code from the Clojure files in `src` or `test` directories.
 
 
 [Writing Unit Tests for Clojure](/clojure/testing/unit-testing/){target=_blank .md-button}
