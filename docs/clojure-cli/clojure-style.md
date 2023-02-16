@@ -51,12 +51,13 @@ Cljstyle will examine all files in the current directory and any sub-directories
 === "Practicalli Clojure CLI Config"
     cljstyle can be used as a library without installing the cljstyle binary.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/cljstyle` alias which should be passed wither the `check` or `format` option
 
+    Check all the Clojure files (.clj .cljc .edn .cljs) in the current project
     ```shell
-    clojure -M:format/cljstyle check
+    clojure -M:format/cljstyle
     ```
 
     ```shell
-    clojure -M:format/cljstyle fix
+    clojure -M:format/cljstyle!
     ```
 
     !!! EXAMPLE "Clojure Alias for cljstyle"
@@ -65,7 +66,13 @@ Cljstyle will examine all files in the current directory and any sub-directories
     {:extra-deps
      {mvxcvi/cljstyle {:git/url "https://github.com/greglook/cljstyle.git"
                        :git/sha "14c18e5b593c39bc59f10df1b894c31a0020dc49"}}
-     :main-opts ["-m" "cljstyle.main"]}
+     :main-opts ["-m" "cljstyle.main" "check"]}
+     
+    :format/cljstyle!
+    {:extra-deps
+     {mvxcvi/cljstyle {:git/url "https://github.com/greglook/cljstyle.git"
+                       :git/sha "14c18e5b593c39bc59f10df1b894c31a0020dc49"}}
+     :main-opts ["-m" "cljstyle.main" "fix"]}
     ```
 
 === "Makefile"
