@@ -60,7 +60,7 @@ The design journal can be used to create meaningful documentation for the projec
 
 * `rich-comment` a basic comment form
 * `rich-comment-rdd` comment form that informs clj-kondo to ignore duplicate function definitions, avoids warnings when testing multiple implementations of the same function
-* `rich-comment-hotload` - comment form with [Clojure CLI library hotloading](/clojure/clojure-cli/hotload-libraries.md)
+* `rich-comment-hotload` - comment form with [Clojure CLI library hotloading](/clojure/clojure-cli/repl-reloaded/)
 
 
 ## Migrating design to tests

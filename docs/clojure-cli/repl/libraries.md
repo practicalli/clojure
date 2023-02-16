@@ -87,9 +87,9 @@ If errors occur when loading or reloading the namespace with require, the `:verb
 ??? INFO "Hotload Libraries in the REPL"
     `add-libs` function from the `clojure.tools.deps.alpha` library is an experimental approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
 
-    [hotload libraries secion](/clojure/clojure-cli/hotload-libraries/) for more details and how to use with Clojure editors.
+    [hotload libraries secion](/clojure/clojure-cli/repl-reloaded/) for more details and how to use with Clojure editors.
 
-Start a REPL session using Clojure CLI with the [`:lib/hotload alias`](/clojure/clojure-cli/hotload-libraries.md), including rebel readline for an enhance REPL terminal UI.
+Start a REPL session using Clojure CLI with the [`:lib/hotload alias`](/clojure/clojure-cli/repl-reloaded/), including rebel readline for an enhance REPL terminal UI.
 
 ```bash
 clojure -M:lib/hotload:repl/rebel

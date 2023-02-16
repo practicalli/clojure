@@ -2,7 +2,7 @@
 
 ![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png)
 
-Run a Clojure REPL configured with the [:lib/hotload alias to include the library dependencies](hotload-libraries.md).
+Run a Clojure REPL configured with the [:lib/hotload alias to include the library dependencies](repl-reloaded/).
 
 Use a rich comment block or [a `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md) to require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hot-load libraries.
 

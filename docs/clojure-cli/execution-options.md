@@ -90,7 +90,7 @@ Multiple aliases can be specified to include additional paths and libraries. Ali
 
 `:env/dev` adds "dev" as an extra path, with the `dev/user.clj` file automatically loading its code into the `user` namespace when the REPL starts
 
-`:lib/hotload` alias adds the `org.clojure/tools.deps.alpha` library to [provide hotloading of dependencies into the running REPL](https://practical.li/clojure/alternative-tools/clojure-tools/hotload-libraries.html)
+`:lib/hotload` alias adds the `org.clojure/tools.deps.alpha` library to [provide hotloading of dependencies into the running REPL](/clojure/clojure-tools/repl-reloaded/)
 
 Start a REPL process with this alias
 
@@ -283,7 +283,7 @@ The alias definition is `:env/dev {:extra-paths ["dev"]}`
 
 Aliases can be chained together and their configuration will be merged
 
-`:lib/hotload` adds a dependency to [provide hotloading of other dependencies](hotload-libraries.html)
+`:lib/hotload` adds a dependency to [provide hotloading of other dependencies](repl-reloaded/)
 
 ```clojure
 :lib/hotload

@@ -152,11 +152,11 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
 
 ## Hotload libraries
 
-[Hotload](/clojure/clojure-cli/hotload-libraries.md) is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.
+[Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.
 
 
 === "Practicalli Clojure CLI Config"
-    `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/hotload-libraries/) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
+    `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
 
 === "Manual"
     Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
