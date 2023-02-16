@@ -1980,11 +1980,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <h1 id="clojure-style">Clojure Style<a class="headerlink" href="#clojure-style" title="Permanent link">λ︎</a></h1>
 <p>Code is easier to read and work with when it is consistent format that follows common rules.</p>
 <p><a href="https://github.com/bbatsov/clojure-style-guide">Clojure community style guide</a> provides a common style for Clojure code.  While most style recommendations are widely used, others are more contentious.  Ultimately the development team for the project should define a workable set of style rules that makes them productions, ideally using much of those rules from the style guide.</p>
-<p>A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other:</p>
+<p>A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other (although zprint defaults will require more customisation):</p>
 <ul>
 <li><a href="https://github.com/weavejester/cljfmt">cljfmt</a> - library, also included in Clojure LSP</li>
 <li><a href="https://github.com/greglook/cljstyle">cljstyle</a> - binary and library (re-write of cljfmt)</li>
-<li><a href="https://github.com/kkinnear/zprint">zprint</a> - binary and library</li>
+<li><a href="https://github.com/kkinnear/zprint">zprint</a> - binary &amp; library</li>
 </ul>
 <details class="info">
 <summary>Tooling that uses the Clojure Style Guide</summary>
@@ -2030,16 +2030,14 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p><a href="https://github.com/practicalli/clojure-app-template">Practicalli Clojure App template repository</a> contains an <a href="https://github.com/practicalli/clojure-app-template/blob/main/Makefile">example Makefile</a> that contains common tasks for Clojure development</p>
 <p>This example calls the cljstyle binary, but could be changed to call the <code>clojure -M:format/cljstyle check</code> and <code>clojure -M:format/cljstyle fix</code> aliases instead.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c"># ------- Code Quality --------------- #</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="nf">format-check</span><span class="o">:</span><span class="w"> </span><span class="c">## Run cljstyle to check the formatting of Clojure code</span>
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>cljstyle<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">    </span>cljstyle<span class="w"> </span>check
-<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a>
-<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="nf">format-fix</span><span class="o">:</span><span class="w">  </span><span class="c">## Run cljstyle and fix the formatting of Clojure code</span>
-<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>cljstyle<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
-<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span>cljstyle<span class="w"> </span>fix
-<a href="#__codelineno-5-10" id="__codelineno-5-10" name="__codelineno-5-10"></a>
-<a href="#__codelineno-5-11" id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c"># ------------------------------------ #</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nf">format-check</span><span class="o">:</span><span class="w"> </span><span class="c">## Run cljstyle to check the formatting of Clojure code</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>cljstyle<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span>cljstyle<span class="w"> </span>check
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="nf">format-fix</span><span class="o">:</span><span class="w">  </span><span class="c">## Run cljstyle and fix the formatting of Clojure code</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>cljstyle<span class="w"> </span>Runner<span class="w"> </span>---------<span class="k">)</span>
+<a href="#__codelineno-5-8" id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span>cljstyle<span class="w"> </span>fix
+<a href="#__codelineno-5-9" id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c"># ------------------------------------ #</span>
 </code></pre></div>
 </div>
 </div>
@@ -2084,7 +2082,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p>zprint requires an external diff tool to see the formating changes it makes.  Changes can be written to another file and a file diff comparison made.  Or files can be staged / committed in a local Git repository and a Git client used to see the diff.</p>
 <p>Once the desirable styles and configuration are established there is less need for an external diff tool, although its always useful to have a quick way to check what format tools are doing.</p>
 </div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Binary</label><label for="__tabbed_2_2">Practicalli Clojure CLI Config</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Binary</label><label for="__tabbed_2_2">Practicalli Clojure CLI Config</label><label for="__tabbed_2_3">Node.js</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Download zprint for Linux or MacOSX using the <a href="https://github.com/kkinnear/zprint/releases/latest">latest binary released on the GitHub repository</a></p>
@@ -2111,34 +2109,39 @@ Or using short form flags
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
-<p>zprint can be used as a library without installing the binary.  <a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> defines the <code>:format/zprint</code> alias which should be passed wither the <code>check</code> or <code>format</code> option</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>clojure<span class="w"> </span>-M:data/zprint<span class="w"> </span>.
+<p>zprint can be used as a library without installing the binary.  <a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> defines the <code>:format/zprint</code> alias which checks the format of a file and reports which files required</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>clojure<span class="w"> </span>-M:format/zprint<span class="w"> </span>deps.edn
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>clojure<span class="w"> </span>-M:data/zprint<span class="w"> </span>filename
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-18-1" id="__codelineno-18-1" name="__codelineno-18-1"></a>clojure<span class="w"> </span>-M:format/zprint<span class="w"> </span>filename
 </code></pre></div>
 <details class="example">
 <summary>Clojure Alias for zprint</summary>
 </details>
-<p>Add th <code>:format/zprint</code> alias to the user or project deps.edn configuration
-```clojure
-:format/zprint
-{:extra-deps {zprint/zprint {:mvn/version "1.2.4"}}
- :main-opts  ["-m" "zprint.main"]}</p>
+<p>Add <code>:format/zprint</code> alias to check format and <code>:format/zprint!</code> to write format changes to a given file or filename pattern
+<div class="highlight"><span class="filename">User or project deps.edn file</span><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="ss">:format/zprint</span>
+<a href="#__codelineno-19-2" id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">zprint/zprint</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.2.4"</span><span class="p">}}</span>
+<a href="#__codelineno-19-3" id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"zprint.main"</span>
+<a href="#__codelineno-19-4" id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="w">              </span><span class="s">"{:style :indent-only}"</span>
+<a href="#__codelineno-19-5" id="__codelineno-19-5" name="__codelineno-19-5"></a><span class="w">              </span><span class="s">"--list-formatted-summary-check"</span><span class="p">]}</span>
+<a href="#__codelineno-19-6" id="__codelineno-19-6" name="__codelineno-19-6"></a>
+<a href="#__codelineno-19-7" id="__codelineno-19-7" name="__codelineno-19-7"></a><span class="ss">:format/zprint!</span>
+<a href="#__codelineno-19-8" id="__codelineno-19-8" name="__codelineno-19-8"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">zprint/zprint</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.2.4"</span><span class="p">}}</span>
+<a href="#__codelineno-19-9" id="__codelineno-19-9" name="__codelineno-19-9"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"zprint.main"</span>
+<a href="#__codelineno-19-10" id="__codelineno-19-10" name="__codelineno-19-10"></a><span class="w">              </span><span class="s">"{:style :indent-only}"</span>
+<a href="#__codelineno-19-11" id="__codelineno-19-11" name="__codelineno-19-11"></a><span class="w">              </span><span class="s">"--list-formatted-summary-write"</span><span class="p">]}</span>
+</code></pre></div>
+Use the alise</p>
 </div>
-</div>
-</input></input></div>
-<p>```</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Node.js</label></div>
-<div class="tabbed-content">
 <div class="tabbed-block">
-<p>zprint is available as an NPM package</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a>sudo<span class="w"> </span>--install<span class="w"> </span>--global<span class="w"> </span>zprint-clj
+<p>zprint is available as an NPM package
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>sudo<span class="w"> </span>--install<span class="w"> </span>--global<span class="w"> </span>zprint-clj
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-20-1" id="__codelineno-20-1" name="__codelineno-20-1"></a>zprint-clj<span class="w"> </span>**/*.<span class="o">{</span>clj,cljs,cljc,edn<span class="o">}</span>
-</code></pre></div>
+Run zprint-clj over all Clojure files
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-21-1" id="__codelineno-21-1" name="__codelineno-21-1"></a>zprint-clj<span class="w"> </span>**/*.<span class="o">{</span>clj,cljs,cljc,edn<span class="o">}</span>
+</code></pre></div></p>
 </div>
 </div>
-</input></div>
+</input></input></input></div>
 <h3 id="configure-zprint">Configure zprint<a class="headerlink" href="#configure-zprint" title="Permanent link">λ︎</a></h3>
 <p>It is assumed that the majority of format needs are met by one of the following style rule sets</p>
 <ul>
