@@ -187,31 +187,39 @@ zprint has advanced features over cljstyle and cljfmt, although may require some
 
 
 === "Practicalli Clojure CLI Config"
-    zprint can be used as a library without installing the binary.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/zprint` alias which should be passed wither the `check` or `format` option
+    zprint can be used as a library without installing the binary.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/zprint` alias which checks the format of a file and reports which files required
 
     ```shell
-    clojure -M:data/zprint .
+    clojure -M:format/zprint deps.edn
     ```
 
     ```shell
-    clojure -M:data/zprint filename
+    clojure -M:format/zprint filename
     ```
 
     ??? EXAMPLE "Clojure Alias for zprint"
-    Add th `:format/zprint` alias to the user or project deps.edn configuration
-    ```clojure
+    Add `:format/zprint` alias to check format and `:format/zprint!` to write format changes to a given file or filename pattern
+    ```clojure title="User or project deps.edn file"
     :format/zprint
     {:extra-deps {zprint/zprint {:mvn/version "1.2.4"}}
-     :main-opts  ["-m" "zprint.main"]}
-   ```
+     :main-opts  ["-m" "zprint.main"
+                  "{:style :indent-only}"
+                  "--list-formatted-summary-check"]}
+
+    :format/zprint!
+    {:extra-deps {zprint/zprint {:mvn/version "1.2.4"}}
+     :main-opts  ["-m" "zprint.main"
+                  "{:style :indent-only}"
+                  "--list-formatted-summary-write"]}
+    ```
+    Use the alise
 
 === "Node.js"
     zprint is available as an NPM package
-
     ```shell
     sudo --install --global zprint-clj
     ```
-
+    Run zprint-clj over all Clojure files
     ```shell
     zprint-clj **/*.{clj,cljs,cljc,edn}
     ```
