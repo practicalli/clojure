@@ -19,7 +19,15 @@ A consistent format between editors also minimises version control changes not r
 
 ## cljstyle
 
-Cljstyle is a rewrite of cljfmt, designed to be easier to configure.  Call with the `check` option to report formatting issues.  Call with `fix` option to automatically update all Clojure files with fixes
+Cljstyle is a rewrite of cljfmt, designed to be easier to configure. The default rules implement many of the style rules from the Clojure community style guide and is compatible with cljfmt.
+
+Call with the `check` option to report formatting issues, providing a coloured diff view of the format changes
+
+![Clojure cljstyle format tool - check format diff example](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cljstyle-check-diff-example-light.png#only-light)
+![Clojure cljstyle format tool - check format diff example](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cljstyle-check-diff-example-dark.png#only-dark)
+
+
+Call with `fix` option to automatically update all Clojure files with fixes, indicating which files have changed.
 
 Cljstyle will examine all files in the current directory and any sub-directories.
 
