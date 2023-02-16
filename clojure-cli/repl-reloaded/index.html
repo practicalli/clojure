@@ -2013,35 +2013,49 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <details class="hint">
 <summary>Remove function definitions before renaming</summary>
 <p>To minimise the need to reload namespaces, undefine function definitions (unbind their name to the function) before changing the names of the function.</p>
-<p><code>ns-unalias</code> <code>ns-unmap</code> <code>remove-ns</code></p>
-<p>Remove an alias for a specific namespace
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">ns-unalias</span><span class="w"> </span><span class="ss">'practicalli.service.utils</span><span class="w"> </span><span class="ss">'utils</span><span class="p">)</span>
-</code></pre></div></p>
-<p>Clojure editors may provide commands to undefine a function definition, e.g. Emacs CIDER includes <code>cider-undef</code> to remove the current symbol</p>
+<p>-
+- <code>(ns-unmap ns sym)</code>
+-</p>
 </details>
+<p>remove-ns`</p>
+<div class="highlight"><pre><span></span><code>Remove a symbol from the namespace, using `*ns*` which is dynamically bound to the current namespace
+```clojure
+(ns-unmap *ns* 'function-or-def-name)
+```
+Remove a specific namespace (any functions defined in the namespace are no longer accessible - illegalStateException - Attempting to call unbound function)
+```clojure
+(remove-ns 'practicalli.service.utils)
+```
+Remove an alias for a specific namespace
+```clojure
+(ns-unalias 'practicalli.service.utils 'utils)
+```
+
+Clojure editors may provide commands to undefine a function definition, e.g. Emacs CIDER includes `cider-undef` to remove the current symbol via nREPL commands
+</code></pre></div>
 <p><a href="https://clojure.github.io/tools.namespace/#clojure.tools.namespace.repl">clojure.tools.namespace.repl</a> contains the <code>refresh</code> function that compares source code files with the definitions in the REPL, removing and re-evaluating those namespaces containing changes.</p>
 <p>refresh will manage loading of namespaces with respect to their dependencies, ensuring each namespace can be loaded without error.</p>
 <p>Require the clojure.tools.namespace.repl refresh function</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label><label for="__tabbed_1_2">Project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]])</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]])</span>
 </code></pre></div>
 </div>
 <div class="tabbed-block">
 <p>Use an ns form for the namespace (often added to a custom <code>user</code> namespace)
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
 </code></pre></div>
 Or in a rich comment expression
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">comment</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
 </code></pre></div></p>
 </div>
 </div>
 </input></input></div>
 <p>Refresh the namespaces that have saved changes</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span>
 </code></pre></div>
 <p>A list of refreshed namespaces are printed.  If there are errors in the Clojure code, then a namespace cannot be loaded and error messages are printed. Check the individual code expressions in the namespace to ensure they are correctly formed.</p>
 <p><a class="md-button" href="/clojure/clojure-cli/repl-startup/" target="_blank">Reload namespaces with dev/user.clj</a></p>
@@ -2077,7 +2091,7 @@ Or in a rich comment expression
 <li><code>:lib/hotload</code> - add the library that includes add-libs function to the path (compose with other aliases)</li>
 </ul>
 <p>Start a rich terminal UI repl:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
 <p>Or include the <code>:dev/reloaded</code> or <code>:lib/hotload</code> aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (<code>-A</code>,<code>-M</code>,<code>-X</code>,<code>-T</code>).</p>
 </div>
@@ -2085,10 +2099,10 @@ Or in a rich comment expression
 <p>Create an alias definition in the user <code>deps.edn</code> configuration or in the current project <code>deps.edn</code> configuration.</p>
 <p>Add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library using the latest SHA commit from the<code>add-libs3</code> branch of <code>clojure.tools.deps.alpha</code> library as an extra dependency.</p>
 <p>The <code>add-libs</code> code is on a separate <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a>, so requires the SHA from the head of add-libs3 branch</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
-<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
-<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"e4fb92eef724fa39e29b39cc2b1a850567d490dd"</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/clojure/tools.deps.alpha"</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"e4fb92eef724fa39e29b39cc2b1a850567d490dd"</span><span class="p">}}}</span>
 </code></pre></div>
 <blockquote>
 <p>Alias example from <a href="https://github.com/practicalli/clojure-deps-edn/">Practicalli Clojure CLI Config</a></p>
@@ -2105,10 +2119,10 @@ Or in a rich comment expression
 <p>Unit tests are written with <code>clojure.test</code> and reside in a parallel <code>test</code> directory, creating matching <code>_test.clj</code> files for each relevant clojure file under <code>src</code>.</p>
 <p>Test runners are highly configurable and can run a very specific set of tests, although Clojure is usually fast enough to run all the tests each time.</p>
 <p>Run the tests in a project with the kaocha test runner by issuing the following command in the root of the project.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-X:test/run
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div>
 <p>Or continually watch for changes and run kaocha test runner each time a file is saved (typically in a separate terminal)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>clojure<span class="w"> </span>-X:test/watch
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure<span class="w"> </span>-X:test/watch
 </code></pre></div>
 <p>Test run will stop on the first failed test unless <code>:fail-fast? false</code> is passed as an argument to either command.</p>
 <details class="hint">
@@ -2126,23 +2140,23 @@ Or in a rich comment expression
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Require the criterium library
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">])</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Require the criterium library via the ns expression</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
 </code></pre></div>
 Or require the criterium library in a rich comment expression
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nf">comment</span>
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
 </code></pre></div></p>
 </div>
 </div>
 </input></input></div>
 <p>Wrap the <code>quick-bench</code> function around the expression to run performance testing upon</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nf">benchmark/quick-bench</span><span class="w"> </span>,,,<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nf">benchmark/quick-bench</span><span class="w"> </span>,,,<span class="p">)</span>
 </code></pre></div>
 <p>The expression being tested will be called multiple times and the duration and average times will be printed.</p>
 <p>Criterium automatically adjusts the benchmark run time according to the execution time of the measured expression. If the expression is fast, Criterium will run it plenty of times, but if a single iteration is quite slow, it will be executed fewer times</p>
