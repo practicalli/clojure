@@ -4,11 +4,11 @@ Code is easier to read and work with when it is consistent format that follows c
 
 [Clojure community style guide](https://github.com/bbatsov/clojure-style-guide) provides a common style for Clojure code.  While most style recommendations are widely used, others are more contentious.  Ultimately the development team for the project should define a workable set of style rules that makes them productions, ideally using much of those rules from the style guide.
 
-A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other:
+A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other (although zprint defaults will require more customisation):
 
 * [cljfmt](https://github.com/weavejester/cljfmt) - library, also included in Clojure LSP
 * [cljstyle](https://github.com/greglook/cljstyle) - binary and library (re-write of cljfmt)
-* [zprint](https://github.com/kkinnear/zprint) - binary and library
+* [zprint](https://github.com/kkinnear/zprint) - binary & library
 
 
 ??? INFO "Tooling that uses the Clojure Style Guide"
@@ -77,7 +77,6 @@ Cljstyle will examine all files in the current directory and any sub-directories
 
     ```make
     # ------- Code Quality --------------- #
-
     format-check: ## Run cljstyle to check the formatting of Clojure code
     	$(info --------- cljstyle Runner ---------)
     	cljstyle check
@@ -85,7 +84,6 @@ Cljstyle will examine all files in the current directory and any sub-directories
     format-fix:  ## Run cljstyle and fix the formatting of Clojure code
     	$(info --------- cljstyle Runner ---------)
     	cljstyle fix
-
     # ------------------------------------ #
     ```
 
