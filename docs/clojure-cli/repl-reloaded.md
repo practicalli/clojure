@@ -26,7 +26,8 @@ Other features include:
     Start a REPL process with an nREPL server to connect Clojure editors. Providing a Rebel rich terminal UI with tools to hotload libraries, reload namespaces and run Portal data inspector.  The alias also includes a path for custom REPL startup and a path to access unit test code, along with a test runner.
     ```clojure
     :repl/reloaded
-    {:extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}
+    {:extra-paths ["dev" "test"]
+     :extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}
                   cider/cider-nrepl          {:mvn/version "0.28.7"}
                   com.bhauman/rebel-readline {:mvn/version "0.1.4"}
                   djblue/portal {:mvn/version "0.34.2"}
@@ -34,6 +35,7 @@ Other features include:
                   org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
                                                 :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
                   org.slf4j/slf4j-nop {:mvn/version "2.0.5"}
+                  com.brunobonacci/mulog {:mvn/version "0.9.0"}
                   lambdaisland/kaocha {:mvn/version "1.71.1119"}
                   org.clojure/test.check {:mvn/version "1.1.1"}
                   ring/ring-mock         {:mvn/version "0.4.0"}
@@ -42,6 +44,18 @@ Other features include:
                   "--middleware" "[cider.nrepl/cider-middleware]"
                   "--interactive"
                   "-f" "rebel-readline.main/-main"]}
+
+    :dev/reloaded
+    {:extra-paths ["dev" "test"]
+     :extra-deps  {djblue/portal {:mvn/version "0.34.2"}
+                   org.clojure/tools.namespace {:mvn/version "1.3.0"}
+                   org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
+                                                 :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
+                   org.slf4j/slf4j-nop {:mvn/version "2.0.5"}
+                   com.brunobonacci/mulog {:mvn/version "0.9.0"}
+                   lambdaisland/kaocha {:mvn/version "1.71.1119"}
+                   org.clojure/test.check {:mvn/version "1.1.1"}
+                   ring/ring-mock         {:mvn/version "0.4.0"}}}
     ```
 
     `org.slf4j/slf4j-nop` is only included to surpress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.
@@ -49,7 +63,7 @@ Other features include:
 
 ## Custom REPL startup
 
-A Clojure REPL starts in the `user` namespace. When a `user.clj` file is on the classpath its code is loaded (evaluated) into the REPl during startup.
+A Clojure REPL starts in the `user` namespace. When a `user.clj` file is on the classpath its code is loaded (evaluated) into the REPL during startup.
 
 Create a `dev/user.clj` file with libraries and tools to support development and add the `dev` directory to the classpath.
 
@@ -257,3 +271,69 @@ Criterium automatically adjusts the benchmark run time according to the executio
 
 [Criterium API Documentation](http://hugoduncan.org/criterium/){target=_blank .md-button}
 [Benchmark with Criterium article](http://clojure-goes-fast.com/blog/benchmarking-tool-criterium/){target=_blank .md-button}
+
+
+## Log and trace events
+
+mulog is a micro-logging library that logs events and data extremely fast and provides a range of publishers for log analysis.
+
+Use the mulog `log` function to create events to capture useful information about the Clojure system operation.  Publish the logs locally to a console or to a log analysis service such as [zipkin](https://zipkin.io/){target=_blank} or [Grafana](https://grafana.com/logs/)
+
+=== "REPL"
+    Require the mulog library
+    ```clojure
+    (require '[com.brunobonacci.mulog :as mulog])
+    ```
+
+=== "Project"
+    Require the mulog library via the namespace form
+    ```clojure
+    (ns your-ns
+      (:require [com.brunobonacci.mulog :as mulog]))
+    ```
+
+Optionally create an event global context, containing information that will be included in every event created
+```clojure
+(mulog/set-global-context! {:service-name "Practicalli GameBoard", :version "1.0.1", :env "dev"})
+```
+Create events with an identity that contains key/value pairs of data that captures the desired information about the event.
+```clojure
+(mulog/log ::system-started :version "0.1.0" :init-time 32)
+```
+Start a publisher to see all the events created.  The publisher can be to the console or to log analysis tools like [zipkin](https://zipkin.io/){target=_blank} or [Grafana](https://grafana.com/logs/)
+```clojure
+(mulog/start-publisher! {:type :console})
+```
+
+`trace` provides accurate data around instrumented operations of a single system or over a distributed system. trace data can be used in Elasticsearch and real-time streaming system sudh as Apache Kafka.
+
+trace will track the rate of a complex operation, including the outcome and latency, within the contextual information of that operation.
+
+
+Consider a function that calls several external services
+```clojure
+(defn product-status [product-id]
+  (let [stock (http/get availability-service {:product-id product-id})
+        pricing (http/get pricing-service {:product-id product-id})]))
+```
+
+```clojure
+(mulog/trace ::product-status
+  [:product-id product-id]
+  (product-status product-id))
+```
+
+`trace` starts a timer then calls `(product-status product-id)`. Once the execution completes a log an event is created using `log` and uses the global context. By including the product id in the trace call, information is captured about the specific product involved in the trace log.
+
+```clojure
+;; {:mulog/event-name :practicalli.service/products,
+;;  :mulog/timestamp 1587504242983,
+;;  :mulog/trace-id #mulog/flake "4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4",
+;;  :mulog/root-trace #mulog/flake "4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4",
+;;  :mulog/duration 254402837,
+;;  :mulog/namespace "practicalli.service",
+;;  :mulog/outcome :ok,
+;;  :app-name "Practicalli GameBoard",
+;;  :env "dev",
+;;  :version "1.0.1"}
+```
