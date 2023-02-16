@@ -12,6 +12,12 @@ The `user.clj` file can be used for one or more of the following:
 
 
 !!! WARNING "Clojure CLI cannot set the REPL to a different namespace"
+    Clojure CLI has no specific mechanism to start the REPL in a namespace other than `user`.
+
+    Technically the `-e` option could be used to set a different namespace by calling `in-ns` with a different namespace, although this approach may affect the running of other tools or add extra complexity to the commands.
+
+    Require functions into the `user` nameapace rather than use potentially complex commands to set the namespace.
+
 
 ??? HINT "Example projects"
     [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template){target=_blank} contains a `dev/user.clj` file for configuring the REPL at start up.
