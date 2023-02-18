@@ -1,6 +1,12 @@
 # Writing tips for MkDocs
 
-Making the docs more engaging using the [mkdocs-material theme reference guide](https://squidfunk.github.io/mkdocs-material/reference/)
+Making the docs more engaging using the [mkdocs-material theme reference guide](https://squidfunk.github.io/mkdocs-material/reference/){target=_blank}
+
+??? INFO "Configuring Colors"
+    [Material for MkDocs - Changing the colors](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/){target=_blank} lists the primary and accent colors available.
+
+    [HSL Color Picker](https://hslpicker.com/) for codes to modify the theme style, overriding colors in `docs/assets/stylesheets/extra.css`
+
 
 ## Hypertext links
 
