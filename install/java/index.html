@@ -272,8 +272,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#java-knowldege-required">
-    Java Knowldege required?
+<a class="md-nav__link" href="#java-knowledge-required">
+    Java Knowledge required?
   </a>
 </li>
 </ul>
@@ -1910,8 +1910,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#java-knowldege-required">
-    Java Knowldege required?
+<a class="md-nav__link" href="#java-knowledge-required">
+    Java Knowledge required?
   </a>
 </li>
 </ul>
@@ -1984,22 +1984,20 @@ Available java versions will be listed.  Enter the list number for the version y
 <p>If Chocolatey does not work, then try the <a href="install-java.html#manual">manual Java install</a>.</p>
 </div>
 <div class="tabbed-block">
-<p><a href="https://adoptium.net/" target="_blank">Download OpenJDK 17 Hotspot from Adoptium</a> - prebuild OpenJDK binaries freely available for multiple operating systems.</p>
+<p><a href="https://adoptium.net/" target="_blank">Download OpenJDK 17 Hotspot from Adoptium</a> - pre-build OpenJDK binaries freely available for multiple operating systems.</p>
 <p>Run the file once downloaded and follow the install instructions.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png"><img alt="Adoptium Prebuilt OpenJDK Binaries - web page" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png"/></a></p>
 </div>
 </div>
 </input></input></input></input></div>
-<h2 id="java-knowldege-required">Java Knowldege required?<a class="headerlink" href="#java-knowldege-required" title="Permanent link">λ︎</a></h2>
-<p>Very little knowledge of the Java lanaguage or the Java Virtual Machine is required.</p>
+<h2 id="java-knowledge-required">Java Knowledge required?<a class="headerlink" href="#java-knowledge-required" title="Permanent link">λ︎</a></h2>
+<p>Very little knowledge of the Java language or the Java Virtual Machine is required.</p>
 <p>It is quite simple to call Java methods from Clojure, although there are a wealth of functions and libraries provided by Clojure and its community to minimise the need for Java Interoperability.</p>
 <p><a href="https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html" target="_blank">Reading stack traces</a> may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.</p>
 <p>Clojure uses its own build tools (Leiningen, Clojure CLI tools) and so Java build tool knowledge is not required.</p>
 <p>When libraries are added to a project, they are downloaded to the <code>$HOME/.m2</code> directory.  This is the default Maven cache used by all JVM libraries.</p>
 <p><code>clojure  -Spom</code> will generate a Maven pom.xml file used for deployment. Understanding of a <a href="https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#minimal-pom" target="_blank">minimal Maven POM (pom.xml) file</a> is useful when managing issues with packaging and deployment.</p>
-<ul>
-<li><a href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank">Maven in 5 minutes</a></li>
-</ul>
+<p><a class="md-button" href="https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html" target="_blank">Maven in 5 minutes</a></p>
 <p>The Java Virtual Machine is highly optimised and does not usually require any options to enhance its performance. The most likely configuration to supply to the JVM are to manage the amount of memory assigned, specifically for resource constrained environments.</p>
 <hr/>
 <div class="md-source-file">
