@@ -1935,35 +1935,37 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Ubuntu</label><label for="__tabbed_1_2">Homebrew</label><label for="__tabbed_1_3">Windows</label><label for="__tabbed_1_4">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>Open a terminal and run the following command (you will be prompted for your login password to complete the install)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jdk
-</code></pre></div>
+<p>Install Java run time edition (JRE) using the <code>apt</code> package manager command in a terminal (prompts for the account login password)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-jre
+</code></pre></div></p>
 <details class="hint">
-<summary>Optionally add Java sources</summary>
-<p>Install the <code>openjdk-17-source</code> package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.</p>
-<p><a href="clojure-cli/#practicalli-clojure-cli-config">Practicalli Clojure CLI Config</a> provides the [<code>:lib/java17-source alias](https://github.com/practicalli/clojure-deps-edn#java-sources){target=_blank} to include the installed package in the classpath when running a REPL.</code></p>
+<summary>Optionally include Java sources</summary>
+<p>Install the <code>openjdk-17-source</code> package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>openjdk-17-source
+</code></pre></div>
+<a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> provides the <code>:src/java17</code> alias to include the Java sources in the classpath when running a REPL.</p>
 </details>
 <p>If <code>openjdk-17-jdk</code> package is not available, add the <a href="https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa" target="_blank">Ubuntu OpenJDK personal package archive</a></p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:openjdk-r/ppa
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>add-apt-repository<span class="w"> </span>ppa:openjdk-r/ppa
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
 </code></pre></div>
 If you have more than one version of Java installed, set the version by opening a terminal and using the following command</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>java
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>sudo<span class="w"> </span>update-alternatives<span class="w"> </span>--config<span class="w"> </span>java
 </code></pre></div>
 Available java versions will be listed.  Enter the list number for the version you wish to use.</p>
 </div>
 <div class="tabbed-block">
 <p>Using <a href="https://brew.sh/" target="_blank">Homebrew</a>, run the following command in a terminal to install Java 17:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>brew<span class="w"> </span>install<span class="w"> </span>openjdk@17
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>brew<span class="w"> </span>install<span class="w"> </span>openjdk@17
 </code></pre></div>
 <details class="hint">
 <summary>Switching between Java versions</summary>
 <p>More than one version of Java can be installed on MacOSX. Set the Java version by opening a terminal and using one of the following commands</p>
 <p>Show the Java versions installed
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>/usr/libexec/java_home<span class="w"> </span>-V
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>/usr/libexec/java_home<span class="w"> </span>-V
 </code></pre></div></p>
 <p>Switch to Java version 17
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="w"> </span>-v<span class="w"> </span><span class="m">17</span><span class="k">)</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_HOME</span><span class="o">=</span><span class="k">$(</span>/usr/libexec/java_home<span class="w"> </span>-v<span class="w"> </span><span class="m">17</span><span class="k">)</span>
 </code></pre></div></p>
 <p>Alternatively, install <a href="https://www.jenv.be/">JEnv Java version manager</a></p>
 </details>
@@ -1972,12 +1974,12 @@ Available java versions will be listed.  Enter the list number for the version y
 <p>For Windows 10 use <a href="https://conan.is/blogging/clojure-on-windows.html" target="_blank">Windows Subsystem for Linux and Windows Terminal are recommended</a> if you have administrative privileges and are happy to use a Unix system on the command line.</p>
 <p>Alternatively use <a href="https://scoop.sh/" target="_blank">scoop.sh</a>, a command line installer for windows.  <a href="https://aka.ms/wmf5download" target="_blank">Powershell 5</a> or greater is required.</p>
 <p>Follow the <a href="https://github.com/littleli/scoop-clojure" target="_blank">scoop-clojure install instructions</a>, summarized here:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>scoop<span class="w"> </span>bucket<span class="w"> </span>add<span class="w"> </span>java
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>scoop<span class="w"> </span>install<span class="w"> </span>temurin-lts-jdk
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>scoop<span class="w"> </span>bucket<span class="w"> </span>add<span class="w"> </span>java
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>scoop<span class="w"> </span>install<span class="w"> </span>temurin-lts-jdk
 </code></pre></div>
 <p>scoop can also be used to <a href="../clojure-cli/">install clojure</a></p>
 <p>If neither Scoop or Windows Subsystem for Linux work, try the <a href="https://chocolatey.org/" target="_blank">Chocolatey</a> package manager. Install the <a href="https://chocolatey.org/packages/javaruntime" target="_blank">Java Runtime (JRE)</a> using the following command in a command line window</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>choco<span class="w"> </span>install<span class="w"> </span>javaruntime
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>choco<span class="w"> </span>install<span class="w"> </span>javaruntime
 </code></pre></div>
 <p>If Chocolatey does not work, then try the <a href="install-java.html#manual">manual Java install</a>.</p>
 </div>
@@ -2004,7 +2006,7 @@ Available java versions will be listed.  Enter the list number for the version y
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 9, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 21, 2023</span>
 </small>
 </div>
 </article>
