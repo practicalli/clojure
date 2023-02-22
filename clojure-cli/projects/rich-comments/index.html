@@ -1976,6 +1976,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <p>When a namespace is evaluted, code within the <code>(comment ,,,)</code> form is not automatically loaded.</p>
 <p>Most editors support evaluation of Clojure code within the <code>(comment ,,,)</code> form, allowing a range of design implementations to be evaluated against each other.</p>
 <p>Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide <a href="/clojure/reference/code-analysis.md">clj-kondo linter</a> warnings for redefined vars (<code>def</code>, <code>defn</code>) when using this approach.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Clojure LSP Config - rich-comment-hotload snippet</p>
+</div>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">;; Rich comment block with redefined vars ignored</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:redefined-var</span><span class="p">]}</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">(</span><span class="nf">comment</span>
@@ -1990,7 +1993,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w">  </span><span class="p">(</span><span class="kd">defn </span><span class="nv">value-added-tax</span><span class="w"> </span><span class="p">[]</span>
 <a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w">    </span><span class="c1">;; algorithm - alternate design)</span>
 <a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>
-<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="c1">;; End of rich comment block</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="c1">; End of rich comment block</span>
 </code></pre></div>
 <h2 id="design-journal">Design Journal<a class="headerlink" href="#design-journal" title="Permanent link">λ︎</a></h2>
 <p>When the problem domain or libraries selected are relatively unknown, a significant amount of learning and experimentation may be required.  This learning can be captured in a separate namespace, often referred to as a design journal.</p>
@@ -2017,17 +2020,18 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <li><code>rich-comment-hotload</code> - comment form with <a href="/clojure/clojure-cli/repl-reloaded/">Clojure CLI library hotloading</a></li>
 </ul>
 <h2 id="migrating-design-to-tests">Migrating design to tests<a class="headerlink" href="#migrating-design-to-tests" title="Permanent link">λ︎</a></h2>
-<p>Code within rich comment blocks is often a good source of code that can be put into formal unit tests, using <code>clojure.test</code></p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png"><img alt="REPL Driven Development and Test Driven Development" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.svg"><img align="right" alt="REPL Driven Development and Test Driven Development" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.svg"/></a></p>
+<p>REPL code experiements within rich comment blocks are often a good source of code that can be converted into formal unit tests.</p>
+<p>Example values used to test functions as they are designed can be useful to create meaningful sets of test data, especially when testing edge conditions.</p>
 <h2 id="live-examples">Live examples<a class="headerlink" href="#live-examples" title="Permanent link">λ︎</a></h2>
 <p>A rich comment at the end of a namespace can include code that demonstrates how to use the key aspects of the namespace API.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://practical.li/clojure/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png"><img alt="Rich Comments - living documentation of a namespace" src="https://practical.li/clojure/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-light.png"><img alt="Rich Comments - living documentation of a namespace" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-light.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>
