@@ -1977,10 +1977,11 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nv">hiccup/hiccup</span><span class="w">       </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0-alpha2"</span><span class="p">}}}</span>
 </code></pre></div>
 <details class="hint">
-<summary>Use Clojure CLI to search for libraries by name</summary>
+<summary>Finding libraries</summary>
+<p>Search for community libraries via the <a href="https://clojars.org/">Clojars.org website</a> or visit <a href="https://www.clojure-toolbox.com/">the Clojure Toolbox</a> to browse some of the community libraries available</p>
 <p><code>clojure -M:search/libraries pattern</code> where pattern is the name of the library to search for.  Copy the relevant results into the project <code>deps.edn</code> file.</p>
 <p><code>clojure -M:search/libraries --format:merge pattern</code> will automatically add the library into the <code>deps.edn</code> file.</p>
-<p>Or visit <a href="https://www.clojure-toolbox.com/">the Clojure Toolbox</a> to browse some of the community libraries available</p>
+<p><code>clojure -X:deps find-versions :lib fully.qualified/library-name :n 5</code> returns the last 5 versions of the given library.</p>
 </details>
 <h2 id="alias-libraries">Alias libraries<a class="headerlink" href="#alias-libraries" title="Permanent link">λ︎</a></h2>
 <p><code>:aliases</code> top-level key contains a hash-map of alias definitions.</p>
@@ -1999,6 +2000,12 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure<span class="w"> </span>-M:dev/reloaded:repl/rebel
 </code></pre></div>
 <h2 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
+<p><code>add-libs</code> is a function to load one or more libraries into a running REPL, negating the need to restart the REPL process.</p>
+<p>Start a REPL process with <code>clojure -M:repl/reloaded</code> to include the add-libs librar. Alternatively, include <code>:dev/reloaded</code> or <code>:lib/hotload</code> alias with any Clojure command to start a REPL.</p>
+<div class="admonition info">
+<p class="admonition-title">Hotload Libraries explained</p>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded - Hotload Libraries</a> details all the options for including the clojure.tools.deps.alpha library that contains the <code>add-libs</code> function</p>
+</div>
 <p>Use a rich comment block or <a href="/clojure-cli/projects/configure-repl-startup.md">a <code>dev/user.clj</code> file</a> to require the <code>clojure.tools.deps.alpha.repl</code> namespace and write <code>add-libs</code> expressions to hot-load libraries.</p>
 <p>A rich comment block ensures <code>add-libs</code> code is only evaluated manually by a developer.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">comment</span>
@@ -2007,16 +2014,75 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="p">)</span>
 </code></pre></div>
 <details class="hint">
-<summary>Clojure LSP snippets</summary>
+<summary>rich-comment-hotload Clojure LSP snippet</summary>
 <p><a href="https://clojure-lsp.io/features/#snippets">Snippets provided by Clojure LSP</a> include <code>rich-comment-hotload</code>, to add a rich comment block with a require for <code>clojure.tools.deps.alpha</code> and an <code>add-libs</code> expression, making it very quick to add this code.</p>
 <p><code>deps-maven</code> and <code>deps-git</code> snippets help ensure the correct syntax is used for the <code>add-libs</code> expression for each library dependency to be added.</p>
+<p><a href="/clojure/clojure-editors/clojure-lsp/practicalli-snippets/">Practicalli Clojure LSP Config</a> contains a wide range of snippets</p>
 </details>
 <h3 id="hotload-example">Hotload Example<a class="headerlink" href="#hotload-example" title="Permanent link">λ︎</a></h3>
 <p>Create a web server from scratch, serving pages generated from hiccup, with all libraries hot-loaded as the code is being written.  Demonstrates that it is possible to write an application when only starting the REPL once.</p>
+<details class="example">
+<summary>Web server from scratch</summary>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">comment</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="c1">;; run REPL with :lib/hotload alias</span>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">  </span><span class="c1">;; hotload the libraries required for the server</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">add-libs</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="o">'</span><span class="p">{</span><span class="nv">http-kit/http-kit</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.5.1"</span><span class="p">}})</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">  </span><span class="c1">;; =&gt; (http-kit/http-kit)</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">  </span><span class="c1">;; Require the namespace from the http-kit library</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">org.httpkit.server</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">app-server</span><span class="p">])</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a>
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">   </span><span class="c1">;; Define a handler for http requests</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">  </span><span class="p">(</span><span class="kd">defn </span><span class="nv">welcome-page</span>
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span>
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">    </span><span class="p">{</span><span class="ss">:status</span><span class="w">  </span><span class="mi">200</span>
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">     </span><span class="ss">:body</span><span class="w">    </span><span class="s">"Welcome to the world of Clojure CLI hotloading"</span>
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">     </span><span class="ss">:headers</span><span class="w"> </span><span class="p">{}})</span>
+<a href="#__codelineno-4-20" id="__codelineno-4-20" name="__codelineno-4-20"></a>
+<a href="#__codelineno-4-21" id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">  </span><span class="c1">;; Start the application server with the handler</span>
+<a href="#__codelineno-4-22" id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">  </span><span class="p">(</span><span class="nf">app-server/run-server</span><span class="w"> </span><span class="o">#</span><span class="ss">'welcome-page</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">"PORT"</span><span class="p">)</span><span class="w"> </span><span class="mi">8888</span><span class="p">)})</span>
+<a href="#__codelineno-4-23" id="__codelineno-4-23" name="__codelineno-4-23"></a>
+<a href="#__codelineno-4-24" id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">  </span><span class="c1">;; Visit http://localhost:8888/ to see the welcome-page</span>
+<a href="#__codelineno-4-25" id="__codelineno-4-25" name="__codelineno-4-25"></a>
+<a href="#__codelineno-4-26" id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">  </span><span class="c1">;; Hotload Hiccup to generate html for the welcome page</span>
+<a href="#__codelineno-4-27" id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">  </span><span class="p">(</span><span class="nf">add-libs</span><span class="w"> </span><span class="o">'</span><span class="p">{</span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0-alpha2"</span><span class="p">}})</span>
+<a href="#__codelineno-4-28" id="__codelineno-4-28" name="__codelineno-4-28"></a>
+<a href="#__codelineno-4-29" id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">hiccup.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">hiccup</span><span class="p">])</span>
+<a href="#__codelineno-4-30" id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">hiccup.page</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">hiccup-page</span><span class="p">])</span>
+<a href="#__codelineno-4-31" id="__codelineno-4-31" name="__codelineno-4-31"></a>
+<a href="#__codelineno-4-32" id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">  </span><span class="c1">;; Create a page template</span>
+<a href="#__codelineno-4-33" id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">  </span><span class="p">(</span><span class="kd">defn </span><span class="nv">page-template</span><span class="w"> </span><span class="p">[</span><span class="nv">content</span><span class="p">]</span>
+<a href="#__codelineno-4-34" id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">    </span><span class="p">(</span><span class="nf">hiccup-page/html5</span>
+<a href="#__codelineno-4-35" id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">      </span><span class="p">{</span><span class="ss">:lang</span><span class="w"> </span><span class="s">"en"</span><span class="p">}</span>
+<a href="#__codelineno-4-36" id="__codelineno-4-36" name="__codelineno-4-36"></a><span class="w">      </span><span class="p">[</span><span class="ss">:head</span><span class="w"> </span><span class="p">(</span><span class="nf">hiccup-page/include-css</span><span class="w"> </span><span class="s">"https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"</span><span class="p">)]</span>
+<a href="#__codelineno-4-37" id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">      </span><span class="p">[</span><span class="ss">:body</span>
+<a href="#__codelineno-4-38" id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">       </span><span class="p">[</span><span class="ss">:section</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"hero is-info"</span><span class="p">}</span>
+<a href="#__codelineno-4-39" id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">        </span><span class="p">[</span><span class="ss">:div</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"hero-body"</span><span class="p">}</span>
+<a href="#__codelineno-4-40" id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">         </span><span class="p">[</span><span class="ss">:div</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"container"</span><span class="p">}</span>
+<a href="#__codelineno-4-41" id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">          </span><span class="p">[</span><span class="ss">:h1</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"title"</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="ss">:title</span><span class="w"> </span><span class="nv">content</span><span class="p">)</span><span class="w"> </span><span class="p">]</span>
+<a href="#__codelineno-4-42" id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">          </span><span class="p">[</span><span class="ss">:p</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"subtitle"</span><span class="p">}</span><span class="w"> </span><span class="p">(</span><span class="ss">:sub-title</span><span class="w"> </span><span class="nv">content</span><span class="p">)]]]]]))</span>
+<a href="#__codelineno-4-43" id="__codelineno-4-43" name="__codelineno-4-43"></a>
+<a href="#__codelineno-4-44" id="__codelineno-4-44" name="__codelineno-4-44"></a><span class="w">  </span><span class="c1">;; Check the page template returns HTML</span>
+<a href="#__codelineno-4-45" id="__codelineno-4-45" name="__codelineno-4-45"></a><span class="w">  </span><span class="p">(</span><span class="nf">page-template</span><span class="w"> </span><span class="p">{</span><span class="ss">:title</span><span class="w">     </span><span class="s">"Hotload Libraries in the REPL"</span>
+<a href="#__codelineno-4-46" id="__codelineno-4-46" name="__codelineno-4-46"></a><span class="w">                  </span><span class="ss">:sub-title</span><span class="w"> </span><span class="s">"REPL driven development enables experimentation with designs"</span><span class="p">})</span>
+<a href="#__codelineno-4-47" id="__codelineno-4-47" name="__codelineno-4-47"></a>
+<a href="#__codelineno-4-48" id="__codelineno-4-48" name="__codelineno-4-48"></a>
+<a href="#__codelineno-4-49" id="__codelineno-4-49" name="__codelineno-4-49"></a><span class="w">  </span><span class="c1">;; redefine the welcome page to call the page template</span>
+<a href="#__codelineno-4-50" id="__codelineno-4-50" name="__codelineno-4-50"></a><span class="w">  </span><span class="p">(</span><span class="kd">defn </span><span class="nv">welcome-page</span>
+<a href="#__codelineno-4-51" id="__codelineno-4-51" name="__codelineno-4-51"></a><span class="w">    </span><span class="p">[</span><span class="nv">request</span><span class="p">]</span>
+<a href="#__codelineno-4-52" id="__codelineno-4-52" name="__codelineno-4-52"></a><span class="w">    </span><span class="p">{</span><span class="ss">:status</span><span class="w">  </span><span class="mi">200</span>
+<a href="#__codelineno-4-53" id="__codelineno-4-53" name="__codelineno-4-53"></a><span class="w">     </span><span class="ss">:body</span><span class="w">    </span><span class="p">(</span><span class="nf">page-template</span><span class="w"> </span><span class="p">{</span><span class="ss">:title</span><span class="w">     </span><span class="s">"Hotload Libraries in the REPL"</span>
+<a href="#__codelineno-4-54" id="__codelineno-4-54" name="__codelineno-4-54"></a><span class="w">                              </span><span class="ss">:sub-title</span><span class="w"> </span><span class="s">"REPL driven development enables experimentation with designs"</span><span class="p">})</span>
+<a href="#__codelineno-4-55" id="__codelineno-4-55" name="__codelineno-4-55"></a><span class="w">     </span><span class="ss">:headers</span><span class="w"> </span><span class="p">{}})</span>
+<a href="#__codelineno-4-56" id="__codelineno-4-56" name="__codelineno-4-56"></a>
+<a href="#__codelineno-4-57" id="__codelineno-4-57" name="__codelineno-4-57"></a><span class="w">  </span><span class="c1">;; Visit http://localhost:8888/ and refresh the page to see the new welcome-page</span>
+<a href="#__codelineno-4-58" id="__codelineno-4-58" name="__codelineno-4-58"></a><span class="w">  </span><span class="p">)</span>
 </code></pre></div>
+</details>
 <h2 id="excluding-dependencies">Excluding dependencies<a class="headerlink" href="#excluding-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Adding several libraries as dependencies to a project may cause conflicts. The <code>:exclusions</code>  key will prevent libraries within a library dependency from being included in the project</p>
 <p>For example, library-a and library-b both have a dependency on library-c, as defined in the project configuration for library-a and library-b.  When including library-a and library-b in the project as dependencies, there could be a conflict if the both libraries use a different version of library-c.  Adding an exclude to library-a or library-b will stop library-c being included twice.</p>
@@ -2030,7 +2096,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 12, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>
