@@ -1,20 +1,33 @@
 # Regular Expressions - regex
+
 Regular expressions are a powerful and compact way to find specific patterns in text strings. Clojure provides a simple syntax for Java regex patterns.
 
-`#"pattern"` is the literal representation of a regular expressions in Clojure, where `pattern` is the regular expression.  `(re-pattern pattern)` will return the Clojure literal representation of a given regex pattern.
+`#"pattern"` is the literal representation of a regular expressions in Clojure, where `pattern` is the regular expression.
+
+!!! HINT "Create regular expression pattern"
+    `(re-pattern pattern)` will return the Clojure literal representation of a given regex pattern.
+
+    A string can become a regular expression pattern, e.g. `":"` becomes the regex pattern `#":"`
+    ```clojure
+    (re-pattern ":")
+    ```
 
 The **[regular expression syntax cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet)** by Mozilla is an excellent reference for regular expression patterns.
 
 ## Regular expressions overview
-Regular expressions in Clojure
-{% youtube %}
-https://youtu.be/iTimmZcNToY
-{% endyoutube %}
 
-find the most common word in a book using regular expressions
-{% youtube %}
-https://youtu.be/hpz2vHaTz44
-{% endyoutube %}
+Regular expressions in Clojure
+
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/iTimmZcNToY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+
+Find the most common word in a book using regular expressions
+
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hpz2vHaTz44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## References

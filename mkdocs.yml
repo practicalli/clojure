@@ -304,14 +304,15 @@ nav:
           - reference/standard-library/index.md
           - reference/standard-library/destructuring.md
           - reference/standard-library/predicate-functions.md
-          - reference/standard-library/regular-expressions/index.md
-          - reference/standard-library/regular-expressions/matching-with-groups.md
-          - reference/standard-library/regular-expressions/matching-sub-strings.md
-          - reference/standard-library/regular-expressions/matching-sub-sequences.md
-          - reference/standard-library/regular-expressions/common-regex-patterns.md
-          - reference/standard-library/regular-expressions/string-replace-with-regex.md
-          - reference/standard-library/regular-expressions/string-split-with-regex.md
-          - reference/standard-library/regular-expressions/sub-expression-matches.md
+          - Regular Expressions:
+              - reference/standard-library/regular-expressions/index.md
+              - reference/standard-library/regular-expressions/matching-with-groups.md
+              - reference/standard-library/regular-expressions/matching-sub-strings.md
+              - reference/standard-library/regular-expressions/matching-sub-sequences.md
+              - reference/standard-library/regular-expressions/common-regex-patterns.md
+              - reference/standard-library/regular-expressions/string-replace-with-regex.md
+              - reference/standard-library/regular-expressions/string-split-with-regex.md
+              - reference/standard-library/regular-expressions/sub-expression-matches.md
           - reference/standard-library/cond-thread-macro.md
       - Java:
           - reference/clojure-syntax/java-interop.md
