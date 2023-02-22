@@ -1,13 +1,23 @@
 # Creating Clojure projects
 
-Creating Clojure projects save code as you are learning or developing applications.  Using a project is the quickest way to test development tools are configured correctly.
+Creating projects using a template is a quick way to get started.  A template will create the project structure, add libraries and even include example code. .
 
-Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and `clj-new` to create projects.
+Clojure CLI can use the deps-new or clj-new community projects to create a project
 
-??? HINT "Clojure Aliases for creating projects from templates"
-    [Practicalli Clojure CLI Config](install/community-tools.html) to provide aliases `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new) project and `:project/new` for [seancorfield/clj-new](https://github.com/seancorfield/clj-new)
+## Add project tools
 
-    ```clojure title="deps.edn"
+Add one or both of the tools as aliases to the Clojure CLI user configuration
+
+=== "Practicalli Clojure CLI Config"
+    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the following aliases
+
+    `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new), to create Clojure CLI specific projects and a simple way to define custom templates
+
+    `:project/new` for [seancorfield/clj-new](https://github.com/seancorfield/clj-new) which can use a wide range of templates (although some may only create Leinginen projects)
+
+=== "Alias Definitions"
+    Create the following alias definitions in the Clojure CLI user configuration, e.g. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
+    ```clojure title="Clojure CLI user deps.edn configuration - :aliases {}"
     :project/create
     {:replace-deps {io.github.seancorfield/deps-new {:git/tag "v0.4.13" :git/sha "879c4eb"}}
      :exec-fn      org.corfield.new/create
@@ -23,6 +33,12 @@ Creating projects using a template is the quickest way to get started, as the te
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7muHVkxzZcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+
+## Create a project
+
+Use deps-new or clj-new to create a project, specifying a template and a name for the project.
+
+> Practicalli recommends deps-new unless there is a specific template only available via clj-new
 
 
 === "deps-new"
@@ -57,7 +73,7 @@ Creating projects using a template is the quickest way to get started, as the te
 
 ## Run Project in a REPL
 
-Change into the directory and test the project runs by starting a REPL with [rebel readline](/repl-driven-development/rebel-readline/)
+Change into the directory and test the project runs by starting a REPL with [Terminal REPL](/clojure/clojure-cli/repl/)
 
 ```bash
 cd playground && clojure -M:repl/rebel
@@ -65,7 +81,7 @@ cd playground && clojure -M:repl/rebel
 
 A repl prompt should appear.
 
-![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png)
+<!-- ![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png) -->
 
 Type code expressions at the repl prompt and press RETURN to evaluate them.
 
