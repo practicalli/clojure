@@ -388,6 +388,16 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#add-project-tools">
+    Add project tools
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-project">
+    Create a project
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#run-project-in-a-repl">
     Run Project in a REPL
   </a>
@@ -1927,6 +1937,16 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#add-project-tools">
+    Add project tools
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-a-project">
+    Create a project
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#run-project-in-a-repl">
     Run Project in a REPL
   </a>
@@ -1949,12 +1969,20 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="creating-clojure-projects">Creating Clojure projects<a class="headerlink" href="#creating-clojure-projects" title="Permanent link">λ︎</a></h1>
-<p>Creating Clojure projects save code as you are learning or developing applications.  Using a project is the quickest way to test development tools are configured correctly.</p>
-<p>Creating projects using a template is the quickest way to get started, as the template will create the project structure and add libraries the project.  Practicalli recommends the Clojure CLI tools and <code>clj-new</code> to create projects.</p>
-<details class="hint">
-<summary>Clojure Aliases for creating projects from templates</summary>
-<p><a href="install/community-tools.html">Practicalli Clojure CLI Config</a> to provide aliases <code>:project/create</code> for <a href="https://github.com/seancorfield/deps-new">seancorfield/deps-new</a> project and <code>:project/new</code> for <a href="https://github.com/seancorfield/clj-new">seancorfield/clj-new</a></p>
-<div class="highlight"><span class="filename">deps.edn</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:project/create</span>
+<p>Creating projects using a template is a quick way to get started.  A template will create the project structure, add libraries and even include example code. .</p>
+<p>Clojure CLI can use the deps-new or clj-new community projects to create a project</p>
+<h2 id="add-project-tools">Add project tools<a class="headerlink" href="#add-project-tools" title="Permanent link">λ︎</a></h2>
+<p>Add one or both of the tools as aliases to the Clojure CLI user configuration</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label><label for="__tabbed_1_2">Alias Definitions</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> provides the following aliases</p>
+<p><code>:project/create</code> for <a href="https://github.com/seancorfield/deps-new">seancorfield/deps-new</a>, to create Clojure CLI specific projects and a simple way to define custom templates</p>
+<p><code>:project/new</code> for <a href="https://github.com/seancorfield/clj-new">seancorfield/clj-new</a> which can use a wide range of templates (although some may only create Leinginen projects)</p>
+</div>
+<div class="tabbed-block">
+<p>Create the following alias definitions in the Clojure CLI user configuration, e.g. <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> or <code>$HOME/.clojure/deps.edn</code>
+<div class="highlight"><span class="filename">Clojure CLI user deps.edn configuration - :aliases {}</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:project/create</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">io.github.seancorfield/deps-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/tag</span><span class="w"> </span><span class="s">"v0.4.13"</span><span class="w"> </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">"879c4eb"</span><span class="p">}}</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w">      </span><span class="nv">org.corfield.new/create</span>
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w">    </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">app</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}}</span>
@@ -1964,12 +1992,19 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w">      </span><span class="nv">clj-new/create</span>
 <a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w">    </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">app</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}</span>
 <a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">    </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]}</span>
-</code></pre></div>
-</details>
+</code></pre></div></p>
+</div>
+</div>
+</input></input></div>
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/7muHVkxzZcE" title="YouTube video player" width="560"></iframe>
 </p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">deps-new</label><label for="__tabbed_1_2">clj-new</label></div>
+<h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">λ︎</a></h2>
+<p>Use deps-new or clj-new to create a project, specifying a template and a name for the project.</p>
+<blockquote>
+<p>Practicalli recommends deps-new unless there is a specific template only available via clj-new</p>
+</blockquote>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">deps-new</label><label for="__tabbed_2_2">clj-new</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Open a terminal window and change to a suitable folder and create a project.  Use the <code>app</code> template to create a runnable application or <code>lib</code> template if writing a library to be used by other applications.  Both can run code in the REPL during development.</p>
@@ -1981,7 +2016,7 @@ The <code>-T</code> execution option runs the tool with Clojure.exec which uses 
 <div class="tabbed-block">
 <p>Open a terminal window and change to a suitable folder and create a project.  Use the <code>app</code> template to create a runnable application or <code>lib</code> template if writing a library to be used by other applications.  Both can run code in the REPL during development.</p>
 <p>The name of the project is of the form <code>domain/app-lib-name</code>. Use a company name or Git Service account name as the <code>domain</code>.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Clojure.exec</label><label for="__tabbed_2_2">Clojure.main</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Clojure.exec</label><label for="__tabbed_3_2">Clojure.main</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>The <code>-X</code> flag runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
@@ -2000,11 +2035,11 @@ The <code>-T</code> execution option runs the tool with Clojure.exec which uses 
 </div>
 </input></input></div>
 <h2 id="run-project-in-a-repl">Run Project in a REPL<a class="headerlink" href="#run-project-in-a-repl" title="Permanent link">λ︎</a></h2>
-<p>Change into the directory and test the project runs by starting a REPL with <a href="/repl-driven-development/rebel-readline/">rebel readline</a></p>
+<p>Change into the directory and test the project runs by starting a REPL with <a href="/clojure/clojure-cli/repl/">Terminal REPL</a></p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>playground<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
 <p>A repl prompt should appear.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-repl-rebel-readline.png"><img alt="Clojure REPL rebel readline" src="/images/clojure-repl-rebel-readline.png"/></a></p>
+<!-- ![Clojure REPL rebel readline](/images/clojure-repl-rebel-readline.png) -->
 <p>Type code expressions at the repl prompt and press RETURN to evaluate them.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
 </code></pre></div>
@@ -2045,7 +2080,7 @@ Then the project can be run using <code>clojure -X:project/run</code> and argume
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>
