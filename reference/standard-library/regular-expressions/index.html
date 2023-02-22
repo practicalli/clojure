@@ -1197,13 +1197,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../desructuring.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/index.md">
-        None
+<a class="md-nav__link" href="../destructuring/">
+        Destructuring - abstract structural binding
       </a>
 </li>
 <li class="md-nav__item">
@@ -1211,54 +1206,20 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         Predicate functions
       </a>
 </li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Regular Expressions - regex
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        Regular Expressions - regex
-      </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_13_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">Regular Expressions</a>
+<label for="__nav_13_5_4">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#regular-expressions-overview">
-    Regular expressions overview
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#references">
-    References
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#double-escaping-not-required">
-    Double escaping not required
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#host-platform-support">
-    Host platform support
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#option-flags">
-    Option flags
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#things-to-avoid">
-    Things to avoid
-  </a>
-</li>
-</ul>
-</nav>
-</li>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_13_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Regular Expressions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="matching-with-groups/">
         Matching with regex groups
@@ -1293,6 +1254,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="sub-expression-matches/">
         Sub-expression Matches
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../cond-thread-macro/">
@@ -1973,15 +1937,24 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <article class="md-content__inner md-typeset">
 <h1 id="regular-expressions-regex">Regular Expressions - regex<a class="headerlink" href="#regular-expressions-regex" title="Permanent link">λ︎</a></h1>
 <p>Regular expressions are a powerful and compact way to find specific patterns in text strings. Clojure provides a simple syntax for Java regex patterns.</p>
-<p><code>#"pattern"</code> is the literal representation of a regular expressions in Clojure, where <code>pattern</code> is the regular expression.  <code>(re-pattern pattern)</code> will return the Clojure literal representation of a given regex pattern.</p>
+<p><code>#"pattern"</code> is the literal representation of a regular expressions in Clojure, where <code>pattern</code> is the regular expression.</p>
+<div class="admonition hint">
+<p class="admonition-title">Create regular expression pattern</p>
+<p><code>(re-pattern pattern)</code> will return the Clojure literal representation of a given regex pattern.</p>
+<p>A string can become a regular expression pattern, e.g. <code>":"</code> becomes the regex pattern <code>#":"</code>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nb">re-pattern </span><span class="s">":"</span><span class="p">)</span>
+</code></pre></div></p>
+</div>
 <p>The <strong><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet">regular expression syntax cheatsheet</a></strong> by Mozilla is an excellent reference for regular expression patterns.</p>
 <h2 id="regular-expressions-overview">Regular expressions overview<a class="headerlink" href="#regular-expressions-overview" title="Permanent link">λ︎</a></h2>
-<p _="%" endyoutube="endyoutube">Regular expressions in Clojure
-{% youtube %}
-<a href="https://youtu.be/iTimmZcNToY">https://youtu.be/iTimmZcNToY</a></p>
-<p _="%" endyoutube="endyoutube">find the most common word in a book using regular expressions
-{% youtube %}
-<a href="https://youtu.be/hpz2vHaTz44">https://youtu.be/hpz2vHaTz44</a></p>
+<p>Regular expressions in Clojure</p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/iTimmZcNToY" title="YouTube video player" width="560"></iframe>
+</p>
+<p>Find the most common word in a book using regular expressions</p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/hpz2vHaTz44" title="YouTube video player" width="560"></iframe>
+</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/037_regular_expression.clj">4Clojure #37 - regular expressions</a></li>
@@ -1989,15 +1962,15 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </ul>
 <h2 id="double-escaping-not-required">Double escaping not required<a class="headerlink" href="#double-escaping-not-required" title="Permanent link">λ︎</a></h2>
 <p>The Clojure syntax means you do not need to double escape special characters, eg. <code>\\</code>, and keeps the patterns clean and simple to read. In other languages, backslashes intended for consumption by the regex compiler must be doubled.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">java.util.regex.Pattern/compile</span><span class="w"> </span><span class="s">"\\d"</span><span class="p">)</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="c1">;;=&gt; #"\d"</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">java.util.regex.Pattern/compile</span><span class="w"> </span><span class="s">"\\d"</span><span class="p">)</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">;;=&gt; #"\d"</span>
 </code></pre></div>
 <p>The rules for embedding unusual literal characters or predefined character classes are listed in the Javadoc for Pattern.</p>
 <h2 id="host-platform-support">Host platform support<a class="headerlink" href="#host-platform-support" title="Permanent link">λ︎</a></h2>
 <p>Clojure runs on the Java Virtual Machine and uses <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html">Java regular expressions</a>.</p>
 <p>Regular expressions in Clojure create a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">java.util.regex.Pattern</a> type</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="o">#</span><span class="s">"pattern"</span><span class="p">)</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">;;=&gt; java.util.regex.Pattern</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="o">#</span><span class="s">"pattern"</span><span class="p">)</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">;;=&gt; java.util.regex.Pattern</span>
 </code></pre></div>
 <p>ClojureScript runs on JavaScript engines and uses Javascript regular expressions.</p>
 <h2 id="option-flags">Option flags<a class="headerlink" href="#option-flags" title="Permanent link">λ︎</a></h2>
@@ -2045,12 +2018,12 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </tbody>
 </table>
 <p>The re-seq function is Clojure's regex workhorse. It returns a lazy seq of all matches in a string, which means it can be used to efficiently test whether a string matches or to find all matches in a string or a mapped file:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w+"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1">;;=&gt; ("one" "two" "three")</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w+"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">;;=&gt; ("one" "two" "three")</span>
 </code></pre></div>
 The preceding regular expression has no capturing groups, so each match in the returned seq is a string. A capturing group (subsegments that are accessible via the returned match object) in the regex causes each returned item to be a vector:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w*(\w)"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">([</span><span class="s">"one"</span><span class="w"> </span><span class="s">"e"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"two"</span><span class="w"> </span><span class="s">"o"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"three"</span><span class="w"> </span><span class="s">"e"</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w*(\w)"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">([</span><span class="s">"one"</span><span class="w"> </span><span class="s">"e"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"two"</span><span class="w"> </span><span class="s">"o"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"three"</span><span class="w"> </span><span class="s">"e"</span><span class="p">])</span>
 </code></pre></div></p>
 <h2 id="things-to-avoid">Things to avoid<a class="headerlink" href="#things-to-avoid" title="Permanent link">λ︎</a></h2>
 <p>Java's regular-expression engine includes a Matcher object that mutates in a non-thread-safe way as it walks through a string finding matches. This object is exposed by Clojure via the re-matcher function and can be used as an argument to re-groups and the single-parameter form of re-find. Avoid these unless you're certain you know what you're doing. These dangerous functions are used internally by the implementations of some of the recommended functions described earlier, but in each case they're careful to disallow access to the Matcher object they use. Use matchers at your own risk, or better yet don't use them directly at all.</p>
@@ -2059,7 +2032,7 @@ The preceding regular expression has no capturing groups, so each match in the r
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>

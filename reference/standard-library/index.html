@@ -14,10 +14,10 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/reference/standard-library/" rel="canonical"/>
 <link href="../code-analysis/" rel="prev"/>
-<link href="predicate-functions/" rel="next"/>
+<link href="destructuring/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.13" name="generator"/>
-<title>Standard Library - clojure.core - Practicalli Clojure</title>
+<title>Clojure Standard Library - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.ffa9267a.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Standard Library - clojure.core - Practicalli Clojure" property="og:title"/>
+<meta content="Clojure Standard Library - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/reference/standard-library/index.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/reference/standard-library/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Standard Library - clojure.core - Practicalli Clojure" name="twitter:title"/>
+<meta content="Clojure Standard Library - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/reference/standard-library/index.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#standard-library-clojurecore">
+<a class="md-skip" href="#clojure-standard-library">
           Skip to content
         </a>
 </div>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Standard Library - clojure.core
+              Clojure Standard Library
             
           </span>
 </div>
@@ -1197,13 +1197,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="desructuring.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="data-structures/index.md">
-        None
+<a class="md-nav__link" href="destructuring/">
+        Destructuring - abstract structural binding
       </a>
 </li>
 <li class="md-nav__item">
@@ -1211,11 +1206,20 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
         Predicate functions
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="regular-expressions/">
-        Regular Expressions - regex
-      </a>
-</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13_5_4" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="regular-expressions/">Regular Expressions</a>
+<label for="__nav_13_5_4">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_13_5_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_13_5_4">
+<span class="md-nav__icon md-icon"></span>
+          Regular Expressions
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="regular-expressions/matching-with-groups/">
         Matching with regex groups
@@ -1250,6 +1254,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="regular-expressions/sub-expression-matches/">
         Sub-expression Matches
       </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="cond-thread-macro/">
@@ -1903,21 +1910,36 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1 id="standard-library-clojurecore">Standard Library - clojure.core<a class="headerlink" href="#standard-library-clojurecore" title="Permanent link">λ︎</a></h1>
+<h1 id="clojure-standard-library">Clojure Standard Library<a class="headerlink" href="#clojure-standard-library" title="Permanent link">λ︎</a></h1>
 <p>Examples of using the functions from the <code>clojure.core</code> namespace and other important functions, macros and special forms that are part of the <code>org.clojure/clojure</code> library.</p>
+<p>There are approximately 700 functions and macros available in the <code>clojure.core</code> namespace.  These are referred to as the Clojure Standard Library.</p>
+<div class="admonition hint">
+<p class="admonition-title">Counting functions in <code>clojure.core</code></p>
+<p>To get an accurate number of functions, call the <code>ns-publics</code> function with a namespace name
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nb">count </span><span class="p">(</span><span class="nb">ns-publics </span><span class="ss">'clojure.core</span><span class="p">))</span>
+</code></pre></div>
+<a href="/clojure/simple-projects/random-clojure-function/">Random Function</a> is a simple project that prints out a random function from the given namespace, or from clojure.core by default.</p>
+</div>
+<!-- TODO: identify groups (families) of Clojure functions that a Clojure developer should be aware of -->
+<!-- Use the Clojure Cheetsheet as a guide to grouping functions -->
+<!-- - general sequence functions - map reduce apply into ,,, -->
+<!-- - collection fuctions - list hash-map set ,,, -->
+<!-- - transformation functions - partition partition-all group-by sort-by -->
 <h2 id="functions-macros-and-special-forms">Functions, Macros and Special forms<a class="headerlink" href="#functions-macros-and-special-forms" title="Permanent link">λ︎</a></h2>
 <p>The majority of times macros and special forms act just like any other defined function (i.e. <code>fn</code>, <code>defn</code>)</p>
 <p>A macro is a piece of code that evaluates into a function when read by the macro reader, or by the developer using <code>macroexpand</code> function.  An expanded macro may also contain macros, so expansion could take place several levels (<code>macroexpand-all</code>).</p>
 <p>macros are not composable like functions, so functions like <code>apply</code> <code>reduce</code> <code>map</code> cannot use a macro (use a function instead).</p>
-<p>Special forms are built into the Clojure runtime, so will not be found in clojure.core
-* Special forms: <code>if</code> <code>do</code> <code>let</code> <code>quote</code> <code>var</code> <code>fn</code> <code>loop</code> <code>recur</code> <code>throw</code> <code>try</code>
-* Special forms for Java interop:  <code>.</code> <code>new</code> <code>set!</code></p>
+<p>Special forms are built into the Clojure runtime, so will not be found in clojure.core</p>
+<ul>
+<li>Special forms: <code>if</code> <code>do</code> <code>let</code> <code>quote</code> <code>var</code> <code>fn</code> <code>loop</code> <code>recur</code> <code>throw</code> <code>try</code></li>
+<li>Special forms for Java interop:  <code>.</code> <code>new</code> <code>set!</code></li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>
