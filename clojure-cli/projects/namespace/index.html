@@ -406,43 +406,16 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="#including-another-namespace">
     Including another namespace
   </a>
-<nav aria-label="Including another namespace" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hinttrying-out-a-namespace">
-    Hint::Trying out a namespace
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#including-specific-parts-of-a-namespace">
     Including specific parts of a namespace
   </a>
-<nav aria-label="Including specific parts of a namespace" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#infoincluding-excluding-renaming-vars">
-    Info::Including / Excluding / renaming vars
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#adding-multiple-namespaces">
     Adding multiple namespaces
   </a>
-<nav aria-label="Adding multiple namespaces" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#infoavoid-use-in-clojure-code">
-    Info::Avoid use in Clojure code
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -1967,43 +1940,16 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="#including-another-namespace">
     Including another namespace
   </a>
-<nav aria-label="Including another namespace" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hinttrying-out-a-namespace">
-    Hint::Trying out a namespace
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#including-specific-parts-of-a-namespace">
     Including specific parts of a namespace
   </a>
-<nav aria-label="Including specific parts of a namespace" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#infoincluding-excluding-renaming-vars">
-    Info::Including / Excluding / renaming vars
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#adding-multiple-namespaces">
     Adding multiple namespaces
   </a>
-<nav aria-label="Adding multiple namespaces" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#infoavoid-use-in-clojure-code">
-    Info::Avoid use in Clojure code
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -2015,9 +1961,12 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <h1 id="namespaces">Namespaces<a class="headerlink" href="#namespaces" title="Permanent link">λ︎</a></h1>
 <p>Using namespaces  makes code easier to work with by provide levels of abstraction that convey the overall design of the project.  Clearly organized namespaces support a simple design approach for a project and make it easier to maintain.</p>
 <p>A namespace is a logical separation of code, usually along features of the projects. Think of all namespaces as creating an API's within the project that communicate the architecture of the system.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/banking-on-clojure-design-namespace-segregation.svg"><img alt="Example of namespace segregation - banking on clojure full stack web service" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/banking-on-clojure-design-namespace-segregation.svg"/></a></p>
 <h2 id="controlling-scope">Controlling scope<a class="headerlink" href="#controlling-scope" title="Permanent link">λ︎</a></h2>
-<p>A namespace contains related data structures and functions, limiting their scope to that function.  Namespaces should limit their interdependence on each other (limited number of required namespaces) to avoid a highly coupled design.</p>
-<p>Within a namespace a var (<code>def</code>, <code>defn</code>) can be called by its name.  Outside of the namespace, a fully qualified name must be used. Vars can be marked as private (<code>defn- name</code>, <code>def ^private name</code>), so they can be accessed only by functions in their own namespace.</p>
+<p>Logically related data structures and functions are defined within a namespace, limiting their default scope to that namespace.   </p>
+<p>Namespaces should limit their interdependence on each other (limited number of required namespaces) to avoid a highly coupled design.</p>
+<p>Within a namespace a var (<code>def</code>, <code>defn</code>) can be called by its short-form name.  Outside of the namespace, a fully qualified name must be used, or required via an alias or directly referred. </p>
+<p>Vars can be marked as private, <code>def ^private name</code>, so they can be accessed only by functions in their own namespace (athough there are ways to by-pass that scope restiction).</p>
 <h2 id="including-another-namespace">Including another namespace<a class="headerlink" href="#including-another-namespace" title="Permanent link">λ︎</a></h2>
 <p><code>(ns namespace.name (:require [domain/filename :as purpose]))</code> is used to enable access to the functions &amp; named data structures in another namespace than the current one.  The included namespace is given an alias so its clear which code comes from that namespace.</p>
 <p>Practicalli recommends using a meaningful alias that defines the purpose of the library you are including.  This helps with the understanding and maintainability of the code, especially if you wish to refactor and replace the included library with an alternative.  An alias name should be meaningful and you should avoid single character and cryptic aliases.</p>
@@ -2029,28 +1978,33 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">(</span><span class="nf">read-the-file</span><span class="w"> </span><span class="s">"project.clj"</span><span class="p">)</span>
 </code></pre></div>
-<blockquote>
-<h4 id="hinttrying-out-a-namespace">Hint::Trying out a namespace<a class="headerlink" href="#hinttrying-out-a-namespace" title="Permanent link">λ︎</a></h4>
-<p><code>(require '[domain/filename])</code> can be used within you code if testing that namespace functions to see if they are useful to the project.  Using a live linter such as <a href="https://github.com/borkdude/clj-kondo">clj-kondo</a> will also advise you when to refer namespaces.</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Trying out a namespace</p>
+<p><code>(require '[domain/filename])</code> can be used within you code if testing that namespace functions to see if they are useful to the project.  Using a live linter such as clj-kondo, part of <a href="/clojure/clojure-editors/clojure-lsp/">Clojure LSP</a>, will highlight missing namespaces.</p>
+</div>
 <h2 id="including-specific-parts-of-a-namespace">Including specific parts of a namespace<a class="headerlink" href="#including-specific-parts-of-a-namespace" title="Permanent link">λ︎</a></h2>
-<p>If the library you are including is the predominant purpose of that namespace, a good example is clojure.test, then you can include specific functions from that namespace.</p>
-<p>Using <code>:refer</code> in the <code>require</code> expression provides a way to include specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">my-namespace.core</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.java.io</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">reader</span><span class="p">]])</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">read-the-file</span><span class="w"> </span><span class="p">[</span><span class="nv">filename</span><span class="p">]</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">  </span><span class="p">(</span><span class="nb">line-seq </span><span class="p">(</span><span class="nf">reader</span><span class="w"> </span><span class="nv">filename</span><span class="p">)))</span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="p">(</span><span class="nf">read-the-file</span><span class="w"> </span><span class="s">"project.clj"</span><span class="p">)</span>
+<p><code>:refer</code> in the <code>require</code> expression includes one or more specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.</p>
+<p>Use <code>:refer</code> when the library being required the predominant focus of that namespace. A good example is <code>clojure.test</code> which is included to specifically write unit tests. </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.gameboard.handler-test</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]]</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="p">[</span><span class="nv">practicalli.gameboard.handler</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">handler</span><span class="p">])</span>
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">highscore-test</span><span class="w"> </span>
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"A description of the test"</span>
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">true? </span><span class="p">(</span><span class="nf">handler/public-function</span><span class="w"> </span><span class="mi">42</span><span class="p">)))))</span>
 </code></pre></div>
-<blockquote>
-<h4 id="infoincluding-excluding-renaming-vars">Info::Including / Excluding / renaming vars<a class="headerlink" href="#infoincluding-excluding-renaming-vars" title="Permanent link">λ︎</a></h4>
+<p>(deftest public-function-in-namespace-test
+  (testing "A description of the test"
+    (is (= 1 (public-function arg)))
+    (is (predicate-function? arg))))</p>
+<details class="warning">
+<summary>Rarely used options - include exclude rename vars</summary>
 <p>These other options on required functions are rarely used in practice.  They tend to cause more issues than they solve, so use with care.</p>
 <p><code>:exclude</code> will prevent a var from being used from a required namespace.</p>
 <p><code>:only</code> will include only that var from the required namespace.</p>
 <p><code>:rename</code> changes the name of the original function, if there conflicts</p>
-</blockquote>
+</details>
 <h2 id="adding-multiple-namespaces">Adding multiple namespaces<a class="headerlink" href="#adding-multiple-namespaces" title="Permanent link">λ︎</a></h2>
 <p>The idiom in Clojure is to include multiple namespaces with just one <code>:require</code> statement</p>
 <p>Here is an example namespace expression with multiple require statements from the <a href="https://github.com/duct-framework/duct">duct</a> web framework template</p>
@@ -2062,17 +2016,17 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">            </span><span class="p">[</span><span class="nv">duct-test.config</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">config</span><span class="p">]</span>
 <a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">            </span><span class="p">[</span><span class="nv">duct-test.system</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">new-system</span><span class="p">]]))</span>
 </code></pre></div>
-<blockquote>
-<h4 id="infoavoid-use-in-clojure-code">Info::Avoid use in Clojure code<a class="headerlink" href="#infoavoid-use-in-clojure-code" title="Permanent link">λ︎</a></h4>
-<p>The <code>use</code> or <code>:use</code> expression should not be used in Clojure code as it pulls in everything the namespace and everything that the included namespace also included.  This can lead to conflicts, especially in larger projects. This is seen as a bad practice especially when writing libraries, as you can end up including a great many unused functions into the namespace.</p>
-<p>As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.  This also helps reduce conflicts when including multiple libraries in your project.</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Avoid use form - require should be used</p>
+<p>The <code>use</code> or <code>:use</code> form is not recommended as it pulls in everything the namespace and everything that the included namespace also included.  This can lead to conflicts, especially in larger projects.</p>
+<p>As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
 </small>
 </div>
 </article>
