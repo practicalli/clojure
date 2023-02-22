@@ -1,6 +1,7 @@
 # Random Clojure Function
 
-![Random numbers](/images/random-numbers.png)
+<!-- https://simplewordcloud.com/ used to generate word cloud -->
+![Clojure function names word cloud](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/clojure-function-word-cloud.png){align=right loading=lazy style="height:300px;width:300px"}
 
 A simple application that returns a random function from the `clojure.core` namespace, along with the function argument list and its description (from the doc-string)
 
@@ -8,32 +9,71 @@ There are 659 functions in [`clojure.core` namespace](https://clojuredocs.org/cl
 
 
 ## Live Coding Video walk-through
+
 A [Live coding video walk-through of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
 
-{% youtube %}
-https://youtu.be/sXZKrD4cAFk
-{% endyoutube %}
+??? HINT " -M flag superseeds -A flag"
+    The `-M` flag replaced the `-A` flag when running code via `clojure.main`, e.g. when an alias containes `:main-opts`.  The `-A` flag should be used only for the specific case of including an alias when starting the Clojure CLI built-in REPL.
 
-> #### Hint::Use -M flag instead of -A
-> The `-M` flag has replaced the `-A` flag for including aliases when running Clojure main, which is the approach that the cider jack-in command uses.
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sXZKrD4cAFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## Create a project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+Use the `:project/create` [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) to create a new Clojure project.
 
 ```bash
-clojure -M:new app practicalli/random-clojure-function
+clojure -T:project/create :template app :name practicalli/random-function
 ```
+
 This project has a `deps.edn` file that includes the aliases
 - `:test` - includes the `test/` directory in the class path so unit test code is found
 - `:runner` to run the Cognitect Labs test runner which will find and run all unit tests
 
 ## REPL experiments
-Start a repl and experiment or open `src/practicalli/random-clojure-function.clj` in a Clojure-aware editor
 
-Get a list of all the functions in the clojure.core namespace, preferably just the public functions.
+Open the project in a Clojure-aware editor or start a Rebel terminal UI REPL 
 
-`ns-publics` returns a map of the function details from the `clojure.core` namespace
+=== "Clojure Editor"
+    Open the `src/practicalli/random-function.clj` file in a Clojure aware editor and start a REPL process (jack-in)
+
+    Optionally create a rich comment form that will contain the expressions as the design of the code evolves, moving completed functions out of the comment forms so they can be run by evaluating the whole namespace.
+    ```clojure
+    (ns practicalli.random-function)
+
+    (comment
+      ;; add experimental code here
+    )
+    ```
+
+=== "Rebel REPL"
+    Open a terminal and change to the root of the Clojure project created, i.e. the directory that contains the `deps.edn` file.
+
+    Start a REPL that provides a rich terminal UI
+    ```shell
+    clojure -M:repl/reloaded
+    ```
+    `require` will make a namespace available from within the REPL
+    ```clojure
+    (require '[practicalli.random-function])
+    ```
+    Change into the `random-function` namespace to define functions
+    ```clojure
+    (in-ns 'practicalli.random-function')
+    ```
+    Reload changes made to the `src/practicalli/random_function.clj` file using the `require` function with the `:reload` option.  `:reload` forces the loading of all the definitions in the namespace file, overriding any functions of the same name in the REPL.
+    ```clojure
+    (require '[practicalli.random-function] :reload)
+    ```
+
+    !!! HINT "Copy finished code into the source code files"
+        Assuming the code should be kept after the REPL is closed, save the finished versions of function definitions into the source code files.  Use ++arrow-up++ and ++arrow-down++ keys at the REPL prompt to navigate the history of expressions
+
+
+List all the public functions in the `clojure.core` namespace using the `ns-publics` function
+
 ```clojure
 (ns-publics 'clojure.core)
 ```
@@ -88,41 +128,42 @@ A single function var is returned, so then the specific meta data can be returne
 
 
 ## Define a name for all functions
-Edit the `src/practicalli/random-clojure-function.clj` file and define a name for the collection of all public functions from `clojure.core`
+
+Edit the `src/practicalli/random-function.clj` file and define a name for the collection of all public functions from `clojure.core`
 
 ```clojure
-(def standard-library-functions
+(def standard-library
   "Fully qualified function names from clojure.core"
   (vals (ns-publics 'clojure.core)))
 ```
 
 ## Write Unit Tests
+
 From the REPL experiments we have a basic approach for the application design, so codify that design by writing unit tests.  This will also highlight regressions during the course of development.
 
-Edit the file `test/practicalli/random_clojure_core_function_test.clj` and add unit tests.
+Edit the file `test/practicalli/random_function_test.clj` and add unit tests.
 
-The first test check th standard-library-functions contains entries.
+The first test check the standard-library-functions contains entries.
 
 The second test checks the -main function returns a string (the function name and details).
 
-```clojure
-(ns practicalli.random-clojure-core-function-test
+```clojure title="src/practicalli/random_function_test.clj"
+(ns practicalli.random-function-test
   (:require [clojure.test :refer [deftest is testing]]
-            [practicalli.random-clojure-core-function :as SUT]))
+            [practicalli.random-function :as random-fn]))
 
-(deftest -main-test
+(deftest standard-library-test
   (testing "Show random function from Clojure standard library"
-
-    (is (seq SUT/standard-library-functions))
-
-    (is (string? (SUT/-main)))))
+    (is (seq random-fn/standard-library-functions))
+    (is (string? (random-fn/-main)))))
 ```
+
 
 ## Update the main function
 
-Edit the `src/practicalli/random-clojure-function.clj` file.  Change the `-main` function to return a string of the function name and description.
+Edit the `src/practicalli/random-function.clj` file.  Change the `-main` function to return a string of the function name and description.
 
-```clojure
+```clojure title="src/practicalli/random-function.clj"
 (defn -main
   "Return a function name from the Clojure Standard library"
   [& args]
@@ -131,23 +172,30 @@ Edit the `src/practicalli/random-clojure-function.clj` file.  Change the `-main`
   )
 ```
 
-Run the tests with the Cognitect Labs test runner from the aliases in the project
+=== "Cognitect Test Runner"
+    Run the tests with the Congnitect test runner via the `test` function in the `build.clj` file.
+    ```bash
+    clojure -T:build test
+    ```
 
-```bash
-clojure -M:test:runner
-```
+=== "Kaocha Test Runner"
+    Run the tests with the Kaocha test runner using the alias `:test/run` from [Practicalli Clojure CLI config](/clojure/clojure-cli/practialli-config/)
+    ```bash
+    clojure -M:test/run
+    ```
 
-The tests should pass.
 
 ## Running the application
+
 Use the clojure command with the main namespace of the application.  Clojure will look for the -main function and evaluate it.
 ```bash
-clojure -M -m practicalli.random-clojure-function
+clojure -M -m practicalli.random-function
 ```
 This should return a random function name and its description.  However, nothing is returned.  Time to refactor the code.
 
 
 ## Improving the code
+
 The tests pass, however, no output is shown when the application is run.
 
 The main function returns a string but nothing is sent to standard out, so running the application does not return anything.
@@ -188,7 +236,7 @@ Run the tests again.
 If the tests pass, then run the application again
 
 ```bash
- clojure -M -m practicalli.random-clojure-function
+ clojure -M -m practicalli.random-function
 ```
 A random function and its description are displayed.
 
@@ -239,6 +287,7 @@ Bind the results of this expression to the name `all-public-functions`.
 
 
 ## Control which namespaces are consulted
+
 There is no way to control which library we get the functions from, limiting the ability of our application.
 
 Refactor the main namespace to act differently based on arguments passed:
@@ -279,6 +328,7 @@ Else return all the functions from all the namespaces.
 
 
 ## Use the fully qualified name for the namespace
+
 Now that functions can come from a range of namespaces, the fully qualified namespace should be used for the function, eg. domain/namespace
 
 ```clojure
@@ -297,6 +347,7 @@ Update the random function to return the domain part of the namespace, separated
 ```
 
 ## Use all available namespaces by default
+
 Define a name to represent the collection of all available namespaces, in the context of the running REPL.
 
 ```clojure
@@ -325,11 +376,10 @@ Add http-kit server and send  information back as a plain text, html, json and e
 
 
 ## Follow-on idea: Convert to a library
+
 Convert the project to a library so this feature can be used as a development tool for any project.
 
 Add functionality to list all functions from all namespaces or a specific namespace, or functions from all namespaces of a particular domain, e.g `practicalli` or `practicalli.app`
-
-
 
 
 
