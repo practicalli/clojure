@@ -15,6 +15,8 @@ Most editors support evaluation of Clojure code within the `(comment ,,,)` form,
 
 Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure/reference/code-analysis.md) warnings for redefined vars (`def`, `defn`) when using this approach.
 
+!!! HINT "Practicalli Clojure LSP Config - rich-comment-hotload snippet"
+
 ```clojure
 ;; Rich comment block with redefined vars ignored
 #_{:clj-kondo/ignore [:redefined-var]}
@@ -30,7 +32,7 @@ Rich comment blocks are very useful for rapidly iterating over different design 
   (defn value-added-tax []
     ;; algorithm - alternate design)
 
-  ) ;; End of rich comment block
+  ) ; End of rich comment block
 ```
 
 
@@ -65,13 +67,15 @@ The design journal can be used to create meaningful documentation for the projec
 
 ## Migrating design to tests
 
-Code within rich comment blocks is often a good source of code that can be put into formal unit tests, using `clojure.test`
+![REPL Driven Development and Test Driven Development](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.svg){align=right loading=lazy}
 
-![REPL Driven Development and Test Driven Development](https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png)
+REPL code experiements within rich comment blocks are often a good source of code that can be converted into formal unit tests.
+
+Example values used to test functions as they are designed can be useful to create meaningful sets of test data, especially when testing edge conditions.
 
 
 ## Live examples
 
 A rich comment at the end of a namespace can include code that demonstrates how to use the key aspects of the namespace API.
 
-![Rich Comments - living documentation of a namespace](https://practical.li/clojure/images/practicalli-clojure-repl-driven-development-rich-comment-blocks.png)
+![Rich Comments - living documentation of a namespace](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/practicalli-clojure-repl-driven-development-rich-comment-light.png){loading=lazy}
