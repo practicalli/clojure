@@ -302,7 +302,7 @@ nav:
       - Code Analysis: reference/code-analysis.md
       - Standard Library:
           - reference/standard-library/index.md
-          - reference/standard-library/desructuring.md
+          - reference/standard-library/destructuring.md
           - reference/standard-library/predicate-functions.md
           - reference/standard-library/regular-expressions/index.md
           - reference/standard-library/regular-expressions/matching-with-groups.md
