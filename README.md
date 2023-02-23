@@ -40,7 +40,6 @@ Issues and pull requests are most welcome.  Please detail issues as much as you 
 
 Please [see the detailed contributing section of the book](contributing.html) before raising an issue or pull request
 
-* [Kanban board of issues](https://github.com/practicalli/clojure/projects/1)
 * [Current Issues](https://github.com/practicalli/clojure/issues)
 * [Current pull requests](https://github.com/practicalli/clojure/pulls)
 
