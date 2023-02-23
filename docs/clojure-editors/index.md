@@ -333,7 +333,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 === "Intellij"
     [Cursive](https://cursive-ide.com/) may be an appropriate choice for people from a Java background who are already familiar with IntelliJ.  Cursive will run static analysis of Clojure code when opening a Clojure project, as IntelliJ does with other languages.
 
-    Follow the Cursive user guide to configure IntelliJ and install Cursive.
+    Follow the [Cursive user guide](https://cursive-ide.com/userguide/){target=_blank} to configure IntelliJ and install Cursive.
 
     !!! HINT "Requires license for commercial development"
         There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.
