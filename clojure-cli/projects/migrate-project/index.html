@@ -416,8 +416,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="#minimal-approach">
     Minimal approach
   </a>
-<nav aria-label="Minimal approach" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#adding-dependencies">
     Adding dependencies
@@ -429,17 +428,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#adding-a-test-runner">
-    Adding a test runner
+<a class="md-nav__link" href="#add-test-runner">
+    Add test runner
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#building-a-jar-or-uberjar-from-the-project">
-    Building a jar or uberjar from the project
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#deployment">
@@ -447,8 +438,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tools-for-migration">
-    Tools for migration
+<a class="md-nav__link" href="#migration-tools">
+    Migration Tools
   </a>
 </li>
 </ul>
@@ -1954,8 +1945,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a class="md-nav__link" href="#minimal-approach">
     Minimal approach
   </a>
-<nav aria-label="Minimal approach" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#adding-dependencies">
     Adding dependencies
@@ -1967,17 +1957,9 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#adding-a-test-runner">
-    Adding a test runner
+<a class="md-nav__link" href="#add-test-runner">
+    Add test runner
   </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#building-a-jar-or-uberjar-from-the-project">
-    Building a jar or uberjar from the project
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#deployment">
@@ -1985,8 +1967,8 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tools-for-migration">
-    Tools for migration
+<a class="md-nav__link" href="#migration-tools">
+    Migration Tools
   </a>
 </li>
 </ul>
@@ -1998,20 +1980,15 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <article class="md-content__inner md-typeset">
 <h1 id="migrating-project-to-clojure-cli">Migrating Project To Clojure CLI<a class="headerlink" href="#migrating-project-to-clojure-cli" title="Permanent link">λ︎</a></h1>
 <p>Migrating an existing project to Clojure CLI can be as simple as the addition of a <code>deps.edn</code> configuration file.</p>
-<p>A <a href="[Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md){target=_blank}">user configuration containing a collection of community tools</a> minimizes the project configuration required.</p>
 <div class="admonition warning">
 <p class="admonition-title">Leiningen plugins that change code</p>
-<p>Some Leiningen plugins inject code into a project to make it work.  For example, lein-ring injects clojure code into the project to run an application server.  These type of plugins may require updates to the Clojure code in the project.</p>
+<p>A few Leiningen plugins inject code into a project to make it work.  For example, lein-ring injects Clojure code into the project to run an application server.  These type of plugins may require updates to the Clojure code in the project.</p>
 </div>
 <h2 id="minimal-approach">Minimal approach<a class="headerlink" href="#minimal-approach" title="Permanent link">λ︎</a></h2>
 <p>Create a <code>deps.edn</code> file in the root of the project directory, containing an empty hash-map, <code>{}</code></p>
 <p>The Clojure version will be taken from the Clojure CLI tools install configuration.</p>
 <p>This configuration is enough to run a terminal REPL UI for the project, although requiring namespaces from the project may require libraries to be added as dependencies first.</p>
-<details class="hint">
-<summary>Use addlibs to hotload dependencies</summary>
-<p>addlibs will hotload libraries into the running REPL so can be used to determine which libraries are reqiured to make the project work.  This approach can be useful for diagnosing conflicts in dependencies by loading them in stages and narrowing down the conflict.</p>
-</details>
-<h3 id="adding-dependencies">Adding dependencies<a class="headerlink" href="#adding-dependencies" title="Permanent link">λ︎</a></h3>
+<h2 id="adding-dependencies">Adding dependencies<a class="headerlink" href="#adding-dependencies" title="Permanent link">λ︎</a></h2>
 <p>All Clojure projects require the <code>org.clojure/clojure</code> library and a specific version is defined in the configuration that comes with the Clojure CLI install.</p>
 <p>Use the <code>:deps</code> key in <code>deps.edn</code> to specify a version of the <code>org.clojure/clojure</code> library, along with any dependencies required for the Clojure code to run.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:deps</span>
@@ -2019,26 +1996,28 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="nv">integrant/integrant</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.8.0"</span><span class="p">}}}</span>
 </code></pre></div>
 <details class="hint">
-<summary>Hot loading dependencies</summary>
+<summary>REPL Reloaded - add-libs hotload dependencies</summary>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">Practicalli REPL Reloaded</a> provides the add-libs function that can hotload libraries into the running REPL, without having to restart the REPL process.</p>
+<p>The hotload approach can also be useful for diagnosing conflicts in dependencies by loading them in stages to narrow down the library causing the conflict.</p>
 </details>
-<blockquote>
-<p><a href="/alternative-tools/clojure-cli/hot-load-dependencies.md">add-lib</a> can hot-load a Clojure dependency into a running REPL process, avoiding the need to restart.</p>
-</blockquote>
-<h3 id="adding-paths">Adding paths<a class="headerlink" href="#adding-paths" title="Permanent link">λ︎</a></h3>
+<h2 id="adding-paths">Adding paths<a class="headerlink" href="#adding-paths" title="Permanent link">λ︎</a></h2>
 <p>It is advisable to specify the directory paths to define the location of the source code in the project, especially when running the project in other environments such as a continuous integration server.</p>
 <p>Edit the <code>deps.edn</code> file in the root of the project directory and add source directory and if relevant the resources directory.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="ss">:paths</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">   </span><span class="p">[</span><span class="s">"src"</span><span class="w"> </span><span class="o">`</span><span class="nv">resource</span><span class="o">`</span><span class="p">]}</span>
 </code></pre></div>
-<h3 id="adding-a-test-runner">Adding a test runner<a class="headerlink" href="#adding-a-test-runner" title="Permanent link">λ︎</a></h3>
-<p>Tests can be run locally using a test runner alias from the <a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a>.</p>
-<p>A Continuous Integration server requires an alias in the project <code>deps.edn</code> file to define a test runner. A selection of test runners are provided by <a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a>.  Copy a <a href="https://github.com/practicalli/clojure-deps-edn#test-runners-and-test-coverage-tools">test runner alias</a> to the project <code>deps.edn</code> file.</p>
-<h3 id="building-a-jar-or-uberjar-from-the-project">Building a jar or uberjar from the project<a class="headerlink" href="#building-a-jar-or-uberjar-from-the-project" title="Permanent link">λ︎</a></h3>
-<p>The depstar project is provided in <a href="{{ book.P9IClojureDepsEdn }}">practicalli/clojure-deps-edn</a> for building jars for libraries and uberjars for applications.  When pushing a project to a Continuous Server, the relevant alias should be included in the Clojure projects <code>deps.edn</code> file so the project can be built</p>
+<h2 id="add-test-runner">Add test runner<a class="headerlink" href="#add-test-runner" title="Permanent link">λ︎</a></h2>
+<p>Tests can be run locally using the <code>:test/run</code> or <code>:test/watch</code> aliases from the <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a>.</p>
+<details class="hint">
+<summary>Continuous Integration Support</summary>
+<p>A Continuous Integration server requires an alias in the project <code>deps.edn</code> file to define a test runner.</p>
+<p>A selection of test runners are provided via aliases defined in <a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a>.  Copy a test runner alias to the project <code>deps.edn</code> file.</p>
+</details>
 <h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">λ︎</a></h2>
 <p>A Continuous Delivery pipeline will require an alias in the project <code>deps.edn</code> file to define how to build a jar or uberjar to package the Clojure project.</p>
-<h2 id="tools-for-migration">Tools for migration<a class="headerlink" href="#tools-for-migration" title="Permanent link">λ︎</a></h2>
-<p>Several tools exist to support migration</p>
+<p><a href="tools-build/">Project Package section</a> details how to use <code>tools.build</code> to create jar and uberjar archives of the project for deployment.</p>
+<h2 id="migration-tools">Migration Tools<a class="headerlink" href="#migration-tools" title="Permanent link">λ︎</a></h2>
+<p>Several tools exist to support migration from Leiningen projects to Clojure CLI projects.  Results will be dependant on how complex the Leiningen project configuration is.</p>
 <ul>
 <li><a href="https://github.com/EwenG/lein-to-deps">lein-to-deps</a> - create a <code>deps.edn</code> configuration from a <code>project.clj</code> configuration</li>
 <li><a href="https://github.com/RickMoynihan/lein-tools-deps">lein-tools-deps</a> - share Clojure CLI dependencies with Leiningen project configuration.</li>
@@ -2048,7 +2027,7 @@ so PR's are of limited value at present. Some page links &amp; images may be bro
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
 </small>
 </div>
 </article>
