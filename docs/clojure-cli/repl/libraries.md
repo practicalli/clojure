@@ -95,7 +95,7 @@ Start a REPL session using Clojure CLI with the [`:lib/hotload alias`](/clojure/
 clojure -M:lib/hotload:repl/rebel
 ```
 
-![Clojure REPL - hot load library dependencies](/images/clojure-repl-hot-load-deps-rebel.png)
+![Clojure REPL - hot load library dependencies](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-rich-comment-block.png)
 
 Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
 
