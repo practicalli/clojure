@@ -98,9 +98,9 @@ plugins:
   - redirects:
       redirect_maps:
         repl-driven-development.md: introduction/repl-workflow.md
-        clojure-cli/data-browsers: data-inspector/
-        clojure-editors/editor-install-guides/vspacecode-calva: clojure-editors
-        clojure-editors/editor-user-guides/vspacecode-calva: clojure-editors
+        clojure-cli/data-browsers/index.md: data-inspector/index.md
+        clojure-editors/editor-install-guides/vspacecode-calva.md: clojure-editors/index.md
+        clojure-editors/editor-user-guides/vspacecode-calva.md: clojure-editors/index.md
 
 # Footer / Social Media
 extra:
