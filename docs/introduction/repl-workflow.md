@@ -30,7 +30,7 @@ Design decisions and valuable data from REPL experiments can be codified as [spe
 
 A REPL connected editor is the primary tool for evaluating Clojure code from source code files, displaying the results inline.
 
-Source code is automatically evaluated in its respective namespace, removing the need to change namespaces in the REPL, (`in-ns`), or use fully qualified names to call functions.
+Source code is automatically evaluated in its respective namespace, removing the need to change namespaces in the REPL with (`in-ns`) or use fully qualified names to call functions.
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rQ802kSaip4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
