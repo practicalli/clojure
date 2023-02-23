@@ -1,36 +1,37 @@
 # Hotload libraries in Clojure Projects
 
-![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png)
+When starting a REPL process the dependencies listed in the project `deps.edn` file are added to the class path.  To add further dependencies the REPL has to be  restarted to include new libraries added to the `deps.edn` file.
 
-Run a Clojure REPL configured with the [:lib/hotload alias to include the library dependencies](repl-reloaded/).
+![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png){loading=lazy}
 
-Use a rich comment block or [a `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md) to require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hot-load libraries.
+[Practicalli REPL Reloaded workflow ](/clojure/clojure-cli/repl-reloaded/) allows new dependencies to be added to a running REPL process, negating the need to restart the REPL process which would loose the current REPL state.
 
-## Hotload Alias
 
-=== "Practicalli Clojure CLI Config"
-    `:lib/hotload` alias defined in [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/) adds the latest SHA commit from the `add-libs3` branch of `clojure.tools.deps.alpha` library as an extra dependency.
+## Hotload REPL
 
-    Include the `:lib/hotload` alias when starting the REPL, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
+Start a REPL with an alias that includes the `add-libs` library.
 
-    See [Terminal REPL](hotload-libraries-terminal-ui.md) and [Clojure Editor](hotload-libraries-editor.md) pages for examples.
+=== "Terminal REPL"
+    Start a terminal  REPL with the `:repl/reloaded` alias and connect
 
-=== "Manual"
-    Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
-
-    The `add-libs` code is on a separate [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3), so requires the SHA from the head of add-libs3 branch
-
-    ```clojure
-      :lib/hotload
-      {:extra-deps {org.clojure/tools.deps.alpha
-                   {:git/url "https://github.com/clojure/tools.deps.alpha"
-                    :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
+    ```shell
+    clojure -M:repl/reloaded
     ```
+    Connect to the REPL process from a Clojure editor for an enhanced development experience.
 
-    > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+
+=== "Clojure Editor"
+    Run a Clojure REPL from the editor (jack-in command) configured with the `:dev/reloaded` alias or `:lib/hotload` alias in an Editor jack-in command or other REPL startup command.
+
+   Alternatively, run a Terminal REPL and connect the editor to that REPL process (connect command) 
+
+
+[Practicalli REPL Reloaded Configuration](/clojure/clojure-cli/repl-reloaded/){target=_blank .md-button}
 
 
 ## Rich Comment Block
+
+Use a rich comment block or [a `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md) to require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hot-load libraries.
 
 A rich comment block ensures `add-libs` code is only evaluated manually by a developer.
 
@@ -42,11 +43,10 @@ A rich comment block ensures `add-libs` code is only evaluated manually by a dev
 ```
 
 
-## Clojure LSP snippets
+??? rich-comment-hotload snippets
+    [Practicalli Clojure LSP Config](/clojure/clojure-editors/clojure-lsp/practicalli-snippets/) includes the `rich-comment-hotload` snippet which adds a rich comment block with a require for `clojure.tools.deps.alpha` and an `add-libs` expression, making it very quick to add this code.
 
-[Snippets provided by Clojure LSP](https://clojure-lsp.io/features/#snippets) include `rich-comment-hotload`, to add a rich comment block with a require for `clojure.tools.deps.alpha` and an `add-libs` expression, making it very quick to add this code.
-
-`deps-maven` and `deps-git` snippets help ensure the correct syntax is used for the `add-libs` expression for each library dependency to be added.
+    `deps-maven` and `deps-git` snippets help ensure the correct syntax is used for the `add-libs` expression for each library dependency to be added.
 
 
 ## Hotload Example
@@ -115,44 +115,43 @@ Create a web server from scratch, serving pages generated from hiccup, with all 
 ```
 
 
-# Using add-libs with project deps.edn
+??? INFO "Using add-libs with project deps.edn"
+    A project `deps.edn` file can also be used to hotload libraries with `add-lib`.  This has the advantage that newly added libraries become part of the normal project dependency configuration.
+    
+    Add a namespace definition to the `deps.edn` file to help editors understand the `deps.edn` file is being used for code.  Use the `#_` comment reader macro with the namespace definition to only evaluate this code manually as a developer.
+    
+    Add the `add-libs` expression after the `:deps` key so that it is easy to slurp in the existing and new dependencies as a single hash-map.  Use the comment reader macro `#_` to only evaluate this code manually.
+    
+    To hotload, remove the `#_` temporarily and slurp in the hash-map of dependencies, placing a `'` at the start of the hash-map.  Add the name and version of libraries to hotload in the hash-map.  Evaluate the `add-libs` expression which should return a list of new namespaces added.
+    
+    Once hotload has finished, barf the hash-maps of dependencies from the `add-libs` expression, removing the `'`.  Add the `#_` to the `add-libs` expression and save the file.
+    
+    The hotloaded libraries are now available by requiring their namespaces.  If the REPL is restarted, the new dependencies will be included in the Classpath as they are now part of the project configuration.
+    
+    
+    ```clojure
+    ;; ---------------------------------------
+    ;; Project Configuration with  Hotload
+    ;; ---------------------------------------
+    
+    ;; Hotload requires
+    #_(ns deps.edn
+        (:require [clojure.tools.deps.alpha.repl :refer [add-libs]]))
+    
+    ;; Project configuration
+    {:paths
+     ["src" "resources"]
+    
+     :deps
+     #_ (add-libs)
+     {org.clojure/clojure {:mvn/version "1.10.1"}
+      http-kit/http-kit   {:mvn/version "2.5.1"}
+      hiccup/hiccup       {:mvn/version "2.0.0-alpha2"}}
+    
+     :aliases {}
+    ```
 
-A project `deps.edn` file can also be used to hotload libraries with `add-lib`.  This has the advantage that newly added libraries become part of the normal project dependency configuration.
-
-Add a namespace definition to the `deps.edn` file to help editors understand the `deps.edn` file is being used for code.  Use the `#_` comment reader macro with the namespace definition to only evaluate this code manually as a developer.
-
-Add the `add-libs` expression after the `:deps` key so that it is easy to slurp in the existing and new dependencies as a single hash-map.  Use the comment reader macro `#_` to only evaluate this code manually.
-
-To hotload, remove the `#_` temporarily and slurp in the hash-map of dependencies, placing a `'` at the start of the hash-map.  Add the name and version of libraries to hotload in the hash-map.  Evaluate the `add-libs` expression which should return a list of new namespaces added.
-
-Once hotload has finished, barf the hash-maps of dependencies from the `add-libs` expression, removing the `'`.  Add the `#_` to the `add-libs` expression and save the file.
-
-The hotloaded libraries are now available by requiring their namespaces.  If the REPL is restarted, the new dependencies will be included in the Classpath as they are now part of the project configuration.
-
-
-```clojure
-;; ---------------------------------------
-;; Project Configuration with  Hotload
-;; ---------------------------------------
-
-;; Hotload requires
-#_(ns deps.edn
-    (:require [clojure.tools.deps.alpha.repl :refer [add-libs]]))
-
-;; Project configuration
-{:paths
- ["src" "resources"]
-
- :deps
- #_ (add-libs)
- {org.clojure/clojure {:mvn/version "1.10.1"}
-  http-kit/http-kit   {:mvn/version "2.5.1"}
-  hiccup/hiccup       {:mvn/version "2.0.0-alpha2"}}
-
- :aliases {}
-```
-
-## Example video
+## Live Coding video
 
 See the [REPL driven development video by Sean Corfield](https://youtu.be/gIoadGfm5T8?t=1390) for this technique.
 
