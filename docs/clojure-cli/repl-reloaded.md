@@ -18,7 +18,7 @@ Other features include:
 
 * `dev` directory for a [custom REPL startup](/clojure/clojure-cli/repl-startup/)
 * `add-libs` hotload libraries without restarting the REPL (alpha software)
-* [`tools.namespace`](https://github.com/clojure/tools.namespace){target'_blank} to reload changed namespaces
+* [`tools.namespace`](#reload-namespaces){target'_blank} to reload changed namespaces
 * [portal](/clojure/data-inspector/portal/){target'_blank} to visualise & inspect data
 * `test` directory, test libraries & kaocha test runner
 * benchmark code with criterium
@@ -29,35 +29,36 @@ Other features include:
     ```clojure
     :repl/reloaded
     {:extra-paths ["dev" "test"]
-     :extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}
-                  cider/cider-nrepl          {:mvn/version "0.28.7"}
-                  com.bhauman/rebel-readline {:mvn/version "0.1.4"}
-                  djblue/portal {:mvn/version "0.34.2"}
-                  org.clojure/tools.namespace {:mvn/version "1.3.0"}
+     :extra-deps {nrepl/nrepl                  {:mvn/version "1.0.0"}
+                  cider/cider-nrepl            {:mvn/version "0.30.0"}
+                  com.bhauman/rebel-readline   {:mvn/version "0.1.4"}
+                  djblue/portal                {:mvn/version "0.35.1"}
+                  org.clojure/tools.namespace  {:mvn/version "1.4.1"}
                   org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
                                                 :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
-                  org.slf4j/slf4j-nop {:mvn/version "2.0.5"}
-                  com.brunobonacci/mulog {:mvn/version "0.9.0"}
-                  lambdaisland/kaocha {:mvn/version "1.71.1119"}
-                  org.clojure/test.check {:mvn/version "1.1.1"}
-                  ring/ring-mock         {:mvn/version "0.4.0"}
-                  criterium/criterium    {:mvn/version "0.4.6"}}
+                  org.slf4j/slf4j-nop          {:mvn/version "2.0.6"}
+                  com.brunobonacci/mulog       {:mvn/version "0.9.0"}
+                  lambdaisland/kaocha          {:mvn/version "1.77.1236"}
+                  org.clojure/test.check       {:mvn/version "1.1.1"}
+                  ring/ring-mock               {:mvn/version "0.4.0"}
+                  criterium/criterium          {:mvn/version "0.4.6"}}
      :main-opts  ["-m" "nrepl.cmdline"
-                  "--middleware" "[cider.nrepl/cider-middleware]"
+                  "--middleware" "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"
                   "--interactive"
                   "-f" "rebel-readline.main/-main"]}
 
     :dev/reloaded
     {:extra-paths ["dev" "test"]
-     :extra-deps  {djblue/portal {:mvn/version "0.34.2"}
-                   org.clojure/tools.namespace {:mvn/version "1.3.0"}
+     :extra-deps  {djblue/portal                {:mvn/version "0.35.1"}
+                   org.clojure/tools.namespace  {:mvn/version "1.4.1"}
                    org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
                                                  :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
-                   org.slf4j/slf4j-nop {:mvn/version "2.0.5"}
-                   com.brunobonacci/mulog {:mvn/version "0.9.0"}
-                   lambdaisland/kaocha {:mvn/version "1.71.1119"}
-                   org.clojure/test.check {:mvn/version "1.1.1"}
-                   ring/ring-mock         {:mvn/version "0.4.0"}}}
+                   org.slf4j/slf4j-nop          {:mvn/version "2.0.6"}
+                   com.brunobonacci/mulog       {:mvn/version "0.9.0"}
+                   lambdaisland/kaocha          {:mvn/version "1.77.1236"}
+                   org.clojure/test.check       {:mvn/version "1.1.1"}
+                   ring/ring-mock               {:mvn/version "0.4.0"}
+                   criterium/criterium          {:mvn/version "0.4.6"}}}
     ```
 
     `org.slf4j/slf4j-nop` is only included to surpress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.
@@ -143,17 +144,17 @@ A list of refreshed namespaces are printed.  If there are errors in the Clojure 
 
 ## Hotload Libraries
 
-`add-libs` "hot-loads" one or more libraries into a running REPL, avoiding the need to restart the REPL and loosing any state just to use a new library with the project.
+`add-libs` to hotload one or more libraries into a running REPL, avoiding the need to restart the REPL and loosing any state just to use a new library with the project.
 
 ![Hotload libraries into a Clojure REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png)
 
-`add-libs` is typically called from a rich comment block or [a separate `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md#create-a-devuserclj-file-and-envdev-alias) to avoid being loaded with application code.
+`add-libs` is typically called from a rich comment block or [a separate `dev/user.clj` file](/clojure/clojure-cli/repl-startup/) to avoid being loaded with application code.
 
 Once hot-loaded, a library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
 
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
-??? WARNING "Add-libs is an experimental feature"
+??? WARNING "Add-libs is an unreleased feature"
     `add-libs` is not yet an official feature and currently available only in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  add-libs should become official release in 2023, although not in within `org.clojure/tools.deps` library.
 
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
