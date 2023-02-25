@@ -11,7 +11,7 @@ The `user.clj` file can be used for one or more of the following:
 * adding development tools - e.g. [portal data inspector](/clojure/data-inspector/portal/#configure-repl-startup)
 
 
-!!! WARNING "Clojure CLI cannot set the REPL to a different namespace"
+??? WARNING "Clojure CLI cannot set the REPL to a different namespace"
     Clojure CLI has no specific mechanism to start the REPL in a namespace other than `user`.
 
     Technically the `-e` option could be used to set a different namespace by calling `in-ns` with a different namespace, although this approach may affect the running of other tools or add extra complexity to the commands.
@@ -50,16 +50,14 @@ Create an alias to include the `dev` path when running a REPL process
       {:extra-paths ["dev"]}
     ```
 
-Running a Clojure REPL with the `:env/dev` alias will add the `dev/user.clj` file to the class path and be loaded by the REPL.
-
-In this example the `dev/` path is added to the project and then the REPL is run using Rebel.
+Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:env/dev`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
 ```bash
-clojure -M:env/dev:repl/rebel
+clojure -M:repl/reloaded
 ```
 
-!!! HINT "Using the `dev/` directory"
-    The `user.clj` code should not be included in live deployments, such as jars and uberjars.  Including the `dev/` directory via the `:env/dev` alias keeps the `user.clj` and any other development only code separate from deployment actions.
+!!! HINT "Keep `user.clj` separate"
+      * [ ] The `user.clj` code should not be included in live deployments, such as a jar or uberjar.  Including the `dev/` directory via an alias separates the `user.clj` from deployment actions.
 
 
 ## Requiring namespaces
@@ -152,8 +150,12 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
 
 ## Hotload libraries
 
-[Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.
+[Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.
 
+??? WARNING "Add-libs is an unreleased feature"
+    `add-libs` is not yet an official feature and currently available only in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  add-libs should become official release in 2023, although not in within `org.clojure/tools.deps` library.
+
+    [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
 
 === "Practicalli Clojure CLI Config"
     `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
