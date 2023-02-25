@@ -2016,12 +2016,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li>hotload libraries into the REPL process without restart</li>
 <li>adding development tools - e.g. <a href="/clojure/data-inspector/portal/#configure-repl-startup">portal data inspector</a></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Clojure CLI cannot set the REPL to a different namespace</p>
+<details class="warning">
+<summary>Clojure CLI cannot set the REPL to a different namespace</summary>
 <p>Clojure CLI has no specific mechanism to start the REPL in a namespace other than <code>user</code>.</p>
 <p>Technically the <code>-e</code> option could be used to set a different namespace by calling <code>in-ns</code> with a different namespace, although this approach may affect the running of other tools or add extra complexity to the commands.</p>
 <p>Require functions into the <code>user</code> nameapace rather than use potentially complex commands to set the namespace.</p>
-</div>
+</details>
 <details class="hint">
 <summary>Example projects</summary>
 <p><a href="https://github.com/practicalli/clojure-app-template" target="_blank">practicalli/clojure-app-template</a> contains a <code>dev/user.clj</code> file for configuring the REPL at start up.</p>
@@ -2050,13 +2050,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 </div>
 </input></input></div>
-<p>Running a Clojure REPL with the <code>:env/dev</code> alias will add the <code>dev/user.clj</code> file to the class path and be loaded by the REPL.</p>
-<p>In this example the <code>dev/</code> path is added to the project and then the REPL is run using Rebel.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure<span class="w"> </span>-M:env/dev:repl/rebel
+<p>Run a Clojure REPL with the <code>:repl/reloaded</code> alias (or <code>:dev/reloaded</code> <code>:env/dev</code>)  to add the <code>dev</code> directory to the class path and load the code in <code>dev/user.clj</code> file into the REPL.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
 <div class="admonition hint">
-<p class="admonition-title">Using the <code>dev/</code> directory</p>
-<p>The <code>user.clj</code> code should not be included in live deployments, such as jars and uberjars.  Including the <code>dev/</code> directory via the <code>:env/dev</code> alias keeps the <code>user.clj</code> and any other development only code separate from deployment actions.</p>
+<p class="admonition-title">Keep <code>user.clj</code> separate</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> The <code>user.clj</code> code should not be included in live deployments, such as a jar or uberjar.  Including the <code>dev/</code> directory via an alias separates the <code>user.clj</code> from deployment actions.</li>
+</ul>
 </div>
 <h2 id="requiring-namespaces">Requiring namespaces<a class="headerlink" href="#requiring-namespaces" title="Permanent link">λ︎</a></h2>
 <p>By requiring a namespace in the <code>dev/user.clj</code> file, the code defined in that namespace will be loaded into the REPL during startup. Functions <code>(defn)</code> and data <code>(def)</code> are immediately available.  If a required namespace also requires namespace, they will also be loaded into the REPL during startup.</p>
@@ -2120,7 +2121,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">find-lib/print-deps</span><span class="w"> </span><span class="s">"library name"</span><span class="p">))</span>
 </code></pre></div>
 <h2 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
-<p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process that were not incldude as a dependency on REPL startup.</p>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.</p>
+<details class="warning">
+<summary>Add-libs is an unreleased feature</summary>
+<p><code>add-libs</code> is not yet an official feature and currently available only in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  add-libs should become official release in 2023, although not in within <code>org.clojure/tools.deps</code> library.</p>
+<p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library for all released functions from the alpha library</p>
+</details>
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -2250,7 +2256,7 @@ Now define code in the <code>dev/dev.clj</code> file that controls the component
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
 </small>
 </div>
 </article>

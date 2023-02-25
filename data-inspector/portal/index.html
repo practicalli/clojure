@@ -494,30 +494,30 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-portal-to-repl">
-    Add Portal to REPL
+<a class="md-nav__link" href="#start-repl-with-portal">
+    Start REPL with Portal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#starting-portal">
-    Starting Portal
+<a class="md-nav__link" href="#open-portal-ui">
+    Open Portal UI
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configure-repl-startup">
-    Configure REPL startup
+<a class="md-nav__link" href="#portal-ui-on-repl-startup">
+    Portal UI on REPL startup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-portal-to-inspect-data">
-    Using Portal to inspect data
+<a class="md-nav__link" href="#send-to-portal">
+    Send to Portal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#emacs-integration">
-    Emacs integration
+<a class="md-nav__link" href="#editor-nrepl-middleware">
+    Editor nREPL middleware
   </a>
-<nav aria-label="Emacs integration" class="md-nav">
+<nav aria-label="Editor nREPL middleware" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#key-bindings">
@@ -1961,30 +1961,30 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-portal-to-repl">
-    Add Portal to REPL
+<a class="md-nav__link" href="#start-repl-with-portal">
+    Start REPL with Portal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#starting-portal">
-    Starting Portal
+<a class="md-nav__link" href="#open-portal-ui">
+    Open Portal UI
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#configure-repl-startup">
-    Configure REPL startup
+<a class="md-nav__link" href="#portal-ui-on-repl-startup">
+    Portal UI on REPL startup
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-portal-to-inspect-data">
-    Using Portal to inspect data
+<a class="md-nav__link" href="#send-to-portal">
+    Send to Portal
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#emacs-integration">
-    Emacs integration
+<a class="md-nav__link" href="#editor-nrepl-middleware">
+    Editor nREPL middleware
   </a>
-<nav aria-label="Emacs integration" class="md-nav">
+<nav aria-label="Editor nREPL middleware" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#key-bindings">
@@ -2025,16 +2025,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label><label for="__tabbed_1_2">Alias Definition</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> contains the <code>:inspect/portal</code> alias that run a Reveal repl with data browser.</p>
+<p><a href="/clojure/clojure-cli/practicalli-config.md">Practicalli Clojure CLI Config</a> contains several aliases that support Portal, either adding as a library or to start a REPL process that can send all Clojure evaluated code to Portal.</p>
+<p>include the portal library in <code>clojure</code> commands to run a REPL</p>
 <ul>
 <li><code>inspect/portal-cli</code> - Clojure CLI (simplest approach)</li>
 <li><code>inspect/portal-web</code> - Web ClojureScript REPL</li>
 <li><code>inspect/portal-node</code> - node ClojureScript REPL</li>
+<li><code>dev/reloaded</code> - Portal, including <a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded tools</a></li>
 </ul>
-<div class="admonition hint">
-<p class="admonition-title">REPL Reloaded aliases also include Portal Clojure CLI</p>
-<p><a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded</a> aliases <code>:repl/reloaded</code> starts a rich terminal UI REPL with Portal. <code>:dev/reloaded</code> also includes Portal, for use with commands that start a REPL.</p>
-</div>
+<p>Run a REPL with portal and <code>portal.nrepl/wrap-portal</code> to <a href="#editor-nrepl-middleware">send every REPL evaluation to Portal over an nREPL connection</a></p>
+<ul>
+<li><code>:repl/inspect</code> - starts a basic REPL with Portal nREPL middleware.</li>
+<li><code>:repl/reloaded</code> - starts a rich terminal UI REPL with Portal nREPL middleware, including <a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded tools</a></li>
+</ul>
 </div>
 <div class="tabbed-block">
 <p>Create portal aliases to include the portal libraries for the Clojure, ClojureScript Web browser and ClojureScript Node server libraries
@@ -2050,11 +2053,23 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">djblue/portal</span><span class="w">             </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.34.2"</span><span class="p">}</span>
 <a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">              </span><span class="nv">org.clojure/clojurescript</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.10.844"</span><span class="p">}}</span>
 <a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"cljs.main"</span><span class="w"> </span><span class="s">"-re"</span><span class="w"> </span><span class="s">"node"</span><span class="p">]}</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="ss">:repl/inspect</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="p">{</span><span class="ss">:extra-deps</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w"> </span><span class="p">{</span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.28.5"</span><span class="p">}</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">  </span><span class="nv">djblue/portal</span><span class="w">     </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.33.0"</span><span class="p">}}</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"nrepl.cmdline"</span>
+<a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">             </span><span class="s">"--middleware"</span>
+<a href="#__codelineno-0-20" id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="w">             </span><span class="s">"[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"</span><span class="p">]}</span>
 </code></pre></div></p>
+<div class="admonition hint">
+<p class="admonition-title">REPL Reloaded Aliases</p>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded section</a> includes the <code>:repl/reloaded</code> and <code>:dev/reloaded</code> ailas definitions</p>
+</div>
 </div>
 </div>
 </input></input></div>
-<h2 id="add-portal-to-repl">Add Portal to REPL<a class="headerlink" href="#add-portal-to-repl" title="Permanent link">λ︎</a></h2>
+<h2 id="start-repl-with-portal">Start REPL with Portal<a class="headerlink" href="#start-repl-with-portal" title="Permanent link">λ︎</a></h2>
 <p>Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><input id="__tabbed_2_3" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">REPL Starup</label><label for="__tabbed_2_2">Emacs Project configuration</label><label for="__tabbed_2_3">Emacs variable</label></div>
 <div class="tabbed-content">
@@ -2087,14 +2102,14 @@ Or include an alias with only portal data inspector
 </div>
 </div>
 </input></input></input></div>
-<h2 id="starting-portal">Starting Portal<a class="headerlink" href="#starting-portal" title="Permanent link">λ︎</a></h2>
+<h2 id="open-portal-ui">Open Portal UI<a class="headerlink" href="#open-portal-ui" title="Permanent link">λ︎</a></h2>
 <p><code>(require '[portal.api :as portal])</code> once the REPL starts.</p>
 <blockquote>
 <p>For <code>inspector-portal-web</code> use <code>(require '[portal.web :as portal])</code> instead</p>
 </blockquote>
 <p><code>(portal/open)</code> to open the web based inspector window in a browser.</p>
 <p><code>(portal/tap)</code>to add portal as a tap target (add-tap)</p>
-<h2 id="configure-repl-startup">Configure REPL startup<a class="headerlink" href="#configure-repl-startup" title="Permanent link">λ︎</a></h2>
+<h2 id="portal-ui-on-repl-startup">Portal UI on REPL startup<a class="headerlink" href="#portal-ui-on-repl-startup" title="Permanent link">λ︎</a></h2>
 <p>Start the Portal inspector as soon as the REPL is started.  This works for a terminal REPL as well as <a href="/clojure-editors/">clojure aware editors</a>.</p>
 <p>Create a <code>dev/user.clj</code> source code file which requires the portal.api library, opens the inspector window and adds portal as  a tap source.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
@@ -2120,34 +2135,88 @@ Or include an alias with only portal data inspector
 <blockquote>
 <p>The rich comment block includes commands to clear and close the portal inspector window.</p>
 </blockquote>
-<p>Start a REPL using the <code>:env/dev</code> and <code>:inspect/portal-cli</code> aliases from <a href="/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a>, using the command:</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:env/dev:inspect/portal-cli</span>
+<p>Start a REPL using the <code>:repl/reloaded</code> alias from <a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> with a <code>clojure</code> command to start a REPL.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:repl/reloaded</span>
 </code></pre></div>
-<p>To use this with Emacs CIDER editor, create a <code>.dir-locals.el</code> file in the root of the Clojure project with the following configuration</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>((clojure-mode . ((cider-clojure-cli-aliases . ":env/dev:inspect/portal-cli"))))
+<p>To use this with Emacs CIDER editor, create a <code>.dir-locals.el</code> file in the root of the Clojure project and include either <code>:env/dev:inspect/portal-cli</code> aliases</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">((</span><span class="nv">clojure-mode</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="p">((</span><span class="nv">cider-clojure-cli-aliases</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">":env/dev:inspect/portal-cli"</span><span class="p">))))</span>
 </code></pre></div>
-<h2 id="using-portal-to-inspect-data">Using Portal to inspect data<a class="headerlink" href="#using-portal-to-inspect-data" title="Permanent link">λ︎</a></h2>
+<p>Or <code>:dev/reloaded</code> alias
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="p">((</span><span class="nv">clojure-mode</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="p">((</span><span class="nv">cider-clojure-cli-aliases</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="s">":dev/reloaded"</span><span class="p">))))</span>
+</code></pre></div></p>
+<h2 id="send-to-portal">Send to Portal<a class="headerlink" href="#send-to-portal" title="Permanent link">λ︎</a></h2>
 <p>The <code>tap&gt;</code> function sends data to Portal to be shown on the inspector window.</p>
 <p><code>(tap&gt; {:accounts [{:name "jen" :email "jen@jen.com"} {:name "sara" :email "sara@sara.com"}]})</code> to send data to the portal inspector window (or any other data you wish to send)</p>
 <p>Use portal to navigate and inspect the details of the data sent to it via <code>tap&gt;</code>.</p>
 <p><code>(portal/clear)</code> to clear all values from the portal inspector window.</p>
 <p><code>(portal/close)</code> to close the inspector window.</p>
-<h2 id="emacs-integration">Emacs integration<a class="headerlink" href="#emacs-integration" title="Permanent link">λ︎</a></h2>
-<p><code>portal.nrepl/wrap-portal</code> sends every REPL evaluation to Portal over an nRepl connection.</p>
+<h2 id="editor-nrepl-middleware">Editor nREPL middleware<a class="headerlink" href="#editor-nrepl-middleware" title="Permanent link">λ︎</a></h2>
+<p><code>portal.nrepl/wrap-portal</code> sends every REPL evaluation to Portal over an nREPL connection, avoiding the need to wrap expressions with <code>tap&gt;</code>.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Alias Definition</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Start a REPL that includes the Portal nREPL middleware to send the result of every evaluation to portal.</p>
+<ul>
+<li><code>:repl/reloaded</code> - rich terminal UI with portal and <a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded tools</a> </li>
+<li><code>:repl/inspect</code> - basic terminal UI with portal </li>
+</ul>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><span class="filename">User deps.edn</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="ss">:repl/inspect</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">{</span><span class="ss">:extra-deps</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w"> </span><span class="p">{</span><span class="nv">cider/cider-nrepl</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.28.5"</span><span class="p">}</span>
+<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">  </span><span class="nv">djblue/portal</span><span class="w">     </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.33.0"</span><span class="p">}}</span>
+<a href="#__codelineno-10-5" id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"nrepl.cmdline"</span>
+<a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">             </span><span class="s">"--middleware"</span>
+<a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">             </span><span class="s">"[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"</span><span class="p">]}}}</span>
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
+<p>Start a REPL with <code>:repl/reloaded</code> or 'repl/inspect'</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+</code></pre></div>
+<p>Start Portal User Interface and add portal as a tap target using the <code>portal.api/submit</code> function to send all evaluated code to Portal</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">user namespace</label><label for="__tabbed_4_2">Emacs</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Include code in the <code>user</code> namespace to start a portal and add a tap source</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">portal.api</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">inspect</span><span class="p">]))</span>
+<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a>
+<a href="#__codelineno-12-4" id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="c1">;; Start Portal inspector on REPL start</span>
+<a href="#__codelineno-12-5" id="__codelineno-12-5" name="__codelineno-12-5"></a>
+<a href="#__codelineno-12-6" id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="c1">;; Open a portal inspector window</span>
+<a href="#__codelineno-12-7" id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="p">(</span><span class="nf">inspect/open</span><span class="p">)</span>
+<a href="#__codelineno-12-8" id="__codelineno-12-8" name="__codelineno-12-8"></a>
+<a href="#__codelineno-12-9" id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="c1">;; Add portal as a tap&gt; target over nREPL connection</span>
+<a href="#__codelineno-12-10" id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="p">(</span><span class="nf">add-tap</span><span class="w"> </span><span class="nv">portal.api/submit</span><span class="p">)</span>
+<a href="#__codelineno-12-11" id="__codelineno-12-11" name="__codelineno-12-11"></a>
+<a href="#__codelineno-12-12" id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-12-13" id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">  </span><span class="c1">;; Clear all values in the portal inspector window</span>
+<a href="#__codelineno-12-14" id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">  </span><span class="p">(</span><span class="nf">inspect/clear</span><span class="p">)</span>
+<a href="#__codelineno-12-15" id="__codelineno-12-15" name="__codelineno-12-15"></a>
+<a href="#__codelineno-12-16" id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="w">  </span><span class="c1">;; Close the inspector</span>
+<a href="#__codelineno-12-17" id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="w">  </span><span class="p">(</span><span class="nf">inspect/close</span><span class="p">)</span>
+<a href="#__codelineno-12-18" id="__codelineno-12-18" name="__codelineno-12-18"></a>
+<a href="#__codelineno-12-19" id="__codelineno-12-19" name="__codelineno-12-19"></a><span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="c1">;; End of rich comment block</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
 <p>Add helper functions to the Emacs configuration and add key bindings to call them.</p>
-<div class="highlight"><span class="filename">Emacs Configuration</span><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">;; def portal to the dev namespace to allow dereferencing via @dev/portal</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/open</span><span class="w"> </span><span class="p">()</span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span>
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">    </span><span class="s">"(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"</span><span class="p">))</span>
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a>
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/clear</span><span class="w"> </span><span class="p">()</span>
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
-<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span><span class="w"> </span><span class="s">"(portal.api/clear)"</span><span class="p">))</span>
-<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a>
-<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/close</span><span class="w"> </span><span class="p">()</span>
-<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
-<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span><span class="w"> </span><span class="s">"(portal.api/close)"</span><span class="p">))</span>
+<div class="highlight"><span class="filename">Emacs Configuration</span><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="c1">;; def portal to the dev namespace to allow dereferencing via @dev/portal</span>
+<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/open</span><span class="w"> </span><span class="p">()</span>
+<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span>
+<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">    </span><span class="s">"(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"</span><span class="p">))</span>
+<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>
+<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/clear</span><span class="w"> </span><span class="p">()</span>
+<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span><span class="w"> </span><span class="s">"(portal.api/clear)"</span><span class="p">))</span>
+<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="p">(</span><span class="nb">defun</span><span class="w"> </span><span class="nv">portal.api/close</span><span class="w"> </span><span class="p">()</span>
+<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a><span class="w">  </span><span class="p">(</span><span class="k">interactive</span><span class="p">)</span>
+<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">  </span><span class="p">(</span><span class="nv">cider-nrepl-sync-request:eval</span><span class="w"> </span><span class="s">"(portal.api/close)"</span><span class="p">))</span>
 </code></pre></div>
 <ul>
 <li>Spacemacs: add to <code>dotspacemacs/user-config</code> in the Spacemacs configuration file.</li>
@@ -2155,57 +2224,60 @@ Or include an alias with only portal data inspector
 </ul>
 <h3 id="key-bindings">Key bindings<a class="headerlink" href="#key-bindings" title="Permanent link">λ︎</a></h3>
 <p>Add key bindings to call the helper functions, ideally from the Clojure major mode menu.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Spacemacs</label><label for="__tabbed_3_2">Doom Emacs</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"><input id="__tabbed_5_2" name="__tabbed_5" type="radio"><div class="tabbed-labels"><label for="__tabbed_5_1">Spacemacs</label><label for="__tabbed_5_2">Doom Emacs</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Add key bindings specifically for Clojure mode, available via the <code>, d p</code> debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
-<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix-for-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dp"</span><span class="w"> </span><span class="s">"Portal"</span><span class="p">)</span>
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
-<a href="#__codelineno-10-4" id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
+<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix-for-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dp"</span><span class="w"> </span><span class="s">"Portal"</span><span class="p">)</span>
+<a href="#__codelineno-14-2" id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
+<a href="#__codelineno-14-3" id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
+<a href="#__codelineno-14-4" id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys-for-major-mode</span><span class="w"> </span><span class="ss">'clojure-mode</span><span class="w"> </span><span class="s">"dpD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Or add user key bindings to the Spacemacs menu (possilbly less useful but will not clash with exisiting Spacemacs key bindings)
-<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix</span><span class="w"> </span><span class="s">"op"</span><span class="w"> </span><span class="s">"Clojure Portal"</span><span class="p">)</span>
-<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
-<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
-<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
+<div class="highlight"><span class="filename">Spacemacs Configuration - dotspacemacs/user-config</span><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">(</span><span class="nv">spacemacs/declare-prefix</span><span class="w"> </span><span class="s">"op"</span><span class="w"> </span><span class="s">"Clojure Portal"</span><span class="p">)</span>
+<a href="#__codelineno-15-2" id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opp"</span><span class="w"> </span><span class="ss">'portal.api/open</span><span class="p">)</span>
+<a href="#__codelineno-15-3" id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opc"</span><span class="w"> </span><span class="ss">'portal.api/clear</span><span class="p">)</span>
+<a href="#__codelineno-15-4" id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="p">(</span><span class="nv">spacemacs/set-leader-keys</span><span class="w"> </span><span class="s">"opD"</span><span class="w"> </span><span class="ss">'portal.api/close</span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
-<p>Use the <code>map!</code> macro to add keys to the <code>clojure-mode-map</code>, using <code>:after</code> to ensure cider is loaded before binding the keys 
-<div class="highlight"><span class="filename">Doom Configuration</span><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nv">map!</span><span class="w"> </span><span class="nb">:map</span><span class="w"> </span><span class="nv">clojure-mode-map</span>
-<a href="#__codelineno-12-2" id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span>
-<a href="#__codelineno-12-3" id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span>
+<p>Use the <code>map!</code> macro to add keys to the <code>clojure-mode-map</code>, using <code>:after</code> to ensure cider is loaded before binding the keys
+<div class="highlight"><span class="filename">Doom Configuration</span><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nv">map!</span><span class="w"> </span><span class="nb">:map</span><span class="w"> </span><span class="nv">clojure-mode-map</span>
+<a href="#__codelineno-16-2" id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"s-o"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/open</span>
+<a href="#__codelineno-16-3" id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">      </span><span class="nb">:n</span><span class="w"> </span><span class="s">"C-l"</span><span class="w"> </span><span class="nf">#'</span><span class="nv">portal.api/clear</span><span class="p">)</span>
 </code></pre></div></p>
 <div class="admonition example">
 <p class="admonition-title">Practicalli Doom Emacs configuration</p>
 <p><a href="https://practical.li/doom-emacs/install/">Practicalli Doom Emacs config</a> includes Portal key bindings in the Clojure major mode menu, under the debug menu.
 * <code>, d p o</code> to open portal
 * <code>, d p c</code> to clear results from portal</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>(map! :after cider
-<a href="#__codelineno-13-2" id="__codelineno-13-2" name="__codelineno-13-2"></a>      :map clojure-mode-map
-<a href="#__codelineno-13-3" id="__codelineno-13-3" name="__codelineno-13-3"></a>      :localleader
-<a href="#__codelineno-13-4" id="__codelineno-13-4" name="__codelineno-13-4"></a>      :desc "REPL session" "'" #'sesman-start
-<a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>
-<a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a>      ;; Debug Clojure
-<a href="#__codelineno-13-7" id="__codelineno-13-7" name="__codelineno-13-7"></a>      (:prefix ("d" . "debug/inspect")
-<a href="#__codelineno-13-8" id="__codelineno-13-8" name="__codelineno-13-8"></a>       :desc "debug" "d" #'cider-debug-defun-at-point
-<a href="#__codelineno-13-9" id="__codelineno-13-9" name="__codelineno-13-9"></a>       (:prefix ("i" . "inspect")
-<a href="#__codelineno-13-10" id="__codelineno-13-10" name="__codelineno-13-10"></a>        :desc "last expression" "e" #'cider-inspect-last-sexp
-<a href="#__codelineno-13-11" id="__codelineno-13-11" name="__codelineno-13-11"></a>        :desc "expression" "f" #'cider-inspect-defun-at-point
-<a href="#__codelineno-13-12" id="__codelineno-13-12" name="__codelineno-13-12"></a>        :desc "inspector" "i" #'cider-inspect
-<a href="#__codelineno-13-13" id="__codelineno-13-13" name="__codelineno-13-13"></a>        :desc "last result" "l" #'cider-inspect-last-result
-<a href="#__codelineno-13-14" id="__codelineno-13-14" name="__codelineno-13-14"></a>        (:prefix ("p" . "portal")
-<a href="#__codelineno-13-15" id="__codelineno-13-15" name="__codelineno-13-15"></a>         :desc "Clear" "c" #'portal.api/clear
-<a href="#__codelineno-13-16" id="__codelineno-13-16" name="__codelineno-13-16"></a>         :desc "Open" "D" #'portal.api/close
-<a href="#__codelineno-13-17" id="__codelineno-13-17" name="__codelineno-13-17"></a>         :desc "Open" "p" #'portal.api/open)
-<a href="#__codelineno-13-18" id="__codelineno-13-18" name="__codelineno-13-18"></a>        :desc "value" "v" #'cider-inspect-expr))
-<a href="#__codelineno-13-19" id="__codelineno-13-19" name="__codelineno-13-19"></a>
-<a href="#__codelineno-13-20" id="__codelineno-13-20" name="__codelineno-13-20"></a>        ; truncated...
-<a href="#__codelineno-13-21" id="__codelineno-13-21" name="__codelineno-13-21"></a>        )
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>(map! :after cider
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a>      :map clojure-mode-map
+<a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>      :localleader
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a>      :desc "REPL session" "'" #'sesman-start
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a>      ;; Debug Clojure
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a>      (:prefix ("d" . "debug/inspect")
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a>       :desc "debug" "d" #'cider-debug-defun-at-point
+<a href="#__codelineno-17-9" id="__codelineno-17-9" name="__codelineno-17-9"></a>       (:prefix ("i" . "inspect")
+<a href="#__codelineno-17-10" id="__codelineno-17-10" name="__codelineno-17-10"></a>        :desc "last expression" "e" #'cider-inspect-last-sexp
+<a href="#__codelineno-17-11" id="__codelineno-17-11" name="__codelineno-17-11"></a>        :desc "expression" "f" #'cider-inspect-defun-at-point
+<a href="#__codelineno-17-12" id="__codelineno-17-12" name="__codelineno-17-12"></a>        :desc "inspector" "i" #'cider-inspect
+<a href="#__codelineno-17-13" id="__codelineno-17-13" name="__codelineno-17-13"></a>        :desc "last result" "l" #'cider-inspect-last-result
+<a href="#__codelineno-17-14" id="__codelineno-17-14" name="__codelineno-17-14"></a>        (:prefix ("p" . "portal")
+<a href="#__codelineno-17-15" id="__codelineno-17-15" name="__codelineno-17-15"></a>         :desc "Clear" "c" #'portal.api/clear
+<a href="#__codelineno-17-16" id="__codelineno-17-16" name="__codelineno-17-16"></a>         :desc "Open" "D" #'portal.api/close
+<a href="#__codelineno-17-17" id="__codelineno-17-17" name="__codelineno-17-17"></a>         :desc "Open" "p" #'portal.api/open)
+<a href="#__codelineno-17-18" id="__codelineno-17-18" name="__codelineno-17-18"></a>        :desc "value" "v" #'cider-inspect-expr))
+<a href="#__codelineno-17-19" id="__codelineno-17-19" name="__codelineno-17-19"></a>
+<a href="#__codelineno-17-20" id="__codelineno-17-20" name="__codelineno-17-20"></a>        ; truncated...
+<a href="#__codelineno-17-21" id="__codelineno-17-21" name="__codelineno-17-21"></a>        )
 </code></pre></div>
 <p><a class="md-button" href="https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el" target="_blank">Practicalli Doom Emacs Config - +clojure.el</a></p>
 </div>
+</div>
+</div>
+</input></input></div>
 </div>
 </div>
 </input></input></div>
@@ -2216,7 +2288,7 @@ Or include an alias with only portal data inspector
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
 </small>
 </div>
 </article>
