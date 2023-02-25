@@ -23,14 +23,20 @@ Portal is registered as a tap source and recieves values send within a  `(tap> ,
 Define aliases in the Clojure CLI user configuration to use Portal with any Clojure or ClojureScript project.
 
 === "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) contains the `:inspect/portal` alias that run a Reveal repl with data browser.
+    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) contains several aliases that support Portal, either adding as a library or to start a REPL process that can send all Clojure evaluated code to Portal.
+
+    include the portal library in `clojure` commands to run a REPL
 
     * `inspect/portal-cli` - Clojure CLI (simplest approach)
     * `inspect/portal-web` - Web ClojureScript REPL
     * `inspect/portal-node` - node ClojureScript REPL
+    * `dev/reloaded` - Portal, including [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/)
 
-    !!! HINT "REPL Reloaded aliases also include Portal Clojure CLI"
-        [REPL Reloaded](/clojure/clojure-cli/repl-reloaded/) aliases `:repl/reloaded` starts a rich terminal UI REPL with Portal. `:dev/reloaded` also includes Portal, for use with commands that start a REPL.
+    Run a REPL with portal and `portal.nrepl/wrap-portal` to [send every REPL evaluation to Portal over an nREPL connection](#editor-nrepl-middleware)
+
+    * `:repl/inspect` - starts a basic REPL with Portal nREPL middleware.
+    * `:repl/reloaded` - starts a rich terminal UI REPL with Portal nREPL middleware, including [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/)
+
 
 === "Alias Definition"
     Create portal aliases to include the portal libraries for the Clojure, ClojureScript Web browser and ClojureScript Node server libraries
@@ -47,10 +53,20 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
     {:extra-deps {djblue/portal             {:mvn/version "0.34.2"}
                   org.clojure/clojurescript {:mvn/version "1.10.844"}}
      :main-opts  ["-m" "cljs.main" "-re" "node"]}
+     
+    :repl/inspect
+    {:extra-deps
+     {cider/cider-nrepl {:mvn/version "0.28.5"}
+      djblue/portal     {:mvn/version "0.33.0"}}
+     :main-opts ["-m" "nrepl.cmdline"
+                 "--middleware"
+                 "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}
     ```
+    !!! HINT "REPL Reloaded Aliases"
+        [REPL Reloaded section](/clojure/clojure-cli/repl-reloaded/) includes the `:repl/reloaded` and `:dev/reloaded` ailas definitions
 
 
-## Add Portal to REPL 
+## Start REPL with Portal 
 
 Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools
 
@@ -87,7 +103,7 @@ Run a REPL in a terminal and include the Portal library, using the Clojure CLI t
     * Doom emacs: add to `config.el` Doom configuration file.
 
 
-## Starting Portal 
+## Open Portal UI
 
 `(require '[portal.api :as portal])` once the REPL starts.
 
@@ -98,12 +114,11 @@ Run a REPL in a terminal and include the Portal library, using the Clojure CLI t
 `(portal/tap) `to add portal as a tap target (add-tap)
 
 
-## Configure REPL startup
+## Portal UI on REPL startup
 
 Start the Portal inspector as soon as the REPL is started.  This works for a terminal REPL as well as [clojure aware editors](/clojure-editors/).
 
 Create a `dev/user.clj` source code file which requires the portal.api library, opens the inspector window and adds portal as  a tap source.
-
 
 ```clojure
 (ns user
@@ -130,20 +145,25 @@ Create a `dev/user.clj` source code file which requires the portal.api library, 
 > The rich comment block includes commands to clear and close the portal inspector window.
 
 
-Start a REPL using the `:env/dev` and `:inspect/portal-cli` aliases from [Practicalli Clojure CLI Config](/clojure-cli/install/community-tools.md), using the command:
+Start a REPL using the `:repl/reloaded` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) with a `clojure` command to start a REPL.
 
 ```clojure
-clojure -M:env/dev:inspect/portal-cli
+clojure -M:repl/reloaded
 ```
 
-To use this with Emacs CIDER editor, create a `.dir-locals.el` file in the root of the Clojure project with the following configuration
 
-```
+To use this with Emacs CIDER editor, create a `.dir-locals.el` file in the root of the Clojure project and include either `:env/dev:inspect/portal-cli` aliases
+
+```emacs
 ((clojure-mode . ((cider-clojure-cli-aliases . ":env/dev:inspect/portal-cli"))))
 ```
 
+Or `:dev/reloaded` alias
+```emacs
+((clojure-mode . ((cider-clojure-cli-aliases . ":dev/reloaded"))))
+```
 
-## Using Portal to inspect data
+## Send to Portal
 
 The `tap>` function sends data to Portal to be shown on the inspector window.
 
@@ -156,92 +176,146 @@ Use portal to navigate and inspect the details of the data sent to it via `tap>`
 `(portal/close)` to close the inspector window.
 
 
-## Emacs integration
+## Editor nREPL middleware
 
-`portal.nrepl/wrap-portal` sends every REPL evaluation to Portal over an nRepl connection.
+`portal.nrepl/wrap-portal` sends every REPL evaluation to Portal over an nREPL connection, avoiding the need to wrap expressions with `tap>`.
 
-Add helper functions to the Emacs configuration and add key bindings to call them.
+=== "Practicalli Clojure CLI Config"
+    Start a REPL that includes the Portal nREPL middleware to send the result of every evaluation to portal.
+    
+    * `:repl/reloaded` - rich terminal UI with portal and [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/) 
+    * `:repl/inspect` - basic terminal UI with portal 
 
-```emacs title="Emacs Configuration"
-;; def portal to the dev namespace to allow dereferencing via @dev/portal
-(defun portal.api/open ()
-  (interactive)
-  (cider-nrepl-sync-request:eval
-    "(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"))
+=== "Alias Definition"
+    
+    ```clojure title="User deps.edn"
+    :repl/inspect
+    {:extra-deps
+     {cider/cider-nrepl {:mvn/version "0.28.5"}
+      djblue/portal     {:mvn/version "0.33.0"}}
+     :main-opts ["-m" "nrepl.cmdline"
+                 "--middleware"
+                 "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}}}
+    ```
 
-(defun portal.api/clear ()
-  (interactive)
-  (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+Start a REPL with `:repl/reloaded` or 'repl/inspect'
 
-(defun portal.api/close ()
-  (interactive)
-  (cider-nrepl-sync-request:eval "(portal.api/close)"))
+```shell
+clojure -M:repl/reloaded
 ```
 
-* Spacemacs: add to `dotspacemacs/user-config` in the Spacemacs configuration file.
-* Doom emacs: add to `config.el` Doom configuration file.
+Start Portal User Interface and add portal as a tap target using the `portal.api/submit` function to send all evaluated code to Portal
+
+=== "user namespace"
+    Include code in the `user` namespace to start a portal and add a tap source
+
+    ```clojure
+    (ns user
+      (:require [portal.api :as inspect]))
+
+    ;; Start Portal inspector on REPL start
+
+    ;; Open a portal inspector window
+    (inspect/open)
+
+    ;; Add portal as a tap> target over nREPL connection
+    (add-tap portal.api/submit)
+
+    (comment
+      ;; Clear all values in the portal inspector window
+      (inspect/clear)
+
+      ;; Close the inspector
+      (inspect/close)
+
+      ) ;; End of rich comment block
+    ```
+    
+
+=== "Emacs"
+    Add helper functions to the Emacs configuration and add key bindings to call them.
+
+    ```emacs title="Emacs Configuration"
+    ;; def portal to the dev namespace to allow dereferencing via @dev/portal
+    (defun portal.api/open ()
+      (interactive)
+      (cider-nrepl-sync-request:eval
+        "(do (ns dev) (def portal ((requiring-resolve 'portal.api/open))) (add-tap (requiring-resolve 'portal.api/submit)))"))
+
+    (defun portal.api/clear ()
+      (interactive)
+      (cider-nrepl-sync-request:eval "(portal.api/clear)"))
+
+    (defun portal.api/close ()
+      (interactive)
+      (cider-nrepl-sync-request:eval "(portal.api/close)"))
+    ```
+
+    * Spacemacs: add to `dotspacemacs/user-config` in the Spacemacs configuration file.
+    * Doom emacs: add to `config.el` Doom configuration file.
  
 
-### Key bindings
+    ### Key bindings
 
-Add key bindings to call the helper functions, ideally from the Clojure major mode menu.
+    Add key bindings to call the helper functions, ideally from the Clojure major mode menu.
 
-=== "Spacemacs"
-    Add key bindings specifically for Clojure mode, available via the `, d p` debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
-    ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
-    (spacemacs/declare-prefix-for-mode 'clojure-mode "dp" "Portal")
-    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpp" 'portal.api/open)
-    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpc" 'portal.api/clear)
-    (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpD" 'portal.api/close)
-    ```
-
-    Or add user key bindings to the Spacemacs menu (possilbly less useful but will not clash with exisiting Spacemacs key bindings)
-    ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
-    (spacemacs/declare-prefix "op" "Clojure Portal")
-    (spacemacs/set-leader-keys "opp" 'portal.api/open)
-    (spacemacs/set-leader-keys "opc" 'portal.api/clear)
-    (spacemacs/set-leader-keys "opD" 'portal.api/close)
-    ```
-
-=== "Doom Emacs"
-    Use the `map!` macro to add keys to the `clojure-mode-map`, using `:after` to ensure cider is loaded before binding the keys 
-    ```emacs title="Doom Configuration"
-    (map! :map clojure-mode-map
-          :n "s-o" #'portal.api/open
-          :n "C-l" #'portal.api/clear)
-    ```
-
-    !!! EXAMPLE "Practicalli Doom Emacs configuration"
-        [Practicalli Doom Emacs config](https://practical.li/doom-emacs/install/) includes Portal key bindings in the Clojure major mode menu, under the debug menu.
-        * `, d p o` to open portal
-        * `, d p c` to clear results from portal
-
+    === "Spacemacs"
+        Add key bindings specifically for Clojure mode, available via the `, d p` debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
+        ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+        (spacemacs/declare-prefix-for-mode 'clojure-mode "dp" "Portal")
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpp" 'portal.api/open)
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpc" 'portal.api/clear)
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpD" 'portal.api/close)
         ```
-        (map! :after cider
-              :map clojure-mode-map
-              :localleader
-              :desc "REPL session" "'" #'sesman-start
 
-              ;; Debug Clojure
-              (:prefix ("d" . "debug/inspect")
-               :desc "debug" "d" #'cider-debug-defun-at-point
-               (:prefix ("i" . "inspect")
-                :desc "last expression" "e" #'cider-inspect-last-sexp
-                :desc "expression" "f" #'cider-inspect-defun-at-point
-                :desc "inspector" "i" #'cider-inspect
-                :desc "last result" "l" #'cider-inspect-last-result
-                (:prefix ("p" . "portal")
-                 :desc "Clear" "c" #'portal.api/clear
-                 :desc "Open" "D" #'portal.api/close
-                 :desc "Open" "p" #'portal.api/open)
-                :desc "value" "v" #'cider-inspect-expr))
-    
-                ; truncated...
-                )
+        Or add user key bindings to the Spacemacs menu (possilbly less useful but will not clash with exisiting Spacemacs key bindings)
+        ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+        (spacemacs/declare-prefix "op" "Clojure Portal")
+        (spacemacs/set-leader-keys "opp" 'portal.api/open)
+        (spacemacs/set-leader-keys "opc" 'portal.api/clear)
+        (spacemacs/set-leader-keys "opD" 'portal.api/close)
         ```
-        
-        [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
+
+    === "Doom Emacs"
+        Use the `map!` macro to add keys to the `clojure-mode-map`, using `:after` to ensure cider is loaded before binding the keys
+        ```emacs title="Doom Configuration"
+        (map! :map clojure-mode-map
+              :n "s-o" #'portal.api/open
+              :n "C-l" #'portal.api/clear)
+        ```
+
+        !!! EXAMPLE "Practicalli Doom Emacs configuration"
+            [Practicalli Doom Emacs config](https://practical.li/doom-emacs/install/) includes Portal key bindings in the Clojure major mode menu, under the debug menu.
+            * `, d p o` to open portal
+            * `, d p c` to clear results from portal
+
+            ```
+            (map! :after cider
+                  :map clojure-mode-map
+                  :localleader
+                  :desc "REPL session" "'" #'sesman-start
+
+                  ;; Debug Clojure
+                  (:prefix ("d" . "debug/inspect")
+                   :desc "debug" "d" #'cider-debug-defun-at-point
+                   (:prefix ("i" . "inspect")
+                    :desc "last expression" "e" #'cider-inspect-last-sexp
+                    :desc "expression" "f" #'cider-inspect-defun-at-point
+                    :desc "inspector" "i" #'cider-inspect
+                    :desc "last result" "l" #'cider-inspect-last-result
+                    (:prefix ("p" . "portal")
+                     :desc "Clear" "c" #'portal.api/clear
+                     :desc "Open" "D" #'portal.api/close
+                     :desc "Open" "p" #'portal.api/open)
+                    :desc "value" "v" #'cider-inspect-expr))
+
+                    ; truncated...
+                    )
+            ```
+
+            [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
 
 
 ## References
+
 See the [Portal project readme](https://github.com/djblue/portal) for more details and examples.
