@@ -13,11 +13,11 @@
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/coding-challenges/exercism/bob/" rel="canonical"/>
-<link href="../space-age/" rel="prev"/>
-<link href="../../codewars/" rel="next"/>
+<link href="../rna-transcription/" rel="prev"/>
+<link href="bob-string-approach/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.14" name="generator"/>
-<title>Bob - Practicalli Clojure</title>
+<title>Index - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,17 +28,17 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Bob - Practicalli Clojure" property="og:title"/>
+<meta content="Index - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/bob.png" property="og:image"/>
+<meta content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/bob/index.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/coding-challenges/exercism/bob/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Bob - Practicalli Clojure" name="twitter:title"/>
+<meta content="Index - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/bob.png" name="twitter:image"/>
+<meta content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/bob/index.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#create-the-project">
+<a class="md-skip" href="#bob">
           Skip to content
         </a>
 </div>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Bob
+              Index
             
           </span>
 </div>
@@ -528,45 +528,29 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Rna transcription
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../hamming.md">
-        None
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../space-age/">
-        Space age
-      </a>
-</li>
-<li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
-<label class="md-nav__link md-nav__link--active" for="__toc">
-          Bob
-          <span class="md-nav__icon md-icon"></span>
-</label>
-<a class="md-nav__link md-nav__link--active" href="./">
-        Bob
-      </a>
-<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_9_3_3" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index md-nav__link--active">
+<a href="./">Bob</a>
+<label for="__nav_9_3_3">
 <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_9_3_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_3_3">
+<span class="md-nav__icon md-icon"></span>
+          Bob
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#create-the-project">
-    Create the project
-  </a>
+<a class="md-nav__link" href="bob-string-approach/">
+        Bob string approach
+      </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#rules-derived-from-the-unit-tests">
-    Rules derived from the Unit tests
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#design-approach">
-    Design approach
-  </a>
+<a class="md-nav__link" href="bob-regular-expression-approach/">
+        Bob solution - regex
+      </a>
 </li>
 </ul>
 </nav>
@@ -603,21 +587,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Random Function
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../simple-projects/salary-calculator.md --&gt;">
-        Salary Calculator
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9_6_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/encode-decode/">Encoder Decode</a>
-<label for="__nav_9_6_4">
+<label for="__nav_9_6_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_6_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_9_6_4">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_3_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_3">
 <span class="md-nav__icon md-icon"></span>
           Encoder Decode
         </label>
@@ -646,15 +625,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9_6_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/data-transformation/">Data Transform</a>
-<label for="__nav_9_6_5">
+<label for="__nav_9_6_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_6_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_9_6_5">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_4">
 <span class="md-nav__icon md-icon"></span>
           Data Transform
         </label>
@@ -668,15 +647,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_9_6_6" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_9_6_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../simple-projects/tdd-kata/">Kata</a>
-<label for="__nav_9_6_6">
+<label for="__nav_9_6_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_9_6_6_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_9_6_6">
+<nav aria-expanded="false" aria-labelledby="__nav_9_6_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_9_6_5">
 <span class="md-nav__icon md-icon"></span>
           Kata
         </label>
@@ -1927,6 +1906,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
+<a class="md-nav__link" href="#bob">
+    Bob
+  </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="#create-the-project">
     Create the project
   </a>
@@ -1948,7 +1932,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<h1>Bob</h1>
+<h1>Index</h1>
+<h2 id="bob">Bob<a class="headerlink" href="#bob" title="Permanent link">λ︎</a></h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-exercise-bob-banner.png"><img alt="Exercism.io challenge - Bob" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-exercise-bob-banner.png"/></a></p>
 <p>The Bob challenge involves writing a very basics example of a text parser, something that would be used for <a href="https://en.wikipedia.org/wiki/Text-based_game">a text based adventure game</a>.</p>
 <p>Bob is described as a <a href="https://en.wiktionary.org/wiki/lackadaisical">lackadaisical</a> teenager, so responses are very limited.  To create the Bob text parser we need to identify the rules that determine Bob's response.</p>
@@ -2006,7 +1991,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>There are two main approaches to solving this challenge.  The first is to use the <a href="https://clojure.github.io/clojure/clojure.string-api.html"><code>clojure.string</code></a> functions to check or transform the phrase given to Bob.  The second approach is to use <a href="/reference/standard-library/regular-expressions">regular expressions</a> with functions such as <a href="https://clojuredocs.org/clojure.core/re-seq"><code>re-seq</code></a>, <a href="https://clojuredocs.org/clojure.core/re-find"><code>re-find</code></a> and <a href="https://clojuredocs.org/clojure.core/re-matches"><code>re-matches</code></a>.</p>
 <p>Start by defining the rules as an expression that returns either true or false, using some of the example strings from the unit tests.</p>
 <p>Use a <code>let</code> expression to bind a name to each rule, e.g. <code>shouting?</code>, <code>question?</code>, <code>silence?</code>.  Then these names can be used in a simple <code>cond</code> expression to return the appropriate phrase.  Regardless of if using <code>clojure.string</code> or regular expressions, the <code>cond</code> code should be similar</p>
-<p>Once you have tried this challenge for yourself, take a look at the design journal for the <a href="../bob-string-approach/">clojure.string approach</a> and the <a href="../bob-regular-expression-approach/">regular expression approach</a>.</p>
+<p>Once you have tried this challenge for yourself, take a look at the design journal for the <a href="bob-string-approach/">clojure.string approach</a> and the <a href="bob-regular-expression-approach/">regular expression approach</a>.</p>
+<p><a class="md-button" href="bob-string-approach/">Bob - clojure.string approach</a>
+<a class="md-button" href="bob-regular-expression-approach/">Bob - regular expression approach</a></p>
 <!-- ## Design Review -->
 <!-- `clojure.string/blank?` checks for empty strings and whitespace, but does not provide a check for tabs, newlines and similar white space characters.  The regex patter `\s` covers all those white space characters. -->
 <!-- While each binding in the let expression could be made into a `defn`, this add repetition in the `cond` conditions as each one would be a function call and argument.  Using the let binding, the cond is very simple. -->
@@ -2016,7 +2003,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
 </small>
 </div>
 </article>
