@@ -2,7 +2,7 @@
 
 [4Ever-Clojure Challenges Website](https://4clojure.oxal.org/){target=_blank .md-button}
 
-[4Ever-Clojure](https://4clojure.oxal.org/) is a simple website with 150 challenges to help discover the functions built-in to the Clojure language, the [Clojure API](https://clojure.github.io/clojure/).
+[4Ever-Clojure](https://4clojure.oxal.org/){target=_blank} is a simple website with 150 challenges to help discover the functions built-in to the Clojure language, the [Clojure API](https://clojure.github.io/clojure/).
 
 The website is self-contained with nothing to install, simply paste in the missing code and run the tests.  [One piece of code should solve all the tests](#using-let-and-anonymous-functions) for that challenge.
 
@@ -17,7 +17,7 @@ Press the **Run** button to see if the code satisfies the tests
 A dialog box is displayed showing how many tests have passed and failed
 
 !!! HINT "Start learning the Clojure API"
-    There are over 550 functions in the `clojure.core` namespace alone, with additional functions in many other namespaces that make up the [https://clojure.github.io/clojure/](https://clojure.github.io/clojure/).  It is not required to learn all these functions to be productive in Clojure.
+    There are over 600 functions in the `clojure.core` namespace alone, with additional functions in many other namespaces that make up the [https://clojure.github.io/clojure/](https://clojure.github.io/clojure/).  It is not required to learn all these functions to be productive in Clojure.
 
 
 ??? INFO "4ever-clojure replaces 4Clojure"
@@ -38,14 +38,15 @@ Search directly in [ClojureDocs](https://clojuredocs.org/core-library){target=_b
 
 An Internet search of `clojure topic`, where `topic` is a name of the thing you want to do, should return many examples of functions that could be useful to solving the challenge.  Or
 
-* [Clojure community - getting help](https://practicalli.github.io/blog/posts/cloure-community-getting-help/){target=_blank} included several other sources of help.
+!!! HINT "Help from the community"
+    [Clojure community - getting help](https://practicalli.github.io/blog/posts/cloure-community-getting-help/){target=_blank} covers several sources of help from the Clojure community.
 
 
 ## Using let and anonymous functions
 
 The solution submitted should be a single form, which is inserted in the test code where the `__` underscore placeholder is.  It is therefore not possible to define data with `def` or a separate function with `defn` to support the submitted solution.
 
-Use the anonymous function, [fn](), to define behavior.
+Use the anonymous function, `(fn [])`, to define behaviour.
 
 ```clojure
 (fn [value1 value2]

@@ -22,11 +22,11 @@ All the challenges are groups into specific [language tracks](https://exercism.i
 
 Join the language track and select either mentored mode or practice mode.
 
-![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-track-mentor-mode.png)
+![Clojure code challenges - Exercism Clojure track](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/clojure-code-challenges-exercism-track-mentor-mode.png)
 
 In mentored mode your solutions are added to the mentors dashboard for review from any of the available mentors.  In practice mode you can complete as many solutions as you wish without waiting for a mentor.
 
-![Clojure code challenges - Exercism Clojure track](/images/clojure-code-challenges-exercism-clojure-track.png)
+![Clojure code challenges - Exercism Clojure track](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/clojure-code-challenges-exercism-clojure-track.png)
 
 
 ## Working Locally
@@ -58,6 +58,6 @@ exercism submit /path/to/src-file
 
 Mentors on the Exercism website will provide a review of your submissions and you can switch between mentor and practice modes as you prefer.
 
-[practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains a design journal of solutions to several Clojure exercises.
+[practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/){target=_blank} contains a design journal of solutions to several Clojure exercises.
 
-Ask for advice in the [#exercism](clojurians.slack.com/messages/exercism) or [#beginners](clojurians.slack.com/messages/beginners) channels of the Clojurians Slack community.
+Ask for advice in the [#exercism](clojurians.slack.com/messages/exercism){target=_blank} or [#beginners](clojurians.slack.com/messages/beginners){target=_blank} channels of the Clojurians Slack community.

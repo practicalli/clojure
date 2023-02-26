@@ -1,3 +1,5 @@
+## Bob
+
 ![Exercism.io challenge - Bob](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-exercise-bob-banner.png)
 
 The Bob challenge involves writing a very basics example of a text parser, something that would be used for [a text based adventure game](https://en.wikipedia.org/wiki/Text-based_game).
@@ -14,7 +16,9 @@ The instructions provide some basic rules:
 
 It is important to also read through the supplied unit tests to elaborate on these rules.
 
+
 ## Create the project
+
 Download the Bob transcription exercise using the exercism CLI tool
 
 ```bash
@@ -25,6 +29,7 @@ exercism download --exercise=bob --track=clojure
 
 
 ## Rules derived from the Unit tests
+
 Reviewing all the examples from the unit tests, there are 5 rules for the Bob parser
 
 These rules were discovered by searching through the unit test code for each reply that Bob should return, showing the tests for each reply.
@@ -41,6 +46,7 @@ Each rule also had to ensure it did not create any false positives by being true
 
 
 ## Design approach
+
 There are two main approaches to solving this challenge.  The first is to use the [`clojure.string`](https://clojure.github.io/clojure/clojure.string-api.html) functions to check or transform the phrase given to Bob.  The second approach is to use [regular expressions](/reference/standard-library/regular-expressions) with functions such as [`re-seq`](https://clojuredocs.org/clojure.core/re-seq), [`re-find`](https://clojuredocs.org/clojure.core/re-find) and [`re-matches`](https://clojuredocs.org/clojure.core/re-matches).
 
 Start by defining the rules as an expression that returns either true or false, using some of the example strings from the unit tests.
@@ -50,6 +56,8 @@ Use a `let` expression to bind a name to each rule, e.g. `shouting?`, `question?
 Once you have tried this challenge for yourself, take a look at the design journal for the [clojure.string approach](bob-string-approach.md) and the [regular expression approach](bob-regular-expression-approach.md).
 
 
+[Bob - clojure.string approach](bob-string-approach.md){.md-button}
+[Bob - regular expression approach](bob-regular-expression-approach.md){.md-button}
 
 
 <!-- ## Design Review -->

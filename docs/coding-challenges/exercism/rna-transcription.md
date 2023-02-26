@@ -1,6 +1,7 @@
 ![RNA Transcription](/images/rna-transcription.png)
 
 # Exercise: RNA Transcription
+
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
 Both DNA and RNA strands are a sequence of nucleotides.
@@ -16,11 +17,12 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 * T -> A
 * A -> U
 
-> #### Hint::Code for this solution on GitHub
-> [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to this exercise
+!!! HINT "Code for this solution on GitHub"
+    [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to this exercise
 
 
 ## Create the project
+
 Download the RNA transcription exercise using the exercism CLI tool
 
 ```bash
@@ -31,6 +33,7 @@ exercism download --exercise=rna-transcription --track=clojure
 
 
 ## Designing the solution
+
 To convert a collection of values, define a hash-map where the keys are the initial DNA values and the hash-map values are the transformed RNA values.  Using a hash-map in this way is often termed as a dictionary.
 
 A string is used as a collection of character values by many of the functions in `clojure.core`.  The dictionary uses characters for its keys and values.
@@ -190,6 +193,7 @@ Refactor the `to-rna` function to use the dictionary by name.
 
 
 ## Making the function pure
+
 Its beyond the scope of the Exercism challenge, however, its recommended to use pure functions where possible.
 
 A pure function only uses data from its arguments.

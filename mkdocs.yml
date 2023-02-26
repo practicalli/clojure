@@ -180,17 +180,18 @@ nav:
       - Exercism:
           - coding-challenges/exercism/index.md
           - coding-challenges/exercism/rna-transcription.md
-          - coding-challenges/exercism/hamming.md
-          - coding-challenges/exercism/space-age.md
-          - Bob: coding-challenges/exercism/bob.md
-            # - coding-challenges/exercism/bob-string-approach.md
-            # - coding-challenges/exercism/bob-regular-expression-approach.md
+          # - coding-challenges/exercism/hamming.md
+          # - coding-challenges/exercism/space-age.md
+          - Bob:
+              - coding-challenges/exercism/bob/index.md
+              - coding-challenges/exercism/bob/bob-string-approach.md
+              - coding-challenges/exercism/bob/bob-regular-expression-approach.md
       - CodeWars: coding-challenges/codewars/index.md
       - Advent Of Code: coding-challenges/advent-of-code.md
       - Simple projects:
           - simple-projects/index.md
           - Random Function: simple-projects/random-clojure-function.md
-          - Salary Calculator: simple-projects/salary-calculator.md -->
+          # - Salary Calculator: simple-projects/salary-calculator.md
           - Encoder Decode:
               - simple-projects/encode-decode/index.md
               - simple-projects/encode-decode/convert-boolean-values.md

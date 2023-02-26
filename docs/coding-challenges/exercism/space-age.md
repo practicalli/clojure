@@ -1,9 +1,12 @@
+## Space Age
+
 ![Exercism](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-exercise-space-age-banner.png)
 
 ## Topics covered
 
 
 ## Challenge introduction
+
 Given an age in seconds, calculate how old someone would be on:
 
 * Earth: orbital period 365.25 Earth days, or 31557600 seconds
