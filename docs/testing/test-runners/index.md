@@ -1,5 +1,5 @@
 # Test Runners
-A Test runner is a tool to run test in a project and report the results. During development test runners are called from editors or run om the command line and can be configured to run automatically when changes are detected in the code.
+A Test runner is a tool to run test in a project and report the results. During development test runners are called from editors or run on the command line and can be configured to run automatically when changes are detected in the code.
 
 Regularly running some or all of the tests in a project checks the design decisions made so far have not regressed by additional development.
 
