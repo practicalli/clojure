@@ -338,3 +338,90 @@ Consider a function that calls several external services
 ;;  :env "dev",
 ;;  :version "1.0.1"}
 ```
+
+## Trace function calls
+
+[clojure.tools.trace](https://github.com/clojure/tools.trace) can trace values, functions and a whole namespace of functions.
+
+Tracing a value will show how that value flows through the code
+
+Tracing a funciton shows the arguments passed to the function each time it is called and the results.  Tracing will identify forms that are failing and also show the results of the function call, helping spotting unwanted `nil` arguments and parts of a function definition that is failing.
+
+* `trace` values, optionally assigning a tag
+* `trace-vars` dynamically trace a given fully qualified function
+* `untrace-vars` - remove trace from a given fully qualified function
+* `trace-ns` dynamically trace all functions in the given namespace
+* `untrace-ns` remove trace from all functions in the given namespace
+
+`:repl/reloaded` and `:dev/reloaded` include the clojure.tools.trace dependency, i.e. `org.clojure/tools.trace {:mvn/version "0.7.11"}`
+
+[tools.trace API Reference](http://clojure.github.io/tools.trace/)
+
+=== "REPL"
+    Require the `clojure.tools.trace` library and refer the `trace` and `untrace` functions
+    ```clojure
+    (require '[clojure.tools.trace :as trace])
+    ```
+
+=== "Project"
+    Require the `clojure.tools.trace` library using the alias `trace`
+
+    ```clojure
+    (ns user
+      (:require '[clojure.tools.trace :as trace]))
+    ```
+
+To trace a value returned from an expression, optionally adding a tag
+```clojure
+(trace/trace  "increments" (map inc [1 2 3 4 5]))
+;;=> TRACE increments: (2 3 4 5 6)
+;;=> (2 3 4 5 6)
+```
+
+Trace a function call and its return value
+
+```clojure
+(deftrace random-function [namespace] (rand-nth (vals (ns-publics namespace))))
+```
+
+Call the function to see the output of trace
+```clojure
+(random-function 'clojure.core)
+;;=> TRACE t1002: (random-function 'clojure.core)
+;;=> TRACE t1002: => #'clojure.core/iteration
+;;=> #'clojure.core/iteration
+```
+
+Trace functions can identify which form is failing
+
+```clojure
+(trace/trace-vars practicalli.random-function/random-number)
+;;=> #'practicalli.random-function/random-number
+```
+
+Call the function that is being traced and see the error
+```clojure
+(practicalli.random-function/random-number 42)
+;;=> TRACE t10951: (practicalli.random-function/random-number 42)
+;;=> Execution error (ArithmeticException) at practicalli.random-function/random-number (random_function.clj:17).
+;;=> Divide by zero
+```
+
+Dynamically trace all functions in the given name space
+```clojure
+(trace-ns domain.namespace)
+```
+
+Or remove all function traces in a namespace
+```clojure
+(untrace-ns domain.namespace)
+```
+
+Dynamically trace a given function
+```clojure
+(trace-vars domain.namespace/function-name)
+ ```
+Remove the trace on a given function
+```clojure
+(untrace-vars domain.namespace/function-name)
+```
