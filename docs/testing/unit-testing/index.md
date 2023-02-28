@@ -1,4 +1,6 @@
-![REPL Driven development and Unit testing in Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/repl-tdd-flow.png)
+# Clojure Unit Testing
+
+![REPL Driven development and Unit testing in Clojure](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png){align=right loading=lazy style="height:150px"}
 
 The function is the unit under test in Clojure.  All public functions that form the API of their respective namespace should have a matching test, i.e. `(deftest)` definition.
 
@@ -7,7 +9,7 @@ The function is the unit under test in Clojure.  All public functions that form 
 ![Clojure test unit test example - status monitor dashboard function and unit test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png "Example Clojure test - web service handler namespace - dashboard function")
 
 
-## Principles for writing unit tests
+## Unit Test Principles
 
 * A `test` namespace for each `src` namespace under test
 * A `deftest` function for each function under test, named after the function its testing with `-test` at the end of the name
@@ -103,10 +105,10 @@ As with file names, the namespaces for each test code file is the same as the so
 
 `codewars/rock-paper-scissors` source code namespace will have a matching `codewars/rock-paper-scissors-test` namespace.
 
-> #### Hint::Create Projects from templates
-> Templates typically include a parallel `test` and `src` directory structure.  The `clj-new` tool has build it templates (app, lib) and will create `src` and `test` directories in the projects it creates.
->
-> `clojure -T:project/new :template app :name practicalli/rock-paper-scissors-lizard-spock`
+??? HINT "Create Projects from templates"
+    Templates typically include a parallel `test` and `src` directory structure.  The `clj-new` tool has build it templates (app, lib) and will create `src` and `test` directories in the projects it creates.
+
+    `clojure -T:project/new :template app :name practicalli/rock-paper-scissors-lizard-spock`
 
 
 ## Project Examples: Code challenges with unit tests
