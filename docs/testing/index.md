@@ -1,32 +1,50 @@
 # Testing in Clojure
+
 Testing is supported in Clojure with a range of testing libraries and test runners.
 
-## Unit Test style frameworks
-Unit testing is part of the Clojure standard library and provides assertion based testing
-* `clojure.test`
+## Unit Test
 
-## Clojure Spec and Generative testing
-Define specifications for data and functions, generating extensive test data from specifications and using that data to verify behavior of functions in generative testing.
-* clojure.spec.alpha
-* clojure.spec.test.alpha
-* clojure.spec.gen.alpha
+The unit of test in Clojure is the function, so functions are defined that test other functions.
+
+clojure.test namespace is part of the Clojure standard library and provides assertion based testing and functions to run tests.
+
+[Practicalli Unit Testing Guide](unit-testing/){.md-button}
+[Using Test Runners](test-runners/){.md-button}
+
+
+## Generative testing
+
+Define specifications for values to confirm information coming into and leaving a Clojure service are of the correct form.
+
+Generate test data from value specifications to verify the behaviour of functions, creating diverse sets of data for extensive testing.
+
+Define specifications for functions to validate the correct form of values are passed and returned from a function.
+
+[Define value and function specifications with Cloure Spec](/clojure/clojure-spec/){.md-button}
+[Generative Testing with Clojure Spec](/clojure/clojure-spec/testing/){.md-button}
+
+
+## Performance testing
+
+Test individual expressions through to application and load testing one or more services.
+
+* time - simple results of evaluating an expression
+* criterion - a realistic measure of performance for clojure expressions
+* [Gatling](https://gatling.io/) - open source & commercial load test tool for web applications
+* [clj-gatling](https://github.com/mhjort/clj-gatling) - wrapper around Gatling which enables tests to be expressed in Clojure.
 
 
 ## Behaviour Driven Development frameworks
-Given, When, Then and scenario approach to outside in software testing
+
+Although not widely used in the Clojure community, there are several approaches to develop and test software using Behaviour Driven Development.
+
+> BDD: Given, When, Then and scenario approach to outside in software testing
+
 * [Scenari](https://github.com/jgrodziski/scenari) - executable specification / BDD in Clojure
 * [kaocha-cucumber](https://github.com/lambdaisland/kaocha-cucumber) - support for Cucumber tests in the gerkin format
 * [speclj](https://github.com/slagyr/speclj) - TDD/BDD framework for Clojure and ClojureScript based on RSpec.
 
 Alternative BDD libraries are discussed at https://github.com/gphilipp/bdd-guide-clojure
-
-
-## Performance testing
-Testing individual expressions through to application and load testing.
-* time - simple results of evaluating an expression
-* criterion - a realistic measure of performance for clojure expressions
-* [Gatling](https://gatling.io/) - open source & commercial load test tool for web applications
-* [clj-gatling](https://github.com/mhjort/clj-gatling) - wrapper around Gatling which enables tests to be expressed in Clojure.
 
 
 ## Articles on testing in Clojure
