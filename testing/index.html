@@ -1906,23 +1906,23 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#unit-test-style-frameworks">
-    Unit Test style frameworks
+<a class="md-nav__link" href="#unit-test">
+    Unit Test
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#clojure-spec-and-generative-testing">
-    Clojure Spec and Generative testing
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#behaviour-driven-development-frameworks">
-    Behaviour Driven Development frameworks
+<a class="md-nav__link" href="#generative-testing">
+    Generative testing
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#performance-testing">
     Performance testing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#behaviour-driven-development-frameworks">
+    Behaviour Driven Development frameworks
   </a>
 </li>
 <li class="md-nav__item">
@@ -1945,26 +1945,36 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="testing-in-clojure">Testing in Clojure<a class="headerlink" href="#testing-in-clojure" title="Permanent link">λ︎</a></h1>
 <p>Testing is supported in Clojure with a range of testing libraries and test runners.</p>
-<h2 id="unit-test-style-frameworks">Unit Test style frameworks<a class="headerlink" href="#unit-test-style-frameworks" title="Permanent link">λ︎</a></h2>
-<p>Unit testing is part of the Clojure standard library and provides assertion based testing
-* <code>clojure.test</code></p>
-<h2 id="clojure-spec-and-generative-testing">Clojure Spec and Generative testing<a class="headerlink" href="#clojure-spec-and-generative-testing" title="Permanent link">λ︎</a></h2>
-<p>Define specifications for data and functions, generating extensive test data from specifications and using that data to verify behavior of functions in generative testing.
-* clojure.spec.alpha
-* clojure.spec.test.alpha
-* clojure.spec.gen.alpha</p>
-<h2 id="behaviour-driven-development-frameworks">Behaviour Driven Development frameworks<a class="headerlink" href="#behaviour-driven-development-frameworks" title="Permanent link">λ︎</a></h2>
-<p>Given, When, Then and scenario approach to outside in software testing
-* <a href="https://github.com/jgrodziski/scenari">Scenari</a> - executable specification / BDD in Clojure
-* <a href="https://github.com/lambdaisland/kaocha-cucumber">kaocha-cucumber</a> - support for Cucumber tests in the gerkin format
-* <a href="https://github.com/slagyr/speclj">speclj</a> - TDD/BDD framework for Clojure and ClojureScript based on RSpec.</p>
-<p>Alternative BDD libraries are discussed at <a href="https://github.com/gphilipp/bdd-guide-clojure">https://github.com/gphilipp/bdd-guide-clojure</a></p>
+<h2 id="unit-test">Unit Test<a class="headerlink" href="#unit-test" title="Permanent link">λ︎</a></h2>
+<p>The unit of test in Clojure is the function, so functions are defined that test other functions.</p>
+<p>clojure.test namespace is part of the Clojure standard library and provides assertion based testing and functions to run tests.</p>
+<p><a class="md-button" href="unit-testing/">Practicalli Unit Testing Guide</a>
+<a class="md-button" href="test-runners/">Using Test Runners</a></p>
+<h2 id="generative-testing">Generative testing<a class="headerlink" href="#generative-testing" title="Permanent link">λ︎</a></h2>
+<p>Define specifications for values to confirm information coming into and leaving a Clojure service are of the correct form.</p>
+<p>Generate test data from value specifications to verify the behaviour of functions, creating diverse sets of data for extensive testing.</p>
+<p>Define specifications for functions to validate the correct form of values are passed and returned from a function.</p>
+<p><a class="md-button" href="/clojure/clojure-spec/">Define value and function specifications with Cloure Spec</a>
+<a class="md-button" href="/clojure/clojure-spec/testing/">Generative Testing with Clojure Spec</a></p>
 <h2 id="performance-testing">Performance testing<a class="headerlink" href="#performance-testing" title="Permanent link">λ︎</a></h2>
-<p>Testing individual expressions through to application and load testing.
-* time - simple results of evaluating an expression
-* criterion - a realistic measure of performance for clojure expressions
-* <a href="https://gatling.io/">Gatling</a> - open source &amp; commercial load test tool for web applications
-* <a href="https://github.com/mhjort/clj-gatling">clj-gatling</a> - wrapper around Gatling which enables tests to be expressed in Clojure.</p>
+<p>Test individual expressions through to application and load testing one or more services.</p>
+<ul>
+<li>time - simple results of evaluating an expression</li>
+<li>criterion - a realistic measure of performance for clojure expressions</li>
+<li><a href="https://gatling.io/">Gatling</a> - open source &amp; commercial load test tool for web applications</li>
+<li><a href="https://github.com/mhjort/clj-gatling">clj-gatling</a> - wrapper around Gatling which enables tests to be expressed in Clojure.</li>
+</ul>
+<h2 id="behaviour-driven-development-frameworks">Behaviour Driven Development frameworks<a class="headerlink" href="#behaviour-driven-development-frameworks" title="Permanent link">λ︎</a></h2>
+<p>Although not widely used in the Clojure community, there are several approaches to develop and test software using Behaviour Driven Development.</p>
+<blockquote>
+<p>BDD: Given, When, Then and scenario approach to outside in software testing</p>
+</blockquote>
+<ul>
+<li><a href="https://github.com/jgrodziski/scenari">Scenari</a> - executable specification / BDD in Clojure</li>
+<li><a href="https://github.com/lambdaisland/kaocha-cucumber">kaocha-cucumber</a> - support for Cucumber tests in the gerkin format</li>
+<li><a href="https://github.com/slagyr/speclj">speclj</a> - TDD/BDD framework for Clojure and ClojureScript based on RSpec.</li>
+</ul>
+<p>Alternative BDD libraries are discussed at <a href="https://github.com/gphilipp/bdd-guide-clojure">https://github.com/gphilipp/bdd-guide-clojure</a></p>
 <h2 id="articles-on-testing-in-clojure">Articles on testing in Clojure<a class="headerlink" href="#articles-on-testing-in-clojure" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://quanttype.net/posts/2017-01-26-clojure-test-runner-of-my-dreams.html">Clojure test runner of my dreams</a></li>
@@ -1980,7 +1990,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2023</span>
 </small>
 </div>
 </article>
