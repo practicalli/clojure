@@ -1900,36 +1900,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-sidebar__scrollwrap">
 <div class="md-sidebar__inner">
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
-<label class="md-nav__title" for="__toc">
-<span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintall-code-should-compile">
-    Hint::All code should compile
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#which-test-runner-to-use">
-    Which test runner to use
-  </a>
-<nav aria-label="Which test runner to use" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintdepsedn-aliases-for-test-runners">
-    Hint::deps.edn aliases for test runners
-  </a>
-</li>
-</ul>
-</nav>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#improving-test-result-readability">
-    Improving test result readability
-  </a>
-</li>
-</ul>
 </nav>
 </div>
 </div>
@@ -1943,14 +1913,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="test-runners">Test Runners<a class="headerlink" href="#test-runners" title="Permanent link">λ︎</a></h1>
-<p>A Test runner is a tool to run test in a project and report the results. During development test runners are called from editors or run om the command line and can be configured to run automatically when changes are detected in the code.</p>
-<p>Regularly running some or all of the tests in a project checks the design decisions made so far have not regressed by additional development.</p>
+<p>A Test runner is a tool to run one or more tests in a project and reports the results.  If there are failing tests, test runners show details of how the test failed. </p>
+<p>Test runners are called from either a Clojure editor, as a command line tool or in a continuous integration workflow.</p>
+<p>Regularly running some or all the tests in a project checks the design decisions made so far have not regressed.</p>
 <p>Test runners are highly recommended step as part of continuous integration and should be used in conjunction with a CI Server for every project.</p>
-<blockquote>
-<h4 id="hintall-code-should-compile">Hint::All code should compile<a class="headerlink" href="#hintall-code-should-compile" title="Permanent link">λ︎</a></h4>
-<p>All the code in the project should be correct Clojure code and compiled unless commented with <code>;;</code>, a <code>(comment ,,,)</code> blocks or prefixed with the <code>#_</code> reader macro.  If code is know not to be correct, <code>;;</code> comment is recommended comment approach.</p>
-</blockquote>
-<h2 id="which-test-runner-to-use">Which test runner to use<a class="headerlink" href="#which-test-runner-to-use" title="Permanent link">λ︎</a></h2>
+<details class="hint">
+<summary>Code should compile or be commented</summary>
+<p>All the code in the project should be correct Clojure code and compiled unless commented with a line comment, <code>;;</code>.</p>
+</details>
 <table>
 <thead>
 <tr>
@@ -1963,7 +1933,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <tr>
 <td>cognitect-labs test runner</td>
 <td>clj</td>
-<td>Defacto test runner for deps.edn projects</td>
+<td>Simple test runner</td>
 </tr>
 <tr>
 <td><a href="https://github.com/Olical/cljs-test-runner">cljs-test-runner</a></td>
@@ -1973,7 +1943,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <tr>
 <td><a href="https://github.com/lambdaisland/kaocha">Kaocha</a></td>
 <td>clj, cljs</td>
-<td>Full featured next gen test runner</td>
+<td>Full featured test runner</td>
 </tr>
 <tr>
 <td>CIDER test runner</td>
@@ -1983,21 +1953,23 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </tbody>
 </table>
 <p>CIDER test runner is ideal if using Emacs for Clojure development, as its build into CIDER.</p>
-<p>Cognitect test runner is the defacto tool Clojure deps projects on the command line and with CI servers.  cljs-test-runner for ClojureScript deps projects, complementing the Cognitect test runner.  Automatic discover of cljs.test based tests, so no configuration required.</p>
-<p>Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.  Kaocha takes a little bit more effort to learn due to the additional features it provides.</p>
-<blockquote>
-<h4 id="hintdepsedn-aliases-for-test-runners">Hint::deps.edn aliases for test runners<a class="headerlink" href="#hintdepsedn-aliases-for-test-runners" title="Permanent link">λ︎</a></h4>
-<p>Aliases for these test runners are provided the <a href="{{ book.P9IClojureDepsEdn }}">practicalli/clojure-deps.edn</a> configuration.</p>
-</blockquote>
-<h2 id="improving-test-result-readability">Improving test result readability<a class="headerlink" href="#improving-test-result-readability" title="Permanent link">λ︎</a></h2>
-<p>Include the <code>:env/test</code> alias when starting a REPL to include the Humane Test Output library, which will pretty print results</p>
-<p>Add the following code to a <code>user</code> namespace on the class path (i.e. a <code>dev/user.clj</code> file if including the <code>:env/dev</code> alias)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">pjstadig.humane-test-output</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">humane-test-results</span><span class="p">])</span>
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">(</span><span class="nf">humane-test-results/activate!</span><span class="p">)</span>
-</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Recommends Kaocha test runner</p>
+<p>Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.  </p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Practicalli aliases for test runners</p>
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> contains several aliases for test runners</p>
 <ul>
-<li><a href="https://github.com/pjstadig/humane-test-output">humane-test-output</a> - more human readable test output with equality assertions diffed</li>
+<li><code>:env/test</code> adds the <code>test</code> directory to the class path</li>
+<li><code>clojure -X:test/run</code> run Kaocha test runner </li>
+<li><code>clojure -X:test/watch</code> run Kaocha test runner in watch mode, running on file changes </li>
+<li><code>clojure -M:test/cljs</code>  run Kaocha ClojureScript test runner </li>
+<li><code>clojure -X:test/cognitect</code> simple to use Cognitect test runner</li>
+<li><code>:lib/kaocha</code> adds Kaocha as a library to the class path, enabling Kaocha to run from an editor, e.g. Emacs Cider</li>
 </ul>
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli REPL Reloaded</a> aliases <code>:repl/reloaded</code> &amp; <code>:dev/reloaded</code> also support Kaocha test runner</p>
+</div>
 <!-- ClojureScript specific testing content -->
 <!-- ## ClojureScript testing -->
 <!-- * [cljs-test-display](https://github.com/bhauman/cljs-test-display) - visual display of in-browser ClojureScript test run -->
@@ -2008,7 +1980,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2023</span>
 </small>
 </div>
 </article>
