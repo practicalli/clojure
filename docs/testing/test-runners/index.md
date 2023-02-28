@@ -1,46 +1,42 @@
 # Test Runners
-A Test runner is a tool to run test in a project and report the results. During development test runners are called from editors or run om the command line and can be configured to run automatically when changes are detected in the code.
 
-Regularly running some or all of the tests in a project checks the design decisions made so far have not regressed by additional development.
+A Test runner is a tool to run one or more tests in a project and reports the results.  If there are failing tests, test runners show details of how the test failed. 
+
+Test runners are called from either a Clojure editor, as a command line tool or in a continuous integration workflow.
+
+Regularly running some or all the tests in a project checks the design decisions made so far have not regressed.
 
 Test runners are highly recommended step as part of continuous integration and should be used in conjunction with a CI Server for every project.
 
-> #### Hint::All code should compile
-> All the code in the project should be correct Clojure code and compiled unless commented with `;;`, a `(comment ,,,)` blocks or prefixed with the `#_` reader macro.  If code is know not to be correct, `;;` comment is recommended comment approach.
+??? HINT "Code should compile or be commented"
+    All the code in the project should be correct Clojure code and compiled unless commented with a line comment, `;;`.
 
-
-## Which test runner to use
 
 | Test runner                                                    | Type      | Summary                                              |
 |----------------------------------------------------------------|-----------|------------------------------------------------------|
-| cognitect-labs test runner                                     | clj       | Defacto test runner for deps.edn projects            |
+| cognitect-labs test runner                                     | clj       | Simple test runner                                   |
 | [cljs-test-runner](https://github.com/Olical/cljs-test-runner) | cljs      | Run all ClojureScript tests with one simple command. |
-| [Kaocha](https://github.com/lambdaisland/kaocha)               | clj, cljs | Full featured next gen test runner                   |
+| [Kaocha](https://github.com/lambdaisland/kaocha)               | clj, cljs | Full featured test runner                            |
 | CIDER test runner                                              | clj       | CIDER built in test runner                           |
 
 CIDER test runner is ideal if using Emacs for Clojure development, as its build into CIDER.
 
-Cognitect test runner is the defacto tool Clojure deps projects on the command line and with CI servers.  cljs-test-runner for ClojureScript deps projects, complementing the Cognitect test runner.  Automatic discover of cljs.test based tests, so no configuration required.
 
-Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.  Kaocha takes a little bit more effort to learn due to the additional features it provides.
+!!! HINT "Practicalli Recommends Kaocha test runner"
+    Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.  
+    
 
-> #### Hint::deps.edn aliases for test runners
-> Aliases for these test runners are provided the [practicalli/clojure-deps.edn]({{ book.P9IClojureDepsEdn }}) configuration.
+!!! INFO "Practicalli aliases for test runners"
+    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains several aliases for test runners
 
-
-## Improving test result readability
-
-Include the `:env/test` alias when starting a REPL to include the Humane Test Output library, which will pretty print results
-
-Add the following code to a `user` namespace on the class path (i.e. a `dev/user.clj` file if including the `:env/dev` alias)
-
-```clojure
-(require '[pjstadig.humane-test-output :as humane-test-results])
-(humane-test-results/activate!)
-```
-
-* [humane-test-output](https://github.com/pjstadig/humane-test-output) - more human readable test output with equality assertions diffed
-
+    * `:env/test` adds the `test` directory to the class path
+    * `clojure -X:test/run` run Kaocha test runner 
+    * `clojure -X:test/watch` run Kaocha test runner in watch mode, running on file changes 
+    * `clojure -M:test/cljs`  run Kaocha ClojureScript test runner 
+    * `clojure -X:test/cognitect` simple to use Cognitect test runner
+    * `:lib/kaocha` adds Kaocha as a library to the class path, enabling Kaocha to run from an editor, e.g. Emacs Cider
+    
+    [Practicalli REPL Reloaded](/clojure/clojure-cli/practicalli-config/) aliases `:repl/reloaded` & `:dev/reloaded` also support Kaocha test runner
 
 
 <!-- ClojureScript specific testing content -->
