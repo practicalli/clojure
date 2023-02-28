@@ -22,9 +22,13 @@ theme:
     - navigation.top
     - content.code.annotate
     - content.tabs.link
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
     - navigation.instant # Avoid page reloading for internal links
     - navigation.tracking # Update URL with anchor
     - navigation.indexes # Nav sections can have files
+    - navigation.footer
   palette:
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"

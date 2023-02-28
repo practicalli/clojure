@@ -65,25 +65,21 @@ A review of the change will be carried out by the Practicalli team and the PR me
 
 The Publish Book GitHub action will run when PR's are merged into main (or the Practicalli team pushes changes to the default branch).
 
+Publish book workflow installs Material for MkDocs version 9
+
 
 ## Local development
 
-Install mkdocs using the Operating system package manager
+Install mkdocs version 9 using the Python pip package manager
 
 ```bash
-sudo apt install mkdocs
-```
-
-Or via Python pip
-
-```bash
-pip install mkdocs
+pip install mkdocs-material=="9.*"
 ```
 
 Install the plugins used by the Practicalli site using Pip (these are also installed in the GitHub Action workflow)
 
 ```bash
-pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin pillow cairosvg
+pip3 install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects pillow cairosvg
 ```
 
 > pillow and cairosvg python packages are required for [Social Cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/)
