@@ -1906,16 +1906,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#references">
-    References
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#double-escaping-not-required">
-    Double escaping not required
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#host-platform-support">
     Host platform support
   </a>
@@ -1926,8 +1916,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#things-to-avoid">
-    Things to avoid
+<a class="md-nav__link" href="#references">
+    References
   </a>
 </li>
 </ul>
@@ -1963,17 +1953,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/hpz2vHaTz44" title="YouTube video player" width="560"></iframe>
 </p>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
-<ul>
-<li><a href="https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/037_regular_expression.clj">4Clojure #37 - regular expressions</a></li>
-<li><a href="http://www.lispcast.com/clojure-regex">Regex in Clojure - purelyfunctional.tv</a></li>
-</ul>
-<h2 id="double-escaping-not-required">Double escaping not required<a class="headerlink" href="#double-escaping-not-required" title="Permanent link">λ︎</a></h2>
+<details class="hint">
+<summary>Double escaping not required</summary>
 <p>The Clojure syntax means you do not need to double escape special characters, eg. <code>\\</code>, and keeps the patterns clean and simple to read. In other languages, backslashes intended for consumption by the regex compiler must be doubled.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">java.util.regex.Pattern/compile</span><span class="w"> </span><span class="s">"\\d"</span><span class="p">)</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="c1">;;=&gt; #"\d"</span>
 </code></pre></div>
 <p>The rules for embedding unusual literal characters or predefined character classes are listed in the Javadoc for Pattern.</p>
+</details>
 <h2 id="host-platform-support">Host platform support<a class="headerlink" href="#host-platform-support" title="Permanent link">λ︎</a></h2>
 <p>Clojure runs on the Java Virtual Machine and uses <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html">Java regular expressions</a>.</p>
 <p>Regular expressions in Clojure create a <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html">java.util.regex.Pattern</a> type</p>
@@ -2025,22 +2012,23 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </tr>
 </tbody>
 </table>
-<p>The re-seq function is Clojure's regex workhorse. It returns a lazy seq of all matches in a string, which means it can be used to efficiently test whether a string matches or to find all matches in a string or a mapped file:
+<p>The re-seq function is Clojure's regex workhorse. It returns a lazy seq of all matches in a string, which means it can be used to efficiently test whether a string matches or to find all matches in a string or a mapped file:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w+"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">;;=&gt; ("one" "two" "three")</span>
 </code></pre></div>
-The preceding regular expression has no capturing groups, so each match in the returned seq is a string. A capturing group (subsegments that are accessible via the returned match object) in the regex causes each returned item to be a vector:
+<p>The preceding regular expression has no capturing groups, so each match in the returned seq is a string. A capturing group (subsegments that are accessible via the returned match object) in the regex causes each returned item to be a vector:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">"\w*(\w)"</span><span class="w"> </span><span class="s">"one-two/three"</span><span class="p">)</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">([</span><span class="s">"one"</span><span class="w"> </span><span class="s">"e"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"two"</span><span class="w"> </span><span class="s">"o"</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="s">"three"</span><span class="w"> </span><span class="s">"e"</span><span class="p">])</span>
-</code></pre></div></p>
-<h2 id="things-to-avoid">Things to avoid<a class="headerlink" href="#things-to-avoid" title="Permanent link">λ︎</a></h2>
-<p>Java's regular-expression engine includes a Matcher object that mutates in a non-thread-safe way as it walks through a string finding matches. This object is exposed by Clojure via the re-matcher function and can be used as an argument to re-groups and the single-parameter form of re-find. Avoid these unless you're certain you know what you're doing. These dangerous functions are used internally by the implementations of some of the recommended functions described earlier, but in each case they're careful to disallow access to the Matcher object they use. Use matchers at your own risk, or better yet don't use them directly at all.</p>
+</code></pre></div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/037_regular_expression.clj" target="_blank">4Clojure #37 - regular expressions</a>
+<a class="md-button" href="http://www.lispcast.com/clojure-regex" target="_blank">Regex in Clojure - purelyfunctional.tv</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
 </small>
 </div>
 </article>

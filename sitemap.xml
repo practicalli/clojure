@@ -31,11 +31,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/namespace-design/</loc>
-         <lastmod>2023-03-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/testing-in-clojure/</loc>
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
@@ -162,11 +157,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/migrate-project/</loc>
-         <lastmod>2023-03-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-cli/projects/namespace-refactoring/</loc>
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
     </url>

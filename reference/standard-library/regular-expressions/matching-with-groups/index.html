@@ -1911,16 +1911,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h1 id="matching-with-regex-groups">Matching with regex groups<a class="headerlink" href="#matching-with-regex-groups" title="Permanent link">λ︎</a></h1>
 <p><code>rematches</code> takes a pattern and compares it with a string.</p>
 <p>If the pattern does not match the string then <code>nil</code> is returned to show the function returned a false value.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(re-matches #"pumpkin" "Halloween pumpkin")
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a> ```
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"pumpkin"</span><span class="w"> </span><span class="s">"Halloween pumpkin"</span><span class="p">)</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w"> </span><span class="o">```</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>If there is an exact match and there are no groups (parens) in the regex, then the matched string is returned.
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nv">If</span><span class="w"> </span><span class="nv">there</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">an</span><span class="w"> </span><span class="nv">exact</span><span class="w"> </span><span class="nv">match</span><span class="w"> </span><span class="nb">and </span><span class="nv">there</span><span class="w"> </span><span class="nv">are</span><span class="w"> </span><span class="nv">no</span><span class="w"> </span><span class="nv">groups</span><span class="w"> </span><span class="p">(</span><span class="nf">parens</span><span class="p">)</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">regex</span>,<span class="w"> </span><span class="nv">then</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">matched</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">returned.</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>```eval-clojure
-<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>(re-matches #"pumpkin" "pumpkin")
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">```</span><span class="nv">clojure</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"pumpkin"</span><span class="w"> </span><span class="s">"pumpkin"</span><span class="p">)</span>
 </code></pre></div>
 <p>If the pattern matches but there are groups, a vector of matching strings is returned. The first element in the vector is the entire match. The remaining elements are the group matches.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(re-matches #"Halloween(.*)" "Halloween pumpkin")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"Halloween(.*)"</span><span class="w"> </span><span class="s">"Halloween pumpkin"</span><span class="p">)</span>
 </code></pre></div>
 <!-- ## Destructure regex result -->
 <!-- (let [[_ fn ln] (re-matches #"(\w+)\s(\w+)" full-name)] -->
@@ -1932,7 +1932,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
 </small>
 </div>
 </article>

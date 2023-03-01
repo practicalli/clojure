@@ -417,6 +417,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     Adding multiple namespaces
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-refactor">
+    Design &amp; Refactor
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1953,6 +1958,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     Adding multiple namespaces
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#design-refactor">
+    Design &amp; Refactor
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1971,9 +1981,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>A namespace is a logical separation of code, usually along features of the projects. Think of all namespaces as creating an API's within the project that communicate the architecture of the system.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/banking-on-clojure-design-namespace-segregation.svg"><img alt="Example of namespace segregation - banking on clojure full stack web service" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure-web-services/banking-on-clojure-design-namespace-segregation.svg"/></a></p>
 <h2 id="controlling-scope">Controlling scope<a class="headerlink" href="#controlling-scope" title="Permanent link">λ︎</a></h2>
-<p>Logically related data structures and functions are defined within a namespace, limiting their default scope to that namespace.   </p>
+<p>Logically related data structures and functions are defined within a namespace, limiting their default scope to that namespace.</p>
 <p>Namespaces should limit their interdependence on each other (limited number of required namespaces) to avoid a highly coupled design.</p>
-<p>Within a namespace a var (<code>def</code>, <code>defn</code>) can be called by its short-form name.  Outside of the namespace, a fully qualified name must be used, or required via an alias or directly referred. </p>
+<p>Within a namespace a var (<code>def</code>, <code>defn</code>) can be called by its short-form name.  Outside of the namespace, a fully qualified name must be used, or required via an alias or directly referred.</p>
 <p>Vars can be marked as private, <code>def ^private name</code>, so they can be accessed only by functions in their own namespace (athough there are ways to by-pass that scope restiction).</p>
 <h2 id="including-another-namespace">Including another namespace<a class="headerlink" href="#including-another-namespace" title="Permanent link">λ︎</a></h2>
 <p><code>(ns namespace.name (:require [domain/filename :as purpose]))</code> is used to enable access to the functions &amp; named data structures in another namespace than the current one.  The included namespace is given an alias so its clear which code comes from that namespace.</p>
@@ -1992,13 +2002,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 <h2 id="including-specific-parts-of-a-namespace">Including specific parts of a namespace<a class="headerlink" href="#including-specific-parts-of-a-namespace" title="Permanent link">λ︎</a></h2>
 <p><code>:refer</code> in the <code>require</code> expression includes one or more specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.</p>
-<p>Use <code>:refer</code> when the library being required the predominant focus of that namespace. A good example is <code>clojure.test</code> which is included to specifically write unit tests. </p>
+<p>Use <code>:refer</code> when the library being required the predominant focus of that namespace. A good example is <code>clojure.test</code> which is included to specifically write unit tests.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.gameboard.handler-test</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="ss">:require</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]]</span>
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="p">[</span><span class="nv">practicalli.gameboard.handler</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">handler</span><span class="p">])</span>
 <a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">highscore-test</span><span class="w"> </span>
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">highscore-test</span>
 <a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"A description of the test"</span>
 <a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">true? </span><span class="p">(</span><span class="nf">handler/public-function</span><span class="w"> </span><span class="mi">42</span><span class="p">)))))</span>
 </code></pre></div>
@@ -2029,12 +2039,43 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The <code>use</code> or <code>:use</code> form is not recommended as it pulls in everything the namespace and everything that the included namespace also included.  This can lead to conflicts, especially in larger projects.</p>
 <p>As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.</p>
 </div>
+<h2 id="design-refactor">Design &amp; Refactor<a class="headerlink" href="#design-refactor" title="Permanent link">λ︎</a></h2>
+<p>When starting a new project all the code is typically in one namespace, unless you are using a template that creates multiple namespaces with sample code.</p>
+<p>Practicalli recommends adding comment sections as the code is developed, grouping code by its purpose.  As the namespace grows in size and complexity, these groups can be moved into their own namespaces as necessary.  A code refactor is much simpler as the code is already grouped logically by purpose.</p>
+<details class="example">
+<summary>Code comment sections</summary>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1">;; State</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>
+<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="c1">;; Helper functions</span>
+<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>
+<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>
+<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">;; --------------------------------------------------</span>
+<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="c1">;; System / Lifecycle</span>
+<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>
+<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1">;; --------------------------------------------------</span>
+</code></pre></div>
+</details>
+<div class="admonition hint">
+<p class="admonition-title">Clojure LSP Snippets</p>
+<p><a href="https://github.com/practicalli/clojure-lsp-config">Practicalli Clojure LSP Config</a> defines snippets to create sections within a Clojure file</p>
+<p><code>comment-header</code> to describe the overall purpose of the namespace</p>
+<p><code>comment-section</code> creates a start and end comment line and text comment</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">One pass evaluation</p>
+<p>A Clojure file is evaluated from top to bottom, so var (<code>def</code>, <code>defn</code>) definitions should come before they are used in the code.</p>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
 </small>
 </div>
 </article>
