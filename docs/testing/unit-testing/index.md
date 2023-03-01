@@ -94,9 +94,9 @@ For each source code file in `src` there should be a corresponding file in `test
 
 For example, code to test the `src/codewars/rock_paper_scissors.clj` is saved in the file `src/codewars/rock_paper_scissors_test.clj` file.
 
-![Clojure project structure - src and test branches](/images/clojure-project-structure-src-test-tree.png)
+![Clojure project structure - src and test branches](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png)
 
-[Example project: CodeWars: Rock Paper Scissors](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors)
+[Example project: CodeWars: Rock Paper Scissors](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){target=_blank .md-button}
 
 
 ## Source and Test Namespaces
