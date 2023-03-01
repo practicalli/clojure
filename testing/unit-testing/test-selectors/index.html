@@ -769,18 +769,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintlambdaislandkaocha-focus-and-skipping">
-    Hint::lambdaisland/kaocha focus and skipping
+<a class="md-nav__link" href="#test-category-metadata">
+    Test category metadata
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#defining-test-catagories-with-metadata">
-    Defining test catagories with metadata
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#running-selective-tests">
-    Running selective tests
+<a class="md-nav__link" href="#test-selectors_1">
+    Test Selectors
   </a>
 </li>
 <li class="md-nav__item">
@@ -1939,18 +1934,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintlambdaislandkaocha-focus-and-skipping">
-    Hint::lambdaisland/kaocha focus and skipping
+<a class="md-nav__link" href="#test-category-metadata">
+    Test category metadata
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#defining-test-catagories-with-metadata">
-    Defining test catagories with metadata
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#running-selective-tests">
-    Running selective tests
+<a class="md-nav__link" href="#test-selectors_1">
+    Test Selectors
   </a>
 </li>
 <li class="md-nav__item">
@@ -1972,31 +1962,32 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="test-selectors">Test Selectors<a class="headerlink" href="#test-selectors" title="Permanent link">λ︎</a></h1>
-<p>As a project grows in scope its important that unit tests are quick to run.  Test that take a noticeable time to run diminish the motivation to run tests frequently.</p>
-<p>Dividing tests into categories means selective tests can be run, continuing to provide fast feedback.  Longer running tests or very large test suites can be run less often without loosing quality in the feedback from tests.</p>
-<p>Test selectors can be included, so only that category of tests run.  Or exclude test selectors so all tests except that category runs.</p>
-<blockquote>
-<h4 id="hintlambdaislandkaocha-focus-and-skipping">Hint::lambdaisland/kaocha focus and skipping<a class="headerlink" href="#hintlambdaislandkaocha-focus-and-skipping" title="Permanent link">λ︎</a></h4>
-<p>kaocha can be used to <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.0.700/doc/3-configuration#test-suites">group tests into categories</a> in the <code>tests.edn</code> configuration, making it easy to <a href="https://cljdoc.org/d/lambdaisland/kaocha/CURRENT/doc/6-focusing-and-skipping">focus or exclude different types of tests</a> (e.g. <code>:unit</code> and <code>:spec</code>)</p>
-</blockquote>
-<h2 id="defining-test-catagories-with-metadata">Defining test catagories with metadata<a class="headerlink" href="#defining-test-catagories-with-metadata" title="Permanent link">λ︎</a></h2>
-<p>Add metadata to <code>deftest</code> functions to provide categories of tests</p>
+<p>As a project grows in scope its important that tests continue to run quickly.  Test runs which take a noticeable time to complete diminish the motivation to run tests frequently.</p>
+<p>Divide tests into categories to run selective tests, continuing to provide fast feedback.  Longer running tests can be run less often without loosing quality in the feedback from tests.</p>
+<p>Test runners use test selectors to run a specific categories, or exclude test selectors so all tests except that category runs.</p>
+<div class="admonition hint">
+<p class="admonition-title">kaocha focus and skipping</p>
+<p>kaocha can <a href="https://cljdoc.org/d/lambdaisland/kaocha/1.0.700/doc/3-configuration#test-suites">group tests into categories</a> in the <code>tests.edn</code> configuration, providing a way to <a href="https://cljdoc.org/d/lambdaisland/kaocha/CURRENT/doc/6-focusing-and-skipping">focus or exclude different types of tests</a> (e.g. <code>:unit</code> and <code>:spec</code>)</p>
+</div>
+<h2 id="test-category-metadata">Test category metadata<a class="headerlink" href="#test-category-metadata" title="Permanent link">λ︎</a></h2>
+<p>Add metadata to <code>deftest</code> functions to provide categories of tests, e.g. <code>integration</code>, <code>persistence</code>, etc.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:integration</span><span class="w"> </span><span class="nv">register-customer</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span>,,,<span class="p">))</span>
 </code></pre></div>
 <p>Example from Banking on Clojure</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:database</span><span class="w"> </span><span class="nv">new-customer-test</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="o">^</span><span class="ss">:persistence</span><span class="w"> </span><span class="nv">new-customer-test</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">"New customer generative testing"</span><span class="p">)</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/valid?</span>
 <a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="ss">:customer/id</span>
 <a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="p">(</span><span class="ss">:customer/id</span><span class="w"> </span><span class="p">(</span><span class="nf">SUT/new-customer</span>
 <a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">                        </span><span class="p">(</span><span class="nf">spec-gen/generate</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/gen</span><span class="w"> </span><span class="ss">:customer/unregistered</span><span class="p">)))))))</span>
 </code></pre></div>
-<h2 id="running-selective-tests">Running selective tests<a class="headerlink" href="#running-selective-tests" title="Permanent link">λ︎</a></h2>
-<p>Start a test running by specifying test selectors to include and/or exclude.</p>
-<p>{% tabs kaocha="kaocha", spacemacs="Spacemacs", cider="CIDER", cognitect="Cognitect Labs"  %}</p>
-<p>{% content "kaocha" %}
-kaocha supports meta data on <code>deftest</code> expressions and has its own metadata tag for skipping tests, <code>^:koacha/skip</code></p>
+<h2 id="test-selectors_1">Test Selectors<a class="headerlink" href="#test-selectors_1" title="Permanent link">λ︎</a></h2>
+<p>Start a test selective category of tests running by specifying test selectors to include or exclude.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Kaocha</label><label for="__tabbed_1_2">Spacemacs</label><label for="__tabbed_1_3">Cider</label><label for="__tabbed_1_4">Cognitect</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>kaocha supports meta data on <code>deftest</code> expressions and has its own metadata tag for skipping tests, <code>^:koacha/skip</code></p>
 <p>Examples of tests with and without test selectors</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">simple-test</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span>
@@ -2015,14 +2006,16 @@ kaocha supports meta data on <code>deftest</code> expressions and has its own me
 <p>Specifying <code>--skip-meta</code> on the command line gives the same results</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>bin/kaocha<span class="w"> </span>--skip-meta<span class="w"> </span>:metadata-name
 </code></pre></div>
-<p>{% content "spacemacs" %}
-Running tests with the universal argument will prompt for test selector filters and only Run those tests that match the selector inclusions/exclusions.</p>
+</div>
+<div class="tabbed-block">
+<p>Running tests with the universal argument will prompt for test selector filters and only Run those tests that match the selector inclusions/exclusions.</p>
 <p><code>SPC u , t a</code> runs all tests, prompting for tests selector names to include (space separated)</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacemacs-clojure-test-selectors-prompt.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="/images/spacemacs-clojure-test-selectors-prompt.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/spacemacs/screenshots/spacemacs-clojure-test-selectors-prompt.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/spacemacs/screenshots/spacemacs-clojure-test-selectors-prompt.png"/></a></p>
 <p>Then prompting for the test selectors to exclude.  A warning displays if CIDER does not find the test selector name.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacemacs-clojure-test-selectors-integration-not-found.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="/images/spacemacs-clojure-test-selectors-integration-not-found.png"/></a></p>
-<p>{% content "cider" %}
-Invoke the CIDER test runner commands with the universal argument and CIDER will prompt for test selector filters, running only those tests that match the selector inclusions/exclusions.</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/spacemacs/screenshots/spacemacs-clojure-test-selectors-integration-not-found.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/spacemacs/screenshots/spacemacs-clojure-test-selectors-integration-not-found.png"/></a></p>
+</div>
+<div class="tabbed-block">
+<p>Invoke the CIDER test runner commands with the universal argument and CIDER will prompt for test selector filters, running only those tests that match the selector inclusions/exclusions.</p>
 <p><code>C-c C-t p</code> runs all the tests in a project.</p>
 <p><code>C-u C-c C-t p</code> prompts for test selectors and runs the matching tests in a project.</p>
 <p><code>C-c C-t l</code> runs all tests currently evaluated in the REPL.</p>
@@ -2031,14 +2024,15 @@ Invoke the CIDER test runner commands with the universal argument and CIDER will
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacemacs-clojure-test-selectors-prompt.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="/images/spacemacs-clojure-test-selectors-prompt.png"/></a></p>
 <p>Then prompts for the test selectors to exclude.  A warning displays if CIDER does not find the test selector name.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/spacemacs-clojure-test-selectors-integration-not-found.png"><img alt="Spacemacs Clojure Cider Test Runner test selector prompt - include" src="/images/spacemacs-clojure-test-selectors-integration-not-found.png"/></a></p>
-<p>{% content "cognitect" %}</p>
+</div>
+<div class="tabbed-block">
 <p>The Cognitect Labs test runner uses command line options to specify test selectors, <code>--include</code> and <code>--exclude</code>.</p>
-<blockquote>
-<p><a href="{{ P9IClojureDepsEdnInstall }}">Practicalli Clojure CLI Config</a> configuration provides the <code>:test/congnitect</code> alias.</p>
-</blockquote>
+<p><a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> configuration provides the <code>:test/congnitect</code> alias.</p>
 <p><code>clojure -M:test/cognitect --include :database</code> only runs tests with the <code>^:database</code> test selector</p>
 <p><code>clojure -M:test/cognitect --exclude :integration</code> runs all tests except those with the <code>^:integration</code> test selector</p>
-<p>{% endtabs %}</p>
+</div>
+</div>
+</input></input></input></input></div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://cljdoc.org/d/lambdaisland/kaocha/1.0.700/doc/6-focusing-and-skipping">Kaocha - Focus and skipping tests with test selectors</a></li>
@@ -2051,7 +2045,7 @@ Invoke the CIDER test runner commands with the universal argument and CIDER will
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
 </small>
 </div>
 </article>
