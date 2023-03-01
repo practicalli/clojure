@@ -11,6 +11,40 @@ Unit tests are centered on assertions, testing if something returns a true or fa
 `deftest` is a collection of assertions, with or without `testing` expressions.  The name of the deftest should be the name of the function it is testing with `-test` as a postfix.  For example, the function `practicalli.playground/calculator` would have a `deftest` called `practicalli.playground-test/calculator-test`
 
 
+## Requiring Namespaces
+
+A test namespace has a singular purpose to test a matching src namespace.
+
+The idiomatic approach is to `:refer` specific functions from `clojure.test` as those functions are used.
+
+The namespace to be tested is referred using a meaningful alias. The alias highlight the exact functions being tested in the body of the code.  This provides a visual way to separate functions under test with other test functions, especially if there are helper functions or vars used for test data.
+
+![Clojure Unit Testing - require software under testa using SUT alias](/images/clojure-unit-test-require-sut.png)
+
+
+![Clojure Unit Testing - using SUT alias](/images/clojure-unit-test-alias-sut.png)
+
+In the above example it is easy to see which namespaces the functions being tested are from.  The `dictionary` namespace is a source of data for those tests.
+
+=== "REPL"
+    ```clojure
+    (require '[clojure.test :refer [are deftest is testing]])
+    ```
+    The namespace under test should be referred using the alias so they are readily identified within the test code.
+    ```clojure
+    (require '[practicalli.gameboard.spec :as gameboard-spec])
+    ```
+
+
+=== "project"
+    Add `clojure.test` to the namespace definition along with the namespace under test.
+    ```clojure
+    (ns practicalli.app-namespace-test
+      (:require '[clojure.test :refer [are deftest is testing]]
+                 [practicalli.gameboard.spec :as gameboard-spec]))
+    ```
+
+
 ## Simple Example
 
 ```clojure
@@ -20,7 +54,7 @@ Unit tests are centered on assertions, testing if something returns a true or fa
     (is (predicate-function? arg))))
 ```
 
-## Testing assertions with a data set
+## Assertion data set
 
 The `are` macro can also be used to define assertions, especially when there would otherwise be multiple assertions that only differ by their test data.
 
@@ -39,34 +73,34 @@ This is equivalent to writing
              (is (= 4 (* 2 2))))
 ```
 
-In this example 5 assertions are almost the same, so are a candidate to be refactored using the `are` macro.
-
-```clojure
-(testing "Tens to number words"
-  (is (= '("zero" "ten")
-         (sut/character-sequence->word-sequence dictionary/digit->word '(\0 \1 \0))))
-  (is (= '("zero" "eleven")
-         (sut/character-sequence->word-sequence dictionary/digit->word '(\0 \1 \1))))
-  (is (= '("zero" "twenty" "zero")
-         (sut/character-sequence->word-sequence dictionary/digit->word '(\0 \2 \0))))
-  (is (= '("zero" "twenty""one")
-         (sut/character-sequence->word-sequence dictionary/digit->word '(\0 \2 \1))))
-  (is (= '("zero" "forty" "two")
-         (sut/character-sequence->word-sequence dictionary/digit->word '(\0 \4 \2)))))
-```
-
-Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
-
-```clojure
-(testing "Tens to number words"
-  (are [words numbers]
-    (= words (sut/character-sequence->word-sequence dictionary/digit->word numbers))
-      '("zero" "ten")           '(\0 \1 \0)
-      '("zero" "eleven")        '(\0 \1 \1)
-      '("zero" "twenty" "zero") '(\0 \2 \0)
-      '("zero" "twenty""one")   '(\0 \2 \1)
-      '("zero" "forty" "two")   '(\0 \4 \2))
-```
+!!! EXAMPLE "Refactor test assertion to use data set"
+    Assertions in the test take the same shape of values, so are candidates to refactor to the `are` macro.
+    ```clojure
+    (deftest encoder-test
+      (testing "Tens to number words"
+        (is (= '("zero" "ten")
+               (character-sequence->word-sequence dictionary/digit->word '(\0 \1 \0))))
+        (is (= '("zero" "eleven")
+               (character-sequence->word-sequence dictionary/digit->word '(\0 \1 \1))))
+        (is (= '("zero" "twenty" "zero")
+               (character-sequence->word-sequence dictionary/digit->word '(\0 \2 \0))))
+        (is (= '("zero" "twenty""one")
+               (character-sequence->word-sequence dictionary/digit->word '(\0 \2 \1))))
+        (is (= '("zero" "forty" "two")
+               (character-sequence->word-sequence dictionary/digit->word '(\0 \4 \2))))))
+    ```
+    Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
+    ```clojure
+    (deftest encoder-test
+      (testing "Tens to number words"
+        (are [words numbers]
+          (= words (character-sequence->word-sequence dictionary/digit->word numbers))
+            '("zero" "ten")           '(\0 \1 \0)
+            '("zero" "eleven")        '(\0 \1 \1)
+            '("zero" "twenty" "zero") '(\0 \2 \0)
+            '("zero" "twenty""one")   '(\0 \2 \1)
+            '("zero" "forty" "two")   '(\0 \4 \2)))
+    ```
 
 !!! HINT "Generative Testing provides a wide range of values"
     [Generating test data from Clojure Specs](/clojure/clojure-spec/generative-testing/) provides an extensive set of values that provide an effective way to test functions.
@@ -76,10 +110,10 @@ Refactor the assertions using are simplifies the code, making it simpler to chan
 
 [clojure.test API](https://clojure.github.io/clojure/clojure.test-api.html){.md-button}
 
-## Project Examples: Code challenges with unit tests
+### Code challenges with tests
 
-* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md){.md-button}
-* [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words){.md-button}
-* [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){.md-button}
-* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides){.md-button}
-* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides){target=_blank .md-button}
+[TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md){.md-button}
+[TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words){.md-button}
+[Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){.md-button}
+[practicalli/codewars-guides](https://github.com/practicalli/codewars-guides){.md-button}
+[practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides){target=_blank .md-button}

@@ -39,7 +39,6 @@ clojure -X:test/watch
 Both kaocha aliases are configured to stop if a test fails.  When re-running kaocha, only failed tests and tests that have changed are run (including tests where the code they are testing has changed).
 
 
-{% content "deps" %}
 
 ## Alias to include the test directory
 
@@ -58,8 +57,6 @@ practicalli/clojure-deps-edn defines an environment alias to include the test pa
 }
 ```
 
-
-{% endtabs %}
 
 ## Cognitect labs Clojure test runner
 

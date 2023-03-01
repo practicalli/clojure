@@ -71,8 +71,8 @@ If tests are not running in the REPL or are returning unexpected errors, a comma
 
 The CLI approach is also more robust for longer running tests than running within an editor.
 
-> ####HINT::Avoid stale tests
-> Running tests via a command line test runner will never experience stale tests, as long as all relevant changes are saved to the source code files.
+!!! WARNING "Avoid stale tests"
+    Running tests via a command line test runner will never experience stale tests, as long as all relevant changes are saved to the source code files.
 
 
 ## Run tests in the REPL
