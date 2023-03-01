@@ -14,6 +14,7 @@ Regular expressions are a powerful and compact way to find specific patterns in 
 
 The **[regular expression syntax cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet)** by Mozilla is an excellent reference for regular expression patterns.
 
+
 ## Regular expressions overview
 
 Regular expressions in Clojure
@@ -30,23 +31,20 @@ Find the most common word in a book using regular expressions
 </p>
 
 
-## References
-* [4Clojure #37 - regular expressions](https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/037_regular_expression.clj)
-* [Regex in Clojure - purelyfunctional.tv](http://www.lispcast.com/clojure-regex)
 
+??? HINT "Double escaping not required"
+    The Clojure syntax means you do not need to double escape special characters, eg. `\\`, and keeps the patterns clean and simple to read. In other languages, backslashes intended for consumption by the regex compiler must be doubled.
 
-## Double escaping not required
-The Clojure syntax means you do not need to double escape special characters, eg. `\\`, and keeps the patterns clean and simple to read. In other languages, backslashes intended for consumption by the regex compiler must be doubled.
+    ```clojure
+    (java.util.regex.Pattern/compile "\\d")
+    ;;=> #"\d"
+    ```
 
-```clojure
-(java.util.regex.Pattern/compile "\\d")
-;;=> #"\d"
-```
-
-The rules for embedding unusual literal characters or predefined character classes are listed in the Javadoc for Pattern.
+    The rules for embedding unusual literal characters or predefined character classes are listed in the Javadoc for Pattern.
 
 
 ## Host platform support
+
 Clojure runs on the Java Virtual Machine and uses [Java regular expressions](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html).
 
 Regular expressions in Clojure create a [java.util.regex.Pattern](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html) type
@@ -60,6 +58,7 @@ ClojureScript runs on JavaScript engines and uses Javascript regular expressions
 
 
 ## Option flags
+
 Regular expression option flags can make a pattern case-insensitive or enable multiline mode. Clojure's regex literals starting with (?<flag>) set the mode for the rest of the pattern. For example, the pattern `#"(?i)yo"` matches the strings `“yo”`, `“yO”`, `“Yo”`, and `“YO”`.
 
 Flags that can be used in Clojure regular-expression patterns, along with their long name and a description of what they do. See Java's documentation for the java.util.regex.Pattern class for more details.
@@ -74,15 +73,21 @@ Flags that can be used in Clojure regular-expression patterns, along with their 
 | u    | UNICODE_CASE     | Causes the i flag to use Unicode case insensitivity instead of ASCII.                                   |
 
 The re-seq function is Clojure's regex workhorse. It returns a lazy seq of all matches in a string, which means it can be used to efficiently test whether a string matches or to find all matches in a string or a mapped file:
+
 ```clojure
 (re-seq #"\w+" "one-two/three")
 ;;=> ("one" "two" "three")
 ```
+
 The preceding regular expression has no capturing groups, so each match in the returned seq is a string. A capturing group (subsegments that are accessible via the returned match object) in the regex causes each returned item to be a vector:
+
 ```clojure
 (re-seq #"\w*(\w)" "one-two/three")
 (["one" "e"] ["two" "o"] ["three" "e"])
 ```
 
-## Things to avoid
-Java's regular-expression engine includes a Matcher object that mutates in a non-thread-safe way as it walks through a string finding matches. This object is exposed by Clojure via the re-matcher function and can be used as an argument to re-groups and the single-parameter form of re-find. Avoid these unless you're certain you know what you're doing. These dangerous functions are used internally by the implementations of some of the recommended functions described earlier, but in each case they're careful to disallow access to the Matcher object they use. Use matchers at your own risk, or better yet don't use them directly at all.
+
+## References
+
+[4Clojure #37 - regular expressions](https://github.com/practicalli/four-clojure/blob/master/src/four_clojure/037_regular_expression.clj){target=_blank .md-button}
+[Regex in Clojure - purelyfunctional.tv](http://www.lispcast.com/clojure-regex){target=_blank .md-button}
