@@ -1,4 +1,5 @@
 # Writing Unit Tests with clojure.test
+
 Unit tests are centered on assertions, testing if something returns a true or false value.
 
 `is` function is the simplest assertion and the most common.  It checks to see if an expression given is true and if so then the assertion passes.  If the value is false then that assertion fails.
@@ -9,7 +10,9 @@ Unit tests are centered on assertions, testing if something returns a true or fa
 
 `deftest` is a collection of assertions, with or without `testing` expressions.  The name of the deftest should be the name of the function it is testing with `-test` as a postfix.  For example, the function `practicalli.playground/calculator` would have a `deftest` called `practicalli.playground-test/calculator-test`
 
+
 ## Simple Example
+
 ```clojure
 (deftest public-function-in-namespace-test
   (testing "A description of the test"
@@ -18,9 +21,11 @@ Unit tests are centered on assertions, testing if something returns a true or fa
 ```
 
 ## Testing assertions with a data set
+
 The `are` macro can also be used to define assertions, especially when there would otherwise be multiple assertions that only differ by their test data.
 
 An `are` assertion defines the arguments to the test, the logic of the test and a series of test data.
+
 ```clojure
 (are [x y] (= x y)
               2 (+ 1 1)
@@ -35,6 +40,7 @@ This is equivalent to writing
 ```
 
 In this example 5 assertions are almost the same, so are a candidate to be refactored using the `are` macro.
+
 ```clojure
 (testing "Tens to number words"
   (is (= '("zero" "ten")
@@ -50,6 +56,7 @@ In this example 5 assertions are almost the same, so are a candidate to be refac
 ```
 
 Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
+
 ```clojure
 (testing "Tens to number words"
   (are [words numbers]
@@ -61,13 +68,18 @@ Refactor the assertions using are simplifies the code, making it simpler to chan
       '("zero" "forty" "two")   '(\0 \4 \2))
 ```
 
+!!! HINT "Generative Testing provides a wide range of values"
+    [Generating test data from Clojure Specs](/clojure/clojure-spec/generative-testing/) provides an extensive set of values that provide an effective way to test functions.
+
 
 ## Reference
-For full details, visit the [API for `clojure.test`](https://clojure.github.io/clojure/clojure.test-api.html)
+
+[clojure.test API](https://clojure.github.io/clojure/clojure.test-api.html){.md-button}
 
 ## Project Examples: Code challenges with unit tests
-* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md)
-* [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words)
-* [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors)
-* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
-* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
+
+* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md){.md-button}
+* [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words){.md-button}
+* [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){.md-button}
+* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides){.md-button}
+* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides){target=_blank .md-button}
