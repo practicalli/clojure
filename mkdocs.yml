@@ -217,7 +217,6 @@ nav:
       - testing/index.md
       - Unit Testing:
           - testing/unit-testing/index.md
-          - testing/unit-testing/configure-projects-for-tests.md
           - testing/unit-testing/writing-unit-tests.md
           - testing/unit-testing/fixtures.md
           - testing/unit-testing/test-selectors.md
