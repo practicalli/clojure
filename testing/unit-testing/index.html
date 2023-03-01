@@ -739,8 +739,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="require-test-namespaces/">
-        Require test namespaces
+<a class="md-nav__link" href="require-test-namespaces.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -750,7 +750,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="fixtures/">
-        Fixtures: setup and tear down for unit tests
+        Test Fixtures
       </a>
 </li>
 <li class="md-nav__item">
@@ -1924,15 +1924,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#command-line-test-runners">
     Command line test runners
   </a>
-<nav aria-label="Command line test runners" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintavoid-stale-tests">
-    HINT::Avoid stale tests
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#run-tests-in-the-repl">
@@ -2024,10 +2015,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Run all tests (including integration tests) via the command line before pushing commits to ensure all changes to the code have been tested.</p>
 <p>If tests are not running in the REPL or are returning unexpected errors, a command line test runner is a useful way to diagnose if it is the test code or test tools causing the error.</p>
 <p>The CLI approach is also more robust for longer running tests than running within an editor.</p>
-<blockquote>
-<h4 id="hintavoid-stale-tests">HINT::Avoid stale tests<a class="headerlink" href="#hintavoid-stale-tests" title="Permanent link">λ︎</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">Avoid stale tests</p>
 <p>Running tests via a command line test runner will never experience stale tests, as long as all relevant changes are saved to the source code files.</p>
-</blockquote>
+</div>
 <h2 id="run-tests-in-the-repl">Run tests in the REPL<a class="headerlink" href="#run-tests-in-the-repl" title="Permanent link">λ︎</a></h2>
 <p><code>clojure.test</code> includes the <code>run-tests</code> function that runs tests (<code>deftest</code> definitions) in given namespaces and <code>run-all-tests</code> which runs all tests in all namespaces.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">run-all-tests</span><span class="p">)</span><span class="w">  </span><span class="c1">; run all tests in all namespaces</span>
@@ -2067,7 +2058,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 28, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
 </small>
 </div>
 </article>

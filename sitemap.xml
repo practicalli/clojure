@@ -1671,11 +1671,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/testing/unit-testing/require-test-namespaces/</loc>
-         <lastmod>2023-03-01</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/testing/unit-testing/test-selectors/</loc>
          <lastmod>2023-03-01</lastmod>
          <changefreq>daily</changefreq>
