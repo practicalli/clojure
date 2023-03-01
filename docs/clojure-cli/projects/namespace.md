@@ -9,11 +9,11 @@ A namespace is a logical separation of code, usually along features of the proje
 
 ## Controlling scope
 
-Logically related data structures and functions are defined within a namespace, limiting their default scope to that namespace.   
+Logically related data structures and functions are defined within a namespace, limiting their default scope to that namespace.
 
 Namespaces should limit their interdependence on each other (limited number of required namespaces) to avoid a highly coupled design.
 
-Within a namespace a var (`def`, `defn`) can be called by its short-form name.  Outside of the namespace, a fully qualified name must be used, or required via an alias or directly referred. 
+Within a namespace a var (`def`, `defn`) can be called by its short-form name.  Outside of the namespace, a fully qualified name must be used, or required via an alias or directly referred.
 
 Vars can be marked as private, `def ^private name`, so they can be accessed only by functions in their own namespace (athough there are ways to by-pass that scope restiction).
 
@@ -42,15 +42,15 @@ Practicalli recommends using a meaningful alias that defines the purpose of the 
 
 `:refer` in the `require` expression includes one or more specific vars directly in the current namespace, as if it had been defined there. Referring a var means it no longer requires a namespace qualifier.
 
-Use `:refer` when the library being required the predominant focus of that namespace. A good example is `clojure.test` which is included to specifically write unit tests. 
+Use `:refer` when the library being required the predominant focus of that namespace. A good example is `clojure.test` which is included to specifically write unit tests.
 
 ```clojure
 (ns practicalli.gameboard.handler-test
-  :require 
+  :require
     [clojure.test :refer [deftest is testing]]
     [practicalli.gameboard.handler :as handler])
 
-(deftest highscore-test 
+(deftest highscore-test
   (testing "A description of the test"
     (is (true? (handler/public-function 42)))))
 ```
@@ -92,3 +92,38 @@ Here is an example namespace expression with multiple require statements from th
     The `use` or `:use` form is not recommended as it pulls in everything the namespace and everything that the included namespace also included.  This can lead to conflicts, especially in larger projects.
 
     As Clojure is typically composed of many libraries, its prudent to only include the specific things you need from another namespace.
+
+
+## Design & Refactor
+
+When starting a new project all the code is typically in one namespace, unless you are using a template that creates multiple namespaces with sample code.
+
+Practicalli recommends adding comment sections as the code is developed, grouping code by its purpose.  As the namespace grows in size and complexity, these groups can be moved into their own namespaces as necessary.  A code refactor is much simpler as the code is already grouped logically by purpose.
+
+??? EXAMPLE "Code comment sections"
+    ```clojure
+    ;; --------------------------------------------------
+    ;; State
+
+    ;; --------------------------------------------------
+
+    ;; --------------------------------------------------
+    ;; Helper functions
+
+    ;; --------------------------------------------------
+
+    ;; --------------------------------------------------
+    ;; System / Lifecycle
+
+    ;; --------------------------------------------------
+    ```
+
+!!! HINT "Clojure LSP Snippets"
+    [Practicalli Clojure LSP Config](https://github.com/practicalli/clojure-lsp-config) defines snippets to create sections within a Clojure file
+
+    `comment-header` to describe the overall purpose of the namespace
+
+    `comment-section` creates a start and end comment line and text comment
+
+!!! INFO "One pass evaluation"
+    A Clojure file is evaluated from top to bottom, so var (`def`, `defn`) definitions should come before they are used in the code.
