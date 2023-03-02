@@ -217,16 +217,16 @@ nav:
       - testing/index.md
       - Unit Testing:
           - testing/unit-testing/index.md
-          - testing/unit-testing/writing-unit-tests.md
-          - testing/unit-testing/fixtures.md
-          - testing/unit-testing/test-selectors.md
+          - Writing Tests: testing/unit-testing/writing-unit-tests.md
+          - Fixtures: testing/unit-testing/fixtures.md
+          - Test Selectors: testing/unit-testing/test-selectors.md
           # <!-- - [TDD Kata: Recent Song-ltesting/unit-testing/tdd-kata/recent-song-list.md -->
           # <!-- - testing/unit-testing/clojure-test-expectations.md -->
       - Test runners:
           - testing/test-runners/index.md
-          - testing/test-runners/congnitect-labs-test-runner.md
-          - testing/test-runners/kaocha-test-runner.md
-          - testing/test-runners/example-projects.md
+          - Kaocha: testing/test-runners/kaocha-test-runner.md
+          - Cognitect Labs: testing/test-runners/congnitect-labs-test-runner.md
+          - Example Projects: testing/test-runners/example-projects.md
   - Clojure Spec:
       - clojure-spec/index.md
       - clojure-spec/using-spec-in-the-repl.md
