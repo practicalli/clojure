@@ -13,11 +13,11 @@
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/testing/test-runners/kaocha-test-runner/" rel="canonical"/>
-<link href="../congnitect-labs-test-runner/" rel="prev"/>
-<link href="../example-projects/" rel="next"/>
+<link href="../" rel="prev"/>
+<link href="../congnitect-labs-test-runner/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
-<title>Kaocha Test Runner from LambdaIsland - Practicalli Clojure</title>
+<title>Kaocha - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Kaocha Test Runner from LambdaIsland - Practicalli Clojure" property="og:title"/>
+<meta content="Kaocha - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/testing/test-runners/kaocha-test-runner.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/testing/test-runners/kaocha-test-runner/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Kaocha Test Runner from LambdaIsland - Practicalli Clojure" name="twitter:title"/>
+<meta content="Kaocha - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/testing/test-runners/kaocha-test-runner.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Kaocha Test Runner from LambdaIsland
+              Kaocha
             
           </span>
 </div>
@@ -735,12 +735,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../unit-testing/writing-unit-tests/">
-        Writing Unit Tests with clojure.test
+        Writing Tests
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../unit-testing/fixtures/">
-        Test Fixtures
+        Fixtures
       </a>
 </li>
 <li class="md-nav__item">
@@ -765,19 +765,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
           Test runners
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../congnitect-labs-test-runner/">
-        Cognitect Labs Test Runner
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kaocha Test Runner from LambdaIsland
+          Kaocha
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Kaocha Test Runner from LambdaIsland
+        Kaocha
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -791,32 +786,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-kaocha-binary-to-the-project-project">
-    Add kaocha binary to the project project
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#continuous-integration-support">
-    Continuous Integration support
+<a class="md-nav__link" href="#run-kaocha">
+    Run Kaocha
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#configuring-test-runs">
     Configuring test runs
   </a>
-<nav aria-label="Configuring test runs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintalternative-kaocha-configuration-with-aero">
-    Hint::Alternative kaocha configuration with aero
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#running-tests">
-    Running tests
+<a class="md-nav__link" href="#run-test-options">
+    Run test options
   </a>
 </li>
 <li class="md-nav__item">
@@ -842,8 +823,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
+<a class="md-nav__link" href="../congnitect-labs-test-runner/">
+        Cognitect Labs
+      </a>
+</li>
+<li class="md-nav__item">
 <a class="md-nav__link" href="../example-projects/">
-        Example projects
+        Example Projects
       </a>
 </li>
 </ul>
@@ -1967,32 +1953,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#add-kaocha-binary-to-the-project-project">
-    Add kaocha binary to the project project
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#continuous-integration-support">
-    Continuous Integration support
+<a class="md-nav__link" href="#run-kaocha">
+    Run Kaocha
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#configuring-test-runs">
     Configuring test runs
   </a>
-<nav aria-label="Configuring test runs" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintalternative-kaocha-configuration-with-aero">
-    Hint::Alternative kaocha configuration with aero
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#running-tests">
-    Running tests
+<a class="md-nav__link" href="#run-test-options">
+    Run test options
   </a>
 </li>
 <li class="md-nav__item">
@@ -2030,54 +2002,101 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h1 id="kaocha-test-runner-from-lambdaisland">Kaocha Test Runner from LambdaIsland<a class="headerlink" href="#kaocha-test-runner-from-lambdaisland" title="Permanent link">λ︎</a></h1>
 <p><a href="https://github.com/lambdaisland/kaocha">lambdaisland/kaocha</a> (cow-cha) is a comprehensive test runner that support unit testing and <code>clojure.spec</code> generative testing.  Clojure and ClojureScript languages are supported.</p>
 <h2 id="a-minimal-starting-point">A minimal starting point<a class="headerlink" href="#a-minimal-starting-point" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Practicalli Clojure CLI Config</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</input></div>
 <p>Install the <a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a> configuration to call kaocha from the root directory of a project which contains <code>clojure.test</code> defined unit tests under a <code>test</code> directory structure.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:test/run
-</code></pre></div>
-<p>Or continually run tests by watching for changes with Kaocha.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure<span class="w"> </span>-M:test/watch
-</code></pre></div>
-<h2 id="add-kaocha-binary-to-the-project-project">Add kaocha binary to the project project<a class="headerlink" href="#add-kaocha-binary-to-the-project-project" title="Permanent link">λ︎</a></h2>
-<p>Kaocha recommends adding a <code>bin/kaocha</code> script to the project, providing a standard location from which to run kaocha and to include project command line options.  Command line options will over-ride the same options in the <code>tests.edn</code> file.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ch">#!/usr/bin/env bash</span>
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>clojure<span class="w"> </span>-M:test/runner<span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
-</code></pre></div>
-<h2 id="continuous-integration-support">Continuous Integration support<a class="headerlink" href="#continuous-integration-support" title="Permanent link">λ︎</a></h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Alias Definition</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Define an alias in the project or user <code>deps.edn</code> configuration.</p>
 <p>For CI services such as CircleCI or GitLabs, add an alias for kaocha to the project <code>deps.edn</code> file.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="w">  </span><span class="ss">:test/runner</span>
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">   </span><span class="ss">:extra-deps</span><span class="w">  </span><span class="p">{</span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.0.700"</span><span class="p">}}</span>
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">   </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"kaocha.runner"</span><span class="p">]}</span>
+<div class="admonition example">
+<p class="admonition-title">Alias definitions which stop on failed tests</p>
+</div>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="ss">:test/run</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.77.1236"</span><span class="p">}}</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">   </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"kaocha.runner"</span><span class="p">]</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">kaocha.runner/exec-fn</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:fail-fast?</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">             </span><span class="ss">:randomize?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}</span>
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1">;; Kaocha test runner in watch mode</span>
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1">;; clojure -X:test/watch</span>
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="ss">:test/watch</span>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.77.1236"</span><span class="p">}}</span>
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="w"> </span><span class="ss">:main-opts</span><span class="w">   </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"kaocha.runner"</span><span class="w"> </span><span class="s">"--watch"</span><span class="w"> </span><span class="s">"--fail-fast"</span><span class="w"> </span><span class="s">"--skip-meta"</span><span class="w"> </span><span class="s">":slow"</span><span class="p">]</span>
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">kaocha.runner/exec-fn</span>
+<a href="#__codelineno-0-16" id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:watch?</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-0-17" id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="w">             </span><span class="ss">:randomize?</span><span class="w"> </span><span class="nv">false</span>
+<a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">             </span><span class="ss">:fail-fast?</span><span class="w"> </span><span class="nv">true</span><span class="p">}}</span>
 </code></pre></div>
+</div>
+</div>
+</input></div>
+<h2 id="run-kaocha">Run Kaocha<a class="headerlink" href="#run-kaocha" title="Permanent link">λ︎</a></h2>
+<p>Run Kaocha using the <code>clojure</code> command in a terminal, using the <code>:test/run</code> which runs all the tests in a project unless a test fails, then kaocha will stop.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure<span class="w"> </span>-M:test/run
+</code></pre></div>
+<p>Pass <code>:fail-fast? false</code> as an argument to run all tests regardless of test failure.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>clojure<span class="w"> </span>-M:test/run<span class="w"> </span>:fail-fast?<span class="w"> </span><span class="nb">false</span>
+</code></pre></div>
+<p>Continually run tests by watching for changes using the <code>:test/watch</code> alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure<span class="w"> </span>-M:test/watch
+</code></pre></div>
+<details class="info">
+<summary>Kaocha recommends script</summary>
+<p>Kaocha recommends adding a <code>bin/kaocha</code> script to each project, although this is optional.  The script calls <code>clojure</code> with a suitable alias and allows for arguments to be passed to the command using <code>"$@"</code>.  Command line options will over-ride the same options in the <code>tests.edn</code> file.</p>
+<div class="highlight"><span class="filename">bin/kaocha</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/usr/bin/env bash</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>clojure<span class="w"> </span>-M:test/runner<span class="w"> </span><span class="s2">"</span><span class="nv">$@</span><span class="s2">"</span>
+</code></pre></div>
+</details>
+<details class="hint">
+<summary>Run via Makefile targets</summary>
+<p>A Makefile target could be defined instead, e.g. <code>make test</code> and <code>make watch</code>
+<div class="highlight"><span class="filename">Makefile</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nf">test</span><span class="o">:</span><span class="w">  </span><span class="c">## Run unit tests - stoping on first error</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Runner<span class="w"> </span><span class="k">for</span><span class="w"> </span>unit<span class="w"> </span>tests<span class="w"> </span>---------<span class="k">)</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span>clojure<span class="w"> </span>-X:test/run
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="nf">test-watch</span><span class="o">:</span><span class="w">  </span><span class="c">## Run tests when changes saved, stopping test run on first error</span>
+<a href="#__codelineno-5-6" id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Watcher<span class="w"> </span><span class="k">for</span><span class="w"> </span>unit<span class="w"> </span>tests<span class="w"> </span>---------<span class="k">)</span>
+<a href="#__codelineno-5-7" id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span>clojure<span class="w"> </span>-X:env/test:test/run<span class="w"> </span>:watch?<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></p>
+</details>
 <h2 id="configuring-test-runs">Configuring test runs<a class="headerlink" href="#configuring-test-runs" title="Permanent link">λ︎</a></h2>
 <p>Kaocha can be configure by options in a <code>tests.edn</code> configuration file and options passed via the command line (typically added to the <code>bin/kaocha</code> script).</p>
 <p>Create a <code>tests.edn</code> file in the root of the project directory.</p>
 <p><code>#kaocha/v1 {}</code> is the minimum configuration, which will use a default configuration.</p>
 <p>The <code>tests.edn</code> file and command line options combine to make the complete configuration for the projects in the test.</p>
 <p><code>bin/kaocha --print-config</code> will print out the complete configuration.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-config-print.png"><img alt="Clojure Unit Test - kaocha print configuration" src="/images/clojure-unit-test-kaocha-config-print.png"/></a></p>
-<p>Use the default configuration as a basis for customizing any specific project.</p>
-<blockquote>
-<h4 id="hintalternative-kaocha-configuration-with-aero">Hint::Alternative kaocha configuration with aero<a class="headerlink" href="#hintalternative-kaocha-configuration-with-aero" title="Permanent link">λ︎</a></h4>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"><img alt="Clojure Unit Test - kaocha print configuration" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"/></a></p>
+<p>Use the default configuration as a basis for customising any specific project.</p>
+<details class="hint">
+<summary>Alternative kaocha configuration with aero</summary>
 <p><a href="https://github.com/juxt/aero">juxt/aero</a> reader literals such as #env, #merge, #ref, and #include can be used to provide different options to the kaocha configuration. For example, a file change watcher can be configured to run unless kaocha is running in CI server environment.</p>
 <p><code>:kaocha/watch #profile {:default true :ci false}</code></p>
-</blockquote>
-<h2 id="running-tests">Running tests<a class="headerlink" href="#running-tests" title="Permanent link">λ︎</a></h2>
-<p>With a <code>deps.edn</code> project with tests under the standard <code>test</code> directory and using <code>-test</code> postfix on test names, then all that is required is the <code>kaocha</code> command</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>bin/kaocha
+</details>
+<h2 id="run-test-options">Run test options<a class="headerlink" href="#run-test-options" title="Permanent link">λ︎</a></h2>
+<p>All test code found on the class path will be run, so ensure the <code>test</code> directory was added when starting the REPL process and test definitions, <code>deftest</code> are using <code>-test</code> postfix</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-run-results.png"><img alt="Clojure Unit Test - kaocha test runner results" src="/images/clojure-unit-test-kaocha-run-results.png"/></a></p>
 <p>If one or more tests fail, then a detailed description of the failure is printed</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-fail-example.png"><img alt="Clojure Unit Test - kaocha test failure example" src="/images/clojure-unit-test-kaocha-fail-example.png"/></a></p>
 <p>The report progress plugin gives visual feedback as the tests are running.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>bin/kaocha<span class="w"> </span>--reporter<span class="w"> </span>kaocha.report.progress/report
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>clojure<span class="w"> </span>-M:test/run<span class="w"> </span>--reporter<span class="w"> </span>kaocha.report.progress/report
 </code></pre></div>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"><img alt="Clojure Unit Test - kaocha test runner plugin report progress" src="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"/></a></p>
 <p>Stop testing on the first failure with the <code>--fail-fast</code> flag.  Especially useful when running larger numbers of tests or slower running tests.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>kaocha<span class="w"> </span>--fail-fast
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>clojure<span class="w"> </span>-M:test/run<span class="w"> </span>--fail-fast
 </code></pre></div>
 <p>Tests are run in a random order, controlled by a seed in the test.edn configuration.  This helps find dependencies between tests where a test is only passing because of another test (or more likely the setup stage or lack of tear down from another test).  The <code>--no-randomize</code> flag will run the tests in the same order each time.</p>
 <p><code>--print-result</code> will return a hash-map of the test results.  This is a very detailed output, so I assume its more suitable for diagnostic tools or viewing in a data browser (eg. Clojure inspector, REBL, etc.)</p>
-<p><code>--watch</code> flag enables watch mode which monitors file changes in source and test paths (from the kaocha configuration), loads in changes and runs tests again.  TODO: rerun just the tests that changed ??</p>
+<p><code>--watch</code> flag enables watch mode which monitors file changes in source and test paths (from the kaocha configuration), loads in changes and runs tests again.</p>
 <h2 id="plugins">Plugins<a class="headerlink" href="#plugins" title="Permanent link">λ︎</a></h2>
 <p>Much of the functionality of Kaocha is provide by plugins</p>
 <ul>
@@ -2088,64 +2107,67 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h3 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">λ︎</a></h3>
 <p>Show the 3 slowest tests for each category of test, after the test results</p>
 <p>As a command line option:
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>bin/kaocha<span class="w"> </span>--plugin<span class="w"> </span>kaocha.plugin/profiling
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>bin/kaocha<span class="w"> </span>--plugin<span class="w"> </span>kaocha.plugin/profiling
 </code></pre></div>
 or added to the <code>test.edn</code> configuration
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
-<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="p">{</span><span class="ss">:plugins</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/profiling</span><span class="p">]}</span>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="p">{</span><span class="ss">:plugins</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/profiling</span><span class="p">]}</span>
 </code></pre></div></p>
 <h2 id="example-banking-on-clojure-project">Example: banking-on-clojure project<a class="headerlink" href="#example-banking-on-clojure-project" title="Permanent link">λ︎</a></h2>
 <p>The practicalli/banking-on-clojure project is a web application backed by a relational database, using kaocha as the test runner.</p>
 <p><code>:kaocha/tests</code> defines two types of tests.  The hash-map containing <code>:kaocha.testable/id :unit</code> defines the configuration for unit tests using <code>clojure.test</code>.  The hash-map containing <code>:kaocha.testable/id :generative-fdef-checks</code> are generative tests using clojure spec.</p>
 <p><code>:kaocha/color?</code> and <code>:kaocha/watch</code> use a value dependent on the <code>#profile</code> kaocha is run under.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
-<a href="#__codelineno-9-2" id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="p">{</span><span class="ss">:kaocha/tests</span>
-<a href="#__codelineno-9-3" id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.testable/id</span><span class="w">      </span><span class="ss">:unit</span>
-<a href="#__codelineno-9-4" id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">    </span><span class="ss">:kaocha.type/clojure.test</span>
-<a href="#__codelineno-9-5" id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">   </span><span class="ss">:kaocha/ns-patterns</span><span class="w">      </span><span class="p">[</span><span class="s">"-test$"</span><span class="p">]</span>,
-<a href="#__codelineno-9-6" id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">     </span><span class="p">[</span><span class="s">"src"</span><span class="p">]</span>,
-<a href="#__codelineno-9-7" id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">   </span><span class="ss">:kaocha/test-paths</span><span class="w">       </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>,
-<a href="#__codelineno-9-8" id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="w">   </span><span class="ss">:kaocha.filter/skip-meta</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha/skip</span><span class="p">]}</span>
-<a href="#__codelineno-9-9" id="__codelineno-9-9" name="__codelineno-9-9"></a>
-<a href="#__codelineno-9-10" id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">  </span><span class="p">{</span><span class="ss">:kaocha.testable/id</span><span class="w">            </span><span class="ss">:generative-fdef-checks</span>
-<a href="#__codelineno-9-11" id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">          </span><span class="ss">:kaocha.type/spec.test.check</span>
-<a href="#__codelineno-9-12" id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">           </span><span class="p">[</span><span class="s">"src"</span><span class="p">]</span>
-<a href="#__codelineno-9-13" id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">   </span><span class="ss">:kaocha.spec.test.check/checks</span><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.spec.test.check/syms</span><span class="w">            </span><span class="ss">:all-fdefs</span>
-<a href="#__codelineno-9-14" id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/instrument?</span><span class="w">    </span><span class="nv">true</span>
-<a href="#__codelineno-9-15" id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/check-asserts?</span><span class="w"> </span><span class="nv">true</span>
-<a href="#__codelineno-9-16" id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/opts</span><span class="w">           </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}}]}</span>
-<a href="#__codelineno-9-17" id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">  </span><span class="p">]</span>
-<a href="#__codelineno-9-18" id="__codelineno-9-18" name="__codelineno-9-18"></a>
-<a href="#__codelineno-9-19" id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w"> </span><span class="ss">:kaocha/reporter</span><span class="w"> </span><span class="p">[</span><span class="nv">kaocha.report/documentation</span><span class="p">]</span>
-<a href="#__codelineno-9-20" id="__codelineno-9-20" name="__codelineno-9-20"></a>
-<a href="#__codelineno-9-21" id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="w"> </span><span class="ss">:kaocha/color?</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span>
-<a href="#__codelineno-9-22" id="__codelineno-9-22" name="__codelineno-9-22"></a><span class="w">                          </span><span class="ss">:ci</span><span class="w">      </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-9-23" id="__codelineno-9-23" name="__codelineno-9-23"></a>
-<a href="#__codelineno-9-24" id="__codelineno-9-24" name="__codelineno-9-24"></a><span class="w"> </span><span class="c1">;; Run tests of file changes, unless running in CI server</span>
-<a href="#__codelineno-9-25" id="__codelineno-9-25" name="__codelineno-9-25"></a><span class="w"> </span><span class="ss">:kaocha/watch</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span><span class="w"> </span><span class="ss">:ci</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a href="#__codelineno-9-26" id="__codelineno-9-26" name="__codelineno-9-26"></a>
-<a href="#__codelineno-9-27" id="__codelineno-9-27" name="__codelineno-9-27"></a><span class="w"> </span><span class="ss">:kaocha/fail-fast?</span><span class="w"> </span><span class="nv">true</span>
-<a href="#__codelineno-9-28" id="__codelineno-9-28" name="__codelineno-9-28"></a>
-<a href="#__codelineno-9-29" id="__codelineno-9-29" name="__codelineno-9-29"></a><span class="w"> </span><span class="ss">:kaocha.plugin.randomize/randomize?</span><span class="w"> </span><span class="nv">false</span>
-<a href="#__codelineno-9-30" id="__codelineno-9-30" name="__codelineno-9-30"></a>
-<a href="#__codelineno-9-31" id="__codelineno-9-31" name="__codelineno-9-31"></a><span class="w"> </span><span class="ss">:kaocha/plugins</span>
-<a href="#__codelineno-9-32" id="__codelineno-9-32" name="__codelineno-9-32"></a><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/randomize</span>
-<a href="#__codelineno-9-33" id="__codelineno-9-33" name="__codelineno-9-33"></a><span class="w">  </span><span class="ss">:kaocha.plugin/filter</span>
-<a href="#__codelineno-9-34" id="__codelineno-9-34" name="__codelineno-9-34"></a><span class="w">  </span><span class="ss">:kaocha.plugin/capture-output</span>
-<a href="#__codelineno-9-35" id="__codelineno-9-35" name="__codelineno-9-35"></a><span class="w">  </span><span class="ss">:kaocha.plugin.alpha/spec-test-check</span><span class="p">]</span>
-<a href="#__codelineno-9-36" id="__codelineno-9-36" name="__codelineno-9-36"></a>
-<a href="#__codelineno-9-37" id="__codelineno-9-37" name="__codelineno-9-37"></a><span class="w"> </span><span class="ss">:kaocha.plugin.capture-output/capture-output?</span><span class="w"> </span><span class="nv">true</span>
-<a href="#__codelineno-9-38" id="__codelineno-9-38" name="__codelineno-9-38"></a><span class="w"> </span><span class="p">}</span>
+<div class="admonition example">
+<p class="admonition-title">Banking on Clojure project - Kaocha test.edn configuration</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="p">{</span><span class="ss">:kaocha/tests</span>
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.testable/id</span><span class="w">      </span><span class="ss">:unit</span>
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">    </span><span class="ss">:kaocha.type/clojure.test</span>
+<a href="#__codelineno-11-5" id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="w">   </span><span class="ss">:kaocha/ns-patterns</span><span class="w">      </span><span class="p">[</span><span class="s">"-test$"</span><span class="p">]</span>,
+<a href="#__codelineno-11-6" id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">     </span><span class="p">[</span><span class="s">"src"</span><span class="p">]</span>,
+<a href="#__codelineno-11-7" id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="w">   </span><span class="ss">:kaocha/test-paths</span><span class="w">       </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>,
+<a href="#__codelineno-11-8" id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="w">   </span><span class="ss">:kaocha.filter/skip-meta</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha/skip</span><span class="p">]}</span>
+<a href="#__codelineno-11-9" id="__codelineno-11-9" name="__codelineno-11-9"></a>
+<a href="#__codelineno-11-10" id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">  </span><span class="p">{</span><span class="ss">:kaocha.testable/id</span><span class="w">            </span><span class="ss">:generative-fdef-checks</span>
+<a href="#__codelineno-11-11" id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">          </span><span class="ss">:kaocha.type/spec.test.check</span>
+<a href="#__codelineno-11-12" id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">           </span><span class="p">[</span><span class="s">"src"</span><span class="p">]</span>
+<a href="#__codelineno-11-13" id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">   </span><span class="ss">:kaocha.spec.test.check/checks</span><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.spec.test.check/syms</span><span class="w">            </span><span class="ss">:all-fdefs</span>
+<a href="#__codelineno-11-14" id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/instrument?</span><span class="w">    </span><span class="nv">true</span>
+<a href="#__codelineno-11-15" id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/check-asserts?</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-11-16" id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/opts</span><span class="w">           </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}}]}</span>
+<a href="#__codelineno-11-17" id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">  </span><span class="p">]</span>
+<a href="#__codelineno-11-18" id="__codelineno-11-18" name="__codelineno-11-18"></a>
+<a href="#__codelineno-11-19" id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w"> </span><span class="ss">:kaocha/reporter</span><span class="w"> </span><span class="p">[</span><span class="nv">kaocha.report/documentation</span><span class="p">]</span>
+<a href="#__codelineno-11-20" id="__codelineno-11-20" name="__codelineno-11-20"></a>
+<a href="#__codelineno-11-21" id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w"> </span><span class="ss">:kaocha/color?</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-11-22" id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="w">                          </span><span class="ss">:ci</span><span class="w">      </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-11-23" id="__codelineno-11-23" name="__codelineno-11-23"></a>
+<a href="#__codelineno-11-24" id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="w"> </span><span class="c1">;; Run tests of file changes, unless running in CI server</span>
+<a href="#__codelineno-11-25" id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w"> </span><span class="ss">:kaocha/watch</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span><span class="w"> </span><span class="ss">:ci</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a href="#__codelineno-11-26" id="__codelineno-11-26" name="__codelineno-11-26"></a>
+<a href="#__codelineno-11-27" id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="w"> </span><span class="ss">:kaocha/fail-fast?</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-11-28" id="__codelineno-11-28" name="__codelineno-11-28"></a>
+<a href="#__codelineno-11-29" id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="w"> </span><span class="ss">:kaocha.plugin.randomize/randomize?</span><span class="w"> </span><span class="nv">false</span>
+<a href="#__codelineno-11-30" id="__codelineno-11-30" name="__codelineno-11-30"></a>
+<a href="#__codelineno-11-31" id="__codelineno-11-31" name="__codelineno-11-31"></a><span class="w"> </span><span class="ss">:kaocha/plugins</span>
+<a href="#__codelineno-11-32" id="__codelineno-11-32" name="__codelineno-11-32"></a><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/randomize</span>
+<a href="#__codelineno-11-33" id="__codelineno-11-33" name="__codelineno-11-33"></a><span class="w">  </span><span class="ss">:kaocha.plugin/filter</span>
+<a href="#__codelineno-11-34" id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="w">  </span><span class="ss">:kaocha.plugin/capture-output</span>
+<a href="#__codelineno-11-35" id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="w">  </span><span class="ss">:kaocha.plugin.alpha/spec-test-check</span><span class="p">]</span>
+<a href="#__codelineno-11-36" id="__codelineno-11-36" name="__codelineno-11-36"></a>
+<a href="#__codelineno-11-37" id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="w"> </span><span class="ss">:kaocha.plugin.capture-output/capture-output?</span><span class="w"> </span><span class="nv">true</span>
+<a href="#__codelineno-11-38" id="__codelineno-11-38" name="__codelineno-11-38"></a><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <blockquote>
 <p>The above configuration could be streamlined and rely on more of the default values, but does show examples of how to configure different sections explicitly.</p>
 </blockquote>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 29, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 2, 2023</span>
 </small>
 </div>
 </article>
@@ -2159,7 +2181,7 @@ or added to the <code>test.edn</code> configuration
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Cognitect Labs Test Runner" class="md-footer__link md-footer__link--prev" href="../congnitect-labs-test-runner/" rel="prev">
+<a aria-label="Previous: Test Runners" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2168,17 +2190,17 @@ or added to the <code>test.edn</code> configuration
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Cognitect Labs Test Runner
+                Test Runners
               </div>
 </div>
 </a>
-<a aria-label="Next: Example projects" class="md-footer__link md-footer__link--next" href="../example-projects/" rel="next">
+<a aria-label="Next: Cognitect Labs" class="md-footer__link md-footer__link--next" href="../congnitect-labs-test-runner/" rel="next">
 <div class="md-footer__title">
 <div class="md-ellipsis">
 <span class="md-footer__direction">
                   Next
                 </span>
-                Example projects
+                Cognitect Labs
               </div>
 </div>
 <div class="md-footer__button md-icon">
