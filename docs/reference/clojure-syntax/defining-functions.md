@@ -3,7 +3,7 @@
 
 Here is a simple function definition that takes a number and divides it by two
 
-```eval-clojure
+```clojure
     (defn half-a-number
       "Divide a given number by 2"
       [number]
@@ -12,7 +12,7 @@ Here is a simple function definition that takes a number and divides it by two
 
 Once you have defined a function, you can call it by using the function name as the first element of a list, `()`.  Any other elements in the list are arguments passed to the function.
 
-```eval-clojure
+```clojure
     (half-a-number 4)
 ```
 

@@ -1,7 +1,7 @@
 ## String splitting using a regex pattern
 `clojure.string/split` takes a string to be split and a pattern to split the string with.
 
-```eval-clojure
+```clojure
 (clojure.string/split "This is a string    that I am splitting." #"\s+")
    ["This" "is" "a" "string" "that" "I" "am" "splitting."]
 ```

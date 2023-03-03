@@ -3,7 +3,7 @@
 
   Using the thread-first macro, `->`, the result of the first evaluation is passed as the **first argument** to the next function and so on.
 
-  ```eval-clojure
+  ```clojure
 (->
  (clojure.string/lower-case "HELLO")
  (str ", Clojure world"))
@@ -13,7 +13,7 @@ The value hello is converted to lower case and that result is passed as the firs
 
   The thread-last macro `->>` passes the result of the first evaluation as the **last argument** to the next expression.
 
-```eval-clojure
+```clojure
 (->>  " this"
  (str " is")
  (str " backwards"))

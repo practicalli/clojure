@@ -16,7 +16,7 @@ clojure -M:new app practicalli/split-the-bill
 ```
 
 
-```eval-clojure
+```clojure
 (str "Create code to calculate the bill, including what each person should pay")
 ```
 

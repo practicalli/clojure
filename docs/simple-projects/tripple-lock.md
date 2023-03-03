@@ -19,7 +19,7 @@ Lets consider how we would create such a combination lock in Clojure.
 
 Each tumbler wheel could have all the numbers it contains within a _Collection_ in Clojure.  The simplest approach would be to put the numbers 0 to 9 into a Vector (an array-like collection).
 
-```eval-clojure
+```clojure
 [0 1 2 3 4 5 6 7 8 9]
 ```
 
@@ -27,7 +27,7 @@ As the numbers on the tumbler wheel are just a range between 0 and 9, then rathe
 
 When we give the range function one argument, it will create all the whole numbers from 0 to the number before that of the argument.  In the following example, we give `range` the argument of 10 and we receive the numbers from 0 to 9.
 
-```eval-clojure
+```clojure
 (range 10)
 ```
 
@@ -39,7 +39,7 @@ You can also give `range` two arguments, such as '(range 5 15)'.
 ## Create all the Combinations
 **Complete the following code (replacing the ,,,) to generate all the possible combinations of the lock**
 
-```eval-clojure
+```clojure
 (for [tumbler-1 (range 10)
       ,,,     ,,,
       ,,,     ,,,]
@@ -50,7 +50,7 @@ Instead of showing all the possible combinations, count all the combinations and
 
 **Take the code from the combinations and wrap it in the count function**
 
-```eval-clojure
+```clojure
 ;; now count the possible combinations
 (count
 
@@ -65,7 +65,7 @@ How many combinations does that give us?
 
 > Hint: Beware not to enter (range) without an argument as Clojure may try and evaluate infinity
 
-```eval-clojure
+```clojure
 (count (for [tumbler-1 (range 10)
              ,,,     ,,,
              ,,,     ,,,

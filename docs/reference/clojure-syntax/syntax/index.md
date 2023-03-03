@@ -16,22 +16,22 @@ edn is used as a data transfer format, especially for [Datomic](https://www.dato
 ## Calling functions
 The first element in a list, `()`, is treated as a call to a function. The examples show how to call functions with multiple arguments.
 
-```eval-clojure
+```clojure
 (+ 1 2)
 ```
-```eval-clojure
+```clojure
 (+ 3 (* 2 (- 7 2) 4) (/ 16 4))
 ```
-```eval-clojure
+```clojure
 (str "Clojure is " (- 2020 2007) " years old")
 ```
-```eval-clojure
+```clojure
 (inc 1)
 ```
-```eval-clojure
+```clojure
 (map inc [1 2 3 4 5])
 ```
-```eval-clojure
+```clojure
 (filter odd? (range 11))
 ```
 
@@ -43,7 +43,7 @@ The first element in a list, `()`, is treated as a call to a function. The examp
 
 ## Understanding functions
 Functions contain doc-strings describing what that function does. The `doc` function returns the doc-string of a particular function.  Most editors also support viewing of doc-strings as well as jumping to function definitions to view the source code
-```eval-clojure
+```clojure
 (doc doc)
 ```
 
@@ -52,11 +52,11 @@ Clojure is a dynamically typed language so types do not need to be explicitly de
 
 Clojure is strongly typed and everything is a type underneath, relative to the host platform (Clojure uses Java types, ClojureScript uses JavaScript types).  The type of anything in Clojure can be returned using the `type` function.
 
-```eval-clojure
+```clojure
 (type 42)
 ;; (type {:hash "data" :map "more data"})
 ```
-```eval-clojure
+```clojure
 (type {:hash "data" :map "more data"})
 ```
 
@@ -64,16 +64,16 @@ Clojure is strongly typed and everything is a type underneath, relative to the h
 ## Modeling data with Collection types
 Clojure has 4 main collection types, all immutable (cannot change once created) and can contain any Clojure types.
 
-```eval-clojure
+```clojure
 (str "lists used mainly " (* 2 2) " " :code)
 ```
-```eval-clojure
+```clojure
 [0 "indexed" :array (* 2 2) "random-access"]
 ```
-```eval-clojure
+```clojure
 {:key "value" "hash-map" "also referred to as dictionary"}
 ```
-```eval-clojure
+```clojure
 #{1 2 3 4 "unique" "set" "of" "values" "unordered" (* 3 9)}
 ```
 
@@ -85,7 +85,7 @@ Clojure has 4 main collection types, all immutable (cannot change once created) 
 Names can be bound to any values, from simple values like numbers, collections or even function calls.  Using `def` is convenient way to create names for values that are shared in your code.
 
 evaluating a name will return the value it is bound to.
-```eval-clojure
+```clojure
 (def public-health-data
   ({:date "2020-01-01" :confirmed-cases 23014 :recovery-percent 15}
    {:date "2020-01-02" :confirmed-cases 23014 :recovery-percent 15}
@@ -102,13 +102,13 @@ public-health-data
 # Using data structures
 Using the `map` and `inc` function, increment all the numbers in a vector
 
-```eval-clojure
+```clojure
 (map inc [1 2 3 4 5])
 ```
 
 The above `map` function is roughly equivalent to the following expression
 
-```eval-clojure
+```clojure
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
 The `conj` function creates a new collection by combining a collection and one or more values.
@@ -116,26 +116,26 @@ The `conj` function creates a new collection by combining a collection and one o
 
 `map` `reduce` `filter` are common functions for iterating through a collection / sequence of values
 
-```eval-clojure
+```clojure
 (map * [1 3 5 8 13 21] [3 5 8 13 21 34])
 ```
 
-```eval-clojure
+```clojure
 (filter even? [1 3 5 8 13 21 34])
 ```
 
-```eval-clojure
+```clojure
 (reduce + [31 28 30 31 30 31])
 ```
 
-```eval-clojure
+```clojure
 (empty? [])
 ```
 
 
 ## Defining custom functions
 
-```eval-clojure
+```clojure
 (defn square-of
   "Calculates the square of a given number"
   [number]
@@ -145,7 +145,7 @@ The `conj` function creates a new collection by combining a collection and one o
 ```
 
 Function definitions can also be used within other expressions, useful for mapping custom functions over a collection
-```eval-clojure
+```clojure
 (map (fn [x] (* x x)) [1 2 3 4 5])
 ```
 
@@ -156,7 +156,7 @@ Function definitions can also be used within other expressions, useful for mappi
 <!-- The Ratio value is used to maintain precision of a calculation of whole numbers (Integers) where otherwise a decimal number of a fixed precision size would be used. -->
 
 <!-- The division function, `/`, will return ratio types rather than decimal types to preserve the accuracy of the calculation.  If one or more of the numbers in the `/`as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result. -->
-<!-- ```eval-clojure -->
+<!-- ```clojure -->
 <!-- 22/7 -->
 <!-- ;;(/ 22 7) -->
 <!-- ;; (/ 22 7.0) -->
@@ -169,7 +169,7 @@ The REPL in this web page is running inside a JavaScript engine, so JavaScript f
 
 In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 
-```eval-clojure
+```clojure
 ()
 ```
 
@@ -198,7 +198,7 @@ JavaScript libraries can be used with ClojureScript, such as React.js
 <!-- ## Recursion -->
 
 <!-- Recursive function -->
-<!-- ```eval-clojure -->
+<!-- ```clojure -->
 <!-- (defn recursive-counter -->
 <!--   [value] -->
 <!--   (if (< value 1000) -->

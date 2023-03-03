@@ -3,7 +3,7 @@ An expression is a piece of Clojure code that can be evaluated and return a resu
 
 This expression calls the `+` function with the arguments `1 2 3 4 5`.  As this code works, we get a result.
 
-```eval-clojure
+```clojure
 (+ 1 2 3 4 5)
 ```
 

@@ -2,7 +2,7 @@
 
 We have seen some simple examples of pure functions, so lets see impure functions as a comparison.
 
-```eval-clojure
+```clojure
 (def global-value '(5 4 3 2 1))
 
 (defn impure-increment-numbers [number-collection]
@@ -18,7 +18,7 @@ The above function is using a global value rather than the argument passed makes
 
 Although the following example is probably quite harmless, it is a simple example of a function effecting the state of something outside.  These side effects should be avoided where possible to keep your code simpler to reason about.
 
-```eval-clojure
+```clojure
 (defn print-to-console [value-to-print]
   (println "The value is:" value-to-print))
 
@@ -30,7 +30,7 @@ Although the following example is probably quite harmless, it is a simple exampl
 
 To demonstrate a side causes form of impure functions, lets create a task-comple function that marks a current task complete using the current timestamp.
 
-```eval-clojure
+```clojure
 (defn task-complete [task-name]
   (str "Setting task " task-name " completed on " (js/Date)))
 
@@ -58,7 +58,7 @@ In this example we have called to the outside world to generate a value for us. 
 
 Change the task-complete function definition and function call to take both the task-name and completed-date as arguments.
 
-```eval-clojure
+```clojure
 (defn task-complete [task-name completed-date]
   (str "Setting task " task-name " completed on " completed-date))
 

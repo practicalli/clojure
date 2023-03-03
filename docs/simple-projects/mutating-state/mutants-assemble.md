@@ -24,13 +24,13 @@ Use the standard `def` function to bind a name to an atom.
 
 The atom wraps data, initially an empty vector.
 
-```eval-clojure
+```clojure
 (def mutants (atom []))
 ```
 
 Define a function using `defn` which takes a mutant as an argument and updates the value managed by the atom.  The reference to the atom is also an argument, making this a pure function and more generic as any given atom can be updated with this function.
 
-```eval-clojure
+```clojure
 
 (defn add-mutant [mutants mutant]
   (swap! mutants conj mutant))
@@ -52,13 +52,13 @@ The value the atom is managing has been swapped for a new value.  The original v
 ## Viewing the value managed by the atom
 Use the `deref` function to see the value the atom is managing.
 
-```eval-clojure
+```clojure
 (deref mutants)
 ```
 
 It is idiomatic to use `@` which is a syntax alias for the `deref` function, rather than explicitly using `deref`.
 
-```eval-clojure
+```clojure
 @mutants
 ```
 

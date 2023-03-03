@@ -4,7 +4,7 @@ Common string formats used in software development and examples of regular expre
 ## Username Regular Expression Pattern
 A 8 to 24 character passwords that can include any lower case character or digit (number).  Only the underscore and dash special characters can be used.
 
-```eval-clojure
+```clojure
 (re-matches #"^[a-z0-9_-]{8,24}$" "good-username")
 ```
 
@@ -22,7 +22,7 @@ $                    # End of the line
 ## Password Regular Expression Pattern
 A password should be 8 to 24 character string with at least one digit, one upper case letter, one lower case letter and one special symbol, `@#$%`.
 
-```eval-clojure
+```clojure
 (re-matches #"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})" "G00d @ username")
 ```
 
@@ -48,7 +48,7 @@ Breakdown the regex pattern:
 ## Hexadecimal Color Code Regular Expression Pattern
 The string must start with a `#`symbol , follow by a letter from `a` to `f`, `A` to `Z` or a digit from `0` to `9` with a length of exactly 3 or 6.` This regular expression pattern is very useful for the Hexadecimal web colors code checking.
 
-```eval-clojure
+```clojure
 (re-matches #"^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$" "#FFAABB")
 ```
 
@@ -72,7 +72,7 @@ The account side of an email address starts with `_A-Za-z0-9-\\+` optional follo
 
 The  domain starts with `A-Za-z0-9-`, follow by first level domain, e.g `.org`, `.io` and `.[A-Za-z0-9]` optionally follow by a second level domain, e.g. `.ac.uk`, `.com.au` or  `\\.[A-Za-z]{2,}`, where second level domain must start with a dot `.` and length must equal or more than 2 characters.
 
-```eval-clojure
+```clojure
 (re-matches
   #"^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"
   "jenny.jenn@jetpack.com.au")
@@ -107,7 +107,7 @@ A file extension name is 1 or more characters without white space, follow by dot
 
 Change the combination `(jpg|png|gif|bmp)` for other file extension.
 
-```eval-clojure
+```clojure
 (re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)" "clojure-logo.png")
 ```
 
@@ -144,7 +144,7 @@ An IP address comprises of 4 groups of numbers between 0 and 255, with each grou
 
 Example IP address are: `192.168.0.1`, `127.0.0.1`, `192.120.240.100`
 
-```eval-clojure
+```clojure
 (re-matches
   #"^([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])$"
   "192.168.0.1")
@@ -172,7 +172,7 @@ $		#end of the line
 ## Time Format Regular Expression Pattern
 Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start between 0-12, then a semi colon, `:`, follow by `00-59`.  The pattern ends with `am` or `pm`.
 
-```eval-clojure
+```clojure
 (re-matches #"(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)" "12:59am")
 ```
 
@@ -195,7 +195,7 @@ Breakdown the regex pattern:
 ## Time in 24-Hour Format Regular Expression Pattern
 The 24-hour clock format start between 0-23 or 00-23, then a semi colon `:` and follow by 00-59.
 
-```eval-clojure
+```clojure
 (re-matches #"(([01]?[0-9]|2[0-3]):[0-5][0-9])" "23:58")
 ```
 
@@ -215,7 +215,7 @@ Breakdown the regex pattern:
 ## Date Format (dd/mm/yyyy) Regular Expression Pattern
 Date format in the form `dd/mm/yyyy`. Validating a leap year and if there is 30 or 31 days in a month is not simple though.
 
-```eval-clojure
+```clojure
 (re-matches #"(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)" "20/02/2020")
 ```
 

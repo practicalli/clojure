@@ -45,7 +45,7 @@ Writing good documentation for your own functions take practice which pays off i
 
 > #### Note::Define your own function
 > Practice writing a meaningful documentation in the doc string
-```eval-clojure
+```clojure
 ()
 ```
 

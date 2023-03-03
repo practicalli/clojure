@@ -16,13 +16,13 @@ The phrase passed to Bob is a question if the last alphanumeric character is a q
 
 So the regular expression pattern will match a single ? character
 
-```eval-clojure
+```clojure
   (re-matches #"\?" "?")
 ```
 
 With other characters present though the pattern doesn't match.
 
-```eval-clojure
+```clojure
   (re-matches #"\?" "Ready?")
 ```
 
@@ -30,19 +30,19 @@ To match `?` with other characters,
 
 `.` matches any single character except line terminators (new line, carriage return)
 
-```eval-clojure
+```clojure
 (re-matches #".\?" "R?")
 ```
 
 `.*` matches any number of single characters one or more times,
 
-```eval-clojure
+```clojure
 (re-matches #".*\?" "?Ready")
 ```
 
 `\s` matches a single whitespace character and `\s*` matches multiple whitespace characters
 
-```eval-clojure
+```clojure
   (re-matches #".*\?$" "Okay if like my  spacebar  quite a bit?")
   ;; => "Okay if like my  spacebar  quite a bit?"
 ```
@@ -51,27 +51,27 @@ To match `?` with other characters,
 
 `re-matches` does not require the `$` as there is an implicit boundary
 
-```eval-clojure
+```clojure
   (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")
 ```
 
 Match if there is a single space or space type character after the ?
 
-```eval-clojure
+```clojure
   (re-matches #".*\?\s" "Okay if like my  spacebar  quite a bit? ")
   ;; => "Okay if like my  spacebar  quite a bit? "
 ```
 
 Match if there are multiple space type characters after the ?
 
-```eval-clojure
+```clojure
   (re-matches #".*\?\s*" "Okay if like my  spacebar  quite a bit?   ")
   ;; => "Okay if like my  spacebar  quite a bit?   "
 ```
 
 Don't match if a question mark character is not at the end of the string
 
-```eval-clojure
+```clojure
   (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")
 ```
 
@@ -85,19 +85,19 @@ Don't match if a question mark character is not at the end of the string
 
 When a phrase has all uppercase characters then we have a match
 
-```eval-clojure
+```clojure
   (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "HELLO")
 ```
 
 If there are lower case characters, even if there are uppercase characters, the pattern does not match.
 
-```eval-clojure
+```clojure
   (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "Hello")
 ```
 
 If the characters are all uppercase then the pattern matches, even if there are other non-alphabetic characters
 
-```eval-clojure
+```clojure
   (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "ABC 1 2 3")
 ```
 
@@ -106,7 +106,7 @@ If the characters are all uppercase then the pattern matches, even if there are 
 
 `\s` matches any single whitespace character, including space, tab, form feed, line feed, and other Unicode spaces.
 
-```eval-clojure
+```clojure
 (re-matches #"\s*" "  \t\t\t")
 ```
 

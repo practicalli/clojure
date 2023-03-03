@@ -7,20 +7,20 @@ The phrase passed to Bob is a question if the last alphanumeric character is a q
 
 Using a simple comparison we can check if the last character in the string a `?`
 
-```eval-clojure
+```clojure
 (= \? (last "this is a question?"))
 ```
 
 However if there is whitespace after the question mark then the `last` character is a whitespace and so the expression returns false
 
-```eval-clojure
+```clojure
   (= \? (last "this is still a question? "))
 
 ```
 
 [`clojure.string/trimr`](https://clojuredocs.org/clojure.string/trimr) will remove all the trailing whitespace from the right side of a string.  Once trimmed, then our initial comparison code will work again.
 
-```eval-clojure
+```clojure
   (= \? (last (clojure.string/trimr "this is still a question? ")))
 ```
 
@@ -33,18 +33,18 @@ Convert the string to uppercase
 ```
 
 compare the uppercase version of the string with the original, if they are equal, then the original string must have been in upper case
-```eval-clojure
+```clojure
   (= "WATCH OUT!"
      (clojure.string/upper-case "WATCH OUT!"))
 
 ```
-```eval-clojure
+```clojure
   (= "watch out!"
      (clojure.string/upper-case "watch out!"))
 ```
 
 There is a flaw in this approach thought, as it will give false positives for strings that should return the 'Whatever' response
-```eval-clojure
+```clojure
   (= "1, 2, 3"
      (clojure.string/upper-case "1, 2, 3"))
 ```

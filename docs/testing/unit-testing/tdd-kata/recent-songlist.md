@@ -29,7 +29,7 @@ We are writing our tests with the `clojure.test` library
 Open `test/playground/recent-song-list-test.clj` file in your editor and update the namespace definition to include `clojure.test`
 
 
-```eval-clojure
+```clojure
 (ns practicalli.recent-song-list-test
   (:require [clojure.test :refer [deftest is testing]]
             [playground.recent-song-list :as SUT]))
@@ -39,7 +39,7 @@ Open `test/playground/recent-song-list-test.clj` file in your editor and update 
 ### Run Tests
 At any time we can call the `run-tests` function in the REPL to get a report back on all of the tests in our current namespace (`recent-song-list`)
 
-```eval-clojure
+```clojure
 (run-tests)
 ```
 
@@ -57,7 +57,7 @@ clojure -M:test:runner
 
 <!--sec data-title="Reveal answer..." data-id="answer000" data-collapse=true ces-->
 
-```eval-clojure
+```clojure
 (def recent-songs [])
 ```
 

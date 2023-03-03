@@ -15,7 +15,7 @@ So lets look at a simple code example
 > ####Note::Write a pure function that adds two numbers together ?
 
 
-```eval-clojure
+```clojure
 (defn add-numbers [number1 number2]
   (+ number1 number2))
 
@@ -24,7 +24,7 @@ So lets look at a simple code example
 
 Lets look at each line of this suggested answer
 
-```eval-clojure
+```clojure
 ;; function takes 2 arguments
 ;; function uses both arguments for result
 (defn add-numbers [number1 number2]
@@ -40,7 +40,7 @@ Lets look at each line of this suggested answer
 > **Note** Define a collection called numbers and write a named function that increments each number of the numbers collection.
 > Is your function pure or impure ?
 
-```eval-clojure
+```clojure
 (def numbers '(5 4 3 2 1))
 
 (defn increment-numbers []
@@ -53,7 +53,7 @@ The function takes no arguments and is pulling in a value from outside the funct
 
 Here is a Pure function example
 
-```eval-clojure
+```clojure
 (def numbers '(5 4 3 2 1))
 
 (defn increment-numbers [number-collection]

@@ -12,7 +12,7 @@ You could have a function that returns a function definition which in turn retur
 >
 > Use a function that checks if a number is even
 > and filter the range of numbers to return only the numbers that match
-```eval-clojure
+```clojure
 
 ```
 
@@ -37,7 +37,7 @@ You could have a function that returns a function definition which in turn retur
 > The result should be then used as an argument to calling the function passed as an argument again.
 >
 > Call the twice function with an inline function which takes a number as an argument and adds it to Pi, `3.14`.
-```eval-clojure
+```clojure
 (defn twice [f]
   ,,,)
 ```
@@ -71,7 +71,7 @@ You could have a function that returns a function definition which in turn retur
 >
 > The returning function should take one or more arguments `[& args]`
 > and use the function originally passed as an argument to `reduce` the data to a single value.
-```eval-clojure
+```clojure
 (defn calculation [f]
   ,,,)
 ```

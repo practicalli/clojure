@@ -30,7 +30,7 @@ Output
 ## Thread-last macro
 
   Using the thread-last macro, **->>**, the result of a function is passed as the last argument of the next function call.  So in another simple series of str function calls, our text comes out backwards.
-```eval-clojure
+```clojure
 (->>  " this"
  (str " is")
  (str " backwards"))

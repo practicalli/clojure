@@ -22,7 +22,7 @@ Using the `get` function the `boolean-value` is used to find a matching key in t
 
 Example:
 
-```eval-clojure
+```clojure
 (get {false 0 true 1} true)
 ```
 
@@ -34,7 +34,7 @@ A map can be called, just like a function.  the `boolean-value` is passed to the
 
 Example:
 
-```eval-clojure
+```clojure
 ({false 0 true 1} true)
 ```
 
@@ -49,7 +49,7 @@ Map this over a collection of values
 
 Example:
 
-```eval-clojure
+```clojure
 (map {false 0 true 1} [true false false true true true false false true false true false false true])
 ```
 
@@ -58,7 +58,7 @@ The `map` function takes two arguments, a function and a collection.  The `map` 
 
 In the above example, the hash-map {false 0 true 1} acts as a function.
 
-```eval-clojure
+```clojure
 ({false 0 true 1} true)
 ```
 
