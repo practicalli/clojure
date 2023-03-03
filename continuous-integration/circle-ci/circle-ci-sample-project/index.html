@@ -14,9 +14,9 @@
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/continuous-integration/circle-ci/circle-ci-sample-project/" rel="canonical"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
 <title>Circle CI example project - Practicalli Clojure</title>
-<link href="../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -76,7 +76,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
 </aside>
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
 <img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
@@ -1105,14 +1105,24 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Status Monitor Circle CI Continuous Integration
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../github-actions/">
-        Index
-      </a>
+</ul>
+</nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+          GitHub Workflow
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_12_3">
+<span class="md-nav__icon md-icon"></span>
+          GitHub Workflow
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../github-actions/clj-kondo-lint/">
-        Clj kondo lint
+<a class="md-nav__link" href="../../github-workflow/index.md">
+        None
       </a>
 </li>
 </ul>
@@ -1918,16 +1928,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="circle-ci-example-project">Circle CI example project<a class="headerlink" href="#circle-ci-example-project" title="Permanent link">λ︎</a></h1>
 <!-- TODO: review the CircleCI example Clojure project -->
-<p><a href="https://circleci.com/docs/2.0/language-clojure/">The Circle CI language guide for Clojure</a> provides an <a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork">example project</a> that is managed by the <a href="https://leiningen.org/">Leiningen build automation tool</a> and based on the <a href="https://luminusweb.com/">Luminus micro-framework template</a>.</p>
+<p><a href="https://circleci.com/docs/2.0/language-clojure/" target="_blank">The Circle CI language guide for Clojure</a> provides an <a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork" target="_blank">example project</a> that is managed by the <a href="https://leiningen.org/" target="_blank">Leiningen build automation tool</a> and based on the <a href="https://luminusweb.com/" target="_blank">Luminus micro-framework template</a>.</p>
 <p>The project runs on the Undertow web server (wrapped by immutant), using ring to manage web requests and responses, with compojure for server-side routing.  The application uses mount to manage the application lifecycle.</p>
-<p><a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork">Fork the CircleCI-Public/circleci-demo-clojure-luminus</a> project on your GitHub or GitLab account or organisation.</p>
+<p><a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork" target="_blank">Fork the CircleCI-Public/circleci-demo-clojure-luminus</a> project on your GitHub or GitLab account or organisation.</p>
 <p>Go to the CircleCI dashboard and login.  Select the GitHub / GitLab organisation you want to work with, this will list the repositories in that organisation.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-select-organisation.png"><img alt="Circle CI Dashboard - Select an organisation and its projects" src="/images/circle-ci-dashboard-select-organisation.png"/></a></p>
 <p>Find the project in the list of repositories for that organisation</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-projects-repo-search-circleci.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/circle-ci-dashboard-projects-repo-search-circleci.png"/></a></p>
 <p>Click on the "Set Up Project" button and select the Clojure configuration from the drop-down menu.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"><img alt="Circle CI Dashboard - Set Up Project on CircleCI using the example repository" src="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"/></a></p>
-<p>This template seems to be older than the sample configuration on the <a href="https://circleci.com/docs/2.0/language-clojure/">Clojure language page</a>.  Copy the sample configuration and paste it into the editor.  Then press Add Config to automatically add it to your code repository.</p>
+<p>This template seems to be older than the sample configuration on the <a href="https://circleci.com/docs/2.0/language-clojure/" target="_blank">Clojure language page</a>.  Copy the sample configuration and paste it into the editor.  Then press Add Config to automatically add it to your code repository.</p>
 <p>This will start a build and show the pipelines dashboard, with the project running the tasks defined in the configuration</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-ci-pipelines-luminus-running.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/clojure-ci-pipelines-luminus-running.png"/></a></p>
 <p>Oh, it failed...</p>
@@ -1954,7 +1964,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>
@@ -2005,6 +2015,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

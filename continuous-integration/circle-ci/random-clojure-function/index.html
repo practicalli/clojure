@@ -16,9 +16,9 @@
 <link href="../" rel="prev"/>
 <link href="../status-monitor/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
 <title>Random Clojure Function - Practicalli Clojure</title>
-<link href="../../../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -78,7 +78,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
 </aside>
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
 <img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
@@ -1150,14 +1150,24 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Status Monitor Circle CI Continuous Integration
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../github-actions/">
-        Index
-      </a>
+</ul>
+</nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+          GitHub Workflow
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_12_3">
+<span class="md-nav__icon md-icon"></span>
+          GitHub Workflow
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../github-actions/clj-kondo-lint/">
-        Clj kondo lint
+<a class="md-nav__link" href="../../github-workflow/index.md">
+        None
       </a>
 </li>
 </ul>
@@ -2000,55 +2010,59 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </p>
 <div class="admonition hint">
 <p class="admonition-title">Video uses an older command to create projects</p>
+<p><code>:project/create</code> alias from <a href="/clojure/clojure-cli/practicalli-config/">Practicalli Clojure CLI Config</a> creates a new project</p>
+<p>Arguments are key value pairs and can specify the <code>:template</code>, project <code>:name</code> and outpug directory <code>:output-dir</code>.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/new<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/playground<span class="sb">`</span>
+</code></pre></div></p>
 </div>
-<blockquote>
-<p><code>clojure -T:project/new</code> is an updated approach to generate projects. Arguments are key value pairs and more specific in their purpose, e.g. <code>clojure -T:project/new :template app :name practicalli/playground</code></p>
-</blockquote>
 <h2 id="create-a-new-project">Create a new project<a class="headerlink" href="#create-a-new-project" title="Permanent link">λ︎</a></h2>
 <p>Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/new<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/random-clojure-function
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>clojure<span class="w"> </span>-T:project/new<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/random-clojure-function
 </code></pre></div>
-<p>Version control the Clojure project using Git (or <a href="https://practical.li/spacemacs/source-control/">magit in Spacemacs</a>)</p>
+<p>Version control the Clojure project using Git (or <a href="https://practical.li/spacemacs/source-control/" target="_blank">magit in Spacemacs</a>)</p>
 <h2 id="add-a-test-run-alias">Add a test run alias<a class="headerlink" href="#add-a-test-run-alias" title="Permanent link">λ︎</a></h2>
 <p>Edit the <code>deps.edn</code> file in the root of the project and add a <code>:test/run</code> alias, to run the kaocha test runner which will stop if a failing test is detected.  Stopping on a failed test saves running the full test suite and make the CI workflow more effective.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="ss">:test/run</span>
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.60.977"</span><span class="p">}}</span>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">kaocha.runner/exec-fn</span>
-<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:randomize?</span><span class="w"> </span><span class="nv">false</span>
-<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">             </span><span class="ss">:fail-fast?</span><span class="w"> </span><span class="nv">true</span><span class="p">}}</span>
+<div class="highlight"><span class="filename">Project deps.edn</span><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="ss">:test/run</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">lambdaisland/kaocha</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.60.977"</span><span class="p">}}</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">kaocha.runner/exec-fn</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:randomize?</span><span class="w"> </span><span class="nv">false</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">             </span><span class="ss">:fail-fast?</span><span class="w"> </span><span class="nv">true</span><span class="p">}}</span>
 </code></pre></div>
 <h2 id="create-a-remote-repository">Create a remote repository<a class="headerlink" href="#create-a-remote-repository" title="Permanent link">λ︎</a></h2>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/github-repository-create-new.png"><img alt="GitHub new repository" src="/images/github-repository-create-new.png"/></a></p>
 <p>Add the remote repository URL to the local Git repository.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>practicalli<span class="w"> </span>git@github.com:practicalli/random-clojure-function.git
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>practicalli<span class="w"> </span>git@github.com:practicalli/random-clojure-function.git
 </code></pre></div>
 <h2 id="add-circleci-configuration">Add CircleCI configuration<a class="headerlink" href="#add-circleci-configuration" title="Permanent link">λ︎</a></h2>
 <p>Adding CircleCI early in the project development cycle ensures testing from the saved source code is successful and testing is consistently repeatable.</p>
-<p>Create a new file called <code>.circleci/config.yml</code> in the root of the project.</p>
+<p>Create a new file called <code>.circleci/config.yaml</code> in the root of the project.</p>
 <p>Edit the file and add the following configuration.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>version: 2.1
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>jobs:                                               # basic units of work in a run
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>  build:                                            # runs without Workflows must have a `build` job as entry point
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a>    working_directory: ~/random-clojure-function    # directory where steps will run
-<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a>    docker:                                         # run the steps with Docker
-<a href="#__codelineno-3-6" id="__codelineno-3-6" name="__codelineno-3-6"></a>      - image:  cimg/clojure:1.10                   # image is primary container where `steps` are run
-<a href="#__codelineno-3-7" id="__codelineno-3-7" name="__codelineno-3-7"></a>    environment:                                    # environment variables for primary container
-<a href="#__codelineno-3-8" id="__codelineno-3-8" name="__codelineno-3-8"></a>      JVM_OPTS: -Xmx3200m                           # limit maximum JVM heap size to prevent out of memory errors
-<a href="#__codelineno-3-9" id="__codelineno-3-9" name="__codelineno-3-9"></a>    steps:                                          # commands that comprise the `build` job
-<a href="#__codelineno-3-10" id="__codelineno-3-10" name="__codelineno-3-10"></a>      - checkout                                    # check out source code to working directory
-<a href="#__codelineno-3-11" id="__codelineno-3-11" name="__codelineno-3-11"></a>      - restore_cache:                              # restores cache if checksum unchanged from last run
-<a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a>          key: random-clojure-function-{{ checksum "deps.edn" }}
-<a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a>      - run: clojure -P
-<a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a>      - save_cache:                                 # generate / update cache in the .m2 directory using a key template
-<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>          paths:
-<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a>            - ~/.m2
-<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a>            - ~/.gitlibs
-<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a>          key: random-clojure-function-{{ checksum "deps.edn" }}
-<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a>      - run: clojure -X:test/run
+<div class="admonition example">
+<p class="admonition-title">Circe CI configuration for Clojure project</p>
+<div class="highlight"><span class="filename">.circleci/config.yaml</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nt">jobs</span><span class="p">:</span><span class="w">                                               </span><span class="c1"># basic units of work in a run</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w">                                            </span><span class="c1"># runs without Workflows must have a `build` job as entry point</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/random-clojure-function</span><span class="w">    </span><span class="c1"># directory where steps will run</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="nt">docker</span><span class="p">:</span><span class="w">                                         </span><span class="c1"># run the steps with Docker</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cimg/clojure:1.10</span><span class="w">                   </span><span class="c1"># image is primary container where `steps` are run</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">                                    </span><span class="c1"># environment variables for primary container</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">      </span><span class="nt">JVM_OPTS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-Xmx3200m</span><span class="w">                           </span><span class="c1"># limit maximum JVM heap size to prevent out of memory errors</span>
+<a href="#__codelineno-4-9" id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">                                          </span><span class="c1"># commands that comprise the `build` job</span>
+<a href="#__codelineno-4-10" id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span><span class="w">                                    </span><span class="c1"># check out source code to working directory</span>
+<a href="#__codelineno-4-11" id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">restore_cache</span><span class="p">:</span><span class="w">                              </span><span class="c1"># restores cache if checksum unchanged from last run</span>
+<a href="#__codelineno-4-12" id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random-clojure-function-{{ checksum "deps.edn" }}</span>
+<a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clojure -P</span>
+<a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">save_cache</span><span class="p">:</span><span class="w">                                 </span><span class="c1"># generate / update cache in the .m2 directory using a key template</span>
+<a href="#__codelineno-4-15" id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
+<a href="#__codelineno-4-16" id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.m2</span>
+<a href="#__codelineno-4-17" id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.gitlibs</span>
+<a href="#__codelineno-4-18" id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random-clojure-function-{{ checksum "deps.edn" }}</span>
+<a href="#__codelineno-4-19" id="__codelineno-4-19" name="__codelineno-4-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clojure -X:test/run</span>
 </code></pre></div>
-<p>The <code>run: clojure -P</code> step downloads dependencies for the project, including the <code>:extra-deps</code> if aliases are also included.</p>
-<p>The <code>run: clojure -X:test/run</code> adds the test directory to the class path and runs the Kaocha runner defined in the alias.</p>
+</div>
+<p><code>run: clojure -P</code> step downloads dependencies for the project, including the <code>:extra-deps</code> if aliases are also included.</p>
+<p><code>run: clojure -X:test/run</code> adds the test directory to the class path and runs the Kaocha runner defined in the alias.</p>
 <h2 id="connect-circle-ci-to-the-project">Connect Circle CI to the project<a class="headerlink" href="#connect-circle-ci-to-the-project" title="Permanent link">λ︎</a></h2>
 <p>Commit and push the <code>.circleci/config.yml</code> file to the GitHub repository.</p>
 <p>Open the CircleCI dashboard and select <strong>Add Project</strong>.  If your GitHub account has multiple organizations, choose the appropriate organization first.</p>
@@ -2066,8 +2080,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The continuous integration is now working and tests are automatically run as soon as you push changes to the remote repository.</p>
 <p>So the development of the project can continue with greater confidence</p>
 <h2 id="adding-a-build-status-badge">Adding a Build Status badge<a class="headerlink" href="#adding-a-build-status-badge" title="Permanent link">λ︎</a></h2>
-<p><a href="https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge">Generating a status badge documentation</a> describes how to add a build status badge for your project, usually at the top of the README.md file in the project</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>[<span class="nt">![CircleCI</span>](<span class="na">https://circleci.com/gh/circleci/circleci-docs.svg?style=svg</span>)](https://circleci.com/gh/practicalli/random-clojure-function)
+<p><a href="https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge" target="_blank">Generating a status badge documentation</a> describes how to add a build status badge for your project, usually at the top of the README.md file in the project</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>[<span class="nt">![CircleCI</span>](<span class="na">https://circleci.com/gh/circleci/circleci-docs.svg?style=svg</span>)](https://circleci.com/gh/practicalli/random-clojure-function)
 </code></pre></div>
 <p>Add this markdown to the top of the README.md file, underneath the title.  Then commit and push the change to the GitHub repository.</p>
 <blockquote>
@@ -2078,7 +2092,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 2, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>
@@ -2157,6 +2171,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

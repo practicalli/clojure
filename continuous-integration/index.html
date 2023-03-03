@@ -16,9 +16,9 @@
 <link href="../clojure-spec/projects/bank-account/test-functions-against-spec/" rel="prev"/>
 <link href="circle-ci/" rel="next"/>
 <link href="../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.0.15" name="generator"/>
-<title>Index - Practicalli Clojure</title>
-<link href="../assets/stylesheets/main.113286f1.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
+<title>Continuous Integration - Practicalli Clojure</title>
+<link href="../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Index - Practicalli Clojure" property="og:title"/>
+<meta content="Continuous Integration - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/continuous-integration/index.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/continuous-integration/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Index - Practicalli Clojure" name="twitter:title"/>
+<meta content="Continuous Integration - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/continuous-integration/index.png" name="twitter:image"/>
 <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#hintcircleci-example-in-practicalli-clojure-web-services">
+<a class="md-skip" href="#continuous-integration">
           Skip to content
         </a>
 </div>
@@ -78,7 +78,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <script>var content,el=document.querySelector("[data-md-component=announce]");el&&(content=el.querySelector(".md-typeset"),__md_hash(content.innerHTML)===__md_get("__announce")&&(el.hidden=!0))</script>
 </aside>
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure">
 <img alt="logo" src="../assets/images/practicalli-logo.png"/>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Index
+              Continuous Integration
             
           </span>
 </div>
@@ -1107,14 +1107,24 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Status Monitor Circle CI Continuous Integration
       </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="github-actions/">
-        Index
-      </a>
+</ul>
+</nav>
 </li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
+          GitHub Workflow
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_12_3">
+<span class="md-nav__icon md-icon"></span>
+          GitHub Workflow
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="github-actions/clj-kondo-lint/">
-        Clj kondo lint
+<a class="md-nav__link" href="github-workflow/index.md">
+        None
       </a>
 </li>
 </ul>
@@ -1896,11 +1906,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintcircleci-example-in-practicalli-clojure-web-services">
-    Hint::CircleCI example in Practicalli Clojure Web Services
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#12-factor-approach">
     12 Factor approach
   </a>
@@ -1911,18 +1916,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#github-actions">
-    GitHub Actions
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#heroku-pipelines">
-    Heroku pipelines
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#heroku-build-process">
-    Heroku Build process
+<a class="md-nav__link" href="#github-workflow">
+    GitHub Workflow
   </a>
 </li>
 </ul>
@@ -1938,53 +1933,47 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/continuous-integration/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1>Index</h1>
+<h1 id="continuous-integration">Continuous Integration<a class="headerlink" href="#continuous-integration" title="Permanent link">λ︎</a></h1>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/continuous-integration-banner.png"><img alt="Continuous Integration banner" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/continuous-integration-banner.png"/></a></p>
-<p>Topics to be covered in this section include:
-* Continuous Integration servers
-  * <a href="circle-ci/">Circle CI</a> (recommended)
-  * <a href="github-actions/">GitHub Actions</a>
-<!-- * GitHub  TODO: research GitLab continuous integration services --></p>
-<ul>
-<li>Configure deployment pipelines</li>
-<li>Manage environment variables</li>
-<li>Deployment and services on Heroku</li>
+<p>Topics to be covered in this section include:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Continuous Integration services<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> <a href="circle-ci/">Circle CI</a></li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> <a href="github-workflow/">GitHub Workflow</a></li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> GitLab CI</li>
 </ul>
-<blockquote>
-<h4 id="hintcircleci-example-in-practicalli-clojure-web-services">Hint::CircleCI example in Practicalli Clojure Web Services<a class="headerlink" href="#hintcircleci-example-in-practicalli-clojure-web-services" title="Permanent link">λ︎</a></h4>
-<p><a href="https://practical.li/clojure-web-services/projects/banking-on-clojure/continuous-integration.html">Banking on Clojure</a> is an example of Continuous Integration using CircleCI, with LambdaIsland/Kaocha as the test runner and Heroku as the deployment pipeline.</p>
-</blockquote>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Configure deployment pipelines</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Manage environment variables</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Security &amp; Secrets</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Deployment<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Amazon AWS</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Render.com</li>
+</ul>
+</li>
+</ul>
+<div class="admonition hint">
+<p class="admonition-title">CircleCI example in Practicalli Clojure Web Services</p>
+<p><a href="https://practical.li/clojure-web-services/projects/banking-on-clojure/continuous-integration/" target="_blank">Banking on Clojure</a> is an example of Continuous Integration using CircleCI, with LambdaIsland/Kaocha as the test runner and Heroku as the deployment pipeline.</p>
+</div>
 <h2 id="12-factor-approach">12 Factor approach<a class="headerlink" href="#12-factor-approach" title="Permanent link">λ︎</a></h2>
-<p>Following the <a href="https://12factor.net/">12 factor principles</a>, the deployment is driven by source code to multiple environments.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/jr0cket/developer-guides/gh-pages/heroku-multiple-environments-concept.png"><img alt="Heroku multiple environment from one source" src="https://raw.githubusercontent.com/jr0cket/developer-guides/gh-pages/heroku-multiple-environments-concept.png"/></a></p>
+<p>Following the <a href="https://12factor.net/" target="_blank">12 factor principles</a>, the deployment is driven by source code to multiple environments.</p>
 <h2 id="circleci-service">CircleCI service<a class="headerlink" href="#circleci-service" title="Permanent link">λ︎</a></h2>
 <p>Use Yaml language to write CI workflows and tasks, using Docker images as a consistent run-time environment</p>
-<p>A commercial service with <a href="https://circleci.com/pricing/">a generous free Cloud plan</a> - (6,000 minutes), providing highly optomises container images to run tasks efficiently.  The CircleCI Clojure images contain Clojure CLI, Leiningen and Babashka pre-installed.</p>
-<p><a href="https://circleci.com/orbs/">CircleCI Orbs</a> package up common configuration and tools, greatly simplifying the configuration and maintenance required.</p>
-<ul>
-<li><a href="https://circleci.com/docs/2.0/language-clojure/">CircleCI Clojure language guide</a></li>
-</ul>
-<h2 id="github-actions">GitHub Actions<a class="headerlink" href="#github-actions" title="Permanent link">λ︎</a></h2>
+<p>A commercial service with <a href="https://circleci.com/pricing/" target="_blank">a generous free Cloud plan</a> - (6,000 minutes), providing highly optomises container images to run tasks efficiently.  The CircleCI Clojure images contain Clojure CLI, Leiningen and Babashka pre-installed.</p>
+<p><a href="https://circleci.com/orbs/" target="_blank">CircleCI Orbs</a> package up common configuration and tools, greatly simplifying the configuration and maintenance required.</p>
+<p><a class="md-button" href="https://circleci.com/docs/2.0/language-clojure/" target="_blank">CircleCI Clojure language guide</a></p>
+<h2 id="github-workflow">GitHub Workflow<a class="headerlink" href="#github-workflow" title="Permanent link">λ︎</a></h2>
 <p>Use Yaml language to write CI workflows and tasks.</p>
-<p>A commercial service with a modest free plan (2,000 minutes) for open source projects.  GitHub Marketplace contains a wide range of Actions, including <a href="https://github.com/marketplace?type=actions&amp;query=clojure+">Clojure related actions</a>, simplifying the configuration of CI.</p>
-<p><a href="https://github.com/marketplace/actions/setup-clojure">Setup Clojure</a> provides Clojure CLI, Leinigen and boot tools for use within the CI workflow</p>
-<ul>
-<li><a href="https://github.com/features/actions">GitHub Actions overview</a></li>
-</ul>
-<h2 id="heroku-pipelines">Heroku pipelines<a class="headerlink" href="#heroku-pipelines" title="Permanent link">λ︎</a></h2>
-<p>Using Heroku Pipelines the staging environment is promoted to production rather than being rebuilt</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/jr0cket/developer-guides/master/heroku-pipelines-staging-production.png"><img alt="Heroku Pipeline concept - staging and production" src="https://raw.githubusercontent.com/jr0cket/developer-guides/master/heroku-pipelines-staging-production.png"/></a></p>
-<p>The Heroku dashboard can be used to promote the application into production, once the staging application is signed off.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/heroku/heroku-pipeline-banking-on-clojure.png"><img alt="Heroku Pipeline banking-on-clojure" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/heroku/heroku-pipeline-banking-on-clojure.png"/></a></p>
-<h2 id="heroku-build-process">Heroku Build process<a class="headerlink" href="#heroku-build-process" title="Permanent link">λ︎</a></h2>
-<p>The build process starts when commits are pushed to Heroku, either directly or via a continuous integration service (eg. CircleCI).</p>
-<p><a href="https://raw.githubusercontent.com/jr0cket/developer-guides/gh-pages/heroku-deployment-process-simplified.png"><img alt="Heroku build process" src="https://raw.githubusercontent.com/jr0cket/developer-guides/gh-pages/heroku-deployment-process-simplified.png"/></a></p>
+<p>A commercial service with a modest free plan (2,000 minutes) for open source projects.  GitHub Marketplace contains a wide range of Actions, including <a href="https://github.com/marketplace?type=actions&amp;query=clojure+" target="_blank">Clojure related actions</a>, simplifying the configuration of CI.</p>
+<p><a href="https://github.com/marketplace/actions/setup-clojure" target="_blank">Setup Clojure</a> provides Clojure CLI, Leinigen and boot tools for use within the CI workflow</p>
+<p><a class="md-button" href="https://github.com/features/actions" target="_blank">GitHub Actions overview</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>
@@ -2063,6 +2052,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.2a6f1dda.min.js"></script>
+<script src="../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
