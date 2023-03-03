@@ -800,17 +800,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -911,7 +911,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1943,7 +1943,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h1 id="threading-macros">Threading macros<a class="headerlink" href="#threading-macros" title="Permanent link">λ︎</a></h1>
 <p>The thread-first <code>-&gt;</code> and thread-last <code>-&gt;&gt;</code> macros allow Clojure code to be written in a more sequential style and with a more terse syntax.  This can sometimes make code easier to understand by humans.</p>
 <p>Using the thread-first macro, <code>-&gt;</code>, the result of the first evaluation is passed as the <strong>first argument</strong> to the next function and so on.</p>
-<p>```eval-clojure
+<p>```clojure
 (-&gt;
  (clojure.string/lower-case "HELLO")
  (str ", Clojure world"))
@@ -1951,7 +1951,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>  The thread-last macro `-&gt;&gt;` passes the result of the first evaluation as the **last argument** to the next expression.
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>```eval-clojure
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>```clojure
 <a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>(-&gt;&gt;  " this"
 <a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a> (str " is")
 <a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a> (str " backwards"))
@@ -2007,7 +2007,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -936,7 +936,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1954,7 +1954,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h1 id="entity-maps">Entity maps<a class="headerlink" href="#entity-maps" title="Permanent link">λ︎</a></h1>
 <p>An entity map is a Specification for a Clojure hash-map of key-value pairs.</p>
 <p>A hash-map is a very effective way to express information in Clojure.  The key should be a descriptive label to express meaning of the value it is associated with.  Without the keys describing the meaning, it is harder for a developer to understand the data.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>{:account-id 12345 :user-name "jenny1999" :name "Jenny Jetpack" :address "42 Meaning place, Earth" :social-security "ABC-123-45-6789"}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">{</span><span class="ss">:account-id</span><span class="w"> </span><span class="mi">12345</span><span class="w"> </span><span class="ss">:user-name</span><span class="w"> </span><span class="s">"jenny1999"</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">"Jenny Jetpack"</span><span class="w"> </span><span class="ss">:address</span><span class="w"> </span><span class="s">"42 Meaning place, Earth"</span><span class="w"> </span><span class="ss">:social-security</span><span class="w"> </span><span class="s">"ABC-123-45-6789"</span><span class="p">}</span>
 </code></pre></div>
 <p>A hash-map contains any number of key-value pairs, keys are used for efficient lookup so there is no concern over ordering.  Passing a hash-map as an argument to a function reduces refactoring required as the signature of the function remains the same and functions can be selective as to which key-value pairs they use.</p>
 <p>For these reasons, hash-maps are a very common data structure to pass data between functions.</p>
@@ -1979,6 +1979,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="example-covid19-dashboard">Example: covid19-dashboard<a class="headerlink" href="#example-covid19-dashboard" title="Permanent link">λ︎</a></h2>
 <p>The <code>coronavirus-cases-data</code> function takes a hash-map of values to make that function easier to extend without breaking existing calls</p>
 <p>Default values can be used if no value is passed as an argument. Extra values can be ignored without breaking the code.</p>
+<div class="admonition example">
+<p class="admonition-title">Coronavirus Cases Specification</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">fun-name</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">csv</span><span class="w"> </span><span class="nv">location</span><span class="w"> </span><span class="nv">date</span><span class="p">])</span>
 <a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>
@@ -1993,21 +1995,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-3-12" id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="w">  </span><span class="p">{</span><span class="ss">:csv-file</span><span class="w">  </span><span class="s">"data-sets/uk-coronavirus-cases.csv"</span>
 <a href="#__codelineno-3-13" id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="w">   </span><span class="ss">:locations</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="s">"Nation"</span><span class="w"> </span><span class="s">"Country"</span><span class="w"> </span><span class="s">"Region"</span><span class="p">}</span>
 <a href="#__codelineno-3-14" id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="w">   </span><span class="ss">:date</span><span class="w">      </span><span class="s">"2020-04-30"</span><span class="p">})</span>
+<a href="#__codelineno-3-15" id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a href="#__codelineno-3-16" id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="c1">;; Define the individual keys for the hash-map</span>
+<a href="#__codelineno-3-17" id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::csv-file</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
+<a href="#__codelineno-3-18" id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::locations</span><span class="w"> </span><span class="nv">set?</span><span class="p">)</span>
+<a href="#__codelineno-3-19" id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::date</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
+<a href="#__codelineno-3-20" id="__codelineno-3-20" name="__codelineno-3-20"></a>
+<a href="#__codelineno-3-21" id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::cases-data</span>
+<a href="#__codelineno-3-22" id="__codelineno-3-22" name="__codelineno-3-22"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/keys</span><span class="w"> </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::csv-file</span><span class="w"> </span><span class="ss">::locations</span><span class="w"> </span><span class="ss">::date</span><span class="p">]))</span>
 </code></pre></div>
-<p>Define the individual keys for the hash-map</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::csv-file</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::locations</span><span class="w"> </span><span class="nv">set?</span><span class="p">)</span>
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::date</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
-</code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::cases-data</span>
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/keys</span><span class="w"> </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::csv-file</span><span class="w"> </span><span class="ss">::locations</span><span class="w"> </span><span class="ss">::date</span><span class="p">]))</span>
-</code></pre></div>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

@@ -17,7 +17,7 @@
 <link href="../data/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
-<title>Organizing Specifications - Practicalli Clojure</title>
+<title>Organise spec - Practicalli Clojure</title>
 <link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Organizing Specifications - Practicalli Clojure" property="og:title"/>
+<meta content="Organise spec - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/clojure-spec/organising-specs.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/clojure-spec/organising-specs/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Organizing Specifications - Practicalli Clojure" name="twitter:title"/>
+<meta content="Organise spec - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/clojure-spec/organising-specs.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Organizing Specifications
+              Organise spec
             
           </span>
 </div>
@@ -802,22 +802,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Organizing Specifications
+          Organise spec
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Organizing Specifications
+        Organise spec
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -941,7 +941,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1963,7 +1963,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="organizing-specifications">Organizing Specifications<a class="headerlink" href="#organizing-specifications" title="Permanent link">λ︎</a></h1>
 <p>Data and function definition specifications are typically placed in a specifications namespace under the relevant <code>src</code> directory for a project.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-spec-organising-specifications-card-game.png"><img alt="Clojure Spec organising specs - card game example" src="/images/clojure-spec-organising-specifications-card-game.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png"><img alt="Clojure Spec organising specs - card game example" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png"/></a></p>
 <p>Add the data specifications (<code>spec/def</code>), custom predicate functions and function specifications (<code>spec/fdef</code>) to the <code>specifications</code> namespace.</p>
 <h2 id="instrumenting-functions">Instrumenting functions<a class="headerlink" href="#instrumenting-functions" title="Permanent link">λ︎</a></h2>
 <p>Add <code>spec-test/instrument</code> expressions to the <code>specifications</code> file, after the <code>spec/fdef</code> expressions.</p>
@@ -1990,13 +1990,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">                   </span><span class="p">{</span><span class="ss">:clojure.spec.test.check/opts</span><span class="w"> </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}})</span>
 </code></pre></div>
 <p>Generative testing with small generators can be run regularly during development without impacting fast feedback.</p>
-<p>It is recommended to separate full generative testing from unit tests, to maintain the fast feedback of those unit tests.  These tests can be included in a separate namespace or marked with meta data as integration tests, e.g <code>^:integration</code></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>
@@ -2010,7 +2009,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Add Spec to Clojure Projects" class="md-footer__link md-footer__link--prev" href="../add-spec-to-projects/" rel="prev">
+<a aria-label="Previous: Project config" class="md-footer__link md-footer__link--prev" href="../add-spec-to-projects/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2019,7 +2018,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Add Spec to Clojure Projects
+                Project config
               </div>
 </div>
 </a>

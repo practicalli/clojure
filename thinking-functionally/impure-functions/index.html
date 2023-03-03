@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -913,7 +913,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1981,27 +1981,27 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="impure-functions">Impure functions<a class="headerlink" href="#impure-functions" title="Permanent link">λ︎</a></h1>
 <p>We have seen some simple examples of pure functions, so lets see impure functions as a comparison.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(def global-value '(5 4 3 2 1))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">global-value</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">5</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>(defn impure-increment-numbers [number-collection]
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>  (map inc global-value))
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">impure-increment-numbers</span><span class="w"> </span><span class="p">[</span><span class="nv">number-collection</span><span class="p">]</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">  </span><span class="p">(</span><span class="nb">map inc </span><span class="nv">global-value</span><span class="p">))</span>
 <a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>
-<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>(impure-increment-numbers '(1 2 3 4 5))
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">(</span><span class="nf">impure-increment-numbers</span><span class="w"> </span><span class="o">'</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
 <p>The above function is using a global value rather than the argument passed makes this function deterministic</p>
 <h2 id="side-effect-printing-to-the-console-log">Side Effect: Printing to the console log<a class="headerlink" href="#side-effect-printing-to-the-console-log" title="Permanent link">λ︎</a></h2>
 <p>Although the following example is probably quite harmless, it is a simple example of a function effecting the state of something outside.  These side effects should be avoided where possible to keep your code simpler to reason about.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(defn print-to-console [value-to-print]
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  (println "The value is:" value-to-print))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">print-to-console</span><span class="w"> </span><span class="p">[</span><span class="nv">value-to-print</span><span class="p">]</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">println </span><span class="s">"The value is:"</span><span class="w"> </span><span class="nv">value-to-print</span><span class="p">))</span>
 <a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>(print-to-console "a side effect")
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="p">(</span><span class="nf">print-to-console</span><span class="w"> </span><span class="s">"a side effect"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="side-causes-calling-libraries">Side Causes: Calling libraries<a class="headerlink" href="#side-causes-calling-libraries" title="Permanent link">λ︎</a></h2>
 <p>To demonstrate a side causes form of impure functions, lets create a task-comple function that marks a current task complete using the current timestamp.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(defn task-complete [task-name]
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>  (str "Setting task " task-name " completed on " (js/Date)))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">task-complete</span><span class="w"> </span><span class="p">[</span><span class="nv">task-name</span><span class="p">]</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Setting task "</span><span class="w"> </span><span class="nv">task-name</span><span class="w"> </span><span class="s">" completed on "</span><span class="w"> </span><span class="p">(</span><span class="nf">js/Date</span><span class="p">)))</span>
 <a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>(task-complete "hack clojure")
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">(</span><span class="nf">task-complete</span><span class="w"> </span><span class="s">"hack clojure"</span><span class="p">)</span>
 </code></pre></div>
 <!--sec data-title="Clojure version java.util.Date" data-id="section1" data-collapse=true ces-->
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="ss">:import</span><span class="w"> </span><span class="nv">java.util.Date</span><span class="p">)</span>
@@ -2018,10 +2018,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <!--endsec-->
 <h2 id="re-write-as-a-pure-function">Re-write as a pure function<a class="headerlink" href="#re-write-as-a-pure-function" title="Permanent link">λ︎</a></h2>
 <p>Change the task-complete function definition and function call to take both the task-name and completed-date as arguments.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(defn task-complete [task-name completed-date]
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>  (str "Setting task " task-name " completed on " completed-date))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">task-complete</span><span class="w"> </span><span class="p">[</span><span class="nv">task-name</span><span class="w"> </span><span class="nv">completed-date</span><span class="p">]</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">"Setting task "</span><span class="w"> </span><span class="nv">task-name</span><span class="w"> </span><span class="s">" completed on "</span><span class="w"> </span><span class="nv">completed-date</span><span class="p">))</span>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>(task-complete "hack clojure" (js/Date))
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">(</span><span class="nf">task-complete</span><span class="w"> </span><span class="s">"hack clojure"</span><span class="w"> </span><span class="p">(</span><span class="nf">js/Date</span><span class="p">))</span>
 </code></pre></div>
 <p>Required values should be generated outside a function where possible.  In this case in the <code>(js/Date)</code> function is first evaluated and replaced by its value, then that date value is passed to the function as an argument, keeping the function pure.</p>
 <!--sec data-title="Clojure version using java.util.Date" data-id="section2" data-collapse=true ces-->
@@ -2039,7 +2039,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -941,7 +941,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1965,42 +1965,42 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>#:</code> map literal macro for Clojure hash-maps adds a given namespace to all the keywords contained in the hash-map.</p>
 <p><code>#::</code> map literal macro for keyword auto-resolve adds the current fully qualified namespace to all the keywords in the hash-map</p>
 <h2 id="require-clojure-spec-in-the-namespace-definition">Require clojure spec in the namespace definition<a class="headerlink" href="#require-clojure-spec-in-the-namespace-definition" title="Permanent link">λ︎</a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div>
 <p>In this example the keys in the map are unqualified.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>{:simplifying      []
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>    :keyword-names    []
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    :with-autoresolve []
-<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>    :map-literal      []}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="ss">:simplifying</span><span class="w">      </span><span class="p">[]</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="ss">:keyword-names</span><span class="w">    </span><span class="p">[]</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="ss">:with-autoresolve</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">    </span><span class="ss">:map-literal</span><span class="w">      </span><span class="p">[]}</span>
 </code></pre></div>
 <h2 id="qualifying-keys-with-auto-resolve">Qualifying keys with auto-resolve<a class="headerlink" href="#qualifying-keys-with-auto-resolve" title="Permanent link">λ︎</a></h2>
 <p>Using the map literal macro for auto-resolve instructs Clojure to treat all keys in the map as qualified to the current namespace</p>
 <p>The following hash-map has the map literal macro.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>#::{:simplifying      []
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>    :keyword-names    []
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a>    :with-autoresolve []
-<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a>    :map-literal      []}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="o">#</span><span class="err">::</span><span class="p">{</span><span class="ss">:simplifying</span><span class="w">      </span><span class="p">[]</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="ss">:keyword-names</span><span class="w">    </span><span class="p">[]</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="ss">:with-autoresolve</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span><span class="ss">:map-literal</span><span class="w">      </span><span class="p">[]}</span>
 </code></pre></div>
 <p>This is the same as explicitly writing out the fully qualified domain for each key in the map.</p>
 <p>However, if we move the map to another namespace, then the explicit namespaces would need to be updated.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>{:practicalli.clojure/simplifying      []
-<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a> :practicalli.clojure/keyword-names    []
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a> :practicalli.clojure/with-autoresolve []
-<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a> :practicalli.clojure/map-literal      []}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span><span class="ss">:practicalli.clojure/simplifying</span><span class="w">      </span><span class="p">[]</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w"> </span><span class="ss">:practicalli.clojure/keyword-names</span><span class="w">    </span><span class="p">[]</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w"> </span><span class="ss">:practicalli.clojure/with-autoresolve</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w"> </span><span class="ss">:practicalli.clojure/map-literal</span><span class="w">      </span><span class="p">[]}</span>
 </code></pre></div>
 <h2 id="qualifying-keywords-with-a-specific-name">Qualifying keywords with a specific name<a class="headerlink" href="#qualifying-keywords-with-a-specific-name" title="Permanent link">λ︎</a></h2>
 <p>Rather than take the name from the current namespace, an explicit name can be added to all the keys in the map</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>#:practicalli.naming {:simplifying      []
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>                      :keyword-names    []
-<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a>                      :with-autoresolve []
-<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a>                      :map-literal      []}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="o">#</span><span class="ss">:practicalli.naming</span><span class="w"> </span><span class="p">{</span><span class="ss">:simplifying</span><span class="w">      </span><span class="p">[]</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">                      </span><span class="ss">:keyword-names</span><span class="w">    </span><span class="p">[]</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">                      </span><span class="ss">:with-autoresolve</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">                      </span><span class="ss">:map-literal</span><span class="w">      </span><span class="p">[]}</span>
 </code></pre></div>
 <p>This is the same as explicitly writing that name in front of each of the keywords in the map.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a># {:practicalli.naming/simplifying      []
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>   :practicalli.naming/keyword-names    []
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>   :practicalli.naming/with-autoresolve []
-<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>   :practicalli.naming/map-literal      []}
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">#</span><span class="w"> </span><span class="p">{</span><span class="ss">:practicalli.naming/simplifying</span><span class="w">      </span><span class="p">[]</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">   </span><span class="ss">:practicalli.naming/keyword-names</span><span class="w">    </span><span class="p">[]</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">   </span><span class="ss">:practicalli.naming/with-autoresolve</span><span class="w"> </span><span class="p">[]</span>
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">   </span><span class="ss">:practicalli.naming/map-literal</span><span class="w">      </span><span class="p">[]}</span>
 </code></pre></div>
 <p>Map literals are relevant to Entity maps with spec.</p>
 <!-- ```clojure -->
@@ -2029,7 +2029,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

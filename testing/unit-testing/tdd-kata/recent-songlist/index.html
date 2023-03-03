@@ -800,17 +800,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -911,7 +911,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1992,13 +1992,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="using-clojuretest">Using <code>clojure.test</code><a class="headerlink" href="#using-clojuretest" title="Permanent link">λ︎</a></h2>
 <p>We are writing our tests with the <code>clojure.test</code> library</p>
 <p>Open <code>test/playground/recent-song-list-test.clj</code> file in your editor and update the namespace definition to include <code>clojure.test</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(ns practicalli.recent-song-list-test
-<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  (:require [clojure.test :refer [deftest is testing]]
-<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>            [playground.recent-song-list :as SUT]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.recent-song-list-test</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]]</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">            </span><span class="p">[</span><span class="nv">playground.recent-song-list</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">SUT</span><span class="p">]))</span>
 </code></pre></div>
 <h3 id="run-tests">Run Tests<a class="headerlink" href="#run-tests" title="Permanent link">λ︎</a></h3>
 <p>At any time we can call the <code>run-tests</code> function in the REPL to get a report back on all of the tests in our current namespace (<code>recent-song-list</code>)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(run-tests)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">run-tests</span><span class="p">)</span>
 </code></pre></div>
 <p>The Cognitect Labs test runner is included in the project by default and can be run from the command line in the root directory of the project.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>clojure<span class="w"> </span>-M:test:runner
@@ -2009,7 +2009,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>You can use an empty collection to start with.  Which collection type will you use though?</p>
 </blockquote>
 <!--sec data-title="Reveal answer..." data-id="answer000" data-collapse=true ces-->
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(def recent-songs [])
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">recent-songs</span><span class="w"> </span><span class="p">[])</span>
 </code></pre></div>
 <!--endsec-->
 <blockquote>
@@ -2085,7 +2085,7 @@ Here is the same test using the <code>empty?</code> function instead of the <cod
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

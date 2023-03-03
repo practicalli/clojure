@@ -800,17 +800,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -911,7 +911,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1957,11 +1957,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="define-an-atom">Define an atom<a class="headerlink" href="#define-an-atom" title="Permanent link">λ︎</a></h2>
 <p>Use the standard <code>def</code> function to bind a name to an atom.</p>
 <p>The atom wraps data, initially an empty vector.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(def mutants (atom []))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">mutants</span><span class="w"> </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="p">[]))</span>
 </code></pre></div>
 <p>Define a function using <code>defn</code> which takes a mutant as an argument and updates the value managed by the atom.  The reference to the atom is also an argument, making this a pure function and more generic as any given atom can be updated with this function.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(defn add-mutant [mutants mutant]
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>  (swap! mutants conj mutant))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">add-mutant</span><span class="w"> </span><span class="p">[</span><span class="nv">mutants</span><span class="w"> </span><span class="nv">mutant</span><span class="p">]</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">swap!</span><span class="w"> </span><span class="nv">mutants</span><span class="w"> </span><span class="nb">conj </span><span class="nv">mutant</span><span class="p">))</span>
 </code></pre></div>
 <p><a href="https://clojuredocs.org/clojure.core/swap!"><code>swap!</code></a> uses a function to create a new value for the atom to manage.  In this case the <code>conj</code> function is used to join the value of mutant with the existing mutants atom value, creating a new vector.</p>
 <p><a href="https://clojuredocs.org/clojure.core/swap!"><code>swap!</code></a> is a macro so the syntax is a little different. Essentially this is the same as an expression <code>(conj mutants mutant)</code>, with the value this returns swapped into the atom.</p>
@@ -1971,10 +1971,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The value the atom is managing has been swapped for a new value.  The original value was not modified (vectors are immutable) so the atom now points to a new value, a vector containing a string.</p>
 <h2 id="viewing-the-value-managed-by-the-atom">Viewing the value managed by the atom<a class="headerlink" href="#viewing-the-value-managed-by-the-atom" title="Permanent link">λ︎</a></h2>
 <p>Use the <code>deref</code> function to see the value the atom is managing.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(deref mutants)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">deref </span><span class="nv">mutants</span><span class="p">)</span>
 </code></pre></div>
 <p>It is idiomatic to use <code>@</code> which is a syntax alias for the <code>deref</code> function, rather than explicitly using <code>deref</code>.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>@mutants
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="o">@</span><span class="nv">mutants</span>
 </code></pre></div>
 <h2 id="reset-the-atom-value">Reset the atom value<a class="headerlink" href="#reset-the-atom-value" title="Permanent link">λ︎</a></h2>
 <p><code>reset!</code> will change the value managed by the atom by providing the new value.  This is simpler than using <code>swap!</code> as it does not use the existing value in the atom.</p>
@@ -1986,7 +1986,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

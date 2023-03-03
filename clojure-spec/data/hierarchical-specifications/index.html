@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -946,7 +946,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1973,34 +1973,34 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="hierarchical-specifications">Hierarchical Specifications<a class="headerlink" href="#hierarchical-specifications" title="Permanent link">λ︎</a></h1>
 <p>Defining specifications for data that is hierarchical or nested in nature.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div>
 <h2 id="example-hierarchical-data">Example hierarchical data<a class="headerlink" href="#example-hierarchical-data" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">{</span><span class="ss">:top-level-key</span><span class="w"> </span><span class="p">{</span><span class="ss">:nested-key</span><span class="w"> </span><span class="s">"value"</span><span class="p">}}</span>
 </code></pre></div>
 <h2 id="individual-specifications">Individual specifications<a class="headerlink" href="#individual-specifications" title="Permanent link">λ︎</a></h2>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/def ::first-name string?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::first-name</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(spec/def ::last-name string?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::last-name</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(spec/def ::residential-address string?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::residential-address</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="composite-specification">Composite Specification<a class="headerlink" href="#composite-specification" title="Permanent link">λ︎</a></h2>
 <p><code>keys</code> function combines specifications to form a composite specification in the form of a Clojure hash-map.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(spec/def ::customer-details
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>  (spec/keys
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>    :req [::first-name ::last-name ::residential-address]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::customer-details</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/keys</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::first-name</span><span class="w"> </span><span class="ss">::last-name</span><span class="w"> </span><span class="ss">::residential-address</span><span class="p">]))</span>
 </code></pre></div>
 <h2 id="hierarchical-specification">Hierarchical Specification<a class="headerlink" href="#hierarchical-specification" title="Permanent link">λ︎</a></h2>
 <p>A user account is composed of a user-id and customer details.  Rather than include the individual customer details, the composite customer-details specification.</p>
 <p>The <code>::user-id</code> specification is as follows</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(spec/def ::user-id uuid?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::user-id</span><span class="w"> </span><span class="nv">uuid?</span><span class="p">)</span>
 </code></pre></div>
 <p>The <code>::user-account</code> specification</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>(spec/def ::user-account
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>  (spec/keys
-<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>    :req [::user-id ::customer-details]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::user-account</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/keys</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="ss">:req</span><span class="w"> </span><span class="p">[</span><span class="ss">::user-id</span><span class="w"> </span><span class="ss">::customer-details</span><span class="p">]))</span>
 </code></pre></div>
 <p>The following data structure will conform to the specification</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">{</span><span class="ss">::user-id</span><span class="w"> </span><span class="o">#</span><span class="nv">uuid</span><span class="w"> </span><span class="s">"97bda55b-6175-4c39-9e04-7c0205c709dc"</span>
@@ -2013,7 +2013,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

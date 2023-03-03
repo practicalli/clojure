@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -914,7 +914,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1917,25 +1917,25 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Sets can be used as predicate functions returning true if the value is within the set</p>
 <p>Checking valid playing cards</p>
 <p>Define a namespace for the page and require Clojure Spec</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(spec/valid? #{:club :diamond :heart :spade} :club)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:club</span><span class="w"> </span><span class="ss">:diamond</span><span class="w"> </span><span class="ss">:heart</span><span class="w"> </span><span class="ss">:spade</span><span class="p">}</span><span class="w"> </span><span class="ss">:club</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/valid? #{:club :diamond :heart :spade} 42)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:club</span><span class="w"> </span><span class="ss">:diamond</span><span class="w"> </span><span class="ss">:heart</span><span class="w"> </span><span class="ss">:spade</span><span class="p">}</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div>
 <p>Answer to the ultimate question?</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(spec/valid? #{42} 42)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">42</span><span class="p">}</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div>
 <p>Using sets for literal values is similar to using the <code>clojure.core/contains?</code> function with a set collection type.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(contains? #{:clubs :diamonds :hearts :spades} :hearts )
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">contains? </span><span class="o">#</span><span class="p">{</span><span class="ss">:clubs</span><span class="w"> </span><span class="ss">:diamonds</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="ss">:spades</span><span class="p">}</span><span class="w"> </span><span class="ss">:hearts</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

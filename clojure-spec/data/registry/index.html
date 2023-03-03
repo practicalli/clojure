@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -878,15 +878,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#removing-specs-from-the-registry">
     Removing specs from the registry
   </a>
-<nav aria-label="Removing specs from the registry" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintregistry-not-persistent">
-    Hint::Registry not persistent
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -940,7 +931,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1936,15 +1927,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#removing-specs-from-the-registry">
     Removing specs from the registry
   </a>
-<nav aria-label="Removing specs from the registry" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintregistry-not-persistent">
-    Hint::Registry not persistent
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -1961,48 +1943,40 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="registry-for-unique-and-re-usable-specifications">Registry for unique and re-usable specifications<a class="headerlink" href="#registry-for-unique-and-re-usable-specifications" title="Permanent link">λ︎</a></h1>
 <p>So far we have just use predicate functions directly in the code examples.</p>
-<p>Using a registry, specs can be uniquely defined across the whole project
-Defining a spec gives that spec a name that has a fully qualified namespace</p>
-<p>Use the spec specific <code>def</code> function to bind a new spec name
-and fully qualified namespace
-and place it in the registry</p>
-<!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
-<pre class="hidden">
-  <code class="lang-eval-clojure" data-preamble="(require '[clojure.spec.alpha :as spec])">
-  </code>
-</pre>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(spec/def :playing-card/suit  #{:club :diamond :heart :spade} )
+<p>Using a registry, specs can be uniquely defined across the whole project. Defining a spec gives that spec a name that has a fully qualified namespace</p>
+<p>Use the spec specific <code>def</code> function to bind a new spec name and fully qualified namespace and place it in the registry</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">:playing-card/suit</span><span class="w">  </span><span class="o">#</span><span class="p">{</span><span class="ss">:club</span><span class="w"> </span><span class="ss">:diamond</span><span class="w"> </span><span class="ss">:heart</span><span class="w"> </span><span class="ss">:spade</span><span class="p">}</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(spec/conform :playing-card/suit :diamond)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="ss">:playing-card/suit</span><span class="w"> </span><span class="ss">:diamond</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/def :show-cats/cat-bread #{:abyssinian :birman :chartreau :devon-rex
-<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>                        :domestic-short-hair :domestic-long-hair})
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">:show-cats/cat-bread</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:abyssinian</span><span class="w"> </span><span class="ss">:birman</span><span class="w"> </span><span class="ss">:chartreau</span><span class="w"> </span><span class="ss">:devon-rex</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">                        </span><span class="ss">:domestic-short-hair</span><span class="w"> </span><span class="ss">:domestic-long-hair</span><span class="p">})</span>
 </code></pre></div>
 <h2 id="removing-specs-from-the-registry">Removing specs from the registry<a class="headerlink" href="#removing-specs-from-the-registry" title="Permanent link">λ︎</a></h2>
 <p>Named specifications can be removed from the registry by binding the name to <code>nil</code>.</p>
 <p>If specification names are to be refactored, then the original name should be set to <code>nil</code> and evaluated, before changing the name.  This will ensure stale specifications are not residing in the REPL.</p>
-<p>Here is a named specification as an example
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(spec/def ::unwanted #{:abandoned})
+<p>Here is a named specification as an example</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::unwanted</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:abandoned</span><span class="p">})</span>
 </code></pre></div>
-The specification is evaluated in the REPL (above) and currently works.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(spec/conform ::unwanted :abandoned)
-</code></pre></div></p>
-<p>Remove this specification from the registry by binding it to nil
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(spec/def ::unwanted nil)
-</code></pre></div></p>
-<p>Now the specification is unavailable
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(spec/conform ::unwanted :abandoned)
-</code></pre></div></p>
-<blockquote>
-<h4 id="hintregistry-not-persistent">Hint::Registry not persistent<a class="headerlink" href="#hintregistry-not-persistent" title="Permanent link">λ︎</a></h4>
+<p>The specification is evaluated in the REPL (above) and currently works.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="ss">::unwanted</span><span class="w"> </span><span class="ss">:abandoned</span><span class="p">)</span>
+</code></pre></div>
+<p>Remove this specification from the registry by binding it to nil</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::unwanted</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
+</code></pre></div>
+<p>Now the specification is unavailable</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="ss">::unwanted</span><span class="w"> </span><span class="ss">:abandoned</span><span class="p">)</span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Registry not persistent</p>
 <p>Restarting the REPL will loose all specification names in the registry as it is not persistent across REPL sessions.</p>
-</blockquote>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

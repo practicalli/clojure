@@ -800,17 +800,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -911,7 +911,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1938,13 +1938,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h1 id="defining-functions">Defining Functions<a class="headerlink" href="#defining-functions" title="Permanent link">λ︎</a></h1>
 <p><code>clojure.core/defn</code> defines a custom function that can be called from anywhere in the current namespace by just using the name.  A defined function can be called from where ever its namespace is required in other namespaces.</p>
 <p>Here is a simple function definition that takes a number and divides it by two</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>    (defn half-a-number
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>      "Divide a given number by 2"
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>      [number]
-<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>      (/ number 2))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">    </span><span class="p">(</span><span class="kd">defn </span><span class="nv">half-a-number</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">      </span><span class="s">"Divide a given number by 2"</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">      </span><span class="p">[</span><span class="nv">number</span><span class="p">]</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">      </span><span class="p">(</span><span class="nb">/ </span><span class="nv">number</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 <p>Once you have defined a function, you can call it by using the function name as the first element of a list, <code>()</code>.  Any other elements in the list are arguments passed to the function.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>    (half-a-number 4)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">    </span><span class="p">(</span><span class="nf">half-a-number</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="understanding-the-defn-syntax">Understanding the <code>defn</code> syntax<a class="headerlink" href="#understanding-the-defn-syntax" title="Permanent link">λ︎</a></h2>
 <p>The standard form of <code>defn</code>:
@@ -1983,7 +1983,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

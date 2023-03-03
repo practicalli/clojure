@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -941,7 +941,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1970,36 +1970,36 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>If the value does conform to the specification, then the value is returned.  This value is referred to as a conformed value.</p>
 <h2 id="require-the-clojure-spec-library">Require the Clojure spec library<a class="headerlink" href="#require-the-clojure-spec-library" title="Permanent link">λ︎</a></h2>
 <p>Set the namespace for the page and require clojure.spec.alpha library, setting the alias to <code>spec</code>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure.specifications
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure.specifications</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div></p>
 <h2 id="using-conform">Using conform<a class="headerlink" href="#using-conform" title="Permanent link">λ︎</a></h2>
 <p>If the value conforms to the spec, a conformed value is returned
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(spec/conform odd? 101)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
 </code></pre></div></p>
 <!-- => 101 -->
 <p>When a value does not conform to a spec, the value <code>:clojure.spec.alpha/invalid</code> is returned</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/conform even? 101)
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
 </code></pre></div>
 <!-- => :clojure.spec.alpha/invalid -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(spec/conform integer? 1)
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">integer?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
 <!-- => 1 -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(spec/conform seq? [1 2 3])
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
 </code></pre></div>
 <!-- => :clojure.spec.alpha/invalid -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(spec/conform seq? (range 10))
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
 <!-- => (0 1 2 3 4 5 6 7 8 9) -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(spec/conform map? {})
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">{})</span>
 </code></pre></div>
 <!-- => {} -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>(spec/conform map? (hash-map :a 1 :b 2))
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 <!-- => {:b 2, :a 1} -->
 </p>
@@ -2008,7 +2008,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

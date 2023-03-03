@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -878,15 +878,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#auto-resolve-macro">
     auto-resolve macro
   </a>
-<nav aria-label="auto-resolve macro" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintfully-qualified-keywords">
-    Hint::Fully Qualified keywords
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -945,7 +936,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1946,15 +1937,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#auto-resolve-macro">
     auto-resolve macro
   </a>
-<nav aria-label="auto-resolve macro" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintfully-qualified-keywords">
-    Hint::Fully Qualified keywords
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 </ul>
 </nav>
@@ -1975,26 +1957,26 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="naming-fully-qualified-keywords">Naming - fully qualified keywords<a class="headerlink" href="#naming-fully-qualified-keywords" title="Permanent link">λ︎</a></h2>
 <p>Specification names should use fully qualified keywords, typically using the namespace in which the specification is defined in.</p>
 <p>Define a namespace for the page and require Clojure Spec</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure.specifications
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure.specifications</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(spec/def :practicalli.clojure.specifications/number number?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">:practicalli.clojure.specifications/number</span><span class="w"> </span><span class="nv">number?</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="auto-resolve-macro">auto-resolve macro<a class="headerlink" href="#auto-resolve-macro" title="Permanent link">λ︎</a></h2>
 <p><code>::</code> double colon is the auto-resolve macro, which will pre-pend the current namespace to the specification keyword. The <code>::</code> notation removes the need to edit fully qualified names should a specification be moved to a different namespace.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/def ::number number?)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::number</span><span class="w"> </span><span class="nv">number?</span><span class="p">)</span>
 </code></pre></div>
-<blockquote>
-<h4 id="hintfully-qualified-keywords">Hint::Fully Qualified keywords<a class="headerlink" href="#hintfully-qualified-keywords" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title">Fully Qualified keywords</p>
 <p>Using fully qualified keywords ensures they are unique and therefore can be used across all projects.</p>
 <p>Namespaces are usually unique as they include the name of the company or organization behind the code and any project or component names used to organize the code.</p>
-</blockquote>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

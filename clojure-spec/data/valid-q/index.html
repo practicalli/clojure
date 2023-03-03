@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -936,7 +936,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1959,40 +1959,40 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>true</code> is returned if the value meets the specification, otherwise <code>false</code> is returned.</p>
 <h2 id="require-the-clojure-spec-library">Require the Clojure spec library<a class="headerlink" href="#require-the-clojure-spec-library" title="Permanent link">λ︎</a></h2>
 <p>Set the namespace for the page and require clojure.spec.alpha library, setting the alias to <code>spec</code>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(ns practicalli.clojure.specifications
-<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>  (:require [clojure.spec.alpha :as spec]))
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure.specifications</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div></p>
 <h2 id="using-valid">Using valid?<a class="headerlink" href="#using-valid" title="Permanent link">λ︎</a></h2>
 <p>If the value is valid then a boolean true is returned.  Experiment with different values and <a href="/reference/clojure/predicate-functions.md">predicate functions</a>.
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(spec/valid? even? 180)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span>
 </code></pre></div>
 <!-- => true -->
 </p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(spec/valid? string? "Am I a valid string")
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="s">"Am I a valid string"</span><span class="p">)</span>
 </code></pre></div>
 <!-- => true -->
 </p>
 <h1 id="using-custom-predicate-functions">using custom predicate functions<a class="headerlink" href="#using-custom-predicate-functions" title="Permanent link">λ︎</a></h1>
 <p>Create <code>fn</code> definitions to use as predicate functions.  Any function that returns true or false can be used.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(spec/valid? (fn [value] (&gt; value 1024)) 8080)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">1024</span><span class="p">))</span><span class="w"> </span><span class="mi">8080</span><span class="p">)</span>
 </code></pre></div>
 <p>The custom predicate function may also be written in the shorter form of a <code>fn</code> definition
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(spec/valid? #(&gt; % 1024) 8080)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">1024</span><span class="p">)</span><span class="w"> </span><span class="mi">8080</span><span class="p">)</span>
 </code></pre></div></p>
 <p>Use <code>def</code> to bind names to custom predicate functions if they are used more than once in the code base.</p>
 <p>In this example a name is bound to a function that checks if a port is within the <a href="https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers">range of IANA registered networking ports</a>.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(def registered-port-range?
-<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>  "Network port number within IANA registered port range"
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>  #(and (&gt; % 1024) #(&lt; % 49151) )
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">registered-port-range?</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="s">"Network port number within IANA registered port range"</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">  </span><span class="o">#</span><span class="p">(</span><span class="nb">and </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">1024</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&lt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">49151</span><span class="p">)</span><span class="w"> </span><span class="p">)</span>
 <a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>(spec/valid? registered-port-range? 8080)
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">registered-port-range?</span><span class="w"> </span><span class="mi">8080</span><span class="p">)</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

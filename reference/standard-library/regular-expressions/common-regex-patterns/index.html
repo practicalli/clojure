@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -913,7 +913,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -2071,7 +2071,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Common string formats used in software development and examples of regular expressions to check their correctness.</p>
 <h2 id="username-regular-expression-pattern">Username Regular Expression Pattern<a class="headerlink" href="#username-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>A 8 to 24 character passwords that can include any lower case character or digit (number).  Only the underscore and dash special characters can be used.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(re-matches #"^[a-z0-9_-]{8,24}$" "good-username")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"^[a-z0-9_-]{8,24}$"</span><span class="w"> </span><span class="s">"good-username"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>^[a-z0-9_-]{8,24}$
@@ -2083,7 +2083,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </code></pre></div></p>
 <h2 id="password-regular-expression-pattern">Password Regular Expression Pattern<a class="headerlink" href="#password-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>A password should be 8 to 24 character string with at least one digit, one upper case letter, one lower case letter and one special symbol, <code>@#$%</code>.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(re-matches #"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})" "G00d @ username")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})"</span><span class="w"> </span><span class="s">"G00d @ username"</span><span class="p">)</span>
 </code></pre></div>
 <p>The order of the grouping formulas does not matter</p>
 <p>Breakdown the regex pattern:
@@ -2101,7 +2101,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>?=</code> means apply the assertion condition, which is meaningless by itself and works in combination with others.</p>
 <h2 id="hexadecimal-color-code-regular-expression-pattern">Hexadecimal Color Code Regular Expression Pattern<a class="headerlink" href="#hexadecimal-color-code-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The string must start with a <code>#</code>symbol , follow by a letter from <code>a</code> to <code>f</code>, <code>A</code> to <code>Z</code> or a digit from <code>0</code> to <code>9</code> with a length of exactly 3 or 6.` This regular expression pattern is very useful for the Hexadecimal web colors code checking.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(re-matches #"^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$" "#FFAABB")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$"</span><span class="w"> </span><span class="s">"#FFAABB"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$
@@ -2118,9 +2118,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="email-regular-expression-pattern">Email Regular Expression Pattern<a class="headerlink" href="#email-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The account side of an email address starts with <code>_A-Za-z0-9-\\+</code> optional follow by <code>.[_A-Za-z0-9-]</code>, ending with an <code>@</code> symbol.</p>
 <p>The  domain starts with <code>A-Za-z0-9-</code>, follow by first level domain, e.g <code>.org</code>, <code>.io</code> and <code>.[A-Za-z0-9]</code> optionally follow by a second level domain, e.g. <code>.ac.uk</code>, <code>.com.au</code> or  <code>\\.[A-Za-z]{2,}</code>, where second level domain must start with a dot <code>.</code> and length must equal or more than 2 characters.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(re-matches
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>  #"^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"
-<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>  "jenny.jenn@jetpack.com.au")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">re-matches</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="o">#</span><span class="s">"^[_A-Za-z0-9-]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$"</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">  </span><span class="s">"jenny.jenn@jetpack.com.au"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <h4 id="hintdouble-escaping-special-characters">Hint::Double escaping special characters<a class="headerlink" href="#hintdouble-escaping-special-characters" title="Permanent link">λ︎</a></h4>
@@ -2147,7 +2147,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="image-file-name-and-extension-regular-expression-pattern">Image File name and Extension Regular Expression Pattern<a class="headerlink" href="#image-file-name-and-extension-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>A file extension name is 1 or more characters without white space, follow by dot <code>.</code> and string end in <code>jpg</code> or <code>png</code> or <code>gif</code> or <code>bmp</code>.  The file name extension is case-insensitive.</p>
 <p>Change the combination <code>(jpg|png|gif|bmp)</code> for other file extension.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>(re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)" "clojure-logo.png")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)"</span><span class="w"> </span><span class="s">"clojure-logo.png"</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
 <h4 id="hintin-line-modifiers-not-supported-in-javascript">Hint::in-line modifiers not supported in JavaScript<a class="headerlink" href="#hintin-line-modifiers-not-supported-in-javascript" title="Permanent link">λ︎</a></h4>
@@ -2177,9 +2177,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="ip-address-regular-expression-pattern">IP Address Regular Expression Pattern<a class="headerlink" href="#ip-address-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>An IP address comprises of 4 groups of numbers between 0 and 255, with each group separated by a dot.</p>
 <p>Example IP address are: <code>192.168.0.1</code>, <code>127.0.0.1</code>, <code>192.120.240.100</code></p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>(re-matches
-<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>  #"^([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])$"
-<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a>  "192.168.0.1")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nf">re-matches</span>
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="o">#</span><span class="s">"^([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])$"</span>
+<a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="s">"192.168.0.1"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
@@ -2200,7 +2200,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </code></pre></div></p>
 <h2 id="time-format-regular-expression-pattern">Time Format Regular Expression Pattern<a class="headerlink" href="#time-format-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start between 0-12, then a semi colon, <code>:</code>, follow by <code>00-59</code>.  The pattern ends with <code>am</code> or <code>pm</code>.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>(re-matches #"(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)" "12:59am")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)"</span><span class="w"> </span><span class="s">"12:59am"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)
@@ -2218,7 +2218,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </code></pre></div></p>
 <h2 id="time-in-24-hour-format-regular-expression-pattern">Time in 24-Hour Format Regular Expression Pattern<a class="headerlink" href="#time-in-24-hour-format-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The 24-hour clock format start between 0-23 or 00-23, then a semi colon <code>:</code> and follow by 00-59.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a>(re-matches #"(([01]?[0-9]|2[0-3]):[0-5][0-9])" "23:58")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"(([01]?[0-9]|2[0-3]):[0-5][0-9])"</span><span class="w"> </span><span class="s">"23:58"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a>([01]?[0-9]|2[0-3]):[0-5][0-9]
@@ -2233,7 +2233,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </code></pre></div></p>
 <h2 id="date-format-ddmmyyyy-regular-expression-pattern">Date Format (dd/mm/yyyy) Regular Expression Pattern<a class="headerlink" href="#date-format-ddmmyyyy-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>Date format in the form <code>dd/mm/yyyy</code>. Validating a leap year and if there is 30 or 31 days in a month is not simple though.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a>(re-matches #"(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)" "20/02/2020")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)"</span><span class="w"> </span><span class="s">"20/02/2020"</span><span class="p">)</span>
 </code></pre></div>
 <p>Breakdown the regex pattern:
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a>(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)
@@ -2312,7 +2312,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

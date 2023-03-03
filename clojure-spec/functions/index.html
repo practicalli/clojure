@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -913,7 +913,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1906,8 +1906,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#examples-of-specifications-from-corespecsalpha">
-    Examples of specifications from core.specs.alpha
+<a class="md-nav__link" href="#clojurecore-examples">
+    clojure.core examples
   </a>
 </li>
 </ul>
@@ -1931,8 +1931,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li>Generative testing - using argument specifications to generate comprehensive test data.</li>
 </ul>
 <p>Many of the functions in <code>clojure.core</code> have <a href="https://github.com/clojure/core.specs.alpha">specifications</a> in the latest version of Clojure.  The specifications for clojure.core functions can be found in the <a href="https://github.com/clojure/core.specs.alpha">clojure/core.specs.alpha</a> repository on GitHub.</p>
-<h2 id="examples-of-specifications-from-corespecsalpha">Examples of specifications from core.specs.alpha<a class="headerlink" href="#examples-of-specifications-from-corespecsalpha" title="Permanent link">λ︎</a></h2>
+<h2 id="clojurecore-examples">clojure.core examples<a class="headerlink" href="#clojurecore-examples" title="Permanent link">λ︎</a></h2>
 <p>Specifications used for the <code>defn</code>, <code>defn-</code>, <code>fn</code> functions in <code>clojure.core</code></p>
+<div class="admonition example">
+<p class="admonition-title">clojure.core specification examples</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">s/def</span><span class="w"> </span><span class="ss">::param-list</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">s/and</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="nv">vector?</span>
@@ -1953,12 +1955,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-0-18" id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="w">                         </span><span class="ss">:arity-n</span><span class="w"> </span><span class="p">(</span><span class="nf">s/cat</span><span class="w"> </span><span class="ss">:bodies</span><span class="w"> </span><span class="p">(</span><span class="nf">s/+</span><span class="w"> </span><span class="p">(</span><span class="nf">s/spec</span><span class="w"> </span><span class="ss">::params+body</span><span class="p">))</span>
 <a href="#__codelineno-0-19" id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="w">                                         </span><span class="ss">:attr-map</span><span class="w"> </span><span class="p">(</span><span class="nf">s/?</span><span class="w"> </span><span class="nv">map?</span><span class="p">)))))</span>
 </code></pre></div>
+</div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

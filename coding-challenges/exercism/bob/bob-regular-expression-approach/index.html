@@ -835,17 +835,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
@@ -946,7 +946,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../../../clojure-spec/functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1980,53 +1980,53 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The phrase passed to Bob is a question if the last alphanumeric character is a question mark. Using a simple regular expression we can check if the last character in the string a <code>?</code></p>
 <p><code>#"\?"</code> is a literal regular expression pattern that will match a single <code>?</code> character</p>
 <p>So the regular expression pattern will match a single ? character</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>  (re-matches #"\?" "?")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"\?"</span><span class="w"> </span><span class="s">"?"</span><span class="p">)</span>
 </code></pre></div>
 <p>With other characters present though the pattern doesn't match.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>  (re-matches #"\?" "Ready?")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"\?"</span><span class="w"> </span><span class="s">"Ready?"</span><span class="p">)</span>
 </code></pre></div>
 <p>To match <code>?</code> with other characters,</p>
 <p><code>.</code> matches any single character except line terminators (new line, carriage return)</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(re-matches #".\?" "R?")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".\?"</span><span class="w"> </span><span class="s">"R?"</span><span class="p">)</span>
 </code></pre></div>
 <p><code>.*</code> matches any number of single characters one or more times,</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(re-matches #".*\?" "?Ready")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?"</span><span class="w"> </span><span class="s">"?Ready"</span><span class="p">)</span>
 </code></pre></div>
 <p><code>\s</code> matches a single whitespace character and <code>\s*</code> matches multiple whitespace characters</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>  (re-matches #".*\?$" "Okay if like my  spacebar  quite a bit?")
-<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>  ;; =&gt; "Okay if like my  spacebar  quite a bit?"
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?$"</span><span class="w"> </span><span class="s">"Okay if like my  spacebar  quite a bit?"</span><span class="p">)</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">  </span><span class="c1">;; =&gt; "Okay if like my  spacebar  quite a bit?"</span>
 </code></pre></div>
 <p><code>$</code> is a boundary assertion so the pattern only matches the ? at the end of a string and not in the middle.  However, this is not required as the <code>re-matches</code> uses groups and that manages the boundary assertion.</p>
 <p><code>re-matches</code> does not require the <code>$</code> as there is an implicit boundary</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>  (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?"</span><span class="w"> </span><span class="s">"Okay if like my ? spacebar  quite a bit"</span><span class="p">)</span>
 </code></pre></div>
 <p>Match if there is a single space or space type character after the ?</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>  (re-matches #".*\?\s" "Okay if like my  spacebar  quite a bit? ")
-<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>  ;; =&gt; "Okay if like my  spacebar  quite a bit? "
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?\s"</span><span class="w"> </span><span class="s">"Okay if like my  spacebar  quite a bit? "</span><span class="p">)</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="c1">;; =&gt; "Okay if like my  spacebar  quite a bit? "</span>
 </code></pre></div>
 <p>Match if there are multiple space type characters after the ?</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>  (re-matches #".*\?\s*" "Okay if like my  spacebar  quite a bit?   ")
-<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>  ;; =&gt; "Okay if like my  spacebar  quite a bit?   "
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?\s*"</span><span class="w"> </span><span class="s">"Okay if like my  spacebar  quite a bit?   "</span><span class="p">)</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="c1">;; =&gt; "Okay if like my  spacebar  quite a bit?   "</span>
 </code></pre></div>
 <p>Don't match if a question mark character is not at the end of the string</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>  (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">".*\?"</span><span class="w"> </span><span class="s">"Okay if like my ? spacebar  quite a bit"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="shouting-a-question-at-bob">Shouting a question at Bob<a class="headerlink" href="#shouting-a-question-at-bob" title="Permanent link">λ︎</a></h2>
 <p><code>[^a-z]</code> matches if there are no lower case alphabetic characters.  The <code>^</code> at the start of the pattern negated the pattern.</p>
 <p><code>*</code> any number of the proceeding pattern</p>
 <p><code>[A-Z]+</code> any number of upper case alphabetic characters</p>
 <p>When a phrase has all uppercase characters then we have a match</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>  (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "HELLO")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"[^a-z]*[A-Z]+[^a-z]*"</span><span class="w"> </span><span class="s">"HELLO"</span><span class="p">)</span>
 </code></pre></div>
 <p>If there are lower case characters, even if there are uppercase characters, the pattern does not match.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>  (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "Hello")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"[^a-z]*[A-Z]+[^a-z]*"</span><span class="w"> </span><span class="s">"Hello"</span><span class="p">)</span>
 </code></pre></div>
 <p>If the characters are all uppercase then the pattern matches, even if there are other non-alphabetic characters</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>  (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "ABC 1 2 3")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"[^a-z]*[A-Z]+[^a-z]*"</span><span class="w"> </span><span class="s">"ABC 1 2 3"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="silence-of-the-bob">Silence of the Bob<a class="headerlink" href="#silence-of-the-bob" title="Permanent link">λ︎</a></h2>
 <p><code>\s</code> matches any single whitespace character, including space, tab, form feed, line feed, and other Unicode spaces.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>(re-matches #"\s*" "  \t\t\t")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">"\s*"</span><span class="w"> </span><span class="s">"  \t\t\t"</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="solution-using-regular-expressions">Solution using regular expressions<a class="headerlink" href="#solution-using-regular-expressions" title="Permanent link">λ︎</a></h2>
 <p>The <code>re-matches</code> expressions with regular expressions patterns can be put into a let expression.  The names are bound to the re-matches expressions which evaluated to either <code>true</code> or <code>false</code></p>
@@ -2055,7 +2055,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>

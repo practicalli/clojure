@@ -802,17 +802,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../using-spec-in-the-repl/">
-        Using Clojure Spec in the REPL
+        REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../add-spec-to-projects/">
-        Add Spec to Clojure Projects
+        Project config
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../organising-specs/">
-        Organizing Specifications
+        Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -845,13 +845,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintclojurecore-predicate-functions">
-    Hint::clojure.core predicate functions
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-predicate-functions-as-specifications">
-    Using predicate functions as specifications
+<a class="md-nav__link" href="#predicate-functions-in-specs">
+    Predicate functions in specs
   </a>
 </li>
 <li class="md-nav__item">
@@ -941,7 +936,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../functions/documentation/">
-        clojure.spec adds documentation to function definitions
+        Documentation
       </a>
 </li>
 <li class="md-nav__item">
@@ -1934,13 +1929,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintclojurecore-predicate-functions">
-    Hint::clojure.core predicate functions
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#using-predicate-functions-as-specifications">
-    Using predicate functions as specifications
+<a class="md-nav__link" href="#predicate-functions-in-specs">
+    Predicate functions in specs
   </a>
 </li>
 <li class="md-nav__item">
@@ -1963,41 +1953,41 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="predicate-functions">Predicate functions<a class="headerlink" href="#predicate-functions" title="Permanent link">λ︎</a></h1>
 <p>A predicate is a function that returns a true or false value and their names end with <code>?</code> by convention.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>(odd? 1)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">odd?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>(string? "am i a string")
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nb">string? </span><span class="s">"am i a string"</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>(int? 2.3)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">int?</span><span class="w"> </span><span class="mf">2.3</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>(int? 2.3)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">int?</span><span class="w"> </span><span class="mf">2.3</span><span class="p">)</span>
 </code></pre></div>
-<blockquote>
-<h4 id="hintclojurecore-predicate-functions">Hint::<code>clojure.core</code> predicate functions<a class="headerlink" href="#hintclojurecore-predicate-functions" title="Permanent link">λ︎</a></h4>
-<p>There are <a href="/reference/clojure/predicates.md">80+ predicate functions in <code>clojure.core</code></a></p>
-</blockquote>
-<h2 id="using-predicate-functions-as-specifications">Using predicate functions as specifications<a class="headerlink" href="#using-predicate-functions-as-specifications" title="Permanent link">λ︎</a></h2>
+<div class="admonition hint">
+<p class="admonition-title"><code>clojure.core</code> predicate functions</p>
+<p><a href="/reference/clojure/predicates.md"><code>clojure.core</code> defines 80+ predicate functions</a></p>
+</div>
+<h2 id="predicate-functions-in-specs">Predicate functions in specs<a class="headerlink" href="#predicate-functions-in-specs" title="Permanent link">λ︎</a></h2>
 <p>Predicate functions can be used as un-named specifications to test values conform.</p>
 <p>Include the <code>clojure.spec.alpha</code> namespace to access the spec functions.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>(require '[clojure.spec.alpha :as spec])
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">])</span>
 </code></pre></div>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(spec/conform int? 42)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">int?</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(spec/conform seq? (range 4))
-</code></pre></div></p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div>
 <h2 id="custom-predicate-functions">Custom predicate functions<a class="headerlink" href="#custom-predicate-functions" title="Permanent link">λ︎</a></h2>
 <p>Define custom predicate functions with <code>defn</code> or <code>fn</code> or the short form <code>#()</code></p>
 <p>Using an anonymous function</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>(spec/conform (fn [value] (= value 42)) 42)
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="nv">value</span><span class="w"> </span><span class="mi">42</span><span class="p">))</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div>
-When the expression is quite terse, then the short form of an anonymous function is typically used.  The <code>%</code> represents the value passed as an argument.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>(spec/conform #(= % 42) 42)
+<p>When the expression is quite terse, then the short form of an anonymous function is typically used.  The <code>%</code> represents the value passed as an argument.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
 </small>
 </div>
 </article>
