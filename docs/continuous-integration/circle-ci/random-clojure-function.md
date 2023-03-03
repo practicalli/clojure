@@ -20,8 +20,12 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 </p>
 
 !!! HINT "Video uses an older command to create projects"
-> `clojure -T:project/new` is an updated approach to generate projects. Arguments are key value pairs and more specific in their purpose, e.g. `clojure -T:project/new :template app :name practicalli/playground`
+    `:project/create` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) creates a new project
 
+    Arguments are key value pairs and can specify the `:template`, project `:name` and outpug directory `:output-dir`.
+    ```shell
+    clojure -T:project/new :template app :name practicalli/playground`
+    ```
 
 ## Create a new project
 
@@ -31,14 +35,14 @@ Start following the guide to create the random clojure function project, using a
 clojure -T:project/new :template app :name practicalli/random-clojure-function
 ```
 
-Version control the Clojure project using Git (or [magit in Spacemacs](https://practical.li/spacemacs/source-control/))
+Version control the Clojure project using Git (or [magit in Spacemacs](https://practical.li/spacemacs/source-control/){target=_blank})
 
 
 ## Add a test run alias
 
 Edit the `deps.edn` file in the root of the project and add a `:test/run` alias, to run the kaocha test runner which will stop if a failing test is detected.  Stopping on a failed test saves running the full test suite and make the CI workflow more effective.
 
-```clojure
+```clojure title="Project deps.edn"
 :test/run
 {:extra-paths ["test"]
  :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
@@ -62,36 +66,36 @@ git remote add practicalli git@github.com:practicalli/random-clojure-function.gi
 
 Adding CircleCI early in the project development cycle ensures testing from the saved source code is successful and testing is consistently repeatable.
 
-Create a new file called `.circleci/config.yml` in the root of the project.
+Create a new file called `.circleci/config.yaml` in the root of the project.
 
 Edit the file and add the following configuration.
 
-```yml
-version: 2.1
-jobs:                                               # basic units of work in a run
-  build:                                            # runs without Workflows must have a `build` job as entry point
-    working_directory: ~/random-clojure-function    # directory where steps will run
-    docker:                                         # run the steps with Docker
-      - image:  cimg/clojure:1.10                   # image is primary container where `steps` are run
-    environment:                                    # environment variables for primary container
-      JVM_OPTS: -Xmx3200m                           # limit maximum JVM heap size to prevent out of memory errors
-    steps:                                          # commands that comprise the `build` job
-      - checkout                                    # check out source code to working directory
-      - restore_cache:                              # restores cache if checksum unchanged from last run
-          key: random-clojure-function-{{ checksum "deps.edn" }}
-      - run: clojure -P
-      - save_cache:                                 # generate / update cache in the .m2 directory using a key template
-          paths:
-            - ~/.m2
-            - ~/.gitlibs
-          key: random-clojure-function-{{ checksum "deps.edn" }}
-      - run: clojure -X:test/run
-```
+!!! EXAMPLE "Circe CI configuration for Clojure project"
+    ```yaml title=".circleci/config.yaml"
+    version: 2.1
+    jobs:                                               # basic units of work in a run
+      build:                                            # runs without Workflows must have a `build` job as entry point
+        working_directory: ~/random-clojure-function    # directory where steps will run
+        docker:                                         # run the steps with Docker
+          - image:  cimg/clojure:1.10                   # image is primary container where `steps` are run
+        environment:                                    # environment variables for primary container
+          JVM_OPTS: -Xmx3200m                           # limit maximum JVM heap size to prevent out of memory errors
+        steps:                                          # commands that comprise the `build` job
+          - checkout                                    # check out source code to working directory
+          - restore_cache:                              # restores cache if checksum unchanged from last run
+              key: random-clojure-function-{{ checksum "deps.edn" }}
+          - run: clojure -P
+          - save_cache:                                 # generate / update cache in the .m2 directory using a key template
+              paths:
+                - ~/.m2
+                - ~/.gitlibs
+              key: random-clojure-function-{{ checksum "deps.edn" }}
+          - run: clojure -X:test/run
+    ```
 
+`run: clojure -P` step downloads dependencies for the project, including the `:extra-deps` if aliases are also included.
 
-The `run: clojure -P` step downloads dependencies for the project, including the `:extra-deps` if aliases are also included.
-
-The `run: clojure -X:test/run` adds the test directory to the class path and runs the Kaocha runner defined in the alias.
+`run: clojure -X:test/run` adds the test directory to the class path and runs the Kaocha runner defined in the alias.
 
 
 ## Connect Circle CI to the project
@@ -131,9 +135,10 @@ The continuous integration is now working and tests are automatically run as soo
 
 So the development of the project can continue with greater confidence
 
+
 ## Adding a Build Status badge
 
-[Generating a status badge documentation](https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge) describes how to add a build status badge for your project, usually at the top of the README.md file in the project
+[Generating a status badge documentation](https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge){target=_blank} describes how to add a build status badge for your project, usually at the top of the README.md file in the project
 
 ```markdown
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/practicalli/random-clojure-function)

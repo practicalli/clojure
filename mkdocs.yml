@@ -286,8 +286,8 @@ nav:
           - continuous-integration/circle-ci/random-clojure-function.md
           - continuous-integration/circle-ci/status-monitor.md
           # <!-- - continuous-integration/circle-ci/circle-ci-sample-project.md -->
-          - continuous-integration/github-actions/index.md
-          - continuous-integration/github-actions/clj-kondo-lint.md
+      - GitHub Workflow:
+          - continuous-integration/github-workflow/index.md
   # <!-- - testing/performance-testing/index.md -->
   # <!-- - testing/load-stress-testing/index.md -->
 
