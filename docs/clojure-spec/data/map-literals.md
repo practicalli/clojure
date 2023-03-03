@@ -5,14 +5,14 @@
 
 ## Require clojure spec in the namespace definition
 
-```eval-clojure
+```clojure
 (ns practicalli.clojure
   (:require [clojure.spec.alpha :as spec]))
 ```
 
 In this example the keys in the map are unqualified.
 
-```eval-clojure
+```clojure
 {:simplifying      []
     :keyword-names    []
     :with-autoresolve []
@@ -24,7 +24,7 @@ Using the map literal macro for auto-resolve instructs Clojure to treat all keys
 
 The following hash-map has the map literal macro.
 
-```eval-clojure
+```clojure
 #::{:simplifying      []
     :keyword-names    []
     :with-autoresolve []
@@ -35,7 +35,7 @@ This is the same as explicitly writing out the fully qualified domain for each k
 
 However, if we move the map to another namespace, then the explicit namespaces would need to be updated.
 
-```eval-clojure
+```clojure
 {:practicalli.clojure/simplifying      []
  :practicalli.clojure/keyword-names    []
  :practicalli.clojure/with-autoresolve []
@@ -45,7 +45,7 @@ However, if we move the map to another namespace, then the explicit namespaces w
 ## Qualifying keywords with a specific name
 Rather than take the name from the current namespace, an explicit name can be added to all the keys in the map
 
-```eval-clojure
+```clojure
 #:practicalli.naming {:simplifying      []
                       :keyword-names    []
                       :with-autoresolve []
@@ -55,7 +55,7 @@ Rather than take the name from the current namespace, an explicit name can be ad
 
 This is the same as explicitly writing that name in front of each of the keywords in the map.
 
-```eval-clojure
+```clojure
 # {:practicalli.naming/simplifying      []
    :practicalli.naming/keyword-names    []
    :practicalli.naming/with-autoresolve []

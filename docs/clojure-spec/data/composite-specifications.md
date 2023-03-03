@@ -4,7 +4,7 @@ No spec is an island
 Composing individual specifications is an effective way to build larger abstractions in specifications without creating fixed hierarchical structures that are harder to refactor.
 
 Require specification namespace to the page
-```eval-clojure
+```clojure
 (ns practicalli.clojure
   (:require [clojure.spec.alpha :as spec]))
 ```
@@ -12,7 +12,7 @@ Require specification namespace to the page
 
 `spec/and` is used when all specifications should be true.
 
-```eval-clojure
+```clojure
 (spec/def ::meaning-of-life
   (spec/and int?
             even?
@@ -21,7 +21,7 @@ Require specification namespace to the page
 
 `spec/or` is use when one or more specifications should be true
 
-```eval-clojure
+```clojure
 (spec/def ::meaning-of-life-int-or-string
   (spec/or :integer #(= 42 %)
            :string  #(= "forty two" %)))
@@ -34,21 +34,21 @@ Labels are included in the return result from `spec/explain` when values do not 
 When an or is conformed, it returns a vector with the condition name and conformed value.
 
 
-```eval-clojure
+```clojure
 (spec/conform ::meaning-of-life-int-or-string 42)
 ```
 
-```eval-clojure
+```clojure
 (spec/conform ::meaning-of-life-int-or-string "forty two")
 ```
 
 
-```eval-clojure
+```clojure
 (spec/conform ::meaning-of-life-int-or-string :entropy)
 ```
 
 
-```eval-clojure
+```clojure
 (spec/explain ::meaning-of-life-int-or-string :entropy)
 ```
 
@@ -56,15 +56,15 @@ When an or is conformed, it returns a vector with the condition name and conform
 ## Individual specifications
 Before composing a more abstract specification, first define individual specifications
 
-```eval-clojure
+```clojure
 (spec/def ::first-name string?)
 ```
 
-```eval-clojure
+```clojure
 (spec/def ::last-name string?)
 ```
 
-```eval-clojure
+```clojure
 (spec/def ::residential-address string?)
 ```
 
@@ -74,7 +74,7 @@ The individual specifications can now be composed into a single specification.
 
 `keys` function combines specifications to form a composite specification in the form of a Clojure hash-map.
 
-```eval-clojure
+```clojure
 (spec/def ::customer-details
   (spec/keys
     :req [::first-name ::last-name ::residential-address]))
@@ -82,7 +82,7 @@ The individual specifications can now be composed into a single specification.
 
 Use the composite specification with a value
 
-```eval-clojure
+```clojure
 (spec/conform ::customer-details
   {::first-name "Jenny"
    ::last-name "Jetpack"

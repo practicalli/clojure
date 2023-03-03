@@ -229,9 +229,9 @@ nav:
           - Example Projects: testing/test-runners/example-projects.md
   - Clojure Spec:
       - clojure-spec/index.md
-      - clojure-spec/using-spec-in-the-repl.md
-      - clojure-spec/add-spec-to-projects.md
-      - clojure-spec/organising-specs.md
+      - REPL Experiments: clojure-spec/using-spec-in-the-repl.md
+      - Project config: clojure-spec/add-spec-to-projects.md
+      - Organise spec: clojure-spec/organising-specs.md
       - Data Specs:
           - clojure-spec/data/index.md
           - clojure-spec/data/predicate-specifications.md

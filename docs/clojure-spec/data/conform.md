@@ -9,7 +9,7 @@ If the value does conform to the specification, then the value is returned.  Thi
 
 ## Require the Clojure spec library
 Set the namespace for the page and require clojure.spec.alpha library, setting the alias to `spec`
-```eval-clojure
+```clojure
 (ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
 ```
@@ -17,7 +17,7 @@ Set the namespace for the page and require clojure.spec.alpha library, setting t
 ## Using conform
 
 If the value conforms to the spec, a conformed value is returned
-```eval-clojure
+```clojure
 (spec/conform odd? 101)
 ```
 <!-- => 101 -->
@@ -25,37 +25,37 @@ If the value conforms to the spec, a conformed value is returned
 
 When a value does not conform to a spec, the value `:clojure.spec.alpha/invalid` is returned
 
-```eval-clojure
+```clojure
 (spec/conform even? 101)
 ```
  <!-- => :clojure.spec.alpha/invalid -->
 
 
-```eval-clojure
+```clojure
 (spec/conform integer? 1)
 ```
  <!-- => 1 -->
 
 
-```eval-clojure
+```clojure
 (spec/conform seq? [1 2 3])
 ```
  <!-- => :clojure.spec.alpha/invalid -->
 
 
-```eval-clojure
+```clojure
 (spec/conform seq? (range 10))
 ```
  <!-- => (0 1 2 3 4 5 6 7 8 9) -->
 
 
-```eval-clojure
+```clojure
 (spec/conform map? {})
 ```
  <!-- => {} -->
 
 
-```eval-clojure
+```clojure
 (spec/conform map? (hash-map :a 1 :b 2))
 ```
  <!-- => {:b 2, :a 1} -->

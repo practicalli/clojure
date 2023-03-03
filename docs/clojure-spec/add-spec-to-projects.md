@@ -7,37 +7,31 @@ Add the `clojure.spec.alpha` to namespaces in the project that should directly u
   (:require [clojure.spec.alpha :as spec]))
 ```
 
+All functions from `clojure.spec.alpha` are accessible using the `spec` alias, e.g. `spec/conform`, `spec/valid?`, `spec/def`.
+
 Evaluate the namespace definition to start using the functions from the namespace.
 
-![Clojure project - require namespace and evaluate](/images/clojure-editor-spec-require-evaluated.png)
-
-
-## Using Spec functions
-
-All functions from `clojure.spec.alpha` are accessible using the `spec` alias, e.g. `spec/conform`, `spec/valid?`, `spec/def`.
+![Clojure project - require namespace and evaluate](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/clojure-project-spec-require-evaluated.png)
 
 
 ## Testing specifications
 
-Add the `clojure.spec.test.alpha` to any namespaces in the project that will directly use the functions from that library.  It is recommended to use the `spec-test` alias to clearly indicate where those functions are defined.
+Add the `clojure.spec.test.alpha` to any namespaces in the project that will directly use the functions from that library.  `spec-test` alias is recommended to clearly indicate where functions are defined.
 
-```clojure
+```clojure title="src/practicalli/leveraging_spec.clj"
 (ns practicalli.leveraging-spec
-  (:require [clojure.spec.alpha :as spec]
-            [clojure.spec.test.alpha :as spec-test]))
+  (:require
+    [clojure.spec.alpha :as spec]
+    [clojure.spec.test.alpha :as spec-test]))
 ```
-
-## Using Spec functions
-
-All functions from `clojure.spec.alpha` are accessible using the `spec` alias, e.g. `spec/conform`, `spec/valid?`, `spec/def`.
 
 
 ## Creating new projects
 
 Create a new Clojure project using the `clj-new` tool or open an existing `deps.edn` based project.
 
-```bash
-clojure -T:project/new :template lib :name practicalli/leveraging-spec
+```bash title="Create new project"
+clojure -T:project/create :template lib :name practicalli/leveraging-spec
 ```
 
 The project is created with Clojure as a dependency, which in turn includes the `clojure.spec.alpha` library.
@@ -46,5 +40,5 @@ The project is created with Clojure as a dependency, which in turn includes the 
 
 The [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec) project is a working example that includes `clojure.spec.alpha`.
 
-> #### Hint:: :project/new is an alias from practicalli/clojure-deps-edn
-> [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn#clojure-projects) repository includes the `:project/new` alias for creating new Clojure projects from a template using [`clj-new`](https://github.com/seancorfield/clj-new).
+??? HINT "Practicalli Clojure CLI Config - :project/create alias"
+    [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn#clojure-projects) repository includes the `:project/create` alias for creating new Clojure projects from a template using [`deps-new`](https://github.com/seancorfield/deps-new).

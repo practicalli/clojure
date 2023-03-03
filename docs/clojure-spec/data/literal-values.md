@@ -5,29 +5,29 @@ Checking valid playing cards
 
 Define a namespace for the page and require Clojure Spec
 
-```eval-clojure
+```clojure
 (ns practicalli.clojure
   (:require [clojure.spec.alpha :as spec]))
 ```
 
 
-```eval-clojure
+```clojure
 (spec/valid? #{:club :diamond :heart :spade} :club)
 ```
 
 
-```eval-clojure
+```clojure
 (spec/valid? #{:club :diamond :heart :spade} 42)
 ```
 
 Answer to the ultimate question?
 
-```eval-clojure
+```clojure
 (spec/valid? #{42} 42)
 ```
 
 Using sets for literal values is similar to using the `clojure.core/contains?` function with a set collection type.
 
-```eval-clojure
+```clojure
 (contains? #{:clubs :diamonds :hearts :spades} :hearts )
 ```

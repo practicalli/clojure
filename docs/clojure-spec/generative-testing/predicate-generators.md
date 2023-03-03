@@ -3,7 +3,7 @@ Specifications are used to generate a wide range of random data.  A generator fo
 
 <!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
 <pre class="hidden">
-  <code class="lang-eval-clojure"
+  <code class="lang-clojure"
   data-preamble="
   (ns practicalli.generative-testing
     (:require [clojure.spec.alpha :as spec]
@@ -16,27 +16,27 @@ Specifications are used to generate a wide range of random data.  A generator fo
 
 ## Predicate generators
 
-```eval-clojure
+```clojure
 (spec-gen/generate (spec/gen int?))
 ```
 
-```eval-clojure
+```clojure
 (spec-gen/generate (spec/gen nil?))
 ```
 
-```eval-clojure
+```clojure
 (spec-gen/sample (spec/gen string?))
 ```
 
-```eval-clojure
+```clojure
 (spec-gen/generate (spec/gen #{:club :diamond :heart :spade}))
 ```
 
-```eval-clojure
+```clojure
 (spec-gen/sample (spec/gen #{:club :diamond :heart :spade}))
 ```
 
 <!-- Example works only for Clojure, not ClojureScript -->
-<!-- ```eval-clojure -->
+<!-- ```clojure -->
 <!-- (spec-gen/sample (spec/gen (spec/cat :k keyword? :ns (spec/+ number?)))) -->
 <!-- ``` -->

@@ -18,7 +18,7 @@ There are several variations on the explain function for different situations
 ## Example of a failing value
 First define a namespace and require the Clojure Spec namespace
 
-```eval-clojure
+```clojure
 (ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
 
@@ -27,13 +27,13 @@ First define a namespace and require the Clojure Spec namespace
 
 Given the following specification
 
-```eval-clojure
+```clojure
 (spec/explain ::meaning-of-life 24)
 ```
 
 Using the value `24` with that specification will fail.  Using explain we can see why
 
-```eval-clojure
+```clojure
 (spec/def ::meaning-of-life-int-or-string
   (spec/or :integer #(= 42 %)
            :string  #(= "forty two" %)))
@@ -48,7 +48,7 @@ In this case explain returned the
 Notice that the value failed on the first condition, `:integer`, then stopped without checking the second, `:string`. The `spec/and` macro works the same as `clojure.core/and` in that is stops as soon as something fails.
 
 
-```eval-clojure
+```clojure
 (spec/explain ::meaning-of-life-int-or-string 24)
 ```
 
@@ -61,11 +61,11 @@ This shows the value of naming your specs descriptively
 ## Explain with a string
 rather than send information to the system out
 
-```eval-clojure
+```clojure
 (spec/explain-str ::meaning-of-life 24)
 ```
 
 
-```eval-clojure
+```clojure
 (spec/explain-data ::meaning-of-life 24)
 ```
