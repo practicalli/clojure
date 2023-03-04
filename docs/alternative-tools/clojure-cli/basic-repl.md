@@ -6,20 +6,19 @@ The `clojure` command will start a REPL by default or if given the `--repl` argu
 
 Use `clj` when you want to run a repl (or preferably use [rebel readline](rebel-readline/) instead) and `clojure` for everything else.
 
-> #### Hint::rebel readline feature rich repl
-> [rebel readline](rebel-readline/) is a command line REPL UI that provides interactive help, function autocomplete, signature prompts and many other features to provide a very rich REPL experience.
->
-> [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }}) includes the `-M:repl/rebel` alias to run rebel readline REPL.
+!!! HINT "Rebel Rich Terminal UI"
+    [rebel readline](rebel-readline/) is a command line REPL UI that provides interactive help, function autocomplete, signature prompts and many other features to provide a very rich REPL experience.
+
+    [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }}) includes the `-M:repl/rebel` alias to run rebel readline REPL.
 
 
-`clojure` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
+`clj` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
+
 ```bash
-clojure
+clj
 ```
 
 Type in a Clojure expression at the `=> user` prompt and press `Return` to see the result
-
-![Clojure REPL clj prompt](/images/clojure-repl-clj-prompt.png)
 
 Clojure code can now be run in the REPL by typing the code and pressing the `ENTER` key.
 
