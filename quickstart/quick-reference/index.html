@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clojure-cli/defining-aliases/">
+<a class="md-nav__link" href="../../clojure-cli/defining-aliases.md">
         Defining aliases
       </a>
 </li>
@@ -1112,21 +1112,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
-          GitHub Workflow
-          <span class="md-nav__icon md-icon"></span>
-</label>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../continuous-integration/github-workflow/">GitHub Workflow</a>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_12_3">
 <span class="md-nav__icon md-icon"></span>
           GitHub Workflow
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../continuous-integration/github-workflow/index.md">
-        None
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -1200,13 +1194,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases.md">
-        None
+<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases/">
+        Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../reference/clojure-cli/example-alias-definitions/">
-        Clojure Tools - Common alias definitions
+        Common alias definitions
       </a>
 </li>
 <li class="md-nav__item">
@@ -1975,12 +1969,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The basic Clojure syntax and a few common functions you should probably learn first.</p>
 <p>Also see the <a href="https://clojure.org/api/cheatsheet">Clojure.org cheat-sheet</a></p>
 <h2 id="calling-functions">Calling functions<a class="headerlink" href="#calling-functions" title="Permanent link">λ︎</a></h2>
-<p>The first element in a list, <code>()</code>, is treated as a call to a function. This is known as prefix notation which greatly simplifies Clojure syntax and makes mathematical expressions completely deterministic, eliminating the need for <a href="https://en.wikipedia.org/wiki/Order_of_operations">operator precedence</a>.
- fs
+<p>The first element in a list, <code>()</code>, is treated as a call to a function. This is known as prefix notation which greatly simplifies Clojure syntax and makes mathematical expressions completely deterministic, eliminating the need for <a href="https://en.wikipedia.org/wiki/Order_of_operations">operator precedence</a>.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">3</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">7</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">/ </span><span class="mi">16</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span>
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="p">(</span><span class="nf">clojure-version</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Functions contain doc-strings and you can ask for a functions documentation, or show the source code.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="nb">doc </span><span class="nv">doc</span><span class="p">)</span>
 <a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="p">(</span><span class="nf">source</span><span class="w"> </span><span class="nv">doc</span><span class="p">)</span>
@@ -2010,18 +2003,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </code></pre></div></p>
 <h2 id="map-reduce-filter">map reduce filter<a class="headerlink" href="#map-reduce-filter" title="Permanent link">λ︎</a></h2>
 <p>Common functions for iterating through a collection / sequence of values</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>(map * [1 3 5 8 13 21] [3 5 8 13 21 34])
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="p">])</span>
 <a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>
-<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>(filter even? [1 3 5 8 13 21 34])
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="p">(</span><span class="nb">filter </span><span class="nv">even?</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="p">])</span>
 <a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>(reduce + [31 28 30 31 30 31])
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="p">(</span><span class="nb">reduce + </span><span class="p">[</span><span class="mi">31</span><span class="w"> </span><span class="mi">28</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="mi">30</span><span class="w"> </span><span class="mi">31</span><span class="p">])</span>
 </code></pre></div>
 <h1 id="using-data-structures">Using data structures<a class="headerlink" href="#using-data-structures" title="Permanent link">λ︎</a></h1>
 <p>Using the <code>map</code> and <code>inc</code> function, increment all the numbers in a vector</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>(map inc [1 2 3 4 5])
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <p>The above <code>map</code> function is roughly equivalent to the following expression</p>
-<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>(conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
 The <code>conj</code> function creates a new collection by combining a collection and one or more values.</p>
 <h2 id="defining-custom-functions">Defining custom functions<a class="headerlink" href="#defining-custom-functions" title="Permanent link">λ︎</a></h2>
@@ -2045,7 +2038,7 @@ The <code>conj</code> function creates a new collection by combining a collectio
 <a href="#__codelineno-10-6" id="__codelineno-10-6" name="__codelineno-10-6"></a>
 <a href="#__codelineno-10-7" id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="p">(</span><span class="nb">/ </span><span class="mi">22</span><span class="w"> </span><span class="mi">7</span><span class="p">))</span>
 </code></pre></div>
-<p>;; Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.</p>
+<p>Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.</p>
 <h2 id="java-interoperability">Java interoperability<a class="headerlink" href="#java-interoperability" title="Permanent link">λ︎</a></h2>
 <p><code>.</code> and <code>new</code> are Clojure functions that create a Java object. This allows you to use values from Java constants, i.e. PI is a static double from the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a> object</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="p">(</span><span class="k">. </span><span class="nv">Math</span><span class="w"> </span><span class="nv">PI</span><span class="p">)</span>
@@ -2066,16 +2059,14 @@ Also call static and instance methods from Java objects.</p>
 <a href="#__codelineno-13-5" id="__codelineno-13-5" name="__codelineno-13-5"></a>
 <a href="#__codelineno-13-6" id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="p">(</span><span class="nf">recursive-counter</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
 </code></pre></div></p>
-<ul>
-<li>TODO: loop-recur</li>
-<li>TODO: reduce and reducing function</li>
-</ul>
+<!-- * TODO: loop-recur -->
+<!-- * TODO: reduce and reducing function -->
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 </small>
 </div>
 </article>

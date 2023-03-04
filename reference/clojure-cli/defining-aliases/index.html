@@ -12,32 +12,34 @@
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
-<link href="https://practical.li/clojure/quickstart/" rel="canonical"/>
-<link href="../assets/favicon.svg" rel="icon"/>
+<link href="https://practical.li/clojure/reference/clojure-cli/defining-aliases/" rel="canonical"/>
+<link href="../" rel="prev"/>
+<link href="../example-alias-definitions/" rel="next"/>
+<link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
-<title>Clojure quick start - Practicalli Clojure</title>
-<link href="../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
-<link href="../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<title>Defining aliases - Practicalli Clojure</title>
+<link href="../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
-<link href="../assets/stylesheets/extra.css" rel="stylesheet"/>
-<script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../../assets/stylesheets/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Clojure quick start - Practicalli Clojure" property="og:title"/>
+<meta content="Defining aliases - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/quickstart/index.png" property="og:image"/>
+<meta content="https://practical.li/clojure/assets/images/social/reference/clojure-cli/defining-aliases.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="630" property="og:image:height"/>
-<meta content="https://practical.li/clojure/quickstart/" property="og:url"/>
+<meta content="https://practical.li/clojure/reference/clojure-cli/defining-aliases/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Clojure quick start - Practicalli Clojure" name="twitter:title"/>
+<meta content="Defining aliases - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
-<meta content="https://practical.li/clojure/assets/images/social/quickstart/index.png" name="twitter:image"/>
-<link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+<meta content="https://practical.li/clojure/assets/images/social/reference/clojure-cli/defining-aliases.png" name="twitter:image"/>
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
             html.glightbox-open { overflow: initial; height: 100%; }
             .gslide-title { margin-top: 0px; user-select: text; }
             .gslide-desc { color: #666; user-select: text; }
@@ -48,14 +50,14 @@
                 body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
                 body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
                 body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-                </style><script src="../assets/javascripts/glightbox.min.js"></script></head>
+                </style><script src="../../../assets/javascripts/glightbox.min.js"></script></head>
 <body data-md-color-accent="teal" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
 <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#clojure-quick-start">
+<a class="md-skip" href="#defining-aliases">
           Skip to content
         </a>
 </div>
@@ -78,8 +80,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
-<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure">
-<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+<a aria-label="Practicalli Clojure" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
+<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
@@ -94,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Clojure quick start
+              Defining aliases
             
           </span>
 </div>
@@ -160,8 +162,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-sidebar__inner">
 <nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
-<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href=".." title="Practicalli Clojure">
-<img alt="logo" src="../assets/images/practicalli-logo.png"/>
+<a aria-label="Practicalli Clojure" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Practicalli Clojure">
+<img alt="logo" src="../../../assets/images/practicalli-logo.png"/>
 </a>
     Practicalli Clojure
   </label>
@@ -179,7 +181,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="..">Introduction</a>
+<a href="../../..">Introduction</a>
 <label for="__nav_1">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -191,19 +193,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/clojure-in-15-minutes/">
+<a class="md-nav__link" href="../../../introduction/clojure-in-15-minutes/">
         Clojure in Fifteen Mins
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/repl-workflow/">
+<a class="md-nav__link" href="../../../introduction/repl-workflow/">
         REPL Workflow
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_1_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../introduction/concepts/">Concepts</a>
+<a href="../../../introduction/concepts/">Concepts</a>
 <label for="__nav_1_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -215,12 +217,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/concepts/what-is-functional-programming/">
+<a class="md-nav__link" href="../../../introduction/concepts/what-is-functional-programming/">
         Functional vs Imperative
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/concepts/clojure-made-simple/">
+<a class="md-nav__link" href="../../../introduction/concepts/clojure-made-simple/">
         From The Author
       </a>
 </li>
@@ -228,12 +230,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/contributing/">
+<a class="md-nav__link" href="../../../introduction/contributing/">
         Contributing
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../introduction/writing-tips/">
+<a class="md-nav__link" href="../../../introduction/writing-tips/">
         Writing Tips
       </a>
 </li>
@@ -243,7 +245,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../install/">Install</a>
+<a href="../../../install/">Install</a>
 <label for="__nav_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -255,12 +257,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../install/java/">
+<a class="md-nav__link" href="../../../install/java/">
         Java Host
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../install/clojure-cli/">
+<a class="md-nav__link" href="../../../install/clojure-cli/">
         Clojure CLI
       </a>
 </li>
@@ -270,7 +272,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-cli/">Clojure CLI Overview</a>
+<a href="../../../clojure-cli/">Clojure CLI Overview</a>
 <label for="__nav_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -282,32 +284,32 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/practicalli-config/">
+<a class="md-nav__link" href="../../../clojure-cli/practicalli-config/">
         Practicalli Config
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/built-in-commands/">
+<a class="md-nav__link" href="../../../clojure-cli/built-in-commands/">
         Built-in Commands
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/defining-aliases/">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
         Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/execution-options/">
+<a class="md-nav__link" href="../../../clojure-cli/execution-options/">
         Execution Options
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl-reloaded/">
+<a class="md-nav__link" href="../../../clojure-cli/repl-reloaded/">
         REPL Reloaded
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/clojure-style/">
+<a class="md-nav__link" href="../../../clojure-cli/clojure-style/">
         Clojure Style
       </a>
 </li>
@@ -317,7 +319,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-cli/repl/">Terminal REPL</a>
+<a href="../../../clojure-cli/repl/">Terminal REPL</a>
 <label for="__nav_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -329,22 +331,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl/coding/">
+<a class="md-nav__link" href="../../../clojure-cli/repl/coding/">
         REPL Coding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl/libraries/">
+<a class="md-nav__link" href="../../../clojure-cli/repl/libraries/">
         REPL Libraries
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl/help/">
+<a class="md-nav__link" href="../../../clojure-cli/repl/help/">
         REPL Help
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl/troubleshooting/">
+<a class="md-nav__link" href="../../../clojure-cli/repl/troubleshooting/">
         REPL troubleshoot
       </a>
 </li>
@@ -352,14 +354,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/repl-startup/">
+<a class="md-nav__link" href="../../../clojure-cli/repl-startup/">
         REPL Startup
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-cli/projects/">Clojure Projects</a>
+<a href="../../../clojure-cli/projects/">Clojure Projects</a>
 <label for="__nav_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -371,37 +373,37 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/create-from-template/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/create-from-template/">
         From Template
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/add-libraries/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/add-libraries/">
         Add Libraries
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/namespace/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/namespace/">
         Namespaces
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/rich-comments/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/rich-comments/">
         Rich Comment
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/hotload-in-project/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/hotload-in-project/">
         Hotload in Project
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/migrate-project/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/migrate-project/">
         Migrate projects
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-cli/projects/tools-build/">
+<a class="md-nav__link" href="../../../clojure-cli/projects/tools-build/">
         Package
       </a>
 </li>
@@ -411,7 +413,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-editors/">Clojure Editors</a>
+<a href="../../../clojure-editors/">Clojure Editors</a>
 <label for="__nav_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -425,7 +427,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-editors/clojure-lsp/">Clojure LSP</a>
+<a href="../../../clojure-editors/clojure-lsp/">Clojure LSP</a>
 <label for="__nav_7_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -437,12 +439,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-editors/clojure-lsp/snippets/">
+<a class="md-nav__link" href="../../../clojure-editors/clojure-lsp/snippets/">
         Clojure LSP Snippets
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-editors/clojure-lsp/practicalli-snippets/">
+<a class="md-nav__link" href="../../../clojure-editors/clojure-lsp/practicalli-snippets/">
         Practicalli Snippets
       </a>
 </li>
@@ -455,7 +457,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../data-inspector/">Data Inspectors</a>
+<a href="../../../data-inspector/">Data Inspectors</a>
 <label for="__nav_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -467,12 +469,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-inspector/clojure-inspector/">
+<a class="md-nav__link" href="../../../data-inspector/clojure-inspector/">
         Clojure Inspector
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-inspector/portal/">
+<a class="md-nav__link" href="../../../data-inspector/portal/">
         Portal
       </a>
 </li>
@@ -482,7 +484,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../coding-challenges/">Code Challenges</a>
+<a href="../../../coding-challenges/">Code Challenges</a>
 <label for="__nav_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -496,7 +498,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../coding-challenges/4clojure/">4 Ever Clojure</a>
+<a href="../../../coding-challenges/4clojure/">4 Ever Clojure</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_9_2_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_9_2">
@@ -510,7 +512,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../coding-challenges/exercism/">Exercism</a>
+<a href="../../../coding-challenges/exercism/">Exercism</a>
 <label for="__nav_9_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -522,14 +524,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-challenges/exercism/rna-transcription/">
+<a class="md-nav__link" href="../../../coding-challenges/exercism/rna-transcription/">
         Rna transcription
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_3_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../coding-challenges/exercism/bob/">Bob</a>
+<a href="../../../coding-challenges/exercism/bob/">Bob</a>
 <label for="__nav_9_3_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -541,12 +543,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-challenges/exercism/bob/bob-string-approach/">
+<a class="md-nav__link" href="../../../coding-challenges/exercism/bob/bob-string-approach/">
         Bob string approach
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-challenges/exercism/bob/bob-regular-expression-approach/">
+<a class="md-nav__link" href="../../../coding-challenges/exercism/bob/bob-regular-expression-approach/">
         Bob solution - regex
       </a>
 </li>
@@ -557,19 +559,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-challenges/codewars/">
+<a class="md-nav__link" href="../../../coding-challenges/codewars/">
         CodeWars
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../coding-challenges/advent-of-code/">
+<a class="md-nav__link" href="../../../coding-challenges/advent-of-code/">
         Advent Of Code
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../simple-projects/">Simple projects</a>
+<a href="../../../simple-projects/">Simple projects</a>
 <label for="__nav_9_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -581,14 +583,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/random-clojure-function/">
+<a class="md-nav__link" href="../../../simple-projects/random-clojure-function/">
         Random Function
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_6_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../simple-projects/encode-decode/">Encoder Decode</a>
+<a href="../../../simple-projects/encode-decode/">Encoder Decode</a>
 <label for="__nav_9_6_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -600,22 +602,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/encode-decode/convert-boolean-values/">
+<a class="md-nav__link" href="../../../simple-projects/encode-decode/convert-boolean-values/">
         Convert boolean values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/encode-decode/caesar-cipher-rot13/">
+<a class="md-nav__link" href="../../../simple-projects/encode-decode/caesar-cipher-rot13/">
         Rotate by 13 (ROT13)
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/encode-decode/rna-dna/">
+<a class="md-nav__link" href="../../../simple-projects/encode-decode/rna-dna/">
         RNA to DNA transcription
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/encode-decode/clacks/">
+<a class="md-nav__link" href="../../../simple-projects/encode-decode/clacks/">
         The Clacks - encoding and decoding messages
       </a>
 </li>
@@ -625,7 +627,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_6_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../simple-projects/data-transformation/">Data Transform</a>
+<a href="../../../simple-projects/data-transformation/">Data Transform</a>
 <label for="__nav_9_6_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -637,7 +639,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/data-transformation/most-common-word/">
+<a class="md-nav__link" href="../../../simple-projects/data-transformation/most-common-word/">
         Most common word
       </a>
 </li>
@@ -647,7 +649,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_6_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../simple-projects/tdd-kata/">Kata</a>
+<a href="../../../simple-projects/tdd-kata/">Kata</a>
 <label for="__nav_9_6_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -659,7 +661,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../simple-projects/tdd-kata/recent-song-list.md">
+<a class="md-nav__link" href="../../../simple-projects/tdd-kata/recent-song-list.md">
         Recent Song list
       </a>
 </li>
@@ -672,7 +674,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../games/">Games</a>
+<a href="../../../games/">Games</a>
 <label for="__nav_9_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -686,7 +688,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_9_7_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../games/tictactoe-cli/">TicTacToe</a>
+<a href="../../../games/tictactoe-cli/">TicTacToe</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_9_7_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_9_7_2">
@@ -706,7 +708,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../testing/">Testing</a>
+<a href="../../../testing/">Testing</a>
 <label for="__nav_10">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -720,7 +722,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../testing/unit-testing/">Unit Testing</a>
+<a href="../../../testing/unit-testing/">Unit Testing</a>
 <label for="__nav_10_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -732,17 +734,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/unit-testing/writing-unit-tests/">
+<a class="md-nav__link" href="../../../testing/unit-testing/writing-unit-tests/">
         Writing Tests
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/unit-testing/fixtures/">
+<a class="md-nav__link" href="../../../testing/unit-testing/fixtures/">
         Fixtures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/unit-testing/test-selectors/">
+<a class="md-nav__link" href="../../../testing/unit-testing/test-selectors/">
         Test Selectors
       </a>
 </li>
@@ -752,7 +754,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_10_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../testing/test-runners/">Test runners</a>
+<a href="../../../testing/test-runners/">Test runners</a>
 <label for="__nav_10_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -764,17 +766,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/test-runners/kaocha-test-runner/">
+<a class="md-nav__link" href="../../../testing/test-runners/kaocha-test-runner/">
         Kaocha
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/test-runners/congnitect-labs-test-runner/">
+<a class="md-nav__link" href="../../../testing/test-runners/congnitect-labs-test-runner/">
         Cognitect Labs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../testing/test-runners/example-projects/">
+<a class="md-nav__link" href="../../../testing/test-runners/example-projects/">
         Example Projects
       </a>
 </li>
@@ -787,7 +789,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/">Clojure Spec</a>
+<a href="../../../clojure-spec/">Clojure Spec</a>
 <label for="__nav_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -799,24 +801,24 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/using-spec-in-the-repl/">
+<a class="md-nav__link" href="../../../clojure-spec/using-spec-in-the-repl/">
         REPL Experiments
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/add-spec-to-projects/">
+<a class="md-nav__link" href="../../../clojure-spec/add-spec-to-projects/">
         Project config
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/organising-specs/">
+<a class="md-nav__link" href="../../../clojure-spec/organising-specs/">
         Organise spec
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/data/">Data Specs</a>
+<a href="../../../clojure-spec/data/">Data Specs</a>
 <label for="__nav_11_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -828,62 +830,62 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/predicate-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/data/predicate-specifications/">
         Predicate functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/literal-values/">
+<a class="md-nav__link" href="../../../clojure-spec/data/literal-values/">
         Literal values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/conform/">
+<a class="md-nav__link" href="../../../clojure-spec/data/conform/">
         Conform
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/valid-q/">
+<a class="md-nav__link" href="../../../clojure-spec/data/valid-q/">
         Is the value valid?
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/explain/">
+<a class="md-nav__link" href="../../../clojure-spec/data/explain/">
         Explaining non-conforming values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/defining-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/data/defining-specifications/">
         Defining specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/registry/">
+<a class="md-nav__link" href="../../../clojure-spec/data/registry/">
         Registry for unique and re-usable specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/entity-maps/">
+<a class="md-nav__link" href="../../../clojure-spec/data/entity-maps/">
         Entity maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/map-literals/">
+<a class="md-nav__link" href="../../../clojure-spec/data/map-literals/">
         Map literal syntax - `#:` and `#::`
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/and-or-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/data/and-or-specifications/">
         Combining specifications with and and or
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/composite-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/data/composite-specifications/">
         Composing Specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/data/hierarchical-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/data/hierarchical-specifications/">
         Hierarchical Specifications
       </a>
 </li>
@@ -893,7 +895,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/functions/">Function Specs</a>
+<a href="../../../clojure-spec/functions/">Function Specs</a>
 <label for="__nav_11_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -905,17 +907,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/functions/function-definition-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/functions/function-definition-specifications/">
         Function definition specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/functions/documentation/">
+<a class="md-nav__link" href="../../../clojure-spec/functions/documentation/">
         Documentation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/functions/higher-order-functions/">
+<a class="md-nav__link" href="../../../clojure-spec/functions/higher-order-functions/">
         Higher order functions
       </a>
 </li>
@@ -925,7 +927,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/testing/">Testing</a>
+<a href="../../../clojure-spec/testing/">Testing</a>
 <label for="__nav_11_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -937,14 +939,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/testing/checking%20arguments/">
+<a class="md-nav__link" href="../../../clojure-spec/testing/checking%20arguments/">
         Checking arguments in function calls with specifications
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_7_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/generative-testing/">Generative Testing</a>
+<a href="../../../clojure-spec/generative-testing/">Generative Testing</a>
 <label for="__nav_11_7_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -956,17 +958,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/generative-testing/predicate-generators/">
+<a class="md-nav__link" href="../../../clojure-spec/generative-testing/predicate-generators/">
         Generators for predicate specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/generative-testing/example-projects/">
+<a class="md-nav__link" href="../../../clojure-spec/generative-testing/example-projects/">
         Example projects using Clojure Spec
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/generative-testing/example-projects/next-jdbc/">
+<a class="md-nav__link" href="../../../clojure-spec/generative-testing/example-projects/next-jdbc/">
         Projects using Clojure spec - next-jdbc
       </a>
 </li>
@@ -979,7 +981,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/projects/">Spec Project</a>
+<a href="../../../clojure-spec/projects/">Spec Project</a>
 <label for="__nav_11_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -993,7 +995,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/projects/card-game/">Playing Cards</a>
+<a href="../../../clojure-spec/projects/card-game/">Playing Cards</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_11_8_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_11_8_2">
@@ -1007,7 +1009,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_11_8_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../clojure-spec/projects/bank-account/">Bank Account</a>
+<a href="../../../clojure-spec/projects/bank-account/">Bank Account</a>
 <label for="__nav_11_8_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1019,42 +1021,42 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/write-failing-tests/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/write-failing-tests/">
         Write failing tests
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/customer-details-specification/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/customer-details-specification/">
         Customer details specification
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/validate-customer-details-specification/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/validate-customer-details-specification/">
         Testing data Specifications
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/account-holder-specification/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/account-holder-specification/">
         Account holder specification
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/generate-test-data/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/generate-test-data/">
         Generate test data
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/unit-tests-with-spec/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/unit-tests-with-spec/">
         Unit tests with specs
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/function-specifications/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/function-specifications/">
         Specifications for function definitions - `fdef`
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../clojure-spec/projects/bank-account/test-functions-against-spec/">
+<a class="md-nav__link" href="../../../clojure-spec/projects/bank-account/test-functions-against-spec/">
         Test functions against spec
       </a>
 </li>
@@ -1070,7 +1072,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../continuous-integration/">Continuous Integration</a>
+<a href="../../../continuous-integration/">Continuous Integration</a>
 <label for="__nav_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1084,7 +1086,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../continuous-integration/circle-ci/">Circle CI</a>
+<a href="../../../continuous-integration/circle-ci/">Circle CI</a>
 <label for="__nav_12_2">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1096,12 +1098,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../continuous-integration/circle-ci/random-clojure-function/">
+<a class="md-nav__link" href="../../../continuous-integration/circle-ci/random-clojure-function/">
         Random Clojure Function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../continuous-integration/circle-ci/status-monitor/">
+<a class="md-nav__link" href="../../../continuous-integration/circle-ci/status-monitor/">
         Status Monitor Circle CI Continuous Integration
       </a>
 </li>
@@ -1110,72 +1112,67 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
-          GitHub Workflow
-          <span class="md-nav__icon md-icon"></span>
-</label>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../continuous-integration/github-workflow/">GitHub Workflow</a>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_12_3">
 <span class="md-nav__icon md-icon"></span>
           GitHub Workflow
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../continuous-integration/github-workflow/index.md">
-        None
-      </a>
-</li>
 </ul>
 </nav>
 </li>
 </ul>
 </nav>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/">Reference</a>
+<a href="../../">Reference</a>
 <label for="__nav_13">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<nav aria-expanded="true" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
 <label class="md-nav__title" for="__nav_13">
 <span class="md-nav__icon md-icon"></span>
           Reference
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="quick-reference/">
+<a class="md-nav__link" href="../../../quickstart/quick-reference/">
         Clojure Quick Reference
       </a>
 </li>
-<li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_13_3" type="checkbox"/>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_13_3" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/clojure-cli/">Clojure CLI</a>
+<a href="../">Clojure CLI</a>
 <label for="__nav_13_3">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_13_3_label" class="md-nav" data-md-level="2">
+<nav aria-expanded="true" aria-labelledby="__nav_13_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_13_3">
 <span class="md-nav__icon md-icon"></span>
           Clojure CLI
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-cli/defining-aliases.md">
-        None
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-cli/example-alias-definitions/">
-        Clojure Tools - Common alias definitions
+<a class="md-nav__link" href="../example-alias-definitions/">
+        Common alias definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-cli/jvm-options/">
+<a class="md-nav__link" href="../jvm-options/">
         Reference: Clojure CLI JVM Options
       </a>
 </li>
@@ -1183,14 +1180,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/code-analysis/">
+<a class="md-nav__link" href="../../code-analysis/">
         Code Analysis
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/standard-library/">Standard Library</a>
+<a href="../../standard-library/">Standard Library</a>
 <label for="__nav_13_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1202,19 +1199,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/destructuring/">
+<a class="md-nav__link" href="../../standard-library/destructuring/">
         Destructuring - abstract structural binding
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/predicate-functions/">
+<a class="md-nav__link" href="../../standard-library/predicate-functions/">
         Predicate functions
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_5_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/standard-library/regular-expressions/">Regular Expressions</a>
+<a href="../../standard-library/regular-expressions/">Regular Expressions</a>
 <label for="__nav_13_5_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1226,37 +1223,37 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/matching-with-groups/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/matching-with-groups/">
         Matching with regex groups
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/matching-sub-strings/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/matching-sub-strings/">
         Matching sub strings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/matching-sub-sequences/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/matching-sub-sequences/">
         Matching sub sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/common-regex-patterns/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/common-regex-patterns/">
         Common Regular Expression patterns
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/string-replace-with-regex/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/string-replace-with-regex/">
         String replace with regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/string-split-with-regex/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/string-split-with-regex/">
         String split with regex
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/regular-expressions/sub-expression-matches/">
+<a class="md-nav__link" href="../../standard-library/regular-expressions/sub-expression-matches/">
         Sub-expression Matches
       </a>
 </li>
@@ -1264,7 +1261,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/standard-library/cond-thread-macro/">
+<a class="md-nav__link" href="../../standard-library/cond-thread-macro/">
         Cond thread macro
       </a>
 </li>
@@ -1284,12 +1281,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/java-interop/">
+<a class="md-nav__link" href="../../clojure-syntax/java-interop/">
         Java Interoperability
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/more-java-fun/">
+<a class="md-nav__link" href="../../clojure-syntax/more-java-fun/">
         More Java fun
       </a>
 </li>
@@ -1299,7 +1296,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_7" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/tagged-literals/">Clojure Syntax</a>
+<a href="../../tagged-literals/">Clojure Syntax</a>
 <label for="__nav_13_7">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1311,72 +1308,72 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/syntax/">
+<a class="md-nav__link" href="../../clojure-syntax/syntax/">
         Clojure syntax
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/parenthesis/">
+<a class="md-nav__link" href="../../clojure-syntax/parenthesis/">
         Parenthesis - defining the structure of Clojure code
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/code-documentation/">
+<a class="md-nav__link" href="../../clojure-syntax/code-documentation/">
         Code documentation
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/comments/">
+<a class="md-nav__link" href="../../clojure-syntax/comments/">
         Comments
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/strings/">
+<a class="md-nav__link" href="../../clojure-syntax/strings/">
         Strings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/numbers-maths/">
+<a class="md-nav__link" href="../../clojure-syntax/numbers-maths/">
         Maths
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/ratios/">
+<a class="md-nav__link" href="../../clojure-syntax/ratios/">
         Ratios
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/control-flow/">
+<a class="md-nav__link" href="../../clojure-syntax/control-flow/">
         Control Flow
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/doc-and-source-functions/">
+<a class="md-nav__link" href="../../doc-and-source-functions/">
         Doc and source functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/assigning-names/">
+<a class="md-nav__link" href="../../clojure-syntax/assigning-names/">
         Assigning Names
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/clojure-syntax/naming/">
+<a class="md-nav__link" href="../../clojure-syntax/naming/">
         Naming
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/kebab-case/">
+<a class="md-nav__link" href="../../kebab-case/">
         Clojure names use kebab-case
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/threading-macros/">
+<a class="md-nav__link" href="../../threading-macros/">
         Reference: Threading macros
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/tagged-literals/uuid/">
+<a class="md-nav__link" href="../../tagged-literals/uuid/">
         uuid tag literal
       </a>
 </li>
@@ -1386,7 +1383,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_8" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../data-structures/">Data Structures</a>
+<a href="../../../data-structures/">Data Structures</a>
 <label for="__nav_13_8">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1398,54 +1395,54 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/list/">
+<a class="md-nav__link" href="../../../data-structures/list/">
         List
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/hash-maps/">
+<a class="md-nav__link" href="../../../data-structures/hash-maps/">
         Data Structures: Hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/hash-maps/create/">
+<a class="md-nav__link" href="../../../data-structures/hash-maps/create/">
         Creating Hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/hash-maps/access/">
+<a class="md-nav__link" href="../../../data-structures/hash-maps/access/">
         Accessing hash-maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/vector/">
+<a class="md-nav__link" href="../../../data-structures/vector/">
         Vector
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/set/">
+<a class="md-nav__link" href="../../../data-structures/set/">
         Set
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/naming/">
+<a class="md-nav__link" href="../../../data-structures/naming/">
         Naming data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/shared-memory/">
+<a class="md-nav__link" href="../../../data-structures/shared-memory/">
         Shared memory with Persistent data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../data-structures/pretty-printing/">
+<a class="md-nav__link" href="../../../data-structures/pretty-printing/">
         Pretty Printing
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_8_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../using-data-structures/">Using Data Structures</a>
+<a href="../../../using-data-structures/">Using Data Structures</a>
 <label for="__nav_13_8_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1457,27 +1454,27 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../using-data-structures/sequences/">
+<a class="md-nav__link" href="../../../using-data-structures/sequences/">
         Sequence abstractions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../using-data-structures/lazy-sequences/">
+<a class="md-nav__link" href="../../../using-data-structures/lazy-sequences/">
         Lazy Sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../using-data-structures/destructuring/">
+<a class="md-nav__link" href="../../../using-data-structures/destructuring/">
         Destructuring
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../using-data-structures/applying-functions/">
+<a class="md-nav__link" href="../../../using-data-structures/applying-functions/">
         Applying functions to data structures
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../using-data-structures/mapping-data-structures/">
+<a class="md-nav__link" href="../../../using-data-structures/mapping-data-structures/">
         Mapping functions over data structures
       </a>
 </li>
@@ -1487,7 +1484,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_8_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../modifying-data-structures/">Modifying</a>
+<a href="../../../modifying-data-structures/">Modifying</a>
 <label for="__nav_13_8_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1499,22 +1496,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../modifying-data-structures/lists/">
+<a class="md-nav__link" href="../../../modifying-data-structures/lists/">
         Lists
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../modifying-data-structures/maps/">
+<a class="md-nav__link" href="../../../modifying-data-structures/maps/">
         Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../modifying-data-structures/vectors/">
+<a class="md-nav__link" href="../../../modifying-data-structures/vectors/">
         Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../modifying-data-structures/sets/">
+<a class="md-nav__link" href="../../../modifying-data-structures/sets/">
         Sets
       </a>
 </li>
@@ -1522,54 +1519,54 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/">
+<a class="md-nav__link" href="../../../iterate-over-data/">
         Iterate over data
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/map/">
+<a class="md-nav__link" href="../../../iterate-over-data/map/">
         map function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/map-partial/">
+<a class="md-nav__link" href="../../../iterate-over-data/map-partial/">
         map with partial
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/map-fn/">
+<a class="md-nav__link" href="../../../iterate-over-data/map-fn/">
         map with fn - anonymous function
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/filter-remove/">
+<a class="md-nav__link" href="../../../iterate-over-data/filter-remove/">
         filter and remove
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/apply/">
+<a class="md-nav__link" href="../../../iterate-over-data/apply/">
         apply
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../iterate-over-data/reduce/">
+<a class="md-nav__link" href="../../../iterate-over-data/reduce/">
         reduce
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_8_22" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../designing-data-structures/">Design</a>
+<a href="../../../designing-data-structures/">Design</a>
 <label for="__nav_13_8_22">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1581,37 +1578,37 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/with-vectors/">
+<a class="md-nav__link" href="../../../designing-data-structures/with-vectors/">
         With Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/with-vectors-of-vectors/">
+<a class="md-nav__link" href="../../../designing-data-structures/with-vectors-of-vectors/">
         With Vectors of Vectors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/with-maps/">
+<a class="md-nav__link" href="../../../designing-data-structures/with-maps/">
         With Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/with-maps-of-maps/">
+<a class="md-nav__link" href="../../../designing-data-structures/with-maps-of-maps/">
         With Maps of Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/with-vectors-of-maps/">
+<a class="md-nav__link" href="../../../designing-data-structures/with-vectors-of-maps/">
         A Vector of Maps
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/modeling-alphabet-codes/">
+<a class="md-nav__link" href="../../../designing-data-structures/modeling-alphabet-codes/">
         Model alphabet codes
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../designing-data-structures/modeling-name-generation-map/">
+<a class="md-nav__link" href="../../../designing-data-structures/modeling-name-generation-map/">
         Design a map for name generation
       </a>
 </li>
@@ -1624,7 +1621,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_9" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../thinking-functionally/">Thinking Functionally</a>
+<a href="../../../thinking-functionally/">Thinking Functionally</a>
 <label for="__nav_13_9">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1636,122 +1633,122 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/side-effects/">
+<a class="md-nav__link" href="../../../thinking-functionally/side-effects/">
         Side effects
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/pure-functions/">
+<a class="md-nav__link" href="../../../thinking-functionally/pure-functions/">
         Pure functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/impure-functions/">
+<a class="md-nav__link" href="../../../thinking-functionally/impure-functions/">
         Impure functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/first-class-functions/">
+<a class="md-nav__link" href="../../../thinking-functionally/first-class-functions/">
         First Class functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/homoiconicity/">
+<a class="md-nav__link" href="../../../thinking-functionally/homoiconicity/">
         Homoiconicity
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/function-composition/">
+<a class="md-nav__link" href="../../../thinking-functionally/function-composition/">
         Function Composition
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/example-hitchhikers-guide/">
+<a class="md-nav__link" href="../../../thinking-functionally/example-hitchhikers-guide/">
         Example: Hitchhikers Guide
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/higher-order-functions/">
+<a class="md-nav__link" href="../../../thinking-functionally/higher-order-functions/">
         Higher Order functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/immutability/">
+<a class="md-nav__link" href="../../../thinking-functionally/immutability/">
         Immutability
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/immutable-values/">
+<a class="md-nav__link" href="../../../thinking-functionally/immutable-values/">
         Immutable values
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/immutable-collections/">
+<a class="md-nav__link" href="../../../thinking-functionally/immutable-collections/">
         Immutable collections
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/immutable-local-bindings/">
+<a class="md-nav__link" href="../../../thinking-functionally/immutable-local-bindings/">
         Immutable Local Bindings
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/partial-functions/">
+<a class="md-nav__link" href="../../../thinking-functionally/partial-functions/">
         Currying &amp; Partial Functions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/map-with-partial/">
+<a class="md-nav__link" href="../../../thinking-functionally/map-with-partial/">
         map with partial
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/list-comprehension/">
+<a class="md-nav__link" href="../../../thinking-functionally/list-comprehension/">
         List Comprehension
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/sequences/">
+<a class="md-nav__link" href="../../../thinking-functionally/sequences/">
         Sequences
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../sequence-abstractions.md">
+<a class="md-nav__link" href="../../../sequence-abstractions.md">
         None
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/functors/">
+<a class="md-nav__link" href="../../../thinking-functionally/functors/">
         Functors
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/arity/">
+<a class="md-nav__link" href="../../../thinking-functionally/arity/">
         Arity
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/pattern-matching/">
+<a class="md-nav__link" href="../../../thinking-functionally/pattern-matching/">
         Pattern matching
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/polymorphism/">
+<a class="md-nav__link" href="../../../thinking-functionally/polymorphism/">
         Polymorphic function definitions
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/recursion/">
+<a class="md-nav__link" href="../../../thinking-functionally/recursion/">
         Recursion
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/recursion-polymorphism/">
+<a class="md-nav__link" href="../../../thinking-functionally/recursion-polymorphism/">
         Recursion &amp; Polymorphism
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../thinking-functionally/tail-recursion/">
+<a class="md-nav__link" href="../../../thinking-functionally/tail-recursion/">
         Tail recursion
       </a>
 </li>
@@ -1771,14 +1768,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/creative-coding/index.md">
+<a class="md-nav__link" href="../../creative-coding/index.md">
         None
       </a>
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_10_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/clojure-svg/">SVG</a>
+<a href="../../clojure-svg/">SVG</a>
 </div>
 <nav aria-expanded="false" aria-labelledby="__nav_13_10_2_label" class="md-nav" data-md-level="3">
 <label class="md-nav__title" for="__nav_13_10_2">
@@ -1795,7 +1792,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_11" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../reference/jvm/">JVM</a>
+<a href="../../jvm/">JVM</a>
 <label for="__nav_13_11">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1807,32 +1804,32 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/jvm/understanding-memory-usage/">
+<a class="md-nav__link" href="../../jvm/understanding-memory-usage/">
         Understanding memory usage.
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/jvm/common-options/">
+<a class="md-nav__link" href="../../jvm/common-options/">
         Commonly used JVM Options
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/jvm/java-17-flags/">
+<a class="md-nav__link" href="../../jvm/java-17-flags/">
         Reference: Java 17 JVM flags
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/jvm/experimental-options/">
+<a class="md-nav__link" href="../../jvm/experimental-options/">
         Reference: JVM Experimental Options
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/jvm/profile-tools/">
+<a class="md-nav__link" href="../../jvm/profile-tools/">
         Profile tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../reference/performance/">
+<a class="md-nav__link" href="../../performance/">
         Clojure Performance
       </a>
 </li>
@@ -1842,7 +1839,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_13_12" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../alternative-tools/">Alternative Tools</a>
+<a href="../../../alternative-tools/">Alternative Tools</a>
 <label for="__nav_13_12">
 <span class="md-nav__icon md-icon"></span>
 </label>
@@ -1854,32 +1851,32 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/clojure-cli/basic-repl/">
+<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/basic-repl/">
         Basic Command Line REPL UI
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/clojure-cli/compare-with-leiningen/">
+<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/compare-with-leiningen/">
         Compare Clojure Project configuration tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/data-inspector/reveal/">
+<a class="md-nav__link" href="../../../alternative-tools/data-inspector/reveal/">
         Reveal - REPL with visual data browser
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/clojure-cli/evaluate-an-expression/">
+<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/evaluate-an-expression/">
         Evaluating an expression with Clojure CLI tools
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/clojure-cli/set-namespace-on-repl-startup/">
+<a class="md-nav__link" href="../../../alternative-tools/clojure-cli/set-namespace-on-repl-startup/">
         Set namespace on REPL startup
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../alternative-tools/leiningen/">
+<a class="md-nav__link" href="../../../alternative-tools/leiningen/">
         Leiningen build automation tool for Clojure
       </a>
 </li>
@@ -1904,22 +1901,116 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/quickstart/index.md" title="Edit this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/edit/main/docs/reference/clojure-cli/defining-aliases.md" title="Edit this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
 </a>
-<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/quickstart/index.md" title="View source of this page">
+<a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/reference/clojure-cli/defining-aliases.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1 id="clojure-quick-start">Clojure quick start<a class="headerlink" href="#clojure-quick-start" title="Permanent link">λ︎</a></h1>
-<p><a href="https://repl.it/@jr0cket/Clojure-In-15-minutes">Clojure in 15 minutes</a> is an online Clojure environment with example code for the Clojure syntax and some common functions.</p>
-<p>If you have a GitHub account, you can fork the code and continue to experiment</p>
-<iframe allowfullscreen="true" allowtransparency="true" frameborder="no" height="1000" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals" scrolling="no" src="https://repl.it/@jr0cket/Clojure-In-15-minutes?lite=true" width="100%"></iframe>
+<h1 id="defining-aliases">Defining aliases<a class="headerlink" href="#defining-aliases" title="Permanent link">λ︎</a></h1>
+<!-- TODO: refactor Clojure CLI defining aliases -->
+<p>Clojure CLI tools provide a very flexible way to run Clojure, using aliases to include community libraries and tools to enhance clojure projects and provide independent tools. Understand the execution options (exec-opts) on the command line options ensures an effective use of Clojure CLI tools.</p>
+<p>Aliases are used to add (or remove) configuration from the</p>
+<p>Aliases are used with Clojure tools to provide additional configuration when explicitly added to the <code>clojure</code> command.</p>
+<p>Aliases can be used to modify:</p>
+<ul>
+<li>the classpath and dependencies included, by adding or removing dependencies and paths</li>
+<li>providing a simple way to configure community tools, such as rebel readline, clj-new, depstar, etc.</li>
+</ul>
+<p>Aliases can be defined in a project <code>deps.edn</code> or be available to all projects via the <code>~/.clojure/deps.edn</code> configuration file.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Clojure CLI Config provides a wide range of aliases</p>
+<p><a href="/clojure/clojure-cli/install/community-tools.md">Practicalli Clojure CLI Config</a> is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.</p>
+</div>
+<h1 id="clojure-cli-tool-options">Clojure CLI tool options<a class="headerlink" href="#clojure-cli-tool-options" title="Permanent link">λ︎</a></h1>
+<p>Clojure CLI tool has several options that determine how aliases and other configuration is used</p>
+<ul>
+<li>add or remove dependencies</li>
+<li>add or remove directories on the class path</li>
+<li>define a function or main namespace to run, along with arguments</li>
+</ul>
+<h2 id="using-an-alias">Using an alias<a class="headerlink" href="#using-an-alias" title="Permanent link">λ︎</a></h2>
+<p>An alias is used via the <code>-M</code> option to the <code>clojure</code> command:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:qualified/alias-name</span>
+</code></pre></div>
+<p>Multiple aliases can be used together</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:env/test:test/runner</span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Only one main namespace</p>
+<p>If multiple aliases set a main namespace, only the last alias in the chain has its main namespace called, e.g. <code>clojure -M:middleware/cider-nrepl:inspect/cognitect-rebl:middleware/nrebl</code> will call the main namespace of <code>:middleware/nrebl</code>.</p>
+</div>
+<h2 id="an-alias-for-a-community-tool">An alias for a community tool<a class="headerlink" href="#an-alias-for-a-community-tool" title="Permanent link">λ︎</a></h2>
+<p>Use the rebel community tool by including its alias.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:repl/rebel</span>
+</code></pre></div>
+<p>This alias adds the library dependency for the rebel readline project and defines the main namespace.  The namespace is where the <code>-main</code> function is located that will start rebel readline.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">{</span><span class="ss">:aliases</span>
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">   </span><span class="ss">:repl/rebel</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">     </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">com.bhauman/rebel-readline</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.1.4"</span><span class="p">}}</span>
+<a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">      </span><span class="ss">:main-opts</span><span class="w">  </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"rebel-readline.main"</span><span class="p">]}</span>
+<a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">}</span><span class="w"> </span><span class="c1">; End of aliases</span>
+</code></pre></div>
+<h2 id="including-paths-deps-and-main-opts">Including paths, deps and main-opts<a class="headerlink" href="#including-paths-deps-and-main-opts" title="Permanent link">λ︎</a></h2>
+<p>The Cognitect Lab test runner included the <code>test</code> directory in the class path, so test code will be included when run with this alias.</p>
+<p>The test runner dependency is pulled from a specific commit shared on GitHub (defined as a Git SHA).</p>
+<p>The main namespace is set to that library and the <code>-main</code> function is called when using this alias.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">{</span><span class="ss">:aliases</span>
+<a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="ss">:test/cognitect</span>
+<a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]</span>
+<a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">     </span><span class="ss">:extra-deps</span><span class="w">  </span><span class="p">{</span><span class="nv">com.cognitect/test-runner</span>
+<a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">                  </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">"https://github.com/cognitect-labs/test-runner.git"</span>
+<a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">                   </span><span class="ss">:sha</span><span class="w">     </span><span class="s">"f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"</span><span class="p">}}</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">     </span><span class="ss">:main-opts</span><span class="w">   </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"cognitect.test-runner"</span><span class="p">]}</span>
+<a href="#__codelineno-4-8" id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="stand-alone-tools">Stand-alone tools<a class="headerlink" href="#stand-alone-tools" title="Permanent link">λ︎</a></h2>
+<p>When a community tool does not require any of the project paths or dependencies to operate, <code>:replace-paths</code> and <code>:replace-deps</code> should be used when defining an alias.  These configurations only used paths and dependencies defined within the alias itself, minimizing the resources used to run the tool, improving the speed of using these tools.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.226"</span><span class="p">}}</span>
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">    </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]}</span>
+</code></pre></div>
+<!-- TODO: Clojure CLI defining aliases: updated project/new alias definition -->
+<h2 id="clojure-exec">Clojure Exec<a class="headerlink" href="#clojure-exec" title="Permanent link">λ︎</a></h2>
+<p>With Clojure CLI tools version 1.10.1.697 the <code>-X</code> flag was introduced using aliases with <a href="https://insideclojure.org/2020/07/28/clj-exec/">Clojure exec</a>.</p>
+<p>The configuration should define a fully qualified function that runs the tool.</p>
+<p>The function should take arguments as key/value pairs as with an Edn hash-map, rather than relying on positional arguments as strings.</p>
+<p>In this example, <code>:exec-fn</code> defines the fully qualified function name that will be called.  <code>:exec-args</code> is a hash-map of the default key values pairs that are passed to the function as an argument.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.23"</span><span class="p">}}</span>
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">    </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]</span><span class="w">    </span><span class="c1">;; deprecated</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w">      </span><span class="nv">clj-new/create</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">   </span><span class="ss">:exec-args</span><span class="w">    </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">lib</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">   </span><span class="p">}</span>
+</code></pre></div>
+<p>Default arguments can be over-ridden in the command,  e.g. <code>clojure -X:project/new :template app :name practicalli/simple-application</code> uses a different template</p>
+<p>Additional arguments can be sent when running the command, e.g. <code>clojure -X:project/new :template figwheel-main :name practicalli/landing-page :args '["--reagent"]'</code> uses the <code>figwheel-main</code> template, specifies a name and <code>:args</code> arguments sent to</p>
+<p><code>:ns-default</code> can also be used to qualify the function that will be executed in an alias.  <code>:ns-default</code> is especially useful when there are several functions that could be called from the specific namespace.</p>
+<p>The command line can over-ride the <code>:exec-fn</code> function configuration, allowing for a default configuration that can be easily over-ridden.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.1.226"</span><span class="p">}}</span>
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">   </span><span class="ss">:main-opts</span><span class="w">    </span><span class="p">[</span><span class="s">"-m"</span><span class="w"> </span><span class="s">"clj-new.create"</span><span class="p">]</span><span class="w">    </span><span class="c1">;; deprecated</span>
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">   </span><span class="ss">:ns-default</span><span class="w">   </span><span class="nv">clj-new</span>
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w">      </span><span class="nv">create</span>
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">   </span><span class="ss">:exec-args</span><span class="w">    </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">lib</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}</span>
+<a href="#__codelineno-7-7" id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">   </span><span class="p">}</span>
+</code></pre></div>
+<div class="admonition hint">
+<p class="admonition-title">Keyword naming</p>
+<p>Legal Clojure keyword names can be used for an alias.  Multiple aliases can be chained together with the <code>clojure</code> command.  For example in this command we are combining three aliases:
+<code>clojure -M:task/path:task/deps:build/options</code></p>
+</div>
+<h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">λ︎</a></h2>
+<ul>
+<li><a href="https://insideclojure.org/2020/07/28/clj-exec/">clj-exec</a> - insideclojure.org</li>
+<li><a href="https://insideclojure.org/2020/09/04/clj-exec/">clj-exec update</a> - insideclojure.org</li>
+</ul>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 </small>
 </div>
 </article>
@@ -1932,6 +2023,34 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
           </a>
 </main>
 <footer class="md-footer">
+<nav aria-label="Footer" class="md-footer__inner md-grid">
+<a aria-label="Previous: Reference: Clojure CLI" class="md-footer__link md-footer__link--prev" href="../" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Previous
+                </span>
+                Reference: Clojure CLI
+              </div>
+</div>
+</a>
+<a aria-label="Next: Common alias definitions" class="md-footer__link md-footer__link--next" href="../example-alias-definitions/" rel="next">
+<div class="md-footer__title">
+<div class="md-ellipsis">
+<span class="md-footer__direction">
+                  Next
+                </span>
+                Common alias definitions
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
 <div class="md-copyright">
@@ -1969,7 +2088,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../assets/javascripts/bundle.ce72ebac.min.js"></script>
+<script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.ce72ebac.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>

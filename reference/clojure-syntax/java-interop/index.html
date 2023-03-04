@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/defining-aliases/">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
         Defining aliases
       </a>
 </li>
@@ -1112,21 +1112,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
-          GitHub Workflow
-          <span class="md-nav__icon md-icon"></span>
-</label>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../continuous-integration/github-workflow/">GitHub Workflow</a>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_12_3">
 <span class="md-nav__icon md-icon"></span>
           GitHub Workflow
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/github-workflow/index.md">
-        None
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -1167,13 +1161,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clojure-cli/defining-aliases.md">
-        None
+<a class="md-nav__link" href="../../clojure-cli/defining-aliases/">
+        Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../../clojure-cli/example-alias-definitions/">
-        Clojure Tools - Common alias definitions
+        Common alias definitions
       </a>
 </li>
 <li class="md-nav__item">
@@ -1961,9 +1955,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </ul>
 <p>As Clojure is hosted on the Java Virtual Machine (JVM), its very easy to include libraries from any other languages that runs on the JVM, for example Java, Groovy, Scala, Jython, JRuby, Jaskell, etc.</p>
 <p>The Leiningen build tool provides a simple way to include libraries as dependencies, using the <code>:dependencies</code> section of the <code>project.clj</code> file. Any library published to <a href="http://search.maven.org/">Maven Central</a> is available for download by Leiningen, as both Maven Central and <a href="https://clojars.org">Clojars.org</a> repositories are used by default.</p>
-<blockquote>
-<p><strong>Hint</strong> Clojure projects and REPL environments include the <code>java.lang</code> library automatically.  Any methods from that library can be used without having to <code>import</code> them or include any dependencies</p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">java.lang included</p>
+<p>Clojure projects and REPL environments include the <code>java.lang</code> library automatically.  Any methods from that library can be used without having to <code>import</code> them or include any dependencies</p>
+</div>
 <h2 id="the-syntax">The syntax<a class="headerlink" href="#the-syntax" title="Permanent link">λ︎</a></h2>
 <p>Its very easy to call Java methods and objects from clojure using the following syntax</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nf">.instanceMember</span><span class="w"> </span><span class="nv">instance</span><span class="w"> </span><span class="nv">args*</span><span class="p">)</span>
@@ -2020,7 +2015,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 </small>
 </div>
 </article>

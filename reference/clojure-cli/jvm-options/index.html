@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/defining-aliases/">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
         Defining aliases
       </a>
 </li>
@@ -1112,21 +1112,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item md-nav__item--nested">
 <input class="md-nav__toggle md-toggle" id="__nav_12_3" type="checkbox"/>
-<label class="md-nav__link" for="__nav_12_3" id="__nav_12_3_label" tabindex="0">
-          GitHub Workflow
-          <span class="md-nav__icon md-icon"></span>
-</label>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../continuous-integration/github-workflow/">GitHub Workflow</a>
+</div>
 <nav aria-expanded="false" aria-labelledby="__nav_12_3_label" class="md-nav" data-md-level="2">
 <label class="md-nav__title" for="__nav_12_3">
 <span class="md-nav__icon md-icon"></span>
           GitHub Workflow
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../continuous-integration/github-workflow/index.md">
-        None
-      </a>
-</li>
 </ul>
 </nav>
 </li>
@@ -1167,13 +1161,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../defining-aliases.md">
-        None
+<a class="md-nav__link" href="../defining-aliases/">
+        Defining aliases
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../example-alias-definitions/">
-        Clojure Tools - Common alias definitions
+        Common alias definitions
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
@@ -1192,16 +1186,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintjdk_java_options-environment-variable">
-    Hint::JDK_JAVA_OPTIONS Environment Variable
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintjava-virtual-machine-configuration-and-reporting">
-    Hint::Java Virtual Machine configuration and reporting
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-cli-command-line-options">
     Clojure CLI command line options
   </a>
@@ -1215,15 +1199,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#calling-a-clojure-uberjar">
     Calling A Clojure Uberjar
   </a>
-<nav aria-label="Calling A Clojure Uberjar" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintuse-jdk_java_options-to-define-jvm-options">
-    Hint::Use JDK_JAVA_OPTIONS to define JVM options
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-related-jvm-options">
@@ -2025,16 +2000,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintjdk_java_options-environment-variable">
-    Hint::JDK_JAVA_OPTIONS Environment Variable
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintjava-virtual-machine-configuration-and-reporting">
-    Hint::Java Virtual Machine configuration and reporting
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-cli-command-line-options">
     Clojure CLI command line options
   </a>
@@ -2048,15 +2013,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#calling-a-clojure-uberjar">
     Calling A Clojure Uberjar
   </a>
-<nav aria-label="Calling A Clojure Uberjar" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintuse-jdk_java_options-to-define-jvm-options">
-    Hint::Use JDK_JAVA_OPTIONS to define JVM options
-  </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#clojure-related-jvm-options">
@@ -2144,19 +2100,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
 <h1 id="reference-clojure-cli-jvm-options">Reference: Clojure CLI JVM Options<a class="headerlink" href="#reference-clojure-cli-jvm-options" title="Permanent link">λ︎</a></h1>
-<blockquote>
-<h4 id="hintjdk_java_options-environment-variable">Hint::<code>JDK_JAVA_OPTIONS</code> Environment Variable<a class="headerlink" href="#hintjdk_java_options-environment-variable" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title"><code>JDK_JAVA_OPTIONS</code> Environment Variable</p>
 <p><code>JDK_JAVA_OPTIONS</code> is the official Environment Variable for setting options when calling <code>java</code>, <code>javac</code> and other Java commands to start running a Java Virtual Machine (Java version 9 onward).</p>
-</blockquote>
+</div>
 <p><a href="https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment">Java Virtual Machine options can be passed using the Clojure CLI</a>, either via the <code>-J</code> command line flag or <code>:jvm-opts</code> in a <code>deps.edn</code> alias.</p>
 <!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
-<blockquote>
-<h4 id="hintjava-virtual-machine-configuration-and-reporting">Hint::Java Virtual Machine configuration and reporting<a class="headerlink" href="#hintjava-virtual-machine-configuration-and-reporting" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title">Java Virtual Machine configuration and reporting</p>
 <p><a href="/reference/jvm/index.md">Java Virtual Machine section</a> covers commonly used options, reporting JVM metrics and optimisation of the JVM process.</p>
-</blockquote>
+</div>
 <h2 id="clojure-cli-command-line-options">Clojure CLI command line options<a class="headerlink" href="#clojure-cli-command-line-options" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI <code>-J</code> flag passes configuration options to the JVM. When there are multiple, each must be prefixed with <code>-J</code>.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-J-XX:+UnlockDiagnosticVMOptions<span class="w"> </span>-J‑XX:NativeMemoryTracking<span class="o">=</span>summary<span class="w"> </span>-J‑XX:+PrintNMTStatistics
 </code></pre></div>
 <h2 id="clojure-cli-depsedn-configuration">Clojure CLI deps.edn configuration<a class="headerlink" href="#clojure-cli-depsedn-configuration" title="Permanent link">λ︎</a></h2>
 <p><code>:jvm-opts</code> key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The <code>:jvm-opts</code> key has a value that is a collection of string JVM options <code>["-Xms2048m" "-Xmx4096"]</code></p>
@@ -2184,11 +2140,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>JVM options must be specified when calling an uberjar with the <code>java</code> command, <code>:jvm-opts</code> in the project <code>deps.edn</code> are not used with the <code>java</code> command</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>java -jar project-uberjar.jar -J...
 </code></pre></div>
-<blockquote>
-<h4 id="hintuse-jdk_java_options-to-define-jvm-options">Hint::Use <code>JDK_JAVA_OPTIONS</code> to define JVM options<a class="headerlink" href="#hintuse-jdk_java_options-to-define-jvm-options" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title">Use <code>JDK_JAVA_OPTIONS</code> to define JVM options</p>
 <p><code>JDK_JAVA_OPTIONS</code> environment variable is used to define options that are used whenever the <code>java</code> command is called, greatly simplifying <code>java</code> commands.</p>
 <p>The <code>JDK_JAVA_OPTIONS</code> environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.</p>
-</blockquote>
+</div>
 <h2 id="clojure-related-jvm-options">Clojure related JVM options<a class="headerlink" href="#clojure-related-jvm-options" title="Permanent link">λ︎</a></h2>
 <p>Specify options or system properties to set up the Clojure service</p>
 <p><code>-Dclojure.compiler.disable-locals-clearing=true</code> - make more info available to debuggers</p>
@@ -2259,22 +2215,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li>Source: <a href="https://docs.oracle.com/cd/E40972_01/doc.70/e40973/cnf_jvmgc.htm#autoId2">Tuning Garbage Collection with Oracle JDK</a></li>
 </ul>
 <h3 id="view-jvm-options-of-a-running-jvm-process">View JVM options of a running JVM process<a class="headerlink" href="#view-jvm-options-of-a-running-jvm-process" title="Permanent link">λ︎</a></h3>
-<p>Use a JMX client, e.g. <a href="https://visualvm.github.io/">VisualVM</a></p>
+<p>Use a JMX client, e.g. <a href="https://visualvm.github.io/" target="_blank">VisualVM</a></p>
 <p><code>jcmd pid VM.system_properties</code> or <code>jcmd pid VM.flags</code> using <code>jcmd -l</code> to get the pid of the JVM process</p>
 <p>On Linux <code>ps -ef | grep java</code> which includes the options to run the JVM process, <code>ps -auxww</code> to show long arguments</p>
-<ul>
-<li><a href="https://stackoverflow.com/questions/5317152/getting-the-parameters-of-a-running-jvm">Getting the parameters of a running JVM</a></li>
-</ul>
+<p><a class="md-button" href="https://stackoverflow.com/questions/5317152/getting-the-parameters-of-a-running-jvm" target="_blank">Getting the parameters of a running JVM</a></p>
 <h3 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h3>
-<ul>
-<li><a href="https://www.jrebel.com/blog/jvm-options-cheat-sheet">JVM Options cheatsheet - JRebel</a></li>
-</ul>
+<p><a class="md-button" href="https://www.jrebel.com/blog/jvm-options-cheat-sheet" target="_blank">JVM Options cheatsheet - JRebel</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 </small>
 </div>
 </article>
@@ -2288,7 +2240,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Clojure Tools - Common alias definitions" class="md-footer__link md-footer__link--prev" href="../example-alias-definitions/" rel="prev">
+<a aria-label="Previous: Common alias definitions" class="md-footer__link md-footer__link--prev" href="../example-alias-definitions/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2297,7 +2249,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Clojure Tools - Common alias definitions
+                Common alias definitions
               </div>
 </div>
 </a>
