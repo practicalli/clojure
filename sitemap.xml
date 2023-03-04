@@ -71,16 +71,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/alternative-tools/leiningen/create-a-project/</loc>
-         <lastmod>2023-03-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/alternative-tools/leiningen/testing/configure-project/</loc>
-         <lastmod>2023-03-04</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/assets/images/social/</loc>
          <lastmod>2023-03-04</lastmod>
          <changefreq>daily</changefreq>

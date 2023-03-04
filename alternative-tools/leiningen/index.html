@@ -1855,7 +1855,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../clojure-cli/compare-with-leiningen/">
-        Compare Clojure Project configuration tools
+        Clojure Automation Aproaches
       </a>
 </li>
 <li class="md-nav__item">
@@ -1889,23 +1889,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintpracticalli-recommends-using-clojure-cli-tools">
-    Hint::Practicalli recommends using Clojure CLI tools
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#install-leiningen">
     Install Leiningen
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#windows-chocolatey">
-    Windows Chocolatey
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#check-leiningen-is-working">
-    Check Leiningen is working
+<a class="md-nav__link" href="#run-leiningen">
+    Run Leiningen
   </a>
 </li>
 </ul>
@@ -1932,23 +1922,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintpracticalli-recommends-using-clojure-cli-tools">
-    Hint::Practicalli recommends using Clojure CLI tools
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#install-leiningen">
     Install Leiningen
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#windows-chocolatey">
-    Windows Chocolatey
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#check-leiningen-is-working">
-    Check Leiningen is working
+<a class="md-nav__link" href="#run-leiningen">
+    Run Leiningen
   </a>
 </li>
 </ul>
@@ -1966,58 +1946,113 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="leiningen-build-automation-tool-for-clojure">Leiningen build automation tool for Clojure<a class="headerlink" href="#leiningen-build-automation-tool-for-clojure" title="Permanent link">λ︎</a></h1>
 <p>Leiningen will help you create, build and deploy your Clojure projects.</p>
-<blockquote>
-<h4 id="hintpracticalli-recommends-using-clojure-cli-tools">Hint::Practicalli recommends using Clojure CLI tools<a class="headerlink" href="#hintpracticalli-recommends-using-clojure-cli-tools" title="Permanent link">λ︎</a></h4>
-<p>For new project, Clojure CLI tools is recommended as it requires fewer resources and enables a more customisable approach to configuring project and running tools to support Clojure development.</p>
-</blockquote>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli recommends using Clojure CLI</p>
+<p>For new project, <a href="/clojure/clojure-cli/">Clojure CLI</a> is recommended as it requires fewer resources and enables a more customisable approach to configuring project and running tools to support Clojure development.</p>
+</div>
 <h2 id="install-leiningen">Install Leiningen<a class="headerlink" href="#install-leiningen" title="Permanent link">λ︎</a></h2>
 <p>Install the Leiningen tool using the specific instructions for your Operating System</p>
 <!-- Operating System specific instructions -->
 <p>{% tabs first="Linux", second="Homebrew", third="GitBash", forth="Chocolatey", fifth="Windows Manual" %}</p>
-<p>{% content "first" %}
-<a href="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein">Download the lein script</a> to your local <code>bin</code> directory.  Then make the <code>lein</code> script executable and run <code>lein</code> to download the full version.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Homebrew</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><a href="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein">Download the lein script</a> to your local <code>bin</code> directory.  Then make the <code>lein</code> script executable and run <code>lein</code> to download the full version.</p>
 <p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>mkdir<span class="w"> </span>~/bin
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>curl<span class="w"> </span>https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein<span class="w"> </span>&gt;<span class="w"> </span>~/bin/lein
 <a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>chmod<span class="w"> </span>u+x<span class="w"> </span>~/bin/lein
 <a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>lein
 </code></pre></div>
 If the command <code>lein</code> is not found, run <code>source ~/.bashrc</code> to ensure your <code>bin</code> directory is on the path.</p>
-<p>{% content "second" %}
-If you have <a href="https://brew.sh/">Homebrew</a> installed, run the following command in a terminal window.</p>
+</div>
+<div class="tabbed-block">
+<p>If you have <a href="https://brew.sh/">Homebrew</a> installed, run the following command in a terminal window.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>leiningen
 </code></pre></div>
-<h2 id="windows-chocolatey">Windows Chocolatey<a class="headerlink" href="#windows-chocolatey" title="Permanent link">λ︎</a></h2>
-<p>{% content "third" %}</p>
+</div>
+</div>
+</input></input></div>
+<p>=== "GitBash" %}
+    <a href="https://gitforwindows.org/">GitBash</a> allows you to use the Linux <code>lein</code> script, which may have less issues when installing.</p>
+<div class="highlight"><pre><span></span><code>Create a directory called `C:\Users\your-user-name\AppData\Local\Programs\Leiningen`
+
+Download the `lein` file and save it to the above directory
+
+Open `Environment variables for your account` and add the directory to your path
+
+Open a command window and run the command: `lein`
+
+The full version of Leiningen will be downloaded and Leiningen is ready to use.
+</code></pre></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Chocolatey</label><label for="__tabbed_2_2">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>If you have <a href="https://chocolatey.org/">Chocolatey</a> installed, add the <a href="https://chocolatey.org/packages/Lein">Leiningen package</a> by running the following command in a terminal window.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>choco<span class="w"> </span>install<span class="w"> </span>lein
 </code></pre></div>
-<p>{% content "forth" %}
-<a href="https://gitforwindows.org/">GitBash</a> allows you to use the Linux <code>lein</code> script, which may have less issues when installing.</p>
+</div>
+<div class="tabbed-block">
 <p>Create a directory called <code>C:\Users\your-user-name\AppData\Local\Programs\Leiningen</code></p>
-<p>Download the <code>lein</code> file and save it to the above directory</p>
-<p>Open <code>Environment variables for your account</code> and add the directory to your path</p>
-<p>Open a command window and run the command: <code>lein</code></p>
-<p>The full version of Leiningen will be downloaded and Leiningen is ready to use.</p>
-<p>{% content "fifth" %}
-Create a directory called <code>C:\Users\your-user-name\AppData\Local\Programs\Leiningen</code></p>
 <p>Download the <code>lein.bat</code> file and save it to the above directory</p>
 <p>Open <code>Environment variables for your account</code> and add the directory to your path</p>
 <p>Open a command window and run the command: <code>lein.bat</code></p>
 <p>The full version of Leiningen will be downloaded and Leiningen is ready to use.</p>
-<p>{% endtabs %}</p>
-<!-- End of Operating System specific instructions -->
-<h2 id="check-leiningen-is-working">Check Leiningen is working<a class="headerlink" href="#check-leiningen-is-working" title="Permanent link">λ︎</a></h2>
-<p>Open a terminal and use the following command</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>lein
+</div>
+</div>
+</input></input></div>
+<h2 id="run-leiningen">Run Leiningen<a class="headerlink" href="#run-leiningen" title="Permanent link">λ︎</a></h2>
+<p>Check Leiningen is working by running <code>lein</code> command in a terminal</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>lein<span class="w"> </span><span class="nb">help</span>
 </code></pre></div>
 <p>If a list of Leiningen commands is shown then it is working correctly.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/leiningen-help.png"><img alt="Leiningen help" src="/images/leiningen-help.png"/></a></p>
+<!-- ![Leiningen help](/images/leiningen-help.png) -->
+<h1 id="creating-project">Creating project<a class="headerlink" href="#creating-project" title="Permanent link">λ︎</a></h1>
+<p>Create a new Clojure project with Leiningen using the <code>new</code> task</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>lein<span class="w"> </span>new<span class="w"> </span>template-name<span class="w"> </span>domain/project-name
+</code></pre></div>
+<p>Built-in templates include <code>app</code> and <code>lib</code></p>
+<div class="admonition example">
+<p class="admonition-title">Create a new project called playground</p>
+<p>Open a terminal window and in a directory where you usually keep your projects, run the following command
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>lein<span class="w"> </span>new<span class="w"> </span>app<span class="w"> </span>practicalli/playground
+</code></pre></div>
+A new directory will be created called <code>playground</code> with a <code>src/practicalli/playground.clj</code></p>
+</div>
+<h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">λ︎</a></h2>
+<p>Leiningen automatically includes the <code>test</code> directory when running, so no additional configuration is required if all tests reside inside the <code>test</code> directory.</p>
+<p>Run all the tests saved to file:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>lein<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>Run just the unit tests in a specific namepsace.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>lein<span class="w"> </span><span class="nb">test</span><span class="w"> </span>:only<span class="w"> </span>domain.namespace-test
+</code></pre></div>
+<h2 id="test-plugins">Test Plugins<a class="headerlink" href="#test-plugins" title="Permanent link">λ︎</a></h2>
+<p>The following Leiningen plugins watch the file system and will run tests when a file change is detected in the project files.</p>
+<ul>
+<li><a href="https://github.com/jakemcc/lein-test-refresh">lein-test-refresh</a></li>
+<li><a href="https://github.com/weavejester/lein-auto">lein-auto</a></li>
+</ul>
+<h2 id="configure-test-paths">Configure test paths<a class="headerlink" href="#configure-test-paths" title="Permanent link">λ︎</a></h2>
+<p><code>:test-paths</code> added as a top level key to the <code>defproject</code> configuration in the <code>project.clj</code> file will configure specific paths for tests</p>
+<p>For example, if the tests are defined under <code>project-name/clj/tests</code> then the project.clj file would look as follows:</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="kd">defproject </span><span class="nv">my-project</span><span class="w"> </span><span class="s">"0.5.0-SNAPSHOT"</span>
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="ss">:description</span><span class="w"> </span><span class="s">"A project for doing things."</span>
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span><span class="ss">:license</span><span class="w"> </span><span class="s">"Creative Commons Zero"</span>
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">  </span><span class="ss">:url</span><span class="w"> </span><span class="s">"http://github.com/practicalli/my-project"</span>
+<a href="#__codelineno-8-5" id="__codelineno-8-5" name="__codelineno-8-5"></a>
+<a href="#__codelineno-8-6" id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">  </span><span class="ss">:dependencies</span><span class="w"> </span><span class="p">[[</span><span class="nv">org.clojure/clojure</span><span class="w"> </span><span class="s">"1.10.1"</span><span class="p">]]</span>
+<a href="#__codelineno-8-7" id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">  </span><span class="ss">:test-paths</span><span class="w">   </span><span class="p">[</span><span class="s">"clj/test"</span><span class="w"> </span><span class="s">"src/test/clojure"</span><span class="p">]</span>
+<a href="#__codelineno-8-8" id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">  </span><span class="ss">:plugins</span><span class="w">      </span><span class="p">[[</span><span class="nv">lein-auto</span><span class="w"> </span><span class="s">"0.1.3"</span><span class="p">]])</span>
+</code></pre></div>
+<blockquote>
+<p><code>:source-paths</code> can also be used to define the location of the source code files in the same manner.</p>
+</blockquote>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
 </small>
 </div>
 </article>
