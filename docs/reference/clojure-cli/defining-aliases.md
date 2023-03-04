@@ -1,4 +1,4 @@
-# Clojure CLI: Defining aliases
+# Defining aliases
 <!-- TODO: refactor Clojure CLI defining aliases -->
 
 Clojure CLI tools provide a very flexible way to run Clojure, using aliases to include community libraries and tools to enhance clojure projects and provide independent tools. Understand the execution options (exec-opts) on the command line options ensures an effective use of Clojure CLI tools.
@@ -139,5 +139,6 @@ The command line can over-ride the `:exec-fn` function configuration, allowing f
 
 
 ## Resources
+
 * [clj-exec](https://insideclojure.org/2020/07/28/clj-exec/) - insideclojure.org
 * [clj-exec update](https://insideclojure.org/2020/09/04/clj-exec/) - insideclojure.org

@@ -1,22 +1,22 @@
 # Reference: Clojure CLI JVM Options
 
-> #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
-> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
+!!! HINT "`JDK_JAVA_OPTIONS` Environment Variable"
+    `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
 
 
 [Java Virtual Machine options can be passed using the Clojure CLI](https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment), either via the `-J` command line flag or `:jvm-opts` in a `deps.edn` alias.
 
 <!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
 
-> #### Hint::Java Virtual Machine configuration and reporting
-> [Java Virtual Machine section](/reference/jvm/index.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
+!!! HINT "Java Virtual Machine configuration and reporting"
+    [Java Virtual Machine section](/reference/jvm/index.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
 
 
 ## Clojure CLI command line options
 
 Clojure CLI `-J` flag passes configuration options to the JVM. When there are multiple, each must be prefixed with `-J`.
 
-```
+```shell
 clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
 ```
 
@@ -69,10 +69,10 @@ JVM options must be specified when calling an uberjar with the `java` command, `
 java -jar project-uberjar.jar -J...
 ```
 
-> #### Hint::Use `JDK_JAVA_OPTIONS` to define JVM options
-> `JDK_JAVA_OPTIONS` environment variable is used to define options that are used whenever the `java` command is called, greatly simplifying `java` commands.
->
-> The `JDK_JAVA_OPTIONS` environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.
+!!! HINT "Use `JDK_JAVA_OPTIONS` to define JVM options"
+    `JDK_JAVA_OPTIONS` environment variable is used to define options that are used whenever the `java` command is called, greatly simplifying `java` commands.
+
+    The `JDK_JAVA_OPTIONS` environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.
 
 
 ## Clojure related JVM options
@@ -190,15 +190,15 @@ Setup GC with short STW pauses which can be relevant for very high web server wo
 
 ### View JVM options of a running JVM process
 
-Use a JMX client, e.g. [VisualVM](https://visualvm.github.io/)
+Use a JMX client, e.g. [VisualVM](https://visualvm.github.io/){target=_blank}
 
 `jcmd pid VM.system_properties` or `jcmd pid VM.flags` using `jcmd -l` to get the pid of the JVM process
 
 On Linux `ps -ef | grep java` which includes the options to run the JVM process, `ps -auxww` to show long arguments
 
-* [Getting the parameters of a running JVM](https://stackoverflow.com/questions/5317152/getting-the-parameters-of-a-running-jvm)
+[Getting the parameters of a running JVM](https://stackoverflow.com/questions/5317152/getting-the-parameters-of-a-running-jvm){target=_blank .md-button}
 
 
 ### References
 
-* [JVM Options cheatsheet - JRebel](https://www.jrebel.com/blog/jvm-options-cheat-sheet)
+[JVM Options cheatsheet - JRebel](https://www.jrebel.com/blog/jvm-options-cheat-sheet){target=_blank .md-button}

@@ -12,7 +12,9 @@
 
   The Leiningen build tool provides a simple way to include libraries as dependencies, using the `:dependencies` section of the `project.clj` file. Any library published to [Maven Central](http://search.maven.org/) is available for download by Leiningen, as both Maven Central and [Clojars.org](https://clojars.org) repositories are used by default.
 
-> **Hint** Clojure projects and REPL environments include the `java.lang` library automatically.  Any methods from that library can be used without having to `import` them or include any dependencies
+!!! INFO "java.lang included"
+    Clojure projects and REPL environments include the `java.lang` library automatically.  Any methods from that library can be used without having to `import` them or include any dependencies
+
 
 ## The syntax
 

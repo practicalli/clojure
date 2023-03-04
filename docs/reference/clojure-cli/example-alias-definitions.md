@@ -1,7 +1,5 @@
-# Clojure Tools - Common alias definitions
+# Common alias definitions
 
-
-<!-- TODO: refactor clojure CLI example aliases  -->
 
 ## Task: Run a simple terminal REPL
 `clojure` and `clj` (requires rlwrap) will run a REPL if given no other arguments.
@@ -127,10 +125,9 @@ clojure -X:project/run server-start :port 8080
 
 ![Clojure CLI tools - using -P flag to download project dependencies](/images/clojure-cli-tools-dependencies-p-flag.png)
 
-> #### Hint::Qualified namespaces required
-> If an unqualified library name is used, e.g. `compojure`, then a warning is sent to the standard out.  Change the name of the library to be fully qualified e.g. `weavejester/compojure`
->
->In a future version of the Clojure CLI tools unqualified namespaces will not be downloaded.
+!!! HINT "Qualified namespaces required"
+    If an unqualified library name is used, e.g. `compojure`, then a warning is sent to the standard out.  Change the name of the library to be fully qualified e.g. `weavejester/compojure`.  Use the same name if there is no official qualified domain, e.g. `http-kit/http-kit`
+
 
 The `-P` flag can be used to modify an existing command to ensure no execution takes place, ensuring a prepare only (dry run) action.
 
@@ -142,6 +139,7 @@ The `-P` flag uses everything from an alias not related to execution.
 
 
 ## Run a Clojure application
+
 `clojure -m full.namespace.to.dash-main` calls the `-main` function from the given namespace. Arguments to the function are simply added to the end of the command line and passed to the `-main` function in the given namespace.
 
 > The `-m` flag in the CLI tools pre-release returns a warning that `-M` should be used.
@@ -206,6 +204,7 @@ Adding `:exec-args` to the `:run-project`
 
 
 #### Example of running a Clojure project - hello-world
+
 In this example I use the hello-world example from https://clojure.org/guides/deps_and_cli#_writing_a_program
 A project `deps.edn` file was created containing the dependency for clojure.java-time and the source code from that page copied into `src/hello.clj`
 
@@ -240,10 +239,11 @@ Changing the `-main` function to `(defn -main [& args] ,,,)` fixes the arity exc
 
 
 ## Local Maven install
+
 Install a jar into the local Maven cache, typically `~/.m2/repository/` directory, organised by groupId
 
 ```clojure
-clojure -M:deps mvn-install :jar '"/path/to.jar"'
+clojure -X:deps mvn-install :jar '"/path/to.jar"'
 ```
 > edn strings must be in double quotes, and then single-quoted for the shell
 
@@ -261,31 +261,3 @@ The install argmap takes the following options:
 | `:version`    | optional | Version number of library (string type)                |
 | `:classifier` | optional | (string type)                                          |
 | `:local-repo` | optional | path to local repo (default = ~/.m2/repository)        |
-
-
-**mvn-install - define default configuration - using in templates for example**
-Rather than pass details via the command line, use an alias to pass in default arguments.  This is especially useful when the project deps.edn is generated from a template.
-
-
-> TODO: Is it possible to define `:exec-args` with the built-in `-X:deps mvn-install` command?
-
-An alias can be defined in the project `deps.edn` file including default arguments via `:exec-args`
-
-```clojure
-{:aliases
- {:deploy/local-install
-  {:exec-fn clojure.tools.deps.alpha.tools.install/install
-  :exec-args {:jar "./project-name.jar" :pom "./project-name.pom"}
-  }}}
-```
-Install the jar using the default arguments using the command:
-
-```bash
-clojure -X:deploy/local-install
-```
-
-
-**How it works**
-`clojure.tools.deps.alpha.tools.install/install` is a function to install a jar into the local Maven cache, i.e. `~/.m2/repository`. An alias called `:deps` is built into Clojure CLI tools and includes the `tools.deps.alpha` library on the classpath,
-
-`:exec-args` optionally includes a hash-map of key/values options that can also be passed on command line

@@ -1,11 +1,13 @@
 # Clojure Quick Reference
+
 The basic Clojure syntax and a few common functions you should probably learn first.
 
 Also see the [Clojure.org cheat-sheet](https://clojure.org/api/cheatsheet)
 
 ## Calling functions
+
 The first element in a list, `()`, is treated as a call to a function. This is known as prefix notation which greatly simplifies Clojure syntax and makes mathematical expressions completely deterministic, eliminating the need for [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations).
- fs
+
 ```clojure
 (+ 2 3 5 8 13 (* 3 7))
 (+ 3 (* 2 (- 7 2) 4) (/ 16 4))
@@ -26,6 +28,7 @@ Clojure is a dynamically typed language, it is also strongly typed (everything i
 ```
 
 ## Modeling data with Collection types
+
 Clojure has 4 main collection types, all immutable (cannot change once created) and can contain any Clojure types.
 
 ```clojure
@@ -40,6 +43,7 @@ Clojure has 4 main collection types, all immutable (cannot change once created) 
 
 
 ## Defining names for values (vars)
+
 Names can be bound to any values, simple values like numbers, collections or functions.  A convenient way to refer to value in your code.
 ```clojure
 (def public-health-data
@@ -51,9 +55,10 @@ Names can be bound to any values, simple values like numbers, collections or fun
 ```
 
 ## map reduce filter
+
 Common functions for iterating through a collection / sequence of values
 
-```
+```clojure
 (map * [1 3 5 8 13 21] [3 5 8 13 21 34])
 
 (filter even? [1 3 5 8 13 21 34])
@@ -62,15 +67,16 @@ Common functions for iterating through a collection / sequence of values
 ```
 
 # Using data structures
+
 Using the `map` and `inc` function, increment all the numbers in a vector
 
-```
+```clojure
 (map inc [1 2 3 4 5])
 ```
 
 The above `map` function is roughly equivalent to the following expression
 
-```
+```clojure
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
 The `conj` function creates a new collection by combining a collection and one or more values.
@@ -107,7 +113,7 @@ Function definitions can also be used within other expressions, useful for mappi
 (type (/ 22 7))
 ```
 
-;; Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
+Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
 
 
 ## Java interoperability
@@ -140,8 +146,7 @@ Recursive function
     (recur (+ value 25))))
 
 (recursive-counter 100)
-
 ```
 
-* TODO: loop-recur
-* TODO: reduce and reducing function
+<!-- * TODO: loop-recur -->
+<!-- * TODO: reduce and reducing function -->
