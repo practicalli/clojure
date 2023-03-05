@@ -1804,12 +1804,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../understanding-memory-usage/">
-        Understanding memory usage.
+        Memory usage
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../common-options/">
-        Commonly used JVM Options
+        Common JVM Options
       </a>
 </li>
 <li class="md-nav__item">
@@ -1977,21 +1977,25 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="profile-jvm-applications">Profile JVM applications<a class="headerlink" href="#profile-jvm-applications" title="Permanent link">λ︎</a></h1>
 <p>Profile applications on the JVM, visualising memory and CPU resources, identifying bottlenecks and areas of the code to review to optimise a running application.</p>
-<ul>
-<li><a href="https://youtu.be/ugRrFdda_JQ">Using FlameGraphs To Illuminate The JVM</a> by Nitsan Wakart at Devoxx UK 2017</li>
-<li><a href="https://youtu.be/TDpbt4thECc">A Simple Approach to the Advanced JVM Profiling</a> - JetBrains</li>
-</ul>
+<p><a class="md-button" href="https://youtu.be/ugRrFdda_JQ" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span> Using FlameGraphs To Illuminate The JVM</a>
+<a class="md-button" href="https://youtu.be/TDpbt4thECc" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span> A Simple Approach to the Advanced JVM Profiling</a></p>
 <!-- ## Command line -->
 <!-- TODO: JVM profile - anything useful on the command line? -->
 <h2 id="java-visualvm">Java VisualVM<a class="headerlink" href="#java-visualvm" title="Permanent link">λ︎</a></h2>
 <p>A simplified and robust profiling tool for Java applications, bundled with the Java Development Kit (JDK) and using JConsole, jstat, jstack, jinfo, and jmap.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png"><img alt="Java VisualVM screenshot" src="https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png"/></a></p>
-<p>{% tabs ubuntu="Ubuntu/Debian", manual="Manually add Alias" %}</p>
-<p>{% content "ubuntu" %}</p>
-<p>Ubuntu / Debian includes VisualVM in the software center</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Ubuntu</label><label for="__tabbed_1_2">MacOSX</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Ubuntu / Debian includes VisualVM in the software center
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>visualvm
-</code></pre></div>
-<p>{% endtabs %}</p>
+</code></pre></div></p>
+</div>
+<div class="tabbed-block">
+<p>Download the macOS application bundle and double-click to install.</p>
+</div>
+</div>
+</input></input></div>
 <h2 id="jdk-flight-recorder">JDK Flight Recorder<a class="headerlink" href="#jdk-flight-recorder" title="Permanent link">λ︎</a></h2>
 <p>JDK Flight Recorder is a production time profiling and diagnostics engine built into the JVM</p>
 <ul>
@@ -2003,23 +2007,24 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>jcmd</code> to access the flight recorder data from the command line</p>
 <p>Mission control provides a graphical tool to visualise flight recorder data.</p>
 <ul>
-<li><a href="https://youtu.be/plYESjZ12hM">Continuous Monitoring with JDK Flight Recorder</a> - Java channel - September 2020</li>
-<li><a href="https://youtu.be/7z_R2Aq-Fl8">JDK11 - Introduction to JDK Flight Recorder</a> - September 2020</li>
-<li><a href="https://youtu.be/wwgvDDuJwtk">Production profiling with JDK Flight Recorder &amp; JDK Mission Control</a> - Madrid JUG</li>
+<li><a href="https://youtu.be/plYESjZ12hM" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span> Continuous Monitoring with JDK Flight Recorder</a></li>
+<li><a href="https://youtu.be/7z_R2Aq-Fl8" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span> JDK11 - Introduction to JDK Flight Recorder</a></li>
+<li><a href="https://youtu.be/wwgvDDuJwtk" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"></path></svg></span> Production profiling with JDK Flight Recorder &amp; JDK Mission Control</a></li>
 </ul>
 <h2 id="mission-control">Mission Control<a class="headerlink" href="#mission-control" title="Permanent link">λ︎</a></h2>
-<p><a href="[GitHub repository](https://github.com/openjdk/jmc)">Mission Control</a> is an open source desktop tool for visualising production time profiling and diagnostics from the JDK flight recorder tool. JDK Mission Control supports OpenJDK 11 and above.</p>
+<p><a href="https://github.com/openjdk/jmc" target="_blank">Mission Control</a> is an open source desktop tool for visualising production time profiling and diagnostics from the JDK flight recorder tool. JDK Mission Control supports OpenJDK 11 and above.</p>
 <p>JDK Mission Control consists of</p>
 <ul>
 <li>A JDK Flight Recorder (JFR) analyser and visualiser</li>
 <li>A Java Management Extensions (JMX) Console</li>
 <li>A heap dump (hprof format) analyzer (JOverflow)</li>
 </ul>
-<p><a href="https://adoptium.net/jmc.html">Eclipse Mission Control from Adoptium</a>.</p>
+<p><a class="md-button" href="https://adoptium.net/jmc.html" target="_blank">Eclipse Mission Control from Adoptium</a></p>
 <!-- TODO:  Compare to VisualVM and Mission Control.  Does it reduce down to Mission Control being a real-time stats version of VisualVM? Or due to leveraging jdk flight recorder -->
 <p>Java Mission Control demo - 2014 outated but might be useful if nothing newer</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/aJH_aZNQ-G4">https://youtu.be/aJH_aZNQ-G4</a></p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/aJH_aZNQ-G4" title="YouTube video player" width="560"></iframe>
+</p>
 <!-- ![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png) -->
 <h2 id="profiling-guides">Profiling guides<a class="headerlink" href="#profiling-guides" title="Permanent link">λ︎</a></h2>
 <p>Profiling your Java Application - A Beginner’s Guide - Victor Rentea</p>
@@ -2027,19 +2032,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 * Using Java Flight Recorder to profile method execution times
 * Using Micrometer-Prometheus-Grafana to profile connection starvation issues
 * Using Glowroot to identify long-running queries</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/3PWgGzpHykc">https://youtu.be/3PWgGzpHykc</a></p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/3PWgGzpHykc" title="YouTube video player" width="560"></iframe>
+</p>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
-<ul>
-<li><a href="https://www.baeldung.com/java-profilers">Java Profilers - Baeldung</a> - overview of several profiling tools</li>
-<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/">Java SE HotSpot Virtual Machine Garbage Collection Tuning Guide - Oracle</a></li>
-</ul>
+<p><a class="md-button" href="https://www.baeldung.com/java-profilers" target="_blank">Java Profilers - Baeldung</a>
+<a class="md-button" href="https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/" target="_blank">HotSpot Virtual Machine Garbage Collection Tuning Guide - Oracle</a></p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2023</span>
 </small>
 </div>
 </article>

@@ -1804,12 +1804,12 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../jvm/understanding-memory-usage/">
-        Understanding memory usage.
+        Memory usage
       </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../jvm/common-options/">
-        Commonly used JVM Options
+        Common JVM Options
       </a>
 </li>
 <li class="md-nav__item">
@@ -1850,6 +1850,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item">
 <a class="md-nav__link" href="#naked-performance">
     Naked Performance
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-types">
+    Advanced types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization-tips-for-types">
+    Optimization tips for types
   </a>
 </li>
 </ul>
@@ -1932,6 +1942,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     Naked Performance
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#advanced-types">
+    Advanced types
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#optimization-tips-for-types">
+    Optimization tips for types
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1950,23 +1970,49 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <h2 id="optimising-the-critical-path">Optimising the critical path<a class="headerlink" href="#optimising-the-critical-path" title="Permanent link">λ︎</a></h2>
 <p>Using two of Clojure's fundamental building blocks, macros and higher order functions, Clojure code can be sped up significantly without sacrificing common idioms.</p>
 <p>Premature optimisation is the root of all evil, this is not a reason to pass up opportunities to improve the critical 3%.</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/5BKn4rUoggg">https://youtu.be/5BKn4rUoggg</a></p>
-<p>Presentation: Dressed up performance in Clojure - Ben Sless - reClojure 2021</p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/5BKn4rUoggg" title="YouTube video player" width="560"></iframe>
+</p>
 <h2 id="naked-performance">Naked Performance<a class="headerlink" href="#naked-performance" title="Permanent link">λ︎</a></h2>
 <p>Lessons learned on building Clojure/Script systems that are both ridiculously fast and will fail fast on errors.</p>
 <p>Compare the performance of mutable, persistent &amp; zero-copy data structures, showing how to use interpreters and compilers to build beautiful and performant abstractions.</p>
 <p>A shot demo on building a simple non-blocking web server that runs idiomatic Clojure to serve millions of requests per second.</p>
-<p>Clojure is awesome, and it can be fast too.</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/3SSHjKT3ZmA">https://youtu.be/3SSHjKT3ZmA</a></p>
-<p>Naked Performance (with Clojure) – Tommi Reiman - Metosin</p>
+<p style="text-align:center">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/3SSHjKT3ZmA" title="YouTube video player" width="560"></iframe>
+</p>
+<h2 id="advanced-types">Advanced types<a class="headerlink" href="#advanced-types" title="Permanent link">λ︎</a></h2>
+<div class="admonition hint">
+<p class="admonition-title">Clojure support for Java Primitives</p>
+<p>Clojure has support for high-performance with Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.  In the extremely rare occasions where this is needed, it is added via metadata and therefore only adds to the existing code without rewriting it.</p>
+</div>
+<p>Rather than write this Java:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">static</span><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="nf">asum</span><span class="p">(</span><span class="kt">float</span><span class="o">[]</span><span class="w"> </span><span class="n">xs</span><span class="p">){</span>
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">ret</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">  </span><span class="k">for</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">xs</span><span class="p">.</span><span class="na">length</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="n">ret</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">xs</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">;</span>
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span>
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
+</code></pre></div>
+you can write this Clojure:</p>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">asum</span><span class="w"> </span><span class="p">[</span><span class="o">^</span><span class="nv">floats</span><span class="w"> </span><span class="nv">xs</span><span class="p">]</span>
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">areduce</span><span class="w"> </span><span class="nv">xs</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">ret</span><span class="w"> </span><span class="p">(</span><span class="nb">float </span><span class="mi">0</span><span class="p">)</span>
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">+ </span><span class="nv">ret</span><span class="w"> </span><span class="p">(</span><span class="nb">aget </span><span class="nv">xs</span><span class="w"> </span><span class="nv">i</span><span class="p">))))</span>
+</code></pre></div>
+and the resulting code is exactly the same speed (when run with java -server).</p>
+<h2 id="optimization-tips-for-types">Optimization tips for types<a class="headerlink" href="#optimization-tips-for-types" title="Permanent link">λ︎</a></h2>
+<p>All arguments are passed to Clojure fns as objects, so there's no point to putting non-array primitive type hints on fn args. Instead, use the let technique shown to place args in primitive locals if they need to participate in primitive arithmetic in the body.
+   (let [foo (int bar)] ...) is the correct way to get a primitive local. Do not use ^Integer etc.</p>
+<p>Don't rush to unchecked math unless you want truncating operations. HotSpot does a good job at optimizing the overflow check, which will yield an exception instead of silent truncation. On a typical example, that has about a 5% difference in speed - well worth it. Also, people reading your code don't know if you are using unchecked for truncation or performance - best to reserve it for the former and comment if the latter.</p>
+<p>There's usually no point in trying to optimize an outer loop, in fact it can hurt you as you'll be representing things as primitives which just have to be re-boxed in order to become args to the inner call. The only exception is reflection warnings - you must get rid of them in any code that gets called frequently.</p>
+<p>Almost every time someone presents something they are trying to optimize with hints, the faster version has far fewer hints than the original. If a hint doesn't improve things in the end - take it out.</p>
+<p>Many people seem to presume only the unchecked- ops do primitive arithmetic - not so. When the args are primitive locals, regular + and * etc do primitive math with an overflow check - fast and safe.</p>
+<p>So, the simplest route to fast math is to leave the operators alone and just make sure the source literals and locals are primitive. Arithmetic on primitives yields primitives. If you've got a loop (which you probably do if you need to optimize) make sure the loop locals are primitives first - then if you accidentally are producing a boxed intermediate result you'll get an error on recur. Don't solve that error by coercing your intermediate result, instead, figure out what argument or local is not primitive.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2023</span>
 </small>
 </div>
 </article>

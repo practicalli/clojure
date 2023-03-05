@@ -17,7 +17,7 @@
 <link href="../java-17-flags/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
-<title>Commonly used JVM Options - Practicalli Clojure</title>
+<title>Common JVM Options - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Commonly used JVM Options - Practicalli Clojure" property="og:title"/>
+<meta content="Common JVM Options - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/reference/jvm/common-options.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/reference/jvm/common-options/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Commonly used JVM Options - Practicalli Clojure" name="twitter:title"/>
+<meta content="Common JVM Options - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/reference/jvm/common-options.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#commonly-used-jvm-options">
+<a class="md-skip" href="#common-jvm-options">
           Skip to content
         </a>
 </div>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Commonly used JVM Options
+              Common JVM Options
             
           </span>
 </div>
@@ -1804,17 +1804,17 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
 <a class="md-nav__link" href="../understanding-memory-usage/">
-        Understanding memory usage.
+        Memory usage
       </a>
 </li>
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Commonly used JVM Options
+          Common JVM Options
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Commonly used JVM Options
+        Common JVM Options
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -1823,28 +1823,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintjdk_java_options-environment-variable">
-    Hint::JDK_JAVA_OPTIONS Environment Variable
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#java-heap-size">
     Java heap size
   </a>
-<nav aria-label="Java heap size" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#set-heap-with-respect-to-garbage-collection">
-    Set heap with respect to garbage collection
+<a class="md-nav__link" href="#heap-and-garbage-collection">
+    Heap and garbage collection
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#container-environments">
     Container Environments
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#stack-traces">
@@ -1982,28 +1973,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#hintjdk_java_options-environment-variable">
-    Hint::JDK_JAVA_OPTIONS Environment Variable
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#java-heap-size">
     Java heap size
   </a>
-<nav aria-label="Java heap size" class="md-nav">
-<ul class="md-nav__list">
+</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#set-heap-with-respect-to-garbage-collection">
-    Set heap with respect to garbage collection
+<a class="md-nav__link" href="#heap-and-garbage-collection">
+    Heap and garbage collection
   </a>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#container-environments">
     Container Environments
   </a>
-</li>
-</ul>
-</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#stack-traces">
@@ -2063,16 +2045,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/reference/jvm/common-options.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1 id="commonly-used-jvm-options">Commonly used JVM Options<a class="headerlink" href="#commonly-used-jvm-options" title="Permanent link">λ︎</a></h1>
-<blockquote>
-<p>The JVM is excellent at self-optimising its performance.  Introducing specific options should only be done if specific resource or performance issues have been identified.</p>
-</blockquote>
+<h1 id="common-jvm-options">Common JVM Options<a class="headerlink" href="#common-jvm-options" title="Permanent link">λ︎</a></h1>
 <p>Examples of commonly used options for any language on the Java Virtual Machine (JVM).</p>
+<p>The JVM is excellent at self-optimising its performance.  Introducing specific options should only be done if specific resource or performance issues have been identified.</p>
 <p><a href="../understanding-memory-usage/">Understanding memory usage</a> has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation</p>
-<blockquote>
-<h4 id="hintjdk_java_options-environment-variable">Hint::<code>JDK_JAVA_OPTIONS</code> Environment Variable<a class="headerlink" href="#hintjdk_java_options-environment-variable" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title"><code>JDK_JAVA_OPTIONS</code> Environment Variable</p>
 <p><code>JDK_JAVA_OPTIONS</code> is the official Environment Variable for setting options when calling <code>java</code>, <code>javac</code> and other Java commands to start running a Java Virtual Machine (Java version 9 onward).</p>
-</blockquote>
+</div>
 <h2 id="java-heap-size">Java heap size<a class="headerlink" href="#java-heap-size" title="Permanent link">λ︎</a></h2>
 <p>Java Ergonomics should provide sensible default options.  Performance analysis of the running code may show advantages of manually setting memory sizes.</p>
 <p>Set the initial heap size if memory usage will quickly grow</p>
@@ -2084,13 +2064,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>-Xss</code> - set java thread stack size</p>
 <p><code>-Xms</code> and <code>-Xmx</code> are commonly used together (where there is a know fixed value for memory resources).</p>
 <!-- TODO: JVM options: example JVM thread stack size -->
-<h3 id="set-heap-with-respect-to-garbage-collection">Set heap with respect to garbage collection<a class="headerlink" href="#set-heap-with-respect-to-garbage-collection" title="Permanent link">λ︎</a></h3>
+<h2 id="heap-and-garbage-collection">Heap and garbage collection<a class="headerlink" href="#heap-and-garbage-collection" title="Permanent link">λ︎</a></h2>
 <p><code>-XX:MaxHeapFreeRatio</code> – maximum percentage of heap free after garbage collection to avoid shrinking.</p>
 <p><code>-XX:MinHeapFreeRatio</code> – minimum percentage of heap free after GC to avoid expansion</p>
 <blockquote>
 <p>VisualVM or JConsole can monitor the heap usage</p>
 </blockquote>
-<h3 id="container-environments">Container Environments<a class="headerlink" href="#container-environments" title="Permanent link">λ︎</a></h3>
+<h2 id="container-environments">Container Environments<a class="headerlink" href="#container-environments" title="Permanent link">λ︎</a></h2>
 <p><code>-XX:InitialRAMPercentage</code> and <code>-XX:MaxRAMPercentage</code> options should be used to set relative limits to the resources available from the host.</p>
 <p>Setting specific heap sizes with <code>-Xms</code> and <code>-Xmx</code> is strongly discouraged in Container environments, as resources available to the container from the host could change between deployments (e.g. a change in operational configuration in Kubernettes, etc.)</p>
 <h2 id="stack-traces">Stack traces<a class="headerlink" href="#stack-traces" title="Permanent link">λ︎</a></h2>
@@ -2160,14 +2140,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>-XX:PermSize</code> - size of PermGen space where string pool and class metadata is saved.</p>
 <p>Option is useful for web servers which load classes of a web application during deployment (e.g. deploying a jar or war to Tomcat).</p>
 <blockquote>
-<p>Metaspace has taken over PermGen space in Java 8</p>
+<p>Metaspace has taken over PermGen space in Java 8 onward</p>
 </blockquote>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2023</span>
 </small>
 </div>
 </article>
@@ -2181,7 +2161,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Understanding memory usage." class="md-footer__link md-footer__link--prev" href="../understanding-memory-usage/" rel="prev">
+<a aria-label="Previous: Memory usage" class="md-footer__link md-footer__link--prev" href="../understanding-memory-usage/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2190,7 +2170,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Understanding memory usage.
+                Memory usage
               </div>
 </div>
 </a>
