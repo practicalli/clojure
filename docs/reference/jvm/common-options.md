@@ -1,14 +1,13 @@
-# Commonly used JVM Options
-
-> The JVM is excellent at self-optimising its performance.  Introducing specific options should only be done if specific resource or performance issues have been identified.
-
+# Common JVM Options
 
 Examples of commonly used options for any language on the Java Virtual Machine (JVM).
 
+The JVM is excellent at self-optimising its performance.  Introducing specific options should only be done if specific resource or performance issues have been identified.
+
 [Understanding memory usage](understanding-memory-usage.md) has more options to diagnose out of memory errors, garbage collection pauses and JIT compilation
 
-> #### Hint::`JDK_JAVA_OPTIONS` Environment Variable
-> `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
+!!! HINT "`JDK_JAVA_OPTIONS` Environment Variable"
+    `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
 
 
 ## Java heap size
@@ -34,7 +33,7 @@ Set the maximum heap size if usage is relatively high under normal conditions
 <!-- TODO: JVM options: example JVM thread stack size -->
 
 
-### Set heap with respect to garbage collection
+## Heap and garbage collection
 
 `-XX:MaxHeapFreeRatio` – maximum percentage of heap free after garbage collection to avoid shrinking.
 
@@ -43,7 +42,7 @@ Set the maximum heap size if usage is relatively high under normal conditions
 > VisualVM or JConsole can monitor the heap usage
 
 
-### Container Environments
+## Container Environments
 
 `-XX:InitialRAMPercentage` and `-XX:MaxRAMPercentage` options should be used to set relative limits to the resources available from the host.
 
@@ -146,4 +145,4 @@ Enable the garbage collection logging to capture detailed statistics, e.g. type 
 
 Option is useful for web servers which load classes of a web application during deployment (e.g. deploying a jar or war to Tomcat).
 
-> Metaspace has taken over PermGen space in Java 8
+> Metaspace has taken over PermGen space in Java 8 onward

@@ -1,4 +1,4 @@
-# Understanding memory usage.
+# Memory usage
 
 Adjusting the heap size and Garbage Collection behaviour is often the simplest means to improving application performance and stability. A mismatch between the heap size.
 
@@ -9,9 +9,10 @@ Garbage collection cost is in the form of execution pauses while the HotSpot JVM
 
 Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:
 
-```bash
--XX:+UnlockDiagnosticVMOptions ‑XX:NativeMemoryTracking=summary ‑XX:+PrintNMTStatistics.
-```
+!!! EXAMPLE "JVM Memory Usage Report"
+    ```bash
+    -XX:+UnlockDiagnosticVMOptions ‑XX:NativeMemoryTracking=summary ‑XX:+PrintNMTStatistics.
+    ```
 
 
 ## Out Of Memory errors

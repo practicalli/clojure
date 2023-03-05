@@ -2,8 +2,8 @@
 
 Profile applications on the JVM, visualising memory and CPU resources, identifying bottlenecks and areas of the code to review to optimise a running application.
 
-* [Using FlameGraphs To Illuminate The JVM](https://youtu.be/ugRrFdda_JQ) by Nitsan Wakart at Devoxx UK 2017
-* [A Simple Approach to the Advanced JVM Profiling](https://youtu.be/TDpbt4thECc) - JetBrains
+[:fontawesome-brands-youtube: Using FlameGraphs To Illuminate The JVM](https://youtu.be/ugRrFdda_JQ){target=_blank .md-button}
+[:fontawesome-brands-youtube: A Simple Approach to the Advanced JVM Profiling](https://youtu.be/TDpbt4thECc){target=_blank .md-button}
 
 <!-- ## Command line -->
 <!-- TODO: JVM profile - anything useful on the command line? -->
@@ -15,19 +15,15 @@ A simplified and robust profiling tool for Java applications, bundled with the J
 
 ![Java VisualVM screenshot](https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png)
 
-{% tabs ubuntu="Ubuntu/Debian", manual="Manually add Alias" %}
 
-{% content "ubuntu" %}
+=== "Ubuntu"
+    Ubuntu / Debian includes VisualVM in the software center
+    ```bash
+    sudo apt install visualvm
+    ```
 
-Ubuntu / Debian includes VisualVM in the software center
-
-```bash
-sudo apt install visualvm
-```
-
-{% endtabs %}
-
-
+=== "MacOSX"
+    Download the macOS application bundle and double-click to install.
 
 
 ## JDK Flight Recorder
@@ -43,14 +39,14 @@ JDK Flight Recorder is a production time profiling and diagnostics engine built 
 
 Mission control provides a graphical tool to visualise flight recorder data.
 
-* [Continuous Monitoring with JDK Flight Recorder](https://youtu.be/plYESjZ12hM) - Java channel - September 2020
-* [JDK11 - Introduction to JDK Flight Recorder](https://youtu.be/7z_R2Aq-Fl8) - September 2020
-* [Production profiling with JDK Flight Recorder & JDK Mission Control](https://youtu.be/wwgvDDuJwtk) - Madrid JUG
+* [:fontawesome-brands-youtube: Continuous Monitoring with JDK Flight Recorder](https://youtu.be/plYESjZ12hM){target=_blank}
+* [:fontawesome-brands-youtube: JDK11 - Introduction to JDK Flight Recorder](https://youtu.be/7z_R2Aq-Fl8){target=_blank}
+* [:fontawesome-brands-youtube: Production profiling with JDK Flight Recorder & JDK Mission Control](https://youtu.be/wwgvDDuJwtk){target=_blank}
 
 
 ## Mission Control
 
-[Mission Control]([GitHub repository](https://github.com/openjdk/jmc)) is an open source desktop tool for visualising production time profiling and diagnostics from the JDK flight recorder tool. JDK Mission Control supports OpenJDK 11 and above.
+[Mission Control](https://github.com/openjdk/jmc){target=_blank} is an open source desktop tool for visualising production time profiling and diagnostics from the JDK flight recorder tool. JDK Mission Control supports OpenJDK 11 and above.
 
 JDK Mission Control consists of
 
@@ -58,16 +54,16 @@ JDK Mission Control consists of
 * A Java Management Extensions (JMX) Console
 * A heap dump (hprof format) analyzer (JOverflow)
 
-[Eclipse Mission Control from Adoptium](https://adoptium.net/jmc.html).
+[Eclipse Mission Control from Adoptium](https://adoptium.net/jmc.html){target=_blank .md-button}
 
 <!-- TODO:  Compare to VisualVM and Mission Control.  Does it reduce down to Mission Control being a real-time stats version of VisualVM? Or due to leveraging jdk flight recorder -->
 
 
 Java Mission Control demo - 2014 outated but might be useful if nothing newer
 
-{% youtube %}
-https://youtu.be/aJH_aZNQ-G4
-{% endyoutube %}
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aJH_aZNQ-G4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 <!-- ![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png) -->
 
@@ -81,12 +77,12 @@ Explore three of the best free tools for profiling a Java (Spring) application:
 * Using Micrometer-Prometheus-Grafana to profile connection starvation issues
 * Using Glowroot to identify long-running queries
 
-{% youtube %}
-https://youtu.be/3PWgGzpHykc
-{% endyoutube %}
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/3PWgGzpHykc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
 
 
 ## References
 
-* [Java Profilers - Baeldung](https://www.baeldung.com/java-profilers) - overview of several profiling tools
-* [Java SE HotSpot Virtual Machine Garbage Collection Tuning Guide - Oracle](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/)
+[Java Profilers - Baeldung](https://www.baeldung.com/java-profilers){target=_blank .md-button}
+[HotSpot Virtual Machine Garbage Collection Tuning Guide - Oracle](https://docs.oracle.com/javase/8/docs/technotes/guides/vm/gctuning/){target=_blank .md-button}
