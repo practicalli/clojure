@@ -1,4 +1,4 @@
-# Leiningen build automation tool for Clojure
+# Leiningen build automation tool
 
 Leiningen will help you create, build and deploy your Clojure projects.
 
@@ -33,7 +33,7 @@ Install the Leiningen tool using the specific instructions for your Operating Sy
     brew install leiningen
     ```
 
-=== "GitBash" %}
+=== "GitBash"
     [GitBash](https://gitforwindows.org/) allows you to use the Linux `lein` script, which may have less issues when installing.
 
     Create a directory called `C:\Users\your-user-name\AppData\Local\Programs\Leiningen`
@@ -80,7 +80,7 @@ If a list of Leiningen commands is shown then it is working correctly.
 <!-- ![Leiningen help](/images/leiningen-help.png) -->
 
 
-# Creating project
+## Create project
 
 Create a new Clojure project with Leiningen using the `new` task
 
