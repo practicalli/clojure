@@ -15,9 +15,9 @@
 <link href="https://practical.li/clojure/alternative-tools/leiningen/" rel="canonical"/>
 <link href="../clojure-cli/set-namespace-on-repl-startup/" rel="prev"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
-<meta content="mkdocs-1.4.2, mkdocs-material-9.1.0" name="generator"/>
-<title>Leiningen build automation tool for Clojure - Practicalli Clojure</title>
-<link href="../../assets/stylesheets/main.402914a4.min.css" rel="stylesheet"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<title>Leiningen build automation tool - Practicalli Clojure</title>
+<link href="../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -27,7 +27,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="Leiningen build automation tool for Clojure - Practicalli Clojure" property="og:title"/>
+<meta content="Leiningen build automation tool - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/alternative-tools/leiningen/index.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -35,7 +35,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/alternative-tools/leiningen/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="Leiningen build automation tool for Clojure - Practicalli Clojure" name="twitter:title"/>
+<meta content="Leiningen build automation tool - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/alternative-tools/leiningen/index.png" name="twitter:image"/>
 <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -56,7 +56,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#leiningen-build-automation-tool-for-clojure">
+<a class="md-skip" href="#leiningen-build-automation-tool">
           Skip to content
         </a>
 </div>
@@ -95,7 +95,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              Leiningen build automation tool for Clojure
+              Leiningen build automation tool
             
           </span>
 </div>
@@ -1876,11 +1876,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          Leiningen build automation tool for Clojure
+          Leiningen build automation tool
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        Leiningen build automation tool for Clojure
+        Leiningen build automation tool
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -1896,6 +1896,26 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item">
 <a class="md-nav__link" href="#run-leiningen">
     Run Leiningen
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-project">
+    Create project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-testing">
+    Unit Testing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-plugins">
+    Test Plugins
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-test-paths">
+    Configure test paths
   </a>
 </li>
 </ul>
@@ -1931,6 +1951,26 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     Run Leiningen
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#create-project">
+    Create project
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#unit-testing">
+    Unit Testing
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#test-plugins">
+    Test Plugins
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#configure-test-paths">
+    Configure test paths
+  </a>
+</li>
 </ul>
 </nav>
 </div>
@@ -1944,7 +1984,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/alternative-tools/leiningen/index.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1 id="leiningen-build-automation-tool-for-clojure">Leiningen build automation tool for Clojure<a class="headerlink" href="#leiningen-build-automation-tool-for-clojure" title="Permanent link">λ︎</a></h1>
+<h1 id="leiningen-build-automation-tool">Leiningen build automation tool<a class="headerlink" href="#leiningen-build-automation-tool" title="Permanent link">λ︎</a></h1>
 <p>Leiningen will help you create, build and deploy your Clojure projects.</p>
 <div class="admonition hint">
 <p class="admonition-title">Practicalli recommends using Clojure CLI</p>
@@ -1954,7 +1994,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Install the Leiningen tool using the specific instructions for your Operating System</p>
 <!-- Operating System specific instructions -->
 <p>{% tabs first="Linux", second="Homebrew", third="GitBash", forth="Chocolatey", fifth="Windows Manual" %}</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Homebrew</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><input id="__tabbed_1_3" name="__tabbed_1" type="radio"><input id="__tabbed_1_4" name="__tabbed_1" type="radio"><input id="__tabbed_1_5" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Linux</label><label for="__tabbed_1_2">Homebrew</label><label for="__tabbed_1_3">GitBash</label><label for="__tabbed_1_4">Chocolatey</label><label for="__tabbed_1_5">Windows</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein">Download the lein script</a> to your local <code>bin</code> directory.  Then make the <code>lein</code> script executable and run <code>lein</code> to download the full version.</p>
@@ -1970,22 +2010,14 @@ If the command <code>lein</code> is not found, run <code>source ~/.bashrc</code>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>leiningen
 </code></pre></div>
 </div>
+<div class="tabbed-block">
+<p><a href="https://gitforwindows.org/">GitBash</a> allows you to use the Linux <code>lein</code> script, which may have less issues when installing.</p>
+<p>Create a directory called <code>C:\Users\your-user-name\AppData\Local\Programs\Leiningen</code></p>
+<p>Download the <code>lein</code> file and save it to the above directory</p>
+<p>Open <code>Environment variables for your account</code> and add the directory to your path</p>
+<p>Open a command window and run the command: <code>lein</code></p>
+<p>The full version of Leiningen will be downloaded and Leiningen is ready to use.</p>
 </div>
-</input></input></div>
-<p>=== "GitBash" %}
-    <a href="https://gitforwindows.org/">GitBash</a> allows you to use the Linux <code>lein</code> script, which may have less issues when installing.</p>
-<div class="highlight"><pre><span></span><code>Create a directory called `C:\Users\your-user-name\AppData\Local\Programs\Leiningen`
-
-Download the `lein` file and save it to the above directory
-
-Open `Environment variables for your account` and add the directory to your path
-
-Open a command window and run the command: `lein`
-
-The full version of Leiningen will be downloaded and Leiningen is ready to use.
-</code></pre></div>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Chocolatey</label><label for="__tabbed_2_2">Windows</label></div>
-<div class="tabbed-content">
 <div class="tabbed-block">
 <p>If you have <a href="https://chocolatey.org/">Chocolatey</a> installed, add the <a href="https://chocolatey.org/packages/Lein">Leiningen package</a> by running the following command in a terminal window.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>choco<span class="w"> </span>install<span class="w"> </span>lein
@@ -1999,14 +2031,14 @@ The full version of Leiningen will be downloaded and Leiningen is ready to use.
 <p>The full version of Leiningen will be downloaded and Leiningen is ready to use.</p>
 </div>
 </div>
-</input></input></div>
+</input></input></input></input></input></div>
 <h2 id="run-leiningen">Run Leiningen<a class="headerlink" href="#run-leiningen" title="Permanent link">λ︎</a></h2>
 <p>Check Leiningen is working by running <code>lein</code> command in a terminal</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>lein<span class="w"> </span><span class="nb">help</span>
 </code></pre></div>
 <p>If a list of Leiningen commands is shown then it is working correctly.</p>
 <!-- ![Leiningen help](/images/leiningen-help.png) -->
-<h1 id="creating-project">Creating project<a class="headerlink" href="#creating-project" title="Permanent link">λ︎</a></h1>
+<h2 id="create-project">Create project<a class="headerlink" href="#create-project" title="Permanent link">λ︎</a></h2>
 <p>Create a new Clojure project with Leiningen using the <code>new</code> task</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>lein<span class="w"> </span>new<span class="w"> </span>template-name<span class="w"> </span>domain/project-name
 </code></pre></div>
@@ -2052,7 +2084,7 @@ A new directory will be created called <code>playground</code> with a <code>src/
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 10, 2023</span>
 </small>
 </div>
 </article>
@@ -2118,6 +2150,6 @@ A new directory will be created called <code>playground</code> with a <code>src/
 <div class="md-dialog__inner md-typeset"></div>
 </div>
 <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "navigation.top", "content.code.annotate", "content.tabs.link", "content.code.copy", "content.action.edit", "content.action.view", "navigation.instant", "navigation.tracking", "navigation.indexes", "navigation.footer"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="../../assets/javascripts/bundle.ce72ebac.min.js"></script>
+<script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
 <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
