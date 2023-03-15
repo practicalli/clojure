@@ -84,10 +84,10 @@ pip3 install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revisio
 
 > pillow and cairosvg python packages are required for [Social Cards](https://squidfunk.github.io/mkdocs-material/setup/setting-up-social-cards/)
 
-Fork the practicalli/spacemacs GitHub repository and clone that fork to your computer,
+Fork the GitHub repository and clone that fork to your computer,
 
 ```bash
-git clone https://github.com/<your-github-account>/spacemacs.git
+git clone https://github.com/<your-github-account>/clojure.git
 
 ```
 
