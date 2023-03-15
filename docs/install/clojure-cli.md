@@ -26,6 +26,10 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
     The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
+    ??? INFO "Include version number for specific release"
+        Clojure CLI linux install scripts include a number in their name to signify the version of Clojure and the version of Clojure CLI.
+
+        Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
 
 === "Homebrew"
 
