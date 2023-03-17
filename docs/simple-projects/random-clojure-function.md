@@ -7,6 +7,9 @@ A simple application that returns a random function from the `clojure.core` name
 
 There are 659 functions in [`clojure.core` namespace](https://clojuredocs.org/clojure.core) and 955 in the standard library (as of June 2020).  These functions are learned over time as experience is gained with Clojure.
 
+??? EXAMPLE "Project: Random Clojure function"
+    [:fontawesome-brands-github: practicalli/random-clojure-function](https://github.com/practicalli/random-clojure-function){target=_blank} repository contains a Clojure project with an example solution
+
 
 ## Live Coding Video walk-through
 
