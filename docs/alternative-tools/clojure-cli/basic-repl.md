@@ -2,17 +2,10 @@
 
 The `clojure` command will start a REPL by default or if given the `--repl` argument.
 
-`clj` is a script that wraps the `clojure` command and uses `rlwrap`, an external readline command, to navigate REPL history via the <kbd>↑</kbd> and <kbd>↓</kbd> keys.
-
-Use `clj` when you want to run a repl (or preferably use [rebel readline](rebel-readline/) instead) and `clojure` for everything else.
-
-!!! HINT "Rebel Rich Terminal UI"
-    [rebel readline](rebel-readline/) is a command line REPL UI that provides interactive help, function autocomplete, signature prompts and many other features to provide a very rich REPL experience.
-
-    [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }}) includes the `-M:repl/rebel` alias to run rebel readline REPL.
+`clj` is a script that wraps the `clojure` command and uses `rlwrap`, an external readline command, to navigate REPL history via the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  Use `clj` when you want to run a repl and `clojure` for everything else.
 
 
-`clj` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
+The `clj` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
 
 ```bash
 clj
