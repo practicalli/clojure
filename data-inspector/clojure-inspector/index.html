@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clojure-cli/defining-aliases.md">
+<a class="md-nav__link" href="../../clojure-cli/defining-aliases/">
         Defining aliases
       </a>
 </li>
@@ -1189,8 +1189,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases/">
-        Defining aliases
+<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -1982,7 +1982,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="nf">inspector/inspect</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">repeatedly</span><span class="w"> </span><span class="mi">10000</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">rand-int </span><span class="mi">101</span><span class="p">)))</span>
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png"><img alt="Clojure Inspector - inspect data elements with index" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png"><img alt="Clojure Inspector - inspect data elements with index" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png"/></a></p>
 <h2 id="inspect-tree"><code>inspect-tree</code><a class="headerlink" href="#inspect-tree" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="nf">inspect</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:star-wars</span>
@@ -1990,7 +1990,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">      </span><span class="p">{</span><span class="ss">:jedi</span><span class="w"> </span><span class="p">[</span><span class="s">"obiwan kenobi"</span><span class="w"> </span><span class="s">"Yoda"</span><span class="w"> </span><span class="s">"Master Wendoo"</span><span class="p">]</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">       </span><span class="ss">:sith</span><span class="w"> </span><span class="p">[</span><span class="s">"Palpatine"</span><span class="w"> </span><span class="s">"Count Dukoo"</span><span class="p">]}}})</span>
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png"><img alt="Clojure - Inspector - inspect tree with hash-map" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png"><img alt="Clojure - Inspector - inspect tree with hash-map" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png"/></a></p>
 <h2 id="inspect-table"><code>inspect-table</code><a class="headerlink" href="#inspect-table" title="Permanent link">λ︎</a></h2>
 <p>Inspect a sequence of data structures that share the same form, often found in data sets for machine learning and wider data science, eg. daily weather records.</p>
 <p>This example generates mock data for a 20 day period for one or more locations.  Each day contains the day, location and cumulative number of cases reported.</p>
@@ -2009,7 +2009,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-4-13" id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">(</span><span class="nf">inspector/inspect-table</span>
 <a href="#__codelineno-4-14" id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">  </span><span class="p">(</span><span class="nf">mock-data-set</span><span class="w"> </span><span class="s">"England"</span><span class="w"> </span><span class="s">"Scotland"</span><span class="w"> </span><span class="s">"Wales"</span><span class="w"> </span><span class="s">"Northern Ireland"</span><span class="p">))</span>
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-table-uk-cases-by-country.png"><img alt="Cider Inspector - inspect table - medical cases mock data" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-table-uk-cases-by-country.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-table-uk-cases-by-country.png"><img alt="Cider Inspector - inspect table - medical cases mock data" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-table-uk-cases-by-country.png"/></a></p>
 <hr/>
 <div class="md-source-file">
 <small>

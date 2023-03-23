@@ -292,7 +292,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases/">
         Defining aliases
       </a>
 </li>
@@ -1159,8 +1159,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-cli/defining-aliases/">
-        Defining aliases
+<a class="md-nav__link" href="../../../reference/clojure-cli/defining-aliases.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -1926,19 +1926,19 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The project runs on the Undertow web server (wrapped by immutant), using ring to manage web requests and responses, with compojure for server-side routing.  The application uses mount to manage the application lifecycle.</p>
 <p><a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork" target="_blank">Fork the CircleCI-Public/circleci-demo-clojure-luminus</a> project on your GitHub or GitLab account or organisation.</p>
 <p>Go to the CircleCI dashboard and login.  Select the GitHub / GitLab organisation you want to work with, this will list the repositories in that organisation.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-select-organisation.png"><img alt="Circle CI Dashboard - Select an organisation and its projects" src="/images/circle-ci-dashboard-select-organisation.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-select-organisation.png"><img alt="Circle CI Dashboard - Select an organisation and its projects" src="/images/circle-ci-dashboard-select-organisation.png"/></a></p>
 <p>Find the project in the list of repositories for that organisation</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-projects-repo-search-circleci.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/circle-ci-dashboard-projects-repo-search-circleci.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-projects-repo-search-circleci.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/circle-ci-dashboard-projects-repo-search-circleci.png"/></a></p>
 <p>Click on the "Set Up Project" button and select the Clojure configuration from the drop-down menu.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"><img alt="Circle CI Dashboard - Set Up Project on CircleCI using the example repository" src="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"><img alt="Circle CI Dashboard - Set Up Project on CircleCI using the example repository" src="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png"/></a></p>
 <p>This template seems to be older than the sample configuration on the <a href="https://circleci.com/docs/2.0/language-clojure/" target="_blank">Clojure language page</a>.  Copy the sample configuration and paste it into the editor.  Then press Add Config to automatically add it to your code repository.</p>
 <p>This will start a build and show the pipelines dashboard, with the project running the tasks defined in the configuration</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-ci-pipelines-luminus-running.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/clojure-ci-pipelines-luminus-running.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/clojure-ci-pipelines-luminus-running.png"><img alt="Circle CI Dashboard - Luminus project " src="/images/clojure-ci-pipelines-luminus-running.png"/></a></p>
 <p>Oh, it failed...</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-pipelines-luminus-failed.png"><img alt="Circle CI Dashboard - Luminus project build failed" src="/images/circle-ci-dashboard-pipelines-luminus-failed.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-pipelines-luminus-failed.png"><img alt="Circle CI Dashboard - Luminus project build failed" src="/images/circle-ci-dashboard-pipelines-luminus-failed.png"/></a></p>
 <p>Clicking on the FAILED button shows details of that particular pipeline.  This opens the build report for the pipeline.</p>
 <p>The build report shows all the steps that have passed and the details of the step which has failed, in this case lein do test, uberjar</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png"><img alt="Circle CI Dashboard - Luminus project build report" src="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png"><img alt="Circle CI Dashboard - Luminus project build report" src="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png"/></a></p>
 <blockquote>
 <h4 id="hintfailing-on-java-11">Hint::Failing on Java 11<a class="headerlink" href="#hintfailing-on-java-11" title="Permanent link">λ︎</a></h4>
 <p>The example project only seems to run on Java 8.  Running the project locally with either <code>lein run</code> or <code>lein test</code></p>
@@ -1949,9 +1949,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Apart from the initial creation of the configuration, its not possible to edit the configuration via the dashboard.</p>
 </blockquote>
 <p>Then commit the change to the code in the code repository. Another build will run automatically.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png"><img alt="Circle CI Dashboard - Luminus project running second build" src="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png"><img alt="Circle CI Dashboard - Luminus project running second build" src="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png"/></a></p>
 <p>The dashboard shows the second build of this pipeline, showing the new commit just pushed</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png"><img alt="Circle CI Dashboard - Luminus project second build successful" src="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png"><img alt="Circle CI Dashboard - Luminus project second build successful" src="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png"/></a></p>
 <p>Success.  Now development can continue knowing the configuration of the pipeline works.</p>
 <hr/>
 <div class="md-source-file">

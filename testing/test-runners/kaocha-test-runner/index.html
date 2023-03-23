@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases/">
         Defining aliases
       </a>
 </li>
@@ -1213,8 +1213,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../reference/clojure-cli/defining-aliases/">
-        Defining aliases
+<a class="md-nav__link" href="../../../reference/clojure-cli/defining-aliases.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -2077,7 +2077,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><code>#kaocha/v1 {}</code> is the minimum configuration, which will use a default configuration.</p>
 <p>The <code>tests.edn</code> file and command line options combine to make the complete configuration for the projects in the test.</p>
 <p><code>bin/kaocha --print-config</code> will print out the complete configuration.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"><img alt="Clojure Unit Test - kaocha print configuration" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"><img alt="Clojure Unit Test - kaocha print configuration" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png"/></a></p>
 <p>Use the default configuration as a basis for customising any specific project.</p>
 <details class="hint">
 <summary>Alternative kaocha configuration with aero</summary>
@@ -2088,13 +2088,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>All test code found on the class path will be run, so ensure the <code>test</code> directory was added when starting the REPL process and test definitions, <code>deftest</code> are using <code>-test</code> postfix</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-run-results.png"><img alt="Clojure Unit Test - kaocha test runner results" src="/images/clojure-unit-test-kaocha-run-results.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/clojure-unit-test-kaocha-run-results.png"><img alt="Clojure Unit Test - kaocha test runner results" src="/images/clojure-unit-test-kaocha-run-results.png"/></a></p>
 <p>If one or more tests fail, then a detailed description of the failure is printed</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-fail-example.png"><img alt="Clojure Unit Test - kaocha test failure example" src="/images/clojure-unit-test-kaocha-fail-example.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/clojure-unit-test-kaocha-fail-example.png"><img alt="Clojure Unit Test - kaocha test failure example" src="/images/clojure-unit-test-kaocha-fail-example.png"/></a></p>
 <p>The report progress plugin gives visual feedback as the tests are running.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>clojure<span class="w"> </span>-M:test/run<span class="w"> </span>--reporter<span class="w"> </span>kaocha.report.progress/report
 </code></pre></div>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"><img alt="Clojure Unit Test - kaocha test runner plugin report progress" src="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"><img alt="Clojure Unit Test - kaocha test runner plugin report progress" src="/images/clojure-unit-test-kaocha-plugin-report-progress-results.png"/></a></p>
 <p>Stop testing on the first failure with the <code>--fail-fast</code> flag.  Especially useful when running larger numbers of tests or slower running tests.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>clojure<span class="w"> </span>-M:test/run<span class="w"> </span>--fail-fast
 </code></pre></div>

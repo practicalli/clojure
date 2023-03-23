@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../../clojure-cli/defining-aliases.md">
+<a class="md-nav__link" href="../../../clojure-cli/defining-aliases/">
         Defining aliases
       </a>
 </li>
@@ -1161,8 +1161,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../clojure-cli/defining-aliases/">
-        Defining aliases
+<a class="md-nav__link" href="../../clojure-cli/defining-aliases.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -1975,7 +1975,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </a>
 <h1 id="parenthesis-defining-the-structure-of-clojure-code">Parenthesis - defining the structure of Clojure code<a class="headerlink" href="#parenthesis-defining-the-structure-of-clojure-code" title="Permanent link">λ︎</a></h1>
 <p>Clojure uses parenthesis, round brackets <code>()</code>, as a simple way to define the structure of the code and provide clear and unambiguous scope.  This structure is the syntax of <a href="https://en.wikipedia.org/wiki/S-expression">symbolic expressions</a>.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://blog.brunobonacci.com/images/20150419_S-expression_tree.png"><img alt="Clojure as an abstract syntax tree" src="https://blog.brunobonacci.com/images/20150419_S-expression_tree.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://blog.brunobonacci.com/images/20150419_S-expression_tree.png"><img alt="Clojure as an abstract syntax tree" src="https://blog.brunobonacci.com/images/20150419_S-expression_tree.png"/></a></p>
 <p>Parenthesis, or parens for short, are used to define and call functions in our code, include libraries and in fact any behavior we wish to express.</p>
 <p>Clojure includes 3 other bracket types to specifically identify data: <code>'()</code> quoted lists and sequences, <code>[]</code> for vectors (arrays) and argument lists, <code>{}</code> for hash-maps and <code>#{}</code> for sets of data.</p>
 <p>No other terminators or precedence rules are required to understand how to read and write Clojure.</p>
@@ -2000,7 +2000,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Clojure is a dialect of LISP and naturally was designed to be a homoiconic language. This means the syntax for behavior and data is the same.  This greatly simplifies the syntax of Clojure and all LISP style languages.</p>
 <p>The Clojure Reader is a parser that reads in data structures as expression, rather than parsing of text required by other languages. The result of parsing is a collection of data structures that can be traversed (asymmetric syntax tree - AST).  Compared to most languages the compiler does very little and you can consider Clojure really does not have a syntax.</p>
 <p>Code is written as data structures that are accessible to the other parts of the code, providing a way to write code that manipulate those data structures and generate new code. In Clojure this type of code is called a macro, a piece of code that writes new code.</p>
-<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-width="100%" href="https://i.pinimg.com/originals/f1/f6/8b/f1f68b008c5910119cd285c427eaae37.png"><img alt="Clojure Macro" src="https://i.pinimg.com/originals/f1/f6/8b/f1f68b008c5910119cd285c427eaae37.png"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://i.pinimg.com/originals/f1/f6/8b/f1f68b008c5910119cd285c427eaae37.png"><img alt="Clojure Macro" src="https://i.pinimg.com/originals/f1/f6/8b/f1f68b008c5910119cd285c427eaae37.png"/></a></p>
 <p>None of this would work as simply as it does without using parens and the symbolic expression syntax.</p>
 <ul>
 <li>Inspired by <a href="http://www.paulgraham.com/avg.html">Beating the Averages by Paul Graham</a></li>

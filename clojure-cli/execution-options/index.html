@@ -13,7 +13,7 @@
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="description"/>
 <meta content="Practicalli" name="author"/>
 <link href="https://practical.li/clojure/clojure-cli/execution-options/" rel="canonical"/>
-<link href="../built-in-commands/" rel="prev"/>
+<link href="../defining-aliases/" rel="prev"/>
 <link href="../repl-reloaded/" rel="next"/>
 <link href="../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.3" name="generator"/>
@@ -294,7 +294,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="../defining-aliases.md">
+<a class="md-nav__link" href="../defining-aliases/">
         Defining aliases
       </a>
 </li>
@@ -319,42 +319,43 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-a-clojure-project-with-clojuremain">
-    Run a Clojure project with clojure.main
+<a class="md-nav__link" href="#form-of-clojureexec-command-line-arguments">
+    Form of clojure.exec command line arguments
   </a>
-<nav aria-label="Run a Clojure project with clojure.main" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-clojuremain-project">
+    Run clojure.main project
+  </a>
+<nav aria-label="Run clojure.main project" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#how-clojuremain-works">
     How clojure.main works
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rebel-rich-terminal-ui">
+    Rebel rich terminal UI
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-a-rich-terminal-repl-with-clojuremain">
-    Run a rich terminal REPL with clojure.main
-  </a>
-<nav aria-label="Run a rich terminal REPL with clojure.main" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#chaining-aliases-together-with-clojuremain">
-    Chaining aliases together with clojure.main
+<a class="md-nav__link" href="#chaining-aliases">
+    Chaining aliases
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-specific-function">
-    Run specific function
+<a class="md-nav__link" href="#clojureexec">
+    clojure.exec
   </a>
-<nav aria-label="Run specific function" class="md-nav">
+<nav aria-label="clojure.exec" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#built-in-clojureexec-functions">
-    Built in clojure.exec functions
+<a class="md-nav__link" href="#built-in-functions">
+    Built in functions
   </a>
 </li>
 </ul>
@@ -1255,8 +1256,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases/">
-        Defining aliases
+<a class="md-nav__link" href="../../reference/clojure-cli/defining-aliases.md">
+        None
       </a>
 </li>
 <li class="md-nav__item">
@@ -1999,42 +2000,43 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-a-clojure-project-with-clojuremain">
-    Run a Clojure project with clojure.main
+<a class="md-nav__link" href="#form-of-clojureexec-command-line-arguments">
+    Form of clojure.exec command line arguments
   </a>
-<nav aria-label="Run a Clojure project with clojure.main" class="md-nav">
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#run-clojuremain-project">
+    Run clojure.main project
+  </a>
+<nav aria-label="Run clojure.main project" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#how-clojuremain-works">
     How clojure.main works
   </a>
 </li>
-</ul>
-</nav>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#rebel-rich-terminal-ui">
+    Rebel rich terminal UI
+  </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-a-rich-terminal-repl-with-clojuremain">
-    Run a rich terminal REPL with clojure.main
-  </a>
-<nav aria-label="Run a rich terminal REPL with clojure.main" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#chaining-aliases-together-with-clojuremain">
-    Chaining aliases together with clojure.main
+<a class="md-nav__link" href="#chaining-aliases">
+    Chaining aliases
   </a>
 </li>
 </ul>
 </nav>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#run-specific-function">
-    Run specific function
+<a class="md-nav__link" href="#clojureexec">
+    clojure.exec
   </a>
-<nav aria-label="Run specific function" class="md-nav">
+<nav aria-label="clojure.exec" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#built-in-clojureexec-functions">
-    Built in clojure.exec functions
+<a class="md-nav__link" href="#built-in-functions">
+    Built in functions
   </a>
 </li>
 </ul>
@@ -2102,7 +2104,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>Use <code>-P</code> to download libraries on the class path, including those from specified aliases</p>
 <p>Use <code>-A</code> in the specific case of running a basic terminal UI REPL with the <code>clojure</code> command (or <code>clj</code> wrapper).</p>
 <p>Common aliases will be used to explain the use of these execution options in more detail.</p>
-<h2 id="run-a-clojure-project-with-clojuremain">Run a Clojure project with clojure.main<a class="headerlink" href="#run-a-clojure-project-with-clojuremain" title="Permanent link">λ︎</a></h2>
+<h2 id="form-of-clojureexec-command-line-arguments">Form of clojure.exec command line arguments<a class="headerlink" href="#form-of-clojureexec-command-line-arguments" title="Permanent link">λ︎</a></h2>
+<p>Key/value pairs are read as EDN (extensible data notation that is the base syntax of Clojure).</p>
+<p>The command line shell needs a little help parsing</p>
+<p>Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. <code>'[:a :b]'</code>, <code>'{:c 1}'</code>.</p>
+<p>The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps</p>
+<p>Number values and keywords should not need to be wrapped.</p>
+<ul>
+<li><code>'"strings in double quotes surround by single quotes"'</code></li>
+<li><code>:key</code>[:service :port]<code>9999</code></li>
+<li><code>:config '{:log :console}'</code></li>
+</ul>
+<h2 id="run-clojuremain-project">Run clojure.main project<a class="headerlink" href="#run-clojuremain-project" title="Permanent link">λ︎</a></h2>
 <p><code>-M</code> execution option uses <code>clojure.main</code> to run Clojure code.</p>
 <p>Run a project with the main namespace <code>practicalli.sudoku-solver</code>, without any additional aliases on the command line</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M<span class="w"> </span>-m<span class="w"> </span>practicalli.sudoku-solver
@@ -2122,8 +2135,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p><a href="https://clojure.org/reference/repl_and_main"><code>clojure.main</code> namespace</a> has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of <a href="#clojure-exec--X">clojure.exec</a>.
 <a href="https://clojure.org/reference/repl_and_main">clojure.main has other features, as covered in the REPL and main entrypoints article</a>) on clojure.org.</p>
 </blockquote>
-<h2 id="run-a-rich-terminal-repl-with-clojuremain">Run a rich terminal REPL with clojure.main<a class="headerlink" href="#run-a-rich-terminal-repl-with-clojuremain" title="Permanent link">λ︎</a></h2>
-<p><a href="https://practical.li/clojure/clojure-cli/repl/">Rebel readline</a> provides a terminal UI REPL, providing auto-completion, function signatures, documentation, etc.</p>
+<h3 id="rebel-rich-terminal-ui">Rebel rich terminal UI<a class="headerlink" href="#rebel-rich-terminal-ui" title="Permanent link">λ︎</a></h3>
+<p><a href="/clojure/clojure-cli/repl/">Rebel readline</a> provides a terminal UI REPL, providing auto-completion, function signatures, documentation, etc.</p>
 <p><code>:repl/rebel</code> is an alias that includes nrepl, cider-nrepl and rebel-readline libraries, with a <code>:main-opts</code> to run the <code>rebel-readline.main/-main</code> function via <code>clojure.main</code>.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ss">:repl/rebel</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">nrepl/nrepl</span><span class="w">                </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"0.9.0"</span><span class="p">}</span>
@@ -2144,14 +2157,14 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>clojure<span class="w"> </span>-M:env/dev:lib/hotload:repl/rebel
 </code></pre></div>
 <p>The Rebel REPL UI will start, include the dev directory on the class path and the <code>org.clojure/tools.deps.alpha</code> library loaded into the REPL</p>
-<h3 id="chaining-aliases-together-with-clojuremain">Chaining aliases together with clojure.main<a class="headerlink" href="#chaining-aliases-together-with-clojuremain" title="Permanent link">λ︎</a></h3>
+<h3 id="chaining-aliases">Chaining aliases<a class="headerlink" href="#chaining-aliases" title="Permanent link">λ︎</a></h3>
 <p>Alises can be used together by chaining their names on the command line</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>clojure<span class="w"> </span>-M:env/dev:lib/hotload:repl/rebel
 </code></pre></div>
 <p>The <code>clojure</code> command will merge the <code>:extra-paths</code> and <code>:extra-deps</code> values from each alias in the chain.</p>
 <p>The <code>:main-opts</code> values from the aliases are not merged. Only the <code>:main-opts</code> value from the last alias in the chain is used with <code>clojure.main</code> to run the Clojure code.</p>
 <p>If the command line includes the <code>-m</code> flag with a namespace, then that namespace is passed to <code>clojure.main</code>, ignoring all <code>:main-opts</code> values from the aliases.  The <a href="https://clojure.org/reference/repl_and_main"><code>-i</code> and <code>-e</code> flags for clojure.main</a> also replace <code>:main-opts</code> values.</p>
-<h2 id="run-specific-function">Run specific function<a class="headerlink" href="#run-specific-function" title="Permanent link">λ︎</a></h2>
+<h2 id="clojureexec">clojure.exec<a class="headerlink" href="#clojureexec" title="Permanent link">λ︎</a></h2>
 <p><code>-X</code> flag provides the flexibility to call any fully qualified function, so Clojure code is no longer tied to <code>-main</code></p>
 <p>Any function on the class path can be called and is passed a hash-map as an argument.  The argument hash-map is either specified in an alias using <code>:exec-args</code> or assembled into a hash-map from key/value pairs on the command line.  Key/values from the command line are merged into the <code>:exec-args</code> map if it exists, with the command line key/values taking precedence.</p>
 <p>Call the <code>status</code> function from the namespace <code>practicalli.service</code>, which is on the classpath in the practicalli.service project</p>
@@ -2161,7 +2174,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>clojure<span class="w"> </span>-X<span class="w"> </span>practicalli.service/start<span class="w"> </span>:port<span class="w"> </span><span class="m">8080</span><span class="w"> </span>:join?<span class="w"> </span><span class="nb">false</span>
 </code></pre></div>
 <p>As the arguments are key/value pairs, it does not matter in which order the pairs are used in the command line.</p>
-<h3 id="built-in-clojureexec-functions">Built in clojure.exec functions<a class="headerlink" href="#built-in-clojureexec-functions" title="Permanent link">λ︎</a></h3>
+<h3 id="built-in-functions">Built in functions<a class="headerlink" href="#built-in-functions" title="Permanent link">λ︎</a></h3>
 <p>Clojure CLI tools has some built in tools under the special <code>:deps</code> alias (not to be confused with the <code>:deps</code> configuration in a <code>deps.edn</code> file)</p>
 <ul>
 <li><code>-X:deps mvn-install</code> - install a maven jar to the local repository cache</li>
@@ -2286,7 +2299,7 @@ The <code>:main-opts</code> configuration for <code>-A</code> execution option i
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 16, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2023</span>
 </small>
 </div>
 </article>
@@ -2300,7 +2313,7 @@ The <code>:main-opts</code> configuration for <code>-A</code> execution option i
 </main>
 <footer class="md-footer">
 <nav aria-label="Footer" class="md-footer__inner md-grid">
-<a aria-label="Previous: Built-in Commands" class="md-footer__link md-footer__link--prev" href="../built-in-commands/" rel="prev">
+<a aria-label="Previous: Defining aliases" class="md-footer__link md-footer__link--prev" href="../defining-aliases/" rel="prev">
 <div class="md-footer__button md-icon">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </div>
@@ -2309,7 +2322,7 @@ The <code>:main-opts</code> configuration for <code>-A</code> execution option i
 <span class="md-footer__direction">
                   Previous
                 </span>
-                Built-in Commands
+                Defining aliases
               </div>
 </div>
 </a>
