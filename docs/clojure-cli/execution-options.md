@@ -25,7 +25,25 @@ Use `-A` in the specific case of running a basic terminal UI REPL with the `cloj
 Common aliases will be used to explain the use of these execution options in more detail.
 
 
-## Run a Clojure project with clojure.main
+## Form of clojure.exec command line arguments
+
+Key/value pairs are read as EDN (extensible data notation that is the base syntax of Clojure).
+
+The command line shell needs a little help parsing
+
+Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. `'[:a :b]'`, `'{:c 1}'`.
+
+The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps
+
+Number values and keywords should not need to be wrapped.
+
+* `'"strings in double quotes surround by single quotes"'`
+* `:key `[:service :port]` 9999`
+* `:config '{:log :console}'`
+
+
+
+## Run clojure.main project
 
 `-M` execution option uses `clojure.main` to run Clojure code.
 
@@ -63,9 +81,9 @@ If no -main function is found or the namespace is not specified, then a REPL ses
 > [clojure.main has other features, as covered in the REPL and main entrypoints article](https://clojure.org/reference/repl_and_main)) on clojure.org.
 
 
-## Run a rich terminal REPL with clojure.main
+### Rebel rich terminal UI
 
-[Rebel readline](https://practical.li/clojure/clojure-cli/repl/) provides a terminal UI REPL, providing auto-completion, function signatures, documentation, etc.
+[Rebel readline](/clojure/clojure-cli/repl/) provides a terminal UI REPL, providing auto-completion, function signatures, documentation, etc.
 
 `:repl/rebel` is an alias that includes nrepl, cider-nrepl and rebel-readline libraries, with a `:main-opts` to run the `rebel-readline.main/-main` function via `clojure.main`.
 
@@ -101,7 +119,7 @@ clojure -M:env/dev:lib/hotload:repl/rebel
 The Rebel REPL UI will start, include the dev directory on the class path and the `org.clojure/tools.deps.alpha` library loaded into the REPL
 
 
-### Chaining aliases together with clojure.main
+### Chaining aliases
 
 Alises can be used together by chaining their names on the command line
 
@@ -116,7 +134,7 @@ The `:main-opts` values from the aliases are not merged. Only the `:main-opts` v
 If the command line includes the `-m` flag with a namespace, then that namespace is passed to `clojure.main`, ignoring all `:main-opts` values from the aliases.  The [`-i` and `-e` flags for clojure.main](https://clojure.org/reference/repl_and_main) also replace `:main-opts` values.
 
 
-## Run specific function
+## clojure.exec
 
 `-X` flag provides the flexibility to call any fully qualified function, so Clojure code is no longer tied to `-main`
 
@@ -136,7 +154,7 @@ clojure -X practicalli.service/start :port 8080 :join? false
 
 As the arguments are key/value pairs, it does not matter in which order the pairs are used in the command line.
 
-### Built in clojure.exec functions
+### Built in functions
 
 Clojure CLI tools has some built in tools under the special `:deps` alias (not to be confused with the `:deps` configuration in a `deps.edn` file)
 
