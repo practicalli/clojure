@@ -175,6 +175,9 @@ nav:
           - Practicalli Snippets: clojure-editors/clojure-lsp/practicalli-snippets.md
   - Automation:
       - automation/index.md
+      - Make: automation/make.md
+      # - Shell Scripts: automation/shell-scripts.md
+      # - Babashka: automation/babashka.md
   - Data Inspectors:
       - data-inspector/index.md
       - data-inspector/clojure-inspector.md
