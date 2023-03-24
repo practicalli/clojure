@@ -316,10 +316,10 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
 === "Pulsar (Atom)"
     ![Chlorine for Pulsar Editor](https://gitlab.com/clj-editors/atom-chlorine/raw/HEAD/docs/chlorine-logo.png){align=right loading=lazy style="height:128px;width:128px"}
-    
+
     [Pulsar Community-led Hyper-Hackable Editor](https://pulsar-edit.dev/) is a very new project to create a community version of the Atom editor from GitHub.
-    
-    [Chlorine plugin](https://web.pulsar-edit.dev/packages/chlorine) provides a Clojure and ClojureScript development environment using Socket-REPL integration 
+
+    [Chlorine plugin](https://web.pulsar-edit.dev/packages/chlorine) provides a Clojure and ClojureScript development environment using Socket-REPL integration
 
     [Pulsar Community-led Hyper-Hackable Editor](https://pulsar-edit.dev/){target=_blank .md-button}
     [Pulsar Chlorine plugin](https://web.pulsar-edit.dev/packages/chlorine){target=_blank .md-button}
