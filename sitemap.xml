@@ -1571,6 +1571,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://practical.li/clojure/simple-projects/tdd-kata/recent-song-list/</loc>
+         <lastmod>2023-03-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://practical.li/clojure/simple-projects/tdd-kata/recent-songlist/</loc>
          <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
@@ -1642,11 +1647,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/writing-unit-tests/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/testing/unit-testing/tdd-kata/recent-songlist/</loc>
          <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
