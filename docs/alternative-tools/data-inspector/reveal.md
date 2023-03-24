@@ -1,4 +1,4 @@
-# Reveal - REPL with visual data browser
+# Reveal REPL with visual data browser
 
 [Reveal](https://vlaaad.github.io/reveal/) provides a REPL with a connected visual data explorer.  Reveal can also be used as a `tap>` target, visualizing data added to a `tap>` (an elegant approach compared to print statements).
 
@@ -35,15 +35,15 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
     === "Practicalli Clojure CLI Config"
 
         `:inspect/reveal-nrepl` alias provided by [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) runs a Reveal repl with data browser and nrepl server, allowing connections from [Clojure aware editors](/clojure/clojure-editors/) such as Emacs CIDER and VSCode Calva.
-    
+
         `:inspect/reveal-light-nrepl` does the same and uses a light them with Ubuntu Mono 32 point font (good for demos, HiDPI screens)
-    
+
     === "Alias Definition"
-    
+
         Add the following aliases to your user level `~/.clojure/deps.edn` configuration to make reveal available to all projects.
-    
+
         Plain nrepl server with Reveal.
-    
+
         ```clojure
           :inspect/reveal-nrepl
           {:extra-deps {vlaaad/reveal {:mvn/version "1.1.159"}
@@ -52,7 +52,7 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
                         "--middleware" "[vlaaad.reveal.nrepl/middleware]"]}
         ```
         CIDER specific nrepl connection with the Cider middleware
-    
+
         ```
           :inspect/reveal-nrepl-cider
           {:extra-deps {vlaaad/reveal                 {:mvn/version "1.1.159"}
@@ -65,27 +65,27 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
 
 
         Start a Reveal REPL with nrepl server
-        
+
         ```
         clojure -M:inspect/reveal-nrepl
         ```
-        
+
         Connect to the Reveal repl from a [Clojure aware editor](/clojure-editors/), e.g `cider-connect`
-        
-        
+
+
         ### Using Reveal with Cider Jack-in
         `C-u cider-jack-in-clj` in CIDER to start a reveal REPL  (`SPC u , '` in Spacemacs)
-        
+
         Edit the jack-in command by deleting the all the configuration after the `clojure` command and add the alias
         ```
         clojure -M:inspect/reveal-nrepl-cider
         ```
-        
+
         `:inspect/reveal-nrepl-cider` is a light version of the above.
-        
+
         ### Cider jack-in with reveal using a .dir-locals.el
         Add a `.dir-locals.el` file to the root of the Clojure project. The `.dir-locals.el` configuration adds the `:inspect/reveal-nrepl-cider` via `cider-clojure-cli-aliases` and all other automatically injected configuration is disabled to prevent those dependencies over-riding the alias.
-        
+
         ```
         ((clojure-mode . ((cider-preferred-build-tool . clojure-cli)
                           (cider-clojure-cli-aliases . ":inspect/reveal-nrepl-cider")
@@ -94,13 +94,13 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
                           (cider-jack-in-lein-plugins . nil)
                           (cider-clojure-cli-parameters . ""))))
         ```
-        
-        Ensure the `.dir-locals.el` file is loaded by using `revert-buffer` on any open Clojure file from the project.
-        
-        `cider-jack-in-clj` should now start the Reveal REPL and send evaluations from Cider to the Reveal visualization UI.
-        
 
-## Using Reveal with Rebel and `tap>`
+        Ensure the `.dir-locals.el` file is loaded by using `revert-buffer` on any open Clojure file from the project.
+
+        `cider-jack-in-clj` should now start the Reveal REPL and send evaluations from Cider to the Reveal visualization UI.
+
+
+## Reveal with Rebel and `tap>`
 
 Reveal can be used as a `tap>` target with the Rebel REPL, launching the Reveal data browser when added as a tap> target.
 
@@ -124,12 +124,8 @@ A reveal window opens and receives all `tap>` values while the REPL is running.
 (tap> (zipmap [:a :b :c] [1 2 3 4]))
 ```
 
-<!-- > TODO: find more examples of using tap>. -->
-<!-- > It seems you can bind specific functions to a tap set, `(add-tap (bound-fn* clojure.pprint/pprint))` `(add-tap (bound-fn* prn))` so am assuming if a function is bound, where ever it is used its result is sent to reveal browser window.  Then functions can be removed from the tap. -->
-<!-- > To stop reveal, shut down the REPL (is there another approach?) -->
 
-
-## Use atom to hold tapped value
+## Atom and Tapped value
 
 Create an atom for debugging purposes
 
@@ -144,24 +140,24 @@ Use `tap>` to capture intermediate values in the middle of code that requires de
 ### Tracking state with an atom
 
 Define the state as an atom, the state being a simple value in this case
-    
+
 ```clojure
 (def state (atom 24))
 ```
-    
+
 Select the reference created for the state in the Revel browser.
-    
+
 `SPACE` or `ENTER` to open the menu and select `Deref`.  A tab opens with the value of the atom.
-    
+
 `SPACE` or `ENTER` with the value selected and select `Watch:all`.
-    
+
 In the REPL, update the value of the state atom.
-    
+
 ```clojure
 (swap! state * 12)
 ```
 The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser.
-    
+
 
 ### Running different types of repl
 
