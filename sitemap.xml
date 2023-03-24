@@ -201,11 +201,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-editors/vscode-install/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-editors/clojure-lsp/</loc>
          <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
@@ -217,121 +212,6 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/clojure-lsp/snippets/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/atom-proton/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/atom-protorepl/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/intellij-cursive/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/neovim-conjure/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/spacevim-configuration/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/spacevim-fireplace/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-install-guides/vim-plugins/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/atom-proton/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/atom-protorepl/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/intellij-cursive/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/lighttable-osx/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/lighttable-windows7/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/lighttable-windows8/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/lighttable/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/neovim-conjure/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/optional-git/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/setup/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/editor-user-guides/spacevim-fireplace/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/install-guides/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/install-guides/atom-proton/</loc>
-         <lastmod>2023-03-24</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-editors/install-guides/atom-protorepl/</loc>
          <lastmod>2023-03-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
