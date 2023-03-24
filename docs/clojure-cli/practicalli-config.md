@@ -1,4 +1,4 @@
-# Practicalli Configuration for Clojure CLI
+# Practicalli Clojure CLI Configuration
 
 [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
 
@@ -40,7 +40,8 @@ Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/cl
     git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
     ```
 
-## Community Tools available
+
+## Community Tools
 
 The Clojure configuration directory contains a `deps.edn` file containing a substantial `:aliases` section with a long list of aliases.  These aliases are described in the [README of the project](https://github.com/practicalli/clojure-deps-edn/blob/live/README.md).
 
@@ -74,21 +75,17 @@ All tools are provided via libraries and are only installed on first use.  Unuse
 
 ### Clojure Projects
 
-- Create projects from deps, leiningen and boot templates with [clj-new](https://github.com/seancorfield/clj-new)
 - Create Clojure CLI specific projects using [deps-new](https://github.com/seancorfield/deps-new)
-- Deploy projects locally and to Clojars
-
-Create a new project using a wide range of templates from the community
+- Create projects from deps, leiningen and boot templates with [clj-new](https://github.com/seancorfield/clj-new)
 
 | Command                                                                                   | Description                                          |
 |-------------------------------------------------------------------------------------------|------------------------------------------------------|
-| `clojure -X:project/new`                                                                  | library project called playground                    |
-| `clojure -X:project/new :template app :name practicalli/service`                          | App project with given name                          |
-| `clojure -X:project/new :template luminus :name practicalli/full-stack-app +http-kit +h2` | Luminus project with given name and template options |
-| `clojure -X:project/create :template app :name practially/service`                        | Clojure CLI project from app template                |
+| `clojure -T:project/create`                                                               | library project called playground                    |
+| `clojure -T:project/create :template app :name practialli/service`                        | Clojure CLI project from app template                |
+| `clojure -T:project/new :template luminus :name practicalli/full-stack-app +http-kit +h2` | Luminus project with given name and template options |
 
 
-#### Run projects
+### Run projects
 
 Run project with or without an alias:
 
@@ -109,7 +106,8 @@ In the project deps.edn file it could be useful to define an alias to run the pr
 ```
 Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
 
-#### Project dependencies
+
+### Project dependencies
 
 | Command                                             | Description                                               |
 |-----------------------------------------------------|-----------------------------------------------------------|
@@ -120,7 +118,7 @@ Then the project can be run using `clojure -X:project/run` and arguments can opt
 | `clojure -M:search/unused-vars`                     | search and remove unused vars                             |
 
 
-#### Project Deployment
+### Project Deployment
 
 Deploy a project archive file locally or to Clojars.org
 
@@ -142,7 +140,7 @@ Path to project.jar can also be set in alias to simplify the Clojure command.
 > `clojure -X:deps mvn-install project.jar` for local deployment of jars is part of the 1.10.1.697 release of the [Clojure CLI tools](https://clojure.org/guides/getting_started) in September 2020.
 
 
-#### Java Sources
+### Java Sources
 
 Include Java source on the  classpath to [look up Java Class and method definitions, e.g. `cider-find-var` in Emacs](https://practicalli.github.io/spacemacs/navigating-code/java-definitions.html)
 Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.zip")
@@ -152,7 +150,7 @@ Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
-#### Format tools
+### Format tools
 
 Use formatting tools to support a consistent code style across all Clojure projects
 
@@ -166,7 +164,7 @@ Use formatting tools to support a consistent code style across all Clojure proje
 
 
 
-#### Databases and drivers
+### Databases and drivers
 
 Databases and drivers, typically for development time inclusion such as embedded databases
 
@@ -180,12 +178,12 @@ https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/getting-started#create--
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
-#### Data Science
+### Data Science
 
 * `lib/clerk` - [Clerk Notebooks](https://github.com/nextjournal/clerk)
 
 
-#### Visualizing projects
+### Visualizing projects
 
 Create [Graphviz](https://www.graphviz.org/) graphs of project and library dependencies
 
@@ -211,12 +209,7 @@ Other options:
 * `clojure -M:graph/deps single --show `  # View graph without saving
 
 
-### Data Inspectors
-
-REPL driven data inspectors and `tap>` sources for visualizing data.
-
-
-#### Portal
+### Data Inspector
 
 [Portal](https://github.com/djblue/portal) Navigate data in the form of edn, json and transit
 
@@ -270,28 +263,20 @@ Run clojure with the specific test runner alias: `clojure -M:test-runner-alias`
 
 | Command                            | Description                                                                   |
 |------------------------------------|-------------------------------------------------------------------------------|
-| `clojure -M:test/cognitect`        | Cognitect Clojure test runner                                                 |
-| `clojure -M:test/cljs`             | ClojureScript test runner (Olical)                                            |
-| `clojure -M:test/runner`           | Kaocha - comprehensive test runner for Clojure (same as :test/kaocha)         |
-| `clojure -M:test/kaocha`           | Kaocha - comprehensive test runner for Clojure                                |
-| `clojure -M:test/kaocha-cljs`      | Kaocha - comprehensive test runner for ClojureScript                          |
-| `clojure -M:test/kaocha-cucumber`  | Kaocha - comprehensive test runner with BDD Cucumber tests                    |
-| `clojure -M:test/kaocha-junit-xml` | Kaocha - comprehensive test runner with Junit XML reporting for CI dashboards |
-| `clojure -M:test/kaocha-cloverage` | Kaocha - comprehensive test runner with test coverage reporting               |
-| `clojure -M:test/midje`            | Midje test runner for BDD style tests                                         |
-| `clojure -M:test/eftest`           | Fast Clojure test runner, pretty output, parallel tests                       |
-| `clojure -M:test/coverage`         | Cloverage clojure.test coverage report                                        |
+| `clojure -M:test/run`              | Kaocha test runner for Clojure                                                |
+| `clojure -M:test/watch`            | Kaocha: watch for changes                                                     |
+| `clojure -M:test/cljs`             | Kaocha test runner for ClojureScript                                          |
 
 
 ### Lint tools
 
 Static analysis tools to help maintain code quality and suggest Clojure idioms.
 
-| Command                    | Description                                      |
-|----------------------------|--------------------------------------------------|
-| `clojure -M:lint/kondo`    | comprehensive and fast static analysis lint tool |
-| `clojure -M:lint/eastwood` | classic lint tool for Clojure                    |
-| `clojure -M:lint/idiom`    | Suggest idiomatic Clojure code                   |
+| Command                     | Description                                      |
+|-----------------------------|--------------------------------------------------|
+| `clojure -M:lint/clj-kondo` | comprehensive and fast static analysis lint tool |
+| `clojure -M:lint/eastwood`  | classic lint tool for Clojure                    |
+| `clojure -M:lint/idiom`     | Suggest idiomatic Clojure code                   |
 
 
 ### Performance testing
@@ -302,7 +287,8 @@ Performance testing tools for the REPL
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
-TODO: check these alias combinations are correct
+> `:dev/reloaded` and `:repl/reloaded` both include criterium library as well
+
 
 ```shell
 clojure -M:performance/benchmark:repl/rebel
@@ -311,9 +297,8 @@ clojure -M:performance/benchmark:repl/rebel
 (bench (adhoc-expression))
 ```
 
-
-TODO: check these alias combinations are correct
 Performance test a project in the REPL
+
 ```shell
 clojure -M:performance/benchmark:repl/rebel
 
@@ -321,9 +306,6 @@ clojure -M:performance/benchmark:repl/rebel
 (in-ns 'practicalli/namespace-name)
 (quick-bench (project-function args))
 ```
-
-
-*  [:performance/memory-meter](https://github.com/clojure-goes-fast/clj-memory-meter) - memory usage
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
