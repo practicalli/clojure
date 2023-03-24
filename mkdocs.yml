@@ -173,6 +173,8 @@ nav:
           - clojure-editors/clojure-lsp/index.md
           - Clojure LSP Snippets: clojure-editors/clojure-lsp/snippets.md
           - Practicalli Snippets: clojure-editors/clojure-lsp/practicalli-snippets.md
+  - Automation:
+      - automation/index.md
   - Data Inspectors:
       - data-inspector/index.md
       - data-inspector/clojure-inspector.md
