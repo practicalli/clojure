@@ -377,11 +377,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#requiring-namespaces">
     Requiring namespaces
   </a>
-</li>
+<nav aria-label="Requiring namespaces" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#calling-functions">
     Calling functions
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#search-for-libraries">
@@ -394,10 +398,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#life-cycle-services">
-    Life-cycle Services
+<a class="md-nav__link" href="#system-components">
+    System Components
   </a>
-<nav aria-label="Life-cycle Services" class="md-nav">
+<nav aria-label="System Components" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#example-life-cycle-code">
@@ -1982,11 +1986,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-nav__link" href="#requiring-namespaces">
     Requiring namespaces
   </a>
-</li>
+<nav aria-label="Requiring namespaces" class="md-nav">
+<ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#calling-functions">
     Calling functions
   </a>
+</li>
+</ul>
+</nav>
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#search-for-libraries">
@@ -1999,10 +2007,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#life-cycle-services">
-    Life-cycle Services
+<a class="md-nav__link" href="#system-components">
+    System Components
   </a>
-<nav aria-label="Life-cycle Services" class="md-nav">
+<nav aria-label="System Components" class="md-nav">
 <ul class="md-nav__list">
 <li class="md-nav__item">
 <a class="md-nav__link" href="#example-life-cycle-code">
@@ -2084,34 +2092,47 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </ul>
 </div>
 <h2 id="requiring-namespaces">Requiring namespaces<a class="headerlink" href="#requiring-namespaces" title="Permanent link">λ︎</a></h2>
-<p>By requiring a namespace in the <code>dev/user.clj</code> file, the code defined in that namespace will be loaded into the REPL during startup. Functions <code>(defn)</code> and data <code>(def)</code> are immediately available.  If a required namespace also requires namespace, they will also be loaded into the REPL during startup.</p>
-<p>Add a require expression to the namespace definition in <code>dev/user.clj</code></p>
+<p>Namespaces required in the <code>user</code> ns form will also be loaded. If a required namespace also requires namespaces, they will also be loaded into the REPL during startup.</p>
+<p>Functions <code>(defn)</code> and data <code>(def)</code> are immediately available.</p>
+<div class="admonition example">
+<p class="admonition-title">Require namespace in user ns expression</p>
+<p>Add a require expression to the namespace definition in <code>dev/user.clj</code>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">practicalli.project-namespace</span><span class="p">]))</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <details class="warning">
-<summary>Requiring many libraries may slow REPL start up time</summary>
+<summary>Requiring a large number of libraries may slow REPL start up time</summary>
 </details>
-<p><code>(require '[practicalli.project-namespace])</code> form can be used instead and placed in a <code>(comment ,,,)</code> form.  If the library is no always required this form can be  evaluated by the developer any time after REPL startup.</p>
+<div class="admonition example">
+<p class="admonition-title">Require namespace in require expression</p>
+<p>If the library is not always required, place a <code>require</code> within a <code>(comment ,,,)</code> expression to be evaluated by the developer any time after REPL startup.
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span><span class="p">)</span>
 <a href="#__codelineno-4-2" id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a href="#__codelineno-4-3" id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="p">(</span><span class="nf">comment</span>
 <a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">practicalli.project-namespace</span><span class="p">])</span>
 <a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="o">#</span><span class="nv">_</span><span class="p">())</span>
-</code></pre></div>
-<h2 id="calling-functions">Calling functions<a class="headerlink" href="#calling-functions" title="Permanent link">λ︎</a></h2>
+</code></pre></div></p>
+</div>
+<h3 id="calling-functions">Calling functions<a class="headerlink" href="#calling-functions" title="Permanent link">λ︎</a></h3>
 <p>Use the fully qualified function name from the required namespace can be called, to start the application for example.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">practicalli.project-namespace</span><span class="p">]))</span>
 <a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>
 <a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="p">(</span><span class="nf">practicalli.project-namespace/-main</span><span class="p">)</span>
 </code></pre></div>
+</div>
 <p>An alias can be used in the require expression, useful if multiple functions from a namespace are to be called</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">practicalli.service</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">service</span><span class="p">]))</span>
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
 <a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="p">(</span><span class="nf">service/-main</span><span class="p">)</span>
 </code></pre></div>
+</div>
 <h2 id="search-for-libraries">Search for libraries<a class="headerlink" href="#search-for-libraries" title="Permanent link">λ︎</a></h2>
 <p>The <a href="https://github.com/hagmonk/find-deps">find-deps project</a> fuzzy searches Maven Central and Clojars for dependencies when given a name.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Manual</label></div>
@@ -2130,20 +2151,26 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 </div>
 </input></input></div>
-<p>Require the <code>find-deps.core</code> namespace in the <code>dev/user.clj</code> file to use its <code>deps</code> and <code>print-deps</code> functions</p>
+<div class="admonition example">
+<p class="admonition-title">Require find-deps in user ns expression</p>
+<p>Require the <code>find-deps.core</code> namespace in the <code>dev/user.clj</code> file to use its <code>deps</code> and <code>print-deps</code> functions
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
 <a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="p">[</span><span class="nv">find-deps.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">find-lib</span><span class="p">]))</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <p>Start a REPL using the <code>:env/dev</code> and <code>:search/libraries</code> aliases.</p>
 <p>To start a Rebel REPL, use the following command in a terminal</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>clojure<span class="w"> </span>-M:env/dev:search/libraries:repl/rebel
 </code></pre></div>
-<p>Call the <code>(find-lib/deps "library-name")</code> to return a map of the matching dependency, or <code>(find-libs/print-deps "library name")</code> to print dependencies in a table.</p>
+<div class="admonition example">
+<p class="admonition-title">Search for libraries within a comment expression</p>
+<p>Call the <code>(find-lib/deps "library-name")</code> to return a map of the matching dependency, or <code>(find-libs/print-deps "library name")</code> to print dependencies in a table.
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="p">(</span><span class="nf">comment</span>
 <a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">find-lib/deps</span><span class="w"> </span><span class="s">"library-name"</span><span class="p">)</span>
 <a href="#__codelineno-10-3" id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">find-lib/print-deps</span><span class="w"> </span><span class="s">"library name"</span><span class="p">))</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <h2 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h2>
 <p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.</p>
 <details class="warning">
@@ -2154,7 +2181,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"><input id="__tabbed_3_2" name="__tabbed_3" type="radio"><div class="tabbed-labels"><label for="__tabbed_3_1">Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Manual</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><code>:lib/hotload</code> and <code>:lib/reloaded</code> aliases in <a href="/clojure/clojure-cli/repl-reloaded/">Practicalli Clojure CLI Config</a> will add the add-libs3 branch of <code>tools.deps.alpha</code> which provides the <code>add-libs</code> function.</p>
+<p><code>:repl/reloaded</code>  and <code>dev/reloaded</code> aliases in <a href="/clojure/clojure-cli/repl-reloaded/">Practicalli Clojure CLI Config</a> provide the <code>add-libs</code> function.</p>
 </div>
 <div class="tabbed-block">
 <p>Edit the project <code>deps.edn</code> configuration and add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library.  Or add an alias to the user level configuration for use with any Clojure CLI project.</p>
@@ -2170,40 +2197,56 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </div>
 </div>
 </input></input></div>
-<p>Start a REPL session using Clojure CLI with the <code>:lib/hotload alias</code>, including rebel readline for an enhance REPL terminal UI.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure<span class="w"> </span>-M:lib/hotload:repl/rebel
+<p>Start a REPL session using Clojure CLI with <code>:repl/reloaded</code>, <code>dev/reloaded</code> or <code>:lib/hotload</code> aliases</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
-<p>Require the <code>clojure.tools.deps.alpha</code> library and refer the <code>add-libs</code> function.  The <code>add-libs</code> function can then be called without having to use an alias or the fully qualified name.</p>
+<div class="admonition example">
+<p class="admonition-title">Require and refer add-libs function</p>
+<p>Require the <code>clojure.tools.deps.alpha</code> library and refer the <code>add-libs</code> function.  The <code>add-libs</code> function can then be called without having to use an alias or the fully qualified name.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span>
-</code></pre></div>
+</code></pre></div></p>
+</div>
 <p>Hotload one or more libraries into the REPL using the <code>add-lib</code> function, including the fully qualified name of the library and version string.</p>
-<p>The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs</p>
+<div class="admonition example">
+<p class="admonition-title">Hotload the hiccup library</p>
+<p>The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-14-1" id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="p">(</span><span class="nf">add-libs</span><span class="w"> </span><span class="o">'</span><span class="p">{</span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"2.0.0-alpha2"</span><span class="p">}})</span>
 </code></pre></div>
-<p>Require the hiccup library so its functions are accessible from the current namespace in the REPL.</p>
+Require the hiccup library so its functions are accessible from the current namespace in the REPL.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-15-1" id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">'</span><span class="p">[</span><span class="nv">hiccup.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">hiccup</span><span class="p">])</span>
 </code></pre></div>
-<p>Enter an expression using the <code>hiccup/html</code> function to convert a clojure data structure to html.</p>
+Enter an expression using the <code>hiccup/html</code> function to convert a clojure data structure to html.
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="nf">hiccup/html</span><span class="w"> </span><span class="p">[</span><span class="ss">:div</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">"right-aligned"</span><span class="p">}])</span>
-</code></pre></div>
-<h2 id="life-cycle-services">Life-cycle Services<a class="headerlink" href="#life-cycle-services" title="Permanent link">λ︎</a></h2>
-<p>Clojure has several library to manage the life-cycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.</p>
-<p>Example component life-cycle libraries included</p>
+</code></pre></div></p>
+</div>
+<h2 id="system-components">System Components<a class="headerlink" href="#system-components" title="Permanent link">λ︎</a></h2>
+<p>Clojure has several library to manage the life-cycle of components that make up the Clojure system, especially those components with state. The order in which components are started and stopped can be defined to keep the system functioning correctly.</p>
+<p>Components can include an http server, routing, persistence, logging publisher, etc.</p>
+<p>Example system component management libraries included</p>
 <ul>
-<li><a href="https://github.com/tolitius/mount">mount</a></li>
-<li><a href="https://github.com/weavejester/integrant">integrant</a></li>
+<li><a href="https://github.com/tolitius/mount">mount</a> - manage system state in an atom</li>
+<li><a href="https://github.com/weavejester/integrant">integrant</a> and <a href="https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant">Integrant REPL</a> - data definition of system and init &amp; halt defmethod interface</li>
+<li><a href="https://github.com/donut-party/system">donut system</a></li>
 <li><a href="https://github.com/stuartsierra/component">component</a></li>
 </ul>
-<p>In Clojure it is idiomatic to define the component life-cycle services in a namespace called <code>dev</code>.  In the <code>dev/user.clj</code> file, add the following <code>ns</code> declaration to require the <code>dev</code> namespace and change to that namespace with <code>in-ns</code></p>
-<p><div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">dev</span><span class="p">]))</span>
+<div class="admonition example">
+<p class="admonition-title">Require system namespace in user ns expression</p>
+<p>Require the system namespace and use <code>start</code>, <code>restart</code> and <code>stop</code> functions to manage the components in the system</p>
+</div>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a href="#__codelineno-17-1" id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a href="#__codelineno-17-2" id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">system</span><span class="p">]))</span>
 <a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a>
-<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="p">(</span><span class="nf">dev/go</span><span class="p">)</span>
+<a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="p">(</span><span class="nf">comment</span>
+<a href="#__codelineno-17-5" id="__codelineno-17-5" name="__codelineno-17-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/start</span><span class="p">)</span>
+<a href="#__codelineno-17-6" id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/restart</span><span class="p">)</span>
+<a href="#__codelineno-17-7" id="__codelineno-17-7" name="__codelineno-17-7"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/stop</span><span class="p">)</span>
+<a href="#__codelineno-17-8" id="__codelineno-17-8" name="__codelineno-17-8"></a><span class="w">  </span><span class="p">)</span>
 </code></pre></div>
-Now define code in the <code>dev/dev.clj</code> file that controls the component life-cycle services library for the project.</p>
+<p>Define code in the <code>dev/system.clj</code> file which controls the component life-cycle services library for the project.</p>
+<p>Create a <code>dev/system.clj</code> to manage the components, optionally using one of the system component management libraries.</p>
 <h3 id="example-life-cycle-code">Example life-cycle code<a class="headerlink" href="#example-life-cycle-code" title="Permanent link">λ︎</a></h3>
 <p>Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Mount</label><label for="__tabbed_4_2">Integrant REPL</label><label for="__tabbed_4_3">Component</label><label for="__tabbed_4_4">Donut System</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:4"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"><input id="__tabbed_4_2" name="__tabbed_4" type="radio"><input id="__tabbed_4_3" name="__tabbed_4" type="radio"><input id="__tabbed_4_4" name="__tabbed_4" type="radio"><div class="tabbed-labels"><label for="__tabbed_4_1">Mount</label><label for="__tabbed_4_2">Integrant REPL</label><label for="__tabbed_4_3">Donut System</label><label for="__tabbed_4_4">Component</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Define a <code>dev.clj</code> file with <code>go</code>, <code>stop</code> and <code>restart</code> functions that manage the life-cycle of mount components.  A <code>start</code> function contains the list of components with optional state.</p>
@@ -2238,20 +2281,15 @@ Now define code in the <code>dev/dev.clj</code> file that controls the component
 <a href="#__codelineno-22-5" id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
 <a href="#__codelineno-22-6" id="__codelineno-22-6" name="__codelineno-22-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">namespace/refresh</span><span class="w"> </span><span class="ss">:after</span><span class="w"> </span><span class="ss">'dev/go</span><span class="p">))</span>
 </code></pre></div>
-<ul>
-<li><a href="https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj">Example dev.clj file for mount</a></li>
-</ul>
+<p><a class="md-button" href="https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj" target="_blank"><span class="twemoji"><svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></span> Example dev.clj file for mount</a></p>
 <div class="admonition hint">
 <p class="admonition-title">Use <code>dev</code> namespace during development</p>
 <p>Require <code>practicalli.app.dev</code> namespace rather than main, to start components in a development environment.</p>
 </div>
 </div>
 <div class="tabbed-block">
-<p>See the <a href="https://practical.li/clojure-web-services/repl-driven-development/integrant-repl/">detailed example of Integrant REPL in Practicalli Clojure Web Services</a></p>
-<p><a href="https://github.com/prestancedesign/usermanager-reitit-example">Usermanager example project</a> using Integrant.</p>
-</div>
-<div class="tabbed-block">
-<p><a href="https://github.com/seancorfield/usermanager-example">seancorfield/usermanager-example</a> is an example project that uses Component for lifecycle management</p>
+<p><a class="md-button" href="https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant" target="_blank"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg></span> Integrant REPL - Practicalli Clojure Web Services</a></p>
+<p><a class="md-button" href="https://github.com/prestancedesign/usermanager-reitit-example" target="_blank">User manager - Integrant</a></p>
 </div>
 <div class="tabbed-block">
 <p><a href="https://github.com/donut-party/system">donut.system</a> is a dependency injection library for Clojure and ClojureScript using system and component abstractions to organise and manage startup &amp; shutdown behaviour.</p>
@@ -2259,6 +2297,9 @@ Now define code in the <code>dev/dev.clj</code> file that controls the component
 <p><p style="text-align:center">
 <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" frameborder="0" height="315" src="https://www.youtube.com/embed/PMat9Wdt-pk" title="YouTube video player" width="560"></iframe>
 </p></p>
+</div>
+<div class="tabbed-block">
+<p><a href="https://github.com/seancorfield/usermanager-example">seancorfield/usermanager-example</a> is an example project that uses Component for lifecycle management</p>
 </div>
 </div>
 </input></input></input></input></div>
@@ -2280,7 +2321,7 @@ Now define code in the <code>dev/dev.clj</code> file that controls the component
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 26, 2023</span>
 </small>
 </div>
 </article>
