@@ -62,48 +62,52 @@ clojure -M:repl/reloaded
 
 ## Requiring namespaces
 
-By requiring a namespace in the `dev/user.clj` file, the code defined in that namespace will be loaded into the REPL during startup. Functions `(defn)` and data `(def)` are immediately available.  If a required namespace also requires namespace, they will also be loaded into the REPL during startup.
+Namespaces required in the `user` ns form will also be loaded. If a required namespace also requires namespaces, they will also be loaded into the REPL during startup.
 
-Add a require expression to the namespace definition in `dev/user.clj`
+Functions `(defn)` and data `(def)` are immediately available.
 
-```clojure title="dev/user.clj"
-(ns user
-  (:require [practicalli.project-namespace]))
-```
+!!! EXAMPLE "Require namespace in user ns expression"
+    Add a require expression to the namespace definition in `dev/user.clj`
+    ```clojure title="dev/user.clj"
+    (ns user
+      (:require [practicalli.project-namespace]))
+    ```
 
-??? WARNING "Requiring many libraries may slow REPL start up time"
-
-
-`(require '[practicalli.project-namespace])` form can be used instead and placed in a `(comment ,,,)` form.  If the library is no always required this form can be  evaluated by the developer any time after REPL startup.
-
-```clojure title="dev/user.clj"
-(ns user)
-
-(comment
-  (require '[practicalli.project-namespace])
-#_())
-```
+??? WARNING "Requiring a large number of libraries may slow REPL start up time"
 
 
-## Calling functions
+!!! EXAMPLE "Require namespace in require expression"
+    If the library is not always required, place a `require` within a `(comment ,,,)` expression to be evaluated by the developer any time after REPL startup.
+    ```clojure title="dev/user.clj"
+    (ns user)
+
+    (comment
+      (require '[practicalli.project-namespace])
+    #_())
+    ```
+
+
+### Calling functions
 
 Use the fully qualified function name from the required namespace can be called, to start the application for example.
 
-```clojure title="dev/user.clj"
-(ns user
-  (:require [practicalli.project-namespace]))
+!!! EXAMPLE
+    ```clojure title="dev/user.clj"
+    (ns user
+      (:require [practicalli.project-namespace]))
 
-(practicalli.project-namespace/-main)
-```
+    (practicalli.project-namespace/-main)
+    ```
 
 An alias can be used in the require expression, useful if multiple functions from a namespace are to be called
 
-```clojure title="dev/user.clj"
-(ns user
-  (:require [practicalli.service :as service]))
+!!! EXAMPLE
+    ```clojure title="dev/user.clj"
+    (ns user
+      (:require [practicalli.service :as service]))
 
-(service/-main)
-```
+    (service/-main)
+    ```
 
 
 ## Search for libraries
@@ -124,13 +128,13 @@ The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Mav
        :main-opts ["-m" "find-deps.core"]}
     ```
 
-Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
-
-```clojure title="dev/user.clj"
-(ns user
-  (:require
-    [find-deps.core :as find-lib]))
-```
+!!! EXAMPLE "Require find-deps in user ns expression"
+    Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
+    ```clojure title="dev/user.clj"
+    (ns user
+      (:require
+        [find-deps.core :as find-lib]))
+    ```
 
 Start a REPL using the `:env/dev` and `:search/libraries` aliases.
 
@@ -140,13 +144,13 @@ To start a Rebel REPL, use the following command in a terminal
 clojure -M:env/dev:search/libraries:repl/rebel
 ```
 
-Call the `(find-lib/deps "library-name")` to return a map of the matching dependency, or `(find-libs/print-deps "library name")` to print dependencies in a table.
-
-```clojure title="dev/user.clj"
-(comment
-  (find-lib/deps "library-name")
-  (find-lib/print-deps "library name"))
-```
+!!! EXAMPLE "Search for libraries within a comment expression"
+    Call the `(find-lib/deps "library-name")` to return a map of the matching dependency, or `(find-libs/print-deps "library name")` to print dependencies in a table.
+    ```clojure title="dev/user.clj"
+    (comment
+      (find-lib/deps "library-name")
+      (find-lib/print-deps "library name"))
+    ```
 
 ## Hotload libraries
 
@@ -158,7 +162,7 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
 
 === "Practicalli Clojure CLI Config"
-    `:lib/hotload` and `:lib/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) will add the add-libs3 branch of `tools.deps.alpha` which provides the `add-libs` function.
+    `:repl/reloaded`  and `dev/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) provide the `add-libs` function.
 
 === "Manual"
     Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
@@ -175,58 +179,65 @@ Call the `(find-lib/deps "library-name")` to return a map of the matching depend
     > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
 
-Start a REPL session using Clojure CLI with the `:lib/hotload alias`, including rebel readline for an enhance REPL terminal UI.
+Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases
 
 ```bash
-clojure -M:lib/hotload:repl/rebel
+clojure -M:repl/reloaded
 ```
 
-Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
-
-```clojure
-(require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-```
+!!! EXAMPLE "Require and refer add-libs function"
+    Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
+    ```clojure
+    (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
+    ```
 
 Hotload one or more libraries into the REPL using the `add-lib` function, including the fully qualified name of the library and version string.
 
-The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
-
-```clojure
-(add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
-```
-
-Require the hiccup library so its functions are accessible from the current namespace in the REPL.
-
-```clojure
-(require '[hiccup.core :as hiccup])
-```
-
-Enter an expression using the `hiccup/html` function to convert a clojure data structure to html.
-
-```clojure
-(hiccup/html [:div {:class "right-aligned"}])
-```
+!!! EXAMPLE "Hotload the hiccup library"
+    The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
+    ```clojure
+    (add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
+    ```
+    Require the hiccup library so its functions are accessible from the current namespace in the REPL.
+    ```clojure
+    (require '[hiccup.core :as hiccup])
+    ```
+    Enter an expression using the `hiccup/html` function to convert a clojure data structure to html.
+    ```clojure
+    (hiccup/html [:div {:class "right-aligned"}])
+    ```
 
 
-## Life-cycle Services
+## System Components
 
-Clojure has several library to manage the life-cycle of components that make up the application, especially those components with state. Components can be started and stopped in a specific order.
+Clojure has several library to manage the life-cycle of components that make up the Clojure system, especially those components with state. The order in which components are started and stopped can be defined to keep the system functioning correctly.
 
-Example component life-cycle libraries included
+Components can include an http server, routing, persistence, logging publisher, etc.
 
-* [mount](https://github.com/tolitius/mount)
-* [integrant](https://github.com/weavejester/integrant)
+Example system component management libraries included
+
+* [mount](https://github.com/tolitius/mount) - manage system state in an atom
+* [integrant](https://github.com/weavejester/integrant) and [Integrant REPL](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant) - data definition of system and init & halt defmethod interface
+* [donut system](https://github.com/donut-party/system)
 * [component](https://github.com/stuartsierra/component)
 
-In Clojure it is idiomatic to define the component life-cycle services in a namespace called `dev`.  In the `dev/user.clj` file, add the following `ns` declaration to require the `dev` namespace and change to that namespace with `in-ns`
 
-```clojure title="dev/user.clj"
-(ns user
-  (:require [dev]))
+!!! EXAMPLE "Require system namespace in user ns expression"
+    Require the system namespace and use `start`, `restart` and `stop` functions to manage the components in the system
+    ```clojure title="dev/user.clj"
+    (ns user
+      (:require [system]))
 
-(dev/go)
-```
-Now define code in the `dev/dev.clj` file that controls the component life-cycle services library for the project.
+    (comment
+      (system/start)
+      (system/restart)
+      (system/stop)
+      )
+    ```
+
+Define code in the `dev/system.clj` file which controls the component life-cycle services library for the project.
+
+Create a `dev/system.clj` to manage the components, optionally using one of the system component management libraries.
 
 
 ### Example life-cycle code
@@ -282,20 +293,16 @@ Start, stop and restart the components that a system is composed of, e.g. app se
       (namespace/refresh :after 'dev/go))
     ```
 
-    * [Example dev.clj file for mount](https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj)
+    [:fontawesome-brands-github: Example dev.clj file for mount](https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj){target=_blank .md-button}
 
     !!! Hint "Use `dev` namespace during development"
         Require `practicalli.app.dev` namespace rather than main, to start components in a development environment.
 
 
 === "Integrant REPL"
-     See the [detailed example of Integrant REPL in Practicalli Clojure Web Services](https://practical.li/clojure-web-services/repl-driven-development/integrant-repl/)
+    [:fontawesome-solid-book-open: Integrant REPL - Practicalli Clojure Web Services](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant){target=_blank .md-button}
 
-    [Usermanager example project](https://github.com/prestancedesign/usermanager-reitit-example) using Integrant.
-
-
-=== "Component"
-    [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
+    [User manager - Integrant](https://github.com/prestancedesign/usermanager-reitit-example){target=_blank .md-button}
 
 
 === "Donut System"
@@ -306,6 +313,9 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     <p style="text-align:center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PMat9Wdt-pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
+
+=== "Component"
+    [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
 
 
 ## Reference
