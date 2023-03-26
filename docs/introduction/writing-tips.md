@@ -42,6 +42,7 @@ Add an icon to the button
 [:octicons-heart-fill-24: Practicalli Blog](http://practical.li/blog){ .md-button .md-button-primary }
 ```
 
+[Search all supported icons](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/){target=_blank .md-button}
 
 
 ## YouTube video
