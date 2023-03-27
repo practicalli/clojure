@@ -4,7 +4,7 @@
 
 Portal is a tool for exploration of Clojure data using a browser window to visualise and inspect Clojure, JSON and Transit data.
 
-Portal is registered as a tap source and recieves values send within a  `(tap> ,,,)` form, providing a more advanced approach to debuging than println.  `tab`
+Portal is registered as a tap source and recieves values send within a  `(tap> ,,,)` form, providing a more advanced approach to debuging than println.
 
 ??? INFO "Clojure 1.10 onward required"
 
