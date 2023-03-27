@@ -42,7 +42,8 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
     Create portal aliases to include the portal libraries for the Clojure, ClojureScript Web browser and ClojureScript Node server libraries
     ```clojure
     :inspect/portal-cli
-    {:extra-deps {djblue/portal {:mvn/version "0.34.2"}}}
+    {:extra-deps {djblue/portal {:mvn/version "0.34.2"}
+                  clj-commons/clj-yaml         {:mvn/version "0.7.0"}}}
 
     :inspect/portal-web
     {:extra-deps {djblue/portal             {:mvn/version "0.34.2"}
@@ -57,13 +58,17 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
     :repl/inspect
     {:extra-deps
      {cider/cider-nrepl {:mvn/version "0.28.5"}
-      djblue/portal     {:mvn/version "0.33.0"}}
+      djblue/portal     {:mvn/version "0.33.0"}
+      clj-commons/clj-yaml         {:mvn/version "0.7.0"}}
      :main-opts ["-m" "nrepl.cmdline"
                  "--middleware"
                  "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}
     ```
+    ??? INFO "YAML support for Portal - Clojure only"
+        [:fontawesome-brands-github: clj-commons/clj-yaml](https://github.com/clj-commons/clj-yaml) adds YAML support to Portal for Clojure on the JVM
+
     !!! HINT "REPL Reloaded Aliases"
-        [REPL Reloaded section](/clojure/clojure-cli/repl-reloaded/) includes the `:repl/reloaded` and `:dev/reloaded` ailas definitions
+        [:fontawesome-solid-book-open: REPL Reloaded section](/clojure/clojure-cli/repl-reloaded/) includes the `:repl/reloaded` and `:dev/reloaded` ailas definitions
 
 
 ## Start REPL with Portal
