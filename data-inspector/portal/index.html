@@ -2039,9 +2039,9 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </details>
 <details class="info">
 <summary>tap sources and tap&gt;</summary>
-<p>tap is a shared, globally accessible system for distributing values (log, debug, function results) to registered tap sources. </p>
+<p>tap is a shared, globally accessible system for distributing values (log, debug, function results) to registered tap sources.</p>
 <p><code>add-tap</code> to register a source and recieve all values sent. <code>remove-tap</code> to remove a source.</p>
-<p><code>tap&gt;</code> form sends its contents to all registered taps. If no taps are registered, the values sent by tap&gt; are discarded. </p>
+<p><code>tap&gt;</code> form sends its contents to all registered taps. If no taps are registered, the values sent by tap&gt; are discarded.</p>
 </details>
 <p><a class="md-button" href="https://djblue.github.io/portal/" target="_blank">Online Portal demo</a></p>
 <h2 id="add-portal">Add Portal<a class="headerlink" href="#add-portal" title="Permanent link">λ︎</a></h2>
@@ -2131,21 +2131,21 @@ Or include an alias with only portal data inspector
 <blockquote>
 <p>For <code>inspector-portal-web</code> use <code>(require '[portal.web :as portal])</code> instead</p>
 </blockquote>
-<p><code>(portal/open)</code> to open the web based inspector window in a browser.</p>
-<p><code>(portal/tap)</code>to add portal as a tap target (add-tap)</p>
+<p><code>(portal/open)</code> to open the Portal inspector window in a browser.</p>
+<p><code>(add-tap #'portal/submit)</code> to add portal as a tap target (add-tap)</p>
 <h2 id="portal-ui-on-repl-startup">Portal UI on REPL startup<a class="headerlink" href="#portal-ui-on-repl-startup" title="Permanent link">λ︎</a></h2>
 <p>Start the Portal inspector as soon as the REPL is started.  This works for a terminal REPL as well as <a href="/clojure-editors/">clojure aware editors</a>.</p>
 <p>Create a <code>dev/user.clj</code> source code file which requires the portal.api library, opens the inspector window and adds portal as  a tap source.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
 <a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">portal.api</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">inspect</span><span class="p">]))</span>
 <a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">;; Start Portal inspector on REPL start</span>
-<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>
-<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">;; Open a portal inspector window</span>
-<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">(</span><span class="nf">inspect/open</span><span class="p">)</span>
-<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a>
-<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="c1">;; Add portal as a tap&gt; target</span>
-<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="p">(</span><span class="nf">inspect/tap</span><span class="p">)</span>
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1">;; Start Portal and capture all evaluation results</span>
+<a href="#__codelineno-6-6" id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1">;; Open Portal window in browser with dark theme</span>
+<a href="#__codelineno-6-7" id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="p">(</span><span class="nf">inspect/open</span><span class="w"> </span><span class="p">{</span><span class="ss">:portal.colors/theme</span><span class="w"> </span><span class="ss">:portal.colors/solarized-dark</span><span class="p">})</span>
+<a href="#__codelineno-6-8" id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="c1">;; Add portal as a tap&gt; target over nREPL connection</span>
+<a href="#__codelineno-6-9" id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="p">(</span><span class="nf">add-tap</span><span class="w"> </span><span class="o">#</span><span class="ss">'portal.api/submit</span><span class="p">)</span>
+<a href="#__codelineno-6-10" id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1">;; ---------------------------------------------------------</span>
 <a href="#__codelineno-6-11" id="__codelineno-6-11" name="__codelineno-6-11"></a>
 <a href="#__codelineno-6-12" id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="p">(</span><span class="nf">comment</span>
 <a href="#__codelineno-6-13" id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">  </span><span class="c1">;; Clear all values in the portal inspector window</span>
@@ -2181,8 +2181,8 @@ Or include an alias with only portal data inspector
 <div class="tabbed-block">
 <p>Start a REPL that includes the Portal nREPL middleware to send the result of every evaluation to portal.</p>
 <ul>
-<li><code>:repl/reloaded</code> - rich terminal UI with portal and <a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded tools</a> </li>
-<li><code>:repl/inspect</code> - basic terminal UI with portal </li>
+<li><code>:repl/reloaded</code> - rich terminal UI with portal and <a href="/clojure/clojure-cli/repl-reloaded/">REPL Reloaded tools</a></li>
+<li><code>:repl/inspect</code> - basic terminal UI with portal</li>
 </ul>
 </div>
 <div class="tabbed-block">
@@ -2312,7 +2312,7 @@ Or include an alias with only portal data inspector
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 27, 2023</span>
 </small>
 </div>
 </article>
