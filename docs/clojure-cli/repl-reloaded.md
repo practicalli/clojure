@@ -6,6 +6,8 @@ The REPL is central to Clojure development and Practicalli REPL Reloaded enhance
 - visualise and inspect data from evaluated functions
 - run unit and performance tests to support design choices
 
+![Practicalli REPL Reloaded text](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/REPL-Reloaded-matrix-text.png){loading=lazy}
+
 Start a Clojure REPL with the `:repl/reloaded` alias (or include `:dev/reloaded` alias in an Editor jack-in command or other REPL startup command)
 
 ```shell
