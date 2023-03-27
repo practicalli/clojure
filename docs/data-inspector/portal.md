@@ -9,12 +9,12 @@ Portal is registered as a tap source and recieves values send within a  `(tap> ,
 ??? INFO "Clojure 1.10 onward required"
 
 ??? INFO "tap sources and tap>"
-    tap is a shared, globally accessible system for distributing values (log, debug, function results) to registered tap sources. 
-    
+    tap is a shared, globally accessible system for distributing values (log, debug, function results) to registered tap sources.
+
     `add-tap` to register a source and recieve all values sent. `remove-tap` to remove a source.
-    
-    `tap>` form sends its contents to all registered taps. If no taps are registered, the values sent by tap> are discarded. 
-    
+
+    `tap>` form sends its contents to all registered taps. If no taps are registered, the values sent by tap> are discarded.
+
 [Online Portal demo](https://djblue.github.io/portal/){target=_blank .md-button}
 
 
@@ -43,17 +43,17 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
     ```clojure
     :inspect/portal-cli
     {:extra-deps {djblue/portal {:mvn/version "0.34.2"}}}
-  
+
     :inspect/portal-web
     {:extra-deps {djblue/portal             {:mvn/version "0.34.2"}
                   org.clojure/clojurescript {:mvn/version "1.10.844"}}
      :main-opts  ["-m" "cljs.main"]}
-  
+
     :inspect/portal-node
     {:extra-deps {djblue/portal             {:mvn/version "0.34.2"}
                   org.clojure/clojurescript {:mvn/version "1.10.844"}}
      :main-opts  ["-m" "cljs.main" "-re" "node"]}
-     
+
     :repl/inspect
     {:extra-deps
      {cider/cider-nrepl {:mvn/version "0.28.5"}
@@ -66,7 +66,7 @@ Define aliases in the Clojure CLI user configuration to use Portal with any Cloj
         [REPL Reloaded section](/clojure/clojure-cli/repl-reloaded/) includes the `:repl/reloaded` and `:dev/reloaded` ailas definitions
 
 
-## Start REPL with Portal 
+## Start REPL with Portal
 
 Run a REPL in a terminal and include the Portal library, using the Clojure CLI tools
 
@@ -109,9 +109,9 @@ Run a REPL in a terminal and include the Portal library, using the Clojure CLI t
 
 > For `inspector-portal-web` use `(require '[portal.web :as portal])` instead
 
-`(portal/open)` to open the web based inspector window in a browser.
+`(portal/open)` to open the Portal inspector window in a browser.
 
-`(portal/tap) `to add portal as a tap target (add-tap)
+`(add-tap #'portal/submit)` to add portal as a tap target (add-tap)
 
 
 ## Portal UI on REPL startup
@@ -124,13 +124,13 @@ Create a `dev/user.clj` source code file which requires the portal.api library, 
 (ns user
   (:require [portal.api :as inspect]))
 
-;; Start Portal inspector on REPL start
-
-;; Open a portal inspector window
-(inspect/open)
-
-;; Add portal as a tap> target
-(inspect/tap)
+;; ---------------------------------------------------------
+;; Start Portal and capture all evaluation results
+;; Open Portal window in browser with dark theme
+(inspect/open {:portal.colors/theme :portal.colors/solarized-dark})
+;; Add portal as a tap> target over nREPL connection
+(add-tap #'portal.api/submit)
+;; ---------------------------------------------------------
 
 (comment
   ;; Clear all values in the portal inspector window
@@ -182,12 +182,12 @@ Use portal to navigate and inspect the details of the data sent to it via `tap>`
 
 === "Practicalli Clojure CLI Config"
     Start a REPL that includes the Portal nREPL middleware to send the result of every evaluation to portal.
-    
-    * `:repl/reloaded` - rich terminal UI with portal and [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/) 
-    * `:repl/inspect` - basic terminal UI with portal 
+
+    * `:repl/reloaded` - rich terminal UI with portal and [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/)
+    * `:repl/inspect` - basic terminal UI with portal
 
 === "Alias Definition"
-    
+
     ```clojure title="User deps.edn"
     :repl/inspect
     {:extra-deps
@@ -230,7 +230,7 @@ Start Portal User Interface and add portal as a tap target using the `portal.api
 
       ) ;; End of rich comment block
     ```
-    
+
 
 === "Emacs"
     Add helper functions to the Emacs configuration and add key bindings to call them.
@@ -253,7 +253,7 @@ Start Portal User Interface and add portal as a tap target using the `portal.api
 
     * Spacemacs: add to `dotspacemacs/user-config` in the Spacemacs configuration file.
     * Doom emacs: add to `config.el` Doom configuration file.
- 
+
 
     ### Key bindings
 
