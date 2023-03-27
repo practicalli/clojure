@@ -1,10 +1,10 @@
 # Portal - navigate your data
 
-![Portal - explore your Clojure data](https://raw.githubusercontent.com/djblue/portal/master/resources/screenshot.png){align=right loading=lazy style="height:300px;width:300px"}
-
 Portal is a tool for exploration of Clojure data using a browser window to visualise and inspect Clojure, JSON and Transit data.
 
 Portal is registered as a tap source and recieves values send within a  `(tap> ,,,)` form, providing a more advanced approach to debuging than println.
+
+![Portal - explore your Clojure data](https://raw.githubusercontent.com/djblue/portal/master/resources/screenshot.png){loading=lazy}
 
 ??? INFO "Clojure 1.10 onward required"
 
@@ -114,14 +114,14 @@ Run a REPL in a terminal and include the Portal library, using the Clojure CLI t
 
 > For `inspector-portal-web` use `(require '[portal.web :as portal])` instead
 
-`(portal/open)` to open the Portal inspector window in a browser.
+`(portal/open)` to open the Portal inspector window in a browser (see [portal themes](https://cljdoc.org/d/djblue/portal/0.37.1/doc/ui-concepts/themes){target=_blank})
 
-`(add-tap #'portal/submit)` to add portal as a tap target (add-tap)
+`(add-tap #'portal/submit)` to add portal as a tap target
 
 
 ## Portal UI on REPL startup
 
-Start the Portal inspector as soon as the REPL is started.  This works for a terminal REPL as well as [clojure aware editors](/clojure-editors/).
+Start the Portal inspector as soon as the REPL is started.  This works for a terminal REPL as well as [clojure aware editors](/clojure/clojure-editors/).
 
 Create a `dev/user.clj` source code file which requires the portal.api library, opens the inspector window and adds portal as  a tap source.
 
@@ -132,38 +132,29 @@ Create a `dev/user.clj` source code file which requires the portal.api library, 
 ;; ---------------------------------------------------------
 ;; Start Portal and capture all evaluation results
 ;; Open Portal window in browser with dark theme
-(inspect/open {:portal.colors/theme :portal.colors/solarized-dark})
+(inspect/open {:portal.colors/theme :portal.colors/gruvbox})
 ;; Add portal as a tap> target over nREPL connection
 (add-tap #'portal.api/submit)
 ;; ---------------------------------------------------------
-
 (comment
-  ;; Clear all values in the portal inspector window
-  (inspect/clear)
-
-  ;; Close the inspector
-  (inspect/close)
-
-  ) ;; End of rich comment block
+  (inspect/clear)  ; Clear all values in the portal inspector window
+  (inspect/close)  ; Close the inspector
+  ) ; End of rich comment block
 ```
 
-> The rich comment block includes commands to clear and close the portal inspector window.
-
-
-Start a REPL using the `:repl/reloaded` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) with a `clojure` command to start a REPL.
+Start a REPL using the `:repl/reloaded` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) with the `clojure` command to start a REPL.
 
 ```clojure
 clojure -M:repl/reloaded
 ```
 
-
-To use this with Emacs CIDER editor, create a `.dir-locals.el` file in the root of the Clojure project and include either `:env/dev:inspect/portal-cli` aliases
+Use the alias with Emacs CIDER editor via a `.dir-locals.el` file in the root of the Clojure project, with the `:env/dev` alias to add the `dev` path and `:inspect/portal-cli` to add portal libraries
 
 ```emacs
 ((clojure-mode . ((cider-clojure-cli-aliases . ":env/dev:inspect/portal-cli"))))
 ```
 
-Or `:dev/reloaded` alias
+Or `:dev/reloaded` alias to use the [REPL Reloaded tooling](/clojure/clojure-cli/repl-reloaded/)
 ```emacs
 ((clojure-mode . ((cider-clojure-cli-aliases . ":dev/reloaded"))))
 ```
@@ -192,15 +183,17 @@ Use portal to navigate and inspect the details of the data sent to it via `tap>`
     * `:repl/inspect` - basic terminal UI with portal
 
 === "Alias Definition"
-
+    `:repl/inspect` to start a terminal REPL with nREPL support for Clojure editor connection and portal libraries and middleware that will send all evaluations to portal once added as a tap source.
     ```clojure title="User deps.edn"
     :repl/inspect
     {:extra-deps
-     {cider/cider-nrepl {:mvn/version "0.28.5"}
-      djblue/portal     {:mvn/version "0.33.0"}}
+     {nrepl/nrepl          {:mvn/version "1.0.0"}
+      cider/cider-nrepl    {:mvn/version "0.30.0"}
+      djblue/portal        {:mvn/version "0.37.1"}
+      clj-commons/clj-yaml {:mvn/version "0.7.0"}}
      :main-opts ["-m" "nrepl.cmdline"
                  "--middleware"
-                 "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}}}
+                 "[cider.nrepl/cider-middleware,portal.nrepl/wrap-portal]"]}
     ```
 
 Start a REPL with `:repl/reloaded` or 'repl/inspect'
@@ -321,6 +314,76 @@ Start Portal User Interface and add portal as a tap target using the `portal.api
             [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
 
 
+## Tap Logs to Portal
+
+Using a custom mulog publisher, all event logs can be automatically sent to portal.
+
+!!! EXAMPLE "mulog tap publisher"
+    ```clojure
+    ;; ---------------------------------------------------------
+    ;; Mulog Custom Publishers
+    ;; - tap publisher for use with Portal and other tap sources
+    ;; ---------------------------------------------------------
+    (ns mulog-publisher
+      (:require
+       ;; [com.brunobonacci.mulog :as mulog]
+       [com.brunobonacci.mulog.buffer :as mulog-buffer]
+       [portal.api :as p]))
+
+    (deftype TapPublisher [buffer transform]
+      com.brunobonacci.mulog.publisher.PPublisher
+      (agent-buffer [_] buffer)
+
+      (publish-delay [_] 200)
+
+      (publish [_ buffer]
+        (doseq [item (transform (map second (mulog-buffer/items buffer)))]
+          (tap> item))
+        (mulog-buffer/clear buffer)))
+
+    (defn tap
+      [{:keys [transform] :as _config}]
+      (TapPublisher. (mulog-buffer/agent-buffer 10000) (or transform identity)))
+    ```
+
+Require the `mulog-publisher` namespace and mulog library in the `user` ns expression
+
+!!! EXAMPLE "Require `mulog-publisher` namespace"
+    ```clojure
+    (ns user
+      "Tools for REPL Driven Development"
+      (:require
+       [com.brunobonacci.mulog :as mulog]
+       [mulog-publisher]))
+    ```
+
+Start the publisher, optionally setting a global context for events first
+
+!!! EXAMPLE "Set values for all mulog events and start custom mulog publisher"
+    ```clojure
+    ;; ---------------------------------------------------------
+    ;; Mulog events and publishing
+
+    ;; set event global context - information added to every event for REPL workflow
+    (mulog/set-global-context! {:app-name "Practicalli Service",
+                                :version "0.1.0", :env "dev"})
+
+    (def mulog-tap-publisher
+      "Start mulog custom tap publisher to send all events to Portal
+      and other tap sources
+      `mulog-tap-publisher` to stop publisher"
+      (mulog/start-publisher!
+        {:type :custom, :fqn-function "mulog-publisher/tap"}))
+    ;; ---------------------------------------------------------
+    ```
+
+Mulog events are now sent to portal when evaluated
+
+```clojure title="Example mulog event expression"
+    (mulog/log ::repl-state ::ns (ns-publics *ns*))
+```
+
+
 ## References
 
-See the [Portal project readme](https://github.com/djblue/portal) for more details and examples.
+[:fontawesome-solid-book-open: Portal Documentation - clj-docs](https://cljdoc.org/d/djblue/portal/){target=_blank .md-button}
