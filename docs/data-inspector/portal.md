@@ -262,10 +262,11 @@ Control Portal from a Clojure Editor by wrapping the portal commands.
             [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
 
 
-[Portal Documentation - Editors](https://cljdoc.org/d/djblue/portal/doc/editors){target=_blank .md-button}
+[Portal Documentation - Editors](https://cljdoc.org/d/djblue/portal/0.37.1/doc/editors){target=_blank .md-button}
 
 
 ## REPL commands
+
 Include code in the `user` namespace to start a portal and add a tap source
 
 ```clojure
