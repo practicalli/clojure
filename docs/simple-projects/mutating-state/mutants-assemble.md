@@ -1,32 +1,38 @@
 # Mutants Assemble
 
-> #### TODO::work in progress, sorry
-
 In this section you will apply changes to values, how to define your own simple functions.
 
 We will also introduce the following functions for the first time:
 
+| function     | Description                                      |
+|--------------|--------------------------------------------------|
 | `atom`       | create an anonymous function, one without a name |
 | `deref`, `@` | assign a name to a function                      |
 
+
 ## Create a new Clojure project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:new app practicalli/mutants-assemble
+clojure -T:project/create :template app :name practicalli/mutants-assemble
 ```
 
-Open the `src/practicalli/mutants-assemble.clj` file in a Clojure aware editor and start the REPL.
+Open the `src/practicalli/mutants_assemble.clj` file in a Clojure aware editor and start the REPL.
 
 
 ## Define an atom
-Use the standard `def` function to bind a name to an atom.
+
+Use the `def` function to bind a name to an atom.
 
 The atom wraps data, initially an empty vector.
 
 ```clojure
 (def mutants (atom []))
 ```
+
+> The vector remains an immutable value, even though it is contained within a mutable atom container
+
 
 Define a function using `defn` which takes a mutant as an argument and updates the value managed by the atom.  The reference to the atom is also an argument, making this a pure function and more generic as any given atom can be updated with this function.
 
@@ -50,6 +56,7 @@ Call the function with the `mutants` atom and a mutant to add, which is a string
 The value the atom is managing has been swapped for a new value.  The original value was not modified (vectors are immutable) so the atom now points to a new value, a vector containing a string.
 
 ## Viewing the value managed by the atom
+
 Use the `deref` function to see the value the atom is managing.
 
 ```clojure
@@ -63,6 +70,7 @@ It is idiomatic to use `@` which is a syntax alias for the `deref` function, rat
 ```
 
 ## Reset the atom value
+
 `reset!` will change the value managed by the atom by providing the new value.  This is simpler than using `swap!` as it does not use the existing value in the atom.
 
 ```
