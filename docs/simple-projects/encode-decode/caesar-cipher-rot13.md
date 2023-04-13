@@ -1,6 +1,6 @@
-# Rotate by 13 (ROT13)
+# Caesar Cipher ROT13
 
-![Caesar Cipher - ROT13](/images/caesar-cipher-rot13.png)
+![Caesar Cipher ROT13](/images/caesar-cipher-rot13.png)
 
 [ROT13](https://en.wikipedia.org/wiki/ROT13) is one of the simplest ciphers which uses an alphabet as a circle of characters, swapping each character with a character 13 positions later in the alphabet, assuming 26 character of an English alphabet.
 
@@ -8,22 +8,26 @@ A dictionary can be generated to translate between the original alphabet and the
 
 
 ## Create a project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:new app practicalli.cypher-rot13
+clojure -T:project/create :template app :name practicalli/caesar-cipher
 ```
 
 
 ## Define an alphabet
+
 Define an alphabet to use as a basis for conversion.  Take the string of all characters and convert to a sequence of character types.
 
-```clojure
+```clojure title="src/practicalli/caesar-cipher.clj"
 (def english-alphabet
   (seq "abcdefghijklmnopqrstuvwxyz"))
 ```
 
+
 ## Generate a cypher
+
 To convert a character, first build up a cypher.  A cypher in this case is simply a hash-map that creates a dictionary lookup defining what each character should be changed to.
 
 `cycle` creates a lazy sequence of the alphabet that continually cycles.  This provides an 'infinite' sequence from which we will take only the characters needed.
@@ -55,10 +59,12 @@ Using the thread last macro, `->>`, the result of each expression becomes the la
 
 Using the clojure.core/replace function with the cypher hash-map and a string of text returns a converted string of text.
 
+
 ## Define a function
+
 Define a `rot13` function with the algorithm created.  The function takes the alphabet and the text to be encrypted.  Passing both pieces of data as arguments ensures that the function is pure, i.e. free from side effects.
 
-```clojure
+```clojure title="src/practicalli/caesar-cipher.clj"
 (defn rot13 [alphabet text]
   (let [cipher (->> (cycle alphabet)
                     (drop 13)
@@ -77,14 +83,15 @@ An encrypted copy of the sentence is returned.
 
 
 ## Idiomatic improvements
+
 [`clojure.string` library](https://clojuredocs.org/clojure.string/join) is more idiomatic approach when working with string types.
 
 In the `practicalli.cypher-rot13` solution `apply str` was used to join a sequence of characters into a string.  [`clojure.string/join`](https://clojuredocs.org/clojure.string/join) combines a sequence of characters into a string.
 
 Require the `clojure.string` namespace to use the functions contained within.  Add the require to the namespace definition of `practicalli.cypher-rot13`
 
-```clojure
-(ns practicalli.cypher-rot13
+```clojure title="src/practicalli/caesar-cipher.clj"
+(ns practicalli.ceaser-cypher
   (:gen-class)
   (:require [clojure.string :as string]))
 ```
