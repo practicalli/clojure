@@ -66,14 +66,18 @@ Equality is =
 (= 2 1) ; => false
 ```
 
-; You need not for logic, too
-(not true) ; => false
+`true` and `false` are Boolean values
 
+ ```clojure
+(true? true) ; => true
+(not true) ; => false
 (not= true false) ; => true
+(true? (complement true?)) ; => false
+ ```
 
 ## Types
 
-Clojure is stronly typed, so everything is a type in Clojure.
+Clojure is strongly typed, so everything is a type in Clojure.
 
 Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.
 
@@ -95,7 +99,6 @@ Vectors and Lists are java classes too!
 (class [1 2 3]); => clojure.lang.PersistentVector
 (class '(1 2 3)); => clojure.lang.PersistentList
 ```
-
 
 
 ### Collections & Sequences
