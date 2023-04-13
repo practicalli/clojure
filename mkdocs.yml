@@ -210,10 +210,11 @@ nav:
           - Data Transform:
               - simple-projects/data-transformation/index.md
               - simple-projects/data-transformation/most-common-word.md
-          - Kata:
-              - simple-projects/tdd-kata/index.md
-              - Recent Song list: simple-projects/tdd-kata/recent-song-list.md
-              # - simple-projects/split-the-bill.md
+      - TDD Kata:
+          - simple-projects/tdd-kata/index.md
+          - Recent Song list: simple-projects/tdd-kata/recent-song-list.md
+          - Salary Slip Generator: simple-projects/tdd-kata/salary-slip-generator.md
+          # - simple-projects/split-the-bill.md
       - Games:
           - games/index.md
           # Convert to deps.edn
