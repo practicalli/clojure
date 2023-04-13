@@ -1,20 +1,29 @@
-# Kaocha Test Runner from LambdaIsland
+# LambdaIsland Kaocha Test Runner
 
-[lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and `clojure.spec` generative testing.  Clojure and ClojureScript languages are supported.
+[:fontawesome-brands-github: lambdaisland/kaocha](https://github.com/lambdaisland/kaocha) (cow-cha) is a comprehensive test runner that support unit testing and `clojure.spec` generative testing.  Clojure and ClojureScript languages are supported.
+
+Kaocha is highly configurable via a `tests.edn` configuration file in the root of the project.
 
 
-## A minimal starting point
+## Clojure CLI Config
 
-=== "Practicalli Clojure CLI Config"
+=== ":fontawesome-brands-github: Practicalli Clojure CLI Config"
 
-    Install the [Practicalli Clojure CLI Config]( /clojure/clojure-cli/install/community-tools.md) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
+    [:fontawesome-brands-github: Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) configuration contains aliases to run kaocha test runner, using either the `-X` or `-M` execution flag.
+
+    * `:test/run` - run all tests in the project, stopping on first failing test
+    * `:test/watch` - watching for file changes and run all tests in the project, stopping on first failing test
+    * `:test/env` - add supporting paths and libraries for testing projects
+
+    Each alias includes `:extra-paths ["test"]` to include the `test` directory on the class path, enabling Koacha test runner to find the unit test code.
 
 === "Alias Definition"
     Define an alias in the project or user `deps.edn` configuration.
 
     For CI services such as CircleCI or GitLabs, add an alias for kaocha to the project `deps.edn` file.
 
-    !!! EXAMPLE "Alias definitions which stop on failed tests"
+    !!! EXAMPLE "Alias definitions for LambdaIsland/Kaocha test runner"
+    Aliases support the `-M` (clojure.main) and `-X` (clojure.exec) [execution options with Clojure CLI](/clojure/clojure-cli/execution-options/).
     ```clojure
     :test/run
     {:extra-paths ["test"]
@@ -36,28 +45,24 @@
                  :fail-fast? true}}
     ```
 
+    Libraries and directories containing code to support testing projects can be added to the `:test/env` alias
+    ```clojure
+    :test/env
+    {:extra-paths ["test"]
+     :extra-deps  {org.clojure/test.check {:mvn/version "1.1.1"}}}
+    ```
+
+    Alias definitions should include `:extra-paths ["test"]` to add the `test` directory on the class path, enabling Koacha test runner to find the unit test code.
+
 
 ## Run Kaocha
 
-Kaocha can be run via the tasks in the Practicalli Makefile, Clojure CLI, or by creating a `kaocha` script.
+Kaocha can be run via make tasks, Clojure CLI, or by creating a `kaocha` script.
+
+> [Babashka task runner](https://book.babashka.org/#tasks) could also be used to develop tasks to run kaocha
 
 === "Make"
-
-    ```shell
-    make test
-    ```
-
-    Kaocha stops if there is a failing task. Use the `test-all` target to run all unit tests regardless of failures (execept compiler errors)
-
-    ```bash
-    make test-all
-    ```
-
-    Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.  Use `watch-all` if all tests should run regardless of failure.
-
-    ```bash
-    make test-watch
-    ```
+    [:fontawesome-brands-github: Practialli Makefile](https://github.com/practicalli/dotfiles/blob/main/Makefile){target=_blank} contains tasks for testing Clojure projects with Kaocha (and many other common Clojure development tasks)
 
     ??? EXAMPLE "Practicalli Makefile targets for unit testing"
         Practicalli Makefile includes the following targets for Kaocha test runner
@@ -67,6 +72,10 @@ Kaocha can be run via the tasks in the Practicalli Makefile, Clojure CLI, or by 
         test-config:  ## Run unit tests - stoping on first error
             $(info --------- Runner Configuration ---------)
             clojure -M:test/env:test/run --print-config
+
+        test-profile:  ## Profile unit test speed, showing 3 slowest tests
+            $(info --------- Runner Profile Tests ---------)
+            clojure -M:test/env:test/run --plugin  kaocha.plugin/profiling
 
         test:  ## Run unit tests - stoping on first error
             $(info --------- Runner for unit tests ---------)
@@ -88,28 +97,46 @@ Kaocha can be run via the tasks in the Practicalli Makefile, Clojure CLI, or by 
         # ------------------------------------ #
         ```
 
+    Run all tests using the following command from the root of the Clojure project. Kaocha stops if there is a failing task, saving time on running the whole test suite.
+    ```shell
+    make test
+    ```
+
+    Use the `test-all` target to run all unit tests regardless of failures (execept compiler errors)
+
+    ```bash
+    make test-all
+    ```
+
+    Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.  Use `watch-all` if all tests should run regardless of failure.
+
+    ```bash
+    make test-watch
+    ```
+
+    ![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-dark.png#only-dark)
+    ![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-light.png#only-light)
+
 
 === "Clojure CLI"
 
     Run Kaocha using the `clojure` command in a terminal, using the `:test/run` which runs all the tests in a project unless a test fails, then kaocha will stop.
 
     ```shell
-    clojure -M:test/run
+    clojure -X:test/run
     ```
 
     Pass `:fail-fast? false` as an argument to run all tests regardless of test failure.
 
     ```bash
-    clojure -M:test/run :fail-fast? false
+    clojure -X:test/run :fail-fast? false
     ```
 
     Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.
 
     ```bash
-    clojure -M:test/watch
+    clojure -X:test/watch
     ```
-
-
 === "Kaocha script"
     Kaocha recommends adding a `bin/kaocha` script to each project, although this is optional.  The script calls `clojure` with a suitable alias and allows for arguments to be passed to the command using `"$@"`.  Command line options will over-ride the same options in the `tests.edn` file.
 
@@ -123,17 +150,15 @@ Kaocha can be run via the tasks in the Practicalli Makefile, Clojure CLI, or by 
     kaocha --fail-fast
     ```
 
-![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-dark.png#only-dark)
-![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-light.png#only-light)
-
-
 ## Configuring test runs
 
 Kaocha can be configure by options in a `tests.edn` configuration file and options passed via the command line (typically added to the `bin/kaocha` script).
 
-Create a `tests.edn` file in the root of the project directory.
+Create a `tests.edn` file in the root of the project directory and add the default configuration.
 
-`#kaocha/v1 {}` is the minimum configuration, which will use a default configuration.
+```clojure title="tests.edn"
+#kaocha/v1 {}
+```
 
 The `tests.edn` file and command line options combine to make the complete configuration for the projects in the test.
 
@@ -142,48 +167,13 @@ The `tests.edn` file and command line options combine to make the complete confi
 ![Clojure Unit Test - kaocha print configuration](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png#only-light)
 ![Clojure Unit Test - kaocha print configuration](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-dark.png#only-dark)
 
-Use the default configuration as a basis for customising any specific project.
+Use the default configuration as the basis for customising kaocha test runner for the current project.
 
 ??? HINT "Alternative kaocha configuration with aero"
     [juxt/aero](https://github.com/juxt/aero) reader literals such as #env, #merge, #ref, and #include can be used to provide different options to the kaocha configuration. For example, a file change watcher can be configured to run unless kaocha is running in CI server environment.
 
     `:kaocha/watch #profile {:default true :ci false}`
 
-
-## Run test options
-
-All test code found on the class path will be run, so ensure the `test` directory was added when starting the REPL process and test definitions, `deftest` are using `-test` postfix
-
-```bash
-clojure -X:test/run
-```
-
-![Clojure Unit Test - kaocha test runner results](/images/clojure-unit-test-kaocha-run-results.png)
-
-
-If one or more tests fail, then a detailed description of the failure is printed
-
-![Clojure Unit Test - kaocha test failure example](/images/clojure-unit-test-kaocha-fail-example.png)
-
-The report progress plugin gives visual feedback as the tests are running.
-
-```bash
-clojure -M:test/run --reporter kaocha.report.progress/report
-```
-
-![Clojure Unit Test - kaocha test runner plugin report progress](/images/clojure-unit-test-kaocha-plugin-report-progress-results.png)
-
-Stop testing on the first failure with the `--fail-fast` flag.  Especially useful when running larger numbers of tests or slower running tests.
-
-```bash
-clojure -M:test/run --fail-fast
-```
-
-Tests are run in a random order, controlled by a seed in the test.edn configuration.  This helps find dependencies between tests where a test is only passing because of another test (or more likely the setup stage or lack of tear down from another test).  The `--no-randomize` flag will run the tests in the same order each time.
-
-`--print-result` will return a hash-map of the test results.  This is a very detailed output, so I assume its more suitable for diagnostic tools or viewing in a data browser (eg. Clojure inspector, REBL, etc.)
-
-`--watch` flag enables watch mode which monitors file changes in source and test paths (from the kaocha configuration), loads in changes and runs tests again.
 
 
 ## Plugins
@@ -199,17 +189,42 @@ Much of the functionality of Kaocha is provide by plugins
 
 Show the 3 slowest tests for each category of test, after the test results
 
-As a command line option:
-```bash
-bin/kaocha --plugin kaocha.plugin/profiling
-```
-or added to the `test.edn` configuration
+=== "Make"
+    As a command line option:
+    ```shell
+    make test-profile
+    ```
+
+=== "Clojure CLI"
+    Pass the profiling plugin as an argument to the Clojure CLI alias using the `-M` (clojure.main) execution option
+    ```shell
+    clojure -M:test/env:test/run --plugin kaocha.plugin/profiling
+    ```
+
+=== "Kaocha Script"
+    As a command line option:
+    ```shell
+    bin/kaocha --plugin kaocha.plugin/profiling
+    ```
+
+Or add the profile plugin to the `test.edn` configuration
+
 ```clojure
 #kaocha/v1
 {:plugins [:kaocha.plugin/profiling]}
 ```
 
-## Example: banking-on-clojure project
+
+<!-- ## Reporter -->
+
+<!-- ```bash -->
+<!-- clojure -M:test/run --reporter kaocha.report.progress/report -->
+<!-- ``` -->
+
+<!-- ![Clojure Unit Test - kaocha test runner plugin report progress](/images/clojure-unit-test-kaocha-plugin-report-progress-results.png) -->
+
+
+## Example tests.edn
 
 The practicalli/banking-on-clojure project is a web application backed by a relational database, using kaocha as the test runner.
 
