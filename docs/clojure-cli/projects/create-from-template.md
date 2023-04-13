@@ -1,15 +1,31 @@
 # Creating Clojure projects
 
-Creating projects using a template is a quick way to get started.  A template will create the project structure, add libraries and even include example code. .
+Creating projects using a template is a quick way to get started.  A template will create the project structure, add libraries and even include example code.
 
-Clojure CLI can use the deps-new or clj-new community projects to create a project
+deps-new provides Clojure CLI specific templates. clj-new uses Leinginen templates which may required additional configuration to work with Clojure CLI.
+
+The deps-new built-in templates for creating a project
+
+* `app` - simple project for a running application (uberjar)
+* `lib` - simple project for a library (jar)
+* `scratch` - a `deps.edn` file and `src/scratch.clj`
+* `template` - project for defining a custom template
+
+!!! INFO "Practicalli Project Templates"
+    Additional templates are under construction at [:fontawesome-brands-github: practicalli/project-templates](https://github.com/practicalli/project-templates)
+
+    * `practicalli/service` - production level project template with Integrant, Http-kit, Reitit, Mulog, Docker, Make, MegaLinter, etc.
+    * `practicalli/application` - production level project template with Mulog, Docker, Make, MegaLinter, etc.
+
+    Practicalli Project templates will be added to the `:project/create` alias once they are ready
+
 
 ## Add project tools
 
 Add one or both of the tools as aliases to the Clojure CLI user configuration
 
-=== "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the following aliases
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the following aliases
 
     `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new), to create Clojure CLI specific projects and a simple way to define custom templates
 
@@ -29,10 +45,12 @@ Add one or both of the tools as aliases to the Clojure CLI user configuration
      :exec-args    {:template app :name practicalli/playground}
      :main-opts    ["-m" "clj-new.create"]}
     ```
+    <!-- TODO: add practicalli/project-templated dependency -->
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7muHVkxzZcE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+
 
 ## Create a project
 
@@ -48,7 +66,7 @@ Use deps-new or clj-new to create a project, specifying a template and a name fo
     ```bash
     clojure -T:project/create :template app :name practicalli/playground
     ```
-    The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project. 
+    The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
 
 
 === "clj-new"
@@ -64,7 +82,7 @@ Use deps-new or clj-new to create a project, specifying a template and a name fo
 
     === "Clojure.main"
         The `-M` execution option calls Clojure.main which takes string options of the form:
-        
+
         `clojure -M:project/new template-name domain/app-lib-name`
         ```bash
         clojure -M:project/new app practicalli/playground
@@ -121,13 +139,12 @@ Then the project can be run using `clojure -X:project/run` and arguments can opt
 * `lib` - a project that will be used as a library (added to other projects as a dependency)
 * `template` - a project for creating your own custom templates.
 
-`clj-new` can create projects from `deps.edn`, Leiningen and Boot templates. A wide range of templates have been created by the Clojure community which can be found by searching on Clojars.org:
+`clj-new` can create projects from `deps.edn` and Leiningen templates. A wide range of templates have been created by the Clojure community which can be found by searching on Clojars.org:
 
 * [clj-templates website](https://clj-templates.com/) - leiningen and boot templates
 * [deps.edn projects](https://clojars.org/search?q=artifact-id:clj-template)
 * [Leiningen projects](https://clojars.org/search?q=artifact-id:lein-template)
-* [Boot projects](https://clojars.org/search?q=artifact-id:boot-template).
 
-`clj-deps` does not change Leiningen or Boot templates into deps.edn projects.
+`clj-new` does not change Leiningen or Boot templates into deps.edn projects.
 
 [Migrate to a Clojure CLI project](migrate-project.md) if the template does not include a `deps.edn` file
