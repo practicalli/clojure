@@ -7,7 +7,7 @@
 
 === "Practicalli Clojure CLI Config"
 
-Install the [Practicalli Clojure CLI Config]( /clojure/clojure-cli/install/community-tools.md) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
+    Install the [Practicalli Clojure CLI Config]( /clojure/clojure-cli/install/community-tools.md) configuration to call kaocha from the root directory of a project which contains `clojure.test` defined unit tests under a `test` directory structure.
 
 === "Alias Definition"
     Define an alias in the project or user `deps.edn` configuration.
@@ -39,44 +39,92 @@ Install the [Practicalli Clojure CLI Config]( /clojure/clojure-cli/install/commu
 
 ## Run Kaocha
 
-Run Kaocha using the `clojure` command in a terminal, using the `:test/run` which runs all the tests in a project unless a test fails, then kaocha will stop.
+Kaocha can be run via the tasks in the Practicalli Makefile, Clojure CLI, or by creating a `kaocha` script.
 
-```bash
-clojure -M:test/run
-```
+=== "Make"
 
-Pass `:fail-fast? false` as an argument to run all tests regardless of test failure.
+    ```shell
+    make test
+    ```
 
-```bash
-clojure -M:test/run :fail-fast? false
-```
+    Kaocha stops if there is a failing task. Use the `test-all` target to run all unit tests regardless of failures (execept compiler errors)
 
-Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.
+    ```bash
+    make test-all
+    ```
 
-```bash
-clojure -M:test/watch
-```
+    Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.  Use `watch-all` if all tests should run regardless of failure.
 
-??? INFO "Kaocha recommends script"
+    ```bash
+    make test-watch
+    ```
+
+    ??? EXAMPLE "Practicalli Makefile targets for unit testing"
+        Practicalli Makefile includes the following targets for Kaocha test runner
+        ```make title="Makefile"
+        # ------- Testing -------------------- #
+
+        test-config:  ## Run unit tests - stoping on first error
+            $(info --------- Runner Configuration ---------)
+            clojure -M:test/env:test/run --print-config
+
+        test:  ## Run unit tests - stoping on first error
+            $(info --------- Runner for unit tests ---------)
+            clojure -X:test/env:test/run
+
+
+        test-all:  ## Run all unit tests regardless of failing tests
+            $(info --------- Runner for all unit tests ---------)
+            clojure -X:test/env:test/run :fail-fast? false
+
+        test-watch:  ## Run tests when changes saved, stopping test run on first error
+            $(info --------- Watcher for unit tests ---------)
+            clojure -X:test/env:test/run :watch? true
+
+        test-watch-all:  ## Run all tests when changes saved, regardless of failing tests
+            $(info --------- Watcher for unit tests ---------)
+            clojure -X:test/env:test/run :fail-fast? false :watch? true
+
+        # ------------------------------------ #
+        ```
+
+
+=== "Clojure CLI"
+
+    Run Kaocha using the `clojure` command in a terminal, using the `:test/run` which runs all the tests in a project unless a test fails, then kaocha will stop.
+
+    ```shell
+    clojure -M:test/run
+    ```
+
+    Pass `:fail-fast? false` as an argument to run all tests regardless of test failure.
+
+    ```bash
+    clojure -M:test/run :fail-fast? false
+    ```
+
+    Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.
+
+    ```bash
+    clojure -M:test/watch
+    ```
+
+
+=== "Kaocha script"
     Kaocha recommends adding a `bin/kaocha` script to each project, although this is optional.  The script calls `clojure` with a suitable alias and allows for arguments to be passed to the command using `"$@"`.  Command line options will over-ride the same options in the `tests.edn` file.
 
     ```bash title="bin/kaocha"
     #!/usr/bin/env bash
     clojure -M:test/runner "$@"
     ```
+    Use the `-M` execution option to pass command line flags to the Kaocha test runner.
 
-??? HINT "Run via Makefile targets"
-    A Makefile target could be defined instead, e.g. `make test` and `make watch`
-    ```make title="Makefile"
-    test:  ## Run unit tests - stoping on first error
-    	$(info --------- Runner for unit tests ---------)
-    	clojure -X:test/run
-
-    test-watch:  ## Run tests when changes saved, stopping test run on first error
-    	$(info --------- Watcher for unit tests ---------)
-    	clojure -X:env/test:test/run :watch? true
+    ```bash
+    kaocha --fail-fast
     ```
 
+![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-dark.png#only-dark)
+![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-light.png#only-light)
 
 
 ## Configuring test runs
@@ -89,9 +137,10 @@ Create a `tests.edn` file in the root of the project directory.
 
 The `tests.edn` file and command line options combine to make the complete configuration for the projects in the test.
 
-`bin/kaocha --print-config` will print out the complete configuration.
+`make test-config` runs `clojure -M:test/run --print-config` to print out the current kaocha configuration.
 
-![Clojure Unit Test - kaocha print configuration](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png)
+![Clojure Unit Test - kaocha print configuration](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-light.png#only-light)
+![Clojure Unit Test - kaocha print configuration](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-config-print-dark.png#only-dark)
 
 Use the default configuration as a basis for customising any specific project.
 
