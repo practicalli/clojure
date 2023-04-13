@@ -1,4 +1,5 @@
 # RNA to DNA transcription
+
 Given a DNA strand, return its RNA complement ([RNA transcription](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)).
 
 ![RNA Transcription](/images/rna-transcription.png)
@@ -16,19 +17,22 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
     T -> A
     A -> U
 
-> #### HINT::Exercism.io challenge
-> This project was inspired by the RNA Transcription exercise on Exercism.io.  Related exercises include Nucleotide Count and Hamming.
+
+??? HINT "Inspired by Exercism.io challenge"
+    This project was inspired by the RNA Transcription exercise on Exercism.io.  Related exercises include Nucleotide Count and Hamming.
+
 
 ## Create a project
-The project is part of the [Exercism.io Clojure track](/coding-challenges/exercism/rna-transcription.html) and a project can be downloaded via the Exercisim command line tool.
 
-Alternatively, use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:project/new app practicalli/rna-transcription
+clojure -T:project/create :template app :name practicalli/rna-transcription
 ```
 
+
 ## Define unit tests
+
 Open the `test/practicalli/rna-transcription.clj` and add the following tests
 
 ```clojure
@@ -58,6 +62,7 @@ Open the `test/practicalli/rna-transcription.clj` and add the following tests
 
 
 ## Code the RNA transcription
+
 Edit the `src/practicalli/rna-transcription.clj` file and require the `clojure.string` library.  The library is part of the Clojure standard library, so does not need to be added as a project dependency.
 
 ```clojure
@@ -152,7 +157,9 @@ Update `to-rna` to be a pure function by including the dictionary as an argument
            (map #(convert-nucleotide dictionary %) dna))))
 ```
 
+
 ## Idiomatic improvements
+
 The `to-rna` function is not pure, as it relies on a shared value in the namespace, the `dictionary-dna-rna` transcription map.
 
 Passing `dictionary-dna-rna` as an argument to the `to-rna` function as well as the dna sequence would make `to-rna` a pure function.  It would also allow use of a range of transcription maps.
@@ -203,4 +210,5 @@ Updated unit tests that call `to-rna` with both arguments
 
 
 ## Summary
+
 This exercise has covered the concept of using a Clojure hash-map structure as a dictionary lookup.
