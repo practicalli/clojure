@@ -103,7 +103,7 @@ Start a test selective category of tests running by specifying test selectors to
 === "Cognitect"
     The Cognitect Labs test runner uses command line options to specify test selectors, `--include` and `--exclude`.
 
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) configuration provides the `:test/congnitect` alias.
+    [:fontawesome-solid-book-open:  Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) configuration provides the `:test/congnitect` alias.
 
     `clojure -M:test/cognitect --include :database` only runs tests with the `^:database` test selector
 
