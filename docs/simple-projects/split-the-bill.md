@@ -1,19 +1,22 @@
 # Split the bill
 
-> #### TODO::work in progress, sorry
+<!-- TODO: challenge: split the bill - create an example solution -->
 
-You are at a restaurant with a group of friends and relatives, having a reunion dinner after a year of not seeing each other.
+In a restaurant a group of friends and relatives are having a reunion dinner after a year of not seeing each other.
 
 Once the meal comes to an end, its time to pay the bill.  So how would you write code to split the bill?
 
 Start with the simplest possible approach, with everyone paying the same.
 
+
 ## Create a new Clojure project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:new app practicalli/split-the-bill
+clojure -T:project/create :template app :name practicalli/split-the-bill
 ```
+
 
 
 ```clojure

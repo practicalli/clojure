@@ -213,6 +213,7 @@ nav:
           - Kata:
               - simple-projects/tdd-kata/index.md
               - Recent Song list: simple-projects/tdd-kata/recent-song-list.md
+              # - simple-projects/split-the-bill.md
       - Games:
           - games/index.md
           # Convert to deps.edn
