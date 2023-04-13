@@ -25,7 +25,7 @@ A [Live coding video walk-through of this project](https://youtu.be/sXZKrD4cAFk)
 
 ## Create a project
 
-Use the `:project/create` [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) to create a new Clojure project.
+Use the `:project/create` [:fontawesome-brands-github: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) to create a new Clojure project.
 
 ```bash
 clojure -T:project/create :template app :name practicalli/random-function
