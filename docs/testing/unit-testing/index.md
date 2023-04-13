@@ -26,6 +26,12 @@ The function is the unit under test in Clojure.  All public functions that form 
 * Limit mocking of systems to integration tests (although mocking data is good everywhere)
 
 
+??? HINT "Code should evaluate or have line comments"
+    All Clojure code should be valid syntax and able to be evaluated (compiled), even code within a `(comment )` expression or after a `#_` reader comment.
+
+    Code commented with a line comment, `;;`, will not be read by Clojure and cannot cause compliation errors when evaluated
+
+
 ## Running tests
 
 [Test runners](/testing/test-runners/) can run be run in the REPL used for development or run separately via the command line and continuous integration tasks.
