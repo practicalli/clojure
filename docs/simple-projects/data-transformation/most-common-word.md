@@ -1,4 +1,5 @@
 # Most common word
+
 In this challenge we would like you to find the most used word in a book. The word should not be part of the [common English words](common-english-words.csv) (i.e. the, a, i, is).
 
 This functionality is useful for generating word maps or identifying patterns across data sets.
@@ -8,6 +9,7 @@ This functionality is useful for generating word maps or identifying patterns ac
 Copyright free books for use are available via Project Guttenburg, e.g. [“The Importance of Being Earnest” by Oscar Wilde](http://www.gutenberg.org/cache/epub/844/pg844.txt).
 
 ## Suggested approach
+
 A suggested approach to find the most common word:
 
 * Pull the content of the book into a collection
@@ -20,11 +22,13 @@ A suggested approach to find the most common word:
 
 
 ## Create a project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:new app practicalli/common-words
+clojure -T:project/create :template app :name practicalli/common-words
 ```
+
 
 ## Get the book contents
 `clojure.core/slurp` will read in a local file or a remote resource (file, web page, etc) and return a single string of the contents.
@@ -51,6 +55,7 @@ Project Gutenberg now compresses the books with GZip, so a stream can be created
 
 
 ## Individual words from the book
+
 The book contents should be broken down into individual words.
 
 A regular expression can be used to identify word boundaries, especially where there are apostrophes and other characters.
@@ -82,6 +87,7 @@ Extending the regex pattern the results can be refined.
 
 
 ## Removing common English words
+
 In any book the most common word its highly likely to be a common English word (the, a, and, etc.).  To make the most common word in any book more specific, the common English words should be removed.
 
 [`common-english-words.csv`](common-english-words.csv) contains comma separate words.
@@ -124,6 +130,7 @@ The `common-english-words` set can now be used with the `being-earnest` book.
 ```
 
 ## Counting Occurrences
+
 `clojure.core/frequencies` takes a collection and returns a map where the keys are the unique elements from the collection and the value for each key is the number of times that element occurred in the collection.
 
 
@@ -144,6 +151,7 @@ The result is sorted from smallest to largest value.  The result could be revers
 ```
 
 ## Assembling the most-common-word function
+
 Define a function called `most-common-word` that assembles all the previous steps.  The function should take all the values it needs for the calculation as arguments, creating a pure function without side effects.
 
 ```clojure
@@ -177,6 +185,7 @@ Call this function with the `being-earnest` book and the `common-english-words`
 
 
 ## Running from the command line
+
 Update the code to take the book reference from the command line.
 
 Remove the `def` that hard-coded the being-earnest book.
