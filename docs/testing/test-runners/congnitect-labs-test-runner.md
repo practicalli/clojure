@@ -1,15 +1,16 @@
 # Cognitect Labs Test Runner
 
-test-runner is a test runner for Clojure projects defined with `deps.edn` and using `clojure.test` library which is part of the Clojure standard library.
+Cognitect Labs test-runner is a test runner for Clojure projects defined with `deps.edn` and using `clojure.test` library which is part of the Clojure standard library.
 
 test-runner aims to provide a standard way to discover and run unit and property-based tests, in a simple to use and lightweight tool.
 
-## Adding test-runner
+
+## Add test-runner
 
 Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`.  Or add test-runner to specific projects by adding an alias to the project `deps.edn` file.  Include `:extra-paths` configuration to include the standard `test` directory so that the runner has access to the test code.
 
 === "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) provides aliases for test runner tools, including `:test/congnitect` for running Cognitect Labs test runner
+    [:fontawesome-solid-book-open:  Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides aliases for test runner tools, including `:test/congnitect` for running Cognitect Labs test runner
 
 === "Alias Definition"
     Add an alias to run Cognitect Labs test runner, either in the project or user `deps.edn` configuration file.
