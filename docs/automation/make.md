@@ -1,5 +1,7 @@
 # Make
 
+[:fontawesome-brands-github: practicalli/dotfiles Makefile](https://github.com/practicalli/dotfiles/blob/main/Makefile){target=_blank .md-button}
+
 [GNU Make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html) provide a simple and consistent way to run any development task for Clojure & ClojureScript projects (or any other languages).
 
 Wrap any combination of tools (building, linting, formatting, testing) with make targets for a simple command line interface, with automatically tab completion, making any Clojure project really easy to work with.  Practicalli also uses make to manage docker images and containers to support Clojure development.
