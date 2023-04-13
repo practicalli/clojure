@@ -6,7 +6,7 @@ Install the Clojure CLI which provides the essential tools for Clojure developme
 
 The Clojure CLI automatically downloads all library dependencies, including the Clojure Standard library. As Clojure itself is packages as a library (`.jar` Java ARchive), any version of Clojure can be used with a project.
 
-[Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
 
 
 === "Linux"
@@ -81,11 +81,11 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 > Reference: [Clojure CLI Install - Clojure.org Getting Started](https://clojure.org/guides/install_clojure){target=_blank} - official guide
 
 
-## Practicalli Clojure CLI Config
+## :fontawesome-solid-book-open: Practicalli Clojure CLI Config
 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
-Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.

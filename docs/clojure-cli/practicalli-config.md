@@ -1,8 +1,8 @@
 # Practicalli Clojure CLI Configuration
 
-[Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank .md-button}
 
-[Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} is a user configuration for Clojure CLI tools providing a range of community tools via meaningful aliases, supporting Clojure and ClojureScript development.
 
 Alias names are designed with qualified keywords that provide context for the use of an alias (`env`, `inspect`, `project`, `repl`, `search` `test`). These keywords help with discovery and reduce cognitive load required to remember their purpose.
 
@@ -15,12 +15,12 @@ Commonly used arguments are included in many alias via `:main-opts` or `:exec-ar
 
 
 ??? HINT "Remote Environments or Continuous Integration"
-    For remote environments or [Continuous Integration services](/continuous-integration/), include [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank}) in the environment build or copy specific aliases to the Clojure project `deps.edn` configuration.
+    For remote environments or [Continuous Integration services](/continuous-integration/), include [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank}) in the environment build or copy specific aliases to the Clojure project `deps.edn` configuration.
 
 
 ## Install
 
-Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
+Fork or clone [:fontawesome-brands-github: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
@@ -43,7 +43,7 @@ Fork or clone [Practicalli Clojure CLI Config](https://github.com/practicalli/cl
 
 ## Community Tools
 
-The Clojure configuration directory contains a `deps.edn` file containing a substantial `:aliases` section with a long list of aliases.  These aliases are described in the [README of the project](https://github.com/practicalli/clojure-deps-edn/blob/live/README.md).
+The Clojure configuration directory contains a `deps.edn` file containing a substantial `:aliases` section with a long list of aliases.  These aliases are described in the [:fontawesome-brands-github: README of the project](https://github.com/practicalli/clojure-cli-config).
 
 All tools are provided via libraries and are only installed on first use.  Unused aliases will therefore not install their libraries.
 

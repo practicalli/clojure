@@ -162,8 +162,8 @@ Once hot-loaded, a library namespace can be required as if the dependency had be
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
 
 
-=== "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines several aliases which include the library that provides the `add-libs` function to the REPL:
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines several aliases which include the library that provides the `add-libs` function to the REPL:
 
     * `:repl/reloaded` starts a rich terminal UI, REPL process, nREPL server for Clojure editors to connect, portal data inspector, namespace reloadeing and test libraries and path
     * `:dev/reloaded` - all the tools `:repl/reloaded` provides without the repl (compose with other aliases)
@@ -192,7 +192,7 @@ Once hot-loaded, a library namespace can be required as if the dependency had be
                     :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
     ```
 
-    > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+    > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
 
 There are several approaches to hotload libraries, including via a terminal REPL UI or in a project with a Clojure editor:

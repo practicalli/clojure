@@ -49,12 +49,12 @@ Edit the `deps.edn` file in the root of the project directory and add source dir
 
 ## Add test runner
 
-Tests can be run locally using the `:test/run` or `:test/watch` aliases from the [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md).
+Tests can be run locally using the `:test/run` or `:test/watch` aliases from the [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/).
 
 ??? HINT "Continuous Integration Support"
     A Continuous Integration server requires an alias in the project `deps.edn` file to define a test runner.
 
-    A selection of test runners are provided via aliases defined in [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md).  Copy a test runner alias to the project `deps.edn` file.
+    A selection of test runners are provided via aliases defined in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/).  Copy a test runner alias to the project `deps.edn` file.
 
 
 ## Deployment

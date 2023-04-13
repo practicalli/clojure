@@ -29,7 +29,7 @@ Download the RNA transcription exercise using the exercism CLI tool
 exercism download --exercise=rna-transcription --track=clojure
 ```
 
-> To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
+> To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
 
 
 ## Designing the solution

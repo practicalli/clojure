@@ -31,7 +31,7 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
         ```bash
         sudo apt install openjdk-17-source
         ```
-        [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
+        [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
         
     
     If `openjdk-17-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}

@@ -32,7 +32,7 @@ Establish an effective Clojure development environment by installing the followi
 
 
 !!! HINT "Aliases in Practicalli Clojure provided by Practicalli Clojure CLI config"
-    [Practicalli Clojure CLI Config](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.
 
     If the Practicalli Clojure CLI config is not used, review the [`deps.edn` file](https://github.com/practicalli/clojure-deps-edn/blob/live/deps.edn){target=_blank} from the GitHub repository and add relevant aliases definitions to your own Clojure CLI configuration.
 

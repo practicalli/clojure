@@ -35,8 +35,8 @@ Create a `dev/user.clj` file with a namespace called `user`.
 
 Create an alias to include the `dev` path when running a REPL process
 
-=== "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) includes aliases that add `dev` directory to the class path
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) includes aliases that add `dev` directory to the class path
 
     * `:env/dev` alias only adds the `dev` directory to the classpath
     * `:dev/reloaded` adds library hotload, namespace reload, porta data inspector and testing libraries & `test`
@@ -114,8 +114,8 @@ An alias can be used in the require expression, useful if multiple functions fro
 
 The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
 
-=== "Practicalli Clojure CLI Config"
-    The `:search/libraries` in [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/#project-dependencies) will add the find-deps library.
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    The `:search/libraries` in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/#project-dependencies) will add the find-deps library.
 
 === "Manual"
     Add the find-deps project to and alias called `:search/libraries` in the user level `deps.edn` file, i.e. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
@@ -161,8 +161,8 @@ clojure -M:env/dev:search/libraries:repl/rebel
 
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
 
-=== "Practicalli Clojure CLI Config"
-    `:repl/reloaded`  and `dev/reloaded` aliases in [Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) provide the `add-libs` function.
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    `:repl/reloaded`  and `dev/reloaded` aliases in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) provide the `add-libs` function.
 
 === "Manual"
     Edit the project `deps.edn` configuration and add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library.  Or add an alias to the user level configuration for use with any Clojure CLI project.
@@ -176,7 +176,7 @@ clojure -M:env/dev:search/libraries:repl/rebel
                     :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
     ```
 
-    > Alias example from [Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+    > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
 
 Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases

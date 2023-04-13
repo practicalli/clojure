@@ -56,7 +56,7 @@ If a REPL prompt appears, then Clojure CLI is working.  If a REPL prompt does no
 
 ## REPL starts but requiring code fails
 
-Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with `clojure -T:project/create` (with [Practicalli Clojure CLI Config](/clojure/install/clojure-cli/) installed)
+Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with `clojure -T:project/create` (with [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/) installed)
 
 If a REPL process starts correctly for a new project but not the existing project, then its most likely one or more expressions in the existing project that are causing an error or the project `deps.edn` configuration.
 

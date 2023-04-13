@@ -10,7 +10,7 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 * managing dependencies (tools.deps) -downloading from Maven and Git repositories
 * [building Clojure projects (using tools.build)](/clojure/clojure-cli/projects/tools-build/) to create deployable Clojure services
 
-[Practicalli Clojure CLI Config](practicalli-config/) extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.
 
 
 ??? WARNING "Video commands dated but concepts remain valid"
@@ -22,7 +22,7 @@ Clojure CLI (command line interface) is the latest approach to working with Cloj
 
 ## Common tasks for Clojure development
 
-The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. [Practicalli Clojure CLI Config](practicalli-config/)
+The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/)
 
 !!! HINT "REPL Reloaded"
     `clojure -M:repl/reloaded` runs a rich terminal UI REPL prompt that includes portal data inspector, namespace reloading and library hotload tools. `test` path is included to support editor test runners and `dev` path for custom user namespace for [custom REPL startup](/clojure/clojure-cli/repl-startup/)
@@ -78,14 +78,14 @@ Configuration is defined using a hash-map with the following top-level keys:
 * `:aliases` - named configuration defining extra paths, extra deps and configuration to run Clojure
 * `:mvn/repos` - library dependency sources, remote and local (e.g. Clojars, Maven, Artifactory, etc).
 
-`:aliases` configuration is only included when using the alias name with the Clojure CLI, e.g. `:repl/rebel` alias in [Practicalli Clojure CLI Config](practicalli-config/) adds library dependencies only used during development to run a rich terminal UI REPL.
+`:aliases` configuration is only included when using the alias name with the Clojure CLI, e.g. `:repl/rebel` alias in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) adds library dependencies only used during development to run a rich terminal UI REPL.
 
 ```shell
 clojure -M:repl/rebel
 ```
 
-??? HINT "Add a wide range of aliases by installing Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](practicalli-config/) provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.
+??? HINT "Add a wide range of aliases by installing :fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) provides aliases for a wide range of tools for use with Clojure CLI to support Clojure software development.
 
 
 ### Precedence Order
@@ -119,7 +119,7 @@ Clojure CLI install has a built-in configuration:
 
 ### User configuration
 
-A Clojure CLI user configuration is available to all projects by the operating system user account.  [Practicalli Clojure CLI Config](practicalli-config/) is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.
+A Clojure CLI user configuration is available to all projects by the operating system user account.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.
 
 ??? Hint "Clojure CLI User Configuration Location"
     Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.

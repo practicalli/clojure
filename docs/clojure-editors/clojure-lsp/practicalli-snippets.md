@@ -7,7 +7,7 @@
 ```
 
 !!! HINT "Practicalli Snippets available in practicalli/clojure-lsp-config"
-    Move or delete the clojure configuration directory and [clone the Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config)
+    Move or delete the clojure configuration directory and [clone the :fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config)
 
 ## Documentation
 

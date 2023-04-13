@@ -20,7 +20,7 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 </p>
 
 !!! HINT "Video uses an older command to create projects"
-    `:project/create` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) creates a new project
+    `:project/create` alias from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) creates a new project
 
     Arguments are key value pairs and can specify the `:template`, project `:name` and outpug directory `:output-dir`.
     ```shell

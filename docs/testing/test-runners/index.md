@@ -24,8 +24,8 @@ Regularly run tests in a project to ensure implementations and design decisions 
     Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.
 
 
-!!! INFO ":fontawesome-brands-github: Practicalli Clojure CLI Config - test runner aliases"
-    [:fontawesome-brands-github: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains several aliases for test runners
+!!! INFO ":fontawesome-solid-book-open: Practicalli Clojure CLI Config - test runner aliases"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains several aliases for test runners
 
     * `:test/env` adds the `test` directory to the class path and `org.clojure/test.check` library
     * `clojure -X:test/run` run Kaocha test runner

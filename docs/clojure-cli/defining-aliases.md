@@ -140,7 +140,7 @@ Argument keys should either be a top-level key or a vector of keys to refer to a
 ## Examples
 
 ??? HINT "Practicalli Clojure CLI Config provides a wide range of aliases"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/install/community-tools.md) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) is a configuration designed to work across all Clojure projects, containing unique and meaningful alias names for ease of understanding.
 
 
 ### Simple Project

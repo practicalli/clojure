@@ -22,8 +22,8 @@ Portal is registered as a tap source and recieves values send within a  `(tap> ,
 
 Define aliases in the Clojure CLI user configuration to use Portal with any Clojure or ClojureScript project.
 
-=== "Practicalli Clojure CLI Config"
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) contains several aliases that support Portal, either adding as a library or to start a REPL process that can send all Clojure evaluated code to Portal.
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains several aliases that support Portal, either adding as a library or to start a REPL process that can send all Clojure evaluated code to Portal.
 
     include the portal library in `clojure` commands to run a REPL
 
@@ -142,7 +142,7 @@ Create a `dev/user.clj` source code file which requires the portal.api library, 
   ) ; End of rich comment block
 ```
 
-Start a REPL using the `:repl/reloaded` alias from [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) with the `clojure` command to start a REPL.
+Start a REPL using the `:repl/reloaded` alias from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) with the `clojure` command to start a REPL.
 
 ```clojure
 clojure -M:repl/reloaded
@@ -297,7 +297,7 @@ Include code in the `user` namespace to start a portal and add a tap source
 
 `portal.nrepl/wrap-portal` sends every REPL evaluation to Portal over an nREPL connection, avoiding the need to wrap expressions with `tap>`.
 
-=== "Practicalli Clojure CLI Config"
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
     Start a REPL that includes the Portal nREPL middleware to send the result of every evaluation to portal.
 
     * `:repl/reloaded` - rich terminal UI with portal and [REPL Reloaded tools](/clojure/clojure-cli/repl-reloaded/)

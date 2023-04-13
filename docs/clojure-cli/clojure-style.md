@@ -14,7 +14,7 @@ A consistent format between editors also minimises version control changes not r
 ??? INFO "Tooling that uses the Clojure Style Guide"
     Emacs `clojure-mode` and Clojure LSP (via cljfmt) format code following the most common Clojure style guide rules, although cljfmt rules are quite strick so Practicalli disables many of them.
 
-    cljstyle default configuration follows the majority of styles and has the same defaults as cljfmt. Practicalli Clojure CLI Config tweaks a few rules to make code more readable and allow for repl design experiments.
+    cljstyle default configuration follows the majority of styles and has the same defaults as cljfmt. :fontawesome-solid-book-open: Practicalli Clojure CLI Config tweaks a few rules to make code more readable and allow for repl design experiments.
 
 
 ## cljstyle
@@ -50,8 +50,8 @@ Cljstyle will examine all files in the current directory and any sub-directories
     ```
 
 
-=== "Practicalli Clojure CLI Config"
-    cljstyle can be used as a library without installing the cljstyle binary.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/cljstyle` alias which should be passed wither the `check` or `format` option
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    cljstyle can be used as a library without installing the cljstyle binary.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/cljstyle` alias which should be passed wither the `check` or `format` option
 
     Check all the Clojure files (.clj .cljc .edn .cljs) in the current project
     ```shell
@@ -69,7 +69,7 @@ Cljstyle will examine all files in the current directory and any sub-directories
      {mvxcvi/cljstyle {:git/url "https://github.com/greglook/cljstyle.git"
                        :git/sha "14c18e5b593c39bc59f10df1b894c31a0020dc49"}}
      :main-opts ["-m" "cljstyle.main" "check"]}
-     
+
     :format/cljstyle!
     {:extra-deps
      {mvxcvi/cljstyle {:git/url "https://github.com/greglook/cljstyle.git"
@@ -87,12 +87,12 @@ Cljstyle will examine all files in the current directory and any sub-directories
     ```make
     # ------- Code Quality --------------- #
     format-check: ## Run cljstyle to check the formatting of Clojure code
-    	$(info --------- cljstyle Runner ---------)
-    	cljstyle check
+        $(info --------- cljstyle Runner ---------)
+        cljstyle check
 
     format-fix:  ## Run cljstyle and fix the formatting of Clojure code
-    	$(info --------- cljstyle Runner ---------)
-    	cljstyle fix
+        $(info --------- cljstyle Runner ---------)
+        cljstyle fix
     # ------------------------------------ #
     ```
 
@@ -156,8 +156,8 @@ zprint has advanced features over cljstyle and cljfmt, although may require some
 
 
 ??? WARNING "No built-in diff option"
-    zprint requires an external diff tool to see the format changes made, as zprint only reports on the files changed and not the content of those files that has changed. 
-    
+    zprint requires an external diff tool to see the format changes made, as zprint only reports on the files changed and not the content of those files that has changed.
+
     zprint can write changes to a new file and a file comparison made.  Or files can be staged / committed in a local Git repository before running zprint and a Git client used to see the diff.
 
     Once the desirable styles and configuration are established there is less need for an external diff tool, although its always useful to have a quick way to check what format tools are doing.
@@ -189,7 +189,7 @@ zprint has advanced features over cljstyle and cljfmt, although may require some
     ```
     Or using short form flags
     ```shell
-    zprint -lfsc **/*.clj **/*.edn 
+    zprint -lfsc **/*.clj **/*.edn
     ```
 
     Update formatting for all the files in a projects, showing details of the files processed and changed
@@ -198,8 +198,8 @@ zprint has advanced features over cljstyle and cljfmt, although may require some
     ```
 
 
-=== "Practicalli Clojure CLI Config"
-    zprint can be used as a library without installing the binary.  [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/zprint` alias which checks the format of a file and reports which files required
+=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
+    zprint can be used as a library without installing the binary.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/zprint` alias which checks the format of a file and reports which files required
 
     ```shell
     clojure -M:format/zprint deps.edn

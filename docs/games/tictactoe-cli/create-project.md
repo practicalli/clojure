@@ -6,7 +6,7 @@ Create a project for our game.
 {% tabs deps="deps.edn projects", lein="Leiningnen projects" %}
 
 {% content "deps" %}
-Create a new project using `clj-new` alias, found in [Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }})
+Create a new project using `clj-new` alias, found in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config]({{ book.P9IClojureDepsEdn }})
 
 ```bash
 clojure -M:new practicalli/tictactoe-cli

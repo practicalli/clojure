@@ -15,10 +15,10 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
 
 ## Install rebel readline
 
-[Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains an alias to run rebel readline.
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains an alias to run rebel readline.
 
 ??? INFO "Add a Rebel terminal UI alias"
-    If not using [Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) then add an alias called `:repl/rebel`to your own user `deps.edn` configuration
+    If not using [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) then add an alias called `:repl/rebel`to your own user `deps.edn` configuration
     ```clojure
     :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                  :main-opts  ["-m" "rebel-readline.main"]}
@@ -92,7 +92,7 @@ A REPL process can be long running, staying alive for days, weeks or months when
 
 Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process.
 
-[Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains aliases for a basic terminal UI and a headless (non-interactive) terminal UI, each starting an nREPL server for editor connection.
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains aliases for a basic terminal UI and a headless (non-interactive) terminal UI, each starting an nREPL server for editor connection.
 
 ??? INFO "Alias definitions for a basic terminal UI REPL"
     Interactive client REPL with nREPL server for Clojure Editor support

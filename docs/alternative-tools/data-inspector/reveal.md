@@ -13,7 +13,7 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
 
 === "REPL Terminal UI"
 
-    [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) contains the `:inspect/reveal` alias to run Reveal REPL in a terminal with the Reveal UI along-side.
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains the `:inspect/reveal` alias to run Reveal REPL in a terminal with the Reveal UI along-side.
 
     Open a terminal and run the command:
 
@@ -34,7 +34,7 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
 
     === "Practicalli Clojure CLI Config"
 
-        `:inspect/reveal-nrepl` alias provided by [Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config.md) runs a Reveal repl with data browser and nrepl server, allowing connections from [Clojure aware editors](/clojure/clojure-editors/) such as Emacs CIDER and VSCode Calva.
+        `:inspect/reveal-nrepl` alias provided by [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) runs a Reveal repl with data browser and nrepl server, allowing connections from [Clojure aware editors](/clojure/clojure-editors/) such as Emacs CIDER and VSCode Calva.
 
         `:inspect/reveal-light-nrepl` does the same and uses a light them with Ubuntu Mono 32 point font (good for demos, HiDPI screens)
 
