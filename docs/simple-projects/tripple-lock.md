@@ -1,17 +1,19 @@
-## Triple Lock
+# Triple Lock
 
-> #### TODO::work in progress, sorry
+A new safe too keep all the richest you will gain from becoming a Clojure developer (hopefully).  The safe has a 3 combination lock to protect your new found wealth, but just how safe is the safe?
 
-You have just bought a new safe too keep all the richest you will gain from becoming a Clojure developer (hopefully).  The safe has a 3 combination lock to protect your new found wealth, but just how safe is the safe?
 
 ## Create a new Clojure project
-Use [Clojure CLI tools and clj-new](/clojure/clojure-cli/install/community-tools.md) to create a new Clojure project.
+
+[:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
 ```bash
-clojure -M:new app practicalli/triple-lock
+clojure -T:project/create :template app :name practicalli/triple-lock
 ```
 
+
 ## Designing the combination lock
+
 Lets consider how we would create such a combination lock in Clojure.
 
 - The combination is managed by three tumbler wheels
@@ -37,6 +39,7 @@ You can also give `range` two arguments, such as '(range 5 15)'.
 
 
 ## Create all the Combinations
+
 **Complete the following code (replacing the ,,,) to generate all the possible combinations of the lock**
 
 ```clojure
@@ -75,4 +78,39 @@ How many combinations does that give us?
          [tumbler-1 ,,,   ,,,]))
 ```
 
-Here is a [suggested example](https://gist.github.com/ab1f8d4561cc2b8b3e51887dd2519a18) of the completed 3-lock challenges.
+??? EXAMPLE "Suggested solution"
+    Suggested solution to the completed 3-lock challenges.
+    ```clojure
+    ;; a 3 combination padlock
+
+    ;; model the combinations
+    (for [tumbler-1 (range 10)
+          tumbler-2 (range 10)
+          tumbler-3 (range 10)]
+     [tumbler-1 tumbler-2 tumbler-3])
+
+
+    ;; now count the possible combinations
+    (count (for [tumbler-1 (range 10)
+                 tumbler-2 (range 10)
+                 tumbler-3 (range 10)]
+             [tumbler-1 tumbler-2 tumbler-3]))
+
+
+    (count (for [tumbler-1 (range 10)
+                 tumbler-2 (range 10)
+                 tumbler-3 (range 10)
+                 :when (or (= tumbler-1 tumbler-2)
+                           (= tumbler-2 tumbler-3)
+                           (= tumbler-3 tumbler-1))]
+             [tumbler-1 tumbler-2 tumbler-3]))
+
+    ;; lets look at the combinations again, we can see that there is always at least 2 matching values.  This is probably the opposite of what we want in real life.
+    (for [tumbler-1 (range 10)
+          tumbler-2 (range 10)
+          tumbler-3 (range 10)
+          :when (or (= tumbler-1 tumbler-2)
+                    (= tumbler-2 tumbler-3)
+                    (= tumbler-3 tumbler-1))]
+      [tumbler-1 tumbler-2 tumbler-3])
+    ```
