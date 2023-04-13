@@ -17,7 +17,7 @@
 <link href="../../data-transformation/" rel="next"/>
 <link href="../../../assets/favicon.svg" rel="icon"/>
 <meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
-<title>The Clacks - encoding and decoding messages - Practicalli Clojure</title>
+<title>Clacks Messages - Practicalli Clojure</title>
 <link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
 <link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
@@ -28,7 +28,7 @@
 <script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-QZ22Z9DH4T"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-QZ22Z9DH4T",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-QZ22Z9DH4T",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
 <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
 <meta content="website" property="og:type"/>
-<meta content="The Clacks - encoding and decoding messages - Practicalli Clojure" property="og:title"/>
+<meta content="Clacks Messages - Practicalli Clojure" property="og:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" property="og:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/simple-projects/encode-decode/clacks.png" property="og:image"/>
 <meta content="image/png" property="og:image:type"/>
@@ -36,7 +36,7 @@
 <meta content="630" property="og:image:height"/>
 <meta content="https://practical.li/clojure/simple-projects/encode-decode/clacks/" property="og:url"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="The Clacks - encoding and decoding messages - Practicalli Clojure" name="twitter:title"/>
+<meta content="Clacks Messages - Practicalli Clojure" name="twitter:title"/>
 <meta content="Practical guide to Clojure programming language and Clojure REPL driven development" name="twitter:description"/>
 <meta content="https://practical.li/clojure/assets/images/social/simple-projects/encode-decode/clacks.png" name="twitter:image"/>
 <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
@@ -57,7 +57,7 @@
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
 <div data-md-component="skip">
-<a class="md-skip" href="#the-clacks-encoding-and-decoding-messages">
+<a class="md-skip" href="#clacks-messages">
           Skip to content
         </a>
 </div>
@@ -96,7 +96,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <div class="md-header__topic" data-md-component="header-topic">
 <span class="md-ellipsis">
             
-              The Clacks - encoding and decoding messages
+              Clacks Messages
             
           </span>
 </div>
@@ -580,26 +580,16 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </ul>
 </nav>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/codewars/">
-        CodeWars
-      </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="../../../coding-challenges/advent-of-code/">
-        Advent Of Code
-      </a>
-</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_10_6" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_10_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../">Simple projects</a>
-<label for="__nav_10_6">
+<label for="__nav_10_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_10_6_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_6">
+<nav aria-expanded="true" aria-labelledby="__nav_10_4_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_4">
 <span class="md-nav__icon md-icon"></span>
           Simple projects
         </label>
@@ -609,16 +599,21 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
         Random Function
       </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tripple-lock/">
+        Tripple Lock
+      </a>
+</li>
 <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-<input checked="" class="md-nav__toggle md-toggle" id="__nav_10_6_3" type="checkbox"/>
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_10_4_4" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../">Encoder Decode</a>
-<label for="__nav_10_6_3">
+<label for="__nav_10_4_4">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="true" aria-labelledby="__nav_10_6_3_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_6_3">
+<nav aria-expanded="true" aria-labelledby="__nav_10_4_4_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_4_4">
 <span class="md-nav__icon md-icon"></span>
           Encoder Decode
         </label>
@@ -630,7 +625,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="../caesar-cipher-rot13/">
-        Rotate by 13 (ROT13)
+        Caesar Cipher ROT13
       </a>
 </li>
 <li class="md-nav__item">
@@ -641,11 +636,11 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <li class="md-nav__item md-nav__item--active">
 <input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
-          The Clacks - encoding and decoding messages
+          Clacks Messages
           <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href="./">
-        The Clacks - encoding and decoding messages
+        Clacks Messages
       </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
 <label class="md-nav__title" for="__toc">
@@ -653,11 +648,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
       Table of contents
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#todoadd-unit-testing">
-    TODO::Add unit testing
-  </a>
-</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#the-challenge">
     The Challenge
@@ -674,22 +664,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#testing-a-simple-conversion-with-our-data-structure">
-    Testing a simple conversion with our data structure
-  </a>
-<nav aria-label="Testing a simple conversion with our data structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintclojure-function-naming">
-    Hint::Clojure function naming
+<a class="md-nav__link" href="#test-simple-conversion">
+    Test simple conversion
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#define-the-alphabet-with-a-hash-map">
-    Define the alphabet with a hash-map
+<a class="md-nav__link" href="#define-the-alphabet">
+    Define the alphabet
   </a>
 </li>
 <li class="md-nav__item">
@@ -708,18 +689,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tidying-up-the-output">
-    Tidying up the output
+<a class="md-nav__link" href="#tidy-output">
+    Tidy output
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#refactor-the-dictionary-design">
-    Refactor the dictionary design
+<a class="md-nav__link" href="#refactor-dictionary-design">
+    Refactor dictionary design
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#move-the-dictionary-to-its-own-namespace">
-    Move the dictionary to its own namespace
+<a class="md-nav__link" href="#refactor-namespace">
+    Refactor namespace
   </a>
 </li>
 <li class="md-nav__item">
@@ -728,8 +709,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-different-dictionaries">
-    Using different dictionaries
+<a class="md-nav__link" href="#use-alternative-dictionaries">
+    Use alternative dictionaries
   </a>
 </li>
 </ul>
@@ -739,15 +720,15 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10_6_4" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_4_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../data-transformation/">Data Transform</a>
-<label for="__nav_10_6_4">
+<label for="__nav_10_4_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_6_4_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_6_4">
+<nav aria-expanded="false" aria-labelledby="__nav_10_4_5_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_4_5">
 <span class="md-nav__icon md-icon"></span>
           Data Transform
         </label>
@@ -761,22 +742,22 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10_6_5" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_4_6" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../tdd-kata/">Kata</a>
-<label for="__nav_10_6_5">
+<a href="../../mutating-state/">Mutating State</a>
+<label for="__nav_10_4_6">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_6_5_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_6_5">
+<nav aria-expanded="false" aria-labelledby="__nav_10_4_6_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_4_6">
 <span class="md-nav__icon md-icon"></span>
-          Kata
+          Mutating State
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="../../tdd-kata/recent-song-list/">
-        Recent Song list
+<a class="md-nav__link" href="../../mutating-state/mutants-assemble/">
+        Mutants Assemble
       </a>
 </li>
 </ul>
@@ -786,26 +767,63 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 </nav>
 </li>
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10_7" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_5" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
-<a href="../../../games/">Games</a>
-<label for="__nav_10_7">
+<a href="../../tdd-kata/">TDD Kata</a>
+<label for="__nav_10_5">
 <span class="md-nav__icon md-icon"></span>
 </label>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_7_label" class="md-nav" data-md-level="2">
-<label class="md-nav__title" for="__nav_10_7">
+<nav aria-expanded="false" aria-labelledby="__nav_10_5_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_5">
+<span class="md-nav__icon md-icon"></span>
+          TDD Kata
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tdd-kata/recent-song-list/">
+        Recent Song list
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tdd-kata/salary-slip-generator/">
+        Salary Slip Generator
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../coding-challenges/codewars/">
+        CodeWars
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../coding-challenges/advent-of-code/">
+        Advent Of Code
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10_8" type="checkbox"/>
+<div class="md-nav__link md-nav__link--index">
+<a href="../../../games/">Games</a>
+<label for="__nav_10_8">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_10_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_10_8">
 <span class="md-nav__icon md-icon"></span>
           Games
         </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--nested">
-<input class="md-nav__toggle md-toggle" id="__nav_10_7_2" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__nav_10_8_2" type="checkbox"/>
 <div class="md-nav__link md-nav__link--index">
 <a href="../../../games/tictactoe-cli/">TicTacToe</a>
 </div>
-<nav aria-expanded="false" aria-labelledby="__nav_10_7_2_label" class="md-nav" data-md-level="3">
-<label class="md-nav__title" for="__nav_10_7_2">
+<nav aria-expanded="false" aria-labelledby="__nav_10_8_2_label" class="md-nav" data-md-level="3">
+<label class="md-nav__title" for="__nav_10_8_2">
 <span class="md-nav__icon md-icon"></span>
           TicTacToe
         </label>
@@ -2009,11 +2027,6 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#todoadd-unit-testing">
-    TODO::Add unit testing
-  </a>
-</li>
-<li class="md-nav__item">
 <a class="md-nav__link" href="#the-challenge">
     The Challenge
   </a>
@@ -2029,22 +2042,13 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#testing-a-simple-conversion-with-our-data-structure">
-    Testing a simple conversion with our data structure
-  </a>
-<nav aria-label="Testing a simple conversion with our data structure" class="md-nav">
-<ul class="md-nav__list">
-<li class="md-nav__item">
-<a class="md-nav__link" href="#hintclojure-function-naming">
-    Hint::Clojure function naming
+<a class="md-nav__link" href="#test-simple-conversion">
+    Test simple conversion
   </a>
 </li>
-</ul>
-</nav>
-</li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#define-the-alphabet-with-a-hash-map">
-    Define the alphabet with a hash-map
+<a class="md-nav__link" href="#define-the-alphabet">
+    Define the alphabet
   </a>
 </li>
 <li class="md-nav__item">
@@ -2063,18 +2067,18 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tidying-up-the-output">
-    Tidying up the output
+<a class="md-nav__link" href="#tidy-output">
+    Tidy output
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#refactor-the-dictionary-design">
-    Refactor the dictionary design
+<a class="md-nav__link" href="#refactor-dictionary-design">
+    Refactor dictionary design
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#move-the-dictionary-to-its-own-namespace">
-    Move the dictionary to its own namespace
+<a class="md-nav__link" href="#refactor-namespace">
+    Refactor namespace
   </a>
 </li>
 <li class="md-nav__item">
@@ -2083,8 +2087,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#using-different-dictionaries">
-    Using different dictionaries
+<a class="md-nav__link" href="#use-alternative-dictionaries">
+    Use alternative dictionaries
   </a>
 </li>
 </ul>
@@ -2100,10 +2104,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a class="md-content__button md-icon" href="https://github.com/practicalli/clojure/raw/main/docs/simple-projects/encode-decode/clacks.md" title="View source of this page">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"></path></svg>
 </a>
-<h1 id="the-clacks-encoding-and-decoding-messages">The Clacks - encoding and decoding messages<a class="headerlink" href="#the-clacks-encoding-and-decoding-messages" title="Permanent link">λ︎</a></h1>
-<blockquote>
-<h4 id="todoadd-unit-testing">TODO::Add unit testing<a class="headerlink" href="#todoadd-unit-testing" title="Permanent link">λ︎</a></h4>
-</blockquote>
+<h1 id="clacks-messages">Clacks Messages<a class="headerlink" href="#clacks-messages" title="Permanent link">λ︎</a></h1>
+<!-- TODO::Add unit testing -->
 <p>In the 33rd Discworld novel, <a href="https://en.wikipedia.org/wiki/Going_Postal">Going Postal</a>, messages are sent faster than a speeding horse via the <a href="https://en.wikipedia.org/wiki/Technology_of_the_Discworld#The_clacks">Clacks</a> system.  The Clacks system composes of a series of towers spread across a continent with each tower sending a light signal to the next tower using combinations of lights for each character in the message.  Each tower sees a grid of lights from a distant tower and sends the message on to the next tower.</p>
 <blockquote>
 <p>The Clacks system was introduced in the 24th Discworld novel called "The Fifth Elephant". "Going Postal" elaborates the full history of the Clacks system.</p>
@@ -2113,8 +2115,8 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The board game defines the alphabet as a 2 by 3 grid (although in the Discworld its actually 8 large squares).  Naturally, the interpreter also converts the Clacks signal back into an English message too.</p>
 <p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="/images/terry-pratchett-clacks-alphabet.png"><img alt="Terry Pratchett - The Clacks Alphabet" src="/images/terry-pratchett-clacks-alphabet.png"/></a></p>
 <h2 id="create-a-project">Create a project<a class="headerlink" href="#create-a-project" title="Permanent link">λ︎</a></h2>
-<p>Use <a href="/clojure/clojure-cli/install/community-tools.md">Clojure CLI tools and clj-new</a> to create a new Clojure project.</p>
-<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-M:new<span class="w"> </span>app<span class="w"> </span>practicalli/clacks-messenger
+<p><a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg></span> Pracitcalli Clojure CLI Config</a> provides the <code>:project/create</code> alias to create projects using deps-new project.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/create<span class="w"> </span>:template<span class="w"> </span>app<span class="w"> </span>:name<span class="w"> </span>practicalli/clacks-messenger
 </code></pre></div>
 <p>This project has a <code>deps.edn</code> file that includes the aliases
 - <code>:test</code> - includes the <code>test/</code> directory in the class path so unit test code is found
@@ -2129,7 +2131,7 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">a</span><span class="w"> </span><span class="p">[[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]])</span>
 </code></pre></div>
 <p>Before defining the complete alphabet using this data structure, test this is the right data structure for the conversion process.</p>
-<h2 id="testing-a-simple-conversion-with-our-data-structure">Testing a simple conversion with our data structure<a class="headerlink" href="#testing-a-simple-conversion-with-our-data-structure" title="Permanent link">λ︎</a></h2>
+<h2 id="test-simple-conversion">Test simple conversion<a class="headerlink" href="#test-simple-conversion" title="Permanent link">λ︎</a></h2>
 <p>Define a function to convert a single character into a clack:</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">character-&gt;clack</span><span class="w"> </span><span class="p">[</span><span class="nv">character</span><span class="p">]</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">character</span><span class="w"> </span><span class="s">"a"</span><span class="p">)</span>
@@ -2139,15 +2141,15 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <p>Calling the function converts a string into the corresponding clack</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="p">(</span><span class="nf">character-&gt;clack</span><span class="w"> </span><span class="s">"a"</span><span class="p">)</span>
 </code></pre></div>
-<blockquote>
-<h4 id="hintclojure-function-naming">Hint::Clojure function naming<a class="headerlink" href="#hintclojure-function-naming" title="Permanent link">λ︎</a></h4>
+<div class="admonition hint">
+<p class="admonition-title">Clojure function naming</p>
 <p><code>-&gt;</code> is a naming convention to indicate a function is specifically transforming to a data format.  For example, <code>json-&gt;clj-map</code> would be a generic function for transforming json to Clojure hash-map</p>
-</blockquote>
+</div>
 <p>The code is simple for a single character, however, would require a lot of redundant code to convert the whole alphabet.  We would need either a deeply nested set of if statements or a very long <code>cond</code> function, neither of which seems to be a particularly functional approach or idiomatic Clojure.</p>
 <p>If a <code>cond</code> statement was used, how would a clacks be converted back into a character?</p>
 <p>So perhaps we need to change the data structure, one that provides an easy way to map to values together.</p>
 <p>Also, there seems no value in mapping values to a 2x3 grid as long as we consistently express a clack.</p>
-<h2 id="define-the-alphabet-with-a-hash-map">Define the alphabet with a hash-map<a class="headerlink" href="#define-the-alphabet-with-a-hash-map" title="Permanent link">λ︎</a></h2>
+<h2 id="define-the-alphabet">Define the alphabet<a class="headerlink" href="#define-the-alphabet" title="Permanent link">λ︎</a></h2>
 <p>A hash map associates each key with a value and are used to create self-describing data. For example a person could be described as a hash-map</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">"Jenny Jetpack"</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="s">"21"</span><span class="w"> </span><span class="ss">:twitter</span><span class="w"> </span><span class="s">"jenjetpack"</span><span class="p">}</span>
 </code></pre></div>
@@ -2223,7 +2225,7 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <blockquote>
 <p>At this point you may be thinking that using keywords to represent the characters of the alphabet may not be the most effective.  Using keywords has required more code to be written, adding to the complexity of the solution.</p>
 </blockquote>
-<h2 id="tidying-up-the-output">Tidying up the output<a class="headerlink" href="#tidying-up-the-output" title="Permanent link">λ︎</a></h2>
+<h2 id="tidy-output">Tidy output<a class="headerlink" href="#tidy-output" title="Permanent link">λ︎</a></h2>
 <p><code>clacks-&gt;string</code> function returns the right result, but not quite in the format required.  Rather than a single string a sequence of characters is returned.</p>
 <p>Using the <code>map</code> function we can apply the <code>str</code> function over the resulting characters to give a single string.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-16-1" id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">clacks-&gt;string</span><span class="w"> </span><span class="p">[</span><span class="nv">clacks</span><span class="p">]</span>
@@ -2235,7 +2237,7 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <a href="#__codelineno-17-3" id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">clacks-&gt;string</span><span class="w"> </span><span class="p">[</span><span class="nv">clacks</span><span class="p">]</span>
 <a href="#__codelineno-17-4" id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">string/join</span><span class="w"> </span><span class="p">(</span><span class="nb">map </span><span class="nv">declacksify</span><span class="w"> </span><span class="nv">clacks</span><span class="p">)))</span>
 </code></pre></div>
-<h2 id="refactor-the-dictionary-design">Refactor the dictionary design<a class="headerlink" href="#refactor-the-dictionary-design" title="Permanent link">λ︎</a></h2>
+<h2 id="refactor-dictionary-design">Refactor dictionary design<a class="headerlink" href="#refactor-dictionary-design" title="Permanent link">λ︎</a></h2>
 <p>Converting characters to keywords and back again seem redundant when characters themselves can be used as keys in a hash-map.</p>
 <p>Using keywords is problematic when it comes to the space character as a keyword cannot be a space.  Using <code>:-</code> to represent a space required the <em>clacksification</em> and <em>declacksification</em> functions to convert between <code>:-</code> and the space character.  This also prevents hyphenated words working in the Clacks system.</p>
 <p>Refactor the dictionary to use a string for each character as the keys in the map, instead of Clojure keywords.  This solves the issue with space and other special characters.</p>
@@ -2247,7 +2249,7 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <a href="#__codelineno-18-6" id="__codelineno-18-6" name="__codelineno-18-6"></a><span class="w">   </span><span class="s">"e"</span><span class="w">      </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span>
 <a href="#__codelineno-18-7" id="__codelineno-18-7" name="__codelineno-18-7"></a><span class="w">   </span>,,,<span class="p">})</span>
 </code></pre></div>
-<h2 id="move-the-dictionary-to-its-own-namespace">Move the dictionary to its own namespace<a class="headerlink" href="#move-the-dictionary-to-its-own-namespace" title="Permanent link">λ︎</a></h2>
+<h2 id="refactor-namespace">Refactor namespace<a class="headerlink" href="#refactor-namespace" title="Permanent link">λ︎</a></h2>
 <p>As the dictionary can be quite large to represent in code, move the dictionary definition to its own namespace.</p>
 <p>Use a more specific name for the dictionary, describing what languages the dictionary is used for</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-19-1" id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">english-&gt;clacks</span>
@@ -2310,14 +2312,15 @@ Therefore we could define a single letter of our alphabet as follows:</p>
 <a href="#__codelineno-23-12" id="__codelineno-23-12" name="__codelineno-23-12"></a><span class="p">(</span><span class="nf">clacks-&gt;message</span>
 <a href="#__codelineno-23-13" id="__codelineno-23-13" name="__codelineno-23-13"></a><span class="w"> </span><span class="o">'</span><span class="p">([</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">])</span><span class="w"> </span><span class="nv">dictionary</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="using-different-dictionaries">Using different dictionaries<a class="headerlink" href="#using-different-dictionaries" title="Permanent link">λ︎</a></h2>
-<p>Thanks to a flexible design with no side effects or side causes then its really easy to replace the English language alphabet with another language that can be encoded into Clack codes.  All that is required is to define a dictionary for another language.  So languages based on the greek, latin or cyrillic alphabet could be send if a suitable alphabet with clack codes is supplied.</p>
+<h2 id="use-alternative-dictionaries">Use alternative dictionaries<a class="headerlink" href="#use-alternative-dictionaries" title="Permanent link">λ︎</a></h2>
+<p>Thanks to a flexible design with no side effects or side causes then its really easy to replace the English language alphabet with another language that can be encoded into Clack codes.</p>
+<p>All that is required is to define a dictionary for another language.  So languages based on the greek, latin or cyrillic alphabet could be send if a suitable alphabet with clack codes is supplied.</p>
 <hr/>
 <div class="md-source-file">
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
 </small>
 </div>
 </article>

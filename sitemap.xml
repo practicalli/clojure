@@ -1366,37 +1366,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/simple-projects/create-project/</loc>
-         <lastmod>2023-04-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/simple-projects/generate-web-page/</loc>
          <lastmod>2023-04-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/random-clojure-function/</loc>
-         <lastmod>2023-04-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/simple-projects/reading-files/</loc>
-         <lastmod>2023-04-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/simple-projects/reading-project-file/</loc>
-         <lastmod>2023-04-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/simple-projects/run-the-repl/</loc>
-         <lastmod>2023-04-13</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/simple-projects/salary-calculator/</loc>
          <lastmod>2023-04-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -1466,7 +1441,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/simple-projects/tdd-kata/recent-songlist/</loc>
+         <loc>https://practical.li/clojure/simple-projects/tdd-kata/salary-slip-generator/</loc>
          <lastmod>2023-04-13</lastmod>
          <changefreq>daily</changefreq>
     </url>
