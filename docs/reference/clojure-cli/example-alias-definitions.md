@@ -131,7 +131,7 @@ clojure -X:project/run server-start :port 8080
 
 The `-P` flag can be used to modify an existing command to ensure no execution takes place, ensuring a prepare only (dry run) action.
 
-`clojure -P -M:alias-name` downloads the dependencies for the specific aliases and multiple aliases can be chained together, e.g. `clojure -P -M:env/dev:test-runner/kaocha`
+`clojure -P -M:alias-name` downloads the dependencies for the specific aliases and multiple aliases can be chained together, e.g. `clojure -P -M:dev/env:test-runner/kaocha`
 
 The `-P` flag uses everything from an alias not related to execution.
 

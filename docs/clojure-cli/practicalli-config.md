@@ -248,7 +248,7 @@ Clojure spec, generators and test.check
 
 Unit test libraries and configuration.  The Clojure standard library includes the `clojure.test` namespace, so no alias is required.
 
-* `:env/test` - add `test` directory to classpath
+* `:test/env` - add `test` directory to classpath
 * [`:lib/expectations`](https://github.com/clojure-expectations/clojure-test) - `clojure.test` with expectations
 * [`:lib/expectations-classic`](https://github.com/clojure-expectations/expectations) - expectations framework
 

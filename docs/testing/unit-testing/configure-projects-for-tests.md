@@ -18,7 +18,7 @@ Use an alias to add the `test` directory, either from a user level configuration
 
 [:fontawesome-solid-book-open:  Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) user-level configuration contains several aliases for Clojure and ClojureScript test runners, each alias includes the `test` directory as an `:extra-path`.
 
-`:env/test` alias is also provided, which simply adds the `test` directory to the class path. The `:env/test` alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).
+`:test/env` alias is also provided, which simply adds the `test` directory to the class path. The `:test/env` alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).
 
 ### Using kaocha test runner
 
@@ -52,7 +52,7 @@ practicalli/clojure-deps-edn defines an environment alias to include the test pa
 ```clojure
 :aliases
 {
-  :env/test
+  :test/env
   {:extra-paths ["test"]}
 }
 ```

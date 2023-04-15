@@ -136,7 +136,7 @@ A basic example of a user configuration for Clojure CLI
 ```clojure
 {
   :aliases {
-    :env/test {:extra-paths ["test"]}
+    :test/env {:extra-paths ["test"]}
 
     :project/new
     {:extra-deps {seancorfield/clj-new {:mvn/version "1.0.199"}}

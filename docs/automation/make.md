@@ -31,7 +31,7 @@ The `repl` target prints out an information message and then uses the [Clojure C
 ```makefile
 repl:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)
     $(info --------- Run Rebel REPL ---------)
-    clojure -M:env/dev:env/test:repl/rebel
+    clojure -M:dev/env:test/env:repl/rebel
 ```
 
 
@@ -83,10 +83,10 @@ A Clojure CLI example depends on the `deps.edn` file that defines all the librar
 ```makefile
 deps: deps.edn  ## Prepare dependencies for test and dist targets
     $(info --------- Download libraries to test and build the service ---------)
-    clojure -P -X:env/test:package/uberjar
+    clojure -P -X:test/env:package/uberjar
 ```
 
-> `:env/test` adds libraries to run Kaocha and libraries used to run unit tests.  `:package/uberjar` runs a tool that creates an uberjar.
+> `:test/env` adds libraries to run Kaocha and libraries used to run unit tests.  `:package/uberjar` runs a tool that creates an uberjar.
 
 
 ## Clean target - hiding command failure

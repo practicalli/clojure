@@ -43,7 +43,7 @@ A user `deps.edn` configuration can be used in any Clojure project and the `deps
 
 ## Alias keys
 
-An alias name is a keyword in Clojure, e.g. `:env/test`, so the `:` is an intrinsic part of the alias name.
+An alias name is a keyword in Clojure, e.g. `:test/env`, so the `:` is an intrinsic part of the alias name.
 
 Keys used to define an alias are:
 
@@ -156,10 +156,10 @@ A project `deps.edn` file typically contains `:path`, `:deps` and `:aliases` sec
  {org.clojure/clojure {:mvn/version "1.11.1"}}
 
  :aliases
- {:env/test {:extra-paths ["test"]}}}
+ {:test/env {:extra-paths ["test"]}}}
 ```
 
-> The `test` path and associated libraries are added as an alias as they are not required when packaging or running a Clojure application.  `:path` and `:deps` keys are always included by default, `:aliases` are optional and only included when specified with the `clojure` command, e.g. `clojure -M:env/test`
+> The `test` path and associated libraries are added as an alias as they are not required when packaging or running a Clojure application.  `:path` and `:deps` keys are always included by default, `:aliases` are optional and only included when specified with the `clojure` command, e.g. `clojure -M:test/env`
 
 
 ### clojure.main tool
