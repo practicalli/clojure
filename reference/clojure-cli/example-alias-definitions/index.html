@@ -2159,7 +2159,7 @@ Specific functions from the namespace can be called via the command line</p>
 <p>If an unqualified library name is used, e.g. <code>compojure</code>, then a warning is sent to the standard out.  Change the name of the library to be fully qualified e.g. <code>weavejester/compojure</code>.  Use the same name if there is no official qualified domain, e.g. <code>http-kit/http-kit</code></p>
 </div>
 <p>The <code>-P</code> flag can be used to modify an existing command to ensure no execution takes place, ensuring a prepare only (dry run) action.</p>
-<p><code>clojure -P -M:alias-name</code> downloads the dependencies for the specific aliases and multiple aliases can be chained together, e.g. <code>clojure -P -M:env/dev:test-runner/kaocha</code></p>
+<p><code>clojure -P -M:alias-name</code> downloads the dependencies for the specific aliases and multiple aliases can be chained together, e.g. <code>clojure -P -M:dev/env:test-runner/kaocha</code></p>
 <p>The <code>-P</code> flag uses everything from an alias not related to execution.</p>
 <blockquote>
 <p>The classic way to download deps was to run <code>clojure -A:aliases -Spath</code>, where <code>-Spath</code> prevented execution of repl or main.</p>
@@ -2281,7 +2281,7 @@ However this gives a warning:
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
 </small>
 </div>
 </article>

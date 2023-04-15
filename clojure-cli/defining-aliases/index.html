@@ -2106,7 +2106,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>User configuration is either <code>$XDG_CONFIG_HOME/clojure/deps.edn</code> or <code>$HOME/.clojure/deps.edn</code> locations and its aliases can be used for any Clojure project.</p>
 </details>
 <h2 id="alias-keys">Alias keys<a class="headerlink" href="#alias-keys" title="Permanent link">λ︎</a></h2>
-<p>An alias name is a keyword in Clojure, e.g. <code>:env/test</code>, so the <code>:</code> is an intrinsic part of the alias name.</p>
+<p>An alias name is a keyword in Clojure, e.g. <code>:test/env</code>, so the <code>:</code> is an intrinsic part of the alias name.</p>
 <p>Keys used to define an alias are:</p>
 <ul>
 <li><code>:extra-paths</code> - a vector of directory names added to the project class path, e.g. <code>["env/dev" "env/test"]</code></li>
@@ -2188,10 +2188,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <a href="#__codelineno-4-4" id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/clojure</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">"1.11.1"</span><span class="p">}}</span>
 <a href="#__codelineno-4-5" id="__codelineno-4-5" name="__codelineno-4-5"></a>
 <a href="#__codelineno-4-6" id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w"> </span><span class="ss">:aliases</span>
-<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w"> </span><span class="p">{</span><span class="ss">:env/test</span><span class="w"> </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]}}}</span>
+<a href="#__codelineno-4-7" id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w"> </span><span class="p">{</span><span class="ss">:test/env</span><span class="w"> </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]}}}</span>
 </code></pre></div>
 <blockquote>
-<p>The <code>test</code> path and associated libraries are added as an alias as they are not required when packaging or running a Clojure application.  <code>:path</code> and <code>:deps</code> keys are always included by default, <code>:aliases</code> are optional and only included when specified with the <code>clojure</code> command, e.g. <code>clojure -M:env/test</code></p>
+<p>The <code>test</code> path and associated libraries are added as an alias as they are not required when packaging or running a Clojure application.  <code>:path</code> and <code>:deps</code> keys are always included by default, <code>:aliases</code> are optional and only included when specified with the <code>clojure</code> command, e.g. <code>clojure -M:test/env</code></p>
 </blockquote>
 <h3 id="clojuremain-tool">clojure.main tool<a class="headerlink" href="#clojuremain-tool" title="Permanent link">λ︎</a></h3>
 <p>The Cognitect Lab test runner included the <code>test</code> directory in the class path, so test code will be included when run with this alias.</p>
@@ -2246,7 +2246,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
 </small>
 </div>
 </article>

@@ -2003,7 +2003,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>{% content "practicalli" %}</p>
 <h2 id="adding-test-path">Adding test path<a class="headerlink" href="#adding-test-path" title="Permanent link">λ︎</a></h2>
 <p><a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji"><svg viewbox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"></path></svg></span>  Practicalli Clojure CLI Config</a> user-level configuration contains several aliases for Clojure and ClojureScript test runners, each alias includes the <code>test</code> directory as an <code>:extra-path</code>.</p>
-<p><code>:env/test</code> alias is also provided, which simply adds the <code>test</code> directory to the class path. The <code>:env/test</code> alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).</p>
+<p><code>:test/env</code> alias is also provided, which simply adds the <code>test</code> directory to the class path. The <code>:test/env</code> alias is useful in concert with other aliases or for editors that have their own built in test runners (e.g. CIDER).</p>
 <h3 id="using-kaocha-test-runner">Using kaocha test runner<a class="headerlink" href="#using-kaocha-test-runner" title="Permanent link">λ︎</a></h3>
 <p><a href="https://github.com/lambdaisland/kaocha">lambdaisland/kaocha</a> is a fast and comprehensive test runner for Clojure and ClojureScript.</p>
 <p><code>:test/run</code> alias runs all tests from the source code files, called with the <code>clojure</code> command in the root of the Clojure project.  The alias includes <code>test</code> as an extra path and calls the Kaocha test runner.</p>
@@ -2019,7 +2019,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>practicalli/clojure-deps-edn defines an environment alias to include the test path.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="ss">:aliases</span>
 <a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="p">{</span>
-<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">  </span><span class="ss">:env/test</span>
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">  </span><span class="ss">:test/env</span>
 <a href="#__codelineno-3-4" id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">"test"</span><span class="p">]}</span>
 <a href="#__codelineno-3-5" id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="p">}</span>
 </code></pre></div>
@@ -2042,7 +2042,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
 </small>
 </div>
 </article>

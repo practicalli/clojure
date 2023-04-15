@@ -2120,7 +2120,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>The <code>repl</code> target prints out an information message and then uses the <a href="https://clojure.org/guides/install_clojure">Clojure CLI</a> with aliases from <a href="https://github.com/practicalli/clojure-deps-edn">practicalli/clojure-deps-edn</a> to run a Clojure REPL process with a rich terminal UI (<a href="https://github.com/bhauman/rebel-readline">Rebel Readline</a>)</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nf">repl</span><span class="o">:</span><span class="w">  </span><span class="c">## Run Clojure REPL with rich terminal UI (Rebel Readline)</span>
 <a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Run<span class="w"> </span>Rebel<span class="w"> </span>REPL<span class="w"> </span>---------<span class="k">)</span>
-<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>clojure<span class="w"> </span>-M:env/dev:env/test:repl/rebel
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span>clojure<span class="w"> </span>-M:dev/env:test/env:repl/rebel
 </code></pre></div>
 <h3 id="common-target-naming">Common target naming<a class="headerlink" href="#common-target-naming" title="Permanent link">λ︎</a></h3>
 <p>Targets used across Practicalli projects follow the <a href="https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html">make standard targets for users</a></p>
@@ -2154,10 +2154,10 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <p>A Clojure CLI example depends on the <code>deps.edn</code> file that defines all the library dependencies for the project, tools for testing and packaging the Clojure service.  The <code>-P</code> flag is the prepare option, a dry run that only downloads the dependencies for the given tasks.</p>
 <div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nf">deps</span><span class="o">:</span><span class="w"> </span><span class="n">deps</span>.<span class="n">edn</span>  <span class="c">## Prepare dependencies for test and dist targets</span>
 <a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">$(</span>info<span class="w"> </span>---------<span class="w"> </span>Download<span class="w"> </span>libraries<span class="w"> </span>to<span class="w"> </span><span class="nb">test</span><span class="w"> </span>and<span class="w"> </span>build<span class="w"> </span>the<span class="w"> </span>service<span class="w"> </span>---------<span class="k">)</span>
-<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span>clojure<span class="w"> </span>-P<span class="w"> </span>-X:env/test:package/uberjar
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span>clojure<span class="w"> </span>-P<span class="w"> </span>-X:test/env:package/uberjar
 </code></pre></div>
 <blockquote>
-<p><code>:env/test</code> adds libraries to run Kaocha and libraries used to run unit tests.  <code>:package/uberjar</code> runs a tool that creates an uberjar.</p>
+<p><code>:test/env</code> adds libraries to run Kaocha and libraries used to run unit tests.  <code>:package/uberjar</code> runs a tool that creates an uberjar.</p>
 </blockquote>
 <h2 id="clean-target-hiding-command-failure">Clean target - hiding command failure<a class="headerlink" href="#clean-target-hiding-command-failure" title="Permanent link">λ︎</a></h2>
 <p>The clean target should remove files and directories created by the build (compile) process, to ensure a consistent approach to building each time.</p>
@@ -2212,7 +2212,7 @@ so PR's are of limited value at present. Some page links &amp; images may be tem
 <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
 </small>
 </div>
 </article>
