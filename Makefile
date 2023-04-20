@@ -6,7 +6,7 @@
 
 # .PHONY: ensures target used rather than matching file name
 # https://makefiletutorial.com/#phony
-.PHONY: all clean docs lint pre-commit-check
+.PHONY: all clean docs lint pre-commit-check test
 
 
 # ------- Makefile Variables --------- #
