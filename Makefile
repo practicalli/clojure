@@ -27,9 +27,10 @@ EDN-FILES := $(wildcard *.edn)
 
 pre-commit-check: lint
 
-lint:  ## Run MegaLinter with custom configuration
+
+lint:  ## Run MegaLinter with custom configuration (node.js required)
 	$(info --------- MegaLinter Runner ---------)
-	mega-linter-runner --flavor documentation --env 'MEGALINTER_CONFIG=.github/config/mega-linter.yml'
+	npx mega-linter-runner --flavor documentation --release beta --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
 
 lint-clean:  ## Clean MegaLinter report information
 	$(info --------- MegaLinter Clean Reports ---------)
