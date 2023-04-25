@@ -5858,13 +5858,13 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>When a specification is defined for a function using <code>fdef</code> the specification is included in the output of the Clojure <code>doc</code> function.</p>
 <p>Including specification details clarifies the precise way to use the function and the information it expects.  When a function has a specification the doc string for that function can focus on the purpose of the function rather than the specific types of data used, as that is covered by the function specification.</p>
 <h2 id="example">Example<a class="headerlink" href="#example" title="Permanent link">λ︎</a></h2>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">clojure.repl/doc</span><span class="w"> </span><span class="ss">::rank</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">clojure.repl/doc</span><span class="w"> </span><span class="ss">::rank</span><span class="p">)</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">;; :practicalli.card-game-specifications/rank</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1">;; Spec</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1">;;   (into #{:king :queen :ace :jack} (range 2 11))</span>
 </code></pre></div>
-When adding a specification to a function definition, <code>doc</code> will also show the specification details along with the function doc-string.</p>
+<p>When adding a specification to a function definition, <code>doc</code> will also show the specification details along with the function doc-string.</p>
 <h2 id="live-example">Live example<a class="headerlink" href="#live-example" title="Permanent link">λ︎</a></h2>
 <p>Define the namespace and include clojure spec and clojure.repl (which contains the doc function)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
@@ -5887,7 +5887,7 @@ When adding a specification to a function definition, <code>doc</code> will also
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

@@ -5825,26 +5825,28 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="nv">fibonacci-sequence</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">;; =&gt; (0 2 6 15 32 65 126 238 440 801)</span>
 </code></pre></div>
-<p>So,
-  - 0 times 1 is 0,
-  - 1, times 2 is 2,
-  - 2 times 3 is 6, etc.</p>
+<p>So,</p>
+<ul>
+<li>0 times 1 is 0,</li>
+<li>1, times 2 is 2,</li>
+<li>2 times 3 is 6, etc.</li>
+</ul>
 <p>If we evaluate the previous expression part by part, its easier to see what is going on.  First lets evaluate the <code>fibonacci-sequence</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="mi">89</span><span class="w"> </span><span class="mi">144</span><span class="w"> </span><span class="mi">278</span><span class="p">])</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="c1">;; =&gt; (0 2 6 15 32 65 126 238 440 801)</span>
 </code></pre></div>
 <p>Now lets evaluate the <code>(range 10)</code> function call</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="mi">89</span><span class="w"> </span><span class="mi">144</span><span class="w"> </span><span class="mi">278</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">(</span><span class="mi">0</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="mi">89</span><span class="w"> </span><span class="mi">144</span><span class="w"> </span><span class="mi">278</span><span class="p">])</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">;; =&gt; (0 2 6 15 32 65 126 238 440 801)</span>
 </code></pre></div>
-We can see the answer is the same, however by evaluating each part of the expression we get an exact view of what is going to happen with the <code>map</code> function.</p>
+<p>We can see the answer is the same, however by evaluating each part of the expression we get an exact view of what is going to happen with the <code>map</code> function.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

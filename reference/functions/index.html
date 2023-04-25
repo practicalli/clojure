@@ -5840,7 +5840,7 @@ Since functions exist to defer evaluation, there’s no sense in creating and in
             (twice 3)))
 8
 Compare that expression to an equivalent, expanded form:</p>
-<p>user=&gt; (+ (<em> 2 1)
+<p>user=&gt; (+ (<em>2 1)
           (</em> 2 3))
 The name twice is gone, and in its place is the same sort of computation–(* 2 something)–written twice. While we could represent our programs as a single massive expression, it’d be impossible to reason about. Instead, we use functions to compact redundant expressions, by isolating common patterns of computation. Symbols help us re-use those functions (and other values) in more than one place. By giving the symbols meaningful names, we make it easier to reason about the structure of the program as a whole; breaking it up into smaller, understandable parts.</p>
 <p>This is core pursuit of software engineering: organizing expressions. Almost every programming language is in search of the right tools to break apart, name, and recombine expressions to solve large problems. In Clojure we’ll see one particular set of tools for composing programs, but the underlying ideas will transfer to many other languages.</p>
@@ -6008,7 +6008,7 @@ We’ve seen how let associates names with values in a particular expression, an
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

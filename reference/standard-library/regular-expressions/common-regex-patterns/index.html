@@ -3884,7 +3884,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
       
         <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
-    Reference:
+    Reference
   </a>
   
 </li>
@@ -5983,7 +5983,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
       
         <li class="md-nav__item">
   <a href="#reference" class="md-nav__link">
-    Reference:
+    Reference
   </a>
   
 </li>
@@ -6025,48 +6025,48 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>A 8 to 24 character passwords that can include any lower case character or digit (number).  Only the underscore and dash special characters can be used.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;^[a-z0-9_-]{8,24}$&quot;</span><span class="w"> </span><span class="s">&quot;good-username&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>^[a-z0-9_-]{8,24}$
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>^                    # Start of the line
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>  [a-z0-9_-]         # Match characters and symbols in the list, a-z, 0-9 , underscore , hyphen
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>             {8,24}  # Length at least 8 characters and maximum length of 24
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>$                    # End of the line
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="password-regular-expression-pattern">Password Regular Expression Pattern<a class="headerlink" href="#password-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>A password should be 8 to 24 character string with at least one digit, one upper case letter, one lower case letter and one special symbol, <code>@#$%</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})&quot;</span><span class="w"> </span><span class="s">&quot;G00d @ username&quot;</span><span class="p">)</span>
 </code></pre></div>
 <p>The order of the grouping formulas does not matter</p>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>(           # Start of group
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  (?=.*\d)      #   must contains one digit from 0-9
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  (?=.*[a-z])       #   must contains one lowercase characters
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  (?=.*[A-Z])       #   must contains one uppercase characters
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  (?=.*[@#$%])      #   must contains one special symbols in the list &quot;@#$%&quot;
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>              .     #     match anything with previous condition checking
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                {8,24}  #        length at least 8 characters and maximum of 24
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>)           # End of group
-</code></pre></div></p>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>(   # Start of group
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>  (?=.*\d)  #   must contains one digit from 0-9
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>  (?=.*[a-z])  #   must contains one lowercase characters
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>  (?=.*[A-Z])  #   must contains one uppercase characters
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>  (?=.*[@#$%])  #   must contains one special symbols in the list &quot;@#$%&quot;
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>              .  #     match anything with previous condition checking
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>                {8,24} #        length at least 8 characters and maximum of 24
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>)   # End of group
+</code></pre></div>
 <p><code>?=</code> means apply the assertion condition, which is meaningless by itself and works in combination with others.</p>
 <h2 id="hexadecimal-color-code-regular-expression-pattern">Hexadecimal Color Code Regular Expression Pattern<a class="headerlink" href="#hexadecimal-color-code-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The string must start with a <code>#</code>symbol , follow by a letter from <code>a</code> to <code>f</code>, <code>A</code> to <code>Z</code> or a digit from <code>0</code> to <code>9</code> with a length of exactly 3 or 6.` This regular expression pattern is very useful for the Hexadecimal web colors code checking.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$&quot;</span><span class="w"> </span><span class="s">&quot;#FFAABB&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>^        #start of the line
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a> #       #  must contain a &quot;#&quot; symbols
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a> (       #  start of group #1
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>^   #start of the line
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a> #   #  must contain a &quot;#&quot; symbols
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a> (   #  start of group #1
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>  [A-Fa-f0-9]{3} #    any strings in the list, with length of 3
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  |      #    ..or
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>  |   #    ..or
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>  [A-Fa-f0-9]{6} #    any strings in the list, with length of 6
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> )       #  end of group #1
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>$        #end of the line
-</code></pre></div></p>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a> )   #  end of group #1
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>$   #end of the line
+</code></pre></div>
 <h2 id="email-regular-expression-pattern">Email Regular Expression Pattern<a class="headerlink" href="#email-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The account side of an email address starts with <code>_A-Za-z0-9-\\+</code> optional follow by <code>.[_A-Za-z0-9-]</code>, ending with an <code>@</code> symbol.</p>
 <p>The  domain starts with <code>A-Za-z0-9-</code>, follow by first level domain, e.g <code>.org</code>, <code>.io</code> and <code>.[A-Za-z0-9]</code> optionally follow by a second level domain, e.g. <code>.ac.uk</code>, <code>.com.au</code> or  <code>\\.[A-Za-z]{2,}</code>, where second level domain must start with a dot <code>.</code> and length must equal or more than 2 characters.</p>
@@ -6078,24 +6078,24 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h4 id="hintdouble-escaping-special-characters">Hint::Double escaping special characters<a class="headerlink" href="#hintdouble-escaping-special-characters" title="Permanent link">λ︎</a></h4>
 <p>Double escaping of special characters is not required in the Clojure syntax.</p>
 </blockquote>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>^           #start of the line
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  [_A-Za-z0-9-]+    #  must start with string in the bracket [ ], must contains one or more (+)
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  (         #  start of group #1
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    \\.[_A-Za-z0-9-]+   #     follow by a dot &quot;.&quot; and string in the bracket [ ], must contains one or more (+)
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  )*            #  end of group #1, this group is optional (*)
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    @           #     must contains a &quot;@&quot; symbol
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>^   #start of the line
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>  [_A-Za-z0-9-]+ #  must start with string in the bracket [ ], must contains one or more (+)
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>  (   #  start of group #1
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    \\.[_A-Za-z0-9-]+ #     follow by a dot &quot;.&quot; and string in the bracket [ ], must contains one or more (+)
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>  )*   #  end of group #1, this group is optional (*)
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    @   #     must contains a &quot;@&quot; symbol
 <a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>     [A-Za-z0-9]+       #        follow by string in the bracket [ ], must contains one or more (+)
-<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>      (         #      start of group #2 - first level TLD checking
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>      (   #    start of group #2 - first level TLD checking
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>       \\.[A-Za-z0-9]+  #        follow by a dot &quot;.&quot; and string in the bracket [ ], must contains one or more (+)
-<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>      )*        #      end of group #2, this group is optional (*)
-<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>      (         #      start of group #3 - second level TLD checking
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>      )*  #    end of group #2, this group is optional (*)
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>      (   #    start of group #3 - second level TLD checking
 <a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>       \\.[A-Za-z]{2,}  #        follow by a dot &quot;.&quot; and string in the bracket [ ], with minimum length of 2
-<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>      )         #      end of group #3
-<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>$           #end of the line
-</code></pre></div></p>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>      )   #    end of group #3
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>$   #end of the line
+</code></pre></div>
 <h2 id="image-file-name-and-extension-regular-expression-pattern">Image File name and Extension Regular Expression Pattern<a class="headerlink" href="#image-file-name-and-extension-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>A file extension name is 1 or more characters without white space, follow by dot <code>.</code> and string end in <code>jpg</code> or <code>png</code> or <code>gif</code> or <code>bmp</code>.  The file name extension is case-insensitive.</p>
 <p>Change the combination <code>(jpg|png|gif|bmp)</code> for other file extension.</p>
@@ -6105,27 +6105,27 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h4 id="hintin-line-modifiers-not-supported-in-javascript">Hint::in-line modifiers not supported in JavaScript<a class="headerlink" href="#hintin-line-modifiers-not-supported-in-javascript" title="Permanent link">λ︎</a></h4>
 <p>The REPL above uses ClojureScript, hosted on JavaScript. JavaScript does not support in-line modifier flags such as <code>(?i)</code> for a case insensitive pattern.  In-line flags will be <a href="https://stackoverflow.com/a/23187290/1762872">converted by the ClojureScript reader if they are the first element in the literal regular expression pattern</a>, or if the <code>js/RegExp</code> function is used to create the regular expression.</p>
 </blockquote>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>([^\s]+(\.(?i)(jpg|png|gif|bmp))$)
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>(           #Start of the group #1
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a> [^\s]+         #  must contains one or more anything (except white space)
-<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>       (        #    start of the group #2
-<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>         \.     #   follow by a dot &quot;.&quot;
-<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>         (?i)       #   ignore the case sensitive checking
-<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>             (      #     start of the group #3
-<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>              jpg   #       contains characters &quot;jpg&quot;
-<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>              |     #       ..or
-<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>              png   #       contains characters &quot;png&quot;
-<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>              |     #       ..or
-<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>              gif   #       contains characters &quot;gif&quot;
-<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>              |     #       ..or
-<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>              bmp   #       contains characters &quot;bmp&quot;
-<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>             )      #     end of the group #3
-<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>       )        #     end of the group #2
-<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  $         #  end of the string
-<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>)           #end of the group #1
-</code></pre></div></p>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>(   #Start of the group #1
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a> [^\s]+   #  must contains one or more anything (except white space)
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>       (  #    start of the group #2
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>         \.  # follow by a dot &quot;.&quot;
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>         (?i)  # ignore the case sensitive checking
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>             (  #   start of the group #3
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>              jpg #       contains characters &quot;jpg&quot;
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>              |  #       ..or
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>              png #       contains characters &quot;png&quot;
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>              |  #       ..or
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>              gif #       contains characters &quot;gif&quot;
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>              |  #       ..or
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>              bmp #       contains characters &quot;bmp&quot;
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>             )  #   end of the group #3
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>       )  #     end of the group #2
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>  $   #  end of the string
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>)   #end of the group #1
+</code></pre></div>
 <h2 id="ip-address-regular-expression-pattern">IP Address Regular Expression Pattern<a class="headerlink" href="#ip-address-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>An IP address comprises of 4 groups of numbers between 0 and 255, with each group separated by a dot.</p>
 <p>Example IP address are: <code>192.168.0.1</code>, <code>127.0.0.1</code>, <code>192.120.240.100</code></p>
@@ -6133,81 +6133,81 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="o">#</span><span class="s">&quot;^([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])\.([01]?\d\d?|2[0-4]\d|25[0-5])$&quot;</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="s">&quot;192.168.0.1&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
-<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>^       #start of the line
-<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a> (      #  start of group #1
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>^  #start of the line
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a> (  #  start of group #1
 <a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>   [01]?\\d\\d? #    Can be one or two digits. If three digits appear, it must start either 0 or 1
 <a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>        #    e.g ([0-9], [0-9][0-9],[0-1][0-9][0-9])
-<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    |       #    ...or
-<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>   2[0-4]\\d    #    start with 2, follow by 0-4 and end with any digit (2[0-4][0-9])
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    |  #    ...or
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>   2[0-4]\\d #    start with 2, follow by 0-4 and end with any digit (2[0-4][0-9])
 <a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>    |           #    ...or
 <a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>   25[0-5]      #    start with 2, follow by 5 and end with 0-5 (25[0-5])
-<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a> )      #  end of group #2
+<a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a> )  #  end of group #2
 <a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a>  \.            #  follow by a dot &quot;.&quot;
 <a id="__codelineno-11-14" name="__codelineno-11-14" href="#__codelineno-11-14"></a>....            # repeat with 3 time (3x)
-<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>$       #end of the line
-</code></pre></div></p>
+<a id="__codelineno-11-15" name="__codelineno-11-15" href="#__codelineno-11-15"></a>$  #end of the line
+</code></pre></div>
 <h2 id="time-format-regular-expression-pattern">Time Format Regular Expression Pattern<a class="headerlink" href="#time-format-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format start between 0-12, then a semi colon, <code>:</code>, follow by <code>00-59</code>.  The pattern ends with <code>am</code> or <code>pm</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;(?i)(1[012]|[1-9]):[0-5][0-9](\s)?(am|pm)&quot;</span><span class="w"> </span><span class="s">&quot;12:59am&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>(1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>(               #start of group #1
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a> 1[012]             #  start with 10, 11, 12
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a> |              #  or
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a> [1-9]              #  start with 1,2,...9
-<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>)               #end of group #1
-<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a> :              #    follow by a semi colon (:)
-<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  [0-5][0-9]            #   follow by 0..5 and 0..9, which means 00 to 59
-<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            (\\s)?      #        follow by a white space (optional)
-<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>                  (?i)      #          next checking is case insensitive
-<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>                      (am|pm)   #            follow by am or pm
-</code></pre></div></p>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>(    #start of group #1
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a> 1[012]    #  start with 10, 11, 12
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a> |    #  or
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a> [1-9]    #  start with 1,2,...9
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>)    #end of group #1
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a> :    #    follow by a semi colon (:)
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  [0-5][0-9]   #   follow by 0..5 and 0..9, which means 00 to 59
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>            (\\s)?  #        follow by a white space (optional)
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>                  (?i)  #          next checking is case insensitive
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>                      (am|pm) #            follow by am or pm
+</code></pre></div>
 <h2 id="time-in-24-hour-format-regular-expression-pattern">Time in 24-Hour Format Regular Expression Pattern<a class="headerlink" href="#time-in-24-hour-format-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>The 24-hour clock format start between 0-23 or 00-23, then a semi colon <code>:</code> and follow by 00-59.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;(([01]?[0-9]|2[0-3]):[0-5][0-9])&quot;</span><span class="w"> </span><span class="s">&quot;23:58&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>([01]?[0-9]|2[0-3]):[0-5][0-9]
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>(               #start of group #1
-<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a> [01]?[0-9]         #  start with 0-9,1-9,00-09,10-19
-<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a> |              #  or
-<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> 2[0-3]             #  start with 20-23
-<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>)               #end of group #1
-<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a> :              #  follow by a semi colon (:)
-<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>  [0-5][0-9]            #    follow by 0..5 and 0..9, which means 00 to 59
-</code></pre></div></p>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>(    #start of group #1
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a> [01]?[0-9]   #  start with 0-9,1-9,00-09,10-19
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a> |    #  or
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a> 2[0-3]    #  start with 20-23
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>)    #end of group #1
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a> :    #  follow by a semi colon (:)
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>  [0-5][0-9]   #    follow by 0..5 and 0..9, which means 00 to 59
+</code></pre></div>
 <h2 id="date-format-ddmmyyyy-regular-expression-pattern">Date Format (dd/mm/yyyy) Regular Expression Pattern<a class="headerlink" href="#date-format-ddmmyyyy-regular-expression-pattern" title="Permanent link">λ︎</a></h2>
 <p>Date format in the form <code>dd/mm/yyyy</code>. Validating a leap year and if there is 30 or 31 days in a month is not simple though.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\d\d)&quot;</span><span class="w"> </span><span class="s">&quot;20/02/2020&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Breakdown the regex pattern:
+<p>Breakdown the regex pattern:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>(           #start of group #1
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a> 0?[1-9]        #  01-09 or 1-9
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>(   #start of group #1
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a> 0?[1-9]  #  01-09 or 1-9
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a> |                      #  ..or
-<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a> [12][0-9]      #  10-19 or 20-29
-<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a> |          #  ..or
-<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a> 3[01]          #  30, 31
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a> [12][0-9]  #  10-19 or 20-29
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a> |   #  ..or
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a> 3[01]   #  30, 31
 <a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>)           #end of group #1
-<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  /         #  follow by a &quot;/&quot;
-<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>   (            #    start of group #2
-<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    0?[1-9]     #   01-09 or 1-9
-<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    |           #   ..or
-<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    1[012]      #   10,11,12
-<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    )           #    end of group #2
-<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>     /          #   follow by a &quot;/&quot;
-<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>      (         #     start of group #3
-<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>       (19|20)\\d\\d    #       19[0-9][0-9] or 20[0-9][0-9]
-<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>       )        #     end of group #3
-</code></pre></div></p>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>  /   #  follow by a &quot;/&quot;
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>   (   #    start of group #2
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a>    0?[1-9]  # 01-09 or 1-9
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a>    |   # ..or
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>    1[012]  # 10,11,12
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>    )   #    end of group #2
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a>     /   # follow by a &quot;/&quot;
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>      (   #   start of group #3
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a>       (19|20)\\d\\d #       19[0-9][0-9] or 20[0-9][0-9]
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>       )  #   end of group #3
+</code></pre></div>
 <!-- ## HTML tag Regular Expression Pattern -->
 <!-- HTML code uses tags to define structure of content. HTML tag, start with an opening tag “<" , follow by double quotes "string", or single quotes 'string' but does not allow one double quotes (") "string, one single quote (') 'string or a closing tag > without single or double quotes enclosed. At last , end with a closing tag “>” -->
 
@@ -6265,7 +6265,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <!--                ([^'">]+)   #     cant contains one single / double quotes and ">" -->
 <!--           )           #    end of group #1 -->
 
-<h2 id="reference">Reference:<a class="headerlink" href="#reference" title="Permanent link">λ︎</a></h2>
+<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know">https://mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know</a></li>
 </ul>
@@ -6275,7 +6275,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

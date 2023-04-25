@@ -5136,7 +5136,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
       
         <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
-    NOTE::
+    NOTE
   </a>
   
 </li>
@@ -5803,7 +5803,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
       
         <li class="md-nav__item">
   <a href="#note" class="md-nav__link">
-    NOTE::
+    NOTE
   </a>
   
 </li>
@@ -5842,17 +5842,19 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h1 id="example-hitchhikers-guide">Example: Hitchhikers Guide<a class="headerlink" href="#example-hitchhikers-guide" title="Permanent link">λ︎</a></h1>
 <p>This is an example of using the threading macros and  a REPL to give fast feedback as you are developing code.</p>
 <blockquote>
-<h4 id="note">NOTE::<a class="headerlink" href="#note" title="Permanent link">λ︎</a></h4>
+<h4 id="note">NOTE<a class="headerlink" href="#note" title="Permanent link">λ︎</a></h4>
 <p>Write functions that will give a list of the most used words used in a book, excluding the common English words like "the, and, it, I".  Join those functions with a threading macro.</p>
 </blockquote>
 <p>Suggest you use the assumed perfectly legal copy of the <a href="http://clearwhitelight.org/hitch/hhgttg.txt">Hitch-hickers book text</a> using the <code>slurp</code> function</p>
-<p><strong>Approximate algorithm</strong>
-* Use a regular expression to create a collection of individual words - eg. <strong>#"[a-zA-Z0-9|']+"</strong>
-* Convert all the words to lower case so they match with common words source - <code>clojure.string/lower-case</code>
-* <code>Remove</code> the <a href="https://www.textfixer.com/tutorials/common-english-words.txt">common English words</a> used in the book, leaving more context specific words
-* Calculate the <code>frequencies</code> of the remaining words, returning a map of word &amp; word count pairs
-* <code>Sort-by</code> word count values in the map
-* <code>Reverse</code> the collection so the most commonly used word is the first element in the map</p>
+<p><strong>Approximate algorithm</strong></p>
+<ul>
+<li>Use a regular expression to create a collection of individual words - eg. <strong>#"[a-zA-Z0-9|']+"</strong></li>
+<li>Convert all the words to lower case so they match with common words source - <code>clojure.string/lower-case</code></li>
+<li><code>Remove</code> the <a href="https://www.textfixer.com/tutorials/common-english-words.txt">common English words</a> used in the book, leaving more context specific words</li>
+<li>Calculate the <code>frequencies</code> of the remaining words, returning a map of word &amp; word count pairs</li>
+<li><code>Sort-by</code> word count values in the map</li>
+<li><code>Reverse</code> the collection so the most commonly used word is the first element in the map</li>
+</ul>
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">book</span><span class="w"> </span><span class="p">(</span><span class="nb">slurp </span><span class="s">&quot;http://clearwhitelight.org/hitch/hhgttg.txt&quot;</span><span class="p">))</span>
@@ -5893,7 +5895,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </code></pre></div>
 <p>Now the <code>-main</code> function will only return the result of the <code>(get-book book-url)</code> function.  To see what each of the other lines do, simply remove the <strong>#_</strong> character from the front of an expression and re-evaluate the <code>-main</code> function in the repl</p>
 <blockquote>
-<p><strong>Hint</strong> In Spacemacs / Emacs, the keybinding C-c C-p show the output in a seperate buffer.  Very useful when the function returns a large results set.</p>
+<p><strong>Hint</strong> In Spacemacs / Emacs, the keybinding C-c C-p show the output in a separate buffer.  Very useful when the function returns a large results set.</p>
 </blockquote>
 <h2 id="off-line-sources-of-hitch-hickers-book-and-common-english-words">Off-line sources of Hitch-hickers book and common English words<a class="headerlink" href="#off-line-sources-of-hitch-hickers-book-and-common-english-words" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(def book (slurp &quot;./hhgttg.txt&quot;))
@@ -5914,7 +5916,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

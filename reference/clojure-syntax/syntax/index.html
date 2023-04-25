@@ -5876,7 +5876,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </ul>
 <h2 id="calling-functions">Calling functions<a class="headerlink" href="#calling-functions" title="Permanent link">λ︎</a></h2>
 <p>The first element in a list, <code>()</code>, is treated as a call to a function. The examples show how to call functions with multiple arguments.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">7</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">/ </span><span class="mi">16</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span>
 </code></pre></div>
@@ -5887,48 +5887,48 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">11</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <blockquote>
 <h4 id="hintprefix-notation-and-parens">Hint::Prefix notation and parens<a class="headerlink" href="#hintprefix-notation-and-parens" title="Permanent link">λ︎</a></h4>
 <p>Hugging code with <code>()</code> is a simple syntax to define the scope of code expressions.  No additional <code>;</code>, <code>,</code> or spaces are required.</p>
 <p>Treating the first element of a list as a function call is referred to as prefix notation, which greatly simplifies Clojure syntax.  Prefix notation makes mathematical expressions completely deterministic, eliminating the need for <a href="https://en.wikipedia.org/wiki/Order_of_operations">operator precedence</a>.</p>
 </blockquote>
 <h2 id="understanding-functions">Understanding functions<a class="headerlink" href="#understanding-functions" title="Permanent link">λ︎</a></h2>
-<p>Functions contain doc-strings describing what that function does. The <code>doc</code> function returns the doc-string of a particular function.  Most editors also support viewing of doc-strings as well as jumping to function definitions to view the source code
+<p>Functions contain doc-strings describing what that function does. The <code>doc</code> function returns the doc-string of a particular function.  Most editors also support viewing of doc-strings as well as jumping to function definitions to view the source code</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nb">doc </span><span class="nv">doc</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="strongly-typed-under-the-covers">Strongly typed under the covers<a class="headerlink" href="#strongly-typed-under-the-covers" title="Permanent link">λ︎</a></h2>
 <p>Clojure is a dynamically typed language so types do not need to be explicitly defined, although type hints can be added for performance where required.</p>
 <p>Clojure is strongly typed and everything is a type underneath, relative to the host platform (Clojure uses Java types, ClojureScript uses JavaScript types).  The type of anything in Clojure can be returned using the <code>type</code> function.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1">;; (type {:hash &quot;data&quot; :map &quot;more data&quot;})</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="p">{</span><span class="ss">:hash</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="w"> </span><span class="ss">:map</span><span class="w"> </span><span class="s">&quot;more data&quot;</span><span class="p">})</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="modeling-data-with-collection-types">Modeling data with Collection types<a class="headerlink" href="#modeling-data-with-collection-types" title="Permanent link">λ︎</a></h2>
 <p>Clojure has 4 main collection types, all immutable (cannot change once created) and can contain any Clojure types.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nb">str </span><span class="s">&quot;lists used mainly &quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="ss">:code</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nb">str </span><span class="s">&quot;lists used mainly &quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="s">&quot; &quot;</span><span class="w"> </span><span class="ss">:code</span><span class="p">)</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">[</span><span class="mi">0</span><span class="w"> </span><span class="s">&quot;indexed&quot;</span><span class="w"> </span><span class="ss">:array</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;random-access&quot;</span><span class="p">]</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="ss">:key</span><span class="w"> </span><span class="s">&quot;value&quot;</span><span class="w"> </span><span class="s">&quot;hash-map&quot;</span><span class="w"> </span><span class="s">&quot;also referred to as dictionary&quot;</span><span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="s">&quot;unique&quot;</span><span class="w"> </span><span class="s">&quot;set&quot;</span><span class="w"> </span><span class="s">&quot;of&quot;</span><span class="w"> </span><span class="s">&quot;values&quot;</span><span class="w"> </span><span class="s">&quot;unordered&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">3</span><span class="w"> </span><span class="mi">9</span><span class="p">)}</span>
-</code></pre></div></p>
+</code></pre></div>
 <blockquote>
 <h4 id="hintpersistent-data-types">Hint::Persistent data types<a class="headerlink" href="#hintpersistent-data-types" title="Permanent link">λ︎</a></h4>
 <p>To change data in Clojure new copies are created rather than changing existing values.  The copies of data will share values from the original data that are common in both.  This sharing is called persistent data types and enables immutable data to be used efficiently.</p>
 </blockquote>
 <h2 id="defining-names-for-values-vars">Defining names for values (vars)<a class="headerlink" href="#defining-names-for-values-vars" title="Permanent link">λ︎</a></h2>
 <p>Names can be bound to any values, from simple values like numbers, collections or even function calls.  Using <code>def</code> is convenient way to create names for values that are shared in your code.</p>
-<p>evaluating a name will return the value it is bound to.
+<p>evaluating a name will return the value it is bound to.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">public-health-data</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p">({</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-01&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-02&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="p">{</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-03&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}))</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nv">public-health-data</span>
-</code></pre></div></p>
+</code></pre></div>
 <blockquote>
 <h4 id="hintdef-for-shared-values-let-for-locally-scoped-values">Hint::def for shared values, let for locally scoped values<a class="headerlink" href="#hintdef-for-shared-values-let-for-locally-scoped-values" title="Permanent link">λ︎</a></h4>
 <p><code>let</code> function is used to bind names to values locally, such as within a function definition.  Names bound with <code>def</code> have namespace scope so can be used with any code in that namespace.</p>
@@ -5938,9 +5938,9 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <p>The above <code>map</code> function is roughly equivalent to the following expression</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
-The <code>conj</code> function creates a new collection by combining a collection and one or more values.</p>
+<p>The <code>conj</code> function creates a new collection by combining a collection and one or more values.</p>
 <p><code>map</code> <code>reduce</code> <code>filter</code> are common functions for iterating through a collection / sequence of values</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="p">])</span>
 </code></pre></div>
@@ -5958,9 +5958,9 @@ The <code>conj</code> function creates a new collection by combining a collectio
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
 <a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">(</span><span class="nf">square-of</span><span class="w"> </span><span class="mi">9</span><span class="p">)</span>
 </code></pre></div>
-<p>Function definitions can also be used within other expressions, useful for mapping custom functions over a collection
+<p>Function definitions can also be used within other expressions, useful for mapping custom functions over a collection</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
-</code></pre></div></p>
+</code></pre></div>
 <!-- Not available in ClojureScript REPL -->
 <!-- ## Ratio Type -->
 <!-- A Ratio type holds a value that is a fraction, such as 22/7.  This is not a function call, it is a legal value in Clojure. -->
@@ -6018,7 +6018,7 @@ The <code>conj</code> function creates a new collection by combining a collectio
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

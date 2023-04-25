@@ -5876,12 +5876,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">;; =&gt; 10</span>
 </code></pre></div>
 <p>In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses. Each clause is a pair made up of a test and a form. In this example there is a single clause with the value false as the test the function inc as the form. Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.</p>
-<p>Let’s look at an example with a truthy test.
+<p>Let’s look at an example with a truthy test.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">cond-&gt;</span><span class="w"> </span><span class="mi">10</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nv">true</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">2</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="c1">;;=&gt; 8</span>
 </code></pre></div>
-Once again, 10 is the starting expression. The single clause has a test that evaluates to true so the expression is threaded into the first position of the form (- 2). The result is 8 and this is returned.</p>
+<p>Once again, 10 is the starting expression. The single clause has a test that evaluates to true so the expression is threaded into the first position of the form (- 2). The result is 8 and this is returned.</p>
 <p>An example of a <code>cond-&gt;</code> with multiple clauses. Explanations are inline with the code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">cond-&gt;</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="c1">; start with 10</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="c1">;; test evaluates to true, so apply inc to 10. Current value is now 11.</span>
@@ -5924,7 +5924,7 @@ Once again, 10 is the starting expression. The single clause has a test that eva
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 17, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

@@ -6072,28 +6072,39 @@ Use the <code>-M</code> execution option to pass command line flags to the Kaoch
 </ul>
 <h3 id="profiling">Profiling<a class="headerlink" href="#profiling" title="Permanent link">λ︎</a></h3>
 <p>Show the 3 slowest tests for each category of test, after the test results</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Make</label><label for="__tabbed_3_2">Clojure CLI</label><label for="__tabbed_3_3">Kaocha Script</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Make</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>As a command line option:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>make<span class="w"> </span>test-profile
-</code></pre></div></p>
+```shell
+make test-profile</p>
 </div>
+</div>
+</div>
+<p>```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">Clojure CLI</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <p>Pass the profiling plugin as an argument to the Clojure CLI alias using the <code>-M</code> (clojure.main) execution option
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>clojure<span class="w"> </span>-M:test/env:test/run<span class="w"> </span>--plugin<span class="w"> </span>kaocha.plugin/profiling
-</code></pre></div></p>
+```shell
+clojure -M:test/env:test/run --plugin kaocha.plugin/profiling</p>
 </div>
+</div>
+</div>
+<p>```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:1"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">Kaocha Script</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <p>As a command line option:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>bin/kaocha<span class="w"> </span>--plugin<span class="w"> </span>kaocha.plugin/profiling
-</code></pre></div></p>
+```shell
+bin/kaocha --plugin kaocha.plugin/profiling</p>
 </div>
 </div>
 </div>
+<p>```</p>
 <p>Or add the profile plugin to the <code>test.edn</code> configuration</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">{</span><span class="ss">:plugins</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/profiling</span><span class="p">]}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="p">{</span><span class="ss">:plugins</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/profiling</span><span class="p">]}</span>
 </code></pre></div>
 <!-- ## Reporter -->
 <!-- TODO: add exmaples of using kaocha reporter plugin -->
@@ -6109,44 +6120,44 @@ Use the <code>-M</code> execution option to pass command line flags to the Kaoch
 <p><code>:kaocha/color?</code> and <code>:kaocha/watch</code> use a value dependent on the <code>#profile</code> kaocha is run under.</p>
 <div class="admonition example">
 <p class="admonition-title">Banking on Clojure project - Kaocha test.edn configuration</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="p">{</span><span class="ss">:kaocha/tests</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.testable/id</span><span class="w">      </span><span class="ss">:unit</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">    </span><span class="ss">:kaocha.type/clojure.test</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">   </span><span class="ss">:kaocha/ns-patterns</span><span class="w">      </span><span class="p">[</span><span class="s">&quot;-test$&quot;</span><span class="p">]</span>,
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">     </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>,
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">   </span><span class="ss">:kaocha/test-paths</span><span class="w">       </span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]</span>,
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">   </span><span class="ss">:kaocha.filter/skip-meta</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha/skip</span><span class="p">]}</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">  </span><span class="p">{</span><span class="ss">:kaocha.testable/id</span><span class="w">            </span><span class="ss">:generative-fdef-checks</span>
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">          </span><span class="ss">:kaocha.type/spec.test.check</span>
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">           </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="w">   </span><span class="ss">:kaocha.spec.test.check/checks</span><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.spec.test.check/syms</span><span class="w">            </span><span class="ss">:all-fdefs</span>
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/instrument?</span><span class="w">    </span><span class="nv">true</span>
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/check-asserts?</span><span class="w"> </span><span class="nv">true</span>
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/opts</span><span class="w">           </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}}]}</span>
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="w">  </span><span class="p">]</span>
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="w"> </span><span class="ss">:kaocha/reporter</span><span class="w"> </span><span class="p">[</span><span class="nv">kaocha.report/documentation</span><span class="p">]</span>
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="w"> </span><span class="ss">:kaocha/color?</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span>
-<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a><span class="w">                          </span><span class="ss">:ci</span><span class="w">      </span><span class="nv">false</span><span class="p">}</span>
-<a id="__codelineno-16-23" name="__codelineno-16-23" href="#__codelineno-16-23"></a>
-<a id="__codelineno-16-24" name="__codelineno-16-24" href="#__codelineno-16-24"></a><span class="w"> </span><span class="c1">;; Run tests of file changes, unless running in CI server</span>
-<a id="__codelineno-16-25" name="__codelineno-16-25" href="#__codelineno-16-25"></a><span class="w"> </span><span class="ss">:kaocha/watch</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span><span class="w"> </span><span class="ss">:ci</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a id="__codelineno-16-26" name="__codelineno-16-26" href="#__codelineno-16-26"></a>
-<a id="__codelineno-16-27" name="__codelineno-16-27" href="#__codelineno-16-27"></a><span class="w"> </span><span class="ss">:kaocha/fail-fast?</span><span class="w"> </span><span class="nv">true</span>
-<a id="__codelineno-16-28" name="__codelineno-16-28" href="#__codelineno-16-28"></a>
-<a id="__codelineno-16-29" name="__codelineno-16-29" href="#__codelineno-16-29"></a><span class="w"> </span><span class="ss">:kaocha.plugin.randomize/randomize?</span><span class="w"> </span><span class="nv">false</span>
-<a id="__codelineno-16-30" name="__codelineno-16-30" href="#__codelineno-16-30"></a>
-<a id="__codelineno-16-31" name="__codelineno-16-31" href="#__codelineno-16-31"></a><span class="w"> </span><span class="ss">:kaocha/plugins</span>
-<a id="__codelineno-16-32" name="__codelineno-16-32" href="#__codelineno-16-32"></a><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/randomize</span>
-<a id="__codelineno-16-33" name="__codelineno-16-33" href="#__codelineno-16-33"></a><span class="w">  </span><span class="ss">:kaocha.plugin/filter</span>
-<a id="__codelineno-16-34" name="__codelineno-16-34" href="#__codelineno-16-34"></a><span class="w">  </span><span class="ss">:kaocha.plugin/capture-output</span>
-<a id="__codelineno-16-35" name="__codelineno-16-35" href="#__codelineno-16-35"></a><span class="w">  </span><span class="ss">:kaocha.plugin.alpha/spec-test-check</span><span class="p">]</span>
-<a id="__codelineno-16-36" name="__codelineno-16-36" href="#__codelineno-16-36"></a>
-<a id="__codelineno-16-37" name="__codelineno-16-37" href="#__codelineno-16-37"></a><span class="w"> </span><span class="ss">:kaocha.plugin.capture-output/capture-output?</span><span class="w"> </span><span class="nv">true</span>
-<a id="__codelineno-16-38" name="__codelineno-16-38" href="#__codelineno-16-38"></a><span class="w"> </span><span class="p">}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">#</span><span class="nv">kaocha/v1</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span><span class="ss">:kaocha/tests</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.testable/id</span><span class="w">      </span><span class="ss">:unit</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">    </span><span class="ss">:kaocha.type/clojure.test</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">   </span><span class="ss">:kaocha/ns-patterns</span><span class="w">      </span><span class="p">[</span><span class="s">&quot;-test$&quot;</span><span class="p">]</span>,
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">     </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>,
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="w">   </span><span class="ss">:kaocha/test-paths</span><span class="w">       </span><span class="p">[</span><span class="s">&quot;test&quot;</span><span class="p">]</span>,
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a><span class="w">   </span><span class="ss">:kaocha.filter/skip-meta</span><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha/skip</span><span class="p">]}</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">  </span><span class="p">{</span><span class="ss">:kaocha.testable/id</span><span class="w">            </span><span class="ss">:generative-fdef-checks</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a><span class="w">   </span><span class="ss">:kaocha.testable/type</span><span class="w">          </span><span class="ss">:kaocha.type/spec.test.check</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a><span class="w">   </span><span class="ss">:kaocha/source-paths</span><span class="w">           </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="w">   </span><span class="ss">:kaocha.spec.test.check/checks</span><span class="w"> </span><span class="p">[{</span><span class="ss">:kaocha.spec.test.check/syms</span><span class="w">            </span><span class="ss">:all-fdefs</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/instrument?</span><span class="w">    </span><span class="nv">true</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/check-asserts?</span><span class="w"> </span><span class="nv">true</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a><span class="w">                                    </span><span class="ss">:clojure.spec.test.check/opts</span><span class="w">           </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}}]}</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="w">  </span><span class="p">]</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a><span class="w"> </span><span class="ss">:kaocha/reporter</span><span class="w"> </span><span class="p">[</span><span class="nv">kaocha.report/documentation</span><span class="p">]</span>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a><span class="w"> </span><span class="ss">:kaocha/color?</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a><span class="w">                          </span><span class="ss">:ci</span><span class="w">      </span><span class="nv">false</span><span class="p">}</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a><span class="w"> </span><span class="c1">;; Run tests of file changes, unless running in CI server</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a><span class="w"> </span><span class="ss">:kaocha/watch</span><span class="w"> </span><span class="o">#</span><span class="nv">profile</span><span class="w"> </span><span class="p">{</span><span class="ss">:default</span><span class="w"> </span><span class="nv">true</span><span class="w"> </span><span class="ss">:ci</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="w"> </span><span class="ss">:kaocha/fail-fast?</span><span class="w"> </span><span class="nv">true</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a><span class="w"> </span><span class="ss">:kaocha.plugin.randomize/randomize?</span><span class="w"> </span><span class="nv">false</span>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a><span class="w"> </span><span class="ss">:kaocha/plugins</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a><span class="w"> </span><span class="p">[</span><span class="ss">:kaocha.plugin/randomize</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a><span class="w">  </span><span class="ss">:kaocha.plugin/filter</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a><span class="w">  </span><span class="ss">:kaocha.plugin/capture-output</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a><span class="w">  </span><span class="ss">:kaocha.plugin.alpha/spec-test-check</span><span class="p">]</span>
+<a id="__codelineno-13-36" name="__codelineno-13-36" href="#__codelineno-13-36"></a>
+<a id="__codelineno-13-37" name="__codelineno-13-37" href="#__codelineno-13-37"></a><span class="w"> </span><span class="ss">:kaocha.plugin.capture-output/capture-output?</span><span class="w"> </span><span class="nv">true</span>
+<a id="__codelineno-13-38" name="__codelineno-13-38" href="#__codelineno-13-38"></a><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <blockquote>
 <p>The above configuration could be streamlined and rely on more of the default values, but does show examples of how to configure different sections explicitly.</p>
@@ -6158,7 +6169,7 @@ Use the <code>-M</code> execution option to pass command line flags to the Kaoch
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

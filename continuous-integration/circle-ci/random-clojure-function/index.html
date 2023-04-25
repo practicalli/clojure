@@ -5959,27 +5959,28 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>Edit the file and add the following configuration.</p>
 <div class="admonition example">
 <p class="admonition-title">Circe CI configuration for Clojure project</p>
-<div class="highlight"><span class="filename">.circleci/config.yaml</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.1</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">jobs</span><span class="p">:</span><span class="w">                                               </span><span class="c1"># basic units of work in a run</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">build</span><span class="p">:</span><span class="w">                                            </span><span class="c1"># runs without Workflows must have a `build` job as entry point</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">working_directory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/random-clojure-function</span><span class="w">    </span><span class="c1"># directory where steps will run</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">docker</span><span class="p">:</span><span class="w">                                         </span><span class="c1"># run the steps with Docker</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">image</span><span class="p">:</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">cimg/clojure:1.10</span><span class="w">                   </span><span class="c1"># image is primary container where `steps` are run</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span><span class="w">                                    </span><span class="c1"># environment variables for primary container</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">      </span><span class="nt">JVM_OPTS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-Xmx3200m</span><span class="w">                           </span><span class="c1"># limit maximum JVM heap size to prevent out of memory errors</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w">                                          </span><span class="c1"># commands that comprise the `build` job</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">checkout</span><span class="w">                                    </span><span class="c1"># check out source code to working directory</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">restore_cache</span><span class="p">:</span><span class="w">                              </span><span class="c1"># restores cache if checksum unchanged from last run</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random-clojure-function-{{ checksum &quot;deps.edn&quot; }}</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clojure -P</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">save_cache</span><span class="p">:</span><span class="w">                                 </span><span class="c1"># generate / update cache in the .m2 directory using a key template</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">          </span><span class="nt">paths</span><span class="p">:</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.m2</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">~/.gitlibs</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">          </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">random-clojure-function-{{ checksum &quot;deps.edn&quot; }}</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clojure -X:test/run</span>
-</code></pre></div>
+<p><code>``yaml title=".circleci/config.yaml"
+version: 2.1
+jobs:                                               # basic units of work in a run
+  build:                                            # runs without Workflows must have a</code>build<code>job as entry point
+    working_directory: ~/random-clojure-function    # directory where steps will run
+    docker:                                         # run the steps with Docker
+      - image:  cimg/clojure:1.10                   # image is primary container where</code>steps<code>are run
+    environment:                                    # environment variables for primary container
+      JVM_OPTS: -Xmx3200m                           # limit maximum JVM heap size to prevent out of memory errors
+    steps:                                          # commands that comprise the</code>build` job
+      - checkout                                    # check out source code to working directory
+      - restore_cache:                              # restores cache if checksum unchanged from last run
+          key: random-clojure-function-{{ checksum "deps.edn" }}
+      - run: clojure -P
+      - save_cache:                                 # generate / update cache in the .m2 directory using a key template
+          paths:
+            - ~/.m2
+            - ~/.gitlibs
+          key: random-clojure-function-{{ checksum "deps.edn" }}
+      - run: clojure -X:test/run</p>
 </div>
+<p>```</p>
 <p><code>run: clojure -P</code> step downloads dependencies for the project, including the <code>:extra-deps</code> if aliases are also included.</p>
 <p><code>run: clojure -X:test/run</code> adds the test directory to the class path and runs the Kaocha runner defined in the alias.</p>
 <h2 id="connect-circle-ci-to-the-project">Connect Circle CI to the project<a class="headerlink" href="#connect-circle-ci-to-the-project" title="Permanent link">λ︎</a></h2>
@@ -6000,7 +6001,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>So the development of the project can continue with greater confidence</p>
 <h2 id="adding-a-build-status-badge">Adding a Build Status badge<a class="headerlink" href="#adding-a-build-status-badge" title="Permanent link">λ︎</a></h2>
 <p><a href="https://circleci.com/docs/2.0/status-badges/#generating-a-status-badge" target="_blank">Generating a status badge documentation</a> describes how to add a build status badge for your project, usually at the top of the README.md file in the project</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[<span class="nt">![CircleCI</span>](<span class="na">https://circleci.com/gh/circleci/circleci-docs.svg?style=svg</span>)](https://circleci.com/gh/practicalli/random-clojure-function)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>[<span class="nt">![CircleCI</span>](<span class="na">https://circleci.com/gh/circleci/circleci-docs.svg?style=svg</span>)](https://circleci.com/gh/practicalli/random-clojure-function)
 </code></pre></div>
 <p>Add this markdown to the top of the README.md file, underneath the title.  Then commit and push the change to the GitHub repository.</p>
 <blockquote>
@@ -6012,7 +6013,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

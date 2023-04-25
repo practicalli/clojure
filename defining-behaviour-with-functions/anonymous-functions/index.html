@@ -5829,12 +5829,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h2 id="binding-a-local-names">Binding a local names<a class="headerlink" href="#binding-a-local-names" title="Permanent link">λ︎</a></h2>
 <p><code>fn</code> can have a local name which can be used to write a recursive function (a fn that calls itself).</p>
 <p>Adding a name also helps with debugging code, as the name will be used to identify that function call if it appears in a stack trace of an exception.</p>
-<p>A recursive function that counts the elements in a collection
+<p>A recursive function that counts the elements in a collection</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">fn </span><span class="nv">-count</span><span class="w"> </span><span class="p">[</span><span class="nv">xs</span><span class="p">]</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nf">empty?</span><span class="w"> </span><span class="nv">xs</span><span class="p">)</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="mi">0</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">inc </span><span class="p">(</span><span class="nf">-count</span><span class="w"> </span><span class="p">(</span><span class="nb">rest </span><span class="nv">xs</span><span class="p">)))))</span>
-</code></pre></div></p>
+</code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">fn </span><span class="nv">meaningful-name</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">[]</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;If I fail, you will know my name&quot;</span><span class="p">))</span>
@@ -5867,7 +5867,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

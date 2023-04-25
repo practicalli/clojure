@@ -5813,12 +5813,16 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>Generative testing provides a far more effective alternative to unit testing.</p>
 <p><code>clojure.spec.test/check/instrument</code> verifies that calls to a function satisfy the function's specification, the <code>:arg</code> in <code>fdef</code>.</p>
 <p><code>clojure.spec.test/check</code> function generates 1000 data values to be used as the inputs to a function, checks that the invocation of the function satisfies its specification, the <code>:ret</code> and <code>:fn</code> in <code>fdef</code>.  The argument specification, <code>:arg</code> in <code>fdef</code> is used to generate a wide range of results, which are more capable of finding edge cases that fail.</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/W6crrbF7s2s">https://youtu.be/W6crrbF7s2s</a></p>
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/W6crrbF7s2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 <h2 id="example-card-game">Example: card game<a class="headerlink" href="#example-card-game" title="Permanent link">λ︎</a></h2>
 <p><a href="https://github.com/practicalli/spec-generative-testing">practicalli/spec-generative-testing</a> is a simple card game with specifications that are used for basic generative testing.</p>
-<p _="%" endyoutube="endyoutube">{% youtube %}
-<a href="https://youtu.be/xZQ7p-YBHtE">https://youtu.be/xZQ7p-YBHtE</a></p>
+<p style="text-align:center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xZQ7p-YBHtE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="https://clojure.org/guides/spec#_generators">Clojure.org guides: Spec - Generators</a></li>
@@ -5827,21 +5831,23 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <li><a href="https://www.youtube.com/watch?v=xw8ZFU8CGdA">Video: How to do Stateful Property Testing in Clojure?</a></li>
 </ul>
 <!--
-  Hand rolling spec test
-  -->
+  TODO: Hand rolling spec test
 
-<p>(-&gt;&gt;
+  (->>
     (spec-test/check `function-with-a-spec)
     ,,, ;; test more functions ??
-    (spec-test/summarize-results))</p>
-<p>(spec/exercise-fn ..</p>
+    (spec-test/summarize-results))
+
+(spec/exercise-fn ..
+
+  -->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

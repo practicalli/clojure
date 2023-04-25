@@ -5860,10 +5860,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 - a value to test against the specification</p>
 <p><code>Success</code> string is sent to standard out if the value meets the specification</p>
 <p>A string explaining where the value deviates from the specification is sent to standard out if the value does not meet the specification.</p>
-<p>There are several variations on the explain function for different situations
-* <code>explain</code> - sends the return value to the standard out / REPL
-* <code>explain-str</code> - returns a human readable result.
-* <code>explain-data</code> - returns a data structure of the error to be processed by other code</p>
+<p>There are several variations on the explain function for different situations</p>
+<ul>
+<li><code>explain</code> - sends the return value to the standard out / REPL</li>
+<li><code>explain-str</code> - returns a human readable result.</li>
+<li><code>explain-data</code> - returns a data structure of the error to be processed by other code</li>
+</ul>
 <h2 id="example-of-a-failing-value">Example of a failing value<a class="headerlink" href="#example-of-a-failing-value" title="Permanent link">λ︎</a></h2>
 <p>First define a namespace and require the Clojure Spec namespace</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure.specifications</span>
@@ -5879,11 +5881,13 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/or</span><span class="w"> </span><span class="ss">:integer</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="mi">42</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">           </span><span class="ss">:string</span><span class="w">  </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;forty two&quot;</span><span class="w"> </span><span class="nv">%</span><span class="p">)))</span>
 </code></pre></div>
-<p>In this case explain returned the
-* value being checked against the spec
-* result of that check (failed)
-* predicate used to check the value
-* spec name used to check the value</p>
+<p>In this case explain returned the</p>
+<ul>
+<li>value being checked against the spec</li>
+<li>result of that check (failed)</li>
+<li>predicate used to check the value</li>
+<li>spec name used to check the value</li>
+</ul>
 <p>Notice that the value failed on the first condition, <code>:integer</code>, then stopped without checking the second, <code>:string</code>. The <code>spec/and</code> macro works the same as <code>clojure.core/and</code> in that is stops as soon as something fails.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/explain</span><span class="w"> </span><span class="ss">::meaning-of-life-int-or-string</span><span class="w"> </span><span class="mi">24</span><span class="p">)</span>
 </code></pre></div>
@@ -5903,7 +5907,7 @@ This shows the value of naming your specs descriptively</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

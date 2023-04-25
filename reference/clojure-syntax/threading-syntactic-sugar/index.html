@@ -5806,10 +5806,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 <h1 id="threading-syntax-sugar">Threading Syntax Sugar<a class="headerlink" href="#threading-syntax-sugar" title="Permanent link">λ︎</a></h1>
 <p>The previous code is written in classic Lisp style.  When you come to read Lisp, you start from the inside out.  In this case you start with <code>(slurp ...)</code> and what it returns is used as the argument to <code>(read-string ...)</code> and so on...</p>
-<p>In our minds we probably constructed the following basic algorithm:
-  * Get the contents of the project.clj file using <code>slurp</code>
-  * Read the text of that file using read-string
-  * Select just the third string using nth 2 (using an index starting at 0)</p>
+<p>In our minds we probably constructed the following basic algorithm:</p>
+<ul>
+<li>Get the contents of the project.clj file using <code>slurp</code></li>
+<li>Read the text of that file using read-string</li>
+<li>Select just the third string using nth 2 (using an index starting at 0)</li>
+</ul>
 <p>Can we rewrite our Clojure code to fit the way we think?</p>
 <h2 id="thread-first-macro">Thread first macro<a class="headerlink" href="#thread-first-macro" title="Permanent link">λ︎</a></h2>
 <p>Using the thread-first macro <strong>-&gt;</strong> we can chain Clojure functions together with a terser syntax, passing the result of the first evaluation as the first argument to the next function and so on.  Using this style, we can write code that matches the algorithm in our head.</p>
@@ -5885,7 +5887,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

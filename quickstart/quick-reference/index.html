@@ -5888,10 +5888,10 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">(</span><span class="nb">+ </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">7</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">/ </span><span class="mi">16</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">(</span><span class="nf">clojure-version</span><span class="p">)</span>
 </code></pre></div>
-<p>Functions contain doc-strings and you can ask for a functions documentation, or show the source code.
+<p>Functions contain doc-strings and you can ask for a functions documentation, or show the source code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nb">doc </span><span class="nv">doc</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">(</span><span class="nf">source</span><span class="w"> </span><span class="nv">doc</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Clojure is a dynamically typed language, it is also strongly typed (everything is a type, but you dont have to express the type in your code).  The type of anything in Clojure can be returned.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="p">{</span><span class="ss">:hash</span><span class="w"> </span><span class="s">&quot;data&quot;</span><span class="w"> </span><span class="ss">:map</span><span class="w"> </span><span class="s">&quot;more data&quot;</span><span class="p">})</span>
@@ -5907,14 +5907,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="s">&quot;unique&quot;</span><span class="w"> </span><span class="s">&quot;set&quot;</span><span class="w"> </span><span class="s">&quot;of&quot;</span><span class="w"> </span><span class="s">&quot;values&quot;</span><span class="w"> </span><span class="s">&quot;unordered&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">3</span><span class="w"> </span><span class="mi">9</span><span class="p">)}</span>
 </code></pre></div>
 <h2 id="defining-names-for-values-vars">Defining names for values (vars)<a class="headerlink" href="#defining-names-for-values-vars" title="Permanent link">λ︎</a></h2>
-<p>Names can be bound to any values, simple values like numbers, collections or functions.  A convenient way to refer to value in your code.
+<p>Names can be bound to any values, simple values like numbers, collections or functions.  A convenient way to refer to value in your code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">public-health-data</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">({</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-01&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-02&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">   </span><span class="p">{</span><span class="ss">:date</span><span class="w"> </span><span class="s">&quot;2020-01-03&quot;</span><span class="w"> </span><span class="ss">:confirmed-cases</span><span class="w"> </span><span class="mi">23014</span><span class="w"> </span><span class="ss">:recovery-percent</span><span class="w"> </span><span class="mi">15</span><span class="p">}))</span>
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
 <a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">(</span><span class="k">def </span><span class="nv">add-hundred</span><span class="w"> </span><span class="p">(</span><span class="nb">partial + </span><span class="mi">100</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="map-reduce-filter">map reduce filter<a class="headerlink" href="#map-reduce-filter" title="Permanent link">λ︎</a></h2>
 <p>Common functions for iterating through a collection / sequence of values</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nb">map * </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">8</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">21</span><span class="w"> </span><span class="mi">34</span><span class="p">])</span>
@@ -5928,20 +5928,20 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 <p>The above <code>map</code> function is roughly equivalent to the following expression</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">5</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">inc </span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
-The <code>conj</code> function creates a new collection by combining a collection and one or more values.</p>
+<p>The <code>conj</code> function creates a new collection by combining a collection and one or more values.</p>
 <h2 id="defining-custom-functions">Defining custom functions<a class="headerlink" href="#defining-custom-functions" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">square-of</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="s">&quot;Calculates the square of a given number&quot;</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="p">[</span><span class="nv">number</span><span class="p">]</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="p">(</span><span class="nb">* </span><span class="nv">number</span><span class="w"> </span><span class="nv">number</span><span class="p">))</span>
 </code></pre></div>
-<p>Function definitions can also be used within other expressions, useful for mapping custom functions over a collection
+<p>Function definitions can also be used within other expressions, useful for mapping custom functions over a collection</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">))</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">])</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="ratio-type">Ratio Type<a class="headerlink" href="#ratio-type" title="Permanent link">λ︎</a></h2>
 <p>; Using the division function (/ ) shows another interesting characteristic of Clojure, the fact that it is lazy.  This is not lazy in a bad way, but lazy evaluation of data structures.  This actually helps to make clojure more efficient at dealing with data, especially very large data sets.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nb">/ </span><span class="mi">22</span><span class="w"> </span><span class="mi">7</span><span class="p">)</span>
@@ -5955,24 +5955,24 @@ The <code>conj</code> function creates a new collection by combining a collectio
 <p>Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.</p>
 <h2 id="java-interoperability">Java interoperability<a class="headerlink" href="#java-interoperability" title="Permanent link">λ︎</a></h2>
 <p><code>.</code> and <code>new</code> are Clojure functions that create a Java object. This allows you to use values from Java constants, i.e. PI is a static double from the <a href="https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">java.lang.Math</a> object</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="k">. </span><span class="nv">Math</span><span class="w"> </span><span class="nv">PI</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="k">. </span><span class="nv">Math</span><span class="w"> </span><span class="nv">PI</span><span class="p">)</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="mf">3.141592653589793</span>
 </code></pre></div>
-Also call static and instance methods from Java objects.</p>
+<p>Also call static and instance methods from Java objects.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">Math/cos</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">(</span><span class="nf">javax.swing.JOptionPane/showMessageDialog</span><span class="w"> </span><span class="nv">nil</span>
 <a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="s">&quot;Hello Java Developers&quot;</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="recursion">Recursion<a class="headerlink" href="#recursion" title="Permanent link">λ︎</a></h2>
-<p>Recursive function
+<p>Recursive function</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">recursive-counter</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">&lt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">1000</span><span class="p">)</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">recur</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="nv">value</span><span class="w"> </span><span class="mi">25</span><span class="p">))))</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="p">(</span><span class="nf">recursive-counter</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <!-- * TODO: loop-recur -->
 <!-- * TODO: reduce and reducing function -->
 
@@ -5981,7 +5981,7 @@ Also call static and instance methods from Java objects.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

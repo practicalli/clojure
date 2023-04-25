@@ -5863,13 +5863,13 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h2 id="defining-entity-maps">Defining entity maps<a class="headerlink" href="#defining-entity-maps" title="Permanent link">λ︎</a></h2>
 <p>The Clojure Spec <code>keys</code> function is used to create a specification for a hash-map of key-value pairs.</p>
 <p><code>keys</code> creates a specification from required keys, <code>:req</code>, and optional keys <code>:opt</code>.</p>
-<p>To define the specification for a player in an online game, first the individual specifications that make up the player hash-map are created.
+<p>To define the specification for a player in an online game, first the individual specifications that make up the player hash-map are created.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::account-id</span><span class="w"> </span><span class="nv">uuid?</span><span class="p">)</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::name</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::score</span><span class="w"> </span><span class="nv">int?</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::profile</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::games-played</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="ss">:vectron</span><span class="w"> </span><span class="ss">:utrazap</span><span class="w"> </span><span class="ss">:avakato</span><span class="p">})</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Those specifications are composed together to create a specification for the player</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="ss">::player-account</span>
@@ -5913,7 +5913,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

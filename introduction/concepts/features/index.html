@@ -5929,15 +5929,21 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </blockquote>
 <hr />
 
-<p>** Input &amp; output with functional programming
-- other fp languages like haskel &amp; Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
-- Clojure doesn't try and enforce functional purity, so any function can include impure code
-- most functions should be pure though or you loose the benefits of functional programming
-- Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
-- Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM</p>
+<p>** Input &amp; output with functional programming</p>
 <ul>
-<li>Supporting concurrency</li>
-<li>atoms etc</li>
+<li>other fp languages like haskel &amp; Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.</li>
+<li>Clojure doesn't try and enforce functional purity, so any function can include impure code</li>
+<li>most functions should be pure though or you loose the benefits of functional programming</li>
+<li>Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small</li>
+<li>
+<p>Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM</p>
+</li>
+<li>
+<p>Supporting concurrency</p>
+</li>
+<li>
+<p>atoms etc</p>
+</li>
 <li>automatic management of state changes via Software transactional memory - like having an ACID database in memory, managing requests to change values over time.</li>
 <li>
 <p>by having immutable data structures - if your values do not change then its trivial to have massive parallelism.</p>
@@ -5945,14 +5951,18 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <li>
 <p>A modern LISP</p>
 </li>
-<li>leaner syntax and not as many brackets as LISP</li>
+<li>
+<p>leaner syntax and not as many brackets as LISP</p>
+</li>
 <li>clean data structure syntax at the core of the language</li>
 <li>LiSP was the first language to introduce first class functions, garbage collection and dynamic typing, which are common in languages used today</li>
 </ul>
-<p>Macros
-- a function that takes in source code and returns source code, replacing the macro code
-- use macros to take out repetition / boilerplate code
-- as LISP syntax is extremely simple it is much easier to write macros that work compared to non-LISP languages</p>
+<p>Macros</p>
+<ul>
+<li>a function that takes in source code and returns source code, replacing the macro code</li>
+<li>use macros to take out repetition / boilerplate code</li>
+<li>as LISP syntax is extremely simple it is much easier to write macros that work compared to non-LISP languages</li>
+</ul>
 <p>Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs.</p>
 <p>Clojure is very concise, requiring very little code to express complex operations.</p>
 <p>Data centric design - a well constructed data structure helps define and clarify the purpose of the code</p>
@@ -5969,7 +5979,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

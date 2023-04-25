@@ -5799,8 +5799,8 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 <h4 id="characteristics">Characteristics<a class="headerlink" href="#characteristics" title="Permanent link">λ︎</a></h4>
 <ul>
-<li>Dynamic </li>
-<li>typed - like Python, Ruby or Groovy </li>
+<li>Dynamic</li>
+<li>typed - like Python, Ruby or Groovy</li>
 <li>because its a LISP - you can redefine running code by redefining functions and re-evaluating</li>
 <li>
 <p>REPL - a fast way to explore your problem domain with code</p>
@@ -5812,26 +5812,26 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <li>immutable data structures at its core, everything is immutable by default</li>
 <li>if any piece of data can be changed, that is mutable state</li>
 <li>in imperative programming, we change state where ever we like</li>
-<li>in functional programming we avoid changing state as much as possible </li>
-<li>if a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments) - often returned as a pure function </li>
+<li>in functional programming we avoid changing state as much as possible</li>
+<li>if a function does not change state it is referentially transparent, always returning the same result when given the same input (arguments) - often returned as a pure function</li>
 <li>impure functions can affect other functions and therefore has to be very mindful of the changes it makes and when it makes them</li>
-<li>pure functions are truely modular as they do not affect any other part of the system
+<li>pure functions are truly modular as they do not affect any other part of the system
 ** Changing state</li>
 <li>rather than changing a data structure, fp instead creates a new data structure that contains the changes and copies of the existing data.</li>
-<li>to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data) 
-** Input &amp; output with functional programming </li>
+<li>to manage the potential overhead of copying data structures, Clojure uses Persistent collections (Lists, Vectors, Maps) which are immutable but provide an efficient way to mutate by sharing common elements (data)
+** Input &amp; output with functional programming</li>
 <li>other fp languages like haskel &amp; Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.</li>
-<li>Clojure doesn't try and enforce functional purity, so any function can include impure code </li>
+<li>Clojure doesn't try and enforce functional purity, so any function can include impure code</li>
 <li>most functions should be pure though or you loose the benefits of functional programming</li>
 <li>Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small</li>
 <li>
-<p>Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM </p>
+<p>Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM</p>
 </li>
 <li>
-<p>Hosted on the Java Virtual Machine </p>
+<p>Hosted on the Java Virtual Machine</p>
 </li>
-<li>written for the JVM &amp; heavily integrated, giving beautiful integration </li>
-<li>Clojure is compiled to Java byte code </li>
+<li>written for the JVM &amp; heavily integrated, giving beautiful integration</li>
+<li>Clojure is compiled to Java byte code</li>
 <li>many parts of the Clojure standard library, Clojure.core defer to the Java Standard library, for example for I/O (reading,writing files)</li>
 <li>
 <p>Clojure makes invoking Java very convenient and provides special primitive constructs in the Clojure language to do so (new .javaMethodName javaClassName. etc)</p>
@@ -5839,35 +5839,37 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <li>
 <p>Supporting concurrency</p>
 </li>
-<li>atoms etc </li>
+<li>atoms etc</li>
 <li>automatic management of state changes via Software transactional memory - like having an ACID database in memory, managing requests to change values over time.</li>
 <li>
 <p>by having immutable data structures - if your values do not change then its trivial to have massive parallelism.</p>
 </li>
 <li>
-<p>A modern LISP </p>
+<p>A modern LISP</p>
 </li>
 <li>leaner syntax and not as many brackets as LISP</li>
 <li>clean data structure syntax at the core of the language</li>
 <li>LiSP was the first language to introduce first class functions, garbage collection and dynamic typing, which are common in languages used today</li>
 </ul>
-<p>Macros 
-- a function that takes in source code and returns source code, replacing the macro code<br />
-- use macros to take out repetition / boilerplate code
-- as LISP syntax is extremely simple it is much easier to write macros that work compared to non-LISP languages</p>
+<p>Macros</p>
+<ul>
+<li>a function that takes in source code and returns source code, replacing the macro code</li>
+<li>use macros to take out repetition / boilerplate code</li>
+<li>as LISP syntax is extremely simple it is much easier to write macros that work compared to non-LISP languages</li>
+</ul>
 <blockquote>
 <p><strong>fixme</strong> assuming you need more, I'll add to this page, but Clojure is a very powerful language, incredibly flexible and tonnes of fun.  What more do you need ?</p>
-<p><strong>fixme</strong> concepts to explore </p>
+<p><strong>fixme</strong> concepts to explore</p>
 </blockquote>
-<p>Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs. </p>
+<p>Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs.</p>
 <p>Clojure is very concise, requiring very little code to express complex operations.</p>
 <p>Data centric design - a well constructed data structure helps define and clarify the purpose of the code</p>
-<p>Modularity - Clojure and its community build things in modules / components that work together (in a similar design approach to the Unix file system, for example). </p>
-<p>It offers a REPL and dynamic type system: ideal for beginners to experiment with, and well-suited for manipulating complex data structures. </p>
+<p>Modularity - Clojure and its community build things in modules / components that work together (in a similar design approach to the Unix file system, for example).</p>
+<p>It offers a REPL and dynamic type system: ideal for beginners to experiment with, and well-suited for manipulating complex data structures.</p>
 <p>A consistently designed standard library and full-featured set of core data types rounds out the Clojure toolbox.</p>
-<p>Clojure is close to the speed of Java </p>
+<p>Clojure is close to the speed of Java</p>
 <h4 id="constraints">Constraints<a class="headerlink" href="#constraints" title="Permanent link">λ︎</a></h4>
-<p>Clojure relies on the JVM so there can be a longer boot time than a scripting language like Javascript.  However, as you can connect to the Clojure runtime (the REPL) of a live system and because Clojure is dynamic, you can make changes to that live system without any downtime.  </p>
+<p>Clojure relies on the JVM so there can be a longer boot time than a scripting language like Javascript.  However, as you can connect to the Clojure runtime (the REPL) of a live system and because Clojure is dynamic, you can make changes to that live system without any downtime.</p>
 <p>If you require more performance from Clojure, you can specify <em>ahead of time</em> compilation.</p>
 
   <hr>
@@ -5875,7 +5877,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

@@ -5816,8 +5816,10 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>recommendation / intro tutorial</p>
 <p><a href="https://github.com/clojure/core.async/blob/master/examples/walk-through.clj">https://github.com/clojure/core.async/blob/master/examples/walk-through.clj</a></p>
 <p>EuroClojure talk about clojure otp library that built on top of core.async because they felt it was too low level</p>
-<p>At the REPL
-- if you don’t create channels with non-zero sized buffers, or don’t perform operations in separate threads or go-blocks, then you can end up blocked quite easily</p>
+<p>At the REPL</p>
+<ul>
+<li>if you don’t create channels with non-zero sized buffers, or don’t perform operations in separate threads or go-blocks, then you can end up blocked quite easily</li>
+</ul>
 <p>In production be sure to catch exceptions, or at least be logging them. It can be too easy to loose errors (and the processes that threw them)</p>
 <p>if you make a note of the nrepl port when you start a repl, you can always connect a second repl to the same process to recover from accidental blocking</p>
 <h2 id="coreasync-and-transducers">core.async and transducers<a class="headerlink" href="#coreasync-and-transducers" title="Permanent link">λ︎</a></h2>
@@ -5868,13 +5870,17 @@ order of results being processed is not important, so concurrency (particularly 
 <p>I am assuming that I need to “def” the channel(s) and then have a form that is in an evaluated namespace that is “waiting” for the channel(s) to have something on them..?</p>
 <p>a common idiom is to return channels/streams/promises as the result of a query fn</p>
 <p>OK, but how would I consume them without tying up the main thread?</p>
-<p>many options
-- put the consuming code inside a core.async <code>go</code> block
-- create a new channel with a transducer and pipe your first channel to that
-- have your api fn take the channel you want responses put on and pass in a channel with a transducer</p>
-<p>similarly in manifold,
-- chain a step onto a deferred <a href="https://github.com/ztellman/manifold/blob/master/docs/deferred.md#composing-with-deferreds">https://github.com/ztellman/manifold/blob/master/docs/deferred.md#composing-with-deferreds</a>
-- map a fn over a stream <a href="https://github.com/ztellman/manifold/blob/master/docs/stream.md#stream-operators">https://github.com/ztellman/manifold/blob/master/docs/stream.md#stream-operators</a></p>
+<p>many options</p>
+<ul>
+<li>put the consuming code inside a core.async <code>go</code> block</li>
+<li>create a new channel with a transducer and pipe your first channel to that</li>
+<li>have your api fn take the channel you want responses put on and pass in a channel with a transducer</li>
+</ul>
+<p>similarly in manifold,</p>
+<ul>
+<li>chain a step onto a deferred <a href="https://github.com/ztellman/manifold/blob/master/docs/deferred.md#composing-with-deferreds">https://github.com/ztellman/manifold/blob/master/docs/deferred.md#composing-with-deferreds</a></li>
+<li>map a fn over a stream <a href="https://github.com/ztellman/manifold/blob/master/docs/stream.md#stream-operators">https://github.com/ztellman/manifold/blob/master/docs/stream.md#stream-operators</a></li>
+</ul>
 <p>need some code in an evaluated namespace that was effectively “listening” for there to be “things” on the channel, just a form at the end of my namespace containing a go block that was consuming a named channel onto which my API function would place “things”</p>
 <p>most web or UI frameworks will already have an event loop to do that i’d have expected?</p>
 <p>order of ops:</p>
@@ -5929,7 +5935,7 @@ I wrote some core.async code in Clojure and when I ran it it consumed all availa
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

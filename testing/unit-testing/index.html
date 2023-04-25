@@ -5863,18 +5863,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <ul>
 <li>A <code>test</code> namespace for each <code>src</code> namespace under test</li>
 <li>A <code>deftest</code> function for each function under test, named after the function its testing with <code>-test</code> at the end of the name</li>
-<li>Multiple assertions (<code>is</code> <code>are</code>) for one function<ul>
+<li>Multiple assertions (<code>is</code> <code>are</code>) for one function</li>
 <li><code>is</code> defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call</li>
 <li><code>are</code> to testing similar functionality with different data sets (or use generative testing)</li>
-</ul>
-</li>
 <li><code>testing</code> to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)</li>
 <li><code>use-fixtures</code> to call <a href="fixtures/" title="Define and run functions that set up and tear down state required for a test or collection of tests">fixture functions</a> that setup and tear down any state required for test(s) to run</li>
-<li>Test API rather than implementation<ul>
+<li>Test API rather than implementation</li>
 <li>test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)</li>
 <li><code>^:helper</code> meta-data on <code>deftest</code> for more generic functions, to skip those tests via a test selector</li>
-</ul>
-</li>
 <li>Use <a href="/clojure-spec/">generative testing</a> to create more maintainable test code with more extensive range of data</li>
 <li>Use <a href="test-selectors/">test selectors</a> with a <a href="/testing/test-runners/">test runner</a> to selectively run tests and optimise speed of test runs</li>
 <li>Limit mocking of systems to integration tests (although mocking data is good everywhere)</li>
@@ -5882,7 +5878,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <details class="hint">
 <summary>Code should evaluate or have line comments</summary>
 <p>All Clojure code should be valid syntax and able to be evaluated (compiled), even code within a <code>(comment )</code> expression or after a <code>#_</code> reader comment.</p>
-<p>Code commented with a line comment, <code>;;</code>, will not be read by Clojure and cannot cause compliation errors when evaluated</p>
+<p>Code commented with a line comment, <code>;;</code>, will not be read by Clojure and cannot cause compilation errors when evaluated</p>
 </details>
 <h2 id="running-tests">Running tests<a class="headerlink" href="#running-tests" title="Permanent link">λ︎</a></h2>
 <p><a href="/testing/test-runners/">Test runners</a> can run be run in the REPL used for development or run separately via the command line and continuous integration tasks.</p>
@@ -5955,7 +5951,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

@@ -6068,14 +6068,15 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="admonition hint">
 <p class="admonition-title">Automate local test runner</p>
 <p>Use <a href="https://practical.li/clojure/testing/test-runners/kaocha-test-runner.html" target="_blank">kaocha test runner</a> in watch mode to run tests and specification check automatically (when changes are saved)
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:test/watch
-</code></pre></div></p>
+```bash
+clojure -X:test/watch</p>
 </div>
+<p>```</p>
 <h2 id="continuous-integration-and-deployment">Continuous Integration and Deployment<a class="headerlink" href="#continuous-integration-and-deployment" title="Permanent link">λ︎</a></h2>
 <p>Add a <a href="https://practical.li/clojure/continuous-integration/" target="_blank">continuous integration service</a> to run tests and builds code on every shared commit.  Spin up testable review deployments when commits pushed to a pull request branch, before pushing commits to the main deployment branch, creating an effective pipeline to gain further feedback.</p>
 <ul>
 <li><a href="https://practical.li/clojure/continuous-integration/circle-ci/" target="_blank">CircleCI</a> provides a simple to use service that supports Clojure projects.</li>
-<li><a href="https://docs.github.com/en/actions/using-workflows" target="_blank">GitHub Workflows</a> and <a href="https://github.com/marketplace?type=actions" target="_blank">GitHub actions marketplace </a> to quickly build a tailored continuous integration service, e.g. <a href="https://github.com/marketplace/actions/setup-clojure" target="_blank">Setup Clojure GitHub Action</a>.</li>
+<li><a href="https://docs.github.com/en/actions/using-workflows" target="_blank">GitHub Workflows</a> and <a href="https://github.com/marketplace?type=actions" target="_blank">GitHub actions marketplace</a> to quickly build a tailored continuous integration service, e.g. <a href="https://github.com/marketplace/actions/setup-clojure" target="_blank">Setup Clojure GitHub Action</a>.</li>
 <li><a href="https://docs.gitlab.com/ee/ci/introduction/index.html" target="_blank">GitLab CI</a></li>
 </ul>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/continuous-integration-overview.svg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Continuous Integration" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/continuous-integration-overview.svg" /></a></p>
@@ -6092,7 +6093,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

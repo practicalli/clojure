@@ -5911,7 +5911,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>probably just need a few examples typically added to the different profile files</p>
 </blockquote>
 <h4 id="project-profiles">Project profiles<a class="headerlink" href="#project-profiles" title="Permanent link">λ︎</a></h4>
-<p>Define one or more profiles specific to the project.  Typically done to seperate configuration for different parts of the development lifecycle, eg. dev, test, production</p>
+<p>Define one or more profiles specific to the project.  Typically done to separate configuration for different parts of the development lifecycle, eg. dev, test, production</p>
 <p>The example below adds a "dummy-data" resources directory during development and a dependency upon "expectations" that's only used for tests/development.</p>
 <div class="highlight"><pre><span></span><code>(defproject myproject &quot;0.5.0-SNAPSHOT&quot;
   :description &quot;A project for doing things.&quot;
@@ -5975,16 +5975,16 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </code></pre></div>
 <h4 id="activating-profiles">Activating Profiles<a class="headerlink" href="#activating-profiles" title="Permanent link">λ︎</a></h4>
 <p>To activate a different set of profiles for a given task, use the with-profile higher-order task:</p>
-<div class="highlight"><pre><span></span><code>$ lein with-profile 1.3 test :database
+<div class="highlight"><pre><span></span><code>lein with-profile 1.3 test :database
 </code></pre></div>
 <p>Multiple profiles may be combined with commas:</p>
-<div class="highlight"><pre><span></span><code>$ lein with-profile qa,user test :database
+<div class="highlight"><pre><span></span><code>lein with-profile qa,user test :database
 </code></pre></div>
 <p>Multiple profiles may be executed in series with colons:</p>
-<div class="highlight"><pre><span></span><code>$ lein with-profile 1.3:1.4 test :database
+<div class="highlight"><pre><span></span><code>lein with-profile 1.3:1.4 test :database
 </code></pre></div>
 <p>The above invocations activate the given profiles in place of the defaults. To activate a profile in addition to the defaults, prepend it with a <code>+</code>:</p>
-<div class="highlight"><pre><span></span><code>$ lein with-profile +server run
+<div class="highlight"><pre><span></span><code>lein with-profile +server run
 </code></pre></div>
 <p>You can also use - to deactivate a profile.</p>
 <p>By default all profiles will share the same :target-path, which can cause problems if settings from one profile leak over into another. It's recommended to set :target-path to "target/%s", which will isolate each profile set and prevent anything from bleeding over.</p>
@@ -6025,7 +6025,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

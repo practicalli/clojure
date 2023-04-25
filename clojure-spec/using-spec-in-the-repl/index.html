@@ -5867,20 +5867,26 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 <h1 id="repl-experiments-with-clojure-spec">REPL Experiments with Clojure Spec<a class="headerlink" href="#repl-experiments-with-clojure-spec" title="Permanent link">λ︎</a></h1>
 <p>Run a <a href="/clojure/clojure-cli/repl/">Clojure REPL with a rich terminal UI</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rebel</label><label for="__tabbed_1_2">REPL Reloaded</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rebel</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-M:repl/rebel
-</code></pre></div>
+<p>```bash
+clojure -M:repl/rebel</p>
 </div>
+</div>
+</div>
+<p>```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">REPL Reloaded</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
-</code></pre></div>
+<p>```bash
+clojure -M:repl/reloaded</p>
 </div>
 </div>
 </div>
+<p>```</p>
 <p>Require the <code>clojure.spec.alpha</code> using an alias called <code>spec</code> to use functions from that namespace.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">])</span>
 </code></pre></div>
 <p>Use <code>(in-ns 'namespace.name)</code> if you need to change into a specific namespace.</p>
 <h2 id="spec-auto-completion">Spec auto-completion<a class="headerlink" href="#spec-auto-completion" title="Permanent link">λ︎</a></h2>
@@ -5898,31 +5904,31 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p><code>spec/conform</code> will return the value if it conforms to the specification, or <code>:clojure.spec.alpha/invalid</code> if the data does not conform.</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure Spec - Conform values</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">integer?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">{})</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">integer?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">{})</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <p><code>spec/valid?</code> returns true or false</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure Spec - validate values</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="s">&quot;Am I a valid string&quot;</span><span class="p">)</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">10000</span><span class="p">))</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="s">&quot;Am I a valid string&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">10000</span><span class="p">))</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
 </code></pre></div>
 </div>
 
@@ -5931,7 +5937,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

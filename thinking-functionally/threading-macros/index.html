@@ -5847,13 +5847,15 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">                        </span><span class="p">(</span><span class="nb">re-seq </span><span class="o">#</span><span class="s">&quot;[a-zA-Z0-9|&#39;]+&quot;</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">                                </span><span class="p">(</span><span class="nb">slurp </span><span class="nv">book.txt</span><span class="p">)))))))</span>
 </code></pre></div>
-<p>Reading inside out:
-1. slurp in the contents of the book.txt file, converting it to a string.
-2. use a regular expression to create a new sequence where the book is a sequence of individual strings for each word.
-3. convert each string in the sequence by mapping the lower-case function over each element of the sequence.
-4. remove common english words such as the and and from the sequence.
-5. count how many times each word occurs and pair the string with its frequency in the book.
-6. reverse the order of the sequence by the value of frequency, so the most used word is at the start of the sequence.</p>
+<p>Reading inside out:</p>
+<ol>
+<li>slurp in the contents of the book.txt file, converting it to a string.</li>
+<li>use a regular expression to create a new sequence where the book is a sequence of individual strings for each word.</li>
+<li>convert each string in the sequence by mapping the lower-case function over each element of the sequence.</li>
+<li>remove common english words such as the and and from the sequence.</li>
+<li>count how many times each word occurs and pair the string with its frequency in the book.</li>
+<li>reverse the order of the sequence by the value of frequency, so the most used word is at the start of the sequence.</li>
+</ol>
 <p>This function uses the var <code>common-english-words</code> which is defined as:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="k">def </span><span class="p">(</span><span class="nf">set</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">       </span><span class="p">(</span><span class="nf">clojure.string/split</span><span class="w"> </span><span class="p">(</span><span class="nb">slurp </span><span class="s">&quot;common-english-words.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">#</span><span class="s">&quot;,&quot;</span><span class="w"> </span><span class="p">)))</span>
@@ -5869,12 +5871,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">     </span><span class="nv">reverse</span><span class="p">)</span>
 </code></pre></div>
 <p><code>frequencies</code> and <code>reverse</code> only take one argument, so they do not require surrounding <code>()</code> inside the threading macro.</p>
-<p>The common-english-words var is fairly easy to read, so probably doesn't need to be written using a threading macro, however, for completeness here is a thread-first example.
+<p>The common-english-words var is fairly easy to read, so probably doesn't need to be written using a threading macro, however, for completeness here is a thread-first example.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">common-english-words</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">-&gt; </span><span class="p">(</span><span class="nb">slurp </span><span class="s">&quot;common-english-words.txt&quot;</span><span class="p">)</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">      </span><span class="p">(</span><span class="nf">clojure.string/split</span><span class="w"> </span><span class="o">#</span><span class="s">&quot;,&quot;</span><span class="p">)</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">      </span><span class="nv">set</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <blockquote>
 <h4 id="hintmacroexpand">Hint::Macroexpand<a class="headerlink" href="#hintmacroexpand" title="Permanent link">λ︎</a></h4>
 <p>use <code>macroexpand-1</code> around the threading macro code to show resulting lisp style Clojure code.  Clojure editors also provide evaluation functions that will macroexpand.</p>
@@ -5885,7 +5887,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

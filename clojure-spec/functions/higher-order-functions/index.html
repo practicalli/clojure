@@ -5795,29 +5795,29 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 <h1 id="higher-order-functions">Higher order functions<a class="headerlink" href="#higher-order-functions" title="Permanent link">λ︎</a></h1>
 <p>Higher order functions are common in Clojure and spec provides fspec to support spec’ing them.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">value-added-tax</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">value-added-tax</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">tax-rate</span><span class="p">]</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="p">(</span><span class="nb">* </span><span class="nv">tax-rate</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
 </code></pre></div>
-The value-added-tax function returns an anonymous function that adds the value of tax to the given value.</p>
+<p>The value-added-tax function returns an anonymous function that adds the value of tax to the given value.</p>
 <p>Define a namespace for the page and require Clojure Spec</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
 </code></pre></div>
 <p>Declare a function spec for value-added-tax using <code>clojure.spec.alpha/fspec</code> for the return value:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">s/fdef</span><span class="w"> </span><span class="nv">value-added-tax</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">s/fdef</span><span class="w"> </span><span class="nv">value-added-tax</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="ss">:args</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/cat</span><span class="w"> </span><span class="ss">:tax-rate</span><span class="w"> </span><span class="nv">number?</span><span class="p">)</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="ss">:ret</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/fspec</span><span class="w"> </span><span class="ss">:args</span><span class="w"> </span><span class="p">(</span><span class="nf">s/cat</span><span class="w"> </span><span class="ss">:value</span><span class="w"> </span><span class="nv">number?</span><span class="p">)</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">                </span><span class="ss">:ret</span><span class="w"> </span><span class="nv">number?</span><span class="p">))</span>
 </code></pre></div>
-The <code>:ret</code> specification uses <code>fspec</code> to declare that the returning function takes and returns a number.</p>
+<p>The <code>:ret</code> specification uses <code>fspec</code> to declare that the returning function takes and returns a number.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

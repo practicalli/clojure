@@ -5910,13 +5910,15 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </code></pre></div>
 <blockquote>
 <h4 id="infoa-more-detailed-email-specification">INFO::A more detailed email specification<a class="headerlink" href="#infoa-more-detailed-email-specification" title="Permanent link">λ︎</a></h4>
-<p>Use a regular expression to define the syntax of an email address, eg. <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#101;&#110;&#110;&#121;&#64;&#106;&#101;&#116;&#112;&#97;&#99;&#107;&#46;&#111;&#114;&#103;">&#106;&#101;&#110;&#110;&#121;&#64;&#106;&#101;&#116;&#112;&#97;&#99;&#107;&#46;&#111;&#114;&#103;</a>
+<p>Use a regular expression to define the syntax of an email address, eg. <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#106;&#101;&#110;&#110;&#121;&#64;&#106;&#101;&#116;&#112;&#97;&#99;&#107;&#46;&#111;&#114;&#103;">&#106;&#101;&#110;&#110;&#121;&#64;&#106;&#101;&#116;&#112;&#97;&#99;&#107;&#46;&#111;&#114;&#103;</a></p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::email-address</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/and</span><span class="w"> </span><span class="nv">string?</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="o">#</span><span class="p">(</span><span class="nb">re-matches </span><span class="o">#</span><span class="s">&quot;^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63}$&quot;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">                         </span><span class="nv">%</span><span class="p">)))</span>
 </code></pre></div>
-This specification will require a custom generator</p>
+<blockquote>
+<p>This specification will require a custom generator</p>
 </blockquote>
 <p>A residential address is made from several pieces of information and is defined as a composite specification, from several specifications.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::house-name-number</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/or</span><span class="w"> </span><span class="ss">:string</span><span class="w"> </span><span class="nv">string?</span>
@@ -5936,13 +5938,15 @@ This specification will require a custom generator</p>
 </code></pre></div>
 <blockquote>
 <h4 id="infodetailed-social-security-numbers-would-check-the-different-forms">INFO::Detailed social security numbers would check the different forms<a class="headerlink" href="#infodetailed-social-security-numbers-would-check-the-different-forms" title="Permanent link">λ︎</a></h4>
-<p>Predicate functions can be defined to check for the size of the different social security forms.
+<p>Predicate functions can be defined to check for the size of the different social security forms.</p>
+</blockquote>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">social-security-number-usa?</span><span class="w"> </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">9</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">value</span><span class="p">)))</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">social-security-number-uk?</span><span class="w"> </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">11</span><span class="w"> </span><span class="p">(</span><span class="nb">count </span><span class="nv">value</span><span class="p">)))</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::social-security-id-usa</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/and</span><span class="w"> </span><span class="nb">string? </span><span class="nv">social-security-number-usa?</span><span class="p">))</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::social-security-id-uk</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/and</span><span class="w"> </span><span class="nb">string? </span><span class="nv">social-security-number-uk?</span><span class="p">))</span>
 </code></pre></div>
-These specifications required a custom generator in order to produce correct data each time.</p>
+<blockquote>
+<p>These specifications required a custom generator in order to produce correct data each time.</p>
 </blockquote>
 <p>A general social security specification can now be defined, with one of any of the country specific specifications</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::social-security-id</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/or</span><span class="w"> </span><span class="ss">::social-security-id-uk</span>
@@ -5961,7 +5965,7 @@ These specifications required a custom generator in order to produce correct dat
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

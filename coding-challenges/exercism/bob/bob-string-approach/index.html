@@ -5894,20 +5894,20 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </code></pre></div>
 <h2 id="shouting-at-bob">Shouting at Bob<a class="headerlink" href="#shouting-at-bob" title="Permanent link">λ︎</a></h2>
 <p>Unfortunately the  clojure.string API does not have a function to check if a string is in capital letters.  There is an <code>upper-case</code> function, so a comparison can be made  with the original string and the string returned from <code>clojure.string/upper-case</code>.</p>
-<p>Convert the string to uppercase
+<p>Convert the string to uppercase</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(clojure.string/upper-case &quot;watch out!&quot;)
-</code></pre></div></p>
-<p>compare the uppercase version of the string with the original, if they are equal, then the original string must have been in upper case
+</code></pre></div>
+<p>compare the uppercase version of the string with the original, if they are equal, then the original string must have been in upper case</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;WATCH OUT!&quot;</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">     </span><span class="p">(</span><span class="nf">clojure.string/upper-case</span><span class="w"> </span><span class="s">&quot;WATCH OUT!&quot;</span><span class="p">))</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;watch out!&quot;</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">     </span><span class="p">(</span><span class="nf">clojure.string/upper-case</span><span class="w"> </span><span class="s">&quot;watch out!&quot;</span><span class="p">))</span>
-</code></pre></div></p>
-<p>There is a flaw in this approach thought, as it will give false positives for strings that should return the 'Whatever' response
+</code></pre></div>
+<p>There is a flaw in this approach thought, as it will give false positives for strings that should return the 'Whatever' response</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;1, 2, 3&quot;</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">     </span><span class="p">(</span><span class="nf">clojure.string/upper-case</span><span class="w"> </span><span class="s">&quot;1, 2, 3&quot;</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Refined rule to check that the phrase contains alphabetic characters, otherwise it is not shouting.</p>
 <p>The <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html">java.lang.Character class</a> has a method called <a href="https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#isLetter(char)">isLetter</a> that determines if a character is a letter.</p>
 <blockquote>
@@ -5917,9 +5917,9 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>(Character/isLetter \a)
 </code></pre></div>
 <p>To support all Unicode characters there is an isLetter method that takes an integer type.  As there could be any kind of characters in the phrase, we will use the int version.  This required conversing the character to an int first before calling <code>Character/isLetter</code></p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>(Character/isLetter (int \a))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>(Character/isLetter (int \a))
 </code></pre></div>
-the <a href="https://clojuredocs.org/clojure.core/some"><code>some</code></a> function is used to iterate over all the characters in the phrase. As soon as a letter is found it returns true, so does not need to process the whole phrase unless no letter is found.</p>
+<p>the <a href="https://clojuredocs.org/clojure.core/some"><code>some</code></a> function is used to iterate over all the characters in the phrase. As soon as a letter is found it returns true, so does not need to process the whole phrase unless no letter is found.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>(some #(Character/isLetter (int %)) phrase)
 </code></pre></div>
 <h2 id="silence-of-the-bob">Silence of the Bob<a class="headerlink" href="#silence-of-the-bob" title="Permanent link">λ︎</a></h2>
@@ -5952,7 +5952,7 @@ the <a href="https://clojuredocs.org/clojure.core/some"><code>some</code></a> fu
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

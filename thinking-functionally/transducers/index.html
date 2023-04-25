@@ -5840,17 +5840,17 @@ Pull requests are welcome</p>
 <p>The benefit is, you don't have to implement all standard combinators every time new data source is added. Again and again. As resulting effect you as user are able to reuse those recipes on different data sources.</p>
 <p>Ad Update</p>
 <p>Prior version 1.7 of Clojure you had three ways how to write dataflow queries:</p>
-<p>nested calls
+<p>nested calls</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="w"> </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">))))</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>functional composition</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">comp</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">partial filter </span><span class="nv">odd?</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">partial map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))))</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nf">xform</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">)))</span>
 </code></pre></div>
-threading macro</p>
+<p>threading macro</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="p">(</span><span class="kd">defn </span><span class="nv">xform</span><span class="w"> </span><span class="p">[</span><span class="nv">xs</span><span class="p">]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">xs</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">           </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
@@ -5858,13 +5858,13 @@ threading macro</p>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nf">xform</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">)))</span>
 </code></pre></div>
 <p>With transducers you will write it like:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">comp</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="p">)))</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">(</span><span class="nf">transduce</span><span class="w"> </span><span class="nv">xform</span><span class="w"> </span><span class="nb">+ </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
-They all do the same. The difference is that you never call Transducers directly, you pass them to another function. Transducers know what to do, the function that gets transducer knows how. The order of combinators is like you write it with threading macro (natural order). Now you can reuse xform with channel:</p>
+<p>They all do the same. The difference is that you never call Transducers directly, you pass them to another function. Transducers know what to do, the function that gets transducer knows how. The order of combinators is like you write it with threading macro (natural order). Now you can reuse xform with channel:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">chan</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">xform</span><span class="p">)</span>
 </code></pre></div>
 <h2 id="business-case">Business case<a class="headerlink" href="#business-case" title="Permanent link">λ︎</a></h2>
@@ -5963,7 +5963,7 @@ Besides, it is really powerful when taking subgroups in account as well. For ins
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

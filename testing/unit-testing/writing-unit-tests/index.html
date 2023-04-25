@@ -5920,69 +5920,74 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p><a class="glightbox" href="/images/clojure-unit-test-require-sut.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure Unit Testing - require software under testa using SUT alias" src="/images/clojure-unit-test-require-sut.png" /></a></p>
 <p><a class="glightbox" href="/images/clojure-unit-test-alias-sut.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure Unit Testing - using SUT alias" src="/images/clojure-unit-test-alias-sut.png" /></a></p>
 <p>In the above example it is easy to see which namespaces the functions being tested are from.  The <code>dictionary</code> namespace is a source of data for those tests.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label><label for="__tabbed_1_2">project</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">are</span><span class="w"> </span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]])</span>
-</code></pre></div>
-The namespace under test should be referred using the alias so they are readily identified within the test code.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">practicalli.gameboard.spec</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">gameboard-spec</span><span class="p">])</span>
-</code></pre></div></p>
+<p>```clojure
+(require '[clojure.test :refer [are deftest is testing]])</p>
 </div>
+</div>
+</div>
+<p><code>The namespace under test should be referred using the alias so they are readily identified within the test code.</code>clojure
+    (require '[practicalli.gameboard.spec :as gameboard-spec])
+```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">project</label></div>
+<div class="tabbed-content">
 <div class="tabbed-block">
 <p>Add <code>clojure.test</code> to the namespace definition along with the namespace under test.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.app-namespace-test</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">are</span><span class="w"> </span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]]</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">             </span><span class="p">[</span><span class="nv">practicalli.gameboard.spec</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">gameboard-spec</span><span class="p">]))</span>
-</code></pre></div></p>
+```clojure
+(ns practicalli.app-namespace-test
+  (:require '[clojure.test :refer [are deftest is testing]]
+             [practicalli.gameboard.spec :as gameboard-spec]))</p>
 </div>
 </div>
 </div>
+<p>```</p>
 <h2 id="simple-example">Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">λ︎</a></h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">public-function-in-namespace-test</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;A description of the test&quot;</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nf">public-function</span><span class="w"> </span><span class="nv">arg</span><span class="p">)))</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">predicate-function?</span><span class="w"> </span><span class="nv">arg</span><span class="p">))))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">public-function-in-namespace-test</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;A description of the test&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nf">public-function</span><span class="w"> </span><span class="nv">arg</span><span class="p">)))</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">predicate-function?</span><span class="w"> </span><span class="nv">arg</span><span class="p">))))</span>
 </code></pre></div>
 <h2 id="assertion-data-set">Assertion data set<a class="headerlink" href="#assertion-data-set" title="Permanent link">λ︎</a></h2>
 <p>The <code>are</code> macro can also be used to define assertions, especially when there would otherwise be multiple assertions that only differ by their test data.</p>
 <p>An <code>are</code> assertion defines the arguments to the test, the logic of the test and a series of test data.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">are</span><span class="w"> </span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">              </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">              </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">are</span><span class="w"> </span><span class="p">[</span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">              </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">              </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 <p>This is equivalent to writing</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">         </span><span class="p">(</span><span class="k">do </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">             </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">         </span><span class="p">(</span><span class="k">do </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="nb">+ </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)))</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">             </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="mi">2</span><span class="p">))))</span>
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Refactor test assertion to use data set</p>
 <p>Assertions in the test take the same shape of values, so are candidates to refactor to the <code>are</code> macro.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">encoder-test</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;Tens to number words&quot;</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;ten&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">           </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\1</span><span class="w"> </span><span class="sc">\0</span><span class="p">))))</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;eleven&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">           </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\1</span><span class="w"> </span><span class="sc">\1</span><span class="p">))))</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;twenty&quot;</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">           </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\2</span><span class="w"> </span><span class="sc">\0</span><span class="p">))))</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;twenty&quot;&quot;one&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">           </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\2</span><span class="w"> </span><span class="sc">\1</span><span class="p">))))</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;forty&quot;</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">           </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\4</span><span class="w"> </span><span class="sc">\2</span><span class="p">))))))</span>
-</code></pre></div>
-Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">encoder-test</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;Tens to number words&quot;</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">are</span><span class="w"> </span><span class="p">[</span><span class="nv">words</span><span class="w"> </span><span class="nv">numbers</span><span class="p">]</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">      </span><span class="p">(</span><span class="nb">= </span><span class="nv">words</span><span class="w"> </span><span class="p">(</span><span class="nf">character-sequence-&gt;word-sequence</span><span class="w"> </span><span class="nv">dictionary/digit-&gt;word</span><span class="w"> </span><span class="nv">numbers</span><span class="p">))</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;ten&quot;</span><span class="p">)</span><span class="w">           </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\1</span><span class="w"> </span><span class="sc">\0</span><span class="p">)</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;eleven&quot;</span><span class="p">)</span><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\1</span><span class="w"> </span><span class="sc">\1</span><span class="p">)</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;twenty&quot;</span><span class="w"> </span><span class="s">&quot;zero&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\2</span><span class="w"> </span><span class="sc">\0</span><span class="p">)</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;twenty&quot;&quot;one&quot;</span><span class="p">)</span><span class="w">   </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\2</span><span class="w"> </span><span class="sc">\1</span><span class="p">)</span>
-<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">        </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;zero&quot;</span><span class="w"> </span><span class="s">&quot;forty&quot;</span><span class="w"> </span><span class="s">&quot;two&quot;</span><span class="p">)</span><span class="w">   </span><span class="o">&#39;</span><span class="p">(</span><span class="sc">\0</span><span class="w"> </span><span class="sc">\4</span><span class="w"> </span><span class="sc">\2</span><span class="p">)))</span>
-</code></pre></div></p>
+```clojure
+(deftest encoder-test
+  (testing "Tens to number words"
+    (is (= '("zero" "ten")
+           (character-sequence-&gt;word-sequence dictionary/digit-&gt;word '(\0 \1 \0))))
+    (is (= '("zero" "eleven")
+           (character-sequence-&gt;word-sequence dictionary/digit-&gt;word '(\0 \1 \1))))
+    (is (= '("zero" "twenty" "zero")
+           (character-sequence-&gt;word-sequence dictionary/digit-&gt;word '(\0 \2 \0))))
+    (is (= '("zero" "twenty""one")
+           (character-sequence-&gt;word-sequence dictionary/digit-&gt;word '(\0 \2 \1))))
+    (is (= '("zero" "forty" "two")
+           (character-sequence-&gt;word-sequence dictionary/digit-&gt;word '(\0 \4 \2))))))</p>
 </div>
+<p><code>Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.</code>clojure
+    (deftest encoder-test
+      (testing "Tens to number words"
+        (are [words numbers]
+          (= words (character-sequence-&gt;word-sequence dictionary/digit-&gt;word numbers))
+            '("zero" "ten")           '(\0 \1 \0)
+            '("zero" "eleven")        '(\0 \1 \1)
+            '("zero" "twenty" "zero") '(\0 \2 \0)
+            '("zero" "twenty""one")   '(\0 \2 \1)
+            '("zero" "forty" "two")   '(\0 \4 \2)))
+```</p>
 <div class="admonition hint">
 <p class="admonition-title">Generative Testing provides a wide range of values</p>
 <p><a href="/clojure/clojure-spec/generative-testing/">Generating test data from Clojure Specs</a> provides an extensive set of values that provide an effective way to test functions.</p>
@@ -6001,7 +6006,7 @@ Refactor the assertions using are simplifies the code, making it simpler to chan
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

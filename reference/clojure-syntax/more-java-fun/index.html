@@ -6056,13 +6056,13 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </code></pre></div>
 <p>Of course, you can also use the read and write methods for resources. It doesn't really make much of a difference which you use; spit and slurp are often convenient because they work with just a string representing a filesystem path or a URL.</p>
 <p>The with-open macro is another convenience: it implicitly closes a resource at the end of its body. There's also the reader function, a nice utility which, according to the clojure.java.io api docs, "attempts to coerce its argument to an open java.io.Reader." This is convenient when you don't want to use slurp because you don't want to try to read a resource in its entirety, and you don't want to figure out which Java class you need to use. You could use it along with with-open and the line-seq function if you're trying to read a file one line at a time:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(with-open [todo-list-rdr (clojure.java.io/reader &quot;/tmp/hercules-todo-list&quot;)]
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>(with-open [todo-list-rdr (clojure.java.io/reader &quot;/tmp/hercules-todo-list&quot;)]
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>  (doseq [todo (line-seq todo-list-rdr)]
 <a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    (println todo)))
 <a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>; =&gt; &quot;- wash hair
 <a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>; =&gt;  - charm the multi-headed snake&quot;
 </code></pre></div>
-That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
+<p>That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
 5. Summary</p>
 <p>In this chapter, you learned what it means for Clojure to be hosted on the JVM. Clojure programs get compiled to Java bytecode and executed within a JVM process. Clojure programs also have access to Java libraries, and you can easily interact with them using Clojure's interop facilities.
 6. Resources</p>
@@ -6117,9 +6117,9 @@ That should be enough for you to get started with IO in Clojure. If you're tryin
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>(. (. System (getProperties)) (get &quot;os.name&quot;))
 </code></pre></div>
 <p>but is easier to write, read, and understand. See also the -&gt; macro which can be used similarly:</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>(-&gt; (System/getProperties) (.get &quot;os.name&quot;))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>(-&gt; (System/getProperties) (.get &quot;os.name&quot;))
 </code></pre></div>
-(doto instance-expr (instanceMethodName-symbol args<em>)</em>)
+<p>(doto instance-expr (instanceMethodName-symbol args<em>)</em>)
 Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>(doto (new java.util.HashMap) (.put &quot;a&quot; 1) (.put &quot;b&quot; 2))
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>-&gt; {a=1, b=2}
@@ -6134,13 +6134,13 @@ Macro. Evaluates instance-expr then calls all of the methods/functions with the 
 The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.</p>
 <p>Alternative Macro Syntax</p>
 <p>As shown, in addition to the canonic special form new, Clojure supports special macroexpansion of symbols containing '.':</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>(new Classname args*)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>(new Classname args*)
 </code></pre></div>
-can be written</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>(Classname. args*)
+<p>can be written</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>(Classname. args*)
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>;; note trailing dot
 </code></pre></div>
-the latter expanding into the former at macro expansion time.</p>
+<p>the latter expanding into the former at macro expansion time.</p>
 <p>(instance? Class expr)
 Evaluates expr and tests if it is an instance of the class. Returns true or false</p>
 <p>(set! (. instance-expr instanceFieldName-symbol) expr)
@@ -6328,7 +6328,7 @@ deref.invoke(printLength);</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

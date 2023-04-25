@@ -5833,11 +5833,11 @@ The <code>testing</code> function can be used to group assertions for a particul
 <h2 id="writing-an-assertion">Writing an assertion<a class="headerlink" href="#writing-an-assertion" title="Permanent link">λ︎</a></h2>
 <p>An assertion is where you compare an expected result with the result of calling a function.  If the assertion is true, then then it is a pass.  If the assertion is false, then its a fail.</p>
 <p>The form of an assertion takes a form <code>(is (comparator expected-value function-call))</code></p>
-<p>Some simple examples include
+<p>Some simple examples include</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">42</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="p">)))</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">not= </span><span class="mi">24</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="p">)))</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="defining-a-test">Defining a test<a class="headerlink" href="#defining-a-test" title="Permanent link">λ︎</a></h2>
 <p><code>deftest</code> is used to define a function that will test a similarly named function from the <code>src</code> tree.  The test function name should match the function it is testing with <code>-test</code> added to the end.</p>
 <p><code>testing</code> function allows you to group one or more assertions</p>
@@ -5857,7 +5857,7 @@ The <code>testing</code> function can be used to group assertions for a particul
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

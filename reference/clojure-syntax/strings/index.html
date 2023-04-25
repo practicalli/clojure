@@ -5840,12 +5840,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 
 <h1 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">λ︎</a></h1>
-<p>Strings in Clojure are actually Java Strings.  </p>
+<p>Strings in Clojure are actually Java Strings.</p>
 <blockquote>
 <p><strong>Hint</strong>  Why do you think this design decision was taken for Clojure?</p>
 <p>If you think about the state property of String objects, then you realise that String Objects are immutable and cannot be changed.  As this is the default approach for other data structures and values in Clojure it makes sense to use Java Strings instead of writing a Clojure implementation.</p>
 </blockquote>
-<p>As Clojure strings are Java strings, then you can use all the same functions you can in Java.  </p>
+<p>As Clojure strings are Java strings, then you can use all the same functions you can in Java.</p>
 <blockquote>
 <p><strong>Note</strong> Use the Java function <code>println</code> to output a string</p>
 </blockquote>
@@ -5854,7 +5854,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p><a class="glightbox" href="../images/clojure-playground-println.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Using the println function" src="../images/clojure-playground-println.png" /></a></p>
 <p>Something different happens when you evaluate this expression.  The actual value returned is <code>nil</code>, not the string.  You see the string because println is writing to the console (i.e the REPL).</p>
 <blockquote>
-<p><strong>Hint</strong> Avoid code that creates side-effects where possible to keep your software less complex to understand. </p>
+<p><strong>Hint</strong> Avoid code that creates side-effects where possible to keep your software less complex to understand.</p>
 <p>You may be used to using println statements to help you debug your code, however, with the fast feedback you get from developing in the REPL then there is usually no need for them.</p>
 </blockquote>
 <h2 id="strings-the-clojure-way">Strings the Clojure way<a class="headerlink" href="#strings-the-clojure-way" title="Permanent link">λ︎</a></h2>
@@ -5882,7 +5882,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">(</span><span class="nf">.indexOf</span><span class="w"> </span><span class="s">&quot;Where is the $ in this string&quot;</span><span class="w"> </span><span class="s">&quot;$&quot;</span><span class="p">)</span>
 </code></pre></div>
 <blockquote>
-<p><strong>Hint</strong> Look at the API docs for <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> for other methods you can call. </p>
+<p><strong>Hint</strong> Look at the API docs for <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/String.html">java.lang.String</a> for other methods you can call.</p>
 </blockquote>
 
   <hr>
@@ -5890,7 +5890,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

@@ -5888,9 +5888,10 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:</p>
 <div class="admonition example">
 <p class="admonition-title">JVM Memory Usage Report</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>-XX:+UnlockDiagnosticVMOptions<span class="w"> </span>‑XX:NativeMemoryTracking<span class="o">=</span>summary<span class="w"> </span>‑XX:+PrintNMTStatistics.
-</code></pre></div>
+<p>```bash
+-XX:+UnlockDiagnosticVMOptions ‑XX:NativeMemoryTracking=summary ‑XX:+PrintNMTStatistics.</p>
 </div>
+<p>```</p>
 <h2 id="out-of-memory-errors">Out Of Memory errors<a class="headerlink" href="#out-of-memory-errors" title="Permanent link">λ︎</a></h2>
 <p>When experiencing <code>OutOfMemory</code> errors, consider how the HotSpot JVM should behave if the application runs out of memory.</p>
 <p><code>-XX:+ExitOnOutOfMemoryError</code> - HotSpot JVM exits on the first OutOfMemory error, suitable if the JVM will be automatically restarted (such as in container services)</p>
@@ -5924,7 +5925,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 5, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

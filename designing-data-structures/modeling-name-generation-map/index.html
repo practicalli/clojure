@@ -5900,18 +5900,18 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>You can get the first element of a string by treating it just like a collection.  However this returns a character</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nb">first </span><span class="s">&quot;Strings also act as collections&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>A string can be converted to a keyword, a character cannot
+<p>A string can be converted to a keyword, a character cannot</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">keyword </span><span class="s">&quot;a&quot;</span><span class="p">)</span>
-</code></pre></div></p>
-<p>A character can be converted to a string using the str function
+</code></pre></div>
+<p>A character can be converted to a string using the str function</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nb">str </span><span class="p">(</span><span class="nb">first </span><span class="s">&quot;Strings also act as collections&quot;</span><span class="p">))</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>The keywords need to be the same case, so convert the first character to lower case (which returns a string, so the explicit str function is no longer required.)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">clojure.string/lower-case</span><span class="w"> </span><span class="p">(</span><span class="nb">first </span><span class="s">&quot;Strings also act as collections&quot;</span><span class="p">))</span>
 </code></pre></div>
-<p>Putting it all together.
+<p>Putting it all together.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nb">keyword </span><span class="p">(</span><span class="nf">clojure.string/lower-case</span><span class="w"> </span><span class="p">(</span><span class="nb">first </span><span class="s">&quot;Strings also act as collections&quot;</span><span class="p">)))</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="create-a-function-to-calculate-your-sloane-name">Create a function to calculate your sloane name<a class="headerlink" href="#create-a-function-to-calculate-your-sloane-name" title="Permanent link">λ︎</a></h2>
 <p>Putting all this together in a function to generate your sloan name, given your a string with your first and last name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">sloane-name</span>
@@ -5937,7 +5937,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>

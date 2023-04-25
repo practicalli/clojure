@@ -5984,15 +5984,15 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h2 id="task-run-a-repl-with-additional-dependencies-and-paths">Task: Run a REPL with additional dependencies and paths<a class="headerlink" href="#task-run-a-repl-with-additional-dependencies-and-paths" title="Permanent link">λ︎</a></h2>
 <p><code>clojure -M:alias</code> will run a repl if the alias does not contain a main namespace defined in <code>:main-opts</code>, e.g. <code>:main-opts ["-m" "namespace.main"]</code>.  The deps and path values are included from the alias.</p>
 <p>If the following alias is defined in the project <code>deps.edn</code> file</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ss">:env/dev</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ss">:env/dev</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">{</span><span class="ss">:extra-paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;resources&quot;</span><span class="p">]</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">com.h2database/h2</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.4.200&quot;</span><span class="p">}}}</span>
 </code></pre></div>
-<code>clojure -M:env/dev</code> will add <code>resources</code> directory to the path and the h2 database library to the dependencies, then runs a REPL.</p>
+<p><code>clojure -M:env/dev</code> will add <code>resources</code> directory to the path and the h2 database library to the dependencies, then runs a REPL.</p>
 <p>Including the <code>-r</code> option in the command line forces a REPL to run, even if a main namespace is provided via <code>:main-opts</code> or the command line.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-r</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:alias1:alias2</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-r</span><span class="w"> </span><span class="nv">-M</span><span class="ss">:alias1:alias2</span>
 </code></pre></div>
-The dependencies and paths will be merged from the alias from left to right, with each successive alias over-riding the value of any matching keys in the dependencies.</p>
+<p>The dependencies and paths will be merged from the alias from left to right, with each successive alias over-riding the value of any matching keys in the dependencies.</p>
 <h2 id="task-create-a-new-project-from-template">Task: Create a new project from template<a class="headerlink" href="#task-create-a-new-project-from-template" title="Permanent link">λ︎</a></h2>
 <p>The <code>clj-new</code> community tool can be used to create a Clojure / ClojureScript project, using a template to provide a project structure and example source code and tests.</p>
 <p>Using the <code>:main-opts</code> approach, an alias for <code>clj-new</code> would be defined as follows</p>
@@ -6007,20 +6007,20 @@ The dependencies and paths will be merged from the alias from left to right, wit
 </code></pre></div>
 <p>The latest version of the <code>clj-new</code> project also supports using the <code>-X</code> flag and default arguments.</p>
 <p>Adding the <code>:exec-fn</code> to the <code>clj-new</code> alias, the <code>-X</code> flag can be used instead of the <code>-M</code>.  Arguments are supplied as key/value pairs</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="ss">:project/new</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="ss">:project/new</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.1.215&quot;</span><span class="p">}}</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">   </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new/create</span><span class="p">}</span>
 </code></pre></div>
-Use this alias with the <code>-X</code> flag</p>
+<p>Use this alias with the <code>-X</code> flag</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:project/new<span class="w"> </span>:template<span class="w"> </span>template-name<span class="w"> </span>:name<span class="w"> </span>practicalli/banking-on-clojure
 </code></pre></div>
 <p>Default values can be added using the <code>:exec-args</code> key to the alias</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ss">:project/new</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="ss">:project/new</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">seancorfield/clj-new</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;1.1.215&quot;</span><span class="p">}}</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">clj-new.create</span>
 <a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:template</span><span class="w"> </span><span class="nv">lib</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="nv">practicalli/playground</span><span class="p">}}</span>
 </code></pre></div>
-<code>clojure -M:project/new :name practicalli/awesome-webapp</code> will create a new project using the <code>{:template lib :name practicalli/awesome-webapp}</code> argument.</p>
+<p><code>clojure -M:project/new :name practicalli/awesome-webapp</code> will create a new project using the <code>{:template lib :name practicalli/awesome-webapp}</code> argument.</p>
 <h2 id="task-executing-a-specific-function">Task: Executing a specific function<a class="headerlink" href="#task-executing-a-specific-function" title="Permanent link">λ︎</a></h2>
 <p>Clojure can run a specific function, useful for one off tasks or timed batch processing (via cron or similar tool) as well as complete applications.</p>
 <p>Arguments to the function are passed as a hash-map, defined in either an aliases <code>:exec-args</code> key or as key value pairs on the command line.  Command line key value pairs are merged with the <code>:exec-arg</code> hash-map, replacing the values from the command line if there are matching keys.</p>
@@ -6038,11 +6038,11 @@ Use this alias with the <code>-X</code> flag</p>
 <p><code>clojure -X:database/migrate :database "specs-repository"</code> would merge the command line args with <code>:exec-args</code> to create the hash-map <code>{:db-type "h2" :database "specs-repository"}</code> which is passed to the <code>practicalli.banking-on-clojure.database/migrate</code> function as an argument.</p>
 <h2 id="task-executing-a-range-of-functions">Task: Executing a range of functions<a class="headerlink" href="#task-executing-a-range-of-functions" title="Permanent link">λ︎</a></h2>
 <p><code>:ns-default</code> in an alias defines the namespace that contains the functions that could be executed.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="ss">:aliases</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="ss">:aliases</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:project/run</span>
 <a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">{</span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">practicalli/banking-on-clojure</span><span class="p">}}}</span>
 </code></pre></div>
-Specific functions from the namespace can be called via the command line</p>
+<p>Specific functions from the namespace can be called via the command line</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clojure<span class="w"> </span>-X:project/run<span class="w"> </span>migrate-db<span class="w"> </span>:db-type<span class="w"> </span>h2<span class="w"> </span>:database<span class="w"> </span>banking-on-clojure
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>clojure<span class="w"> </span>-X:project/run<span class="w"> </span>server-start<span class="w"> </span>:port<span class="w"> </span><span class="m">8080</span>
 </code></pre></div>
@@ -6064,19 +6064,19 @@ Specific functions from the namespace can be called via the command line</p>
 <blockquote>
 <p>The <code>-m</code> flag in the CLI tools pre-release returns a warning that <code>-M</code> should be used.</p>
 </blockquote>
-<p>Using <code>-M</code> and <code>-m</code> works, but seems redundant.  Using <code>-M</code> by itself runs the REPL.
+<p>Using <code>-M</code> and <code>-m</code> works, but seems redundant.  Using <code>-M</code> by itself runs the REPL.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>clojure<span class="w"> </span>-M<span class="w"> </span>-m<span class="w"> </span>full.namespace.to.dash-main
-</code></pre></div></p>
+</code></pre></div>
 <p><code>-M</code> seems useful when including an alias with extra configuration (eg. <code>:extra-deps</code>, <code>:extra-paths</code>, <code>:main-opts</code>).  As <code>:main-opts</code> is no different to the <code>-m</code> option, creating an alias just to avoid the warning seems excessive.</p>
 <h2 id="task-executing-a-project-using-edn-style-args">Task: Executing a project - using Edn style args<a class="headerlink" href="#task-executing-a-project-using-edn-style-args" title="Permanent link">λ︎</a></h2>
 <p>Clojure CLI tools is encouraging a move to functions that take a hash-map for their arguments.  Passing arguments in as an edn data structure has more rigor than options and strings on the command line.</p>
-<p>The simplest form is to define an alias to run the project, specifying just the function to execute using <code>:exec-fn</code>
+<p>The simplest form is to define an alias to run the project, specifying just the function to execute using <code>:exec-fn</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w"> </span><span class="ss">:aliases</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project/run</span>
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">practicalli.banking-on-clojure/server-start</span><span class="p">}</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="c1">;; End of Aliases</span>
 </code></pre></div>
-Then the project can be run using this alias.</p>
+<p>Then the project can be run using this alias.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:project/run
 </code></pre></div>
 <p>Arguments can be passed to the function as key/value pairs on the command line.</p>
@@ -6104,16 +6104,16 @@ Then the project can be run using this alias.</p>
 <p>In this example I use the hello-world example from <a href="https://clojure.org/guides/deps_and_cli#_writing_a_program">https://clojure.org/guides/deps_and_cli#_writing_a_program</a>
 A project <code>deps.edn</code> file was created containing the dependency for clojure.java-time and the source code from that page copied into <code>src/hello.clj</code></p>
 <p><code>clojure -m</code> hello runs the project and returns the time from running the -main function.
-However this gives a warning:
+However this gives a warning:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>WARNING:<span class="w"> </span>When<span class="w"> </span>invoking<span class="w"> </span>clojure.main,<span class="w"> </span>use<span class="w"> </span>-M
-</code></pre></div></p>
+</code></pre></div>
 <p><code>clojure -M</code> runs a REPL</p>
 <p><code>clojure -M -m hello</code> runs the project and returns the time.  But then I ask myself what is the purpose of -M</p>
 <p>Creating an alias to run the project seems an interesting idea, as I could also set default arguments.</p>
-<p>Adding an <code>:project-run</code> alias to the project <code>deps.edn</code> works when calling with clojure <code>-M:project-run</code>
+<p>Adding an <code>:project-run</code> alias to the project <code>deps.edn</code> works when calling with clojure <code>-M:project-run</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w"> </span><span class="ss">:aliases</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w"> </span><span class="p">{</span><span class="ss">:project-run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;-m&quot;</span><span class="w"> </span><span class="s">&quot;hello&quot;</span><span class="p">]}}</span>
-</code></pre></div></p>
+</code></pre></div>
 <p>Changing the <code>:project-run</code> alias to use <code>:exec-fn</code> and a fully qualified function (-main by default) should work when calling with <code>clojure -X:project-run</code>.
  :aliases
  {:run-project {:exec-fn hello]}}</p>
@@ -6177,7 +6177,7 @@ However this gives a warning:
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
       
     
   </small>
