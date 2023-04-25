@@ -18,4 +18,3 @@ The following `sum` function will calculate the value of adding all the elements
 ```
 
 Rather than duplicate the calculation, the behaviour of calling `sum` with just a collection simply calls `sum` again, this time passing a starting value of zero.
-

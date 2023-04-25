@@ -10,11 +10,9 @@
 | **User** | `profiles.clj` | add or override individual configuration for the project, not typically shared as part of the project.
 | **User-wide** | `~/.lein/profiles.clj` | common configuration a developer uses across all their Clojure projects.
 
-
   Profiles defined with the same name in any of the above files are either merged or over-written in the following order of precedence to form a single configuration map:
 
 ![Leiningen profiles - order of precedence](../images/clojure-leiningen-configuration-precedence.png)
-
 
 ---
 
@@ -22,10 +20,9 @@
 
 > probably just need a few examples typically added to the different profile files
 
-
 #### Project profiles
 
-  Define one or more profiles specific to the project.  Typically done to seperate configuration for different parts of the development lifecycle, eg. dev, test, production
+  Define one or more profiles specific to the project.  Typically done to separate configuration for different parts of the development lifecycle, eg. dev, test, production
 
 The example below adds a "dummy-data" resources directory during development and a dependency upon "expectations" that's only used for tests/development.
 
@@ -35,10 +32,7 @@ The example below adds a "dummy-data" resources directory during development and
       :profiles {:dev {:resource-paths ["dummy-data"]
                        :dependencies [[expectations "1.4.41"]]}})
 
-
 Use the `lein show-profiles` task to list the project's profiles.
-
-
 
 #### User profiles
 
@@ -46,9 +40,7 @@ Use the `lein show-profiles` task to list the project's profiles.
 
   Create / edit the file `profiles.clj` in the root of the specific Clojure project (the same directory as `project.clj`)
 
-
 Use the `lein show-profiles` task to list the project's profiles.
-
 
 #### User-wide profiles
 
@@ -56,22 +48,16 @@ Use the `lein show-profiles` task to list the project's profiles.
 
   Create / edit the file `~/.lein/profiles.clj`
 
-
-
   Typical things are added to your profile include
 
-  * common development tools (lein-ancient, [slamhound](https://github.com/technomancy/slamhound), etc)
-  * additional directories on the classpath (ie. classes used during testing that are not in any jar file yet)
-
-
-
+* common development tools (lein-ancient, [slamhound](https://github.com/technomancy/slamhound), etc)
+* additional directories on the classpath (ie. classes used during testing that are not in any jar file yet)
 
 #### Declaring Profiles
 
   Profiles specified in `~/.lein/profiles.clj` override profiles in a specific project configuration file, `project.clj`.
 
   Override project configuration without having to change the project.clj file or adding those changes to version control.
-
 
 User-wide profiles can also be specified in ~/.lein/profiles.clj. These will be available in all projects managed by Leiningen, though those profiles will be overridden by profiles of the same name specified in the project. System-wide profiles can be placed in /etc/leiningen/profiles.clj. They are treated the same as user profiles, but with lower precedence.
 
@@ -145,19 +131,19 @@ Another use of profiles is to test against various sets of dependencies:
 
 To activate a different set of profiles for a given task, use the with-profile higher-order task:
 
-    $ lein with-profile 1.3 test :database
+    lein with-profile 1.3 test :database
 
 Multiple profiles may be combined with commas:
 
-    $ lein with-profile qa,user test :database
+    lein with-profile qa,user test :database
 
 Multiple profiles may be executed in series with colons:
 
-    $ lein with-profile 1.3:1.4 test :database
+    lein with-profile 1.3:1.4 test :database
 
 The above invocations activate the given profiles in place of the defaults. To activate a profile in addition to the defaults, prepend it with a `+`:
 
-    $ lein with-profile +server run
+    lein with-profile +server run
 
 You can also use - to deactivate a profile.
 
@@ -185,7 +171,6 @@ Here is an example of such a case:
         :target-path #=(eval (System/getenv "ci.target-path"))}}
 ```
 
-
 #### Debugging
 
 To see how a given profile affects your project map, use the [lein-pprint](https://clojars.org/lein-pprint) plugin:
@@ -206,8 +191,6 @@ $ lein with-profile 1.4 pprint
 ```
 
 In order to prevent profile settings from being propagated to other projects that depend upon yours, the :default profiles are removed from your project when generating the pom, jar, and uberjar, and an :uberjar profile, if present, is included when creating uberjars. (This can be useful if you want to specify a :main namespace for uberjar use without triggering AOT during regular development.) Profiles activated through an explicit with-profile invocation will be preserved.
-
-
 
 #### Production
 

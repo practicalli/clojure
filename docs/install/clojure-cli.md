@@ -8,7 +8,6 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
 
-
 === "Linux"
 
     Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  Add the following to `~/.bashrc` for the bash shell or `~/.zshenv` for Zsh.
@@ -77,9 +76,7 @@ The Clojure CLI automatically downloads all library dependencies, including the 
     scoop install git 7zip pshazz temurin-lts-jdk clj-deps leiningen clj-kondo vscode coreutils windows-terminal
     ```
 
-
 > Reference: [Clojure CLI Install - Clojure.org Getting Started](https://clojure.org/guides/install_clojure){target=_blank} - official guide
-
 
 ## :fontawesome-solid-book-open: Practicalli Clojure CLI Config
 
@@ -89,7 +86,6 @@ Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](htt
 
 ??? HINT "Check Clojure CLI configuration location"
     Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
-
 
 === "Free Desktop XDG CONFIG"
     If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
@@ -109,13 +105,13 @@ Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](htt
     Via SSH
     ```shell
     git clone git@github.com:practicalli/clojure-deps-edn.git $HOME/.clojure
-    ```
+
+```
 
     Via HTTPS
     ```shell
     git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
     ```
-
 
 ## Check Configuration
 
@@ -142,7 +138,6 @@ The output of the command includes the version of Clojure CLI in the `:version` 
 ```
 
 > `clojure -Sversion` will shows the version of Clojure CLI being when the `clojure` command is used to run a REPL or other Clojure command.
-
 
 ## Optional rlwrap readline
 

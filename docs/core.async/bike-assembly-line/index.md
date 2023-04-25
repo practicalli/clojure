@@ -1,8 +1,8 @@
 # core.async scenario: Bike assembly line
 
 > #### TODO::work in progress, sorry
+>
 > Pull requests are welcome
-
 
 In this example we are going to use a bicycle assembly line as the process we want to make concurrent.  The tasks involved in making our bicycle are:
 

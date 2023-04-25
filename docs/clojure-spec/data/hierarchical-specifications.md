@@ -1,11 +1,11 @@
 # Hierarchical Specifications
+
 Defining specifications for data that is hierarchical or nested in nature.
 
 ```clojure
 (ns practicalli.clojure
   (:require [clojure.spec.alpha :as spec]))
 ```
-
 
 ## Example hierarchical data
 
@@ -23,12 +23,12 @@ Defining specifications for data that is hierarchical or nested in nature.
 (spec/def ::last-name string?)
 ```
 
-
 ```clojure
 (spec/def ::residential-address string?)
 ```
 
 ## Composite Specification
+
 `keys` function combines specifications to form a composite specification in the form of a Clojure hash-map.
 
 ```clojure
@@ -37,9 +37,8 @@ Defining specifications for data that is hierarchical or nested in nature.
     :req [::first-name ::last-name ::residential-address]))
 ```
 
-
-
 ## Hierarchical Specification
+
 A user account is composed of a user-id and customer details.  Rather than include the individual customer details, the composite customer-details specification.
 
 The `::user-id` specification is as follows
@@ -49,7 +48,6 @@ The `::user-id` specification is as follows
 ```
 
 The `::user-account` specification
-
 
 ```clojure
 (spec/def ::user-account

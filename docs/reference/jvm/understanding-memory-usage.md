@@ -6,14 +6,13 @@ Allocating additional memory to the HotSpot JVM is a relatively cheap way to imp
 
 Garbage collection cost is in the form of execution pauses while the HotSpot JVM cleans up the no-longer-needed heap allocations.
 
-
 Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:
 
 !!! EXAMPLE "JVM Memory Usage Report"
     ```bash
     -XX:+UnlockDiagnosticVMOptions ‑XX:NativeMemoryTracking=summary ‑XX:+PrintNMTStatistics.
-    ```
 
+```
 
 ## Out Of Memory errors
 
@@ -24,7 +23,6 @@ When experiencing `OutOfMemory` errors, consider how the HotSpot JVM should beha
 `-XX:+HeapDumpOnOutOfMemoryError` - dump contents of heap to file, `<java_pid>.hprof`, to help diagnose memory leaks
 
 `-XX:HeapDumpPath` defines the path for the heap dump, default is current directory
-
 
 ## Choose A Garbage Collector
 
@@ -40,13 +38,11 @@ Other garbage collectors available include:
 
 `-XX:+UseZGC` - ZGC collector scalable low latency garbage collector (experimental in JDK 11, so requires `-XX:+UnlockExperimentalVMOptions`).
 
-
 Enable garbage collection logging
 
 `-Xlog:gc` - basic GC logging
 
 `-Xlog:gc*` - verbose GC logging
-
 
 ## Object Allocation
 
@@ -59,7 +55,6 @@ To avoid premature promotion:
 `-XX:MaxNewSize=n` - maximum size for the young generation
 
 `-XX:MaxTenuringThreshold=n` - maximum number of young-generation collections an object can survive before it is promoted to the old generation
-
 
 ## Just In Time Optimisation
 

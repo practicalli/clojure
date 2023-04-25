@@ -13,4 +13,3 @@ The most frequent use of  you will see is in the `project.clj` file, where a vec
 ```
 
 > **Fixme** Think of an exercise to create a vector of vectors as a data model
-

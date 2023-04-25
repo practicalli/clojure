@@ -8,7 +8,6 @@ Add a CSS library (bulma.io, bootstrap) to improve generation
 
 <!-- TODO: challenge: add Generate web page walk-through and provide example code -->
 
-
 ## Summary
 
 Generating a web page in Clojure shows how easy it is to structure data and transform that data into other structures.

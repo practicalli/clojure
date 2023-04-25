@@ -1,4 +1,5 @@
 # Create a Clojure project
+>
 > #### TODO::work in progress, sorry
 
 Create a project for our game.
@@ -26,7 +27,6 @@ Once the rebel REPL is running, load the project and change to the main namespac
 (in-ns 'practicalli/tictactoe-cli)
 ```
 
-
 {% content "lein" %}
 The default Leiningen template is suitable fine for the project as no additional libraries are used.
 
@@ -35,7 +35,9 @@ lein new tictactoe-cli
 ```
 
 > #### Hint::Alternatively clone the github repository
+>
 > You can also clone the tictactoe-cli game from GitHub
+
 ```bash
 git clone https://github.com/practicalli/tictactoe-cli.git
 ```

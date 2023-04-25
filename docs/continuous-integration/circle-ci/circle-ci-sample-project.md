@@ -37,11 +37,13 @@ The build report shows all the steps that have passed and the details of the ste
 ![Circle CI Dashboard - Luminus project build report](/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png)
 
 > #### Hint::Failing on Java 11
+>
 > The example project only seems to run on Java 8.  Running the project locally with either `lein run` or `lein test`
 
 Edit the `.circleci/config.yml` file in your fork and change the images used to `openjdk-8-lein-2.9.3`.
 
 > #### Hint::Cannot edit configuration via dashboard
+>
 > Apart from the initial creation of the configuration, its not possible to edit the configuration via the dashboard.
 
 Then commit the change to the code in the code repository. Another build will run automatically.

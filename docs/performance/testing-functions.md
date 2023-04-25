@@ -1,6 +1,5 @@
 # Testing Functions
 
-
 ## Adding the Criterium library
 
 Add `[criterium "0.4.4"]` to you `project.clj` file.
@@ -21,7 +20,6 @@ Or simply require criterium in the REPL
 ## Using Criterium to test code
 
 Lets try a few similar Clojure functions to see the Criterium benchmark in action
-
 
 ```clojure
 (let [number 5]
@@ -61,7 +59,6 @@ There is a parallized version of `cond` called `condp`.
   (quick-bench (condp = 5 1 1 2 2 3 3 4 4 5 5)))
 ```
 
-
 ```
 Evaluation count : 3625284 in 6 samples of 604214 calls.
              Execution time mean : 156.813816 ns
@@ -88,7 +85,6 @@ Evaluation count : 3707922 in 6 samples of 617987 calls.
 ```
 
 So using a parallized version of a function adds a significant exectution time.  I believe the extra time is due to setting up a thread.  If so, then when using `condp` you only get a more effective throughput when running multiple parallel threads, which should be fairly obvious.
-
 
 Now lets benchmark a similar function called `case`.  This function is nicely optimised on the JVM especially when the values are sequential, so we should see faster results
 

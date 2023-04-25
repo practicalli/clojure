@@ -8,8 +8,6 @@ Test runners are called from either a Clojure editor, as a command line tool or 
 
 Regularly run tests in a project to ensure implementations and design decisions made so far have not regressed.
 
-
-
 | Test runner                                                                                            | Type      | Summary                                              |
 |--------------------------------------------------------------------------------------------------------|-----------|------------------------------------------------------|
 | cognitect-labs test runner                                                                             | clj       | Simple test runner                                   |
@@ -19,10 +17,8 @@ Regularly run tests in a project to ensure implementations and design decisions 
 
 [:fontawesome-solid-book-open: CIDER test runner](https://practical.li/spacemacs/testing/unit-testing/running-tests/){target=_blank} is ideal if using Emacs for Clojure development, as its build into CIDER.
 
-
 !!! HINT "Practicalli Recommends Kaocha test runner"
     Kaocha is a very feature rich test runner for Clojure and ClojureScript, BDD style cucumber tests, coverage and junit style reporting.
-
 
 !!! INFO ":fontawesome-solid-book-open: Practicalli Clojure CLI Config - test runner aliases"
     [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) contains several aliases for test runners
@@ -35,7 +31,6 @@ Regularly run tests in a project to ensure implementations and design decisions 
     * `:lib/kaocha` adds Kaocha as a library to the class path, enabling Kaocha to run from an editor, e.g. [Emacs Cider with Kaocha test runner](https://practical.li/spacemacs/testing/kaocha-test-runner/)
 
     [Practicalli REPL Reloaded](/clojure/clojure-cli/practicalli-config/) aliases `:repl/reloaded` & `:dev/reloaded` also support Kaocha test runner
-
 
 <!-- ClojureScript specific testing content -->
 <!-- ## ClojureScript testing -->

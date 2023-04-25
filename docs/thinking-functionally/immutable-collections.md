@@ -2,10 +2,9 @@
 
 As we have discussed, immutable data structures cannot be changed.  So when you run a function over a collection a copy of that collection is returned.  Lets see this by running some code in the REPL.
 
-
 > **Note** Define a data structure called `numbers` using a vector.  Then write a function that uses the `map` and `inc` function to increment all the numbers in a vector.
 
-> Then check the current value of the `numbers` data structure by evaluating its name. 
+> Then check the current value of the `numbers` data structure by evaluating its name.
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 ```clojure
@@ -20,7 +19,6 @@ numbers
 ```
 
 <!--endsec-->
-
 
 > **Note** Use the `conj` function to first add the number `5` to the `numbers` vector from the previous exercise and check the value of `numbers`.  Then add the number `6` to the `numbers` vector and check the value of `numbers`.
 
@@ -61,4 +59,3 @@ numbers
 So even though we have applied several functions on the `numbers` data structure it still has the same value.
 
 <!--endsec-->
-

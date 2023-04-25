@@ -5,17 +5,13 @@
 >
 > Open that project in your Clojure editor or run `lein repl` in the top level directory of the project.
 
-
 ## The toy car factory
 
 The toy car factory assembles car parts before distributing them.  How can we make this process faster and more scalable?
 
-
 ## The current process
 
 One worker picks out random parts of a car from the parts box until all the parts are collected to assemble the car.
-
-
 
 ## The `time` macro
 
@@ -27,7 +23,6 @@ A simple example would be:
 (time
   (map inc (range 0 10000)))
 ```
-
 
 ## Timing assembly functions
 
@@ -50,7 +45,6 @@ And to total time it takes to get a a whole car through the assembly line
 ```
 
 The total time can be longer than the sum of the tasks, as the `take-part` function does not always give the required part needed.
-
 
 ## Hiring more workers
 

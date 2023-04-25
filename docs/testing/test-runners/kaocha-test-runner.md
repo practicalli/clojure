@@ -4,7 +4,6 @@
 
 Kaocha is highly configurable via a `tests.edn` configuration file in the root of the project.
 
-
 ## Clojure CLI Config
 
 === "Practicalli Clojure CLI Config"
@@ -53,7 +52,6 @@ Kaocha is highly configurable via a `tests.edn` configuration file in the root o
         ```
 
         Alias definitions should include `:extra-paths ["test"]` to add the `test` directory on the class path, enabling Koacha test runner to find the unit test code.
-
 
 ## Run Kaocha
 
@@ -117,7 +115,6 @@ Kaocha can be run via make tasks, Clojure CLI, or by creating a `kaocha` script.
     ![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-dark.png#only-dark)
     ![Clojure test runner - Kaocha - watch mode - failing test, detect change, passing test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/testing/clojure-test-runner-kaocha-watch-fail-reload-pass-test-output-light.png#only-light)
 
-
 === "Clojure CLI"
     [:fontawesome-solid-book-open:  Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) configuration contains aliases to run kaocha test runner, using either the `-X` or `-M` execution flag.
 
@@ -151,7 +148,6 @@ Kaocha can be run via make tasks, Clojure CLI, or by creating a `kaocha` script.
     kaocha --fail-fast
     ```
 
-
 ## Configuring Kaocha
 
 Kaocha can be configure by options in a `tests.edn` configuration file and options passed via the command line (typically added to the `bin/kaocha` script).
@@ -176,7 +172,6 @@ Use the default configuration as the basis for customising kaocha test runner fo
 
     `:kaocha/watch #profile {:default true :ci false}`
 
-
 ## Plugins
 
 Much of the functionality of Kaocha is provide by plugins
@@ -184,7 +179,6 @@ Much of the functionality of Kaocha is provide by plugins
 * profiling - lists the slowest tests for each test category
 * cucumber - bdd style test
 * junit-xml reports - format used by Continuous Integration servers to display results
-
 
 ### Profiling
 
@@ -194,19 +188,21 @@ Show the 3 slowest tests for each category of test, after the test results
     As a command line option:
     ```shell
     make test-profile
-    ```
+
+```
 
 === "Clojure CLI"
     Pass the profiling plugin as an argument to the Clojure CLI alias using the `-M` (clojure.main) execution option
     ```shell
     clojure -M:test/env:test/run --plugin kaocha.plugin/profiling
-    ```
+```
 
 === "Kaocha Script"
     As a command line option:
     ```shell
     bin/kaocha --plugin kaocha.plugin/profiling
-    ```
+
+```
 
 Or add the profile plugin to the `test.edn` configuration
 
@@ -215,7 +211,6 @@ Or add the profile plugin to the `test.edn` configuration
 {:plugins [:kaocha.plugin/profiling]}
 ```
 
-
 <!-- ## Reporter -->
 <!-- TODO: add exmaples of using kaocha reporter plugin -->
 <!-- ```bash -->
@@ -223,7 +218,6 @@ Or add the profile plugin to the `test.edn` configuration
 <!-- ``` -->
 
 <!-- ![Clojure Unit Test - kaocha test runner plugin report progress](/images/clojure-unit-test-kaocha-plugin-report-progress-results.png) -->
-
 
 ## Example tests.edn
 

@@ -36,6 +36,4 @@ These settings turn on notifications when my tests finish running (:notify-comma
 
 Quick feedback lets you make changes faster. If you’re going to write tests, and you should write tests, having them run quickly is powerful. After years of writing Clojure, this is my current go-to for testing Clojure code and getting extremely fast feedback.
 
-
-
 > I use test-refresh every day. Frankly I'm not sure how one can program effectively without it. I especially like being able to control the notifications

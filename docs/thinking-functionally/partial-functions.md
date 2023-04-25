@@ -2,7 +2,6 @@
 
 Clojure does not support automatic currying, (+3) would result in applying + to 3, resulting with number 3 instead of a function that adds 3 as in Haskell. Therefore, in Clojure we use partial that enables the equivalent behavior.
 
-
 ```clojure
 (defn sum
   "Sum two numbers together"
@@ -56,7 +55,6 @@ We can use the partial function to create a default message that can be just giv
 
 First we would define a function that combines parts of the message together.
 
-
 ```clojure
 (defn join-strings
   "join one or more strings"
@@ -85,7 +83,6 @@ Now we define a name called `wrap-message` that can be used to wrap the start of
  ;; => "Hello Clojurians in London"
 ```
 
-
 ## Currying in clojure
 
 Currying is the process of taking some function that accepts multiple arguments, and turning it into a sequence of functions, each accepting a single argument.  Or put another way, to transform a function with multiple arguments into a chain of single-argument functions.
@@ -98,6 +95,6 @@ Clojure therefore has the partial function gives results similar to currying, ho
 
 One advantage of `partial` is to avoid having to write your own anonymous functions
 
-#  Useful references
+# Useful references
 
 * [Partial function applications for humans](http://andrewberls.com/blog/post/partial-function-application-for-humans)

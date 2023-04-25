@@ -7,7 +7,6 @@ Maps in Clojure are used to model key and value pairs.
 
 Vectors in Clojure are a general data structure that are good for handing any kind of information.
 
-
 > **Note** Define a data structure where each letter of the alphabet is represented by a 6 digit binary code
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->

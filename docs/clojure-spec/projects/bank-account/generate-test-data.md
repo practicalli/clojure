@@ -1,7 +1,9 @@
 ## Generate test data from Specifications
+
 Now there are specifications for the customer-details and account-details, spec can generate random data for use with tests.
 
 ## Add requires to the test namespace
+
 Edit the `src/test/practicalli/banking_on_clojure.clj` and add requires for the `banking-specifications`, `clojure.spec.alpha` and `clojure.spec.test.alpha`.
 
 ```clojure
@@ -14,8 +16,8 @@ Edit the `src/test/practicalli/banking_on_clojure.clj` and add requires for the 
             [practicalli.banking-specifications]))
 ```
 
-
 ## Using Generators to generate data
+
 Test data can now be generated from this specification, creating values for each key in the hash-map.
 
 The ::email-address specification has been simplified, as the regular expression version requires a custom generator (no built in generator to support this specification).  The simplified email specification is:
@@ -25,10 +27,10 @@ The ::email-address specification has been simplified, as the regular expression
 ```
 
 > #### Hint::Libraries for custom generators
+>
 > [gfredericks/test.chuck](https://github.com/gfredericks/test.chuck) is a utility library for test.check and will work with clojure spec as its a wrapper around test.check.
 >
 > [lambdaisland/regal](https://github.com/lambdaisland/regal) also has test.check generators that can be used for regular expressions defined with the regal (hiccup style) syntax.
-
 
 With the simplified email specification, the customer-details specification can be used to generate all the data using the built in clojure.spec.alpha generators.
 
@@ -47,9 +49,7 @@ With the simplified email specification, the customer-details specification can 
       :social-security-id "a7P0xfBNPv6"}
 ```
 
-
 Bind the result of this function to a name and it can be used as mock data throughout the unit tests defined.
-
 
 ```clojure
 (defn customer-details-mock-data
@@ -58,8 +58,8 @@ Bind the result of this function to a name and it can be used as mock data throu
 
 The generated data can also be used with function definitions and `clojure.spec.test.alpha/check` function.
 
-
 ## Generating more than one value for a specification
+
 `clojure.spec.gen.alpha/sample` will generate 10 random values from the specification
 
 ```clojure
@@ -88,11 +88,9 @@ The generated data can also be used with function definitions and `clojure.spec.
 
 Generating multiple result is useful if a collection of customer details is required for testing purposes.
 
-
-
 ## Exercising a specification
-`clojure.spec.test.alpha/exercise` returns pairs of generated and conformed values for a spec. exercise by default produces 10 samples (like sample) but you can pass both functions a number indicating the number of samples to produce.
 
+`clojure.spec.test.alpha/exercise` returns pairs of generated and conformed values for a spec. exercise by default produces 10 samples (like sample) but you can pass both functions a number indicating the number of samples to produce.
 
 ```clojure
 (spec/exercise (spec/cat :practicalli.banking-specifications/first-name :practicalli.banking-specifications/last-name))

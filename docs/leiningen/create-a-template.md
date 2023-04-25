@@ -24,7 +24,6 @@
 
 ![Customised Clojure REPL prompt with welcome message](../images/clojure-leiningen-prompt-custom-simple.png)
 
-
 #### Create a new template
 
   Add the Leining plugin called `lein-create-template` to your user-wide profile by adding the following line to the file `~/.lein/profiles.clj`
@@ -52,6 +51,5 @@
 > **fixme** something has gone wrong with the creation of the template, missing a version number.  Check the files created in the original project and in the ~/.m2 directory.  I wonder if it is because the original project had a snapshot for the version.
 
 ---
-
 
 > **Hint** I created further customisation's to the prompt in the article [add colour to your clojure repl](http://jr0cket.co.uk/2013/08/add-colour-to-your-clojure-repl-with.html.html)

@@ -8,12 +8,9 @@ Should something from outside a function be allowed to affect the result of eval
 
 ![Pure function basic concept](/images/functional-programming-concepts-pure-function.png)
 
-
 So lets look at a simple code example
 
-
 > ####Note::Write a pure function that adds two numbers together ?
-
 
 ```clojure
 (defn add-numbers [number1 number2]
@@ -33,7 +30,6 @@ Lets look at each line of this suggested answer
 ;; specific values are passed as arguments
 (add-numbers 1 2)
 ```
-
 
 # An example with map
 

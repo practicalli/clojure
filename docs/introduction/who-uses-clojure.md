@@ -35,7 +35,6 @@ Here is just a small and diverse set of example companies that I am aware of tha
 
 There are many more examples of projects on the HackerNews thread: [Ask HN: Who's using Clojure in Production](https://news.ycombinator.com/item?id=8549823)
 
-
 ## Tech Radar
 
 Clojure is also defined as a technology that can be adopted since 2014, according to the Thoughtworks technology radar.

@@ -6,7 +6,6 @@ Collections can take any types of elements and types can be mixed.  Collections 
 
 Collections are passed as arguments to function (either in part or in full) and functions often return collections as a result.
 
-
 ## Built-in collections
 
 Values can be represented as a collection of discrete pieces of data: number, string, boolean value.
@@ -26,7 +25,6 @@ Vector and hash-map are the most commonly collections used to model information 
 
 Lists are not explicitly used to model data, although data may be returned by a function as a list (referred to as a sequence)
 
-
 ## Collection Characteristics
 
 Clojure data structure share the following characteristics:
@@ -37,20 +35,17 @@ Clojure data structure share the following characteristics:
 
 This section will cover the Clojure built in persistent data structures in more detail.
 
-## Common Data Sturctures
-
+## Common Data Structures
 
 Simple data
 
 (def name value)
-
 
 Sequential data
 
 (list ...) sequence - always processed sequentially
 
 (vector) sequencw with randon access
-
 
 Dictionary
 
@@ -59,7 +54,6 @@ Dictionary
  key2 value)
 
  Connverting data, data decoder/encoder, state machine, etc
-
 
  Data set
 
@@ -72,9 +66,7 @@ Dictionary
 
  Weather monitoring data, bank transactions, stock exchange rates, etc
 
-
-
-### Hierachical data
+### Hierarchical data
 
 ```clojure
 (def name
@@ -87,7 +79,7 @@ representing state,
 structure of a website
 Starwars example,
 
-walk the hierachy to get the appropriate values
+walk the hierarchy to get the appropriate values
 
 extract only the values required by a function and pass as arguments
 

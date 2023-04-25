@@ -19,6 +19,7 @@ The `#` character tells the Clojure reader that this is the macro form of a func
 ```
 
 > #### Hint::When to use the terse form of anonymous function
+>
 > The terse form is often used with higher order functions, as an argument to a function.
 > If the body of the function is simple to comprehend, then the terse form of anonymous function definition is appropriate.  When the body of a function is more complex, then consider using a separate `defn` function definition.
 
@@ -33,10 +34,12 @@ The `map` function returns a lazy sequence. This is very useful for large data s
 ```
 
 > #### Hint::Lists and vectors - does it matter?
+>
 > Some functions in `clojure.core` will return a sequence using the list syntax, even if the arguments given are vectors.  Most of the time this is not important, as Clojure considers values rather than constructs for most of its functions.
 > For example, `(= ("pig" "cow" "goat" "cat" "dog" "rabbit") ["pig" "cow" "goat" "cat" "dog" "rabbit"])` is true as the values are compared rather than the type of container (list, vector)
 
 ## Using conditionals
+
 Adding sheep as an element raises a problem, as the plural of sheep is sheep.
 
 Using a conditional, a test can be added to determine if a name should be made plural
@@ -107,7 +110,6 @@ Using the terse form of the anonymous function, `#()`, call the pluralise functi
 
 The `partial` function can be used instead of creating an anonymous function, removing the need for more custom code.  The order of the arguments must be swapped for `partial` to call `pluralise` correctly
 
-
 ```
 (defn pluralise
   "Pluralise a given string value"
@@ -128,6 +130,7 @@ The argument that is the non-plural-words is constant, its the individual elemen
 Using partial here is like calling `(pluralise non-plural-words ,,,)` but each time including an element from animals where the `,,,` is.
 
 ## Learning at the REPL
+
 At first I was getting incorrect output, `["deer" "sheep" "shrimp"]`, then I realised that it was returning the non-plural-words instead of pluralised animals.  The arguments from the partial function were being sent in the wrong order.  So I simply changed the order in the pluralise function and it worked.
 
 I checked this by adding some old-fashioned print statement.

@@ -9,4 +9,5 @@
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/)
 
 ## Add dependency
+
 Edit the deps.edn file for the current project

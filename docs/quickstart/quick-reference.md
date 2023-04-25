@@ -15,6 +15,7 @@ The first element in a list, `()`, is treated as a call to a function. This is k
 ```
 
 Functions contain doc-strings and you can ask for a functions documentation, or show the source code.
+
 ```clojure
 (doc doc)
 (source doc)
@@ -41,10 +42,10 @@ Clojure has 4 main collection types, all immutable (cannot change once created) 
 #{1 2 3 4 "unique" "set" "of" "values" "unordered" (* 3 9)}
 ```
 
-
 ## Defining names for values (vars)
 
 Names can be bound to any values, simple values like numbers, collections or functions.  A convenient way to refer to value in your code.
+
 ```clojure
 (def public-health-data
   ({:date "2020-01-01" :confirmed-cases 23014 :recovery-percent 15}
@@ -79,8 +80,8 @@ The above `map` function is roughly equivalent to the following expression
 ```clojure
 (conj [] (inc 1) (inc 2) (inc 3) (inc 4) (inc 5))
 ```
-The `conj` function creates a new collection by combining a collection and one or more values.
 
+The `conj` function creates a new collection by combining a collection and one or more values.
 
 ## Defining custom functions
 
@@ -92,12 +93,12 @@ The `conj` function creates a new collection by combining a collection and one o
 ```
 
 Function definitions can also be used within other expressions, useful for mapping custom functions over a collection
+
 ```clojure
 (fn [x] (* x x))
 
 (map (fn [x] (* x x)) [1 2 3 4 5])
 ```
-
 
 ## Ratio Type
 
@@ -115,7 +116,6 @@ Function definitions can also be used within other expressions, useful for mappi
 
 Using a Ratio means that the mathematical division is not evaluated when using whole numbers (Integers) that would produce a decimal number.  If you do return a decimal number then what precision of decimal are you expecting.  By specifying one or more of the numbers as a decimal value you are giving Clojure a precision to infer and can therefore provide a specific decimal result.
 
-
 ## Java interoperability
 
 `.` and `new` are Clojure functions that create a Java object. This allows you to use values from Java constants, i.e. PI is a static double from the [java.lang.Math](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) object
@@ -124,6 +124,7 @@ Using a Ratio means that the mathematical division is not evaluated when using w
 (. Math PI)
 3.141592653589793
 ```
+
 Also call static and instance methods from Java objects.
 
 ```clojure
@@ -133,12 +134,10 @@ Also call static and instance methods from Java objects.
     "Hello Java Developers")
 ```
 
-
-
-
 ## Recursion
 
 Recursive function
+
 ```clojure
 (defn recursive-counter
   [value]

@@ -1,4 +1,5 @@
 ## Matching sub-sequences
+
 `re-seq` returns a lazy seq of all of the matches. The elements of the seq are the results that `re-find` would return.
 
 ```clojure
@@ -6,9 +7,8 @@
 ```
    <!-- ("e" "ee") -->
 
-
-
 ## Most common word
+
 `re-seq` is used in the most common word challenge to split a string into individual words.
 
 Extract from Project Guttenburg the text of The importance of being Earnest by Oscar Wilde.  This returns a string of the whole book.

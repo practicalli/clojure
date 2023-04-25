@@ -6,7 +6,6 @@ In the 33rd Discworld novel, [Going Postal](https://en.wikipedia.org/wiki/Going_
 
 > The Clacks system was introduced in the 24th Discworld novel called "The Fifth Elephant". "Going Postal" elaborates the full history of the Clacks system.
 
-
 ## The Challenge
 
 Create a Clacks encoder that converts any English language message into its corresponding clacks signal, based on the [Clacks alphabet](https://boardgamegeek.com/image/1670734/clacks-discworld-board-game) as defined by the board game of the same name.
@@ -14,7 +13,6 @@ Create a Clacks encoder that converts any English language message into its corr
 The board game defines the alphabet as a 2 by 3 grid (although in the Discworld its actually 8 large squares).  Naturally, the interpreter also converts the Clacks signal back into an English message too.
 
 ![Terry Pratchett - The Clacks Alphabet](/images/terry-pratchett-clacks-alphabet.png)
-
 
 ## Create a project
 
@@ -25,9 +23,9 @@ clojure -T:project/create :template app :name practicalli/clacks-messenger
 ```
 
 This project has a `deps.edn` file that includes the aliases
+
 - `:test` - includes the `test/` directory in the class path so unit test code is found
 - `:runner` to run the Cognitect Labs test runner which will find and run all unit tests
-
 
 ## Representing a Clack
 
@@ -40,6 +38,7 @@ So a simple expression of the letter a in the clacks alphabet would be:
 ```clojure
 [[0 1 0][0 0 1]]
 ```
+
 Therefore we could define a single letter of our alphabet as follows:
 
 ```clojure
@@ -47,7 +46,6 @@ Therefore we could define a single letter of our alphabet as follows:
 ```
 
 Before defining the complete alphabet using this data structure, test this is the right data structure for the conversion process.
-
 
 ## Test simple conversion
 
@@ -69,7 +67,6 @@ Calling the function converts a string into the corresponding clack
 !!! HINT "Clojure function naming"
     `->` is a naming convention to indicate a function is specifically transforming to a data format.  For example, `json->clj-map` would be a generic function for transforming json to Clojure hash-map
 
-
 The code is simple for a single character, however, would require a lot of redundant code to convert the whole alphabet.  We would need either a deeply nested set of if statements or a very long `cond` function, neither of which seems to be a particularly functional approach or idiomatic Clojure.
 
 If a `cond` statement was used, how would a clacks be converted back into a character?
@@ -77,7 +74,6 @@ If a `cond` statement was used, how would a clacks be converted back into a char
 So perhaps we need to change the data structure, one that provides an easy way to map to values together.
 
 Also, there seems no value in mapping values to a 2x3 grid as long as we consistently express a clack.
-
 
 ## Define the alphabet
 
@@ -102,7 +98,6 @@ Test the design by defining enough letters for the clacks alphabet to convert so
                :b [0 0 1 0 1 0]
                :t [1 0 0 1 1 1]})
 ```
-
 
 ## Testing the map design
 
@@ -131,7 +126,6 @@ And call the function as follows
 ;; => [0 1 0 0 0 1]
 ```
 
-
 ## Converting a word
 
 Now we want to convert a whole word to a clacks sequence.  It seemed the easiest way to convert a whole word was to convert each letter at a time using the map to look up each clack code, returning all the clacks codes in a sequence.
@@ -156,7 +150,6 @@ Now we could convert any word that used the letters of our limited alphabet.  We
 ```
 
 > As we are passing a string and not a keyword to the `clacksify` function, then we first convert the string to a keyword using the `keyword` function.
-
 
 ## Converting the clack to a string
 
@@ -198,7 +191,6 @@ So calling these functions with a clacks
 
 > At this point you may be thinking that using keywords to represent the characters of the alphabet may not be the most effective.  Using keywords has required more code to be written, adding to the complexity of the solution.
 
-
 ## Tidy output
 
 `clacks->string` function returns the right result, but not quite in the format required.  Rather than a single string a sequence of characters is returned.
@@ -212,14 +204,12 @@ Using the `map` function we can apply the `str` function over the resulting char
 
 Using `clojure.string/join` is a more idiomatic approach to converting a sequence of characters to a string
 
-
 ```clojure
 (require '[clojure.string :as string])
 
 (defn clacks->string [clacks]
   (string/join (map declacksify clacks)))
 ```
-
 
 ## Refactor dictionary design
 
@@ -231,14 +221,13 @@ Refactor the dictionary to use a string for each character as the keys in the ma
 
 ```clojure
 (def dictionary
-  {"a"		[0 1 1 0 0 0 0 1]
-   "b"		[0 1 1 0 0 0 1 0]
-   "c"		[0 1 1 0 0 0 1 1]
-   "d"		[0 1 1 0 0 1 0 0]
-   "e"		[0 1 1 0 0 1 0 1]
+  {"a"  [0 1 1 0 0 0 0 1]
+   "b"  [0 1 1 0 0 0 1 0]
+   "c"  [0 1 1 0 0 0 1 1]
+   "d"  [0 1 1 0 0 1 0 0]
+   "e"  [0 1 1 0 0 1 0 1]
    ,,,})
 ```
-
 
 ## Refactor namespace
 
@@ -248,11 +237,11 @@ Use a more specific name for the dictionary, describing what languages the dicti
 
 ```clojure
 (def english->clacks
-  {"a"		[0 1 1 0 0 0 0 1]
-   "b"		[0 1 1 0 0 0 1 0]
-   "c"		[0 1 1 0 0 0 1 1]
-   "d"		[0 1 1 0 0 1 0 0]
-   "e"		[0 1 1 0 0 1 0 1]
+  {"a"  [0 1 1 0 0 0 0 1]
+   "b"  [0 1 1 0 0 0 1 0]
+   "c"  [0 1 1 0 0 0 1 1]
+   "d"  [0 1 1 0 0 1 0 0]
+   "e"  [0 1 1 0 0 1 0 1]
    ,,,})
 ```
 
@@ -282,8 +271,8 @@ Also require `clojure.string` using the alias `string` to use the join function.
             [clojure.string :as string]))
 ```
 
-
 ## Removing side effects
+
 Designing pure functions, those that receive all their data via arguments, is a common way to remove [side effects](/thinking-functionally/side-effects.html).
 
 Include the dictionary as an argument to each of the functions.  This ensures that each function is pure and prevents side effects (side causes).

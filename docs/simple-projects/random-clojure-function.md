@@ -10,18 +10,16 @@ There are 659 functions in [`clojure.core` namespace](https://clojuredocs.org/cl
 ??? EXAMPLE "Project: Random Clojure function"
     [:fontawesome-brands-github: practicalli/random-clojure-function](https://github.com/practicalli/random-clojure-function){target=_blank} repository contains a Clojure project with an example solution
 
-
 ## Live Coding Video walk-through
 
 A [Live coding video walk-through of this project](https://youtu.be/sXZKrD4cAFk) shows how this application was developed, using Spacemacs editor and CircleCI for continuous integration.
 
 ??? HINT " -M flag superseeds -A flag"
-    The `-M` flag replaced the `-A` flag when running code via `clojure.main`, e.g. when an alias containes `:main-opts`.  The `-A` flag should be used only for the specific case of including an alias when starting the Clojure CLI built-in REPL.
+    The `-M` flag replaced the `-A` flag when running code via `clojure.main`, e.g. when an alias contains `:main-opts`.  The `-A` flag should be used only for the specific case of including an alias when starting the Clojure CLI built-in REPL.
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sXZKrD4cAFk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Create a project
 
@@ -32,12 +30,13 @@ clojure -T:project/create :template app :name practicalli/random-function
 ```
 
 This project has a `deps.edn` file that includes the aliases
+
 - `:test` - includes the `test/` directory in the class path so unit test code is found
 - `:runner` to run the Cognitect Labs test runner which will find and run all unit tests
 
 ## REPL experiments
 
-Open the project in a Clojure-aware editor or start a Rebel terminal UI REPL 
+Open the project in a Clojure-aware editor or start a Rebel terminal UI REPL
 
 === "Clojure Editor"
     Open the `src/practicalli/random-function.clj` file in a Clojure aware editor and start a REPL process (jack-in)
@@ -74,12 +73,12 @@ Open the project in a Clojure-aware editor or start a Rebel terminal UI REPL
     !!! HINT "Copy finished code into the source code files"
         Assuming the code should be kept after the REPL is closed, save the finished versions of function definitions into the source code files.  Use ++arrow-up++ and ++arrow-down++ keys at the REPL prompt to navigate the history of expressions
 
-
 List all the public functions in the `clojure.core` namespace using the `ns-publics` function
 
 ```clojure
 (ns-publics 'clojure.core)
 ```
+
 The hash-map keys are function symbols and the values are the function vars
 
 ```clojure
@@ -129,7 +128,6 @@ A single function var is returned, so then the specific meta data can be returne
 (meta (rand-nth (vals (ns-publics 'clojure.core))))
 ```
 
-
 ## Define a name for all functions
 
 Edit the `src/practicalli/random-function.clj` file and define a name for the collection of all public functions from `clojure.core`
@@ -161,7 +159,6 @@ The second test checks the -main function returns a string (the function name an
     (is (string? (random-fn/-main)))))
 ```
 
-
 ## Update the main function
 
 Edit the `src/practicalli/random-function.clj` file.  Change the `-main` function to return a string of the function name and description.
@@ -179,23 +176,24 @@ Edit the `src/practicalli/random-function.clj` file.  Change the `-main` functio
     Run the tests with the Congnitect test runner via the `test` function in the `build.clj` file.
     ```bash
     clojure -T:build test
-    ```
+
+```
 
 === "Kaocha Test Runner"
     Run the tests with the Kaocha test runner using the alias `:test/run` from [Practicalli Clojure CLI config](/clojure/clojure-cli/practialli-config/)
     ```bash
     clojure -M:test/run
-    ```
-
+```
 
 ## Running the application
 
 Use the clojure command with the main namespace of the application.  Clojure will look for the -main function and evaluate it.
+
 ```bash
 clojure -M -m practicalli.random-function
 ```
-This should return a random function name and its description.  However, nothing is returned.  Time to refactor the code.
 
+This should return a random function name and its description.  However, nothing is returned.  Time to refactor the code.
 
 ## Improving the code
 
@@ -241,10 +239,11 @@ If the tests pass, then run the application again
 ```bash
  clojure -M -m practicalli.random-function
 ```
+
 A random function and its description are displayed.
 
-
 ## Adding the function signature
+
 Edit the `random-function` code and add the function signature to the string returned by the application.
 
 Format the code so it is in the same structure of the output it produces, making the code clearer to understand.
@@ -258,13 +257,14 @@ Format the code so it is in the same structure of the output it produces, making
     "\n  " (function-details :arglists))))
 ```
 
-
 ## Add more namespaces
+
 All current namespaces on the classpath can be retrieved using the `all-ns` function.  This returns a lazy-seq, `(type (all-ns))`
 
 ```clojure
 (all-ns)
 ```
+
 Using the list of namespace the `ns-publics` can retrieve all functions across all namespaces.
 
 Create a helper function to get the functions from a namespace, as this is going to be used in several places.
@@ -288,7 +288,6 @@ Bind the results of this expression to the name `all-public-functions`.
   (mapcat #(vals (ns-publics %)) (all-ns)))
 ```
 
-
 ## Control which namespaces are consulted
 
 There is no way to control which library we get the functions from, limiting the ability of our application.
@@ -300,6 +299,7 @@ Refactor the main namespace to act differently based on arguments passed:
 2. If any argument is passed, the argument should be used as the namespace to pull a random function from.  The argument is assumed to be a string.
 
 `ns-publics` function needs a namespace as a symbol, so the `symbol` function is used to convert the argument.
+
 ```clojure
 (symbol "clojure.string")
 ```
@@ -328,7 +328,6 @@ Else return all the functions from all the namespaces.
     (println (random-function (mapcat #(function-list (symbol %)) args)))
     (println (random-function standard-library-functions))))
 ```
-
 
 ## Use the fully qualified name for the namespace
 
@@ -359,7 +358,6 @@ Define a name to represent the collection of all available namespaces, in the co
   (mapcat #(vals (ns-publics %)) (all-ns)))
 ```
 
-
 Update the `-main` function to use all available namespaces if no arguments are passed to the main function.
 
 ```clojure
@@ -372,19 +370,15 @@ Update the `-main` function to use all available namespaces if no arguments are 
     (println (random-function all-public-functions))))
 ```
 
-
 ## Follow-on idea: Convert to a web service
 
 Add http-kit server and send  information back as a plain text, html, json and edn
-
 
 ## Follow-on idea: Convert to a library
 
 Convert the project to a library so this feature can be used as a development tool for any project.
 
 Add functionality to list all functions from all namespaces or a specific namespace, or functions from all namespaces of a particular domain, e.g `practicalli` or `practicalli.app`
-
-
 
 <!-- > #### Hint::Evaluating namespaces on REPL start -->
 <!-- > The REPL does not evaluate project code on start-up.  If it did and that code had a error, it may prevent the REPL from starting. -->

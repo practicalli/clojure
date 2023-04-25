@@ -4,12 +4,7 @@ Data structures in Clojure are used to model information and data, within a part
 
 Lets look at some of the common functions that are used in Clojure with data structures
 
-
-
-
-
 > **fixme** the below content is work in progress, sorry.
-
 
 # Managing Return values
 
@@ -39,9 +34,6 @@ You can get the value of this map
 
 (get luke :skill)
 ```
-
-
-
 
 ## Immutability
 
@@ -102,7 +94,6 @@ name1
 > You have the number 2.  If you add 1 to 2, what value is the number 2?
 > The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return
 
-
 # Creating new data structures
 
 Use concat to add lists or vectors together
@@ -133,8 +124,6 @@ Reduce can take an initial-value argument too
 ; = (conj (conj (conj [] 3) 2) 1)
 ; => [3 2 1]
 ```
-
-
 
 Use cons to add an item to the beginning of a list or vector
 

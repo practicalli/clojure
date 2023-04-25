@@ -14,7 +14,6 @@ Spec is included in Clojure [version 1.9](https://clojure.org/news/2017/12/08/cl
 
 [What is Clojure spec - an illustrated guide](https://www.pixelated-noise.com/blog/2020/09/10/what-spec-is/){target=_blank .md-button}
 
-
 ## Purpose of Clojure spec
 
 A summary highlighting the common purposes that Clojure Spec is used for
@@ -29,14 +28,11 @@ A summary highlighting the common purposes that Clojure Spec is used for
 | Development time checking       | Instrument functions to ensure correctness                                                   |
 | Derive code from specifications | Specify a system of record for data structures, internal and external to the system.         |
 
-
-
 ## Example use cases
 
 * API requests (schema is often used here, but so can spec)
 * Checking data pulled from / pushed to message systems (e.g. Kafka, TIBCO)
 * Data specifications (eg. Vega-lite)
-
 
 ## Example code
 
@@ -44,13 +40,11 @@ A summary highlighting the common purposes that Clojure Spec is used for
 
 [practicalli/leveraging-spec](https://github.com/practicalli/leveraging-spec){target=_blank} - basic examples of using spec, following the [Practicalli Spec broadcasts](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiBWGAuncfBRYhZtY5-Bp75s){target=_blank}
 
-
 ## Understanding the basics of Clojure Spec
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rj7Wsw4VFI0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Trying clojure.spec
 
@@ -60,18 +54,15 @@ Follow the examples in these two excellent videos
 <iframe width="560" height="315" src="https://www.youtube.com/embed/nqY4nUMfus8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/W6crrbF7s2s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Why is the spec library called alpha?
 
 The library is called `clojure.spec.alpha` as the design of spec is still evolving and there may be some changes to the design in later versions.  Clojure aims for backwards compatibility, so new versions typically do not break existing use of libraries.
 
 There are some important changes being developed for spec version 2 and a few things may change, however, the large majority of Spec will remain the same and is safe to use.
-
 
 ## References
 

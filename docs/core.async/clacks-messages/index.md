@@ -1,8 +1,8 @@
 # Clacks Messenger with core.async
 
 > #### TODO::work in progress, sorry
+>
 > Pull requests are welcome
-
 
 In a previous exercise we built a simple encoder/decoder to send messages via the Clacks message service (as designed by Sir Terry Pratchett, RIP).
 

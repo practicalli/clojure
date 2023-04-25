@@ -16,7 +16,6 @@ The instructions provide some basic rules:
 
 It is important to also read through the supplied unit tests to elaborate on these rules.
 
-
 ## Create the project
 
 Download the Bob transcription exercise using the exercism CLI tool
@@ -26,7 +25,6 @@ exercism download --exercise=bob --track=clojure
 ```
 
 > To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
-
 
 ## Rules derived from the Unit tests
 
@@ -44,7 +42,6 @@ Each rule also had to ensure it did not create any false positives by being true
 | silence           | The phrase is empty or contains characters that are not alphanumeric                    |
 | whatever          | Any phrase that does not match any of the other rules                                   |
 
-
 ## Design approach
 
 There are two main approaches to solving this challenge.  The first is to use the [`clojure.string`](https://clojure.github.io/clojure/clojure.string-api.html) functions to check or transform the phrase given to Bob.  The second approach is to use [regular expressions](/reference/standard-library/regular-expressions) with functions such as [`re-seq`](https://clojuredocs.org/clojure.core/re-seq), [`re-find`](https://clojuredocs.org/clojure.core/re-find) and [`re-matches`](https://clojuredocs.org/clojure.core/re-matches).
@@ -55,10 +52,8 @@ Use a `let` expression to bind a name to each rule, e.g. `shouting?`, `question?
 
 Once you have tried this challenge for yourself, take a look at the design journal for the [clojure.string approach](bob-string-approach.md) and the [regular expression approach](bob-regular-expression-approach.md).
 
-
 [Bob - clojure.string approach](bob-string-approach.md){.md-button}
 [Bob - regular expression approach](bob-regular-expression-approach.md){.md-button}
-
 
 <!-- ## Design Review -->
 

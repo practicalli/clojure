@@ -10,9 +10,7 @@ clojure -M:repl/rebel
 
 Once rebel has started a prompt will be displayed.
 
-
 First required the main namespace, containing the functions of the application.  This loads the code in that namespace into the REPL.
-
 
 ```clojure
 (require 'practicalli.banking-on-clojure)
@@ -24,9 +22,7 @@ Now add the specifications for the project
 (require 'practicalli.banking-on-clojure)
 ```
 
-
 ? When does the TAB completion start to work ?
-
 
 Testing the specifications
 
@@ -42,7 +38,6 @@ Generate sample data from the specifications
 (spec-gen/sample (spec/gen ::account-id))
 ```
 
-
 The function specifications and the instrument functions are loaded from the requires, so test by calling the instrumented functions, first with bad data and then with correct data.
 
 ```clojure
@@ -51,14 +46,11 @@ The function specifications and the instrument functions are loaded from the req
 
 Use the specifications to generate good data
 
-
 ```clojure
 (register-account-holder ::customer-details)
 ```
 
-
 Run generative tests on functions to check the return and fn values
-
 
 ```clojure
 (spec-test/check `register-account-holder)

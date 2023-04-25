@@ -2,7 +2,6 @@
 
 Functions to create and work with the Clojure sequences, including lists and sequence generators
 
-
 ## Sequence access
 
 | Function  | Description |
@@ -13,7 +12,6 @@ Functions to create and work with the Clojure sequences, including lists and seq
 | `last`    |             |
 | `butlast` |             |
 | `nth`     |             |
-
 
 ## Infinite sequence generators
 

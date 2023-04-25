@@ -1,7 +1,7 @@
 # Calling Functions
 
-  To call a function in Clojure you use the name of the function as the first element of a list.  
-  
+  To call a function in Clojure you use the name of the function as the first element of a list.
+
   In this simple example, a function is defined that takes no arguments, then that function is called.
 
 ```clojure
@@ -11,14 +11,13 @@
 (my-function)
 ```
 
-  Functions can be defined to take arguments. 
+  Functions can be defined to take arguments.
 
-## Arity 
+## Arity
 
-  This is the term to describe the number of arguments a function takes.  This can be a fixed number or variable number of arguments.  
-  
+  This is the term to describe the number of arguments a function takes.  This can be a fixed number or variable number of arguments.
+
   Simple polymorphism can also be used to have one function take different numbers of arguments, as with the `multi-arity` function in the examples below.
-
 
 ```clojure
 (defn single-arity [] 

@@ -1,4 +1,5 @@
 # Generators for predicate specifications
+
 Specifications are used to generate a wide range of random data.  A generator for the specification is obtained and then data is generated.
 
 <!-- Klipse reagent include to generate SVG graphics - hidden as not relevant at this point -->
@@ -11,8 +12,6 @@ Specifications are used to generate a wide range of random data.  A generator fo
               [clojure.spec.test.alpha :as spec-test]))">
   </code>
 </pre>
-
-
 
 ## Predicate generators
 

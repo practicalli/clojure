@@ -2,7 +2,7 @@
 
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing or in production systems.
 
-A Terminal UI provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results.  A terminal UI is most useful for expressions for longer running processes or for a convienient way to interact with the REPL state and manage components.
+A Terminal UI provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results.  A terminal UI is most useful for expressions for longer running processes or for a convenient way to interact with the REPL state and manage components.
 
 Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process, providing a more effective way to write and extend Clojure code.
 
@@ -11,7 +11,6 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U19TWMsg0s0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Install rebel readline
 
@@ -22,8 +21,8 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
     ```clojure
     :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                  :main-opts  ["-m" "rebel-readline.main"]}
-    ```
 
+```
 
 ## Running the rebel REPL
 
@@ -43,7 +42,6 @@ Evaluate Clojure code by typing at the `=> user` prompt pressing `Return`, the r
 `:repl/quit` as the prompt will end the REPL session and all changes not saved to a file will be lost.
 
 > ++ctrl+"c"++ if the repl process does not return to the shell prompt.
-
 
 # Customize Rebel Readline
 
@@ -72,17 +70,14 @@ Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/c
                    bindings have been applied
 ```
 
-
 For example, to change the default keybindings to vi:
 
 ```
 {:key-map :viins}
 ```
 
-
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark)
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light)
-
 
 ## Basic REPL
 
@@ -103,7 +98,8 @@ Including an nREPL server when starting the REPL allows [clojure ware editors](/
      :main-opts  ["-m" "nrepl.cmdline"
                   "--middleware" "[cider.nrepl/cider-middleware]"
                   "--interactive"]}
-    ```
+
+```
 
     Headless REPL with nREPL server for Clojure Editor support
     ```clojure

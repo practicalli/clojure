@@ -5,12 +5,13 @@ Run a [Clojure REPL with a rich terminal UI](/clojure/clojure-cli/repl/)
 === "Rebel"
     ```bash
     clojure -M:repl/rebel
-    ```
+
+```
 
 === "REPL Reloaded"
     ```bash
     clojure -M:repl/reloaded
-    ```
+```
 
 Require the `clojure.spec.alpha` using an alias called `spec` to use functions from that namespace.
 
@@ -19,7 +20,6 @@ Require the `clojure.spec.alpha` using an alias called `spec` to use functions f
 ```
 
 Use `(in-ns 'namespace.name)` if you need to change into a specific namespace.
-
 
 ## Spec auto-completion
 
@@ -33,13 +33,11 @@ Typing a space character after the full name of a function shows the function si
 
 ![Clojure REPL - rebel readline spec conform function signature](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/cloure-repl-rebel-readline-spec-function-help-conform.png)
 
-
 ## Check data conforms to the specification
 
 Use the `spec/conform` and `spec/valid?` functions to test if data matches a specification.  In these examples, predicate functions are used as a specification.
 
 ![Clojure REPL - rebel readline spec examples](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-readline-spec-examples-conform-valid.png)
-
 
 ## Examples
 

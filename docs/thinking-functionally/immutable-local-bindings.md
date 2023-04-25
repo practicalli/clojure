@@ -4,7 +4,6 @@ Names can be bound to values & and data structures with either the `def` or `let
 
 > **Hint** The `let` function is typically used to define names within a function definition, or in snippets of code created during repl driven development.
 
-
 ```clojure
 
 (let [five 5]
@@ -15,7 +14,6 @@ Names can be bound to values & and data structures with either the `def` or `let
 five
 ;; => Unable to resolve symbol: five in this context
 ```
-
 
 > **Note** Create a local binding called number that represents the value 5 using the `let` function. Increment the number, then print out the value of number.
 

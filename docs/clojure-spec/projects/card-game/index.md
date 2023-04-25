@@ -4,7 +4,6 @@ Define a data specification that represent a deck of playing cards, adding funct
 
 spec generators are used to return varied sample data from those specifications. Function definitions are instrumented and check for correct arguments when those functions are called.
 
-
 ## Create a new project
 
 Create a new Clojure project using `:project/create` from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) or add an alias definition of your choosing to the Clojure CLI user configuration.
@@ -19,7 +18,6 @@ Open the `src/practicalli/card_game.clj` file and require the `clojure.spec.alph
 (ns practicalli.card-game.clj
   (:require [clojure.spec.alpha :as spec]))
 ```
-
 
 ## Playing card specifications
 
@@ -61,10 +59,8 @@ A composite specification called `::card-suits` provides a simple abstraction ov
            :international ::suits-international))
 ```
 
-
 <!-- TODO: check if a deck contains 4 suits -->
 <!-- TODO: check if a deck is one of the regions above -->
-
 
 ### Define an alias
 
@@ -82,7 +78,6 @@ Any value that conforms to the `::face-card` specification also conforms to the 
 ```clojure
 (spec/conform ::court-cards :ace)
 ```
-
 
 ### Playing card rank
 
@@ -105,8 +100,8 @@ The `::rank` specification now generates all the possible values for playing car
 ```clojure
 (spec/def ::rank (into #{:ace :jack :queen :king} (range 2 11)))
 ```
-The specification only checks to see if a value is in the set, the order of the values in the set is irrelevant.
 
+The specification only checks to see if a value is in the set, the order of the values in the set is irrelevant.
 
 ### Playing Card
 
@@ -119,10 +114,10 @@ Clojure spec has a `tuple` function, however, we need to define some predicates 
 ```
 
 Use the spec with values to see if they conform.  Try you own values for a playing card.
+
 ```clojure
 (spec/conform ::playing-card [:ace :spades])
 ```
-
 
 ### Game specs
 
@@ -148,7 +143,6 @@ A player is represented by a hash-map that contains their name, score and the ha
             :req [::name ::score ::dealt-hand]))
 ```
 
-
 ### Game deck specs
 
 A card game has a deck of 52 cards, one card for each combination of suit and rank.
@@ -170,7 +164,6 @@ A game is represented by a hash-map with a collection of players and a card deck
 ```clojure
 (spec/def ::game (spec/keys :req [::players ::card-deck]))
 ```
-
 
 ## Generative data from Specifications
 
@@ -210,7 +203,6 @@ To generated data based on a specification, first get a generator for a given sp
 (spec-gen/sample (spec/gen ::rank))
 ```
 
-
 ### Card Game data
 
 Generate a random value for the `::player` specification
@@ -226,8 +218,8 @@ Generate a random value for the `::player` specification
     {:name "Yp34KE63vAL1eriKN4cBt",
      :score 225,
      :dealt-hand ([9 :hearts] [4 :clubs] [8 :hearts] [10 :clubs] [:queen :spades] [3 :clubs] [6 :hearts] [8 :hearts] [7 :diamonds] [:king :spades] [:ace :diamonds] [2 :hearts] [4 :spades] [2 :clubs] [6 :clubs] [8 :diamonds] [6 :spades] [5 :spades] [:queen :clubs] [:queen :hearts] [6 :spades])}
-    ```
 
+```
 
 Generate a random value for the `::game` specification
 
@@ -240,7 +232,6 @@ Generate a collection of random values that each conform to the specification.
 ```clojure
 (spec-gen/sample (spec/gen ::game))
 ```
-
 
 ## Function Specifications
 
@@ -266,7 +257,6 @@ The specifications for the function may be composed from previously defined data
 (spec/def ::players (spec/* ::player))
 (spec/def ::game (spec/keys :req [::players ::card-deck]))
 ```
-
 
 ### Function definition
 
@@ -308,14 +298,13 @@ At the start of function design, the algorithm may still be undefined.  Using th
        :dealt-hand [[9 :hearts] [4 :clubs] [8 :hearts] [10 :clubs] [:queen :spades]]}
     ```
 
-
 ### Spec definitions
 
 Define a function specification for the `deal-cards` function
 
-- argument must be of type `::game`
-- return type is `::game`
-- function applies arguments to a game and returns the game
+* argument must be of type `::game`
+* return type is `::game`
+* function applies arguments to a game and returns the game
 
 ```clojure
 (spec/fdef deal-cards
@@ -327,15 +316,14 @@ Define a function specification for the `deal-cards` function
 
 Define a function specification for the `winning-player` function
 
-- argument must be of type `::players`
-- return type is `::players`
+* argument must be of type `::players`
+* return type is `::players`
 
 ```clojure
 (spec/fdef winning-player
   :args (spec/cat :players ::players)
   :ret ::player)
 ```
-
 
 ## Instrument functions
 
@@ -369,7 +357,6 @@ ERROR: #error
  :cljs.spec.alpha/args ("fake game data"),
  :cljs.spec.alpha/failure :instrument}}
 ```
-
 
 ### Organizing function instrumentation
 

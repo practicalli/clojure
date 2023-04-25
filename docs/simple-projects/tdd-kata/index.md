@@ -4,7 +4,6 @@ A kata is a small challenge that you attempt to solve in different ways, so expe
 
 Kata are often coupled with Test Driven Development approach.
 
-
 | Project                                           | Topics | Overview                                               |
 |---------------------------------------------------|--------|--------------------------------------------------------|
 | [Recent song-list](recent-song-list.md)           | TDD    | Keep a list of recent songs played, without duplicates |

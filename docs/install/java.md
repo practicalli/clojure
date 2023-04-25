@@ -2,7 +2,6 @@
 
 Java is a host platform for Clojure, on which Clojure projects and tools run.  [No experience of Java or its platform is required](#what-you-need-to-know-about-java) for successful Clojure projects.
 
-
 # Install Java
 
 Check to see if there is an appropriate version of Java already installed.
@@ -20,20 +19,20 @@ If Java is installed, you will see something like this in your terminal:
 
 If the version is `17` or above, then [jump to the Clojure install page](clojure-cli.md)
 
-
-=== "Ubuntu" 
+=== "Ubuntu"
     Install Java run time edition (JRE) using the `apt` package manager command in a terminal (prompts for the account login password)
     ```bash
     sudo apt install openjdk-17-jre
-    ```
+
+```
     ??? HINT "Optionally include Java sources"
         Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
         ```bash
         sudo apt install openjdk-17-source
-        ```
+```
+
         [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
-        
-    
+
     If `openjdk-17-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
     
     ```bash
@@ -47,10 +46,9 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     ```
     Available java versions will be listed.  Enter the list number for the version you wish to use.
 
-
-=== "Homebrew" 
+=== "Homebrew"
     Using [Homebrew](https://brew.sh/){target=_blank}, run the following command in a terminal to install Java 17:
-    
+
     ```bash
     brew install openjdk@17
     ```
@@ -70,10 +68,9 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
         
         Alternatively, install [JEnv Java version manager](https://www.jenv.be/)
 
-
-=== "Windows" 
+=== "Windows"
     For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html){target=_blank} if you have administrative privileges and are happy to use a Unix system on the command line.
-    
+
     Alternatively use [scoop.sh](https://scoop.sh/){target=_blank}, a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download){target=_blank} or greater is required.
     
     Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure){target=_blank}, summarized here:
@@ -93,14 +90,12 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
 
     If Chocolatey does not work, then try the [manual Java install](install-java.html#manual).
 
-
 === "Manual"
     [Download OpenJDK 17 Hotspot from Adoptium](https://adoptium.net/){target=_blank} - pre-build OpenJDK binaries freely available for multiple operating systems.
-    
+
     Run the file once downloaded and follow the install instructions.
     
     ![Adoptium Prebuilt OpenJDK Binaries - web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png)
-
 
 ## Java Knowledge required?
 

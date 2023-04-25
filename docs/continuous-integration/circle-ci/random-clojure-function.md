@@ -37,7 +37,6 @@ clojure -T:project/new :template app :name practicalli/random-clojure-function
 
 Version control the Clojure project using Git (or [magit in Spacemacs](https://practical.li/spacemacs/source-control/){target=_blank})
 
-
 ## Add a test run alias
 
 Edit the `deps.edn` file in the root of the project and add a `:test/run` alias, to run the kaocha test runner which will stop if a failing test is detected.  Stopping on a failed test saves running the full test suite and make the CI workflow more effective.
@@ -60,7 +59,6 @@ Add the remote repository URL to the local Git repository.
 ```bash
 git remote add practicalli git@github.com:practicalli/random-clojure-function.git
 ```
-
 
 ## Add CircleCI configuration
 
@@ -91,12 +89,12 @@ Edit the file and add the following configuration.
                 - ~/.gitlibs
               key: random-clojure-function-{{ checksum "deps.edn" }}
           - run: clojure -X:test/run
-    ```
+
+```
 
 `run: clojure -P` step downloads dependencies for the project, including the `:extra-deps` if aliases are also included.
 
 `run: clojure -X:test/run` adds the test directory to the class path and runs the Kaocha runner defined in the alias.
-
 
 ## Connect Circle CI to the project
 
@@ -110,31 +108,25 @@ Search the repository list for the GitHub repository and select ,,,
 
 Select the **Manual** configuration as a `.circleci/config.yml` file has already been added to the Git repository.
 
-
 ![Circle CI dashboard add Clojure project configuration](/images/circle-ci-dashboard-projects-random-clojure-function-configuration.png)
 
 Press **Start Building** button to confirm that a `config.yml` file has already been added and the build should start.
-
 
 ![Circle CI dashboard - confirm config.yml configuration added and start build](/images/circle-ci-dashboard-projects-random-clojure-function-config-yml-added.png)
 
 Now the first build runs with the `config.yml` file.
 
-
 ![Circle CI dashboard - build running the Clojure project](/images/circle-ci-dashboard-pipelines-random-clojure-function-running.png)
 
 Its failed.  Okay lets investigate...
 
-
 ![Circle CI dashboard - build running the Clojure project and failed on unit tests as the test does not pass](/images/circle-ci-dashboard-pipelines-random-clojure-function-build-failed-test-runner.png)
-
 
 Thats okay, we have failing tests locally, so we know that the CircleCI build is working the same as on our local development environment.
 
 The continuous integration is now working and tests are automatically run as soon as you push changes to the remote repository.
 
 So the development of the project can continue with greater confidence
-
 
 ## Adding a Build Status badge
 

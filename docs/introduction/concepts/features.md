@@ -39,7 +39,6 @@
 
   One thing that keeps Clojure a small language is the fact that the same syntax is used to represent data and behaviour.  For example, a function call is defined using a list, data structures and functions are defined using a list.  In fact everything is a list, although we use a little syntactic sugar here and there to make the code quicker for a human to parse.
 
-
 ## Clojure is an implementation of Lisp
 
   Lisp stands for LISt Processing, so its no surprise that all Clojure code is defined in a list.
@@ -48,18 +47,15 @@
 
   The evaluation of the first element of a list can be behaviour of `(` can be over-ridden using `quote` or its short form the quote character, **'**, so the list elements are all treated as data.
 
-
 ## Runtime Polymorphism
 
   See Clojure arity and multi-methods for more information
-
 
 ## Concurrent Programming & Parallelism
 
   Concurrent code is much safer when you data does not change state (eg. immutable values).  Clojure encourages an immutable approach with its built in persistent data structures (list, Map, Vector, Set).  Using Pure Functions that are not affected by or cause side effects also make writing concurrent code trivial.
 
   Clojure helps you scale your applications by with a parallel processing approach, as you can run functions over immutable data-structures without conflict.
-
 
 ## Hosted on the JVM
 
@@ -76,48 +72,41 @@
 
   Using `atoms` or `refs` in clojure you can have mutable data.  Changes are done safely within Software Transactional Memory (STM), like having an in-memory ACID database managing access
 
-
 ## Extend the language with Macros
 
   Clojure uses macros
 
-
 <hr />
-
 
 > **Fixme** Review the following content to see if its relevant ?
 
 <hr />
 
-
-
-
-
-
-
 ** Input & output with functional programming
+
 - other fp languages like haskel & Scala use monads to encapsulate data changes whilst appearing stateless to the rest of the program - monads allow us to sneak in impure code into the context of pure code.
 - Clojure doesn't try and enforce functional purity, so any function can include impure code
 - most functions should be pure though or you loose the benefits of functional programming
 - Clojure encourages minimal state changes / mutable state - so its up to the developer to keep the ratio of mutable data small
 - Clojure uses reference types to manage threads and mutable state.  References provide synchronisation of threads without using locks (notoriously cumbersome).  See STM
 
-* Supporting concurrency
+- Supporting concurrency
+
 - atoms etc
 - automatic management of state changes via Software transactional memory - like having an ACID database in memory, managing requests to change values over time.
 - by having immutable data structures - if your values do not change then its trivial to have massive parallelism.
 
-* A modern LISP
+- A modern LISP
+
 - leaner syntax and not as many brackets as LISP
 - clean data structure syntax at the core of the language
 - LiSP was the first language to introduce first class functions, garbage collection and dynamic typing, which are common in languages used today
 
 Macros
+
 - a function that takes in source code and returns source code, replacing the macro code
 - use macros to take out repetition / boilerplate code
 - as LISP syntax is extremely simple it is much easier to write macros that work compared to non-LISP languages
-
-
 
 Clojure emphasizes safety in its type system and approach to parallelism, making it easier to write correct multi-threaded programs.
 

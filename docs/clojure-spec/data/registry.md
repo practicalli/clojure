@@ -19,7 +19,6 @@ Use the spec specific `def` function to bind a new spec name and fully qualified
                         :domestic-short-hair :domestic-long-hair})
 ```
 
-
 ## Removing specs from the registry
 
 Named specifications can be removed from the registry by binding the name to `nil`.

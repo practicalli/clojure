@@ -1,13 +1,13 @@
 # Common alias definitions
 
-
 ## Task: Run a simple terminal REPL
+
 `clojure` and `clj` (requires rlwrap) will run a REPL if given no other arguments.
 
 Running either command from the root directory of a project will merge the `deps.edn` configuration with `~/.clojure/deps.edn`.
 
-
 ## Task: Run a REPL with additional dependencies and paths
+
 `clojure -M:alias` will run a repl if the alias does not contain a main namespace defined in `:main-opts`, e.g. `:main-opts ["-m" "namespace.main"]`.  The deps and path values are included from the alias.
 
 If the following alias is defined in the project `deps.edn` file
@@ -17,6 +17,7 @@ If the following alias is defined in the project `deps.edn` file
 {:extra-paths ["resources"]
  :extra-deps {com.h2database/h2 {:mvn/version "1.4.200"}}}
 ```
+
 `clojure -M:env/dev` will add `resources` directory to the path and the h2 database library to the dependencies, then runs a REPL.
 
 Including the `-r` option in the command line forces a REPL to run, even if a main namespace is provided via `:main-opts` or the command line.
@@ -24,10 +25,11 @@ Including the `-r` option in the command line forces a REPL to run, even if a ma
 ```clojure
 clojure -r -M:alias1:alias2
 ```
+
 The dependencies and paths will be merged from the alias from left to right, with each successive alias over-riding the value of any matching keys in the dependencies.
 
-
 ## Task: Create a new project from template
+
 The `clj-new` community tool can be used to create a Clojure / ClojureScript project, using a template to provide a project structure and example source code and tests.
 
 Using the `:main-opts` approach, an alias for `clj-new` would be defined as follows
@@ -57,6 +59,7 @@ Adding the `:exec-fn` to the `clj-new` alias, the `-X` flag can be used instead 
   {:extra-deps {seancorfield/clj-new {:mvn/version "1.1.215"}}
    :exec-fn clj-new/create}
 ```
+
 Use this alias with the `-X` flag
 
 ```bash
@@ -71,11 +74,11 @@ Default values can be added using the `:exec-args` key to the alias
  :exec-fn clj-new.create
  :exec-args {:template lib :name practicalli/playground}}
 ```
+
 `clojure -M:project/new :name practicalli/awesome-webapp` will create a new project using the `{:template lib :name practicalli/awesome-webapp}` argument.
 
-
-
 ## Task: Executing a specific function
+
 Clojure can run a specific function, useful for one off tasks or timed batch processing (via cron or similar tool) as well as complete applications.
 
 Arguments to the function are passed as a hash-map, defined in either an aliases `:exec-args` key or as key value pairs on the command line.  Command line key value pairs are merged with the `:exec-arg` hash-map, replacing the values from the command line if there are matching keys.
@@ -102,7 +105,6 @@ Assuming there is an alias called `database/migrate` defined in the project `dep
 
 `clojure -X:database/migrate :database "specs-repository"` would merge the command line args with `:exec-args` to create the hash-map `{:db-type "h2" :database "specs-repository"}` which is passed to the `practicalli.banking-on-clojure.database/migrate` function as an argument.
 
-
 ## Task: Executing a range of functions
 
 `:ns-default` in an alias defines the namespace that contains the functions that could be executed.
@@ -112,6 +114,7 @@ Assuming there is an alias called `database/migrate` defined in the project `dep
   {:project/run
     {:ns-default practicalli/banking-on-clojure}}}
 ```
+
 Specific functions from the namespace can be called via the command line
 
 ```bash
@@ -119,15 +122,14 @@ clojure -X:project/run migrate-db :db-type h2 :database banking-on-clojure
 clojure -X:project/run server-start :port 8080
 ```
 
-
 ## Task: Dry Run or Prepare for CI / Containers
+
 `clojure -P` will download the libraries defined in `:deps` in the project `deps.edn` and do nothing else.  Standard out shows downloading of dependencies not already cached locally, including name and versions and repository downloaded from.
 
 ![Clojure CLI tools - using -P flag to download project dependencies](/images/clojure-cli-tools-dependencies-p-flag.png)
 
 !!! HINT "Qualified namespaces required"
     If an unqualified library name is used, e.g. `compojure`, then a warning is sent to the standard out.  Change the name of the library to be fully qualified e.g. `weavejester/compojure`.  Use the same name if there is no official qualified domain, e.g. `http-kit/http-kit`
-
 
 The `-P` flag can be used to modify an existing command to ensure no execution takes place, ensuring a prepare only (dry run) action.
 
@@ -137,7 +139,6 @@ The `-P` flag uses everything from an alias not related to execution.
 
 > The classic way to download deps was to run `clojure -A:aliases -Spath`, where `-Spath` prevented execution of repl or main.
 
-
 ## Run a Clojure application
 
 `clojure -m full.namespace.to.dash-main` calls the `-main` function from the given namespace. Arguments to the function are simply added to the end of the command line and passed to the `-main` function in the given namespace.
@@ -145,24 +146,26 @@ The `-P` flag uses everything from an alias not related to execution.
 > The `-m` flag in the CLI tools pre-release returns a warning that `-M` should be used.
 
 Using `-M` and `-m` works, but seems redundant.  Using `-M` by itself runs the REPL.
+
 ```bash
 clojure -M -m full.namespace.to.dash-main
 ```
 
 `-M` seems useful when including an alias with extra configuration (eg. `:extra-deps`, `:extra-paths`, `:main-opts`).  As `:main-opts` is no different to the `-m` option, creating an alias just to avoid the warning seems excessive.
 
-
-
 ## Task: Executing a project - using Edn style args
+
 Clojure CLI tools is encouraging a move to functions that take a hash-map for their arguments.  Passing arguments in as an edn data structure has more rigor than options and strings on the command line.
 
 The simplest form is to define an alias to run the project, specifying just the function to execute using `:exec-fn`
+
 ```clojure
  :aliases
  {:project/run
    {:exec-fn practicalli.banking-on-clojure/server-start}
  } ;; End of Aliases
 ```
+
 Then the project can be run using this alias.
 
 ```bash
@@ -175,13 +178,11 @@ Arguments can be passed to the function as key/value pairs on the command line.
 clojure -X:project/run  :port 8080 :host "localhost"
 ```
 
-
 `:exec-args` provides a way to define default arguments for the function, regardless of if it is defined in `;:exec-fn` or passed via the command line.
 
 `:exec-args` defines a hash-map of arguments so the function must support taking a hash-map as an argument.
 
 > A function may take variable args, especially if it is supporting both hash-maps and strings as options.
-
 
 ```clojure
  :aliases
@@ -201,15 +202,14 @@ Adding `:exec-args` to the `:run-project`
  } ;; End of Aliases
 ```
 
-
-
 #### Example of running a Clojure project - hello-world
 
-In this example I use the hello-world example from https://clojure.org/guides/deps_and_cli#_writing_a_program
+In this example I use the hello-world example from <https://clojure.org/guides/deps_and_cli#_writing_a_program>
 A project `deps.edn` file was created containing the dependency for clojure.java-time and the source code from that page copied into `src/hello.clj`
 
 `clojure -m` hello runs the project and returns the time from running the -main function.
 However this gives a warning:
+
 ```bash
 WARNING: When invoking clojure.main, use -M
 ```
@@ -221,6 +221,7 @@ WARNING: When invoking clojure.main, use -M
 Creating an alias to run the project seems an interesting idea, as I could also set default arguments.
 
 Adding an `:project-run` alias to the project `deps.edn` works when calling with clojure `-M:project-run`
+
 ```clojure
  :aliases
  {:project-run {:main-opts ["-m" "hello"]}}
@@ -236,8 +237,6 @@ Moving the source code to `src/practicalli/hello.clj` and calling `clojure -X:ru
 
 Changing the `-main` function to `(defn -main [& args] ,,,)` fixes the arity exception and calling `clojure -X:run-project` works.
 
-
-
 ## Local Maven install
 
 Install a jar into the local Maven cache, typically `~/.m2/repository/` directory, organised by groupId
@@ -245,6 +244,7 @@ Install a jar into the local Maven cache, typically `~/.m2/repository/` director
 ```clojure
 clojure -X:deps mvn-install :jar '"/path/to.jar"'
 ```
+
 > edn strings must be in double quotes, and then single-quoted for the shell
 
 `mvn-install` uses the `.pom` file contained in the jar (if it exists) to determine the _groupId_, _artifactId_, and _version coordinates_ to use when the jar is installed.

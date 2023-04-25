@@ -1,4 +1,5 @@
 # uuid tag literal
+
 A universally unique identifier (UUID).
 
     #uuid "8-4-4-4-12" - numbers represent the number of hex digits
@@ -9,9 +10,8 @@ Representing UUIDs with #uuid rather than just a plain string has the following 
     the reader will throw an exception on malformed UUIDs
     its UUID type is preserved and shown when serialized to edn.
 
-
-
 ## Creating UUIDs - Clojure
+
 In Clojure, call the randomUUID method of the java.util.UUID class
 
 ```
@@ -33,6 +33,7 @@ Looking at the type we can see its a Java object from the java.util.UUID class:
 ```
 
 ## Creating UUIDs - ClojureScript
+
 Randomly generate a UUID in ClojureScript:
 
 `cljs.core/random-uuid`
@@ -41,8 +42,8 @@ To label a value as a UUID:
 
 `cljs.core/uuid`
 
-
 > #### Hint::uuid does not validate the value
+>
 > The [ClojureScript documentation](https://github.com/cljs/api/blob/master/docfiles/cljs.core/uuid.md) states that uuid? does not perform validation.
 
 ## Testing for a uuid

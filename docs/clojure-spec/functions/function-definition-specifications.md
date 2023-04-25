@@ -6,7 +6,6 @@
 * return value expected
 * relationships between arguments and return value
 
-
 ## Examples
 
 The `practicalli.database-access/new-account-holder` function takes a customer details specification and returns an `account-holder-id` specification.

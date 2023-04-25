@@ -12,7 +12,9 @@ A direct approach
 Let’s think about the problem in concrete terms. We want to increment each of three elements: the first, second, and third. We know how to get an element from a sequence by using nth, so let’s start with the first number, at index 0:
 
 user=> (def numbers [1 2 3])
-#'user/numbers
+
+# 'user/numbers
+
 user=> (nth numbers 0)
 1
 user=> (inc (nth numbers 0))
@@ -30,7 +32,9 @@ user=> [(inc (nth numbers 0)) (inc (nth numbers 1)) (inc (nth numbers 2))]
 Success! We’ve incremented each of the numbers in the list! How about a list with only two elements?
 
 user=> (def numbers [1 2])
-#'user/numbers
+
+# 'user/numbers
+
 user=> [(inc (nth numbers 0)) (inc (nth numbers 1)) (inc (nth numbers 2))]
 
 IndexOutOfBoundsException   clojure.lang.PersistentVector.arrayFor (PersistentVector.java:107)
@@ -80,6 +84,7 @@ So there are really two cases for this function. If there is a first element in 
 
 user=> (doc if)
 -------------------------
+
 if
   (if test then else?)
 Special Form
@@ -87,7 +92,7 @@ Special Form
   evaluates and yields then, otherwise, evaluates and yields else. If
   else is not supplied it defaults to nil.
 
-  Please see http://clojure.org/special_forms#if
+  Please see <http://clojure.org/special_forms#if>
 To confirm our intuition:
 
 user=> (if true :a :b)
@@ -341,6 +346,7 @@ In general, we want to combine elements together in some way, using a function. 
 
 user=> (doc reduce)
 -------------------------
+
 clojure.core/reduce
 ([f coll] [f val coll])
   f should be a function of 2 arguments. If val is not supplied,
@@ -369,7 +375,9 @@ user=> (reductions + [1 2 3 4])
 Oftentimes we include a default state to start with. For instance, we could start with an empty set, and add each element to it as we go along:
 
 user=> (reduce conj #{} [:a :b :b :b :a :a])
-#{:a :b}
+
+# {:a :b}
+
 Reducing elements into a collection has its own name: into. We can conj [key value] vectors into a map, for instance, or build up a list:
 
 user=> (into {} [[:a 2] [:b 3]])
@@ -421,7 +429,9 @@ There’s a few new pieces here, but the structure is essentially the same as ou
 Most of Clojure’s sequence functions are lazy. They don’t do anything until needed. For instance, we can increment every number from zero to infinity:
 
 user=> (def infinite-sequence (map inc (iterate inc 0)))
-#'user/infinite-sequence
+
+# 'user/infinite-sequence
+
 user=> (realized? infinite-sequence)
 false
 That function returned immediately. Because it hasn’t done any work yet, we say the sequence is unrealized. It doesn’t increment any numbers at all until we ask for them:

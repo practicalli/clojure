@@ -6,9 +6,7 @@ This is a collection of reader macros (think syntactic sugar) that are valid in 
 
 Many reader macros start with the character **#**, which is in fact the _Dispatch macro_ that tells the Clojure reader (the thing that takes a file of Clojure text and parses it for consumption in the compiler) to go and look at another read table for the definition of the next character - in essence this allows extending default reader behaviour.
 
-
 * **#_** - Discard macro - ignore the next expression.  Often used to comment out code, especially when nested inside other expressions
-
 
 * **#'** - Var macro - returns the reference to the var.  Used to pass the definition of something rather than the result of evaluating it.
 

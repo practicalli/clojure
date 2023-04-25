@@ -32,8 +32,8 @@ Clojure aware editors can also have an align option when formatting hash-maps, m
 ```
 
 > #### Hint::Pretty Print evaluation results
+>
 > Clojure aware editors should allow the pretty printing of the evaluation results.
-
 
 ## Print Table of nested data structures
 
@@ -53,7 +53,6 @@ Nested data structures can also be shown as a table, especially the common appro
 |     Wales |        50876 |             1202 |
 |   England |      5440876 |           200202 |
 ```
-
 
 ## References
 

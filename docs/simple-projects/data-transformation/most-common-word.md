@@ -20,7 +20,6 @@ A suggested approach to find the most common word:
 * Sort the words by the number of the occurrences
 * Reverse the collection so the most commonly used word is shown first
 
-
 ## Create a project
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
@@ -29,8 +28,8 @@ A suggested approach to find the most common word:
 clojure -T:project/create :template app :name practicalli/common-words
 ```
 
-
 ## Get the book contents
+
 `clojure.core/slurp` will read in a local file or a remote resource (file, web page, etc) and return a single string of the contents.
 
 ```clojure
@@ -53,7 +52,6 @@ Project Gutenberg now compresses the books with GZip, so a stream can be created
     (slurp uncompress-text)))
  ```
 
-
 ## Individual words from the book
 
 The book contents should be broken down into individual words.
@@ -73,6 +71,7 @@ Using `re-seq` to convert the first sentence of the `being-earnest` book using a
 The result is a sequence of the individual words, however, the hyphenated words and the apostrophes have been split into separate words.
 
 Extending the regex pattern the results can be refined.
+
 ```clojure
 (re-seq #"[\w|'-]+" "Morning-room in Algernon's flat in Half-Moon Street.")
 
@@ -84,7 +83,6 @@ Extending the regex pattern the results can be refined.
 ```
 
 > The #"[\w|'-]+" is the same pattern as the more explicit pattern #"[a-zA-Z0-9|'-]+"
-
 
 ## Removing common English words
 
@@ -132,7 +130,6 @@ The `common-english-words` set can now be used with the `being-earnest` book.
 ## Counting Occurrences
 
 `clojure.core/frequencies` takes a collection and returns a map where the keys are the unique elements from the collection and the value for each key is the number of times that element occurred in the collection.
-
 
 ```clojure
 (filter (remove common-english-words (re-seq #"[\w|'-]+" being-earnest)))
@@ -182,7 +179,6 @@ Call this function with the `being-earnest` book and the `common-english-words`
 ```clojure
 (most-common-word being-earnest common-english-words)
 ```
-
 
 ## Running from the command line
 

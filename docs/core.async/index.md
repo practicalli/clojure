@@ -1,8 +1,8 @@
 # Introducing core.async
 
 > #### TODO::work in progress, sorry
+>
 > Pull requests are welcome
-
 
 The [`core.async`](https://clojure.github.io/core.async/) library provides a way to do concurrent programming using channels (eg. queues).
 
@@ -10,8 +10,8 @@ It minimises the need to use complex concurrent constructs and worry less about 
 
 `core.async` is written in Clojure and can be used with both Clojure and ClojureScript.
 
-
 > #### Hint:: core.async resources
+
 * [core.async getting started](https://github.com/clojure/core.async/wiki/Getting-Started)
 * [Introduction to asynchronous programming](http://www.bradcypert.com/2016/07/15/clojure-async/)
 * [ClojureScript core.async and todos](https://rigsomelight.com/drafts/clojurescript-core-async-todos.html) - Bruce Haurman
@@ -33,17 +33,15 @@ Communicating Sequential Processes (CSP) is a formalism for describing concurren
 
 ## core.async on ClojureScript
 
-core.async is very widely used withing ClojureScript applications and many libraries are built on top of it.
+core.async is very widely used within ClojureScript applications and many libraries are built on top of it.
 
 It’s a good example of the syntactic abstractions that can be achieved by transforming code with ClojureScript macros.
 
 JavaScript is single-threaded so you do not get the benefit of safe communication between threads, as there is only one.
 
-
 # Concepts
 
 ![Concepts - channel, put, take](/images/core.async-concepts-put-take.png)
-
 
 ## Channels
 
@@ -57,7 +55,6 @@ Channels do not include a buffer by default,  they use a producer (`put!`) and c
 
 Specify a channel using `(chan)` or a channel with a fixed buffer using `(chan 12)`.
 
-
 ## Processes
 
 Processes are independently running pieces of code that use channels for communication and coordination.
@@ -67,8 +64,6 @@ Calling `put!` and `take!` inside a process will stop that process until the ope
 Processes are launched using the go macro and puts and takes use the <! and >! placeholders. The go macro rewrites your code to use callbacks but inside go everything looks like synchronous code, which makes understanding it straightforward:
 
 In ClojureScript, stopping a process doesn’t block the single-threaded JavaScript environment, instead, the process will be resumed at a later time when it is no longer blocked.
-
-
 
 # Important functions
 
@@ -88,7 +83,6 @@ eg. filtering messages `(chan 12 (map even?))`
 
 Channels can be explicitly closed using `(close channel-name)` or by adding a timeout that closes the channel after the specified number of milliseconds `(timeout 6000)`.
 
-
 ## `put!`
 
 The `put!` function puts a value (message) on the channel.
@@ -96,7 +90,6 @@ The `put!` function puts a value (message) on the channel.
 You can put messages on the channel even if nothing is listening (no waiting `take!` functions).
 
 Evaluating `put!` will always add a message on to the channel as long as the channel is open and not full.
-
 
 ## `take!`
 
@@ -106,22 +99,15 @@ If there are no messages on the queue when you evaluate `take!`, then the functi
 
 The `take!` function needs an argument that is the channel and a function that will receive any message taken from a channel.
 
-
-
-
 ## `time`
+
 This is a macro that executes an expression and prints the time it takes
 
 [Criterium](https://github.com/hugoduncan/criterium) is an excellent library for performance testing your code
 
-
 ## `go`
 
 Referred to as a _go block_, the `go` function creates a lightweight process, not bound to threads.  Thousands of go blocks can be created efficiently and they can all have their own channel.
-
-
-
-
 
 ### blocking and non-blocking
 

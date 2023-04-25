@@ -42,6 +42,7 @@ The details of each event (the value to go with the event name key) is itself a 
 ```
 
 Lets call the data structure and see what it evaluates too, it should not be a surprise
+
 ```
 dev-event-details
 ```
@@ -78,4 +79,3 @@ portfolio
 ```
 
   First and next are termed as sequence functions in Clojure, unlike other lisps, you can use first and next on other data structures too
-

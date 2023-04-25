@@ -9,7 +9,6 @@ The examples are editable (using an embedded REPL) so feel free to experiment an
 !!! HINT "Want to go deeper already?"
     Watch [the Clojure language video series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) for a detailed introduction to key parts of the language.  Or discover Clojure core functions by completing challenges on [4Clojure.org](https://4clojure.oxal.org/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
 
-
 ## Calling functions
 
 The first element in a list, `()`, is a call to a function.  Any other elements are passed to the function as arguments. The examples show how to call functions with multiple arguments.
@@ -43,7 +42,6 @@ The first element in a list, `()`, is a call to a function.  Any other elements 
 
     Treating the first element of a list as a function call is referred to as prefix notation, which greatly simplifies Clojure syntax.  Prefix notation makes mathematical expressions completely deterministic, eliminating the need for [operator precedence](https://en.wikipedia.org/wiki/Order_of_operations).
 
-
 ## Understanding functions
 
 `clojure.repl/doc` function returns the doc-string of the given function. A doc-string should be part of all public function definitions.
@@ -53,7 +51,6 @@ Clojure editors should provide commands to view doc-strings and the ability to j
 ```clojure
 (clojure.repl/ddoc doc)
 ```
-
 
 ## Modeling data with Collection types
 
@@ -85,7 +82,6 @@ A set, `#{}`, use as a unique set of values. Sets are used to test if a value is
 
 !!! Hint "Persistent data types"
     Values are immutable so when a function changes a value a new immutable value is created. When creating new collection values, unchanged values are shared with the original collection.  This [sharing model is called persistent data types]( /data-structures/shared-memory.md) and enables immutable data to be used efficiently.
-
 
 ## Using data structures
 
@@ -123,7 +119,6 @@ The `conj` function creates a new collection by combining a collection and one o
 
 !!! HINT "Many Clojure core functions for collections"
     `map`, `reduce`, `apply`, `filter`, `remove` are just a few examples of Clojure core functions that work with data structures.
-
 
 ## Defining custom functions
 
@@ -184,7 +179,6 @@ public-health-data
 !!! HINT "def for shared values, let for locally scoped values"
     `let` function is used to bind names to values locally, such as within a function definition.  Names bound with `def` have namespace scope so can be used with any code in that namespace.
 
-
 ## Iterating over collections
 
 `map` iterates a function over a collection of values, returning a new collection of values
@@ -221,7 +215,6 @@ Functions can call themselves to iterate over a collection.  Using a lazy sequen
 (take 10 (fibonacci-sequence 0 1))
 ```
 
-
 ## Host Interoperability
 
 The REPL in this web page is running inside a JavaScript engine, so JavaScript functions can be used from within ClojureScript code (ClojureScript is Clojure that runs in JavaScript environments).
@@ -235,11 +228,9 @@ In the box below, replace `()` with `(js/alert "I am a pop-up alert")`
 !!! HINT "Java libraries in Clojure"
     [java.lang library](https://docs.oracle.com/javase/8/docs/api/java/lang/compact2-package-summary.html) is available in Clojure by default and many other Java methods can be included by using their full name, e.g. `(java.lang.Date.)` will return the current date.
 
-
 ## Next steps
 
 [Install Clojure](/clojure-cli/install/) on your computer if you want to experiment even further or keep on reading more about Clojure.
-
 
 <!-- ## Recursion -->
 

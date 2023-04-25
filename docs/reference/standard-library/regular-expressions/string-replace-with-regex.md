@@ -1,5 +1,7 @@
 ## String replace with regex pattern
+
 `clojure.string/replace` takes a string, a pattern and a substring that will replace matching patterns.
+
 ```clojure
 (clojure.string/replace "mississippi" #"i.." "obb")
 ```
@@ -23,4 +25,4 @@ Replace with the value of a function applied to the match:
    "M--SS--SS--Ppi"
 ```
 
-`clojure.string/replace-first` is a variation where just the first occurance is replaced.
+`clojure.string/replace-first` is a variation where just the first occurrence is replaced.

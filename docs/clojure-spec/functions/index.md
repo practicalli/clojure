@@ -8,7 +8,6 @@
 
 Many of the functions in `clojure.core` have [specifications](https://github.com/clojure/core.specs.alpha) in the latest version of Clojure.  The specifications for clojure.core functions can be found in the [clojure/core.specs.alpha](https://github.com/clojure/core.specs.alpha) repository on GitHub.
 
-
 ## clojure.core examples
 
 Specifications used for the `defn`, `defn-`, `fn` functions in `clojure.core`

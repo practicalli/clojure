@@ -6,7 +6,6 @@
 
 A dictionary can be generated to translate between the original alphabet and the rotated alphabet, providing a simple way to generate an encrypted message.
 
-
 ## Create a project
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
@@ -14,7 +13,6 @@ A dictionary can be generated to translate between the original alphabet and the
 ```bash
 clojure -T:project/create :template app :name practicalli/caesar-cipher
 ```
-
 
 ## Define an alphabet
 
@@ -24,7 +22,6 @@ Define an alphabet to use as a basis for conversion.  Take the string of all cha
 (def english-alphabet
   (seq "abcdefghijklmnopqrstuvwxyz"))
 ```
-
 
 ## Generate a cypher
 
@@ -59,7 +56,6 @@ Using the thread last macro, `->>`, the result of each expression becomes the la
 
 Using the clojure.core/replace function with the cypher hash-map and a string of text returns a converted string of text.
 
-
 ## Define a function
 
 Define a `rot13` function with the algorithm created.  The function takes the alphabet and the text to be encrypted.  Passing both pieces of data as arguments ensures that the function is pure, i.e. free from side effects.
@@ -80,7 +76,6 @@ Call the rot13 function with the `english-alphabet` and a sentence as a string.
 ```
 
 An encrypted copy of the sentence is returned.
-
 
 ## Idiomatic improvements
 
@@ -107,10 +102,7 @@ Update the `rot13` function to use [`clojure.string/join`](https://clojuredocs.o
     (string/join (replace cipher text))))
 ```
 
-
-
 <!-- ## Upper and Lowercase cypher -->
-
 
 <!-- ```clojure -->
 <!-- (def english-alphabet -->
@@ -119,7 +111,6 @@ Update the `rot13` function to use [`clojure.string/join`](https://clojuredocs.o
 <!-- ``` -->
 
 <!-- Using the `clojure.core/map` function -->
-
 
 <!-- Create a Clojure set with the lower and uppercase characters of the English alphabet -->
 
@@ -133,7 +124,6 @@ Update the `rot13` function to use [`clojure.string/join`](https://clojuredocs.o
 
 <!-- (rot13 english-alphabet "The Quick Brown Fox Jumped Over The Lazy Dog!") -->
 <!-- ``` -->
-
 
 <!-- ```clojure -->
 <!-- (let [a (int \a) m (int \m) A (int \A) M (int \M) -->

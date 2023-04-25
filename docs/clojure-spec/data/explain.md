@@ -10,12 +10,13 @@
 A string explaining where the value deviates from the specification is sent to standard out if the value does not meet the specification.
 
 There are several variations on the explain function for different situations
-* `explain` - sends the return value to the standard out / REPL
-* `explain-str` - returns a human readable result.
-* `explain-data` - returns a data structure of the error to be processed by other code
 
+- `explain` - sends the return value to the standard out / REPL
+- `explain-str` - returns a human readable result.
+- `explain-data` - returns a data structure of the error to be processed by other code
 
 ## Example of a failing value
+
 First define a namespace and require the Clojure Spec namespace
 
 ```clojure
@@ -40,13 +41,13 @@ Using the value `24` with that specification will fail.  Using explain we can se
 ```
 
 In this case explain returned the
-* value being checked against the spec
-* result of that check (failed)
-* predicate used to check the value
-* spec name used to check the value
+
+- value being checked against the spec
+- result of that check (failed)
+- predicate used to check the value
+- spec name used to check the value
 
 Notice that the value failed on the first condition, `:integer`, then stopped without checking the second, `:string`. The `spec/and` macro works the same as `clojure.core/and` in that is stops as soon as something fails.
-
 
 ```clojure
 (spec/explain ::meaning-of-life-int-or-string 24)
@@ -59,6 +60,7 @@ This shows the value of naming your specs descriptively
 
 
 ## Explain with a string
+
 rather than send information to the system out
 
 ```clojure

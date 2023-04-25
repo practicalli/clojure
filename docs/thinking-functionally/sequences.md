@@ -2,7 +2,6 @@
 
 > **Fixme** work in progress
 
-
 Data structures can be built by combining functions
 
 ```clojure
@@ -17,4 +16,3 @@ Data structures can be built by combining functions
  (cons 2)
  (cons 1))
 ```
-

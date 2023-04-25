@@ -7,7 +7,6 @@ Making the docs more engaging using the [mkdocs-material theme reference guide](
 
     [HSL Color Picker](https://hslpicker.com/) for codes to modify the theme style, overriding colors in `docs/assets/stylesheets/extra.css`
 
-
 ## Hypertext links
 
 Links open in the same browser window/tab by default.
@@ -44,7 +43,6 @@ Add an icon to the button
 
 [Search all supported icons](https://squidfunk.github.io/mkdocs-material/reference/icons-emojis/){target=_blank .md-button}
 
-
 ## YouTube video
 
 Use an iframe element to include a YouTube video, wrapping in a paragraph tag with center alignment to place the video in a centered horizontal position
@@ -56,7 +54,6 @@ Use an iframe element to include a YouTube video, wrapping in a paragraph tag wi
 ```
 
 > mkdocs material does not have direct support for adding a YouTube video via markdown.
-
 
 ## Admonitions
 
@@ -105,8 +102,6 @@ Use an iframe element to include a YouTube video, wrapping in a paragraph tag wi
 !!! QUOTE
     Use `!!!` followed by `QUOTE`
 
-
-
 ### Collapsing admonitions
 
 ??? NOTE
@@ -115,10 +110,8 @@ Use an iframe element to include a YouTube video, wrapping in a paragraph tag wi
 ??? NOTE "Replace with a title"
     Use `???` followed by `NOTE` and a `"title in double quotes"`
 
-
 ???+ NOTE "Expanded by default"
      Use `???+`, note the `+` character,  followed by `NOTE` and a `"title in double quotes"`
-
 
 ### Inline blocks
 
@@ -131,7 +124,6 @@ Inline blocks of text to make a very specific callout within text
     Curabitur feugiat, tortor non consequat
     finibus, justo purus auctor massa, nec
     semper lorem quam in massa.
-
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
@@ -147,12 +139,9 @@ Adding something to then end of text is probably my favourite
     finibus, justo purus auctor massa, nec
     semper lorem quam in massa.
 
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
-
-
 
 ## Code blocks
 
@@ -168,7 +157,6 @@ Syntax highlighting in code blocks
 ```
 
 Give the code block a title using `title=""` after the backtics and language name
-
 
 ```clojure title="src/practicalli/gameboard.clj"
 (defn my-function
@@ -192,7 +180,6 @@ Add `linenums=42` to start line numbers from 42 onward
 clojure linenums="42" title="src/practicalli/gameboard.clj"
 ```
 
-
 ### Annotations
 
 Annotations in a code block help to highlight important aspects.  Use the comment character for the language followed by a space and a number in brackets
@@ -205,8 +192,7 @@ Use a number after the code block to add the text for the annotation, e.g. `1.`.
 ls -la $HOME/Downloads  # (1)
 ```
 
-1.  :woman_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
-
+1. :woman_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
 
 Code blocks with annotation, add `!` after the annotation number to suppress the `#` character
 
@@ -218,8 +204,7 @@ Code blocks with annotation, add `!` after the annotation number to suppress the
   )
 ```
 
-1.  Always include a doc-string in every function to describe the purpose of that function, identifying why it was added and what its value is.
-
+1. Always include a doc-string in every function to describe the purpose of that function, identifying why it was added and what its value is.
 
 GitHub action example with multiple annotations
 
@@ -244,12 +229,12 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 
-1.  You can change the name to your liking.
+1. You can change the name to your liking.
 
-2.  At some point, GitHub renamed `master` to `main`. If your default branch
+2. At some point, GitHub renamed `master` to `main`. If your default branch
     is named `master`, you can safely remove `main`, vice versa.
 
-3.  This is the place to install further [MkDocs plugins] or Markdown
+3. This is the place to install further [MkDocs plugins] or Markdown
     extensions with `pip` to be used during the build:
 
     ``` sh
@@ -258,7 +243,6 @@ jobs:
       mkdocs-awesome-pages-plugin \
       ...
     ```
-
 
 ### Highlight lines in code blocks
 
@@ -275,7 +259,6 @@ Add highlight line meta data to a code block after the opening backticks and cod
    [1 2 3]))
 ```
 
-
 ## Content tabs
 
 Create in page tabs that can also be
@@ -285,17 +268,15 @@ Setting up a project
 === "Clojure CLI"
     ```shell
     clojure -T:project/new :template app :name practicalli/gameboard
-    ```
 
+```
 
 === "Leiningen"
     ```shell
     lein new app practicalli/gameboard
-    ```
-
+```
 
 Or nest the content tabs in an admonition
-
 
 !!! INFO "Run a terminal REPL"
 
@@ -310,7 +291,6 @@ Or nest the content tabs in an admonition
         lein repl
         ```
 
-
 ## Diagrams
 
 Neat flow diagrams
@@ -323,7 +303,6 @@ graph LR
   D --> B;
   B ---->|No| E[Yay!];
 ```
-
 
 UML Sequence Diagrams
 
@@ -355,7 +334,6 @@ stateDiagram-v2
     State4 --> [*]
 ```
 
-
 Class diagrams - but dont need them.
 
 Entity relationship diagrams are handy though
@@ -374,13 +352,6 @@ Besides the diagram types listed above, [Mermaid.js] provides support for
 [requirement diagrams], all of which are not officially supported by Material
 for MkDocs. Those diagrams should still work as advertised by [Mermaid.js], but
 we don't consider them a good choice, mostly as they don't work well on mobile.
-
-  [pie charts]: https://mermaid-js.github.io/mermaid/#/pie
-  [gantt charts]: https://mermaid-js.github.io/mermaid/#/gantt
-  [user journeys]: https://mermaid-js.github.io/mermaid/#/user-journey
-  [git graphs]: https://mermaid-js.github.io/mermaid/#/gitgraph
-  [requirement diagrams]: https://mermaid-js.github.io/mermaid/#/requirementDiagram
-
 
 ## Keyboard keys
 
@@ -407,22 +378,20 @@ For key combinations, use join they key identifies with a `+`
 
 [MkDocs keyboard keys reference](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#extendingmodifying-key-map-index){target=_blank .md-button}
 
-
 ## Grids
 
 Useful for putting button links on the main page as quick links into the key parts of the book
 
 <div class="grid cards" markdown>
 
-- :fontawesome-brands-html5: __HTML__ for content and structure
-- :fontawesome-brands-js: __JavaScript__ for interactivity
-- :fontawesome-brands-css3: __CSS__ for text running out of boxes
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+* :fontawesome-brands-html5: __HTML__ for content and structure
+* :fontawesome-brands-js: __JavaScript__ for interactivity
+* :fontawesome-brands-css3: __CSS__ for text running out of boxes
+* :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
 
 </div>
 
 > Sponsor only feature
-
 
 ## Images
 
@@ -432,10 +401,10 @@ Markdown images can be appended with material tags to set the size of the image,
     `{style="height:150px;width:150px"}` specifies the image size
     ```markdown
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark){style="height:150px;width:150px"}
-    ```
+
+```
 
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark){style="height:150px;width:150px"}
-
 
 === "Lazy Loading"
 
@@ -456,7 +425,6 @@ Markdown images can be appended with material tags to set the size of the image,
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png){align=right style="height:64px;width:64px"}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-
 === "Theme Specific"
 
     `![Kitty Logo](image/kitty-light.png#only-dark)` or `![Kitty Logo](image/kitty-light.png#only-light)`  specifies the theme the image should be shown, allowing different versions of images to be shown based on the theme.
@@ -470,7 +438,6 @@ Markdown images can be appended with material tags to set the size of the image,
 
     > Requires the [color pallet toggle](https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle)
 
-
 === "All Image Attributes"
     Alight right, lazy load and set image to 150x150
 
@@ -483,17 +450,16 @@ Markdown images can be appended with material tags to set the size of the image,
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-dark.png#only-light){align=left loading=lazy style="height:64px;width:64px"}
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor massa, nec semper lorem quam in massa.
 
-
 ## Lists
 
 Task lists
 
-- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-- [ ] Vestibulum convallis sit amet nisi a tincidunt
-    * [x] In hac habitasse platea dictumst
-    * [x] In scelerisque nibh non dolor mollis congue sed et metus
-    * [ ] Praesent sed risus massa
-- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+* [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
+* [ ] Vestibulum convallis sit amet nisi a tincidunt
+  * [x] In hac habitasse platea dictumst
+  * [x] In scelerisque nibh non dolor mollis congue sed et metus
+  * [ ] Praesent sed risus massa
+* [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 
 !!! EXAMPLE "Task List example"
     ```markdown
@@ -503,7 +469,7 @@ Task lists
         * [x] In scelerisque nibh non dolor mollis congue sed et metus
         * [ ] Praesent sed risus massa
     - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
-    ```
+```
 
 ## Tooltips
 
@@ -517,11 +483,9 @@ with references
 
   [example]: https://example.com "I'm a tooltip!"
 
-
 Icon tool tip with a title
 
 :material-information-outline:{ title="Important information" }
-
 
 ### Abreviations
 
@@ -529,8 +493,6 @@ The HTML specification is maintained by the W3C.
 
 *[HTML]: Hyper Text Markup Language
 *[W3C]: World Wide Web Consortium
-
-
 
 ## Magic links
 

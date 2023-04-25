@@ -4,18 +4,16 @@ In Clojure everything is a value, as even a function is a value potential which 
 
 Transducers provide an efficient way to transform values which can be simple values, collections, core.async channels and java.jdbc (0.7.0 upwards).
 
-
 > #### TODO::work in progress, sorry
+>
 > A very messy brain dump of ideas to tidy up.
 > Pull requests are welcome
 
-
-https://www.youtube.com/watch?v=WkHdqg_DBBs
+<https://www.youtube.com/watch?v=WkHdqg_DBBs>
 
 ### From slack - beginners channel
 
 Transducers are a functional design to compose operations on data collections, whereby the operations you describe through your transducers, aren't applied each on the entire input collection as in normal plain clojure code, but rather every element in the collection gets acted upon by a composition of what you specify in your transducers. Meaning, the input collection gets walked only once!
-
 
 Transducers provide an alternative way to act on data collections, which requires of you to stray from the plain clojure API you'd normally would, but brings along some benefits like lazy evaluation and/or different performance trade-offs.
 
@@ -24,7 +22,6 @@ In addition, some advantages in terms of affording greater modularity in applyin
 Using Transducers eliminates the need for intermediate structures.
 
 [A walk through the basics of Transducers](http://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/)
-
 
 Items coming from a collection are a common case with transducers, but a big motivation for making transducers was the ability to apply transformation directly to the source of data, without forcing it into a collection first (eg. a core.async channel or a network stream etc.)
 
@@ -40,12 +37,9 @@ As of `java.jdbc` 0.7.0-beta1, you can also apply transducers to “reducible qu
 
 Instead of passing in functions to transform rows and process the transformed result set, you can now just create a “reducible query” and hand it off to anything that knows how to reduce it: reducers, transducers, plain ol’ `reduce` and `into` etc…
 
-
-
-
 ### from stackoverflow
 
-https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms
+<https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms>
 
 Transducers are recipes what to do with a sequence of data without knowledge what the underlying sequence is (how to do it). It can be any seq, async channel or maybe observable.
 
@@ -58,6 +52,7 @@ Ad Update
 Prior version 1.7 of Clojure you had three ways how to write dataflow queries:
 
 nested calls
+
 ```clojure
 (reduce + (filter odd? (map #(+ 2 %) (range 0 10))))
 ```
@@ -71,6 +66,7 @@ functional composition
     (partial map #(+ 2 %))))
   (reduce + (xform (range 0 10)))
 ```
+
 threading macro
 
 ```clojure
@@ -90,13 +86,12 @@ With transducers you will write it like:
     (filter odd?)))
 (transduce xform + (range 0 10))
 ```
+
 They all do the same. The difference is that you never call Transducers directly, you pass them to another function. Transducers know what to do, the function that gets transducer knows how. The order of combinators is like you write it with threading macro (natural order). Now you can reuse xform with channel:
 
 ```clojure
 (chan 1 xform)
 ```
-
-
 
 ## Business case
 
@@ -119,8 +114,6 @@ And at least regarding Clojure's version of laziness, the issue of laziness is o
 An example would be nice. – Zubair Oct 13 '14 at 6:56
 2
 @LyubomyrShaydariv By "intermediate collection", noisesmith doesn't mean "iterate/reify an entire collection, then iterate/reify another entire collection". He or she means that when you nest function calls that return sequentials, each function call results in the creation of a new sequential. The actual iteration still only happens once, but there is additional memory consumption and object allocation due to the nested sequentials
-
-
 
 Transducers are a means of combination for reducing functions.
 
@@ -154,9 +147,7 @@ They are also independent of what kind of source the input is.
 
 Multiple transducers can be chained as a (chainable) recipe to transform reducing functions.
 
-Update: Since there now is an official page about it, I highly recommend to read it: http://clojure.org/transducers
-
-
+Update: Since there now is an official page about it, I highly recommend to read it: <http://clojure.org/transducers>
 
 Say you want to use a series of functions to transform a stream of data. The Unix shell lets you do this kind of thing with the pipe operator, e.g.
 
@@ -167,9 +158,7 @@ The same kind of thing holds for Clojure. There are multiple, concise ways to ex
 
 So to answer your question, transducers won't necessarily make your code shorter or more understandable, but your code probably won't be longer or less understandable either, and if you're working with a lot of data, transducers can make your code faster.
 
-https://bendyworks.com/transducers-clojures-next-big-idea/
-
-
+<https://bendyworks.com/transducers-clojures-next-big-idea/>
 
 Ah, so transducers are mostly a performance optimisation, is that what you are saying? – Zubair Oct 13 '14 at 9:10
 
@@ -177,16 +166,11 @@ Ah, so transducers are mostly a performance optimisation, is that what you are s
 
 It's worth mentioning pmap, which doesn't seem to get enough attention. If you are mapping an expensive function over a sequence, making the operation parallel is as easy as adding "p". No need to change anything else in your code, and it's available now--not alpha, not beta. (If the function creates intermediate sequences, then transducers might be faster, I would guess.) – Mars Oct 30 '14 at 15:13
 
-
-
 Rich Hickey gave a 'Transducers' talk at the Strange Loop 2014 conference (45 min).
 
 He explains in simple way what transducers are, with real world examples - processing bags in an airport. He clearly separates the different aspects and contrasts them with the current approaches. Towards the end, he gives the rationale for their existence.
 
-Video: https://www.youtube.com/watch?v=6mTbuzafcII
-
-
-
+Video: <https://www.youtube.com/watch?v=6mTbuzafcII>
 
 5
 down vote

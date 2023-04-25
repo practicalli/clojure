@@ -28,6 +28,7 @@
 ```
 
 > #### Hint::First element of a list is a function call
+>
 > The first element of a list is evaluated as a function call, unless the list is wrapped in a quote function
 
 We can create a list using the `list` function
@@ -52,7 +53,6 @@ However, if we create a list directly by using `(1 2 3 4)`, this will fail when 
 (quote (1 2 3 4))
 '(1 2 3 4)
 ```
-
 
 <!-- Clojure through code
 
@@ -84,7 +84,6 @@ However, if we create a list directly by using `(1 2 3 4)`, this will fail when 
 ;;  use 'my-namespace.library)
 
  end of clojure through code -->
-
 
 ## Testing for a List
 

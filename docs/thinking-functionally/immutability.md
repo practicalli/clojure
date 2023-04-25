@@ -8,7 +8,7 @@ When functions act on values, a new value is created and returned, rather than m
 
 > **TODO** include a diagram to visualise this...
 
-# Immutabile data structures 
+# Immutabile data structures
 
 List, Map, Vector and Set are all immutable data structures in Clojure.
 
@@ -17,4 +17,3 @@ So when you use these data structures with a function, a new data structure is r
 > **Hint** When a new data structure is created from an existing data structure, then under the covers the two data structures actually share memory use for any elements that are common.  This keeps copies very cheap to create in terms of memory used.
 
 > See the section on [data structures](/data-structures/) for more details.
-

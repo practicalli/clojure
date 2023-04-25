@@ -1,8 +1,8 @@
 ## The doc & source functions
+
 If you are not using a Clojure aware editor or spend a lot of time in the REPL you can also view the documentation of a function by calling the `doc` function and see the source by calling the `source` function.
 
 To use the `doc` & `source` functions in the REPL you should be in the `user` namespace.
-
 
 > **Note** On the command line, start a REPL with the command `lein repl` and then view the documentation for three common functions used in clojure
 
@@ -28,11 +28,9 @@ Make sure you are in the `user` namespace before calling the `doc` function.  If
 
  > **Hint** As the documentation for a function is part of its definition, by looking at the source of a function you also get the documentation.
 
-
 ## Using doc & source function from another namespace
 
   The `doc` and `source` functions are only included in the `user` namespace. If you switch to another namespace or your editor places you in the current namespace of your project, these functions will not be available unless you including `core.repl` in the current namespace.
-
 
 From the REPL, evaluate the expression:
 

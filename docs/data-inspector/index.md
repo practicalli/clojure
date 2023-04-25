@@ -8,7 +8,6 @@ There are many `clojure.core` functions that can be used to explore data structu
 
 New tools are being created to capture and visualize results from evaluated expressions (REBL, Reveal) as well as tools to specifically visualize `tap>` expressions (Reveal, Portal).
 
-
 ## Common approaches
 
 * Editor data browsers - e.g. [cider-inspect](https://practical.li/spacemacs/evaluating-clojure/inspect/){target=_blank}

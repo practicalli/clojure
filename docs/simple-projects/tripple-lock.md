@@ -2,7 +2,6 @@
 
 A new safe too keep all the richest you will gain from becoming a Clojure developer (hopefully).  The safe has a 3 combination lock to protect your new found wealth, but just how safe is the safe?
 
-
 ## Create a new Clojure project
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
@@ -10,7 +9,6 @@ A new safe too keep all the richest you will gain from becoming a Clojure develo
 ```bash
 clojure -T:project/create :template app :name practicalli/triple-lock
 ```
-
 
 ## Designing the combination lock
 
@@ -36,7 +34,6 @@ When we give the range function one argument, it will create all the whole numbe
 You can also give `range` two arguments, such as '(range 5 15)'.
 
 > Be careful not to call the `range` function by itself, or it will try and generate an infinite range of numbers (until your computer memory is all used up).
-
 
 ## Create all the Combinations
 

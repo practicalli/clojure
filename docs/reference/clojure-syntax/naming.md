@@ -2,11 +2,9 @@
 
 ## Naming when requiring other namespaces
 
-
 `(require [cheshire.core :refer :all])` is an example of self-inflicted errors, as this library included a `contains?` function that will over-write the `clojure.core/contains?` function when using `:refer :all` or the `(use )` expression.
 
 This situation is one example of why `:refer :all` and `use` are not recommended and can cause lots of debugging headaches.
-
 
 If a namespace is predominantly about using a specific library, then refer specific functions as they are used within the current namespace
 
@@ -17,6 +15,7 @@ If a namespace is predominantly about using a specific library, then refer speci
 ```
 
 > #### Hint::clj-kondo lint tool shows unused functions
+>
 > Using clj-kondo
 
 A classic example is a test namespace that uses clojure core

@@ -4,7 +4,6 @@
 
 ## Topics covered
 
-
 ## Challenge introduction
 
 Given an age in seconds, calculate how old someone would be on:

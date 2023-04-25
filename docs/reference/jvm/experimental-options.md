@@ -14,7 +14,6 @@ java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
 
 > The ZGC collector became a product option in JDK 15, so is no longer experimental.
 
-
 ## Manageable
 
 <!-- TODO: JVM Experimental Options - manageable options description and examples -->
@@ -26,7 +25,6 @@ java -XX:+UnlockExperimentalVMOptions -XX:+PrintConcurrentLocks
 ```
 
 > These options can be set at runtime via the MXBean API or related JDK tools
-
 
 ## Diagnostic
 
@@ -43,7 +41,6 @@ java -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation
 The HotSpot JVM outputs a log file containing details of all the optimisations made by the JIT compilers. Inspect the output to understand which parts of your program were optimized and to identify parts of the program that might not have been optimized as expected.
 
 The LogCompilation output is verbose but can be visualized in a tool such as JITWatch, which can tell you about method inlining, escape analysis, lock elision, and other optimizations that the HotSpot JVM made to your running code.
-
 
 <!-- ## Developmental -->
 

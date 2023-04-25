@@ -16,7 +16,6 @@ Maps allow you to model data with its contextual meaning.  The keys of a map can
 
 <!--endsec-->
 
-
 > **Note** Define a star-wars characters, eg. luke skywalker, jarjar binks.  The star-wars character should include a name and a skill (it doesn't matter what these are).
 
 > Use the 'get' function to return the value of a given key, eg. name.  Use keywords to return a given value if you used keywords for the map keys.
@@ -38,7 +37,6 @@ Lets see what the specific skill luke has
 ```
 
 When you use a keyword, eg. :name, as the key in a map, then that keyword can be used as a function call on the map to return its associated value.  Maps can also act as functions too.
-
 
 ```clojure
 (:name luke)

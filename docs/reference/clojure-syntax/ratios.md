@@ -1,7 +1,7 @@
 # Ratios
 
   In mathematics you need to ensure that you manage precision of your calculations when you are dividing numbers.  Once you create a decimal number then everything it touches had a greater potential to becoming a decimal.
-  
+
 > **Note** Calculate a rough approximation to Pi by dividing 22 by 7
 
 ```
@@ -11,9 +11,9 @@
 ```
 
 ![](../images/clojure-playground-ratio-pi.png)
-  
+
   If the result of an integer calculation would be a decimal number, then Clojure holds the value as a Ratio.  This is one example of lazy evaluation.  Rather than calculate the decimal value at some particular precision (number of decimal points).  Clojure is saving the calculation until its needed, at which time the specific precision required should be known.
-  
+
 > **Note** Explore the ratio type further and see how to get a decimal value as the result
 
 ```clojure

@@ -4,7 +4,6 @@ Cognitect Labs test-runner is a test runner for Clojure projects defined with `d
 
 test-runner aims to provide a standard way to discover and run unit and property-based tests, in a simple to use and lightweight tool.
 
-
 ## Add test-runner
 
 Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`.  Or add test-runner to specific projects by adding an alias to the project `deps.edn` file.  Include `:extra-paths` configuration to include the standard `test` directory so that the runner has access to the test code.
@@ -21,8 +20,8 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
                      {:git/url "https://github.com/cognitect-labs/test-runner.git"
                       :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
        :main-opts   ["-m" "cognitect.test-runner"]}
-    ```
 
+```
 
 ## Run test runner
 
@@ -38,19 +37,17 @@ A summary is returned with the results of running the tests.
 
 ![Clojure Unit Test - Cognitect Labs test runner example result](/images/clojure-unit-test-cognitect-labs-test-runner-results-example.png)
 
-
 ## Command line options
 
-| Flag                        | Description                                                    |
-|-----------------------------|----------------------------------------------------------------|
-| -d, --dir DIRNAME           | Name of the directory containing tests. Defaults to "test".    |
-| -n, --namespace SYMBOL      | Symbol indicating a specific namespace to test.                |
+| Flag                        | Description                                                                                                   |
+|-----------------------------|---------------------------------------------------------------------------------------------------------------|
+| -d, --dir DIRNAME           | Name of the directory containing tests. Defaults to "test".                                                   |
+| -n, --namespace SYMBOL      | Symbol indicating a specific namespace to test.                                                               |
 | -r, --namespace-regex REGEX | Regex for namespaces to test. Defaults to #".*-test$"  (i.e, only namespaces ending in '-test' are evaluated) |
-| -v, --var SYMBOL            | Symbol indicating the fully qualified name of a specific test. |
-| -i, --include KEYWORD       | Run only tests that have this metadata keyword.                |
-| -e, --exclude KEYWORD       | Exclude tests with this metadata keyword.                      |
-| -H, --test-help             | Display this help message                                      |
-
+| -v, --var SYMBOL            | Symbol indicating the fully qualified name of a specific test.                                                |
+| -i, --include KEYWORD       | Run only tests that have this metadata keyword.                                                               |
+| -e, --exclude KEYWORD       | Exclude tests with this metadata keyword.                                                                     |
+| -H, --test-help             | Display this help message                                                                                     |
 
 Options can be used multiple times in one command, for a logical OR effect. For example, the following command runs all tests in the `practicalli.data.survey` and `practicalli.services.survey-report` namespaces that are found in the `src` and `test` directories
 
@@ -82,7 +79,6 @@ clojure -M:test-runner-cognitect --include :integration --include :persistence
 ```
 
 [Clojure Unit Test - categories example integration and develop tests](/images/clojure-unit-test-categories-example-integration-develop.png)
-
 
 `--exclude` flag runs all tests except those in the given category
 

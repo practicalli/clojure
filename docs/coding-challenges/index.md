@@ -8,7 +8,6 @@ Challenges are there to explore a language and practice your understanding of ho
 
 [4Ever-Clojure](https://4clojure.oxal.org/){target=_blank} is a highly recommended starting point for learning Clojure and does not require any installation or setup.  4Ever-Clojure is a new implementation of 4Clojure.com.
 
-
 | Challenge website                                     | Description                                               | Requirements                                                                                      |
 |-------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------------------------------|
 | [4Ever-Clojure](4clojure/)                            | Learning the core functions of the Clojure language       | Web Browser                                                                                       |

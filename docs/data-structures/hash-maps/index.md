@@ -22,21 +22,20 @@ Keywords point to themselves, so using them for the keys makes it very easy to g
 ```
 
 > #### Hint::Comma characters are treated as white-space
+>
 > The comma character is rarely used in Clojure hash-maps as it is ignored by Clojure.  When coming from other languages, it may be initially comforting to include commas.
-
 
 ## Nested data models
 
-nested maps to create a hierachy or path for data.  This can add more context to the overall design
+nested maps to create a hierarchy or path for data.  This can add more context to the overall design
 
 various types of data
 
-
 > #### Hint::One data structure to rule them all
+>
 > It is preferred to have a single data structure to model the data of a system, which is them used by all the functions of that system.  An example is in the state used for an application, e.g. [Practicalli website practicalli.data namespace](https://github.com/practicalli/practicalli.github.io/blob/live/src/practicalli/data.cljs)
 >
 > If there is no logical connection between data across a system, then data should be grouped into one structure per namespace as a minimal approach.
-
 
 ## Example use: Data sets
 

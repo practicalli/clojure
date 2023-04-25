@@ -49,7 +49,6 @@ With the `for` function we can add a filter on the results by using a predicate,
 
 To do this kind of filtering with maps would be possible, however the code would be harder for humans to parse and understand.
 
-
 > **Note** Create a 3-tumbler combination padlock, with each tumbler having a range of 0 to 9. Count the number of possible combinations.  Then add a predicate that filters out some of the combinations
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
@@ -85,7 +84,6 @@ Now add a predicate using `:when` to filter out the combinations that do not mat
 ```
 
 <!--endsec-->
-
 
 > **Note** Create a 2 character prefix for tickets, using capital letters from the English alphabet.  However, exclude I and O as they can be mistaken for numbers
 

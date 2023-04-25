@@ -20,7 +20,6 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 !!! HINT "Code for this solution on GitHub"
     [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to this exercise
 
-
 ## Create the project
 
 Download the RNA transcription exercise using the exercism CLI tool
@@ -30,7 +29,6 @@ exercism download --exercise=rna-transcription --track=clojure
 ```
 
 > To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
-
 
 ## Designing the solution
 
@@ -58,7 +56,6 @@ Use an anonymous function to wrap the dictionary and pass each a character (nucl
 ```
 <!-- ;; => (\C \G \A \U) -->
 
-
 The result is returned as a sequence of characters.
 
 Refactor the `to-rna` function and add `clojure.string/join` to return the RNA value as a string
@@ -79,6 +76,7 @@ Now the function returns a string rather than a collection of characters.
 <!-- ;; => "CGAU" -->
 
 ## Throwing an assertion error for incorrect nucleotide
+
 In the Exercism test suite, one test checks for an AssertionError when an incorrect nucleotide is passed as part of the DNA string.
 
 ```clojure
@@ -113,11 +111,9 @@ What if the `throw` function is used as the not-found value in the `get` functio
 
 Unfortunately this approach will evaluate the throw expression regardless of if the nucleotide is found in the dictionary, so calling this version of the function always fails.
 
-
 The `or` function evaluate the first expression and if a true value is returned then any additional expressions are skipped over.
 
 If the first expression returns false or a falsey value, i.e. `nil`, then the next expression is evaluated.
-
 
 ```clojure
 (defn to-rna
@@ -133,7 +129,6 @@ If the first expression returns false or a falsey value, i.e. `nil`, then the ne
 ```
 <!-- ;; => "CGAU" -->
 
-
 Call the `to-rna` function with a DNA string that contains an invalid nucleotide.
 
 ```clojure
@@ -142,8 +137,8 @@ Call the `to-rna` function with a DNA string that contains an invalid nucleotide
 
 An `AssertionError` is thrown as the `X` character does not exist in the dictionary hash-map, so the `get` expression returns `nil`.
 
-
 ## Refactor and streamline
+
 Now the function is working, some minor adjustments could be made to streamline the code.
 
 A hash-map can be called as a function and takes a key as an argument.  This acts the same as the `get` function, returning the value  associated to a matching key, otherwise returning `nil` or the not-found value if specified.
@@ -190,7 +185,6 @@ Refactor the `to-rna` function to use the dictionary by name.
               (throw (AssertionError. "Unknown nucleotide")))
          dna)))
 ```
-
 
 ## Making the function pure
 

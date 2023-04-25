@@ -1,9 +1,8 @@
 # Naming - local scope
 
-
 ## Local names in functions
-  You can define names for things within the scope of a function using the `let` function.
 
+  You can define names for things within the scope of a function using the `let` function.
 
 ### Example
 
@@ -16,12 +15,12 @@ You can use the let function to define a simple expression, for which everything
 
 You can also use `let` inside a function to do something with the arguments passed to that function.  Here we calculate the hourly-rate from a yearly salary, returning the calculated-rate.
 
-
 (defn hourly-rate [yearly-salary weeks-in-year days-in-week]
   (let [calculated-rate (/ yearly-salary weeks-in-year days-in-week)]
     calculated-rate))
 
 (hourly-rate 60000 48 5)
+
 ```
 
 

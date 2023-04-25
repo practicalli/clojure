@@ -10,11 +10,9 @@ Solve challenges via the built-in Exercism editor, so no install is reqiured.
 
 Or download each exercise locally using the [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank}, providing a [Clojure CLI](/clojure/clojure-cli/){target=_blank} configured project with a test runner.  Use the [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank} to submit a solution for metor feedback.
 
-
 ??? INFO "Exercism embdedded Clojure editor"
     The Exercisim Clojure editor is powered by [babashka/sci](https://github.com/babashka/SCI)
     ![Exercism Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/exercism/exercism-editor-clojure-example-licians-luscious-lasagna.png)
-
 
 ## Clojure Track
 
@@ -28,7 +26,6 @@ In mentored mode your solutions are added to the mentors dashboard for review fr
 
 ![Clojure code challenges - Exercism Clojure track](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/clojure-code-challenges-exercism-clojure-track.png)
 
-
 ## Working Locally
 
 [Exercism Guide to working locally](https://exercism.org/docs/using/solving-exercises/working-locally){target=_blank .md-button}
@@ -41,7 +38,8 @@ The [Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank} can down
     Each Exercise page shows the command to download the code for that specific exercise, which is of the form
     ```bash
     exercism download --exercise=exercise-name --track=clojure
-    ```
+
+```
 
 Open the project in your [preferred Clojure editor](/clojure/clojure-editors/) and write a solution to solve the exercise.
 
@@ -52,7 +50,6 @@ Once the tests pass and you are happy with the solution, submit it to the Exerci
 ```bash
 exercism submit /path/to/src-file
 ```
-
 
 ## Support
 

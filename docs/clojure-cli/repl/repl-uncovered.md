@@ -8,10 +8,7 @@ The REPL allows you to run any existing code, write new code and change code.  E
 
 The REPL can run all of your code or simply get the result of an individual expression.  You can inspect run-time values and continually develop your code without having to restart each time.
 
-
 > **Hint** If you are not using the REPL for your Clojure development you are missing out on a highly productive workflow.  Once you start using a REPL as part of you development cycle you will feel lost without one.
-
-
 
 # How the REPL works (simple version)
 
@@ -38,9 +35,6 @@ For example, when Clojure reads the text (+ 1 2), the result is a list data stru
 
 ## The Reader
 
-
-
-
 > **Hint** Clojure is a [homoiconic](http://en.wikipedia.org/wiki/Homoiconicity) language, which is a fancy term describing the fact that Clojure programs are represented by Clojure data structures. This is a very important difference between Clojure and most other programming languages.  It means that Clojure is defined in terms of the evaluation of data structures and not in terms of the syntax of character streams/files.
 
 > It is quite common, and easy, for Clojure programs to manipulate, transform and produce other Clojure programs.
@@ -48,8 +42,6 @@ For example, when Clojure reads the text (+ 1 2), the result is a list data stru
 The reader has syntax defined in terms of characters, and the Clojure language has syntax defined in terms of symbols, lists, vectors, maps etc. The reader is represented by the function [read](http://clojure.github.io/clojure/clojure.core-api.html#clojure.core/read), which reads the next form (not character) from a stream, and returns the object represented by that form.
 
 There are also [Reader Macros](/resources/reader-macros.html) that define special rules on top of the Clojure syntax.  They give the language some additional syntax sugar, making your Clojure code compact.  See the [reference section on reader macros](/resources/reader-macros.html) for more information
-
-
 
 ## Evaluator
 
@@ -60,6 +52,5 @@ To evaluate a symbol, Clojure looks up what the symbol refers to.
 To evaluate a list, Clojure looks at the first element of the list and calls a function, macro, or special form.
 
 Any other values including strings, numbers and keywords simply evaluate to themselves.
-
 
 > **Hint** Read the section on [Reading, Evaluation and Macros from BraveClojure](http://www.braveclojure.com/read-and-eval/) to see examples of the REPL process.

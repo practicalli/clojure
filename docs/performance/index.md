@@ -8,12 +8,10 @@ There are several aspects to performance testing
 
 The purpose of performance testing and bench-marking is to understand the expected behaviour of your application under various usage patterns.  This kind of testing can also suggest areas of the application that might benefit from optimisation
 
-
 ## Performance tools for Clojure
 
 * [Criterium](https://github.com/hugoduncan/criterium) - benchmarks for Clojure expressions
 * [Gatling]()
-
 
 ## Gatling
 
@@ -30,7 +28,6 @@ Key Features of Gatling:
 * Powerful and flexible validation and assertions system
 * Comprehensive informative load reports
 
-
 ## Reference: Other performance tools
 
 Other notable performance tools include:
@@ -40,7 +37,6 @@ Other notable performance tools include:
 * Tsung (required Erlang)
 * Locust (python)
 
-
 Key Features of The Grinder:
 
 * TCP proxy to record network activity into the Grinder test script
@@ -49,7 +45,6 @@ Key Features of The Grinder:
 * Flexible parameterization, which includes creating test data on the fly and the ability to use external data sources like files and databases
 * Post-processing and assertion with full access to test results for correlation and content verification
 * Support of multiple protocols
-
 
 Key Features of JMeter:
 
@@ -62,7 +57,6 @@ Key Features of JMeter:
 * Multiple built-in and external listeners to visualize and analyze performance test results
 * Integration with major build and continuous integration systems, making JMeter performance tests part of the full software development life cycle
 * Extensions via plugins
-
 
 ## Resources
 

@@ -11,7 +11,6 @@ clojure.test namespace is part of the Clojure standard library and provides asse
 [Practicalli Unit Testing Guide](unit-testing/){.md-button}
 [Using Test Runners](test-runners/){.md-button}
 
-
 ## Generative testing
 
 Define specifications for values to confirm information coming into and leaving a Clojure service are of the correct form.
@@ -23,7 +22,6 @@ Define specifications for functions to validate the correct form of values are p
 [Define value and function specifications with Cloure Spec](/clojure/clojure-spec/){.md-button}
 [Generative Testing with Clojure Spec](/clojure/clojure-spec/testing/){.md-button}
 
-
 ## Performance testing
 
 Test individual expressions through to application and load testing one or more services.
@@ -32,7 +30,6 @@ Test individual expressions through to application and load testing one or more 
 * criterion - a realistic measure of performance for clojure expressions
 * [Gatling](https://gatling.io/) - open source & commercial load test tool for web applications
 * [clj-gatling](https://github.com/mhjort/clj-gatling) - wrapper around Gatling which enables tests to be expressed in Clojure.
-
 
 ## Behaviour Driven Development frameworks
 
@@ -44,10 +41,10 @@ Although not widely used in the Clojure community, there are several approaches 
 * [kaocha-cucumber](https://github.com/lambdaisland/kaocha-cucumber) - support for Cucumber tests in the gerkin format
 * [speclj](https://github.com/slagyr/speclj) - TDD/BDD framework for Clojure and ClojureScript based on RSpec.
 
-Alternative BDD libraries are discussed at https://github.com/gphilipp/bdd-guide-clojure
-
+Alternative BDD libraries are discussed at <https://github.com/gphilipp/bdd-guide-clojure>
 
 ## Articles on testing in Clojure
+
 * [Clojure test runner of my dreams](https://quanttype.net/posts/2017-01-26-clojure-test-runner-of-my-dreams.html)
 * [Example based unit testing in Clojure](https://lispcast.com/unit-testing-in-functional-languages/)
 * [TDD in Clojure at Funding Circle](https://engineering.fundingcircle.com/blog/2016/01/11/tdd-in-clojure/)

@@ -45,7 +45,6 @@ And finally we can also use the threading macro to minimise our code further
 
 This technique is called destructuring.  Find out [more on Destructuring](https://gist.github.com/john2x/e1dca953548bfdfb9844)
 
-
 Duplicate keys in a map are not allowed, so the following maps...
 
 ```clojure

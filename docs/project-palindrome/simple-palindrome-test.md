@@ -1,2 +1,1 @@
 # Simple palindrome test
-

@@ -10,7 +10,6 @@ Unit tests are centered on assertions, testing if something returns a true or fa
 
 `deftest` is a collection of assertions, with or without `testing` expressions.  The name of the deftest should be the name of the function it is testing with `-test` as a postfix.  For example, the function `practicalli.playground/calculator` would have a `deftest` called `practicalli.playground-test/calculator-test`
 
-
 ## Requiring Namespaces
 
 A test namespace has a singular purpose to test a matching src namespace.
@@ -21,7 +20,6 @@ The namespace to be tested is referred using a meaningful alias. The alias highl
 
 ![Clojure Unit Testing - require software under testa using SUT alias](/images/clojure-unit-test-require-sut.png)
 
-
 ![Clojure Unit Testing - using SUT alias](/images/clojure-unit-test-alias-sut.png)
 
 In the above example it is easy to see which namespaces the functions being tested are from.  The `dictionary` namespace is a source of data for those tests.
@@ -29,12 +27,12 @@ In the above example it is easy to see which namespaces the functions being test
 === "REPL"
     ```clojure
     (require '[clojure.test :refer [are deftest is testing]])
-    ```
+
+```
     The namespace under test should be referred using the alias so they are readily identified within the test code.
     ```clojure
     (require '[practicalli.gameboard.spec :as gameboard-spec])
-    ```
-
+```
 
 === "project"
     Add `clojure.test` to the namespace definition along with the namespace under test.
@@ -42,8 +40,8 @@ In the above example it is easy to see which namespaces the functions being test
     (ns practicalli.app-namespace-test
       (:require '[clojure.test :refer [are deftest is testing]]
                  [practicalli.gameboard.spec :as gameboard-spec]))
-    ```
 
+```
 
 ## Simple Example
 
@@ -88,7 +86,8 @@ This is equivalent to writing
                (character-sequence->word-sequence dictionary/digit->word '(\0 \2 \1))))
         (is (= '("zero" "forty" "two")
                (character-sequence->word-sequence dictionary/digit->word '(\0 \4 \2))))))
-    ```
+
+```
     Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
     ```clojure
     (deftest encoder-test
@@ -100,11 +99,10 @@ This is equivalent to writing
             '("zero" "twenty" "zero") '(\0 \2 \0)
             '("zero" "twenty""one")   '(\0 \2 \1)
             '("zero" "forty" "two")   '(\0 \4 \2)))
-    ```
+```
 
 !!! HINT "Generative Testing provides a wide range of values"
     [Generating test data from Clojure Specs](/clojure/clojure-spec/generative-testing/) provides an extensive set of values that provide an effective way to test functions.
-
 
 ## Reference
 

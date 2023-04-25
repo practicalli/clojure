@@ -14,7 +14,6 @@ Regular expressions are a powerful and compact way to find specific patterns in 
 
 The **[regular expression syntax cheatsheet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet)** by Mozilla is an excellent reference for regular expression patterns.
 
-
 ## Regular expressions overview
 
 Regular expressions in Clojure
@@ -23,14 +22,11 @@ Regular expressions in Clojure
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iTimmZcNToY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-
 Find the most common word in a book using regular expressions
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/hpz2vHaTz44" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
-
 
 ??? HINT "Double escaping not required"
     The Clojure syntax means you do not need to double escape special characters, eg. `\\`, and keeps the patterns clean and simple to read. In other languages, backslashes intended for consumption by the regex compiler must be doubled.
@@ -41,7 +37,6 @@ Find the most common word in a book using regular expressions
     ```
 
     The rules for embedding unusual literal characters or predefined character classes are listed in the Javadoc for Pattern.
-
 
 ## Host platform support
 
@@ -55,7 +50,6 @@ Regular expressions in Clojure create a [java.util.regex.Pattern](https://docs.o
 ```
 
 ClojureScript runs on JavaScript engines and uses Javascript regular expressions.
-
 
 ## Option flags
 
@@ -85,7 +79,6 @@ The preceding regular expression has no capturing groups, so each match in the r
 (re-seq #"\w*(\w)" "one-two/three")
 (["one" "e"] ["two" "o"] ["three" "e"])
 ```
-
 
 ## References
 

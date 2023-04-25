@@ -13,6 +13,7 @@ Idempotent - given the same input you get the same output
 > Create an expression to do the same calculation, but without having to write all the numbers.  Hint: consider the functions called range and reduce.
 
 The `range` function generates a sequence of numbers and when given arguments it does so from a specific range.  The second number is exclusive, so for 1 to 10 the second argument should be 11.
+
 ```clojure
 (range 1 11)
 ```

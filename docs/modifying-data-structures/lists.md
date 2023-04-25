@@ -2,9 +2,7 @@
 
   You can change lists with the `cons` function, see `(doc cons)` for details
 
-
 (cons 5 '(1 2 3 4))
-
 
 You will see that `cons` does not change the existing list, it create a new list that contains the number 5 and a link to all the elements of the existing list.
 

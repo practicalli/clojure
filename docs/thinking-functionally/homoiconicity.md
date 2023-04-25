@@ -1,12 +1,12 @@
 # Homoiconicity
 
-Clojure is a homoiconic language, which is a term describing the fact that Clojure programs are represented by Clojure data structures. 
+Clojure is a homoiconic language, which is a term describing the fact that Clojure programs are represented by Clojure data structures.
 
 In Clojure you write your business logic as functions.  A function is defined using a list structure.  A function is called using a list structure, as the first element of a list is evaluated as a function call.
 
 > **Hint** Everything in Clojure is a _List_ (or vector, map, set).
 
-This is a very important difference between Clojure (and Common Lisp) and most other programming languages - Clojure is defined in terms of the evaluation of data structures and not in terms of the syntax of character streams/files. 
+This is a very important difference between Clojure (and Common Lisp) and most other programming languages - Clojure is defined in terms of the evaluation of data structures and not in terms of the syntax of character streams/files.
 
 It is quite easy for Clojure programs to manipulate, transform and produce other Clojure programs.  This is essentially what macros do in Clojure, they re-write Clojure for you.
 
@@ -14,7 +14,7 @@ It is quite easy for Clojure programs to manipulate, transform and produce other
 
 ![Skynet logo](https://truthernews.files.wordpress.com/2015/04/skynet_wallpaper.jpg)
 
-## An example 
+## An example
 
 Consider the following expression:
 
@@ -25,7 +25,7 @@ Consider the following expression:
 
 Evaluating the above code in the REPL returns `2` because the repl compiles and executes any code entered into it. But `[x 1]` is also a literal vector data structure when it appears in a different context.
 
-All Clojure code can be interpreted as data in this way. In fact, Clojure is a superset of EDN – Extensible Data Notation, a data transfer format similar to JSON. EDN supports numbers, strings, lists (1 2 3), vectors [1 2 3], maps {"key" "value"}. 
+All Clojure code can be interpreted as data in this way. In fact, Clojure is a superset of EDN – Extensible Data Notation, a data transfer format similar to JSON. EDN supports numbers, strings, lists (1 2 3), vectors [1 2 3], maps {"key" "value"}.
 
 If this sounds and looks a lot like Clojure syntax, it’s because it is. The relationship between Clojure and EDN is similar to that of Javascript and JSON, but much more powerful.
 

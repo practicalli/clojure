@@ -8,36 +8,32 @@ The function is the unit under test in Clojure.  All public functions that form 
 
 ![Clojure test unit test example - status monitor dashboard function and unit test](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png "Example Clojure test - web service handler namespace - dashboard function")
 
-
 ## Unit Test Principles
 
 * A `test` namespace for each `src` namespace under test
 * A `deftest` function for each function under test, named after the function its testing with `-test` at the end of the name
 * Multiple assertions (`is` `are`) for one function
-    * `is` defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call
-    * `are` to testing similar functionality with different data sets (or use generative testing)
+  * `is` defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call
+  * `are` to testing similar functionality with different data sets (or use generative testing)
 * `testing` to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)
 * `use-fixtures` to call [fixture functions](fixtures.md "Define and run functions that set up and tear down state required for a test or collection of tests") that setup and tear down any state required for test(s) to run
 * Test API rather than implementation
-    * test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)
-    * `^:helper` meta-data on `deftest` for more generic functions, to skip those tests via a test selector
+  * test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)
+  * `^:helper` meta-data on `deftest` for more generic functions, to skip those tests via a test selector
 * Use [generative testing](/clojure-spec/) to create more maintainable test code with more extensive range of data
 * Use [test selectors](test-selectors.md) with a [test runner](/testing/test-runners/) to selectively run tests and optimise speed of test runs
 * Limit mocking of systems to integration tests (although mocking data is good everywhere)
 
-
 ??? HINT "Code should evaluate or have line comments"
     All Clojure code should be valid syntax and able to be evaluated (compiled), even code within a `(comment )` expression or after a `#_` reader comment.
 
-    Code commented with a line comment, `;;`, will not be read by Clojure and cannot cause compliation errors when evaluated
-
+    Code commented with a line comment, `;;`, will not be read by Clojure and cannot cause compilation errors when evaluated
 
 ## Running tests
 
 [Test runners](/testing/test-runners/) can run be run in the REPL used for development or run separately via the command line and continuous integration tasks.
 
 ![Clojure unit testing approach - editor and command line](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png)
-
 
 ## Run tests in Editor connected REPL
 
@@ -62,7 +58,6 @@ The original name can also be removed using Clojure `(ns-unmap 'namespace 'name)
 
 > Stop and start the REPL process ensures all function and tests are correctly loaded
 
-
 ## Command line test runners
 
 Command line test runners (i.e. koacha, Cognitect Labs) load function and test definitions from the source code files each time, ensuring tests are run and a clean REPL state is created on each run. This clearly defined REPL state is especially valuable for running repeatable integration tests.
@@ -80,7 +75,6 @@ The CLI approach is also more robust for longer running tests than running withi
 !!! WARNING "Avoid stale tests"
     Running tests via a command line test runner will never experience stale tests, as long as all relevant changes are saved to the source code files.
 
-
 ## Run tests in the REPL
 
 `clojure.test` includes the `run-tests` function that runs tests (`deftest` definitions) in given namespaces and `run-all-tests` which runs all tests in all namespaces.
@@ -93,7 +87,6 @@ The CLI approach is also more robust for longer running tests than running withi
 
 > `run-tests` and `run-all-tests` are a less common approach as the command line and editor driven test runners provide a rich set of features
 
-
 ## Project structure with tests
 
 For each source code file in `src` there should be a corresponding file in `test` directory with the same name and `_test` postfix.
@@ -103,7 +96,6 @@ For example, code to test the `src/codewars/rock_paper_scissors.clj` is saved in
 ![Clojure project structure - src and test branches](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png)
 
 [Example project: CodeWars: Rock Paper Scissors](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){target=_blank .md-button}
-
 
 ## Source and Test Namespaces
 
@@ -116,7 +108,6 @@ As with file names, the namespaces for each test code file is the same as the so
 
     `clojure -T:project/new :template app :name practicalli/rock-paper-scissors-lizard-spock`
 
-
 ## Project Examples: Code challenges with unit tests
 
 * [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
@@ -124,7 +115,6 @@ As with file names, the namespaces for each test code file is the same as the so
 * [practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
 * [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
 * [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
-
 
 ## References
 

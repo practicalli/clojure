@@ -5,11 +5,11 @@
 Recursion is used greatly in Clojure to iterate through data and as anything can be treated as data in Clojure you can understand why.
 
 The constructs available in Clojure for recursion include
+
 * `loop` and `recur`
 * Named function that calls itself
 * `map`, `reduce`, `filter`, `remove`, etc.
 * `for`
-
 
 # Recursively calling the same function
 
@@ -27,8 +27,8 @@ Lets iterate though a collection using recursion by writing a function that call
 
 Lets take this recursive approach to create a function that can tell us the length of a collection (list or vector)
 
-
 We define a function that takes a collection of an argument.  The collection is tested to see if it is empty and if so a zero value is returned.  If the collection is not empty, then we
+
 ```clojure
 (defn length [collection]
   (if (empty? collection)
@@ -55,7 +55,6 @@ The second expression starts with a simple counter, using the `+` function and t
 
 ```
 
-
 ```clojure
 (+ 1 (length [1 2]))
 (+ 1 (+ 1 (length [2])))
@@ -67,15 +66,13 @@ The second expression starts with a simple counter, using the `+` function and t
 
 ```
 
-
 (defn length [collection]
   (kk))
-
-
 
 # Further recursion examples
 
 Other functions to consider
+
 * every
 * accumulating / accumulative
 * keep

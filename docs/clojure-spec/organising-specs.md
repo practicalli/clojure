@@ -34,7 +34,6 @@ Write simple helper functions to wrap the instrumenting of function specificatio
 
 Specifications can be incorporated into the existing unit tests, so it is sensible to keep them under the corresponding `test` directory files.
 
-
 ## Generative testing
 
 Using `spec-test/check` will generate 1000 data values for each expression, so by default these tests will take far longer that other tests.

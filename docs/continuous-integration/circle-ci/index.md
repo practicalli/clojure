@@ -8,7 +8,6 @@ Integration will be supported by Git version control, a continuous integration s
 
 <!-- ![Continuous integration workflow - simple concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/circleci-workflow-sequential-git-heroku.png) -->
 
-
 ## Getting Started
 
 [Sign up](https://circleci.com/signup/){target=_blank} using a GitHub or Bitbucket account and login to the CircleCI dashboard.
@@ -16,7 +15,6 @@ Integration will be supported by Git version control, a continuous integration s
 **Add Project** in the CircleCI dashboard to configure a shared Git repository and run build pipelines using a `.circleci/config.yml` file in the root of the Clojure project.
 
 Every time changes are pushed to the shared code repository (GitHub, Bitbucket), CirceCI will run the pipeline for the project and show the results.
-
 
 ## Clojure images
 
@@ -32,15 +30,12 @@ Add the following under the `docker:` key in the `config.yml`
 
 The [CircleCI Clojure Language guide](https://circleci.com/docs/2.0/language-clojure/){target=_blank} walks through the sections of the yaml configuration in detail.
 
-
 ??? INFO "Check Clojure version"
     `clojure -Sdescribe` shows configuration information for the Clojure CLI tool as a hash-map, with the :version key associated with the exact install version.
 
     `lein version` shows the current version of Leiningen install on your development environment.
 
     `java -version` shows the current version of the Java installation.
-
-
 
 ## References
 

@@ -5,7 +5,6 @@ Starting a REPL is a fast way to start experimenting with Clojure.  Clojure code
 !!! HINT "Clojure Editors are the main tool for writing code"
     An [editor connected a a Clojure REPL](/clojure-editors/) is far more effective for writing code than typing into the command line REPL directly.  Evaluating code in an editor will automatically use the correct namespace.
 
-
 ## Evaluating code
 
 Type Clojure code at the REPL prompt, e.g `(map inc [1 2 3 4 5])`.  Press `Enter` to evaluate the code and see the result.
@@ -19,7 +18,6 @@ Typing part of function name shows matches available, ++tab++ to cycle through t
 
 ![Clojure REPL rebel readline - example of autocompletion](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-dark.png#only-dark)
 ![Clojure REPL rebel readline - example of autocompletion](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-autocomplete-map-light.png#only-light)
-
 
 ## Including code from a file
 
@@ -37,7 +35,6 @@ Requiring the namespace of a file will evaluate the code from that file in the R
 
 Functions from the file can be called using their fully qualified names.  Assuming the namespace contains a function called `main`, that function can be called using `(practicalli.playground/main)`.
 
-
 ## Changing namespaces
 
 If the default `user` namespace is change to `practicalli.playground` then functions in that namespace can be called by just the function name, eg. `(main)`.
@@ -50,7 +47,6 @@ If the default `user` namespace is change to `practicalli.playground` then funct
 
 Now the `(main)` function can be called without having to include the full namespace name.
 
-
 ## Reloading code changes from a file
 
 The `:reload` option to `require` will load in any changes to a namespace that happened outside of the REPL, eg. using an editor to change the source code in the file.
@@ -60,7 +56,6 @@ The `:reload` option to `require` will load in any changes to a namespace that h
 ```
 
 When using an editor that is not connected to the Clojure REPL, then reloading is an effective way of updating the code with all the changes saved in the file.
-
 
 ## Clojure projects
 

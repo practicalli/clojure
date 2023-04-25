@@ -112,7 +112,6 @@
 (- 2)
 ```
 
-
 # Boolean & Predicates
 
 Predicates are functions that take a value and return a boolean result (true | false)
@@ -124,7 +123,6 @@ Predicates are functions that take a value and return a boolean result (true | f
 (true? (not false))
 (true? nil)
 ```
-
 
 # Types
 
@@ -158,6 +156,7 @@ Predicates are functions that take a value and return a boolean result (true | f
 ```
 
 # Ratios
+
   To help maintain the precision of numbers, Clojure has a type called Ratio.  So when you are dividing numbers you can keep the as a fraction using whole numbers, rather than constrain the result to a approximate
 
 ```clojure

@@ -23,7 +23,6 @@ Configured with a project.clj file.
                         [ring/ring-mock "0.3.2"]]}})
 ```
 
-
 ## CircleCI Configuration
 
 This configuration uses the CircleCI specific docker image with Java 17 and the latest version of Leiningen.
@@ -64,7 +63,6 @@ jobs:
       # run tests!
       - run: lein test
 ```
-
 
 ## Caching dependencies
 

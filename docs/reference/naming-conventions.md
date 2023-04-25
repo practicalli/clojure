@@ -22,7 +22,6 @@ not-empty?
 null?
 ```
 
-
 ## Namespace requires and aliases
 
 Required libraries should be given a contextually meaningful name as an alias, helping to identify the purpose of functions defined outside of the namespace.
@@ -37,7 +36,6 @@ Aliases are rarely typed more than once in full as Clojure editors have auto-com
             [hiccup.form :refer :as web-form]))
 ```
 
-
 In very commonly used libraries or very highly used functions through out the code, refer those functions explicitly
 
 ```clojure
@@ -45,7 +43,6 @@ In very commonly used libraries or very highly used functions through out the co
   (:require [compojure.core :refer [defroutes GET POST]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]))
 ```
-
 
 ## Converting functions
 

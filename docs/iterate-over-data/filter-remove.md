@@ -6,9 +6,7 @@ filter creates a new collection that contains all the matching values from the p
 
 `remove` creates a new collection with contains all the values that didn't match the predicate function (false).
 
-
 > #### TODO::work in progress, sorry
-
 
 ```clojure
 (filter odd? [1 2 3 4 5 6 7 8 9])

@@ -43,9 +43,7 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 > **Hint** When a function is effectively asking if a value is true or false, its referred to as a _predicate function_.  Its common practice in Clojure to place a `?` at the end of that functions name.
 
-
 ## Lookup data from a Vector
-
 
 ```clojure
 ([1 2 3] 1)
@@ -54,7 +52,6 @@ Vectors are written using square brackets `[]` with any number of pieces of data
 
 ;; ((1 2 3) 1) ;; you cant treat lists in the same way, there is another approach - assoc
 ```
-
 
 ## Changing vectors
 

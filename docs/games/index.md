@@ -1,6 +1,7 @@
 # Writing Games with Clojure
 
 > #### TODO::work in progress, sorry
+>
 > Pull requests are welcome
 
 Games are driven by events and require state to be managed, so are a good way to explore how to manage state with immutable values.
@@ -11,6 +12,6 @@ This section will contain several games that have been built using a functional 
 
 * TicTacToe on the command line
 
-
 > #### Hint::Games in ClojureScript
+>
 > There is a section on games in the Practicalli ClojureScript book, including [a TicTacToe game using Reagent](https://practicalli.github.io/clojurescript/reagent-projects/tic-tac-toe/index.html) (react.js style library) and Scalable Vector Graphics (SVG).

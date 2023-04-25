@@ -21,7 +21,6 @@ A predicate is a function that returns a true or false value and their names end
 !!! HINT "`clojure.core` predicate functions"
     [`clojure.core` defines 80+ predicate functions](/reference/clojure/predicates.md)
 
-
 ## Predicate functions in specs
 
 Predicate functions can be used as un-named specifications to test values conform.
@@ -39,7 +38,6 @@ Include the `clojure.spec.alpha` namespace to access the spec functions.
 ```clojure
 (spec/conform seq? (range 4))
 ```
-
 
 ## Custom predicate functions
 

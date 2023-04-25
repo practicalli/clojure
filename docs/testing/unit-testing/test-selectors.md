@@ -9,7 +9,6 @@ Test runners use test selectors to run a specific categories, or exclude test se
 !!! HINT "kaocha focus and skipping"
     kaocha can [group tests into categories](https://cljdoc.org/d/lambdaisland/kaocha/1.0.700/doc/3-configuration#test-suites) in the `tests.edn` configuration, providing a way to [focus or exclude different types of tests](https://cljdoc.org/d/lambdaisland/kaocha/CURRENT/doc/6-focusing-and-skipping) (e.g. `:unit` and `:spec`)
 
-
 ## Test category metadata
 
 Add metadata to `deftest` functions to provide categories of tests, e.g. `integration`, `persistence`, etc.
@@ -30,11 +29,9 @@ Example from Banking on Clojure
                         (spec-gen/generate (spec/gen :customer/unregistered)))))))
 ```
 
-
 ## Test Selectors
 
 Start a test selective category of tests running by specifying test selectors to include or exclude.
-
 
 === "Kaocha"
     kaocha supports meta data on `deftest` expressions and has its own metadata tag for skipping tests, `^:koacha/skip`
@@ -67,7 +64,6 @@ Start a test selective category of tests running by specifying test selectors to
     bin/kaocha --skip-meta :metadata-name
     ```
 
-
 === "Spacemacs"
     Running tests with the universal argument will prompt for test selector filters and only Run those tests that match the selector inclusions/exclusions.
 
@@ -78,7 +74,6 @@ Start a test selective category of tests running by specifying test selectors to
     Then prompting for the test selectors to exclude.  A warning displays if CIDER does not find the test selector name.
 
     ![Spacemacs Clojure Cider Test Runner test selector prompt - include](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/spacemacs/screenshots/spacemacs-clojure-test-selectors-integration-not-found.png)
-
 
 === "Cider"
     Invoke the CIDER test runner commands with the universal argument and CIDER will prompt for test selector filters, running only those tests that match the selector inclusions/exclusions.
@@ -99,7 +94,6 @@ Start a test selective category of tests running by specifying test selectors to
 
     ![Spacemacs Clojure Cider Test Runner test selector prompt - include](/images/spacemacs-clojure-test-selectors-integration-not-found.png)
 
-
 === "Cognitect"
     The Cognitect Labs test runner uses command line options to specify test selectors, `--include` and `--exclude`.
 
@@ -108,8 +102,6 @@ Start a test selective category of tests running by specifying test selectors to
     `clojure -M:test/cognitect --include :database` only runs tests with the `^:database` test selector
 
     `clojure -M:test/cognitect --exclude :integration` runs all tests except those with the `^:integration` test selector
-
-
 
 ## References
 

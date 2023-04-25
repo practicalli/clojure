@@ -1,4 +1,5 @@
 # Literal values
+
 Sets can be used as predicate functions returning true if the value is within the set
 
 Checking valid playing cards
@@ -10,11 +11,9 @@ Define a namespace for the page and require Clojure Spec
   (:require [clojure.spec.alpha :as spec]))
 ```
 
-
 ```clojure
 (spec/valid? #{:club :diamond :heart :spade} :club)
 ```
-
 
 ```clojure
 (spec/valid? #{:club :diamond :heart :spade} 42)

@@ -11,7 +11,6 @@ A simple syntax means Clojure is quick to learn and a wide range of open source 
 
     Clojure concepts are easier to relate to whist practicing with Clojure and building Clojure software solutions.
 
-
 ## Ten Big Ideas plus one
 
 The key to understanding Clojure is ideas, not language constructs but the concepts that shape the language.
@@ -38,7 +37,6 @@ Stuart Halloway presents [Clojure in 10 big ideas (plus one)](https://vimeo.com/
 
 * 2013 [RuPy slides](https://github.com/stuarthalloway/presentations/blob/master/Barnstorming_2013/ClojureInTenBigIdeas.pdf?raw=true){target=_blank}
 * 2017 [Chicago JUG slides](https://github.com/stuarthalloway/presentations/blob/master/ClojureInTenBigIdeas-Jun-2017.pdf?raw=true){target=_blank}
-
 
 ## Antithesis of Clojure and simple software design
 

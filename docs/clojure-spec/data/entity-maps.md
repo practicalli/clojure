@@ -20,6 +20,7 @@ The Clojure Spec `keys` function is used to create a specification for a hash-ma
 `keys` creates a specification from required keys, `:req`, and optional keys `:opt`.
 
 To define the specification for a player in an online game, first the individual specifications that make up the player hash-map are created.
+
 ```clojure
 (spec/def ::account-id uuid?)
 (spec/def ::name string?)

@@ -5,6 +5,7 @@
 Install Clojure and a build tool
 
 Setup a Clojure aware editor
+
 * Emacs & CIDER - Spacemacs, Doom, Prelude
 * Neovim & Conjure
 * VSCode & Clover or Calva
@@ -16,7 +17,6 @@ Setup a Clojure aware editor
 
 * 4clojure.org
 * Exercism.io
-
 
 ### def / defn / let
 
@@ -31,6 +31,7 @@ Setup a Clojure aware editor
 ### Server-side websites
 
 #### Ring / Compojure / Reitit / Hiccup | Selma
+
 ### React client-side single page apps
 
 #### React.js / Om-next / Reagent / Re-frame
@@ -38,6 +39,5 @@ Setup a Clojure aware editor
 #### core.async
 
 ### Full Stack apps
-
 
 #### Kit Framework

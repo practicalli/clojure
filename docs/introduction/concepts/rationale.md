@@ -12,8 +12,7 @@ Clojure has a distinctive approach to [state and identity](http://clojure.org/st
 
 Why Clojure?
 
-
-## Motivating ideas behind Clojure.
+## Motivating ideas behind Clojure
 
 A LISP base language design is very effecitve
 
@@ -21,9 +20,7 @@ A LISP base language design is very effecitve
 
 * Core advantage still code-as-data and syntactic abstraction
 
-
 Standard Lisps (Common Lisp, Scheme) have not evolved over time, since standardisation.  Their core data structures are mutable and not extensible and therefore no mechanisms for effectively dealing with concurrency.
-
 
 Clojure is a Lisp not constrained by backwards compatibility, allowing modernisation of the language that otherwise deters developers from adoption.
 
@@ -36,8 +33,9 @@ Core data structures are extensible abstractions
 Embraces a platform (JVM)
 
 Functional programming is a good thing
-- Immutable data + first-class functions
-- Could always be done in Lisp, by discipline/convention
+
+* Immutable data + first-class functions
+* Could always be done in Lisp, by discipline/convention
 
 But if a data structure can be mutated, dangerous to presume it won't be
 In traditional Lisp, only the list data structure is structurally recursive

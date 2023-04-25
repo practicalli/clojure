@@ -10,7 +10,9 @@ Let bindings
 We know that symbols are names for things, and that when evaluated, Clojure replaces those symbols with their corresponding values. +, for instance, is a symbol which points to the verb #<core$_PLUS_ clojure.core$_PLUS_@12992c>.
 
 user=> +
-#<core$_PLUS_ clojure.core$_PLUS_@12992c>
+
+# <core$_PLUS_ clojure.core$_PLUS_@12992c>
+
 When you try to use a symbol which has no defined meaning, Clojure refuses:
 
 user=> cats
@@ -59,11 +61,15 @@ If we bound x to 5 instead of 1, this expression would evaluate to 6. We can thi
 We can’t actually evaluate this program, because there’s no value for x yet. It could be 1, or 4, or 1453. We say that x is unbound, because it has no binding to a particular value. This is the nature of the function: an expression with unbound symbols.
 
 user=> (fn [x] (+ x 1))
-#<user$eval293$fn__294 user$eval293$fn__294@663fc37>
+
+# <user$eval293$fn__294 user$eval293$fn__294@663fc37>
+
 Does the name of that function remind you of anything?
 
 user=> inc
-#<core$inc clojure.core$inc@16bc0b3c>
+
+# <core$inc clojure.core$inc@16bc0b3c>
+
 Almost all verbs in Clojure are functions. Functions represent unrealized computation: expressions which are not yet evaluated, or incomplete. This particular function works just like inc: it’s an expression which has a single unbound symbol, x. When we invoke the function with a particular value, the expressions in the function are evaluated with x bound to that value.
 
 user=> (inc 2)
@@ -87,7 +93,7 @@ user=> (let [twice (fn [x] (* 2 x))]
 8
 Compare that expression to an equivalent, expanded form:
 
-user=> (+ (* 2 1)
+user=> (+ (*2 1)
           (* 2 3))
 The name twice is gone, and in its place is the same sort of computation–(* 2 something)–written twice. While we could represent our programs as a single massive expression, it’d be impossible to reason about. Instead, we use functions to compact redundant expressions, by isolating common patterns of computation. Symbols help us re-use those functions (and other values) in more than one place. By giving the symbols meaningful names, we make it easier to reason about the structure of the program as a whole; breaking it up into smaller, understandable parts.
 
@@ -99,7 +105,9 @@ We’ve used let to define a symbol within an expression, but what about the def
 Well, not exactly. That’s one way to think about default bindings, but it’s brittle. We’d need to wrap our whole program in a new let expression every time we wanted to change the meaning of a symbol. And moreover, once a let is defined, there’s no way to change it. If we want to redefine symbols for everyone–even code that we didn’t write–we need a new construct: a mutable variable.
 
 user=> (def cats 5)
-#'user/cats
+
+# 'user/cats
+
 user=> (type #'user/cats)
 clojure.lang.Var
 def defines a type of value we haven’t seen before: a var. Vars, like symbols, are references to other values. When evaluated, a symbol pointing to a var is replaced by the var’s corresponding value:
@@ -117,17 +125,25 @@ When we said in chapter one that inc, list, and friends were symbols that pointe
 user=> 'inc
 inc ; the symbol
 user=> (resolve 'inc)
-#'clojure.core/inc ; the var
+
+# 'clojure.core/inc ; the var
+
 user=> (eval 'inc)
-#<core$inc clojure.core$inc@16bc0b3c> ; the value
+
+# <core$inc clojure.core$inc@16bc0b3c> ; the value
+
 Why two layers of indirection? Because unlike the symbol, we can change the meaning of a Var for everyone, globally, at any time.
 
 user=> (def astronauts [])
-#'user/astronauts
+
+# 'user/astronauts
+
 user=> (count astronauts)
 0
 user=> (def astronauts ["Sally Ride" "Guy Bluford"])
-#'user/astronauts
+
+# 'user/astronauts
+
 user=> (count astronauts)
 2
 Notice that astronauts had two distinct meanings, depending on when we evaluated it. After the first def, astronauts was an empty vector. After the second def, it had one entry.
@@ -140,17 +156,23 @@ Defining functions
 Armed with def, we’re ready to create our own named functions in Clojure.
 
 user=> (def half (fn [number] (/ number 2)))
-#'user/half
+
+# 'user/half
+
 user=> (half 6)
 3
 Creating a function and binding it to a var is so common that it has its own form: defn, short for def fn.
 
 user=> (defn half [number] (/ number 2))
-#'user/half
+
+# 'user/half
+
 Functions don’t have to take an argument. We’ve seen functions which take zero arguments, like (+).
 
 user=> (defn half [] 1/2)
-#'user/half
+
+# 'user/half
+
 user=> (half)
 1/2
 But if we try to use our earlier form with one argument, Clojure complains that the arity–the number of arguments to the function–is incorrect.
@@ -172,7 +194,9 @@ Multiple arguments work just like you expect. Just specify an argument vector of
 user=> (defn add
          [x y]
          (+ x y))
-#'user/add
+
+# 'user/add
+
 user=> (add 1 2)
 3
 Some functions can take any number of arguments. For that, Clojure provides &, which slurps up all remaining arguments as a list:
@@ -182,7 +206,9 @@ user=> (defn variable-arguments
          {:x    x
           :y    y
           :more more-args})
-#'user/variable-arguments
+
+# 'user/variable-arguments
+
 user=> (variable-arguments 1)
 
 ArityException Wrong number of args (1) passed to: user$variable-arguments  clojure.lang.AFn.throwArity (AFn.java:437)
@@ -204,6 +230,7 @@ Docstrings are used to automatically generate documentation for Clojure programs
 
 user=> (doc launch)
 -------------------------
+
 user/launch
 ([craft target-orbit])
    Launches a spacecraft into the given orbit by initiating a
@@ -224,13 +251,17 @@ java.lang.long
 And that type, like all functions, is a kind of object with its own unique type:
 
 user=> type
-#<core$type clojure.core$type@39bda9b9>
+
+# <core$type clojure.core$type@39bda9b9>
+
 user=> (type type)
 clojure.core$type
 This tells us that type is a particular instance, at memory address 39bda9b9, of the type clojure.core$type. clojure.core is a namespace which defines the fundamentals of the Clojure language, and $type tells us that it’s named type in that namespace. None of this is particularly helpful, though. Maybe we can find out more about the clojure.core$type by asking what its super types are:
 
 user=> (supers (type type))
-#{clojure.lang.AFunction clojure.lang.IMeta java.util.concurrent.Callable clojure.lang.Fn clojure.lang.AFn java.util.Comparator java.lang.Object clojure.lang.RestFn clojure.lang.IObj java.lang.Runnable java.io.Serializable clojure.lang.IFn}
+
+# {clojure.lang.AFunction clojure.lang.IMeta java.util.concurrent.Callable clojure.lang.Fn clojure.lang.AFn java.util.Comparator java.lang.Object clojure.lang.RestFn clojure.lang.IObj java.lang.Runnable java.io.Serializable clojure.lang.IFn}
+
 This is a set of all the types that include type. We say that type is an instance of clojure.lang.AFunction, or that it implements or extends java.util.concurrent.Callable, and so on. Since it’s a member of clojure.lang.IMeta it has metadata, and since it’s a member of clojure.lang.AFn, it’s a function. Just to double check, let’s confirm that type is indeed a function:
 
 user=> (fn? type)
@@ -239,6 +270,7 @@ What about its documentation?
 
 user=> (doc type)
 -------------------------
+
 clojure.core/type
 ([x])
   Returns the :type metadata of x, or its Class if none

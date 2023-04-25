@@ -10,7 +10,6 @@ An overview of thinking functionally is also covered in the presentation entitle
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/mEfqULqChZs" frameborder="0" allowfullscreen></iframe>
 
-
 [![Join the conversation on Clojurians Slack](/images/practicalli-slack-channel.png)](https://clojurians.slack.com/messages/practicalli)
 
 Get a [free Clojurians slack community account](https://clojurians.net/)

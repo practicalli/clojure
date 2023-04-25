@@ -13,7 +13,6 @@ We have seen some simple examples of pure functions, so lets see impure function
 
 The above function is using a global value rather than the argument passed makes this function deterministic
 
-
 ## Side Effect: Printing to the console log
 
 Although the following example is probably quite harmless, it is a simple example of a function effecting the state of something outside.  These side effects should be avoided where possible to keep your code simpler to reason about.
@@ -24,7 +23,6 @@ Although the following example is probably quite harmless, it is a simple exampl
 
 (print-to-console "a side effect")
 ```
-
 
 ## Side Causes: Calling libraries
 
@@ -53,7 +51,6 @@ In this example we have called to the outside world to generate a value for us. 
 
 <!--endsec-->
 
-
 ## Re-write as a pure function
 
 Change the task-complete function definition and function call to take both the task-name and completed-date as arguments.
@@ -66,7 +63,6 @@ Change the task-complete function definition and function call to take both the 
 ```
 
 Required values should be generated outside a function where possible.  In this case in the `(js/Date)` function is first evaluated and replaced by its value, then that date value is passed to the function as an argument, keeping the function pure.
-
 
 <!--sec data-title="Clojure version using java.util.Date" data-id="section2" data-collapse=true ces-->
 

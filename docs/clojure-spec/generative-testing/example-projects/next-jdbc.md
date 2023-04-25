@@ -4,16 +4,16 @@ The next-jdbc project is a modern low-level Clojure wrapper for JDBC-based acces
 
 The project defines data specifications using predicates and
 
-
 ## Defining specifications
+
 Specifications are defined within a single file [`src/next/jdbc/specs.clj`](https://github.com/seancorfield/next-jdbc/blob/master/src/next/jdbc/specs.clj).
 
 Specifications start with `clojure.spec.alpha/def` expressions, using predicate functions as specifications.  There is also a custom predicate function called
 
 Function definition specifications follow, using the `clojure.spec.alpha/fdef` function.  The `fdef` functions define the specification for the arguments of each function.  The `fdef` function name is the same as the function definition it is defining a specification for.
 
-
 ## Instrumenting specifications
+
 Instrumenting functions provides automatic checking that argument in a function call conforms to the specification.
 
 Rather than write individual expressions to instrument each function, a var called `fns-with-specs` contains a collection of names for all the `fdef` function definition specifications.

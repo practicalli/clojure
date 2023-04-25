@@ -2,7 +2,6 @@
 
 > #### TODO::work in progress, sorry
 
-
 ```clojure
 (map (fn [arg] (+ arg 5)) [1 2 3 4 5])
 ```
@@ -17,9 +16,8 @@ Adding this into our previous expression we can see that its still quite readabl
 (map #(+ arg 5) [1 2 3 4 5])
 ```
 
-
-
 > #### Hint::Anonymous function name
+>
 > Anonymous functions do not have an externally referable name, so must be used in-line with an expression.
 >
 > The `fn` function can be defined with a name, however, this is only available in the scope of that function definition, the name cannot be used to refer to that function outside of its definition.

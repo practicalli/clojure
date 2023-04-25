@@ -10,8 +10,8 @@
 |:----------------------------------------------------|:---------------------------------------------------------------------------------------------------------|
 | `clojure -X:deps list`                              | List full transitive deps set and licenses                                                               |
 | `clojure -X:deps tree`                              | download dependencies & print dependency tree, indenting libraries that are dependencies of dependencies |
-| `clojure -X:deps find-versions`                     | Find available versions of a given library (domain/name)
-| `clojure -X:deps prep`                              | Prepare all unprepped libs in the dep tree
+| `clojure -X:deps find-versions`                     | Find available versions of a given library (domain/name)                                                 |
+| `clojure -X:deps prep`                              | Prepare all unprepped libs in the dep tree                                                               |
 | `clojure -X:deps mvn-install :jar '"/path/to.jar"'` | install a given jar file into the local maven repository, eg. `~/.m2/repository`                         |
 | `clojure -X:deps git-resolve-tags`                  | update `deps.edn` git based dependencies that used tags with the equivalent SHA commit values            |
 
@@ -33,6 +33,7 @@ Show the full dependencies for the project and the `:dev/reloaded` alias which c
 ```shell
 clojure -X:dev/reloaded:deps list
 ```
+
 
 ## Dependency tree
 

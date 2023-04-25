@@ -9,7 +9,6 @@ Slow running unit tests lead to unit tests not being run so often and therefore 
 !!! HINT "Organise tests with test selectors"
     Tests with fixtures may be slower to run so separate them by [using a test selector](test-selectors.md), a piece of meta data attached to a `deftest` definition. For example, add the `^:persistence` meta data to test that require database fixtures  (deftest ^:database db-bulk-upload).  The test runner can be instructed to skip or focus on tests with specific meta data.
 
-
 ## Defining a fixture
 
 Require the `use-fixtures` function in the require expression for `clojure.test`
@@ -31,7 +30,6 @@ A fixture is a standard Clojure function which takes a function as an argument. 
  )
 ```
 
-
 ## When to run fixtures
 
 The `use-fixtures` function defines when a fixture should be called when running the unit tests in each namespace.  All Clojure unit test runners should support the `use-fixtures` definitions when running the tests.
@@ -41,18 +39,15 @@ The `use-fixtures` function defines when a fixture should be called when running
 | `(use-fixtures :once fixture1 fixture2)` | Run the fixtures once for the namespace.             |
 | `(use-fixtures :each fixture1 fixture2)` | Run the fixtures for each `deftest` in the namespace |
 
-
 **Once**
 
 The setup in the fixture is run, followed by all the `deftest` functions in the namespace, then the fixture tear-down is run.
 
 Running a fixture once per namespace is useful for establishing a database connection or creating a particular state of data for all the unit tests to use.
 
-
 **Each**
 
 The fixture setup is run before each `deftest` function in the namespace. The fixture tear-down is run after each `deftest` function.
-
 
 ## Anonymous function fixture
 
@@ -63,7 +58,6 @@ The `use-fixtures` function can also include anonymous function as well as a nam
 ```
 
 `defn` functions are usually recommended unless the fixture code is relatively terse.
-
 
 !!! EXAMPLE "Development database"
     Define a fixture to reset the database before running a test and clear the database after each test.
@@ -88,7 +82,6 @@ The `use-fixtures` function can also include anonymous function as well as a nam
     ```clojure
     (use-fixtures :each database-reset-fixture)
     ```
-
 
 ## References
 

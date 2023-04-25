@@ -1,4 +1,5 @@
 # Map literal syntax - `#:` and `#::`
+
 `#:` map literal macro for Clojure hash-maps adds a given namespace to all the keywords contained in the hash-map.
 
 `#::` map literal macro for keyword auto-resolve adds the current fully qualified namespace to all the keywords in the hash-map
@@ -20,6 +21,7 @@ In this example the keys in the map are unqualified.
 ```
 
 ## Qualifying keys with auto-resolve
+
 Using the map literal macro for auto-resolve instructs Clojure to treat all keys in the map as qualified to the current namespace
 
 The following hash-map has the map literal macro.
@@ -43,6 +45,7 @@ However, if we move the map to another namespace, then the explicit namespaces w
 ```
 
 ## Qualifying keywords with a specific name
+
 Rather than take the name from the current namespace, an explicit name can be added to all the keys in the map
 
 ```clojure
@@ -51,7 +54,6 @@ Rather than take the name from the current namespace, an explicit name can be ad
                       :with-autoresolve []
                       :map-literal      []}
 ```
-
 
 This is the same as explicitly writing that name in front of each of the keywords in the map.
 
@@ -62,9 +64,7 @@ This is the same as explicitly writing that name in front of each of the keyword
    :practicalli.naming/map-literal      []}
 ```
 
-
 Map literals are relevant to Entity maps with spec.
-
 
 <!-- ```clojure -->
 <!-- #:clojure.spec.alpha {:problems -->
@@ -79,7 +79,6 @@ Map literals are relevant to Entity maps with spec.
 <!-- ``` -->
 
 <!-- ;; means the same as -->
-
 
 <!-- ```clojure -->
 <!-- {:clojure.spec.alpha/problems -->

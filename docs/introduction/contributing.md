@@ -1,13 +1,12 @@
 # Contributing to Practicalli
 
-How to effectivley contribute to Practicalli Books.
+How to effectively contribute to Practicalli Books.
 
 Practicalli books are written in markdown and use MkDocs to generate the published website via a GitHub workflow.  MkDocs can also run a local server using the `make docs` target from the `Makefile`
 
 By submitting content ideas and corrections you are agreeing they can be used in this book under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors){target=_blank}.
 
 All content and interaction with any persons or systems must be done so with respect and within the Practicalli Code of Conduct.
-
 
 ## Book status
 
@@ -20,13 +19,11 @@ All content and interaction with any persons or systems must be done so with res
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/m/practicalli/clojure?style=for-the-badge)
 ![GitHub contributors](https://img.shields.io/github/contributors/practicalli/clojure?style=for-the-badge&label=github%20contributors)
 
-
 ### Submit and issue or idea
 
 If something doesnt seem quite right or something is missing from the book, please [raise an issue via the GitHub repository](https://github.com/practicalli/clojure/issues){target=_blank} explaining in as much detail as you can.
 
 Raising an issue before creating a pull request will save you and the maintainer time.
-
 
 ### Considering a Pull request?
 
@@ -35,7 +32,6 @@ Before investing any time in a pull request, please raise an issue explaining th
 Please keep pull requests small and focused, as they are much quicker to review and easier to accept.  Ideally PR's should be for a specific page or at most a section.
 
 A PR with a list of changes across different sections will not be merged, it will be reviewed eventually though.
-
 
 ## Thank you to everyone that has contributed
 

@@ -38,14 +38,11 @@ clojure -X:test/watch
 
 Both kaocha aliases are configured to stop if a test fails.  When re-running kaocha, only failed tests and tests that have changed are run (including tests where the code they are testing has changed).
 
-
-
 ## Alias to include the test directory
 
 Add the following aliases to the Clojure CLI tools user wide configuration, (e.g. `~/.clojure/deps.edn`), or to the project `deps.edn` file.
 
 To use a test runners with a `deps.edn` projects, the `test` directory should be on the classpath.
-
 
 practicalli/clojure-deps-edn defines an environment alias to include the test path.
 
@@ -56,7 +53,6 @@ practicalli/clojure-deps-edn defines an environment alias to include the test pa
   {:extra-paths ["test"]}
 }
 ```
-
 
 ## Cognitect labs Clojure test runner
 
@@ -69,10 +65,10 @@ clojure -X:test/cognitect
 ## Kaocha unit test and clojure spec runner
 
 `:test/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
+
 ```bash
 clojure -X:test/kaocha
 ```
-
 
 ## References
 

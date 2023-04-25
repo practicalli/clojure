@@ -1,6 +1,6 @@
 # Install Clojure
 
-Clojure CLI is the minimum Clojure environment, although a [Clojure aware editor](/clojure/clojure-editors/) with [Clojure LSP server](/clojure/clojure-editors/clojure-lsp/) is highly recommeded.
+Clojure CLI is the minimum Clojure environment, although a [Clojure aware editor](/clojure/clojure-editors/) with [Clojure LSP server](/clojure/clojure-editors/clojure-lsp/) is highly recommended.
 
 Clojure CLI provide the foundation for Clojure development, providing a simple and configurable way to:
 
@@ -12,7 +12,6 @@ Clojure CLI provide the foundation for Clojure development, providing a simple a
 
 [Clojure aware editors](/clojure-editors/) provide the most effective way to write and maintaine Clojure projects, connecting to (or even starting) a Clojure REPL and evaluating code as its typed and seeing the results instantly in line with the code.
 
-
 ## Complete Clojure environment
 
 Establish an effective Clojure development environment by installing the following:
@@ -23,13 +22,11 @@ Establish an effective Clojure development environment by installing the followi
 | [Clojure CLI](clojure-cli.md)                                                 | Run Clojure REPL and other tools for development and production                                                                 |
 | [Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) | Curated aliases providing common development tasks and tools across all projects (used heavily in this guide)                   |
 
-
-| Recommended Tools                                             | Purpose                                                                                  |
-|---------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| [Clojure aware editors](/clojure/clojure-editors/)            | Editors providing a complete Clojure development environment                             |
+| Recommended Tools                                           | Purpose                                                                                  |
+|-------------------------------------------------------------|------------------------------------------------------------------------------------------|
+| [Clojure aware editors](/clojure/clojure-editors/)          | Editors providing a complete Clojure development environment                             |
 | [Clojure LSP server](/clojure/clojure-editors/clojure-lsp/) | Lint tool to detect syntax bugs and suggest idiomatic code                               |
-| [Data browsers](/clojure/data-browsers/)                               | Visualize results of Clojure code, navigate nested data and page through large data sets |
-
+| [Data browsers](/clojure/data-browsers/)                    | Visualize results of Clojure code, navigate nested data and page through large data sets |
 
 !!! HINT "Aliases in Practicalli Clojure provided by Practicalli Clojure CLI config"
     [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration of over 50 aliases to support Clojure development. These aliases are used heavily in the Practicalli Clojure book.
@@ -40,4 +37,4 @@ Establish an effective Clojure development environment by installing the followi
     [Code analysis (clj-kondo)](/clojure/reference/code-analysis.md){target=_blank} is a Clojure syntax analysis tool that can detect syntax bugs and suggest idiomatic code.  clj-kondo is included in Clojure-lsp so is an optional install
 
 ??? INFO "Alternative development tools"
-    [Leiningen](https://leiningen.org){target=_blank} is the classic development tool for Clojure.  All the code examples in this book should work with Leiningen when a correctly configured `project.clj` file is created which includes all the neccessary library dependencies.  Libraries included via aliases should be added as either `:dev-dependencies` or `:aliases` in the Leiningen `project.clj` file.
+    [Leiningen](https://leiningen.org){target=_blank} is the classic development tool for Clojure.  All the code examples in this book should work with Leiningen when a correctly configured `project.clj` file is created which includes all the necessary library dependencies.  Libraries included via aliases should be added as either `:dev-dependencies` or `:aliases` in the Leiningen `project.clj` file.

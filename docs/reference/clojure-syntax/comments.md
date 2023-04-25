@@ -1,4 +1,5 @@
 # Comments
+
 As well as the classic line comments, Clojure also can comment specific parts of the code structure, even when it run over multiple lines.
 
 `;;` to comment a whole line and `;` to add a comment after the start of a line
@@ -7,13 +8,11 @@ As well as the classic line comments, Clojure also can comment specific parts of
 
 `#_` to ignore the next form as if it has not been written, commonly used for debugging
 
-
 ## Line comments
 
 Add general documentation for a namespace, such as a comment header that describes the overall purpose of a namespace.
 
 Separate a namespace into logical sections to aid navigation and help identify opportunities to refactor a namespace as it grows.
-
 
 ## comment function
 
@@ -32,7 +31,6 @@ The `comment` function returns `nil` so its advised not to use it inside another
 This will fail as it tries to use the `+` function to add `1` to `nil`
 
 The `#_` is the appropriate comment style for this example
-
 
 ### Rich comment
 
@@ -60,7 +58,6 @@ These rich comments make a project more accessible and easier to use.
 
 The "Rich" in the name also refers to Rich Hickey, the author and benevolent leader of the Clojure language.
 
-
 ## Comment forms with the comment reader macro
 
 `#_` is the comment reader macro that instructs the Clojure reader to completely ignore the next form, as if it had never been written.
@@ -68,7 +65,6 @@ The "Rich" in the name also refers to Rich Hickey, the author and benevolent lea
 No value is returned, so this comment is safe to use within an expression.
 
 You can place `#_` before the start of a form and everything inside that form will be commented
-
 
 ```clojure
 #_(def my-data [1 2 3 4 5])
@@ -115,7 +111,6 @@ Watch episode [#13 of Practicalli Clojure study group](https://youtu.be/ZkemmMgX
 In this example the third vector of values is not read by the Clojure reader and therefore is not passed as an argument to `+` function by `map`
 
 `(map + [1 2 3] [4 5 6] #_[7 8 9])`
-
 
 ### Stacking comments
 

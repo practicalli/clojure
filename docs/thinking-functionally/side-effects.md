@@ -18,8 +18,8 @@ You can think about these effects is in two specific areas, **Side Causes** and 
 
 * **Side Effects** - are where the current code (function) affects the rest of the system
 
-
 [![Side Causes & Side Effects - Kris Jenkins](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/theory/side-causes-side-effects.png)](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/theory/side-causes-side-effects.png)
 
 > #### Hint::Side Causes term
+>
 > The term of side causes was coined by [Kris Jenkins](https://twitter.com/krisajenkins) in the superb article [What is Functional Programming?](http://blog.jenkster.com/2015/12/what-is-functional-programming.html)

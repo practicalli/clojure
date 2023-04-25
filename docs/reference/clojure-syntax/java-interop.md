@@ -4,9 +4,9 @@
 
   Clojure provides very clear and simple syntax for [Java interoperability](http://clojure.org/java_interop), using the following functions
 
-  * `import` - add functions from the Java library into the current namespace
-  * `new` - create a new Java object
-  * `.` - is the short form of the `new` function
+* `import` - add functions from the Java library into the current namespace
+* `new` - create a new Java object
+* `.` - is the short form of the `new` function
 
   As Clojure is hosted on the Java Virtual Machine (JVM), its very easy to include libraries from any other languages that runs on the JVM, for example Java, Groovy, Scala, Jython, JRuby, Jaskell, etc.
 
@@ -14,7 +14,6 @@
 
 !!! INFO "java.lang included"
     Clojure projects and REPL environments include the `java.lang` library automatically.  Any methods from that library can be used without having to `import` them or include any dependencies
-
 
 ## The syntax
 
@@ -42,7 +41,6 @@ The string passed as an argument should now be all uppercase: "I WAS LOW, BUT NO
 
 <!--endsec-->
 
-
 > **Note** Use the staticField `Math/PI` to return the approximate value of Pi
 
 <!--sec data-title="Reveal answer..." data-id="answer002" data-collapse=true ces-->
@@ -56,7 +54,6 @@ Math/PI
 -> 3.141592653589793
 ```
 <!--endsec-->
-
 
 ## Getting the Java environment
 
@@ -73,7 +70,6 @@ Math/PI
 ```
 <!--endsec-->
 
-
 > **Note** Use `System/getenv` to return your system's environment variables as a map
 
 <!--sec data-title="Reveal answer..." data-id="answer004" data-collapse=true ces-->
@@ -83,9 +79,7 @@ Math/PI
 
 ![](../images/clojure-playground-getenv.png)
 
-
   You may notice that this is a map data structure that we return, so we can use use destructuring or the maps behaviour itself to pull out information.
-
 
 > **Hint** A full list of properties can be seen in the [getProperty() documentation](http://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
 

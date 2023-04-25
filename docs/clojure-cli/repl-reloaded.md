@@ -18,13 +18,13 @@ This command runs a Clojure REPL process and nREPL server which allows Clojure e
 
 Other features include:
 
-* `dev` directory for a [custom REPL startup](/clojure/clojure-cli/repl-startup/)
-* `add-libs` hotload libraries without restarting the REPL (alpha software)
-* [`tools.namespace`](#reload-namespaces){target'_blank} to reload changed namespaces
-* [portal](/clojure/data-inspector/portal/){target'_blank} to visualise & inspect data
-* `test` directory, test libraries & kaocha test runner
-* benchmark code with criterium
-* [mulog](https://github.com/BrunoBonacci/mulog){target'_blank} log and trace events
+- `dev` directory for a [custom REPL startup](/clojure/clojure-cli/repl-startup/)
+- `add-libs` hotload libraries without restarting the REPL (alpha software)
+- [`tools.namespace`](#reload-namespaces){target'_blank} to reload changed namespaces
+- [portal](/clojure/data-inspector/portal/){target'_blank} to visualise & inspect data
+- `test` directory, test libraries & kaocha test runner
+- benchmark code with criterium
+- [mulog](https://github.com/BrunoBonacci/mulog){target'_blank} log and trace events
 
 ??? EXAMPLE "Alias Definitions"
     Start a REPL process with an nREPL server to connect Clojure editors. Providing a Rebel rich terminal UI with tools to hotload libraries, reload namespaces and run Portal data inspector.  The alias also includes a path for custom REPL startup and a path to access unit test code, along with a test runner.
@@ -63,8 +63,7 @@ Other features include:
                    criterium/criterium          {:mvn/version "0.4.6"}}}
     ```
 
-    `org.slf4j/slf4j-nop` is only included to surpress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.
-
+    `org.slf4j/slf4j-nop` is only included to suppress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.
 
 ## Custom REPL startup
 
@@ -106,19 +105,22 @@ Require the clojure.tools.namespace.repl refresh function
 === "REPL"
     ```clojure
     (require '[clojure.tools.namespace.repl :refer [refresh]])
-    ```
+
+```
 
 === "Project"
     Use an ns form for the namespace (often added to a custom `user` namespace)
     ```clojure
     (ns user
       (:require [clojure.tools.namespace.repl :refer [refresh]]))
-    ```
+```
+
     Or in a rich comment expression
     ```clojure
     (comment
       (require '[clojure.tools.namespace.repl :refer [refresh]]))
-    ```
+
+```
 
 Refresh the namespaces that have saved changes
 
@@ -136,13 +138,11 @@ A list of refreshed namespaces are printed.  If there are errors in the Clojure 
     `*e` is bound to the exeception so will print the exeception when evaluated
 
 
-
 ??? INFO "tools.namespace refactor"
     `refresh` and other functions were moved to the `clojure.tools.namespace.repl` namespace. The original `clojure.tools.namespace` functions are deprecated, although the new `clojure.tools.namespace.repl` namespace is not deprecated.
 
 [Clojure tools.namespace API reference](https://clojure.github.io/tools.namespace/){target=_blank .md-button}
 [Namespaces Reference - Clojure.org](https://clojure.org/reference/namespaces){target=_blank .md-button}
-
 
 ## Hotload Libraries
 
@@ -197,9 +197,8 @@ Once hot-loaded, a library namespace can be required as if the dependency had be
 
 There are several approaches to hotload libraries, including via a terminal REPL UI or in a project with a Clojure editor:
 
-* [Rich terminal UI REPL](/clojure/clojure-cli/repl/libraries/#hotload-libraries)
-* [Hotload in a Project](/clojure/clojure-cli/projects/hotload-in-project/)
-
+- [Rich terminal UI REPL](/clojure/clojure-cli/repl/libraries/#hotload-libraries)
+- [Hotload in a Project](/clojure/clojure-cli/projects/hotload-in-project/)
 
 ## Unit test runner
 
@@ -296,14 +295,19 @@ Use the mulog `log` function to create events to capture useful information abou
     ```
 
 Optionally create an event global context, containing information that will be included in every event created
+
 ```clojure
 (mulog/set-global-context! {:service-name "Practicalli GameBoard", :version "1.0.1", :env "dev"})
 ```
+
 Create events with an identity that contains key/value pairs of data that captures the desired information about the event.
+
 ```clojure
 (mulog/log ::system-started :version "0.1.0" :init-time 32)
 ```
+
 Start a publisher to see all the events created.  The publisher can be to the console or to log analysis tools like [zipkin](https://zipkin.io/){target=_blank} or [Grafana](https://grafana.com/logs/)
+
 ```clojure
 (mulog/start-publisher! {:type :console})
 ```
@@ -347,13 +351,13 @@ Consider a function that calls several external services
 
 Tracing a value will show how that value flows through the code
 
-Tracing a funciton shows the arguments passed to the function each time it is called and the results.  Tracing will identify forms that are failing and also show the results of the function call, helping spotting unwanted `nil` arguments and parts of a function definition that is failing.
+Tracing a function shows the arguments passed to the function each time it is called and the results.  Tracing will identify forms that are failing and also show the results of the function call, helping spotting unwanted `nil` arguments and parts of a function definition that is failing.
 
-* `trace` values, optionally assigning a tag
-* `trace-vars` dynamically trace a given fully qualified function
-* `untrace-vars` - remove trace from a given fully qualified function
-* `trace-ns` dynamically trace all functions in the given namespace
-* `untrace-ns` remove trace from all functions in the given namespace
+- `trace` values, optionally assigning a tag
+- `trace-vars` dynamically trace a given fully qualified function
+- `untrace-vars` - remove trace from a given fully qualified function
+- `trace-ns` dynamically trace all functions in the given namespace
+- `untrace-ns` remove trace from all functions in the given namespace
 
 `:repl/reloaded` and `:dev/reloaded` include the clojure.tools.trace dependency, i.e. `org.clojure/tools.trace {:mvn/version "0.7.11"}`
 
@@ -374,6 +378,7 @@ Tracing a funciton shows the arguments passed to the function each time it is ca
     ```
 
 To trace a value returned from an expression, optionally adding a tag
+
 ```clojure
 (trace/trace  "increments" (map inc [1 2 3 4 5]))
 ;;=> TRACE increments: (2 3 4 5 6)
@@ -402,6 +407,7 @@ Trace functions can identify which form is failing
 ```
 
 Call the function that is being traced and see the error
+
 ```clojure
 (practicalli.random-function/random-number 42)
 ;;=> TRACE t10951: (practicalli.random-function/random-number 42)
@@ -410,20 +416,25 @@ Call the function that is being traced and see the error
 ```
 
 Dynamically trace all functions in the given name space
+
 ```clojure
 (trace-ns domain.namespace)
 ```
 
 Or remove all function traces in a namespace
+
 ```clojure
 (untrace-ns domain.namespace)
 ```
 
 Dynamically trace a given function
+
 ```clojure
 (trace-vars domain.namespace/function-name)
  ```
+
 Remove the trace on a given function
+
 ```clojure
 (untrace-vars domain.namespace/function-name)
 ```

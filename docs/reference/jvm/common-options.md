@@ -9,7 +9,6 @@ The JVM is excellent at self-optimising its performance.  Introducing specific o
 !!! HINT "`JDK_JAVA_OPTIONS` Environment Variable"
     `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
 
-
 ## Java heap size
 
 Java Ergonomics should provide sensible default options.  Performance analysis of the running code may show advantages of manually setting memory sizes.
@@ -32,7 +31,6 @@ Set the maximum heap size if usage is relatively high under normal conditions
 
 <!-- TODO: JVM options: example JVM thread stack size -->
 
-
 ## Heap and garbage collection
 
 `-XX:MaxHeapFreeRatio` – maximum percentage of heap free after garbage collection to avoid shrinking.
@@ -41,18 +39,15 @@ Set the maximum heap size if usage is relatively high under normal conditions
 
 > VisualVM or JConsole can monitor the heap usage
 
-
 ## Container Environments
 
 `-XX:InitialRAMPercentage` and `-XX:MaxRAMPercentage` options should be used to set relative limits to the resources available from the host.
 
 Setting specific heap sizes with `-Xms` and `-Xmx` is strongly discouraged in Container environments, as resources available to the container from the host could change between deployments (e.g. a change in operational configuration in Kubernettes, etc.)
 
-
 ## Stack traces
 
 `-XX:-OmitStackTraceInFastThrow` no StackTrace for implicit exceptions thrown by JVM, e.g. NullPointerException, ArithmeticException, ArrayIndexOutOfBoundsException, ArrayStoreException or ClassCastException.
-
 
 ## Reflection
 
@@ -65,13 +60,11 @@ Setting specific heap sizes with `-Xms` and `-Xmx` is strongly discouraged in Co
 
 > Java 16 deprecates `--illegal-access` flag, via work done for [JEP403](https://openjdk.java.net/jeps/403) - may still be useful for 3rd party Java libraries.
 
-
 ## Enable class data sharing
 
 `-Xshareclasses` enables class data sharing in a shared class cache.
 
 The JVM connects to an existing cache (creating a cache if none exist). Multiple caches specified by adding a sub-option to the `-Xshareclasses` option.
-
 
 ## Handling ‘OutOfMemory’ Error
 
@@ -87,7 +80,6 @@ A heap dump file can gigabytes in size, so assure that the target file system ha
 
 The option can take multiple commands, separated by a `;`, e.g. `-XX:OnOutOfMemoryError="< cmd args >;< cmd args >"`
 
-
 ## Trace classloading and unloading
 
 Identify memory leaks suspected from the JVM Class Loader, e.g. classes are not unloading or garbage collected
@@ -95,7 +87,6 @@ Identify memory leaks suspected from the JVM Class Loader, e.g. classes are not 
 `-XX:+TraceClassLoading`  - log classes loaded into the JVM
 
 `-XX:+TraceClassUnloading` - log classes unloaded from the JVM
-
 
 ## Profiling
 
@@ -107,7 +98,6 @@ Profiling JVM processes provides a fine-grained view of application execution an
 Consider using a profile tool, such as VisualVM
 
 ![Oracle Java VisualVM profiler example results](https://docs.oracle.com/javase/8/docs/technotes/guides/visualvm/images/profiler-memory.png)
-
 
 ## Skip byte code verification
 
@@ -127,7 +117,6 @@ Checks carried out by the verifier include
 * Final classes are not subclassed and final methods are not overridden
 * field and method references have valid names, valid classes and valid type descriptor
 
-
 ## Print GC
 
 Enable the garbage collection logging to capture detailed statistics, e.g. type of garbage collector, how often memory is restored and how much time memory was held for. Garbage collection can last several milliseconds, so logging is useful for latency-sensitive processes.
@@ -137,7 +126,6 @@ Enable the garbage collection logging to capture detailed statistics, e.g. type 
 * `-XX:-PrintGCTimeStamps` - Print timestamps at garbage collection.
 
 > Consider using [LMAX disruptor](https://lmax-exchange.github.io/disruptor/) for a Garbage Collection free architecture for ultra latency-sensitive applications
-
 
 ## Deprecated: PermGen Size
 

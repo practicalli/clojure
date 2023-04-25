@@ -2,19 +2,13 @@
 
 Recursion is a highly valuable tool in functional programming as it provides an idiomatic way of processing collections of data.
 
-
 ## normal recursion is more idiomatic
 
 On average it tends to give you clearer, more functional code whereas loop/recur tens to push you more towards an imperative, iterative style.
 
-
-
 ## Recursive functions
 
-
-
 > ####Warning::Recursion can hit the limit of your heap/stack and cause a ... exception
-
 
 ## Tail-call Optimisation with `recur`
 
@@ -27,11 +21,9 @@ Therefore `recur` is good choice for deeply nested recursion or when manipulatin
 
 Without tail-call optimisation the code may otherwise cause a StackOverflow / Heap out of memory Error
 
-
 ## Fast
 
 Using `loop` and `recur` it's one of the most efficient constructs in Clojure, match the speed of an equivalent for loop in Java code.
-
 
 ## Restrictions
 
@@ -43,12 +35,9 @@ Sometime it simply isn't possible to use loop/recur or it may require the contor
 > By calling a recursive function by name rather than using `recur` can prevent your code from remaining in an infinite loop if you get a terminating condition wrong.  Without recur you memory space will be eaten up and your code will stop.
 > Once your function is working correctly, then you can replace the call to itself with `recur`.
 
-
-
 ## Examples
 
 Here are two examples using two different recursion approaches. What are the guidelines of usage of one over another?
-
 
 This example recursively calls itself
 
@@ -69,7 +58,6 @@ This example recursively calls itself
 > The above example could not use `recur` instead of the recursive call to `take-while` as that call is not in the last position.
 > The `cons` function is in the last position of this function.
 
-
 This example uses `loop` and `recur` for recursively processing the collection.
 
 ```clojure
@@ -84,8 +72,6 @@ This example uses `loop` and `recur` for recursively processing the collection.
       (recur (next s) (next lead))
       s)))
 ```
-
-
 
 ## Misc
 

@@ -4,7 +4,6 @@ The best editor to use for learning Clojure is the editor already familiar with 
 
 Use SublimeText & ClojureSublimed if unsure where to start as it will be the simplest tool to use.
 
-
 ## Clojure editor features
 
 An ideal Clojure editor includes the these core features
@@ -17,13 +16,11 @@ An ideal Clojure editor includes the these core features
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
-
 ## Clojure aware editors
 
 Emacs (Spacemacs, Doom, Prelude), Neovim (Conjure) and VSCode (Calva) are the most common open source Editors for Clojure and ClojureScript development.
 
 SublimeText and IntelliJ are commercial editors (with limited free editions) which also provide Clojure support
-
 
 === "Emacs"
     ![GNU Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
@@ -37,7 +34,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     === "Spacemacs"
         ![Spacemacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/spacemacs-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-        [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim sytle editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
+        [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim style editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
 
         [Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
 
@@ -64,7 +61,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     === "Doom Emacs"
         ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px"}
 
-        [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those comming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
+        [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those coming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
 
         [Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){.md-button}
 
@@ -159,10 +156,9 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             pacman -S mingw-w64-x86_64-emacs
             ```
 
-        Once Emacs is installed, add the cider package for essentail Clojure support.
+        Once Emacs is installed, add the cider package for essential Clojure support.
 
         [Cider Install Guide](https://docs.cider.mx/cider/basics/installation.html){target=_blank .md-button}
-
 
 === "Neovim"
     ![Neovim logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
@@ -171,7 +167,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
-    Neovim now includes Treesitter which understands the syntax of a great many programming and configuration languages, also providing a Langauge Sever Protocol (LSP) client.
+    Neovim now includes Treesitter which understands the syntax of a great many programming and configuration languages, also providing a Language Sever Protocol (LSP) client.
 
     ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png){align=right loading=lazy style="height:128px;width:128px"}
 
@@ -231,8 +227,6 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
         [vim-iced documentation](https://liquidz.github.io/vim-iced/){target=_blank .md-button}
 
-
-
 === "VSCode"
     ![VS Code logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/vs-code.svg){align=right loading=lazy style="height:128px;width:128px"}
 
@@ -286,9 +280,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     === "Clover"
         [Clover](https://marketplace.visualstudio.com/items?itemName=mauricioszabo.clover){target=_blank} is a Socket REPL based development tool for Clojure with some ClojureScript support (not including Figwheel).
 
-        [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes useage details.
-
-
+        [Clojure GitLab repository](https://gitlab.com/clj-editors/clover) includes usage details.
 
 === "SublimeText"
     ![Clojure Sublimed Text logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/clojure-sublimed-logo.png){align=right loading=lazy style="height:128px;width:128px"}
@@ -313,7 +305,6 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     [Clojure-Sublimed install](https://github.com/tonsky/Clojure-Sublimed#installation){target=_blank .md-button}
     [SublimeText Documentation](https://www.sublimetext.com/docs/index.html){target=_blank .md-button}
 
-
 === "Pulsar (Atom)"
     ![Chlorine for Pulsar Editor](https://gitlab.com/clj-editors/atom-chlorine/raw/HEAD/docs/chlorine-logo.png){align=right loading=lazy style="height:128px;width:128px"}
 
@@ -328,7 +319,6 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         Atom will be archived on December 15 2022 with no further updates from GitHub team
 
         Consider using VSCode with Clover or Calva plugin or help support the evolution of the Pulsar project
-
 
 === "Intellij"
     [Cursive](https://cursive-ide.com/) may be an appropriate choice for people from a Java background who are already familiar with IntelliJ.  Cursive will run static analysis of Clojure code when opening a Clojure project, as IntelliJ does with other languages.

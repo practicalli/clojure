@@ -3,6 +3,7 @@
 Solution to Bob challenge using `clojure.string` functions and Character class from Java.
 
 ## Asking Bob a question?
+
 The phrase passed to Bob is a question if the last alphanumeric character is a question mark.
 
 Using a simple comparison we can check if the last character in the string a `?`
@@ -25,25 +26,30 @@ However if there is whitespace after the question mark then the `last` character
 ```
 
 ## Shouting at Bob
+
 Unfortunately the  clojure.string API does not have a function to check if a string is in capital letters.  There is an `upper-case` function, so a comparison can be made  with the original string and the string returned from `clojure.string/upper-case`.
 
 Convert the string to uppercase
+
 ```
 (clojure.string/upper-case "watch out!")
 ```
 
 compare the uppercase version of the string with the original, if they are equal, then the original string must have been in upper case
+
 ```clojure
   (= "WATCH OUT!"
      (clojure.string/upper-case "WATCH OUT!"))
 
 ```
+
 ```clojure
   (= "watch out!"
      (clojure.string/upper-case "watch out!"))
 ```
 
 There is a flaw in this approach thought, as it will give false positives for strings that should return the 'Whatever' response
+
 ```clojure
   (= "1, 2, 3"
      (clojure.string/upper-case "1, 2, 3"))
@@ -52,7 +58,6 @@ There is a flaw in this approach thought, as it will give false positives for st
 Refined rule to check that the phrase contains alphabetic characters, otherwise it is not shouting.
 
 The [java.lang.Character class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html) has a method called [isLetter](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Character.html#isLetter(char)) that determines if a character is a letter.
-
 
 > The Classes and methods in `java.lang` are always available within a Clojure project, without the need for specifically importing the library.
 
@@ -67,18 +72,19 @@ To support all Unicode characters there is an isLetter method that takes an inte
 ```
 (Character/isLetter (int \a))
 ```
+
 the [`some`](https://clojuredocs.org/clojure.core/some) function is used to iterate over all the characters in the phrase. As soon as a letter is found it returns true, so does not need to process the whole phrase unless no letter is found.
 
 ```
 (some #(Character/isLetter (int %)) phrase)
 ```
 
-
 ## Silence of the Bob
+
 `clojure.string/blank?` is a predicate function that returns true if a string is empty or contains only whitespace.  It also returns true for a `nil` value.
 
-
 ## Final solution
+
 Each of the rules is bound to a name that represents either a true or false value returned from each expression.
 
 The `cond` expression then evaluates the local names to see if they are true or false.  The first true value found returns the string associated with the name.

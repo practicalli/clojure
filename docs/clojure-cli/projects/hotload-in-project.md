@@ -4,8 +4,7 @@ When starting a REPL process the dependencies listed in the project `deps.edn` f
 
 ![Hotload libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png){loading=lazy}
 
-[Practicalli REPL Reloaded workflow ](/clojure/clojure-cli/repl-reloaded/) allows new dependencies to be added to a running REPL process, negating the need to restart the REPL process which would loose the current REPL state.
-
+[Practicalli REPL Reloaded workflow](/clojure/clojure-cli/repl-reloaded/) allows new dependencies to be added to a running REPL process, negating the need to restart the REPL process which would loose the current REPL state.
 
 ## Hotload REPL
 

@@ -57,11 +57,13 @@ You can get the first element of a string by treating it just like a collection.
 ```
 
 A string can be converted to a keyword, a character cannot
+
 ```clojure
 (keyword "a")
 ```
 
 A character can be converted to a string using the str function
+
 ```clojure
 (str (first "Strings also act as collections"))
 ```
@@ -73,6 +75,7 @@ The keywords need to be the same case, so convert the first character to lower c
 ```
 
 Putting it all together.
+
 ```clojure
 (keyword (clojure.string/lower-case (first "Strings also act as collections")))
 ```

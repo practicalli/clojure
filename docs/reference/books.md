@@ -3,6 +3,7 @@
 Here is a list of Clojure books, grouped by skill level.  There is also a [book list on Clojure.org](http://clojure.org/community/books) or via a [search for Clojure on o'Reilly](https://ssearch.oreilly.com/?q=clojure&x=0&y=0) lists most of these books.
 
 ## For Clojure beginners
+
 * [Living Clojure](http://shop.oreilly.com/product/0636920034292.do), O'Reilly April 2015
 * [Clojure for the Brave and the True](http://www.braveclojure.com/), NoStartch Press September 2015
 * [Clojurescript Unraveled](https://funcool.github.io/clojurescript-unraveled/) - June 2016
@@ -11,10 +12,12 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Practicalli Clojure WebApps](https://practical.li/clojure-web-services)
 
 ## Reference
+
 * [Clojure Programming Cookbook](https://www.packtpub.com/application-development/clojure-programming-cookbook), Packt August 2016
 * [Clojure Cookbook](http://clojure-cookbook.com/), O'Reilly March 2014 - hundreds of real-world problems and solutions, ranging from basic utilities to rich web services to heavy data processing
 
 ## Intermediate level
+
 * [Web Development with Clojure](https://pragprog.com/book/dswdcloj2/web-development-with-clojure-second-edition), Pragmatic July 2016
 * [Mastering Clojure](https://www.packtpub.com/application-development/mastering-clojure), Packt March 2016
 * [Clojure in Action](https://www.manning.com/books/clojure-in-action-second-edition), Manning December 2015
@@ -24,6 +27,7 @@ Here is a list of Clojure books, grouped by skill level.  There is also a [book 
 * [Clojure Programming](http://shop.oreilly.com/product/0636920013754.do), O'Reilly March 2012
 
 ## Other books
+
 * [Learning Clojurescript](https://www.packtpub.com/web-development/learning-clojurescript), Packt June 2016
 * [Professional Clojure](http://shop.oreilly.com/product/9781119267270.do), Wiley/Wrox May 2016
 * [Clojure for Java Developers](https://www.packtpub.com/application-development/clojure-java-developers), Packt February 2016

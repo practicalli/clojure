@@ -11,7 +11,7 @@ clojure-lsp is an implementation of an LSP server, for Clojure and ClojureScript
 
 Follow your preferred option on the [Clojure LSP installation guide](https://clojure-lsp.io/installation/)
 
-Practicalli downloads the clojure-lsp-native-linux-amd64.zip file from [GitHub release page ](https://github.com/clojure-lsp/clojure-lsp/releases)and extracts the `clojure-lsp` binary to `~/.local/bin/clojure-lsp`.
+Practicalli downloads the clojure-lsp-native-linux-amd64.zip file from [GitHub release page](https://github.com/clojure-lsp/clojure-lsp/releases)and extracts the `clojure-lsp` binary to `~/.local/bin/clojure-lsp`.
 
 `clojure-lsp -v` in a terminal will test if the the install is working.
 

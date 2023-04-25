@@ -103,7 +103,7 @@ This alias is called using the command `clojure -M:repl/cider`
 
 `:exec-fn` specifies the fully qualified name of the function, using the `clojure -X` execution option flag .
 
-`:exec-args` specifies a hash-map of default key/value pairs passed to the `:exec-fn` function.  The defaults can be overriden on the command line with respective key/value pairs.
+`:exec-args` specifies a hash-map of default key/value pairs passed to the `:exec-fn` function.  The defaults can be overridden on the command line with respective key/value pairs.
 
 Arguments can be nested within the `:exec-args` map, especially useful on projects with several component configurations (server, database, logging) and managed by a component system (i.e Integrant)
 

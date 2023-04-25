@@ -8,7 +8,6 @@ To test if you have Java on your computer, open a command line window and run th
 
     java -version
 
-
 ## Installing the Java Runtime Edition
 
   Download and install the latest [Oracle Java SDK](https://www.java.com) (version 1.8 at time of writing).
@@ -20,7 +19,6 @@ To test if you have Java on your computer, open a command line window and run th
 The OpenJDK is available as a package on Ubuntu and can be installed via the Ubuntu software center or via the command line:
 
     sudo apt-get install openjdk-8-jre
-
 
 ## Why is Java Required
 

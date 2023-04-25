@@ -37,9 +37,7 @@ The `str` function creates a new string from all the arguments passed
 
 `clojure.string` returns string values (other functions my return characters as results)
 
-
 ## Math, Truth & prefix notation
-
 
 Functions use prefix notation, so you can do math with multiple values very easily
 
@@ -57,7 +55,6 @@ Nesting forms defined a very precise calculation
 ```clojure
 (+ 1 (- 3 2)) ; = 1 + (3 - 2) => 2
 ```
-
 
 Equality is =
 
@@ -100,7 +97,6 @@ Vectors and Lists are java classes too!
 (class '(1 2 3)); => clojure.lang.PersistentList
 ```
 
-
 ### Collections & Sequences
 
 The most common data collections in Clojure:
@@ -119,11 +115,14 @@ The `'` quote function informs the Clojure reader to treat the list as data only
 ```
 
 Lists and vectors are collections
+
 ```clojure
 (coll? '(1 2 3)) ; => true
 (coll? [1 2 3]) ; => true
 ```
+
 Only lists are sequences
+
 ```clojure
 (seq? '(1 2 3)) ; => true
 (seq? [1 2 3]) ; => false
@@ -164,6 +163,7 @@ Use filter, map to interact with collections
 (map inc [1 2 3]) ; => (2 3 4)
 (filter even? [1 2 3]) ; => (2)
 ```
+
 Use reduce to reduce them
 
 ```clojure
@@ -180,7 +180,6 @@ Reduce can take an initial-value argument too
 ```
 
 Equivalent of `(conj (conj (conj [] 3) 2) 1)`
-
 
 ## Functions
 
@@ -422,7 +421,6 @@ The functions from clojure.set can be used via the alias name, rather than the f
 (comment
   (require 'clojure.set :as set))
 ```
-
 
 ## Java
 

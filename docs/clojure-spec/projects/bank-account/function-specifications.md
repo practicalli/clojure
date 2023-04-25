@@ -1,15 +1,17 @@
 # Specifications for function definitions - `fdef`
+
 Create a `spec/fdef` for the register-account-holder function
 
 `clojure.spec.alpha/fdef` defines a specification for a function definition, `defn`. Specifications can attached to the arguments using `:args`, the return value using `:ret` and the relationship between the two using `fn`.
 
 `:args`, `:ret` and `fn` are optional, although `args` and `ret` are required if you want to use `:fn`
 
+## Add a spec to cover the function arguments
 
-## Add a spec to cover the function arguments.
 `:args` is a compound specification that covers all the function arguments. The `:args` spec is invoked with the arguments in a list, so working with them is like using apply.
 
 Using regular expressions we can find the right arguments to give to the specification. Regular expression spec functions include
+
 * `spec/cat`
 * `spec/alt`
 * `spec/*`
@@ -26,6 +28,7 @@ The function is defined in the `practicalli.banking-on-clojure` namespace.  Requ
 
             [practicalli.banking-on-clojure :as SUT]))
 ```
+
 The `SUT` alias is used for the banking-on-clojure namespace, as is done with `clojure.test` unit test namespaces.
 
 ```clojure
@@ -34,8 +37,8 @@ The `SUT` alias is used for the banking-on-clojure namespace, as is done with `c
                   :practicalli.bank-account-spec/customer-details))
 ```
 
-
 ## Checking function calls against the spec - instrument
+
 `spec/fdef` by itself does not run checks against the specs
 
 ```clojure
@@ -120,8 +123,8 @@ Calling the register-account-holder with a value that conforms to the bank-accou
 ;; => {:practicalli.bank-account-spec/first-name "Jenny", :practicalli.bank-account-spec/last-name "Jetpack", :practicalli.bank-account-spec/email-address "jenny@jetpack.org", :practicalli.bank-account-spec/residential-address "42 meaning of life street, Earth", :practicalli.bank-account-spec/postal-code "AB3 0EF", :practicalli.bank-account-spec/social-security-id "123456789", :account-id #uuid "e0f327de-4e92-479e-a9de-468e2c7c0e6d"}
 ```
 
+## Add a specification to the return value
 
-## Add a specification to the return value,
 Attach the account-holder details specification to `:ret`
 
 ```clojure
@@ -151,6 +154,7 @@ Returns an integer rather than a uuid
 ```
 
 So this should fail
+
 ```clojure
 (register-account-holder
   #:practicalli.bank-account-spec
@@ -184,7 +188,7 @@ The result is 100 generated tests that all fail, because the function was change
   :max-tries 100}
 ```
 
-## Change the function back again.
+## Change the function back again
 
 ```clojure
 (defn register-account-holder
@@ -201,6 +205,7 @@ The result is 100 generated tests that all fail, because the function was change
 ```
 
 ## Instrument the function
+
 Testing function calls against the specification
 
 Requires the spec test namespace
@@ -215,7 +220,6 @@ Instrument the spec to add checking, this only checks the arguments are correct.
 (spec-test/instrument `practicalli.bank-account/register-account-holder)
 
 ```
-
 
 ```clojure
 (register-account-holder {:first-name          "Jenny"

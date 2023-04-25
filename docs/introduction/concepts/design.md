@@ -21,7 +21,6 @@
 
 > **Hint** As functions always evaluate to a value, a function can be used as an argument to another function (or itself if you get recursive !!)
 
-
 ## Data focused design - Maps & Vectors
 
 Maps (hash-map) and vectors are two more built-in persistent data structures that are more commonly used to represent data within a Clojure application.
@@ -55,6 +54,7 @@ Hash-maps are a collection of key / value pairs that provide an easy way to refe
 ```
 
 > #### Hint::Basic design principle
+>
 > “It is better to have 100 functions operate on one data structure than 10 functions on 10 data structures.” —Alan Perlis
 
 ## Extensibility via Macros

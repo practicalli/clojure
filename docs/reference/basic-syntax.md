@@ -1,8 +1,6 @@
-# Reference: Basic Syntax 
-
+# Reference: Basic Syntax
 
 ## Notes from Aphyr
-
 
 Let’s write a simple program. The simplest, in fact. Type “nil”, and hit enter.
 
@@ -25,7 +23,9 @@ user=> "hi there!"
 nil, true, 0, and "hi there!" are all different types of values; the nouns of programming. Just as one could say “House.” in English, we can write a program like "hello, world" and it evaluates to itself: the string "hello world". But most sentences aren’t just about stating the existence of a thing; they involve action. We need verbs.
 
 user=> inc
-#<core$inc clojure.core$inc@6f7ef41c>
+
+# <core$inc clojure.core$inc@6f7ef41c>
+
 This is a verb called inc–short for “increment”. Specifically, inc is a symbol which points to a verb: #<core$inc clojure.core$inc@6f7ef41c>– just like the word “run” is a name for the concept of running.
 
 There’s a key distinction here–that a signifier, a reference, a label, is not the same as the signified, the referent, the concept itself. If you write the word “run” on paper, the ink means nothing by itself. It’s just a symbol. But in the mind of a reader, that symbol takes on meaning; the idea of running.
@@ -107,4 +107,3 @@ Every list starts with a verb. Parts of a list are evaluated from left to right.
 That’s it.
 
 The entire grammar of Lisp: the structure for every expression in the language. We transform expressions by substituting meanings for symbols, and obtain some result. This is the core of the Lambda Calculus, and it is the theoretical basis for almost all computer languages. Ruby, Javascript, C, Haskell; all languages express the text of their programs in different ways, but internally all construct a tree of expressions. Lisp simply makes it explicit.
-

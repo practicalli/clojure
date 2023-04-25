@@ -1,8 +1,8 @@
 # Designing Data Structures
 
-Some common design guides for data structures in Clojure 
+Some common design guides for data structures in Clojure
 
-# The Basics design approach 
+# The Basics design approach
 
 Most data structures in Clojure seem to be created from either vectors or maps or a combination of both.  Sets are used where uniqueness of values is important and lists are often used for their lazy properties.
 

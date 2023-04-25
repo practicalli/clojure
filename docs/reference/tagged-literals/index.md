@@ -1,4 +1,5 @@
 # Tagged Literals
+
 Frequently used value types are afforded a "tagged literal" syntax. It is similar to a constructor, but this special syntax makes it de/serializable and easier to read at the REPL.
 
 Tagged literals start with a # followed by a symbol and a literal:

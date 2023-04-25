@@ -7,7 +7,6 @@ A practical guide to learning Clojure with step by step explanations of code and
 !!! QUOTE - "John Stevenson, Practical.li"
     Clojure - an elegant language for a more civilised development experience
 
-
 ## Clojure REPL Driven Development
 
 ![Clojure Repl workflow - concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png){loading=lazy}
@@ -16,10 +15,8 @@ Clojure runs in [a REPL process](/clojure/clojure-cli/repl/) that provides insta
 
 The REPL is [Clojure interactive environment](introduction/repl-workflow.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
 
-
 !!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
     The most productive programmers I know are writing everything in Clojure and swearing by it and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
-
 
 ## About the book
 
@@ -29,13 +26,11 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
-
 ## Resources
 
-[:fontawesome-solid-book-open: Practicalli Clojure CLI Config - additonal tools via aliases](/clojure/clojure-cli/practicalli-config/){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli Clojure CLI Config - additional tools via aliases](/clojure/clojure-cli/practicalli-config/){target=_blank .md-button}
 [Clojure Aware Editors](/clojure/clojure-editors){target=_blank .md-button}
 [Practicalli YouTube channel](https://youtube.co/practicalli){target=_blank .md-button}
-
 
 ## Sponsor my work
 
@@ -44,7 +39,6 @@ As we work through code we will discuss the concepts behind Clojure, including f
 The majority of my work is now focused on the [Practicalli series of books and videos](https://practical.li/){target=_blank} and an advisory role with several communities
 
 Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors](https://github.com/sponsors/practicalli-john#sponsors){target=_blank} from the Clojure community for your continued support
-
 
 ## Creative commons license
 

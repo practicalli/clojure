@@ -1,8 +1,8 @@
 # Clojure Inspector
+
 A visual browser for Clojure data using the Java UI libraries.
 
 Require the [`clojure.inspector` namespace](https://clojure.github.io/clojure/clojure.inspector-api.html) in the REPL or project namespace definitions to use the functions
-
 
 === "Repl"
 
@@ -21,7 +21,6 @@ Require the [`clojure.inspector` namespace](https://clojure.github.io/clojure/cl
 * `inspect-tree` for deeply nested / hierarchically data
 * `inspect-table` a sequence of data structures with the same shape
 
-
 ## `inspect`
 
 View flat structures especially with non-trivial size data sets.
@@ -35,7 +34,6 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
 
 ![Clojure Inspector - inspect data elements with index](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-collection-with-index.png)
 
-
 ## `inspect-tree`
 
 ```clojure
@@ -47,7 +45,6 @@ This example generated 10,000 random numbers.  The Clojure inspector shows the v
 ```
 
 ![Clojure - Inspector - inspect tree with hash-map](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-inspector-inspect-tree-hash-map.png)
-
 
 ## `inspect-table`
 

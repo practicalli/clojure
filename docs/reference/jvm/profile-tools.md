@@ -8,23 +8,21 @@ Profile applications on the JVM, visualising memory and CPU resources, identifyi
 <!-- ## Command line -->
 <!-- TODO: JVM profile - anything useful on the command line? -->
 
-
 ## Java VisualVM
 
 A simplified and robust profiling tool for Java applications, bundled with the Java Development Kit (JDK) and using JConsole, jstat, jstack, jinfo, and jmap.
 
 ![Java VisualVM screenshot](https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png)
 
-
 === "Ubuntu"
     Ubuntu / Debian includes VisualVM in the software center
     ```bash
     sudo apt install visualvm
-    ```
+
+```
 
 === "MacOSX"
     Download the macOS application bundle and double-click to install.
-
 
 ## JDK Flight Recorder
 
@@ -43,7 +41,6 @@ Mission control provides a graphical tool to visualise flight recorder data.
 * [:fontawesome-brands-youtube: JDK11 - Introduction to JDK Flight Recorder](https://youtu.be/7z_R2Aq-Fl8){target=_blank}
 * [:fontawesome-brands-youtube: Production profiling with JDK Flight Recorder & JDK Mission Control](https://youtu.be/wwgvDDuJwtk){target=_blank}
 
-
 ## Mission Control
 
 [Mission Control](https://github.com/openjdk/jmc){target=_blank} is an open source desktop tool for visualising production time profiling and diagnostics from the JDK flight recorder tool. JDK Mission Control supports OpenJDK 11 and above.
@@ -58,7 +55,6 @@ JDK Mission Control consists of
 
 <!-- TODO:  Compare to VisualVM and Mission Control.  Does it reduce down to Mission Control being a real-time stats version of VisualVM? Or due to leveraging jdk flight recorder -->
 
-
 Java Mission Control demo - 2014 outated but might be useful if nothing newer
 
 <p style="text-align:center">
@@ -67,12 +63,12 @@ Java Mission Control demo - 2014 outated but might be useful if nothing newer
 
 <!-- ![Java Mission Control - Clojure example](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-mission-control-clojure-example.png) -->
 
-
 ## Profiling guides
 
 Profiling your Java Application - A Beginner’s Guide - Victor Rentea
 
 Explore three of the best free tools for profiling a Java (Spring) application:
+
 * Using Java Flight Recorder to profile method execution times
 * Using Micrometer-Prometheus-Grafana to profile connection starvation issues
 * Using Glowroot to identify long-running queries
@@ -80,7 +76,6 @@ Explore three of the best free tools for profiling a Java (Spring) application:
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3PWgGzpHykc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## References
 

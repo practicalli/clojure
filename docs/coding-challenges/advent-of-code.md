@@ -8,7 +8,6 @@ Every programming language requires regular practice to maintain your skills.  A
 
 Solving challenges in a different language is another great way to extend your experiences, so here are some tips and examples for solving the advent of code in Clojure.
 
-
 ## Solving challenges
 
 * Keep the solution as simple as possible.  Its very easy to over-complicate the solution and end up simply confusing yourself.
@@ -19,7 +18,6 @@ Solving challenges in a different language is another great way to extend your e
 
 ![Advent Of Code 2019 Day 1 challenge snippet](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/advent-of-code-2019-day1.png)
 
-
 ## Coding video
 
 A video guide to solving the first challenge of Advent of Code from 2018, trying out different solutions at increasing levels of abstraction.  With each level of abstraction it helps to think in a more functional way.
@@ -28,9 +26,7 @@ A video guide to solving the first challenge of Advent of Code from 2018, trying
 <iframe width="560" height="315" src="https://www.youtube.com/embed/opM7fU7IAV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-
 ## Creating a project for the challenge
-
 
 ```bash
 clojure -T:project/create :template lib practicalli.advent-of-clojure-code/2019
@@ -40,7 +36,6 @@ Create a new Clojure file for each of the daily challenges.  It makes sense to k
 
 !!! EXAMPLE "Practicalli Advent Of Code solutions repository"
     [practicalli/advent-of-clojure-code-2019](https://github.com/practicalli/advent-of-clojure-code-2019)
-
 
 ## Useful Resources And Examples
 

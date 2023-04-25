@@ -1,5 +1,7 @@
 # Is the value valid?
+
 `clojure.spec.alpha/valid?` takes two arguments
+
 - a specification
 - a value to test against the specification
 
@@ -8,14 +10,18 @@
 `true` is returned if the value meets the specification, otherwise `false` is returned.
 
 ## Require the Clojure spec library
+
 Set the namespace for the page and require clojure.spec.alpha library, setting the alias to `spec`
+
 ```clojure
 (ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
 ```
 
 ## Using valid?
+
 If the value is valid then a boolean true is returned.  Experiment with different values and [predicate functions](/reference/clojure/predicate-functions.md).
+
 ```clojure
 (spec/valid? even? 180)
 ```
@@ -26,8 +32,8 @@ If the value is valid then a boolean true is returned.  Experiment with differen
 ```
  <!-- => true -->
 
-
 # using custom predicate functions
+
 Create `fn` definitions to use as predicate functions.  Any function that returns true or false can be used.
 
 ```clojure
@@ -35,6 +41,7 @@ Create `fn` definitions to use as predicate functions.  Any function that return
 ```
 
 The custom predicate function may also be written in the shorter form of a `fn` definition
+
 ```clojure
 (spec/valid? #(> % 1024) 8080)
 ```
@@ -50,6 +57,5 @@ In this example a name is bound to a function that checks if a port is within th
 
 (spec/valid? registered-port-range? 8080)
 ```
-
 
 [1]: https://en.wikipedia.org/wiki/Port_(computer_networking)#Common_port_numbers

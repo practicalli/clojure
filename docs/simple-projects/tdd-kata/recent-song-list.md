@@ -13,7 +13,6 @@ Optional extras:
 * Empty song names are not allowed.
 * Add a limit to the number of songs the list contains, with the least recently added items dropped when that limit is reached.
 
-
 ## Create Project
 
 Create a new project using clj-new
@@ -36,13 +35,11 @@ clojure -M:repl/rebel
 
 Open `test/playground/recent_song_list_test.clj` file in your editor and update the namespace definition to include `clojure.test`
 
-
 ```clojure
 (ns practicalli.recent-song-list-test
   (:require [clojure.test :refer [deftest is testing]]
             [playground.recent-song-list :as song-list]))
 ```
-
 
 ## Run Tests
 
@@ -65,14 +62,12 @@ Call the `run-tests` function in the REPL to get a report back on all of the tes
     clojure -X:test/run
     ```
 
-
-
 === "clojure.test runner"
     Evaluate the project code and evaluate the `run-tests` function from `clojure.test` from within the REPL
     ```clojure
     (run-tests)
-    ```
 
+```
 
 ## Test song-list exists
 
@@ -88,10 +83,9 @@ This is an opportunity to think about what kind of data structure you want to us
     (deftest song-list-exists-test
       (testing "Does a recent song list exist"
         (is (vector? song-list/recent-songs))))
-    ```
+```
 
     `recent-songs` should be defined in `src/playground/recent-song-list.clj` before running the test, otherwise a compilation error will be returned.
-
 
 ## Define a recent song list
 
@@ -103,8 +97,8 @@ Use an empty collection to start with.  Which collection type will you use thoug
     Define a recent-song name for an empty vector
     ```clojure
     (def recent-songs [])
-    ```
 
+```
 
 ## Test song-list is empty
 
@@ -117,7 +111,8 @@ The recent song list should be empty to start with.
       (testing "Is song list empty if we haven't added any songs"
         (is
          (= [] song-list/recent-songs))))
-    ```
+```
+
     Here is the same test using the `empty?` function instead of the `=` function.
 
     ```clojure
@@ -128,7 +123,6 @@ The recent song list should be empty to start with.
     ```
 
     Either of these tests could replace the test that the song list exists, as these tests would fail if the song list did not exist.
-
 
 ## Test adding a song to the list
 
@@ -153,7 +147,6 @@ Add a song to the collection, for example `Tubular Bells - Mike Oldfield`
     ```
 
     Other songs are avialbe and Practicalli makes no recommendation as to what songs should be used or listened too.
-
 
 ## Function to add song
 

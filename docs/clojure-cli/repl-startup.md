@@ -10,7 +10,6 @@ The `user.clj` file can be used for one or more of the following:
 * hotload libraries into the REPL process without restart
 * adding development tools - e.g. [portal data inspector](/clojure/data-inspector/portal/#configure-repl-startup)
 
-
 ??? WARNING "Clojure CLI cannot set the REPL to a different namespace"
     Clojure CLI has no specific mechanism to start the REPL in a namespace other than `user`.
 
@@ -18,10 +17,8 @@ The `user.clj` file can be used for one or more of the following:
 
     Require functions into the `user` nameapace rather than use potentially complex commands to set the namespace.
 
-
 ??? HINT "Example projects"
     [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template){target=_blank} contains a `dev/user.clj` file for configuring the REPL at start up.
-
 
 ## Custom user namespace
 
@@ -59,7 +56,6 @@ clojure -M:repl/reloaded
 !!! HINT "Keep `user.clj` separate"
       * [ ] The `user.clj` code should not be included in live deployments, such as a jar or uberjar.  Including the `dev/` directory via an alias separates the `user.clj` from deployment actions.
 
-
 ## Requiring namespaces
 
 Namespaces required in the `user` ns form will also be loaded. If a required namespace also requires namespaces, they will also be loaded into the REPL during startup.
@@ -71,10 +67,10 @@ Functions `(defn)` and data `(def)` are immediately available.
     ```clojure title="dev/user.clj"
     (ns user
       (:require [practicalli.project-namespace]))
-    ```
+
+```
 
 ??? WARNING "Requiring a large number of libraries may slow REPL start up time"
-
 
 !!! EXAMPLE "Require namespace in require expression"
     If the library is not always required, place a `require` within a `(comment ,,,)` expression to be evaluated by the developer any time after REPL startup.
@@ -85,7 +81,6 @@ Functions `(defn)` and data `(def)` are immediately available.
       (require '[practicalli.project-namespace])
     #_())
     ```
-
 
 ### Calling functions
 
@@ -108,7 +103,6 @@ An alias can be used in the require expression, useful if multiple functions fro
 
     (service/-main)
     ```
-
 
 ## Search for libraries
 
@@ -134,7 +128,7 @@ The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Mav
     (ns user
       (:require
         [find-deps.core :as find-lib]))
-    ```
+```
 
 Start a REPL using the `:env/dev` and `:search/libraries` aliases.
 
@@ -150,7 +144,8 @@ clojure -M:env/dev:search/libraries:repl/rebel
     (comment
       (find-lib/deps "library-name")
       (find-lib/print-deps "library name"))
-    ```
+
+```
 
 ## Hotload libraries
 
@@ -178,7 +173,6 @@ clojure -M:env/dev:search/libraries:repl/rebel
 
     > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
 
-
 Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases
 
 ```bash
@@ -189,7 +183,8 @@ clojure -M:repl/reloaded
     Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
     ```clojure
     (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-    ```
+
+```
 
 Hotload one or more libraries into the REPL using the `add-lib` function, including the fully qualified name of the library and version string.
 
@@ -197,16 +192,17 @@ Hotload one or more libraries into the REPL using the `add-lib` function, includ
     The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
     ```clojure
     (add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
-    ```
+```
+
     Require the hiccup library so its functions are accessible from the current namespace in the REPL.
     ```clojure
     (require '[hiccup.core :as hiccup])
-    ```
+
+```
     Enter an expression using the `hiccup/html` function to convert a clojure data structure to html.
     ```clojure
     (hiccup/html [:div {:class "right-aligned"}])
-    ```
-
+```
 
 ## System Components
 
@@ -220,7 +216,6 @@ Example system component management libraries included
 * [integrant](https://github.com/weavejester/integrant) and [Integrant REPL](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant) - data definition of system and init & halt defmethod interface
 * [donut system](https://github.com/donut-party/system)
 * [component](https://github.com/stuartsierra/component)
-
 
 !!! EXAMPLE "Require system namespace in user ns expression"
     Require the system namespace and use `start`, `restart` and `stop` functions to manage the components in the system
@@ -238,7 +233,6 @@ Example system component management libraries included
 Define code in the `dev/system.clj` file which controls the component life-cycle services library for the project.
 
 Create a `dev/system.clj` to manage the components, optionally using one of the system component management libraries.
-
 
 ### Example life-cycle code
 
@@ -298,12 +292,10 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     !!! Hint "Use `dev` namespace during development"
         Require `practicalli.app.dev` namespace rather than main, to start components in a development environment.
 
-
 === "Integrant REPL"
     [:fontawesome-solid-book-open: Integrant REPL - Practicalli Clojure Web Services](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant){target=_blank .md-button}
 
     [User manager - Integrant](https://github.com/prestancedesign/usermanager-reitit-example){target=_blank .md-button}
-
 
 === "Donut System"
     [donut.system](https://github.com/donut-party/system) is a dependency injection library for Clojure and ClojureScript using system and component abstractions to organise and manage startup & shutdown behaviour.
@@ -317,8 +309,8 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 === "Component"
     [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
 
-
 ## Reference
+
 * [Mount project on GitHub](https://github.com/tolitius/mount)
 * [Mount - collection of Clojure/Script mount apps](https://github.com/tolitius/stater)
 * [donut.system](https://github.com/donut-party/system)

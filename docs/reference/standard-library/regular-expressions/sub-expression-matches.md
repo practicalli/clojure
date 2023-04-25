@@ -1,6 +1,5 @@
 # Sub-expression Matches
 
-
 | Pattern | Description                                                                                     |
 |---------|-------------------------------------------------------------------------------------------------|
 | ^       | Matches beginning of line.                                                                      |

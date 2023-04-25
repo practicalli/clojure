@@ -4,7 +4,6 @@ The following section of functions gives examples of simple control flow.  As yo
 
 > **Hint** Although these functions may seem similar to other non-functional languages, there are subtle differences
 
-
 ## If
 
   Using the `if` function you can test if an expression evaluates to true.  If it is true, the first value is returned, if its false the second value is returned.
@@ -42,8 +41,8 @@ When a condition is true, then return the value of evaluating the next expressio
 => "Higher"
 ```
 
-
 ## Case
+
 When one of these things is true, do this, else default
 
 ```clojure

@@ -2,14 +2,11 @@
 
 > **Fixme** work in progress
 
-
 ```clojure
 (first '(1 2 3 4 5))
 (rest '(1 2 3 4 5))
 (last '(1 2 3 4 5))
 ```
-
-
 
 ```clojure
 (defn nth [items n]

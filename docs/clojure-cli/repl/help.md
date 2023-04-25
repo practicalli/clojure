@@ -22,11 +22,9 @@ Moving the cursor after the name of a function will show the signatures availabl
 
 > `clojure.repl/doc` function also shows the docstring of a function `(clojure.repl/doc doc)`
 
-
 ++ctrl+c+ctrl+"a"++ on a name shows all the possible matching functions to help you discover what is available.  ++tab++ through the list of matches, ++enter++ to select a function
 
 ![clojure repl rebel - apropos on function showing all variations](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-function-apropos-map-dark.png#only-dark)
-
 
 ## Rebel Commands
 
@@ -44,7 +42,6 @@ Type `:repl/help` or `:repl` TAB to see a list of available commands.
 | `:repl/toggle-eldoc`      | Toggle the auto display of function signatures on and off         |
 | `:repl/toggle-highlight`  | Toggle readline syntax highlighting on and off                    |
 | `:repl/toggle-indent`     | Toggle the automatic indenting of Clojure code on and off         |
-
 
 ## Key-bindings
 

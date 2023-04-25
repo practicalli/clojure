@@ -3,9 +3,10 @@
   The previous code is written in classic Lisp style.  When you come to read Lisp, you start from the inside out.  In this case you start with `(slurp ...)` and what it returns is used as the argument to `(read-string ...)` and so on...
 
   In our minds we probably constructed the following basic algorithm:
-  * Get the contents of the project.clj file using `slurp`
-  * Read the text of that file using read-string
-  * Select just the third string using nth 2 (using an index starting at 0)
+
+* Get the contents of the project.clj file using `slurp`
+* Read the text of that file using read-string
+* Select just the third string using nth 2 (using an index starting at 0)
 
 Can we rewrite our Clojure code to fit the way we think?
 
@@ -66,8 +67,6 @@ To make this really simple lets create a contrived example of the threading macr
 > **Hint** Commas in clojure are treated as whitespace, they are simply ignored when it comes to evaluating code.  Typically commas are rarely used and only to help human readability of the code
 
 <!--endsec-->
-
-
 
 > **Note** Create a new map that contains the project configuration for the current project
 

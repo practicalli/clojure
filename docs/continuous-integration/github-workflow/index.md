@@ -14,7 +14,6 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 [Introduction to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions){target=_blank .md-button}
 [Understanding the workflow file](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#understanding-the-workflow-file){target=_blank .md-button}
 
-
 ## Anatomy of a workflow
 
 | Term     | Description                                                                                                                                                                           |
@@ -25,7 +24,6 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 | Step     | Individual task that runs commands (actions), sharing data with other steps                                                                                                           |
 | Action   | Standalone commands defined within a step, custom commands or GitHub community                                                                                                        |
 | Runner   | A GitHub Actions server, listening for available jobs                                                                                                                                 |
-
 
 ## Example GitHub Action
 

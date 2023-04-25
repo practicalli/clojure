@@ -1,5 +1,6 @@
 # Defining Functions
-`clojure.core/defn ` defines a custom function that can be called from anywhere in the current namespace by just using the name.  A defined function can be called from where ever its namespace is required in other namespaces.
+
+`clojure.core/defn` defines a custom function that can be called from anywhere in the current namespace by just using the name.  A defined function can be called from where ever its namespace is required in other namespaces.
 
 Here is a simple function definition that takes a number and divides it by two
 
@@ -16,9 +17,10 @@ Once you have defined a function, you can call it by using the function name as 
     (half-a-number 4)
 ```
 
-
 ## Understanding the `defn` syntax
+
 The standard form of `defn`:
+
 ```clojure
 (defn name doc-string? attr-map? [params*] prepost-map? body)
 ```
@@ -35,7 +37,6 @@ The standard form of `defn`:
 
 **body** is the algorithm that will evaluate when the function is called.
 
-
 There is a second form of the `defn` function, one which responds differently based on the number of arguments used to call the function (polymorphic).
 
 ```clojure
@@ -44,7 +45,6 @@ There is a second form of the `defn` function, one which responds differently ba
 ```
 
 [Thinking Functionally - Polymorphism](/thinking-functionally/polymorphism.md) has examples of using defn to define polymorphic functions
-
 
 ## Breaking down the defn syntax
 
@@ -64,6 +64,7 @@ Here is the same function if you typed it out in full
 ```
 
 > #### Hint::Macroexpand functions
+>
 > The `macroexpand-1` function takes an expression that includes one or more macros and returns the expanded version of Clojure code. The `macroexpand-all` will also expand macros into Clojure code, doing so recursively for all macros it finds.
 >
 > Clojure editors also provide evaluation functions that will macroexpand.

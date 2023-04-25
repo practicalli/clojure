@@ -8,14 +8,13 @@ When shared mutable state is common in an OO design, then a system quickly becom
 
 Functional programming is actually simpler that the OO approach, although initially it may be unfamiliar and not considered as easy.  As systems grow in complexity, the building blocks are still simple and deterministic, creating a system that is far easier to reason about.
 
-
 ## Imperative programming languages
+
 In Imperative languages code is written that specifies a **sequential of instructions** that complete a task.  These instructions typically **modifies program state** until the desired result is achieved.
 
 Variables typically represent **memory addresses that are mutable** (can be changed) by default.
 
 ![Imperative program - conceptual view](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/theory/functional-programming-imperative-program.png)
-
 
 ## Functional programming languages
 

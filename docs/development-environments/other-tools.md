@@ -17,11 +17,10 @@
 
 There may be many more variations, however you should find a development environment with at minimum the following features:
 
-  * starting & using a REPL, with in-line evaluation
-  * syntax highlighting & coloured brackets (eg. rainbow-delimiters in Emacs)
-  * autocomplete of  names (functions, symbols, keywords, etc)
-  * snippets / templates
-
+* starting & using a REPL, with in-line evaluation
+* syntax highlighting & coloured brackets (eg. rainbow-delimiters in Emacs)
+* autocomplete of  names (functions, symbols, keywords, etc)
+* snippets / templates
 
 ## Tools for developers with a Java background
 

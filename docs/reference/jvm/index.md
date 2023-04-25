@@ -8,10 +8,8 @@ Overview of tools for monitoring and profiling Clojure applications running on t
 * [Common JVM Options](common-options.md) - for development and deployment
 * [JVM Profiling tools](profile-tools.md) - understand resources and help diagnose run-time problems
 
-
 !!! HINT "`JDK_JAVA_OPTIONS` Environment Variable"
     `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
-
 
 ## Display resources available to the JVM
 
@@ -34,7 +32,6 @@ java -XshowSettings:system -jar practicalli-service.jar
 !!! HINT "Print resources in Container systems"
     `-XshowSettings:system` is especially useful for environments which may vary in resources available, such as containers (Docker, Kubernettes, etc.)
 
-
 ## JVM option types
 
 `-X` - nonstandard VM options
@@ -45,7 +42,6 @@ java -XshowSettings:system -jar practicalli-service.jar
 
 `-D` a system property for the application running on the JVM using a name=value
 <!-- TODO: is the java -D option an alternative to reading in a system.properties file? -->
-
 
 ## Java Modules
 
@@ -67,18 +63,15 @@ Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter
 
 `-Djdk.launcher.addmods=java.xml.bind` added to the `JAVA_TOOL_OPTIONS` environment variable (`jdk.launcher.addmods` `--add-modules` doesn’t work in `JAVA_TOOL_OPTIONS`)
 
-
 ## Unified Logging sub-system
 
 `-Xlog` - [JEP 158](https://openjdk.java.net/jeps/158)
-
 
 ## References
 
 * [Best practice for JVM Tuning with G1 GC](https://backstage.forgerock.com/knowledge/kb/article/a75965340)
 * [Command Line Options - IBM SDK documentation](https://www.ibm.com/docs/en/sdk-java-technology/7.1?topic=reference-command-line-options)
 * [Best HotSpot JVM Options and switches for Java 11 through Java 17](https://blogs.oracle.com/javamagazine/post/the-best-hotspot-jvm-options-and-switches-for-java-11-through-java-17)
-
 
 <!-- TODO: review IBM Java documentation JVM options -->
 

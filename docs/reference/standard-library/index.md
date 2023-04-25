@@ -8,7 +8,8 @@ There are approximately 700 functions and macros available in the `clojure.core`
     To get an accurate number of functions, call the `ns-publics` function with a namespace name
     ```clojure
     (count (ns-publics 'clojure.core))
-    ```
+
+```
     [Random Function](/clojure/simple-projects/random-clojure-function/) is a simple project that prints out a random function from the given namespace, or from clojure.core by default.
 
 <!-- TODO: identify groups (families) of Clojure functions that a Clojure developer should be aware of -->
@@ -16,7 +17,6 @@ There are approximately 700 functions and macros available in the `clojure.core`
 <!-- - general sequence functions - map reduce apply into ,,, -->
 <!-- - collection fuctions - list hash-map set ,,, -->
 <!-- - transformation functions - partition partition-all group-by sort-by -->
-
 
 ## Functions, Macros and Special forms
 

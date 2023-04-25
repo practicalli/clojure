@@ -1,4 +1,5 @@
 # Parenthesis - defining the structure of Clojure code
+
 Clojure uses parenthesis, round brackets `()`, as a simple way to define the structure of the code and provide clear and unambiguous scope.  This structure is the syntax of [symbolic expressions](https://en.wikipedia.org/wiki/S-expression).
 
 ![Clojure as an abstract syntax tree](https://blog.brunobonacci.com/images/20150419_S-expression_tree.png)
@@ -9,8 +10,8 @@ Clojure includes 3 other bracket types to specifically identify data: `'()` quot
 
 No other terminators or precedence rules are required to understand how to read and write Clojure.
 
-
 ## The Parenthesis hangup
+
 Some raise the concern that there are "too many brackets" in Clojure.
 
 Clojure doesn't require any additional parens compared to other languages, it simply moves the open parens to the start of the expression giving a clearly defined structure to the code
@@ -25,8 +26,8 @@ This structure of Clojure code is simple to parse for both humans and computers.
 
 After realising the simplicity that parens bring, you have to wonder why other (non-lisp) languages made their syntax more complex.
 
-
 ## Working with Parens
+
 [Clojure aware editors](/clojure-editors/) all support structured editing to manage parens and ensure they remain balanced (same number of open and close parens).
 
 A developer only needs to type the open paren and the editor will automatically add the closing paren.
@@ -38,8 +39,8 @@ Code can be pulled into parens (slurp) or pushed out of parens (barf).  Code can
 * [Smartparens for Structural editing](https://github.com/Fuco1/smartparens#smartparens) - a modern update of ParEdit
 * [The animated guide to ParEdit](http://danmidwood.com/content/2014/11/21/animated-paredit.html)
 
-
 ## Homoiconicity and Macros
+
 Clojure is a dialect of LISP and naturally was designed to be a homoiconic language. This means the syntax for behavior and data is the same.  This greatly simplifies the syntax of Clojure and all LISP style languages.
 
 The Clojure Reader is a parser that reads in data structures as expression, rather than parsing of text required by other languages. The result of parsing is a collection of data structures that can be traversed (asymmetric syntax tree - AST).  Compared to most languages the compiler does very little and you can consider Clojure really does not have a syntax.
@@ -52,8 +53,8 @@ None of this would work as simply as it does without using parens and the symbol
 
 * Inspired by [Beating the Averages by Paul Graham](http://www.paulgraham.com/avg.html)
 
-
 ### Example: Function invocation
+
 The choice was made early in the design of Lisp that lists would be used for function invocation in the form:
 
 ```clojure
@@ -69,7 +70,6 @@ The advantages of this design are:
 * simple syntax to parse - everything between two parentheses is a self-contained expression.
 * fewer parens due to high order functions, composition and threading macros
 
-
 The function name could have been put outside the parentheses:
 
 ```
@@ -78,7 +78,7 @@ function (arg1 arg2 arg3) => some result
 
 This design has many disadvantages:
 
-*  a function call is no longer a single form and have to pass the function name and the argument list.
+* a function call is no longer a single form and have to pass the function name and the argument list.
 * syntax is complex and requires additional syntax rules to define a function call
 * code generation is very complex
 * same number of parens as Clojure or possibly more (no direct support for higher order functions)

@@ -8,7 +8,6 @@ Add the following to your project.clj :dependencies
 [clj-gatling "0.11.0"]
 ```
 
-
 ## Describe a Load Test
 
 This is how we would write a simple load test which performs 50 GET requests against a server running at test.com:
@@ -26,7 +25,6 @@ class SimpleSimulation extends Simulation {
 ```
 
 Gatling refers to load tests as Simulations which have one or more Scenarios. In the one above we are saying we will have 10 users execute 5 requests each in parallel. We could provide a Content-Type header with the request and check for a 200 response code like this:
-
 
 ```
 http("myRequest")
@@ -77,13 +75,11 @@ Scenarios can also be run with a ramp up. If we wanted to run the scenario above
 setUp(scn.users(1000).ramp(20))
 ```
 
-
 ## Run a Simulation
 
 There are a number of ways to run Gatling simulations. You can download the bundle, place your simulations under the user-files/simulations directory and then run bin/gatling.sh.
 
 If you prefer integration with your build system there are plugins for Maven, Gradle and SBT. For example, for Maven we just add the dependencies in the pom.xml:
-
 
 ```
 <dependencies>
@@ -105,7 +101,6 @@ If you prefer integration with your build system there are plugins for Maven, Gr
 ```
 
 Place simulations under src/test/scala/com/company/service and then in the terminal:
-
 
 ```
 mvn gatling:execute -Dgatling.simulationClass=com.company.service.YourSimulation

@@ -6,7 +6,6 @@ Add library dependencies to the top level `:deps` key in a project `deps.edn` co
 
 Aliases from a user configuration can also add optional libraries when running a REPL, e.g. [Practicalli Clojure CLI config](clojure/clojure-cli/practicalli-config.md)
 
-
 ```clojure
 {:paths ["src" "resources"]
 
@@ -30,7 +29,6 @@ Aliases from a user configuration can also add optional libraries when running a
 
     `clojure -X:deps find-versions :lib fully.qualified/library-name :n 5` returns the last 5 versions of the given library.
 
-
 ## Include library
 
 Open a terminal and change to the root of the Clojure project directory, where the `deps.edn` file can be found.
@@ -49,7 +47,6 @@ Add aliases to include optional libraries, such as those used for development.  
 clojure -M:database/h2:repl/rebel
 ```
 
-
 ## Load namespace
 
 At the REPL prompt, require a namespace from the project to load all the code from that namespace and any namespaces required.
@@ -61,7 +58,6 @@ If a project was created with the command `clojure -T:project/new :template app 
 ```
 
 The `require` function loads all the code from the main namespace.  When an `ns` form is read, required namespaces in the `ns` form are also loaded.
-
 
 ## Reloading namespace
 
@@ -80,7 +76,6 @@ If errors occur when loading or reloading the namespace with require, the `:verb
 ```clojure
 (require '[practicalli.status-monitor] :reload :verbose)
 ```
-
 
 ## Hotload libraries
 
@@ -115,7 +110,6 @@ Multiple libraries can be hot-loaded in a single `add-libs` expression
 (add-libs '{hhgttg/meaning {:mvn/version "4.2.0"}
             eternity/room  {:mvn/version "1.0.1"}})
 ```
-
 
 ### Hotload hiccup in a terminal REPL
 

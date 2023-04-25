@@ -10,7 +10,6 @@ CircleCI Orbs are pre-packaged configurations for specific tasks, reducing the a
 |                               | Deploy to Heroku                                                                      |
 |                               | Kaocha test runner - unit and generative testing, junit-xml reports and test coverage |
 
-
 ## Executors
 
 Define an executor for the environment used to run the CircleCI jobs.
@@ -21,7 +20,6 @@ Define an executor for the environment used to run the CircleCI jobs.
 | docker               |                       |
 |                      |                       |
 |                      |                       |
-
 
 !!! EXAMPLE "Configuration for a Clojure CLI project"
     ```yaml

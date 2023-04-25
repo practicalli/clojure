@@ -15,8 +15,8 @@ Including specification details clarifies the precise way to use the function an
 ;; Spec
 ;;   (into #{:king :queen :ace :jack} (range 2 11))
 ```
-When adding a specification to a function definition, `doc` will also show the specification details along with the function doc-string.
 
+When adding a specification to a function definition, `doc` will also show the specification details along with the function doc-string.
 
 ## Live example
 
@@ -39,7 +39,6 @@ Print the documentation for the `:playing-card/suit`
 ```clojure
 (clojure.repl/doc :playing-card/suit)
 ```
-
 
 ```clojure
  #{:spade :heart :diamond :club}

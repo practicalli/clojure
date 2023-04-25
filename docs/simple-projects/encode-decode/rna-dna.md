@@ -17,10 +17,8 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
     T -> A
     A -> U
 
-
 ??? HINT "Inspired by Exercism.io challenge"
     This project was inspired by the RNA Transcription exercise on Exercism.io.  Related exercises include Nucleotide Count and Hamming.
-
 
 ## Create a project
 
@@ -29,7 +27,6 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 ```bash
 clojure -T:project/create :template app :name practicalli/rna-transcription
 ```
-
 
 ## Define unit tests
 
@@ -59,7 +56,6 @@ Open the `test/practicalli/rna-transcription.clj` and add the following tests
   (testing "validate dna strands"
     (is (thrown? AssertionError (rna-transcription/to-rna "XCGFGGTDTTAA")))))
 ```
-
 
 ## Code the RNA transcription
 
@@ -119,7 +115,6 @@ The functions provide the correct answer, however, `to-rna` is not a pure functi
 
 Update all the tests in `test/practicalli/rna-transcription.clj` to call `SUT/to-rna` with a dictionary included in the argument.
 
-
 ```clojure
 (ns practicalli.rna-transcription-test
   (:require [clojure.test :refer [deftest is testing]]
@@ -157,7 +152,6 @@ Update `to-rna` to be a pure function by including the dictionary as an argument
            (map #(convert-nucleotide dictionary %) dna))))
 ```
 
-
 ## Idiomatic improvements
 
 The `to-rna` function is not pure, as it relies on a shared value in the namespace, the `dictionary-dna-rna` transcription map.
@@ -179,6 +173,7 @@ Passing `dictionary-dna-rna` as an argument to the `to-rna` function as well as 
 The change to the `to-rna` function will break all the tests.
 
 > #### Hint::Exercisim project and the pure function
+>
 > If you wish to keep the Exercisim project passing, then add a new namespace to the project by create a new file called `rna-transcript-pure.clj`.  Add the new design of the `to-rna` function to that namespace.  Copy the tests into a new namespace by creating a file called `rna-transcription-pure.clj` and update the tests to use two arguments when calling `to-rna`
 
 Updated unit tests that call `to-rna` with both arguments
@@ -207,7 +202,6 @@ Updated unit tests that call `to-rna` with both arguments
 (deftest it-validates-dna-strands
   (is (thrown? AssertionError (SUT/dna->rna data/dna-nucleotide->rna-nucleotide "XCGFGGTDTTAA"))))
 ```
-
 
 ## Summary
 

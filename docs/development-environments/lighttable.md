@@ -29,7 +29,6 @@ Here is a sample of user behaviours file for LightTable
 
 <script src="https://gist.github.com/jr0cket/80344ffed2562fc50102c2dade0b48a8.js"></script>
 
-
 ## Using LightTable
 
   LightTable has an online tutorial entitled [Getting started with LightTable](http://docs.lighttable.com/tutorials/full/)

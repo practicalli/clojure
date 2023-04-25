@@ -6,15 +6,14 @@ As with other unit testing libraries you use `clojure.test` to write test.  Thes
 
 As a general guideline, a Clojure test function should test a specific Clojure function.
 
-
 > #### Hint::What to test
+>
 > Define a `deftest` for every public functions within a namespace, so the contract / api for each namespace is testable and will highlight obvious regressions.
 > The `testing` function can be used to group assertions for a particular `deftest`, so different aspects of the tests can be grouped together.
 >
 > Test reports contain only the names of the `deftest` functions, as there are no names with `testing`
 >
 > `clojure.spec` provides another way to define a contract around your functions and data structures.  It also includes generative testing approach to broaden the test data used to test your functions.
-
 
 ## Test namespaces
 
@@ -30,7 +29,6 @@ The namespace that is under test also needs to be included and and its recommend
             [my-clojure-app.core :as SUT ]))
 ```
 
-
 ## Writing an assertion
 
 An assertion is where you compare an expected result with the result of calling a function.  If the assertion is true, then then it is a pass.  If the assertion is false, then its a fail.
@@ -38,12 +36,12 @@ An assertion is where you compare an expected result with the result of calling 
 The form of an assertion takes a form `(is (comparator expected-value function-call))`
 
 Some simple examples include
+
 ```clojure
 (is (= 42 (* 6 7)))
 
 (is (not= 24 (* 6 7)))
 ```
-
 
 ## Defining a test
 

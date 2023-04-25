@@ -34,10 +34,7 @@ This is the equivalent to the Java code:
 
 > More on types in the section [a quick look at types](a-quick-look-at-types.html)
 
-
 > **fixme** The following is work in progress
-
-
 
 ## Using Java date
 
@@ -54,7 +51,6 @@ This is the equivalent to the Java code:
 ```
 
 ![Using java.util.Date](../images/clojure-playground-java-util-date.png)
-
 
   Its easy to create a local reference to a Java Date object instance and then call methods on that date object
 
@@ -87,13 +83,11 @@ Or using the threading macro, we can make the code a little clearer
 (time-format/unparse custom-formatter (date-time 2010 10 3))
 ```
 
-
 ## Swing coding
 
   Swing GUI coding in Java feels quite messy to me, however using Swing in Clojure feels much cleaner.  Using the `doto` function allow you to chain function (Java method) calls together.
 
 > **Note**  Start with the `import` function to add the necessary swing libraries.  Then create a button and add it to a panel, adding that panel to a frame.
-
 
 ```
 (import '(javax.swing JFrame JPanel JButton))
@@ -118,7 +112,6 @@ Let’s make our button show a message using an JOptionPane/showMessageDialog wi
 
 To connect this function to our button, write a class implementing the ActionListener interface.  Clojure’s proxy feature is the easiest way to do this:
 
-
 ```
 (import 'java.awt.event.ActionListener)
 (def act (proxy [ActionListener] []
@@ -138,8 +131,6 @@ Now evaluate the `say-hello` function to see the new button in action.
 ```
 
 > **Hint** [Seesaw](https://github.com/daveray/seesaw) is a really nice library for swing development.  Also talk a look at the [Seesaw minesweeper](http://nathanwilliams.github.io/2013/05/15/seesaw-gui-programming-the-clojure-way/) series.
-
-
 
 ## Understanding the dot special form
 
@@ -223,14 +214,14 @@ The with-open macro is another convenience: it implicitly closes a resource at t
 ; => "- wash hair
 ; =>  - charm the multi-headed snake"
 ```
+
 That should be enough for you to get started with IO in Clojure. If you're trying to do something more sophisticated, definitely take a look at the clojure.java.io docs, the java.nio.file package docs, or the java.io package docs.
 5. Summary
 
 In this chapter, you learned what it means for Clojure to be hosted on the JVM. Clojure programs get compiled to Java bytecode and executed within a JVM process. Clojure programs also have access to Java libraries, and you can easily interact with them using Clojure's interop facilities.
 6. Resources
 
-
-## From http://clojure.org/java_interop
+## From <http://clojure.org/java_interop>
 
 ```
 (.instanceMember instance args*)
@@ -309,6 +300,7 @@ but is easier to write, read, and understand. See also the -> macro which can be
 ```
 (-> (System/getProperties) (.get "os.name"))
 ```
+
 (doto instance-expr (instanceMethodName-symbol args*)*)
 Macro. Evaluates instance-expr then calls all of the methods/functions with the supplied arguments in succession on the resulting object, returning it.
 
@@ -327,7 +319,6 @@ Note the above applies to the latest Clojure SVN revision. If you are using the 
 (Classname. args*)
 (new Classname args*)
 
-
 Special form.
 The args, if any, are evaluated from left to right, and passed to the constructor of the class named by Classname. The constructed object is returned.
 
@@ -338,17 +329,18 @@ As shown, in addition to the canonic special form new, Clojure supports special 
 ```
 (new Classname args*)
 ```
+
 can be written
 
 ```
 (Classname. args*)
 ;; note trailing dot
 ```
+
 the latter expanding into the former at macro expansion time.
 
 (instance? Class expr)
 Evaluates expr and tests if it is an instance of the class. Returns true or false
-
 
 (set! (. instance-expr instanceFieldName-symbol) expr)
 (set! (. Classname-symbol staticFieldName-symbol) expr)
@@ -377,7 +369,6 @@ Takes a Java object and returns a read-only implementation of the map abstractio
 -> {:RGB -16777216, :alpha 255, :transparency 1,
     :class class java.awt.Color, :green 0, :blue 0,
     :colorSpace java.awt.color.ICC_ColorSpace@c94b51, :red 0}
-
 
 Support for Java in Clojure Library Functions
 
@@ -481,8 +472,6 @@ Clojure provides aliases for primitive Java types and arrays which do not have t
     char - A primitive character
     chars - A character array
 
-
-
 Support for Java Primitives
 
 Clojure has support for high-performance manipulation of, and arithmetic involving, Java primitive types in local contexts. All Java primitive types are supported: int, float, long, double, boolean, char, short, and byte.
@@ -500,7 +489,6 @@ Clojure has support for high-performance manipulation of, and arithmetic involvi
     A set of "unchecked" operations for utmost performing, but potentially unsafe, integer (int/long) ops: unchecked-multiply unchecked-dec unchecked-inc unchecked-negate unchecked-add unchecked-subtract unchecked-remainder unchecked-divide
     A dynamic var to automatically swap safe operations with unchecked operations: *unchecked-math*
     amap and areduce macros for functionally (i.e. non-destructively) processing one or more arrays in order to produce a new array or aggregate value respectively.
-
 
 Rather than write this Java:
 
@@ -555,7 +543,6 @@ Some optimization tips
     Many people seem to presume only the unchecked- ops do primitive arithmetic - not so. When the args are primitive locals, regular + and * etc do primitive math with an overflow check - fast and safe.
     So, the simplest route to fast math is to leave the operators alone and just make sure the source literals and locals are primitive. Arithmetic on primitives yields primitives. If you've got a loop (which you probably do if you need to optimize) make sure the loop locals are primitives first - then if you accidentally are producing a boxed intermediate result you'll get an error on recur. Don't solve that error by coercing your intermediate result, instead, figure out what argument or local is not primitive.
 
-
 Simple XML Support
 Included with the distribution is simple XML support, found in the src/xml.clj file. All names from this file are in the xml namespace.
 
@@ -577,7 +564,6 @@ The public Java API for Clojure consists of the following classes and interfaces
 
     clojure.java.api.Clojure
     clojure.lang.IFn
-
 
 All other Java classes should be treated as implementation details, and applications should avoid relying on them.
 

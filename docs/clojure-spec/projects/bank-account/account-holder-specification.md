@@ -1,4 +1,5 @@
 # Account holder specification
+
 The account holder has the same information as custom details with the addition of an account-id
 
 In the register-account-holder a uuid is generated for the account id, So a spec can be defined for this type
@@ -8,6 +9,7 @@ In the register-account-holder a uuid is generated for the account id, So a spec
 ```
 
 ## Design decision: hierarchical or composite
+
 There are several approaches to combining, depending on the shape of the data used
 
 The account holder is a hash-map, so `spec/keys` will create the map from specification keys

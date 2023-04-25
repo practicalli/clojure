@@ -2,7 +2,6 @@
 
 Two excellent presentations on Clojure performance
 
-
 ## Optimising the critical path
 
 Using two of Clojure's fundamental building blocks, macros and higher order functions, Clojure code can be sped up significantly without sacrificing common idioms.
@@ -12,7 +11,6 @@ Premature optimisation is the root of all evil, this is not a reason to pass up 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5BKn4rUoggg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Naked Performance
 
@@ -25,7 +23,6 @@ A shot demo on building a simple non-blocking web server that runs idiomatic Clo
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3SSHjKT3ZmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
 
 ## Advanced types
 
@@ -42,6 +39,7 @@ static public float asum(float[] xs){
   return ret;
 }
 ```
+
 you can write this Clojure:
 
 ```clojure
@@ -49,8 +47,8 @@ you can write this Clojure:
   (areduce xs i ret (float 0)
     (+ ret (aget xs i))))
 ```
-and the resulting code is exactly the same speed (when run with java -server).
 
+and the resulting code is exactly the same speed (when run with java -server).
 
 ## Optimization tips for types
 

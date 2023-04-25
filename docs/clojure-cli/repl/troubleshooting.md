@@ -6,7 +6,6 @@ The aspects to consider when a REPL process fails to run are:
 * Dependencies are not available
 * Project (or editor) misconfigured
 
-
 ## Code expression failing
 
 All code in the project must compile and be syntactically correct, even if that code is in a rich `(comment ,,,)` block.
@@ -14,7 +13,6 @@ All code in the project must compile and be syntactically correct, even if that 
 A Clojure expression following a Reader comment, `#_` does not have to compile, however it must be syntactically correct, i.e. balanced parentheses.
 
 Add a line comment, `;;`, to any code that is suspected of not compiling or being syntactically incorrect (or delete that code).
-
 
 ## Editor REPL fails to start
 
@@ -34,7 +32,6 @@ Then require the main namespace and see if there are issues, optionally using :v
 
 If the REPL runs correctly, it is likely the editor configuration is missing something or is incorrect.  Check the configuration for running a Clojure project with the editor.
 
-
 ## Terminal UI REPL fails in project
 
 If the REPL does not run correctly or the namespace fails to load, run a repl without any extra development dependencies (tooling, dev libraries, etc) and load the main namespace
@@ -53,7 +50,6 @@ If a REPL prompt appears, then Clojure CLI is working.  If a REPL prompt does no
 
 [Clojure CLI install - Practicalli Guide](/clojure/install/clojure-cli.md){target=_blank .md-button}
 
-
 ## REPL starts but requiring code fails
 
 Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with `clojure -T:project/create` (with [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/) installed)
@@ -61,7 +57,6 @@ Creating a new project is a fast way to check development tooling is working cor
 If a REPL process starts correctly for a new project but not the existing project, then its most likely one or more expressions in the existing project that are causing an error or the project `deps.edn` configuration.
 
 Copy the `deps.edn` configuration from the existing project to the root of the new project (or just the `:deps` section of the `deps.edn` configuration).  Run the REPL again using the `clojure` command.  If the REPL fails then it is likely an issue with the exiting projects `deps.edn` file or one of the dependencies
-
 
 ## Dependency issues
 

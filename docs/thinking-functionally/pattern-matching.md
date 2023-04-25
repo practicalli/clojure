@@ -2,6 +2,6 @@
 
 > **Fixme** work in progress
 
-# Regular Expression 
+# Regular Expression
 
 # Destructuring

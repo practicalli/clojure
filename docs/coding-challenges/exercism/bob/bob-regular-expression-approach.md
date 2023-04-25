@@ -8,8 +8,8 @@ Using `re-matchers`, if the string matches the pattern, then the string is retur
 
 The [regular expressions cheatsheet from Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Cheatsheet) was very helpful in understanding regular expressions
 
-
 ## Asking Bob a question?
+
 The phrase passed to Bob is a question if the last alphanumeric character is a question mark. Using a simple regular expression we can check if the last character in the string a `?`
 
 `#"\?"` is a literal regular expression pattern that will match a single `?` character
@@ -75,8 +75,8 @@ Don't match if a question mark character is not at the end of the string
   (re-matches #".*\?" "Okay if like my ? spacebar  quite a bit")
 ```
 
-
 ## Shouting a question at Bob
+
 `[^a-z]` matches if there are no lower case alphabetic characters.  The `^` at the start of the pattern negated the pattern.
 
 `*` any number of the proceeding pattern
@@ -101,7 +101,6 @@ If the characters are all uppercase then the pattern matches, even if there are 
   (re-matches #"[^a-z]*[A-Z]+[^a-z]*" "ABC 1 2 3")
 ```
 
-
 ## Silence of the Bob
 
 `\s` matches any single whitespace character, including space, tab, form feed, line feed, and other Unicode spaces.
@@ -110,8 +109,8 @@ If the characters are all uppercase then the pattern matches, even if there are 
 (re-matches #"\s*" "  \t\t\t")
 ```
 
-
 ## Solution using regular expressions
+
 The `re-matches` expressions with regular expressions patterns can be put into a let expression.  The names are bound to the re-matches expressions which evaluated to either `true` or `false`
 
 The names from the let are used with a `cond` function as conditions, returning the relevant reply from Bob.

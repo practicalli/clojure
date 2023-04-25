@@ -2,12 +2,11 @@
 
 `LightTable/User/user.keymap`
 
-## Emacs 
+## Emacs
 
-  Add a keybinding to kill a line 
-  
+  Add a keybinding to kill a line
 
-Suggested configuration   
+Suggested configuration
 
 ```clojure
     [:editor "ctrl-k" (:editor.line-start)
@@ -15,4 +14,4 @@ Suggested configuration
                       (:editor.delete-char-left)]
 ```
 
-> need to test this 
+> need to test this

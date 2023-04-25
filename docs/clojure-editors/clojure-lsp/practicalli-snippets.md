@@ -180,7 +180,7 @@ Add a Maven style dependency to a Clojure CLI `deps.edn` project.
 ```
 
 
-Add a dependency from a Git repository, where the library is named after the remote Git repository, i.e io.github.user|org/library-name for the GitHub repository https://github.com/user|org/library-name.
+Add a dependency from a Git repository, where the library is named after the remote Git repository, i.e io.github.user|org/library-name for the GitHub repository `https://github.com/user|org/library-name`.
 
 The `:git/sha` defines a specific commit to use for the dependency.
 

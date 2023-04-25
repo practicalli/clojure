@@ -6,13 +6,11 @@
 clojure -T:project/create :template app :name practicalli/salary-calculator
 ```
 
-
 ## Problem description
 
   A typical salary slip contains employee details like employee id, employee name and their monthly salary details like their gross salary, national insurance contributions, tax-free allowance, taxable income and tax payable.
 
   Salary slips are generated each month for every employee.
-
 
 ## Acceptance criteria
 
@@ -27,8 +25,6 @@ clojure -T:project/create :template app :name practicalli/salary-calculator
   ,,,)
 ```
 
-
-
 ## Iterations
 
 Each iteration adds more rules to the calculation. Some iterations also introduce new fields to the salary slip.
@@ -38,6 +34,7 @@ In a given iteration, all the salary slips contain the same number fields for ea
 This means that for each iteration you will need to add fields to the `SalarySlip` class. In the first iteration, `SalarySlip` only contains the Employee ID, Employee Name and Monthly Gross Salary.
 
 #### Iteration 1: for an annual salary of £5,000.00
+
 This is the most basic case.
 
 - *Given* I have an employee John J Doe with an annual gross salary of £5,000.00
@@ -50,8 +47,7 @@ This is the most basic case.
 
 Calculation rules:
 
- * Monthly Gross Salary: The monthly gross salary is the employee's annual gross salary divided by 12
-
+- Monthly Gross Salary: The monthly gross salary is the employee's annual gross salary divided by 12
 
 ## Iteration 2: for an annual gross salary of £9,060.00
 
@@ -65,8 +61,8 @@ The monthly salary slip should contain the below:
            National Insurance contributions: £10.00
 
 Calculation rules:
- * National Insurance contributions: Any amount of money earned above a gross annual salary of £8,060.00 is subject to a National Insurance contribution of 12%
 
+- National Insurance contributions: Any amount of money earned above a gross annual salary of £8,060.00 is subject to a National Insurance contribution of 12%
 
 ## Iteration 3: for an annual gross salary of £12,000.00
 
@@ -84,8 +80,7 @@ The monthly salary slip should contain the below:
 
 Calculation rules:
 
- * Taxable income: Any amount of money earned above a gross annual salary of £11,000.00 is taxed at 20%
-
+- Taxable income: Any amount of money earned above a gross annual salary of £11,000.00 is taxed at 20%
 
 ## Iteration 4: for an annual gross salary of £45,000.00
 
@@ -103,9 +98,8 @@ The monthly salary slip should contain the below:
 
 Calculation rules:
 
-* Taxable income (higher rate): Any amount of money earned above a gross annual salary of £43,000.00 is taxed at 40%
-* National Insurance (higher contributions): Any amount of money earned above a gross annual salary of £43,000.00 is only subject to a 2% NI contribution
-
+- Taxable income (higher rate): Any amount of money earned above a gross annual salary of £43,000.00 is taxed at 40%
+- National Insurance (higher contributions): Any amount of money earned above a gross annual salary of £43,000.00 is only subject to a 2% NI contribution
 
 ## Iteration 5: for annual gross salaries of £101,000.00; £111,000.00; £122,000.00 and £150,000.00
 
@@ -150,8 +144,7 @@ The monthly salary slips should contain the below (respectively):
 
 Calculation rules:
 
-* Tax-free allowance: When the Annual Gross Salary exceeds £100,000.00, the tax-free allowance starts decreasing. It decreases by £1 for every £2 earned over £100,000.00. And this excess is taxed at the Higher rate tax.
-
+- Tax-free allowance: When the Annual Gross Salary exceeds £100,000.00, the tax-free allowance starts decreasing. It decreases by £1 for every £2 earned over £100,000.00. And this excess is taxed at the Higher rate tax.
 
 ## Iteration 6: for an annual gross salary of £160,000.00
 
@@ -167,12 +160,9 @@ The monthly salary slip should contain the below:
           Taxable income: £13,333.33
           Tax Payable: £4,841.67
 
-
 Calculation rules:
 
-* Income tax (additional rate band) : Any amount of money earned above a gross annual salary of £150,000.00 is taxed at 45%
-
-
+- Income tax (additional rate band) : Any amount of money earned above a gross annual salary of £150,000.00 is taxed at 45%
 
 ??? EXAMPLE "Practicalli Salary Slip Kata"
     <!-- TODO; challenge: complete salary slip challenge example  -->

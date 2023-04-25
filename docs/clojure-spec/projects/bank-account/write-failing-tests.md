@@ -1,4 +1,5 @@
 # Write failing tests
+
 In Test Driven Development style, first write unit tests for the banking functions.
 
 Edit the `src/practicalli/banking_on_clojure_test.clj` and add `deftest` tests
@@ -10,8 +11,8 @@ Edit the `src/practicalli/banking_on_clojure_test.clj` and add `deftest` tests
            (set (keys {:account-id "123" :customer-name "Jenny Jetpack"}))))))
 ```
 
-
 ## Write a function stub to run the tests
+
 The tests cannot run unless they call the function to be tested.  A common approach it to write a function that returns the argument.
 
 ```clojure
@@ -27,8 +28,8 @@ The tests cannot run unless they call the function to be tested.  A common appro
   customer-details)
 ```
 
-
 ## Add mock data
+
 Define some initial mock data to use with the unit tests
 
 ```clojure
@@ -40,7 +41,6 @@ Define some initial mock data to use with the unit tests
    :postal-code         "AB3 0EF"
    :social-security-id  "123456789"})
 ```
-
 
 ```clojure
 account is a customer with a bank account id added
@@ -54,7 +54,6 @@ account is a customer with a bank account id added
    :postal-code         "AB3 0EF"
    :social-security-id  "123456789"})
 ```
-
 
 Update the test to use the mock data.
 

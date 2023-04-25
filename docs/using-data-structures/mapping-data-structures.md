@@ -46,9 +46,10 @@ If we want a calculation using the values of the fibonacci-sequence then we can 
 ```
 
   So,
-  - 0 times 1 is 0,
-  - 1, times 2 is 2,
-  - 2 times 3 is 6, etc.
+
+- 0 times 1 is 0,
+- 1, times 2 is 2,
+- 2 times 3 is 6, etc.
 
 If we evaluate the previous expression part by part, its easier to see what is going on.  First lets evaluate the `fibonacci-sequence`
 
@@ -63,4 +64,5 @@ Now lets evaluate the `(range 10)` function call
 (map * (0 1 2 3 4 5 6 7 8 9) [1 2 3 5 8 13 21 34 55 89 144 278])
 ;; => (0 2 6 15 32 65 126 238 440 801)
 ```
+
 We can see the answer is the same, however by evaluating each part of the expression we get an exact view of what is going to happen with the `map` function.

@@ -23,11 +23,13 @@ Note that, unlike cond branching, cond-> threading does not short circuit after 
 In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses. Each clause is a pair made up of a test and a form. In this example there is a single clause with the value false as the test the function inc as the form. Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.
 
 Let’s look at an example with a truthy test.
+
 ```clojure
 (cond-> 10
   true (- 2)
 ;;=> 8
 ```
+
 Once again, 10 is the starting expression. The single clause has a test that evaluates to true so the expression is threaded into the first position of the form (- 2). The result is 8 and this is returned.
 
 An example of a `cond->` with multiple clauses. Explanations are inline with the code.

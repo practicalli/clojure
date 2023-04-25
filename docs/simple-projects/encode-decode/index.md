@@ -15,8 +15,8 @@ These projects show several ways to transform data in Clojure.
 | [RNA / DNA converter](rna-dna.md)                    |                  | Convert between DNA and RNA                     |
 | [Clacks telegram](clacks.md)                         |                  | Encoding and decoding messages with Clacks      |
 
-
 ## Examples of Encoding
+
 * [Portable Network Graphics for image compression](https://en.wikipedia.org/wiki/Portable_Network_Graphics)
 * [Vorbis for music and video compression](https://en.wikipedia.org/wiki/Vorbis) plus several commercial compression encoders
 * [Enigma machine - encrypted communications](https://www.google.com/search?q=clojure+enigma+machine)

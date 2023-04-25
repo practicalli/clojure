@@ -23,9 +23,8 @@ Clojure provides a get function that returns the value mapped to a key in a set 
 (get-in nested-map [:keys :path])
 ```
 
-
-
 > #### Hint::missing or incorrect key
+>
 > If the key in the path is missing or the path is missing (or nil) then `get-in` will return more of the hash-map than expected.
 
 ```clojure
@@ -42,7 +41,6 @@ Clojure provides a get function that returns the value mapped to a key in a set 
 ;;=> {"timestamp" 1291578985220, "scores" {"FSU" 31, "UF" 7}}
 ```
 
-
 ## Using hash-map as a function
 
 A hash-map (and list, vector, set) can be called as a function with a key as the argument.  This provides a more terse expression than using `get` and also works irrespective of key types used.
@@ -58,7 +56,6 @@ A nested hash-map (containing other hash-maps) can be accessed via multiple nest
 ```clojure
 ((({:star-wars {:characters {:jedi ["Luke" "Obiwan"]}}} :star-wars) :characters) :jedi)
 ```
-
 
 ## keyword key as a function
 
@@ -101,11 +98,9 @@ As part of a processing pipeline, taking specific values from a JSON file of ass
     :goals-home-team)
 ```
 
-
 ## Checking a key or value exists in a hash-map
 
 `keys` function will return a collection of the keys contained in a map.  `vals` returns a collection of the values
-
 
 is in a map or set. In general I use the value returned from a map or set to determine if a key exists - the following snippet uses that pattern.
 
@@ -121,9 +116,7 @@ Check a key has a specific value and also use that value
 
 > TODO: is this a good case for if-lets
 
-
 This pattern fails if the value of :key is nil.
-
 
 ## contains? and some
 

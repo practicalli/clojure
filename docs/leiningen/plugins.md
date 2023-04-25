@@ -9,7 +9,6 @@ Some interesting plugins to look at include:
 * [lein-auto](https://github.com/weavejester/lein-auto) - automatically runs a task on file system change
 * [lein-heroku-deploy](https://github.com/maxprokopiev/lein-heroku-deploy) - use maintenance mode whilst deploying to [Heroku](https://heroku.com)
 
-
 ## Alembic
 
 Alembic is an easy way to reload your project in the REPL, useful when you need to add a new dependency.  This saves time stopping and starting a REPL and avoids loosing any REPL state (?)
@@ -20,8 +19,8 @@ Reload your project.clj with the following expressions in the REPL
 (use 'alembic.still)
 (load-project)
 ```
-Use Alembic to load a library without adding it to your project.clj, if you just want to try a library. In this example wed add the cheshire library by running these expressions in the REPL
 
+Use Alembic to load a library without adding it to your project.clj, if you just want to try a library. In this example wed add the cheshire library by running these expressions in the REPL
 
 ```clojure
 (use 'alembic.still)
@@ -36,7 +35,6 @@ Edit `~/.lein/profiles.clj` and add Alembic to the `:repl` `:dependencies`
 {:repl {:dependencies [[alembic "0.3.2"]]}}
 ```
 
-
 ## Lein Ancient
 
 Ancient tells you which project dependencies have newer versions and will update them to the latest.  This saves you manually searching for each dependency in [Clojars)[https://clojars.org/] and finding the latest version.
@@ -49,8 +47,8 @@ Ancient tells you which project dependencies have newer versions and will update
 [clj-http "3.0.1"] is available but we use "2.1.0"
 [lein-figwheel "0.5.3-1"] is available but we use "0.5.2"
 
-
 > #### Hint::Test dependency updates
+>
 > Extensively test dependency changing and check the logs for any messages about conflicts of functions and namespaces.
 
 ### Add Lein Ancient to every project
@@ -58,7 +56,6 @@ Ancient tells you which project dependencies have newer versions and will update
 Edit `~/.lein/profiles.clj` and include the following plugin in the `:user` `:plugins` configuration
 
 {:user {:plugins [[lein-ancient "0.6.10"]]}}
-
 
 ## Eastwood
 

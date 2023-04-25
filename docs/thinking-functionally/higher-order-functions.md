@@ -6,12 +6,13 @@ Higher Order functions can also return a function definition, as when that funct
 
 You could have a function that returns a function definition which in turn returns a function definition, but at some point this will get very confusing for the developers (yes, that means you).
 
-
 > #### Note::Return the even numbers from 1 to 10
+>
 > Generate a range of numbers from 1 to 10
 >
 > Use a function that checks if a number is even
 > and filter the range of numbers to return only the numbers that match
+
 ```clojure
 
 ```
@@ -27,9 +28,8 @@ You could have a function that returns a function definition which in turn retur
 
 <!--endsec-->
 
-
-
 > #### Note::Create a named function as a higher order function called `twice`
+>
 > The function twice which takes a function and value as arguments.
 >
 > The twice function should call the function passed as an argument on the value passed as an argument.
@@ -37,11 +37,11 @@ You could have a function that returns a function definition which in turn retur
 > The result should be then used as an argument to calling the function passed as an argument again.
 >
 > Call the twice function with an inline function which takes a number as an argument and adds it to Pi, `3.14`.
+
 ```clojure
 (defn twice [f]
   ,,,)
 ```
-
 
 <!--sec data-title="Higher order function to add a number twice" data-id="answer001" data-collapse=true ces-->
 
@@ -64,13 +64,13 @@ You could have a function that returns a function definition which in turn retur
 ```
 <!--endsec-->
 
-
 > #### Note::Define a function that returns a function
 >
 > The function should take a clojure.core function for a mathematical calculation, i.e. `+`, `-`, `*`, `/`
 >
 > The returning function should take one or more arguments `[& args]`
 > and use the function originally passed as an argument to `reduce` the data to a single value.
+
 ```clojure
 (defn calculation [f]
   ,,,)
@@ -90,8 +90,6 @@ You could have a function that returns a function definition which in turn retur
 ```
 <!--endsec-->
 
-
-
-
 # References
+
 * [Writing Elegant Clojure code using Higher Order functions](http://christophermaier.name/blog/2011/07/07/writing-elegant-clojure-code-using-higher-order-functions)

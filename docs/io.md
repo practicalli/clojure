@@ -1,7 +1,6 @@
 # IO in Clojure
 
-
-From http://blog.isaachodes.io/p/clojure-io-p1/
+From <http://blog.isaachodes.io/p/clojure-io-p1/>
 
 The Ins and Outs of Clojure: Part I
 November 13, 2010

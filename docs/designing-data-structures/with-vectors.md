@@ -2,7 +2,8 @@
 
 Vectors as the simplest data structure in Clojure to work with.  They are very similar to an array in other languages, although they have additional qualities in Clojure.
 
-Vectors 
+Vectors
+
 * can be of any length
 * are indexed so have fast random access
 * can contain any types
@@ -12,7 +13,7 @@ Vectors
 
 <!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
 
-```clojure 
+```clojure
 (def shopping-list ["Cerial" "Baked Beans" "Cat food" "Quorn chicken pieces" ])
 ```
 <!--endsec-->

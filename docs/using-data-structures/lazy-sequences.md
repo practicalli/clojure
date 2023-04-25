@@ -18,5 +18,4 @@ For example, if we just wanted the first four numbers from the infinite sequence
 
 Here the range function is being lazy, because it will only generate the first 4 numbers in its sequence.
 
-
 Clojure (and Lisps in general) often evaluate at the last possible moment, usually when they have been given more specific content.

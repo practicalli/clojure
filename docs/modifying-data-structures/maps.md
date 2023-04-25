@@ -12,7 +12,6 @@ If you have a collection of maps, you can add another map to that collection wit
 ;; => [{:map1 1} {:map2 2}]
 ```
 
-
 # Changing values with `assoc`
 
 The `assoc` function is used to update a value in a map without necessary being concerned about the current value.  `assoc` returns a complete new map with the specified value.
