@@ -35,7 +35,7 @@ Create an alias to include the `dev` path when running a REPL process
 === ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
     [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) includes aliases that add `dev` directory to the class path
 
-    * `:env/dev` alias only adds the `dev` directory to the classpath
+    * `:dev/env` alias only adds the `dev` directory to the classpath
     * `:dev/reloaded` adds library hotload, namespace reload, porta data inspector and testing libraries & `test`
     * `:repl/reloaded` adds Rebel rich terminal UI to the tools provided by `:dev/reloaded`
 
@@ -47,7 +47,7 @@ Create an alias to include the `dev` path when running a REPL process
       {:extra-paths ["dev"]}
     ```
 
-Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:env/dev`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
+Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:dev/env`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
 ```bash
 clojure -M:repl/reloaded
