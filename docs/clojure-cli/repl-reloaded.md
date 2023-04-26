@@ -105,7 +105,6 @@ Require the clojure.tools.namespace.repl refresh function
 === "REPL"
     ```clojure
     (require '[clojure.tools.namespace.repl :refer [refresh]])
-
 ```
 
 === "Project"
@@ -113,14 +112,13 @@ Require the clojure.tools.namespace.repl refresh function
     ```clojure
     (ns user
       (:require [clojure.tools.namespace.repl :refer [refresh]]))
-```
+    ```
 
     Or in a rich comment expression
     ```clojure
     (comment
       (require '[clojure.tools.namespace.repl :refer [refresh]]))
-
-```
+    ```
 
 Refresh the namespaces that have saved changes
 
