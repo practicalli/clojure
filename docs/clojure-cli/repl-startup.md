@@ -67,8 +67,7 @@ Functions `(defn)` and data `(def)` are immediately available.
     ```clojure title="dev/user.clj"
     (ns user
       (:require [practicalli.project-namespace]))
-
-```
+    ```
 
 ??? WARNING "Requiring a large number of libraries may slow REPL start up time"
 
@@ -128,7 +127,7 @@ The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Mav
     (ns user
       (:require
         [find-deps.core :as find-lib]))
-```
+    ```
 
 Start a REPL using the `:env/dev` and `:search/libraries` aliases.
 
@@ -144,8 +143,7 @@ clojure -M:env/dev:search/libraries:repl/rebel
     (comment
       (find-lib/deps "library-name")
       (find-lib/print-deps "library name"))
-
-```
+    ```
 
 ## Hotload libraries
 
@@ -183,8 +181,7 @@ clojure -M:repl/reloaded
     Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
     ```clojure
     (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-
-```
+    ```
 
 Hotload one or more libraries into the REPL using the `add-lib` function, including the fully qualified name of the library and version string.
 
@@ -192,17 +189,16 @@ Hotload one or more libraries into the REPL using the `add-lib` function, includ
     The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
     ```clojure
     (add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
-```
+    ```
 
     Require the hiccup library so its functions are accessible from the current namespace in the REPL.
     ```clojure
     (require '[hiccup.core :as hiccup])
-
-```
+    ```
     Enter an expression using the `hiccup/html` function to convert a clojure data structure to html.
     ```clojure
     (hiccup/html [:div {:class "right-aligned"}])
-```
+    ```
 
 ## System Components
 
