@@ -26,6 +26,21 @@ As we work through code we will discuss the concepts behind Clojure, including f
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
+## Navigate the book
+
+Use the mouse or built-in key bindings to navigate the pages of the book
+
+- ++p++ , ++comma++ : go to previous page
+- ++n++ , ++period++ : go to next page
+
+Use the search box to quickly find a specific topic
+
+- ++f++ , ++s++ , ++slash++ : open search dialog
+- ++arrow-down++ , ++arrow-up++ : select next / previous result
+- ++esc++ , ++tab++ : close search dialog
+- ++enter++ : follow selected result
+
+
 ## Resources
 
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config - additional tools via aliases](/clojure/clojure-cli/practicalli-config/){target=_blank .md-button}
