@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-as-a-recipe/</loc>
-         <lastmod>2023-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/core-async/</loc>
          <lastmod>2023-04-26</lastmod>
          <changefreq>daily</changefreq>
@@ -131,22 +126,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-cli/wip/</loc>
-         <lastmod>2023-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/</loc>
          <lastmod>2023-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/add-libraries/</loc>
-         <lastmod>2023-04-26</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://practical.li/clojure/clojure-cli/projects/create-from-template/</loc>
          <lastmod>2023-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -172,6 +157,11 @@
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/tools-build/</loc>
+         <lastmod>2023-04-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure/clojure-cli/projects/templates/</loc>
          <lastmod>2023-04-26</lastmod>
          <changefreq>daily</changefreq>
     </url>

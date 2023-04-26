@@ -927,10 +927,40 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
   
   
-    <li class="md-nav__item">
-      <a href="clojure-cli/projects/create-from-template/" class="md-nav__link">
-        From Template
-      </a>
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="clojure-cli/projects/templates/">Template Projects</a>
+          
+        </div>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Template Projects
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
     </li>
   
 
@@ -5771,6 +5801,13 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </li>
       
         <li class="md-nav__item">
+  <a href="#navigate-the-book" class="md-nav__link">
+    Navigate the book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resources" class="md-nav__link">
     Resources
   </a>
@@ -5838,9 +5875,22 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>The most productive programmers I know are writing everything in Clojure and swearing by it and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.</p>
 </div>
 <h2 id="about-the-book">About the book<a class="headerlink" href="#about-the-book" title="Permanent link">λ︎</a></h2>
-<p>Practicalli Clojure provides a hands on approach to learning Clojure through the entire development workflow.</p>
-<p>As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.</p>
+<p>Practicalli Clojure provides a hands on approach to learning Clojure through the entire software development workflow.</p>
+<p>Practical examples from commercial experience is shared and supported by discussions of the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.</p>
 <p><a href="https://practicalli.github.io/spacemacs/"><img alt="Built with Spacemacs" src="https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg" /></a></p>
+<h2 id="navigate-the-book">Navigate the book<a class="headerlink" href="#navigate-the-book" title="Permanent link">λ︎</a></h2>
+<p>Use the mouse or built-in key bindings to navigate the pages of the book</p>
+<ul>
+<li><span class="keys"><kbd class="key-p">P</kbd></span> , <span class="keys"><kbd class="key-comma">,</kbd></span> : go to previous page</li>
+<li><span class="keys"><kbd class="key-n">N</kbd></span> , <span class="keys"><kbd class="key-period">.</kbd></span> : go to next page</li>
+</ul>
+<p>Use the search box to quickly find a specific topic</p>
+<ul>
+<li><span class="keys"><kbd class="key-f">F</kbd></span> , <span class="keys"><kbd class="key-s">S</kbd></span> , <span class="keys"><kbd class="key-slash">/</kbd></span> : open search dialog</li>
+<li><span class="keys"><kbd class="key-arrow-down">Down</kbd></span> , <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> : select next / previous result</li>
+<li><span class="keys"><kbd class="key-escape">Esc</kbd></span> , <span class="keys"><kbd class="key-tab">Tab</kbd></span> : close search dialog</li>
+<li><span class="keys"><kbd class="key-enter">Enter</kbd></span> : follow selected result</li>
+</ul>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">λ︎</a></h2>
 <p><a class="md-button" href="/clojure/clojure-cli/practicalli-config/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config - additional tools via aliases</a>
 <a class="md-button" href="/clojure/clojure-editors" target="_blank">Clojure Aware Editors</a>
@@ -5860,7 +5910,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
       
     
   </small>
