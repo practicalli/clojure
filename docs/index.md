@@ -20,9 +20,9 @@ The REPL is [Clojure interactive environment](introduction/repl-workflow.md) use
 
 ## About the book
 
-Practicalli Clojure provides a hands on approach to learning Clojure through the entire development workflow.
+Practicalli Clojure provides a hands on approach to learning Clojure through the entire software development workflow.
 
-As we work through code we will discuss the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
+Practical examples from commercial experience is shared and supported by discussions of the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
 [![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
