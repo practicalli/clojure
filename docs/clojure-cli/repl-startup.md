@@ -103,47 +103,6 @@ An alias can be used in the require expression, useful if multiple functions fro
     (service/-main)
     ```
 
-## Search for libraries
-
-The [find-deps project](https://github.com/hagmonk/find-deps) fuzzy searches Maven Central and Clojars for dependencies when given a name.
-
-=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
-    The `:search/libraries` in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/#project-dependencies) will add the find-deps library.
-
-=== "Manual"
-    Add the find-deps project to and alias called `:search/libraries` in the user level `deps.edn` file, i.e. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
-
-    ```clojure title="Clojure User Config"
-      :search/libraries
-      {:extra-deps
-       {find-deps/find-deps {:git/url "https://github.com/hagmonk/find-deps"
-                             :git/sha "9bf23a52cb0a8190c9c2c7ad1d796da802f8ce7a"}}
-       :main-opts ["-m" "find-deps.core"]}
-    ```
-
-!!! EXAMPLE "Require find-deps in user ns expression"
-    Require the `find-deps.core` namespace in the `dev/user.clj` file to use its `deps` and `print-deps` functions
-    ```clojure title="dev/user.clj"
-    (ns user
-      (:require
-        [find-deps.core :as find-lib]))
-    ```
-
-Start a REPL using the `:env/dev` and `:search/libraries` aliases.
-
-To start a Rebel REPL, use the following command in a terminal
-
-```bash
-clojure -M:env/dev:search/libraries:repl/rebel
-```
-
-!!! EXAMPLE "Search for libraries within a comment expression"
-    Call the `(find-lib/deps "library-name")` to return a map of the matching dependency, or `(find-libs/print-deps "library name")` to print dependencies in a table.
-    ```clojure title="dev/user.clj"
-    (comment
-      (find-lib/deps "library-name")
-      (find-lib/print-deps "library name"))
-    ```
 
 ## Hotload libraries
 
