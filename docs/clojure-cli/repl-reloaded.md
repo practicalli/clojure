@@ -1,32 +1,43 @@
 # Practicalli REPL Reloaded Workflow
 
-The REPL is central to Clojure development and Practicalli REPL Reloaded enhances the experience further
+An effective REPL workflow is central to Clojure development. Practicalli REPL Reloaded workflow provides a rich set of tools and minimises the need to restart the REPL
 
-- avoid restarting the REPL
-- visualise and inspect data from evaluated functions
-- run unit and performance tests to support design choices
+- [custom REPL startup](/clojure/clojure-cli/repl-startup/) using `dev/user.clj`
+- [continually run unit tests](#unit-test-runner) with Kaocha
+- [event log and publisher](https://github.com/BrunoBonacci/mulog){target'_blank} with mulog
+- [:fontawesome-solid-book-open: visualise & navigate evaluation data and logs](/clojure/data-inspector/portal/){target'_blank} with Portal
+- [hotload libraries without restarting the REPL](#hotload-libraries) with `clojure.repl.deps` (Clojure 1.12)
+- [reload changed namespaces to manage large code refactor](#reload-namespaces){target'_blank} with `tools.namespace`
+- [performance testing code expressions](#performance-tests) with time & Criterium
+
 
 ![Practicalli REPL Reloaded text](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/REPL-Reloaded-matrix-text.png){loading=lazy}
 
-Start a Clojure REPL with the `:repl/reloaded` alias (or include `:dev/reloaded` alias in an Editor jack-in command or other REPL startup command)
 
-```shell
-clojure -M:repl/reloaded
-```
+## Start the REPL
 
-This command runs a Clojure REPL process and nREPL server which allows Clojure editors connect to the REPL process. A [Rebel rich terminal UI REPL prompt](/clojure/clojure-cli/repl/) is provides for direct evaluation in the REPL (with autocomplete, documentation, signature hints and multi-line editing)
+Start a Clojure REPL with the `:repl/reloaded` alias (or include `:dev/reloaded` alias in an Editor jack-in command or other REPL startup command).
 
-Other features include:
+Aliases are defined in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/)
 
-- `dev` directory for a [custom REPL startup](/clojure/clojure-cli/repl-startup/)
-- `add-libs` hotload libraries without restarting the REPL (alpha software)
-- [`tools.namespace`](#reload-namespaces){target'_blank} to reload changed namespaces
-- [portal](/clojure/data-inspector/portal/){target'_blank} to visualise & inspect data
-- `test` directory, test libraries & kaocha test runner
-- benchmark code with criterium
-- [mulog](https://github.com/BrunoBonacci/mulog){target'_blank} log and trace events
+Start a rich terminal UI repl and the REPL Reloaded tools
 
-??? EXAMPLE "Alias Definitions"
+!!! NOTE ""
+    ```shell
+    clojure -M:repl/reloaded
+    ```
+
+A [:fontawesome-solid-book-open: Rebel rich terminal UI REPL prompt](/clojure/clojure-cli/repl/) provides direct evaluation in the REPL (with autocomplete, documentation, signature hints and multi-line editing)
+
+An nREPL server is started to allow connections from a range of Clojure editors.
+
+Portal Inspector window opens and is connected to all evaluation results and Mulog events that occur.
+
+
+[:fontawesome-solid-book-open: Rebel REPL Teminal UI](/clojure/clojure-cli/repl/){target=_blank .md-button}
+
+
+??? EXAMPLE "Example Alias Definitions"
     Start a REPL process with an nREPL server to connect Clojure editors. Providing a Rebel rich terminal UI with tools to hotload libraries, reload namespaces and run Portal data inspector.  The alias also includes a path for custom REPL startup and a path to access unit test code, along with a test runner.
     ```clojure
     :repl/reloaded
@@ -36,8 +47,6 @@ Other features include:
                   com.bhauman/rebel-readline   {:mvn/version "0.1.4"}
                   djblue/portal                {:mvn/version "0.35.1"}
                   org.clojure/tools.namespace  {:mvn/version "1.4.1"}
-                  org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
-                                                :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
                   org.slf4j/slf4j-nop          {:mvn/version "2.0.6"}
                   com.brunobonacci/mulog       {:mvn/version "0.9.0"}
                   lambdaisland/kaocha          {:mvn/version "1.77.1236"}
@@ -53,8 +62,6 @@ Other features include:
     {:extra-paths ["dev" "test"]
      :extra-deps  {djblue/portal                {:mvn/version "0.35.1"}
                    org.clojure/tools.namespace  {:mvn/version "1.4.1"}
-                   org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
-                                                 :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}
                    org.slf4j/slf4j-nop          {:mvn/version "2.0.6"}
                    com.brunobonacci/mulog       {:mvn/version "0.9.0"}
                    lambdaisland/kaocha          {:mvn/version "1.77.1236"}
@@ -63,7 +70,26 @@ Other features include:
                    criterium/criterium          {:mvn/version "0.4.6"}}}
     ```
 
-    `org.slf4j/slf4j-nop` is only included to suppress warnings about a missing SLF4J implementation.  If an actual SLF4J library is used then this library dependency should be removed.
+    Include the `:dev/reloaded` or `:lib/hotload` aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
+
+    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+
+
+??? EXAMPLE "Clojure 1.11 Hotload Support"
+    To support Clojure 1.11.x, add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library using the latest SHA commit from the [:fontawesome-brands-github: add-libs3 branch of `clojure.tools.deps.alpha` library](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) as an extra dependency.
+
+    The `add-libs` code is on a separate , so requires the SHA from the head of add-libs3 branch
+
+    ```clojure
+      :lib/hotload
+      {:extra-deps {org.clojure/tools.deps.alpha
+                   {:git/url "https://github.com/clojure/tools.deps.alpha"
+                    :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
+    ```
+    Include the `:dev/reloaded` or `:lib/hotload` aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
+
+    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+
 
 ## Custom REPL startup
 
@@ -103,28 +129,31 @@ refresh will manage loading of namespaces with respect to their dependencies, en
 Require the clojure.tools.namespace.repl refresh function
 
 === "REPL"
-    ```clojure
-    (require '[clojure.tools.namespace.repl :refer [refresh]])
-    ```
+    !!! NOTE ""
+        ```clojure
+        (require '[clojure.tools.namespace.repl :refer [refresh]])
+        ```
 
 === "Project"
     Use an ns form for the namespace (often added to a custom `user` namespace)
-    ```clojure
-    (ns user
-      (:require [clojure.tools.namespace.repl :refer [refresh]]))
-    ```
+    !!! NOTE ""
+        ```clojure
+        (ns user
+          (:require [clojure.tools.namespace.repl :refer [refresh]]))
+        ```
 
     Or in a rich comment expression
-    ```clojure
-    (comment
-      (require '[clojure.tools.namespace.repl :refer [refresh]]))
-    ```
+    !!! NOTE ""
+        ```clojure
+        (comment
+          (require '[clojure.tools.namespace.repl :refer [refresh]]))
+        ```
 
 Refresh the namespaces that have saved changes
-
-```clojure
-(refresh)
-```
+!!! NOTE ""
+    ```clojure
+    (refresh)
+    ```
 
 A list of refreshed namespaces are printed.  If there are errors in the Clojure code, then a namespace cannot be loaded and error messages are printed. Check the individual code expressions in the namespace to ensure they are correctly formed.
 
@@ -136,7 +165,7 @@ A list of refreshed namespaces are printed.  If there are errors in the Clojure 
     `*e` is bound to the exeception so will print the exeception when evaluated
 
 
-??? INFO "tools.namespace refactor"
+??? INFO "tools.namespace refactor - documentation can be misleading"
     `refresh` and other functions were moved to the `clojure.tools.namespace.repl` namespace. The original `clojure.tools.namespace` functions are deprecated, although the new `clojure.tools.namespace.repl` namespace is not deprecated.
 
 [Clojure tools.namespace API reference](https://clojure.github.io/tools.namespace/){target=_blank .md-button}
@@ -144,53 +173,84 @@ A list of refreshed namespaces are printed.  If there are errors in the Clojure 
 
 ## Hotload Libraries
 
-`add-libs` to hotload one or more libraries into a running REPL, avoiding the need to restart the REPL and loosing any state just to use a new library with the project.
-
 ![Hotload libraries into a Clojure REPL](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries.png)
 
-`add-libs` is typically called from a rich comment block or [a separate `dev/user.clj` file](/clojure/clojure-cli/repl-startup/) to avoid being loaded with application code.
+`clojure.repl.deps` provides functions to hotload libraries into a running REPL, avoiding the need to restart the REPL and loose state just to use a new library with the project.
+
+- `add-lib` finds a library by name and adds it to the REPL
+- `add-libs` takes a hash-map of one or more library name and version key/value pairs and adds them to the REPL
+- `sync-deps` reads the project `deps.edn` file and adds `:deps` dependencies to the REPL that are not already loaded
+
+Hotload functions are typically called from a rich comment block in [a separate `dev/user.clj` file](/clojure/clojure-cli/repl-startup/) to avoid being automatically loaded.
 
 Once hot-loaded, a library namespace can be required as if the dependency had been added to the project configuration before the REPL started.
 
 [practicalli/clojure-webapp-hotload-libraries](https://github.com/practicalli/clojure-webapp-hotload-libraries) is an example project that uses REPL driven development and hot loading of libraries to build a very simple web server using http-kit and hiccup.
 
-??? WARNING "Add-libs is an unreleased feature"
-    `add-libs` is not yet an official feature and currently available only in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  add-libs should become official release in 2023, although not in within `org.clojure/tools.deps` library.
+??? WARNING "Hotload requires Clojure 1.12 & latest Clojure CLI"
+    Install the latest Clojure CLI version and use Clojure 1.12 onward to use the officially released hotload library.
 
-    [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
-
-
-=== ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
-    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines several aliases which include the library that provides the `add-libs` function to the REPL:
-
-    * `:repl/reloaded` starts a rich terminal UI, REPL process, nREPL server for Clojure editors to connect, portal data inspector, namespace reloadeing and test libraries and path
-    * `:dev/reloaded` - all the tools `:repl/reloaded` provides without the repl (compose with other aliases)
-    * `:lib/hotload` - add the library that includes add-libs function to the path (compose with other aliases)
-
-    Start a rich terminal UI repl:
-
-    ```shell
-    clojure -M:repl/reloaded
-    ```
-
-    Or include the `:dev/reloaded` or `:lib/hotload` aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
+    `add-libs` is an unofficial feature for Clojure 1.11.x and available only in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.
 
 
-=== "Alias Definition"
-    Create an alias definition in the user `deps.edn` configuration or in the current project `deps.edn` configuration.
-
-    Add an `:lib/hotload` alias for the `clojure.tools.deps.alpha.repl` library using the latest SHA commit from the`add-libs3` branch of `clojure.tools.deps.alpha` library as an extra dependency.
-
-    The `add-libs` code is on a separate [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3), so requires the SHA from the head of add-libs3 branch
-
+??? EXAMPLE "Hotload simple web server and build a page"
     ```clojure
-      :lib/hotload
-      {:extra-deps {org.clojure/tools.deps.alpha
-                   {:git/url "https://github.com/clojure/tools.deps.alpha"
-                    :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
-    ```
+    (comment
+      ;; Require if not automatically loaded by the REPL tooling, ie. Rebel Readline
+      #_(require '[clojure..deps.repl :refer [add-lib add-libs sync-deps]])
 
-    > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+      ;; hotload the libraries required for the server
+      (add-libs '{http-kit/http-kit {:mvn/version "2.5.1"}})
+
+      (require '[org.httpkit.server :as app-server])
+
+      ;; Discover which http-kit functions are available
+      (ns-publics (find-ns 'org.httpkit.server))
+
+      ;; Define an entry point for the application
+      (defn welcome-page
+        [request]
+        {:status  200
+         :body    "Welcome to the world of Clojure CLI hotloading"
+         :headers {}})
+
+      ;; Start the application server
+      (app-server/run-server #'welcome-page {:port (or (System/getenv "PORT") 8888)})
+
+      ;; Visit http://localhost:8888/ to see the welcome-page
+
+      ;; Hotload Hiccup to generate html for the welcome page
+      (add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
+
+      (require '[hiccup.core :as hiccup])
+      (require '[hiccup.page :as hiccup-page])
+
+      (defn page-template [content]
+        (hiccup-page/html5
+          {:lang "en"}
+          [:head (hiccup-page/include-css "https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")]
+          [:body
+           [:section {:class "hero is-info"}
+            [:div {:class "hero-body"}
+             [:div {:class "container"}
+              [:h1 {:class "title"} (:title content) ]
+              [:p {:class "subtitle"} (:sub-title content)]]]]]))
+
+      ;; Check the page template returns HTML
+      (page-template {:title     "Hotload Libraries in the REPL"
+                      :sub-title "REPL driven development enables experimentation with designs"})
+
+
+      ;; redefine the welcome page to call the page template
+      (defn welcome-page
+        [request]
+        {:status  200
+         :body    (page-template {:title     "Hotload Libraries in the REPL"
+                                  :sub-title "REPL driven development enables experimentation with designs"})
+         :headers {}})
+
+      ) ; End of rich comment block
+    ```
 
 
 There are several approaches to hotload libraries, including via a terminal REPL UI or in a project with a Clojure editor:
@@ -231,9 +291,13 @@ Test run will stop on the first failed test unless `:fail-fast? false` is passed
 
 ## Performance tests
 
+`time` is a quick way to see if an expression is worth further performance investigation.
+
 `(time ,,,)` wrapped around an expression will print the duration that expression took to run.  This provides a very rough indicator of the performance of code, although as it only runs once then results may vary and are easily affected by the environment (Java Virtual Machine, Operating System, other concurrent processes).
 
 [Criterium](http://hugoduncan.org/criterium/){target=_blank} provides more realistic performance results which are less affected by the environment, providing a better indication of performance to inform design choices.
+
+Criterium tools take a little longer to run in order to return more accurate and consistent performance results.
 
 
 === "REPL"
@@ -266,14 +330,14 @@ The expression being tested will be called multiple times and the duration and a
 Criterium automatically adjusts the benchmark run time according to the execution time of the measured expression. If the expression is fast, Criterium will run it plenty of times, but if a single iteration is quite slow, it will be executed fewer times
 
 
-!!! HINT "bench may be more accurate but far slower to test with"
-    The bench macro is claimed to be more accurate than quick-bench, but in practice, it runs for much longer and doesn't yield significantly different results most of the time
+!!! HINT "Use quick-bench rather than bench"
+    The bench macro is claimed to be more accurate than quick-bench, but in practice, it runs for much longer and doesn't yield significantly different results in most cases
 
 [Criterium API Documentation](http://hugoduncan.org/criterium/){target=_blank .md-button}
 [Benchmark with Criterium article](http://clojure-goes-fast.com/blog/benchmarking-tool-criterium/){target=_blank .md-button}
 
 
-## Log and trace events
+## Log and publish events
 
 mulog is a micro-logging library that logs events and data extremely fast and provides a range of publishers for log analysis.
 
@@ -316,17 +380,20 @@ trace will track the rate of a complex operation, including the outcome and late
 
 
 Consider a function that calls several external services
-```clojure
-(defn product-status [product-id]
-  (let [stock (http/get availability-service {:product-id product-id})
-        pricing (http/get pricing-service {:product-id product-id})]))
-```
+!!! NOTE ""
+    ```clojure
+    (defn product-status [product-id]
+      (let [stock (http/get availability-service {:product-id product-id})
+            pricing (http/get pricing-service {:product-id product-id})]))
+    ```
 
-```clojure
-(mulog/trace ::product-status
-  [:product-id product-id]
-  (product-status product-id))
-```
+Create a trace between the function calls
+!!! NOTE ""
+    ```clojure
+    (mulog/trace ::product-status
+      [:product-id product-id]
+      (product-status product-id))
+    ```
 
 `trace` starts a timer then calls `(product-status product-id)`. Once the execution completes a log an event is created using `log` and uses the global context. By including the product id in the trace call, information is captured about the specific product involved in the trace log.
 
@@ -390,6 +457,7 @@ Trace a function call and its return value
 ```
 
 Call the function to see the output of trace
+
 ```clojure
 (random-function 'clojure.core)
 ;;=> TRACE t1002: (random-function 'clojure.core)
