@@ -4,7 +4,7 @@ Destructuring is a form of pattern matching that is common in Clojure.  Destruct
 
 Destructuring is commonly used with the `let` method for creating local bindings (locally scoped names).
 
-```
+```clojure
 (let [[a b c & d :as e] [1 2 3 4 5 6 7]]
   [a b c d e])
 
@@ -22,19 +22,19 @@ Destructuring is commonly used with the `let` method for creating local bindings
 
 It is often the case that you will want to bind same-named symbols to the map keys. The :keys directive allows you to avoid the redundancy:
 
-```
+```clojure
 (let [{fred :fred ethel :ethel lucy :lucy} m] )
 ```
 
 This can be written in a shorter form as follows:
 
-```
+```clojure
 (let [{:keys [fred ethel lucy]} m] )
 ```
 
 As of Clojure 1.6, you can also use prefixed map keys in the map destructuring form:
 
-```
+```clojure
 (let [m {:x/a 1, :y/b 2}
       {:keys [x/a y/b]} m]
   (+ a b))
@@ -42,7 +42,7 @@ As of Clojure 1.6, you can also use prefixed map keys in the map destructuring f
 
 As shown above, in the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the :keys directive:
 
-```
+```clojure
 (let [m {::x 42}
       {:keys [::x]} m]
   x)

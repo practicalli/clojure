@@ -1,5 +1,7 @@
 ## Does a value conform to a specification?
+
 `clojure.spec.alpha/conform` takes two arguments
+
 - a specification
 - a value to test against the specification
 
@@ -8,7 +10,9 @@
 If the value does conform to the specification, then the value is returned.  This value is referred to as a conformed value.
 
 ## Require the Clojure spec library
+
 Set the namespace for the page and require clojure.spec.alpha library, setting the alias to `spec`
+
 ```clojure
 (ns practicalli.clojure.specifications
   (:require [clojure.spec.alpha :as spec]))
@@ -17,6 +21,7 @@ Set the namespace for the page and require clojure.spec.alpha library, setting t
 ## Using conform
 
 If the value conforms to the spec, a conformed value is returned
+
 ```clojure
 (spec/conform odd? 101)
 ```

@@ -49,10 +49,10 @@ Keys used to define an alias are:
 
 * `:extra-paths` - a vector of directory names added to the project class path, e.g. `["env/dev" "env/test"]`
 * `:extra-deps` - a map of additional library dependencies, as a Maven library, Git repository or local directory
-    - `{domain/library-name {:mvn/version "1.2.33"}}` maven library
-    - `{domain/name {:git/url "https://github.com/account-name/repository-name" :git/sha 'ab3de67'}}`
-    - `{io.github.account/repository-name {:git/tag "2023-01-10" :git/sha 'ab3de67'}}`
-    - `{}`
+  * `{domain/library-name {:mvn/version "1.2.33"}}` maven library
+  * `{domain/name {:git/url "https://github.com/account-name/repository-name" :git/sha 'ab3de67'}}`
+  * `{io.github.account/repository-name {:git/tag "2023-01-10" :git/sha 'ab3de67'}}`
+  * `{}`
 * `:main-opts` - a vector of command line options passed to `clojure.main`
 * `:exec-fn` - the fully qualified name of a function to be run by `clojure.exec`
 * `:exec-args` - default arguments passed to the function, over-ridden by matching argument keys specified on the command line

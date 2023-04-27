@@ -1,4 +1,5 @@
 # Set namespace on REPL startup
+
 The REPL process does not evaluate project code on start-up.  If it did and that code had a error, it could prevent the REPL from starting.
 
 The common approach is to require the main namespace for the project, making the functions in that namespace available.  This will also make available functions from those namespaces.
@@ -6,7 +7,8 @@ The common approach is to require the main namespace for the project, making the
 Switching to a specific namespace in the REPL allows calling functions by name, without the fully qualified name.
 
 
-### Set namespace via the command line
+## Set namespace via the command line
+
 To require and switch to a namespace on startup, use the `clojure` or `clj` commands with the --eval option to run the specific commands.  The --repl option will ensure the repl starts.
 
 ```bash
@@ -23,6 +25,7 @@ clj -e "(ns foo.bar) (alter-var-root #'*ns* (constantly 'foo.bar)) (clojure.main
 
 
 ## Set namespace with Rebel Readline
+
 Set the namespace using Rebel Readline alias from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/)
 
 ```clojure
@@ -39,6 +42,7 @@ The `--eval` approach will be blocked if used with aliases that set the main nam
 
 
 ## Set namespace using an editor
+
 It is not necessary to set the namespace when evaluating code in a Clojure aware editor.  Expressions are evaluated within the scope of the namespace in which they are defined.
 
 Using an editor to evaluate Clojure is much simpler and quicker than using a command line REPL, especially when working with Clojure projects with more than one namespace.

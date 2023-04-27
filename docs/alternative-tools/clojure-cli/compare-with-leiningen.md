@@ -34,7 +34,6 @@ Boot runs tasks written in Clojure on the command line, providing a flexible way
 | Boot              | build.boot with `deftask`, `task-options!`, `set-env!` |                                                                  | Write the tasks required in Clojure                                                              |
 
 
-
 === "Clojure CLI"
     Clojure CLI tools are configured with an EDN data structure, i.e. a hash-map of key-value pairs.  As this is a Clojure data structure its much easier to parse and should be very familiar to Clojure developers.
 
@@ -47,7 +46,6 @@ Boot runs tasks written in Clojure on the command line, providing a flexible way
 
 === "Boot"
     `build.boot` is a file containing Clojure code that defines the tasks for using your project.
-
 
 
 ## Extending the tools

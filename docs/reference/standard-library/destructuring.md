@@ -1,4 +1,4 @@
-# Destructuring - abstract structural binding
+# Destructuring
 
 Destructuring is a form of pattern matching where you return specific elements from a collection and assign those elements names.  It is commonly used in function parameter lists or with the `let` function.
 
@@ -41,37 +41,50 @@ This example seems a little redundant at first, however if we add recursion then
 
  splitting a vector into a head and a tail. When defining a function with an arglist** you use an ampersand. The same is true in destructuring.
 
+```clojure
 (def indexes [1 2 3])
 
-user=> (let [[x & more] indexes]
+(let [[x & more] indexes]
          (println "x:" x "more:" more))
-x: 1 more: (2 3)
+;; => x: 1 more: (2 3)
+```
 
 It's also worth noting that you can bind the entire vector to a local using the :as directive.
 
-user=> (def indexes [1 2 3])
+```clojure
+(def indexes [1 2 3])
+```
+
 
 # 'user/indexes
 
-user=> (let [[x & more :as full-list] indexes]
+```clojure
+ (let [[x & more :as full-list] indexes]
          (println "x:" x "more:" more "full list:" full-list))
-x: 1 more: (2 3) full list: [1 2 3]
+;; => x: 1 more: (2 3) full list: [1 2 3]
+```
 
 Vector examples are the easiest; however, in practice I find myself using destructuring with maps far more often.
 
 Simple destructuring on a map is as easy as choosing a local name and providing the key.
 
-user=> (def point {:x 5 :y 7})
+```clojure
+(def point {:x 5 :y 7})
+```
 
 # 'user/point
 
-user=> (let [{the-x :x the-y :y} point]
+```clojure
+ (let [{the-x :x the-y :y} point]
          (println "x:" the-x "y:" the-y))
-x: 5 y: 7
+;; => x: 5 y: 7
+```
 
 As the example shows, the values of :x and :y are bound to locals with the names the-x and the-y. In practice we would never prepend "the-" to our local names; however, using different names provides a bit of clarity for our first example. In production code you would be much more likely to want locals with the same name as the key. This works perfectly well, as the next example shows.
 
-user=> (def point {:x 5 :y 7})
+```clojure
+(def point {:x 5 :y 7})
+```
 
 # 'user/point
 

@@ -97,4 +97,4 @@ Run a local server from the root of the cloned project
 mkdocs serve
 ```
 
-The website will open at http://localhost:8000
+The website will open at <http://localhost:8000>

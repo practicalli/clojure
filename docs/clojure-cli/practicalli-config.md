@@ -104,6 +104,7 @@ In the project deps.edn file it could be useful to define an alias to run the pr
  :exec-fn -main
  :exec-args {:port 8888}}
 ```
+
 Then the project can be run using `clojure -X:project/run` and arguments can optionally be included in this command line, to complement or replace any default arguments in `exec-args`.
 
 
@@ -145,7 +146,7 @@ Path to project.jar can also be set in alias to simplify the Clojure command.
 Include Java source on the  classpath to [look up Java Class and method definitions, e.g. `cider-find-var` in Emacs](https://practicalli.github.io/spacemacs/navigating-code/java-definitions.html)
 Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.zip")
 
-* `:lib/java17-source`
+- `:lib/java17-source`
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
@@ -163,24 +164,23 @@ Use formatting tools to support a consistent code style across all Clojure proje
 > Include `:lib/pprint-sorted` when starting a REPL to pretty print data with sorted keys and set values
 
 
-
 ### Databases and drivers
 
 Databases and drivers, typically for development time inclusion such as embedded databases
 
-* `:database/h2` - H2 embedded database library and next.jdbc
-* `lib/next.jdbc` - include the next.jdbc library
+- `:database/h2` - H2 embedded database library and next.jdbc
+- `lib/next.jdbc` - include the next.jdbc library
 
 `clojure -M:database/h2` - run a REPL with an embedded H2 database and next.jdbc libraries
 
-https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/getting-started#create--populate-a-database
+<https://cljdoc.org/d/seancorfield/next.jdbc/CURRENT/doc/getting-started#create--populate-a-database>
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 
 ### Data Science
 
-* `lib/clerk` - [Clerk Notebooks](https://github.com/nextjournal/clerk)
+- `lib/clerk` - [Clerk Notebooks](https://github.com/nextjournal/clerk)
 
 
 ### Visualizing projects
@@ -189,24 +189,24 @@ Create [Graphviz](https://www.graphviz.org/) graphs of project and library depen
 
 Morpheus creates grahps of project vars and their relationships
 
-* [`:graph/vars`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .dot file
-* [`:graph/vars-png`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .png file using `src` and `test` paths
-* [`:graph/vars-svg`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .svg file using `src` and `test` paths
+- [`:graph/vars`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .dot file
+- [`:graph/vars-png`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .png file using `src` and `test` paths
+- [`:graph/vars-svg`](https://github.com/benedekfazekas/morpheus) - generate graph of vars in a project as a .svg file using `src` and `test` paths
 
 > Install [Graphviz](https://www.graphviz.org/) to generate PNG and SVG images.  Or use the [Edotor website](https://edotor.net/) to convert .dot files to PNG or SVG images and select different graph layout engines.
 
 
 [Vizns](https://github.com/SevereOverfl0w/vizns) creates graphs of relationships between library dependencies and project namespaces
 
-* `:graph/deps`
-* `:graph/deps-png` - generate a single deps-graph png image
+- `:graph/deps`
+- `:graph/deps-png` - generate a single deps-graph png image
 
 Other options:
-* `clojure -M:graph/deps navigate`  # navigable folder of SVGs
-* `clojure -M:graph/deps single`    # deps-graph.dot file
-* `clojure -M:graph/deps single -o deps-graph.png -f png`
-* `clojure -M:graph/deps single -o deps-graph.svg -f svg`
-* `clojure -M:graph/deps single --show `  # View graph without saving
+- `clojure -M:graph/deps navigate`  # navigable folder of SVGs
+- `clojure -M:graph/deps single`    # deps-graph.dot file
+- `clojure -M:graph/deps single -o deps-graph.png -f png`
+- `clojure -M:graph/deps single -o deps-graph.svg -f svg`
+- `clojure -M:graph/deps single --show`  # View graph without saving
 
 
 ### Data Inspector
@@ -227,7 +227,7 @@ Other options:
 
 `(portal/open)` to open the web based inspector window in a browser.
 
-`(portal/tap) `to add portal as a tap target (add-tap)
+`(portal/tap)`to add portal as a tap target (add-tap)
 
 `(tap> {:accounts [{:name "jen" :email "jen@jen.com"} {:name "sara" :email "sara@sara.com"}]})` to send data to the portal inspector window (or any other data you wish to send)
 
@@ -240,17 +240,17 @@ Other options:
 
 Clojure spec, generators and test.check
 
-* `:lib/spec-test` - generative testing with Clojure test.check
-* `:lib/spec2` - experiment with the next version of Clojure spec - alpha: design may change
+- `:lib/spec-test` - generative testing with Clojure test.check
+- `:lib/spec2` - experiment with the next version of Clojure spec - alpha: design may change
 
 
 ### Unit Testing frameworks
 
 Unit test libraries and configuration.  The Clojure standard library includes the `clojure.test` namespace, so no alias is required.
 
-* `:test/env` - add `test` directory to classpath
-* [`:lib/expectations`](https://github.com/clojure-expectations/clojure-test) - `clojure.test` with expectations
-* [`:lib/expectations-classic`](https://github.com/clojure-expectations/expectations) - expectations framework
+- `:test/env` - add `test` directory to classpath
+- [`:lib/expectations`](https://github.com/clojure-expectations/clojure-test) - `clojure.test` with expectations
+- [`:lib/expectations-classic`](https://github.com/clojure-expectations/expectations) - expectations framework
 
 Use expectations in a project `clojure -M:test:expectations` or from the command line with a test runner, e.g. `clojure -M:lib/expectations:test/runner`
 
@@ -293,13 +293,13 @@ Start a REPL using the `:repl/reloaded` alias, or by including the `:performance
     !!! NOTE ""
         ```shell
         clojure -M:repl/reloaded
-        ```
+```
 
 === "Clojure command"
     !!! NOTE ""
         ```shell
         clojure -M:performance/benchmark:repl/basic
-        ```
+```
 
 
 === "REPL"
@@ -326,6 +326,7 @@ clojure -M:performance/benchmark:repl/rebel
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 In the REPL:
+
 ```clojure
   (require '[clj-memory-meter.core :as memory-meter])
    (memory-meter/measure (your-expression))

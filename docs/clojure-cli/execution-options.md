@@ -27,20 +27,17 @@ Common aliases will be used to explain the use of these execution options in mor
 
 ## Form of clojure.exec command line arguments
 
-Key/value pairs are read as EDN (extensible data notation that is the base syntax of Clojure).
+Clojure.exec command takes Key/value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).
 
-The command line shell needs a little help parsing
+Number values and keywords can be parsed from the command line
 
 Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. `'[:a :b]'`, `'{:c 1}'`.
 
 The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps
 
-Number values and keywords should not need to be wrapped.
-
-* `'"strings in double quotes surround by single quotes"'`
-* `:key `[:service :port]` 9999`
-* `:config '{:log :console}'`
-
+- `'"strings in double quotes surround by single quotes"'`
+- `'[:vectors :with-single-quotes]'`
+- `'{:hash-maps :with-single-quotes}'`
 
 
 ## Run clojure.main project

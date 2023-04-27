@@ -22,7 +22,7 @@ Start a REPL with an alias that includes the `add-libs` library.
 === "Clojure Editor"
     Run a Clojure REPL from the editor (jack-in command) configured with the `:dev/reloaded` alias or `:lib/hotload` alias in an Editor jack-in command or other REPL startup command.
 
-   Alternatively, run a Terminal REPL and connect the editor to that REPL process (connect command) 
+   Alternatively, run a Terminal REPL and connect the editor to that REPL process (connect command)
 
 
 [Practicalli REPL Reloaded Configuration](/clojure/clojure-cli/repl-reloaded/){target=_blank .md-button}
@@ -116,7 +116,7 @@ Create a web server from scratch, serving pages generated from hiccup, with all 
 
 ??? INFO "Using add-libs with project deps.edn"
     A project `deps.edn` file can also be used to hotload libraries with `add-lib`.  This has the advantage that newly added libraries become part of the normal project dependency configuration.
-    
+
     Add a namespace definition to the `deps.edn` file to help editors understand the `deps.edn` file is being used for code.  Use the `#_` comment reader macro with the namespace definition to only evaluate this code manually as a developer.
     
     Add the `add-libs` expression after the `:deps` key so that it is easy to slurp in the existing and new dependencies as a single hash-map.  Use the comment reader macro `#_` to only evaluate this code manually.

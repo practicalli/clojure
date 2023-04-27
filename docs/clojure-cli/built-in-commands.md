@@ -107,8 +107,8 @@ Add a library dependency as with any other library (git or local/root):
 ```
 
 
-
 `:deps prep` will built the library of any dependency that requires it
+
 ```shell
 clojure -X:deps prep
 ```
@@ -116,7 +116,7 @@ clojure -X:deps prep
 
 ## Resolve Git tags
 
-/* TODO: Clojure CLI resolve Git tags examples */
+<!-- TODO: Clojure CLI resolve Git tags examples -->
 
 `-X:deps git-resolve-tags` updates git based dependencies in the project `deps.edn` file which use :git/tags key to the equivalent SHA commit values in the `:git/sha` key
 

@@ -1,7 +1,9 @@
 # Explaining non-conforming values
+
 `clojure.spec.alpha/explain` describes why a value does not satisfy a specification.
 
 `clojure.spec.alpha/explain` takes two arguments
+
 - a specification
 - a value to test against the specification
 

@@ -69,6 +69,7 @@ The name of the project is of the form `domain/app-lib-name`. Use a company name
 ```bash
 clojure -T:project/create :template app :name practicalli/playground
 ```
+
 The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
 
 

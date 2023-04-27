@@ -8,8 +8,7 @@ There are approximately 700 functions and macros available in the `clojure.core`
     To get an accurate number of functions, call the `ns-publics` function with a namespace name
     ```clojure
     (count (ns-publics 'clojure.core))
-
-```
+    ```
     [Random Function](/clojure/simple-projects/random-clojure-function/) is a simple project that prints out a random function from the given namespace, or from clojure.core by default.
 
 <!-- TODO: identify groups (families) of Clojure functions that a Clojure developer should be aware of -->
@@ -28,5 +27,5 @@ macros are not composable like functions, so functions like `apply` `reduce` `ma
 
 Special forms are built into the Clojure runtime, so will not be found in clojure.core
 
-* Special forms: `if` `do` `let` `quote` `var` `fn` `loop` `recur` `throw` `try`
-* Special forms for Java interop:  `.` `new` `set!`
+- Special forms: `if` `do` `let` `quote` `var` `fn` `loop` `recur` `throw` `try`
+- Special forms for Java interop:  `.` `new` `set!`

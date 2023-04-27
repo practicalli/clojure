@@ -3,6 +3,7 @@
 `clojure.core/and` function and `clojure.core/or` function can be used to define a specification with multiple parts.
 
 ## Conform to One or more specifications
+
 A specification for residential address included either a house number or name.  The `clojure.core/or` function allows either type of value to be used and conform to the specification.
 
 ```clojure
@@ -26,6 +27,7 @@ If specifications are uses as the options in the `clojure.spec.alpha/or` then th
 
 
 ## Conform to all specifications
+
 Create a composite specification using `clojure.spec.alpha/and` when all specifications should be conformed by the values
 
 

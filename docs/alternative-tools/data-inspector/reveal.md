@@ -4,7 +4,7 @@
 
 [Reveal](https://vlaaad.github.io/reveal/) describes itself as a read evaluate visualize loop tool proving extra tools to explore data in Clojure visually.  The [extensive documentation](https://vlaaad.github.io/reveal/) shows the many ways to use Reveal.
 
-Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure editor that uses nrepl](#using-reveal-with-nrepl-editors), such as Emacs Cider and Spacemacs.  Reveal can be added as a tap source to any running REPL, eg. using [Reveal with Rebel Readline](#using-reveal-with-rebel-and-tap).
+Use Reveal with a terminal REPL or a Clojure editor that uses nrepl such as Emacs Cider and Spacemacs.  Reveal can be added as a tap source to any running REPL, eg. using Reveal with Rebel Readline.
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1jy09_16EeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -25,7 +25,6 @@ Use Reveal with [a terminal REPL](#using-reveal-in-a-terminal), a [Clojure edito
     Write Clojure code as normal in the REPL and result are also sent to the Reveal data browser window.
 
     The [extensive documentation](https://vlaaad.github.io/reveal/) shows the many ways to use Reveal.
-
 
 
 === "nrepl Editors"
@@ -156,6 +155,7 @@ In the REPL, update the value of the state atom.
 ```clojure
 (swap! state * 12)
 ```
+
 The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser.
 
 

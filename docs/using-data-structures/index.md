@@ -6,7 +6,7 @@ Lets look at some of the common functions that are used in Clojure with data str
 
 > **fixme** the below content is work in progress, sorry.
 
-# Managing Return values
+## Managing Return values
 
   If you run a function over a data structure, you may not always get back the type of value you want.  It easy to wrap a function around to give you the desired value type.
 
@@ -27,7 +27,7 @@ Lets look at some of the common functions that are used in Clojure with data str
 
 You can get the value of this map
 
-```
+```clojure
 (def luke {:name "Luke Skywalker" :skill "Targeting Swamp Rats"})
 (def darth {:name "Darth Vader"    :skill "Crank phone calls"})
 (def jarjar {:name "JarJar Binks"   :skill "Upsetting a generation of fans"})
@@ -41,77 +41,78 @@ When you use functions on data structures, although they can return a new value 
 
 Lets define a name for a data structure
 
-```
+```clojure
 (def name1 [1 2 3 4])
 ```
 
 when we evaluate that name we get the original data we set
 
-```
+```clojure
 name1
 ```
 
 Now we use a function called conj to adds (conjoin) another number to our data structure
 
-```
+```clojure
 (conj name1 5)
 ```
 
 This returns a new value without changing the original data structure
 
-```
+```clojure
 name1
 ```
 
 We cant change the original data structure, it is immutable.  Once it is set it cant be changed. However, if we give a name to the result of changing the original data structure, we can refer to that new data structure
 
-```
+```clojure
 (def name2(conj name1 5))
 ```
 
 Now name2 is the new data structure, but name1 remains unchanged
 
-```
+```clojure
 name2
 name1
 ```
 
 So we cannot change the data structure, however we can achieve something that looks like we have changed it.  We can re-assign the original name to the result of changing the original data structure
 
-```
+```clojure
 (def name2(conj name1 5))
 ```
 
 Now name1 and name2 are the same result
 
-```
+```clojure
 name2
 name1
 ```
 
-> **Hint** An analogy (thanks to Chris Ford)
+!!! HINT "An analogy"
+    You have the number 2.  If you add 1 to 2, what value is the number 2?
 
-> You have the number 2.  If you add 1 to 2, what value is the number 2?
-> The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return
+    The number 2 is still 2 no mater that you add 1 to it, however, you get the value 3 in return
 
-# Creating new data structures
+
+## Creating new data structures
 
 Use concat to add lists or vectors together
 
-```
+```clojure
 (concat [1 2] '(3 4)) ; => (1 2 3 4)
 ```
 
 Use filter, map to interact with collections
 
-```
+```clojure
 (map inc [1 2 3]) ; => (2 3 4)
 (filter even? [1 2 3]) ; => (2)
 ```
 
 Use reduce to reduce them
 
-```
+```clojure
 (reduce + [1 2 3 4])
 ; = (+ (+ (+ 1 2) 3) 4)
 ; => 10
@@ -119,7 +120,7 @@ Use reduce to reduce them
 
 Reduce can take an initial-value argument too
 
-```
+```clojure
 (reduce conj [] '(3 2 1))
 ; = (conj (conj (conj [] 3) 2) 1)
 ; => [3 2 1]
@@ -127,14 +128,14 @@ Reduce can take an initial-value argument too
 
 Use cons to add an item to the beginning of a list or vector
 
-```
+```clojure
 (cons 4 [1 2 3]) ; => (4 1 2 3)
 (cons 4 '(1 2 3)) ; => (4 1 2 3)
 ```
 
 Use conj to add an item to the beginning of a list, or the end of a vector
 
-```
+```clojure
 (conj [1 2 3] 4) ; => [1 2 3 4]
 (conj '(1 2 3) 4) ; => (4 1 2 3)
 ```

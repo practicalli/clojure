@@ -9,7 +9,6 @@ A Clojure CLI project is [defined by a `deps.edn` file](/clojure/clojure-cli/con
     [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template) provides a production grade example of a project starting point, with additional configuration files for building and deploying the project.
 
 
-
 ## Create a minimal project
 
 Create a `deps.edn` file containing `{}` in the root of a directory for a minimal configuration.
@@ -27,7 +26,6 @@ The project can now be run with a REPL via a [terminal UI](../repl/) or [Clojure
 
 ??? TIP "Migrate project to Clojure CLI"
     [Guide to Migrating a project to Clojure CLI](migrate-project.md){target=_blank .md-button}
-
 
 
 ## General form of a Clojure project

@@ -101,7 +101,7 @@ Clojure CLI Configuration can be used from several different sources.
 
 ![Clojure CLI configuration order of precedence](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-cli-configuration-precedence.png)
 
-Command line arguemnts take preceedence over the other configurations. When running the `clojure` command the configurations are merged, with key/values being added or replaces following the precedence order.
+Command line arguments take preceedence over the other configurations. When running the `clojure` command the configurations are merged, with key/values being added or replaces following the precedence order.
 
 
 ### Install configuration

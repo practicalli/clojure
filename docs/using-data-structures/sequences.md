@@ -9,7 +9,7 @@ There are functions that work on all the built in data-structures in Clojure.
 
 ## Practising with lists
 
-> **Note** Create a simple collection of developer events.  First use a list of strings, then try a map with keywords.  For each data structure, pull out some of the event details
+Create a simple collection of developer events.  First use a list of strings, then try a map with keywords.  For each data structure, pull out some of the event details
 
 ```clojure
 (def developer-events-strings '("Devoxx UK" "Devoxx France" "Devoxx" "Hack the Tower"))
@@ -26,7 +26,8 @@ developer-events-strings
 
 Using a Clojure Vector data structure is a more Clojure approach, especially when the vector contains keywords.  Think of a Vector as an Array, although in Clojure it is again immutable in the same way a list is.
 
-> **Note** Create a slightly more involved data structure, holding more data around each developer events.  Suggest using a map, with each key being the unique name of the developer event.
+Create a slightly more involved data structure, holding more data around each developer events.  Suggest using a map, with each key being the unique name of the developer event.
+
 The details of each event (the value to go with the event name key) is itself a map as there are several pieces of data associated with each event name.
 
 ```clojure
@@ -43,23 +44,29 @@ The details of each event (the value to go with the event name key) is itself a 
 
 Lets call the data structure and see what it evaluates too, it should not be a surprise
 
-```
+```clojure
 dev-event-details
 ```
 
 We can ask for the value of a specific key, and just that value is returned
 
-```
+```clojure
 (dev-event-details :devoxxuk)
 ```
 
 In our example, the value returned from the :devoxxuk key is also a map, so we can ask for a specific part of that map value by again using its key
 
-```
+```clojure
 (:URL (dev-event-details :devoxxuk))
 ```
 
-> **Note** Lets define a simple data structure for stocks data using a vector of maps, as there will be one or more company stocks to track.  Each map represents the stock information for a company.  Get the value of the whole data structure by referring to it by name, ask for a specific element by its position in the array using the `nth` function.  Then try some of the common functions that work on collections.
+Define a simple data structure for stocks data using a vector of maps, as there will be one or more company stocks to track.
+
+Each map represents the stock information for a company.
+
+Get the value of the whole data structure by referring to it by name, ask for a specific element by its position in the array using the `nth` function.
+
+Then try some of the common functions that work on collections.
 
 ```clojure
 (def portfolio [ { :ticker "CRM" :lastTrade 233.12 :open 230.66}
@@ -78,4 +85,4 @@ portfolio
 (last portfolio)
 ```
 
-  First and next are termed as sequence functions in Clojure, unlike other lisps, you can use first and next on other data structures too
+First and next are termed as sequence functions in Clojure, unlike other lisps, you can use first and next on other data structures too

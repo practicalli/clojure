@@ -47,6 +47,7 @@ The `(comment ,,,)` function wraps code that is only run directly by the develop
 Expressions in rich comment blocks can represent how to use the functions that make up the namespace API.  For example, starting/restarting the system, updating the database, etc.  Expressions provide examples of calling functions with typical arguments and make a project more accessible and easier to work with.
 
 !!! EXAMPLE ""
+
 ```clojure
 (ns practicalli.gameboard.service)
 
@@ -112,8 +113,8 @@ Pretty print shows the structure of results from function calls in a human-frien
 
 Tools to view and navigate code
 
-- [:fontawesome-solid-book-open: Cider inspector](https://practical.li/spacemacs/evaluating-clojure/inspect/){target=_blank} is an effective way to navigate nested data and page through large data sets.
-- [:fontawesome-solid-book-open: Portal Inspector](https://practical.li/clojure/clojure-tools/data-inspector/portal){target=_blank} to visualise many kinds of data in many different forms.
+* [:fontawesome-solid-book-open: Cider inspector](https://practical.li/spacemacs/evaluating-clojure/inspect/){target=_blank} is an effective way to navigate nested data and page through large data sets.
+* [:fontawesome-solid-book-open: Portal Inspector](https://practical.li/clojure/clojure-tools/data-inspector/portal){target=_blank} to visualise many kinds of data in many different forms.
 
 ![Portal - view and navigate Clojure data and event logs](https://raw.githubusercontent.com/practicalli/graphic-design/live/portal/portal-data-browser-example.png)
 
@@ -122,7 +123,7 @@ Tools to view and navigate code
 
 Clojure aware editors should automatically apply formatting that follows the [:globe_with_meridians: Clojure Style guide](https://github.com/bbatsov/clojure-style-guide){target=_blank}.
 
-Live linting with [clj-kondo](:fontawesome-brands-github: https://github.com/borkdude/clj-kondo){target=_blank} suggests common idioms and highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.
+Live linting with [clj-kondo](:fontawesome-brands-github: <https://github.com/borkdude/clj-kondo){target=_blank>} suggests common idioms and highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.
 
 ![Clojure code static analysis for live linting](https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-light.png#only-light)
 ![Clojure code static analysis for live linting](https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-dark.png#only-dark)
@@ -185,7 +186,7 @@ Clojure has a number of [:fontawesome-solid-book-open: test runners](https://pra
     Use [:fontawesome-solid-book-open: kaocha test runner](https://practical.li/clojure/testing/test-runners/kaocha-test-runner/){target=_blank} in watch mode to run tests and specification check automatically (when changes are saved)
     ```bash
     clojure -X:test/watch
-    ```
+```
 
 ## Continuous Integration and Deployment
 

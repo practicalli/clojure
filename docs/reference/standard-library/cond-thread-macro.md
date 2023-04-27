@@ -1,8 +1,6 @@
-## Clojure cond->
+# Clojure cond->
 
 `cond->` and `cond->>` are versatile macros available since version 1.5, although its more of a nieche use, its really useful in that neiche
-
-What is cond->?
 
 Usage: (cond-> expr & clauses)
 
@@ -12,6 +10,7 @@ Threads expr (via ->) through each form for which the corresponding test express
 
 Note that, unlike cond branching, cond-> threading does not short circuit after the first true test expression.
 
+
 ## Deconstruct
 
 ```clojure
@@ -20,7 +19,11 @@ Note that, unlike cond branching, cond-> threading does not short circuit after 
 ;; => 10
 ```
 
-In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses. Each clause is a pair made up of a test and a form. In this example there is a single clause with the value false as the test the function inc as the form. Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.
+In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses.
+
+Each clause is a pair made up of a test and a form.  There is a single clause with the value false as the test the function inc as the form.
+
+Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.
 
 Let’s look at an example with a truthy test.
 
