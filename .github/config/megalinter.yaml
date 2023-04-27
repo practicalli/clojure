@@ -35,8 +35,8 @@ ENABLE:
 CREDENTIALS_SECRETLINT_CONFIG_FILE: ".github/config/secretlintrc.json"
 
 MARKDOWN_MARKDOWNLINT_CONFIG_FILE: ".github/config/markdown-lint.jsonc"
-MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: ".github/pull_request_template.md"
-MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: true
+MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: ".github/pull_request_template.md|CHANGELOG.md"
+# MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: true
 MARKDOWN_MARKDOWN_LINK_CHECK_CONFIG_FILE: ".github/config/markdown-link-check.json"
 # MARKDOWN_MARKDOWN_LINK_CHECK_CLI_LINT_MODE: "project"
 # MARKDOWN_MARKDOWN_LINK_CHECK_DISABLE_ERRORS: false
@@ -57,24 +57,18 @@ SPELL_MISSPELL_DISABLE_ERRORS: true
 
 # Disable linter features
 DISABLE_LINTERS:
+  - YAML_PRETTIER # draconian format rules
   - SPELL_CSPELL # many clojure references causing false positives
   - YAML_YAMLLINT # vague error mesages, investigation required
   - REPOSITORY_GIT_DIFF # warnings about LF to CRLF
   - REPOSITORY_SECRETLINT # reporting errors in its own config file
   # - REPOSITORY_DEVSKIM # unnecessary URL TLS checks
   - REPOSITORY_CHECKOV # fails on root user in Dockerfile
-  # - REPOSITORY_SECRETLINT
+  - REPOSITORY_SECRETLINT
 
 # Ignore all errors and return without error status
 # DISABLE_ERRORS: true
 
-# ------------------------
-
-# ------------------------
-# Fix Errors
-
-# Automatically update files with corrections
-APPLY_FIXES: all # all, none, or list of linter keys
 # ------------------------
 
 # ------------------------
