@@ -105,7 +105,7 @@ Require the clojure.tools.namespace.repl refresh function
 === "REPL"
     ```clojure
     (require '[clojure.tools.namespace.repl :refer [refresh]])
-```
+    ```
 
 === "Project"
     Use an ns form for the namespace (often added to a custom `user` namespace)
