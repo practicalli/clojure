@@ -6034,31 +6034,26 @@ Remove an alias for a specific namespace
 <p><a href="https://clojure.github.io/tools.namespace/#clojure.tools.namespace.repl">clojure.tools.namespace.repl</a> contains the <code>refresh</code> function that compares source code files with the definitions in the REPL, removing and re-evaluating those namespaces containing changes.</p>
 <p>refresh will manage loading of namespaces with respect to their dependencies, ensuring each namespace can be loaded without error.</p>
 <p>Require the clojure.tools.namespace.repl refresh function</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REPL</label><label for="__tabbed_1_2">Project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>```clojure
-(require '[clojure.tools.namespace.repl :refer [refresh]])</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]])</span>
+</code></pre></div>
 </div>
-</div>
-</div>
-<p>```</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Project</label></div>
-<div class="tabbed-content">
 <div class="tabbed-block">
 <p>Use an ns form for the namespace (often added to a custom <code>user</code> namespace)
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
 </code></pre></div></p>
 <p>Or in a rich comment expression
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">comment</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]))</span>
 </code></pre></div></p>
 </div>
 </div>
 </div>
 <p>Refresh the namespaces that have saved changes</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span>
 </code></pre></div>
 <p>A list of refreshed namespaces are printed.  If there are errors in the Clojure code, then a namespace cannot be loaded and error messages are printed. Check the individual code expressions in the namespace to ensure they are correctly formed.</p>
 <p><a class="md-button" href="/clojure/clojure-cli/repl-startup/" target="_blank">Reload namespaces with dev/user.clj</a></p>
@@ -6084,7 +6079,7 @@ Remove an alias for a specific namespace
 <p><code>add-libs</code> is not yet an official feature and currently available only in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  add-libs should become official release in 2023, although not in within <code>org.clojure/tools.deps</code> library.</p>
 <p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library for all released functions from the alpha library</p>
 </details>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</label><label for="__tabbed_3_2">Alias Definition</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Alias Definition</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> defines several aliases which include the library that provides the <code>add-libs</code> function to the REPL:</p>
@@ -6094,7 +6089,7 @@ Remove an alias for a specific namespace
 <li><code>:lib/hotload</code> - add the library that includes add-libs function to the path (compose with other aliases)</li>
 </ul>
 <p>Start a rich terminal UI repl:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
 <p>Or include the <code>:dev/reloaded</code> or <code>:lib/hotload</code> aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (<code>-A</code>,<code>-M</code>,<code>-X</code>,<code>-T</code>).</p>
 </div>
@@ -6102,10 +6097,10 @@ Remove an alias for a specific namespace
 <p>Create an alias definition in the user <code>deps.edn</code> configuration or in the current project <code>deps.edn</code> configuration.</p>
 <p>Add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library using the latest SHA commit from the<code>add-libs3</code> branch of <code>clojure.tools.deps.alpha</code> library as an extra dependency.</p>
 <p>The <code>add-libs</code> code is on a separate <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a>, so requires the SHA from the head of add-libs3 branch</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">&quot;https://github.com/clojure/tools.deps.alpha&quot;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;e4fb92eef724fa39e29b39cc2b1a850567d490dd&quot;</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">&quot;https://github.com/clojure/tools.deps.alpha&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;e4fb92eef724fa39e29b39cc2b1a850567d490dd&quot;</span><span class="p">}}}</span>
 </code></pre></div>
 <blockquote>
 <p>Alias example from <a href="https://github.com/practicalli/clojure-deps-edn/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a></p>
@@ -6122,10 +6117,10 @@ Remove an alias for a specific namespace
 <p>Unit tests are written with <code>clojure.test</code> and reside in a parallel <code>test</code> directory, creating matching <code>_test.clj</code> files for each relevant clojure file under <code>src</code>.</p>
 <p>Test runners are highly configurable and can run a very specific set of tests, although Clojure is usually fast enough to run all the tests each time.</p>
 <p>Run the tests in a project with the kaocha test runner by issuing the following command in the root of the project.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>clojure<span class="w"> </span>-X:test/run
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div>
 <p>Or continually watch for changes and run kaocha test runner each time a file is saved (typically in a separate terminal)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>clojure<span class="w"> </span>-X:test/watch
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:test/watch
 </code></pre></div>
 <p>Test run will stop on the first failed test unless <code>:fail-fast? false</code> is passed as an argument to either command.</p>
 <details class="hint">
@@ -6138,27 +6133,27 @@ Remove an alias for a specific namespace
 <h2 id="performance-tests">Performance tests<a class="headerlink" href="#performance-tests" title="Permanent link">λ︎</a></h2>
 <p><code>(time ,,,)</code> wrapped around an expression will print the duration that expression took to run.  This provides a very rough indicator of the performance of code, although as it only runs once then results may vary and are easily affected by the environment (Java Virtual Machine, Operating System, other concurrent processes).</p>
 <p><a href="http://hugoduncan.org/criterium/" target="_blank">Criterium</a> provides more realistic performance results which are less affected by the environment, providing a better indication of performance to inform design choices.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">REPL</label><label for="__tabbed_4_2">Project</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">REPL</label><label for="__tabbed_3_2">Project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Require the criterium library
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">])</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Require the criterium library via the ns expression</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
 </code></pre></div>
 Or require the criterium library in a rich comment expression
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nf">comment</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">comment</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">benchmark</span><span class="p">]))</span>
 </code></pre></div></p>
 </div>
 </div>
 </div>
 <p>Wrap the <code>quick-bench</code> function around the expression to run performance testing upon</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">benchmark/quick-bench</span><span class="w"> </span>,,,<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">benchmark/quick-bench</span><span class="w"> </span>,,,<span class="p">)</span>
 </code></pre></div>
 <p>The expression being tested will be called multiple times and the duration and average times will be printed.</p>
 <p>Criterium automatically adjusts the benchmark run time according to the execution time of the measured expression. If the expression is fast, Criterium will run it plenty of times, but if a single iteration is quite slow, it will be executed fewer times</p>
@@ -6171,52 +6166,52 @@ Or require the criterium library in a rich comment expression
 <h2 id="log-and-trace-events">Log and trace events<a class="headerlink" href="#log-and-trace-events" title="Permanent link">λ︎</a></h2>
 <p>mulog is a micro-logging library that logs events and data extremely fast and provides a range of publishers for log analysis.</p>
 <p>Use the mulog <code>log</code> function to create events to capture useful information about the Clojure system operation.  Publish the logs locally to a console or to a log analysis service such as <a href="https://zipkin.io/" target="_blank">zipkin</a> or <a href="https://grafana.com/logs/">Grafana</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">REPL</label><label for="__tabbed_5_2">Project</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><input id="__tabbed_4_2" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">REPL</label><label for="__tabbed_4_2">Project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Require the mulog library
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">])</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Require the mulog library via the namespace form
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">your-ns</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">your-ns</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]))</span>
 </code></pre></div></p>
 </div>
 </div>
 </div>
 <p>Optionally create an event global context, containing information that will be included in every event created</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">(</span><span class="nf">mulog/set-global-context!</span><span class="w"> </span><span class="p">{</span><span class="ss">:service-name</span><span class="w"> </span><span class="s">&quot;Practicalli GameBoard&quot;</span>,<span class="w"> </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;1.0.1&quot;</span>,<span class="w"> </span><span class="ss">:env</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="nf">mulog/set-global-context!</span><span class="w"> </span><span class="p">{</span><span class="ss">:service-name</span><span class="w"> </span><span class="s">&quot;Practicalli GameBoard&quot;</span>,<span class="w"> </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;1.0.1&quot;</span>,<span class="w"> </span><span class="ss">:env</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="p">})</span>
 </code></pre></div>
 <p>Create events with an identity that contains key/value pairs of data that captures the desired information about the event.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::system-started</span><span class="w"> </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span><span class="w"> </span><span class="ss">:init-time</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::system-started</span><span class="w"> </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span><span class="w"> </span><span class="ss">:init-time</span><span class="w"> </span><span class="mi">32</span><span class="p">)</span>
 </code></pre></div>
 <p>Start a publisher to see all the events created.  The publisher can be to the console or to log analysis tools like <a href="https://zipkin.io/" target="_blank">zipkin</a> or <a href="https://grafana.com/logs/">Grafana</a></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">(</span><span class="nf">mulog/start-publisher!</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console</span><span class="p">})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">(</span><span class="nf">mulog/start-publisher!</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console</span><span class="p">})</span>
 </code></pre></div>
 <p><code>trace</code> provides accurate data around instrumented operations of a single system or over a distributed system. trace data can be used in Elasticsearch and real-time streaming system sudh as Apache Kafka.</p>
 <p>trace will track the rate of a complex operation, including the outcome and latency, within the contextual information of that operation.</p>
 <p>Consider a function that calls several external services
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">product-status</span><span class="w"> </span><span class="p">[</span><span class="nv">product-id</span><span class="p">]</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">stock</span><span class="w"> </span><span class="p">(</span><span class="nf">http/get</span><span class="w"> </span><span class="nv">availability-service</span><span class="w"> </span><span class="p">{</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">})</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">        </span><span class="nv">pricing</span><span class="w"> </span><span class="p">(</span><span class="nf">http/get</span><span class="w"> </span><span class="nv">pricing-service</span><span class="w"> </span><span class="p">{</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">})]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">product-status</span><span class="w"> </span><span class="p">[</span><span class="nv">product-id</span><span class="p">]</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">stock</span><span class="w"> </span><span class="p">(</span><span class="nf">http/get</span><span class="w"> </span><span class="nv">availability-service</span><span class="w"> </span><span class="p">{</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">})</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">        </span><span class="nv">pricing</span><span class="w"> </span><span class="p">(</span><span class="nf">http/get</span><span class="w"> </span><span class="nv">pricing-service</span><span class="w"> </span><span class="p">{</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">})]))</span>
 </code></pre></div></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">(</span><span class="nf">mulog/trace</span><span class="w"> </span><span class="ss">::product-status</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p">[</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">]</span>
-<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">product-status</span><span class="w"> </span><span class="nv">product-id</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">(</span><span class="nf">mulog/trace</span><span class="w"> </span><span class="ss">::product-status</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="p">[</span><span class="ss">:product-id</span><span class="w"> </span><span class="nv">product-id</span><span class="p">]</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">product-status</span><span class="w"> </span><span class="nv">product-id</span><span class="p">))</span>
 </code></pre></div>
 <p><code>trace</code> starts a timer then calls <code>(product-status product-id)</code>. Once the execution completes a log an event is created using <code>log</code> and uses the global context. By including the product id in the trace call, information is captured about the specific product involved in the trace log.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="c1">;; {:mulog/event-name :practicalli.service/products,</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="c1">;;  :mulog/timestamp 1587504242983,</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="c1">;;  :mulog/trace-id #mulog/flake &quot;4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4&quot;,</span>
-<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="c1">;;  :mulog/root-trace #mulog/flake &quot;4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4&quot;,</span>
-<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="c1">;;  :mulog/duration 254402837,</span>
-<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="c1">;;  :mulog/namespace &quot;practicalli.service&quot;,</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a><span class="c1">;;  :mulog/outcome :ok,</span>
-<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a><span class="c1">;;  :app-name &quot;Practicalli GameBoard&quot;,</span>
-<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a><span class="c1">;;  :env &quot;dev&quot;,</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a><span class="c1">;;  :version &quot;1.0.1&quot;}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="c1">;; {:mulog/event-name :practicalli.service/products,</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="c1">;;  :mulog/timestamp 1587504242983,</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="c1">;;  :mulog/trace-id #mulog/flake &quot;4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4&quot;,</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="c1">;;  :mulog/root-trace #mulog/flake &quot;4VTF9QBbnef57vxVy-b4uKzh7dG7r7y4&quot;,</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="c1">;;  :mulog/duration 254402837,</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="c1">;;  :mulog/namespace &quot;practicalli.service&quot;,</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a><span class="c1">;;  :mulog/outcome :ok,</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="c1">;;  :app-name &quot;Practicalli GameBoard&quot;,</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="c1">;;  :env &quot;dev&quot;,</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="c1">;;  :version &quot;1.0.1&quot;}</span>
 </code></pre></div>
 <h2 id="trace-function-calls">Trace function calls<a class="headerlink" href="#trace-function-calls" title="Permanent link">λ︎</a></h2>
 <p><a href="https://github.com/clojure/tools.trace">clojure.tools.trace</a> can trace values, functions and a whole namespace of functions.</p>
@@ -6231,59 +6226,59 @@ Or require the criterium library in a rich comment expression
 </ul>
 <p><code>:repl/reloaded</code> and <code>:dev/reloaded</code> include the clojure.tools.trace dependency, i.e. <code>org.clojure/tools.trace {:mvn/version "0.7.11"}</code></p>
 <p><a href="http://clojure.github.io/tools.trace/">tools.trace API Reference</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio" /><input id="__tabbed_6_2" name="__tabbed_6" type="radio" /><div class="tabbed-labels"><label for="__tabbed_6_1">REPL</label><label for="__tabbed_6_2">Project</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio" /><input id="__tabbed_5_2" name="__tabbed_5" type="radio" /><div class="tabbed-labels"><label for="__tabbed_5_1">REPL</label><label for="__tabbed_5_2">Project</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>Require the <code>clojure.tools.trace</code> library and refer the <code>trace</code> and <code>untrace</code> functions
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.trace</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">trace</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.trace</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">trace</span><span class="p">])</span>
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Require the <code>clojure.tools.trace</code> library using the alias <code>trace</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.trace</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">trace</span><span class="p">]))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.trace</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">trace</span><span class="p">]))</span>
 </code></pre></div>
 </div>
 </div>
 </div>
 <p>To trace a value returned from an expression, optionally adding a tag</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="nf">trace/trace</span><span class="w">  </span><span class="s">&quot;increments&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]))</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="c1">;;=&gt; TRACE increments: (2 3 4 5 6)</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="c1">;;=&gt; (2 3 4 5 6)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">(</span><span class="nf">trace/trace</span><span class="w">  </span><span class="s">&quot;increments&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]))</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="c1">;;=&gt; TRACE increments: (2 3 4 5 6)</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="c1">;;=&gt; (2 3 4 5 6)</span>
 </code></pre></div>
 <p>Trace a function call and its return value</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">(</span><span class="nf">deftrace</span><span class="w"> </span><span class="nv">random-function</span><span class="w"> </span><span class="p">[</span><span class="nv">namespace</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nf">rand-nth</span><span class="w"> </span><span class="p">(</span><span class="nb">vals </span><span class="p">(</span><span class="nb">ns-publics </span><span class="nv">namespace</span><span class="p">))))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">(</span><span class="nf">deftrace</span><span class="w"> </span><span class="nv">random-function</span><span class="w"> </span><span class="p">[</span><span class="nv">namespace</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nf">rand-nth</span><span class="w"> </span><span class="p">(</span><span class="nb">vals </span><span class="p">(</span><span class="nb">ns-publics </span><span class="nv">namespace</span><span class="p">))))</span>
 </code></pre></div>
 <p>Call the function to see the output of trace
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">(</span><span class="nf">random-function</span><span class="w"> </span><span class="ss">&#39;clojure.core</span><span class="p">)</span>
-<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="c1">;;=&gt; TRACE t1002: (random-function &#39;clojure.core)</span>
-<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="c1">;;=&gt; TRACE t1002: =&gt; #&#39;clojure.core/iteration</span>
-<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="c1">;;=&gt; #&#39;clojure.core/iteration</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">(</span><span class="nf">random-function</span><span class="w"> </span><span class="ss">&#39;clojure.core</span><span class="p">)</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="c1">;;=&gt; TRACE t1002: (random-function &#39;clojure.core)</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1">;;=&gt; TRACE t1002: =&gt; #&#39;clojure.core/iteration</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="c1">;;=&gt; #&#39;clojure.core/iteration</span>
 </code></pre></div></p>
 <p>Trace functions can identify which form is failing</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">(</span><span class="nf">trace/trace-vars</span><span class="w"> </span><span class="nv">practicalli.random-function/random-number</span><span class="p">)</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="c1">;;=&gt; #&#39;practicalli.random-function/random-number</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">(</span><span class="nf">trace/trace-vars</span><span class="w"> </span><span class="nv">practicalli.random-function/random-number</span><span class="p">)</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c1">;;=&gt; #&#39;practicalli.random-function/random-number</span>
 </code></pre></div>
 <p>Call the function that is being traced and see the error</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">(</span><span class="nf">practicalli.random-function/random-number</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="c1">;;=&gt; TRACE t10951: (practicalli.random-function/random-number 42)</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1">;;=&gt; Execution error (ArithmeticException) at practicalli.random-function/random-number (random_function.clj:17).</span>
-<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="c1">;;=&gt; Divide by zero</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">(</span><span class="nf">practicalli.random-function/random-number</span><span class="w"> </span><span class="mi">42</span><span class="p">)</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="c1">;;=&gt; TRACE t10951: (practicalli.random-function/random-number 42)</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="c1">;;=&gt; Execution error (ArithmeticException) at practicalli.random-function/random-number (random_function.clj:17).</span>
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="c1">;;=&gt; Divide by zero</span>
 </code></pre></div>
 <p>Dynamically trace all functions in the given name space</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">(</span><span class="nf">trace-ns</span><span class="w"> </span><span class="nv">domain.namespace</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">(</span><span class="nf">trace-ns</span><span class="w"> </span><span class="nv">domain.namespace</span><span class="p">)</span>
 </code></pre></div>
 <p>Or remove all function traces in a namespace</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">(</span><span class="nf">untrace-ns</span><span class="w"> </span><span class="nv">domain.namespace</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">(</span><span class="nf">untrace-ns</span><span class="w"> </span><span class="nv">domain.namespace</span><span class="p">)</span>
 </code></pre></div>
 <p>Dynamically trace a given function</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">(</span><span class="nf">trace-vars</span><span class="w"> </span><span class="nv">domain.namespace/function-name</span><span class="p">)</span>
-<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w"> </span><span class="o">```</span>
-<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
-<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nv">Remove</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">trace</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">given</span><span class="w"> </span><span class="nv">function</span>
-<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
-<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="o">```</span><span class="nv">clojure</span>
-<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a><span class="p">(</span><span class="nf">untrace-vars</span><span class="w"> </span><span class="nv">domain.namespace/function-name</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="p">(</span><span class="nf">trace-vars</span><span class="w"> </span><span class="nv">domain.namespace/function-name</span><span class="p">)</span>
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w"> </span><span class="o">```</span>
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="nv">Remove</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">trace</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">given</span><span class="w"> </span><span class="nv">function</span>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="o">```</span><span class="nv">clojure</span>
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a><span class="p">(</span><span class="nf">untrace-vars</span><span class="w"> </span><span class="nv">domain.namespace/function-name</span><span class="p">)</span>
 </code></pre></div>
 
   <hr>
@@ -6291,7 +6286,7 @@ Or require the criterium library in a rich comment expression
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>
