@@ -63,12 +63,12 @@ All tools are provided via libraries and are only installed on first use.  Unuse
 
 [Rebel REPL terminal UI](/clojure/clojure-cli/repl/) provides a feature rich REPL prompt experience, far beyond the basic `clj` command.
 
-| Command                            | Description                                                                               |
-|------------------------------------|-------------------------------------------------------------------------------------------|
-| `clojure -M:repl/rebel`            | Rebel terminal UI                                                                         |
-| `clojure -M:env/dev:repl/rebel`    | Rebel including deps & path from `:env/dev` alias to configure REPL start                 |
-| `clojure -M:repl/reloaded`         | Rebel with `dev` & `test` paths, library hotload, namespace reload, portal data inspector |
-| `clojure -M:repl/rebel-cljs`       | Run a ClojureScript REPL using Rebel Readline                                             |
+| Command                         | Description                                                                               |
+|---------------------------------|-------------------------------------------------------------------------------------------|
+| `clojure -M:repl/rebel`         | Rebel terminal UI                                                                         |
+| `clojure -M:env/dev:repl/rebel` | Rebel including deps & path from `:env/dev` alias to configure REPL start                 |
+| `clojure -M:repl/reloaded`      | Rebel with `dev` & `test` paths, library hotload, namespace reload, portal data inspector |
+| `clojure -M:repl/rebel-cljs`    | Run a ClojureScript REPL using Rebel Readline                                             |
 
 `:repl/help` in the REPL for help and available commands.  `:repl/quit` to close the REPL.
 
@@ -154,11 +154,11 @@ Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
 Use formatting tools to support a consistent code style across all Clojure projects
 
-| Command                                         | Description                        |
-|-------------------------------------------------|------------------------------------|
-| `clojure -M:format/cljstyle check / fix`        | Check or fix code style (cljstyle) |
-| `clojure -M:format/cljfmt check / fix`          | Check or fix code style (cljfmt)   |
-| `clojure -M:format/zprint filename`             | Format file using zprint           |
+| Command                                  | Description                        |
+|------------------------------------------|------------------------------------|
+| `clojure -M:format/cljstyle check / fix` | Check or fix code style (cljstyle) |
+| `clojure -M:format/cljfmt check / fix`   | Check or fix code style (cljfmt)   |
+| `clojure -M:format/zprint filename`      | Format file using zprint           |
 
 > Include `:lib/pprint-sorted` when starting a REPL to pretty print data with sorted keys and set values
 
@@ -261,11 +261,11 @@ Tools to run unit tests in a project which are defined under `test` path.
 
 Run clojure with the specific test runner alias: `clojure -M:test-runner-alias`
 
-| Command                            | Description                                                                   |
-|------------------------------------|-------------------------------------------------------------------------------|
-| `clojure -M:test/run`              | Kaocha test runner for Clojure                                                |
-| `clojure -M:test/watch`            | Kaocha: watch for changes                                                     |
-| `clojure -M:test/cljs`             | Kaocha test runner for ClojureScript                                          |
+| Command                 | Description                          |
+|-------------------------|--------------------------------------|
+| `clojure -M:test/run`   | Kaocha test runner for Clojure       |
+| `clojure -M:test/watch` | Kaocha: watch for changes            |
+| `clojure -M:test/cljs`  | Kaocha test runner for ClojureScript |
 
 
 ### Lint tools
@@ -281,20 +281,36 @@ Static analysis tools to help maintain code quality and suggest Clojure idioms.
 
 ### Performance testing
 
-Performance testing tools for the REPL
-
-* [:performance/benchmark](https://github.com/hugoduncan/criterium/)
+`:performance/benchmark` alias includes the [Criterium library](https://github.com/hugoduncan/criterium/) for performance testing of Clojure expressions.
 
 Use the aliases with either `-M` or `-X` flags on the Clojure command line.
 
-> `:dev/reloaded` and `:repl/reloaded` both include criterium library as well
+> `:dev/reloaded` and `:repl/reloaded` both include criterium library
+
+Start a REPL using the `:repl/reloaded` alias, or by including the `:performance/benchmark` in a Clojure command to start a REPL.
+
+=== "Repl Reloaded"
+    !!! NOTE ""
+        ```shell
+        clojure -M:repl/reloaded
+        ```
+
+=== "Clojure command"
+    !!! NOTE ""
+        ```shell
+        clojure -M:performance/benchmark:repl/basic
+        ```
 
 
-```shell
-clojure -M:performance/benchmark:repl/rebel
+=== "REPL"
+Require the Criterium `quick-bench` function
 
-(require '[criterium.core :refer [bench quick-bench]])
-(bench (adhoc-expression))
+```clojure
+(require '[criterium.core :refer [quick-bench]])
+```
+
+```clojure
+(quick-bench (adhoc-expression))
 ```
 
 Performance test a project in the REPL
