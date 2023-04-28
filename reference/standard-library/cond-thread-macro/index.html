@@ -33,7 +33,7 @@
     
     
       
-        <title>Cond thread macro - Practicalli Clojure</title>
+        <title>Clojure cond-> - Practicalli Clojure</title>
       
     
     
@@ -79,7 +79,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Cond thread macro - Practicalli Clojure" >
+        <meta  property="og:title"  content="Clojure cond-> - Practicalli Clojure" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -95,7 +95,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Cond thread macro - Practicalli Clojure" >
+        <meta  name="twitter:title"  content="Clojure cond-> - Practicalli Clojure" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -189,7 +189,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cond thread macro
+              Clojure cond->
             
           </span>
         </div>
@@ -3664,7 +3664,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3857,14 +3857,16 @@ so PR's are of limited value at present. Some page links & images may be tempora
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Cond thread macro
+          Clojure cond->
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Cond thread macro
+        Clojure cond->
       </a>
       
         
@@ -3873,19 +3875,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#clojure-cond-" class="md-nav__link">
-    Clojure cond-&gt;
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#deconstruct" class="md-nav__link">
@@ -5832,19 +5829,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#clojure-cond-" class="md-nav__link">
-    Clojure cond-&gt;
-  </a>
-  
-</li>
       
         <li class="md-nav__item">
   <a href="#deconstruct" class="md-nav__link">
@@ -5891,11 +5883,8 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
 
 
-  <h1>Cond thread macro</h1>
-
-<h2 id="clojure-cond-">Clojure cond-&gt;<a class="headerlink" href="#clojure-cond-" title="Permanent link">λ︎</a></h2>
+<h1 id="clojure-cond-">Clojure cond-&gt;<a class="headerlink" href="#clojure-cond-" title="Permanent link">λ︎</a></h1>
 <p><code>cond-&gt;</code> and <code>cond-&gt;&gt;</code> are versatile macros available since version 1.5, although its more of a nieche use, its really useful in that neiche</p>
-<p>What is cond-&gt;?</p>
 <p>Usage: (cond-&gt; expr &amp; clauses)</p>
 <p>Takes an expression and a set of test/form pairs.</p>
 <p>Threads expr (via -&gt;) through each form for which the corresponding test expression is true.</p>
@@ -5905,7 +5894,9 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nv">false</span><span class="w"> </span><span class="nv">inc</span><span class="p">)</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="c1">;; =&gt; 10</span>
 </code></pre></div>
-<p>In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses. Each clause is a pair made up of a test and a form. In this example there is a single clause with the value false as the test the function inc as the form. Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.</p>
+<p>In the above example 10 is the expr mentioned in the docstring and everything after it are the clauses.</p>
+<p>Each clause is a pair made up of a test and a form.  There is a single clause with the value false as the test the function inc as the form.</p>
+<p>Since the test evaluates to a false value the expression is not threaded into the form. As a result the original expression, 10, is returned.</p>
 <p>Let’s look at an example with a truthy test.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">cond-&gt;</span><span class="w"> </span><span class="mi">10</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nv">true</span><span class="w"> </span><span class="p">(</span><span class="nb">- </span><span class="mi">2</span><span class="p">)</span>
@@ -5954,7 +5945,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

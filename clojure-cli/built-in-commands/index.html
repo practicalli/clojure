@@ -3745,7 +3745,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3933,7 +3933,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -6039,11 +6039,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}}}</span>
 </code></pre></div>
-<p><code>:deps prep</code> will built the library of any dependency that requires it
+<p><code>:deps prep</code> will built the library of any dependency that requires it</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
-<p>/<em> TODO: Clojure CLI resolve Git tags examples </em>/</p>
+<!-- TODO: Clojure CLI resolve Git tags examples -->
+
 <p><code>-X:deps git-resolve-tags</code> updates git based dependencies in the project <code>deps.edn</code> file which use :git/tags key to the equivalent SHA commit values in the <code>:git/sha</code> key</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
 </code></pre></div>
@@ -6058,7 +6059,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

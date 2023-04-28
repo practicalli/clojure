@@ -3712,7 +3712,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3900,7 +3900,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5886,10 +5886,10 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h1 id="composing-specifications">Composing Specifications<a class="headerlink" href="#composing-specifications" title="Permanent link">λ︎</a></h1>
 <p>No spec is an island</p>
 <p>Composing individual specifications is an effective way to build larger abstractions in specifications without creating fixed hierarchical structures that are harder to refactor.</p>
-<p>Require specification namespace to the page
+<p>Require specification namespace to the page</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
-</code></pre></div></p>
+</code></pre></div>
 <p><code>spec/and</code> is used when all specifications should be true.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/def</span><span class="w"> </span><span class="ss">::meaning-of-life</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">spec/and</span><span class="w"> </span><span class="nv">int?</span>
@@ -5939,7 +5939,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

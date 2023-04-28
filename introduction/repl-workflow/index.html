@@ -3759,7 +3759,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3947,7 +3947,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -6078,7 +6078,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/portal/portal-data-browser-example.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Portal - view and navigate Clojure data and event logs" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/portal/portal-data-browser-example.png" /></a></p>
 <h2 id="code-style-and-idiomatic-clojure">Code Style and idiomatic Clojure<a class="headerlink" href="#code-style-and-idiomatic-clojure" title="Permanent link">λ︎</a></h2>
 <p>Clojure aware editors should automatically apply formatting that follows the <a href="https://github.com/bbatsov/clojure-style-guide" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure Style guide</a>.</p>
-<p>Live linting with <a href=":fontawesome-brands-github: https://github.com/borkdude/clj-kondo" target="_blank">clj-kondo</a> suggests common idioms and highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.</p>
+<p>Live linting with <a href=":fontawesome-brands-github: &lt;https://github.com/borkdude/clj-kondo" target="_blank&gt;">clj-kondo</a> suggests common idioms and highlights a wide range of syntax errors as code is written, minimizing bugs and therefore speeding up the development process.</p>
 <p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-light.png#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure code static analysis for live linting" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-light.png#only-light" /></a>
 <a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-dark.png#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure code static analysis for live linting" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/spacemacs/screenshots/spacemacs-clojure-live-linting-flycheck-errors-dark.png#only-dark" /></a></p>
 <div class="admonition info">
@@ -6127,9 +6127,10 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <div class="admonition hint">
 <p class="admonition-title">Automate local test runner</p>
 <p>Use <a href="https://practical.li/clojure/testing/test-runners/kaocha-test-runner/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> kaocha test runner</a> in watch mode to run tests and specification check automatically (when changes are saved)
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure<span class="w"> </span>-X:test/watch
-</code></pre></div></p>
+```bash
+clojure -X:test/watch</p>
 </div>
+<p>```</p>
 <h2 id="continuous-integration-and-deployment">Continuous Integration and Deployment<a class="headerlink" href="#continuous-integration-and-deployment" title="Permanent link">λ︎</a></h2>
 <p>Add a <a href="https://practical.li/clojure/continuous-integration/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> continuous integration service</a> to run tests and builds code on every shared commit.  Spin up testable review deployments when commits pushed to a pull request branch, before pushing commits to the main deployment branch, creating an effective pipeline to gain further feedback.</p>
 <ul>
@@ -6151,7 +6152,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 26, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

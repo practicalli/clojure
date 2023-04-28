@@ -3828,7 +3828,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -4016,7 +4016,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -6227,12 +6227,12 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>The <code>-M</code> flag is required even if an alias is not included in the running of the application.  A warning will be displayed if the <code>-M</code> option is missing.</p>
 </blockquote>
 <p>In the project deps.edn file it could be useful to define an alias to run the project, specifying the main namespace, the function to run and optionally any default arguments that are passed to that function.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ss">:project/run</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="ss">:project/run</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="p">{</span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">domain.main-namespace</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w"> </span><span class="ss">:exec-fn</span><span class="w"> </span><span class="nv">-main</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w"> </span><span class="ss">:exec-args</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="mi">8888</span><span class="p">}}</span>
 </code></pre></div>
-Then the project can be run using <code>clojure -X:project/run</code> and arguments can optionally be included in this command line, to complement or replace any default arguments in <code>exec-args</code>.</p>
+<p>Then the project can be run using <code>clojure -X:project/run</code> and arguments can optionally be included in this command line, to complement or replace any default arguments in <code>exec-args</code>.</p>
 <h3 id="project-dependencies">Project dependencies<a class="headerlink" href="#project-dependencies" title="Permanent link">λ︎</a></h3>
 <table>
 <thead>
@@ -6362,11 +6362,11 @@ Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.
 <li><code>:graph/deps-png</code> - generate a single deps-graph png image</li>
 </ul>
 <p>Other options:
-* <code>clojure -M:graph/deps navigate</code>  # navigable folder of SVGs
-* <code>clojure -M:graph/deps single</code>    # deps-graph.dot file
-* <code>clojure -M:graph/deps single -o deps-graph.png -f png</code>
-* <code>clojure -M:graph/deps single -o deps-graph.svg -f svg</code>
-* <code>clojure -M:graph/deps single --show</code>  # View graph without saving</p>
+- <code>clojure -M:graph/deps navigate</code>  # navigable folder of SVGs
+- <code>clojure -M:graph/deps single</code>    # deps-graph.dot file
+- <code>clojure -M:graph/deps single -o deps-graph.png -f png</code>
+- <code>clojure -M:graph/deps single -o deps-graph.svg -f svg</code>
+- <code>clojure -M:graph/deps single --show</code>  # View graph without saving</p>
 <h3 id="data-inspector">Data Inspector<a class="headerlink" href="#data-inspector" title="Permanent link">λ︎</a></h3>
 <p><a href="https://github.com/djblue/portal">Portal</a> Navigate data in the form of edn, json and transit</p>
 <p><a href="https://practicalli.github.io/clojure/clojure-cli/data-browsers/portal.html">Practicalli Clojure - data browsers section - portal</a></p>
@@ -6463,38 +6463,63 @@ Requires: Java sources installed locally (e.g. "/usr/lib/jvm/openjdk-11/lib/src.
 </tbody>
 </table>
 <h3 id="performance-testing">Performance testing<a class="headerlink" href="#performance-testing" title="Permanent link">λ︎</a></h3>
-<p>Performance testing tools for the REPL</p>
-<ul>
-<li><a href="https://github.com/hugoduncan/criterium/">:performance/benchmark</a></li>
-</ul>
+<p><code>:performance/benchmark</code> alias includes the <a href="https://github.com/hugoduncan/criterium/">Criterium library</a> for performance testing of Clojure expressions.</p>
 <p>Use the aliases with either <code>-M</code> or <code>-X</code> flags on the Clojure command line.</p>
 <blockquote>
-<p><code>:dev/reloaded</code> and <code>:repl/reloaded</code> both include criterium library as well</p>
+<p><code>:dev/reloaded</code> and <code>:repl/reloaded</code> both include criterium library</p>
 </blockquote>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure<span class="w"> </span>-M:performance/benchmark:repl/rebel
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">(</span>require<span class="w"> </span><span class="err">&#39;</span><span class="o">[</span>criterium.core<span class="w"> </span>:refer<span class="w"> </span><span class="o">[</span>bench<span class="w"> </span>quick-bench<span class="o">]])</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">(</span>bench<span class="w"> </span><span class="o">(</span>adhoc-expression<span class="o">))</span>
+<p>Start a REPL using the <code>:repl/reloaded</code> alias, or by including the <code>:performance/benchmark</code> in a Clojure command to start a REPL.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Repl Reloaded</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition note">
+<p>```shell
+clojure -M:repl/reloaded</p>
+</div>
+</div>
+</div>
+</div>
+<p>```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:1"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Clojure command</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="admonition note">
+<p>```shell
+clojure -M:performance/benchmark:repl/basic</p>
+</div>
+</div>
+</div>
+</div>
+<p>```</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:1"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio" /><div class="tabbed-labels"><label for="__tabbed_4_1">REPL</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block"></div>
+</div>
+</div>
+<p>Require the Criterium <code>quick-bench</code> function</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">criterium.core</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">quick-bench</span><span class="p">]])</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">quick-bench</span><span class="w"> </span><span class="p">(</span><span class="nf">adhoc-expression</span><span class="p">))</span>
 </code></pre></div>
 <p>Performance test a project in the REPL</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-M:performance/benchmark:repl/rebel
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="o">(</span>require<span class="w"> </span><span class="s1">&#39;[practicalli/namespace-name]) ; require project code</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="s1">(in-ns &#39;</span>practicalli/namespace-name<span class="o">)</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="o">(</span>quick-bench<span class="w"> </span><span class="o">(</span>project-function<span class="w"> </span>args<span class="o">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>clojure<span class="w"> </span>-M:performance/benchmark:repl/rebel
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="o">(</span>require<span class="w"> </span><span class="s1">&#39;[practicalli/namespace-name]) ; require project code</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="s1">(in-ns &#39;</span>practicalli/namespace-name<span class="o">)</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="o">(</span>quick-bench<span class="w"> </span><span class="o">(</span>project-function<span class="w"> </span>args<span class="o">))</span>
 </code></pre></div>
 <p>Use the aliases with either <code>-M</code> or <code>-X</code> flags on the Clojure command line.</p>
-<p>In the REPL:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clj-memory-meter.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">memory-meter</span><span class="p">])</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">   </span><span class="p">(</span><span class="nf">memory-meter/measure</span><span class="w"> </span><span class="p">(</span><span class="nf">your-expression</span><span class="p">))</span>
-</code></pre></div></p>
+<p>In the REPL:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clj-memory-meter.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">memory-meter</span><span class="p">])</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="p">(</span><span class="nf">memory-meter/measure</span><span class="w"> </span><span class="p">(</span><span class="nf">your-expression</span><span class="p">))</span>
+</code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 15, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

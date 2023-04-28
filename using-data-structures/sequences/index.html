@@ -3662,7 +3662,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3850,7 +3850,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5878,9 +5878,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <code>rest</code>
 <code>cons</code></p>
 <h2 id="practising-with-lists">Practising with lists<a class="headerlink" href="#practising-with-lists" title="Permanent link">λ︎</a></h2>
-<blockquote>
-<p><strong>Note</strong> Create a simple collection of developer events.  First use a list of strings, then try a map with keywords.  For each data structure, pull out some of the event details</p>
-</blockquote>
+<p>Create a simple collection of developer events.  First use a list of strings, then try a map with keywords.  For each data structure, pull out some of the event details</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">developer-events-strings</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="s">&quot;Devoxx UK&quot;</span><span class="w"> </span><span class="s">&quot;Devoxx France&quot;</span><span class="w"> </span><span class="s">&quot;Devoxx&quot;</span><span class="w"> </span><span class="s">&quot;Hack the Tower&quot;</span><span class="p">))</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">(</span><span class="k">def </span><span class="nv">developer-events-strings2</span><span class="w"> </span><span class="p">(</span><span class="nb">list </span><span class="s">&quot;Devoxx UK&quot;</span><span class="w"> </span><span class="s">&quot;Devoxx France&quot;</span><span class="w"> </span><span class="s">&quot;Devoxx&quot;</span><span class="w"> </span><span class="s">&quot;Hack the Tower&quot;</span><span class="p">))</span>
@@ -5893,10 +5891,8 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">[</span><span class="ss">:devoxxuk</span><span class="w"> </span><span class="ss">:devoxxfr</span><span class="w"> </span><span class="ss">:devoxx</span><span class="w"> </span><span class="ss">:hackthetower</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <p>Using a Clojure Vector data structure is a more Clojure approach, especially when the vector contains keywords.  Think of a Vector as an Array, although in Clojure it is again immutable in the same way a list is.</p>
-<blockquote>
-<p><strong>Note</strong> Create a slightly more involved data structure, holding more data around each developer events.  Suggest using a map, with each key being the unique name of the developer event.
-The details of each event (the value to go with the event name key) is itself a map as there are several pieces of data associated with each event name.</p>
-</blockquote>
+<p>Create a slightly more involved data structure, holding more data around each developer events.  Suggest using a map, with each key being the unique name of the developer event.</p>
+<p>The details of each event (the value to go with the event name key) is itself a map as there are several pieces of data associated with each event name.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">dev-event-details</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:devoxxuk</span><span class="w">     </span><span class="p">{</span><span class="ss">:URL</span><span class="w"> </span><span class="s">&quot;http://jaxlondon.co.uk&quot;</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">                  </span><span class="ss">:event-type</span><span class="w"> </span><span class="s">&quot;Conference&quot;</span>
@@ -5908,17 +5904,18 @@ The details of each event (the value to go with the event name key) is itself a 
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                  </span><span class="ss">:call-for-papers</span><span class="w"> </span><span class="nv">false</span><span class="p">}})</span>
 </code></pre></div>
 <p>Lets call the data structure and see what it evaluates too, it should not be a surprise</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>dev-event-details
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">dev-event-details</span>
 </code></pre></div>
 <p>We can ask for the value of a specific key, and just that value is returned</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(dev-event-details :devoxxuk)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">dev-event-details</span><span class="w"> </span><span class="ss">:devoxxuk</span><span class="p">)</span>
 </code></pre></div>
 <p>In our example, the value returned from the :devoxxuk key is also a map, so we can ask for a specific part of that map value by again using its key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(:URL (dev-event-details :devoxxuk))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="ss">:URL</span><span class="w"> </span><span class="p">(</span><span class="nf">dev-event-details</span><span class="w"> </span><span class="ss">:devoxxuk</span><span class="p">))</span>
 </code></pre></div>
-<blockquote>
-<p><strong>Note</strong> Lets define a simple data structure for stocks data using a vector of maps, as there will be one or more company stocks to track.  Each map represents the stock information for a company.  Get the value of the whole data structure by referring to it by name, ask for a specific element by its position in the array using the <code>nth</code> function.  Then try some of the common functions that work on collections.</p>
-</blockquote>
+<p>Define a simple data structure for stocks data using a vector of maps, as there will be one or more company stocks to track.</p>
+<p>Each map represents the stock information for a company.</p>
+<p>Get the value of the whole data structure by referring to it by name, ask for a specific element by its position in the array using the <code>nth</code> function.</p>
+<p>Then try some of the common functions that work on collections.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">portfolio</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">:ticker</span><span class="w"> </span><span class="s">&quot;CRM&quot;</span><span class="w"> </span><span class="ss">:lastTrade</span><span class="w"> </span><span class="mf">233.12</span><span class="w"> </span><span class="ss">:open</span><span class="w"> </span><span class="mf">230.66</span><span class="p">}</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">                 </span><span class="p">{</span><span class="w"> </span><span class="ss">:ticker</span><span class="w"> </span><span class="s">&quot;AAPL&quot;</span><span class="w"> </span><span class="ss">:lastTrade</span><span class="w"> </span><span class="mf">203.25</span><span class="w"> </span><span class="ss">:open</span><span class="w"> </span><span class="mf">204.50</span><span class="p">}</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">                 </span><span class="p">{</span><span class="w"> </span><span class="ss">:ticker</span><span class="w"> </span><span class="s">&quot;MSFT&quot;</span><span class="w"> </span><span class="ss">:lastTrade</span><span class="w"> </span><span class="mf">29.12</span><span class="w">  </span><span class="ss">:open</span><span class="w"> </span><span class="mf">29.08</span><span class="w"> </span><span class="p">}</span>
@@ -5941,7 +5938,7 @@ The details of each event (the value to go with the event name key) is itself a 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

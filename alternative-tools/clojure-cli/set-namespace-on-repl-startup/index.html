@@ -3662,7 +3662,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3850,7 +3850,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5901,7 +5901,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>The REPL process does not evaluate project code on start-up.  If it did and that code had a error, it could prevent the REPL from starting.</p>
 <p>The common approach is to require the main namespace for the project, making the functions in that namespace available.  This will also make available functions from those namespaces.</p>
 <p>Switching to a specific namespace in the REPL allows calling functions by name, without the fully qualified name.</p>
-<h3 id="set-namespace-via-the-command-line">Set namespace via the command line<a class="headerlink" href="#set-namespace-via-the-command-line" title="Permanent link">λ︎</a></h3>
+<h2 id="set-namespace-via-the-command-line">Set namespace via the command line<a class="headerlink" href="#set-namespace-via-the-command-line" title="Permanent link">λ︎</a></h2>
 <p>To require and switch to a namespace on startup, use the <code>clojure</code> or <code>clj</code> commands with the --eval option to run the specific commands.  The --repl option will ensure the repl starts.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clj<span class="w"> </span>--eval<span class="w"> </span><span class="s2">&quot;(require &#39;practicalli.random-clojure-core-function)&quot;</span><span class="w"> </span>--eval<span class="w"> </span><span class="s2">&quot;(in-ns &#39;practicalli.random-clojure-core-function)&quot;</span><span class="w"> </span>--repl
 </code></pre></div>
@@ -5941,7 +5941,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

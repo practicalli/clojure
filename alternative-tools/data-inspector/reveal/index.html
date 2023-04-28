@@ -3656,7 +3656,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3844,7 +3844,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5878,7 +5878,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h1 id="reveal-repl-with-visual-data-browser">Reveal REPL with visual data browser<a class="headerlink" href="#reveal-repl-with-visual-data-browser" title="Permanent link">λ︎</a></h1>
 <p><a href="https://vlaaad.github.io/reveal/">Reveal</a> provides a REPL with a connected visual data explorer.  Reveal can also be used as a <code>tap&gt;</code> target, visualizing data added to a <code>tap&gt;</code> (an elegant approach compared to print statements).</p>
 <p><a href="https://vlaaad.github.io/reveal/">Reveal</a> describes itself as a read evaluate visualize loop tool proving extra tools to explore data in Clojure visually.  The <a href="https://vlaaad.github.io/reveal/">extensive documentation</a> shows the many ways to use Reveal.</p>
-<p>Use Reveal with <a href="#using-reveal-in-a-terminal">a terminal REPL</a>, a <a href="#using-reveal-with-nrepl-editors">Clojure editor that uses nrepl</a>, such as Emacs Cider and Spacemacs.  Reveal can be added as a tap source to any running REPL, eg. using <a href="#using-reveal-with-rebel-and-tap">Reveal with Rebel Readline</a>.</p>
+<p>Use Reveal with a terminal REPL or a Clojure editor that uses nrepl such as Emacs Cider and Spacemacs.  Reveal can be added as a tap source to any running REPL, eg. using Reveal with Rebel Readline.</p>
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/1jy09_16EeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
@@ -5976,9 +5976,9 @@ CIDER specific nrepl connection with the Cider middleware</p>
 <p><code>SPACE</code> or <code>ENTER</code> to open the menu and select <code>Deref</code>.  A tab opens with the value of the atom.</p>
 <p><code>SPACE</code> or <code>ENTER</code> with the value selected and select <code>Watch:all</code>.</p>
 <p>In the REPL, update the value of the state atom.</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">swap!</span><span class="w"> </span><span class="nv">state</span><span class="w"> </span><span class="nb">* </span><span class="mi">12</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">swap!</span><span class="w"> </span><span class="nv">state</span><span class="w"> </span><span class="nb">* </span><span class="mi">12</span><span class="p">)</span>
 </code></pre></div>
-The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser.</p>
+<p>The new value of the state atom is shown in the Reveal data browser.  Each Clojure expressions evaluated that affects the state atom will be displayed in the Reveal browser.</p>
 <h3 id="running-different-types-of-repl">Running different types of repl<a class="headerlink" href="#running-different-types-of-repl" title="Permanent link">λ︎</a></h3>
 <p>Using Clojure exec <code>-X</code> flag, the default repl function can be over-ridden on the command line, supplying the <code>io-prepl</code> or <code>remote-prepl</code> functions.</p>
 <ul>
@@ -5997,7 +5997,7 @@ The new value of the state atom is shown in the Reveal data browser.  Each Cloju
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 13, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

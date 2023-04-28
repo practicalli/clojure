@@ -3765,7 +3765,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3953,7 +3953,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -6029,13 +6029,11 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>Keys used to define an alias are:</p>
 <ul>
 <li><code>:extra-paths</code> - a vector of directory names added to the project class path, e.g. <code>["env/dev" "env/test"]</code></li>
-<li><code>:extra-deps</code> - a map of additional library dependencies, as a Maven library, Git repository or local directory<ul>
+<li><code>:extra-deps</code> - a map of additional library dependencies, as a Maven library, Git repository or local directory</li>
 <li><code>{domain/library-name {:mvn/version "1.2.33"}}</code> maven library</li>
 <li><code>{domain/name {:git/url "https://github.com/account-name/repository-name" :git/sha 'ab3de67'}}</code></li>
 <li><code>{io.github.account/repository-name {:git/tag "2023-01-10" :git/sha 'ab3de67'}}</code></li>
 <li><code>{}</code></li>
-</ul>
-</li>
 <li><code>:main-opts</code> - a vector of command line options passed to <code>clojure.main</code></li>
 <li><code>:exec-fn</code> - the fully qualified name of a function to be run by <code>clojure.exec</code></li>
 <li><code>:exec-args</code> - default arguments passed to the function, over-ridden by matching argument keys specified on the command line</li>
@@ -6166,7 +6164,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

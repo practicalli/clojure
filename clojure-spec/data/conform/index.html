@@ -3715,7 +3715,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3903,7 +3903,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5894,20 +5894,22 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <h1>Conform</h1>
 
 <h2 id="does-a-value-conform-to-a-specification">Does a value conform to a specification?<a class="headerlink" href="#does-a-value-conform-to-a-specification" title="Permanent link">λ︎</a></h2>
-<p><code>clojure.spec.alpha/conform</code> takes two arguments
-- a specification
-- a value to test against the specification</p>
+<p><code>clojure.spec.alpha/conform</code> takes two arguments</p>
+<ul>
+<li>a specification</li>
+<li>a value to test against the specification</li>
+</ul>
 <p><code>:clojure.spec.alpha/invalid</code> is returned when a value does not conform to a specification.</p>
 <p>If the value does conform to the specification, then the value is returned.  This value is referred to as a conformed value.</p>
 <h2 id="require-the-clojure-spec-library">Require the Clojure spec library<a class="headerlink" href="#require-the-clojure-spec-library" title="Permanent link">λ︎</a></h2>
-<p>Set the namespace for the page and require clojure.spec.alpha library, setting the alias to <code>spec</code>
+<p>Set the namespace for the page and require clojure.spec.alpha library, setting the alias to <code>spec</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.clojure.specifications</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">]))</span>
-</code></pre></div></p>
+</code></pre></div>
 <h2 id="using-conform">Using conform<a class="headerlink" href="#using-conform" title="Permanent link">λ︎</a></h2>
-<p>If the value conforms to the spec, a conformed value is returned
+<p>If the value conforms to the spec, a conformed value is returned</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
-</code></pre></div></p>
+</code></pre></div>
 <!-- => 101 -->
 
 <p>When a value does not conform to a spec, the value <code>:clojure.spec.alpha/invalid</code> is returned</p>
@@ -5941,7 +5943,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

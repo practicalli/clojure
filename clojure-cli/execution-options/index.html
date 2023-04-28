@@ -3812,7 +3812,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -4000,7 +4000,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -6101,15 +6101,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <p>Use <code>-A</code> in the specific case of running a basic terminal UI REPL with the <code>clojure</code> command (or <code>clj</code> wrapper).</p>
 <p>Common aliases will be used to explain the use of these execution options in more detail.</p>
 <h2 id="form-of-clojureexec-command-line-arguments">Form of clojure.exec command line arguments<a class="headerlink" href="#form-of-clojureexec-command-line-arguments" title="Permanent link">λ︎</a></h2>
-<p>Key/value pairs are read as EDN (extensible data notation that is the base syntax of Clojure).</p>
-<p>The command line shell needs a little help parsing</p>
+<p>Clojure.exec command takes Key/value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).</p>
+<p>Number values and keywords can be parsed from the command line</p>
 <p>Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. <code>'[:a :b]'</code>, <code>'{:c 1}'</code>.</p>
 <p>The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps</p>
-<p>Number values and keywords should not need to be wrapped.</p>
 <ul>
 <li><code>'"strings in double quotes surround by single quotes"'</code></li>
-<li><code>:key</code>[:service :port]<code>9999</code></li>
-<li><code>:config '{:log :console}'</code></li>
+<li><code>'[:vectors :with-single-quotes]'</code></li>
+<li><code>'{:hash-maps :with-single-quotes}'</code></li>
 </ul>
 <h2 id="run-clojuremain-project">Run clojure.main project<a class="headerlink" href="#run-clojuremain-project" title="Permanent link">λ︎</a></h2>
 <p><code>-M</code> execution option uses <code>clojure.main</code> to run Clojure code.</p>
@@ -6296,7 +6295,7 @@ The <code>:main-opts</code> configuration for <code>-A</code> execution option i
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 23, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>

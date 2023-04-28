@@ -3662,7 +3662,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/destructuring/" class="md-nav__link">
-        Destructuring - abstract structural binding
+        Destructuring
       </a>
     </li>
   
@@ -3850,7 +3850,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
-        Cond thread macro
+        Clojure cond->
       </a>
     </li>
   
@@ -5828,35 +5828,35 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <h1 id="destructuring">Destructuring<a class="headerlink" href="#destructuring" title="Permanent link">λ︎</a></h1>
 <p>Destructuring is a form of pattern matching that is common in Clojure.  Destructuring allow you to pull out the specific elements from a collection.</p>
 <p>Destructuring is commonly used with the <code>let</code> method for creating local bindings (locally scoped names).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>(let [[a b c &amp; d :as e] [1 2 3 4 5 6 7]]
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  [a b c d e])
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">e</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">6</span><span class="w"> </span><span class="mi">7</span><span class="p">]]</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="nv">e</span><span class="p">])</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>(let [[[x1 y1][x2 y2]] [[1 2] [3 4]]]
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  [x1 y1 x2 y2])
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">(</span><span class="k">let </span><span class="p">[[[</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="p">][</span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="p">]]</span><span class="w"> </span><span class="p">[[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">]]]</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="p">[</span><span class="nv">x1</span><span class="w"> </span><span class="nv">y1</span><span class="w"> </span><span class="nv">x2</span><span class="w"> </span><span class="nv">y2</span><span class="p">])</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>;; with strings
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>(let [[a b &amp; c :as str] &quot;asdjhhfdas&quot;]
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  [a b c str])
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1">;; with strings</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">(</span><span class="k">let </span><span class="p">[[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">str</span><span class="p">]</span><span class="w"> </span><span class="s">&quot;asdjhhfdas&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nv">str</span><span class="p">])</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>;; with maps
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>(let [{a :a, b :b, c :c, :as m :or {a 2 b 3}}  {:a 5 :c 6}]
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>  [a b c m])
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="c1">;; with maps</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="nv">a</span><span class="w"> </span><span class="ss">:a</span>,<span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="ss">:b</span>,<span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="ss">:c</span>,<span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">m</span><span class="w"> </span><span class="ss">:or</span><span class="w"> </span><span class="p">{</span><span class="nv">a</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="mi">3</span><span class="p">}}</span><span class="w">  </span><span class="p">{</span><span class="ss">:a</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="ss">:c</span><span class="w"> </span><span class="mi">6</span><span class="p">}]</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="p">[</span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="nv">m</span><span class="p">])</span>
 </code></pre></div>
 <p>It is often the case that you will want to bind same-named symbols to the map keys. The :keys directive allows you to avoid the redundancy:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(let [{fred :fred ethel :ethel lucy :lucy} m] )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="nv">fred</span><span class="w"> </span><span class="ss">:fred</span><span class="w"> </span><span class="nv">ethel</span><span class="w"> </span><span class="ss">:ethel</span><span class="w"> </span><span class="nv">lucy</span><span class="w"> </span><span class="ss">:lucy</span><span class="p">}</span><span class="w"> </span><span class="nv">m</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <p>This can be written in a shorter form as follows:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>(let [{:keys [fred ethel lucy]} m] )
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">fred</span><span class="w"> </span><span class="nv">ethel</span><span class="w"> </span><span class="nv">lucy</span><span class="p">]}</span><span class="w"> </span><span class="nv">m</span><span class="p">]</span><span class="w"> </span><span class="p">)</span>
 </code></pre></div>
 <p>As of Clojure 1.6, you can also use prefixed map keys in the map destructuring form:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>(let [m {:x/a 1, :y/b 2}
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>      {:keys [x/a y/b]} m]
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  (+ a b))
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">m</span><span class="w"> </span><span class="p">{</span><span class="ss">:x/a</span><span class="w"> </span><span class="mi">1</span>,<span class="w"> </span><span class="ss">:y/b</span><span class="w"> </span><span class="mi">2</span><span class="p">}</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span><span class="p">{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">x/a</span><span class="w"> </span><span class="nv">y/b</span><span class="p">]}</span><span class="w"> </span><span class="nv">m</span><span class="p">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">+ </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
 </code></pre></div>
 <p>As shown above, in the case of using prefixed keys, the bound symbol name will be the same as the right-hand side of the prefixed key. You can also use auto-resolved keyword forms in the :keys directive:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>(let [m {::x 42}
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>      {:keys [::x]} m]
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>  x)
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">m</span><span class="w"> </span><span class="p">{</span><span class="ss">::x</span><span class="w"> </span><span class="mi">42</span><span class="p">}</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">      </span><span class="p">{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="ss">::x</span><span class="p">]}</span><span class="w"> </span><span class="nv">m</span><span class="p">]</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nv">x</span><span class="p">)</span>
 </code></pre></div>
 
   <hr>
@@ -5864,7 +5864,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
       
     
   </small>
