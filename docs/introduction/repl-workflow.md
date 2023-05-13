@@ -46,30 +46,29 @@ The `(comment ,,,)` function wraps code that is only run directly by the develop
 
 Expressions in rich comment blocks can represent how to use the functions that make up the namespace API.  For example, starting/restarting the system, updating the database, etc.  Expressions provide examples of calling functions with typical arguments and make a project more accessible and easier to work with.
 
-!!! EXAMPLE ""
+!!! EXAMPLE "Clojure Rich Comment to manage a service"
+    ```clojure
+    (ns practicalli.gameboard.service)
 
-```clojure
-(ns practicalli.gameboard.service)
+    (defn app-server-start [port] ,,,)
+    (defn app-server-start [] ,,,)
+    (defn app-server-restart [] ,,,)
 
-(defn app-server-start [port] ,,,)
-(defn app-server-start [] ,,,)
-(defn app-server-restart [] ,,,)
+    (defn -main
+      "Start the service using system components"
+      [& options] ,,,)
 
-(defn -main
-  "Start the service using system components"
-  [& options] ,,,)
+    (comment
+      (-main)
+      (app-server-start 8888)
+      (app-server-stop)
+      (app-server-restart 8888)
 
-(comment
-  (-main)
-  (app-server-start 8888)
-  (app-server-stop)
-  (app-server-restart 8888)
-
-  (System/getenv "PORT")
-  (def environment (System/getenv))
-  (def system-properties (System/getProperties))
-  ) ; End of rich comment block
-```
+      (System/getenv "PORT")
+      (def environment (System/getenv))
+      (def system-properties (System/getProperties))
+      ) ; End of rich comment block
+    ```
 
 Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](https://practical.li/clojure/clojure-cli/install/code-analysis.html){target=_blank} warnings for redefined vars (`def`, `defn`) when using this approach.
 
@@ -78,10 +77,10 @@ Rich comment blocks are very useful for rapidly iterating over different design 
 #_{:clj-kondo/ignore [:redefined-var]}
 (comment
   (defn value-added-tax []
-    ;; algorithm design - first try)
+    ;; algorithm design - first idea)
 
   (defn value-added-tax []
-    ;; algorithm design - second try)
+    ;; algorithm design - second idea)
 
   ) ;; End of rich comment block
 ```
@@ -117,7 +116,6 @@ Tools to view and navigate code
 * [:fontawesome-solid-book-open: Portal Inspector](https://practical.li/clojure/clojure-tools/data-inspector/portal){target=_blank} to visualise many kinds of data in many different forms.
 
 ![Portal - view and navigate Clojure data and event logs](https://raw.githubusercontent.com/practicalli/graphic-design/live/portal/portal-data-browser-example.png)
-
 
 ## Code Style and idiomatic Clojure
 
@@ -186,15 +184,15 @@ Clojure has a number of [:fontawesome-solid-book-open: test runners](https://pra
     Use [:fontawesome-solid-book-open: kaocha test runner](https://practical.li/clojure/testing/test-runners/kaocha-test-runner/){target=_blank} in watch mode to run tests and specification check automatically (when changes are saved)
     ```bash
     clojure -X:test/watch
-```
+    ```
 
 ## Continuous Integration and Deployment
 
 Add a [:fontawesome-solid-book-open: continuous integration service](https://practical.li/clojure/continuous-integration/){target=_blank} to run tests and builds code on every shared commit.  Spin up testable review deployments when commits pushed to a pull request branch, before pushing commits to the main deployment branch, creating an effective pipeline to gain further feedback.
 
-* [:globe_with_meridians: CircleCI](https://practical.li/clojure/continuous-integration/circle-ci/){target=_blank} provides a simple to use service that supports Clojure projects.
-* [:globe_with_meridians: GitHub Workflows](https://docs.github.com/en/actions/using-workflows){target=_blank} and [GitHub actions marketplace](https://github.com/marketplace?type=actions){target=_blank} to quickly build a tailored continuous integration service, e.g. [Setup Clojure GitHub Action](https://github.com/marketplace/actions/setup-clojure){target=_blank}.
-* [:globe_with_meridians: GitLab CI](https://docs.gitlab.com/ee/ci/introduction/index.html){target=_blank}
+- [:globe_with_meridians: CircleCI](https://practical.li/clojure/continuous-integration/circle-ci/){target=_blank} provides a simple to use service that supports Clojure projects.
+- [:globe_with_meridians: GitHub Workflows](https://docs.github.com/en/actions/using-workflows){target=_blank} and [GitHub actions marketplace](https://github.com/marketplace?type=actions){target=_blank} to quickly build a tailored continuous integration service, e.g. [Setup Clojure GitHub Action](https://github.com/marketplace/actions/setup-clojure){target=_blank}.
+- [:globe_with_meridians: GitLab CI](https://docs.gitlab.com/ee/ci/introduction/index.html){target=_blank}
 
 ![Continuous Integration](https://raw.githubusercontent.com/practicalli/graphic-design/live/continuous-integration/continuous-integration-overview.svg)
 
