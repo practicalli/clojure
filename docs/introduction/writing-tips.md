@@ -192,7 +192,8 @@ Use a number after the code block to add the text for the annotation, e.g. `1.`.
 ls -la $HOME/Downloads  # (1)
 ```
 
-1. :woman_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
+1.  :woman_raising_hand: I'm a code annotation! I can contain `code`, __formatted text__, images, ... basically anything that can be written in Markdown.
+
 
 Code blocks with annotation, add `!` after the annotation number to suppress the `#` character
 
@@ -204,7 +205,7 @@ Code blocks with annotation, add `!` after the annotation number to suppress the
   )
 ```
 
-1. Always include a doc-string in every function to describe the purpose of that function, identifying why it was added and what its value is.
+1.  Always include a doc-string in every function to describe the purpose of that function, identifying why it was added and what its value is.
 
 GitHub action example with multiple annotations
 
@@ -229,12 +230,12 @@ jobs:
       - run: mkdocs gh-deploy --force
 ```
 
-1. You can change the name to your liking.
+1.  You can change the name to your liking.
 
-2. At some point, GitHub renamed `master` to `main`. If your default branch
+2.  At some point, GitHub renamed `master` to `main`. If your default branch
     is named `master`, you can safely remove `main`, vice versa.
 
-3. This is the place to install further [MkDocs plugins] or Markdown
+3.  This is the place to install further [MkDocs plugins] or Markdown
     extensions with `pip` to be used during the build:
 
     ``` sh
@@ -250,7 +251,7 @@ Add highlight line meta data to a code block after the opening backticks and cod
 
 `hl_lines="2"` highlights line 2 in the codeblock
 
-```clojure hl_lines="2,4"
+```clojure hl_lines="4 5 6"
 (defn my-function
   "With a lovely doc-string"
   [arguments]
@@ -289,13 +290,12 @@ Setting up a project
 === "Clojure CLI"
     ```shell
     clojure -T:project/new :template app :name practicalli/gameboard
-
-```
+    ```
 
 === "Leiningen"
     ```shell
     lein new app practicalli/gameboard
-```
+    ```
 
 Or nest the content tabs in an admonition
 
@@ -315,6 +315,8 @@ Or nest the content tabs in an admonition
 ## Diagrams
 
 Neat flow diagrams
+
+[Diagrams - Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/diagrams/){target=_blank .md-button}
 
 ``` mermaid
 graph LR
@@ -355,7 +357,7 @@ stateDiagram-v2
     State4 --> [*]
 ```
 
-Class diagrams - but dont need them.
+Class diagrams - not needed for Clojure
 
 Entity relationship diagrams are handy though
 
@@ -363,16 +365,12 @@ Entity relationship diagrams are handy though
 erDiagram
   CUSTOMER ||--o{ ORDER : places
   ORDER ||--|{ LINE-ITEM : contains
+  LINE-ITEM {
+    customer-name string
+    unit-price int
+  }
   CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
-
-### Other diagram types
-
-Besides the diagram types listed above, [Mermaid.js] provides support for
-[pie charts], [gantt charts], [user journeys], [git graphs] and
-[requirement diagrams], all of which are not officially supported by Material
-for MkDocs. Those diagrams should still work as advertised by [Mermaid.js], but
-we don't consider them a good choice, mostly as they don't work well on mobile.
 
 ## Keyboard keys
 
@@ -399,21 +397,6 @@ For key combinations, use join they key identifies with a `+`
 
 [MkDocs keyboard keys reference](https://facelessuser.github.io/pymdown-extensions/extensions/keys/#extendingmodifying-key-map-index){target=_blank .md-button}
 
-## Grids
-
-Useful for putting button links on the main page as quick links into the key parts of the book
-
-<div class="grid cards" markdown>
-
-* :fontawesome-brands-html5: __HTML__ for content and structure
-* :fontawesome-brands-js: __JavaScript__ for interactivity
-* :fontawesome-brands-css3: __CSS__ for text running out of boxes
-* :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-
-</div>
-
-> Sponsor only feature
-
 ## Images
 
 Markdown images can be appended with material tags to set the size of the image, whether to appear on light or dark theme and support lazy image loading in browsers
@@ -422,8 +405,7 @@ Markdown images can be appended with material tags to set the size of the image,
     `{style="height:150px;width:150px"}` specifies the image size
     ```markdown
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark){style="height:150px;width:150px"}
-
-```
+    ```
 
     ![Kitty Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/kitty-light.png#only-dark){style="height:150px;width:150px"}
 
@@ -475,12 +457,12 @@ Markdown images can be appended with material tags to set the size of the image,
 
 Task lists
 
-* [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
-* [ ] Vestibulum convallis sit amet nisi a tincidunt
-  * [x] In hac habitasse platea dictumst
-  * [x] In scelerisque nibh non dolor mollis congue sed et metus
-  * [ ] Praesent sed risus massa
-* [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
+- [x] Lorem ipsum dolor sit amet, consectetur adipiscing elit
+- [ ] Vestibulum convallis sit amet nisi a tincidunt
+    * [x] In hac habitasse platea dictumst
+    * [x] In scelerisque nibh non dolor mollis congue sed et metus
+    * [ ] Praesent sed risus massa
+- [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
 
 !!! EXAMPLE "Task List example"
     ```markdown
@@ -490,7 +472,7 @@ Task lists
         * [x] In scelerisque nibh non dolor mollis congue sed et metus
         * [ ] Praesent sed risus massa
     - [ ] Aenean pretium efficitur erat, donec pharetra, ligula non scelerisque
-```
+    ```
 
 ## Tooltips
 
