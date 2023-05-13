@@ -259,6 +259,27 @@ Add highlight line meta data to a code block after the opening backticks and cod
    [1 2 3]))
 ```
 
+### Embed external files
+
+`--8<--` in a code block inserts code from a source code file or other text file
+
+Specify a local file from the root of the book project (the directory containing mkdocs.yml)
+
+??? EXAMPLE "Scheduled Version Check GitHub Workflow from source code file"
+    ```yaml title="scheduled version check"
+    --8<-- ".github/workflows/scheduled-version-check.yaml"
+    ```
+
+??? EXAMPLE "Practicalli Project Templates"
+    ```markdown title="Emacs project configuration - .dir-locals.el"
+    --8<-- "https://raw.githubusercontent.com/practicalli/project-templates/main/.dir-locals.el"
+    ```
+
+!!! HINT "Code example reuse"
+    Use an embedded local or external file (URL) when the same content is required in more than one place in the book.
+
+    An effective way of sharing code and configuration mutliple times in a book or across multiple books.
+
 ## Content tabs
 
 Create in page tabs that can also be
