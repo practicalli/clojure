@@ -18,21 +18,14 @@ The idiomatic approach is to `:refer` specific functions from `clojure.test` as 
 
 The namespace to be tested is referred using a meaningful alias. The alias highlight the exact functions being tested in the body of the code.  This provides a visual way to separate functions under test with other test functions, especially if there are helper functions or vars used for test data.
 
-![Clojure Unit Testing - require software under testa using SUT alias](/images/clojure-unit-test-require-sut.png)
-
-![Clojure Unit Testing - using SUT alias](/images/clojure-unit-test-alias-sut.png)
-
-In the above example it is easy to see which namespaces the functions being tested are from.  The `dictionary` namespace is a source of data for those tests.
-
 === "REPL"
     ```clojure
     (require '[clojure.test :refer [are deftest is testing]])
-
-```
+    ```
     The namespace under test should be referred using the alias so they are readily identified within the test code.
     ```clojure
     (require '[practicalli.gameboard.spec :as gameboard-spec])
-```
+    ```
 
 === "project"
     Add `clojure.test` to the namespace definition along with the namespace under test.
@@ -40,8 +33,7 @@ In the above example it is easy to see which namespaces the functions being test
     (ns practicalli.app-namespace-test
       (:require '[clojure.test :refer [are deftest is testing]]
                  [practicalli.gameboard.spec :as gameboard-spec]))
-
-```
+    ```
 
 ## Simple Example
 
@@ -86,8 +78,7 @@ This is equivalent to writing
                (character-sequence->word-sequence dictionary/digit->word '(\0 \2 \1))))
         (is (= '("zero" "forty" "two")
                (character-sequence->word-sequence dictionary/digit->word '(\0 \4 \2))))))
-
-```
+    ```
     Refactor the assertions using are simplifies the code, making it simpler to change further and extend with more data.
     ```clojure
     (deftest encoder-test
@@ -99,7 +90,7 @@ This is equivalent to writing
             '("zero" "twenty" "zero") '(\0 \2 \0)
             '("zero" "twenty""one")   '(\0 \2 \1)
             '("zero" "forty" "two")   '(\0 \4 \2)))
-```
+    ```
 
 !!! HINT "Generative Testing provides a wide range of values"
     [Generating test data from Clojure Specs](/clojure/clojure-spec/generative-testing/) provides an extensive set of values that provide an effective way to test functions.
