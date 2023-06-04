@@ -21,13 +21,13 @@ Add `{target=_blank}` to the end of a link to configure opening in a new tab
 
 Convert any link into a button by adding `{.md-button}` class names to end of the markdown for a link, which uses `.md-button-primary` by default.  Include `target=_blank` for buttons with links to external sites.
 
-```
+```markdown
 [link text](http://practical.li/blog){.md-button target=_blank}
 ```
 
 Or specify a different class
 
-```
+```markdown
 [link text](http://practical.li/blog){.md-button .md-button-primary}
 ```
 
@@ -176,7 +176,7 @@ We all like line numbers, especially when you can set the starting line
 
 Add `linenums=42` to start line numbers from 42 onward
 
-```
+```shell
 clojure linenums="42" title="src/practicalli/gameboard.clj"
 ```
 
@@ -209,7 +209,7 @@ Code blocks with annotation, add `!` after the annotation number to suppress the
 
 GitHub action example with multiple annotations
 
-``` yaml
+```yaml
 name: ci # (1)!
 on:
   push:
@@ -238,7 +238,7 @@ jobs:
 3.  This is the place to install further [MkDocs plugins] or Markdown
     extensions with `pip` to be used during the build:
 
-    ``` sh
+    ```shell
     pip install \
       mkdocs-material \
       mkdocs-awesome-pages-plugin \
@@ -318,7 +318,7 @@ Neat flow diagrams
 
 [Diagrams - Material for MkDocs](https://squidfunk.github.io/mkdocs-material/reference/diagrams/){target=_blank .md-button}
 
-``` mermaid
+```mermaid
 graph LR
   A[Start] --> B{Error?};
   B -->|Yes| C[Hmm...];
@@ -329,7 +329,7 @@ graph LR
 
 UML Sequence Diagrams
 
-``` mermaid
+```mermaid
 sequenceDiagram
   Alice->>John: Hello John, how are you?
   loop Healthcheck
@@ -343,7 +343,7 @@ sequenceDiagram
 
 state transition diagrams
 
-``` mermaid
+```mermaid
 stateDiagram-v2
   state fork_state <<fork>>
     [*] --> fork_state
@@ -361,7 +361,7 @@ Class diagrams - not needed for Clojure
 
 Entity relationship diagrams are handy though
 
-``` mermaid
+```mermaid
 erDiagram
   CUSTOMER ||--o{ ORDER : places
   ORDER ||--|{ LINE-ITEM : contains
