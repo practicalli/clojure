@@ -8,10 +8,11 @@ on:
   workflow_run:
     workflows:
       - "MegaLinter"
-    paths-ignore:
-      - README.md
-      - CHANGELOG.md
-      - .gitignore
+    paths:
+      - "docs/**"
+      - "includes/**"
+      - "overrides/**"
+      - "mkdocs.yaml"
     branches:
       - main
     types:
