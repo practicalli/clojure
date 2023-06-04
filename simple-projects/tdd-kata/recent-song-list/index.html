@@ -29,7 +29,7 @@
         <link rel="next" href="../salary-slip-generator/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.12">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -37,10 +37,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -152,8 +152,7 @@
             
             
 
-<a href="https://practical.li/clojure">Practicalli Clojure</a> is converting to MkDocs and a content refactor
-so PR's are of limited value at present. Some page links & images may be temporarily broken.
+<a href="https://practical.li/clojure">Practicalli Clojure</a> has migrated to MkDocs and has been undergoing a content refresh
 
 
           </div>
@@ -1490,7 +1489,7 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
     <li class="md-nav__item">
       <a href="../../../coding-challenges/exercism/rna-transcription/" class="md-nav__link">
-        Rna transcription
+        Exercise: RNA Transcription
       </a>
     </li>
   
@@ -2055,6 +2054,20 @@ so PR's are of limited value at present. Some page links & images may be tempora
         <li class="md-nav__item">
   <a href="#function-to-add-song" class="md-nav__link">
     Function to add song
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-song-added-to-top-of-list" class="md-nav__link">
+    Test song added to top of list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-song-to-start-of-list" class="md-nav__link">
+    Add song to start of list
   </a>
   
 </li>
@@ -5950,6 +5963,20 @@ so PR's are of limited value at present. Some page links & images may be tempora
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#test-song-added-to-top-of-list" class="md-nav__link">
+    Test song added to top of list
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-song-to-start-of-list" class="md-nav__link">
+    Add song to start of list
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5982,12 +6009,14 @@ so PR's are of limited value at present. Some page links & images may be tempora
 
 
 <h1 id="tdd-kata-recent-song-list">TDD Kata Recent Song-list<a class="headerlink" href="#tdd-kata-recent-song-list" title="Permanent link">λ︎</a></h1>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/code-challenges/songs-playlist.png?raw=true" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Song List banner" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/code-challenges/songs-playlist.png?raw=true" /></a></p>
 <p>Create a recent song list to hold a unique set of songs that have been played.</p>
 <p>The most recently played song is at the start of the list, the least recently played song is the last in the list.</p>
 <ul>
 <li>A recently-used-list is initially empty.</li>
 <li>Songs in the list are unique, so repeatedly played songs should only appear once in the list</li>
 <li>Songs can be looked up by index, which counts from zero.</li>
+<li>The song list can be transitory (starting from empty each time) or persistent within a REPL session (examples use a transitory approach)</li>
 </ul>
 <p>Optional extras:</p>
 <ul>
@@ -5996,42 +6025,56 @@ so PR's are of limited value at present. Some page links & images may be tempora
 </ul>
 <h2 id="create-project">Create Project<a class="headerlink" href="#create-project" title="Permanent link">λ︎</a></h2>
 <p>Create a new project using clj-new</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/create<span class="w"> </span>practicalli/recent-song-list
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/create<span class="w"> </span>practicalli/song-list
 </code></pre></div>
 <h2 id="run-repl">Run REPL<a class="headerlink" href="#run-repl" title="Permanent link">λ︎</a></h2>
 <p>Start a Clojure REPL via <a href="/clojure/clojure-editors/">a Clojure editor</a> or via the command line from the root of the project directory</p>
-<div class="highlight"><span class="filename">Start rich terminal UI Clojure REPL</span><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:repl/rebel
+<div class="admonition example">
+<p class="admonition-title">Start rich terminal UI Clojure REPL</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
+</div>
 <h2 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">λ︎</a></h2>
 <p><code>clojure.test</code> library is part of Clojure standard library and is the most common way to write unit tests in Clojure</p>
-<p>Open <code>test/playground/recent_song_list_test.clj</code> file in your editor and update the namespace definition to include <code>clojure.test</code></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.recent-song-list-test</span>
+<p>Open <code>test/playground/song_list_test.clj</code> file in your editor and update the namespace definition to include <code>clojure.test</code></p>
+<div class="admonition example">
+<p class="admonition-title">Require clojure.test namespace</p>
+<div class="highlight"><span class="filename">test/playground/song_list_test.clj</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.song-list-test</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="nv">testing</span><span class="p">]]</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="p">[</span><span class="nv">playground.recent-song-list</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">song-list</span><span class="p">]))</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="p">[</span><span class="nv">playground.song-list</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">song-list</span><span class="p">]))</span>
 </code></pre></div>
+</div>
 <h2 id="run-tests">Run Tests<a class="headerlink" href="#run-tests" title="Permanent link">λ︎</a></h2>
-<p>Evaluate the <code>practicalli.recent-song-list</code> and <code>practicalli.recent-song-list-test</code> namespaces to load their code into the REPL</p>
-<p>Call the <code>run-tests</code> function in the REPL to get a report back on all of the tests in our current namespace (<code>recent-song-list</code>)</p>
+<p>Evaluate the <code>practicalli.song-list</code> and <code>practicalli.song-list-test</code> namespaces to load their code into the REPL</p>
+<p>Call the <code>run-tests</code> function in the REPL to get a report back on all of the tests in our current namespace (<code>song-list</code>)</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Kaocha test runner</label><label for="__tabbed_1_2">clojure.test runner</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p><a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicall Clojure CLI Config</a> provides the <code>:test/run</code> alias to run the Kaocha test runner.</p>
+<div class="admonition example">
+<p class="admonition-title">Kaocha test runner</p>
 <p>Open a command line in the root directory of the project and run the following command.
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div></p>
+</div>
 <p>Kaocha runs all the tests, stopping should a test fail.</p>
+<div class="admonition example">
+<p class="admonition-title">Kaocha test runner with file watch</p>
 <p>Use the <code>:test/watch</code> alias to automatically run tests when ever a file is saved
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure<span class="w"> </span>-X:test/run
 </code></pre></div></p>
 </div>
+</div>
 <div class="tabbed-block">
-<p>Evaluate the project code and evaluate the <code>run-tests</code> function from <code>clojure.test</code> from within the REPL
-```clojure
-(run-tests)</p>
+<p>Evaluate the project code and evaluate the <code>run-tests</code> function from <code>clojure.test</code> from within the REPL</p>
+<div class="admonition example">
+<p class="admonition-title">clojure.test runner</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">run-tests</span><span class="p">)</span>
+</code></pre></div>
 </div>
 </div>
 </div>
-<p>```</p>
+</div>
 <h2 id="test-song-list-exists">Test song-list exists<a class="headerlink" href="#test-song-list-exists" title="Permanent link">λ︎</a></h2>
 <p>Write a test to see if a recent song list exists.</p>
 <p>This is an opportunity to think about what kind of data structure you want to use to hold your recent song list.</p>
@@ -6041,65 +6084,62 @@ so PR's are of limited value at present. Some page links & images may be tempora
 <details class="example">
 <summary>Test song-list exists</summary>
 <p>A simple test that checks for a <code>recent-songs</code> list
-```clojure
-(deftest song-list-exists-test
-  (testing "Does a recent song list exist"
-    (is (vector? song-list/recent-songs))))</p>
-</details>
-<p>```</p>
-<div class="highlight"><pre><span></span><code>`recent-songs` should be defined in `src/playground/recent-song-list.clj` before running the test, otherwise a compilation error will be returned.
+<div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">song-list-exists-test</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;Does a recent song list exist&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">vector? </span><span class="nv">song-list/recent-songs</span><span class="p">))))</span>
 </code></pre></div>
+<code>recent-songs</code> should be defined in <code>src/playground/recent-song-list.clj</code> before running the test, otherwise a compilation error will be returned.</p>
+</details>
 <h2 id="define-a-recent-song-list">Define a recent song list<a class="headerlink" href="#define-a-recent-song-list" title="Permanent link">λ︎</a></h2>
-<p>Edit <code>src/playground/recent-song-list.clj</code> and define a name for the collection of recent songs</p>
+<p>Edit <code>src/playground/song_list.clj</code> and define a name for the collection of recent songs</p>
 <p>Use an empty collection to start with.  Which collection type will you use though (hash-map <code>{}</code>, list <code>()</code>, set <code>#{}</code>, vector <code>[]</code>)?</p>
 <details class="example">
 <summary>recent-songs collection</summary>
 <p>Define a recent-song name for an empty vector
-```clojure
-(def recent-songs [])</p>
+<div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">recent-songs</span><span class="w"> </span><span class="p">[])</span>
+</code></pre></div></p>
 </details>
-<p>```</p>
+<details class="hint">
+<summary>Test First Approach</summary>
+<p>For a strict test first approach, a <code>recent-songs</code> name (symbol) would be defined that returns <code>false</code> or a falsy value, e.g. <code>nil</code></p>
+<p>A name (symbol) must be defined for use in the test so that the Clojure code can compile</p>
+</details>
 <h2 id="test-song-list-is-empty">Test song-list is empty<a class="headerlink" href="#test-song-list-is-empty" title="Permanent link">λ︎</a></h2>
 <p>The recent song list should be empty to start with.</p>
 <details class="example">
 <summary>Check song list is empty</summary>
 <p>A simple test that compares an empty vector with the value of <code>recent-songs</code>
-```clojure
-(deftest song-list-empty-test
-  (testing "Is song list empty if we haven't added any songs"
-    (is
-     (= [] song-list/recent-songs))))</p>
-</details>
-<p>```</p>
-<div class="highlight"><pre><span></span><code>Here is the same test using the `empty?` function instead of the `=` function.
-
-```clojure
-(deftest song-list-empty-test-2
-  (testing &quot;Is song list empty if we haven&#39;t added any songs&quot;
-    (is
-     (empty? song-list/recent-songs))))
-```
-
-Either of these tests could replace the test that the song list exists, as these tests would fail if the song list did not exist.
+<div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">song-list-empty-test</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;Is song list empty if we haven&#39;t added any songs&quot;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">     </span><span class="p">(</span><span class="nb">= </span><span class="p">[]</span><span class="w"> </span><span class="nv">song-list/recent-songs</span><span class="p">))))</span>
+</code></pre></div></p>
+<p>Here is the same test using the <code>empty?</code> function instead of the <code>=</code> function.</p>
+<p><div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">song-list-empty-test</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;Is song list empty if we haven&#39;t added any songs&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">     </span><span class="p">(</span><span class="nf">empty?</span><span class="w"> </span><span class="nv">song-list/recent-songs</span><span class="p">))))</span>
 </code></pre></div>
+Either of these tests could replace the test that the song list exists, as these tests would fail if the song list did not exist.</p>
+</details>
 <h2 id="test-adding-a-song-to-the-list">Test adding a song to the list<a class="headerlink" href="#test-adding-a-song-to-the-list" title="Permanent link">λ︎</a></h2>
 <p>Add a song to the collection, for example <code>Tubular Bells - Mike Oldfield</code></p>
 <details class="example">
 <summary>Test adding a song to the list</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">adding-songs-test</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;add song returns a song list with entries&quot;</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">     </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">empty?</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">           </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Barry Manilow - Love on the rocks&quot;</span><span class="w"> </span><span class="nv">song-list/recent-songs</span><span class="p">)))))</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;add multiple song returns a song list with entries&quot;</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">     </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">empty?</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">           </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">song-list/recent-songs</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Mike Oldfield - Tubular Bells Part 1&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Barry Manilow - Love on the rocks&quot;</span><span class="p">)</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Phil Colins - Sususudio&quot;</span><span class="w"> </span><span class="p">)))))))</span>
+<div class="highlight"><span class="filename">test/playground/song_list_test.clj</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">add-songs-test</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;add song returns a song list with entries&quot;</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">     </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">empty?</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">           </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Barry Manilow - Love on the rocks&quot;</span><span class="w"> </span><span class="nv">song-list/recent-songs</span><span class="p">)))))</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;add multiple song returns a song list with entries&quot;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">     </span><span class="p">(</span><span class="nb">not </span><span class="p">(</span><span class="nf">empty?</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">           </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">song-list/recent-songs</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Mike Oldfield - Tubular Bells Part 1&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Barry Manilow - Love on the rocks&quot;</span><span class="p">)</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="w">             </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Phil Colins - Sususudio&quot;</span><span class="w"> </span><span class="p">)))))))</span>
 </code></pre></div>
 <p>Other songs are avialbe and Practicalli makes no recommendation as to what songs should be used or listened too.</p>
 </details>
@@ -6111,12 +6151,66 @@ Either of these tests could replace the test that the song list exists, as these
 <p>A Thread-last macro <code>-&gt;&gt;</code> is used to pass the song list over two functions.</p>
 <p>The <code>song-list</code> is first passed to the <code>remove</code> expression as its last argument.  This expression will remove any occurrence of the new song we want to add from the <code>song-list</code>.</p>
 <p>The results of the <code>remove</code> expression are then passed to the <code>cons</code> expression as its last argument.  The <code>cons</code> expression simply adds the new song to the start of the list, making it the most recent song.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">recent-songs</span><span class="w"> </span><span class="p">[])</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">add-song</span><span class="w"> </span><span class="p">[</span><span class="nv">song</span><span class="w"> </span><span class="nv">song-list</span><span class="p">]</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">song-list</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">       </span><span class="p">(</span><span class="nb">remove </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">song</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">       </span><span class="p">(</span><span class="nb">cons </span><span class="nv">song</span><span class="p">)))</span>
+<div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">recent-songs</span><span class="w"> </span><span class="p">[])</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">add-song</span><span class="w"> </span><span class="p">[</span><span class="nv">song</span><span class="w"> </span><span class="nv">song-list</span><span class="p">]</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="p">(</span><span class="nb">cons </span><span class="nv">song</span><span class="w"> </span><span class="nv">song-list</span><span class="p">))</span>
+</code></pre></div>
+<p><code>recent-songs</code> is passed into the <code>add-song</code> function as an argument, <code>song-list</code> to keep the design of <code>add-song</code> function pure (no side-effects).  This design also provides greater scope to using the <code>add-song</code> function, as any song list can be added to, rather than hard-coding <code>recent-songs</code> list.</p>
+</details>
+<h2 id="test-song-added-to-top-of-list">Test song added to top of list<a class="headerlink" href="#test-song-added-to-top-of-list" title="Permanent link">λ︎</a></h2>
+<p>As the song list shows recently played songs, new songs added should be at the top of the list.</p>
+<p>The list should not contain duplicate entries for a song.</p>
+<details class="example">
+<summary>Test songs added to top of list</summary>
+<div class="highlight"><span class="filename">test/playground/song_list_test.clj</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">recently-added-song-first-test</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;most recent song should be first in the list when empty list&quot;</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">=</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">         </span><span class="p">(</span><span class="nb">first </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Daft Punk - Get Lucky&quot;</span><span class="w"> </span><span class="nv">recent-songs</span><span class="p">))</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">         </span><span class="s">&quot;Daft Punk - Get Lucky&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;most recent song should be first in list when adding multiple songs&quot;</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">=</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="w">         </span><span class="p">(</span><span class="nf">first</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="w">          </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">recent-songs</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Daft Punk - Get Lucky&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="w">         </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;most recent song should be first in list when adding a repeated song&quot;</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">=</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a><span class="w">         </span><span class="p">(</span><span class="nf">first</span>
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a><span class="w">          </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">recent-songs</span>
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Daft Punk - Get Lucky&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-23" name="__codelineno-12-23" href="#__codelineno-12-23"></a><span class="w">         </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-24" name="__codelineno-12-24" href="#__codelineno-12-24"></a>
+<a id="__codelineno-12-25" name="__codelineno-12-25" href="#__codelineno-12-25"></a><span class="w">  </span><span class="p">(</span><span class="nf">testing</span><span class="w"> </span><span class="s">&quot;most recent song should be first in list when adding a repeated song&quot;</span>
+<a id="__codelineno-12-26" name="__codelineno-12-26" href="#__codelineno-12-26"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">not=</span>
+<a id="__codelineno-12-27" name="__codelineno-12-27" href="#__codelineno-12-27"></a><span class="w">         </span><span class="p">(</span><span class="nf">last</span>
+<a id="__codelineno-12-28" name="__codelineno-12-28" href="#__codelineno-12-28"></a><span class="w">          </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">recent-songs</span>
+<a id="__codelineno-12-29" name="__codelineno-12-29" href="#__codelineno-12-29"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-30" name="__codelineno-12-30" href="#__codelineno-12-30"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Daft Punk - Get Lucky&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-31" name="__codelineno-12-31" href="#__codelineno-12-31"></a><span class="w">               </span><span class="p">(</span><span class="nf">add-song</span><span class="w"> </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">)))</span>
+<a id="__codelineno-12-32" name="__codelineno-12-32" href="#__codelineno-12-32"></a><span class="w">         </span><span class="s">&quot;Pharrell Williams - Happy&quot;</span><span class="p">))))</span>
+</code></pre></div>
+</details>
+<h2 id="add-song-to-start-of-list">Add song to start of list<a class="headerlink" href="#add-song-to-start-of-list" title="Permanent link">λ︎</a></h2>
+<p>Create a function to add a song to the start of the song list.</p>
+<details class="example">
+<summary>Function to add song to list</summary>
+<p>The <code>add-song</code> function takes the name of a song and the song list to which it will be added.</p>
+<p>A Thread-last macro <code>-&gt;&gt;</code> is used to pass the song list over two functions.</p>
+<p>The <code>song-list</code> is first passed to the <code>remove</code> expression as its last argument.  This expression will remove any occurrence of the new song we want to add from the <code>song-list</code>.</p>
+<p>The results of the <code>remove</code> expression are then passed to the <code>cons</code> expression as its last argument.  The <code>cons</code> expression simply adds the new song to the start of the list, making it the most recent song.</p>
+<div class="highlight"><span class="filename">src/playground/song_list.clj</span><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">recent-songs</span><span class="w"> </span><span class="p">[])</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">add-song</span><span class="w"> </span><span class="p">[</span><span class="nv">song</span><span class="w"> </span><span class="nv">song-list</span><span class="p">]</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">song-list</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">       </span><span class="p">(</span><span class="nb">remove </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">song</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">       </span><span class="p">(</span><span class="nb">cons </span><span class="nv">song</span><span class="p">)))</span>
 </code></pre></div>
 <p><code>recent-songs</code> is passed into the <code>add-song</code> function as an argument, <code>song-list</code> to keep the design of <code>add-song</code> function pure (no side-effects).  This design also provides greater scope to using the <code>add-song</code> function, as any song list can be added to, rather than hard-coding <code>recent-songs</code> list.</p>
 </details>
@@ -6126,7 +6220,7 @@ Either of these tests could replace the test that the song list exists, as these
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2023</span>
       
     
   </small>
@@ -6281,7 +6375,7 @@ Either of these tests could replace the test that the song list exists, as these
     <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c2be25ad.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
