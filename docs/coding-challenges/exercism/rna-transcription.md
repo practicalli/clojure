@@ -1,6 +1,6 @@
-![RNA Transcription](/images/rna-transcription.png)
-
 # Exercise: RNA Transcription
+
+![RNA Transcription](https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true)
 
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
