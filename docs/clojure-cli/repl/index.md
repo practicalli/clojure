@@ -21,16 +21,16 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
     ```clojure
     :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
                  :main-opts  ["-m" "rebel-readline.main"]}
-
-```
+    ```
 
 ## Running the rebel REPL
 
 Start a Clojure REPL with Rebel terminal UI.  Use the command in the root of a Clojure project to include the project dependencies and source code.
 
-```bash
-clojure -M:repl/rebel
-```
+!!! NOTE ""
+    ```shell
+    clojure -M:repl/rebel
+    ```
 
 A REPL prompt displays and will evaluate code entered.
 
@@ -43,38 +43,46 @@ Evaluate Clojure code by typing at the `=> user` prompt pressing `Return`, the r
 
 > ++ctrl+"c"++ if the repl process does not return to the shell prompt.
 
+
 # Customize Rebel Readline
 
 `:repl/help` in the repl prompt shows the Rebel configuration options
 
 Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/clojure/` or `$HOME/.clojure`
 
-```
-:key-map         - either :viins or :emacs. Defaults to :emacs
-
-:color-theme     - either :light-screen-theme or :dark-screen-theme
-
-:highlight       - boolean, whether to syntax highlight or not. Defaults to true
-
-:completion      - boolean, whether to complete on tab. Defaults to true
-
-:eldoc           - boolean, whether to display function docs as you type.
-                   Defaults to true
-
-:indent          - boolean, whether to auto indent code on newline. Defaults to true
-
-:redirect-output - boolean, rebinds root *out* during read to protect linereader
-                   Defaults to true
-
-:key-bindings    - map of key-bindings that get applied after all other key
-                   bindings have been applied
-```
-
-For example, to change the default keybindings to vi:
-
-```
-{:key-map :viins}
-```
+??? EXAMPLE "Rebel Readline Configuration options"
+    ```clojure title="$XDG_CONFIG_HOME/clojure/rebel_readline.edn"
+    ;; ---------------------------------------------------------
+    ;; Rebel Readline Configuration
+    ;;
+    ;; Customise use and appearance
+    ;; ---------------------------------------------------------
+    
+    {;; Vi or Emacs style key-map
+     ;; :viins or :emacs. Default :emacs
+     :key-map     :viins
+    
+     ;; Color theme - light or dark
+     ;; :color-theme :light-screen-theme
+     :color-theme :dark-screen-theme
+    
+     ;; Enable syntax highlight. Default true}
+     :hihighlight true
+    
+     ;; Enable complete on tab. Default true}
+     :completion  true
+    
+     ;; Enable function documentation Default true
+     :eldoc  true
+     ;; auto indent code on newline. Default true}
+     :indent true
+    
+     ;; rebind root *out* during read to protect linereader, Default true}
+     :redirect-output true
+    
+     ;; Custom key-bindings applied after all other 
+     :key-bindings {}}
+    ```
 
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark)
 ![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light)
@@ -98,8 +106,7 @@ Including an nREPL server when starting the REPL allows [clojure ware editors](/
      :main-opts  ["-m" "nrepl.cmdline"
                   "--middleware" "[cider.nrepl/cider-middleware]"
                   "--interactive"]}
-
-```
+    ```
 
     Headless REPL with nREPL server for Clojure Editor support
     ```clojure
@@ -112,12 +119,14 @@ Including an nREPL server when starting the REPL allows [clojure ware editors](/
 
 To have a basic terminal UI REPL prompt use the `:repl/basic` alias to start a REPL process with nREPL connection.
 
-```shell
-clj -M:repl/basic
-```
+!!! NOTE ""
+    ```shell
+    clj -M:repl/basic
+    ```
 
 To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.  This approach is useful to separate the REPL output from the editor whilst keeping all the interacting with the REPL via the editor.
 
-```shell
-clj -M:repl/headless
-```
+!!! NOTE ""
+    ```shell
+    clj -M:repl/headless
+    ```
