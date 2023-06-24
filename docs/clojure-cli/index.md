@@ -128,7 +128,7 @@ A Clojure CLI user configuration is available to all projects by the operating s
 
     `CLJ_CONFIG` can be used to over-ride all other location settings
 
-    Run `clojure -Sdescribe` in a terminal and checking the `:user-config` value to see the location of your Clojure configuration directory
+    Run `clojure -Sdescribe` in a terminal and checking the `:config-user` value to see the location of your Clojure configuration directory
 
 
 A basic example of a user configuration for Clojure CLI
