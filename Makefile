@@ -17,6 +17,9 @@
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
 
+# Tool Commands
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+
 # Makefile file and directory name wildcard
 EDN-FILES := $(wildcard *.edn)
 
@@ -29,12 +32,11 @@ pre-commit-check: lint
 
 lint:  ## Run MegaLinter with custom configuration (node.js required)
 	$(info --------- MegaLinter Runner ---------)
-	npx mega-linter-runner --flavor documentation --release beta --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
-
+	$(MEGALINTER_RUNNER)
 
 lint-fix:  ## Run MegaLinter with custom configuration (node.js required)
 	$(info --------- MegaLinter Runner ---------)
-	npx mega-linter-runner --fix --flavor documentation --release beta --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+	$(MEGALINTER_RUNNER) --fix
 
 lint-clean:  ## Clean MegaLinter report information
 	$(info --------- MegaLinter Clean Reports ---------)
