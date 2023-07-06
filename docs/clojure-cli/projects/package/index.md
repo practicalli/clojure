@@ -18,14 +18,14 @@ The [:globe_with_meridians: Clojure.org tools.build project](https://clojure.org
 
     !!! NOTE ""
         ```shell
-        clojure -T:build uberjar
+        clojure -T:project/build uberjar
         ```
 
     Create a Clojure library archive
 
     !!! NOTE ""
         ```shell
-        clojure -T:build jar
+        clojure -T:project/build jar
         ```
 
 === "Clojure tools.build"
