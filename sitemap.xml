@@ -156,7 +156,12 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://practical.li/clojure/clojure-cli/projects/tools-build/</loc>
+         <loc>https://practical.li/clojure/clojure-cli/projects/package/</loc>
+         <lastmod>2023-07-06</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://practical.li/clojure/clojure-cli/projects/package/tools-build/</loc>
          <lastmod>2023-07-06</lastmod>
          <changefreq>daily</changefreq>
     </url>
