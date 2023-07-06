@@ -2,6 +2,8 @@
 
 ![RNA Transcription](https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true)
 
+[:globe_with_meridians: Clojure Track: Nucleotide Count](https://exercism.org/tracks/clojure/exercises/rna-transcription){target=_blank .md-button}
+
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
 Both DNA and RNA strands are a sequence of nucleotides.
@@ -18,17 +20,20 @@ Given a DNA strand, its transcribed RNA strand is formed by replacing each nucle
 * A -> U
 
 !!! HINT "Code for this solution on GitHub"
-    [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to this exercise
+    [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/) contains the design journal and solution to this exercise and many others.
 
 ## Create the project
 
 Download the RNA transcription exercise using the exercism CLI tool
 
-```bash
-exercism download --exercise=rna-transcription --track=clojure
-```
+!!! NOTE ""
+    ```bash
+    exercism download --exercise=rna-transcription --track=clojure
+    ```
 
-> To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
+!!! HINT "Use the REPL workflow to explore solutions locally"
+    Open the project in a [Clojure aware editor](/clojure/clojure-editors) and [start a REPL](/clojure/coding-challenges/exercism/#repl-workflow), using a rich comment form to experiment with code to solve the challenge.
+
 
 ## Designing the solution
 
@@ -115,68 +120,83 @@ The `or` function evaluate the first expression and if a true value is returned 
 
 If the first expression returns false or a falsey value, i.e. `nil`, then the next expression is evaluated.
 
-```clojure
-(defn to-rna
-  [dna]
-  (clojure.string/join
-    (map (fn [nucleotide](or (get {\G \C \C \G \T \A \A \U} nucleotide)
-                             (throw (AssertionError. "Unknown nucleotide"))))
-         dna)))
-```
+!!! EXAMPLE "Proposed Solution"
+    ```clojure
+    (defn to-rna
+      [dna]
+      (clojure.string/join
+        (map (fn [nucleotide](or (get {\G \C \C \G \T \A \A \U} nucleotide)
+                                 (throw (AssertionError. "Unknown nucleotide"))))
+             dna)))
+    ```
 
-```clojure
-(to-rna "GCTA")
-```
-<!-- ;; => "CGAU" -->
+Call the `to-rna` function with a DNA string from the unit test code
+
+!!! NOTE ""
+    ```clojure
+    (to-rna "GCTA")
+    ```
+
+The function should return `"CGAU"`
 
 Call the `to-rna` function with a DNA string that contains an invalid nucleotide.
 
-```clojure
-(to-rna "GCXA")
-```
+!!! NOTE ""
+    ```clojure
+    (to-rna "GCXA")
+    ```
 
 An `AssertionError` is thrown as the `X` character does not exist in the dictionary hash-map, so the `get` expression returns `nil`.
 
-## Refactor and streamline
 
-Now the function is working, some minor adjustments could be made to streamline the code.
+## Refactor
 
+Now the function is solving unit tests, minor adjustments can be made to streamline the code.
+
+### Hash map as function
 A hash-map can be called as a function and takes a key as an argument.  This acts the same as the `get` function, returning the value  associated to a matching key, otherwise returning `nil` or the not-found value if specified.
 
 ```clojure
 (defn to-rna
   [dna]
   (clojure.string/join
-    (map (fn [nucleotide ](or ({\G \C \C \G \T \A \A \U} nucleotide)
+    (map (fn [nucleotide] (or ({\G \C \C \G \T \A \A \U} nucleotide)
                               (throw (AssertionError. "Unknown nucleotide"))))
          dna)))
 ```
 
-The anonymous function has a terser form.
+### Anonymous function
+
+The anonymous function, `fn`, has a terse form.
 
 `#(* %1 %2)` is the same as `(fn [value1 value2] (+ value1 value2))`
 
-This syntax sugar is often use with `map`, `reduce`, `apply` functions as the function definition tends to be compact and of single use.
+This syntax sugar is often use with `map`, `reduce`, `apply` functions as the behaviour tends to be compact and of single use.
 
 If the function definition is more complex or used elsewhere in the namespace, then the `defn` function should be used to define shared behavior.
 
-```clojure
-(defn to-rna
-  [dna]
-  (clojure.string/join
-    (map #(or ({\G \C \C \G \T \A \A \U} %)
-              (throw (AssertionError. "Unknown nucleotide")))
-         dna )))
-```
+!!! EXAMPLE "Solution with anonymous function"
+    ```clojure
+    (defn to-rna
+      [dna]
+      (clojure.string/join
+        (map #(or ({\G \C \C \G \T \A \A \U} %)
+                  (throw (AssertionError. "Unknown nucleotide")))
+             dna )))
+    ```
+
+### Named dictionary data
 
 Replace the hard-coded hash-map by defining a name for the dictionary.
 
-```clojure
-(def dictionary-dna-rna {\G \C \C \G \T \A \A \U})
-```
+!!! EXAMPLE "Define a name to represent the dictionary data"
+    ```clojure
+    (def dictionary-dna-rna {\G \C \C \G \T \A \A \U})
+    ```
 
 Refactor the `to-rna` function to use the dictionary by name.
 
+!!! EXAMPLE "Solution using named dictionary data"
 ```clojure
 (defn to-rna
   [dna]
@@ -186,7 +206,7 @@ Refactor the `to-rna` function to use the dictionary by name.
          dna)))
 ```
 
-## Making the function pure
+### Making the function pure
 
 Its beyond the scope of the Exercism challenge, however, its recommended to use pure functions where possible.
 
@@ -194,19 +214,21 @@ A pure function only uses data from its arguments.
 
 Adding a dictionary as an argument to the `to-rna` function would be simple.
 
-```clojure
-(defn to-rna
-  [dictionary dna]
-  (clojure.string/join
-    (map #(or (dictionary %)
-              (throw (AssertionError. "Unknown nucleotide")))
-         dna )))
-```
+!!! EXAMPLE "Pure function approach"
+    ```clojure
+    (defn to-rna
+      [dictionary dna]
+      (clojure.string/join
+        (map #(or (dictionary %)
+                  (throw (AssertionError. "Unknown nucleotide")))
+             dna )))
+    ```
 
 With a dictionary as an argument the function is also more usable, as other dictionaries could be used with the function.
 
 The function would now be called as follows
 
-```clojure
-(to-rna dictionary-dna-rna "GTGAC")
-```
+!!! NOTE ""
+    ```clojure
+    (to-rna dictionary-dna-rna "GTGAC")
+    ```

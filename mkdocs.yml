@@ -195,9 +195,9 @@ nav:
           - coding-challenges/4clojure/index.md
       - Exercism:
           - coding-challenges/exercism/index.md
-          - coding-challenges/exercism/rna-transcription.md
           # - coding-challenges/exercism/hamming.md
           # - coding-challenges/exercism/space-age.md
+          - RNA Transcription: coding-challenges/exercism/rna-transcription.md
           - Bob:
               - coding-challenges/exercism/bob/index.md
               - coding-challenges/exercism/bob/bob-string-approach.md
