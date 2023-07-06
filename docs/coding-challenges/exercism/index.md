@@ -10,7 +10,7 @@ Solve challenges via the built-in Exercism editor.
 
 ![Exercism Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/code-challenges/exercism/exercism-editor-clojure-example-licians-luscious-lasagna.png)
 
-Or download each exercise locally using the [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank}, providing a [:globe_with_meridians: Clojure CLI](/clojure/clojure-cli/){target=_blank} configured project with a test runner.  
+Or download each exercise locally using the [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank}, providing a [:globe_with_meridians: Clojure CLI](/clojure/clojure-cli/){target=_blank} configured project with a test runner.
 
 Use the [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){target=_blank} to submit a solution for metor feedback.
 
@@ -43,10 +43,10 @@ The [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){
 
 Open the project in your [:fontawesome-solid-book-open: preferred Clojure editor](/clojure/clojure-editors/) and write a solution to solve the exercise.
 
-`clojure -X:test` command in the root of the downloaded project will run the tests supplied by the exercise 
+`clojure -X:test` command in the root of the downloaded project will run the tests supplied by the exercise
 
 ??? HINT "Practicalli Test Runner aliases"
-     
+
     `clojure -X:test/run` runs the Kaocha test runner from the [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/)
 
     `clojure -X:test/watch` will automatically re-run tests when file changes are detected.
