@@ -171,7 +171,9 @@ nav:
       - Rich Comment: clojure-cli/projects/rich-comments.md
       - Hotload in Project: clojure-cli/projects/hotload-in-project.md
       - Migrate projects: clojure-cli/projects/migrate-project.md
-      - Package: clojure-cli/projects/tools-build.md
+      - Package:
+          - clojure-cli/projects/package/index.md
+          - tools.build: clojure-cli/projects/package/tools-build.md
   - Clojure Editors:
       - clojure-editors/index.md
       - Clojure LSP:

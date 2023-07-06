@@ -1,44 +1,43 @@
 # Clojure tools.build
 
-The [Clojure.org tools.build project](https://clojure.org/guides/tools_build) is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).
+[:globe_with_meridians: Clojure.org tools.build](https://clojure.org/guides/tools_build) is a library to define build related tasks using Clojure code.
 
-Tasks are writtend in Clojure code using the [tools.build API](https://clojure.github.io/tools.build/), which provides a consistent interfact to the project configuration and common tasks that facilitate building and packaging projects.
+[:globe_with_meridians: tools.build API](https://clojure.github.io/tools.build/) provides a consistent interface to access the project configuration (project basis) and common tasks that facilitate building and packaging projects.
 
-The following are created in each project that uses tools.build:
+The following files are created in each project that uses tools.build:
 
 * `build.clj` contains a namespace with tasks
 * `:project/build` alias containing tools.build library and sets the default namespace
 
 `clojure -T:build task-name` to run any of the tasks defined in the default `build` namespaces.
 
-
-!!! HINT "Java ARchive - jar file"
-    A `.jar` file is a zip archive of the project containing all the files for running a Clojure project.  The archive should contain metatdata files such as Manifest and pom.xml and can contain Clojure sources or compiled class files from the project (or both).
-
-    An ubjerjar is `.jar` file that also contains all the project dependencies including Clojure.  The uberjar is a self-contained file that can be easily deployed and requires only a Java run-time (Java Virtual Machine), using the `java -jar project-uberjar.jar` command, with the option to pass arguments to the Uberjar also.
+??? HINT "Practicalli Project Templates include tools.build tasks"
+    [:fontawesome-solid-book-open: Practicalli Project templates](/clojure/clojure-cli/projects/templates/) include a `build.clj` configuration with `jar` and `uberjar` tasks.
 
 
 ## Define a build alias
 
 Add an alias to the project `deps.edn` file which includes the `org.clojure/tools.build` project.
 
-```clojure title="Project deps.edn"
-  :build
-  {:replace-paths ["."]
-   :replace-deps {io.github.clojure/tools.build {:git/tag "v0.9.4" :git/sha "76b78fe"}}
-   :ns-default build}
-```
+!!! EXAMPLE "Alias to include tools.build library"
+    ```clojure title="Project deps.edn"
+      :project/build
+      {:replace-paths ["."]
+       :replace-deps {io.github.clojure/tools.build
+                      {:git/tag "v0.9.4" :git/sha "76b78fe"}}
+       :ns-default build}
+    ```
 
 ??? INFO "Developing code in the build script"
     `:replace-paths ["."]` includes the `build.clj` file on the class path to allow for REPL development of the build tasks
 
-    Include `:build` aliase in the Clojure command when starting the REPL.
+    Include `:build` alias in the Clojure command when starting the REPL.
     ```shell
-    clojure -M:build:repl/rebel
+    clojure -M:project/build:repl/rebel
     ```
 
 ??? INFO "tools.build release information"
-    [Clojure.org tools.build release information](https://github.com/clojure/tools.build#release-information) shows the current values for `git/tag` and `:git/sha`
+    [Clojure.org tools.build release information](:fontawesome-brands-github: https://github.com/clojure/tools.build#release-information) shows the current values for `git/tag` and `:git/sha`
 
 
 ## Build Script
@@ -84,58 +83,60 @@ Define functions to support common tasks `clean`, `jar`, `uberjar`
 
     `_` name convention is used when a function definition does not make use of the argument that is passed
 
-```clojure title="build.clj"
-;; ---------------------------------------------------------
-;; Build tasks
 
-(defn clean
-  "Remove a directory
-  - `:path '\"directory-name\"'` for a specific directory
-  - `nil` (or no command line arguments) to delete `target` directory
-  `target` is the default directory for build artefacts"
-  [directory]
-  (build-api/delete {:path (or (:path directory) "target")}))
+!!! EXAMPLE "tools.build tasks configuration"
+    ```clojure title="build.clj"
+    ;; ---------------------------------------------------------
+    ;; Build tasks
 
-
-(defn jar
-  "Create a build of the project, cleaning existing build assets first"
-  [_]
-  (let [{:keys [class-directory jar-file library-name project-basis project-version]} project-config]
-    (clean nil)
-    (pprint/pprint project-config)
-    (build-api/write-pom {:class-dir class-directory
-                          :lib       library-name
-                          :version   project-version
-                          :basis     project-basis
-                          :src-dirs  ["src"]})
-    (build-api/copy-dir {:src-dirs   ["src" "resources"]
-                         :target-dir class-directory})
-    (build-api/jar {:class-dir class-directory
-                    :jar-file  jar-file})))
+    (defn clean
+      "Remove a directory
+      - `:path '\"directory-name\"'` for a specific directory
+      - `nil` (or no command line arguments) to delete `target` directory
+      `target` is the default directory for build artefacts"
+      [directory]
+      (build-api/delete {:path (or (:path directory) "target")}))
 
 
-(defn uberjar
-  "Create an archive containing Clojure and the build of the project"
-  [_]
-  (let [{:keys [class-directory main-namespace project-basis uberjar-file]} project-config]
-    (clean nil)
-    (build-api/copy-dir {:src-dirs   ["src" "resources"]
-                         :target-dir class-directory})
+    (defn jar
+      "Create a build of the project, cleaning existing build assets first"
+      [_]
+      (let [{:keys [class-directory jar-file library-name project-basis project-version]} project-config]
+        (clean nil)
+        (pprint/pprint project-config)
+        (build-api/write-pom {:class-dir class-directory
+                              :lib       library-name
+                              :version   project-version
+                              :basis     project-basis
+                              :src-dirs  ["src"]})
+        (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                             :target-dir class-directory})
+        (build-api/jar {:class-dir class-directory
+                        :jar-file  jar-file})))
 
-    (build-api/compile-clj {:basis     project-basis
-                            :src-dirs  ["src"]
-                            :class-dir class-directory})
 
-    (build-api/uber {:class-dir class-directory
-                     :uber-file uberjar-file
-                     :basis     project-basis
-                     :main      main-namespace})))
+    (defn uberjar
+      "Create an archive containing Clojure and the build of the project"
+      [_]
+      (let [{:keys [class-directory main-namespace project-basis uberjar-file]} project-config]
+        (clean nil)
+        (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                             :target-dir class-directory})
 
-;; End of Build tasks
-;; ---------------------------------------------------------
-```
+        (build-api/compile-clj {:basis     project-basis
+                                :src-dirs  ["src"]
+                                :class-dir class-directory})
 
-??? EXAMPLE "Project configuration"
+        (build-api/uber {:class-dir class-directory
+                         :uber-file uberjar-file
+                         :basis     project-basis
+                         :main      main-namespace})))
+
+    ;; End of Build tasks
+    ;; ---------------------------------------------------------
+    ```
+
+!!! EXAMPLE "Project configuration"
     Pretty printed Example of a project configuration
     ```clojure
     {:library-name practicalli/clojure-app-template,
@@ -216,6 +217,8 @@ Define functions to support common tasks `clean`, `jar`, `uberjar`
 
 ## Resources
 
-[Clojure.org tools.build Guide](https://clojure.org/guides/tools_build){target=_blank .md-button}
-[Clojure.org tools.build API Docs](https://clojure.github.io/tools.build/){target=_blank .md-button}
-[Clojure.org tools.build release information](https://github.com/clojure/tools.build#release-information){target=_blank .md-button}
+[:globe_with_meridians: Clojure.org tools.build Guide](https://clojure.org/guides/tools_build){target=_blank .md-button}
+
+[:globe_with_meridians: Clojure.org tools.build API Docs](https://clojure.github.io/tools.build/){target=_blank .md-button}
+
+[:globe_with_meridians: Clojure.org tools.build release information](https://github.com/clojure/tools.build#release-information){target=_blank .md-button}
