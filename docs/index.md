@@ -16,7 +16,7 @@ Clojure runs in [a REPL process](/clojure/clojure-cli/repl/) that provides insta
 The REPL is [Clojure interactive environment](introduction/repl-workflow.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
 
 !!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
-    The most productive programmers I know are writing everything in Clojure and swearing by it and then just producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
+    The most productive programmers I know are writing everything in Clojure ... producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
 
 ## About the book
 
