@@ -19,6 +19,7 @@ HELP-DESCRIPTION-SPACING := 24
 
 # Tool Commands
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 
 # Makefile file and directory name wildcard
 EDN-FILES := $(wildcard *.edn)
@@ -49,11 +50,11 @@ lint-clean:  ## Clean MegaLinter report information
 
 docs:  ## Build and run mkdocs in local server
 	$(info --------- Mkdocs Local Server ---------)
-	mkdocs serve --dev-addr localhost:7777
+	$(MKDOCS_SERVER)
 
 docs-changed:  ## Build only changed files and run mkdocs in local server
 	$(info --------- Mkdocs Local Server ---------)
-	mkdocs serve --dirtyreload --dev-addr localhost:7777
+	$(MKDOCS_SERVER) --dirtyreload
 
 docs-build:  ## Build mkdocs
 	$(info --------- Mkdocs Local Server ---------)
