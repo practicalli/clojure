@@ -60,6 +60,43 @@ Once the tests pass and you are happy with the solution, submit it to the Exerci
 exercism submit /path/to/src-file
 ```
 
+
+## REPL Workflow
+
+Use a REPL workflow to get instant feedback on code written to make the unit test assersions pass.
+
+=== "Terminal UI"
+    Start a REPL via a Terminal UI in the root of the Exercism project
+
+    ```shell
+    clojure -M:repl/rebel
+    ```
+
+    Open the project in a [:fontawesome-solid-book-open: Clojure aware editor](/clojure/clojure-editors/) and connect to the REPL process.
+
+
+=== "Editor connected REPL"
+
+    Open the project in a [:fontawesome-solid-book-open: Clojure aware editor](/clojure/clojure-editors/) and start a Clojure REPL, e.g. jack-in
+
+
+REPL experiments are typically written within a `comment` function, referred to a a Rich Comment.  This separates experimental code from finished designs.
+
+
+!!! HINT "Disable Linter rules"
+    Disable Linter rules within the `comment` expression that are not useful for REPL experiments.
+
+    It is common to have several implmentations of a function with the same name, so `:redefined-var` is disabled.
+
+    Functions defined in the REPL experments are not ment to be used publicly (until they are copied/moved out of the comment form), so `:clojure-lsp/unused-public-var` lint rule is disabled
+    ```clojure
+    #_{:clj-kondo/ignore [:redefined-var :clojure-lsp/unused-public-var]}
+    (comment
+      ,,,
+    )
+    ```
+
+
 ## Support
 
 Mentors on the Exercism website will provide a review of your submissions and you can switch between mentor and practice modes as you prefer.
