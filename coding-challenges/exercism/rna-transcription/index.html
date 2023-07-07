@@ -26,14 +26,14 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../bob/">
+        <link rel="next" href="../nucleotide-count/">
       
       <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Exercise: RNA Transcription - Practicalli Clojure</title>
+        <title>RNA Transcription - Practicalli Clojure</title>
       
     
     
@@ -79,7 +79,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Exercise: RNA Transcription - Practicalli Clojure" >
+        <meta  property="og:title"  content="RNA Transcription - Practicalli Clojure" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -95,7 +95,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Exercise: RNA Transcription - Practicalli Clojure" >
+        <meta  name="twitter:title"  content="RNA Transcription - Practicalli Clojure" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -188,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Exercise: RNA Transcription
+              RNA Transcription
             
           </span>
         </div>
@@ -1512,6 +1512,8 @@
         
           
         
+          
+        
       
       
         
@@ -1550,12 +1552,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Exercise: RNA Transcription
+          RNA Transcription
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Exercise: RNA Transcription
+        RNA Transcription
       </a>
       
         
@@ -1595,16 +1597,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#refactor-and-streamline" class="md-nav__link">
-    Refactor and streamline
+  <a href="#refactor" class="md-nav__link">
+    Refactor
+  </a>
+  
+    <nav class="md-nav" aria-label="Refactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-map-as-function" class="md-nav__link">
+    Hash map as function
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#anonymous-function" class="md-nav__link">
+    Anonymous function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-dictionary-data" class="md-nav__link">
+    Named dictionary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#making-the-function-pure" class="md-nav__link">
     Making the function pure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1622,13 +1651,27 @@
   
   
   
+    <li class="md-nav__item">
+      <a href="../nucleotide-count/" class="md-nav__link">
+        Nucleotide Count
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
     
     <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3_4" >
       
       
         
@@ -1647,14 +1690,14 @@
         <div class="md-nav__link md-nav__link--index ">
           <a href="../bob/">Bob</a>
           
-            <label for="__nav_10_3_3">
+            <label for="__nav_10_3_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_3_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10_3_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3_4">
           <span class="md-nav__icon md-icon"></span>
           Bob
         </label>
@@ -5930,16 +5973,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#refactor-and-streamline" class="md-nav__link">
-    Refactor and streamline
+  <a href="#refactor" class="md-nav__link">
+    Refactor
+  </a>
+  
+    <nav class="md-nav" aria-label="Refactor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hash-map-as-function" class="md-nav__link">
+    Hash map as function
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#anonymous-function" class="md-nav__link">
+    Anonymous function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-dictionary-data" class="md-nav__link">
+    Named dictionary data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#making-the-function-pure" class="md-nav__link">
     Making the function pure
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -5976,6 +6046,7 @@
 
 <h1 id="exercise-rna-transcription">Exercise: RNA Transcription<a class="headerlink" href="#exercise-rna-transcription" title="Permanent link">λ︎</a></h1>
 <p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="RNA Transcription" src="https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true" /></a></p>
+<p><a class="md-button" href="https://exercism.org/tracks/clojure/exercises/rna-transcription" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure Track: Nucleotide Count</a></p>
 <p>Given a DNA strand, return its RNA complement (per RNA transcription).</p>
 <p>Both DNA and RNA strands are a sequence of nucleotides.</p>
 <p>The four nucleotides found in DNA are adenine (A), cytosine (C), guanine (G) and thymine (T).</p>
@@ -5989,15 +6060,18 @@
 </ul>
 <div class="admonition hint">
 <p class="admonition-title">Code for this solution on GitHub</p>
-<p><a href="https://github.com/practicalli/exercism-clojure-guides/">practicalli/exercism-clojure-guides</a> contains the design journal and solution to this exercise</p>
+<p><a href="https://github.com/practicalli/exercism-clojure-guides/">practicalli/exercism-clojure-guides</a> contains the design journal and solution to this exercise and many others.</p>
 </div>
 <h2 id="create-the-project">Create the project<a class="headerlink" href="#create-the-project" title="Permanent link">λ︎</a></h2>
 <p>Download the RNA transcription exercise using the exercism CLI tool</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>exercism<span class="w"> </span>download<span class="w"> </span>--exercise<span class="o">=</span>rna-transcription<span class="w"> </span>--track<span class="o">=</span>clojure
 </code></pre></div>
-<blockquote>
-<p>To use the Clojure CLI tool instead of Leiningen, create a <code>deps.edn</code> file containing an empty hash-map, <code>{}</code> and clone <a href="clojure/clojure-cli/practicalli-config.md"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> to <code>~/.clojure/</code>.</p>
-</blockquote>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Use the REPL workflow to explore solutions locally</p>
+<p>Open the project in a <a href="/clojure/clojure-editors">Clojure aware editor</a> and <a href="/clojure/coding-challenges/exercism/#repl-workflow">start a REPL</a>, using a rich comment form to experiment with code to solve the challenge.</p>
+</div>
 <h2 id="designing-the-solution">Designing the solution<a class="headerlink" href="#designing-the-solution" title="Permanent link">λ︎</a></h2>
 <p>To convert a collection of values, define a hash-map where the keys are the initial DNA values and the hash-map values are the transformed RNA values.  Using a hash-map in this way is often termed as a dictionary.</p>
 <p>A string is used as a collection of character values by many of the functions in <code>clojure.core</code>.  The dictionary uses characters for its keys and values.</p>
@@ -6050,6 +6124,8 @@
 <p>Unfortunately this approach will evaluate the throw expression regardless of if the nucleotide is found in the dictionary, so calling this version of the function always fails.</p>
 <p>The <code>or</code> function evaluate the first expression and if a true value is returned then any additional expressions are skipped over.</p>
 <p>If the first expression returns false or a falsey value, i.e. <code>nil</code>, then the next expression is evaluated.</p>
+<div class="admonition example">
+<p class="admonition-title">Proposed Solution</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">to-rna</span>
 <a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">dna</span><span class="p">]</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">clojure.string/join</span>
@@ -6057,28 +6133,37 @@
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">                             </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">AssertionError.</span><span class="w"> </span><span class="s">&quot;Unknown nucleotide&quot;</span><span class="p">))))</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">         </span><span class="nv">dna</span><span class="p">)))</span>
 </code></pre></div>
+</div>
+<p>Call the <code>to-rna</code> function with a DNA string from the unit test code</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">to-rna</span><span class="w"> </span><span class="s">&quot;GCTA&quot;</span><span class="p">)</span>
 </code></pre></div>
-<!-- ;; => "CGAU" -->
-
+</div>
+<p>The function should return <code>"CGAU"</code></p>
 <p>Call the <code>to-rna</code> function with a DNA string that contains an invalid nucleotide.</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">to-rna</span><span class="w"> </span><span class="s">&quot;GCXA&quot;</span><span class="p">)</span>
 </code></pre></div>
+</div>
 <p>An <code>AssertionError</code> is thrown as the <code>X</code> character does not exist in the dictionary hash-map, so the <code>get</code> expression returns <code>nil</code>.</p>
-<h2 id="refactor-and-streamline">Refactor and streamline<a class="headerlink" href="#refactor-and-streamline" title="Permanent link">λ︎</a></h2>
-<p>Now the function is working, some minor adjustments could be made to streamline the code.</p>
+<h2 id="refactor">Refactor<a class="headerlink" href="#refactor" title="Permanent link">λ︎</a></h2>
+<p>Now the function is solving unit tests, minor adjustments can be made to streamline the code.</p>
+<h3 id="hash-map-as-function">Hash map as function<a class="headerlink" href="#hash-map-as-function" title="Permanent link">λ︎</a></h3>
 <p>A hash-map can be called as a function and takes a key as an argument.  This acts the same as the <code>get</code> function, returning the value  associated to a matching key, otherwise returning <code>nil</code> or the not-found value if specified.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">to-rna</span>
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">dna</span><span class="p">]</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">clojure.string/join</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">nucleotide</span><span class="w"> </span><span class="p">](</span><span class="nb">or </span><span class="p">({</span><span class="sc">\G</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\U</span><span class="p">}</span><span class="w"> </span><span class="nv">nucleotide</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">nucleotide</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">({</span><span class="sc">\G</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\U</span><span class="p">}</span><span class="w"> </span><span class="nv">nucleotide</span><span class="p">)</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">                              </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">AssertionError.</span><span class="w"> </span><span class="s">&quot;Unknown nucleotide&quot;</span><span class="p">))))</span>
 <a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">         </span><span class="nv">dna</span><span class="p">)))</span>
 </code></pre></div>
-<p>The anonymous function has a terser form.</p>
+<h3 id="anonymous-function">Anonymous function<a class="headerlink" href="#anonymous-function" title="Permanent link">λ︎</a></h3>
+<p>The anonymous function, <code>fn</code>, has a terse form.</p>
 <p><code>#(* %1 %2)</code> is the same as <code>(fn [value1 value2] (+ value1 value2))</code></p>
-<p>This syntax sugar is often use with <code>map</code>, <code>reduce</code>, <code>apply</code> functions as the function definition tends to be compact and of single use.</p>
+<p>This syntax sugar is often use with <code>map</code>, <code>reduce</code>, <code>apply</code> functions as the behaviour tends to be compact and of single use.</p>
 <p>If the function definition is more complex or used elsewhere in the namespace, then the <code>defn</code> function should be used to define shared behavior.</p>
+<div class="admonition example">
+<p class="admonition-title">Solution with anonymous function</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">to-rna</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">dna</span><span class="p">]</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">clojure.string/join</span>
@@ -6086,10 +6171,18 @@
 <a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">              </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">AssertionError.</span><span class="w"> </span><span class="s">&quot;Unknown nucleotide&quot;</span><span class="p">)))</span>
 <a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">         </span><span class="nv">dna</span><span class="w"> </span><span class="p">)))</span>
 </code></pre></div>
+</div>
+<h3 id="named-dictionary-data">Named dictionary data<a class="headerlink" href="#named-dictionary-data" title="Permanent link">λ︎</a></h3>
 <p>Replace the hard-coded hash-map by defining a name for the dictionary.</p>
+<div class="admonition example">
+<p class="admonition-title">Define a name to represent the dictionary data</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">dictionary-dna-rna</span><span class="w"> </span><span class="p">{</span><span class="sc">\G</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\A</span><span class="w"> </span><span class="sc">\U</span><span class="p">})</span>
 </code></pre></div>
+</div>
 <p>Refactor the <code>to-rna</code> function to use the dictionary by name.</p>
+<div class="admonition example">
+<p class="admonition-title">Solution using named dictionary data</p>
+</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">to-rna</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">dna</span><span class="p">]</span>
 <a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">clojure.string/join</span>
@@ -6097,10 +6190,12 @@
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="w">              </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">AssertionError.</span><span class="w"> </span><span class="s">&quot;Unknown nucleotide&quot;</span><span class="p">)))</span>
 <a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="w">         </span><span class="nv">dna</span><span class="p">)))</span>
 </code></pre></div>
-<h2 id="making-the-function-pure">Making the function pure<a class="headerlink" href="#making-the-function-pure" title="Permanent link">λ︎</a></h2>
+<h3 id="making-the-function-pure">Making the function pure<a class="headerlink" href="#making-the-function-pure" title="Permanent link">λ︎</a></h3>
 <p>Its beyond the scope of the Exercism challenge, however, its recommended to use pure functions where possible.</p>
 <p>A pure function only uses data from its arguments.</p>
 <p>Adding a dictionary as an argument to the <code>to-rna</code> function would be simple.</p>
+<div class="admonition example">
+<p class="admonition-title">Pure function approach</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">to-rna</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">dictionary</span><span class="w"> </span><span class="nv">dna</span><span class="p">]</span>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">clojure.string/join</span>
@@ -6108,17 +6203,20 @@
 <a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">              </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">AssertionError.</span><span class="w"> </span><span class="s">&quot;Unknown nucleotide&quot;</span><span class="p">)))</span>
 <a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">         </span><span class="nv">dna</span><span class="w"> </span><span class="p">)))</span>
 </code></pre></div>
+</div>
 <p>With a dictionary as an argument the function is also more usable, as other dictionaries could be used with the function.</p>
 <p>The function would now be called as follows</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="nf">to-rna</span><span class="w"> </span><span class="nv">dictionary-dna-rna</span><span class="w"> </span><span class="s">&quot;GTGAC&quot;</span><span class="p">)</span>
 </code></pre></div>
+</div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 4, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2023</span>
       
     
   </small>
@@ -6169,13 +6267,13 @@
         
         
           
-          <a href="../bob/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+          <a href="../nucleotide-count/" class="md-footer__link md-footer__link--next" aria-label="Next: Nucleotide Count" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Index
+                Nucleotide Count
               </div>
             </div>
             <div class="md-footer__button md-icon">

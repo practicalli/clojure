@@ -20,23 +20,27 @@
         <meta name="author" content="Practicalli">
       
       
-        <link rel="canonical" href="https://practical.li/clojure/lighttable/">
+        <link rel="canonical" href="https://practical.li/clojure/coding-challenges/exercism/nucleotide-count/">
       
       
+        <link rel="prev" href="../rna-transcription/">
       
-      <link rel="icon" href="../assets/favicon.svg">
+      
+        <link rel="next" href="../bob/">
+      
+      <link rel="icon" href="../../../assets/favicon.svg">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
     
     
       
-        <title>Lighttable - Practicalli Clojure</title>
+        <title>Nucleotide Count - Practicalli Clojure</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
       
       
 
@@ -52,9 +56,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -75,11 +79,11 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Lighttable - Practicalli Clojure" >
+        <meta  property="og:title"  content="Nucleotide Count - Practicalli Clojure" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
-        <meta  property="og:image"  content="https://practical.li/clojure/assets/images/social/lighttable/index.png" >
+        <meta  property="og:image"  content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/nucleotide-count.png" >
       
         <meta  property="og:image:type"  content="image/png" >
       
@@ -87,19 +91,19 @@
       
         <meta  property="og:image:height"  content="630" >
       
-        <meta  property="og:url"  content="https://practical.li/clojure/lighttable/" >
+        <meta  property="og:url"  content="https://practical.li/clojure/coding-challenges/exercism/nucleotide-count/" >
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Lighttable - Practicalli Clojure" >
+        <meta  name="twitter:title"  content="Nucleotide Count - Practicalli Clojure" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
-        <meta  name="twitter:image"  content="https://practical.li/clojure/assets/images/social/lighttable/index.png" >
+        <meta  name="twitter:image"  content="https://practical.li/clojure/assets/images/social/coding-challenges/exercism/nucleotide-count.png" >
       
     
     
-   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -110,7 +114,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -132,7 +136,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lighttable" class="md-skip">
+        <a href="#nucleotide-count" class="md-skip">
           Skip to content
         </a>
       
@@ -166,9 +170,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Practicalli Clojure" class="md-header__button md-logo" aria-label="Practicalli Clojure" data-md-component="logo">
+    <a href="../../.." title="Practicalli Clojure" class="md-header__button md-logo" aria-label="Practicalli Clojure" data-md-component="logo">
       
-  <img src="../assets/images/practicalli-logo.png" alt="logo">
+  <img src="../../../assets/images/practicalli-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -184,7 +188,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Lighttable
+              Nucleotide Count
             
           </span>
         </div>
@@ -289,9 +293,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Practicalli Clojure" class="md-nav__button md-logo" aria-label="Practicalli Clojure" data-md-component="logo">
+    <a href="../../.." title="Practicalli Clojure" class="md-nav__button md-logo" aria-label="Practicalli Clojure" data-md-component="logo">
       
-  <img src="../assets/images/practicalli-logo.png" alt="logo">
+  <img src="../../../assets/images/practicalli-logo.png" alt="logo">
 
     </a>
     Practicalli Clojure
@@ -347,7 +351,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="..">Introduction</a>
+          <a href="../../..">Introduction</a>
           
             <label for="__nav_1">
               <span class="md-nav__icon md-icon"></span>
@@ -370,7 +374,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/clojure-in-15-minutes/" class="md-nav__link">
+      <a href="../../../introduction/clojure-in-15-minutes/" class="md-nav__link">
         Clojure in Fifteen Mins
       </a>
     </li>
@@ -384,7 +388,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/repl-workflow/" class="md-nav__link">
+      <a href="../../../introduction/repl-workflow/" class="md-nav__link">
         REPL Workflow
       </a>
     </li>
@@ -420,7 +424,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../introduction/concepts/">Concepts</a>
+          <a href="../../../introduction/concepts/">Concepts</a>
           
             <label for="__nav_1_4">
               <span class="md-nav__icon md-icon"></span>
@@ -443,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/concepts/what-is-functional-programming/" class="md-nav__link">
+      <a href="../../../introduction/concepts/what-is-functional-programming/" class="md-nav__link">
         Functional vs Imperative
       </a>
     </li>
@@ -457,7 +461,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/concepts/clojure-made-simple/" class="md-nav__link">
+      <a href="../../../introduction/concepts/clojure-made-simple/" class="md-nav__link">
         From The Author
       </a>
     </li>
@@ -478,7 +482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/contributing/" class="md-nav__link">
+      <a href="../../../introduction/contributing/" class="md-nav__link">
         Contributing
       </a>
     </li>
@@ -492,7 +496,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../introduction/writing-tips/" class="md-nav__link">
+      <a href="../../../introduction/writing-tips/" class="md-nav__link">
         Writing Tips
       </a>
     </li>
@@ -536,7 +540,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../install/">Install</a>
+          <a href="../../../install/">Install</a>
           
             <label for="__nav_2">
               <span class="md-nav__icon md-icon"></span>
@@ -559,7 +563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install/java/" class="md-nav__link">
+      <a href="../../../install/java/" class="md-nav__link">
         Java Host
       </a>
     </li>
@@ -573,7 +577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../install/clojure-cli/" class="md-nav__link">
+      <a href="../../../install/clojure-cli/" class="md-nav__link">
         Clojure CLI
       </a>
     </li>
@@ -625,7 +629,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-cli/">Clojure CLI Overview</a>
+          <a href="../../../clojure-cli/">Clojure CLI Overview</a>
           
             <label for="__nav_3">
               <span class="md-nav__icon md-icon"></span>
@@ -648,7 +652,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/practicalli-config/" class="md-nav__link">
+      <a href="../../../clojure-cli/practicalli-config/" class="md-nav__link">
         Practicalli Config
       </a>
     </li>
@@ -662,7 +666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/built-in-commands/" class="md-nav__link">
+      <a href="../../../clojure-cli/built-in-commands/" class="md-nav__link">
         Built-in Commands
       </a>
     </li>
@@ -676,7 +680,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/defining-aliases/" class="md-nav__link">
+      <a href="../../../clojure-cli/defining-aliases/" class="md-nav__link">
         Defining aliases
       </a>
     </li>
@@ -690,7 +694,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/execution-options/" class="md-nav__link">
+      <a href="../../../clojure-cli/execution-options/" class="md-nav__link">
         Execution Options
       </a>
     </li>
@@ -704,7 +708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl-reloaded/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl-reloaded/" class="md-nav__link">
         REPL Reloaded
       </a>
     </li>
@@ -718,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/clojure-style/" class="md-nav__link">
+      <a href="../../../clojure-cli/clojure-style/" class="md-nav__link">
         Clojure Style
       </a>
     </li>
@@ -766,7 +770,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-cli/repl/">Terminal REPL</a>
+          <a href="../../../clojure-cli/repl/">Terminal REPL</a>
           
             <label for="__nav_4">
               <span class="md-nav__icon md-icon"></span>
@@ -789,7 +793,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl/coding/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl/coding/" class="md-nav__link">
         REPL Coding
       </a>
     </li>
@@ -803,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl/libraries/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl/libraries/" class="md-nav__link">
         REPL Libraries
       </a>
     </li>
@@ -817,7 +821,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl/help/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl/help/" class="md-nav__link">
         REPL Help
       </a>
     </li>
@@ -831,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl/troubleshooting/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl/troubleshooting/" class="md-nav__link">
         REPL troubleshoot
       </a>
     </li>
@@ -853,7 +857,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/repl-startup/" class="md-nav__link">
+      <a href="../../../clojure-cli/repl-startup/" class="md-nav__link">
         REPL Startup
       </a>
     </li>
@@ -900,7 +904,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-cli/projects/">Clojure Projects</a>
+          <a href="../../../clojure-cli/projects/">Clojure Projects</a>
           
             <label for="__nav_6">
               <span class="md-nav__icon md-icon"></span>
@@ -941,7 +945,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-cli/projects/templates/">Template Projects</a>
+          <a href="../../../clojure-cli/projects/templates/">Template Projects</a>
           
         </div>
       
@@ -967,7 +971,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/add-libraries/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/add-libraries/" class="md-nav__link">
         Add Libraries
       </a>
     </li>
@@ -981,7 +985,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/namespace/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/namespace/" class="md-nav__link">
         Namespaces
       </a>
     </li>
@@ -995,7 +999,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/rich-comments/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/rich-comments/" class="md-nav__link">
         Rich Comment
       </a>
     </li>
@@ -1009,7 +1013,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/hotload-in-project/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/hotload-in-project/" class="md-nav__link">
         Hotload in Project
       </a>
     </li>
@@ -1023,7 +1027,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/migrate-project/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/migrate-project/" class="md-nav__link">
         Migrate projects
       </a>
     </li>
@@ -1057,7 +1061,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-cli/projects/package/">Package</a>
+          <a href="../../../clojure-cli/projects/package/">Package</a>
           
             <label for="__nav_6_8">
               <span class="md-nav__icon md-icon"></span>
@@ -1080,7 +1084,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-cli/projects/package/tools-build/" class="md-nav__link">
+      <a href="../../../clojure-cli/projects/package/tools-build/" class="md-nav__link">
         tools.build
       </a>
     </li>
@@ -1129,7 +1133,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-editors/">Clojure Editors</a>
+          <a href="../../../clojure-editors/">Clojure Editors</a>
           
             <label for="__nav_7">
               <span class="md-nav__icon md-icon"></span>
@@ -1174,7 +1178,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-editors/clojure-lsp/">Clojure LSP</a>
+          <a href="../../../clojure-editors/clojure-lsp/">Clojure LSP</a>
           
             <label for="__nav_7_2">
               <span class="md-nav__icon md-icon"></span>
@@ -1197,7 +1201,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-editors/clojure-lsp/snippets/" class="md-nav__link">
+      <a href="../../../clojure-editors/clojure-lsp/snippets/" class="md-nav__link">
         Clojure LSP Snippets
       </a>
     </li>
@@ -1211,7 +1215,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-editors/clojure-lsp/practicalli-snippets/" class="md-nav__link">
+      <a href="../../../clojure-editors/clojure-lsp/practicalli-snippets/" class="md-nav__link">
         Practicalli Snippets
       </a>
     </li>
@@ -1260,7 +1264,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../automation/">Automation</a>
+          <a href="../../../automation/">Automation</a>
           
             <label for="__nav_8">
               <span class="md-nav__icon md-icon"></span>
@@ -1283,7 +1287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../automation/make/" class="md-nav__link">
+      <a href="../../../automation/make/" class="md-nav__link">
         Make
       </a>
     </li>
@@ -1327,7 +1331,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../data-inspector/">Data Inspectors</a>
+          <a href="../../../data-inspector/">Data Inspectors</a>
           
             <label for="__nav_9">
               <span class="md-nav__icon md-icon"></span>
@@ -1350,7 +1354,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-inspector/clojure-inspector/" class="md-nav__link">
+      <a href="../../../data-inspector/clojure-inspector/" class="md-nav__link">
         Clojure Inspector
       </a>
     </li>
@@ -1364,7 +1368,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-inspector/portal/" class="md-nav__link">
+      <a href="../../../data-inspector/portal/" class="md-nav__link">
         Portal
       </a>
     </li>
@@ -1384,14 +1388,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
       
       
         
@@ -1420,7 +1426,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../coding-challenges/">Code Challenges</a>
+          <a href="../../">Code Challenges</a>
           
             <label for="__nav_10">
               <span class="md-nav__icon md-icon"></span>
@@ -1428,7 +1434,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_10">
           <span class="md-nav__icon md-icon"></span>
           Code Challenges
@@ -1461,7 +1467,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../coding-challenges/4clojure/">4 Ever Clojure</a>
+          <a href="../../4clojure/">4 Ever Clojure</a>
           
         </div>
       
@@ -1485,14 +1491,16 @@
               
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" checked>
       
       
         
@@ -1504,12 +1512,14 @@
         
           
         
+          
+        
       
       
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../coding-challenges/exercism/">Exercism</a>
+          <a href="../">Exercism</a>
           
             <label for="__nav_10_3">
               <span class="md-nav__icon md-icon"></span>
@@ -1517,7 +1527,7 @@
           
         </div>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_10_3">
           <span class="md-nav__icon md-icon"></span>
           Exercism
@@ -1532,9 +1542,119 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-challenges/exercism/rna-transcription/" class="md-nav__link">
-        Exercise: RNA Transcription
+      <a href="../rna-transcription/" class="md-nav__link">
+        RNA Transcription
       </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Nucleotide Count
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Nucleotide Count
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    Create the project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-point" class="md-nav__link">
+    Starting point
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-tests-pass" class="md-nav__link">
+    Making the tests pass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-nucleotides" class="md-nav__link">
+    Counting nucleotides
+  </a>
+  
+    <nav class="md-nav" aria-label="Counting nucleotides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-unit-tests" class="md-nav__link">
+    Run unit tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nucleotide-occurances" class="md-nav__link">
+    Nucleotide occurances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hammock-time" class="md-nav__link">
+    Hammock time...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1551,7 +1671,7 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3_3" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3_4" >
       
       
         
@@ -1568,16 +1688,16 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../coding-challenges/exercism/bob/">Bob</a>
+          <a href="../bob/">Bob</a>
           
-            <label for="__nav_10_3_3">
+            <label for="__nav_10_3_4">
               <span class="md-nav__icon md-icon"></span>
             </label>
           
         </div>
       
-      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_3_3_label" aria-expanded="false">
-        <label class="md-nav__title" for="__nav_10_3_3">
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_10_3_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10_3_4">
           <span class="md-nav__icon md-icon"></span>
           Bob
         </label>
@@ -1591,7 +1711,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-challenges/exercism/bob/bob-string-approach/" class="md-nav__link">
+      <a href="../bob/bob-string-approach/" class="md-nav__link">
         Bob string approach
       </a>
     </li>
@@ -1605,7 +1725,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-challenges/exercism/bob/bob-regular-expression-approach/" class="md-nav__link">
+      <a href="../bob/bob-regular-expression-approach/" class="md-nav__link">
         Bob solution - regex
       </a>
     </li>
@@ -1661,7 +1781,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../simple-projects/">Simple projects</a>
+          <a href="../../../simple-projects/">Simple projects</a>
           
             <label for="__nav_10_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1684,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/random-clojure-function/" class="md-nav__link">
+      <a href="../../../simple-projects/random-clojure-function/" class="md-nav__link">
         Random Function
       </a>
     </li>
@@ -1698,7 +1818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/tripple-lock/" class="md-nav__link">
+      <a href="../../../simple-projects/tripple-lock/" class="md-nav__link">
         Tripple Lock
       </a>
     </li>
@@ -1738,7 +1858,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../simple-projects/encode-decode/">Encoder Decode</a>
+          <a href="../../../simple-projects/encode-decode/">Encoder Decode</a>
           
             <label for="__nav_10_4_4">
               <span class="md-nav__icon md-icon"></span>
@@ -1761,7 +1881,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/encode-decode/convert-boolean-values/" class="md-nav__link">
+      <a href="../../../simple-projects/encode-decode/convert-boolean-values/" class="md-nav__link">
         Convert boolean values
       </a>
     </li>
@@ -1775,7 +1895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/encode-decode/caesar-cipher-rot13/" class="md-nav__link">
+      <a href="../../../simple-projects/encode-decode/caesar-cipher-rot13/" class="md-nav__link">
         Caesar Cipher ROT13
       </a>
     </li>
@@ -1789,7 +1909,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/encode-decode/rna-dna/" class="md-nav__link">
+      <a href="../../../simple-projects/encode-decode/rna-dna/" class="md-nav__link">
         RNA to DNA transcription
       </a>
     </li>
@@ -1803,7 +1923,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/encode-decode/clacks/" class="md-nav__link">
+      <a href="../../../simple-projects/encode-decode/clacks/" class="md-nav__link">
         Clacks Messages
       </a>
     </li>
@@ -1844,7 +1964,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../simple-projects/data-transformation/">Data Transform</a>
+          <a href="../../../simple-projects/data-transformation/">Data Transform</a>
           
             <label for="__nav_10_4_5">
               <span class="md-nav__icon md-icon"></span>
@@ -1867,7 +1987,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/data-transformation/most-common-word/" class="md-nav__link">
+      <a href="../../../simple-projects/data-transformation/most-common-word/" class="md-nav__link">
         Most common word
       </a>
     </li>
@@ -1908,7 +2028,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../simple-projects/mutating-state/">Mutating State</a>
+          <a href="../../../simple-projects/mutating-state/">Mutating State</a>
           
             <label for="__nav_10_4_6">
               <span class="md-nav__icon md-icon"></span>
@@ -1931,7 +2051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/mutating-state/mutants-assemble/" class="md-nav__link">
+      <a href="../../../simple-projects/mutating-state/mutants-assemble/" class="md-nav__link">
         Mutants Assemble
       </a>
     </li>
@@ -1981,7 +2101,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../simple-projects/tdd-kata/">TDD Kata</a>
+          <a href="../../../simple-projects/tdd-kata/">TDD Kata</a>
           
             <label for="__nav_10_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2004,7 +2124,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/tdd-kata/recent-song-list/" class="md-nav__link">
+      <a href="../../../simple-projects/tdd-kata/recent-song-list/" class="md-nav__link">
         Recent Song list
       </a>
     </li>
@@ -2018,7 +2138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../simple-projects/tdd-kata/salary-slip-generator/" class="md-nav__link">
+      <a href="../../../simple-projects/tdd-kata/salary-slip-generator/" class="md-nav__link">
         Salary Slip Generator
       </a>
     </li>
@@ -2039,7 +2159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-challenges/codewars/" class="md-nav__link">
+      <a href="../../codewars/" class="md-nav__link">
         CodeWars
       </a>
     </li>
@@ -2053,7 +2173,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../coding-challenges/advent-of-code/" class="md-nav__link">
+      <a href="../../advent-of-code/" class="md-nav__link">
         Advent Of Code
       </a>
     </li>
@@ -2087,7 +2207,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../games/">Games</a>
+          <a href="../../../games/">Games</a>
           
             <label for="__nav_10_8">
               <span class="md-nav__icon md-icon"></span>
@@ -2128,7 +2248,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../games/tictactoe-cli/">TicTacToe</a>
+          <a href="../../../games/tictactoe-cli/">TicTacToe</a>
           
         </div>
       
@@ -2191,7 +2311,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../testing/">Testing</a>
+          <a href="../../../testing/">Testing</a>
           
             <label for="__nav_11">
               <span class="md-nav__icon md-icon"></span>
@@ -2238,7 +2358,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../testing/unit-testing/">Unit Testing</a>
+          <a href="../../../testing/unit-testing/">Unit Testing</a>
           
             <label for="__nav_11_2">
               <span class="md-nav__icon md-icon"></span>
@@ -2261,7 +2381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/unit-testing/writing-unit-tests/" class="md-nav__link">
+      <a href="../../../testing/unit-testing/writing-unit-tests/" class="md-nav__link">
         Writing Tests
       </a>
     </li>
@@ -2275,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/unit-testing/fixtures/" class="md-nav__link">
+      <a href="../../../testing/unit-testing/fixtures/" class="md-nav__link">
         Fixtures
       </a>
     </li>
@@ -2289,7 +2409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/unit-testing/test-selectors/" class="md-nav__link">
+      <a href="../../../testing/unit-testing/test-selectors/" class="md-nav__link">
         Test Selectors
       </a>
     </li>
@@ -2334,7 +2454,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../testing/test-runners/">Test runners</a>
+          <a href="../../../testing/test-runners/">Test runners</a>
           
             <label for="__nav_11_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2357,7 +2477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/test-runners/kaocha-test-runner/" class="md-nav__link">
+      <a href="../../../testing/test-runners/kaocha-test-runner/" class="md-nav__link">
         Kaocha
       </a>
     </li>
@@ -2371,7 +2491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/test-runners/congnitect-labs-test-runner/" class="md-nav__link">
+      <a href="../../../testing/test-runners/congnitect-labs-test-runner/" class="md-nav__link">
         Cognitect Labs
       </a>
     </li>
@@ -2385,7 +2505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../testing/test-runners/example-projects/" class="md-nav__link">
+      <a href="../../../testing/test-runners/example-projects/" class="md-nav__link">
         Example Projects
       </a>
     </li>
@@ -2446,7 +2566,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/">Clojure Spec</a>
+          <a href="../../../clojure-spec/">Clojure Spec</a>
           
             <label for="__nav_12">
               <span class="md-nav__icon md-icon"></span>
@@ -2469,7 +2589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/using-spec-in-the-repl/" class="md-nav__link">
+      <a href="../../../clojure-spec/using-spec-in-the-repl/" class="md-nav__link">
         REPL Experiments
       </a>
     </li>
@@ -2483,7 +2603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/add-spec-to-projects/" class="md-nav__link">
+      <a href="../../../clojure-spec/add-spec-to-projects/" class="md-nav__link">
         Project config
       </a>
     </li>
@@ -2497,7 +2617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/organising-specs/" class="md-nav__link">
+      <a href="../../../clojure-spec/organising-specs/" class="md-nav__link">
         Organise spec
       </a>
     </li>
@@ -2553,7 +2673,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/data/">Data Specs</a>
+          <a href="../../../clojure-spec/data/">Data Specs</a>
           
             <label for="__nav_12_5">
               <span class="md-nav__icon md-icon"></span>
@@ -2576,7 +2696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/predicate-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/predicate-specifications/" class="md-nav__link">
         Predicate functions
       </a>
     </li>
@@ -2590,7 +2710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/literal-values/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/literal-values/" class="md-nav__link">
         Literal values
       </a>
     </li>
@@ -2604,7 +2724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/conform/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/conform/" class="md-nav__link">
         Conform
       </a>
     </li>
@@ -2618,7 +2738,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/valid-q/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/valid-q/" class="md-nav__link">
         Is the value valid?
       </a>
     </li>
@@ -2632,7 +2752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/explain/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/explain/" class="md-nav__link">
         Explaining non-conforming values
       </a>
     </li>
@@ -2646,7 +2766,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/defining-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/defining-specifications/" class="md-nav__link">
         Defining specifications
       </a>
     </li>
@@ -2660,7 +2780,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/registry/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/registry/" class="md-nav__link">
         Registry for unique and re-usable specifications
       </a>
     </li>
@@ -2674,7 +2794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/entity-maps/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/entity-maps/" class="md-nav__link">
         Entity maps
       </a>
     </li>
@@ -2688,7 +2808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/map-literals/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/map-literals/" class="md-nav__link">
         Map literal syntax - `#:` and `#::`
       </a>
     </li>
@@ -2702,7 +2822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/and-or-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/and-or-specifications/" class="md-nav__link">
         Combining specifications with and and or
       </a>
     </li>
@@ -2716,7 +2836,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/composite-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/composite-specifications/" class="md-nav__link">
         Composing Specifications
       </a>
     </li>
@@ -2730,7 +2850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/hierarchical-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/data/hierarchical-specifications/" class="md-nav__link">
         Hierarchical Specifications
       </a>
     </li>
@@ -2775,7 +2895,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/functions/">Function Specs</a>
+          <a href="../../../clojure-spec/functions/">Function Specs</a>
           
             <label for="__nav_12_6">
               <span class="md-nav__icon md-icon"></span>
@@ -2798,7 +2918,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/functions/function-definition-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/functions/function-definition-specifications/" class="md-nav__link">
         Function definition specifications
       </a>
     </li>
@@ -2812,7 +2932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/functions/documentation/" class="md-nav__link">
+      <a href="../../../clojure-spec/functions/documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -2826,7 +2946,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/functions/higher-order-functions/" class="md-nav__link">
+      <a href="../../../clojure-spec/functions/higher-order-functions/" class="md-nav__link">
         Higher order functions
       </a>
     </li>
@@ -2869,7 +2989,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/testing/">Testing</a>
+          <a href="../../../clojure-spec/testing/">Testing</a>
           
             <label for="__nav_12_7">
               <span class="md-nav__icon md-icon"></span>
@@ -2892,7 +3012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/testing/checking%20arguments/" class="md-nav__link">
+      <a href="../../../clojure-spec/testing/checking%20arguments/" class="md-nav__link">
         Checking arguments in function calls with specifications
       </a>
     </li>
@@ -2932,7 +3052,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/generative-testing/">Generative Testing</a>
+          <a href="../../../clojure-spec/generative-testing/">Generative Testing</a>
           
             <label for="__nav_12_7_3">
               <span class="md-nav__icon md-icon"></span>
@@ -2955,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/generative-testing/predicate-generators/" class="md-nav__link">
+      <a href="../../../clojure-spec/generative-testing/predicate-generators/" class="md-nav__link">
         Generators for predicate specifications
       </a>
     </li>
@@ -2969,7 +3089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/generative-testing/example-projects/" class="md-nav__link">
+      <a href="../../../clojure-spec/generative-testing/example-projects/" class="md-nav__link">
         Example projects using Clojure Spec
       </a>
     </li>
@@ -2983,7 +3103,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/generative-testing/example-projects/next-jdbc/" class="md-nav__link">
+      <a href="../../../clojure-spec/generative-testing/example-projects/next-jdbc/" class="md-nav__link">
         Projects using Clojure spec - next-jdbc
       </a>
     </li>
@@ -3033,7 +3153,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/projects/">Spec Project</a>
+          <a href="../../../clojure-spec/projects/">Spec Project</a>
           
             <label for="__nav_12_8">
               <span class="md-nav__icon md-icon"></span>
@@ -3074,7 +3194,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/projects/card-game/">Playing Cards</a>
+          <a href="../../../clojure-spec/projects/card-game/">Playing Cards</a>
           
         </div>
       
@@ -3134,7 +3254,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../clojure-spec/projects/bank-account/">Bank Account</a>
+          <a href="../../../clojure-spec/projects/bank-account/">Bank Account</a>
           
             <label for="__nav_12_8_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3157,7 +3277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/write-failing-tests/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/write-failing-tests/" class="md-nav__link">
         Write failing tests
       </a>
     </li>
@@ -3171,7 +3291,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/customer-details-specification/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/customer-details-specification/" class="md-nav__link">
         Customer details specification
       </a>
     </li>
@@ -3185,7 +3305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/validate-customer-details-specification/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/validate-customer-details-specification/" class="md-nav__link">
         Testing data Specifications
       </a>
     </li>
@@ -3199,7 +3319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/account-holder-specification/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/account-holder-specification/" class="md-nav__link">
         Account holder specification
       </a>
     </li>
@@ -3213,7 +3333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/generate-test-data/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/generate-test-data/" class="md-nav__link">
         Generate test data
       </a>
     </li>
@@ -3227,7 +3347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/unit-tests-with-spec/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/unit-tests-with-spec/" class="md-nav__link">
         Unit tests with specs
       </a>
     </li>
@@ -3241,7 +3361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/function-specifications/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/function-specifications/" class="md-nav__link">
         Specifications for function definitions - `fdef`
       </a>
     </li>
@@ -3255,7 +3375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/projects/bank-account/test-functions-against-spec/" class="md-nav__link">
+      <a href="../../../clojure-spec/projects/bank-account/test-functions-against-spec/" class="md-nav__link">
         Test functions against spec
       </a>
     </li>
@@ -3313,7 +3433,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../continuous-integration/">Continuous Integration</a>
+          <a href="../../../continuous-integration/">Continuous Integration</a>
           
             <label for="__nav_13">
               <span class="md-nav__icon md-icon"></span>
@@ -3358,7 +3478,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../continuous-integration/circle-ci/">Circle CI</a>
+          <a href="../../../continuous-integration/circle-ci/">Circle CI</a>
           
             <label for="__nav_13_2">
               <span class="md-nav__icon md-icon"></span>
@@ -3381,7 +3501,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../continuous-integration/circle-ci/random-clojure-function/" class="md-nav__link">
+      <a href="../../../continuous-integration/circle-ci/random-clojure-function/" class="md-nav__link">
         Random Clojure Function
       </a>
     </li>
@@ -3395,7 +3515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../continuous-integration/circle-ci/status-monitor/" class="md-nav__link">
+      <a href="../../../continuous-integration/circle-ci/status-monitor/" class="md-nav__link">
         Status Monitor Circle CI Continuous Integration
       </a>
     </li>
@@ -3434,7 +3554,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../continuous-integration/github-workflow/">GitHub Workflow</a>
+          <a href="../../../continuous-integration/github-workflow/">GitHub Workflow</a>
           
         </div>
       
@@ -3508,7 +3628,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/">Reference</a>
+          <a href="../../../reference/">Reference</a>
           
             <label for="__nav_14">
               <span class="md-nav__icon md-icon"></span>
@@ -3531,7 +3651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/quick-reference/" class="md-nav__link">
+      <a href="../../../quickstart/quick-reference/" class="md-nav__link">
         Clojure Quick Reference
       </a>
     </li>
@@ -3569,7 +3689,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/clojure-cli/">Clojure CLI</a>
+          <a href="../../../reference/clojure-cli/">Clojure CLI</a>
           
             <label for="__nav_14_3">
               <span class="md-nav__icon md-icon"></span>
@@ -3592,7 +3712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-cli/defining-aliases.md" class="md-nav__link">
+      <a href="../../../reference/clojure-cli/defining-aliases.md" class="md-nav__link">
         None
       </a>
     </li>
@@ -3606,7 +3726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-cli/example-alias-definitions/" class="md-nav__link">
+      <a href="../../../reference/clojure-cli/example-alias-definitions/" class="md-nav__link">
         Common alias definitions
       </a>
     </li>
@@ -3620,7 +3740,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-cli/jvm-options/" class="md-nav__link">
+      <a href="../../../reference/clojure-cli/jvm-options/" class="md-nav__link">
         Reference: Clojure CLI JVM Options
       </a>
     </li>
@@ -3641,7 +3761,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/code-analysis/" class="md-nav__link">
+      <a href="../../../reference/code-analysis/" class="md-nav__link">
         Code Analysis
       </a>
     </li>
@@ -3681,7 +3801,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/standard-library/">Standard Library</a>
+          <a href="../../../reference/standard-library/">Standard Library</a>
           
             <label for="__nav_14_5">
               <span class="md-nav__icon md-icon"></span>
@@ -3704,7 +3824,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/destructuring/" class="md-nav__link">
+      <a href="../../../reference/standard-library/destructuring/" class="md-nav__link">
         Destructuring
       </a>
     </li>
@@ -3718,7 +3838,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/predicate-functions/" class="md-nav__link">
+      <a href="../../../reference/standard-library/predicate-functions/" class="md-nav__link">
         Predicate functions
       </a>
     </li>
@@ -3764,7 +3884,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/standard-library/regular-expressions/">Regular Expressions</a>
+          <a href="../../../reference/standard-library/regular-expressions/">Regular Expressions</a>
           
             <label for="__nav_14_5_4">
               <span class="md-nav__icon md-icon"></span>
@@ -3787,7 +3907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/matching-with-groups/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/matching-with-groups/" class="md-nav__link">
         Matching with regex groups
       </a>
     </li>
@@ -3801,7 +3921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/matching-sub-strings/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/matching-sub-strings/" class="md-nav__link">
         Matching sub strings
       </a>
     </li>
@@ -3815,7 +3935,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/matching-sub-sequences/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/matching-sub-sequences/" class="md-nav__link">
         Matching sub sequences
       </a>
     </li>
@@ -3829,7 +3949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/common-regex-patterns/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/common-regex-patterns/" class="md-nav__link">
         Common Regular Expression patterns
       </a>
     </li>
@@ -3843,7 +3963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/string-replace-with-regex/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/string-replace-with-regex/" class="md-nav__link">
         String replace with regex
       </a>
     </li>
@@ -3857,7 +3977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/string-split-with-regex/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/string-split-with-regex/" class="md-nav__link">
         String split with regex
       </a>
     </li>
@@ -3871,7 +3991,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/regular-expressions/sub-expression-matches/" class="md-nav__link">
+      <a href="../../../reference/standard-library/regular-expressions/sub-expression-matches/" class="md-nav__link">
         Sub-expression Matches
       </a>
     </li>
@@ -3892,7 +4012,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/standard-library/cond-thread-macro/" class="md-nav__link">
+      <a href="../../../reference/standard-library/cond-thread-macro/" class="md-nav__link">
         Clojure cond->
       </a>
     </li>
@@ -3946,7 +4066,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/java-interop/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/java-interop/" class="md-nav__link">
         Java Interoperability
       </a>
     </li>
@@ -3960,7 +4080,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/more-java-fun/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/more-java-fun/" class="md-nav__link">
         More Java fun
       </a>
     </li>
@@ -4027,7 +4147,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/tagged-literals/">Clojure Syntax</a>
+          <a href="../../../reference/tagged-literals/">Clojure Syntax</a>
           
             <label for="__nav_14_7">
               <span class="md-nav__icon md-icon"></span>
@@ -4048,7 +4168,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/syntax/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/syntax/" class="md-nav__link">
         Clojure syntax
       </a>
     </li>
@@ -4062,7 +4182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/parenthesis/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/parenthesis/" class="md-nav__link">
         Parenthesis - defining the structure of Clojure code
       </a>
     </li>
@@ -4076,7 +4196,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/code-documentation/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/code-documentation/" class="md-nav__link">
         Code documentation
       </a>
     </li>
@@ -4090,7 +4210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/comments/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/comments/" class="md-nav__link">
         Comments
       </a>
     </li>
@@ -4104,7 +4224,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/strings/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/strings/" class="md-nav__link">
         Strings
       </a>
     </li>
@@ -4118,7 +4238,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/numbers-maths/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/numbers-maths/" class="md-nav__link">
         Maths
       </a>
     </li>
@@ -4132,7 +4252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/ratios/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/ratios/" class="md-nav__link">
         Ratios
       </a>
     </li>
@@ -4146,7 +4266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/control-flow/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/control-flow/" class="md-nav__link">
         Control Flow
       </a>
     </li>
@@ -4160,7 +4280,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/doc-and-source-functions/" class="md-nav__link">
+      <a href="../../../reference/doc-and-source-functions/" class="md-nav__link">
         Doc and source functions
       </a>
     </li>
@@ -4174,7 +4294,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/assigning-names/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/assigning-names/" class="md-nav__link">
         Assigning Names
       </a>
     </li>
@@ -4188,7 +4308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/clojure-syntax/naming/" class="md-nav__link">
+      <a href="../../../reference/clojure-syntax/naming/" class="md-nav__link">
         Naming
       </a>
     </li>
@@ -4202,7 +4322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/kebab-case/" class="md-nav__link">
+      <a href="../../../reference/kebab-case/" class="md-nav__link">
         Clojure names use kebab-case
       </a>
     </li>
@@ -4216,7 +4336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/threading-macros/" class="md-nav__link">
+      <a href="../../../reference/threading-macros/" class="md-nav__link">
         Reference: Threading macros
       </a>
     </li>
@@ -4232,7 +4352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/tagged-literals/uuid/" class="md-nav__link">
+      <a href="../../../reference/tagged-literals/uuid/" class="md-nav__link">
         uuid tag literal
       </a>
     </li>
@@ -4317,7 +4437,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../data-structures/">Data Structures</a>
+          <a href="../../../data-structures/">Data Structures</a>
           
             <label for="__nav_14_8">
               <span class="md-nav__icon md-icon"></span>
@@ -4340,7 +4460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/list/" class="md-nav__link">
+      <a href="../../../data-structures/list/" class="md-nav__link">
         List
       </a>
     </li>
@@ -4354,7 +4474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/hash-maps/" class="md-nav__link">
+      <a href="../../../data-structures/hash-maps/" class="md-nav__link">
         Data Structures: Hash-maps
       </a>
     </li>
@@ -4368,7 +4488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/hash-maps/create/" class="md-nav__link">
+      <a href="../../../data-structures/hash-maps/create/" class="md-nav__link">
         Creating Hash-maps
       </a>
     </li>
@@ -4382,7 +4502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/hash-maps/access/" class="md-nav__link">
+      <a href="../../../data-structures/hash-maps/access/" class="md-nav__link">
         Accessing hash-maps
       </a>
     </li>
@@ -4396,7 +4516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/vector/" class="md-nav__link">
+      <a href="../../../data-structures/vector/" class="md-nav__link">
         Vector
       </a>
     </li>
@@ -4410,7 +4530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/set/" class="md-nav__link">
+      <a href="../../../data-structures/set/" class="md-nav__link">
         Set
       </a>
     </li>
@@ -4424,7 +4544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/naming/" class="md-nav__link">
+      <a href="../../../data-structures/naming/" class="md-nav__link">
         Naming data structures
       </a>
     </li>
@@ -4438,7 +4558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/shared-memory/" class="md-nav__link">
+      <a href="../../../data-structures/shared-memory/" class="md-nav__link">
         Shared memory with Persistent data structures
       </a>
     </li>
@@ -4452,7 +4572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../data-structures/pretty-printing/" class="md-nav__link">
+      <a href="../../../data-structures/pretty-printing/" class="md-nav__link">
         Pretty Printing
       </a>
     </li>
@@ -4494,7 +4614,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../using-data-structures/">Using Data Structures</a>
+          <a href="../../../using-data-structures/">Using Data Structures</a>
           
             <label for="__nav_14_8_11">
               <span class="md-nav__icon md-icon"></span>
@@ -4517,7 +4637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-data-structures/sequences/" class="md-nav__link">
+      <a href="../../../using-data-structures/sequences/" class="md-nav__link">
         Sequence abstractions
       </a>
     </li>
@@ -4531,7 +4651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-data-structures/lazy-sequences/" class="md-nav__link">
+      <a href="../../../using-data-structures/lazy-sequences/" class="md-nav__link">
         Lazy Sequences
       </a>
     </li>
@@ -4545,7 +4665,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-data-structures/destructuring/" class="md-nav__link">
+      <a href="../../../using-data-structures/destructuring/" class="md-nav__link">
         Destructuring
       </a>
     </li>
@@ -4559,7 +4679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-data-structures/applying-functions/" class="md-nav__link">
+      <a href="../../../using-data-structures/applying-functions/" class="md-nav__link">
         Applying functions to data structures
       </a>
     </li>
@@ -4573,7 +4693,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../using-data-structures/mapping-data-structures/" class="md-nav__link">
+      <a href="../../../using-data-structures/mapping-data-structures/" class="md-nav__link">
         Mapping functions over data structures
       </a>
     </li>
@@ -4620,7 +4740,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../modifying-data-structures/">Modifying</a>
+          <a href="../../../modifying-data-structures/">Modifying</a>
           
             <label for="__nav_14_8_12">
               <span class="md-nav__icon md-icon"></span>
@@ -4643,7 +4763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modifying-data-structures/lists/" class="md-nav__link">
+      <a href="../../../modifying-data-structures/lists/" class="md-nav__link">
         Lists
       </a>
     </li>
@@ -4657,7 +4777,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modifying-data-structures/maps/" class="md-nav__link">
+      <a href="../../../modifying-data-structures/maps/" class="md-nav__link">
         Maps
       </a>
     </li>
@@ -4671,7 +4791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modifying-data-structures/vectors/" class="md-nav__link">
+      <a href="../../../modifying-data-structures/vectors/" class="md-nav__link">
         Vectors
       </a>
     </li>
@@ -4685,7 +4805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modifying-data-structures/sets/" class="md-nav__link">
+      <a href="../../../modifying-data-structures/sets/" class="md-nav__link">
         Sets
       </a>
     </li>
@@ -4706,7 +4826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/" class="md-nav__link">
+      <a href="../../../iterate-over-data/" class="md-nav__link">
         Iterate over data
       </a>
     </li>
@@ -4720,7 +4840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/map/" class="md-nav__link">
+      <a href="../../../iterate-over-data/map/" class="md-nav__link">
         map function
       </a>
     </li>
@@ -4734,7 +4854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/map-partial/" class="md-nav__link">
+      <a href="../../../iterate-over-data/map-partial/" class="md-nav__link">
         map with partial
       </a>
     </li>
@@ -4748,7 +4868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/map-fn/" class="md-nav__link">
+      <a href="../../../iterate-over-data/map-fn/" class="md-nav__link">
         map with fn - anonymous function
       </a>
     </li>
@@ -4762,7 +4882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/filter-remove/" class="md-nav__link">
+      <a href="../../../iterate-over-data/filter-remove/" class="md-nav__link">
         filter and remove
       </a>
     </li>
@@ -4776,7 +4896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/apply/" class="md-nav__link">
+      <a href="../../../iterate-over-data/apply/" class="md-nav__link">
         apply
       </a>
     </li>
@@ -4790,7 +4910,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/reduce/" class="md-nav__link">
+      <a href="../../../iterate-over-data/reduce/" class="md-nav__link">
         None
       </a>
     </li>
@@ -4804,7 +4924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/reduce/" class="md-nav__link">
+      <a href="../../../iterate-over-data/reduce/" class="md-nav__link">
         None
       </a>
     </li>
@@ -4818,7 +4938,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../iterate-over-data/reduce/" class="md-nav__link">
+      <a href="../../../iterate-over-data/reduce/" class="md-nav__link">
         reduce
       </a>
     </li>
@@ -4864,7 +4984,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../designing-data-structures/">Design</a>
+          <a href="../../../designing-data-structures/">Design</a>
           
             <label for="__nav_14_8_22">
               <span class="md-nav__icon md-icon"></span>
@@ -4887,7 +5007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/with-vectors/" class="md-nav__link">
+      <a href="../../../designing-data-structures/with-vectors/" class="md-nav__link">
         With Vectors
       </a>
     </li>
@@ -4901,7 +5021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/with-vectors-of-vectors/" class="md-nav__link">
+      <a href="../../../designing-data-structures/with-vectors-of-vectors/" class="md-nav__link">
         With Vectors of Vectors
       </a>
     </li>
@@ -4915,7 +5035,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/with-maps/" class="md-nav__link">
+      <a href="../../../designing-data-structures/with-maps/" class="md-nav__link">
         With Maps
       </a>
     </li>
@@ -4929,7 +5049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/with-maps-of-maps/" class="md-nav__link">
+      <a href="../../../designing-data-structures/with-maps-of-maps/" class="md-nav__link">
         With Maps of Maps
       </a>
     </li>
@@ -4943,7 +5063,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/with-vectors-of-maps/" class="md-nav__link">
+      <a href="../../../designing-data-structures/with-vectors-of-maps/" class="md-nav__link">
         A Vector of Maps
       </a>
     </li>
@@ -4957,7 +5077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/modeling-alphabet-codes/" class="md-nav__link">
+      <a href="../../../designing-data-structures/modeling-alphabet-codes/" class="md-nav__link">
         Model alphabet codes
       </a>
     </li>
@@ -4971,7 +5091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../designing-data-structures/modeling-name-generation-map/" class="md-nav__link">
+      <a href="../../../designing-data-structures/modeling-name-generation-map/" class="md-nav__link">
         Design a map for name generation
       </a>
     </li>
@@ -5065,7 +5185,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../thinking-functionally/">Thinking Functionally</a>
+          <a href="../../../thinking-functionally/">Thinking Functionally</a>
           
             <label for="__nav_14_9">
               <span class="md-nav__icon md-icon"></span>
@@ -5088,7 +5208,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/side-effects/" class="md-nav__link">
+      <a href="../../../thinking-functionally/side-effects/" class="md-nav__link">
         Side effects
       </a>
     </li>
@@ -5102,7 +5222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/pure-functions/" class="md-nav__link">
+      <a href="../../../thinking-functionally/pure-functions/" class="md-nav__link">
         Pure functions
       </a>
     </li>
@@ -5116,7 +5236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/impure-functions/" class="md-nav__link">
+      <a href="../../../thinking-functionally/impure-functions/" class="md-nav__link">
         Impure functions
       </a>
     </li>
@@ -5130,7 +5250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/first-class-functions/" class="md-nav__link">
+      <a href="../../../thinking-functionally/first-class-functions/" class="md-nav__link">
         First Class functions
       </a>
     </li>
@@ -5144,7 +5264,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/homoiconicity/" class="md-nav__link">
+      <a href="../../../thinking-functionally/homoiconicity/" class="md-nav__link">
         Homoiconicity
       </a>
     </li>
@@ -5158,7 +5278,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/function-composition/" class="md-nav__link">
+      <a href="../../../thinking-functionally/function-composition/" class="md-nav__link">
         Function Composition
       </a>
     </li>
@@ -5172,7 +5292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/example-hitchhikers-guide/" class="md-nav__link">
+      <a href="../../../thinking-functionally/example-hitchhikers-guide/" class="md-nav__link">
         Example: Hitchhikers Guide
       </a>
     </li>
@@ -5186,7 +5306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/higher-order-functions/" class="md-nav__link">
+      <a href="../../../thinking-functionally/higher-order-functions/" class="md-nav__link">
         Higher Order functions
       </a>
     </li>
@@ -5200,7 +5320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/immutability/" class="md-nav__link">
+      <a href="../../../thinking-functionally/immutability/" class="md-nav__link">
         Immutability
       </a>
     </li>
@@ -5214,7 +5334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/immutable-values/" class="md-nav__link">
+      <a href="../../../thinking-functionally/immutable-values/" class="md-nav__link">
         Immutable values
       </a>
     </li>
@@ -5228,7 +5348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/immutable-collections/" class="md-nav__link">
+      <a href="../../../thinking-functionally/immutable-collections/" class="md-nav__link">
         Immutable collections
       </a>
     </li>
@@ -5242,7 +5362,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/immutable-local-bindings/" class="md-nav__link">
+      <a href="../../../thinking-functionally/immutable-local-bindings/" class="md-nav__link">
         Immutable Local Bindings
       </a>
     </li>
@@ -5256,7 +5376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/partial-functions/" class="md-nav__link">
+      <a href="../../../thinking-functionally/partial-functions/" class="md-nav__link">
         Currying & Partial Functions
       </a>
     </li>
@@ -5270,7 +5390,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/map-with-partial/" class="md-nav__link">
+      <a href="../../../thinking-functionally/map-with-partial/" class="md-nav__link">
         map with partial
       </a>
     </li>
@@ -5284,7 +5404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/list-comprehension/" class="md-nav__link">
+      <a href="../../../thinking-functionally/list-comprehension/" class="md-nav__link">
         List Comprehension
       </a>
     </li>
@@ -5298,7 +5418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/sequences/" class="md-nav__link">
+      <a href="../../../thinking-functionally/sequences/" class="md-nav__link">
         Sequences
       </a>
     </li>
@@ -5312,7 +5432,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sequence-abstractions.md" class="md-nav__link">
+      <a href="../../../sequence-abstractions.md" class="md-nav__link">
         None
       </a>
     </li>
@@ -5326,7 +5446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/functors/" class="md-nav__link">
+      <a href="../../../thinking-functionally/functors/" class="md-nav__link">
         Functors
       </a>
     </li>
@@ -5340,7 +5460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/arity/" class="md-nav__link">
+      <a href="../../../thinking-functionally/arity/" class="md-nav__link">
         Arity
       </a>
     </li>
@@ -5354,7 +5474,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/pattern-matching/" class="md-nav__link">
+      <a href="../../../thinking-functionally/pattern-matching/" class="md-nav__link">
         Pattern matching
       </a>
     </li>
@@ -5368,7 +5488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/polymorphism/" class="md-nav__link">
+      <a href="../../../thinking-functionally/polymorphism/" class="md-nav__link">
         Polymorphic function definitions
       </a>
     </li>
@@ -5382,7 +5502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/recursion/" class="md-nav__link">
+      <a href="../../../thinking-functionally/recursion/" class="md-nav__link">
         Recursion
       </a>
     </li>
@@ -5396,7 +5516,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/recursion-polymorphism/" class="md-nav__link">
+      <a href="../../../thinking-functionally/recursion-polymorphism/" class="md-nav__link">
         Recursion & Polymorphism
       </a>
     </li>
@@ -5410,7 +5530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../thinking-functionally/tail-recursion/" class="md-nav__link">
+      <a href="../../../thinking-functionally/tail-recursion/" class="md-nav__link">
         Tail recursion
       </a>
     </li>
@@ -5464,7 +5584,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/creative-coding/index.md" class="md-nav__link">
+      <a href="../../../reference/creative-coding/index.md" class="md-nav__link">
         None
       </a>
     </li>
@@ -5496,7 +5616,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/clojure-svg/">SVG</a>
+          <a href="../../../reference/clojure-svg/">SVG</a>
           
         </div>
       
@@ -5561,7 +5681,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../reference/jvm/">JVM</a>
+          <a href="../../../reference/jvm/">JVM</a>
           
             <label for="__nav_14_11">
               <span class="md-nav__icon md-icon"></span>
@@ -5584,7 +5704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/jvm/understanding-memory-usage/" class="md-nav__link">
+      <a href="../../../reference/jvm/understanding-memory-usage/" class="md-nav__link">
         Memory usage
       </a>
     </li>
@@ -5598,7 +5718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/jvm/common-options/" class="md-nav__link">
+      <a href="../../../reference/jvm/common-options/" class="md-nav__link">
         Common JVM Options
       </a>
     </li>
@@ -5612,7 +5732,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/jvm/java-17-flags/" class="md-nav__link">
+      <a href="../../../reference/jvm/java-17-flags/" class="md-nav__link">
         Reference: Java 17 JVM flags
       </a>
     </li>
@@ -5626,7 +5746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/jvm/experimental-options/" class="md-nav__link">
+      <a href="../../../reference/jvm/experimental-options/" class="md-nav__link">
         Reference: JVM Experimental Options
       </a>
     </li>
@@ -5640,7 +5760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/jvm/profile-tools/" class="md-nav__link">
+      <a href="../../../reference/jvm/profile-tools/" class="md-nav__link">
         Profile tools
       </a>
     </li>
@@ -5654,7 +5774,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reference/performance/" class="md-nav__link">
+      <a href="../../../reference/performance/" class="md-nav__link">
         Clojure Performance
       </a>
     </li>
@@ -5705,7 +5825,7 @@
         
         
         <div class="md-nav__link md-nav__link--index ">
-          <a href="../alternative-tools/">Alternative Tools</a>
+          <a href="../../../alternative-tools/">Alternative Tools</a>
           
             <label for="__nav_14_12">
               <span class="md-nav__icon md-icon"></span>
@@ -5728,7 +5848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alternative-tools/clojure-cli/basic-repl/" class="md-nav__link">
+      <a href="../../../alternative-tools/clojure-cli/basic-repl/" class="md-nav__link">
         Basic Terminal REPL UI
       </a>
     </li>
@@ -5742,7 +5862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alternative-tools/clojure-cli/compare-with-leiningen/" class="md-nav__link">
+      <a href="../../../alternative-tools/clojure-cli/compare-with-leiningen/" class="md-nav__link">
         Clojure Automation Aproaches
       </a>
     </li>
@@ -5756,7 +5876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alternative-tools/clojure-cli/evaluate-an-expression/" class="md-nav__link">
+      <a href="../../../alternative-tools/clojure-cli/evaluate-an-expression/" class="md-nav__link">
         Evaluating an expression with Clojure CLI tools
       </a>
     </li>
@@ -5770,7 +5890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alternative-tools/clojure-cli/set-namespace-on-repl-startup/" class="md-nav__link">
+      <a href="../../../alternative-tools/clojure-cli/set-namespace-on-repl-startup/" class="md-nav__link">
         Set namespace on REPL startup
       </a>
     </li>
@@ -5784,7 +5904,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../alternative-tools/leiningen/" class="md-nav__link">
+      <a href="../../../alternative-tools/leiningen/" class="md-nav__link">
         Leiningen build automation tool
       </a>
     </li>
@@ -5825,6 +5945,76 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-project" class="md-nav__link">
+    Create the project
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#starting-point" class="md-nav__link">
+    Starting point
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#making-the-tests-pass" class="md-nav__link">
+    Making the tests pass
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-nucleotides" class="md-nav__link">
+    Counting nucleotides
+  </a>
+  
+    <nav class="md-nav" aria-label="Counting nucleotides">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#run-unit-tests" class="md-nav__link">
+    Run unit tests
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nucleotide-occurances" class="md-nav__link">
+    Nucleotide occurances
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hammock-time" class="md-nav__link">
+    Hammock time...
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solutions" class="md-nav__link">
+    Solutions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -5838,7 +6028,7 @@
                   
 
   
-    <a href="https://github.com/practicalli/clojure/edit/main/docs/lighttable/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/clojure/edit/main/docs/coding-challenges/exercism/nucleotide-count.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -5847,21 +6037,302 @@
     
       
     
-    <a href="https://github.com/practicalli/clojure/raw/main/docs/lighttable/index.md" title="View source of this page" class="md-content__button md-icon">
+    <a href="https://github.com/practicalli/clojure/raw/main/docs/coding-challenges/exercism/nucleotide-count.md" title="View source of this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.15 8.15 0 0 1-1.23-2Z"/></svg>
     </a>
   
 
 
-<h1 id="lighttable">Lighttable<a class="headerlink" href="#lighttable" title="Permanent link">λ︎</a></h1>
+<h1 id="nucleotide-count">Nucleotide Count<a class="headerlink" href="#nucleotide-count" title="Permanent link">λ︎</a></h1>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="RNA Transcription" src="https://github.com/practicalli/graphic-design/blob/live/code-challenges/exercism/rna-transcription.png?raw=true" /></a></p>
+<p><a class="md-button" href="https://exercism.org/tracks/clojure/exercises/nucleotide-count" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure Track: Nucleotide Count</a></p>
+<p>Given a string representing a DNA sequence, count how many of each nucleotide is present.</p>
+<p>If the string contains characters other than A, C, G, or T then an error should be throw.</p>
+<p>Represent a DNA sequence as an ordered collection of nucleotides, e.g. a string of characters such as "ATTACG".</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="s2">&quot;GATTACA&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span><span class="s1">&#39;A&#39;</span>:<span class="w"> </span><span class="m">3</span>,<span class="w"> </span><span class="s1">&#39;C&#39;</span>:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="s1">&#39;G&#39;</span>:<span class="w"> </span><span class="m">1</span>,<span class="w"> </span><span class="s1">&#39;T&#39;</span>:<span class="w"> </span><span class="m">2</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="s2">&quot;INVALID&quot;</span><span class="w"> </span>-&gt;<span class="w"> </span>error
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">DNA Nucleotide names</p>
+<p><code>A</code> is Adenine, <code>C</code> is Cytosine, <code>G</code> is Guanine and <code>T</code> is Thymine</p>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Code for this solution on GitHub</p>
+<p><a href="https://github.com/practicalli/exercism-clojure-guides/">practicalli/exercism-clojure-guides</a> contains the design journal and solution to this exercise and many others.</p>
+</div>
+<h2 id="create-the-project">Create the project<a class="headerlink" href="#create-the-project" title="Permanent link">λ︎</a></h2>
+<p>Download the Nucleotide Count exercise using the exercism CLI tool</p>
+<div class="admonition note">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>exercism<span class="w"> </span>download<span class="w"> </span>--exercise<span class="o">=</span>nucleotide-count<span class="w"> </span>--track<span class="o">=</span>clojure
+</code></pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Use the REPL workflow to explore solutions locally</p>
+<p>Open the project in a <a href="/clojure/clojure-editors">Clojure aware editor</a> and <a href="/clojure/coding-challenges/exercism/#repl-workflow">start a REPL</a>, using a rich comment form to experiment with code to solve the challenge.</p>
+</div>
+<h2 id="starting-point">Starting point<a class="headerlink" href="#starting-point" title="Permanent link">λ︎</a></h2>
+<p>Unit test code calls functions from the <code>src</code> tree which must exist with the correct argument signature for the unit test code to compile successfully.</p>
+<p>Reviewing each assertion in the unit test code identifies the function definitions required.</p>
+<details class="example">
+<summary>Exercism Unit Tests</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">nucleotide-count-test</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.test</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">deftest</span><span class="w"> </span><span class="nv">is</span><span class="p">]]</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">            </span><span class="nv">nucleotide-count</span><span class="p">))</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">empty-dna-strand-has-no-adenosine</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="nf">nucleotide-count/count-of-nucleotide-in-strand</span><span class="w"> </span><span class="sc">\A</span>,<span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">empty-dna-strand-has-no-nucleotides</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">         </span><span class="p">(</span><span class="nf">nucleotide-count/nucleotide-counts</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">repetitive-cytidine-gets-counted</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">5</span><span class="w"> </span><span class="p">(</span><span class="nf">nucleotide-count/count-of-nucleotide-in-strand</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="s">&quot;CCCCC&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">repetitive-sequence-has-only-guanosine</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">0</span>,<span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">8</span><span class="p">}</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="w">         </span><span class="p">(</span><span class="nf">nucleotide-count/nucleotide-counts</span><span class="w"> </span><span class="s">&quot;GGGGGGGG&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">counts-only-thymidine</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nf">nucleotide-count/count-of-nucleotide-in-strand</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="s">&quot;GGGGGTAACCCGG&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">validates-nucleotides</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="w">  </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nf">thrown?</span><span class="w"> </span><span class="nv">Throwable</span><span class="w"> </span><span class="p">(</span><span class="nf">nucleotide-count/count-of-nucleotide-in-strand</span><span class="w"> </span><span class="sc">\X</span><span class="w"> </span><span class="s">&quot;GACT&quot;</span><span class="p">))))</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="p">(</span><span class="nf">deftest</span><span class="w"> </span><span class="nv">counts-all-nucleotides</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">s</span><span class="w"> </span><span class="s">&quot;AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC&quot;</span><span class="p">]</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="w">    </span><span class="p">(</span><span class="nf">is</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">20</span>,<span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">21</span>,<span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">17</span>,<span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="w">           </span><span class="p">(</span><span class="nf">nucleotide-count/nucleotide-counts</span><span class="w"> </span><span class="nv">s</span><span class="p">)))))</span>
+</code></pre></div>
+</details>
+<div class="admonition example">
+<p class="admonition-title">Function definitions required to compile unit test code</p>
+<div class="highlight"><span class="filename">src/nucleotide_count.clj</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">nucleotide-count</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">count-of-nucleotide-in-strand</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="s">&quot;Count how many of a given nucleotide is in a strand&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="p">[</span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">strand</span><span class="p">])</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">nucleotide-counts</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="s">&quot;Count all nucleotide in a strand&quot;</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">  </span><span class="p">[</span><span class="nv">strand</span><span class="p">])</span>
+</code></pre></div>
+</div>
+<h2 id="making-the-tests-pass">Making the tests pass<a class="headerlink" href="#making-the-tests-pass" title="Permanent link">λ︎</a></h2>
+<p>Select one assertion from the unit tests and write code to make the test pass.</p>
+<p>Experiment with solutions in the <code>comment</code> form and add the chosen approach to the respective function definition.</p>
+<h2 id="counting-nucleotides">Counting nucleotides<a class="headerlink" href="#counting-nucleotides" title="Permanent link">λ︎</a></h2>
+<p>Use test data from the unit test code, e.g. <code>"GGGGGTAACCCGG"</code></p>
+<p>How often does a nucleotide appear</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">map</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="s">&quot;GGGGGTAACCCGG&quot;</span><span class="p">)</span>
+</code></pre></div>
+</div>
+<p>Add the result to get the total count</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">count</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">   </span><span class="p">(</span><span class="nf">map</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">     </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">     </span><span class="s">&quot;GGGGGTAACCCGG&quot;</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<p>Is there a more elegant way?</p>
+<p>When only the matching nucleotide is in the strand, then all the elements of the strand can be counted.</p>
+<p><code>filter</code> the DNA strand with a predicate function (returns true/false) that returns only the matching nucleotide.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<p>;; Count the elements in the returned sequence for the total</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">count</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">   </span><span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<p>Add this code into the starting function</p>
+<h3 id="run-unit-tests">Run unit tests<a class="headerlink" href="#run-unit-tests" title="Permanent link">λ︎</a></h3>
+<p>Run the unit tests to see if they pass.  x should pass, x should fail.</p>
+<h3 id="nucleotide-occurances">Nucleotide occurances<a class="headerlink" href="#nucleotide-occurances" title="Permanent link">λ︎</a></h3>
+<p>Count the occurances</p>
+<p>"GGGGGTAACCCGG"</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">   </span><span class="p">(</span><span class="nf">count</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">     </span><span class="p">(</span><span class="nb">filter </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">nucleotide</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">= </span><span class="nv">nucleotide</span><span class="w"> </span><span class="sc">\A</span><span class="p">))</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">             </span><span class="s">&quot;GGGGGTAACCCGG&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Define the data</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="w">  </span><span class="p">(</span><span class="k">def </span><span class="nv">valid-nucleotides</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="s">&quot;Characters representing valid nucleotides&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">    </span><span class="p">[</span><span class="sc">\A</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="sc">\T</span><span class="p">])</span>
+</code></pre></div>
+<p>Exception handling required</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">Throwable.</span><span class="p">))</span><span class="w"> </span><span class="k">if </span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">is</span><span class="w"> </span><span class="sc">\X</span>
+</code></pre></div>
+<p>Or use a predicate with some (some element? in the sequence)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">some </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="sc">\G</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">some </span><span class="o">#</span><span class="p">{</span><span class="sc">\G</span><span class="p">}</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="w">  </span><span class="p">(</span><span class="kd">defn </span><span class="nv">count-of-nucleotide-in-strand</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p">[</span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">strand</span><span class="p">]</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">some </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">      </span><span class="p">(</span><span class="nf">count</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">       </span><span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">               </span><span class="nv">strand</span><span class="p">))</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="w">      </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">Throwable.</span><span class="p">))))</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="w">  </span><span class="p">(</span><span class="nf">count-of-nucleotide-in-strand</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="s">&quot;GGGGGTAACCCGG&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Design the second function</p>
+<p>How often does a nucleotide appear</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">map</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+</code></pre></div>
+<p>Add the result to get the total count</p>
+<p>Is there a more elegant way?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">%</span><span class="w"> </span><span class="sc">\A</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+</code></pre></div>
+<p>Count the elements in the returned sequence for the total</p>
+<p>Design the second function</p>
+<p>How often does a nucleotide appear</p>
+<p>NOTE: zero must be returned when there are no appearences</p>
+<p>Return value always in the form</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="w">  </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">20</span>,<span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">21</span>,<span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">17</span>,<span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">12</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="hammock-time">Hammock time...<a class="headerlink" href="#hammock-time" title="Permanent link">λ︎</a></h3>
+<ul>
+<li>How often does something appear,</li>
+<li>how frequenct is it?</li>
+<li>Is there a clojure standard library for that (approx 700 functions), review <a href="https://clojure-docs.org/">https://clojure-docs.org/</a></li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="w">  </span><span class="p">(</span><span class="nf">frequencies</span><span class="w"> </span><span class="s">&quot;GGGGGAACCCGG&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>If there are missing nucleotides then there is no answer</p>
+<p>What if there is a starting point</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="w">  </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+</code></pre></div>
+<p>;; Then merge the result of frequencies</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="w">  </span><span class="p">(</span><span class="nb">merge </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">         </span><span class="p">(</span><span class="nf">frequencies</span><span class="w"> </span><span class="s">&quot;GGGGGAACCCGG&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>Update the function definition and run tests</p>
+<h2 id="solutions">Solutions<a class="headerlink" href="#solutions" title="Permanent link">λ︎</a></h2>
+<p>There are many ways to solve a challenge and there is value trying different approaches to help learn more about the Clojure language.</p>
+<p>The following solution includes <code>filter</code> and <code>frequencies</code> functions which are commonly used functions from the Clojure standard library.</p>
+<div class="admonition example">
+<p class="admonition-title">Example Solution</p>
+<div class="highlight"><span class="filename">src/nucleotide_count.clj</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">nucleotide-count</span><span class="p">)</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">(</span><span class="k">def </span><span class="nv">valid-nucleotides</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">    </span><span class="s">&quot;Characters representing valid nucleotides&quot;</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">    </span><span class="p">[</span><span class="sc">\A</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="sc">\T</span><span class="p">])</span>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">count-of-nucleotide-in-strand</span>
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">  </span><span class="p">[</span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">strand</span><span class="p">]</span>
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w">  </span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">some </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="nv">valid-nucleotides</span><span class="p">)</span>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a><span class="w">    </span><span class="p">(</span><span class="nf">count</span>
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a><span class="w">     </span><span class="p">(</span><span class="nb">filter </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="nv">nucleotide</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span>
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a><span class="w">             </span><span class="nv">strand</span><span class="p">))</span>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a><span class="w">    </span><span class="p">(</span><span class="nf">throw</span><span class="w"> </span><span class="p">(</span><span class="nf">Throwable.</span><span class="p">))))</span>
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>
+<a id="__codelineno-19-15" name="__codelineno-19-15" href="#__codelineno-19-15"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">nucleotide-counts</span>
+<a id="__codelineno-19-16" name="__codelineno-19-16" href="#__codelineno-19-16"></a><span class="w">  </span><span class="s">&quot;Count all nucleotide in a strand&quot;</span>
+<a id="__codelineno-19-17" name="__codelineno-19-17" href="#__codelineno-19-17"></a><span class="w">  </span><span class="p">[</span><span class="nv">strand</span><span class="p">]</span>
+<a id="__codelineno-19-18" name="__codelineno-19-18" href="#__codelineno-19-18"></a><span class="w">  </span><span class="p">(</span><span class="nb">merge </span><span class="p">{</span><span class="sc">\A</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\C</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\G</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="sc">\T</span><span class="w"> </span><span class="mi">0</span><span class="p">}</span>
+<a id="__codelineno-19-19" name="__codelineno-19-19" href="#__codelineno-19-19"></a><span class="w">         </span><span class="p">(</span><span class="nf">frequencies</span><span class="w"> </span><span class="s">&quot;GGGGGAACCCGG&quot;</span><span class="p">)))</span>
+</code></pre></div>
+</div>
+<!--
+
+;; ---------------------------------------------------------
+;; Solution
+
+
+  #_(defn count-of-nucleotide-in-strand [nucleotide strand]
+      (if (= \X nucleotide)
+        (throw (Throwable.))
+        (count (filter #(= nucleotide %) strand))))
+
+  #_(defn nucleotide-counts [strand]
+      (apply merge
+             (for [nucleotide strand]
+               {nucleotide
+                (count-of-nucleotide-in-strand nucleotide strand)})))
+
+
+
+
+  #_(defn count-of-nucleotide-in-strand [nucleotide strand]
+      (if (some (set nucleotide) valid-nucleotides)
+       (count (filter #(= nucleotide %) strand))
+       (throw (Throwable.)))))
+
+
+;; End of Solution
+;; ---------------------------------------------------------
+
+
+(comment)
+
+
+#_{:clj-kondo/ignore [:redefined-var]}
+
+#_() ; End of rich comment
+
+
+  ;; (defn count-of-nucleotide-in-strand [nucleotide strand]
+  ;;   (get (frequencies strand) nucleotide (throw (Throwable.))))
+
+;; add a guard condition if passed an empty strand
+;; returning zero
+
+  ;; (defn count-of-nucleotide-in-strand [nucleotide strand]
+  ;;   (if (empty? strand)
+  ;;     0
+  ;;     (get (frequencies strand) nucleotide (throw (Throwable.)))))
+
+  ;; (count-of-nucleotide-in-strand \T "GGGGGTAACCCGG")
+
+;; using a function as the not-found
+  ;; (get {:a 1 :b 2} :b (throw (Throwable.)))
+
+
+;; unfortunately the throw expression is evaluated before the get
+;; so we always get a Throwable exception even if the key is in the hash-map.
+;; We can fix that with an or
+
+  ;; (defn count-of-nucleotide-in-strand [nucleotide strand]
+  ;;   (if (empty? strand)
+  ;;     0
+  ;;     (or (get (frequencies strand) nucleotide)
+  ;;         (throw (Throwable.)))))
+  ;;
+  ;; (defn nucleotide-counts [strand]
+  ;;   (frequencies strand))
+  ;;
+;; fails the empty case,
+;; but we can add an empty result as the default value
+;; and merge it with the resulting frequencies
+
+
+  ;; (defn nucleotide-counts [strand]
+  ;;   (merge {\A 0 \C 0 \G 0 \T 0} (frequencies strand)))
+
+-->
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2023</span>
       
     
   </small>
@@ -5891,6 +6362,42 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../rna-transcription/" class="md-footer__link md-footer__link--prev" aria-label="Previous: RNA Transcription" rel="prev">
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                RNA Transcription
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../bob/" class="md-footer__link md-footer__link--next" aria-label="Next: Index" rel="next">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Index
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -5977,10 +6484,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.220ee61c.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
