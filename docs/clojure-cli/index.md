@@ -27,20 +27,20 @@ The Clojure CLI has several built-in tasks.  Additional tasks are provided via a
 !!! HINT "REPL Reloaded"
     `clojure -M:repl/reloaded` runs a rich terminal UI REPL prompt that includes portal data inspector, namespace reloading and library hotload tools. `test` path is included to support editor test runners and `dev` path for custom user namespace for [custom REPL startup](/clojure/clojure-cli/repl-startup/)
 
-| Task                                      | Command                                                                     | Defined In  |
-|-------------------------------------------|-----------------------------------------------------------------------------|-------------|
-| Basic terminal UI REPL                    | `clojure` or `clj` if `rlwrap` binary installed                             | Clojure CLI |
-| Enhanced terminal UI REPL (Rebel & nREPL) | `clojure -M:repl/rebel` or `clojure -M:repl/reloaded`                       | Practicalli |
-| Create project                            | `clojure -T:project/new :template app :name domain/appname :args '["+h2"]'` | Practicalli |
-| Run unit tests / watch for changes        | `clojure -X:test/run` or `clojure -X:test/watch`                            | Practicalli |
-| Run the project (clojure.main)            | `clojure -M -m domain.main-namespace`                                       | *No Alias*  |
-| Find libraries (maven & git)              | `clojure -M:search/library library-name`                                    | Practicalli |
-| Find library versions (maven)             | `clojure -X:deps find-versions domain/library-name`                         | CLojure CLI |
-| Download dependencies                     | `clojure -P`  (plus optional execution flags with aliases)                  | CLojure CLI |
-| Check for new dependency versions         | `clojure -T:search/outdated`                                                | Practicalli |
-| Package library                           | `clojure -X:build/jars`                                                     | Practicalli |
-| Deploy library locally                    | `clojure -X:deps mvn-install`                                               | Clojure CLI |
-| Check code for unused vars                | `clojure -X:search/unused`                                                  | Practicalli |
+| Task                                                                                     | Command                                                                     | Defined In  |
+|------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------|-------------|
+| Basic terminal UI REPL                                                                   | `clojure` (or `clj` if `rlwrap` binary installed)                           | Clojure CLI |
+| Enhanced terminal UI REPL (Rebel & nREPL)                                                | `clojure -M:repl/rebel` or `clojure -M:repl/reloaded`                       | Practicalli |
+| [Create project](https://practical.li/clojure/clojure-cli/projects/)                     | `clojure -T:project/new :template app :name domain/appname :args '["+h2"]'` | Practicalli |
+| [Run unit tests / watch for changes](https://practical.li/clojure/testing/test-runners/) | `clojure -X:test/run` or `clojure -X:test/watch`                            | Practicalli |
+| Run the project (clojure.main)                                                           | `clojure -M -m domain.main-namespace`                                       | *No Alias*  |
+| Find libraries (maven & git)                                                             | `clojure -M:search/library library-name`                                    | Practicalli |
+| Find library versions (maven)                                                            | `clojure -X:deps find-versions domain/library-name`                         | CLojure CLI |
+| Download dependencies                                                                    | `clojure -P`  (plus optional execution flags with aliases)                  | CLojure CLI |
+| Check for new dependency versions                                                        | `clojure -T:search/outdated`                                                | Practicalli |
+| Package library                                                                          | `clojure -X:build/jar` and `clojure -X:build/uberjar`                       | Practicalli |
+| Deploy library locally                                                                   | `clojure -X:deps mvn-install`                                               | Clojure CLI |
+| Check code for unused vars                                                               | `clojure -X:search/unused`                                                  | Practicalli |
 
 !!! INFO "tools.build is recommended for packaging projects"
     [Package with tools.build](/clojure/clojure-cli/projects/tools-build/) is the recommended approach to create jar and Uberjar packages of a Clojure project.
