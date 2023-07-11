@@ -119,7 +119,7 @@ Clojure CLI install has a built-in configuration:
 
 ### User configuration
 
-A Clojure CLI user configuration is available to all projects by the operating system user account.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.
+A Clojure CLI user configuration is available to all projects by the operating system user account.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config/) is a user configuration that contains a set of well-formed aliases that add common tools for all Clojure project.
 
 ??? Hint "Clojure CLI User Configuration Location"
     Clojure CLI tools creates a configuration directory called `.clojure`, which [by default](https://clojure.org/reference/deps_and_cli#_deps_edn_sources) is placed in the root of the operating system user account directory, e.g. `$HOME/.clojure`.
