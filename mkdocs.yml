@@ -106,6 +106,7 @@ plugins:
         clojure-cli/data-browsers/index.md: data-inspector/index.md
         clojure-editors/editor-install-guides/vspacecode-calva.md: clojure-editors/index.md
         clojure-editors/editor-user-guides/vspacecode-calva.md: clojure-editors/index.md
+        clojure-cli/projects/tools-build.md: clojure-cli/projects/package/tools-build.md
 
 # Footer / Social Media
 extra:
