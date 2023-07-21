@@ -29,7 +29,7 @@
         <link rel="next" href="practicalli-config/">
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.18">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.19">
     
     
       
@@ -37,7 +37,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.eebd395e.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
@@ -5952,13 +5952,13 @@
 <li><a href="/clojure/clojure-cli/projects/tools-build/">building Clojure projects (using tools.build)</a> to create deployable Clojure services</li>
 </ul>
 <p><a href="practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> extends the feautres of Clojure CLI, defining aliases that add community libraries and tools.</p>
-<details class="warning">
-<summary>Video commands dated but concepts remain valid</summary>
-</details>
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/u5VoFpsntXc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
+<details class="warning">
+<summary>Video commands dated but concepts remain valid</summary>
+</details>
 <h2 id="common-tasks-for-clojure-development">Common tasks for Clojure development<a class="headerlink" href="#common-tasks-for-clojure-development" title="Permanent link">λ︎</a></h2>
 <p>The Clojure CLI has several built-in tasks.  Additional tasks are provided via aliases that include libraries and tools from the Clojure community, e.g. <a href="practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a></p>
 <div class="admonition hint">
@@ -5976,7 +5976,7 @@
 <tbody>
 <tr>
 <td>Basic terminal UI REPL</td>
-<td><code>clojure</code> or <code>clj</code> if <code>rlwrap</code> binary installed</td>
+<td><code>clojure</code> (or <code>clj</code> if <code>rlwrap</code> binary installed)</td>
 <td>Clojure CLI</td>
 </tr>
 <tr>
@@ -5985,12 +5985,12 @@
 <td>Practicalli</td>
 </tr>
 <tr>
-<td>Create project</td>
+<td><a href="https://practical.li/clojure/clojure-cli/projects/">Create project</a></td>
 <td><code>clojure -T:project/new :template app :name domain/appname :args '["+h2"]'</code></td>
 <td>Practicalli</td>
 </tr>
 <tr>
-<td>Run unit tests / watch for changes</td>
+<td><a href="https://practical.li/clojure/testing/test-runners/">Run unit tests / watch for changes</a></td>
 <td><code>clojure -X:test/run</code> or <code>clojure -X:test/watch</code></td>
 <td>Practicalli</td>
 </tr>
@@ -6021,7 +6021,7 @@
 </tr>
 <tr>
 <td>Package library</td>
-<td><code>clojure -X:build/jars</code></td>
+<td><code>clojure -X:build/jar</code> and <code>clojure -X:build/uberjar</code></td>
 <td>Practicalli</td>
 </tr>
 <tr>
@@ -6142,13 +6142,13 @@
 <p>Including <code>org.clojure/clojure</code> as a dependency the project <code>deps.edn</code> file specifies a version of the Clojure language.  The Clojure CLI version is used if no other dependency is specified.</p>
 </details>
 <h3 id="user-configuration">User configuration<a class="headerlink" href="#user-configuration" title="Permanent link">λ︎</a></h3>
-<p>A Clojure CLI user configuration is available to all projects by the operating system user account.  <a href="practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> is a user configuration that contains a set of well-formed aliases that adds common tools for any Clojure project.</p>
+<p>A Clojure CLI user configuration is available to all projects by the operating system user account.  <a href="practicalli-config/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> is a user configuration that contains a set of well-formed aliases that add common tools for all Clojure project.</p>
 <details class="hint">
 <summary>Clojure CLI User Configuration Location</summary>
 <p>Clojure CLI tools creates a configuration directory called <code>.clojure</code>, which <a href="https://clojure.org/reference/deps_and_cli#_deps_edn_sources">by default</a> is placed in the root of the operating system user account directory, e.g. <code>$HOME/.clojure</code>.</p>
 <p><code>XDG_CONFIG_HOME</code> may be set by your operating system and over-rides the default location, e.g. <code>$HOME/.config/.clojure</code></p>
 <p><code>CLJ_CONFIG</code> can be used to over-ride all other location settings</p>
-<p>Run <code>clojure -Sdescribe</code> in a terminal and checking the <code>:user-config</code> value to see the location of your Clojure configuration directory</p>
+<p>Run <code>clojure -Sdescribe</code> in a terminal and checking the <code>:config-user</code> value to see the location of your Clojure configuration directory</p>
 </details>
 <p>A basic example of a user configuration for Clojure CLI</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
@@ -6180,7 +6180,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 11, 2023</span>
       
     
   </small>
