@@ -39,6 +39,6 @@ make provides tab completion of tasks defined in the Makefile without additional
 
 Write Clojure code using the [Babashka task runner](https://book.babashka.org/#tasks){target=_blank}
 
-Babashka reqiures more coding that make, although has the ability to use a wide range of Clojure functions and libraries.
+Babashka reqiures more coding than make, although has the ability to use a wide range of Clojure functions and libraries.
 
 [Babashka task runner](https://book.babashka.org/#tasks){target=_blank .md-button}
