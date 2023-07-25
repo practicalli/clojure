@@ -111,4 +111,4 @@ Mentors on the Exercism website will provide a review of your submissions and yo
 
 [:fontawesome-brands-github: practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides/){target=_blank} contains a design journal of solutions to several Clojure exercises.
 
-Ask for advice in the [#exercism](clojurians.slack.com/messages/exercism){target=_blank} or [#beginners](clojurians.slack.com/messages/beginners){target=_blank} channels of the Clojurians Slack community.
+Ask for advice in the [#exercism](https://clojurians.slack.com/messages/exercism){target=_blank} or [#beginners](https://clojurians.slack.com/messages/beginners){target=_blank} channels of the Clojurians Slack community.
