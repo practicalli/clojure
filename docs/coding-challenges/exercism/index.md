@@ -1,10 +1,10 @@
-# Exercism.io Challenges
+# Exercism Challenges
 
 ![Exercisim Clojure Track icon](https://dg8krxphbh767.cloudfront.net/tracks/clojure.svg){align=right loading=lazy style="height:150px;width:150px"}
 
-[:globe_with_meridians: Exercism Clojure Track](https://exercism.com/tracks/clojure){target=_blank .md-button}
+[:globe_with_meridians: Exercism Clojure Track](https://exercism.org/tracks/clojure){target=_blank .md-button}
 
-[:globe_with_meridians: Exercism.io](https://exercism.io/tracks){target=_blank} is a learning platform for 12 programming languates which combines carefully crafted coding challenges and mentors who review and advise on solutions.
+[:globe_with_meridians: Exercism](https://exercism.org/tracks){target=_blank} is a learning platform for multiple programming languates (currently 67) which combines carefully crafted coding challenges and mentors who review and advise on solutions.
 
 Solve challenges via the built-in Exercism editor.
 
@@ -21,7 +21,7 @@ Use the [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrou
 ## Clojure Track
 
 All the challenges are groups into specific [:globe_with_meridians: language tracks](https://exercism.io/my/tracks){target=_blank}, including the [:globe_with_meridians:
-Clojure track](https://exercism.io/tracks/clojure){target=_blank}
+Clojure track](https://exercism.org/tracks/clojure){target=_blank}
 
 Join the language track to be presented with available challenges and progress through that specific track.
 
@@ -41,7 +41,8 @@ The [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){
     exercism download --exercise=exercise-name --track=clojure
     ```
 
-Open the project in your [:fontawesome-solid-book-open: preferred Clojure editor](/clojure/clojure-editors/) and write a solution to solve the exercise.
+Open the project source code downloaded from Exercism in a [:fontawesome-solid-book-open: preferred Clojure editor](/clojure/clojure-editors/){target=_blank} and write a solution to solve the exercise.
+
 
 `clojure -X:test` command in the root of the downloaded project will run the tests supplied by the exercise
 
@@ -80,8 +81,15 @@ Use a REPL workflow to get instant feedback on code written to make the unit tes
     Open the project in a [:fontawesome-solid-book-open: Clojure aware editor](/clojure/clojure-editors/) and start a Clojure REPL, e.g. jack-in
 
 
-REPL experiments are typically written within a `comment` function, referred to a a Rich Comment.  This separates experimental code from finished designs.
+Use a rich `comment` to experiment with clojure expressions that help move towards a solution, typically solving one unit test at a time. This separates experimental code from finished designs.
 
+```clojure
+(comment 
+  ;; experiment with clojure code 
+  ;; evaluate expressions in the Clojure editor
+  ;; and see the evalaution results inline
+)
+```
 
 !!! HINT "Disable Linter rules"
     Disable Linter rules within the `comment` expression that are not useful for REPL experiments.
