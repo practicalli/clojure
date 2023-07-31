@@ -43,6 +43,13 @@ Evaluate Clojure code by typing at the `=> user` prompt pressing `Return`, the r
 
 > ++ctrl+"c"++ if the repl process does not return to the shell prompt.
 
+## REPL startup
+
+The Clojure REPL always starts in the `user` namespace.
+
+During startup the the `clojure.core` functions are required (made available) in the user namespace, so `(map inc [1 2 3])` can be called without specifying the `clojure.core` namespace in which those functions are defined.
+
+> If clojure.core were not required, then the expression would be `(clojure.core/map clojure.core/inc [1 2 3])`
 
 ### Customize Rebel Readline
 
