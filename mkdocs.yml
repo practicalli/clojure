@@ -192,6 +192,9 @@ nav:
       - Portal: data-inspector/portal.md
   - Code Challenges:
       - coding-challenges/index.md
+      # - Palindrome:
+      #     - coding-challenges/palindrome/index.md
+      #     - coding-challenges/palindrome/simple-palindrome-test.md
       - 4 Ever Clojure:
           - coding-challenges/4clojure/index.md
       - Exercism:
