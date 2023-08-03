@@ -152,7 +152,7 @@ nav:
       - Execution Options: clojure-cli/execution-options.md
       - REPL Reloaded: clojure-cli/repl-reloaded.md
       - Clojure Style: clojure-cli/clojure-style.md
-  - Terminal REPL:
+  - Clojure REPL:
       - clojure-cli/repl/index.md
       - REPL Coding: clojure-cli/repl/coding.md
       - REPL Libraries: clojure-cli/repl/libraries.md
