@@ -1,4 +1,4 @@
-# Terminal REPL
+# Clojure REPL
 
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing or in production systems.
 
