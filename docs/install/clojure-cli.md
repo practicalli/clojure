@@ -25,6 +25,16 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
     The installation creates `/usr/local/bin/clojure`, `/usr/local/bin/clj` wrapper and `/usr/local/lib/clojure` directory.
 
+    ??? HINT "Use alternative location - unattended install"
+        `--prefix` option specifies an alternative lolcation for the Clojure CLI install.
+
+        When permissions are not available or for automating the install without password prompt, use a local user specific install, e.g.
+        ```shell
+        curl -O https://download.clojure.org/install/linux-install.sh && \
+        chmod +x linux-install.sh && \
+        ./linux-install.sh --prefix $HOME/.local/
+        ```
+    
     ??? INFO "Include version number for specific release"
         Clojure CLI linux install scripts include a number in their name to signify the version of Clojure and the version of Clojure CLI.
 
