@@ -88,7 +88,7 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
 > Reference: [Clojure CLI Install - Clojure.org Getting Started](https://clojure.org/guides/install_clojure){target=_blank} - official guide
 
-## :fontawesome-solid-book-open: Practicalli Clojure CLI Config
+## Practicalli Clojure CLI Config
 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
