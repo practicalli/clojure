@@ -145,9 +145,6 @@ Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/c
      :key-bindings {}}
     ```
 
-    ![Clojure Rebel REPL - repl/help](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png?raw=true#only-light)
-    ![Clojure Rebel REPL - repl/help](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png?raw=true#only-dark)
-
 
 ## Next Steps
 
