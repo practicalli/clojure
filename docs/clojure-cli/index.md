@@ -1,7 +1,7 @@
 # Clojure CLI
 
 ??? HINT "Learn by doing"
-    To learn Clojure CLI by doing, jump to [Terminal REPL](/clojure/cli/repl/) or [Clojure project](/clojure/clojure-cli/projects/) sections to start using the Clojure CLI
+    To learn Clojure CLI by doing, jump to [Terminal REPL](/clojure/clojure-cli/repl/) or [Clojure project](/clojure/clojure-cli/projects/) sections to start using the Clojure CLI
 
 Clojure CLI (command line interface) is the latest approach to working with Clojure projects, libraries and tools. Clojure CLI focuses on:
 
