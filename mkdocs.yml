@@ -154,12 +154,12 @@ nav:
       - Clojure Style: clojure-cli/clojure-style.md
   - Clojure REPL:
       - clojure-cli/repl/index.md
-      # <!-- - clojure-cli/repl/repl-uncovered.md --> <!-- TODO rewrite -->
       - Coding: clojure-cli/repl/coding.md
       - Managing Libraries: clojure-cli/repl/libraries.md
       - Help: clojure-cli/repl/help.md
       - Custom Startup: clojure-cli/repl-startup.md
       - Troubleshoot: clojure-cli/repl/troubleshooting.md
+      - Theory REPL Uncovered: clojure-cli/repl/repl-uncovered.md
   - Clojure Projects:
       - clojure-cli/projects/index.md
       - Template Projects:
