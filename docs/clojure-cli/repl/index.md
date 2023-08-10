@@ -2,54 +2,108 @@
 
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing or in production systems.
 
-A Terminal REPL provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results.  A terminal REPL is very quick experiments, working with long running processes (e.g. http severs running Clojure) or for a convenient way to interact with the REPL state and manage components (e.g restarting system components, querying UI component state or services system state).
+A Terminal REPL provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results. 
+
+Use a  terminal REPL for 
+
+* quick experiments
+* long running processes (e.g. http severs running Clojure) 
+* interact with the REPL state and manage components (e.g restarting system components, querying UI component state or services system state).
+* a REPL process separate from a specific editor control
+
+!!! INFO "REPL connected Editor"
+    A [Clojure aware editor](/clojure/clojure-editors/) connected to the REPL is used for the majority of Clojure development.  One or more expressions from a source code file can be sent to the REPL for evaluation, displaying the results inline.
+
 
 ## Rebel Terminal REPL UI
 
-Rebel is a REPL terminal UI that provides auto-completion, function call syntax help, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-cli/basic-repl.md) by default.
+Rebel is a REPL terminal UI that provides auto-completion, function call syntax help and documentation, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-cli/basic-repl.md) by default.
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U19TWMsg0s0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-### Install rebel readline
+### Install Rebel 
 
-[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains an alias to run rebel readline.
+=== "Practicalli Clojure CLI Config"
+    `:repl/rebel` alias is provided by [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) to run rebel readline.
 
-??? INFO "Add a Rebel terminal UI alias"
-    If not using [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) then add an alias called `:repl/rebel`to your own user `deps.edn` configuration
-    ```clojure
-    :repl/rebel {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
-                 :main-opts  ["-m" "rebel-readline.main"]}
-    ```
+    `:repl/reloaded` alias runs Rebel with tools to support the [:fontawesome-solid-book-open: Practicalli REPL Reloaded](/clojure/clojure-cli/repl-reloaded/), providing a custom REPL startup with support for Portal data inspector and Mulog event logs.
 
-### Running the rebel REPL
+    Both aliases will start an nREPL server for [:fontawesome-solid-book-open: Clojure aware editors](/clojure/clojure-editors/) to connect.
 
-Start a Clojure REPL with Rebel terminal UI.  Use the command in the root of a Clojure project to include the project dependencies and source code.
+    Rebel libraries are downloaded the first time the Rebel alias is used.
 
-!!! NOTE ""
-    ```shell
-    clojure -M:repl/rebel
-    ```
 
-A REPL prompt displays and will evaluate code entered.
+=== "Define Rebel Alias"
+    Add an alias called `:repl/rebel`to the user `deps.edn` configuration, e.g. `~/.config/clojure/deps.edn`
+    !!! EXAMPLE "Basic Rebel terminal UI alias"
+        ```clojure title="~/.config/clojure/deps.edn"
+        :repl/rebel 
+        {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.5"}}
+         :main-opts  ["-m" "rebel-readline.main"]}
+        ```
 
-![Clojure REPL rebel readline](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-dark.png#only-dark)
-![Clojure REPL rebel readline](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-prompt-light.png#only-light)
+    !!! EXAMPLE "Rebel terminal UI alias with nREPL for editor connection"
+        ```clojure title="~/.config/clojure/deps.edn"
+        :repl/rebel
+        {:extra-deps {nrepl/nrepl                {:mvn/version "1.0.0"}
+                      cider/cider-nrepl          {:mvn/version "0.31.0"}
+                      com.bhauman/rebel-readline {:mvn/version "0.1.4"}}
+         :main-opts  ["-e" "(apply require clojure.main/repl-requires)"
+                      "--main" "nrepl.cmdline"
+                      "--middleware" "[cider.nrepl/cider-middleware]"
+                      "--interactive"
+                      "-f" "rebel-readline.main/-main"]}
+        ```
 
-Evaluate Clojure code by typing at the `=> user` prompt pressing `Return`, the results of evaluating the code are printed on the next line.
 
-`:repl/quit` as the prompt will end the REPL session and all changes not saved to a file will be lost.
+=== "Clojure CLI REPL"
+    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains aliases for a basic terminal UI and a headless (non-interactive) terminal UI, each starting an nREPL server for editor connection.
 
-> ++ctrl+"c"++ if the repl process does not return to the shell prompt.
+    !!! INFO "Alias definitions for a basic terminal UI REPL"
+        Interactive client REPL with nREPL server for Clojure Editor support
+        ```clojure
+        :repl/basic
+        {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                      cider/cider-nrepl {:mvn/version "0.28.7"}}
+         :main-opts  ["-m" "nrepl.cmdline"
+                      "--middleware" "[cider.nrepl/cider-middleware]"
+                      "--interactive"]}
+        ```
 
-## REPL startup
+        Headless REPL with nREPL server for Clojure Editor support
+        ```clojure
+        :repl/headless
+        {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
+                      cider/cider-nrepl {:mvn/version "0.28.7"}}
+         :main-opts  ["-m" "nrepl.cmdline"
+                      "--middleware" "[cider.nrepl/cider-middleware]"]}
+        ```
 
-The Clojure REPL always starts in the `user` namespace.
+    To have a basic terminal UI REPL prompt use the `:repl/basic` alias to start a REPL process with nREPL connection.
 
-During startup the the `clojure.core` functions are required (made available) in the user namespace, so `(map inc [1 2 3])` can be called without specifying the `clojure.core` namespace in which those functions are defined.
+    !!! NOTE ""
+        ```shell
+        clj -M:repl/basic
+        ```
 
-> If clojure.core were not required, then the expression would be `(clojure.core/map clojure.core/inc [1 2 3])`
+    To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.  This approach is useful to separate the REPL output from the editor whilst keeping all the interaction with the REPL via the editor.
+
+    !!! NOTE ""
+        ```shell
+        clj -M:repl/headless
+        ```
+
+
+??? INFO "Terminal REPL and Editor"
+    Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process, providing a more effective way to write and extend Clojure code.
+
+    An external REPL can still be of use even when only evaluating code in a [Clojure editor](/clojure/clojure-editor/). Separating the REPL process from the editor process allows the editor to be closed, upgraded or swapped for a different editor without having to end the REPL session.  Different editors could be connected to the same REPL to use particular features they provide.
+
+    A REPL process can be long running, staying alive for days, weeks or months when working on larger projects.  Avoiding stop and start of the REPL maintains state in the REPL, maintaining the flow of the Clojure workflow.
+
+
 
 ### Customize Rebel Readline
 
@@ -57,7 +111,7 @@ During startup the the `clojure.core` functions are required (made available) in
 
 Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/clojure/` or `$HOME/.clojure`
 
-??? EXAMPLE "Rebel Readline Configuration options"
+??? EXAMPLE "Practicalli Rebel Readline Configuration options"
     ```clojure title="$XDG_CONFIG_HOME/clojure/rebel_readline.edn"
     ;; ---------------------------------------------------------
     ;; Rebel Readline Configuration
@@ -91,51 +145,22 @@ Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/c
      :key-bindings {}}
     ```
 
-![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png#only-dark)
-![Clojure Rebel REPL - repl/help](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png#only-light)
+    ![Clojure Rebel REPL - repl/help](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-help-menu-light.png?raw=true#only-light)
+    ![Clojure Rebel REPL - repl/help](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-help-menu-dark.png?raw=true#only-dark)
 
-## Terminal REPL and Editor
 
-Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process, providing a more effective way to write and extend Clojure code.
+## Next Steps
 
-An external REPL can still be of use even when only evaluating code in a [Clojure editor](/clojure/clojure-editor/). Separating the REPL process from the editor process allows the editor to be closed, upgraded or swapped for a different editor without having to end the REPL session.  Different editors could be connected to the same REPL to use particular features they provide.
+[:fontawesome-solid-book-open: Code In The REPL](coding.md){target=_blank .md-button} 
 
-A REPL process can be long running, staying alive for days, weeks or months when working on larger projects.  Avoiding a REPL atop and start maintains the state of the REPL in memory, supporting the flow of the Clojure workflow.
+[:fontawesome-solid-book-open: Managing Libraries In The REPL](libraries.md){target=_blank .md-button} 
 
-Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process.
+[:fontawesome-solid-book-open: Help In The REPL](help.md){target=_blank .md-button} 
 
-[:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) contains aliases for a basic terminal UI and a headless (non-interactive) terminal UI, each starting an nREPL server for editor connection.
+[:fontawesome-solid-book-open: Custom REPL Startup](../repl-startup.md){target=_blank .md-button} 
 
-??? INFO "Alias definitions for a basic terminal UI REPL"
-    Interactive client REPL with nREPL server for Clojure Editor support
-    ```clojure
-    :repl/basic
-    {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
-                  cider/cider-nrepl {:mvn/version "0.28.7"}}
-     :main-opts  ["-m" "nrepl.cmdline"
-                  "--middleware" "[cider.nrepl/cider-middleware]"
-                  "--interactive"]}
-    ```
+[:fontawesome-solid-book-open: REPL Uncovered](repl-uncovered.md){target=_blank .md-button} 
 
-    Headless REPL with nREPL server for Clojure Editor support
-    ```clojure
-    :repl/headless
-    {:extra-deps {nrepl/nrepl {:mvn/version "1.0.0"}
-                  cider/cider-nrepl {:mvn/version "0.28.7"}}
-     :main-opts  ["-m" "nrepl.cmdline"
-                  "--middleware" "[cider.nrepl/cider-middleware]"]}
-    ```
 
-To have a basic terminal UI REPL prompt use the `:repl/basic` alias to start a REPL process with nREPL connection.
 
-!!! NOTE ""
-    ```shell
-    clj -M:repl/basic
-    ```
 
-To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.  This approach is useful to separate the REPL output from the editor whilst keeping all the interaction with the REPL via the editor.
-
-!!! NOTE ""
-    ```shell
-    clj -M:repl/headless
-    ```
