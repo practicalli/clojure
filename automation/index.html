@@ -5907,7 +5907,14 @@
     Automation tooling
   </a>
   
-    <nav class="md-nav" aria-label="Automation tooling">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make" class="md-nav__link">
+    Make
+  </a>
+  
+    <nav class="md-nav" aria-label="Make">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -5919,13 +5926,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#make" class="md-nav__link">
-    Make
-  </a>
   
 </li>
       
@@ -5968,28 +5968,35 @@
 
 
 <h1 id="automation">Automation<a class="headerlink" href="#automation" title="Permanent link">λ︎</a></h1>
-<p>Using an automation tool can provide a consistent command line interface across a wide range of projects</p>
+<p>Automation tools can provide a consistent command line interface across a wide range of projects.</p>
 <p>Whilst the Clojure CLI is a very extensible tool that flexibility can also add some complexity to its command line interface.</p>
-<p>Using a consistent set of user aliases can help manage the command line interface, however, automation tools can abstract the command line task even further to provide a consistent and simple to use experience whilst keeping the underlying flexibility</p>
+<p>Using a consistent set of user aliases can help manage the command line interface, however, automation tools can abstract the command line task even further to provide a consistent and simple to user experience whilst keeping the underlying flexibility.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli recommends make</p>
+<p>A Makefile is not reliant on programming language knowledge so has no barrier to those who are unfamiliar with the Clojure language.</p>
+<p>Make is useful when working with mixed language teams to create a unified tool and command line across a wide range of projects.</p>
+</div>
 <h2 id="automation-tooling">Automation tooling<a class="headerlink" href="#automation-tooling" title="Permanent link">λ︎</a></h2>
 <ul>
 <li><a href="make/">Make</a> - ubiquitous task automation tool, programming language agnostic</li>
 <li>Shell Scripts</li>
 <li>Babashka - create task automation tool with Clojure</li>
 </ul>
-<h3 id="shell-scripts">Shell Scripts<a class="headerlink" href="#shell-scripts" title="Permanent link">λ︎</a></h3>
-<p>Shell scripts provide a very common way to create a relatively ubiquitous approach to running tools, even across multiple Shell implementations (Bash, Zsh, fish, etc.) and operating systems.</p>
-<p>Shell scripting language is very powerful especially for manipulation of the operating system.</p>
 <h2 id="make">Make<a class="headerlink" href="#make" title="Permanent link">λ︎</a></h2>
-<p>Make has a long history as a build tool and wider task automation tool.</p>
-<p>Make is very simple to use.</p>
-<p>Task are defined in a <code>Makefile</code> and task can depend on each other.</p>
-<p>Any commands or combination of commands that run on the command line can be used as make tasks.</p>
+<p>Make is very simple to use and has a long history as a build tool and wider task automation tool.</p>
+<p>Task are defined in a <code>Makefile</code> and task can depend on each other. Any commands or combination of commands that run on the command line can be used as make tasks.</p>
 <p>make provides tab completion of tasks defined in the Makefile without additional configuration.</p>
 <p><code>make</code> is available for all operating systems.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Project Templates include Makefile</p>
+<p>Creating new projects with <code>:project/create</code> and <a href="/clojure/clojure-cli/projects/templates/">Practicalli Project Templates</a> provide a Makefile with a wide range of common tasks for Clojure development. </p>
+</div>
+<h3 id="shell-scripts">Shell Scripts<a class="headerlink" href="#shell-scripts" title="Permanent link">λ︎</a></h3>
+<p>Shell scripts provide a very common way to create a relatively ubiquitous approach to running tools, even across multiple Shell implementations (Bash, Zsh, fish, etc.) and operating systems.</p>
+<p>Shell scripting language is very powerful especially for manipulation of the operating system, although scripts require development and maintenance.</p>
 <h2 id="babashka">Babashka<a class="headerlink" href="#babashka" title="Permanent link">λ︎</a></h2>
-<p>Write Clojure code using the <a href="https://book.babashka.org/#tasks" target="_blank">Babashka task runner</a></p>
-<p>Babashka reqiures more coding that make, although has the ability to use a wide range of Clojure functions and libraries.</p>
+<p>Write automation scripts with Clojure code using the <a href="https://book.babashka.org/#tasks" target="_blank">Babashka task runner</a></p>
+<p>Babashka can use a wide range of Clojure functions and libraries, although as a general script tool then additional coding and maintenance may be reqiured compared to a dedicated tool.</p>
 <p><a class="md-button" href="https://book.babashka.org/#tasks" target="_blank">Babashka task runner</a></p>
 
   <hr>
@@ -5997,7 +6004,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 24, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 10, 2023</span>
       
     
   </small>
