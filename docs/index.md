@@ -1,6 +1,6 @@
 # Practicalli Clojure
 
-Getting started with Clojure programming language using [Clojure CLI](/clojure/clojure-cli/) and [community tools](/clojure/clojure-cli/community-tools.md).
+Getting started with Clojure programming language using [Clojure CLI](/clojure/clojure-cli/) and [community tools](/clojure/clojure-cli/practicalli-config/).
 
 A practical guide to learning Clojure with step by step explanations of code and design decisions and live coding videos to demonstrate the Clojure REPL workflow.
 
