@@ -11,12 +11,17 @@ A practical guide to learning Clojure with step by step explanations of code and
 
 ![Clojure Repl workflow - concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png){loading=lazy}
 
-Clojure runs in [a REPL process](/clojure/clojure-cli/repl/) that provides instant feedback as code is written, encouraging experimentation and allowing effective designs to evolve rapidly and with confidence that comes with a clear understanding.
+The [Clojure REPL](/clojure/clojure-cli/repl/) is interactive environment used to run Clojure code in both development and production. The [REPL workflow]](introduction/repl-workflow.md) provides an instant feedback loop so individual pieces of code (expressions) can be evaluatived, quickly growing confidence with Clojure and rapidly evolving effective designs.
 
-The REPL is [Clojure interactive environment](introduction/repl-workflow.md) used to create an run Clojure code, in both development and production.  Quickly grow confidence with Clojure by evaluating, breaking, fixing and extending code in the REPL.  All the while getting instant feedback on what the code is doing.
+Clojure programming language has a strong dynamic type system that allows for a very simple syntax that is a joy to work with.  Immutable values and pragmatic pure functional programming approach makes it easier to create simple systems. A specification library ensures values are of the correct shape, especially when receiving data from outside of Clojure.
+
+Clojure has an open source license and a large number of open source libraries and tools.  Simple host interoperability allows a even more libraries to be leveraged.
 
 !!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
     The most productive programmers I know are writing everything in Clojure ... producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
+
+[Clojure REPL Workflow overview](introduction/repl-workflow.md)){.md-button}
+[Clojure REPL](/clojure/clojure-cli/repl/){.md-button}
 
 ## About the book
 
@@ -61,3 +66,4 @@ Thank you to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](ht
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
   This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
 </div>
+ 
