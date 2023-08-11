@@ -1,6 +1,6 @@
 # Clojure in 15 minutes
 
-A quick tour of the Clojure syntax, which is so terse you can read through this section in around 15 minutes (or less).
+A quick tour of the Clojure syntax and common functions, which is so terse you can read through this page in around 15 minutes and have a basic understanding of the language.
 
 ## Comments
 
@@ -10,21 +10,36 @@ A quick tour of the Clojure syntax, which is so terse you can read through this 
 
 `(comment )` form to comment all the containing forms
 
-## Clojure written in forms
+## Clojure expressions
 
-Clojure is written in "forms", which are just a lists of things inside parentheses, `()`, separated by whitespace.
+Clojure is mostly written with "expressions", a lists of elements inside parentheses, `()`, separated by space characters.
 
-Clojure evaluates the first thing in a form as a function call.  Additional values in the form are passed as arguments to the called function.
+Clojure evaluates the first element in an expression as a function call.  Additional elements in the expression are passed as value arguments to the called function.
 
-Clojure is organised into one or more namespaces. The namespace represents the directory path and file name that contains the code of the particular namespace.
+```clojure
+(+ 2007 (* 1 16))       ;; function call with value and expression as arguments
+(map inc (range 0 99))  ;; functions can be passed as an argument
+```
+
+## Organising Clojure
+
+Clojure code is organised into one or more namespaces. The namespace represents the directory path and file name that contains the code of the particular namespace.
+
+A company name or community repository name is often used making the namespace unique and easier to share & reuse.
 
 ```clojure
 ;; Define the namespace test
-(ns test.code)  ;; src/test/code.clj
+(ns practicalli.game-board)  ;; src/practicalli/game_board.clj
 
 ;; Define a longer namespace
-(ns com.company.product.component.core)  ;; src/com/company/product/component/core.clj
+(ns com.company.product.component-name)  ;; src/com/company/product/component_name.clj
 ```
+
+??? WARNING "Namespaces use dash, directory and file names use underscore"
+    Clojure uses `kebab-case` for names (common in Lisp dialects)
+
+    Unfortunately the Java Virtual Machine that hosts Clojure does not support dash, `-`, in file and directory names, so an underscore, `-`, character is used
+
 
 ## String manipulation
 
@@ -78,23 +93,23 @@ Clojure is strongly typed, so everything is a type in Clojure.
 
 Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.
 
-As Clojure is a hosted language it uses the type system of its host where relevant.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.
+Clojure is a hosted language and uses the type system of the platform it runs upon.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.
 
-Use `class` or `type` functions to inspect the type of some code in Clojure.
+Use `class` or `type` function to inspect the type of some code in Clojure.
 
 ```clojure
-(class 1) ; Integer literals are java.lang.Long by default
-(class 1.); Float literals are java.lang.Double
-(class ""); Strings always double-quoted, and are java.lang.String
-(class false) ; Booleans are java.lang.Boolean
-(class nil); The "null" value is called nil
+(type 1) ; Integer literals are java.lang.Long by default
+(type 1.); Float literals are java.lang.Double
+(type ""); Strings always double-quoted, and are java.lang.String
+(type false) ; Booleans are java.lang.Boolean
+(type nil); The "null" value is called nil
 ```
 
 Vectors and Lists are java classes too!
 
 ```
-(class [1 2 3]); => clojure.lang.PersistentVector
-(class '(1 2 3)); => clojure.lang.PersistentList
+(type [1 2 3]); => clojure.lang.PersistentVector
+(type '(1 2 3)); => clojure.lang.PersistentList
 ```
 
 ### Collections & Sequences
@@ -422,7 +437,7 @@ The functions from clojure.set can be used via the alias name, rather than the f
   (require 'clojure.set :as set))
 ```
 
-## Java
+## Java Interop
 
 Java has a huge and useful standard library, so you'll want to learn how to get at it.
 
