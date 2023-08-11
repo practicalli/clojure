@@ -9,11 +9,11 @@ A practical guide to learning Clojure with step by step explanations of code and
 
 ## Clojure REPL Driven Development
 
-![Clojure Repl workflow - concept](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-workflow-concept.png){loading=lazy}
+![Clojure Repl workflow - concept](https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true){loading=lazy}
 
-The [Clojure REPL](/clojure/clojure-cli/repl/) is interactive environment used to run Clojure code in both development and production. The [REPL workflow]](introduction/repl-workflow.md) provides an instant feedback loop so individual pieces of code (expressions) can be evaluatived, quickly growing confidence with Clojure and rapidly evolving effective designs.
+The [Clojure REPL](/clojure/clojure-cli/repl/) is interactive environment used to run Clojure code in both development and production. The [REPL workflow](introduction/repl-workflow.md) provides an instant feedback loop so individual pieces of code (expressions) can be evaluatived, quickly growing confidence with Clojure and rapidly evolving effective designs.
 
-Clojure programming language has a strong dynamic type system that allows for a very simple syntax that is a joy to work with.  Immutable values and pragmatic pure functional programming approach makes it easier to create simple systems. A specification library ensures values are of the correct shape, especially when receiving data from outside of Clojure.
+Clojure programming language has a strong dynamic type system and a [simple syntax](introduction/clojure-in-15-minutes/) that is a joy to work with.  Immutable values and a pragmatic approach to pure functional programming makes it easier to create simple and highly maintainable systems. A [specification library](clojure-spec/) ensures values are of the correct shape, especially valuable when receiving data from outside of Clojure.
 
 Clojure has an open source license and a large number of open source libraries and tools.  Simple host interoperability allows a even more libraries to be leveraged.
 
