@@ -1,8 +1,10 @@
 # Practicalli Clojure
 
-Getting started with Clojure programming language using [Clojure CLI](/clojure/clojure-cli/) and [community tools](/clojure/clojure-cli/practicalli-config/).
+Practicalli Clojure is a hands-on guide to using Clojure throughout all the software development stages.  Live coding videos demonstrate the Clojure REPL workflow in action, showing how to get the most out of the unique approach the language provides.
 
-A practical guide to learning Clojure with step by step explanations of code and design decisions and live coding videos to demonstrate the Clojure REPL workflow.
+Discover how to make the most of [Clojure CLI](/clojure/clojure-cli/) and [community tools](/clojure/clojure-cli/practicalli-config/), drawing from commercial experiences and community discussions.
+
+Practical code examples are supported by discussions of the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
 
 !!! QUOTE - "John Stevenson, Practical.li"
     Clojure - an elegant language for a more civilised development experience
@@ -12,6 +14,9 @@ A practical guide to learning Clojure with step by step explanations of code and
 ![Clojure Repl workflow - concept](https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true){loading=lazy}
 
 The [Clojure REPL](/clojure/clojure-cli/repl/) is interactive environment used to run Clojure code in both development and production. The [REPL workflow](introduction/repl-workflow.md) provides an instant feedback loop so individual pieces of code (expressions) can be evaluatived, quickly growing confidence with Clojure and rapidly evolving effective designs.
+
+
+### Clojure Language
 
 Clojure programming language has a strong dynamic type system and a [simple syntax](introduction/clojure-in-15-minutes/) that is a joy to work with.  Immutable values and a pragmatic approach to pure functional programming makes it easier to create simple and highly maintainable systems. A [specification library](clojure-spec/) ensures values are of the correct shape, especially valuable when receiving data from outside of Clojure.
 
@@ -23,13 +28,8 @@ Clojure has an open source license and a large number of open source libraries a
 [Clojure REPL Workflow overview](introduction/repl-workflow.md){.md-button}
 [Clojure REPL](/clojure/clojure-cli/repl/){.md-button}
 
-## About the book
 
-Practicalli Clojure provides a hands on approach to learning Clojure through the entire software development workflow.
 
-Practical examples from commercial experience is shared and supported by discussions of the concepts behind Clojure, including functional programming, "pure" functions and a stateless approach with persistent data structures, changing state safely, Java interoperability and tooling around Clojure.
-
-[![Built with Spacemacs](https://cdn.rawgit.com/syl20bnr/spacemacs/442d025779da2f62fc86c2082703697714db6514/assets/spacemacs-badge.svg)](https://practicalli.github.io/spacemacs/)
 
 ## Navigate the book
 
