@@ -20,7 +20,7 @@ Clojure has an open source license and a large number of open source libraries a
 !!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
     The most productive programmers I know are writing everything in Clojure ... producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
 
-[Clojure REPL Workflow overview](introduction/repl-workflow.md)){.md-button}
+[Clojure REPL Workflow overview](introduction/repl-workflow.md){.md-button}
 [Clojure REPL](/clojure/clojure-cli/repl/){.md-button}
 
 ## About the book
