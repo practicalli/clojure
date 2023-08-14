@@ -6244,54 +6244,63 @@
 <ul>
 <li>Income tax (additional rate band) : Any amount of money earned above a gross annual salary of £150,000.00 is taxed at 45%</li>
 </ul>
+<!-- TODO; challenge: complete salary slip challenge example  -->
+
 <details class="example">
 <summary>Practicalli Salary Slip Kata</summary>
-<p><!-- TODO; challenge: complete salary slip challenge example  -->
-<!-- from https://github.com/practicalli-john/salary-slip-kata-devox-2019 -->
-```clojure
-(ns salary-slip-kata.core)</p>
-<p>;; Developer Anarchy by Fred George
-;; - made devs write the same solution in different languages
-;; -- helps devs master the business domain
-;; -- helps devs master technology domain</p>
-<p>(defn- national-insurance-contribution
-  "Calculate the national insurance contribution due for a given annual salary.</p>
-<p>---------------------+-------------------------+--------
-  Band                 | NI deductible income    | NI Rate
-  ---------------------+-------------------------+--------
-  No contributions     | Up to £8,060.00         |    0%
-  Basic contributions  | £8,060.00 to £43,000.00 |   12%
-  Higher contributions | over £43,000.00         |    2%
-  ---------------------+-------------------------+-------- "</p>
-<p>[annual-gross-salary]
-  ;; add a cond statement to return the calculate the value with respect to the band.
-  (* annual-gross-salary 0.12))</p>
-<p>;; taxable income
-;; ---------------------+---------------------------+---------
-;; Band                 | Taxable income            | Tax rate
-;; ---------------------+---------------------------+---------
-;; Personal Allowance*  | Up to £11,000.00          |    0%
-;; Basic rate           | £11,000.00 to £43,000.00  |   20%
-;; Higher rate          | £43,000.00 to £150,000.00 |   40%
-;; Additional rate      | over £150,000.00          |   45%
-;; ---------------------+---------------------------+---------</p>
-<p>(defn salary-slip
-  "Creates a salary slip for a person</p>
-<p>Specifically for employee of 24K annual salary"</p>
-<p>[{:keys [employee-id
-           employee-name
-           annual-gross-salary]}]
-  (let [tax-free-allowance 11000
-        taxable-income     (- annual-gross-salary
-                              tax-free-allowance)]
-    {:employee-id        employee-id
-     :employee-name      employee-name
-     :gross-salary       (/ annual-gross-salary 12)
-     :national-insurance (national-insurance-contribution annual-gross-salary)
-     :tax-free-allowance tax-free-allowance
-     :taxable-income     taxable-income
-     :tax-payable        (* taxable-income 0.20)}))
-    ```</p>
+<p><a href="https://github.com/practicalli-john/salary-slip-kata-devox-2019">Salary slip kata - Devoxx 2019</a></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">salary-slip-kata.core</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="s">&quot;Developer Anarchy by Fred George</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="s">   - made devs write the same solution in different languages</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s">   -- helps devs master the business domain</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="s">   -- helps devs master technology domain&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">(</span><span class="kd">defn- </span><span class="nv">national-insurance-contribution</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="s">&quot;Calculate the national insurance contribution due for a given annual salary.</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="s">  ---------------------+-------------------------+--------</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="s">  Band                 | NI deductible income    | NI Rate</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="s">  ---------------------+-------------------------+--------</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="s">  No contributions     | Up to £8,060.00         |    0%</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="s">  Basic contributions  | £8,060.00 to £43,000.00 |   12%</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="s">  Higher contributions | over £43,000.00         |    2%</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="s">  ---------------------+-------------------------+-------- &quot;</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="w">  </span><span class="p">[</span><span class="nv">annual-gross-salary</span><span class="p">]</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a><span class="w">  </span><span class="c1">;; add a cond statement to return the calculate the value with respect to the band.</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">  </span><span class="p">(</span><span class="nb">* </span><span class="nv">annual-gross-salary</span><span class="w"> </span><span class="mf">0.12</span><span class="p">))</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a><span class="c1">;; taxable income</span>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a><span class="c1">;; ---------------------+---------------------------+---------</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="c1">;; Band                 | Taxable income            | Tax rate</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="c1">;; ---------------------+---------------------------+---------</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a><span class="c1">;; Personal Allowance*  | Up to £11,000.00          |    0%</span>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a><span class="c1">;; Basic rate           | £11,000.00 to £43,000.00  |   20%</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a><span class="c1">;; Higher rate          | £43,000.00 to £150,000.00 |   40%</span>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a><span class="c1">;; Additional rate      | over £150,000.00          |   45%</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="c1">;; ---------------------+---------------------------+---------</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">salary-slip</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a><span class="w">  </span><span class="s">&quot;Creates a salary slip for a person</span>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="s">  Specifically for employee of 24K annual salary&quot;</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">employee-id</span>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a><span class="w">           </span><span class="nv">employee-name</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a><span class="w">           </span><span class="nv">annual-gross-salary</span><span class="p">]}]</span>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">tax-free-allowance</span><span class="w"> </span><span class="mi">11000</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span><span class="nv">taxable-income</span><span class="w">     </span><span class="p">(</span><span class="nb">- </span><span class="nv">annual-gross-salary</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="w">                              </span><span class="nv">tax-free-allowance</span><span class="p">)]</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a><span class="w">    </span><span class="p">{</span><span class="ss">:employee-id</span><span class="w">        </span><span class="nv">employee-id</span>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a><span class="w">     </span><span class="ss">:employee-name</span><span class="w">      </span><span class="nv">employee-name</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a><span class="w">     </span><span class="ss">:gross-salary</span><span class="w">       </span><span class="p">(</span><span class="nb">/ </span><span class="nv">annual-gross-salary</span><span class="w"> </span><span class="mi">12</span><span class="p">)</span>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a><span class="w">     </span><span class="ss">:national-insurance</span><span class="w"> </span><span class="p">(</span><span class="nf">national-insurance-contribution</span><span class="w"> </span><span class="nv">annual-gross-salary</span><span class="p">)</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">     </span><span class="ss">:tax-free-allowance</span><span class="w"> </span><span class="nv">tax-free-allowance</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="w">     </span><span class="ss">:taxable-income</span><span class="w">     </span><span class="nv">taxable-income</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a><span class="w">     </span><span class="ss">:tax-payable</span><span class="w">        </span><span class="p">(</span><span class="nb">* </span><span class="nv">taxable-income</span><span class="w"> </span><span class="mf">0.20</span><span class="p">)}))</span>
+</code></pre></div>
 </details>
 
   <hr>
@@ -6299,7 +6308,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2023</span>
       
     
   </small>
