@@ -92,35 +92,32 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
-Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure` directory if they exist.
-
-??? HINT "Check Clojure CLI configuration location"
-    Check the location of your Clojure configuration directory by running `clojure -Sdescribe` and checking the `:user-config` value.
+Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` and `$HOME/.clojure` directory if they exist.
 
 === "Free Desktop XDG CONFIG"
     If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
 
     Via SSH
     ```shell
-    git clone git@github.com:practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
+    git clone git@github.com:practicalli/clojure-cli-config.git $XDG_CONFIG_HOME/clojure
     ```
 
     Via HTTPS:
     ```shell
-    git clone https://github.com/practicalli/clojure-deps-edn.git $XDG_CONFIG_HOME/clojure
+    git clone https://github.com/practicalli/clojure-cli-config.git $XDG_CONFIG_HOME/clojure
     ```
 
 === "Classic Config"
     Clojure CLI will look for its configuration in `$HOME/.clojure` directory if `$XDG_CONFIG_HOME` and `CLJ_CONFIG` environment variables not set.
     Via SSH
     ```shell
-    git clone git@github.com:practicalli/clojure-deps-edn.git $HOME/.clojure
+    git clone git@github.com:practicalli/clojure-cli-config.git $HOME/.clojure
 
 ```
 
     Via HTTPS
     ```shell
-    git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
+    git clone https://github.com/practicalli/clojure-cli-config.git $HOME/.clojure
     ```
 
 ## Check Configuration
@@ -134,7 +131,7 @@ clojure -Sdescribe
 The output of the command includes the version of Clojure CLI in the `:version` key
 
 ```bash
-{:version "1.11.1.1208"
+{:version "1.11.1.1386"
  :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.config/clojure/deps.edn" ]
  :config-user "/home/practicalli/.config/clojure/deps.edn"
  :config-project "deps.edn"
