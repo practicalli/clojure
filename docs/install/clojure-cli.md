@@ -40,9 +40,9 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
         Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
         ```shell title="Clojure CLI install specific version"
-        curl -O https://download.clojure.org/install/linux-install-1.11.1.1252.sh
-        chmod +x linux-install-1.11.1.1252.sh
-        sudo ./linux-install-1.11.1.1252.sh
+        curl -L -O https://github.com/clojure/brew-install/releases/1.11.1.1386/download/linux-install.sh && \
+        chmod +x linux-install-1.11.1.1386.sh
+        sudo ./linux-install-1.11.1.1386.sh
         ```
 
 === "Homebrew"
