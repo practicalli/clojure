@@ -17,8 +17,8 @@ The Clojure CLI automatically downloads all library dependencies, including the 
     ```
 
     Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux) to install the latest stable release
-    ```bash
-    curl -O https://download.clojure.org/install/linux-install.sh && \
+    ```shell   
+    curl -L -O https://download.clojure.org/install/linux-install.sh && \
     chmod +x linux-install.sh && \
     sudo ./linux-install.sh
     ```
