@@ -16,7 +16,8 @@ The Clojure CLI automatically downloads all library dependencies, including the 
     export XDG_CONFIG_HOME="$HOME/.config"
     ```
 
-    Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux) to install the latest stable release
+    Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux) to install or update to the latest stable release
+
     ```shell
     curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh && \
     chmod +x linux-install.sh && \
