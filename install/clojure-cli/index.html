@@ -6039,9 +6039,9 @@
 <summary>Include version number for specific release</summary>
 <p>Clojure CLI linux install scripts include a number in their name to signify the version of Clojure and the version of Clojure CLI.</p>
 <p>Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
-<div class="highlight"><span class="filename">Clojure CLI install specific version</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://download.clojure.org/install/linux-install-1.11.1.1252.sh
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install-1.11.1.1252.sh
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>./linux-install-1.11.1.1252.sh
+<div class="highlight"><span class="filename">Clojure CLI install specific version</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/clojure/brew-install/releases/1.11.1.1386/download/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install-1.11.1.1386.sh
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>./linux-install-1.11.1.1386.sh
 </code></pre></div></p>
 </details>
 </div>
@@ -6080,34 +6080,30 @@ Then in the same PowerShell window, install the Clojure related tools using the 
 </blockquote>
 <h2 id="practicalli-clojure-cli-config">Practicalli Clojure CLI Config<a class="headerlink" href="#practicalli-clojure-cli-config" title="Permanent link">λ︎</a></h2>
 <p>Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.</p>
-<p>Fork or clone <a href="https://github.com/practicalli/clojure-deps-edn" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> or <code>$HOME/.clojure</code> directory if they exist.</p>
-<details class="hint">
-<summary>Check Clojure CLI configuration location</summary>
-<p>Check the location of your Clojure configuration directory by running <code>clojure -Sdescribe</code> and checking the <code>:user-config</code> value.</p>
-</details>
+<p>Fork or clone <a href="https://github.com/practicalli/clojure-cli-config" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> and <code>$HOME/.clojure</code> directory if they exist.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Free Desktop XDG CONFIG</label><label for="__tabbed_2_2">Classic Config</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
 <p>If <code>XDG_CONFIG_HOME</code> environment variable is set, clone the repository to <code>$XDG_CONFIG_HOME/clojure</code></p>
 <p>Via SSH
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:practicalli/clojure-deps-edn.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/clojure
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git<span class="w"> </span>clone<span class="w"> </span>git@github.com:practicalli/clojure-cli-config.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/clojure
 </code></pre></div></p>
 <p>Via HTTPS:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/clojure-deps-edn.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/clojure
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/practicalli/clojure-cli-config.git<span class="w"> </span><span class="nv">$XDG_CONFIG_HOME</span>/clojure
 </code></pre></div></p>
 </div>
 <div class="tabbed-block">
 <p>Clojure CLI will look for its configuration in <code>$HOME/.clojure</code> directory if <code>$XDG_CONFIG_HOME</code> and <code>CLJ_CONFIG</code> environment variables not set.
 Via SSH
 ```shell
-git clone <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:practicalli/clojure-deps-edn.git $HOME/.clojure</p>
+git clone <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#105;&#116;&#64;&#103;&#105;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:practicalli/clojure-cli-config.git $HOME/.clojure</p>
 </div>
 </div>
 </div>
 <p>```</p>
 <div class="highlight"><pre><span></span><code>Via HTTPS
 ```shell
-git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
+git clone https://github.com/practicalli/clojure-cli-config.git $HOME/.clojure
 ```
 </code></pre></div>
 <h2 id="check-configuration">Check Configuration<a class="headerlink" href="#check-configuration" title="Permanent link">λ︎</a></h2>
@@ -6115,7 +6111,7 @@ git clone https://github.com/practicalli/clojure-deps-edn.git $HOME/.clojure
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-Sdescribe
 </code></pre></div>
 <p>The output of the command includes the version of Clojure CLI in the <code>:version</code> key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">{</span>:version<span class="w"> </span><span class="s2">&quot;1.11.1.1208&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">{</span>:version<span class="w"> </span><span class="s2">&quot;1.11.1.1386&quot;</span>
 <a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w"> </span>:config-files<span class="w"> </span><span class="o">[</span><span class="s2">&quot;/usr/local/lib/clojure/deps.edn&quot;</span><span class="w"> </span><span class="s2">&quot;/home/practicalli/.config/clojure/deps.edn&quot;</span><span class="w"> </span><span class="o">]</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w"> </span>:config-user<span class="w"> </span><span class="s2">&quot;/home/practicalli/.config/clojure/deps.edn&quot;</span>
 <a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w"> </span>:config-project<span class="w"> </span><span class="s2">&quot;deps.edn&quot;</span>
