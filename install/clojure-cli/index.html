@@ -6021,7 +6021,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>export XDG_CONFIG_HOME=&quot;$HOME/.config&quot;
 </code></pre></div>
 <p>Use the Linux script installer from <a href="https://clojure.org/guides/getting_started#_installation_on_linux">Clojure.org - Getting Started</a> to install the latest stable release
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://download.clojure.org/install/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>sudo<span class="w"> </span>./linux-install.sh
 </code></pre></div></p>
@@ -6030,7 +6030,7 @@
 <summary>Use alternative location - unattended install</summary>
 <p><code>--prefix</code> option specifies an alternative lolcation for the Clojure CLI install.</p>
 <p>When permissions are not available or for automating the install without password prompt, use a local user specific install, e.g.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://download.clojure.org/install/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>./linux-install.sh<span class="w"> </span>--prefix<span class="w"> </span><span class="nv">$HOME</span>/.local/
 </code></pre></div></p>
