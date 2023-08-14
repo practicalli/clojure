@@ -164,17 +164,19 @@ Calculation rules:
 
 - Income tax (additional rate band) : Any amount of money earned above a gross annual salary of £150,000.00 is taxed at 45%
 
+
+<!-- TODO; challenge: complete salary slip challenge example  -->
+
 ??? EXAMPLE "Practicalli Salary Slip Kata"
-    <!-- TODO; challenge: complete salary slip challenge example  -->
-    <!-- from https://github.com/practicalli-john/salary-slip-kata-devox-2019 -->
+    [Salary slip kata - Devoxx 2019](https://github.com/practicalli-john/salary-slip-kata-devox-2019)
+
     ```clojure
-    (ns salary-slip-kata.core)
 
-    ;; Developer Anarchy by Fred George
-    ;; - made devs write the same solution in different languages
-    ;; -- helps devs master the business domain
-    ;; -- helps devs master technology domain
-
+    (ns salary-slip-kata.core
+      "Developer Anarchy by Fred George
+       - made devs write the same solution in different languages
+       -- helps devs master the business domain
+       -- helps devs master technology domain")
 
     (defn- national-insurance-contribution
       "Calculate the national insurance contribution due for a given annual salary.
@@ -221,4 +223,5 @@ Calculation rules:
          :tax-free-allowance tax-free-allowance
          :taxable-income     taxable-income
          :tax-payable        (* taxable-income 0.20)}))
-        ```
+    ```
+
