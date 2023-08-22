@@ -12,7 +12,7 @@ An ideal Clojure editor includes the these core features
 * evaluation results inline or in a repl window (fast feedback on what the code does)
 * syntax highlighting (including highlight of matching parens)
 * structural editing to ensure parens are balanced when writing and refactor code
-* data inspector to visualise large and nested data, or connection to [external data inpector tools](/clojure/data-inspector/)
+* data inspector to visualise large and nested data, or connection to [:fontawesome-solid-book-open: data inpector tools](/clojure/data-inspector/)
 
 ![Clojure REPL driven development with Clojure aware editors](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-driven-development-clojure-aware-editor.png)
 
@@ -25,20 +25,20 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 === "Emacs"
     ![GNU Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-    Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages. Emacs 28 onward uses Native Compilation of Emacs packages, dramatically speeding up many common tasks.
+    Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages. Native Compilation of Emacs packages dramatically speeds up many common tasks.
 
     Emacs uses CIDER and Clojure LSP for a feature rich clojure development experience.
 
-    Use one of the popular community configurations for Emacs or visit the [CIDER documentation](https://docs.cider.mx/) to learn how to add Clojure support to Emacs.
+    Use one of the popular community configurations for Emacs or visit the [:fontawesome-solid-globe: CIDER documentation](https://docs.cider.mx/) to learn how to add Clojure support to Emacs.
 
     === "Spacemacs"
         ![Spacemacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/spacemacs-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-        [Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [Vim style editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
+        [:fontawesome-solid-globe: Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [:fontawesome-solid-globe: Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [:fontawesome-solid-book-open: Vim style editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
 
-        [Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
+        [:fontawesome-solid-book-open: Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
 
-        [practicalli/spacemacs.d repository](https://github.com/practicalli/spacemacs.d){target=_blank} contains a customised configuration for Clojure development and supporting tools. [Browse the repository online](https://github.com/practicalli/spacemacs.d){target=_blank} or fork / clone the repository
+        [:fontawesome-brands-github: Practicalli Spacemacs Config](https://github.com/practicalli/spacemacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools.
 
         === "Free Desktop XDG Config"
             ```bash
@@ -58,14 +58,22 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NDrpclY54E0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </p>
 
+    === "Prelude Emacs"
+         [:fontawesome-solid-globe: Emacs Prelude](https://prelude.emacsredux.com/en/stable/) is an easy to use Emacs configuration for Emacs newcomers and lots of additional power for Emacs power users, from the author of [CIDER - the definitive Clojure IDE for Emacs](https://docs.cider.mx/).
+
+         Prelude uses the traditional chorded key bindings to drive Emacs, e.g. ++ctrl+"c"++ ++ctrl+"c"++ to evaluate the current top-level form.
+
+         [:fontawesome-solid-globe: Prelude Install Guide](https://prelude.emacsredux.com/en/stable/installation/){target=_blank .md-button}
+
+
     === "Doom Emacs"
         ![Doom Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/doom-emacs-logo.png){align=right loading=lazy style="height:128px"}
 
-        [Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those coming from a Vim-style editing background or simply looking for a lightweight setup with options to extend the configuration.
+        [:fontawesome-brands-github: Doom Emacs](https://github.com/doomemacs/doomemacs){target=_blank} is a community configuration for [Emacs](https://www.gnu.org/software/emacs/){target=_blank} that provides a minimalistic configuration that is readily customisable.  Doom Emacs is most suited to those coming from Vim and have a strong experience for multi-modal editing.
 
-        [Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){.md-button}
+        [:fontawesome-solid-book-open: Practicalli Doom Emacs Book](https://practical.li/doom-emacs/){target=_blank .md-button}
 
-        [practicalli/doom-emacs-config repository](https://github.com/practicalli/doom-emacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools. [Browse the repository online](https://github.com/practicalli/doom-emacs-config){target=_blank} or fork / clone the repository
+        [:fontawesome-brands-github: Practicalli Doom Emacs Config](https://github.com/practicalli/doom-emacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools.
 
         === "Free Desktop XDG Config"
             ```bash
@@ -84,16 +92,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         ![Emacs Doom with Practicalli customisations](https://raw.githubusercontent.com/practicalli/graphic-design/live/doom-emacs/doom-emacs-practicalli-light.png#only-light)
 
 
-    === "Prelude Emacs"
-         [Emacs Prelude](https://prelude.emacsredux.com/en/stable/) is an easy to use Emacs configuration for Emacs newcomers and lots of additional power for Emacs power users, from the author of [CIDER - the definitive Clojure IDE for Emacs](https://docs.cider.mx/).
-
-         Prelude uses the traditional chorded key bindings to drive Emacs, e.g. ++ctrl+"c"++ ++ctrl+"c"++ to evaluate the current top-level form.
-
-         [Prelude Install Guide](https://prelude.emacsredux.com/en/stable/installation/){target=_blank .md-button}
-
-
     === "Vanilla Emacs & Cider"
-        Emacs 28 is recommended as it includes native compilation support and optomised JSON support which is valuable for Language Server Protocol servers.
+        Emacs 29 is recommended as it includes native compilation support and optomised JSON support which is valuable for Language Server Protocol servers.
 
         Emacs is available for Linux, MacOSX and Windows.
 
@@ -109,8 +109,8 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             `sudo apt install emacs-snapshot` package to use the latest nightly build of Emacs, although be aware that some things may break.
 
 
-            ??? HINT "Build Emacs 28 from source"
-                [Building Emacs 28 from source code on Ubuntu](https://practical.li/blog/posts/build-emacs-28-on-ubuntu/) is relatively straight forward task, although it will take a little time to compile.  Building Emacs allows customisation of some features, such as native compilatin of elisp to enhance the performance of Emacs.
+            ??? HINT "Build Emacs 29 from source"
+                [Building Emacs 29 from source code on Ubuntu](https://practical.li/blog/posts/build-emacs-28-on-ubuntu/) is relatively straight forward task, although it will take a little time to compile.  Building Emacs allows customisation of some features, such as native compilatin of elisp to enhance the performance of Emacs.
 
 
         === "Homebrew / MacOSX"
@@ -161,17 +161,17 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         [Cider Install Guide](https://docs.cider.mx/cider/basics/installation.html){target=_blank .md-button}
 
 === "Neovim"
-    ![Neovim logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/neovimio-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
+    ![Neovim logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/neovim-logo-small.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-    Neovim is a hyper-extensible text editor that evolved from Vim whist still fully compatible with Vim"s editing model and Vimscript extension language.  Neovim uses lua configuration and with the [aniseed package](https://github.com/Olical/aniseed) configuration and Neovim packages can be written in Fennel (a lisp dialect).
+    Neovim is a hyper-extensible text editor that runs in a terminal, configured with the [Lua programming language](http://www.lua.org/). Configuration can also be written in [Fennel](/neovim/introduction/fennel/) (a lisp dialect), using [nfnl](https://github.com/Olical/nfnl) to generate Lua code.
 
     Neovim is based on multi-model editing (e.g. normal, insert, visual editing states) providing a highly effective tool for writing code, configuration and documentation.
 
-    Neovim now includes Treesitter which understands the syntax of a great many programming and configuration languages, also providing a Language Sever Protocol (LSP) client.
+    Neovim includes Treesitter which understands the syntax of a great many programming and configuration languages, which can be coupled with analysist from Language Sever Protocol (LSP) servers to provide live feedback on code quality.
 
-    ![Conjure logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/icons/conjure.png){align=right loading=lazy style="height:128px;width:128px"}
+    ![Conjure logo](https://github.com/practicalli/graphic-design/blob/live/logos/conjure-logo-wizard.png?raw=true){align=right loading=lazy style="height:128px;width:128px"}
 
-    [Conjure](https://github.com/Olical/conjure) is predominantly used for Clojure development and supports Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)
+    [Conjure](https://github.com/Olical/conjure) provides Clojure interactive (REPL) development, supporting Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)
 
     Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
     ```bash
@@ -183,28 +183,40 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     `:q` to quit the tutorial.
 
 
+    === "Practicalli AstroNvim"
+
+        [:fontawesome-solid-book-open: Practicalli Neovim - AstroNvim install](https://practical.li/neovim/configuration/astronvim/){target=_blank .md-button}
+
+        AstroNvim community configuration for Neovim provides an engaging UI, using Lazy plugin manger and Mason to manage LSP servers, format & lint tools.
+
+        [:fontawesome-brands-github: Practicalli AstroNvim Config](https://github.com/practicalli/astronvim-config) provides a user configuration for Astronvim, including Conjure, parinfer, LSP server and treesitter parser for Clojure development.
+
+        [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
+
+        ![Practicalli Neovim in action](https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-clojure-development-example-light.png?raw=true#only-light)
+        ![Practicalli Neovim in action](https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-clojure-development-example-dark.png?raw=true#only-dark)
+
+
     === "Practicalli Neovim"
 
-        [Practicalli Neovim - install Neovim & Conjure, plus user guide](https://practical.li/neovim/){target=_blank .md-button}
+        **Archived project** - to be reimplemented using nfnl rather than aniseed.  Recommend using AstroNvim instead.
 
-        [Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
-
-        [practicalli/neovim-config-redux](https://github.com/practicalli/neovim-config-redux) is provided as a configuration for Neovim which adds [a range of Neovim plugins](https://practical.li/neovim/install/packages/) for a rich development experience.
+        [:fontawesome-brands-github: Practicalli Neovim Config Redux](https://github.com/practicalli/neovim-config-redux) configuration for Neovim which adds [:fontawesome-solid-book-open: a range of Neovim plugins](https://practical.li/neovim/install/packages/) for a rich development experience.
 
         * mnemonic of key bindings to make adoptiong Neovim easier
         * visual navigation for files, project, environment variables and any other list items
         * version control and GitHub issue & pull request management
 
-        [Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
+        [:fontawesome-brands-github: Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
 
-        [Practicalli Neovim](https://practical.li/neovim/){target=_blank} covers installation and basic use of Neovim for Clojure development.
+        [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
 
         ![Practicalli Neovim in action](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-clojure-development-tree-whichkey.png)
 
     === "SpaceVim"
-        [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a simple Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
+        [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a minimal Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
 
-        Follow the [Quick Start Guide to instal SpaceVim](https://spacevim.org/quick-start-guide/)
+        Follow the [Quick Start Guide to install SpaceVim](https://spacevim.org/quick-start-guide/)
 
         Add the Clojure layer to the SpaceVim custom configuration file
         ```shell title="~/.SpaceVim.d/init.toml"
