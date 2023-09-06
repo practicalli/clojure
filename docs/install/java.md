@@ -33,13 +33,13 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
         [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
 
     If `openjdk-17-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
-    
+
     ```bash
     sudo add-apt-repository ppa:openjdk-r/ppa
     sudo apt-get update
     ```
     If you have more than one version of Java installed, set the version by opening a terminal and using the following command
-    
+
     ```bash
     sudo update-alternatives --config java
     ```
@@ -51,38 +51,38 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     ```bash
     brew install openjdk@17
     ```
-    
+
     ??? HINT "Switching between Java versions"
         More than one version of Java can be installed on MacOSX. Set the Java version by opening a terminal and using one of the following commands
-    
+
         Show the Java versions installed
         ```bash
         /usr/libexec/java_home -V
         ```
-        
+
         Switch to Java version 17
         ```bash
         export JAVA_HOME=$(/usr/libexec/java_home -v 17)
         ```
-        
+
         Alternatively, install [JEnv Java version manager](https://www.jenv.be/)
 
 === "Windows"
     For Windows 10 use [Windows Subsystem for Linux and Windows Terminal are recommended](https://conan.is/blogging/clojure-on-windows.html){target=_blank} if you have administrative privileges and are happy to use a Unix system on the command line.
 
     Alternatively use [scoop.sh](https://scoop.sh/){target=_blank}, a command line installer for windows.  [Powershell 5](https://aka.ms/wmf5download){target=_blank} or greater is required.
-    
+
     Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure){target=_blank}, summarized here:
-    
+
     ```bash
     scoop bucket add java
     scoop install temurin-lts-jdk
     ```
-    
+
     scoop can also be used to [install clojure](clojure-cli.md)
-    
+
     If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/){target=_blank} package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime){target=_blank} using the following command in a command line window
-    
+
     ```bash
     choco install javaruntime
     ```
@@ -93,7 +93,7 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     [Download OpenJDK 17 Hotspot from Adoptium](https://adoptium.net/){target=_blank} - pre-build OpenJDK binaries freely available for multiple operating systems.
 
     Run the file once downloaded and follow the install instructions.
-    
+
     ![Adoptium Prebuilt OpenJDK Binaries - web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png)
 
 ## Java Knowledge required?
