@@ -23,13 +23,12 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     Install Java run time edition (JRE) using the `apt` package manager command in a terminal (prompts for the account login password)
     ```bash
     sudo apt install openjdk-17-jre
-
-```
+    ```
     ??? HINT "Optionally include Java sources"
         Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
         ```bash
         sudo apt install openjdk-17-source
-```
+        ```
 
         [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
 
