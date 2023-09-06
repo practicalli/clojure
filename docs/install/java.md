@@ -99,8 +99,10 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
 ## Java Knowledge required?
 
 Very little knowledge of the Java language or the Java Virtual Machine is required.
+## Multiple versions of Java
 
 It is quite simple to call Java methods from Clojure, although there are a wealth of functions and libraries provided by Clojure and its community to minimise the need for Java Interoperability.
+[jenv](https://www.jenv.be/) provides a simple way to switch between multiple installed versions of Java.  jenv can be used to set the java version globally, for the current shell or for a specific project by adding `.java-version` file containing the Java version number in the root of the project.
 
 [Reading stack traces](https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html){target=_blank} may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.
 
