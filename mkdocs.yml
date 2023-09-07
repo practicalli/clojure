@@ -4,6 +4,7 @@ site_name: Practicalli Clojure
 site_url: https://practical.li/clojure
 site_description: Practical guide to Clojure programming language and Clojure REPL driven development
 site_author: Practicalli
+site_org: https://practical.li/
 copyright: Copyright &copy 2023  Practicali <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>
 repo_url: https://github.com/practicalli/clojure/
 edit_uri: https://github.com/practicalli/clojure/edit/main/docs/
