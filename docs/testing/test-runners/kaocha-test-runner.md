@@ -188,21 +188,19 @@ Show the 3 slowest tests for each category of test, after the test results
     As a command line option:
     ```shell
     make test-profile
-
-```
+    ```
 
 === "Clojure CLI"
     Pass the profiling plugin as an argument to the Clojure CLI alias using the `-M` (clojure.main) execution option
     ```shell
     clojure -M:test/env:test/run --plugin kaocha.plugin/profiling
-```
+    ```
 
 === "Kaocha Script"
     As a command line option:
     ```shell
     bin/kaocha --plugin kaocha.plugin/profiling
-
-```
+    ```
 
 Or add the profile plugin to the `test.edn` configuration
 
