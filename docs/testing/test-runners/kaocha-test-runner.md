@@ -266,4 +266,4 @@ Or add the profile plugin to the `test.edn` configuration
      :kaocha.plugin.capture-output/capture-output? true
      }
     ```
-    > The above configuration could be streamlined and rely on more of the default values, but does show examples of how to configure different sections explicitly.
+    > The configuration shows how to explicitly configure different sections, although configuration could be streamlined by using more default values.
