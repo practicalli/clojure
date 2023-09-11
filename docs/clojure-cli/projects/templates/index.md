@@ -1,8 +1,8 @@
 # Creating projects from templates
 
-Creating projects using a template is a quick way to get started.  A template will create the project structure, add libraries and even include example code.
+Creating projects using a template is a quick way to get started or create a common .  A template will create the project structure, add libraries and even include example code.
 
-deps-new provides Clojure CLI specific templates. clj-new uses Leinginen templates which may required additional configuration to work with Clojure CLI.
+deps-new provides Clojure CLI specific templates. 
 
 The deps-new built-in templates for creating a project
 
@@ -12,12 +12,12 @@ The deps-new built-in templates for creating a project
 - `template` - project for defining a custom template
 
 !!! INFO "Practicalli Project Templates"
-    [:fontawesome-brands-github: practicalli/project-templates](https://github.com/practicalli/project-templates){target=_blank} provide production level templates that include Practicalli [REPL Reloaded Workflow]() tools, Docker & Compose configurations, Makefile tasks for a consistent command line UI and GitHub workflows to manage quality of code and configuration.
+    [:fontawesome-brands-github: practicalli/project-templates](https://github.com/practicalli/project-templates){target=_blank} provide production level templates that include Practicalli [REPL Reloaded Workflow](/clojure/clojure-cli/repl-reloaded/) tools, Docker & Compose configurations, Makefile tasks for a consistent command line UI and GitHub workflows to manage quality of code and configuration.
 
-    - `practicalli/application` - production level project template with Mulog, Docker, Make, MegaLinter, etc.
-    - `practicalli/service` - production level web services template with Integrant, Http-kit, Reitit, Mulog, Docker, Make, MegaLinter, etc.
-
-    > More template will be added throughout 2023
+    - `practicalli/minimal` - essential tools, libraries and example code
+    - `practicalli/application` - general Clojure production level project template 
+    - `practicalli/service` - production level web services template with component management, Http-kit, Reitit and Swagger
+    - `pracicalli/landing-page` - simple clojurescript website with bulma.io CSS and Figheel-main build tool. 
 
 
 ??? INFO "clj-new provides Leiningen format templates"
