@@ -1,15 +1,16 @@
 # Clojure projects
 
-A Clojure CLI project is [defined by a `deps.edn` file](/clojure/clojure-cli/configure.md) that specifies source and library paths to use for the project.  The `deps.edn` file can also define aliases which can optionally be included when running the REPL to support development related tasks.
+Clojure CLI projects use a [`deps.edn` file](/clojure/clojure-cli/#configure-clojure-cli) to specifies source paths and libraries required for the project to run.   
+
+alias are defined in the  `deps.edn` file to support development tasks, providing additional libraries, paths and tools. 
 
 !!! HINT "Generate a project from a template"
-    [Create a project from a template](templates/) to save time creating a common project structure.
+    [Create a project from a template](templates/) for a consistent project structure and include commonly used libraries.
 
-??? INFO "Practicalli clojure-app-template example project"
-    [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template) provides a production grade example of a project starting point, with additional configuration files for building and deploying the project.
+    [Practicalli Project Templates](templates/practicalli/) create production grade projects providing a detailed starting point with configuration files for building and deploying the project.
 
 
-## Create a minimal project
+## Create minimal project
 
 Create a `deps.edn` file containing `{}` in the root of a directory for a minimal configuration.
 
@@ -28,7 +29,7 @@ The project can now be run with a REPL via a [terminal UI](../repl/) or [Clojure
     [Guide to Migrating a project to Clojure CLI](migrate-project.md){target=_blank .md-button}
 
 
-## General form of a Clojure project
+## Project Structure
 
 The essence of most Clojure CLI projects contains the following files and directories.
 
