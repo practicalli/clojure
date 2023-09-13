@@ -7807,14 +7807,15 @@
 
 
 <h1 id="clojure-projects">Clojure projects<a class="headerlink" href="#clojure-projects" title="Permanent link">λ︎</a></h1>
-<p>A Clojure CLI project is <a href="/clojure/clojure-cli/configure.md">defined by a <code>deps.edn</code> file</a> that specifies source and library paths to use for the project.  The <code>deps.edn</code> file can also define aliases which can optionally be included when running the REPL to support development related tasks.</p>
+<p>Clojure CLI projects use a <a href="/clojure/clojure-cli/configure.md"><code>deps.edn</code> file</a> to specifies source paths and library required for the project to run.   </p>
+<p>alias are defined in the  <code>deps.edn</code> file to support development tasks, providing additional libraries, paths and tools. </p>
 <div class="admonition hint">
 <p class="admonition-title">Generate a project from a template</p>
-<p><a href="templates/">Create a project from a template</a> to save time creating a common project structure.</p>
+<p><a href="templates/">Create a project from a template</a> for a consistent project structure and include commonly used libraries.</p>
 </div>
 <details class="info">
-<summary>Practicalli clojure-app-template example project</summary>
-<p><a href="https://github.com/practicalli/clojure-app-template">practicalli/clojure-app-template</a> provides a production grade example of a project starting point, with additional configuration files for building and deploying the project.</p>
+<summary>Practicalli Project Templates</summary>
+<p><a href="templates/practicalli/">Practicalli Project Templates</a> create production grade projects providing a detailed starting point with configuration files for building and deploying the project.</p>
 </details>
 <h2 id="create-a-minimal-project">Create a minimal project<a class="headerlink" href="#create-a-minimal-project" title="Permanent link">λ︎</a></h2>
 <p>Create a <code>deps.edn</code> file containing <code>{}</code> in the root of a directory for a minimal configuration.</p>
@@ -7884,7 +7885,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 30, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 13, 2023</span>
       
     
   </small>
