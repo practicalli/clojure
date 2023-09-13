@@ -172,6 +172,7 @@ nav:
           # - Create Templates: clojure-cli/projects/templates/create.md
           - Practicalli Templates:
               - clojure-cli/projects/templates/practicalli/index.md
+              - Minimal: clojure-cli/projects/templates/practicalli/minimal.md
       - Add Libraries: clojure-cli/projects/add-libraries.md
       - Namespaces: clojure-cli/projects/namespace.md
       - Rich Comment: clojure-cli/projects/rich-comments.md
