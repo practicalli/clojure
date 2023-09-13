@@ -2,17 +2,17 @@
 
 Creating projects using a template is a quick way to get started or create a common .  A template will create the project structure, add libraries and even include example code.
 
-deps-new provides Clojure CLI specific templates. 
+deps-new provides Clojure CLI specific templates and [:fontawesome-solid-book-open: Practicalli Project Templates]() provides production level templates with a REPL Reloaded workflow
 
-The deps-new built-in templates for creating a project
+??? INFO "deps-new built-in templates"
+    The deps-new built-in templates for creating a project
+    - `app` - simple project for a running application (uberjar)
+    - `lib` - simple project for a library (jar)
+    - `scratch` - a `deps.edn` file and `src/scratch.clj`
+    - `template` - project for defining a custom template
 
-- `app` - simple project for a running application (uberjar)
-- `lib` - simple project for a library (jar)
-- `scratch` - a `deps.edn` file and `src/scratch.clj`
-- `template` - project for defining a custom template
-
-!!! INFO "Practicalli Project Templates"
-    [:fontawesome-brands-github: practicalli/project-templates](https://github.com/practicalli/project-templates){target=_blank} provide production level templates that include Practicalli [REPL Reloaded Workflow](/clojure/clojure-cli/repl-reloaded/) tools, Docker & Compose configurations, Makefile tasks for a consistent command line UI and GitHub workflows to manage quality of code and configuration.
+??? INFO "Practicalli Project Templates"
+    [:fontawesome-solid-book-open: Practicalli Project Templates](practicalli/) provide production level templates that include Practicalli [REPL Reloaded Workflow](/clojure/clojure-cli/repl-reloaded/) tools, Docker & Compose configurations, Makefile tasks for a consistent command line UI and GitHub workflows to manage quality of code and configuration.
 
     - `practicalli/minimal` - essential tools, libraries and example code
     - `practicalli/application` - general Clojure production level project template 
@@ -34,43 +34,55 @@ The deps-new built-in templates for creating a project
     - [Leiningen projects](https://clojars.org/search?q=artifact-id:lein-template)
 
 
-## Include deps-new
+## Add deps-new
 
-deps-new can be used via Clojure CLI aliases (user `deps.edn` configuration) or [installed as a tool](https://github.com/seancorfield/deps-new/blob/develop/src/org/corfield/new.clj).
+Add deps-new via a Clojure CLI user alias or [:globe_with_meridians: install as a tool](https://github.com/seancorfield/deps-new/blob/develop/src/org/corfield/new.clj).
 
 === ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
-    [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the following aliases
+    `:project/create` alias provided by [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) runs the [:fontawesome-brands-github: seancorfield/deps-new](https://github.com/seancorfield/deps-new) tool to create Clojure CLI specific projects. 
 
-    `:project/create` for [seancorfield/deps-new](https://github.com/seancorfield/deps-new), to create Clojure CLI specific projects and a simple way to define custom templates.  This alias also includes the [:fontawesome-brands-github: Practicall Project templates ](https://github.com/practicalli/project-templates){target=_blank}
-
+    `:project/create` alias includes the [:fontawesome-solid-book-open: Practicall Project templates ](practicalli/), extending the range of available templates
 
 === "Alias Definitions"
     Create the following alias definitions in the Clojure CLI user configuration, e.g. `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn`
     ```clojure title="Clojure CLI user deps.edn configuration - :aliases {}"
     :project/create
     {:replace-deps {io.github.seancorfield/deps-new
-                    {:git/tag "v0.5.1" :git/sha "21cede2"}
+                    {:git/tag "v0.5.2" :git/sha "253f32a"}
                     io.github.practicalli/project-templates
-                    {:git/tag "2023.04.25" :git/sha "66713b9"}}
+                    {:git/tag "2023-08-02" :git/sha "eaa11fa"}}
      :exec-fn      org.corfield.new/create
-     :exec-args    {:template practicalli/application
+     :exec-args    {:template practicalli/minimal
                     :name practicalli/playground}}
     ```
 
 
 ## Create a project
 
-Use deps-new to create a project, specifying a template and a name for the project.
+Open a terminal window and change to a suitable folder and create a project.  
 
-Open a terminal window and change to a suitable folder and create a project.  Use the `app` template to create a runnable application or `lib` template if writing a library to be used by other applications.  Both can run code in the REPL during development.
+Create a project using the `:project/create` alias.
 
-The name of the project is of the form `domain/app-lib-name`. Use a company name or Git Service account name as the `domain`.
+The `practicalli/minimal` template and `practicalli/playground` name are used if `:template` and `:name` arguments are not specified.
 
 ```bash
-clojure -T:project/create :template app :name practicalli/playground
+clojure -T:project/create
 ```
 
-The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
+> The `-T` execution option runs the tool with Clojure.exec which uses keywords to specify the options for creating the project.
+
+
+Use the form `domain/app-or-lib-name` to specify a project name, typically with a company name or Git Service account name as the `domain`.
+
+`:template` can be one of the deps-new built-in templates (`app`, `lib`) or one of the [:fontawesome-solid-book-open: Practicalli Project Templates](practicalli/).
+
+Create a project using the `practicalli/application` template and random-function name. 
+
+```bash
+clojure -T:project/create :template practicalli/application :name practicalli/random-function
+```
+
+
 
 
 ## Run Project in a REPL
