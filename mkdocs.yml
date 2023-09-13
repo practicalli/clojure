@@ -170,6 +170,8 @@ nav:
           # - Practicalli Application: clojure-cli/projects/templates/practicalli-application.md
           # - Practicalli Service: clojure-cli/projects/templates/practicalli-service.md
           # - Create Templates: clojure-cli/projects/templates/create.md
+          - Practicalli Templates:
+              - clojure-cli/projects/templates/practicalli/index.md
       - Add Libraries: clojure-cli/projects/add-libraries.md
       - Namespaces: clojure-cli/projects/namespace.md
       - Rich Comment: clojure-cli/projects/rich-comments.md
