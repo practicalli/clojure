@@ -44,5 +44,47 @@ The essence of most Clojure CLI projects contains the following files and direct
 | .git         | Local git repository and configuration                            |
 | .gitignore   | Git ignore patterns for the project                               |
 
-??? INFO "Practicalli clojure-app-template example project"
-    [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template) provides a production grade example of a project starting point, with additional configuration files for building and deploying the project.
+
+!!! EXAMPLE "Example deps.edn configuration file"
+    ```clojure
+    {:paths
+     ["src" "resources"]
+
+     :deps
+     {org.clojure/clojure    {:mvn/version "1.11.1"}}
+      http-kit/http-kit      {:mvn/version "2.6.0"}  
+      metosin/reitit         {:mvn/version "0.5.13"}
+      com.brunobonacci/mulog {:mvn/version "0.9.0"}
+
+     :aliases
+     {;; Clojure.main execution of application
+      :run/service
+      {:main-opts ["-m" "practicalli.donuts.service"]}
+
+      ;; Clojure.exec execution of specified function
+      :run/greet
+      {:exec-fn   practicalli.donuts.service/greet
+       :exec-args {:name "Clojure"}}
+
+      ;; Add libraries and paths to support additional test tools
+      :test/env
+      {}
+
+      ;; Test runner - local and CI
+      ;; call with :watch? true to start file watcher and re-run tests on saved changes
+      :test/run
+      {:extra-paths ["test"]
+       :extra-deps  {lambdaisland/kaocha {:mvn/version "1.85.1342"}}
+       :main-opts   ["-m" "kaocha.runner"]
+       :exec-fn     kaocha.runner/exec-fn
+       :exec-args   {:randomize? false
+                     :fail-fast? true}}
+
+      ;; tools.build `build.clj` built script
+      :build
+      {:replace-paths ["."]
+       :replace-deps  {io.github.clojure/tools.build
+                       {:git/tag "v0.9.4" :git/sha "76b78fe"}}
+       :ns-default    build}}}
+    ```
+
