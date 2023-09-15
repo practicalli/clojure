@@ -10,12 +10,6 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 
 === "Linux"
 
-    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  Add the following to `~/.bashrc` for the bash shell or `~/.zshenv` for Zsh.
-
-    ```
-    export XDG_CONFIG_HOME="$HOME/.config"
-    ```
-
     Use the Linux script installer from [Clojure.org - Getting Started](https://clojure.org/guides/getting_started#_installation_on_linux) to install or update to the latest stable release
 
     ```shell
@@ -96,6 +90,23 @@ The Clojure CLI automatically downloads all library dependencies, including the 
 Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
 
 Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` and `$HOME/.clojure` directory if they exist.
+
+!!! INFO "Practicalli recommends using FreeDesktop XDG configuration locations"
+    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  
+
+    Configure `~/.bashrc` for the bash shell 
+    ```shell title="Bash .bashrc file"
+    export XDG_CONFIG_HOME="$HOME/.config"
+    ```
+
+    Configure `~/.zshenv` for Zsh
+    ```shell
+    # Set XDG_CONFIG_HOME for clean management of configuration files
+    export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:=$HOME/.config}"
+    export XDG_DATA_HOME="${XDG_DATA_HOME:=$HOME/.local/share}"
+    export XDG_CACHE_HOME="${XDG_CACHE_HOME:=$HOME/.cache}"
+    export ZDOTDIR="${ZDOTDIR:=$XDG_CONFIG_HOME/zsh}"
+    ```
 
 === "Free Desktop XDG CONFIG"
     If `XDG_CONFIG_HOME` environment variable is set, clone the repository to `$XDG_CONFIG_HOME/clojure`
