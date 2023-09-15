@@ -8,9 +8,9 @@ Profile applications on the JVM, visualising memory and CPU resources, identifyi
 <!-- ## Command line -->
 <!-- TODO: JVM profile - anything useful on the command line? -->
 
-## Java VisualVM
+## VisualVM
 
-A simplified and robust profiling tool for Java applications, bundled with the Java Development Kit (JDK) and using JConsole, jstat, jstack, jinfo, and jmap.
+[VisualVM](https://visualvm.github.io/) provides a simplified and robust profiling tool for Java applications, bundled with the Java Development Kit (JDK) and using JConsole, jstat, jstack, jinfo, and jmap.
 
 ![Java VisualVM screenshot](https://www.baeldung.com/wp-content/uploads/2017/10/7-visualvm-sample-memory.png)
 
@@ -18,11 +18,11 @@ A simplified and robust profiling tool for Java applications, bundled with the J
     Ubuntu / Debian includes VisualVM in the software center
     ```bash
     sudo apt install visualvm
-
-```
+    ```
 
 === "MacOSX"
-    Download the macOS application bundle and double-click to install.
+    [Download](https://visualvm.github.io/download.html) the macOS application bundle and double-click to install.
+
 
 ## JDK Flight Recorder
 
