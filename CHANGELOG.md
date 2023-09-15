@@ -2,6 +2,10 @@
 
 # Unreleased
 
+## Added
+- button link to Clojure CLI releases changelog to view available versions
+
+
 # 2023-08-14
 
 ## Added

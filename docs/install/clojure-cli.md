@@ -37,13 +37,15 @@ The Clojure CLI automatically downloads all library dependencies, including the 
         ```
     
     ??? INFO "Include version number for specific release"
-        Clojure CLI linux install scripts include a number in their name to signify the version of Clojure and the version of Clojure CLI.
+        Each Clojure CLI version is a number that represents the version of Clojure used and the build version of the Clojure CLI tool, e.g. `1.11.1.1413`.
+
+        [Clojure CLI Releases page](https://clojure.org/releases/tools){target=_blank .md-button} 
 
         Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
         ```shell title="Clojure CLI install specific version"
-        curl -L -O https://github.com/clojure/brew-install/releases/1.11.1.1386/download/linux-install.sh && \
-        chmod +x linux-install-1.11.1.1386.sh
-        sudo ./linux-install-1.11.1.1386.sh
+        curl -L -O https://github.com/clojure/brew-install/releases/1.11.1.1413/download/linux-install.sh && \
+        chmod +x linux-install-1.11.1.1413.sh
+        sudo ./linux-install-1.11.1.1413.sh
         ```
 
 === "Homebrew"
