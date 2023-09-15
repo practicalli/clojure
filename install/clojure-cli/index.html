@@ -7902,11 +7902,12 @@
 </details>
 <details class="info">
 <summary>Include version number for specific release</summary>
-<p>Clojure CLI linux install scripts include a number in their name to signify the version of Clojure and the version of Clojure CLI.</p>
+<p>Each Clojure CLI version is a number that represents the version of Clojure used and the build version of the Clojure CLI tool, e.g. `1.11.1.1413.</p>
+<p><a class="md-button" href="https://clojure.org/releases/tools" target="_blank">Clojure CLI Releases page</a> </p>
 <p>Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
-<div class="highlight"><span class="filename">Clojure CLI install specific version</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/clojure/brew-install/releases/1.11.1.1386/download/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install-1.11.1.1386.sh
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>./linux-install-1.11.1.1386.sh
+<div class="highlight"><span class="filename">Clojure CLI install specific version</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-L<span class="w"> </span>-O<span class="w"> </span>https://github.com/clojure/brew-install/releases/1.11.1.1413/download/linux-install.sh<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>chmod<span class="w"> </span>+x<span class="w"> </span>linux-install-1.11.1.1413.sh
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>sudo<span class="w"> </span>./linux-install-1.11.1.1413.sh
 </code></pre></div></p>
 </details>
 </div>
@@ -8006,7 +8007,7 @@ git clone https://github.com/practicalli/clojure-cli-config.git $HOME/.clojure
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 14, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 15, 2023</span>
       
     
   </small>
