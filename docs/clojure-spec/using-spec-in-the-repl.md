@@ -1,17 +1,24 @@
 # REPL Experiments with Clojure Spec
 
+??? HINT "Create a minimal Project"
+    Clojure Spec can be tried without creating a Clojure project, although creating a project is useful if saving the Clojure Spec code experiments.
+
+    Create a minimal Clojure project with a Clojure CLI deps.edn configuration.
+    ```shell
+    clojure -T:project/create :template practicalli/minimal :name practicalli/spec-experiments
+    ```
+
 Run a [Clojure REPL with a rich terminal UI](/clojure/clojure-cli/repl/)
 
-=== "Rebel"
-    ```bash
+=== "REPL Rebel"
+    ```shell
     clojure -M:repl/rebel
-
-```
+    ```
 
 === "REPL Reloaded"
-    ```bash
+    ```shell
     clojure -M:repl/reloaded
-```
+    ```
 
 Require the `clojure.spec.alpha` using an alias called `spec` to use functions from that namespace.
 
@@ -19,7 +26,7 @@ Require the `clojure.spec.alpha` using an alias called `spec` to use functions f
 (require '[clojure.spec.alpha :as spec])
 ```
 
-Use `(in-ns 'namespace.name)` if you need to change into a specific namespace.
+> NOTE: `clojure.spec.alpha` is often aliased as `s`, although  Practicalli avoids
 
 ## Spec auto-completion
 
@@ -27,19 +34,32 @@ Using rebel-readline for the Clojure REPL will show autocompletion for all spec 
 
 > Type `(spec /` and press `TAB` to list all the functions in the namespace.
 
-![Clojure REPL - rebel readline autocompletion for spec](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-require-spec-tab-function-autocompletion.png)
+![Clojure REPL - rebel autocompletion for spec functions](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-light.png?raw=true#only-light){loading=lazy}
+![Clojure REPL - rebel autocompletion for spec functions](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-dark.png?raw=true#only-dark){loading=lazy}
 
 Typing a space character after the full name of a function shows the function signature with arguments that should be passed to that function.
 
-![Clojure REPL - rebel readline spec conform function signature](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/cloure-repl-rebel-readline-spec-function-help-conform.png)
+![Clojure REPL - rebel readline spec conform function signature](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-light.png?raw=true#only-light){loading=lazy}
+![Clojure REPL - rebel readline spec conform function signature](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-dark.png?raw=true#only-dark){loading=lazy}
 
-## Check data conforms to the specification
+++ctrl++ ++"x"++ ++ctrl++ ++"d"++ displays the documentation for the current function 
+
+![Clojure REPL - rebel readline spec conform documentation](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-light.png?raw=true#only-light){loading=lazy}
+![Clojure REPL - rebel readline spec conform documentation](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-dark.png?raw=true#only-dark){loading=lazy}
+
+![Clojure REPL - rebel readline spec valid? documentation](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-light.png?raw=true#only-light){loading=lazy}
+![Clojure REPL - rebel readline spec valid? documentation](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-dark.png?raw=true#only-dark){loading=lazy}
+
+
+## Check data conforms to specification
 
 Use the `spec/conform` and `spec/valid?` functions to test if data matches a specification.  In these examples, predicate functions are used as a specification.
 
-![Clojure REPL - rebel readline spec examples](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-readline-spec-examples-conform-valid.png)
+![Clojure REPL - rebel readline spec examples](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-light.png?raw=true#only-light)
+![Clojure REPL - rebel readline spec examples](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-dark.png?raw=true#only-dark)
 
-## Examples
+
+### Example expressions
 
 `spec/conform` will return the value if it conforms to the specification, or `:clojure.spec.alpha/invalid` if the data does not conform.
 
