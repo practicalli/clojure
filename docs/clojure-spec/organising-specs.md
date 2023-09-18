@@ -1,10 +1,15 @@
 # Organizing Specifications
 
-Data and function definition specifications are typically placed in a specifications namespace under the relevant `src` directory for a project.
-
-![Clojure Spec organising specs - card game example](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png)
+Data and function definition specifications are typically placed in a dedicated Specification namespaces.  
 
 Add the data specifications (`spec/def`), custom predicate functions and function specifications (`spec/fdef`) to the `specifications` namespace.
+
+Specifications for an architecture layer can be organised next to the namespaces managing the layer, e.g. database. 
+
+Migrate specifications to a library once they are applicable to multiple projects.
+
+<!-- ![Clojure Spec organising specs - card game example](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png) -->
+
 
 ## Instrumenting functions
 
@@ -46,3 +51,5 @@ Configuring generative tests to only generate a small number of values will make
 ```
 
 Generative testing with small generators can be run regularly during development without impacting fast feedback.
+
+[:fontawesome-solid-book-open: Testing with Clojure Spec](/clojure/clojure-spec/testing/){.md-button} 
