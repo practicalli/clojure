@@ -7875,9 +7875,12 @@
 
 
 <h1 id="organizing-specifications">Organizing Specifications<a class="headerlink" href="#organizing-specifications" title="Permanent link">λ︎</a></h1>
-<p>Data and function definition specifications are typically placed in a specifications namespace under the relevant <code>src</code> directory for a project.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure Spec organising specs - card game example" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png" /></a></p>
+<p>Data and function definition specifications are typically placed in a dedicated <code>specification</code> namespaces, e.g <code>src/domain/project/specification.clj</code>.  </p>
 <p>Add the data specifications (<code>spec/def</code>), custom predicate functions and function specifications (<code>spec/fdef</code>) to the <code>specifications</code> namespace.</p>
+<p>Specifications for an architecture layer can be organised next to the namespaces managing the layer, e.g. database. </p>
+<p>Migrate specifications to a library once they are applicable to multiple projects.</p>
+<!-- ![Clojure Spec organising specs - card game example](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-spec-organising-specifications-card-game.png) -->
+
 <h2 id="instrumenting-functions">Instrumenting functions<a class="headerlink" href="#instrumenting-functions" title="Permanent link">λ︎</a></h2>
 <p>Add <code>spec-test/instrument</code> expressions to the <code>specifications</code> file, after the <code>spec/fdef</code> expressions.</p>
 <p>Rather than create individual expressions, create a <code>clojure.core/def</code> to contain a collection of all the <code>spec/fdef</code> expressions.  This list can then be used to <code>instrument</code> and <code>unstrument</code> all the <code>spec/fdef</code> specifications.</p>
@@ -7903,13 +7906,14 @@
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">                   </span><span class="p">{</span><span class="ss">:clojure.spec.test.check/opts</span><span class="w"> </span><span class="p">{</span><span class="ss">:num-tests</span><span class="w"> </span><span class="mi">10</span><span class="p">}})</span>
 </code></pre></div>
 <p>Generative testing with small generators can be run regularly during development without impacting fast feedback.</p>
+<p><a class="md-button" href="/clojure/clojure-spec/testing/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Testing with Clojure Spec</a> </p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2023</span>
       
     
   </small>
