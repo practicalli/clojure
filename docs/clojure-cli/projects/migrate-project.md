@@ -25,7 +25,7 @@ Use the `:deps` key in `deps.edn` to specify a version of the `org.clojure/cloju
 
 ```clojure
 {:deps
- {org.clojure/clojure {:mvn/version "1.10.2"}
+ {org.clojure/clojure {:mvn/version "1.11.1"}
   integrant/integrant {:mvn/version "0.8.0"}}}
 ```
 
