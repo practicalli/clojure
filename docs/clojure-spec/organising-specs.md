@@ -1,6 +1,6 @@
 # Organizing Specifications
 
-Data and function definition specifications are typically placed in a dedicated Specification namespaces.  
+Data and function definition specifications are typically placed in a dedicated `specification` namespaces, e.g `src/domain/project/specification.clj`.  
 
 Add the data specifications (`spec/def`), custom predicate functions and function specifications (`spec/fdef`) to the `specifications` namespace.
 
