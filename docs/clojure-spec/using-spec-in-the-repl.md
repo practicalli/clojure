@@ -11,11 +11,13 @@
 Run a [Clojure REPL with a rich terminal UI](/clojure/clojure-cli/repl/)
 
 === "REPL Rebel"
+    A REPL with a rich terminal UI
     ```shell
     clojure -M:repl/rebel
     ```
 
 === "REPL Reloaded"
+    A REPL with a rich terminal UI and tools to support the [Practicalli REPL Reloaded workflow](/clojure/clojure-cli/repl-reloaded).
     ```shell
     clojure -M:repl/reloaded
     ```
