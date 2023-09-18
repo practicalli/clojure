@@ -23,7 +23,7 @@ deps-new provides Clojure CLI specific templates and [:fontawesome-solid-book-op
 ??? INFO "clj-new provides Leiningen format templates"
     The Practicalli `:project/new` alias provides the [seancorfield/clj-new](https://github.com/seancorfield/clj-new) tool which can use a wide range of templates (although some may only create Leinginen projects).  This project has been archived and deps-new is the recommended approach.
 
-    [Migrate to a Clojure CLI project](migrate-project.md) if the template does not include a `deps.edn` file
+    [Migrate to a Clojure CLI project](/clojure/clojure-cli/projects/migrate-project/) if the template does not include a `deps.edn` file
 
     [:fontawesome-brands-youtube: Clojure Projects with the REPL video](https://www.youtube.com/embed/7muHVkxzZcE) demonstrates shows how to use clj-new
 
@@ -81,8 +81,6 @@ Create a project using the `practicalli/application` template and random-functio
 ```bash
 clojure -T:project/create :template practicalli/application :name practicalli/random-function
 ```
-
-
 
 
 ## Run Project in a REPL
