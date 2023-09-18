@@ -3411,16 +3411,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-data-conforms-to-the-specification" class="md-nav__link">
-    Check data conforms to the specification
+  <a href="#check-data-conforms-to-specification" class="md-nav__link">
+    Check data conforms to specification
+  </a>
+  
+    <nav class="md-nav" aria-label="Check data conforms to specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-expressions" class="md-nav__link">
+    Example expressions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7830,16 +7836,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#check-data-conforms-to-the-specification" class="md-nav__link">
-    Check data conforms to the specification
+  <a href="#check-data-conforms-to-specification" class="md-nav__link">
+    Check data conforms to specification
+  </a>
+  
+    <nav class="md-nav" aria-label="Check data conforms to specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-expressions" class="md-nav__link">
+    Example expressions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
-  </a>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -7875,69 +7887,80 @@
 
 
 <h1 id="repl-experiments-with-clojure-spec">REPL Experiments with Clojure Spec<a class="headerlink" href="#repl-experiments-with-clojure-spec" title="Permanent link">λ︎</a></h1>
+<details class="hint">
+<summary>Create a minimal Project</summary>
+<p>Clojure Spec can be tried without creating a Clojure project, although creating a project is useful if saving the Clojure Spec code experiments.</p>
+<p>Create a minimal Clojure project with a Clojure CLI deps.edn configuration.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-T:project/create<span class="w"> </span>:template<span class="w"> </span>practicalli/minimal<span class="w"> </span>:name<span class="w"> </span>practicalli/spec-experiments
+</code></pre></div></p>
+</details>
 <p>Run a <a href="/clojure/clojure-cli/repl/">Clojure REPL with a rich terminal UI</a></p>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Rebel</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">REPL Rebel</label><label for="__tabbed_1_2">REPL Reloaded</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
-<p>```bash
-clojure -M:repl/rebel</p>
-</div>
-</div>
-</div>
-<p>```</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:1"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">REPL Reloaded</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<p>```bash
-clojure -M:repl/reloaded</p>
-</div>
-</div>
-</div>
-<p>```</p>
-<p>Require the <code>clojure.spec.alpha</code> using an alias called <code>spec</code> to use functions from that namespace.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-M:repl/rebel
 </code></pre></div>
-<p>Use <code>(in-ns 'namespace.name)</code> if you need to change into a specific namespace.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Require the <code>clojure.spec.alpha</code> using an alias called <code>spec</code> to use functions from that namespace.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.spec.alpha</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">spec</span><span class="p">])</span>
+</code></pre></div>
+<blockquote>
+<p>NOTE: <code>clojure.spec.alpha</code> is often aliased as <code>s</code>, although  Practicalli avoids</p>
+</blockquote>
 <h2 id="spec-auto-completion">Spec auto-completion<a class="headerlink" href="#spec-auto-completion" title="Permanent link">λ︎</a></h2>
 <p>Using rebel-readline for the Clojure REPL will show autocompletion for all spec functions once the spec namespace has been required.</p>
 <blockquote>
 <p>Type <code>(spec /</code> and press <code>TAB</code> to list all the functions in the namespace.</p>
 </blockquote>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-require-spec-tab-function-autocompletion.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline autocompletion for spec" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-require-spec-tab-function-autocompletion.png" /></a></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-light.png?raw=true#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel autocompletion for spec functions" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-light.png?raw=true#only-light" /></a>
+<a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-dark.png?raw=true#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel autocompletion for spec functions" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-completion-spec-dark.png?raw=true#only-dark" /></a></p>
 <p>Typing a space character after the full name of a function shows the function signature with arguments that should be passed to that function.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/cloure-repl-rebel-readline-spec-function-help-conform.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec conform function signature" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/cloure-repl-rebel-readline-spec-function-help-conform.png" /></a></p>
-<h2 id="check-data-conforms-to-the-specification">Check data conforms to the specification<a class="headerlink" href="#check-data-conforms-to-the-specification" title="Permanent link">λ︎</a></h2>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-light.png?raw=true#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec conform function signature" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-light.png?raw=true#only-light" /></a>
+<a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-dark.png?raw=true#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec conform function signature" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-eldoc-conform-dark.png?raw=true#only-dark" /></a></p>
+<p><span class="keys"><kbd class="key-control">Ctrl</kbd></span> <span class="keys"><kbd>x</kbd></span> <span class="keys"><kbd class="key-control">Ctrl</kbd></span> <span class="keys"><kbd>d</kbd></span> displays the documentation for the current function </p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-light.png?raw=true#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec conform documentation" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-light.png?raw=true#only-light" /></a>
+<a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-dark.png?raw=true#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec conform documentation" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-conform-dark.png?raw=true#only-dark" /></a></p>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-light.png?raw=true#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec valid? documentation" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-light.png?raw=true#only-light" /></a>
+<a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-dark.png?raw=true#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec valid? documentation" loading="lazy" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-doc-spec-valid-dark.png?raw=true#only-dark" /></a></p>
+<h2 id="check-data-conforms-to-specification">Check data conforms to specification<a class="headerlink" href="#check-data-conforms-to-specification" title="Permanent link">λ︎</a></h2>
 <p>Use the <code>spec/conform</code> and <code>spec/valid?</code> functions to test if data matches a specification.  In these examples, predicate functions are used as a specification.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-readline-spec-examples-conform-valid.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec examples" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-rebel-readline-spec-examples-conform-valid.png" /></a></p>
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">λ︎</a></h2>
+<p><a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-light.png?raw=true#only-light" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec examples" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-light.png?raw=true#only-light" /></a>
+<a class="glightbox" href="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-dark.png?raw=true#only-dark" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure REPL - rebel readline spec examples" src="https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-spec-expression-examples-dark.png?raw=true#only-dark" /></a></p>
+<h3 id="example-expressions">Example expressions<a class="headerlink" href="#example-expressions" title="Permanent link">λ︎</a></h3>
 <p><code>spec/conform</code> will return the value if it conforms to the specification, or <code>:clojure.spec.alpha/invalid</code> if the data does not conform.</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure Spec - Conform values</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">integer?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">))</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">{})</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">odd?</span><span class="w"> </span><span class="mi">101</span><span class="p">)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nv">integer?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">seq? </span><span class="p">(</span><span class="nb">range </span><span class="mi">10</span><span class="p">))</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">{})</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="nb">map? </span><span class="p">(</span><span class="nb">hash-map </span><span class="ss">:a</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ss">:b</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div>
 </div>
 <p><code>spec/valid?</code> returns true or false</p>
 <div class="admonition example">
 <p class="admonition-title">Clojure Spec - validate values</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="s">&quot;Am I a valid string&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">10000</span><span class="p">))</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nv">even?</span><span class="w"> </span><span class="mi">180</span><span class="p">)</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="s">&quot;Am I a valid string&quot;</span><span class="p">)</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">value</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">value</span><span class="w"> </span><span class="mi">10000</span><span class="p">))</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="p">(</span><span class="nf">spec/conform</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">&gt; </span><span class="nv">%</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="mi">30076</span><span class="p">)</span>
 </code></pre></div>
 </div>
 
@@ -7946,7 +7969,7 @@ clojure -M:repl/reloaded</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 18, 2023</span>
       
     
   </small>
