@@ -4,9 +4,9 @@ Specifications can be defined for any data in Clojure, be that simple values or 
 
 ## What is a specification
 
-Specifications can be [predicates](predicate-specifications.md) (return true or false), [literal values](literal-values.md) in sets and [entity maps](entity-maps.md).
+Specifications can be [predicates](predicate-functions.md) (return true or false), [literal values](literal-values.md) in sets and [entity maps](entity-maps.md).
 
-There are many [predicate functions that come with Clojure](/reference/clojure/predicate-functions.md) which help speed the creation of specifications.  Clojure function definitions (`fn`, `defn`) can be used to define custom predicate functions too.
+There are many [predicate functions that come with Clojure](/reference/standard-library/predicate-functions.md) which help speed the creation of specifications.  Clojure function definitions (`fn`, `defn`) can be used to define custom predicate functions too.
 
 ## Do values meet a specification
 
@@ -26,22 +26,21 @@ Typically Specifications are created when data structures are being modeled, whi
 
 The generative tests section shows how specifications are used to generate mock data, so creating specifications earlier on in the development process will provide a wider range of data for unit tests and repl experimentation.
 
+
+!!! HINT "Spec and nil values"
+    Some predicates do not consider `nil` as a valid value, espcially those predicates that check for a specific type
+
+    `spec/nilable` will transform a predicate to use nil
+
+    ```clojure
+    (spec/valid? string? nil)
+
+    (type "what type am I")
+    (type nil)
+
+    (spec/valid? (spec/nilable string?) nil)
+    ```
+
 <!--
-
 ;; Question: when use valid? rather than conform?
-
-;; What about nil values
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Some predicates do not consider `nil` a valid value
-;; typically those predicates that check for a specific type
-
-;; spec/nilable will transform a predicate to use nil
-
-(spec/valid? string? nil)
-
-(type "what type am I")
-(type nil)
-
-(spec/valid? (spec/nilable string?) nil)
-
  -->
