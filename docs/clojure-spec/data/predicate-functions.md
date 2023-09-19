@@ -1,4 +1,4 @@
-# Predicate functions
+# Spec - Predicate functions
 
 A predicate is a function that returns a true or false value and their names end with `?` by convention.
 
@@ -19,7 +19,7 @@ A predicate is a function that returns a true or false value and their names end
 ```
 
 !!! HINT "`clojure.core` predicate functions"
-    [`clojure.core` defines 80+ predicate functions](/reference/clojure/predicates.md)
+    [`clojure.core` defines 80+ predicate functions](/reference/standard-library/predicate-functions.md)
 
 ## Predicate functions in specs
 
