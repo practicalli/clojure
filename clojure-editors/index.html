@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.85d0ee34.min.css">
@@ -3492,11 +3492,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../clojure-spec/data/predicate-specifications/" class="md-nav__link">
+      <a href="../clojure-spec/data/predicate-specifications.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Predicate functions
+    None
   </span>
   
 
@@ -4964,7 +4964,7 @@
         
   
   <span class="md-ellipsis">
-    Predicate functions
+    Clojure Predicate functions
   </span>
   
 
@@ -7995,9 +7995,14 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <p><a href="https://code.visualstudio.com/">VS Code</a> is a freely available editor build on open source and available for Linux, MacOS and Microsoft Windows.</p>
 <p><a class="md-button" href="https://code.visualstudio.com/docs/introvideos/basics" target="_blank">VSCode Getting Started Guide</a></p>
 <p><a href="https://marketplace.visualstudio.com/VSCode">VS Code has a large marketplace of extensions</a>, proiding additional tools for a complete development environment.</p>
-<p>Calva is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).</p>
-<p>VSpaceCode provides a mnemonic menu to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.</p>
-<p>Clover provides a mininal, highly customisable environment using Socket REPL.</p>
+<p><strong>Calva</strong> is the most commonly used extension for Clojure support and aims to provide similar features to Emacs Cider (and uses some of the same Clojure libraries).</p>
+<div class="admonition warning">
+<p class="admonition-title">Clojure CLI User Aliases not directly supported</p>
+<p>Calva does not support Clojure CLI user aliases directly (only project deps.edn).  A JSON mapping must be added to the Calva configuration for each user alias (duplicating configuration)</p>
+<p>Practicalli recommends starting the Clojure REPL in a terminal and specifying the required Clojure CLI user aliases, using Calva connect once the REPL has started.</p>
+</div>
+<p><strong>VSpaceCode</strong> provides a mnemonic menu to drive VS Code by keyboard alone, vim editing and rich Git client (edamagit).  VSpaceCode extension also provides key bindings for common Calva commands.  Users experienced with Neovim and Emacs (Spacemacs / Doom) will find this extension makes VS Code easiter to use than vanilla VS Code or VS Code with an Neovim backend.</p>
+<p><strong>Clover</strong> provides a mininal, highly customisable environment using Socket REPL.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="7:3"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio" /><input id="__tabbed_7_2" name="__tabbed_7" type="radio" /><input id="__tabbed_7_3" name="__tabbed_7" type="radio" /><div class="tabbed-labels"><label for="__tabbed_7_1">Calva</label><label for="__tabbed_7_2">VSpaceCode</label><label for="__tabbed_7_3">Clover</label></div>
 <div class="tabbed-content">
 <div class="tabbed-block">
@@ -8013,7 +8018,7 @@ The Practicalli configuration should replace the <code>~/.doom.d/</code> directo
 <div class="tabbed-block">
 <p><a class="glightbox" href="https://vspacecode.github.io/img/logo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="VSpaceCode logo" loading="lazy" src="https://vspacecode.github.io/img/logo.png" style="height:128px;width:128px" /></a></p>
 <p><a href="https://github.com/VSpaceCode/VSpaceCode">VSpaceCode</a> is a Spacemacs-like community configuration for Microsoft VS Code. Drive VS Code entirely from the keyboard, using easy to remember mnemonic keys for all commands and full vim-stile editing tools.</p>
-<p>Calva is supported by VSpaceCode and Calva commands are included in the mneomic menu when a Clojure file is open.</p>
+<p>Calva extension must be added as it is not part of VSpaceCode, although Calva commands are included in the VSpaceCode mneomoic menu when a Clojure file is open.</p>
 <p>Edamagit is a sophisticated text based Git client (like magit for Emacs) is also included in the VSpacemacs extension.</p>
 <p><a class="md-button" href="https://practical.li/vspacecode/install/" target="_blank">Practicalli VSpaceCode install guide</a>
 <a class="md-button" href="vspacecode-guide/" target="_blank">Practicalli VSpaceCode user guide</a></p>
@@ -8079,7 +8084,7 @@ Run a REPL process via <strong>Tools</strong> » <strong>Build With…</strong> 
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 22, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>

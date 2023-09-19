@@ -26,11 +26,11 @@
         <link rel="prev" href="../organising-specs/">
       
       
-        <link rel="next" href="predicate-specifications/">
+        <link rel="next" href="literal-values/">
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.3.1">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.3.2">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.30068a00.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.85d0ee34.min.css">
@@ -3494,11 +3494,11 @@
   
   
     <li class="md-nav__item">
-      <a href="predicate-specifications/" class="md-nav__link">
+      <a href="predicate-specifications.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Predicate functions
+    None
   </span>
   
 
@@ -4966,7 +4966,7 @@
         
   
   <span class="md-ellipsis">
-    Predicate functions
+    Clojure Predicate functions
   </span>
   
 
@@ -7818,8 +7818,8 @@
 <h1 id="clojure-spec-for-data">Clojure Spec for data<a class="headerlink" href="#clojure-spec-for-data" title="Permanent link">λ︎</a></h1>
 <p>Specifications can be defined for any data in Clojure, be that simple values or complex data structures. More complex specifications are composed of individual specifications, providing a flexible way to define specifications without building a brittle hierarchy.</p>
 <h2 id="what-is-a-specification">What is a specification<a class="headerlink" href="#what-is-a-specification" title="Permanent link">λ︎</a></h2>
-<p>Specifications can be <a href="predicate-specifications/">predicates</a> (return true or false), <a href="literal-values/">literal values</a> in sets and <a href="entity-maps/">entity maps</a>.</p>
-<p>There are many <a href="/reference/clojure/predicate-functions.md">predicate functions that come with Clojure</a> which help speed the creation of specifications.  Clojure function definitions (<code>fn</code>, <code>defn</code>) can be used to define custom predicate functions too.</p>
+<p>Specifications can be <a href="predicate-functions/">predicates</a> (return true or false), <a href="literal-values/">literal values</a> in sets and <a href="entity-maps/">entity maps</a>.</p>
+<p>There are many <a href="/reference/standard-library/predicate-functions.md">predicate functions that come with Clojure</a> which help speed the creation of specifications.  Clojure function definitions (<code>fn</code>, <code>defn</code>) can be used to define custom predicate functions too.</p>
 <h2 id="do-values-meet-a-specification">Do values meet a specification<a class="headerlink" href="#do-values-meet-a-specification" title="Permanent link">λ︎</a></h2>
 <p>The functions use to compare data with a specification are:</p>
 <ul>
@@ -7832,24 +7832,20 @@
 <p>Using Clojure Specification is very flexible, they can be used as much or as little as required.</p>
 <p>Typically Specifications are created when data structures are being modeled, which can be done via experimenting in the REPL or taking a test first approach.  Either way is viable.</p>
 <p>The generative tests section shows how specifications are used to generate mock data, so creating specifications earlier on in the development process will provide a wider range of data for unit tests and repl experimentation.</p>
+<div class="admonition hint">
+<p class="admonition-title">Spec and nil values</p>
+<p>Some predicates do not consider <code>nil</code> as a valid value, espcially those predicates that check for a specific type</p>
+<p><code>spec/nilable</code> will transform a predicate to use nil</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="nb">string? </span><span class="nv">nil</span><span class="p">)</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="s">&quot;what type am I&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="p">(</span><span class="nf">spec/valid?</span><span class="w"> </span><span class="p">(</span><span class="nf">spec/nilable</span><span class="w"> </span><span class="nv">string?</span><span class="p">)</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
+</code></pre></div>
+</div>
 <!--
-
 ;; Question: when use valid? rather than conform?
-
-;; What about nil values
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Some predicates do not consider `nil` a valid value
-;; typically those predicates that check for a specific type
-
-;; spec/nilable will transform a predicate to use nil
-
-(spec/valid? string? nil)
-
-(type "what type am I")
-(type nil)
-
-(spec/valid? (spec/nilable string?) nil)
-
  -->
 
   <hr>
@@ -7857,7 +7853,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 19, 2023</span>
       
     
   </small>
@@ -7910,13 +7906,13 @@
         
         
           
-          <a href="predicate-specifications/" class="md-footer__link md-footer__link--next" aria-label="Next: Predicate functions" rel="next">
+          <a href="literal-values/" class="md-footer__link md-footer__link--next" aria-label="Next: Literal values" rel="next">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Predicate functions
+                Literal values
               </div>
             </div>
             <div class="md-footer__button md-icon">
