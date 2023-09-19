@@ -1,8 +1,11 @@
-![Clojure - Simple projects - Encoding and decoding](/images/simple-projects-encoding-true-false.png)
+# Clojure Predicate functions
 
-# clojure.core predicate functions
+A predicate function takes a single argument and returns a truthy value, e.g. `true` or `false`
 
-The predicate functions defined in clojure.core.  A predicate function takes a single argument and returns a truthy value, e.g. `true` or `false`
+![Clojure - Simple projects - Encoding and decoding](https://github.com/practicalli/graphic-design/blob/live/code-challenges/simple-projects-encoding-true-false.png?raw=true)
+
+
+There are over 70 predicate functions provided by the `clojure.core` namespace. 
 
 | `clojure.core` predicates      | Description |
 |--------------------------------|-------------|
