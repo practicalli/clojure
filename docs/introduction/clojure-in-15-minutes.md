@@ -80,12 +80,12 @@ Equality is =
 
 `true` and `false` are Boolean values
 
- ```clojure
+```clojure
 (true? true) ; => true
 (not true) ; => false
 (not= true false) ; => true
 (true? (complement true?)) ; => false
- ```
+```
 
 ## Types
 
@@ -148,7 +148,7 @@ Sequences are an interface for logical lists, which can be lazy. "Lazy" means th
 A lazy sequence enables the use of large or even an infinite series, like so:
 
 ```clojure
- (range) ; => (0 1 2 3 4 ...) - an infinite series
+(range) ; => (0 1 2 3 4 ...) - an infinite series
 (take 4 (range)) ;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken
 ```
 
@@ -210,7 +210,7 @@ Wrap a `(fn ,,,)` form in parens to call it and return the result
 ((fn hello [] "Hello World")) ; => "Hello World"
 ```
 
-Create a reusable function using `def`, creating a name that is a `var`.  The function behaviour defined in `def` can be changed and the expression re-evaluated to use the new behaviour.
+Create a reusable function using `defn`, creating a name that is a `var`.  The function behaviour defined in `defn` can be changed and the expression re-evaluated to use the new behaviour.
 
 ```clojure
 (defn hello-world []
