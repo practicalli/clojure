@@ -8,6 +8,10 @@
 # https://oxsecurity.github.io/megalinter/latest/supported-linters/
 
 # ------------------------
+# Checkout Code
+VALIDATE_ALL_CODEBASE: true
+
+# ------------------------
 # Linters
 
 # Run linters in parallel
