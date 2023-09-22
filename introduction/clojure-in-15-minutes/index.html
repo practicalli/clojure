@@ -8150,7 +8150,7 @@
 </div>
 <p><code>22/7</code> is returned as the value, rather than a floating point value (double) which may loose some precision due to rounding.</p>
 <h3 id="equality">Equality<a class="headerlink" href="#equality" title="Permanent link">λ︎</a></h3>
-<p>Equality is <code>=</code></p>
+<p><code>=</code> function provides a test for equality</p>
 <div class="admonition example">
 <p class="admonition-title">Equal values return a boolean true</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nb">= </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; true</span>
@@ -8162,6 +8162,9 @@
 </code></pre></div>
 </div>
 <p><code>true</code> and <code>false</code> are Boolean values and can be used literally in Clojure.</p>
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+</div>
 <h3 id="predicates">Predicates<a class="headerlink" href="#predicates" title="Permanent link">λ︎</a></h3>
 <p>A predicate is a function that returns a boolean <code>true</code> or <code>false</code> value and by convention the function name ends in <code>?</code>, e.g. <code>true?</code>, <code>false?</code>, <code>seq?</code>, <code>even?</code>, <code>uuid?</code>.</p>
 <p><code>and</code> &amp; <code>or</code> functions can be used to chain the results of predicates together for more interesting conditional tests.</p>
@@ -8242,9 +8245,9 @@
 <p>Wrap a <code>(fn ,,,)</code> form in parens to call it and return the result.  </p>
 <div class="admonition example">
 <p class="admonition-title">Call an anonymous function</p>
-</div>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">((</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; &quot;Hello World&quot;</span>
 </code></pre></div>
+</div>
 <p>Normally the anonymous function is used inline with other code</p>
 <div class="admonition example">
 <p class="admonition-title">Use anonymous function within other code</p>
@@ -8254,13 +8257,14 @@
 <p>Create a reusable function using <code>def</code>, creating a name that is a <code>var</code>.  The function behaviour defined in <code>def</code> can be changed and the expression re-evaluated to use the new behaviour.</p>
 <div class="admonition example">
 <p class="admonition-title">Bind a name to the anonymous function</p>
+<p>```clojure
+(def hello-world 
+  (fn hello [] "Hello World")) </p>
 </div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">hello-world</span><span class="w"> </span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="p">(</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">))</span><span class="w"> </span>
-</code></pre></div>
+<p>```</p>
 <div class="admonition example">
 <p class="admonition-title">Evaluate annonymous function by evaluating its name</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">hello-world</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">hello-world</span>
 </code></pre></div>
 </div>
 <blockquote>
@@ -8270,7 +8274,7 @@
 <p>It is more common to use the <code>defn</code> macro to define a function.  This is the same as defining the <code>fn</code> function and the <code>def</code> name within the same expression</p>
 <div class="admonition example">
 <p class="admonition-title">Define a function with defn macro</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-world</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-world</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <p><code>#'user/hello-world</code> is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a differnt namespace than <code>user</code>.</p>
@@ -8279,28 +8283,36 @@
 </blockquote>
 <div class="admonition example">
 <p class="admonition-title">Call a function</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">(</span><span class="nf">hello-world</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="p">(</span><span class="nf">hello-world</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <p>The <code>[]</code> vector is used to define the argument names for the function.  There can be zero or more arguments. </p>
+<div class="admonition example">
+<p class="admonition-title">Call function with arguments</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span>
+</code></pre></div>
+</div>
+<p>The correct number of arguments must be used when calling a function, or an error will be returned.</p>
+<div class="admonition example">
+<p class="admonition-title">Call function with arguments</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">(</span><span class="nf">hello</span><span class="w"> </span><span class="s">&quot;Steve&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; &quot;Hello Steve&quot;</span>
+</code></pre></div>
+</div>
 <details class="hint">
 <summary>Pass a hash-map as an argument</summary>
 <p>Simplify the design of a function signature by passing all arguments as a hash-map.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">data-processing</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">data</span><span class="p">]</span>
-<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">body</span><span class="w"> </span><span class="p">(</span><span class="nb">get </span><span class="nv">data</span><span class="w"> </span><span class="ss">:body</span><span class="p">)])</span>
-<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="nv">body</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">data-processing</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">data</span><span class="p">]</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">body</span><span class="w"> </span><span class="p">(</span><span class="nb">get </span><span class="nv">data</span><span class="w"> </span><span class="ss">:body</span><span class="p">)])</span>
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="nv">body</span><span class="p">))</span>
 </code></pre></div>
 <a href="https://clojure.org/guides/destructuring#_associative_destructuring" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Associative Destructuring</a> can be used to automatically create local variables from the desired keys contained in the map, giving access to the value of each key.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">data-processing</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">body</span><span class="p">]}]</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="nv">body</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">data-processing</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">body</span><span class="p">]}]</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="nv">body</span><span class="p">))</span>
 </code></pre></div></p>
 </details>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
-<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span>
-<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="p">(</span><span class="nf">hello</span><span class="w"> </span><span class="s">&quot;Steve&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; &quot;Hello Steve&quot;</span>
-</code></pre></div>
 <p>Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments.  This provides a simple form of polymorphism based on the number of arguments.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-polly</span>
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">; (1)!</span>
