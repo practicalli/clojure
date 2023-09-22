@@ -16,6 +16,15 @@
  ╚═════╝╚══════╝ ╚═════╝  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 ```
 
+## Book Overview
+
+A guide to software development with the Clojure programming language, using Clojure CLI and a wide range of community tools for a REPL focused workflow.
+
+The guide uses Practicalli Clojure CLI Config to provide aliases to run over 30 community tools that complement the workflow, including a REPL Reloaded workflow for a highly interactive and effective development experience.
+
+Learning Clojure syntax and how to think in a functional design is also covered with code examples and challenge that help embed these concepts.
+
+
 ## Book status
 
 [![MegaLinter](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/megalinter.yaml)[![Publish Book](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml/badge.svg)](https://github.com/practicalli/clojure/actions/workflows/publish-book.yaml)
@@ -37,16 +46,16 @@
 
 ## Contributing
 
-Issues and pull requests are most welcome.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
+Issues and pull requests are most welcome although it is the maintainers discression as to if they are applicable.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
 
-Please [see the detailed contributing section of the book](contributing.html) before raising an issue or pull request
+Please read the [detailed contributing section of the book](https://practical.li/clojure/introduction/contributing/) before raising an issue or pull request to avoid disapointment.
 
 * [Current Issues](https://github.com/practicalli/clojure/issues)
 * [Current pull requests](https://github.com/practicalli/clojure/pulls)
 
-[Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) provides a user level configuration used in this guide and issues and pull requests can also be made there.
+[Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) provides a user level configuration providing aliases for community tools used throughout this guide.  Issues and pull requests can also be made via its GitHub repository.
 
-By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
+By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 
 ## Sponsor Practicalli
 
@@ -100,6 +109,6 @@ The website will open at <http://localhost:8000>
 
 If making smaller changes, then only rebuild the content that changes, speeding up the local development process
 ```bash
-make docs
+make docs-changed
 ```
 

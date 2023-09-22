@@ -4,7 +4,7 @@
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
-
+- readme: add book overview, update contributing section
 
 # 2023-08-14
 
