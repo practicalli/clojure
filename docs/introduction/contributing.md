@@ -1,8 +1,11 @@
 # Contributing to Practicalli
 
-Practicalli books are written in markdown and use MkDocs to generate the published website via a GitHub workflow.  MkDocs can also run a local server using the `make docs` target from the `Makefile`
+By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors){target=_blank}.
 
-By submitting content ideas and corrections you are agreeing they can be used in this book under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/){target=_blank}.  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors){target=_blank}.
+!!! INFO "Please raise an issue before creating a pull request"  
+    Raising an issue or post on the #practicalli channel of Clojurians Slack community avoids disappointment if the contribution would not be accepted and saves time for all.
+
+Practicalli books are written in markdown and use MkDocs to generate the published website via a GitHub workflow.  MkDocs can also run a local server using the `make docs` target from the `Makefile`
 
 All content and interaction with any persons or systems must be done so with respect and within the Practicalli Code of Conduct.
 
@@ -24,17 +27,25 @@ If something doesnt seem quite right or something is missing from the book, plea
 
 **Raising an issue before creating a pull request will save you and the maintainer time**.
 
+Alternatively, reach out to Practicalli via the `#practicalli` channel of the Clojurians Slack community.
+
+[Clojurians Slack community](http://clojurians.net/){target=_blank .md-button}
+
 ## Considering a Pull request?
 
 Before investing any time in a pull request, please raise an issue explaining the situation.  This can save you and the maintainer time and avoid rejected pull requests.
 
 Please keep pull requests small and focused, as they are much quicker to review and easier to accept.  Ideally PR's should be for a specific page or at most a section.
 
+All pull requests must include an entry in CHANGELOG.md or will not be merged.  A changelog entry allows the community to easily follow the changes to the book.
+
+Each pull request will have a number of CI workflows run against the contribution, checking the format of the content and if a changelog entry has been provided.
+
 A PR with a list of changes across different sections will not be merged, it will be reviewed eventually though.
 
 ## Thank you to everyone that has contributed
 
-A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.  Special thank you to Alex Miller who has provided excellent advice on working with Clojure and the CLI tooling.
+A huge thank you to Rich Hickey and the team at Cognitect for creating and continually guiding the Clojure language.  
 
 The Clojure community has been highly supportive of everyone using Clojure and I'd like to thank everyone for the feedback and contributions.  I would also like to thank everyone that has joined in with the [London Clojurins community](https://www.meetup.com/London-Clojurians/){target=_blank}, [ClojureBridgeLondon](https://clojurebridgelondon.github.io/){target=_blank}, [Clojurians Slack community](http://clojurians.net/){target=_blank}, [Clojurians Zulip](https://clojurians.zulipchat.com/){target=_blank} community and [Clojureverse community](https://clojureverse.org/){target=_blank}.
 
