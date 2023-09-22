@@ -65,11 +65,11 @@ A company name or community repository name is often used making the namespace u
 The `str` function creates a new string from all the arguments passed
 
 !!! EXAMPLE "Combine strings into a single string value"
-```clojure
-(str "Hello" " " "World")
-```
-`"Hello World"` is returned from evaluating the expression.
+    ```clojure
+    (str "Hello" " " "World")
+    ```
 
+`"Hello World"` is returned from evaluating the expression.
 
 !!! HINT "clojure.string library for manipulating strings"
     `clojure.string` library functions manipulate values and return string values (other clojure.core functions my return characters as results, e.g. `map`)
@@ -106,28 +106,49 @@ Maintain precision for calculations using a Ratio type in Clojure
 `22/7` is returned as the value, rather than a floating point value (double) which may loose some precision due to rounding.
 
 
-```clojure
-(+ 1 (- 3 2)) ; = 1 + (3 - 2) => 2
-```
+### Equality
 
-Equality is =
+`=` function provides a test for equality
 
-```clojure
-(= 1 1) ; => true
-(= 2 1) ; => false
-```
+!!! EXAMPLE "Equal values return a boolean true"
+    ```clojure
+    (= 1 1) ; => true
+    ```
 
-`true` and `false` are Boolean values
+!!! EXAMPLE "Unequals values return a boolean false"
+    ```clojure
+    (= 2 1) ; => false
+    ```
 
- ```clojure
-(true? true) ; => true
-(not true) ; => false
-(not= true false) ; => true
-(true? (complement true?)) ; => false
- ```
+`true` and `false` are Boolean values and can be used literally in Clojure.
 
 
-### Collections & Sequences
+### Predicates
+
+A predicate is a function that returns a boolean `true` or `false` value and by convention the function name ends in `?`, e.g. `true?`, `false?`, `seq?`, `even?`, `uuid?`.
+
+`and` & `or` functions can be used to chain the results of predicates together for more interesting conditional tests.
+
+!!! EXAMPLE "All predicates are true, returning true"
+    ```clojure
+    (and (true? true) (not false)) ; => true
+    ```
+
+!!! EXAMPLE "One of the predicates or values is true"
+    ```clojure
+    (or nil (not= true false) (true? (complement true?)) ) ; => true
+    ```
+
+!!! HINT "Truthy and Falsy values in Clojure"
+    `false` boolean value and `nil` value are considered false in Clojure.
+
+    All other values are consider true.
+
+
+[:fontawesome-solid-book-open: Clojure Standard Library Predicate Functions](https://practical.li/clojure/reference/standard-library/predicate-functions/){.md-button} 
+
+
+## Collections & Sequences
 
 The most common data collections in Clojure:
 
@@ -140,16 +161,15 @@ A list `()` is evaluated as a function call. The first element of the list the n
 
 The `'` quote function informs the Clojure reader to treat the list as data only.
 
-```clojure
-'(1 2 3)
-```
+!!! EXAMPLE "A quoted list is treated as data"
+    ```clojure
+    '(1 2 3) ; => (1 2 3)
+    ```
 
-Lists and vectors are collections
-
-```clojure
-(coll? '(1 2 3)) ; => true
-(coll? [1 2 3]) ; => true
-```
+!!! EXAMPLE "Lists and vectors are collections"
+    ```clojure
+    (and (coll? '(1 2 3)) (coll? [1 2 3])) ; => true
+    ```
 
 Only lists are sequences
 
@@ -211,6 +231,7 @@ Reduce can take an initial-value argument too
 
 Equivalent of `(conj (conj (conj [] 3) 2) 1)`
 
+
 ## Annonymous Functions
 
 Use `fn` to create new functions that defines some behaviour. `fn` is referred to as an anonymous fuction as it has no external name to be referenced by and must be called within a list form.
@@ -222,9 +243,9 @@ Use `fn` to create new functions that defines some behaviour. `fn` is referred t
 Wrap a `(fn ,,,)` form in parens to call it and return the result.  
 
 !!! EXAMPLE "Call an anonymous function"
-```clojure
-((fn hello [] "Hello World")) ; => "Hello World"
-```
+    ```clojure
+    ((fn hello [] "Hello World")) ; => "Hello World"
+    ```
 
 Normally the anonymous function is used inline with other code
 
@@ -233,20 +254,24 @@ Normally the anonymous function is used inline with other code
     (map (fn [x] (* x 2)) [1 2 3 4  [1 2 3 4 5]5])
     ```
 
-Create a reusable function using `def`, creating a name that is a `var`.  The function behaviour defined in `def` can be changed and the expression re-evaluated to use the new behaviour.
+Make the anonymous function reusable by binding it to a shared name (`var`) using `def`.  
+
+The `var` name bound to the function can now be called anywhere in the namespace.
+
+> As `def` creates a `var` (variable) name, the developer can changed the expression the name is bound to and re-evaluated to use the changed behaviour.
 
 !!! EXAMPLE "Bind a name to the anonymous function"
-```clojure
-(def hello-world 
-  (fn hello [] "Hello World")) 
-```
+    ```clojure
+    (def hello-world 
+      (fn hello [] "Hello World")) 
+    ```
 
 !!! EXAMPLE "Evaluate annonymous function by evaluating its name"
     ```clojure
     hello-world
     ```
 
-> NOTE: this is a name and not a function call, so parentheses are not required.
+> NOTE: `hello-world` is a name and not a function call, so parentheses are not required.
 
 
 ## Shared Functions
@@ -255,7 +280,10 @@ It is more common to use the `defn` macro to define a function.  This is the sam
 
 !!! EXAMPLE "Define a function with defn macro"
     ```clojure
-    (defn hello-world [] "Hello World")
+    (defn hello-world
+      "I am a humble doc-string, please describe the function purpose"
+     [] 
+     "Hello World")
     ```
 
 `#'user/hello-world` is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a differnt namespace than `user`.
@@ -269,6 +297,19 @@ It is more common to use the `defn` macro to define a function.  This is the sam
     ```
 
 The `[]` vector is used to define the argument names for the function.  There can be zero or more arguments. 
+
+!!! EXAMPLE "Call function with arguments"
+    ```clojure
+    (defn hello [name]
+      (str "Hello " name))
+    ```
+
+The correct number of arguments must be used when calling a function, or an error will be returned.
+
+!!! EXAMPLE "Call function with arguments"
+    ```clojure
+    (hello "Steve") ; => "Hello Steve"
+    ```
 
 ??? HINT "Pass a hash-map as an argument"
     Simplify the design of a function signature by passing all arguments as a hash-map.
@@ -285,11 +326,6 @@ The `[]` vector is used to define the argument names for the function.  There ca
       (transform body))
     ```
 
-```clojure
-(defn hello [name]
-  (str "Hello " name))
-(hello "Steve") ; => "Hello Steve"
-```
 
 Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments.  This provides a simple form of polymorphism based on the number of arguments.
 
