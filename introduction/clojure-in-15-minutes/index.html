@@ -8162,9 +8162,6 @@
 </code></pre></div>
 </div>
 <p><code>true</code> and <code>false</code> are Boolean values and can be used literally in Clojure.</p>
-<div class="admonition example">
-<p class="admonition-title">Example</p>
-</div>
 <h3 id="predicates">Predicates<a class="headerlink" href="#predicates" title="Permanent link">λ︎</a></h3>
 <p>A predicate is a function that returns a boolean <code>true</code> or <code>false</code> value and by convention the function name ends in <code>?</code>, e.g. <code>true?</code>, <code>false?</code>, <code>seq?</code>, <code>even?</code>, <code>uuid?</code>.</p>
 <p><code>and</code> &amp; <code>or</code> functions can be used to chain the results of predicates together for more interesting conditional tests.</p>
@@ -8254,7 +8251,11 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="p">(</span><span class="nb">map </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">x</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="nv">x</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w">  </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="mi">5</span><span class="p">])</span>
 </code></pre></div>
 </div>
-<p>Create a reusable function using <code>def</code>, creating a name that is a <code>var</code>.  The function behaviour defined in <code>def</code> can be changed and the expression re-evaluated to use the new behaviour.</p>
+<p>Make the anonymous function reusable by binding it to a shared name (<code>var</code>) using <code>def</code>.  </p>
+<p>The <code>var</code> name bound to the function can now be called anywhere in the namespace.</p>
+<blockquote>
+<p>As <code>def</code> creates a <code>var</code> (variable) name, the developer can changed the expression the name is bound to and re-evaluated to use the changed behaviour.</p>
+</blockquote>
 <div class="admonition example">
 <p class="admonition-title">Bind a name to the anonymous function</p>
 <p>```clojure
@@ -8268,13 +8269,16 @@
 </code></pre></div>
 </div>
 <blockquote>
-<p>NOTE: this is a name and not a function call, so parentheses are not required.</p>
+<p>NOTE: <code>hello-world</code> is a name and not a function call, so parentheses are not required.</p>
 </blockquote>
 <h2 id="shared-functions">Shared Functions<a class="headerlink" href="#shared-functions" title="Permanent link">λ︎</a></h2>
 <p>It is more common to use the <code>defn</code> macro to define a function.  This is the same as defining the <code>fn</code> function and the <code>def</code> name within the same expression</p>
 <div class="admonition example">
 <p class="admonition-title">Define a function with defn macro</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-world</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-world</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="s">&quot;I am a humble doc-string, please describe the function purpose&quot;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w"> </span><span class="p">[]</span><span class="w"> </span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <p><code>#'user/hello-world</code> is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a differnt namespace than <code>user</code>.</p>
