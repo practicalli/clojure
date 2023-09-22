@@ -2,13 +2,20 @@
 
 A quick tour of the Clojure syntax and common functions, which is so terse you can read through this page in around 15 minutes and have a basic understanding of the language.
 
+!!! HINT "Try the code out in the REPL"
+    [Start a Clojure REPL]() or use a [Clojure aware editor](/clojure/clojure-editors/) connected to a REPL and experiment with these code examples.
+
+    Using the REPL provides instant feedback on each expression as they are evaluated, greatly increasing your understanding.
+
+
 ## Comments
 
 `;;` two semi-colons for a line comment, `;` single semi-colon to comment the rest of the line
 
 `#_` comment reader macro to comment out the next form
 
-`(comment )` form to comment all the containing forms
+`(comment )` form to comment all the containing forms, useful to [:fontawesome-solid-book-open: separate experimental and established code](https://practical.li/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation) in a namespace.
+
 
 ## Clojure expressions
 
@@ -16,10 +23,15 @@ Clojure is mostly written with "expressions", a lists of elements inside parenth
 
 Clojure evaluates the first element in an expression as a function call.  Additional elements in the expression are passed as value arguments to the called function.
 
-```clojure
-(+ 2007 (* 1 16))       ;; function call with value and expression as arguments
-(map inc (range 0 99))  ;; functions can be passed as an argument
-```
+!!! EXAMPLE "Function call with value and expression as arguments"
+    ```clojure
+    (+ 2007 (* 1 16))       
+    ```
+
+!!! EXAMPLE "Functions can be passed as an argument"
+    ```clojure
+    (map inc (range 0 99))  
+    ```
 
 ## Organising Clojure
 
@@ -27,13 +39,20 @@ Clojure code is organised into one or more namespaces. The namespace represents 
 
 A company name or community repository name is often used making the namespace unique and easier to share & reuse.
 
-```clojure
-;; Define the namespace test
-(ns practicalli.game-board)  ;; src/practicalli/game_board.clj
+??? INFO "ns form returns nil value"
+    The `(ns namespace.,,,)` expression returns a `nil` value, as its work is done behind the scenes.
 
-;; Define a longer namespace
-(ns com.company.product.component-name)  ;; src/com/company/product/component_name.clj
-```
+    All Clojure functions must return a value and `nil` is a value that means 'no value'.
+
+!!! EXAMPLE "Define a namespace"
+    ```clojure title="src/practicalli/game_board.clj"
+    (ns practicalli.game-board)
+    ```
+
+!!! EXAMPLE "Define a longer namespace"
+    ```clojure title="src/com/company/product/component_name.clj"
+    (ns com.company.product.component-name)  ;; 
+    ```
 
 ??? WARNING "Namespaces use dash, directory and file names use underscore"
     Clojure uses `kebab-case` for names (common in Lisp dialects)
@@ -45,27 +64,47 @@ A company name or community repository name is often used making the namespace u
 
 The `str` function creates a new string from all the arguments passed
 
+!!! EXAMPLE "Combine strings into a single string value"
 ```clojure
 (str "Hello" " " "World")
-; => "Hello World"
 ```
+`"Hello World"` is returned from evaluating the expression.
 
-`clojure.string` returns string values (other functions my return characters as results)
+
+!!! HINT "clojure.string library for manipulating strings"
+    `clojure.string` library functions manipulate values and return string values (other clojure.core functions my return characters as results, e.g. `map`)
+
 
 ## Math, Truth & prefix notation
 
 Functions use prefix notation, so you can do math with multiple values very easily
 
-```clojure
-(+ 1 2 3 5 7 9 12) ; => 40
-(- 24 7 3) ; => 14
-(* 1 2) ; => 2
-(/ 27 7) ; => 22/7
-```
+!!! EXAMPLE "Prefix syntax takes multiple arguments"
+    ```clojure
+    (+ 1 2 3 5 7 9 12) ; => 40
+    ```
 
-Math is very precise, no need for operator precedence rules (as there are no operators)
+Math in Clojure is very precise, no need for operator precedence rules (as there are no operators)
 
 Nesting forms defined a very precise calculation
+
+!!! EXAMPLE "Parentheses used instead of operator preceedence rules"
+    ```clojure
+    (* 1 2 (- 24 (* 7 3)))
+    ```
+ 
+`6` is returned as the value.  Nested expressions are typically read inside out.  `(* 7 3)` is `21`, giving `(- 24 21)` expression resulting in `3`.  Finally the expression becomes `(* 1 2 3)`, resulting in a value of `6` 
+
+
+Maintain precision for calculations using a Ratio type in Clojure
+
+!!! EXAMPLE "Clojure Ratio value"
+    ```clojure
+    (/ 27 7) 
+    ```
+
+`22/7` is returned as the value, rather than a floating point value (double) which may loose some precision due to rounding.
+
 
 ```clojure
 (+ 1 (- 3 2)) ; = 1 + (3 - 2) => 2
@@ -87,30 +126,6 @@ Equality is =
 (true? (complement true?)) ; => false
  ```
 
-## Types
-
-Clojure is strongly typed, so everything is a type in Clojure.
-
-Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.
-
-Clojure is a hosted language and uses the type system of the platform it runs upon.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.
-
-Use `class` or `type` function to inspect the type of some code in Clojure.
-
-```clojure
-(type 1) ; Integer literals are java.lang.Long by default
-(type 1.); Float literals are java.lang.Double
-(type ""); Strings always double-quoted, and are java.lang.String
-(type false) ; Booleans are java.lang.Boolean
-(type nil); The "null" value is called nil
-```
-
-Vectors and Lists are java classes too!
-
-```
-(type [1 2 3]); => clojure.lang.PersistentVector
-(type '(1 2 3)); => clojure.lang.PersistentList
-```
 
 ### Collections & Sequences
 
@@ -196,29 +211,79 @@ Reduce can take an initial-value argument too
 
 Equivalent of `(conj (conj (conj [] 3) 2) 1)`
 
-## Functions
+## Annonymous Functions
 
 Use `fn` to create new functions that defines some behaviour. `fn` is referred to as an anonymous fuction as it has no external name to be referenced by and must be called within a list form.
 
 ```clojure
-(fn hello [] "Hello World") ; => hello
+(fn hello [] "Hello World") 
 ```
 
-Wrap a `(fn ,,,)` form in parens to call it and return the result
+Wrap a `(fn ,,,)` form in parens to call it and return the result.  
 
+!!! EXAMPLE "Call an anonymous function"
 ```clojure
 ((fn hello [] "Hello World")) ; => "Hello World"
 ```
 
+Normally the anonymous function is used inline with other code
+
+!!! EXAMPLE "Use anonymous function within other code"
+    ```clojure
+    (map (fn [x] (* x 2)) [1 2 3 4  [1 2 3 4 5]5])
+    ```
+
 Create a reusable function using `def`, creating a name that is a `var`.  The function behaviour defined in `def` can be changed and the expression re-evaluated to use the new behaviour.
 
+!!! EXAMPLE "Bind a name to the anonymous function"
 ```clojure
-(defn hello-world []
-  "Hello World")
-;; => "Hello World"
+(def hello-world 
+  (fn hello [] "Hello World")) 
 ```
 
-The [] is the list of arguments for the function.
+!!! EXAMPLE "Evaluate annonymous function by evaluating its name"
+    ```clojure
+    hello-world
+    ```
+
+> NOTE: this is a name and not a function call, so parentheses are not required.
+
+
+## Shared Functions
+
+It is more common to use the `defn` macro to define a function.  This is the same as defining the `fn` function and the `def` name within the same expression
+
+!!! EXAMPLE "Define a function with defn macro"
+    ```clojure
+    (defn hello-world [] "Hello World")
+    ```
+
+`#'user/hello-world` is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a differnt namespace than `user`.
+
+
+> A `defn` function has the scope of the current namespace, so can be called anywhere in the namespace or in a namepace that has used `require` to include this namespace.
+
+!!! EXAMPLE "Call a function"
+    ```clojure
+    (hello-world)
+    ```
+
+The `[]` vector is used to define the argument names for the function.  There can be zero or more arguments. 
+
+??? HINT "Pass a hash-map as an argument"
+    Simplify the design of a function signature by passing all arguments as a hash-map.
+    ```clojure
+    (defn data-processing
+      [data]
+      (let [body (get data :body)])
+        (transform body))
+    ```
+    [:globe_with_meridians: Associative Destructuring](https://clojure.org/guides/destructuring#_associative_destructuring){target=_blank} can be used to automatically create local variables from the desired keys contained in the map, giving access to the value of each key.
+    ```clojure
+    (defn data-processing
+      [{:keys [body]}]
+      (transform body))
+    ```
 
 ```clojure
 (defn hello [name]
@@ -226,15 +291,23 @@ The [] is the list of arguments for the function.
 (hello "Steve") ; => "Hello Steve"
 ```
 
-Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments
+Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments.  This provides a simple form of polymorphism based on the number of arguments.
 
 ```clojure
-(defn hello3
-  ([] "Hello World")
-  ([name] (str "Hello " name)))
-(hello3 "Jake") ; => "Hello Jake"
-(hello3) ; => "Hello World"
+(defn hello-polly
+  ([] "Hello World")  ; (1)!
+  ([name] (str "Hello " name))) ; (2)!
 ```
+
+  1. Call `hello-polly` with one argument
+     ```clojure
+     (hello-polly "Jake") ; => "Hello Jake"
+     ```
+
+  2. Call `hello-polly` with zero arguments
+     ```clojure
+     (hello-polly) ; => "Hello World"
+     ```
 
 Functions can pack extra arguments up in a seq for you
 
@@ -436,6 +509,36 @@ The functions from clojure.set can be used via the alias name, rather than the f
 (comment
   (require 'clojure.set :as set))
 ```
+
+
+## Strong Dynamic Types
+
+Clojure is strongly typed, so everything is a type in Clojure.
+
+Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.
+
+Clojure is a hosted language and uses the type system of the platform it runs upon.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.
+
+Use `class` or `type` function to inspect the type of some code in Clojure.
+
+```clojure
+(type 1) ; Integer literals are java.lang.Long by default
+(type 1.); Float literals are java.lang.Double
+(type ""); Strings always double-quoted, and are java.lang.String
+(type false) ; Booleans are java.lang.Boolean
+(type nil); The "null" value is called nil
+```
+
+Vectors and Lists are java classes too!
+
+```
+(type [1 2 3]); => clojure.lang.PersistentVector
+(type '(1 2 3)); => clojure.lang.PersistentList
+```
+
+!!! INFO "Type hints"
+    Type hints can be used to avoid reflection look-ups where performace critical issues have been identified.  Type hints are not required in general.
+    [Clojure Type Hints](https://clojure.org/reference/java_interop#typehints){target=_blank .md-button} 
 
 ## Java Interop
 

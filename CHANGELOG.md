@@ -6,6 +6,7 @@
 - button link to Clojure CLI releases changelog to view available versions
 - readme: add book overview, update contributing section
 - intro: clarify wording & approach in contributing guide
+- intro: enhance clojure examples and simplify format for experimenting with code
 
 # 2023-08-14
 
