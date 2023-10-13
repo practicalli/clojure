@@ -14,8 +14,13 @@ Use the `:template` command line argument to specify a project template to gener
 
 - `practicalli/minimal` - essential tools, libraries and example code
 - `practicalli/application` - general Clojure production level project template 
-- `practicalli/service` - production level web services template with component management, Http-kit, Reitit and Swagger
+- `practicalli/service` - production level web services template with Http-kit, Reitit and Swagger. Optional `: component` management with `:donut` or `:integrant`
 - `pracicalli/landing-page` - simple clojurescript website with bulma.io CSS and Figheel-main build tool. 
+
+!!! EXAMPLE "Create service project with      Donut System components"
+    ```shell
+    clojure -T:project/create :template practicalli/service :name practicalli/todo-list :component :donut
+    ```
 
 ## Common Template Design
 
