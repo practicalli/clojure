@@ -1,5 +1,7 @@
 # Portal - navigate your data
 
+![Practicalli Portal logo](https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true){align=right loading=lazy style="height:150px;width:150px"}
+
 Portal inspector is a tool for exploration of Clojure data using a browser window to visualise and inspect Clojure, JSON, Transit, Logs, Yaml, etc.
 
 Registered Portal as a tap source and wrap code with `(tap> ,,,)` to see the results in Portal, providing a more advanced approach to debuging than println.
