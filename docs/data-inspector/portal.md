@@ -6,9 +6,18 @@ Portal inspector is a tool for exploration of Clojure data using a browser windo
 
 Registered Portal as a tap source and wrap code with `(tap> ,,,)` to see the results in Portal, providing a more advanced approach to debuging than println.
 
-Using [portal-wrap middleware all evaluation results over nREPL will be sent to Portal](#editor-nrepl-middleware), keeping a history of development.  Add a [custom Mulog publisher](#tap-logs-to-portal) to send all logs to Portal to help with debugging.
+Send all evaluation results to Portal for a complete history using the [portal-wrap nREPL middleware](#editor-nrepl-middleware)
 
-Open Portal from the REPL or [configure Portal to automatically open on REPL startup](#open-portal-on-repl-startup).
+Add a [custom Mulog publisher](#tap-logs-to-portal) to send all logs to Portal to help with debugging.
+
+Open Portal from the REPL or [configure Portal to open on REPL startup](#open-portal-on-repl-startup).
+
+!!! HINT "Practicalli Project Templates"
+    Clojure projects created with [Practicalli Project Templates]() include Portal configuration to recieve all evaluation results and Mulog event logs.
+
+    A custom `dev/user.clj` file loads `dev/portal.clj` and `dev/mulog-events.clj` configurations on REPL startup, when the `dev` directory is included on the path.
+
+    Use the `:repl/reloaded` for a complete REPL reloaded workflow and tooling on REPL startup
 
 
 ![Portal - explore your Clojure data](https://user-images.githubusercontent.com/1986211/196015562-238cf450-6467-451c-a985-04c7a9b49dba.png){loading=lazy}

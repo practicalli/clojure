@@ -7,6 +7,7 @@
 - readme: add book overview, update contributing section
 - intro: clarify wording & approach in contributing guide
 - intro: enhance clojure examples and simplify format for experimenting with code
+- dev: checkout action v4 in all GitHub workflow
 
 # 2023-08-14
 
@@ -65,7 +66,7 @@
 - clojure-cli: remove find-deps from repl startup
 - alias: :dev/environment corrections
 - format: updated from local MegaLinter run
-- inspector: update portal configuration 
+- inspector: update portal configuration
 - dev: add test to .PHONY
 - dev: mega-linter-runner no install & remove container
 - ci: update workflows to practicalli common configuration
@@ -99,7 +100,7 @@
 - challenges: update exercism section and and REPL workflow
 - ci: spell lychee & repository trufflehog linters warn only (false positives)
 - install: unattended aternative local location for Clojure CLI
-- clojure-cli: rewrite Clojure REPL section 
+- clojure-cli: rewrite Clojure REPL section
 - automation: rewrite automation overview
 - intro: rewrite introduction on front page
 - intro: more examples in 15 mins page
