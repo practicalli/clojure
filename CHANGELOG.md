@@ -9,6 +9,9 @@
 - intro: enhance clojure examples and simplify format for experimenting with code
 - dev: checkout action v4 in all GitHub workflow
 
+## Changed
+- mkdocs: emoji extension name update for Material 9.4
+
 # 2023-08-14
 
 ## Added
