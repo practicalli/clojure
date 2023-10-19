@@ -25,11 +25,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
       - uses: actions/checkout@v4
         with:
-          token: "${{ secrets.PAT || secrets.GITHUB_TOKEN }}"
-          fetch-depth: 0 # fetch all history, only checkout specific directories
+          fetch-depth: 0
           sparse-checkout: |
             docs
             overrides
