@@ -7983,22 +7983,23 @@
 <p>The following files are created in each project that uses tools.build:</p>
 <ul>
 <li><code>build.clj</code> contains a namespace with tasks</li>
-<li><code>:project/build</code> alias containing tools.build library and sets the default namespace</li>
+<li><code>:build/task</code> alias containing tools.build library and sets the default namespace</li>
 </ul>
-<p><code>clojure -T:build task-name</code> to run any of the tasks defined in the default <code>build</code> namespaces.</p>
+<p><code>clojure -T:build/task task-name</code> to run any of the tasks defined in the default <code>build</code> namespaces.</p>
 <details class="hint">
 <summary>Practicalli Project Templates include tools.build tasks</summary>
-<p><a href="/clojure/clojure-cli/projects/templates/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Project templates</a> include a <code>build.clj</code> configuration with <code>jar</code> and <code>uberjar</code> tasks.</p>
+<p><a href="/clojure/clojure-cli/projects/templates/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Project templates</a> include a <code>build.clj</code> tasks to generate a library <code>jar</code> or a service <code>uberjar</code>.</p>
 </details>
 <h2 id="define-a-build-alias">Define a build alias<a class="headerlink" href="#define-a-build-alias" title="Permanent link">λ︎</a></h2>
 <p>Add an alias to the project <code>deps.edn</code> file which includes the <code>org.clojure/tools.build</code> project.</p>
 <div class="admonition example">
 <p class="admonition-title">Alias to include tools.build library</p>
-<div class="highlight"><span class="filename">Project deps.edn</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">  </span><span class="ss">:project/build</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;.&quot;</span><span class="p">]</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">io.github.clojure/tools.build</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">                  </span><span class="p">{</span><span class="ss">:git/tag</span><span class="w"> </span><span class="s">&quot;v0.9.4&quot;</span><span class="w"> </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;76b78fe&quot;</span><span class="p">}}</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">build</span><span class="p">}</span>
+<div class="highlight"><span class="filename">Project deps.edn</span><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="w">  </span><span class="c1">;; tools.build `build.clj` built script</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="ss">:project/build</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="p">{</span><span class="ss">:replace-paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;.&quot;</span><span class="p">]</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="ss">:replace-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">io.github.clojure/tools.build</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">                  </span><span class="p">{</span><span class="ss">:git/tag</span><span class="w"> </span><span class="s">&quot;v0.9.6&quot;</span><span class="w"> </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;8e78bcc&quot;</span><span class="p">}}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">   </span><span class="ss">:ns-default</span><span class="w"> </span><span class="nv">build</span><span class="p">}</span>
 </code></pre></div>
 </div>
 <details class="info">
@@ -8018,25 +8019,53 @@
 <div class="highlight"><span class="filename">build.clj</span><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">build</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.tools.build.api</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">build-api</span><span class="p">]))</span>
 </code></pre></div>
-<p>Define a configuration for the build with values used in the build tasks.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Service Uberjar</label><label for="__tabbed_1_2">Library Jar</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Define a project configuration for building an Uberjar file to run a service using the <code>java -jar</code> command.</p>
+<p>The Uberjar can be deployed to run the service in test, staging and production environments.</p>
 <div class="highlight"><span class="filename">build.clj</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">;; Build configuration</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c1">;; Project configuration</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">(</span><span class="k">def </span><span class="nv">project-config</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">  </span><span class="s">&quot;Project configuration to support all tasks&quot;</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">library-name</span><span class="w"> </span><span class="ss">&#39;practicalli/clojure-app-template</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="nv">version</span><span class="w"> </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;1.0.%s&quot;</span><span class="w"> </span><span class="p">(</span><span class="nf">build-api/git-count-revs</span><span class="w"> </span><span class="nv">nil</span><span class="p">))]</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span><span class="p">{</span><span class="ss">:library-name</span><span class="w">    </span><span class="nv">library-name</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">     </span><span class="ss">:main-namespace</span><span class="w">  </span><span class="nv">library-name</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">     </span><span class="ss">:project-version</span><span class="w"> </span><span class="nv">version</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">     </span><span class="ss">:class-directory</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">     </span><span class="ss">:project-basis</span><span class="w">   </span><span class="p">(</span><span class="nf">build-api/create-basis</span><span class="p">)</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">     </span><span class="ss">:jar-file</span><span class="w">        </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">     </span><span class="ss">:uberjar-file</span><span class="w">    </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s-standalone.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)}))</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">  </span><span class="p">{</span><span class="ss">:class-directory</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">   </span><span class="ss">:main-namespace</span><span class="w">  </span><span class="ss">&#39;practicalli/bob-the-builder</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">   </span><span class="ss">:project-basis</span><span class="w">   </span><span class="p">(</span><span class="nf">build-api/create-basis</span><span class="p">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">   </span><span class="ss">:uberjar-file</span><span class="w">    </span><span class="s">&quot;target/practicalli-service-name-standalone.jar&quot;</span><span class="p">})</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">config</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">  </span><span class="s">&quot;Display build configuration&quot;</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">  </span><span class="p">[</span><span class="nv">config</span><span class="p">]</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">  </span><span class="p">(</span><span class="nf">pprint/pprint</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">config</span><span class="w"> </span><span class="nv">project-config</span><span class="p">)))</span>
 <a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
 <a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="c1">;; End of Build configuration</span>
 <a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Define a project configuration for building a jar file for deployment on Clojars and Maven Central, or a private repository. </p>
+<div class="highlight"><span class="filename">build.clj</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">;; Build configuration</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">(</span><span class="k">def </span><span class="nv">project-config</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="s">&quot;Project configuration to support all tasks&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">library-name</span><span class="w"> </span><span class="ss">&#39;practicalli/clojure-app-template</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nv">version</span><span class="w"> </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;1.0.%s&quot;</span><span class="w"> </span><span class="p">(</span><span class="nf">build-api/git-count-revs</span><span class="w"> </span><span class="nv">nil</span><span class="p">))]</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="w">    </span><span class="p">{</span><span class="ss">:library-name</span><span class="w">    </span><span class="nv">library-name</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">     </span><span class="ss">:main-namespace</span><span class="w">  </span><span class="nv">library-name</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">     </span><span class="ss">:project-version</span><span class="w"> </span><span class="nv">version</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">     </span><span class="ss">:class-directory</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">     </span><span class="ss">:project-basis</span><span class="w">   </span><span class="p">(</span><span class="nf">build-api/create-basis</span><span class="p">)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">     </span><span class="ss">:jar-file</span><span class="w">        </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">     </span><span class="ss">:uberjar-file</span><span class="w">    </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s-standalone.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)}))</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="c1">;; End of Build configuration</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="c1">;; ---------------------------------------------------------</span>
+</code></pre></div>
+</div>
+</div>
+</div>
 <p>Define functions to support common tasks <code>clean</code>, <code>jar</code>, <code>uberjar</code></p>
 <div class="admonition info">
 <p class="admonition-title">Functions are passed command line arguments</p>
@@ -8044,60 +8073,128 @@
 <p>If arguments are not given on the command line, a <code>nil</code> value is passed to the called function</p>
 <p><code>_</code> name convention is used when a function definition does not make use of the argument that is passed</p>
 </div>
-<div class="admonition example">
-<p class="admonition-title">tools.build tasks configuration</p>
-<div class="highlight"><span class="filename">build.clj</span><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="c1">;; Build tasks</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">clean</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">  </span><span class="s">&quot;Remove a directory</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="s">  - `:path &#39;\&quot;directory-name\&quot;&#39;` for a specific directory</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="s">  - `nil` (or no command line arguments) to delete `target` directory</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="s">  `target` is the default directory for build artefacts&quot;</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="p">[</span><span class="nv">directory</span><span class="p">]</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">  </span><span class="p">(</span><span class="nf">build-api/delete</span><span class="w"> </span><span class="p">{</span><span class="ss">:path</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="ss">:path</span><span class="w"> </span><span class="nv">directory</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;target&quot;</span><span class="p">)}))</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
-<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
-<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">jar</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">  </span><span class="s">&quot;Create a build of the project, cleaning existing build assets first&quot;</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">  </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span>
-<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">class-directory</span><span class="w"> </span><span class="nv">jar-file</span><span class="w"> </span><span class="nv">library-name</span><span class="w"> </span><span class="nv">project-basis</span><span class="w"> </span><span class="nv">project-version</span><span class="p">]}</span><span class="w"> </span><span class="nv">project-config</span><span class="p">]</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">    </span><span class="p">(</span><span class="nf">clean</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">    </span><span class="p">(</span><span class="nf">pprint/pprint</span><span class="w"> </span><span class="nv">project-config</span><span class="p">)</span>
-<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/write-pom</span><span class="w"> </span><span class="p">{</span><span class="ss">:class-dir</span><span class="w"> </span><span class="nv">class-directory</span>
-<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">                          </span><span class="ss">:lib</span><span class="w">       </span><span class="nv">library-name</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">                          </span><span class="ss">:version</span><span class="w">   </span><span class="nv">project-version</span>
-<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">                          </span><span class="ss">:basis</span><span class="w">     </span><span class="nv">project-basis</span>
-<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">                          </span><span class="ss">:src-dirs</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]})</span>
-<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/copy-dir</span><span class="w"> </span><span class="p">{</span><span class="ss">:src-dirs</span><span class="w">   </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="p">]</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a><span class="w">                         </span><span class="ss">:target-dir</span><span class="w"> </span><span class="nv">class-directory</span><span class="p">})</span>
-<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/jar</span><span class="w"> </span><span class="p">{</span><span class="ss">:class-dir</span><span class="w"> </span><span class="nv">class-directory</span>
-<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a><span class="w">                    </span><span class="ss">:jar-file</span><span class="w">  </span><span class="nv">jar-file</span><span class="p">})))</span>
-<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>
-<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
-<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">uberjar</span>
-<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a><span class="w">  </span><span class="s">&quot;Create an archive containing Clojure and the build of the project&quot;</span>
-<a id="__codelineno-4-32" name="__codelineno-4-32" href="#__codelineno-4-32"></a><span class="w">  </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33" href="#__codelineno-4-33"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">class-directory</span><span class="w"> </span><span class="nv">main-namespace</span><span class="w"> </span><span class="nv">project-basis</span><span class="w"> </span><span class="nv">uberjar-file</span><span class="p">]}</span><span class="w"> </span><span class="nv">project-config</span><span class="p">]</span>
-<a id="__codelineno-4-34" name="__codelineno-4-34" href="#__codelineno-4-34"></a><span class="w">    </span><span class="p">(</span><span class="nf">clean</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span>
-<a id="__codelineno-4-35" name="__codelineno-4-35" href="#__codelineno-4-35"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/copy-dir</span><span class="w"> </span><span class="p">{</span><span class="ss">:src-dirs</span><span class="w">   </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="p">]</span>
-<a id="__codelineno-4-36" name="__codelineno-4-36" href="#__codelineno-4-36"></a><span class="w">                         </span><span class="ss">:target-dir</span><span class="w"> </span><span class="nv">class-directory</span><span class="p">})</span>
-<a id="__codelineno-4-37" name="__codelineno-4-37" href="#__codelineno-4-37"></a>
-<a id="__codelineno-4-38" name="__codelineno-4-38" href="#__codelineno-4-38"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/compile-clj</span><span class="w"> </span><span class="p">{</span><span class="ss">:basis</span><span class="w">     </span><span class="nv">project-basis</span>
-<a id="__codelineno-4-39" name="__codelineno-4-39" href="#__codelineno-4-39"></a><span class="w">                            </span><span class="ss">:src-dirs</span><span class="w">  </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>
-<a id="__codelineno-4-40" name="__codelineno-4-40" href="#__codelineno-4-40"></a><span class="w">                            </span><span class="ss">:class-dir</span><span class="w"> </span><span class="nv">class-directory</span><span class="p">})</span>
-<a id="__codelineno-4-41" name="__codelineno-4-41" href="#__codelineno-4-41"></a>
-<a id="__codelineno-4-42" name="__codelineno-4-42" href="#__codelineno-4-42"></a><span class="w">    </span><span class="p">(</span><span class="nf">build-api/uber</span><span class="w"> </span><span class="p">{</span><span class="ss">:class-dir</span><span class="w"> </span><span class="nv">class-directory</span>
-<a id="__codelineno-4-43" name="__codelineno-4-43" href="#__codelineno-4-43"></a><span class="w">                     </span><span class="ss">:uber-file</span><span class="w"> </span><span class="nv">uberjar-file</span>
-<a id="__codelineno-4-44" name="__codelineno-4-44" href="#__codelineno-4-44"></a><span class="w">                     </span><span class="ss">:basis</span><span class="w">     </span><span class="nv">project-basis</span>
-<a id="__codelineno-4-45" name="__codelineno-4-45" href="#__codelineno-4-45"></a><span class="w">                     </span><span class="ss">:main</span><span class="w">      </span><span class="nv">main-namespace</span><span class="p">})))</span>
-<a id="__codelineno-4-46" name="__codelineno-4-46" href="#__codelineno-4-46"></a>
-<a id="__codelineno-4-47" name="__codelineno-4-47" href="#__codelineno-4-47"></a><span class="c1">;; End of Build tasks</span>
-<a id="__codelineno-4-48" name="__codelineno-4-48" href="#__codelineno-4-48"></a><span class="c1">;; ---------------------------------------------------------</span>
+<details class="example">
+<summary>tools.build uberjar task configuration</summary>
+<p><code>``clojure title="build.clj"
+;; ---------------------------------------------------------
+;; Build Script
+;;
+;; Build project and package for deployment
+;; -</code>uberjar<code>- packaged application for deployment
+;; -</code>clean<code>remove all build assets and jar files
+;;
+;; All functions are passed command line arguments
+;; -</code>nil<code>is passed if there are no arguments
+;;
+;;
+;; tools.build API commands
+;; -</code>create-basis<code>create a project basis
+;; -</code>copy-dir<code>copy Clojure source and resources into a working dir
+;; -</code>compile-clj<code>compile Clojure source code to classes
+;; -</code>delete<code>- remove path from file space
+;; -</code>write-pom<code>- write pom.xml and pom.properties files
+;; -</code>jar` - to jar up the working dir into a jar file
+;;
+;; ---------------------------------------------------------</p>
+<p>(ns build
+  (:require
+   [clojure.tools.build.api :as build-api]
+   [clojure.pprint :as pprint]))</p>
+<p>;; ---------------------------------------------------------
+;; Project configuration</p>
+<p>(def project-config
+  "Project configuration to support all tasks"
+  {:class-directory "target/classes"
+   :main-namespace  'practicalli/bob-the-builder
+   :project-basis   (build-api/create-basis)
+   :uberjar-file    "target/practicalli-service-name-standalone.jar"})</p>
+<p>(defn config
+  "Display build configuration"
+  [config]
+  (pprint/pprint (or config project-config)))</p>
+<p>;; End of Build configuration
+;; ---------------------------------------------------------</p>
+<p>;; ---------------------------------------------------------
+;; Build tasks</p>
+<p>(defn clean
+  "Remove a directory
+  - <code>:path '\"directory-name\"'</code> for a specific directory
+  - <code>nil</code> (or no command line arguments) to delete <code>target</code> directory
+  <code>target</code> is the default directory for build artefacts
+  Checks that <code>.</code> and <code>/</code> directories are not deleted"
+  [directory]
+  (when
+   (not (contains? #{"." "/"} directory))
+   (build-api/delete {:path (or (:path directory) "target")})))</p>
+<p>(defn uberjar
+  "Create an archive containing Clojure and the build of the project
+  Merge command line configuration to the default project config"
+  [options]
+  (let [config (merge project-config options)
+        {:keys [class-directory main-namespace project-basis uberjar-file]} config]
+    (clean "target")
+    (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                         :target-dir class-directory})</p>
+<div class="highlight"><pre><span></span><code>(build-api/compile-clj {:basis     project-basis
+                        :class-dir class-directory
+                        :src-dirs  [&quot;src&quot;]})
+
+(build-api/uber {:basis     project-basis
+                 :class-dir class-directory
+                 :main      main-namespace
+                 :uber-file uberjar-file})))
 </code></pre></div>
-</div>
-<div class="admonition example">
-<p class="admonition-title">Project configuration</p>
+<p>;; End of Build tasks
+;; ---------------------------------------------------------</p>
+</details>
+<details class="example">
+<summary>tools.build jar task configuration</summary>
+<p>;; ---------------------------------------------------------
+;; Build tasks</p>
+<p>(defn clean
+  "Remove a directory
+  - <code>:path '\"directory-name\"'</code> for a specific directory
+  - <code>nil</code> (or no command line arguments) to delete <code>target</code> directory
+  <code>target</code> is the default directory for build artefacts"
+  [directory]
+  (build-api/delete {:path (or (:path directory) "target")}))</p>
+<p>(defn jar
+  "Create a build of the project, cleaning existing build assets first"
+  [_]
+  (let [{:keys [class-directory jar-file library-name project-basis project-version]} project-config]
+    (clean nil)
+    (pprint/pprint project-config)
+    (build-api/write-pom {:class-dir class-directory
+                          :lib       library-name
+                          :version   project-version
+                          :basis     project-basis
+                          :src-dirs  ["src"]})
+    (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                         :target-dir class-directory})
+    (build-api/jar {:class-dir class-directory
+                    :jar-file  jar-file})))</p>
+<p>(defn uberjar
+  "Create an archive containing Clojure and the build of the project"
+  [_]
+  (let [{:keys [class-directory main-namespace project-basis uberjar-file]} project-config]
+    (clean nil)
+    (build-api/copy-dir {:src-dirs   ["src" "resources"]
+                         :target-dir class-directory})</p>
+<div class="highlight"><pre><span></span><code>(build-api/compile-clj {:basis     project-basis
+                        :src-dirs  [&quot;src&quot;]
+                        :class-dir class-directory})
+
+(build-api/uber {:class-dir class-directory
+                 :uber-file uberjar-file
+                 :basis     project-basis
+                 :main      main-namespace})))
+</code></pre></div>
+<p>;; End of Build tasks
+;; ---------------------------------------------------------
+```</p>
+</details>
+<details class="example">
+<summary>Project configuration</summary>
 <p>Pretty printed Example of a project configuration
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="ss">:library-name</span><span class="w"> </span><span class="nv">practicalli/clojure-app-template</span>,
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w"> </span><span class="ss">:main-namespace</span><span class="w"> </span><span class="nv">practicalli/clojure-app-template</span>,
@@ -8174,7 +8271,7 @@
 <a id="__codelineno-5-73" name="__codelineno-5-73" href="#__codelineno-5-73"></a><span class="w"> </span><span class="ss">:jar-file</span><span class="w"> </span><span class="s">&quot;target/clojure-app-template-1.0.16.jar&quot;</span>,
 <a id="__codelineno-5-74" name="__codelineno-5-74" href="#__codelineno-5-74"></a><span class="w"> </span><span class="ss">:uberjar-file</span><span class="w"> </span><span class="s">&quot;target/clojure-app-template-1.0.16-standalone.jar&quot;</span><span class="p">}</span>
 </code></pre></div></p>
-</div>
+</details>
 <h2 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">λ︎</a></h2>
 <p><a class="md-button" href="https://clojure.org/guides/tools_build" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure.org tools.build Guide</a></p>
 <p><a class="md-button" href="https://clojure.github.io/tools.build/" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure.org tools.build API Docs</a></p>
@@ -8185,7 +8282,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2023</span>
       
     
   </small>

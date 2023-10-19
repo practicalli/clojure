@@ -7890,6 +7890,11 @@
 <h1 id="package-with-clojure-toolsbuild">Package with Clojure tools.build<a class="headerlink" href="#package-with-clojure-toolsbuild" title="Permanent link">λ︎</a></h1>
 <p>The <a href="https://clojure.org/guides/tools_build"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure.org tools.build project</a> is used to build jar files to deploy libraries and uberjar files to run deployed projects (e.g. in Docker containers or directly on an Operating System with Java JVM installed).</p>
 <p><a href="tools-build/">Clojure tools.build</a> is a library to define build related tasks using Clojure code.</p>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli Project Templates includes tools.build configuration</p>
+<p>Clojure projects created with <a href="https://practical.li/clojure/clojure-cli/projects/templates/practicalli/">Practicalli Project Templates</a> include a <code>build.clj</code> configuration to build an uberjar of the project.</p>
+<p>The <code>make build-jar</code> runs the <code>clojure -T:build jar</code> command to build an uberjar.</p>
+</div>
 <details class="hint">
 <summary>Java ARchive - jar file</summary>
 <p>A <code>.jar</code> file is a zip archive of the project containing all the files for running a Clojure project.  The archive should contain metatdata files such as Manifest and pom.xml and can contain Clojure sources or compiled class files from the project (or both).</p>
@@ -7923,7 +7928,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 6, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 19, 2023</span>
       
     
   </small>
