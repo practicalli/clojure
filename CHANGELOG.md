@@ -11,6 +11,7 @@
 
 ## Changed
 - mkdocs: emoji extension name update for Material 9.4
+- project: update built.tools approach and configuration examples
 
 # 2023-08-14
 
