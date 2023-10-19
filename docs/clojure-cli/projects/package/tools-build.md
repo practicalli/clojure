@@ -1,6 +1,7 @@
 # Package projects with tools.build
 
-!!! WARNING "Page being updated with enhanced examples"
+??? WARNING "Improved build script examples have been added"
+    Please report any issues using the new examples
 
 [:globe_with_meridians: Clojure.org tools.build](https://clojure.org/guides/tools_build) is a library to define build related tasks using Clojure code.
 
