@@ -1650,8 +1650,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#project-configuration" class="md-nav__link">
-    Project configuration
+  <a href="#build-configuration" class="md-nav__link">
+    Build configuration
   </a>
   
 </li>
@@ -7975,8 +7975,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#project-configuration" class="md-nav__link">
-    Project configuration
+  <a href="#build-configuration" class="md-nav__link">
+    Build configuration
   </a>
   
 </li>
@@ -8037,7 +8037,7 @@
 </div>
 <p><a href="https://clojure.org/guides/tools_build"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure.org tools.build</a> is a library to define build related tasks using Clojure code.</p>
 <p>The <a href="https://clojure.github.io/tools.build/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> tools.build API</a> provides a consistent interface to access the project configuration (project basis) and common tasks that facilitate building and packaging projects.</p>
-<p>Include a build alias and build script in each project that should use tools.build:</p>
+<p>Include a <strong>build alias</strong> and <strong>build script</strong> in each project to make use of Clojure tools.build:</p>
 <ul>
 <li><code>:build/task</code> alias adding tools.build library to the class path in the project <code>deps.edn</code> file</li>
 <li><code>build.clj</code> defines a namespace requiring tools.build, a project configuration and functions as build tasks</li>
@@ -8073,7 +8073,9 @@
 </code></pre></div></p>
 </details>
 <h2 id="build-script">Build Script<a class="headerlink" href="#build-script" title="Permanent link">λ︎</a></h2>
-<p>Create a <code>build.clj</code> file to contain the build configuration and tasks.</p>
+<p>Create a <code>build.clj</code> file which defines a namespace requiring tools.build, a project configuration and functions as build tasks</p>
+<p>An <strong>Uberjar</strong> file is built to deploy a Clojure service, e.g. in test, staging or production environment.</p>
+<p>A <strong>Jar</strong> file is built to published a Clojure library to a Maven repository, e.g. Clojars.org, Maven Central or a private Maven repository.</p>
 <h3 id="namespace-definition">Namespace definition<a class="headerlink" href="#namespace-definition" title="Permanent link">λ︎</a></h3>
 <p>Define the namespace and require the clojure.tools.build.api and any additional libraries.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Service Uberjar</label><label for="__tabbed_1_2">Library Jar</label></div>
@@ -8101,7 +8103,7 @@
 </div>
 </div>
 </div>
-<h3 id="project-configuration">Project configuration<a class="headerlink" href="#project-configuration" title="Permanent link">λ︎</a></h3>
+<h3 id="build-configuration">Build configuration<a class="headerlink" href="#build-configuration" title="Permanent link">λ︎</a></h3>
 <p>Define a hash-map containing keys and values required to build the project.</p>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Service Uberjar</label><label for="__tabbed_2_2">Library Jar</label></div>
 <div class="tabbed-content">
@@ -8132,23 +8134,47 @@
 <div class="highlight"><span class="filename">build.clj</span><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">;; ---------------------------------------------------------</span>
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">;; Build configuration</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">(</span><span class="k">def </span><span class="nv">project-config</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="s">&quot;Project configuration to support build tasks&quot;</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">library-name</span><span class="w"> </span><span class="ss">&#39;practicalli/library-name</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">        </span><span class="nv">version</span><span class="w"> </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;1.0.%s&quot;</span><span class="w"> </span><span class="p">(</span><span class="nf">build-api/git-count-revs</span><span class="w"> </span><span class="nv">nil</span><span class="p">))]</span>
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">{</span><span class="ss">:library-name</span><span class="w">    </span><span class="nv">library-name</span>
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">     </span><span class="ss">:main-namespace</span><span class="w">  </span><span class="nv">library-name</span>
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">     </span><span class="ss">:project-version</span><span class="w"> </span><span class="nv">version</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">     </span><span class="ss">:class-directory</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">     </span><span class="ss">:project-basis</span><span class="w">   </span><span class="p">(</span><span class="nf">build-api/create-basis</span><span class="p">)</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">     </span><span class="ss">:jar-file</span><span class="w">        </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)}))</span>
-<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
-<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">config</span>
-<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">  </span><span class="s">&quot;Display build configuration&quot;</span>
-<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="p">[</span><span class="nv">config</span><span class="p">]</span>
-<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="p">(</span><span class="nf">pprint/pprint</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">config</span><span class="w"> </span><span class="nv">project-config</span><span class="p">)))</span>
-<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="c1">;; End of Build configuration</span>
-<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="p">(</span><span class="kd">defn- </span><span class="nv">pom-template</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="s">&quot;Standard structure for a `pom.xml` file, a Maven project configuration </span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="s">  required to deploy libraries to Clojars.org, Maven Central or private Maven repositories</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="s">  https://maven.apache.org/guides/introduction/introduction-to-the-pom.html&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span><span class="p">[</span><span class="nv">project-version</span><span class="p">]</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="p">[[</span><span class="ss">:description</span><span class="w"> </span><span class="s">&quot;FIXME: add purpose of library.&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">   </span><span class="p">[</span><span class="ss">:url</span><span class="w"> </span><span class="s">&quot;https://github.com/organisation/project-name&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">   </span><span class="p">[</span><span class="ss">:licenses</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="p">[</span><span class="ss">:license</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">     </span><span class="p">[</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Creative Commons Attribution-ShareAlike 4.0 International&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">     </span><span class="p">[</span><span class="ss">:url</span><span class="w"> </span><span class="s">&quot;https://creativecommons.org/licenses/by-sa/4.0/&quot;</span><span class="p">]]]</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">   </span><span class="p">[</span><span class="ss">:developers</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a><span class="w">    </span><span class="p">[</span><span class="ss">:developer</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">     </span><span class="p">[</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Organisation name&quot;</span><span class="p">]]]</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">   </span><span class="p">[</span><span class="ss">:scm</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="p">[</span><span class="ss">:url</span><span class="w"> </span><span class="s">&quot;https://github.com/organisation/project-name&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a><span class="w">    </span><span class="p">[</span><span class="ss">:connection</span><span class="w"> </span><span class="s">&quot;scm:git:https://github.com/organisation/project-name.git&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="p">[</span><span class="ss">:developerConnection</span><span class="w"> </span><span class="s">&quot;scm:git:ssh:git@github.com:organisation/project-name.git&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="p">[</span><span class="ss">:tag</span><span class="w"> </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;v&quot;</span><span class="w"> </span><span class="nv">project-version</span><span class="p">)]]])</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="p">(</span><span class="k">def </span><span class="nv">project-config</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">  </span><span class="s">&quot;Project configuration to support build tasks&quot;</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">library-name</span><span class="w"> </span><span class="ss">&#39;net.clojars.organisation/project-name</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">        </span><span class="nv">version</span><span class="w"> </span><span class="s">&quot;0.1.0-SNAPSHOT&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="w">    </span><span class="p">{</span><span class="ss">:library-name</span><span class="w">     </span><span class="nv">library-name</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a><span class="w">     </span><span class="ss">:project-version</span><span class="w">  </span><span class="nv">version</span>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="w">     </span><span class="ss">:jar-file</span><span class="w">         </span><span class="p">(</span><span class="nf">format</span><span class="w"> </span><span class="s">&quot;target/%s-%s.jar&quot;</span><span class="w"> </span><span class="p">(</span><span class="nb">name </span><span class="nv">library-name</span><span class="p">)</span><span class="w"> </span><span class="nv">version</span><span class="p">)</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">     </span><span class="ss">:project-basis</span><span class="w">    </span><span class="p">(</span><span class="nf">build-api/create-basis</span><span class="p">)</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="w">     </span><span class="ss">:class-directory</span><span class="w">  </span><span class="s">&quot;target/classes&quot;</span>
+<a id="__codelineno-6-34" name="__codelineno-6-34" href="#__codelineno-6-34"></a><span class="w">     </span><span class="ss">:src-directory</span><span class="w">    </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="p">]</span>
+<a id="__codelineno-6-35" name="__codelineno-6-35" href="#__codelineno-6-35"></a><span class="w">     </span><span class="ss">:target-directory</span><span class="w"> </span><span class="s">&quot;target&quot;</span>
+<a id="__codelineno-6-36" name="__codelineno-6-36" href="#__codelineno-6-36"></a><span class="w">     </span><span class="ss">:pom-config</span><span class="w">       </span><span class="p">(</span><span class="nf">pom-template</span><span class="w"> </span><span class="nv">version</span><span class="p">)}))</span>
+<a id="__codelineno-6-37" name="__codelineno-6-37" href="#__codelineno-6-37"></a>
+<a id="__codelineno-6-38" name="__codelineno-6-38" href="#__codelineno-6-38"></a>
+<a id="__codelineno-6-39" name="__codelineno-6-39" href="#__codelineno-6-39"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">config</span>
+<a id="__codelineno-6-40" name="__codelineno-6-40" href="#__codelineno-6-40"></a><span class="w">  </span><span class="s">&quot;Display build configuration&quot;</span>
+<a id="__codelineno-6-41" name="__codelineno-6-41" href="#__codelineno-6-41"></a><span class="w">  </span><span class="p">[</span><span class="nv">config</span><span class="p">]</span>
+<a id="__codelineno-6-42" name="__codelineno-6-42" href="#__codelineno-6-42"></a><span class="w">  </span><span class="p">(</span><span class="nf">pprint/pprint</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">config</span><span class="w"> </span><span class="nv">project-config</span><span class="p">)))</span>
+<a id="__codelineno-6-43" name="__codelineno-6-43" href="#__codelineno-6-43"></a><span class="c1">;; End of Build configuration</span>
+<a id="__codelineno-6-44" name="__codelineno-6-44" href="#__codelineno-6-44"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
 </div>
 </div>
