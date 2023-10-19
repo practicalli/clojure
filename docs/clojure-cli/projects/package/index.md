@@ -5,6 +5,12 @@ The [:globe_with_meridians: Clojure.org tools.build project](https://clojure.org
 [Clojure tools.build](tools-build.md) is a library to define build related tasks using Clojure code.
 
 
+!!! HINT "Practicalli Project Templates includes tools.build configuration"
+    Clojure projects created with [Practicalli Project Templates](https://practical.li/clojure/clojure-cli/projects/templates/practicalli/) include a `build.clj` configuration to build an uberjar of the project.
+
+    The `make build-jar` runs the `clojure -T:build jar` command to build an uberjar.
+
+
 ??? HINT "Java ARchive - jar file"
     A `.jar` file is a zip archive of the project containing all the files for running a Clojure project.  The archive should contain metatdata files such as Manifest and pom.xml and can contain Clojure sources or compiled class files from the project (or both).
 
