@@ -8018,11 +8018,14 @@
 
 
 <h1 id="package-projects-with-toolsbuild">Package projects with tools.build<a class="headerlink" href="#package-projects-with-toolsbuild" title="Permanent link">λ︎</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Page being updated with enhanced examples</p>
+</div>
 <p><a href="https://clojure.org/guides/tools_build"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Clojure.org tools.build</a> is a library to define build related tasks using Clojure code.</p>
-<p><a href="https://clojure.github.io/tools.build/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> tools.build API</a> provides a consistent interface to access the project configuration (project basis) and common tasks that facilitate building and packaging projects.</p>
-<p>The following files are created in each project that uses tools.build:</p>
+<p>The <a href="https://clojure.github.io/tools.build/"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@14.1.2/assets/svg/1f310.svg" title=":globe_with_meridians:" /> tools.build API</a> provides a consistent interface to access the project configuration (project basis) and common tasks that facilitate building and packaging projects.</p>
+<p>Include a build alias and build script in each project that should use tools.build:</p>
 <ul>
-<li><code>:build/task</code> alias adding tools.build library to the class path </li>
+<li><code>:build/task</code> alias adding tools.build library to the class path in the project <code>deps.edn</code> file</li>
 <li><code>build.clj</code> defines a namespace requiring tools.build, a project configuration and functions as build tasks</li>
 </ul>
 <details class="hint">
