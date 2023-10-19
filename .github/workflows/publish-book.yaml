@@ -25,9 +25,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          token: "${{ secrets.PAT || secrets.GITHUB_TOKEN }}"
+          fetch-depth: 0 # fetch all history, only checkout specific directories
+          sparse-checkout: |
+            docs
+            overrides
+      - run: echo "🐙 ${{ github.repository }} repository sparse-checkout to the CI runner."
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
