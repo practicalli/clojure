@@ -35,7 +35,7 @@ jobs:
             docs
             overrides
             .github
-      - run: echo "🐙 ${{ github.repository }} repository was cloned to the runner."
+      - run: echo "🐙 Sparse Checkout of ${{ github.repository }} repository to the CI runner."
       # MegaLinter Configuration
       - name: MegaLinter Run
         id: ml
