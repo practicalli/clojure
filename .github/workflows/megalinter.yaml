@@ -34,6 +34,7 @@ jobs:
           sparse-checkout: |
             docs
             overrides
+            .github
       - run: echo "🐙 ${{ github.repository }} repository was cloned to the runner."
       # MegaLinter Configuration
       - name: MegaLinter Run
