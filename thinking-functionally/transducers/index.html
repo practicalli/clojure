@@ -7857,29 +7857,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#todowork-in-progress-sorry" class="md-nav__link">
-    TODO::work in progress, sorry
+  <a href="#evolving-design" class="md-nav__link">
+    Evolving design
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-slack-beginners-channel" class="md-nav__link">
-    From slack - beginners channel
+  <a href="#coreasync" class="md-nav__link">
+    core.async
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#from-stackoverflow" class="md-nav__link">
-    from stackoverflow
+  <a href="#database-queries" class="md-nav__link">
+    Database queries
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#business-case" class="md-nav__link">
-    Business case
+  <a href="#simplified-description" class="md-nav__link">
+    Simplified description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reducing-functions" class="md-nav__link">
+    Reducing functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Reducing functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pmap" class="md-nav__link">
+    pmap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reducing-functions_1" class="md-nav__link">
+    Reducing functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
   </a>
   
 </li>
@@ -7916,158 +7950,201 @@
 
 
 <h1 id="transducers">Transducers<a class="headerlink" href="#transducers" title="Permanent link">λ︎</a></h1>
-<p>In Clojure everything is a value, as even a function is a value potential which returns that value when evaluated.</p>
-<p>Transducers provide an efficient way to transform values which can be simple values, collections, core.async channels and java.jdbc (0.7.0 upwards).</p>
-<blockquote>
-<h4 id="todowork-in-progress-sorry">TODO::work in progress, sorry<a class="headerlink" href="#todowork-in-progress-sorry" title="Permanent link">λ︎</a></h4>
-<p>A very messy brain dump of ideas to tidy up.
-Pull requests are welcome</p>
-</blockquote>
-<p><a href="https://www.youtube.com/watch?v=WkHdqg_DBBs">https://www.youtube.com/watch?v=WkHdqg_DBBs</a></p>
-<h3 id="from-slack-beginners-channel">From slack - beginners channel<a class="headerlink" href="#from-slack-beginners-channel" title="Permanent link">λ︎</a></h3>
-<p>Transducers are a functional design to compose operations on data collections, whereby the operations you describe through your transducers, aren't applied each on the entire input collection as in normal plain clojure code, but rather every element in the collection gets acted upon by a composition of what you specify in your transducers. Meaning, the input collection gets walked only once!</p>
-<p>Transducers provide an alternative way to act on data collections, which requires of you to stray from the plain clojure API you'd normally would, but brings along some benefits like lazy evaluation and/or different performance trade-offs.</p>
-<p>In addition, some advantages in terms of affording greater modularity in applying transformations on  data, are mentioned in the linked SO question above ― although not really well elucidated in code examples there.</p>
-<p>Using Transducers eliminates the need for intermediate structures.</p>
-<p><a href="http://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/">A walk through the basics of Transducers</a></p>
-<p>Items coming from a collection are a common case with transducers, but a big motivation for making transducers was the ability to apply transformation directly to the source of data, without forcing it into a collection first (eg. a core.async channel or a network stream etc.)</p>
-<p>the fact that you can chain transducing functions without intermediate collections comes from this - the context of another transducer is one of the data sources you can apply a transducer to</p>
-<p>you can use (map f), as one example of a transducing function, directly on a channel</p>
-<p>it's an optional arg when you create the channel, and causes that transform to be applied to all data that goes through the channel</p>
-<p>channels are part of why transducers were added to Clojure. The Clojure maintainers discovered they were re-implementing filter, map, partition, etc. etc. on core.async and realized it would be better to have an abstraction for the transforms independent of the source and destination of data</p>
-<p>As of <code>java.jdbc</code> 0.7.0-beta1, you can also apply transducers to “reducible queries” (and reducible result sets).</p>
-<p>Instead of passing in functions to transform rows and process the transformed result set, you can now just create a “reducible query” and hand it off to anything that knows how to reduce it: reducers, transducers, plain ol’ <code>reduce</code> and <code>into</code> etc…</p>
-<h3 id="from-stackoverflow">from stackoverflow<a class="headerlink" href="#from-stackoverflow" title="Permanent link">λ︎</a></h3>
-<p><a href="https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms">https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms</a></p>
-<p>Transducers are recipes what to do with a sequence of data without knowledge what the underlying sequence is (how to do it). It can be any seq, async channel or maybe observable.</p>
-<p>They are composable and polymorphic.</p>
-<p>The benefit is, you don't have to implement all standard combinators every time new data source is added. Again and again. As resulting effect you as user are able to reuse those recipes on different data sources.</p>
-<p>Ad Update</p>
-<p>Prior version 1.7 of Clojure you had three ways how to write dataflow queries:</p>
-<p>nested calls</p>
+<p>Transducers provide an efficient way to transform values from a collection or stream of data,
+eg. core.async channel, java.jdbc database query (0.7.0 upward) or a network stream etc.</p>
+<p>Transformations are applied directly to a stream of data without first creating a collection.</p>
+<p>Multiple transducers are composed into a single transforming function, walking the data elements only once and without the need for intermediate collections.  </p>
+<p>One Transducer benefit is to allow the design to switch from a seq-based implementation to a core.async implementation using channels</p>
+<p><a class="md-button" href="https://clojuredocs.org/clojure.core/transduce" target="_blank">Transducers: Clojure.org</a> 
+<a class="md-button" href="https://clojure.org/guides/faq#transducers_vs_seqs" target="_blank">Transducer use cases</a> </p>
+<p><a class="md-button" href="http://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/" target="_blank">Basics Transducer walkthrough</a></p>
+<p><a class="md-button" href="http://ianrumford.github.io/clojure/transducers/reducers/2014/08/08/Some-trivial-examples-of-using-Clojure-Transducers.html" target="_blank">Simple examples of Clojure Transducers</a></p>
+<p style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6mTbuzafcII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<p style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/WkHdqg_DBBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+
+<h2 id="evolving-design">Evolving design<a class="headerlink" href="#evolving-design" title="Permanent link">λ︎</a></h2>
+<p>Each element of the data collection is acted upon by a composition of each transducer in an expression, making them more efficient than a applying one expression after another (e.g. as with a thread macro or composed list expressions). </p>
+<p>Transducers provide benefits like lazy evaluation and alternative performance trade-offs.</p>
+<div class="admonition example">
+<p class="admonition-title">Nested calls</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="w"> </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">))))</span>
 </code></pre></div>
-<p>functional composition</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Functional composition</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">comp</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">partial filter </span><span class="nv">odd?</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">partial map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))))</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nf">xform</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">)))</span>
 </code></pre></div>
-<p>threading macro</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Thread macro</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w">    </span><span class="p">(</span><span class="kd">defn </span><span class="nv">xform</span><span class="w"> </span><span class="p">[</span><span class="nv">xs</span><span class="p">]</span>
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="p">(</span><span class="nf">-&gt;&gt;</span><span class="w"> </span><span class="nv">xs</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">           </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">           </span><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="p">)))</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">    </span><span class="p">(</span><span class="nb">reduce + </span><span class="p">(</span><span class="nf">xform</span><span class="w"> </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">)))</span>
 </code></pre></div>
-<p>With transducers you will write it like:</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Transducer</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">xform</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">comp</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="nb">+ </span><span class="mi">2</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span>
 <a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="p">(</span><span class="nb">filter </span><span class="nv">odd?</span><span class="p">)))</span>
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="p">(</span><span class="nf">transduce</span><span class="w"> </span><span class="nv">xform</span><span class="w"> </span><span class="nb">+ </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
-<p>They all do the same. The difference is that you never call Transducers directly, you pass them to another function. Transducers know what to do, the function that gets transducer knows how. The order of combinators is like you write it with threading macro (natural order). Now you can reuse xform with channel:</p>
+</div>
+<blockquote>
+<p>The order of combinators in a transducer is the same as a thread macro (natural order). </p>
+</blockquote>
+<h2 id="coreasync">core.async<a class="headerlink" href="#coreasync" title="Permanent link">λ︎</a></h2>
+<p>Transducers were introduced into the Clojure language to provide a common abstraction to avoid re-implmentation of clojure.core transformation functions specific to core.async.</p>
+<p>in a large part to support processing data to and from a core.async channel.</p>
+<p>The Clojure maintainers discovered they were re-implementing filter, map, partition, etc. on core.async and realized it would be better to have an abstraction for the transforms independent of the source and destination of data.</p>
+<p>The xform can be used with an core.async channel</p>
+<div class="admonition example">
+<p class="admonition-title">Transducer with core.async</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nf">chan</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">xform</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="business-case">Business case<a class="headerlink" href="#business-case" title="Permanent link">λ︎</a></h2>
-<p>Transducers seem to be a useful way of abstracting over various forms of iterable objects. These can be non-consumable, such as Clojure seqs, or consumable (such as async channels). In this respect, it seems to me you would benefit greatly from using transducers if, e.g., you switch from a seq-based implementation to a core.async implementation using channels. Transducers should allow you to keep the core of your logic unchanged. Using traditional sequence-based processing you would have to convert this to use either transducers or some core-async analog. That's the business case</p>
-<p>Transducers improve efficiency, and allow you to write efficient code in a more modular way.</p>
-<p><a href="http://ianrumford.github.io/clojure/transducers/reducers/2014/08/08/Some-trivial-examples-of-using-Clojure-Transducers.html">Trivial examples of using Clojure Transducers</a></p>
-<p>Compared to composing calls to the old map, filter, reduce etc. you get better performance because you don't need to build intermediate collections between each step, and repeatedly walk those collections.</p>
-<p>Compared to reducers, or manually composing all your operations into a single expression, you get easier to use abstractions, better modularity and reuse of processing functions.</p>
-<p>Just curious, you said above: "to build intermediate collections between each step". But doesn't "intermediate collections" sound like an anti-pattern? .NET offers lazy enumerables, Java offers lazy streams or Guava-driven iterables, lazy Haskell must have something lazy too. None of these requires map/reduce to use intermediate collections because all of them build an iterator chain. Where am I wrong here? – Lyubomyr Shaydariv Oct 11 '14 at 21:01
-1
-Clojure map and filter create intermediate collections when nested. – noisesmith Oct 11 '14 at 22:59
-2
-And at least regarding Clojure's version of laziness, the issue of laziness is orthogonal here. Yes, map and filter are lazy, the also generate containers for lazy values when you chain them. If you don't hold onto the head, you don't build up large lazy sequences that aren't needed, but you still build those intermediate abstractions for each lazy element. – noisesmith Oct 12 '14 at 0:59</p>
-<p>An example would be nice. – Zubair Oct 13 '14 at 6:56
-2
-@LyubomyrShaydariv By "intermediate collection", noisesmith doesn't mean "iterate/reify an entire collection, then iterate/reify another entire collection". He or she means that when you nest function calls that return sequentials, each function call results in the creation of a new sequential. The actual iteration still only happens once, but there is additional memory consumption and object allocation due to the nested sequentials</p>
-<p>Transducers are a means of combination for reducing functions.</p>
-<p>Example: Reducing functions are functions that take two arguments: A result so far and an input. They return a new result (so far). For example +: With two arguments, you can think of the first as the result so far and the second as the input.</p>
+</div>
+<blockquote>
+<p>an optional arg when creating a channel, causing a transform to be applied to all data that goes through the channel</p>
+</blockquote>
+<h2 id="database-queries">Database queries<a class="headerlink" href="#database-queries" title="Permanent link">λ︎</a></h2>
+<p>Typical database access involves passing in functions to transform rows and process the transformed result set</p>
+<p><code>java.jdbc</code> 0.7.0-beta1 onwards can also apply transducers to “reducible queries” (and reducible result sets).</p>
+<p>Create a <strong>reducible query</strong> which is passed to transforming function, e.g. reducers, transducers, plain ol’ <code>reduce</code> and <code>into</code> etc </p>
+<h2 id="simplified-description">Simplified description<a class="headerlink" href="#simplified-description" title="Permanent link">λ︎</a></h2>
+<p>Transducers are recipes what to do with a sequence of data without knowledge what the underlying sequence is (how to do it). It can be any seq, async channel or maybe observable.</p>
+<p>They are composable and polymorphic.</p>
+<p>The benefit is, you don't have to implement all standard combinators every time new data source is added. Again and again. As resulting effect you as user are able to reuse those recipes on different data sources.</p>
+<blockquote>
+<p><a href="https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms">https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms</a></p>
+</blockquote>
+<details class="warning">
+<summary>Work In Progress, sorry</summary>
+<p>A very messy brain dump of ideas to tidy up. Pull requests are welcome</p>
+</details>
+<p>Clojure.core functions such as map and filter are lazy, however they also generate containers for lazy values when chained together. </p>
+<p>Without holding onto the head of the collection, large lazy sequences aren't created but intermediate abstractions are still created for each lazy element.</p>
+<h2 id="reducing-functions">Reducing functions<a class="headerlink" href="#reducing-functions" title="Permanent link">λ︎</a></h2>
+<p>Reducing functions are those that take two arguments: </p>
+<ul>
+<li>a result so far </li>
+<li>an input. </li>
+</ul>
+<p>The reducing function returns a new result (so far). </p>
+<p>For example +: With two arguments, you can think of the first as the result so far and the second as the input.</p>
 <p>A transducer could now take the + function and make it a twice-plus function (doubles every input before adding it). This is how that transducer would look like (in most basic terms):</p>
-<p>(defn double
-  [rfn]
-  (fn [r i]
-    (rfn r (* 2 i))))
-For illustration substitute rfn with + to see how + is transformed into twice-plus:</p>
-<p>(def twice-plus ;; result of (double +)
-  (fn [r i]
-    (+ r (* 2 i))))</p>
-<p>(twice-plus 1 2)  ;-&gt; 5
-(= (twice-plus 1 2) ((double +) 1 2)) ;-&gt; true
-So</p>
-<p>(reduce (double +) 0 [1 2 3])
-would now yield 12.</p>
-<p>Reducing functions returned by transducers are independent of how the result is accumulated because they accumulate with the reducing function passed to them, unknowingly how. Here we use conj instead of +. Conj takes a collection and a value and returns a new collection with that value appended.</p>
-<p>(reduce (double conj) [] [1 2 3])
-would yield [2 4 6]</p>
-<p>They are also independent of what kind of source the input is.</p>
-<p>Multiple transducers can be chained as a (chainable) recipe to transform reducing functions.</p>
-<p>Update: Since there now is an official page about it, I highly recommend to read it: <a href="http://clojure.org/transducers">http://clojure.org/transducers</a></p>
-<p>Say you want to use a series of functions to transform a stream of data. The Unix shell lets you do this kind of thing with the pipe operator, e.g.</p>
-<p>cat /etc/passwd | tr '[:lower:]' '[:upper:]' | cut -d: -f1| grep R| wc -l
-(The above command counts the number of users with the letter r in either upper- or lowercase in their username). This is implemented as a set of processes, each of which reads from the previous processes's output, so there are four intermediate streams. You could imagine a different implementation that composes the five commands into a single aggregate command, which would read from its input and write its output exactly once. If intermediate streams were expensive, and composition were cheap, that might be a good trade-off.</p>
-<p>The same kind of thing holds for Clojure. There are multiple, concise ways to express a pipeline of transformations, but depending on how you do it, you can end up with intermediate streams passing from one function to the next. If you have a lot of data, it's faster to compose those functions into a single function. Transducers make it easy to do that. An earlier Clojure innovation, reducers, let you do that too, but with some restrictions. Transducers remove some of those restrictions.</p>
-<p>So to answer your question, transducers won't necessarily make your code shorter or more understandable, but your code probably won't be longer or less understandable either, and if you're working with a lot of data, transducers can make your code faster.</p>
-<p><a href="https://bendyworks.com/transducers-clojures-next-big-idea/">https://bendyworks.com/transducers-clojures-next-big-idea/</a></p>
-<p>Ah, so transducers are mostly a performance optimisation, is that what you are saying? – Zubair Oct 13 '14 at 9:10</p>
-<p>@Zubair Yes, that's right. Note that the optimization goes beyond eliminating intermediate streams; you may also be able to perform operations in parallel. – user100464 Oct 14 '14 at 19:17</p>
-<p>It's worth mentioning pmap, which doesn't seem to get enough attention. If you are mapping an expensive function over a sequence, making the operation parallel is as easy as adding "p". No need to change anything else in your code, and it's available now--not alpha, not beta. (If the function creates intermediate sequences, then transducers might be faster, I would guess.) – Mars Oct 30 '14 at 15:13</p>
-<p>Rich Hickey gave a 'Transducers' talk at the Strange Loop 2014 conference (45 min).</p>
-<p>He explains in simple way what transducers are, with real world examples - processing bags in an airport. He clearly separates the different aspects and contrasts them with the current approaches. Towards the end, he gives the rationale for their existence.</p>
-<p>Video: <a href="https://www.youtube.com/watch?v=6mTbuzafcII">https://www.youtube.com/watch?v=6mTbuzafcII</a></p>
-<p>5
-down vote
-A transducer clear definition is here:</p>
-<p>Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many contexts, and they’re coming to Clojure core and core.async.
-To understand it, let's consider the following simple example:</p>
-<p>;; The Families in the Village</p>
-<p 5="5" :age=":age" :child=":child" :f=":f" :family=":family" :name=":name" :north=":north" :role=":role" :sex=":sex" _sadie_="&quot;sadie&quot;" _smith_="&quot;smith&quot;" home="home">(def village
-  [{:home :north :family "smith" :name "sue" :age 37 :sex :f :role :parent}
-   {:home :north :family "smith" :name "stan" :age 35 :sex :m :role :parent}
-   {:home :north :family "smith" :name "simon" :age 7 :sex :m :role :child}</p>
-<p 14="14" :age=":age" :child=":child" :f=":f" :family=":family" :name=":name" :role=":role" :sex=":sex" :south=":south" _jones_="&quot;jones&quot;" _june_="&quot;june&quot;" home="home">{:home :south :family "jones" :name "jill" :age 45 :sex :f :role :parent}
-   {:home :south :family "jones" :name "jeff" :age 45 :sex :m :role :parent}
-   {:home :south :family "jones" :name "jackie" :age 19 :sex :f :role :child}
-   {:home :south :family "jones" :name "jason" :age 16 :sex :f :role :child}</p>
-<p 29="29" :age=":age" :child=":child" :f=":f" :family=":family" :name=":name" :role=":role" :sex=":sex" :west=":west" _bettie_="&quot;bettie&quot;" _brown_="&quot;brown&quot;" home="home">{:home :west :family "brown" :name "billie" :age 55 :sex :f :role :parent}
-   {:home :west :family "brown" :name "brian" :age 23 :sex :m :role :child}</p>
-<p>{:home :east :family "williams" :name "walter" :age 23 :sex :m :role :parent}
-   {:home :east :family "williams" :name "wanda" :age 3 :sex :f :role :child}])
-What about it we want to know how many children are in the village? We can easily find it out with the following reducer:</p>
-<p>;; Example 1a - using a reducer to add up all the mapped values</p>
-<p>(def ex1a-map-children-to-value-1 (r/map #(if (= :child (:role %)) 1 0)))</p>
-<p>(r/reduce + 0 (ex1a-map-children-to-value-1 village))
-;;=&gt;
-8
-Here is another way to do it:</p>
-<p>;; Example 1b - using a transducer to add up all the mapped values</p>
-<p>;; create the transducers using the new arity for map that
-;; takes just the function, no collection</p>
-<p>(def ex1b-map-children-to-value-1 (map #(if (= :child (:role %)) 1 0)))</p>
-<p>;; now use transduce (c.f r/reduce) with the transducer to get the answer
-(transduce ex1b-map-children-to-value-1 + 0 village)
-;;=&gt;
-8
-Besides, it is really powerful when taking subgroups in account as well. For instance, if we would like to know how many children are in Brown Family, we can execute:</p>
-<p>;; Example 2a - using a reducer to count the children in the Brown family</p>
-<p>;; create the reducer to select members of the Brown family
-(def ex2a-select-brown-family (r/filter #(= "brown" (string/lower-case (:family %)))))</p>
-<p>;; compose a composite function to select the Brown family and map children to 1
-(def ex2a-count-brown-family-children (comp ex1a-map-children-to-value-1 ex2a-select-brown-family))</p>
-<p>;; reduce to add up all the Brown children
-(r/reduce + 0 (ex2a-count-brown-family-children village))
-;;=&gt; 2</p>
+<div class="admonition example">
+<p class="admonition-title">Reducing function</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">double</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="p">[</span><span class="nv">rfn</span><span class="p">]</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">r</span><span class="w"> </span><span class="nv">i</span><span class="p">]</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">rfn</span><span class="w"> </span><span class="nv">r</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="nv">i</span><span class="p">))))</span>
+</code></pre></div>
+</div>
+<p>For illustration substitute rfn with + to see how + is transformed into twice-plus:</p>
+<div class="admonition example">
+<p class="admonition-title">Reducing function - twice plus</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">twice-plus</span><span class="w"> </span><span class="c1">;; result of (double +)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="p">(</span><span class="k">fn </span><span class="p">[</span><span class="nv">r</span><span class="w"> </span><span class="nv">i</span><span class="p">]</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">+ </span><span class="nv">r</span><span class="w"> </span><span class="p">(</span><span class="nb">* </span><span class="mi">2</span><span class="w"> </span><span class="nv">i</span><span class="p">))))</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="p">(</span><span class="nf">twice-plus</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="c1">;-&gt; 5</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="p">(</span><span class="nb">= </span><span class="p">(</span><span class="nf">twice-plus</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">((</span><span class="nb">double </span><span class="nv">+</span><span class="p">)</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w"> </span><span class="c1">;-&gt; true</span>
+</code></pre></div>
+</div>
+<p>Calling the reducing function</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">(</span><span class="nb">reduce </span><span class="p">(</span><span class="nb">double </span><span class="nv">+</span><span class="p">)</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="c1">;; =&gt; 12</span>
+</code></pre></div>
+<p>Reducing functions returned by transducers are independent of how the result is accumulated because they accumulate with the reducing function passed to them. </p>
+<p><code>conj</code> takes a collection and a value and returns a new collection with that value appended.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">(</span><span class="nb">reduce </span><span class="p">(</span><span class="nb">double </span><span class="nv">conj</span><span class="p">)</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">;; =&gt; [2 4 6]</span>
+</code></pre></div>
+<p>Transducers are independent of the kind of data is passed.</p>
+<p>optimisation goes beyond eliminating intermediate streams; it is possible to perform operations in parallel.</p>
+<h3 id="pmap">pmap<a class="headerlink" href="#pmap" title="Permanent link">λ︎</a></h3>
+<p>Use <code>pmap</code> when mapping an expensive function over a sequence, making the operation parallel.  No other changes to the code are required. </p>
+<p>Transducers will still be faster if the pmap function creates intermedicate data structures.</p>
+<p>A transducer clear definition is here:</p>
+<p>Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many contexts.</p>
+<h2 id="reducing-functions_1">Reducing functions<a class="headerlink" href="#reducing-functions_1" title="Permanent link">λ︎</a></h2>
+<div class="admonition example">
+<p class="admonition-title">Population a local Village</p>
+<p>The 
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">village</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:north</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;smith&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;sue&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">37</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:north</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;smith&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;stan&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">35</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:m</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:north</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;smith&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;simon&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:m</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:north</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;smith&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;sadie&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:south</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;jones&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;jill&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:south</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;jones&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;jeff&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">45</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:m</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:south</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;jones&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;jackie&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:south</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;jones&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;jason&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">16</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:south</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;jones&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;june&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">14</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:west</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;brown&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;billie&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">55</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:west</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;brown&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;brian&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">23</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:m</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:west</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;brown&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;bettie&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">29</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:east</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;williams&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;walter&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">23</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:m</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:parent</span><span class="p">}</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">   </span><span class="p">{</span><span class="ss">:home</span><span class="w"> </span><span class="ss">:east</span><span class="w"> </span><span class="ss">:family</span><span class="w"> </span><span class="s">&quot;williams&quot;</span><span class="w"> </span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;wanda&quot;</span><span class="w"> </span><span class="ss">:age</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="ss">:sex</span><span class="w"> </span><span class="ss">:f</span><span class="w"> </span><span class="ss">:role</span><span class="w"> </span><span class="ss">:child</span><span class="p">}])</span>
+</code></pre></div></p>
+<p>Define a reducing expression to return the number of children in the village.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="k">def </span><span class="nb">children </span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">r/map</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="ss">:child</span><span class="w"> </span><span class="p">(</span><span class="ss">:role</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+</code></pre></div>
+<p>Call the expression
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">r/reduce</span><span class="w"> </span><span class="nb">+ </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="nb">children </span><span class="nv">village</span><span class="p">))</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="c1">;;=&gt; 8</span>
+</code></pre></div></p>
+</div>
+<p>Using a transducer to add up all the mapped values</p>
+<p>create the transducers using the new arity for map that takes the function, no collection</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">child-numbers</span><span class="w"> </span><span class="p">(</span><span class="nb">map </span><span class="o">#</span><span class="p">(</span><span class="k">if </span><span class="p">(</span><span class="nb">= </span><span class="ss">:child</span><span class="w"> </span><span class="p">(</span><span class="ss">:role</span><span class="w"> </span><span class="nv">%</span><span class="p">))</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">0</span><span class="p">)))</span>
+</code></pre></div>
+<p>Use transduce (c.f r/reduce) with the transducer to get the answer
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">transduce</span><span class="w"> </span><span class="nv">child-numbers</span><span class="w"> </span><span class="nb">+ </span><span class="mi">0</span><span class="w"> </span><span class="nv">village</span><span class="p">)</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="c1">;;=&gt; 8</span>
+</code></pre></div></p>
+<p>It is really powerful when taking subgroups in account, e.g to know how many children in the Brown Family</p>
+<div class="admonition example">
+<p class="admonition-title">Reducer to count children in Brown family</p>
+<p>Create the reducer to select members of the Brown family</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">brown-family-children</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">r/filter</span><span class="w"> </span><span class="o">#</span><span class="p">(</span><span class="nb">= </span><span class="s">&quot;brown&quot;</span><span class="w"> </span><span class="p">(</span><span class="nf">string/lower-case</span><span class="w"> </span><span class="p">(</span><span class="ss">:family</span><span class="w"> </span><span class="nv">%</span><span class="p">)))))</span>
+</code></pre></div>
+<p>compose a composite function to select the Brown family and map children to 1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">count-brown-family-children</span><span class="w"> </span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">comp </span><span class="nv">ex1a-map-children-to-value-1</span><span class="w"> </span><span class="nv">brown-family-children</span><span class="p">))</span>
+</code></pre></div>
+<p>reduce to add up all the Brown children
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">r/reduce</span><span class="w"> </span><span class="nb">+ </span><span class="mi">0</span><span class="w"> </span><span class="p">(</span><span class="nf">ex2a-count-brown-family-children</span><span class="w"> </span><span class="nv">village</span><span class="p">))</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="c1">;;=&gt; 2</span>
+</code></pre></div></p>
+</div>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
+<p><a class="md-button" href="https://bendyworks.com/transducers-clojures-next-big-idea/" target="_blank">Transducers - Clojure next big idea</a></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 23, 2023</span>
       
     
   </small>
