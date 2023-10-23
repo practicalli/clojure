@@ -1,45 +1,104 @@
 # Transducers
 
-In Clojure everything is a value, as even a function is a value potential which returns that value when evaluated.
+Transducers provide an efficient way to transform values from a collection or stream of data,
+eg. core.async channel, java.jdbc database query (0.7.0 upward) or a network stream etc.
 
-Transducers provide an efficient way to transform values which can be simple values, collections, core.async channels and java.jdbc (0.7.0 upwards).
+Transformations are applied directly to a stream of data without first creating a collection.
 
-> #### TODO::work in progress, sorry
->
-> A very messy brain dump of ideas to tidy up.
-> Pull requests are welcome
+Multiple transducers are composed into a single transforming function, walking the data elements only once and without the need for intermediate collections.  
 
-<https://www.youtube.com/watch?v=WkHdqg_DBBs>
+One Transducer benefit is to allow the design to switch from a seq-based implementation to a core.async implementation using channels
 
-### From slack - beginners channel
+[Transducers: Clojure.org](https://clojuredocs.org/clojure.core/transduce){target=_blank .md-button} 
+[Transducer use cases](https://clojure.org/guides/faq#transducers_vs_seqs){target=_blank .md-button} 
 
-Transducers are a functional design to compose operations on data collections, whereby the operations you describe through your transducers, aren't applied each on the entire input collection as in normal plain clojure code, but rather every element in the collection gets acted upon by a composition of what you specify in your transducers. Meaning, the input collection gets walked only once!
+[Basics Transducer walkthrough](http://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/){target=_blank .md-button}
 
-Transducers provide an alternative way to act on data collections, which requires of you to stray from the plain clojure API you'd normally would, but brings along some benefits like lazy evaluation and/or different performance trade-offs.
+[Simple examples of Clojure Transducers](http://ianrumford.github.io/clojure/transducers/reducers/2014/08/08/Some-trivial-examples-of-using-Clojure-Transducers.html){target=_blank .md-button}
 
-In addition, some advantages in terms of affording greater modularity in applying transformations on  data, are mentioned in the linked SO question above ― although not really well elucidated in code examples there.
 
-Using Transducers eliminates the need for intermediate structures.
 
-[A walk through the basics of Transducers](http://eli.thegreenplace.net/2017/reducers-transducers-and-coreasync-in-clojure/)
+<p style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/6mTbuzafcII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p> 
 
-Items coming from a collection are a common case with transducers, but a big motivation for making transducers was the ability to apply transformation directly to the source of data, without forcing it into a collection first (eg. a core.async channel or a network stream etc.)
 
-the fact that you can chain transducing functions without intermediate collections comes from this - the context of another transducer is one of the data sources you can apply a transducer to
+<p style="text-align:center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/WkHdqg_DBBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p> 
 
-you can use (map f), as one example of a transducing function, directly on a channel
 
-it's an optional arg when you create the channel, and causes that transform to be applied to all data that goes through the channel
+## Evolving design
 
-channels are part of why transducers were added to Clojure. The Clojure maintainers discovered they were re-implementing filter, map, partition, etc. etc. on core.async and realized it would be better to have an abstraction for the transforms independent of the source and destination of data
+Each element of the data collection is acted upon by a composition of each transducer in an expression, making them more efficient than a applying one expression after another (e.g. as with a thread macro or composed list expressions). 
 
-As of `java.jdbc` 0.7.0-beta1, you can also apply transducers to “reducible queries” (and reducible result sets).
+Transducers provide benefits like lazy evaluation and alternative performance trade-offs.
 
-Instead of passing in functions to transform rows and process the transformed result set, you can now just create a “reducible query” and hand it off to anything that knows how to reduce it: reducers, transducers, plain ol’ `reduce` and `into` etc…
 
-### from stackoverflow
+!!! EXAMPLE "Nested calls"
+    ```clojure
+    (reduce + (filter odd? (map #(+ 2 %) (range 0 10))))
+    ```
 
-<https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms>
+!!! EXAMPLE "Functional composition"
+    ```clojure
+    (def xform
+      (comp
+        (partial filter odd?)
+        (partial map #(+ 2 %))))
+      (reduce + (xform (range 0 10)))
+    ```
+
+!!! EXAMPLE "Thread macro"
+    ```clojure
+        (defn xform [xs]
+          (->> xs
+               (map #(+ 2 %))
+               (filter odd?)))
+        (reduce + (xform (range 0 10)))
+    ```
+
+!!! EXAMPLE "Transducer"
+    ```clojure
+    (def xform
+      (comp
+        (map #(+ 2 %))
+        (filter odd?)))
+    (transduce xform + (range 0 10))
+    ```
+
+> The order of combinators in a transducer is the same as a thread macro (natural order). 
+
+
+## core.async
+
+Transducers were introduced into the Clojure language to provide a common abstraction to avoid re-implmentation of clojure.core transformation functions specific to core.async.
+
+in a large part to support processing data to and from a core.async channel.
+
+The Clojure maintainers discovered they were re-implementing filter, map, partition, etc. on core.async and realized it would be better to have an abstraction for the transforms independent of the source and destination of data.
+
+
+The xform can be used with an core.async channel
+
+!!! EXAMPLE "Transducer with core.async"
+    ```clojure
+    (chan 1 xform)
+    ```
+
+> an optional arg when creating a channel, causing a transform to be applied to all data that goes through the channel
+
+
+## Database queries
+
+Typical database access involves passing in functions to transform rows and process the transformed result set
+
+`java.jdbc` 0.7.0-beta1 onwards can also apply transducers to “reducible queries” (and reducible result sets).
+
+Create a **reducible query** which is passed to transforming function, e.g. reducers, transducers, plain ol’ `reduce` and `into` etc 
+
+
+## Simplified description
 
 Transducers are recipes what to do with a sequence of data without knowledge what the underlying sequence is (how to do it). It can be any seq, async channel or maybe observable.
 
@@ -47,190 +106,164 @@ They are composable and polymorphic.
 
 The benefit is, you don't have to implement all standard combinators every time new data source is added. Again and again. As resulting effect you as user are able to reuse those recipes on different data sources.
 
-Ad Update
+> <https://stackoverflow.com/questions/26317325/can-someone-explain-clojure-transducers-to-me-in-simple-terms>
 
-Prior version 1.7 of Clojure you had three ways how to write dataflow queries:
 
-nested calls
 
-```clojure
-(reduce + (filter odd? (map #(+ 2 %) (range 0 10))))
-```
+??? WARNING "Work In Progress, sorry"
+    A very messy brain dump of ideas to tidy up. Pull requests are welcome
 
-functional composition
 
-```clojure
-(def xform
-  (comp
-    (partial filter odd?)
-    (partial map #(+ 2 %))))
-  (reduce + (xform (range 0 10)))
-```
+Clojure.core functions such as map and filter are lazy, however they also generate containers for lazy values when chained together. 
 
-threading macro
+Without holding onto the head of the collection, large lazy sequences aren't created but intermediate abstractions are still created for each lazy element.
 
-```clojure
-    (defn xform [xs]
-      (->> xs
-           (map #(+ 2 %))
-           (filter odd?)))
-    (reduce + (xform (range 0 10)))
-```
 
-With transducers you will write it like:
+## Reducing functions
 
-```clojure
-(def xform
-  (comp
-    (map #(+ 2 %))
-    (filter odd?)))
-(transduce xform + (range 0 10))
-```
+Reducing functions are those that take two arguments: 
 
-They all do the same. The difference is that you never call Transducers directly, you pass them to another function. Transducers know what to do, the function that gets transducer knows how. The order of combinators is like you write it with threading macro (natural order). Now you can reuse xform with channel:
+ - a result so far 
+ - an input. 
 
-```clojure
-(chan 1 xform)
-```
+The reducing function returns a new result (so far). 
 
-## Business case
-
-Transducers seem to be a useful way of abstracting over various forms of iterable objects. These can be non-consumable, such as Clojure seqs, or consumable (such as async channels). In this respect, it seems to me you would benefit greatly from using transducers if, e.g., you switch from a seq-based implementation to a core.async implementation using channels. Transducers should allow you to keep the core of your logic unchanged. Using traditional sequence-based processing you would have to convert this to use either transducers or some core-async analog. That's the business case
-
-Transducers improve efficiency, and allow you to write efficient code in a more modular way.
-
-[Trivial examples of using Clojure Transducers](http://ianrumford.github.io/clojure/transducers/reducers/2014/08/08/Some-trivial-examples-of-using-Clojure-Transducers.html)
-
-Compared to composing calls to the old map, filter, reduce etc. you get better performance because you don't need to build intermediate collections between each step, and repeatedly walk those collections.
-
-Compared to reducers, or manually composing all your operations into a single expression, you get easier to use abstractions, better modularity and reuse of processing functions.
-
-Just curious, you said above: "to build intermediate collections between each step". But doesn't "intermediate collections" sound like an anti-pattern? .NET offers lazy enumerables, Java offers lazy streams or Guava-driven iterables, lazy Haskell must have something lazy too. None of these requires map/reduce to use intermediate collections because all of them build an iterator chain. Where am I wrong here? – Lyubomyr Shaydariv Oct 11 '14 at 21:01
-1
-Clojure map and filter create intermediate collections when nested. – noisesmith Oct 11 '14 at 22:59
-2
-And at least regarding Clojure's version of laziness, the issue of laziness is orthogonal here. Yes, map and filter are lazy, the also generate containers for lazy values when you chain them. If you don't hold onto the head, you don't build up large lazy sequences that aren't needed, but you still build those intermediate abstractions for each lazy element. – noisesmith Oct 12 '14 at 0:59
-
-An example would be nice. – Zubair Oct 13 '14 at 6:56
-2
-@LyubomyrShaydariv By "intermediate collection", noisesmith doesn't mean "iterate/reify an entire collection, then iterate/reify another entire collection". He or she means that when you nest function calls that return sequentials, each function call results in the creation of a new sequential. The actual iteration still only happens once, but there is additional memory consumption and object allocation due to the nested sequentials
-
-Transducers are a means of combination for reducing functions.
-
-Example: Reducing functions are functions that take two arguments: A result so far and an input. They return a new result (so far). For example +: With two arguments, you can think of the first as the result so far and the second as the input.
+For example +: With two arguments, you can think of the first as the result so far and the second as the input.
 
 A transducer could now take the + function and make it a twice-plus function (doubles every input before adding it). This is how that transducer would look like (in most basic terms):
 
-(defn double
-  [rfn]
-  (fn [r i]
-    (rfn r (* 2 i))))
+!!! EXAMPLE "Reducing function"
+    ```clojure
+    (defn double
+      [rfn]
+      (fn [r i]
+        (rfn r (* 2 i))))
+    ```
+
 For illustration substitute rfn with + to see how + is transformed into twice-plus:
 
-(def twice-plus ;; result of (double +)
-  (fn [r i]
-    (+ r (* 2 i))))
+!!! EXAMPLE "Reducing function - twice plus"
+    ```clojure
+    (def twice-plus ;; result of (double +)
+      (fn [r i]
+        (+ r (* 2 i))))
 
-(twice-plus 1 2)  ;-> 5
-(= (twice-plus 1 2) ((double +) 1 2)) ;-> true
-So
+    (twice-plus 1 2)  ;-> 5
+    (= (twice-plus 1 2) ((double +) 1 2)) ;-> true
+    ```
 
+Calling the reducing function
+
+```clojure
 (reduce (double +) 0 [1 2 3])
-would now yield 12.
 
-Reducing functions returned by transducers are independent of how the result is accumulated because they accumulate with the reducing function passed to them, unknowingly how. Here we use conj instead of +. Conj takes a collection and a value and returns a new collection with that value appended.
+;; => 12
+```
 
+Reducing functions returned by transducers are independent of how the result is accumulated because they accumulate with the reducing function passed to them. 
+
+`conj` takes a collection and a value and returns a new collection with that value appended.
+
+```clojure
 (reduce (double conj) [] [1 2 3])
-would yield [2 4 6]
+;; => [2 4 6]
+```
 
-They are also independent of what kind of source the input is.
+Transducers are independent of the kind of data is passed.
 
-Multiple transducers can be chained as a (chainable) recipe to transform reducing functions.
+optimisation goes beyond eliminating intermediate streams; it is possible to perform operations in parallel.
 
-Update: Since there now is an official page about it, I highly recommend to read it: <http://clojure.org/transducers>
 
-Say you want to use a series of functions to transform a stream of data. The Unix shell lets you do this kind of thing with the pipe operator, e.g.
+### pmap 
 
-cat /etc/passwd | tr '[:lower:]' '[:upper:]' | cut -d: -f1| grep R| wc -l
-(The above command counts the number of users with the letter r in either upper- or lowercase in their username). This is implemented as a set of processes, each of which reads from the previous processes's output, so there are four intermediate streams. You could imagine a different implementation that composes the five commands into a single aggregate command, which would read from its input and write its output exactly once. If intermediate streams were expensive, and composition were cheap, that might be a good trade-off.
+Use `pmap` when mapping an expensive function over a sequence, making the operation parallel.  No other changes to the code are required. 
 
-The same kind of thing holds for Clojure. There are multiple, concise ways to express a pipeline of transformations, but depending on how you do it, you can end up with intermediate streams passing from one function to the next. If you have a lot of data, it's faster to compose those functions into a single function. Transducers make it easy to do that. An earlier Clojure innovation, reducers, let you do that too, but with some restrictions. Transducers remove some of those restrictions.
+Transducers will still be faster if the pmap function creates intermedicate data structures.
 
-So to answer your question, transducers won't necessarily make your code shorter or more understandable, but your code probably won't be longer or less understandable either, and if you're working with a lot of data, transducers can make your code faster.
 
-<https://bendyworks.com/transducers-clojures-next-big-idea/>
 
-Ah, so transducers are mostly a performance optimisation, is that what you are saying? – Zubair Oct 13 '14 at 9:10
-
-@Zubair Yes, that's right. Note that the optimization goes beyond eliminating intermediate streams; you may also be able to perform operations in parallel. – user100464 Oct 14 '14 at 19:17
-
-It's worth mentioning pmap, which doesn't seem to get enough attention. If you are mapping an expensive function over a sequence, making the operation parallel is as easy as adding "p". No need to change anything else in your code, and it's available now--not alpha, not beta. (If the function creates intermediate sequences, then transducers might be faster, I would guess.) – Mars Oct 30 '14 at 15:13
-
-Rich Hickey gave a 'Transducers' talk at the Strange Loop 2014 conference (45 min).
-
-He explains in simple way what transducers are, with real world examples - processing bags in an airport. He clearly separates the different aspects and contrasts them with the current approaches. Towards the end, he gives the rationale for their existence.
-
-Video: <https://www.youtube.com/watch?v=6mTbuzafcII>
-
-5
-down vote
 A transducer clear definition is here:
 
-Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many contexts, and they’re coming to Clojure core and core.async.
-To understand it, let's consider the following simple example:
+Transducers are a powerful and composable way to build algorithmic transformations that you can reuse in many contexts.
 
-;; The Families in the Village
+## Reducing functions
 
-(def village
-  [{:home :north :family "smith" :name "sue" :age 37 :sex :f :role :parent}
-   {:home :north :family "smith" :name "stan" :age 35 :sex :m :role :parent}
-   {:home :north :family "smith" :name "simon" :age 7 :sex :m :role :child}
-   {:home :north :family "smith" :name "sadie" :age 5 :sex :f :role :child}
+!!! EXAMPLE "Population a local Village"
+    The 
+    ```clojure
+    (def village
+      [{:home :north :family "smith" :name "sue" :age 37 :sex :f :role :parent}
+       {:home :north :family "smith" :name "stan" :age 35 :sex :m :role :parent}
+       {:home :north :family "smith" :name "simon" :age 7 :sex :m :role :child}
+       {:home :north :family "smith" :name "sadie" :age 5 :sex :f :role :child}
 
-   {:home :south :family "jones" :name "jill" :age 45 :sex :f :role :parent}
-   {:home :south :family "jones" :name "jeff" :age 45 :sex :m :role :parent}
-   {:home :south :family "jones" :name "jackie" :age 19 :sex :f :role :child}
-   {:home :south :family "jones" :name "jason" :age 16 :sex :f :role :child}
-   {:home :south :family "jones" :name "june" :age 14 :sex :f :role :child}
+       {:home :south :family "jones" :name "jill" :age 45 :sex :f :role :parent}
+       {:home :south :family "jones" :name "jeff" :age 45 :sex :m :role :parent}
+       {:home :south :family "jones" :name "jackie" :age 19 :sex :f :role :child}
+       {:home :south :family "jones" :name "jason" :age 16 :sex :f :role :child}
+       {:home :south :family "jones" :name "june" :age 14 :sex :f :role :child}
 
-   {:home :west :family "brown" :name "billie" :age 55 :sex :f :role :parent}
-   {:home :west :family "brown" :name "brian" :age 23 :sex :m :role :child}
-   {:home :west :family "brown" :name "bettie" :age 29 :sex :f :role :child}
+       {:home :west :family "brown" :name "billie" :age 55 :sex :f :role :parent}
+       {:home :west :family "brown" :name "brian" :age 23 :sex :m :role :child}
+       {:home :west :family "brown" :name "bettie" :age 29 :sex :f :role :child}
 
-   {:home :east :family "williams" :name "walter" :age 23 :sex :m :role :parent}
-   {:home :east :family "williams" :name "wanda" :age 3 :sex :f :role :child}])
-What about it we want to know how many children are in the village? We can easily find it out with the following reducer:
+       {:home :east :family "williams" :name "walter" :age 23 :sex :m :role :parent}
+       {:home :east :family "williams" :name "wanda" :age 3 :sex :f :role :child}])
+    ```
 
-;; Example 1a - using a reducer to add up all the mapped values
+    Define a reducing expression to return the number of children in the village.
 
-(def ex1a-map-children-to-value-1 (r/map #(if (= :child (:role %)) 1 0)))
+    ```clojure
+    (def children 
+      (r/map #(if (= :child (:role %)) 1 0)))
+    ```
 
-(r/reduce + 0 (ex1a-map-children-to-value-1 village))
-;;=>
-8
-Here is another way to do it:
+    Call the expression
+    ```clojure
+    (r/reduce + 0 (children village))
+    ;;=> 8
+    ```
 
-;; Example 1b - using a transducer to add up all the mapped values
+Using a transducer to add up all the mapped values
 
-;; create the transducers using the new arity for map that
-;; takes just the function, no collection
+ create the transducers using the new arity for map that takes the function, no collection
 
-(def ex1b-map-children-to-value-1 (map #(if (= :child (:role %)) 1 0)))
+```clojure
+(def child-numbers (map #(if (= :child (:role %)) 1 0)))
+```
 
-;; now use transduce (c.f r/reduce) with the transducer to get the answer
-(transduce ex1b-map-children-to-value-1 + 0 village)
-;;=>
-8
-Besides, it is really powerful when taking subgroups in account as well. For instance, if we would like to know how many children are in Brown Family, we can execute:
+Use transduce (c.f r/reduce) with the transducer to get the answer
+```clojure
+(transduce child-numbers + 0 village)
+;;=> 8
+```
 
-;; Example 2a - using a reducer to count the children in the Brown family
+It is really powerful when taking subgroups in account, e.g to know how many children in the Brown Family
 
-;; create the reducer to select members of the Brown family
-(def ex2a-select-brown-family (r/filter #(= "brown" (string/lower-case (:family %)))))
+!!! EXAMPLE "Reducer to count children in Brown family"
 
-;; compose a composite function to select the Brown family and map children to 1
-(def ex2a-count-brown-family-children (comp ex1a-map-children-to-value-1 ex2a-select-brown-family))
+    Create the reducer to select members of the Brown family
 
-;; reduce to add up all the Brown children
-(r/reduce + 0 (ex2a-count-brown-family-children village))
-;;=> 2
+    ```clojure
+    (def brown-family-children
+      (r/filter #(= "brown" (string/lower-case (:family %)))))
+    ```
+
+    compose a composite function to select the Brown family and map children to 1
+
+    ```clojure
+    (def count-brown-family-children 
+      (comp ex1a-map-children-to-value-1 brown-family-children))
+    ```
+
+    reduce to add up all the Brown children
+    ```clojure
+    (r/reduce + 0 (ex2a-count-brown-family-children village))
+    ;;=> 2
+    ```
+
+
+## References
+
+[Transducers - Clojure next big idea](https://bendyworks.com/transducers-clojures-next-big-idea/){target=_blank .md-button}
+
