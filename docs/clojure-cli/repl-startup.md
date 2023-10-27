@@ -184,12 +184,17 @@ Add a `(help)` expression to call the help function on REPL startup, displaying 
 
 ### Hotload libraries
 
-[Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.
+[Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process which were not include as a dependency during REPL startup.
 
-??? WARNING "Add-libs is an unreleased feature"
-    `add-libs` is not yet an official feature and currently available only in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  add-libs should become official release in 2023, although not in within `org.clojure/tools.deps` library.
+??? WARNING "Hotload libraries is SNAPSHOT feature - this guide will change when Clojure 1.12 is released"
+    Functions to hotload libraries are part of the Clojure 1.12 development releases and an official feature as of the stable 1.12 release.
+
+    For Clojure 1.11 and similar functions are available in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  
 
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
+
+    This guide will be significantly rewritten once Clojure 1.12 is released.
+
 
 === ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
     `:repl/reloaded`  and `dev/reloaded` aliases in [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/repl-reloaded/) provide the `add-libs` function.
