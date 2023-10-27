@@ -182,6 +182,38 @@ Add a `(help)` expression to call the help function on REPL startup, displaying 
     ;; ---------------------------------------------------------
     ```
 
+
+### Reload Namespaces
+
+The REPL state can become 'stale' and contain vars (data and function names) that are no longer part of the source code, especially after a code refactor.
+
+Rather than restart the repl, clojure.tools.namespace.repl provides functions that can clean the REPL state and reload changed namespaces from source code.
+
+
+!!! EXAMPLE "Clojure Namespace Tools - reload"
+    Require the `clojure.tools.namespace.repl` namespace to access the `refresh` and `set-refresh-dirs` functions to support reloading of source code into a clean REPL state.
+
+    ```clojure title="dev/user.clj"
+    (ns user
+      "Tools for REPL Driven Development"
+      (:require
+       [clojure.tools.namespace.repl :refer [set-refresh-dirs]]))
+    ```
+
+    Use the `set-refresh-dirs` function to define directories to reload when calling `refresh`, effectively excluding `dev` and other directories by not including their names as arguments.
+
+    ```clojure title="dev/user.clj"
+    ;; ---------------------------------------------------------
+    ;; Avoid reloading `dev` code
+    ;; - code in `dev` directory should be evaluated if changed to reload into repl
+    (println
+     "Set REPL refresh directories to "
+     (set-refresh-dirs "src" "resources"))
+    ;; ---------------------------------------------------------
+
+    ```
+
+
 ### Hotload libraries
 
 [Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process which were not include as a dependency during REPL startup.
