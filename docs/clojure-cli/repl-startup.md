@@ -19,6 +19,22 @@ The `user.clj` file can be used for one or more of the following:
 
 ??? HINT "Example projects"
     [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template){target=_blank} contains a `dev/user.clj` file for configuring the REPL at start up.
+??? INFO "Default REPL Tools"
+    The Clojure REPL automatically loads common tools to support the foundation of a REPL driven workflow:
+
+    [:globe_with_meridians: clojure.repl namespace](https://clojuredocs.org/clojure.repl) loads:
+
+    - [:globe_with_meridians: apropos](https://clojuredocs.org/clojure.repl/apropos) - function names fuzzy matching a given regex pattern
+    - [:globe_with_meridians: dir](https://clojuredocs.org/clojure.repl/dir) - sorted list of public vars (functions) in a given namespace
+    - [:globe_with_meridians: doc](https://clojuredocs.org/clojure.repl/doc) - doc-string of a give Clojure function / symbol 
+    - [:globe_with_meridians: find-doc](https://clojuredocs.org/clojure.repl/find-doc) - doc-string of matching functions, given a string or regex pattern
+    - [:globe_with_meridians: source](https://clojuredocs.org/clojure.repl/source) - source code of a given function
+    - [:globe_with_meridians: pst](https://clojuredocs.org/clojure.repl/pst) print stack trace, optionally setting depth
+
+    [:globe_with_meridians: clojure.java.javadoc](https://clojuredocs.org/clojure.java.javadoc) loads [:globe_with_meridians: javadoc](https://clojuredocs.org/clojure.java.javadoc/javadoc) to show the doc-string of Java methods
+
+    [:globe_with_meridians: clojure.pprint namepace](https://clojuredocs.org/clojure.pprint) loads [:globe_with_meridians: pp](https://clojuredocs.org/clojure.pprint/pp) & [:globe_with_meridians: pprint](https://clojuredocs.org/clojure.pprint/pprint) to return pretty printed (human friendly format) evaluation results
+
 
 ## Custom user namespace
 
