@@ -182,6 +182,79 @@ Add a `(help)` expression to call the help function on REPL startup, displaying 
     ;; ---------------------------------------------------------
     ```
 
+### Log publisher
+
+mulog is a very effective event log tool that also provides a range of log publishers.  A custom user namespace can be used to start mulog log publishers to directly support the development workflow
+
+- pretty print console output for easier to read event messages
+- custom tap-publisher to send all log message to a `tap>` source, e.g. [Portal data inspector](https://practical.li/clojure/data-inspector/portal/)
+
+
+!!! EXAMPLE "Mulog configuration and publishers"
+    Require the mulog namespaces.
+
+    Set the global context for all mulog events, setting common key/value pairs that appear in every event created after the global context was evaluated.
+
+    Define a custom publisher to send all mulog events to the registered tap> sources, e.g. Portal data inspector.
+
+    ```clojure title="dev/mulog_events.clj"
+    ;; ---------------------------------------------------------
+    ;; Mulog Global Context and Custom Publisher
+    ;;
+    ;; - set event log global context
+    ;; - tap publisher for use with Portal and other tap sources
+    ;; - publish all mulog events to Portal tap source
+    ;; ---------------------------------------------------------
+
+    (ns mulog-events
+      (:require
+       [com.brunobonacci.mulog        :as mulog]
+       [com.brunobonacci.mulog.buffer :as mulog-buffer]))
+
+    ;; ---------------------------------------------------------
+    ;; Set event global context
+    ;; - information added to every event for REPL workflow
+    (mulog/set-global-context! {:app-name "todo-basic Service",
+                                :version "0.1.0", :env "dev"})
+    ;; ---------------------------------------------------------
+
+    ;; ---------------------------------------------------------
+    ;; Mulog event publishing
+
+    (deftype TapPublisher
+             [buffer transform]
+      com.brunobonacci.mulog.publisher.PPublisher
+      (agent-buffer [_] buffer)
+      (publish-delay [_] 200)
+      (publish [_ buffer]
+        (doseq [item (transform (map second (mulog-buffer/items buffer)))]
+          (tap> item))
+        (mulog-buffer/clear buffer)))
+
+    #_{:clj-kondo/ignore [:unused-private-var]}
+    (defn ^:private tap-events
+      [{:keys [transform] :as _config}]
+      (TapPublisher. (mulog-buffer/agent-buffer 10000) (or transform identity)))
+
+    (def tap-publisher
+      "Start mulog custom tap publisher to send all events to Portal
+      and other tap sources
+      `mulog-tap-publisher` to stop publisher"
+      (mulog/start-publisher!
+       {:type :custom, :fqn-function "mulog-events/tap-events"}))
+
+    #_{:clj-kondo/ignore [:unused-public-var]}
+    (defn stop
+      "Stop mulog tap publisher to ensure multiple publishers are not started
+     Recommended before using `(restart)` or evaluating the `user` namespace"
+      []
+      tap-publisher)
+
+    ;; Example mulog event message
+    ;; (mulog/log ::dev-user-ns :message "Example event message" :ns (ns-publics *ns*))
+    ;; ---------------------------------------------------------
+    ```
+
 
 ### Reload Namespaces
 
