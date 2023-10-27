@@ -119,8 +119,57 @@ An alias can be used in the require expression, useful if multiple functions fro
     (service/-main)
     ```
 
+### REPL Help menu
 
 ## Hotload libraries
+Printing a menu of functions provided by the custom user namespace helps with the usability of a project.
+
+Define a `help` function that prints out commands with a breif explination of their purpose.
+
+Add a `(help)` expression to call the help function on REPL startup, displaying the help menu. 
+
+!!! EXAMPLE "REPL Help menu"
+    ```clojure
+    ;; ---------------------------------------------------------
+    ;; Help
+
+    (println "---------------------------------------------------------")
+    (println "Loading custom user namespace tools...")
+    (println "---------------------------------------------------------")
+
+    (defn help
+      []
+      (println "---------------------------------------------------------")
+      (println "System components:")
+      (println "(start)                        ; starts all components in system config")
+      (println "(restart)                      ; read system config, reloads changed namespaces & restarts system")
+      (println "(stop)                         ; shutdown all components in the system")
+      ;; (println "(system)                       ; show configuration of the running system")
+      ;; (println "(config)                       ; show system configuration")
+      (println)
+      (println "Hotload libraries:             ; Clojure 1.12.x")
+      (println "(add-lib 'library-name)")
+      (println "(add-libs '{domain/library-name {:mvn/version \"v1.2.3\"}})")
+      (println "(sync-deps)                    ; load dependencies from deps.edn")
+      (println "- deps-* lsp snippets for adding library")
+      (println)
+      (println)
+      (println "Portal Inspector:")
+      (println "- portal started by default, listening to all evaluations")
+      (println "(inspect/clear)                ; clear all values in portal")
+      (println "(remove-tap #'inspect/submit)  ; stop sending to portal")
+      (println "(inspect/close)                ; close portal")
+      (println)
+      (println "(help)                         ; print help text")
+      (println "---------------------------------------------------------"))
+
+    (help)
+
+    ;; End of Help
+    ;; ---------------------------------------------------------
+    ```
+
+### Hotload libraries
 
 [Hotload](/clojure/clojure-cli/repl-reloaded/) is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.
 
