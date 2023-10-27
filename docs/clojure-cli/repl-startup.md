@@ -1,24 +1,16 @@
 # Configure REPL on Startup
 
-A Clojure REPL starts in the `user` namespace by default.  Clojure automatically loads code from a `user.clj` file when found on the class path.
+A Clojure REPL starts in the `user` namespace and automatically loads common tools to support REPL based development. 
 
-The `user.clj` file can be used for one or more of the following:
+When interacting with the REPL prompt directly, use `require` expressions to include additional functions into the `user` nameapace rather than use potentially complex commands to set the namespace.
 
-* load code into the REPL by requiring namespaces
-* call functions to run an application or service
-* start components (i.e for mount, component, integrant)
-* hotload libraries into the REPL process without restart
-* adding development tools - e.g. [portal data inspector](/clojure/data-inspector/portal/#configure-repl-startup)
 
-??? WARNING "Clojure CLI cannot set the REPL to a different namespace"
-    Clojure CLI has no specific mechanism to start the REPL in a namespace other than `user`.
+??? WARNING "Clojure REPL only starts in user namespace"
+    The Clojure REPL only guarantees startup in the `user` namespace. There is no specific mechanism to start the REPL in any other namespace than `user`.
 
-    Technically the `-e` option could be used to set a different namespace by calling `in-ns` with a different namespace, although this approach may affect the running of other tools or add extra complexity to the commands.
+    Clojure CLI could use the general `--eval` flag as a hack to set a different namespace with an `in-ns` expression, although this may affect other tools and add complexity to the startup process.
 
-    Require functions into the `user` nameapace rather than use potentially complex commands to set the namespace.
 
-??? HINT "Example projects"
-    [practicalli/clojure-app-template](https://github.com/practicalli/clojure-app-template){target=_blank} contains a `dev/user.clj` file for configuring the REPL at start up.
 ??? INFO "Default REPL Tools"
     The Clojure REPL automatically loads common tools to support the foundation of a REPL driven workflow:
 
@@ -37,6 +29,25 @@ The `user.clj` file can be used for one or more of the following:
 
 
 ## Custom user namespace
+
+Add a custom `user` namespace to further enhance the Clojure REPL workflow:
+
+- load code into the REPL by requiring namespaces
+- call functions to start services that support development, e.g. logging publisher, print REPL command help menu
+- launch development tools - e.g. [portal data inspector](/clojure/data-inspector/portal/#configure-repl-startup)
+- start components (i.e for mount, component, integrant)
+- hotload libraries into the REPL process without restart (Clojure 1.12 onward)
+
+
+!!! HINT "Create a project with custom user namespace"
+    Projects created with [:fontawesome-solid-book-open: Practicalli Project Templates](/clojure/clojure-cli/projects/templates/practicalli/) contain a `dev/user.clj` file for configuring the REPL at start up.
+
+    Practicalli custom user namespace supports the [:fontawesome-solid-book-open: Practicalli REPL Reloaded workflow](https://practical.li/clojure/clojure-cli/repl-reloaded/)
+
+    Start the REPL with either the `:dev/env`, `:dev/reloaded` or `:repl/reloaded` alias from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) to include `dev` directory on the class path and automatically load `dev/user.clj` code on REPL startup.
+
+
+### Define user namespace
 
 A custom `user.clj` is typically placed in a `dev` folder within the root of the project, with the `dev` path defined in an alias to keep it separated from production code.
 
@@ -62,6 +73,8 @@ Create an alias to include the `dev` path when running a REPL process
      :env/dev
       {:extra-paths ["dev"]}
     ```
+    Review [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) for further alias examples.
+ 
 
 Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:dev/env`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
@@ -70,9 +83,10 @@ clojure -M:repl/reloaded
 ```
 
 !!! HINT "Keep `user.clj` separate"
-      * [ ] The `user.clj` code should not be included in live deployments, such as a jar or uberjar.  Including the `dev/` directory via an alias separates the `user.clj` from deployment actions.
+    The `user.clj` code should not be included in live deployments, such as a jar or uberjar.  Including the `dev/` directory via an alias separates the `user.clj` from deployment actions.
 
-## Requiring namespaces
+
+### Requiring namespaces
 
 Namespaces required in the `user` ns form will also be loaded. If a required namespace also requires namespaces, they will also be loaded into the REPL during startup.
 
@@ -121,7 +135,6 @@ An alias can be used in the require expression, useful if multiple functions fro
 
 ### REPL Help menu
 
-## Hotload libraries
 Printing a menu of functions provided by the custom user namespace helps with the usability of a project.
 
 Define a `help` function that prints out commands with a breif explination of their purpose.
@@ -224,7 +237,7 @@ Hotload one or more libraries into the REPL using the `add-lib` function, includ
     (hiccup/html [:div {:class "right-aligned"}])
     ```
 
-## System Components
+### System Components
 
 Clojure has several library to manage the life-cycle of components that make up the Clojure system, especially those components with state. The order in which components are started and stopped can be defined to keep the system functioning correctly.
 
@@ -254,7 +267,7 @@ Define code in the `dev/system.clj` file which controls the component life-cycle
 
 Create a `dev/system.clj` to manage the components, optionally using one of the system component management libraries.
 
-### Example life-cycle code
+#### life-cycle functions
 
 Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.
 
