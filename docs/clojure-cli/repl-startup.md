@@ -381,6 +381,84 @@ Create a `dev/system.clj` to manage the components, optionally using one of the 
 
 Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.
 
+
+=== "Atom restart"
+    Clojure web services run ontop of an HTTP server, e.g. http-kit, Jetty.
+
+    A Clojure aton can be used to hold a reference to the HTTP server, allowing commands to stop that server.
+
+    Use `clojure.tools.namespace.repl/refresh` when restarting the server (in between `stop` and `start`) to remove stale information in the REPL state.
+
+    !!! EXAMPLE "Restart an HTTP server for Clojure Web Service & Refresh namespaces"
+        ```clojure title="dev/system_repl.clj"
+        ;; ---------------------------------------------------------
+        ;; System REPL - Atom Restart 
+        ;;
+        ;; Tools for REPl workflow with Aton reference to HTTP server 
+        ;; https://practical.li/clojure-web-services/app-servers/simple-restart/
+        ;; ---------------------------------------------------------
+
+        (ns system-repl
+          (:require 
+            [clojure.tools.namespace.repl :refer [refresh]]
+            [practicalli.todo-basic.service :as service]))
+                    
+        ;; ---------------------------------------------------------
+        ;; HTTP Server State
+
+        (defonce http-server-instance 
+          (atom nil))  ; (1)! 
+        ;; ---------------------------------------------------------
+
+        ;; ---------------------------------------------------------
+        ;; REPL workflow commands
+
+        (defn stop
+          "Gracefully shutdown the server, waiting 100ms.
+           Check if an http server isntance exists and 
+           send a `:timeout` key and time in milliseconds to shutdown the server.
+           Reset the atom to nil to indicate no http server is running."
+          []
+          (when-not (nil? @http-server-instance)
+            (@http-server-instance :timeout 100) ; (2)!
+            (reset! http-server-instance nil)  ; (3)!
+            (println "INFO: HTTP server shutting down...")))
+
+        (defn start
+          "Start the application server and run the application,
+           saving a reference to the https server in the atom."
+          [& port]
+          (let [port (Integer/parseInt
+                      (or (first port)
+                          (System/getenv "PORT")
+                          "8080"))]
+            (println "INFO: Starting server on port:" port)
+
+            (reset! http-server-instance
+                    (service/http-server-start port)))) ; (4)!
+
+
+        (defn restart
+          "Stop the http server, refresh changed namespace and start the http server again"
+          []
+          (stop)
+          (refresh)  ; (5)! 
+          (start))
+        ;; ---------------------------------------------------------
+
+        ```
+
+        1.  A Clojure Aton holds a reference to the http server instance
+
+        2.  Shut down http server instance without stopping the Clojure REPL
+
+        3.  Reset the value in the atom to mil, indicating that no http server instance is running
+
+        4.  Reset the value in the atom to a reference for the running http server.  The reference is returned when starting the http server.
+
+        5.  Refresh the REPL state and reload changed namespaces from source code using `clojure.tools.namespace.repl/refresh`
+
+
 === "Mount"
     Define a `dev.clj` file with `go`, `stop` and `restart` functions that manage the life-cycle of mount components.  A `start` function contains the list of components with optional state.
 
