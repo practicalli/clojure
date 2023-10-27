@@ -8241,11 +8241,13 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 </code></pre></div>
 </div>
 <h3 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h3>
-<p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process that were not include as a dependency on REPL startup.</p>
+<p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process which were not include as a dependency during REPL startup.</p>
 <details class="warning">
-<summary>Add-libs is an unreleased feature</summary>
-<p><code>add-libs</code> is not yet an official feature and currently available only in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  add-libs should become official release in 2023, although not in within <code>org.clojure/tools.deps</code> library.</p>
+<summary>Hotload libraries is SNAPSHOT feature - this guide will change when Clojure 1.12 is released</summary>
+<p>Functions to hotload libraries are part of the Clojure 1.12 development releases and an official feature as of the stable 1.12 release.</p>
+<p>For Clojure 1.11 and similar functions are available in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  </p>
 <p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library for all released functions from the alpha library</p>
+<p>This guide will be significantly rewritten once Clojure 1.12 is released.</p>
 </details>
 <div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</label><label for="__tabbed_2_2">Manual</label></div>
 <div class="tabbed-content">
