@@ -1143,6 +1143,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#log-publisher" class="md-nav__link">
+    Log publisher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-namespaces" class="md-nav__link">
+    Reload Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hotload-libraries" class="md-nav__link">
     Hotload libraries
   </a>
@@ -8014,6 +8028,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#log-publisher" class="md-nav__link">
+    Log publisher
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reload-namespaces" class="md-nav__link">
+    Reload Namespaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#hotload-libraries" class="md-nav__link">
     Hotload libraries
   </a>
@@ -8240,6 +8268,95 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 <a id="__codelineno-7-37" name="__codelineno-7-37" href="#__codelineno-7-37"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
 </div>
+<h3 id="log-publisher">Log publisher<a class="headerlink" href="#log-publisher" title="Permanent link">λ︎</a></h3>
+<p>mulog is a very effective event log tool that also provides a range of log publishers.  A custom user namespace can be used to start mulog log publishers to directly support the development workflow</p>
+<ul>
+<li>pretty print console output for easier to read event messages</li>
+<li>custom tap-publisher to send all log message to a <code>tap&gt;</code> source, e.g. <a href="https://practical.li/clojure/data-inspector/portal/">Portal data inspector</a></li>
+</ul>
+<div class="admonition example">
+<p class="admonition-title">Mulog configuration and publishers</p>
+<p>Require the mulog namespaces.</p>
+<p>Set the global context for all mulog events, setting common key/value pairs that appear in every event created after the global context was evaluated.</p>
+<p>Define a custom publisher to send all mulog events to the registered tap&gt; sources, e.g. Portal data inspector.</p>
+<div class="highlight"><span class="filename">dev/mulog_events.clj</span><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="c1">;; Mulog Global Context and Custom Publisher</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="c1">;;</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="c1">;; - set event log global context</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="c1">;; - tap publisher for use with Portal and other tap sources</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="c1">;; - publish all mulog events to Portal tap source</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">mulog-events</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w">        </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog.buffer</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog-buffer</span><span class="p">]))</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a><span class="c1">;; Set event global context</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a><span class="c1">;; - information added to every event for REPL workflow</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a><span class="p">(</span><span class="nf">mulog/set-global-context!</span><span class="w"> </span><span class="p">{</span><span class="ss">:app-name</span><span class="w"> </span><span class="s">&quot;todo-basic Service&quot;</span>,
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="w">                            </span><span class="ss">:version</span><span class="w"> </span><span class="s">&quot;0.1.0&quot;</span>,<span class="w"> </span><span class="ss">:env</span><span class="w"> </span><span class="s">&quot;dev&quot;</span><span class="p">})</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a><span class="c1">;; Mulog event publishing</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="p">(</span><span class="kd">deftype </span><span class="nv">TapPublisher</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a><span class="w">         </span><span class="p">[</span><span class="nv">buffer</span><span class="w"> </span><span class="nv">transform</span><span class="p">]</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a><span class="w">  </span><span class="nv">com.brunobonacci.mulog.publisher.PPublisher</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a><span class="w">  </span><span class="p">(</span><span class="nf">agent-buffer</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish-delay</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="mi">200</span><span class="p">)</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a><span class="w">  </span><span class="p">(</span><span class="nf">publish</span><span class="w"> </span><span class="p">[</span><span class="nv">_</span><span class="w"> </span><span class="nv">buffer</span><span class="p">]</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a><span class="w">    </span><span class="p">(</span><span class="nb">doseq </span><span class="p">[</span><span class="nv">item</span><span class="w"> </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="p">(</span><span class="nb">map second </span><span class="p">(</span><span class="nf">mulog-buffer/items</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))]</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="w">      </span><span class="p">(</span><span class="nf">tap&gt;</span><span class="w"> </span><span class="nv">item</span><span class="p">))</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a><span class="w">    </span><span class="p">(</span><span class="nf">mulog-buffer/clear</span><span class="w"> </span><span class="nv">buffer</span><span class="p">)))</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33" href="#__codelineno-8-33"></a>
+<a id="__codelineno-8-34" name="__codelineno-8-34" href="#__codelineno-8-34"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-private-var</span><span class="p">]}</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35" href="#__codelineno-8-35"></a><span class="p">(</span><span class="kd">defn </span><span class="o">^</span><span class="ss">:private</span><span class="w"> </span><span class="nv">tap-events</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36" href="#__codelineno-8-36"></a><span class="w">  </span><span class="p">[{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">transform</span><span class="p">]</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">_config</span><span class="p">}]</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37" href="#__codelineno-8-37"></a><span class="w">  </span><span class="p">(</span><span class="nf">TapPublisher.</span><span class="w"> </span><span class="p">(</span><span class="nf">mulog-buffer/agent-buffer</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="nv">transform</span><span class="w"> </span><span class="nv">identity</span><span class="p">)))</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38" href="#__codelineno-8-38"></a>
+<a id="__codelineno-8-39" name="__codelineno-8-39" href="#__codelineno-8-39"></a><span class="p">(</span><span class="k">def </span><span class="nv">tap-publisher</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40" href="#__codelineno-8-40"></a><span class="w">  </span><span class="s">&quot;Start mulog custom tap publisher to send all events to Portal</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41" href="#__codelineno-8-41"></a><span class="s">  and other tap sources</span>
+<a id="__codelineno-8-42" name="__codelineno-8-42" href="#__codelineno-8-42"></a><span class="s">  `mulog-tap-publisher` to stop publisher&quot;</span>
+<a id="__codelineno-8-43" name="__codelineno-8-43" href="#__codelineno-8-43"></a><span class="w">  </span><span class="p">(</span><span class="nf">mulog/start-publisher!</span>
+<a id="__codelineno-8-44" name="__codelineno-8-44" href="#__codelineno-8-44"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:custom</span>,<span class="w"> </span><span class="ss">:fqn-function</span><span class="w"> </span><span class="s">&quot;mulog-events/tap-events&quot;</span><span class="p">}))</span>
+<a id="__codelineno-8-45" name="__codelineno-8-45" href="#__codelineno-8-45"></a>
+<a id="__codelineno-8-46" name="__codelineno-8-46" href="#__codelineno-8-46"></a><span class="o">#</span><span class="nv">_</span><span class="p">{</span><span class="ss">:clj-kondo/ignore</span><span class="w"> </span><span class="p">[</span><span class="ss">:unused-public-var</span><span class="p">]}</span>
+<a id="__codelineno-8-47" name="__codelineno-8-47" href="#__codelineno-8-47"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
+<a id="__codelineno-8-48" name="__codelineno-8-48" href="#__codelineno-8-48"></a><span class="w">  </span><span class="s">&quot;Stop mulog tap publisher to ensure multiple publishers are not started</span>
+<a id="__codelineno-8-49" name="__codelineno-8-49" href="#__codelineno-8-49"></a><span class="s"> Recommended before using `(restart)` or evaluating the `user` namespace&quot;</span>
+<a id="__codelineno-8-50" name="__codelineno-8-50" href="#__codelineno-8-50"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-8-51" name="__codelineno-8-51" href="#__codelineno-8-51"></a><span class="w">  </span><span class="nv">tap-publisher</span><span class="p">)</span>
+<a id="__codelineno-8-52" name="__codelineno-8-52" href="#__codelineno-8-52"></a>
+<a id="__codelineno-8-53" name="__codelineno-8-53" href="#__codelineno-8-53"></a><span class="c1">;; Example mulog event message</span>
+<a id="__codelineno-8-54" name="__codelineno-8-54" href="#__codelineno-8-54"></a><span class="c1">;; (mulog/log ::dev-user-ns :message &quot;Example event message&quot; :ns (ns-publics *ns*))</span>
+<a id="__codelineno-8-55" name="__codelineno-8-55" href="#__codelineno-8-55"></a><span class="c1">;; ---------------------------------------------------------</span>
+</code></pre></div>
+</div>
+<h3 id="reload-namespaces">Reload Namespaces<a class="headerlink" href="#reload-namespaces" title="Permanent link">λ︎</a></h3>
+<p>The REPL state can become 'stale' and contain vars (data and function names) that are no longer part of the source code, especially after a code refactor.</p>
+<p>Rather than restart the repl, clojure.tools.namespace.repl provides functions that can clean the REPL state and reload changed namespaces from source code.</p>
+<div class="admonition example">
+<p class="admonition-title">Clojure Namespace Tools - reload</p>
+<p>Require the <code>clojure.tools.namespace.repl</code> namespace to access the <code>refresh</code> and <code>set-refresh-dirs</code> functions to support reloading of source code into a clean REPL state.</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="s">&quot;Tools for REPL Driven Development&quot;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">   </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">set-refresh-dirs</span><span class="p">]]))</span>
+</code></pre></div>
+<p>Use the <code>set-refresh-dirs</code> function to define directories to reload when calling <code>refresh</code>, effectively excluding <code>dev</code> and other directories by not including their names as arguments.</p>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">;; Avoid reloading `dev` code</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">;; - code in `dev` directory should be evaluated if changed to reload into repl</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">(</span><span class="nf">println</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w"> </span><span class="s">&quot;Set REPL refresh directories to &quot;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w"> </span><span class="p">(</span><span class="nf">set-refresh-dirs</span><span class="w"> </span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;resources&quot;</span><span class="p">))</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1">;; ---------------------------------------------------------</span>
+</code></pre></div>
+</div>
 <h3 id="hotload-libraries">Hotload libraries<a class="headerlink" href="#hotload-libraries" title="Permanent link">λ︎</a></h3>
 <p><a href="/clojure/clojure-cli/repl-reloaded/">Hotload</a> is a way to add libraries to a running REPL process which were not include as a dependency during REPL startup.</p>
 <details class="warning">
@@ -8257,10 +8374,10 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 <div class="tabbed-block">
 <p>Edit the project <code>deps.edn</code> configuration and add an <code>:lib/hotload</code> alias for the <code>clojure.tools.deps.alpha.repl</code> library.  Or add an alias to the user level configuration for use with any Clojure CLI project.</p>
 <p>The <code>add-libs</code> code is on a separate <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a>, so requires the SHA from the head of add-libs3 branch</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">&quot;https://github.com/clojure/tools.deps.alpha&quot;</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;e4fb92eef724fa39e29b39cc2b1a850567d490dd&quot;</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="w">  </span><span class="ss">:lib/hotload</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="p">{</span><span class="ss">:extra-deps</span><span class="w"> </span><span class="p">{</span><span class="nv">org.clojure/tools.deps.alpha</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">               </span><span class="p">{</span><span class="ss">:git/url</span><span class="w"> </span><span class="s">&quot;https://github.com/clojure/tools.deps.alpha&quot;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">                </span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;e4fb92eef724fa39e29b39cc2b1a850567d490dd&quot;</span><span class="p">}}}</span>
 </code></pre></div>
 <blockquote>
 <p>Alias example from <a href="https://github.com/practicalli/clojure-deps-edn/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a></p>
@@ -8269,25 +8386,25 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 </div>
 </div>
 <p>Start a REPL session using Clojure CLI with <code>:repl/reloaded</code>, <code>dev/reloaded</code> or <code>:lib/hotload</code> aliases</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-M:repl/reloaded
 </code></pre></div>
 <div class="admonition example">
 <p class="admonition-title">Require and refer add-libs function</p>
 <p>Require the <code>clojure.tools.deps.alpha</code> library and refer the <code>add-libs</code> function.  The <code>add-libs</code> function can then be called without having to use an alias or the fully qualified name.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">clojure.tools.deps.alpha.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">add-libs</span><span class="p">]])</span>
 </code></pre></div></p>
 </div>
 <p>Hotload one or more libraries into the REPL using the <code>add-lib</code> function, including the fully qualified name of the library and version string.</p>
 <div class="admonition example">
 <p class="admonition-title">Hotload the hiccup library</p>
 <p>The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags. Load the hiccup library using add-libs
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">(</span><span class="nf">add-libs</span><span class="w"> </span><span class="o">&#39;</span><span class="p">{</span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;2.0.0-alpha2&quot;</span><span class="p">}})</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="nf">add-libs</span><span class="w"> </span><span class="o">&#39;</span><span class="p">{</span><span class="nv">hiccup/hiccup</span><span class="w"> </span><span class="p">{</span><span class="ss">:mvn/version</span><span class="w"> </span><span class="s">&quot;2.0.0-alpha2&quot;</span><span class="p">}})</span>
 </code></pre></div></p>
 <p>Require the hiccup library so its functions are accessible from the current namespace in the REPL.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">hiccup.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">hiccup</span><span class="p">])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="o">&#39;</span><span class="p">[</span><span class="nv">hiccup.core</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">hiccup</span><span class="p">])</span>
 </code></pre></div>
 Enter an expression using the <code>hiccup/html</code> function to convert a clojure data structure to html.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="p">(</span><span class="nf">hiccup/html</span><span class="w"> </span><span class="p">[</span><span class="ss">:div</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;right-aligned&quot;</span><span class="p">}])</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="nf">hiccup/html</span><span class="w"> </span><span class="p">[</span><span class="ss">:div</span><span class="w"> </span><span class="p">{</span><span class="ss">:class</span><span class="w"> </span><span class="s">&quot;right-aligned&quot;</span><span class="p">}])</span>
 </code></pre></div></p>
 </div>
 <h3 id="system-components">System Components<a class="headerlink" href="#system-components" title="Permanent link">λ︎</a></h3>
@@ -8303,54 +8420,134 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <div class="admonition example">
 <p class="admonition-title">Require system namespace in user ns expression</p>
 <p>Require the system namespace and use <code>start</code>, <code>restart</code> and <code>stop</code> functions to manage the components in the system
-<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">system</span><span class="p">]))</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">(</span><span class="nf">comment</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/start</span><span class="p">)</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/restart</span><span class="p">)</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/stop</span><span class="p">)</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a><span class="w">  </span><span class="p">)</span>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">system</span><span class="p">]))</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="p">(</span><span class="nf">comment</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/start</span><span class="p">)</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/restart</span><span class="p">)</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">  </span><span class="p">(</span><span class="nf">system/stop</span><span class="p">)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">  </span><span class="p">)</span>
 </code></pre></div></p>
 </div>
 <p>Define code in the <code>dev/system.clj</code> file which controls the component life-cycle services library for the project.</p>
 <p>Create a <code>dev/system.clj</code> to manage the components, optionally using one of the system component management libraries.</p>
 <h4 id="life-cycle-functions">life-cycle functions<a class="headerlink" href="#life-cycle-functions" title="Permanent link">λ︎</a></h4>
 <p>Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.</p>
-<div class="tabbed-set tabbed-alternate" data-tabs="3:4"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Mount</label><label for="__tabbed_3_2">Integrant REPL</label><label for="__tabbed_3_3">Donut System</label><label for="__tabbed_3_4">Component</label></div>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:5"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><input id="__tabbed_3_4" name="__tabbed_3" type="radio" /><input id="__tabbed_3_5" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Atom restart</label><label for="__tabbed_3_2">Mount</label><label for="__tabbed_3_3">Integrant REPL</label><label for="__tabbed_3_4">Donut System</label><label for="__tabbed_3_5">Component</label></div>
 <div class="tabbed-content">
+<div class="tabbed-block">
+<p>Clojure web services run ontop of an HTTP server, e.g. http-kit, Jetty.</p>
+<p>A Clojure aton can be used to hold a reference to the HTTP server, allowing commands to stop that server.</p>
+<p>Use <code>clojure.tools.namespace.repl/refresh</code> when restarting the server (in between <code>stop</code> and <code>start</code>) to remove stale information in the REPL state.</p>
+<div class="admonition example">
+<p class="admonition-title">Restart an HTTP server for Clojure Web Service &amp; Refresh namespaces</p>
+<div class="highlight"><span class="filename">dev/system_repl.clj</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">;; System REPL - Atom Restart </span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1">;;</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1">;; Tools for REPl workflow with Aton reference to HTTP server </span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1">;; https://practical.li/clojure-web-services/app-servers/simple-restart/</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">system-repl</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="p">[</span><span class="nv">practicalli.todo-basic.service</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">service</span><span class="p">]))</span>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
+<a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">;; HTTP Server State</span>
+<a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">(</span><span class="kd">defonce </span><span class="nv">http-server-instance</span><span class="w"> </span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span><span class="w">  </span><span class="c1">; (1)! </span>
+<a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
+<a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-18-21" name="__codelineno-18-21" href="#__codelineno-18-21"></a><span class="c1">;; REPL workflow commands</span>
+<a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
+<a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
+<a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">  </span><span class="s">&quot;Gracefully shutdown the server, waiting 100ms.</span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="s">   Check if an http server isntance exists and </span>
+<a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="s">   send a `:timeout` key and time in milliseconds to shutdown the server.</span>
+<a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="s">   Reset the atom to nil to indicate no http server is running.&quot;</span>
+<a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-18-29" name="__codelineno-18-29" href="#__codelineno-18-29"></a><span class="w">  </span><span class="p">(</span><span class="nb">when-not </span><span class="p">(</span><span class="nb">nil? </span><span class="o">@</span><span class="nv">http-server-instance</span><span class="p">)</span>
+<a id="__codelineno-18-30" name="__codelineno-18-30" href="#__codelineno-18-30"></a><span class="w">    </span><span class="p">(</span><span class="o">@</span><span class="nv">http-server-instance</span><span class="w"> </span><span class="ss">:timeout</span><span class="w"> </span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="c1">; (2)!</span>
+<a id="__codelineno-18-31" name="__codelineno-18-31" href="#__codelineno-18-31"></a><span class="w">    </span><span class="p">(</span><span class="nf">reset!</span><span class="w"> </span><span class="nv">http-server-instance</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="w">  </span><span class="c1">; (3)!</span>
+<a id="__codelineno-18-32" name="__codelineno-18-32" href="#__codelineno-18-32"></a><span class="w">    </span><span class="p">(</span><span class="nb">println </span><span class="s">&quot;INFO: HTTP server shutting down...&quot;</span><span class="p">)))</span>
+<a id="__codelineno-18-33" name="__codelineno-18-33" href="#__codelineno-18-33"></a>
+<a id="__codelineno-18-34" name="__codelineno-18-34" href="#__codelineno-18-34"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span>
+<a id="__codelineno-18-35" name="__codelineno-18-35" href="#__codelineno-18-35"></a><span class="w">  </span><span class="s">&quot;Start the application server and run the application,</span>
+<a id="__codelineno-18-36" name="__codelineno-18-36" href="#__codelineno-18-36"></a><span class="s">   saving a reference to the https server in the atom.&quot;</span>
+<a id="__codelineno-18-37" name="__codelineno-18-37" href="#__codelineno-18-37"></a><span class="w">  </span><span class="p">[</span><span class="o">&amp;</span><span class="w"> </span><span class="nv">port</span><span class="p">]</span>
+<a id="__codelineno-18-38" name="__codelineno-18-38" href="#__codelineno-18-38"></a><span class="w">  </span><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nv">port</span><span class="w"> </span><span class="p">(</span><span class="nf">Integer/parseInt</span>
+<a id="__codelineno-18-39" name="__codelineno-18-39" href="#__codelineno-18-39"></a><span class="w">              </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nb">first </span><span class="nv">port</span><span class="p">)</span>
+<a id="__codelineno-18-40" name="__codelineno-18-40" href="#__codelineno-18-40"></a><span class="w">                  </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;PORT&quot;</span><span class="p">)</span>
+<a id="__codelineno-18-41" name="__codelineno-18-41" href="#__codelineno-18-41"></a><span class="w">                  </span><span class="s">&quot;8080&quot;</span><span class="p">))]</span>
+<a id="__codelineno-18-42" name="__codelineno-18-42" href="#__codelineno-18-42"></a><span class="w">    </span><span class="p">(</span><span class="nb">println </span><span class="s">&quot;INFO: Starting server on port:&quot;</span><span class="w"> </span><span class="nv">port</span><span class="p">)</span>
+<a id="__codelineno-18-43" name="__codelineno-18-43" href="#__codelineno-18-43"></a>
+<a id="__codelineno-18-44" name="__codelineno-18-44" href="#__codelineno-18-44"></a><span class="w">    </span><span class="p">(</span><span class="nf">reset!</span><span class="w"> </span><span class="nv">http-server-instance</span>
+<a id="__codelineno-18-45" name="__codelineno-18-45" href="#__codelineno-18-45"></a><span class="w">            </span><span class="p">(</span><span class="nf">service/http-server-start</span><span class="w"> </span><span class="nv">port</span><span class="p">))))</span><span class="w"> </span><span class="c1">; (4)!</span>
+<a id="__codelineno-18-46" name="__codelineno-18-46" href="#__codelineno-18-46"></a>
+<a id="__codelineno-18-47" name="__codelineno-18-47" href="#__codelineno-18-47"></a>
+<a id="__codelineno-18-48" name="__codelineno-18-48" href="#__codelineno-18-48"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">restart</span>
+<a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a><span class="w">  </span><span class="s">&quot;Stop the http server, refresh changed namespace and start the http server again&quot;</span>
+<a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a><span class="w">  </span><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span><span class="w">  </span><span class="c1">; (5)! </span>
+<a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a><span class="w">  </span><span class="p">(</span><span class="nf">start</span><span class="p">))</span>
+<a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a><span class="c1">;; ---------------------------------------------------------</span>
+</code></pre></div>
+<ol>
+<li>
+<p>A Clojure Aton holds a reference to the http server instance</p>
+</li>
+<li>
+<p>Shut down http server instance without stopping the Clojure REPL</p>
+</li>
+<li>
+<p>Reset the value in the atom to mil, indicating that no http server instance is running</p>
+</li>
+<li>
+<p>Reset the value in the atom to a reference for the running http server.  The reference is returned when starting the http server.</p>
+</li>
+<li>
+<p>Refresh the REPL state and reload changed namespaces from source code using <code>clojure.tools.namespace.repl/refresh</code></p>
+</li>
+</ol>
+</div>
+</div>
 <div class="tabbed-block">
 <p>Define a <code>dev.clj</code> file with <code>go</code>, <code>stop</code> and <code>restart</code> functions that manage the life-cycle of mount components.  A <code>start</code> function contains the list of components with optional state.</p>
 <p>Require the mount namespace and the main namespace for the project, which should contain all the code to start and stop services.</p>
-<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">mount.core</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">defstate</span><span class="p">]]</span>
-<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">           </span><span class="p">[</span><span class="nv">practicalli.app.main</span><span class="p">])</span>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">user</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="ss">:require</span><span class="w"> </span><span class="p">[</span><span class="nv">mount.core</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">defstate</span><span class="p">]]</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">           </span><span class="p">[</span><span class="nv">practicalli.app.main</span><span class="p">])</span>
 </code></pre></div>
 <p>Define a start function to start all services</p>
-<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span><span class="w"> </span><span class="p">[]</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">with-logging-status</span><span class="p">)</span>
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">mount/start</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;practicalli.app.conf/environment</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.db/connection</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.www/business-app</span>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.service/nrepl</span><span class="p">))</span>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">with-logging-status</span><span class="p">)</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">mount/start</span><span class="w"> </span><span class="o">#</span><span class="ss">&#39;practicalli.app.conf/environment</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.db/connection</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.www/business-app</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="w">               </span><span class="o">#</span><span class="ss">&#39;practicalli.app.service/nrepl</span><span class="p">))</span>
 </code></pre></div>
 <p>The <code>go</code> function calls <code>start</code> and marks all components as ready.</p>
-<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">go</span>
-<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="s">&quot;Start all states defined by defstate&quot;</span>
-<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">  </span><span class="p">[]</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">start</span><span class="p">)</span>
-<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">  </span><span class="ss">:ready</span><span class="p">)</span>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">go</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="w">  </span><span class="s">&quot;Start all states defined by defstate&quot;</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">start</span><span class="p">)</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">  </span><span class="ss">:ready</span><span class="p">)</span>
 </code></pre></div>
 <p>The <code>stop</code> function stops all components, removing all non-persistent state.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nf">mount/stop</span><span class="p">))</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nf">mount/stop</span><span class="p">))</span>
 </code></pre></div>
 <p>The reset function that calls <code>stop</code>, refreshes the namespaces so that stale definitions are removed and starts all components (loading in any new code).</p>
-<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">reset</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">  </span><span class="s">&quot;Stop all states defined by defstate.</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="s">  Reload modified source files and restart all states&quot;</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">  </span><span class="p">[]</span>
-<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
-<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">namespace/refresh</span><span class="w"> </span><span class="ss">:after</span><span class="w"> </span><span class="ss">&#39;dev/go</span><span class="p">))</span>
+<div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">reset</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">  </span><span class="s">&quot;Stop all states defined by defstate.</span>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="s">  Reload modified source files and restart all states&quot;</span>
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">  </span><span class="p">[]</span>
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a><span class="w">  </span><span class="p">(</span><span class="nf">namespace/refresh</span><span class="w"> </span><span class="ss">:after</span><span class="w"> </span><span class="ss">&#39;dev/go</span><span class="p">))</span>
 </code></pre></div>
 <p><a class="md-button" href="https://github.com/tolitius/mount/blob/master/dev/clj/dev.clj" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span> Example dev.clj file for mount</a></p>
 <div class="admonition hint">
