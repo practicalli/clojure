@@ -22,22 +22,36 @@ permissions:
   contents: write
 
 jobs:
-  deploy:
+  publish-book:
+    name: MkDocs Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - run: echo "🚀 Job automatically triggered by ${{ github.event_name }}"
+      - run: echo "🐧 Job running on ${{ runner.os }} server"
+      - run: echo "🐙 Using ${{ github.ref }} branch from ${{ github.repository }} repository"
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
           sparse-checkout: |
             docs
             overrides
       - run: echo "🐙 ${{ github.repository }} repository sparse-checkout to the CI runner."
-      - uses: actions/setup-python@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - uses: actions/cache@v3
+
+      - name: Cache
+        uses: actions/cache@v3
         with:
           key: ${{ github.ref }}
           path: .cache
+
       - run: pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects pillow cairosvg
       - run: mkdocs gh-deploy --force
+
+      # Summary and status
+      - run: echo "🎨 MkDocs Publish Book workflow completed"
+      - run: echo "🍏 Job status is ${{ job.status }}."
