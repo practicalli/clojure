@@ -1,6 +1,9 @@
 # Changelog
 
 # Unreleased
+## Changed
+- dev: changelog-check checkout action v4 with sparse-checkout
+- dev: changelog-check remove paths-ignore
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
