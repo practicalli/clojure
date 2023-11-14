@@ -30,12 +30,14 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v4
         with:
+          token: "${{ secrets.PAT || secrets.GITHUB_TOKEN }}"
           fetch-depth: 0
           sparse-checkout: |
             docs
             overrides
             .github
       - run: echo "🐙 Sparse Checkout of ${{ github.repository }} repository to the CI runner."
+
       # MegaLinter Configuration
       - name: MegaLinter Run
         id: ml

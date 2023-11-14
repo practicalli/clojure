@@ -51,6 +51,7 @@ jobs:
 
       - run: pip install mkdocs-material mkdocs-callouts mkdocs-glightbox mkdocs-git-revision-date-localized-plugin mkdocs-redirects pillow cairosvg
       - run: mkdocs gh-deploy --force
+      - run: echo "🐙 ."
 
       # Summary and status
       - run: echo "🎨 MkDocs Publish Book workflow completed"
