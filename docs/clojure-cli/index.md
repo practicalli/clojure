@@ -109,6 +109,31 @@ Clojure CLI install has a built-in configuration:
 * `org.clojure/clojure` library dependency, setting the default version of Clojure for the Clojure CLI
 * `src` set as the default path
 
+??? INFO "Clojure CLI Install deps.edn"
+    The Clojure CLI install includes a `deps.edn` configuration, e.g. `/usr/local/lib/clojure/deps.edn`
+    ```clojure
+    {
+      :paths ["src"]
+     
+      :deps {
+        org.clojure/clojure {:mvn/version "1.11.1"}
+      }
+
+      :aliases {
+        :deps {:replace-paths []
+               :replace-deps {org.clojure/tools.deps.cli {:mvn/version "0.9.10"}}
+               :ns-default clojure.tools.deps.cli.api
+               :ns-aliases {help clojure.tools.deps.cli.help}}
+        :test {:extra-paths ["test"]}
+      }
+
+      :mvn/repos {
+        "central" {:url "https://repo1.maven.org/maven2/"}
+        "clojars" {:url "https://repo.clojars.org/"}
+      }
+    }
+    ```
+
 ??? INFO "Check version of Clojure"
     Evaluate `*clojure-version*` in a REPL shows which version of the Clojure language is currently being used.
 
