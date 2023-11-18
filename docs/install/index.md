@@ -10,7 +10,7 @@ Clojure CLI provide the foundation for Clojure development, providing a declarat
 
 [Practicalli Clojure CLI config](clojure-cli/#practicalli-clojure-cli-config) provides a user configuration that extends Clojure CLI with tasks to create, develop, build and deploy Clojure applications and services. Configuration for cljstyle Clojure format tool is also included.
 
-[Clojure aware editors](/clojure-editors/) provide the most effective way to write and maintain Clojure projects, connecting to (or even starting) a Clojure REPL and evaluating code as its typed and seeing the results instantly in line with the code.
+[Clojure aware editors](/clojure/clojure-editors/) provide the most effective way to write and maintain Clojure projects, connecting to (or even starting) a Clojure REPL and evaluating code as its typed and seeing the results instantly in line with the code.
 
 [Practicalli Clojure LSP configuration](/clojure/clojure-editors/clojure-lsp/) for static code analysis with Clojure LSP server and live code formatting with cljfmt. 
 
