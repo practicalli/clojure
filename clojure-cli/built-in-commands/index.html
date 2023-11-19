@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.9">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.10">
     
     
       
@@ -38,7 +38,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.78cf6014.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.fad675c6.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.356b1318.min.css">
@@ -8088,6 +8088,10 @@
 <td style="text-align: left;">Prepare all unprepped libs in the dep tree</td>
 </tr>
 <tr>
+<td style="text-align: left;"><code>clojure -X:deps mvn-pom</code></td>
+<td style="text-align: left;">Generate or update pom.xml with deps and paths</td>
+</tr>
+<tr>
 <td style="text-align: left;"><code>clojure -X:deps mvn-install :jar '"/path/to.jar"'</code></td>
 <td style="text-align: left;">install a given jar file into the local maven repository, eg. <code>~/.m2/repository</code></td>
 </tr>
@@ -8103,12 +8107,145 @@
 <p>Show the full dependencies for the project</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list
 </code></pre></div>
-<p>Show the full dependencies for the project and the <code>:dev/reloaded</code> alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>clojure<span class="w"> </span>-X:dev/reloaded:deps<span class="w"> </span>list
+<details class="example">
+<summary>Dependency list from Practicalli Service project template</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="w"> </span>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>aero/aero<span class="w"> </span><span class="m">1</span>.1.6<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>amalloy/ring-buffer<span class="w"> </span><span class="m">1</span>.3.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>aysylu/loom<span class="w"> </span><span class="m">1</span>.0.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>borkdude/dynaload<span class="w"> </span><span class="m">0</span>.2.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>borkdude/edamame<span class="w"> </span><span class="m">0</span>.0.18<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>com.bhauman/spell-spec<span class="w"> </span><span class="m">0</span>.1.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>com.brunobonacci/mulog<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>com.brunobonacci/mulog-adv-console<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>com.brunobonacci/mulog-json<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>com.cnuernber/charred<span class="w"> </span><span class="m">1</span>.010<span class="w"> </span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>com.cognitect/transit-clj<span class="w"> </span><span class="m">1</span>.0.324<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>com.cognitect/transit-java<span class="w"> </span><span class="m">1</span>.0.343<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>com.fasterxml.jackson.core/jackson-annotations<span class="w"> </span><span class="m">2</span>.12.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>com.fasterxml.jackson.core/jackson-core<span class="w"> </span><span class="m">2</span>.12.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>com.fasterxml.jackson.core/jackson-databind<span class="w"> </span><span class="m">2</span>.12.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>com.fasterxml.jackson.datatype/jackson-datatype-jsr310<span class="w"> </span><span class="m">2</span>.12.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>com.google.javascript/closure-compiler<span class="w"> </span>v20151015<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>com.googlecode.json-simple/json-simple<span class="w"> </span><span class="m">1</span>.1.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>commons-codec/commons-codec<span class="w"> </span><span class="m">1</span>.15<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>commons-fileupload/commons-fileupload<span class="w"> </span><span class="m">1</span>.4<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>commons-io/commons-io<span class="w"> </span><span class="m">2</span>.6<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>crypto-equality/crypto-equality<span class="w"> </span><span class="m">1</span>.0.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>crypto-random/crypto-random<span class="w"> </span><span class="m">1</span>.2.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>expound/expound<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>fipp/fipp<span class="w"> </span><span class="m">0</span>.6.25<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>http-kit/http-kit<span class="w"> </span><span class="m">2</span>.6.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>javax.xml.bind/jaxb-api<span class="w"> </span><span class="m">2</span>.3.0<span class="w">  </span><span class="o">(</span>CDDL<span class="w"> </span><span class="m">1</span>.1<span class="o">)</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>lambdaisland/deep-diff<span class="w"> </span><span class="m">0</span>.0-47<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>meta-merge/meta-merge<span class="w"> </span><span class="m">1</span>.0.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>metosin/jsonista<span class="w"> </span><span class="m">0</span>.3.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>metosin/malli<span class="w"> </span><span class="m">0</span>.7.5<span class="w">  </span><span class="o">(</span>EPL-2.0<span class="o">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>metosin/muuntaja<span class="w"> </span><span class="m">0</span>.6.8<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>metosin/reitit<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>metosin/reitit-core<span class="w"> </span><span class="m">0</span>.5.18<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>metosin/reitit-dev<span class="w"> </span><span class="m">0</span>.5.18<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>metosin/reitit-frontend<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>metosin/reitit-http<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>metosin/reitit-interceptors<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>metosin/reitit-malli<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>metosin/reitit-middleware<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>metosin/reitit-ring<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>metosin/reitit-schema<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>metosin/reitit-sieppari<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>metosin/reitit-spec<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>metosin/reitit-swagger<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>metosin/reitit-swagger-ui<span class="w"> </span><span class="m">0</span>.5.13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>metosin/ring-swagger-ui<span class="w"> </span><span class="m">3</span>.36.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>metosin/schema-tools<span class="w"> </span><span class="m">0</span>.12.3<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>metosin/sieppari<span class="w"> </span><span class="m">0</span>.0.0-alpha13<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>metosin/spec-tools<span class="w"> </span><span class="m">0</span>.10.5<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>mvxcvi/arrangement<span class="w"> </span><span class="m">2</span>.0.0<span class="w">  </span><span class="o">(</span>Public<span class="w"> </span>Domain<span class="o">)</span>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>mvxcvi/puget<span class="w"> </span><span class="m">1</span>.1.2<span class="w">  </span><span class="o">(</span>Public<span class="w"> </span>Domain<span class="o">)</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a>org.clojure/clojurescript<span class="w"> </span><span class="m">1</span>.7.170<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>org.clojure/core.rrb-vector<span class="w"> </span><span class="m">0</span>.0.14<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>org.clojure/data.json<span class="w"> </span><span class="m">0</span>.2.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>org.clojure/data.priority-map<span class="w"> </span><span class="m">0</span>.0.5<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a>org.clojure/google-closure-library<span class="w"> </span><span class="m">0</span>.0-20151016-61277aea<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a>org.clojure/google-closure-library-third-party<span class="w"> </span><span class="m">0</span>.0-20151016-61277aea<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a>org.clojure/java.classpath<span class="w"> </span><span class="m">1</span>.0.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>org.clojure/test.check<span class="w"> </span><span class="m">1</span>.1.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>org.clojure/tools.namespace<span class="w"> </span><span class="m">1</span>.3.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>org.clojure/tools.reader<span class="w"> </span><span class="m">1</span>.3.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>org.javassist/javassist<span class="w"> </span><span class="m">3</span>.18.1-GA<span class="w">  </span><span class="o">(</span>MPL<span class="w"> </span><span class="m">1</span>.1<span class="o">)</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>org.mozilla/rhino<span class="w"> </span><span class="m">1</span>.7R5<span class="w">  </span><span class="o">(</span>Mozilla<span class="w"> </span>Public<span class="w"> </span>License,<span class="w"> </span>Version<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>org.msgpack/msgpack<span class="w"> </span><span class="m">0</span>.6.12<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>party.donut/system<span class="w"> </span><span class="m">0</span>.0.202<span class="w"> </span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>prismatic/schema<span class="w"> </span><span class="m">1</span>.1.12<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>ring/ring-codec<span class="w"> </span><span class="m">1</span>.1.3<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>ring/ring-core<span class="w"> </span><span class="m">1</span>.9.1<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>tailrecursion/cljs-priority-map<span class="w"> </span><span class="m">1</span>.2.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>tech.droit/clj-diff<span class="w"> </span><span class="m">1</span>.0.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
 </code></pre></div>
+</details>
+<p>Show the dependencies for a project or user alias, useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list<span class="w"> </span>:aliases<span class="w"> </span><span class="s1">&#39;[:dev/reloaded]&#39;</span>
+</code></pre></div>
+<details class="example">
+<summary>Dependency list from Practicalli :dev/reloaded alias</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list<span class="w"> </span>:aliases<span class="w"> </span><span class="s1">&#39;[:dev/reloaded]&#39;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>aero/aero<span class="w"> </span><span class="m">1</span>.1.6<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>amalloy/ring-buffer<span class="w"> </span><span class="m">1</span>.3.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>clj-commons/clj-yaml<span class="w"> </span><span class="m">1</span>.0.27<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>com.brunobonacci/mulog<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>com.cognitect/transit-clj<span class="w"> </span><span class="m">1</span>.0.333<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>com.cognitect/transit-cljs<span class="w"> </span><span class="m">0</span>.8.280<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>com.cognitect/transit-java<span class="w"> </span><span class="m">1</span>.0.371<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>com.cognitect/transit-js<span class="w"> </span><span class="m">0</span>.8.874<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>com.fasterxml.jackson.core/jackson-core<span class="w"> </span><span class="m">2</span>.14.2<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>com.google.code.gson/gson<span class="w"> </span><span class="m">2</span>.10.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>com.googlecode.json-simple/json-simple<span class="w"> </span><span class="m">1</span>.1.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>com.nextjournal/beholder<span class="w"> </span><span class="m">1</span>.0.2<span class="w"> </span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>criterium/criterium<span class="w"> </span><span class="m">0</span>.4.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>djblue/portal<span class="w"> </span><span class="m">0</span>.49.0<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>expound/expound<span class="w"> </span><span class="m">0</span>.9.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>fipp/fipp<span class="w"> </span><span class="m">0</span>.6.26<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>hawk/hawk<span class="w"> </span><span class="m">0</span>.2.11<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>http-kit/http-kit<span class="w"> </span><span class="m">2</span>.7.0<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20" href="#__codelineno-3-20"></a>io.methvin/directory-watcher<span class="w"> </span><span class="m">0</span>.17.3<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21" href="#__codelineno-3-21"></a>javax.activation/javax.activation-api<span class="w"> </span><span class="m">1</span>.2.0<span class="w">  </span><span class="o">(</span>CDDL/GPLv2+CE<span class="o">)</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22" href="#__codelineno-3-22"></a>javax.xml.bind/jaxb-api<span class="w"> </span><span class="m">2</span>.4.0-b180830.0359<span class="w">  </span><span class="o">(</span>CDDL<span class="w"> </span><span class="m">1</span>.1<span class="o">)</span>
+<a id="__codelineno-3-23" name="__codelineno-3-23" href="#__codelineno-3-23"></a>lambdaisland/clj-diff<span class="w"> </span><span class="m">1</span>.4.78<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-24" name="__codelineno-3-24" href="#__codelineno-3-24"></a>lambdaisland/deep-diff2<span class="w"> </span><span class="m">2</span>.10.211<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-25" name="__codelineno-3-25" href="#__codelineno-3-25"></a>lambdaisland/kaocha<span class="w"> </span><span class="m">1</span>.87.1366<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-26" name="__codelineno-3-26" href="#__codelineno-3-26"></a>lambdaisland/tools.namespace<span class="w"> </span><span class="m">0</span>.3.256<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-27" name="__codelineno-3-27" href="#__codelineno-3-27"></a>meta-merge/meta-merge<span class="w"> </span><span class="m">1</span>.0.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-28" name="__codelineno-3-28" href="#__codelineno-3-28"></a>mvxcvi/arrangement<span class="w"> </span><span class="m">2</span>.1.0<span class="w">  </span><span class="o">(</span>Public<span class="w"> </span>Domain<span class="o">)</span>
+<a id="__codelineno-3-29" name="__codelineno-3-29" href="#__codelineno-3-29"></a>net.incongru.watchservice/barbary-watchservice<span class="w"> </span><span class="m">1</span>.0<span class="w">  </span><span class="o">(</span>GPLv2<span class="w"> </span>+<span class="w"> </span>Classpath<span class="w"> </span>Exception<span class="o">)</span>
+<a id="__codelineno-3-30" name="__codelineno-3-30" href="#__codelineno-3-30"></a>net.java.dev.jna/jna<span class="w"> </span><span class="m">5</span>.12.1<span class="w">  </span><span class="o">(</span>LGPL-2.1-or-later<span class="o">)</span>
+<a id="__codelineno-3-31" name="__codelineno-3-31" href="#__codelineno-3-31"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-32" name="__codelineno-3-32" href="#__codelineno-3-32"></a>org.clojure/core.rrb-vector<span class="w"> </span><span class="m">0</span>.1.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-33" name="__codelineno-3-33" href="#__codelineno-3-33"></a>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-34" name="__codelineno-3-34" href="#__codelineno-3-34"></a>org.clojure/data.json<span class="w"> </span><span class="m">2</span>.4.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-35" name="__codelineno-3-35" href="#__codelineno-3-35"></a>org.clojure/java.classpath<span class="w"> </span><span class="m">1</span>.0.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-36" name="__codelineno-3-36" href="#__codelineno-3-36"></a>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-37" name="__codelineno-3-37" href="#__codelineno-3-37"></a>org.clojure/test.check<span class="w"> </span><span class="m">1</span>.1.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-38" name="__codelineno-3-38" href="#__codelineno-3-38"></a>org.clojure/tools.cli<span class="w"> </span><span class="m">1</span>.0.219<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-39" name="__codelineno-3-39" href="#__codelineno-3-39"></a>org.clojure/tools.namespace<span class="w"> </span><span class="m">1</span>.4.4<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-40" name="__codelineno-3-40" href="#__codelineno-3-40"></a>org.clojure/tools.reader<span class="w"> </span><span class="m">1</span>.3.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-41" name="__codelineno-3-41" href="#__codelineno-3-41"></a>org.clojure/tools.trace<span class="w"> </span><span class="m">0</span>.7.11<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-42" name="__codelineno-3-42" href="#__codelineno-3-42"></a>org.flatland/ordered<span class="w"> </span><span class="m">1</span>.15.11<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-43" name="__codelineno-3-43" href="#__codelineno-3-43"></a>org.javassist/javassist<span class="w"> </span><span class="m">3</span>.18.1-GA<span class="w">  </span><span class="o">(</span>MPL<span class="w"> </span><span class="m">1</span>.1<span class="o">)</span>
+<a id="__codelineno-3-44" name="__codelineno-3-44" href="#__codelineno-3-44"></a>org.msgpack/msgpack<span class="w"> </span><span class="m">0</span>.6.12<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-45" name="__codelineno-3-45" href="#__codelineno-3-45"></a>org.slf4j/slf4j-api<span class="w"> </span><span class="m">2</span>.0.9<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-3-46" name="__codelineno-3-46" href="#__codelineno-3-46"></a>org.slf4j/slf4j-nop<span class="w"> </span><span class="m">2</span>.0.9<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-3-47" name="__codelineno-3-47" href="#__codelineno-3-47"></a>org.tcrawley/dynapath<span class="w"> </span><span class="m">1</span>.1.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-48" name="__codelineno-3-48" href="#__codelineno-3-48"></a>org.yaml/snakeyaml<span class="w"> </span><span class="m">2</span>.1<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-3-49" name="__codelineno-3-49" href="#__codelineno-3-49"></a>progrock/progrock<span class="w"> </span><span class="m">0</span>.1.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>slingshot/slingshot<span class="w"> </span><span class="m">0</span>.12.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+</code></pre></div>
+</details>
 <h2 id="dependency-tree">Dependency tree<a class="headerlink" href="#dependency-tree" title="Permanent link">λ︎</a></h2>
 <p>Run the <code>:deps tree</code> command in the root of a Clojure project to see all the dependencies</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
 </code></pre></div>
 <blockquote>
 <p>Libraries to satisfy the dependencies are downloaded if they are not in the local Maven cache, i.e. <code>$HOME/.m2/repository</code>, so the command may take a little time.</p>
@@ -8118,43 +8255,43 @@
 <p><code>clojure -P</code> is the recommended way to download libraries, which can also be used with aliases, e.g. <code>clojure -P -M:dev/reloaded:project/build</code></p>
 </div>
 <p>Show the full dependencies for the project and the <code>:dev/reloaded</code> alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>clojure<span class="w"> </span>-X:dev/reloaded:deps<span class="w"> </span>tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:dev/reloaded:deps<span class="w"> </span>tree
 </code></pre></div>
 <p>If run outside of a Clojure CLI project, then the user configuration and Clojure CLI install dependencies are shown (could be useful if there are development tool issues from the user configuration aliases used)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62
 </code></pre></div>
 <h2 id="local-library-install">Local library install<a class="headerlink" href="#local-library-install" title="Permanent link">λ︎</a></h2>
 <p>Add a jar file for a library to the local Maven repository, e.g. <code>~/.m2/repository</code>, making that library accessible to all other local projects.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>mvn-install<span class="w"> </span>:jar<span class="w"> </span><span class="s1">&#39;&quot;/path/to.jar&quot;&#39;</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>mvn-install<span class="w"> </span>:jar<span class="w"> </span><span class="s1">&#39;&quot;/path/to.jar&quot;&#39;</span><span class="sb">`</span>
 </code></pre></div>
 <h2 id="find-library-versions">Find Library Versions<a class="headerlink" href="#find-library-versions" title="Permanent link">λ︎</a></h2>
 <p>Find the available versions of a given library in the form domain/library-name (domain is typically the company name or Git Service user or organisation name).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span>
 </code></pre></div>
 <h2 id="prepare-source-dependencies">Prepare Source dependencies<a class="headerlink" href="#prepare-source-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Some dependencies will require a preparation step before they can be used on the classpath.</p>
 <p>Projects that require preparation would have a configuration of the form:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">]</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w"> </span><span class="ss">:deps/prep-lib</span><span class="w"> </span><span class="p">{</span><span class="ss">:alias</span><span class="w"> </span><span class="ss">:build</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">                 </span><span class="ss">:fn</span><span class="w"> </span><span class="nv">compile</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">                 </span><span class="ss">:ensure</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">]</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w"> </span><span class="ss">:deps/prep-lib</span><span class="w"> </span><span class="p">{</span><span class="ss">:alias</span><span class="w"> </span><span class="ss">:build</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">                 </span><span class="ss">:fn</span><span class="w"> </span><span class="nv">compile</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">                 </span><span class="ss">:ensure</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">}}</span>
 </code></pre></div>
 <p>Including the top-level key <code>:deps/prep-lib</code> tells the tools.deps classpath construction that something extra is needed to prepare this lib and that can be performed by invoking the compile function in the :build alias. Once the prepare step has been done, it should create the path "target/classes" and that can be checked for completion.</p>
 <p>Add a library dependency as with any other library (git or local/root):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}}}</span>
 </code></pre></div>
 <p><code>:deps prep</code> will built the library of any dependency that requires it</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
 </code></pre></div>
 <h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
 <!-- TODO: Clojure CLI resolve Git tags examples -->
 
 <p><code>-X:deps git-resolve-tags</code> updates git based dependencies in the project <code>deps.edn</code> file which use :git/tags key to the equivalent SHA commit values in the <code>:git/sha</code> key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
 </code></pre></div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <p><a class="md-button" href="https://clojure.org/reference/deps_and_cli" target="_blank">tools.deps and cli guide</a>
@@ -8167,7 +8304,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 27, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2023</span>
       
     
   </small>
