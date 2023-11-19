@@ -8103,8 +8103,9 @@
 </table>
 <p><a class="md-button" href="https://clojure.github.io/tools.deps.alpha/" target="_blank">tools.deps.alpha API Reference</a></p>
 <h2 id="list-full-dependencies">List full dependencies<a class="headerlink" href="#list-full-dependencies" title="Permanent link">λ︎</a></h2>
-<p>Report on the depenencies of a project and any included aliases, including the transitive dependencies (dependencies of dependencies).</p>
-<p>Show the full dependencies for the project</p>
+<p>List the library depenencies of a project, including the library version and software licence for each library.</p>
+<p>The list includes the transitive dependencies, library dependencies of the project library dependencies.</p>
+<p>The <code>aliases</code> argument will also list library dependencies from a given alias, either project alias or user alias. </p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list
 </code></pre></div>
 <details class="example">
