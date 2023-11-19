@@ -5,6 +5,7 @@
 - dev: changelog-check checkout action v4 with sparse-checkout
 - dev: changelog-check remove paths-ignore
 - clojure-cli: install deps.edn configuration
+- clojure-cli: `clojure -X:deps tree` examples
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions

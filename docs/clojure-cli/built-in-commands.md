@@ -1,6 +1,6 @@
 # Clojure CLI Built-in commands
 
-`clojure` without any other arguments will run a REPL with a basic terminal prompt.  `clj` is a wrapper for the `clojure` command that uses `rlwrap` to add command history to the basic REPL prompt.
+`clojure` without any other arguments will run a REPL with a basic terminal prompt.  `clj` is a wrapper script for the `clojure` command (`rlwrap` required) to add command history to the basic REPL prompt.
 
 `clojure -T:deps` to run one of several built-in commands to help work with Clojure CLI projects and libraries.  `clojure --help` list the available commands.
 
@@ -19,13 +19,26 @@
 [tools.deps.alpha API Reference](https://clojure.github.io/tools.deps.alpha/){target=_blank .md-button}
 
 
-## List full dependencies
+> Libraries are downloaded if they are not in the local Maven cache, e.g. `$HOME/.m2/repository`, so the command may take a little time.
 
-List the library depenencies of a project, including the library version and software licence for each library.
 
-The list includes the transitive dependencies, library dependencies of the project library dependencies.
+??? HINT "Use Clojure CLI -P flag to download libraries"
+    `clojure -P` is the recommended way to download library dependencies as it does not run any other commands
 
-The `aliases` argument will also list library dependencies from a given alias, either project alias or user alias. 
+    The `-P` flag can be used with aliases to download libraries for building and testing a Clojure project, especially useful for a cached environment like Docker.
+
+    ```shell
+    clojure -P -M:dev/reloaded:project/build
+    ```
+
+
+## List Library dependencies
+
+List library depenencies of a project, including the library version and software licence for each library.
+
+The list includes transitive dependencies, library dependencies of the project library dependencies.
+
+The `:aliases '[:alias/name(s)]'` argument will also list library dependencies from a given alias, either project alias or user alias. 
 
 ```shell
 clojure -X:deps list
@@ -110,7 +123,7 @@ clojure -X:deps list
     tech.droit/clj-diff 1.0.1  (EPL-1.0)
     ```
 
-Use the `:aliases` option to also include the dependencies from a project or user alias.  Showing the dependencies from an aliase can useful to identify conflicting dependencies when using an alias (unlikely but it could happen).
+Use the `:aliases '[:alias/name(s)]'` option to also include the dependencies from a project or user alias.  Showing the dependencies from an aliase can useful to identify conflicting dependencies when using an alias (unlikely but it could happen).
 
 ```shell
 clojure -X:deps list :aliases '[:dev/reloaded]'
@@ -203,33 +216,177 @@ The `:aliases` option can be used to inspect the dependencies of a user alias, l
 
 ## Dependency tree
 
-Run the `:deps tree` command in the root of a Clojure project to see all the dependencies
+Show a tree hieracthy of project library dependencies, including the library name and version used.
+
+The tree includes transitive dependencies, library dependencies of the project library dependencies.
+
+The `:aliases '[:alias/name(s)]'` argument will also list library dependencies from a given alias, either project alias or user alias. 
 
 ```shell
 clojure -X:deps tree
 ```
 
-> Libraries to satisfy the dependencies are downloaded if they are not in the local Maven cache, i.e. `$HOME/.m2/repository`, so the command may take a little time.
+??? EXAMPLE "Dependency list from Practicalli Service project template"
+    ```shell
+    ❯ clojure -X:deps tree
+    org.clojure/clojure 1.11.1
+      . org.clojure/spec.alpha 0.3.218
+      . org.clojure/core.specs.alpha 0.2.62
+    http-kit/http-kit 2.6.0
+    metosin/reitit 0.5.13
+      X metosin/reitit-core 0.5.13 :superseded
+        X meta-merge/meta-merge 1.0.0 :parent-omitted
+      X metosin/reitit-dev 0.5.13 :use-top
+      . metosin/reitit-spec 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        . metosin/spec-tools 0.10.5
+          X org.clojure/spec.alpha 0.2.187 :older-version
+      . metosin/reitit-malli 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        X metosin/malli 0.3.0 :older-version
+      . metosin/reitit-schema 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        . metosin/schema-tools 0.12.3
+          . prismatic/schema 1.1.12
+      . metosin/reitit-ring 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        . ring/ring-core 1.9.1
+          . ring/ring-codec 1.1.3
+            . commons-codec/commons-codec 1.15
+          . commons-io/commons-io 2.6
+          . commons-fileupload/commons-fileupload 1.4
+            X commons-io/commons-io 2.2 :older-version
+          . crypto-random/crypto-random 1.2.0
+            X commons-codec/commons-codec 1.6 :older-version
+          . crypto-equality/crypto-equality 1.0.0
+      . metosin/reitit-middleware 0.5.13
+        . metosin/reitit-ring 0.5.13
+        . lambdaisland/deep-diff 0.0-47
+          . mvxcvi/puget 1.1.2
+            X mvxcvi/arrangement 1.2.0 :older-version
+            X fipp/fipp 0.6.17 :older-version
+          X fipp/fipp 0.6.17 :older-version
+          . org.clojure/core.rrb-vector 0.0.14
+          . tech.droit/clj-diff 1.0.1
+          X mvxcvi/arrangement 1.2.0 :older-version
+        . metosin/muuntaja 0.6.8
+          . metosin/jsonista 0.3.1
+          . com.cognitect/transit-clj 1.0.324
+            . com.cognitect/transit-java 1.0.343
+              X com.fasterxml.jackson.core/jackson-core 2.8.7 :older-version
+              . org.msgpack/msgpack 0.6.12
+                . com.googlecode.json-simple/json-simple 1.1.1
+                . org.javassist/javassist 3.18.1-GA
+              X commons-codec/commons-codec 1.10 :older-version
+              . javax.xml.bind/jaxb-api 2.3.0
+        . metosin/spec-tools 0.10.5
+      . metosin/reitit-http 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        . metosin/reitit-ring 0.5.13
+      . metosin/reitit-interceptors 0.5.13
+        . metosin/reitit-ring 0.5.13
+        . lambdaisland/deep-diff 0.0-47
+        . metosin/muuntaja 0.6.8
+      . metosin/reitit-swagger 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+      . metosin/reitit-swagger-ui 0.5.13
+        . metosin/reitit-ring 0.5.13
+        . metosin/jsonista 0.3.1
+          X com.fasterxml.jackson.core/jackson-core 2.12.0 :older-version
+          X com.fasterxml.jackson.core/jackson-databind 2.12.0 :older-version
+          . com.fasterxml.jackson.datatype/jackson-datatype-jsr310 2.12.0
+            X com.fasterxml.jackson.core/jackson-annotations 2.12.0 :older-version
+            X com.fasterxml.jackson.core/jackson-core 2.12.0 :older-version
+            X com.fasterxml.jackson.core/jackson-databind 2.12.0 :older-version
+        . metosin/ring-swagger-ui 3.36.0
+      . metosin/reitit-frontend 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+      . metosin/reitit-sieppari 0.5.13
+        X metosin/reitit-core 0.5.13 :older-version
+        . metosin/sieppari 0.0.0-alpha13
+      . com.fasterxml.jackson.core/jackson-core 2.12.1
+      . com.fasterxml.jackson.core/jackson-databind 2.12.1
+        . com.fasterxml.jackson.core/jackson-annotations 2.12.1
+        . com.fasterxml.jackson.core/jackson-core 2.12.1
+    metosin/reitit-dev 0.5.18
+      . metosin/reitit-core 0.5.18 :newer-version
+        . meta-merge/meta-merge 1.0.0
+      . com.bhauman/spell-spec 0.1.2
+      . expound/expound 0.9.0
+      . fipp/fipp 0.6.25
+    com.brunobonacci/mulog 0.9.0
+      . amalloy/ring-buffer 1.3.1
+    com.brunobonacci/mulog-adv-console 0.9.0
+      X com.brunobonacci/mulog 0.9.0 :use-top
+      . com.brunobonacci/mulog-json 0.9.0
+        X com.brunobonacci/mulog 0.9.0 :use-top
+        . com.cnuernber/charred 1.010
+    aero/aero 1.1.6
+    party.donut/system 0.0.202
+      . aysylu/loom 1.0.2
+        . org.clojure/data.priority-map 0.0.5
+        . tailrecursion/cljs-priority-map 1.2.1
+          . org.clojure/clojurescript 1.7.170
+            . com.google.javascript/closure-compiler v20151015
+            . org.clojure/google-closure-library 0.0-20151016-61277aea
+              . org.clojure/google-closure-library-third-party 0.0-20151016-61277aea
+            . org.clojure/data.json 0.2.6
+            . org.mozilla/rhino 1.7R5
+            X org.clojure/tools.reader 0.10.0-alpha3 :older-version
+      . org.clojure/tools.namespace 1.3.0
+        . org.clojure/java.classpath 1.0.0
+        . org.clojure/tools.reader 1.3.6
+      . metosin/malli 0.7.5
+        . borkdude/dynaload 0.2.2
+        . borkdude/edamame 0.0.18
+          X org.clojure/tools.reader 1.3.4 :older-version
+        . org.clojure/test.check 1.1.1
+        X fipp/fipp 0.6.24 :older-version
+        . mvxcvi/arrangement 2.0.0
+    ```
 
 
-!!! HINT "Use Clojure CLI -P flag to download libraries"
-    `clojure -P` is the recommended way to download libraries, which can also be used with aliases, e.g. `clojure -P -M:dev/reloaded:project/build`
-
-
-Show the full dependencies for the project and the `:dev/reloaded` alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).
+Use the `:aliases` option with the Clojure CLI in the root of a project to show library dependencies for the project and the `:dev/reloaded` alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).
 
 ```shell
-clojure -X:dev/reloaded:deps tree
+clojure -X:deps tree :aliases '[:dev/reloaded]'
 ```
 
-If run outside of a Clojure CLI project, then the user configuration and Clojure CLI install dependencies are shown (could be useful if there are development tool issues from the user configuration aliases used)
+The `:aliases` option can be used to inspect the dependencies of a user alias, listing only dependencies from the specified aliases when run outside of a Clojure project.
 
-```shell
-❯ clojure -X:deps tree
-org.clojure/clojure 1.11.1
-  . org.clojure/spec.alpha 0.3.218
-  . org.clojure/core.specs.alpha 0.2.62
-```
+??? EXAMPLE "Dependency list from Practicalli :repl/rebel alias only"
+    ```shell
+     ❯ clojure -X:deps tree :aliases '[:repl/rebel]'
+    org.clojure/clojure 1.11.1
+      . org.clojure/spec.alpha 0.3.218
+      . org.clojure/core.specs.alpha 0.2.62
+    nrepl/nrepl 1.1.0
+    cider/cider-nrepl 0.42.1
+      X nrepl/nrepl 1.0.0 :use-top
+      . cider/orchard 0.18.0
+      . mx.cider/logjam 0.1.1
+    com.bhauman/rebel-readline 0.1.4
+      . org.jline/jline-reader 3.5.1
+        . org.jline/jline-terminal 3.5.1
+      . org.jline/jline-terminal 3.5.1
+      . org.jline/jline-terminal-jansi 3.5.1
+        . org.fusesource.jansi/jansi 1.16
+        . org.jline/jline-terminal 3.5.1
+      . cljfmt/cljfmt 0.5.7
+        . org.clojure/tools.reader 1.0.0-alpha4
+        . rewrite-clj/rewrite-clj 0.5.2
+          X org.clojure/tools.reader 0.10.0 :older-version
+        . rewrite-cljs/rewrite-cljs 0.4.3
+          . org.clojure/clojurescript 1.7.228
+            . com.google.javascript/closure-compiler v20151216
+            . org.clojure/google-closure-library 0.0-20151016-61277aea
+              . org.clojure/google-closure-library-third-party 0.0-20151016-61277aea
+            . org.clojure/data.json 0.2.6
+            . org.mozilla/rhino 1.7R5
+            X org.clojure/tools.reader 1.0.0-alpha1 :older-version
+          X org.clojure/tools.reader 1.0.0-alpha3 :older-version
+      . compliment/compliment 0.3.6
+    ```
 
 
 ## Local library install
