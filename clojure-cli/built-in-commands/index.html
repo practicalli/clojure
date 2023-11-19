@@ -8186,11 +8186,11 @@
 <a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>tech.droit/clj-diff<span class="w"> </span><span class="m">1</span>.0.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
 </code></pre></div>
 </details>
-<p>Show the dependencies for a project or user alias, useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
+<p>Use the <code>:aliases</code> option to also include the dependencies from a project or user alias.  Showing the dependencies from an aliase can useful to identify conflicting dependencies when using an alias (unlikely but it could happen).</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list<span class="w"> </span>:aliases<span class="w"> </span><span class="s1">&#39;[:dev/reloaded]&#39;</span>
 </code></pre></div>
 <details class="example">
-<summary>Dependency list from Practicalli :dev/reloaded alias</summary>
+<summary>Dependency list from project and Practicalli :dev/reloaded alias</summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list<span class="w"> </span>:aliases<span class="w"> </span><span class="s1">&#39;[:dev/reloaded]&#39;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>aero/aero<span class="w"> </span><span class="m">1</span>.1.6<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>amalloy/ring-buffer<span class="w"> </span><span class="m">1</span>.3.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
@@ -8243,9 +8243,38 @@
 <a id="__codelineno-3-50" name="__codelineno-3-50" href="#__codelineno-3-50"></a>slingshot/slingshot<span class="w"> </span><span class="m">0</span>.12.2<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
 </code></pre></div>
 </details>
+<p>The <code>:aliases</code> option can be used to inspect the dependencies of a user alias, listing only dependencies from the specified aliases when run outside of a Clojure project.</p>
+<details class="example">
+<summary>Dependency list from Practicalli :repl/rebel alias only</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>list<span class="w"> </span>:aliases<span class="w"> </span><span class="s1">&#39;[:repl/rebel]&#39;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>cider/cider-nrepl<span class="w"> </span><span class="m">0</span>.42.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>cider/orchard<span class="w"> </span><span class="m">0</span>.18.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>cljfmt/cljfmt<span class="w"> </span><span class="m">0</span>.5.7<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>com.bhauman/rebel-readline<span class="w"> </span><span class="m">0</span>.1.4<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>com.google.javascript/closure-compiler<span class="w"> </span>v20151216<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>compliment/compliment<span class="w"> </span><span class="m">0</span>.3.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>mx.cider/logjam<span class="w"> </span><span class="m">0</span>.1.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>nrepl/nrepl<span class="w"> </span><span class="m">1</span>.1.0<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>org.clojure/clojurescript<span class="w"> </span><span class="m">1</span>.7.228<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>org.clojure/data.json<span class="w"> </span><span class="m">0</span>.2.6<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>org.clojure/google-closure-library<span class="w"> </span><span class="m">0</span>.0-20151016-61277aea<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>org.clojure/google-closure-library-third-party<span class="w"> </span><span class="m">0</span>.0-20151016-61277aea<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>org.clojure/tools.reader<span class="w"> </span><span class="m">1</span>.0.0-alpha4<span class="w">  </span><span class="o">(</span>EPL-1.0<span class="o">)</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>org.fusesource.jansi/jansi<span class="w"> </span><span class="m">1</span>.16<span class="w">  </span><span class="o">(</span>Apache-2.0<span class="o">)</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>org.jline/jline-reader<span class="w"> </span><span class="m">3</span>.5.1<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>BSD<span class="w"> </span>License<span class="o">)</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>org.jline/jline-terminal<span class="w"> </span><span class="m">3</span>.5.1<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>BSD<span class="w"> </span>License<span class="o">)</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>org.jline/jline-terminal-jansi<span class="w"> </span><span class="m">3</span>.5.1<span class="w">  </span><span class="o">(</span>The<span class="w"> </span>BSD<span class="w"> </span>License<span class="o">)</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>org.mozilla/rhino<span class="w"> </span><span class="m">1</span>.7R5<span class="w">  </span><span class="o">(</span>Mozilla<span class="w"> </span>Public<span class="w"> </span>License,<span class="w"> </span>Version<span class="w"> </span><span class="m">2</span>.0<span class="o">)</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>rewrite-clj/rewrite-clj<span class="w"> </span><span class="m">0</span>.5.2<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>rewrite-cljs/rewrite-cljs<span class="w"> </span><span class="m">0</span>.4.3<span class="w">  </span><span class="o">(</span>MIT<span class="o">)</span>
+</code></pre></div>
+</details>
 <h2 id="dependency-tree">Dependency tree<a class="headerlink" href="#dependency-tree" title="Permanent link">λ︎</a></h2>
 <p>Run the <code>:deps tree</code> command in the root of a Clojure project to see all the dependencies</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
 </code></pre></div>
 <blockquote>
 <p>Libraries to satisfy the dependencies are downloaded if they are not in the local Maven cache, i.e. <code>$HOME/.m2/repository</code>, so the command may take a little time.</p>
@@ -8255,43 +8284,43 @@
 <p><code>clojure -P</code> is the recommended way to download libraries, which can also be used with aliases, e.g. <code>clojure -P -M:dev/reloaded:project/build</code></p>
 </div>
 <p>Show the full dependencies for the project and the <code>:dev/reloaded</code> alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>clojure<span class="w"> </span>-X:dev/reloaded:deps<span class="w"> </span>tree
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>clojure<span class="w"> </span>-X:dev/reloaded:deps<span class="w"> </span>tree
 </code></pre></div>
 <p>If run outside of a Clojure CLI project, then the user configuration and Clojure CLI install dependencies are shown (could be useful if there are development tool issues from the user configuration aliases used)</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>❯<span class="w"> </span>clojure<span class="w"> </span>-X:deps<span class="w"> </span>tree
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>org.clojure/clojure<span class="w"> </span><span class="m">1</span>.11.1
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/spec.alpha<span class="w"> </span><span class="m">0</span>.3.218
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>.<span class="w"> </span>org.clojure/core.specs.alpha<span class="w"> </span><span class="m">0</span>.2.62
 </code></pre></div>
 <h2 id="local-library-install">Local library install<a class="headerlink" href="#local-library-install" title="Permanent link">λ︎</a></h2>
 <p>Add a jar file for a library to the local Maven repository, e.g. <code>~/.m2/repository</code>, making that library accessible to all other local projects.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>mvn-install<span class="w"> </span>:jar<span class="w"> </span><span class="s1">&#39;&quot;/path/to.jar&quot;&#39;</span><span class="sb">`</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>mvn-install<span class="w"> </span>:jar<span class="w"> </span><span class="s1">&#39;&quot;/path/to.jar&quot;&#39;</span><span class="sb">`</span>
 </code></pre></div>
 <h2 id="find-library-versions">Find Library Versions<a class="headerlink" href="#find-library-versions" title="Permanent link">λ︎</a></h2>
 <p>Find the available versions of a given library in the form domain/library-name (domain is typically the company name or Git Service user or organisation name).</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">clojure</span><span class="w"> </span><span class="nv">-X</span><span class="ss">:deps</span><span class="w"> </span><span class="nv">find-versions</span><span class="w"> </span><span class="ss">:lib</span><span class="w"> </span><span class="nv">clojure.java-time/clojure.java-time</span>
 </code></pre></div>
 <h2 id="prepare-source-dependencies">Prepare Source dependencies<a class="headerlink" href="#prepare-source-dependencies" title="Permanent link">λ︎</a></h2>
 <p>Some dependencies will require a preparation step before they can be used on the classpath.</p>
 <p>Projects that require preparation would have a configuration of the form:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">]</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w"> </span><span class="ss">:deps/prep-lib</span><span class="w"> </span><span class="p">{</span><span class="ss">:alias</span><span class="w"> </span><span class="ss">:build</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">                 </span><span class="ss">:fn</span><span class="w"> </span><span class="nv">compile</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">                 </span><span class="ss">:ensure</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="ss">:paths</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;src&quot;</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w"> </span><span class="ss">:deps/prep-lib</span><span class="w"> </span><span class="p">{</span><span class="ss">:alias</span><span class="w"> </span><span class="ss">:build</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">                 </span><span class="ss">:fn</span><span class="w"> </span><span class="nv">compile</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">                 </span><span class="ss">:ensure</span><span class="w"> </span><span class="s">&quot;target/classes&quot;</span><span class="p">}}</span>
 </code></pre></div>
 <p>Including the top-level key <code>:deps/prep-lib</code> tells the tools.deps classpath construction that something extra is needed to prepare this lib and that can be performed by invoking the compile function in the :build alias. Once the prepare step has been done, it should create the path "target/classes" and that can be checked for completion.</p>
 <p>Add a library dependency as with any other library (git or local/root):</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}}}</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span><span class="ss">:deps</span><span class="w"> </span><span class="p">{</span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:local/root</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">        </span><span class="nv">practicalli/library-name</span><span class="w"> </span><span class="p">{</span><span class="ss">:git/sha</span><span class="w"> </span><span class="s">&quot;../needs-prep&quot;</span><span class="p">}}}</span>
 </code></pre></div>
 <p><code>:deps prep</code> will built the library of any dependency that requires it</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
 </code></pre></div>
 <h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
 <!-- TODO: Clojure CLI resolve Git tags examples -->
 
 <p><code>-X:deps git-resolve-tags</code> updates git based dependencies in the project <code>deps.edn</code> file which use :git/tags key to the equivalent SHA commit values in the <code>:git/sha</code> key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
 </code></pre></div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <p><a class="md-button" href="https://clojure.org/reference/deps_and_cli" target="_blank">tools.deps and cli guide</a>
