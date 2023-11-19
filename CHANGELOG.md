@@ -12,6 +12,7 @@
 - intro: clarify wording & approach in contributing guide
 - intro: enhance clojure examples and simplify format for experimenting with code
 - dev: checkout action v4 in all GitHub workflow
+- clojure-cli: add `clojure -X:deps mvn-pom` built-in command description
 
 ## Changed
 - mkdocs: emoji extension name update for Material 9.4
