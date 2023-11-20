@@ -921,6 +921,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pom-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      POM file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resolve-git-tags" class="md-nav__link">
     <span class="md-ellipsis">
       Resolve Git tags
@@ -8011,6 +8020,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#pom-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      POM file
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#resolve-git-tags" class="md-nav__link">
     <span class="md-ellipsis">
       Resolve Git tags
@@ -8470,11 +8488,15 @@
 <p><code>:deps prep</code> will built the library of any dependency that requires it</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>prep
 </code></pre></div>
+<h2 id="pom-file">POM file<a class="headerlink" href="#pom-file" title="Permanent link">λ︎</a></h2>
+<p>Generate or update pom.xml with deps and paths</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>mvn-pom
+</code></pre></div>
 <h2 id="resolve-git-tags">Resolve Git tags<a class="headerlink" href="#resolve-git-tags" title="Permanent link">λ︎</a></h2>
 <!-- TODO: Clojure CLI resolve Git tags examples -->
 
 <p><code>-X:deps git-resolve-tags</code> updates git based dependencies in the project <code>deps.edn</code> file which use :git/tags key to the equivalent SHA commit values in the <code>:git/sha</code> key</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>clojure<span class="w"> </span>-X:deps<span class="w"> </span>git-resolve-tags
 </code></pre></div>
 <h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
 <p><a class="md-button" href="https://clojure.org/reference/deps_and_cli" target="_blank">tools.deps and cli guide</a>
@@ -8487,7 +8509,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2023</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 20, 2023</span>
       
     
   </small>
