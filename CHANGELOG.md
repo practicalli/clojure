@@ -6,6 +6,7 @@
 - dev: changelog-check remove paths-ignore
 - clojure-cli: install deps.edn configuration
 - clojure-cli: `clojure -X:deps tree` examples
+- clojure-cli: `clojure -X:deps pom` 
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions

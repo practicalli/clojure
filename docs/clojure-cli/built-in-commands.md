@@ -436,6 +436,14 @@ Add a library dependency as with any other library (git or local/root):
 clojure -X:deps prep
 ```
 
+## POM file
+
+Generate or update pom.xml with deps and paths
+
+```shell
+clojure -X:deps mvn-pom
+```
+
 
 ## Resolve Git tags
 
