@@ -22,11 +22,20 @@ If Java is installed, you will see something like this in your terminal:
 
 If the version is `17` or above, then [jump to the Clojure install page](clojure-cli.md)
 
-=== "Ubuntu"
-    Install Java run time edition (JRE) using the `apt` package manager command in a terminal (prompts for the account login password)
+=== "Debian Packages"
+    Install Java development kit (JDK) using the `apt` package manager (login as `su -` or prefix the command with `sudo`)
+
     ```bash
-    sudo apt install openjdk-17-jre
+    apt install openjdk-17-jdk
     ```
+
+    ??? HINT "Check available versions of OpenJDK"
+        Long terms support versions should include OpenJDK 17 and may include OpenJDK 21.  Check versions available via the `apt` package management tool.
+
+        ```shell
+        apt search --names-only openjdk
+        ```
+
     ??? HINT "Optionally include Java sources"
         Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
         ```bash
