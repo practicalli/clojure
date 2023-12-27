@@ -2,6 +2,9 @@
 
 Java is a host platform for Clojure, on which Clojure projects and tools run.  [No experience of Java or its platform is required](#what-you-need-to-know-about-java) for successful Clojure projects.
 
+!!! INFO "Practicalli recommends OpenJDK version 17 or 21"
+
+
 # Install Java
 
 Check to see if there is an appropriate version of Java already installed.
