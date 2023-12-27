@@ -7,6 +7,8 @@
 - clojure-cli: install deps.edn configuration
 - clojure-cli: `clojure -X:deps tree` examples
 - clojure-cli: `clojure -X:deps pom` 
+- install: debian packages approach for OpenJDK rather than a specific Ubuntu tab
+- install: recommended OpenJDK versions of 17 and 21 as hint
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions

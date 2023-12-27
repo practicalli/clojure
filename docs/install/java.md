@@ -102,7 +102,7 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
     If Chocolatey does not work, then try the [manual Java install](install-java.html#manual).
 
 === "Manual"
-    [Download OpenJDK 17 Hotspot from Adoptium](https://adoptium.net/){target=_blank} - pre-build OpenJDK binaries freely available for multiple operating systems.
+    [Download OpenJDK from Adoptium](https://adoptium.net/){target=_blank} - pre-build OpenJDK binaries freely available for multiple operating systems.
 
     Run the file once downloaded and follow the install instructions.
 
