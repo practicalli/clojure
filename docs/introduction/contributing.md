@@ -33,15 +33,21 @@ Alternatively, reach out to Practicalli via the `#practicalli` channel of the Cl
 
 ## Considering a Pull request?
 
-Before investing any time in a pull request, please raise an issue explaining the situation.  This can save you and the maintainer time and avoid rejected pull requests.
+!!! INFO "Pull Request Commits must be cryptographically signed"
+    All commits contributed to Practicalli must be signed via a legitimate SSH or GPG key to avoid the risk of commit spoofing.
 
-Please keep pull requests small and focused, as they are much quicker to review and easier to accept.  Ideally PR's should be for a specific page or at most a section.
+    [Configure commit signing with SSH key - Practicalli Engineering](https://practical.li/engineering-playbook/source-control/git-configuration/#commit-signing-with-ssh-key){target=_blank .md-button}
 
-All pull requests must include an entry in CHANGELOG.md or will not be merged.  A changelog entry allows the community to easily follow the changes to the book.
+All pull requests must include an entry in CHANGELOG.md or will not be merged.  A changelog entry allows the community to follow the changes to the book.
 
 Each pull request will have a number of CI workflows run against the contribution, checking the format of the content and if a changelog entry has been provided.
 
-A PR with a list of changes across different sections will not be merged, it will be reviewed eventually though.
+Please keep pull requests small and focused, as they are much quicker to review and easier to accept.  Ideally PR's should be for a specific page or at most a section.
+
+A PR with a list of changes across different sections will be closed without merging as these take considerable time to review.
+
+Issues such as grammar improvements are typically a sign of a rushed section that requires a rewrite, so a pull request to fix a typeographic error will probably not be merged.  Raise an issue, or post a thread in the [:globe_with_meridians: Clojurians Slack #practicall channel](https://clojurians.slack.com/messages/practicalli)
+
 
 ## Thank you to everyone that has contributed
 
