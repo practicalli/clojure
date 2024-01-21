@@ -26,7 +26,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -8155,19 +8155,19 @@
 <p>The project runs on the Undertow web server (wrapped by immutant), using ring to manage web requests and responses, with compojure for server-side routing.  The application uses mount to manage the application lifecycle.</p>
 <p><a href="https://github.com/CircleCI-Public/circleci-demo-clojure-luminus/fork" target="_blank">Fork the CircleCI-Public/circleci-demo-clojure-luminus</a> project on your GitHub or GitLab account or organisation.</p>
 <p>Go to the CircleCI dashboard and login.  Select the GitHub / GitLab organisation you want to work with, this will list the repositories in that organisation.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-select-organisation.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Select an organisation and its projects" src="/images/circle-ci-dashboard-select-organisation.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-select-organisation.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Select an organisation and its projects" src="/images/circle-ci-dashboard-select-organisation.png" /></a></p>
 <p>Find the project in the list of repositories for that organisation</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-repo-search-circleci.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project " src="/images/circle-ci-dashboard-projects-repo-search-circleci.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-repo-search-circleci.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project " src="/images/circle-ci-dashboard-projects-repo-search-circleci.png" /></a></p>
 <p>Click on the "Set Up Project" button and select the Clojure configuration from the drop-down menu.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Set Up Project on CircleCI using the example repository" src="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Set Up Project on CircleCI using the example repository" src="/images/circle-ci-dashboard-projects-luminus-configuration-clojure.png" /></a></p>
 <p>This template seems to be older than the sample configuration on the <a href="https://circleci.com/docs/2.0/language-clojure/" target="_blank">Clojure language page</a>.  Copy the sample configuration and paste it into the editor.  Then press Add Config to automatically add it to your code repository.</p>
 <p>This will start a build and show the pipelines dashboard, with the project running the tasks defined in the configuration</p>
-<p><a class="glightbox" href="/images/clojure-ci-pipelines-luminus-running.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project " src="/images/clojure-ci-pipelines-luminus-running.png" /></a></p>
+<p><a class="glightbox" href="/images/clojure-ci-pipelines-luminus-running.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project " src="/images/clojure-ci-pipelines-luminus-running.png" /></a></p>
 <p>Oh, it failed...</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-luminus-failed.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project build failed" src="/images/circle-ci-dashboard-pipelines-luminus-failed.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-luminus-failed.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project build failed" src="/images/circle-ci-dashboard-pipelines-luminus-failed.png" /></a></p>
 <p>Clicking on the FAILED button shows details of that particular pipeline.  This opens the build report for the pipeline.</p>
 <p>The build report shows all the steps that have passed and the details of the step which has failed, in this case lein do test, uberjar</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project build report" src="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project build report" src="/images/circle-ci-dashboard-build-luminus-failed-details-uberjar.png" /></a></p>
 <blockquote>
 <h4 id="hintfailing-on-java-11">Hint::Failing on Java 11<a class="headerlink" href="#hintfailing-on-java-11" title="Permanent link">λ︎</a></h4>
 <p>The example project only seems to run on Java 8.  Running the project locally with either <code>lein run</code> or <code>lein test</code></p>
@@ -8178,9 +8178,9 @@
 <p>Apart from the initial creation of the configuration, its not possible to edit the configuration via the dashboard.</p>
 </blockquote>
 <p>Then commit the change to the code in the code repository. Another build will run automatically.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project running second build" src="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project running second build" src="/images/circle-ci-dashboard-pipeline-luminus-running-second-time.png" /></a></p>
 <p>The dashboard shows the second build of this pipeline, showing the new commit just pushed</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project second build successful" src="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI Dashboard - Luminus project second build successful" src="/images/circle-ci-dashboard-pipeline-luminus-second-build-success.png" /></a></p>
 <p>Success.  Now development can continue knowing the configuration of the pipeline works.</p>
 
 
@@ -8335,10 +8335,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

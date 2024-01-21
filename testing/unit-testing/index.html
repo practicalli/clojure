@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -8220,10 +8220,10 @@
 
 
 <h1 id="clojure-unit-testing">Clojure Unit Testing<a class="headerlink" href="#clojure-unit-testing" title="Permanent link">λ︎</a></h1>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img align="right" alt="REPL Driven development and Unit testing in Clojure" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png" style="height:150px" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="right" alt="REPL Driven development and Unit testing in Clojure" loading="lazy" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/repl-tdd-flow.png" style="height:150px" /></a></p>
 <p>The function is the unit under test in Clojure.  All public functions that form the API of their respective namespace should have a matching test, i.e. <code>(deftest)</code> definition.</p>
 <p><a href="https://clojure.github.io/clojure/clojure.test-api.html"><code>clojure.test</code> namespace</a> provides functions for defining and running unit tests and is available in the Clojure library for any project to use.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure test unit test example - status monitor dashboard function and unit test" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png" title="Example Clojure test - web service handler namespace - dashboard function" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Clojure test unit test example - status monitor dashboard function and unit test" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-test-example-service-monitor-dashboard.png" title="Example Clojure test - web service handler namespace - dashboard function" /></a></p>
 <h2 id="unit-test-principles">Unit Test Principles<a class="headerlink" href="#unit-test-principles" title="Permanent link">λ︎</a></h2>
 <ul>
 <li>A <code>test</code> namespace for each <code>src</code> namespace under test</li>
@@ -8247,7 +8247,7 @@
 </details>
 <h2 id="running-tests">Running tests<a class="headerlink" href="#running-tests" title="Permanent link">λ︎</a></h2>
 <p><a href="/testing/test-runners/">Test runners</a> can run be run in the REPL used for development or run separately via the command line and continuous integration tasks.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure unit testing approach - editor and command line" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Clojure unit testing approach - editor and command line" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-testing-approach.png" /></a></p>
 <h2 id="run-tests-in-editor-connected-repl">Run tests in Editor connected REPL<a class="headerlink" href="#run-tests-in-editor-connected-repl" title="Permanent link">λ︎</a></h2>
 <p>Using an editor connected REPL keeps the workflow in one tool and helps maintain focus. Using editor commands to run the tests and navigable error reports provides an effective flow to run and debug issues.</p>
 <blockquote>
@@ -8288,7 +8288,7 @@
 <h2 id="project-structure-with-tests">Project structure with tests<a class="headerlink" href="#project-structure-with-tests" title="Permanent link">λ︎</a></h2>
 <p>For each source code file in <code>src</code> there should be a corresponding file in <code>test</code> directory with the same name and <code>_test</code> postfix.</p>
 <p>For example, code to test the <code>src/codewars/rock_paper_scissors.clj</code> is saved in the file <code>src/codewars/rock_paper_scissors_test.clj</code> file.</p>
-<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Clojure project structure - src and test branches" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png" /></a></p>
+<p><a class="glightbox" href="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Clojure project structure - src and test branches" src="https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-project-structure-src-test-tree.png" /></a></p>
 <p><a class="md-button" href="https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors" target="_blank">Example project: CodeWars: Rock Paper Scissors</a></p>
 <h2 id="source-and-test-namespaces">Source and Test Namespaces<a class="headerlink" href="#source-and-test-namespaces" title="Permanent link">λ︎</a></h2>
 <p>As with file names, the namespaces for each test code file is the same as the source code it is testing, with a <code>-test</code> postfix.</p>
@@ -8501,10 +8501,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

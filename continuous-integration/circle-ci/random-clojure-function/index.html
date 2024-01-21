@@ -30,7 +30,7 @@
       
       
       <link rel="icon" href="../../../assets/favicon.svg">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.3">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.4">
     
     
       
@@ -8326,7 +8326,7 @@
 <a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">             </span><span class="ss">:fail-fast?</span><span class="w"> </span><span class="nv">true</span><span class="p">}}</span>
 </code></pre></div>
 <h2 id="create-a-remote-repository">Create a remote repository<a class="headerlink" href="#create-a-remote-repository" title="Permanent link">λ︎</a></h2>
-<p><a class="glightbox" href="/images/github-repository-create-new.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="GitHub new repository" src="/images/github-repository-create-new.png" /></a></p>
+<p><a class="glightbox" href="/images/github-repository-create-new.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="GitHub new repository" src="/images/github-repository-create-new.png" /></a></p>
 <p>Add the remote repository URL to the local Git repository.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>practicalli<span class="w"> </span>git@github.com:practicalli/random-clojure-function.git
 </code></pre></div>
@@ -8364,15 +8364,15 @@ jobs:                                               # basic units of work in a r
 <p>Commit and push the <code>.circleci/config.yml</code> file to the GitHub repository.</p>
 <p>Open the CircleCI dashboard and select <strong>Add Project</strong>.  If your GitHub account has multiple organizations, choose the appropriate organization first.</p>
 <p>Search the repository list for the GitHub repository and select ,,,</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-projecs-random-clojure-function-setup.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard add project" src="/images/circle-ci-dashboard-projecs-random-clojure-function-setup.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-projecs-random-clojure-function-setup.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard add project" src="/images/circle-ci-dashboard-projecs-random-clojure-function-setup.png" /></a></p>
 <p>Select the <strong>Manual</strong> configuration as a <code>.circleci/config.yml</code> file has already been added to the Git repository.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-random-clojure-function-configuration.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard add Clojure project configuration" src="/images/circle-ci-dashboard-projects-random-clojure-function-configuration.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-random-clojure-function-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard add Clojure project configuration" src="/images/circle-ci-dashboard-projects-random-clojure-function-configuration.png" /></a></p>
 <p>Press <strong>Start Building</strong> button to confirm that a <code>config.yml</code> file has already been added and the build should start.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-random-clojure-function-config-yml-added.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - confirm config.yml configuration added and start build" src="/images/circle-ci-dashboard-projects-random-clojure-function-config-yml-added.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-projects-random-clojure-function-config-yml-added.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - confirm config.yml configuration added and start build" src="/images/circle-ci-dashboard-projects-random-clojure-function-config-yml-added.png" /></a></p>
 <p>Now the first build runs with the <code>config.yml</code> file.</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-random-clojure-function-running.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - build running the Clojure project" src="/images/circle-ci-dashboard-pipelines-random-clojure-function-running.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-random-clojure-function-running.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - build running the Clojure project" src="/images/circle-ci-dashboard-pipelines-random-clojure-function-running.png" /></a></p>
 <p>Its failed.  Okay lets investigate...</p>
-<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-random-clojure-function-build-failed-test-runner.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - build running the Clojure project and failed on unit tests as the test does not pass" src="/images/circle-ci-dashboard-pipelines-random-clojure-function-build-failed-test-runner.png" /></a></p>
+<p><a class="glightbox" href="/images/circle-ci-dashboard-pipelines-random-clojure-function-build-failed-test-runner.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Circle CI dashboard - build running the Clojure project and failed on unit tests as the test does not pass" src="/images/circle-ci-dashboard-pipelines-random-clojure-function-build-failed-test-runner.png" /></a></p>
 <p>Thats okay, we have failing tests locally, so we know that the CircleCI build is working the same as on our local development environment.</p>
 <p>The continuous integration is now working and tests are automatically run as soon as you push changes to the remote repository.</p>
 <p>So the development of the project can continue with greater confidence</p>
@@ -8575,10 +8575,10 @@ jobs:                                               # basic units of work in a r
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tabs.link", "navigation.footer", "navigation.indexes", "navigation.instant", "navigation.top", "navigation.tracking"], "search": "../../../assets/javascripts/workers/search.c011b7c0.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.7389ff0e.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
