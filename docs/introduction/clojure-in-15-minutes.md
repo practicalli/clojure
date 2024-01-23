@@ -178,7 +178,7 @@ Only lists are sequences
 (seq? [1 2 3]) ; => false
 ```
 
-Sequences are an interface for logical lists, which can be lazy. "Lazy" means that a sequence of valus are not evaluated until accessed.
+Sequences are an interface for logical lists, which can be lazy. "Lazy" means that a sequence of values are not evaluated until accessed.
 
 A lazy sequence enables the use of large or even an infinite series, like so:
 
