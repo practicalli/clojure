@@ -13,7 +13,7 @@ Follow your preferred option on the [Clojure LSP installation guide](https://clo
 
 Practicalli downloads the clojure-lsp-native-linux-amd64.zip file from [GitHub release page](https://github.com/clojure-lsp/clojure-lsp/releases)and extracts the `clojure-lsp` binary to `~/.local/bin/clojure-lsp`.
 
-`clojure-lsp -v` in a terminal will test if the the install is working.
+`clojure-lsp --version` in a terminal will test if the the install is working.
 
 ??? HINT "Editors may install Clojure LSP for you"
     Spacemacs LSP layer will prompt to install a language server when first opening a file of a major mode where LSP is enabled.  E.g. when a Clojure related file is opened, the Clojure LSP server is downloaded if not installed (or not found on the Emacs path).
