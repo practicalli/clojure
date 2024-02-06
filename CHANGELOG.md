@@ -9,6 +9,7 @@
 - clojure-cli: `clojure -X:deps pom` 
 - install: debian packages approach for OpenJDK rather than a specific Ubuntu tab
 - install: recommended OpenJDK versions of 17 and 21 as hint
+- editor: refactor Clojure LSP page and format for Material for MkDocs
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
