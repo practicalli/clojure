@@ -2,9 +2,22 @@
 
 ![Clojure CLI Logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/practicalli-clojure-cli-logo.png){align=right loading=lazy style="height:150px;width:150px"}
 
-Install the Clojure CLI which provides the essential tools for Clojure development.
+Clojure CLI is a command line tool for running a Clojure REPL, project or tool.
 
-The Clojure CLI automatically downloads all library dependencies, including the Clojure Standard library. As Clojure itself is packages as a library (`.jar` Java ARchive), any version of Clojure can be used with a project.
+Clojure CLI automatically downloads required library dependencies, including the Clojure Standard library. 
+
+??? INFO "Clojure distributed as a library"
+    Clojure is distributed as a library (`.jar` Java ARchive) via Maven Central. 
+
+    A `deps.edn` file specifies the version of Clojure to be used with a project.
+
+    ```clojure
+    :deps {org.clojure/clojure {:mvn/version "1.12.0"}}
+    ```
+
+    The Clojure CLI tool provides a default Clojure library version if not specified in the project or user `deps.edn` files.
+
+    [Clojure releases](https://clojure.org/releases/downloads){target=_blank .md-button} 
 
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
 
@@ -166,9 +179,9 @@ The `rlwrap` binary is a basic readline tool that provides a history of commands
 
 Pressing the ++arrow-up++ and ++arrow-down++ keys will scroll through the code previously entered in the REPL.
 
-`rlwrap` is available with most Linux systems. Look for  install instructions by searching for rlwrap in a web browser or build from source from the [rlwrap GitHub repository](https://github.com/hanslub42/rlwrap).
+`rlwrap` is available with most Linux systems. Look for  install instructions by searching for rlwrap in a web browser or build from source from the [:globe_with_meridians: rlwrap GitHub repository](https://github.com/hanslub42/rlwrap).
 
 !!! HINT "Use Rebel Readline for a rich terminal UI experience"
-    [rebel readline](/clojure/clojure-cli/repl/) provides a auto-completion, documentation, signature help and multi-line editing all within a terminal UI, providing a much richer experience than the `clj` wrapper and `rlwrap`.
+    [:fontawesome-solid-book-open: rebel readline](/clojure/clojure-cli/repl/) provides a auto-completion, documentation, signature help and multi-line editing all within a terminal UI, providing a much richer experience than the `clj` wrapper and `rlwrap`.
 
     Rebel Readline is part of the [Practicalli Clojure CLI config](#practicalli-clojure-cli-config).
