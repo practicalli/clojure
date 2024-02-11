@@ -1,32 +1,33 @@
 ![Java](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/practicalli-java-adoptium-banner.png)
 
-Java is a host platform for Clojure, on which Clojure projects and tools run.  [No experience of Java or its platform is required](#what-you-need-to-know-about-java) for successful Clojure projects.
+Java is a host platform for Clojure, on which Clojure projects and tools run.  Java provides a virtual machine which runs the bytecode generated when Clojure code is compiled.
 
-!!! INFO "Practicalli recommends OpenJDK version 17 or 21"
+Java virtual machine includes a Just In Time (JIT) compiler that optimises running of bytecode.
+
+!!! INFO "Practicalli recommends OpenJDK version 21"
 
 
-# Install Java
+## Install Java
 
 Check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
 
 ```bash
-java -version
+java --version
 ```
 
-If Java is installed, you will see something like this in your terminal:
+If Java is installed and on the execution path, the version infomation is returned
 
-![Java version check - dark version](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-install-java-version-linux-dark.png#only-dark)
-![Java version check - light version](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-cli/clojure-install-java-version-linux-light.png#only-light)
+![Java version check - dark version](https://github.com/practicalli/graphic-design/blob/live/java/screenshots/java-openjdk-21-version-in-terminal-light.png?raw=true#only-light)
+![Java version check - light version](https://github.com/practicalli/graphic-design/blob/live/java/screenshots/java-openjdk-21-version-in-terminal-dark.png?raw=true#only-dark)
 
-If the version is `17` or above, then [jump to the Clojure install page](clojure-cli.md)
 
 === "Debian Packages"
     Install Java development kit (JDK) using the `apt` package manager (login as `su -` or prefix the command with `sudo`)
 
     ```bash
-    apt install openjdk-17-jdk
+    apt install openjdk-21-jdk
     ```
 
     ??? HINT "Check available versions of OpenJDK"
@@ -36,33 +37,39 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
         apt search --names-only openjdk
         ```
 
-    ??? HINT "Optionally include Java sources"
-        Install the `openjdk-17-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
+    ??? HINT "Optionally include Java docs and sources"
+        Install the `openjdk-21-doc` locally to provide Javadocs to support Java Interop code.
+
+        Install the `openjdk-21-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
+
         ```bash
-        sudo apt install openjdk-17-source
+        sudo apt install openjdk-21-doc openjdk-21-source
         ```
 
         [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:src/java17` alias to include the Java sources in the classpath when running a REPL.
 
-    If `openjdk-17-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
+    If `openjdk-21-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
 
-    ```bash
-    sudo add-apt-repository ppa:openjdk-r/ppa
-    sudo apt-get update
-    ```
-    If you have more than one version of Java installed, set the version by opening a terminal and using the following command
+    !!! NOTE ""
+        ```bash
+        sudo add-apt-repository ppa:openjdk-r/ppa
+        sudo apt-get update
+        ```
+    When multiple versions of Java are installed, set the version using the `update-alternatives` command in a terminal
 
-    ```bash
-    sudo update-alternatives --config java
-    ```
+    !!! NOTE ""
+        ```bash
+        sudo update-alternatives --config java
+        ```
     Available java versions will be listed.  Enter the list number for the version you wish to use.
 
 === "Homebrew"
     Using [Homebrew](https://brew.sh/){target=_blank}, run the following command in a terminal to install Java 17:
 
-    ```bash
-    brew install openjdk@17
-    ```
+    !!! NOTE ""
+        ```bash
+        brew install openjdk@21
+        ```
 
     ??? HINT "Switching between Java versions"
         More than one version of Java can be installed on MacOSX. Set the Java version by opening a terminal and using one of the following commands
@@ -72,9 +79,9 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
         /usr/libexec/java_home -V
         ```
 
-        Switch to Java version 17
+        Switch to Java version 21
         ```bash
-        export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+        export JAVA_HOME=$(/usr/libexec/java_home -v 21)
         ```
 
         Alternatively, install [JEnv Java version manager](https://www.jenv.be/)
@@ -106,28 +113,28 @@ If the version is `17` or above, then [jump to the Clojure install page](clojure
 
     Run the file once downloaded and follow the install instructions.
 
-    ![Adoptium Prebuilt OpenJDK Binaries - web page](https://raw.githubusercontent.com/practicalli/graphic-design/live/java/screenshots/java-adoptium-website-temurin-17.png)
+    ![Adoptium Prebuilt OpenJDK Binaries - web page](https://github.com/practicalli/graphic-design/blob/live/java/screenshots/java-adoptium-website-temurin-21.png?raw=true)
 
 
 ## Multiple versions of Java
 
-[jenv](https://www.jenv.be/) provides a simple way to switch between multiple installed versions of Java.  jenv can be used to set the java version globally, for the current shell or for a specific project by adding `.java-version` file containing the Java version number in the root of the project.
+[:globe_with_meridians: jenv](https://www.jenv.be/){target=_blank} provides a simple way to switch between multiple installed versions of Java.  jenv can be used to set the java version globally, for the current shell or for a specific project by adding `.java-version` file containing the Java version number in the root of the project.
 
 
-??? INFO "A little Java Knowledge"
+## A little Java Knowledge
 
-    Very little knowledge of the Java language or the Java Virtual Machine is required.
+Very little knowledge of the Java language or the Java Virtual Machine is required.
 
-    It is quite simple to call Java methods from Clojure, although there are a wealth of functions and libraries provided by Clojure and its community to minimise the need for Java Interoperability.
+It is quite simple to call Java methods from Clojure, although there are a wealth of functions and libraries provided by Clojure and its community to minimise the need for Java Interoperability.
 
-    [Reading stack traces](https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html){target=_blank} may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.
+[Reading stack traces](https://8thlight.com/blog/connor-mendenhall/2014/09/12/clojure-stacktraces.html){target=_blank} may benefit from some Java experience, although its usually the first couple of lines in a stack trace that describe the issue.
 
-    Clojure uses its own build tools (Leiningen, Clojure CLI tools) and so Java build tool knowledge is not required.
+Clojure uses its own build tools (Leiningen, Clojure CLI tools) and so Java build tool knowledge is not required.
 
-    When libraries are added to a project, they are downloaded to the `$HOME/.m2` directory.  This is the default Maven cache used by all JVM libraries.
+When libraries are added to a project, they are downloaded to the `$HOME/.m2` directory.  This is the default Maven cache used by all JVM libraries.
 
-    `clojure  -Spom` will generate a Maven pom.xml file used for deployment. Understanding of a [minimal Maven POM (pom.xml) file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#minimal-pom){target=_blank} is useful when managing issues with packaging and deployment.
+`clojure  -Spom` will generate a Maven pom.xml file used for deployment. Understanding of a [minimal Maven POM (pom.xml) file](https://maven.apache.org/guides/introduction/introduction-to-the-pom.html#minimal-pom){target=_blank} is useful when managing issues with packaging and deployment.
 
-    [Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html){target=_blank .md-button}
+[Maven in 5 minutes](https://maven.apache.org/guides/getting-started/maven-in-five-minutes.html){target=_blank .md-button}
 
-    The Java Virtual Machine is highly optimised and does not usually require any options to enhance its performance. The most likely configuration to supply to the JVM are to manage the amount of memory assigned, specifically for resource constrained environments.
+The Java Virtual Machine is highly optimised and does not usually require any options to enhance its performance. The most likely configuration to supply to the JVM are to manage the amount of memory assigned, specifically for resource constrained environments.
