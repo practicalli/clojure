@@ -10,6 +10,7 @@
 - install: debian packages approach for OpenJDK rather than a specific Ubuntu tab
 - install: recommended OpenJDK versions of 17 and 21 as hint
 - editor: refactor Clojure LSP page and format for Material for MkDocs
+- editor: update Clojure LSP page and included Practicalli Clojure LSP Config via external url
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
