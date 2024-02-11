@@ -7,7 +7,7 @@ Built-in snippets can include Clojure code for generating the text of the snippe
 ??? INFO "Clojure LSP Configuration locations"
     Project specific configuration resides in `.lsp/config.edn`
 
-    User level configuration is either `$XDG_CONFIG_HOME/clojure-lsp/config.edn` or `$HOME/.lsp/config`
+    User level configuration is either `$XDG_CONFIG_HOME/clojure-lsp/config.edn` or `$HOME/.clojure-lsp/config`
 
 
 ## Snippet definition
