@@ -3,7 +3,7 @@
 A quick tour of the Clojure syntax and common functions, which is so terse you can read through this page in around 15 minutes and have a basic understanding of the language.
 
 !!! HINT "Try the code out in the REPL"
-    [Start a Clojure REPL]() or use a [Clojure aware editor](/clojure/clojure-editors/) connected to a REPL and experiment with these code examples.
+    [:fontawesome-solid-book-open: Start a Clojure REPL](/clojure/clojure-cli/repl/) or use a [:fontawesome-solid-book-open: Clojure aware editor](/clojure/clojure-editors/) connected to a REPL and experiment with these code examples.
 
     Using the REPL provides instant feedback on each expression as they are evaluated, greatly increasing your understanding.
 
@@ -14,7 +14,7 @@ A quick tour of the Clojure syntax and common functions, which is so terse you c
 
 `#_` comment reader macro to comment out the next form
 
-`(comment )` form to comment all the containing forms, useful to [:fontawesome-solid-book-open: separate experimental and established code](https://practical.li/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation) in a namespace.
+`(comment ,,,)` form to comment all the containing forms, useful to [:fontawesome-solid-book-open: separate experimental and established code](/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation) in a namespace.
 
 
 ## Clojure expressions
@@ -25,12 +25,12 @@ Clojure evaluates the first element in an expression as a function call.  Additi
 
 !!! EXAMPLE "Function call with value and expression as arguments"
     ```clojure
-    (+ 2007 (* 1 16))       
+    (+ 2007 (* 1 16))
     ```
 
 !!! EXAMPLE "Functions can be passed as an argument"
     ```clojure
-    (map inc (range 0 99))  
+    (map inc (range 0 99))
     ```
 
 ## Organising Clojure
@@ -51,7 +51,7 @@ A company name or community repository name is often used making the namespace u
 
 !!! EXAMPLE "Define a longer namespace"
     ```clojure title="src/com/company/product/component_name.clj"
-    (ns com.company.product.component-name)  ;; 
+    (ns com.company.product.component-name)
     ```
 
 ??? WARNING "Namespaces use dash, directory and file names use underscore"
@@ -92,15 +92,15 @@ Nesting forms defined a very precise calculation
     ```clojure
     (* 1 2 (- 24 (* 7 3)))
     ```
- 
-`6` is returned as the value.  Nested expressions are typically read inside out.  `(* 7 3)` is `21`, giving `(- 24 21)` expression resulting in `3`.  Finally the expression becomes `(* 1 2 3)`, resulting in a value of `6` 
+
+`6` is returned as the value.  Nested expressions are typically read inside out.  `(* 7 3)` is `21`, giving `(- 24 21)` expression resulting in `3`.  Finally the expression becomes `(* 1 2 3)`, resulting in a value of `6`
 
 
 Maintain precision for calculations using a Ratio type in Clojure
 
 !!! EXAMPLE "Clojure Ratio value"
     ```clojure
-    (/ 27 7) 
+    (/ 27 7)  ; => 27/7
     ```
 
 `22/7` is returned as the value, rather than a floating point value (double) which may loose some precision due to rounding.
@@ -145,7 +145,7 @@ A predicate is a function that returns a boolean `true` or `false` value and by 
     All other values are consider true.
 
 
-[:fontawesome-solid-book-open: Clojure Standard Library Predicate Functions](https://practical.li/clojure/reference/standard-library/predicate-functions/){.md-button} 
+[:fontawesome-solid-book-open: Clojure Standard Library Predicate Functions](https://practical.li/clojure/reference/standard-library/predicate-functions/){.md-button}
 
 
 ## Collections & Sequences
@@ -182,10 +182,11 @@ Sequences are an interface for logical lists, which can be lazy. "Lazy" means th
 
 A lazy sequence enables the use of large or even an infinite series, like so:
 
-```clojure
- (range) ; => (0 1 2 3 4 ...) - an infinite series
-(take 4 (range)) ;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken
-```
+!!! EXAMPLE "Lazy sequences"
+    ```clojure
+    (range) ; => (0 1 2 3 4 ...) - an infinite series
+    (take 4 (range)) ;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken
+    ```
 
 Use cons to add an item to the beginning of a list or vector
 
@@ -237,10 +238,10 @@ Equivalent of `(conj (conj (conj [] 3) 2) 1)`
 Use `fn` to create new functions that defines some behaviour. `fn` is referred to as an anonymous fuction as it has no external name to be referenced by and must be called within a list form.
 
 ```clojure
-(fn hello [] "Hello World") 
+(fn hello [] "Hello World")
 ```
 
-Wrap a `(fn ,,,)` form in parens to call it and return the result.  
+Wrap a `(fn ,,,)` form in parens to call it and return the result.
 
 !!! EXAMPLE "Call an anonymous function"
     ```clojure
@@ -254,7 +255,7 @@ Normally the anonymous function is used inline with other code
     (map (fn [x] (* x 2)) [1 2 3 4  [1 2 3 4 5]5])
     ```
 
-Make the anonymous function reusable by binding it to a shared name (`var`) using `def`.  
+Make the anonymous function reusable by binding it to a shared name (`var`) using `def`.
 
 The `var` name bound to the function can now be called anywhere in the namespace.
 
@@ -262,8 +263,8 @@ The `var` name bound to the function can now be called anywhere in the namespace
 
 !!! EXAMPLE "Bind a name to the anonymous function"
     ```clojure
-    (def hello-world 
-      (fn hello [] "Hello World")) 
+    (def hello-world
+      (fn hello [] "Hello World"))
     ```
 
 !!! EXAMPLE "Evaluate annonymous function by evaluating its name"
@@ -282,7 +283,7 @@ It is more common to use the `defn` macro to define a function.  This is the sam
     ```clojure
     (defn hello-world
       "I am a humble doc-string, please describe the function purpose"
-     [] 
+     []
      "Hello World")
     ```
 
@@ -296,7 +297,7 @@ It is more common to use the `defn` macro to define a function.  This is the sam
     (hello-world)
     ```
 
-The `[]` vector is used to define the argument names for the function.  There can be zero or more arguments. 
+The `[]` vector is used to define the argument names for the function.  There can be zero or more arguments.
 
 !!! EXAMPLE "Call function with arguments"
     ```clojure
@@ -574,7 +575,7 @@ Vectors and Lists are java classes too!
 
 !!! INFO "Type hints"
     Type hints can be used to avoid reflection look-ups where performace critical issues have been identified.  Type hints are not required in general.
-    [Clojure Type Hints](https://clojure.org/reference/java_interop#typehints){target=_blank .md-button} 
+    [Clojure Type Hints](https://clojure.org/reference/java_interop#typehints){target=_blank .md-button}
 
 ## Java Interop
 
