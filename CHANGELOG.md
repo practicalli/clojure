@@ -16,6 +16,7 @@
 - dev: validate new & changed files in megalinter to speed up checks
 - dev: signed commit checkbox in pull request template
 - dev: skip readme change and sparse checkout for changelog check workflow
+- dev: checkout v4 & python v5 actions in publish-book workflow
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
