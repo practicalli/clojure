@@ -14,6 +14,7 @@
 - dev: update codeowners to practicalli-johnny
 - dev: use funding from practicalli org
 - dev: validate new & changed files in megalinter to speed up checks
+- dev: signed commit checkbox in pull request template
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
