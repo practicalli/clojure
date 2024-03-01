@@ -18,6 +18,7 @@
 - dev: skip readme change and sparse checkout for changelog check workflow
 - dev: checkout v4 & python v5 actions in publish-book workflow
 - dev: sparse checkout scheduled version workflow
+- dev: upload-artefact v4 & remove explicit token from megalinter
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
