@@ -12,6 +12,7 @@
 - editor: refactor Clojure LSP page and format for Material for MkDocs
 - editor: update Clojure LSP page and included Practicalli Clojure LSP Config via external url
 - dev: update codeowners to practicalli-johnny
+- dev: use funding from practicalli org
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
