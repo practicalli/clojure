@@ -15,6 +15,7 @@
 - dev: use funding from practicalli org
 - dev: validate new & changed files in megalinter to speed up checks
 - dev: signed commit checkbox in pull request template
+- dev: skip readme change and sparse checkout for changelog check workflow
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
