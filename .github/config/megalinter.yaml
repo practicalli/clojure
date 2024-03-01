@@ -8,8 +8,9 @@
 # https://oxsecurity.github.io/megalinter/latest/supported-linters/
 
 # ------------------------
-# Checkout Code
-VALIDATE_ALL_CODEBASE: true
+# Validate all files if true
+# or new / edited files if false
+VALIDATE_ALL_CODEBASE: false
 
 # ------------------------
 # Linters

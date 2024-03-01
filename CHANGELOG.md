@@ -13,6 +13,7 @@
 - editor: update Clojure LSP page and included Practicalli Clojure LSP Config via external url
 - dev: update codeowners to practicalli-johnny
 - dev: use funding from practicalli org
+- dev: validate new & changed files in megalinter to speed up checks
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions
