@@ -20,7 +20,7 @@ Optional extras:
 
 Create a new project using clj-new
 
-```bash
+```shell
 clojure -T:project/create practicalli/song-list
 ```
 

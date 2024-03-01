@@ -2,7 +2,7 @@
 
 A complete list of all flags available for the JVM, created using the `-XX:+PrintFlagsFinal` option and the results written to a file
 
-```bash
+```shell
 java -XX:+PrintFlagsFinal > java-flags.md
 ```
 

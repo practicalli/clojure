@@ -14,7 +14,7 @@ Use `clj` when you want to run a repl (or preferably use [rebel readline](rebel-
 
 `clj` command in a terminal window starts a Clojure REPL and shows the version of Clojure used.  The command does not need to be in a directory containing a Clojure project.
 
-```bash
+```shell
 clj
 ```
 

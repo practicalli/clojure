@@ -78,7 +78,7 @@ Create an alias to include the `dev` path when running a REPL process
 
 Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:dev/env`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
-```bash
+```shell
 clojure -M:repl/reloaded
 ```
 
@@ -320,7 +320,7 @@ Rather than restart the repl, clojure.tools.namespace.repl provides functions th
 
 Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases
 
-```bash
+```shell
 clojure -M:repl/reloaded
 ```
 

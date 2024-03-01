@@ -41,12 +41,12 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         [:fontawesome-brands-github: Practicalli Spacemacs Config](https://github.com/practicalli/spacemacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools.
 
         === "Free Desktop XDG Config"
-            ```bash
+            ```shell
             git clone https://github.com/practicalli/spacemacs.d.git $XDG_CONFIG_HOME/spacemacs`
             ```
 
         === "Classic Config"
-            ```bash
+            ```shell
             git clone https://github.com/practicalli/spacemacs.d.git $HOME/.spacemacs.d`
             ```
 
@@ -76,13 +76,13 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         [:fontawesome-brands-github: Practicalli Doom Emacs Config](https://github.com/practicalli/doom-emacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools.
 
         === "Free Desktop XDG Config"
-            ```bash
+            ```shell
             git clone https://github.com/practicalli/doom-emacs-config.git $XDG_CONFIG_HOME/doom`
             ```
             The Practicalli configuration should replace the `~/.config/doom/` directory created by the `doom install` command.
 
         === "Classic Config"
-            ```bash
+            ```shell
             git clone https://github.com/practicalli/doom-emacs-config.git $HOME/.doom.d`
             ```
             The Practicalli configuration should replace the `~/.doom.d/` directory created by the `doom install` command.
@@ -100,7 +100,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         === "Ubuntu / Debian"
             `apt-cache show emacs` to check available versions of Emacs in the Ubuntu package manager. If version 28 is available, install Emacs using the Ubuntu package manager.
 
-            ```bash
+            ```shell
             sudo apt install emacs
             ```
 
@@ -174,7 +174,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     [Conjure](https://github.com/Olical/conjure) provides Clojure interactive (REPL) development, supporting Clojure CLI, Leiningen and Babashka projects (as well as several other Lisp dialects and interesting languages)
 
     Try the Conjure interactive `:ConjureSchool` tutorial which only requires a recent version of neovim
-    ```bash
+    ```shell
     curl -fL conjure.fun/school | sh
     ```
     ![Clojure editors - neovim and conjure tutorial](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-conjure-conjure-fun-school-light.png#only-light)

@@ -20,7 +20,7 @@ If using a **jack-in** approach with the editor to start the repl, run a termina
 
 [Clojure CLI repl - rebel terminal UI](/clojure/clojure-cli/repl/coding/){target=_blank .md-button}
 
-```bash
+```shell
 clojure -M:repl/rebel
 ```
 
@@ -68,13 +68,13 @@ If a dependency is not available then a warning should state which library canno
 
 Check the extent of the dependencies for the existing project:
 
-```bash
+```shell
 clojure -Stree
 ```
 
 Use the antq tool to check for a newer version of a dependency
 
-```bash
+```shell
 clojure -T:project/outdated
 ```
 

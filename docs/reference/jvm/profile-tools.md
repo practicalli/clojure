@@ -16,7 +16,7 @@ Profile applications on the JVM, visualising memory and CPU resources, identifyi
 
 === "Ubuntu"
     Ubuntu / Debian includes VisualVM in the software center
-    ```bash
+    ```shell
     sudo apt install visualvm
     ```
 

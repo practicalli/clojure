@@ -124,7 +124,7 @@ clojure -X:project/run
 
 Over-ride the default arguments by passing them on the command line
 
-```bash
+```shell
 clojure -X:project/run '[:http/server :port]' 8888 :log/mulog :console :profile :dev
 ```
 

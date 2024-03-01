@@ -29,7 +29,7 @@ Represent a DNA sequence as an ordered collection of nucleotides, e.g. a string 
 Download the Nucleotide Count exercise using the exercism CLI tool
 
 !!! NOTE ""
-    ```bash
+    ```shell
     exercism download --exercise=nucleotide-count --track=clojure
     ```
 

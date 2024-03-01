@@ -26,13 +26,13 @@ Use an alias to add the `test` directory, either from a user level configuration
 
 `:test/run` alias runs all tests from the source code files, called with the `clojure` command in the root of the Clojure project.  The alias includes `test` as an extra path and calls the Kaocha test runner.
 
-```bash
+```shell
 clojure -X:test/run
 ```
 
 Kaocha can also watch for changes saved to file and re-run the tests.
 
-```bash
+```shell
 clojure -X:test/watch
 ```
 
@@ -66,7 +66,7 @@ clojure -X:test/cognitect
 
 `:test/kaocha` alias unit test runner that also supports Clojure Spec functional tests.  the kaocha test runner on the current project.  Add a `test.edn` file to configure which tests are run by kaocha.
 
-```bash
+```shell
 clojure -X:test/kaocha
 ```
 

@@ -6,7 +6,7 @@ A new safe too keep all the richest you will gain from becoming a Clojure develo
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
-```bash
+```shell
 clojure -T:project/create :template app :name practicalli/triple-lock
 ```
 

@@ -102,13 +102,13 @@ Kaocha can be run via make tasks, Clojure CLI, or by creating a `kaocha` script.
 
     Use the `test-all` target to run all unit tests regardless of failures (execept compiler errors)
 
-    ```bash
+    ```shell
     make test-all
     ```
 
     Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.  Use `watch-all` if all tests should run regardless of failure.
 
-    ```bash
+    ```shell
     make test-watch
     ```
 
@@ -126,25 +126,25 @@ Kaocha can be run via make tasks, Clojure CLI, or by creating a `kaocha` script.
 
     Pass `:fail-fast? false` as an argument to run all tests regardless of test failure.
 
-    ```bash
+    ```shell
     clojure -X:test/run :fail-fast? false
     ```
 
     Continually run tests by watching for changes using the `:test/watch` alias.  If a test fails, Koacha will stop the test run and restart from the failing test when a change is detected.
 
-    ```bash
+    ```shell
     clojure -X:test/watch
     ```
 === "Kaocha script"
     Kaocha recommends adding a `bin/kaocha` script to each project, although this is optional.  The script calls `clojure` with a suitable alias and allows for arguments to be passed to the command using `"$@"`.  Command line options will over-ride the same options in the `tests.edn` file.
 
-    ```bash title="bin/kaocha"
+    ```shell title="bin/kaocha"
     #!/usr/bin/env bash
     clojure -M:test/runner "$@"
     ```
     Use the `-M` execution option to pass command line flags to the Kaocha test runner.
 
-    ```bash
+    ```shell
     kaocha --fail-fast
     ```
 
@@ -211,7 +211,7 @@ Or add the profile plugin to the `test.edn` configuration
 
 <!-- ## Reporter -->
 <!-- TODO: add exmaples of using kaocha reporter plugin -->
-<!-- ```bash -->
+<!-- ```shell -->
 <!-- clojure -M:test/run --reporter kaocha.report.progress/report -->
 <!-- ``` -->
 

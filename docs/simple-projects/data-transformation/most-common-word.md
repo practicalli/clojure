@@ -24,7 +24,7 @@ A suggested approach to find the most common word:
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
-```bash
+```shell
 clojure -T:project/create :template app :name practicalli/common-words
 ```
 
@@ -222,6 +222,6 @@ Add a `-main` function that takes a reference for the source of the book and the
 
 Now call the code on the command line.
 
-```bash
+```shell
 clojure -m practicalli.common-word "https://www.gutenberg.org/cache/epub/844/pg844.txt" "common-english-words.csv"
 ```

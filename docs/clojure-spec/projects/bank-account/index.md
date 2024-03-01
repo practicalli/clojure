@@ -10,7 +10,7 @@ A relatively simple bank account application with data and function specificatio
 
 Use Clojure CLI and `clj-new`
 
-```bash
+```shell
 clojure -M:new app practicalli/banking-on-clojure
 ```
 

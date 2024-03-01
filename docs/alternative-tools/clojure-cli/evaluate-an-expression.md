@@ -12,7 +12,7 @@ This expression calls the `+` function with the arguments `1 2 3 4 5`.  As this 
 Using the `-e` option an expression can be passed to the Clojure CLI tools and a value returned
 
 
-```bash
+```shell
 clojure -e (+ 1 2 3 4 5)
 ```
 

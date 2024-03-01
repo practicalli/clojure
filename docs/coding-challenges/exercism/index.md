@@ -37,7 +37,7 @@ The [:globe_with_meridians: Exercism CLI](https://exercism.org/cli-walkthrough){
 
 ??? HINT "Each challenge shows the download and submit commands"
     Each Exercise page shows the command to download the code for that specific exercise, which is of the form
-    ```bash
+    ```shell
     exercism download --exercise=exercise-name --track=clojure
     ```
 
@@ -57,7 +57,7 @@ Open the project source code downloaded from Exercism in a [:fontawesome-solid-b
 
 Once the tests pass and you are happy with the solution, submit it to the Exercism website
 
-```bash
+```shell
 exercism submit /path/to/src-file
 ```
 

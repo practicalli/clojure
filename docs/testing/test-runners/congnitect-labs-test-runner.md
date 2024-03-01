@@ -27,7 +27,7 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
 
 Run the Cognitect Labs test runner via the command line
 
-```bash
+```shell
 clojure -M:test/cognitect
 ```
 
@@ -51,7 +51,7 @@ A summary is returned with the results of running the tests.
 
 Options can be used multiple times in one command, for a logical OR effect. For example, the following command runs all tests in the `practicalli.data.survey` and `practicalli.services.survey-report` namespaces that are found in the `src` and `test` directories
 
-```bash
+```shell
 clojure -M:test/cognitect -d test -d src -n practicalli.data.survey -n practicalli.services.survey-report
 ```
 
@@ -67,14 +67,14 @@ Selectively running tests by including and excluding test categories, from the m
 
 Use the `--include` flag with the test runner to specify specific categories of tests
 
-```bash
+```shell
 clojure -M:test-runner-cognitect --include :integration
 
 ```
 
 The `--include` flag can be used multiple times, defining a test category with each include.
 
-```bash
+```shell
 clojure -M:test-runner-cognitect --include :integration --include :persistence
 ```
 
@@ -82,7 +82,7 @@ clojure -M:test-runner-cognitect --include :integration --include :persistence
 
 `--exclude` flag runs all tests except those in the given category
 
-```bash
+```shell
 clojure -M:test/cognitect --exclude :integration
 ```
 

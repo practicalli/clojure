@@ -197,7 +197,7 @@ Additionally a Git tag can be specified, enabling the use of the short SHA value
 
 A Git client can obtain the short form of a SHA from a Git repository
 
-```bash
+```shell
 git rev-parse --short 1e872b59013425b7c404a91d16119e8452b983f2
 ```
 

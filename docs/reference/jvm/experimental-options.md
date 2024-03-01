@@ -8,7 +8,7 @@ HotSpot JVM experimental features need to be unlocked by specifying the `-XX:+Un
 
 For example, the ZGC garbage collector in JDK 11 can be accessed using
 
-```bash
+```shell
 java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
 ```
 
@@ -20,7 +20,7 @@ java -XX:+UnlockExperimentalVMOptions -XX:+UseZGC
 
 Show locks held by `java.util.concurrent` classes in a HotSpot JVM thread dump:
 
-```bash
+```shell
 java -XX:+UnlockExperimentalVMOptions -XX:+PrintConcurrentLocks
 ```
 
@@ -34,7 +34,7 @@ These options require you to use the `-XX:+UnlockDiagnosticVMOptions`  option be
 
 View advance compilation optimisations using the `-XX:+LogCompilation` option:
 
-```bash
+```shell
 java -XX:+UnlockDiagnosticVMOptions -XX:+LogCompilation
 ```
 

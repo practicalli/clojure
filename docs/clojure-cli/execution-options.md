@@ -46,7 +46,7 @@ The double quotes in an EDN string must be wrapped by single quotes, along with 
 
 Run a project with the main namespace `practicalli.sudoku-solver`, without any additional aliases on the command line
 
-```bash
+```shell
 clojure -M -m practicalli.sudoku-solver
 ```
 
@@ -63,7 +63,7 @@ Adding a `:project/run` alias to the project `deps.edn` file provides a simpler 
 
 Now the project code can be run using the simple command line form
 
-```bash
+```shell
 clojure -M:project/run
 ```
 
@@ -97,7 +97,7 @@ If no -main function is found or the namespace is not specified, then a REPL ses
 
 Use the `:repl/rebel` alias with the `-M` execution option
 
-```bash
+```shell
 clojure -M:repl/rebel
 ```
 
@@ -109,7 +109,7 @@ Multiple aliases can be specified to include additional paths and libraries. Ali
 
 Start a REPL process with this alias
 
-```bash
+```shell
 clojure -M:env/dev:lib/hotload:repl/rebel
 ```
 
@@ -120,7 +120,7 @@ The Rebel REPL UI will start, include the dev directory on the class path and th
 
 Alises can be used together by chaining their names on the command line
 
-```bash
+```shell
 clojure -M:env/dev:lib/hotload:repl/rebel
 ```
 
@@ -139,13 +139,13 @@ Any function on the class path can be called and is passed a hash-map as an argu
 
 Call the `status` function from the namespace `practicalli.service`, which is on the classpath in the practicalli.service project
 
-```bash
+```shell
 clojure -X practicalli.service/status
 ```
 
 Pass arguments to a `start` function in the `practicalli.service` namespace
 
-```bash
+```shell
 clojure -X practicalli.service/start :port 8080 :join? false
 ```
 
@@ -170,7 +170,7 @@ The `-T` execution option also uses the `clojure.exec` approach, although the `:
 
 Calling Tools on the command line has the general form:
 
-```bash
+```shell
 clojure -Ttool-name function-name :key "value" ,,,
 ```
 
@@ -183,7 +183,7 @@ key/value pairs can be passed as arguments to that function (as with the -X exec
 
 In this example, the antq tool is installed using the name `antq`
 
-```bash
+```shell
 clojure -Ttools install com.github.liquidz/antq '{:git/tag "1.3.1"}' :as antq
 ```
 
@@ -191,19 +191,19 @@ Installing a tool adds an EDN configuration file using the name of the tool in `
 
 Once a tool is installed, run by using the name of the tool.
 
-```bash
+```shell
 clojure -Tantq outdated
 ```
 
 Options to the tool are passed as key/value pairs (as the tool is called by clojure.exec)
 
-```bash
+```shell
 clojure -Tantq outdated :upgrade true
 ```
 
 `-Ttools remove` will remove the configuration of the tool of the given name
 
-```bash
+```shell
 clojure -Ttools remove :tool antq
 ```
 
@@ -265,13 +265,13 @@ If `:git` or `:local/root` dependencies are defined, the respective code will be
 
 Prepare flag by itself download dependencies defined in the `:deps` section of the `deps.edn` file of the current project.
 
-```bash
+```shell
 clojure -P
 ```
 
 Including one or more aliases will preparing all the dependencies from every alias specified
 
-```bash
+```shell
 clojure -P -M:env/dev:lib/hotload:repl/cider
 ```
 
@@ -290,7 +290,7 @@ As prepare is essentially a dry run, then the `clojure` command does not call `:
 
 The `:env/dev` alias adds "dev" directory to the class path, [typically used to add a `user.clj` that will automatically load code from the `user` namespace defined in that file](https://practical.li/clojure/clojure-cli/projects/configure-repl-startup.html).
 
-```bash
+```shell
 clojure -A:env/dev
 ```
 
@@ -310,7 +310,7 @@ Aliases can be chained together and their configuration will be merged
 
 Start a REPL process with this alias
 
-```bash
+```shell
 clojure -A:env/dev:lib/hotload
 ```
 

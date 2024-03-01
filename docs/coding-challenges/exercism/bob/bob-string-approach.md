@@ -16,7 +16,6 @@ However if there is whitespace after the question mark then the `last` character
 
 ```clojure
   (= \? (last "this is still a question? "))
-
 ```
 
 [`clojure.string/trimr`](https://clojuredocs.org/clojure.string/trimr) will remove all the trailing whitespace from the right side of a string.  Once trimmed, then our initial comparison code will work again.
@@ -31,7 +30,7 @@ Unfortunately the  clojure.string API does not have a function to check if a str
 
 Convert the string to uppercase
 
-```
+```clojure
 (clojure.string/upper-case "watch out!")
 ```
 
@@ -40,8 +39,8 @@ compare the uppercase version of the string with the original, if they are equal
 ```clojure
   (= "WATCH OUT!"
      (clojure.string/upper-case "WATCH OUT!"))
-
 ```
+
 
 ```clojure
   (= "watch out!"
@@ -63,19 +62,19 @@ The [java.lang.Character class](https://docs.oracle.com/en/java/javase/11/docs/a
 
 `Character/isLetter` can be called as a function in Clojure, passing in a character type.
 
-```
+```clojure
 (Character/isLetter \a)
 ```
 
 To support all Unicode characters there is an isLetter method that takes an integer type.  As there could be any kind of characters in the phrase, we will use the int version.  This required conversing the character to an int first before calling `Character/isLetter`
 
-```
+```clojure
 (Character/isLetter (int \a))
 ```
 
 the [`some`](https://clojuredocs.org/clojure.core/some) function is used to iterate over all the characters in the phrase. As soon as a letter is found it returns true, so does not need to process the whole phrase unless no letter is found.
 
-```
+```clojure
 (some #(Character/isLetter (int %)) phrase)
 ```
 
@@ -92,7 +91,6 @@ The `cond` expression then evaluates the local names to see if they are true or 
 For the shouting question, the `and` is used to check if two names are both true.
 
 ```clojure
-
 (defn response-for [phrase]
   (let [phrase    (string/trimr phrase)
         silence?  (string/blank? phrase)
@@ -106,7 +104,6 @@ For the shouting question, the `and` is used to check if two names are both true
       shouting?                 "Whoa, chill out!"
       question?                 "Sure."
       :else                     "Whatever.")))
-
 ```
 
 > The first let binding, `phrase` over-rides the name of the argument to the function.  This is not that common an approach as over-riding can lead to confusion.  However, in this relatively simple example it feels okay to do.  The over-ride is the first let binding and it is preparing the string for all the other let bindings to use.

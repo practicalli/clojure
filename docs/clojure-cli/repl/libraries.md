@@ -35,7 +35,7 @@ Open a terminal and change to the root of the Clojure project directory, where t
 
 Start the REPL including the `:database/h2` alias to include every library defined in the `:deps` key and libraries in the `:database/h2` alias.  This example is using rebel readline rich terminal UI
 
-```bash
+```shell
 clojure -M:repl/rebel
 ```
 
@@ -43,7 +43,7 @@ This command will include
 
 Add aliases to include optional libraries, such as those used for development.  In this example, the H2 database and next.jdbc libraries are included along with those libraries in the `:deps` key of `deps.edn`
 
-```bash
+```shell
 clojure -M:database/h2:repl/rebel
 ```
 
@@ -86,7 +86,7 @@ If errors occur when loading or reloading the namespace with require, the `:verb
 
 Start a REPL session using Clojure CLI with the [`:lib/hotload alias`](/clojure/clojure-cli/repl-reloaded/), including rebel readline for an enhance REPL terminal UI.
 
-```bash
+```shell
 clojure -M:lib/hotload:repl/rebel
 ```
 

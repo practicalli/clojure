@@ -60,7 +60,7 @@ Start a test selective category of tests running by specifying test selectors to
 
     Specifying `--skip-meta` on the command line gives the same results
 
-    ```bash
+    ```shell
     bin/kaocha --skip-meta :metadata-name
     ```
 

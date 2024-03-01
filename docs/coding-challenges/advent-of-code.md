@@ -28,7 +28,7 @@ A video guide to solving the first challenge of Advent of Code from 2018, trying
 
 ## Creating a project for the challenge
 
-```bash
+```shell
 clojure -T:project/create :template lib practicalli.advent-of-clojure-code/2019
 ```
 

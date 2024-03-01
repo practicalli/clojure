@@ -31,7 +31,7 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration
 
-```bash
+```shell
 clojure -T:project/new :template app :name practicalli/random-clojure-function
 ```
 
@@ -56,7 +56,7 @@ Edit the `deps.edn` file in the root of the project and add a `:test/run` alias,
 
 Add the remote repository URL to the local Git repository.
 
-```bash
+```shell
 git remote add practicalli git@github.com:practicalli/random-clojure-function.git
 ```
 

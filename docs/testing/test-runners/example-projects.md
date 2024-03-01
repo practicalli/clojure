@@ -22,7 +22,7 @@ Adding a `test.edn` file is not sufficient for testing this project with lambdai
 
 Create a `bin/koacha` script and add the extra alias
 
-```bash
+```shell
 #!/usr/bin/env bash
 clojure -M:test:test-runner-kaocha "$@"
 ```

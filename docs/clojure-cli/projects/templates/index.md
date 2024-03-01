@@ -65,7 +65,7 @@ Create a project using the `:project/create` alias.
 
 The `practicalli/minimal` template and `practicalli/playground` name are used if `:template` and `:name` arguments are not specified.
 
-```bash
+```shell
 clojure -T:project/create
 ```
 
@@ -78,7 +78,7 @@ Use the form `domain/app-or-lib-name` to specify a project name, typically with 
 
 Create a project using the `practicalli/application` template and random-function name. 
 
-```bash
+```shell
 clojure -T:project/create :template practicalli/application :name practicalli/random-function
 ```
 
@@ -87,7 +87,7 @@ clojure -T:project/create :template practicalli/application :name practicalli/ra
 
 Change into the directory and test the project runs by starting a REPL with [Terminal REPL](/clojure/clojure-cli/repl/)
 
-```bash
+```shell
 cd playground && clojure -M:repl/rebel
 ```
 
@@ -108,7 +108,7 @@ Type code expressions at the repl prompt and press RETURN to evaluate them.
 
 Run project with or without an alias:
 
-```bash
+```shell
 clojure -M:alias -m domain.app-name
 clojure -M -m domain.app-name
 ```

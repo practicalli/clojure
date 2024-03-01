@@ -17,7 +17,7 @@ Overview of tools for monitoring and profiling Clojure applications running on t
 
 See the environment resources available to the JVM without running a Clojure or Java application:
 
-```bash
+```shell
 java -XshowSettings:system -version
 ```
 
@@ -25,7 +25,7 @@ java -XshowSettings:system -version
 
 Include `-XshowSettings:system` when running any Java command to provide simple diagnostics, e.g. when running a Clojure Uberjar
 
-```bash
+```shell
 java -XshowSettings:system -jar practicalli-service.jar
 ```
 
@@ -51,7 +51,7 @@ Before [CLJS-2377 issue was resolved](https://clojure.atlassian.net/browse/CLJS-
 
 At that time, compiling a ClojureScript project without adding the java.xml.bind module would return the error:
 
-```bash
+```shell
 <Exception details>
 ...
 Caused by: java.lang.ClassNotFoundException: javax.xml.bind.DatatypeConverter

@@ -13,7 +13,7 @@
 Download the RNA transcription exercise using the exercism CLI tool
 
 !!! NOTE ""
-    ```bash
+    ```shell
     exercism download --exercise=rna-transcription --track=clojure
     ```
 

@@ -9,7 +9,7 @@ Garbage collection cost is in the form of execution pauses while the HotSpot JVM
 Report a full breakdown of the HotSpot JVM’s memory usage upon exit using the following option combination:
 
 !!! EXAMPLE "JVM Memory Usage Report"
-    ```bash
+    ```shell
     -XX:+UnlockDiagnosticVMOptions ‑XX:NativeMemoryTracking=summary ‑XX:+PrintNMTStatistics.
 
 ```

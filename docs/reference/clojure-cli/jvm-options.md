@@ -138,7 +138,7 @@ For systems that require very low latency, use the Z Garbage collector
 
 `-Xverify:none` option reduces startup time of the JVM by skipping verification process
 
-```bash
+```shell
 "-Xverify:none"
 ```
 

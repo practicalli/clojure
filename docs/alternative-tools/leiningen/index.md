@@ -17,7 +17,7 @@ Install the Leiningen tool using the specific instructions for your Operating Sy
 === "Linux"
     [Download the lein script](https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein) to your local `bin` directory.  Then make the `lein` script executable and run `lein` to download the full version.
 
-    ```bash
+    ```shell
     mkdir ~/bin
     curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein > ~/bin/lein
     chmod u+x ~/bin/lein
@@ -29,7 +29,7 @@ Install the Leiningen tool using the specific instructions for your Operating Sy
 === "Homebrew"
     If you have [Homebrew](https://brew.sh/) installed, run the following command in a terminal window.
 
-    ```bash
+    ```shell
     brew install leiningen
     ```
 
@@ -51,7 +51,7 @@ Install the Leiningen tool using the specific instructions for your Operating Sy
 
     If you have [Chocolatey](https://chocolatey.org/) installed, add the [Leiningen package](https://chocolatey.org/packages/Lein) by running the following command in a terminal window.
 
-    ```bash
+    ```shell
     choco install lein
     ```
 
@@ -71,7 +71,7 @@ Install the Leiningen tool using the specific instructions for your Operating Sy
 
 Check Leiningen is working by running `lein` command in a terminal
 
-```bash
+```shell
 lein help
 ```
 
@@ -104,13 +104,13 @@ Leiningen automatically includes the `test` directory when running, so no additi
 
 Run all the tests saved to file:
 
-```bash
+```shell
 lein test
 ```
 
 Run just the unit tests in a specific namepsace.
 
-```bash
+```shell
 lein test :only domain.namespace-test
 ```
 

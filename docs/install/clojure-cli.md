@@ -64,12 +64,12 @@ Clojure CLI automatically downloads required library dependencies, including the
 
     Use the Homebrew command with the [clojure/tools tap](https://github.com/clojure/homebrew-tools), as defined in the [Clojure.org Getting started guide](https://clojure.org/guides/getting_started#_installation_on_linux)
 
-    ```bash
+    ```shell
     brew install clojure/tools/clojure
     ```
 
     Use Homebrew to update an install of Clojure CLI to the latest release
-    ```bash
+    ```shell
     brew upgrade clojure/tools/clojure
     ```
 
@@ -83,13 +83,13 @@ Clojure CLI automatically downloads required library dependencies, including the
 
     Open "Windows PowerShell" and enter the following commands to configure the shell:
 
-    ```bash
+    ```shell
     iwr -useb get.scoop.sh | iex
     Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
     ```
     Then in the same PowerShell window, install the Clojure related tools using the following commands:
 
-    ```bash
+    ```shell
     scoop bucket add extras
     scoop bucket add java
     scoop bucket add scoop-clojure https://github.com/littleli/scoop-clojure
@@ -151,13 +151,13 @@ Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](htt
 
 `clojure -Sdescribe` shows the version of Clojure CLI installed and configuration locations used.
 
-```bash
+```shell
 clojure -Sdescribe
 ```
 
 The output of the command includes the version of Clojure CLI in the `:version` key
 
-```bash
+```shell
 {:version "1.11.1.1386"
  :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.config/clojure/deps.edn" ]
  :config-user "/home/practicalli/.config/clojure/deps.edn"

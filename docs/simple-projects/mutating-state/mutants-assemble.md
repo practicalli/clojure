@@ -13,7 +13,7 @@ We will also introduce the following functions for the first time:
 
 [:fontawesome-solid-book-open: Pracitcalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) provides the `:project/create` alias to create projects using deps-new project.
 
-```bash
+```shell
 clojure -T:project/create :template app :name practicalli/mutants-assemble
 ```
 

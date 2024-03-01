@@ -13,7 +13,7 @@ Check to see if there is an appropriate version of Java already installed.
 
 Open a terminal and run the command
 
-```bash
+```shell
 java --version
 ```
 
@@ -26,7 +26,7 @@ If Java is installed and on the execution path, the version infomation is return
 === "Debian Packages"
     Install Java development kit (JDK) using the `apt` package manager (login as `su -` or prefix the command with `sudo`)
 
-    ```bash
+    ```shell
     apt install openjdk-21-jdk
     ```
 
@@ -42,7 +42,7 @@ If Java is installed and on the execution path, the version infomation is return
 
         Install the `openjdk-21-source` package to support navigation of Java Object and Method source code, especially useful when using Java Interoperability from within Clojure code.
 
-        ```bash
+        ```shell
         sudo apt install openjdk-21-doc openjdk-21-source
         ```
 
@@ -51,14 +51,14 @@ If Java is installed and on the execution path, the version infomation is return
     If `openjdk-21-jdk` package is not available, add the [Ubuntu OpenJDK personal package archive](https://launchpad.net/~openjdk-r/+archive/ubuntu/ppa){target=_blank}
 
     !!! NOTE ""
-        ```bash
+        ```shell
         sudo add-apt-repository ppa:openjdk-r/ppa
         sudo apt-get update
         ```
     When multiple versions of Java are installed, set the version using the `update-alternatives` command in a terminal
 
     !!! NOTE ""
-        ```bash
+        ```shell
         sudo update-alternatives --config java
         ```
     Available java versions will be listed.  Enter the list number for the version you wish to use.
@@ -67,7 +67,7 @@ If Java is installed and on the execution path, the version infomation is return
     Using [Homebrew](https://brew.sh/){target=_blank}, run the following command in a terminal to install Java 17:
 
     !!! NOTE ""
-        ```bash
+        ```shell
         brew install openjdk@21
         ```
 
@@ -75,12 +75,12 @@ If Java is installed and on the execution path, the version infomation is return
         More than one version of Java can be installed on MacOSX. Set the Java version by opening a terminal and using one of the following commands
 
         Show the Java versions installed
-        ```bash
+        ```shell
         /usr/libexec/java_home -V
         ```
 
         Switch to Java version 21
-        ```bash
+        ```shell
         export JAVA_HOME=$(/usr/libexec/java_home -v 21)
         ```
 
@@ -93,7 +93,7 @@ If Java is installed and on the execution path, the version infomation is return
 
     Follow the [scoop-clojure install instructions](https://github.com/littleli/scoop-clojure){target=_blank}, summarized here:
 
-    ```bash
+    ```shell
     scoop bucket add java
     scoop install temurin-lts-jdk
     ```
@@ -102,7 +102,7 @@ If Java is installed and on the execution path, the version infomation is return
 
     If neither Scoop or Windows Subsystem for Linux work, try the [Chocolatey](https://chocolatey.org/){target=_blank} package manager. Install the [Java Runtime (JRE)](https://chocolatey.org/packages/javaruntime){target=_blank} using the following command in a command line window
 
-    ```bash
+    ```shell
     choco install javaruntime
     ```
 

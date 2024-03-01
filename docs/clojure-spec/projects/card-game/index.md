@@ -8,7 +8,7 @@ spec generators are used to return varied sample data from those specifications.
 
 Create a new Clojure project using `:project/create` from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) or add an alias definition of your choosing to the Clojure CLI user configuration.
 
-```bash
+```shell
 clojure -T:project/create :template app :name practicalli/card-game
 ```
 

@@ -182,7 +182,7 @@ Clojure has a number of [:fontawesome-solid-book-open: test runners](https://pra
 
 !!! Hint "Automate local test runner"
     Use [:fontawesome-solid-book-open: kaocha test runner](https://practical.li/clojure/testing/test-runners/kaocha-test-runner/){target=_blank} in watch mode to run tests and specification check automatically (when changes are saved)
-    ```bash
+    ```shell
     clojure -X:test/watch
     ```
 

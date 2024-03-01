@@ -25,7 +25,7 @@ A [Live coding video walk-through of this project](https://youtu.be/sXZKrD4cAFk)
 
 Use the `:project/create` [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) to create a new Clojure project.
 
-```bash
+```shell
 clojure -T:project/create :template app :name practicalli/random-function
 ```
 
@@ -174,14 +174,14 @@ Edit the `src/practicalli/random-function.clj` file.  Change the `-main` functio
 
 === "Cognitect Test Runner"
     Run the tests with the Congnitect test runner via the `test` function in the `build.clj` file.
-    ```bash
+    ```shell
     clojure -T:build test
 
 ```
 
 === "Kaocha Test Runner"
     Run the tests with the Kaocha test runner using the alias `:test/run` from [Practicalli Clojure CLI config](/clojure/clojure-cli/practialli-config/)
-    ```bash
+    ```shell
     clojure -M:test/run
 ```
 
@@ -189,7 +189,7 @@ Edit the `src/practicalli/random-function.clj` file.  Change the `-main` functio
 
 Use the clojure command with the main namespace of the application.  Clojure will look for the -main function and evaluate it.
 
-```bash
+```shell
 clojure -M -m practicalli.random-function
 ```
 
@@ -236,7 +236,7 @@ Run the tests again.
 
 If the tests pass, then run the application again
 
-```bash
+```shell
  clojure -M -m practicalli.random-function
 ```
 
@@ -385,7 +385,7 @@ Add functionality to list all functions from all namespaces or a specific namesp
 <!-- > -->
 <!-- > Standard practice is to required the main namespace for the project, then switch the REPL to that namespace.  The functions for the project are now available. -->
 <!-- > To require and switch to a namespace on startup, use the `clojure` or `clj` commands with the --eval option to run the specific commands.  The --repl option will ensure the repl starts. -->
-<!-- ```bash -->
+<!-- ```shell -->
 <!-- clj --eval "(require 'practicalli.random-clojure-core-function)" --eval "(in-ns 'practicalli.random-clojure-core-function)" --repl -->
 <!-- ``` -->
 <!-- > The --eval approach will be blocked if used with aliases that set the main namespace, such as `:rebel`. -->

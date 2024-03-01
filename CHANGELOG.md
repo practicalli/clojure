@@ -19,6 +19,7 @@
 - dev: checkout v4 & python v5 actions in publish-book workflow
 - dev: sparse checkout scheduled version workflow
 - dev: upload-artefact v4 & remove explicit token from megalinter
+- format: use shell for code blocks, add missing clojure language to code blocks
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions

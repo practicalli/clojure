@@ -89,7 +89,7 @@ All tools are provided via libraries and are only installed on first use.  Unuse
 
 Run project with or without an alias:
 
-```bash
+```shell
 clojure -M:alias -m domain.app-name
 clojure -M -m domain.app-name
 ```
