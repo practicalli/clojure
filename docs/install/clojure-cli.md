@@ -100,12 +100,19 @@ Clojure CLI automatically downloads required library dependencies, including the
 
 ## Practicalli Clojure CLI Config
 
-Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.
+Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases.
 
-Fork or clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` and `$HOME/.clojure` directory if they exist.
+Clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config){target=_blank} GitHub repository, first removing the `$XDG_CONFIG_HOME/clojure` and `$HOME/.clojure` directory if they exist.
 
-!!! INFO "Practicalli recommends using FreeDesktop XDG configuration locations"
-    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory, to avoid creating another dot directory in the root of the user account.  
+??? INFO "User configuration locations"
+    If `XDG_CONFIG_HOME` environment variable is set, then the user configuration is `$XDG_CONFIG_HOME/clojure/deps.edn`
+
+    Otherwise the user configuration is `$HOME/.clojure/deps.edn`.
+
+    `CLJ_CONFIG` environment variable can be used to set a custom location, overriding any other location.
+
+!!! HINT "Practicalli recommends FreeDesktop XDG location"
+    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory to simplify versioning of configuration. 
 
     Configure `~/.bashrc` for the bash shell 
     ```shell title="Bash .bashrc file"
@@ -182,6 +189,8 @@ Pressing the ++arrow-up++ and ++arrow-down++ keys will scroll through the code p
 `rlwrap` is available with most Linux systems. Look for  install instructions by searching for rlwrap in a web browser or build from source from the [:globe_with_meridians: rlwrap GitHub repository](https://github.com/hanslub42/rlwrap).
 
 !!! HINT "Use Rebel Readline for a rich terminal UI experience"
-    [:fontawesome-solid-book-open: rebel readline](/clojure/clojure-cli/repl/) provides a auto-completion, documentation, signature help and multi-line editing all within a terminal UI, providing a much richer experience than the `clj` wrapper and `rlwrap`.
+    [:fontawesome-solid-book-open: rebel readline](/clojure/clojure-cli/repl/) is an advanced readline tool providing auto-completion, documentation, signature help and multi-line editing, all within a terminal UI
+
+    Rebel is a much richer experience than the `clj` wrapper with `rlwrap`.  Rebel should not be used with `clj`.
 
     Rebel Readline is part of the [Practicalli Clojure CLI config](#practicalli-clojure-cli-config).
