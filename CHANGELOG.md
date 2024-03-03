@@ -3,6 +3,7 @@
 # Unreleased
 ## Changed
 - clojure-cli: enhance built-in commands description
+- code-challenge: rewrite code challenges overview 
 
 # 2024-03-03
 
