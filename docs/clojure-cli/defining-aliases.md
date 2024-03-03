@@ -26,19 +26,22 @@ Aliases can be used to :
 * `:mvn/local-repo` to [specify an alternative location for the Maven cache](https://github.com/practicalli/clojure-deps-edn#maven-local-repository)
 * `:aliases` - a map of optional libraries and tools, the key being the alias name and its value the configuration
 
-
 The installation of Clojure CLI contains a configuration
 
 * adds `src` and `org.clojure/clojure` library
 * Maven Central & Clojars.org repository sources.
 
-Configuration can be defined in a `deps.edn` file in the root of a Clojure project, applying only to that specific project.
+Configuration available to all projects (or stand-alone tools) is defined in a user `deps.edn` configuration in either `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure`.
 
-A user `deps.edn` configuration can be used in any Clojure project and the `deps.edn` configuration file resides in either `$XDG_CONFIG_HOME/clojure` or `$HOME/.clojure`.
-
+Project specific configuration is defined in a `deps.edn` file in the root of the Clojure project.
 
 ??? INFO "User configuration locations"
-    User configuration is either `$XDG_CONFIG_HOME/clojure/deps.edn` or `$HOME/.clojure/deps.edn` locations and its aliases can be used for any Clojure project.
+    If `XDG_CONFIG_HOME` environment variable is set, then the user configuration is `$XDG_CONFIG_HOME/clojure/deps.edn`
+
+    Otherwide the user configuration is `$HOME/.clojure/deps.edn`.
+
+    The `CLJ_CONFIG` environment variable will be used if set.
+
 
 
 ## Alias keys
@@ -118,7 +121,7 @@ Arguments can be nested within the `:exec-args` map, especially useful on projec
 
 To run with the default arguments:
 
-```
+```shell
 clojure -X:project/run
 ```
 
@@ -211,19 +214,27 @@ Additional arguments can be sent when running the command, e.g. `clojure -X:proj
 
 The command line can over-ride the `:exec-fn` function configuration, allowing for a default configuration that can be easily over-ridden.
 
-```clojure
-  :project/new
-  {:replace-deps {seancorfield/clj-new {:mvn/version "1.1.226"}}
-   :main-opts    ["-m" "clj-new.create"]    ;; deprecated
-   :ns-default   clj-new
-   :exec-fn      create
-   :exec-args    {:template lib :name practicalli/playground}
-   }
-```
+!!! EXAMPLE
+    ```clojure
+      :project/new
+      {:replace-deps {seancorfield/clj-new {:mvn/version "1.1.226"}}
+       :main-opts    ["-m" "clj-new.create"]    ;; deprecated
+       :ns-default   clj-new
+       :exec-fn      create
+       :exec-args    {:template lib :name practicalli/playground}
+       }
+    ```
 
 !!! HINT "Keyword naming"
-    Legal Clojure keyword names can be used for an alias.  Multiple aliases can be chained together with the `clojure` command.  For example in this command we are combining three aliases:
-    `clojure -M:task/path:task/deps:build/options`
+    Alias names are a Clojure keyword, which can be qualified to provide context, e.g. `:project/create`.  
+
+    Aliases are composable (chained together) and their path and deps configurations merged:
+
+    ```shell
+    clojure -M:task/path:task/deps:build/options
+    ```
+    
+    When multiple aliases contain a `:main-opts` configurations they are not merged, the configuration in the last alias is used
 
 
 ## Resources

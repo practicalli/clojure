@@ -2,63 +2,48 @@
 
 Execution options (`-A` `-M` `-P` `-T` `-X`) define how aliases are used with the Clojure CLI. Aliases are included via one of these execution options and each option can affect how the alias is used.
 
-Since the [first documented released](https://clojure.org/releases/tools#v1.10.1.510) which exclusively used the `-A` execution option to include aliases, the design has evolved to provide specific execution options to run code via clojure.main (`-M`) and clojure.exec (`-X`). In July 2021, the ability to run tools (`-T`) independent from the Clojure project classpath was also introduced.
+??? INFO "Clojure CLI design evolution"
+    The [first documented released](https://clojure.org/releases/tools#v1.10.1.510) used the `-A` execution option to include aliases. 
 
-The exec-opts command line flags have evolved to enable these features, so lets explore those flags and show how each flag is typically used.
+    The design has evolved to provide specific execution options to run code via clojure.main (`-M`) and clojure.exec (`-X`). 
 
-??? INFO "Understanding Aliases"
-    [Understand aliases in more detail](https://practical.li/blog/posts/clojure-cli-tools-understanding-aliases/)
+    In July 2021 the ability to run tools (`-T`) independent from the Clojure project classpath was introduced.
 
 
 ## Quick summary
 
-Use `-M` for code that should be called via the `-main` function in a specified namespace, passing string-based arguments.
+`-M` uses `clojure.main` to call the `-main` function of the specified namespace, passing string-based arguments.
 
-Use `-X` to run a specified function, passing arguments as key and value pairs (not hash-maps yet)
+`-X` uses `clojure.exec` to call a fully qualified function, passing arguments as key and value pairs
 
-Use `-T` to run a tool independently from any libraries defined in a project.  Only the libraries in the alias are included in the ClassPath.  The path is defined as `"."` by default.
+`-T` runs a tool independent from project dependencies.  Only the libraries in the alias are included in the Class Path.  The path is defined as `"."` by default.
 
-Use `-P` to download libraries on the class path, including those from specified aliases
+`-P` downloads library dependencies, including those from specified aliases
 
-Use `-A` in the specific case of running a basic terminal UI REPL with the `clojure` command (or `clj` wrapper).
-
-Common aliases will be used to explain the use of these execution options in more detail.
+`-A` in the specific case of running a basic terminal UI REPL with the `clojure` command or `clj` wrapper.
 
 
-## Form of clojure.exec command line arguments
+## clojure.main
 
-Clojure.exec command takes Key/value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).
+`-M` flag instructs Clojure CLI tools to use `clojure.main` to run Clojure code.
 
-Number values and keywords can be parsed from the command line
+The `--main` or `-m` flag is an argument to `clojure.main` which specifies the namespace to search for a `-main` function.
 
-Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. `'[:a :b]'`, `'{:c 1}'`.
+`clojure.main/main` function searches for a `-main` function in the given namespace, e.g. `--main pracicalli.gameboard.service`
 
-The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps
-
-- `'"strings in double quotes surround by single quotes"'`
-- `'[:vectors :with-single-quotes]'`
-- `'{:hash-maps :with-single-quotes}'`
-
-
-## Run clojure.main project
-
-`-M` execution option uses `clojure.main` to run Clojure code.
+> If the -main function is not found or the namespace is not specified, then the `clojure` command will run a REPL session.
 
 Run a project with the main namespace `practicalli.sudoku-solver`, without any additional aliases on the command line
 
-```shell
-clojure -M -m practicalli.sudoku-solver
-```
+!!! NOTE ""
+    ```shell
+    clojure -M -m practicalli.sudoku-solver
+    ```
 
-`-M` flag instructs Clojure CLI tools to use `clojure.main` to run the Clojure code.
-
-`-m` flag is an argument to `clojure.main` which specifies the namespace to search for a `-main` function.
-
-
-Adding a `:project/run` alias to the project `deps.edn` file provides a simpler way to run the project on the command line
+Add `:project/run` alias to the project `deps.edn` file to provide a simpler way to run the project on the command line
 
 ```clojure
-:project/run {:main-opts ["-m" "practicalli.sudoku-solver"]}
+:project/run {:main-opts ["--main" "practicalli.sudoku-solver"]}
 ```
 
 Now the project code can be run using the simple command line form
@@ -68,13 +53,10 @@ clojure -M:project/run
 ```
 
 
-### How clojure.main works
+### Using clojure.main
 
-`clojure.main/main` function searches for a `-main` function in the given namespace (`-m fully-qualified.namespace`)
 
-If no -main function is found or the namespace is not specified, then a REPL session is run.  This is the approach Leiningen has always used and still uses today.
-
-> [`clojure.main` namespace](https://clojure.org/reference/repl_and_main) has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of [clojure.exec](#clojure-exec--X).
+> [`clojure.main` namespace](https://clojure.org/reference/repl_and_main) has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of [clojure.exec](#clojureexec).
 > [clojure.main has other features, as covered in the REPL and main entrypoints article](https://clojure.org/reference/repl_and_main)) on clojure.org.
 
 
@@ -136,6 +118,23 @@ If the command line includes the `-m` flag with a namespace, then that namespace
 `-X` flag provides the flexibility to call any fully qualified function, so Clojure code is no longer tied to `-main`
 
 Any function on the class path can be called and is passed a hash-map as an argument.  The argument hash-map is either specified in an alias using `:exec-args` or assembled into a hash-map from key/value pairs on the command line.  Key/values from the command line are merged into the `:exec-args` map if it exists, with the command line key/values taking precedence.
+
+### clojure.exec arguments
+
+Clojure.exec command takes key value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).
+
+Number values and keywords can be parsed from the command line
+
+Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. `'[:a :b]'`, `'{:c 1}'`.
+
+The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps
+
+- `'"strings in double quotes surround by single quotes"'`
+- `'[:vectors :with-single-quotes]'`
+- `'{:hash-maps :with-single-quotes}'`
+
+
+### clojure.exec examples
 
 Call the `status` function from the namespace `practicalli.service`, which is on the classpath in the practicalli.service project
 

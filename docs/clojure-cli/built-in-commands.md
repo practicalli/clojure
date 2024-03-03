@@ -1,8 +1,13 @@
 # Clojure CLI Built-in commands
 
-`clojure` without any other arguments will run a REPL with a basic terminal prompt.  `clj` is a wrapper script for the `clojure` command (`rlwrap` required) to add command history to the basic REPL prompt.
+`clojure` without any other arguments will run a REPL with a basic terminal prompt.  
 
-`clojure -T:deps` to run one of several built-in commands to help work with Clojure CLI projects and libraries.  `clojure --help` list the available commands.
+`clj` is a wrapper script for the `clojure` command (`rlwrap` required) to add command history to the basic REPL prompt.
+
+`clojure -T:deps` to run one of several built-in commands to help work with Clojure CLI projects and libraries.
+
+`clojure --help` list the available commands.
+
 
 `-X` execution option is used for the  `:deps` aliases, running them via `clojure.exec` and limiting the class path to the current directory.
 
@@ -40,9 +45,10 @@ The list includes transitive dependencies, library dependencies of the project l
 
 The `:aliases '[:alias/name(s)]'` argument will also list library dependencies from a given alias, either project alias or user alias. 
 
-```shell
-clojure -X:deps list
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps list
+    ```
 
 ??? EXAMPLE "Dependency list from Practicalli Service project template"
     ```shell
@@ -56,7 +62,7 @@ clojure -X:deps list
     com.brunobonacci/mulog 0.9.0  (Apache-2.0)
     com.brunobonacci/mulog-adv-console 0.9.0  (Apache-2.0)
     com.brunobonacci/mulog-json 0.9.0  (Apache-2.0)
-    com.cnuernber/charred 1.010 
+    com.cnuernber/charred 1.010
     com.cognitect/transit-clj 1.0.324  (Apache-2.0)
     com.cognitect/transit-java 1.0.343  (Apache-2.0)
     com.fasterxml.jackson.core/jackson-annotations 2.12.1  (Apache-2.0)
@@ -125,9 +131,10 @@ clojure -X:deps list
 
 Use the `:aliases '[:alias/name(s)]'` option to also include the dependencies from a project or user alias.  Showing the dependencies from an aliase can useful to identify conflicting dependencies when using an alias (unlikely but it could happen).
 
-```shell
-clojure -X:deps list :aliases '[:dev/reloaded]'
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps list :aliases '[:dev/reloaded]'
+    ```
 
 ??? EXAMPLE "Dependency list from project and Practicalli :dev/reloaded alias"
     ```shell
@@ -222,9 +229,10 @@ The tree includes transitive dependencies, library dependencies of the project l
 
 The `:aliases '[:alias/name(s)]'` argument will also list library dependencies from a given alias, either project alias or user alias. 
 
-```shell
-clojure -X:deps tree
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps tree
+    ```
 
 ??? EXAMPLE "Dependency list from Practicalli Service project template"
     ```shell
@@ -348,9 +356,10 @@ clojure -X:deps tree
 
 Use the `:aliases` option with the Clojure CLI in the root of a project to show library dependencies for the project and the `:dev/reloaded` alias which could be useful if there are library conflicts when using an alias (unlikely but it could happen).
 
-```shell
-clojure -X:deps tree :aliases '[:dev/reloaded]'
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps tree :aliases '[:dev/reloaded]'
+    ```
 
 The `:aliases` option can be used to inspect the dependencies of a user alias, listing only dependencies from the specified aliases when run outside of a Clojure project.
 
@@ -393,18 +402,20 @@ The `:aliases` option can be used to inspect the dependencies of a user alias, l
 
 Add a jar file for a library to the local Maven repository, e.g. `~/.m2/repository`, making that library accessible to all other local projects.
 
-```shell
-clojure -X:deps mvn-install :jar '"/path/to.jar"'`
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps mvn-install :jar '"/path/to.jar"'`
+    ```
 
 
 ## Find Library Versions
 
 Find the available versions of a given library in the form domain/library-name (domain is typically the company name or Git Service user or organisation name).
 
-```clojure
-clojure -X:deps find-versions :lib clojure.java-time/clojure.java-time
-```
+!!! NOTE ""
+    ```clojure
+    clojure -X:deps find-versions :lib clojure.java-time/clojure.java-time
+    ```
 
 
 ## Prepare Source dependencies
@@ -413,36 +424,40 @@ Some dependencies will require a preparation step before they can be used on the
 
 Projects that require preparation would have a configuration of the form:
 
-```clojure
-{:paths ["src" "target/classes"]
- :deps/prep-lib {:alias :build
-                 :fn compile
-                 :ensure "target/classes"}}
-```
+!!! EXAMPLE
+    ```clojure
+    {:paths ["src" "target/classes"]
+     :deps/prep-lib {:alias :build
+                     :fn compile
+                     :ensure "target/classes"}}
+    ```
 
 Including the top-level key `:deps/prep-lib` tells the tools.deps classpath construction that something extra is needed to prepare this lib and that can be performed by invoking the compile function in the :build alias. Once the prepare step has been done, it should create the path "target/classes" and that can be checked for completion.
 
 Add a library dependency as with any other library (git or local/root):
 
-```clojure
-{:deps {practicalli/library-name {:local/root "../needs-prep"}
-        practicalli/library-name {:git/sha "../needs-prep"}}}
-```
+!!! EXAMPLE
+    ```clojure
+    {:deps {practicalli/library-name {:local/root "../needs-prep"}
+            practicalli/library-name {:git/sha "../needs-prep"}}}
+    ```
 
 
 `:deps prep` will built the library of any dependency that requires it
 
-```shell
-clojure -X:deps prep
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps prep
+    ```
 
 ## POM file
 
 Generate or update pom.xml with deps and paths
 
-```shell
-clojure -X:deps mvn-pom
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps mvn-pom
+    ```
 
 
 ## Resolve Git tags
@@ -451,9 +466,10 @@ clojure -X:deps mvn-pom
 
 `-X:deps git-resolve-tags` updates git based dependencies in the project `deps.edn` file which use :git/tags key to the equivalent SHA commit values in the `:git/sha` key
 
-```shell
-clojure -X:deps git-resolve-tags
-```
+!!! NOTE ""
+    ```shell
+    clojure -X:deps git-resolve-tags
+    ```
 
 
 ## References
