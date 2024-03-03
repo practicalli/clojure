@@ -9,7 +9,7 @@
 `clojure --help` list the available commands.
 
 
-## :deps tool
+## :deps alias
 
 The `:deps` aliases provides tools for managing library dependencies.  
 
