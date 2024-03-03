@@ -9,22 +9,26 @@
 `clojure --help` list the available commands.
 
 
-`-X` execution option is used for the  `:deps` aliases, running them via `clojure.exec` and limiting the class path to the current directory.
+## :deps tool
 
-| aliases                                               | Description                                                                                                |
-| :---------------------------------------------------- | :--------------------------------------------------------------------------------------------------------- |
-| `clojure -X:deps list`                                | List full transitive deps set and licenses                                                                 |
-| `clojure -X:deps tree`                                | download dependencies & print dependency tree, indenting libraries that are dependencies of dependencies   |
-| `clojure -X:deps find-versions`                       | Find available versions of a given library (domain/name)                                                   |
-| `clojure -X:deps prep`                                | Prepare all unprepped libs in the dep tree                                                                 |
-| `clojure -X:deps mvn-pom`                             | Generate or update pom.xml with deps and paths                                                             |
-| `clojure -X:deps mvn-install :jar '"/path/to.jar"'`   | install a given jar file into the local maven repository, eg. `~/.m2/repository`                           |
-| `clojure -X:deps git-resolve-tags`                    | update `deps.edn` git based dependencies that used tags with the equivalent SHA commit values              |
+The `:deps` aliases provides tools for managing library dependencies.  
+
+The Clojure CLI `-X` flag is used to call these tools via `clojure.exec` and take key value pairs as arguments
+
+| aliases                                             | Description                                                                                              |
+| --------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| `clojure -X:deps list`                              | List full transitive deps set and licenses                                                               |
+| `clojure -X:deps tree`                              | download dependencies & print dependency tree, indenting libraries that are dependencies of dependencies |
+| `clojure -X:deps find-versions`                     | Find available versions of a given library (domain/name)                                                 |
+| `clojure -X:deps prep`                              | Prepare all unprepped libs in the dep tree                                                               |
+| `clojure -X:deps mvn-pom`                           | Generate or update pom.xml with deps and paths                                                           |
+| `clojure -X:deps mvn-install :jar '"/path/to.jar"'` | install a given jar file into the local maven repository, eg. `~/.m2/repository`                         |
+| `clojure -X:deps git-resolve-tags`                  | update `deps.edn` git based dependencies that used tags with the equivalent SHA commit values            |
 
 [tools.deps.alpha API Reference](https://clojure.github.io/tools.deps.alpha/){target=_blank .md-button}
 
 
-> Libraries are downloaded if they are not in the local Maven cache, e.g. `$HOME/.m2/repository`, so the command may take a little time.
+> Libraries are downloaded if they are not in the local Maven cache, e.g. `$HOME/.m2/repository`, so on first run a command may take a little time.
 
 
 ??? HINT "Use Clojure CLI -P flag to download libraries"

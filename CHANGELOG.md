@@ -1,6 +1,8 @@
 # Changelog
 
 # Unreleased
+## Changed
+- clojure-cli: enhance built-in commands description
 
 # 2024-03-03
 
