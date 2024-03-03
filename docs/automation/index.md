@@ -4,7 +4,7 @@ Automation tools can provide a consistent command line interface across a wide r
 
 Whilst the Clojure CLI is a very extensible tool that flexibility can also add some complexity to its command line interface.
 
-Using a consistent set of user aliases can help manage the command line interface, however, automation tools can abstract the command line task even further to provide a consistent and simple to user experience whilst keeping the underlying flexibility.
+Automation tools abstract the command line to provide a consistent and simple user experience whilst keeping underlying flexibility.
 
 !!! HINT "Practicalli recommends make"
     A Makefile is not reliant on programming language knowledge so has no barrier to those who are unfamiliar with the Clojure language.
@@ -47,4 +47,3 @@ Write automation scripts with Clojure code using the [Babashka task runner](http
 Babashka can use a wide range of Clojure functions and libraries, although as a general script tool then additional coding and maintenance may be reqiured compared to a dedicated tool.
 
 [Babashka task runner](https://book.babashka.org/#tasks){target=_blank .md-button}
-

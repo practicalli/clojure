@@ -4,7 +4,9 @@
 
 [GNU Make](https://www.gnu.org/software/make/manual/html_node/Standard-Targets.html) provide a simple and consistent way to run any development task for Clojure & ClojureScript projects (or any other languages).
 
-Wrap any combination of tools (building, linting, formatting, testing) with make targets for a simple command line interface, with automatically tab completion, making any Clojure project really easy to work with.  Practicalli also uses make to manage docker images and containers to support Clojure development.
+Wrap any combination of tools (building, linting, formatting, testing) with Make targets for a simple command line interface.
+
+Make supports tab completion making tasks discoverable.
 
 All that is required is [a `Makefile` in the root of the project](https://github.com/practicalli/dotfiles/blob/main/Makefile)
 
@@ -89,7 +91,7 @@ deps: deps.edn  ## Prepare dependencies for test and dist targets
 > `:test/env` adds libraries to run Kaocha and libraries used to run unit tests.  `:package/uberjar` runs a tool that creates an uberjar.
 
 
-## Clean target - hiding command failure
+## Clean target - hiding command errors
 
 The clean target should remove files and directories created by the build (compile) process, to ensure a consistent approach to building each time.
 
@@ -153,7 +155,7 @@ Although unlikely, if a filename in the root of a project has the same name as a
 [phony - MakefileTutorial](https://makefiletutorial.com/#phony){target=_blank .md-button}
 
 
-## Halt on failure
+## Halt on error
 
 `.DELETE_ON_ERROR:` halts any further commands if a command returns non-zero exit status.  Useful as short-circuit to stop tasks when further work is not valuable, e.g. if tests fail then it may not be valuable to build the Clojure project.
 
