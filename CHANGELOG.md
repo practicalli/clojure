@@ -1,7 +1,22 @@
 # Changelog
 
 # Unreleased
+
+# 2024-03-03
+
+## Added
+- button link to Clojure CLI releases changelog to view available versions
+- readme: add book overview, update contributing section
+- intro: clarify wording & approach in contributing guide
+- intro: enhance clojure examples and simplify format for experimenting with code
+- dev: checkout action v4 in all GitHub workflow
+- clojure-cli: add `clojure -X:deps mvn-pom` built-in command description
+- clojure-cli: `clojure -X:deps list` examples
+
 ## Changed
+- mkdocs: emoji extension name update for Material 9.4
+- project: update built.tools approach and configuration examples
+- install: refine section wording and format
 - dev: changelog-check checkout action v4 with sparse-checkout
 - dev: changelog-check remove paths-ignore
 - clojure-cli: install deps.edn configuration
@@ -23,19 +38,6 @@
 - dev: megalinter local runner - validate all files 
 - dev: spell lychee config file for megalinter config
 
-## Added
-- button link to Clojure CLI releases changelog to view available versions
-- readme: add book overview, update contributing section
-- intro: clarify wording & approach in contributing guide
-- intro: enhance clojure examples and simplify format for experimenting with code
-- dev: checkout action v4 in all GitHub workflow
-- clojure-cli: add `clojure -X:deps mvn-pom` built-in command description
-- clojure-cli: `clojure -X:deps list` examples
-
-## Changed
-- mkdocs: emoji extension name update for Material 9.4
-- project: update built.tools approach and configuration examples
-- install: refine section wording and format
 
 # 2023-08-14
 
