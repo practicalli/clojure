@@ -20,6 +20,7 @@
 - dev: sparse checkout scheduled version workflow
 - dev: upload-artefact v4 & remove explicit token from megalinter
 - format: use shell for code blocks, add missing clojure language to code blocks
+- dev: megalinter local runner - validate all files 
 
 ## Added
 - button link to Clojure CLI releases changelog to view available versions

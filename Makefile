@@ -16,7 +16,7 @@
 HELP-DESCRIPTION-SPACING := 24
 
 # Tool Commands
-MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
 
 # Makefile file and directory name wildcard
