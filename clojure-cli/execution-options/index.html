@@ -928,28 +928,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#form-of-clojureexec-command-line-arguments" class="md-nav__link">
+  <a href="#clojuremain" class="md-nav__link">
     <span class="md-ellipsis">
-      Form of clojure.exec command line arguments
+      clojure.main
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-clojuremain-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run clojure.main project
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run clojure.main project">
+    <nav class="md-nav" aria-label="clojure.main">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-clojuremain-works" class="md-nav__link">
+  <a href="#using-clojuremain" class="md-nav__link">
     <span class="md-ellipsis">
-      How clojure.main works
+      Using clojure.main
     </span>
   </a>
   
@@ -987,6 +978,24 @@
   
     <nav class="md-nav" aria-label="clojure.exec">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clojureexec-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      clojure.exec arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clojureexec-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      clojure.exec examples
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#built-in-functions" class="md-nav__link">
@@ -8191,28 +8200,19 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#form-of-clojureexec-command-line-arguments" class="md-nav__link">
+  <a href="#clojuremain" class="md-nav__link">
     <span class="md-ellipsis">
-      Form of clojure.exec command line arguments
+      clojure.main
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#run-clojuremain-project" class="md-nav__link">
-    <span class="md-ellipsis">
-      Run clojure.main project
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Run clojure.main project">
+    <nav class="md-nav" aria-label="clojure.main">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#how-clojuremain-works" class="md-nav__link">
+  <a href="#using-clojuremain" class="md-nav__link">
     <span class="md-ellipsis">
-      How clojure.main works
+      Using clojure.main
     </span>
   </a>
   
@@ -8250,6 +8250,24 @@
   
     <nav class="md-nav" aria-label="clojure.exec">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#clojureexec-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      clojure.exec arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clojureexec-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      clojure.exec examples
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#built-in-functions" class="md-nav__link">
@@ -8358,47 +8376,39 @@
 
 <h1 id="clojure-cli-execution-options">Clojure CLI Execution options<a class="headerlink" href="#clojure-cli-execution-options" title="Permanent link">λ︎</a></h1>
 <p>Execution options (<code>-A</code> <code>-M</code> <code>-P</code> <code>-T</code> <code>-X</code>) define how aliases are used with the Clojure CLI. Aliases are included via one of these execution options and each option can affect how the alias is used.</p>
-<p>Since the <a href="https://clojure.org/releases/tools#v1.10.1.510">first documented released</a> which exclusively used the <code>-A</code> execution option to include aliases, the design has evolved to provide specific execution options to run code via clojure.main (<code>-M</code>) and clojure.exec (<code>-X</code>). In July 2021, the ability to run tools (<code>-T</code>) independent from the Clojure project classpath was also introduced.</p>
-<p>The exec-opts command line flags have evolved to enable these features, so lets explore those flags and show how each flag is typically used.</p>
 <details class="info">
-<summary>Understanding Aliases</summary>
-<p><a href="https://practical.li/blog/posts/clojure-cli-tools-understanding-aliases/">Understand aliases in more detail</a></p>
+<summary>Clojure CLI design evolution</summary>
+<p>The <a href="https://clojure.org/releases/tools#v1.10.1.510">first documented released</a> used the <code>-A</code> execution option to include aliases. </p>
+<p>The design has evolved to provide specific execution options to run code via clojure.main (<code>-M</code>) and clojure.exec (<code>-X</code>). </p>
+<p>In July 2021 the ability to run tools (<code>-T</code>) independent from the Clojure project classpath was introduced.</p>
 </details>
 <h2 id="quick-summary">Quick summary<a class="headerlink" href="#quick-summary" title="Permanent link">λ︎</a></h2>
-<p>Use <code>-M</code> for code that should be called via the <code>-main</code> function in a specified namespace, passing string-based arguments.</p>
-<p>Use <code>-X</code> to run a specified function, passing arguments as key and value pairs (not hash-maps yet)</p>
-<p>Use <code>-T</code> to run a tool independently from any libraries defined in a project.  Only the libraries in the alias are included in the ClassPath.  The path is defined as <code>"."</code> by default.</p>
-<p>Use <code>-P</code> to download libraries on the class path, including those from specified aliases</p>
-<p>Use <code>-A</code> in the specific case of running a basic terminal UI REPL with the <code>clojure</code> command (or <code>clj</code> wrapper).</p>
-<p>Common aliases will be used to explain the use of these execution options in more detail.</p>
-<h2 id="form-of-clojureexec-command-line-arguments">Form of clojure.exec command line arguments<a class="headerlink" href="#form-of-clojureexec-command-line-arguments" title="Permanent link">λ︎</a></h2>
-<p>Clojure.exec command takes Key/value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).</p>
-<p>Number values and keywords can be parsed from the command line</p>
-<p>Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. <code>'[:a :b]'</code>, <code>'{:c 1}'</code>.</p>
-<p>The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps</p>
-<ul>
-<li><code>'"strings in double quotes surround by single quotes"'</code></li>
-<li><code>'[:vectors :with-single-quotes]'</code></li>
-<li><code>'{:hash-maps :with-single-quotes}'</code></li>
-</ul>
-<h2 id="run-clojuremain-project">Run clojure.main project<a class="headerlink" href="#run-clojuremain-project" title="Permanent link">λ︎</a></h2>
-<p><code>-M</code> execution option uses <code>clojure.main</code> to run Clojure code.</p>
+<p><code>-M</code> uses <code>clojure.main</code> to call the <code>-main</code> function of the specified namespace, passing string-based arguments.</p>
+<p><code>-X</code> uses <code>clojure.exec</code> to call a fully qualified function, passing arguments as key and value pairs</p>
+<p><code>-T</code> runs a tool independent from project dependencies.  Only the libraries in the alias are included in the Class Path.  The path is defined as <code>"."</code> by default.</p>
+<p><code>-P</code> downloads library dependencies, including those from specified aliases</p>
+<p><code>-A</code> in the specific case of running a basic terminal UI REPL with the <code>clojure</code> command or <code>clj</code> wrapper.</p>
+<h2 id="clojuremain">clojure.main<a class="headerlink" href="#clojuremain" title="Permanent link">λ︎</a></h2>
+<p><code>-M</code> flag instructs Clojure CLI tools to use <code>clojure.main</code> to run Clojure code.</p>
+<p>The <code>--main</code> or <code>-m</code> flag is an argument to <code>clojure.main</code> which specifies the namespace to search for a <code>-main</code> function.</p>
+<p><code>clojure.main/main</code> function searches for a <code>-main</code> function in the given namespace, e.g. <code>--main pracicalli.gameboard.service</code></p>
+<blockquote>
+<p>If the -main function is not found or the namespace is not specified, then the <code>clojure</code> command will run a REPL session.</p>
+</blockquote>
 <p>Run a project with the main namespace <code>practicalli.sudoku-solver</code>, without any additional aliases on the command line</p>
+<div class="admonition note">
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>clojure<span class="w"> </span>-M<span class="w"> </span>-m<span class="w"> </span>practicalli.sudoku-solver
 </code></pre></div>
-<p><code>-M</code> flag instructs Clojure CLI tools to use <code>clojure.main</code> to run the Clojure code.</p>
-<p><code>-m</code> flag is an argument to <code>clojure.main</code> which specifies the namespace to search for a <code>-main</code> function.</p>
-<p>Adding a <code>:project/run</code> alias to the project <code>deps.edn</code> file provides a simpler way to run the project on the command line</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ss">:project/run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;-m&quot;</span><span class="w"> </span><span class="s">&quot;practicalli.sudoku-solver&quot;</span><span class="p">]}</span>
+</div>
+<p>Add <code>:project/run</code> alias to the project <code>deps.edn</code> file to provide a simpler way to run the project on the command line</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="ss">:project/run</span><span class="w"> </span><span class="p">{</span><span class="ss">:main-opts</span><span class="w"> </span><span class="p">[</span><span class="s">&quot;--main&quot;</span><span class="w"> </span><span class="s">&quot;practicalli.sudoku-solver&quot;</span><span class="p">]}</span>
 </code></pre></div>
 <p>Now the project code can be run using the simple command line form</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>clojure<span class="w"> </span>-M:project/run
 </code></pre></div>
-<h3 id="how-clojuremain-works">How clojure.main works<a class="headerlink" href="#how-clojuremain-works" title="Permanent link">λ︎</a></h3>
-<p><code>clojure.main/main</code> function searches for a <code>-main</code> function in the given namespace (<code>-m fully-qualified.namespace</code>)</p>
-<p>If no -main function is found or the namespace is not specified, then a REPL session is run.  This is the approach Leiningen has always used and still uses today.</p>
+<h3 id="using-clojuremain">Using clojure.main<a class="headerlink" href="#using-clojuremain" title="Permanent link">λ︎</a></h3>
 <blockquote>
-<p><a href="https://clojure.org/reference/repl_and_main"><code>clojure.main</code> namespace</a> has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of <a href="#clojure-exec--X">clojure.exec</a>.
+<p><a href="https://clojure.org/reference/repl_and_main"><code>clojure.main</code> namespace</a> has been the way Clojure code was run (including a REPL) for most of its history.  This is now evolving with the addition of <a href="#clojureexec">clojure.exec</a>.
 <a href="https://clojure.org/reference/repl_and_main">clojure.main has other features, as covered in the REPL and main entrypoints article</a>) on clojure.org.</p>
 </blockquote>
 <h3 id="rebel-rich-terminal-ui">Rebel rich terminal UI<a class="headerlink" href="#rebel-rich-terminal-ui" title="Permanent link">λ︎</a></h3>
@@ -8433,6 +8443,17 @@
 <h2 id="clojureexec">clojure.exec<a class="headerlink" href="#clojureexec" title="Permanent link">λ︎</a></h2>
 <p><code>-X</code> flag provides the flexibility to call any fully qualified function, so Clojure code is no longer tied to <code>-main</code></p>
 <p>Any function on the class path can be called and is passed a hash-map as an argument.  The argument hash-map is either specified in an alias using <code>:exec-args</code> or assembled into a hash-map from key/value pairs on the command line.  Key/values from the command line are merged into the <code>:exec-args</code> map if it exists, with the command line key/values taking precedence.</p>
+<h3 id="clojureexec-arguments">clojure.exec arguments<a class="headerlink" href="#clojureexec-arguments" title="Permanent link">λ︎</a></h3>
+<p>Clojure.exec command takes key value pairs read as EDN values (extensible data notation that is the base syntax of Clojure).</p>
+<p>Number values and keywords can be parsed from the command line</p>
+<p>Arguments that are vectors and hash maps should be wrapped in single quotes to avoid the command line shell splitting arguments at spaces, e.g. <code>'[:a :b]'</code>, <code>'{:c 1}'</code>.</p>
+<p>The double quotes in an EDN string must be wrapped by single quotes, along with vectors and hash-maps</p>
+<ul>
+<li><code>'"strings in double quotes surround by single quotes"'</code></li>
+<li><code>'[:vectors :with-single-quotes]'</code></li>
+<li><code>'{:hash-maps :with-single-quotes}'</code></li>
+</ul>
+<h3 id="clojureexec-examples">clojure.exec examples<a class="headerlink" href="#clojureexec-examples" title="Permanent link">λ︎</a></h3>
 <p>Call the <code>status</code> function from the namespace <code>practicalli.service</code>, which is on the classpath in the practicalli.service project</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>clojure<span class="w"> </span>-X<span class="w"> </span>practicalli.service/status
 </code></pre></div>
@@ -8580,7 +8601,7 @@ The <code>:main-opts</code> configuration for <code>-A</code> execution option i
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
   </span>
 
     

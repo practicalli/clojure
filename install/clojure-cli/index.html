@@ -8199,11 +8199,17 @@ Then in the same PowerShell window, install the Clojure related tools using the 
 <p>Reference: <a href="https://clojure.org/guides/install_clojure" target="_blank">Clojure CLI Install - Clojure.org Getting Started</a> - official guide</p>
 </blockquote>
 <h2 id="practicalli-clojure-cli-config">Practicalli Clojure CLI Config<a class="headerlink" href="#practicalli-clojure-cli-config" title="Permanent link">λ︎</a></h2>
-<p>Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases contained within Practicalli Clojure CLI configuration.</p>
-<p>Fork or clone <a href="https://github.com/practicalli/clojure-cli-config" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> and <code>$HOME/.clojure</code> directory if they exist.</p>
-<div class="admonition info">
-<p class="admonition-title">Practicalli recommends using FreeDesktop XDG configuration locations</p>
-<p>Practically recommends setting <code>XDG_CONFIG_HOME</code> to the <code>.config</code> directory, to avoid creating another dot directory in the root of the user account.  </p>
+<p>Add a wide range of community tools to extend the capabilities of Clojure CLI via the aliases.</p>
+<p>Clone <a href="https://github.com/practicalli/clojure-cli-config" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> Practicalli Clojure CLI Config</a> GitHub repository, first removing the <code>$XDG_CONFIG_HOME/clojure</code> and <code>$HOME/.clojure</code> directory if they exist.</p>
+<details class="info">
+<summary>User configuration locations</summary>
+<p>If <code>XDG_CONFIG_HOME</code> environment variable is set, then the user configuration is <code>$XDG_CONFIG_HOME/clojure/deps.edn</code></p>
+<p>Otherwise the user configuration is <code>$HOME/.clojure/deps.edn</code>.</p>
+<p><code>CLJ_CONFIG</code> environment variable can be used to set a custom location, overriding any other location.</p>
+</details>
+<div class="admonition hint">
+<p class="admonition-title">Practicalli recommends FreeDesktop XDG location</p>
+<p>Practically recommends setting <code>XDG_CONFIG_HOME</code> to the <code>.config</code> directory to simplify versioning of configuration. </p>
 <p>Configure <code>~/.bashrc</code> for the bash shell 
 <div class="highlight"><span class="filename">Bash .bashrc file</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">XDG_CONFIG_HOME</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/.config&quot;</span>
 </code></pre></div></p>
@@ -8266,7 +8272,8 @@ git clone https://github.com/practicalli/clojure-cli-config.git $HOME/.clojure
 <p><code>rlwrap</code> is available with most Linux systems. Look for  install instructions by searching for rlwrap in a web browser or build from source from the <a href="https://github.com/hanslub42/rlwrap"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> rlwrap GitHub repository</a>.</p>
 <div class="admonition hint">
 <p class="admonition-title">Use Rebel Readline for a rich terminal UI experience</p>
-<p><a href="/clojure/clojure-cli/repl/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> rebel readline</a> provides a auto-completion, documentation, signature help and multi-line editing all within a terminal UI, providing a much richer experience than the <code>clj</code> wrapper and <code>rlwrap</code>.</p>
+<p><a href="/clojure/clojure-cli/repl/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5z"/></svg></span> rebel readline</a> is an advanced readline tool providing auto-completion, documentation, signature help and multi-line editing, all within a terminal UI</p>
+<p>Rebel is a much richer experience than the <code>clj</code> wrapper with <code>rlwrap</code>.  Rebel should not be used with <code>clj</code>.</p>
 <p>Rebel Readline is part of the <a href="#practicalli-clojure-cli-config">Practicalli Clojure CLI config</a>.</p>
 </div>
 
@@ -8289,7 +8296,7 @@ git clone https://github.com/practicalli/clojure-cli-config.git $HOME/.clojure
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 1, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 3, 2024</span>
   </span>
 
     
