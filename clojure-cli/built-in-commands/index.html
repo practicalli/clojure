@@ -877,6 +877,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deps-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      :deps tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#list-library-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       List Library dependencies
@@ -8110,6 +8119,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#deps-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      :deps tool
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#list-library-dependencies" class="md-nav__link">
     <span class="md-ellipsis">
       List Library dependencies
@@ -8217,48 +8235,50 @@
 <p><code>clj</code> is a wrapper script for the <code>clojure</code> command (<code>rlwrap</code> required) to add command history to the basic REPL prompt.</p>
 <p><code>clojure -T:deps</code> to run one of several built-in commands to help work with Clojure CLI projects and libraries.</p>
 <p><code>clojure --help</code> list the available commands.</p>
-<p><code>-X</code> execution option is used for the  <code>:deps</code> aliases, running them via <code>clojure.exec</code> and limiting the class path to the current directory.</p>
+<h2 id="deps-tool">:deps tool<a class="headerlink" href="#deps-tool" title="Permanent link">λ︎</a></h2>
+<p>The <code>:deps</code> aliases provides tools for managing library dependencies.  </p>
+<p>The Clojure CLI <code>-X</code> flag is used to call these tools via <code>clojure.exec</code> and take key value pairs as arguments</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">aliases</th>
-<th style="text-align: left;">Description</th>
+<th>aliases</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps list</code></td>
-<td style="text-align: left;">List full transitive deps set and licenses</td>
+<td><code>clojure -X:deps list</code></td>
+<td>List full transitive deps set and licenses</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps tree</code></td>
-<td style="text-align: left;">download dependencies &amp; print dependency tree, indenting libraries that are dependencies of dependencies</td>
+<td><code>clojure -X:deps tree</code></td>
+<td>download dependencies &amp; print dependency tree, indenting libraries that are dependencies of dependencies</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps find-versions</code></td>
-<td style="text-align: left;">Find available versions of a given library (domain/name)</td>
+<td><code>clojure -X:deps find-versions</code></td>
+<td>Find available versions of a given library (domain/name)</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps prep</code></td>
-<td style="text-align: left;">Prepare all unprepped libs in the dep tree</td>
+<td><code>clojure -X:deps prep</code></td>
+<td>Prepare all unprepped libs in the dep tree</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps mvn-pom</code></td>
-<td style="text-align: left;">Generate or update pom.xml with deps and paths</td>
+<td><code>clojure -X:deps mvn-pom</code></td>
+<td>Generate or update pom.xml with deps and paths</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps mvn-install :jar '"/path/to.jar"'</code></td>
-<td style="text-align: left;">install a given jar file into the local maven repository, eg. <code>~/.m2/repository</code></td>
+<td><code>clojure -X:deps mvn-install :jar '"/path/to.jar"'</code></td>
+<td>install a given jar file into the local maven repository, eg. <code>~/.m2/repository</code></td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>clojure -X:deps git-resolve-tags</code></td>
-<td style="text-align: left;">update <code>deps.edn</code> git based dependencies that used tags with the equivalent SHA commit values</td>
+<td><code>clojure -X:deps git-resolve-tags</code></td>
+<td>update <code>deps.edn</code> git based dependencies that used tags with the equivalent SHA commit values</td>
 </tr>
 </tbody>
 </table>
 <p><a class="md-button" href="https://clojure.github.io/tools.deps.alpha/" target="_blank">tools.deps.alpha API Reference</a></p>
 <blockquote>
-<p>Libraries are downloaded if they are not in the local Maven cache, e.g. <code>$HOME/.m2/repository</code>, so the command may take a little time.</p>
+<p>Libraries are downloaded if they are not in the local Maven cache, e.g. <code>$HOME/.m2/repository</code>, so on first run a command may take a little time.</p>
 </blockquote>
 <details class="hint">
 <summary>Use Clojure CLI -P flag to download libraries</summary>
