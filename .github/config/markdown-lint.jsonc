@@ -244,13 +244,19 @@
   "MD045": true,
 
   // MD046/code-block-style - Code block style
-  "MD046": false,
+  "MD046": {
+    // Block style
+    "style": "consistent"
+  },
 
   // MD047/single-trailing-newline - Files should end with a single newline character
   "MD047": true,
 
   // MD048/code-fence-style - Code fence style
-  "MD048": false,
+  "MD048": {
+    // Code fence style
+    "style": "consistent"
+  },
 
   // MD049/emphasis-style - Emphasis style should be consistent
   "MD049": {

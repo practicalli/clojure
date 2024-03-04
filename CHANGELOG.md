@@ -4,6 +4,7 @@
 ## Changed
 - clojure-cli: enhance built-in commands description
 - code-challenge: rewrite code challenges overview 
+- dev: code block consistent style lint rules 46 & 48
 
 # 2024-03-03
 
