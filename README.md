@@ -48,7 +48,7 @@ Learning Clojure syntax and how to think in a functional design is also covered 
 
 Issues and pull requests are most welcome although it is the maintainers discression as to if they are applicable.  Please detail issues as much as you can.  Pull requests are simpler to work with when they are specific to a page or at most a section.  The smaller the change the quicker it is to review and merge.
 
-Please read the [detailed contributing section of the book](https://practical.li/clojure/introduction/contributing/) before raising an issue or pull request to avoid disapointment.
+Please read the [detailed Practicalli contributing page](https://practical.li/contributing/) before raising an issue or pull request to avoid disapointment.
 
 * [Current Issues](https://github.com/practicalli/clojure/issues)
 * [Current pull requests](https://github.com/practicalli/clojure/pulls)
