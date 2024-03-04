@@ -6,6 +6,7 @@
 - code-challenge: rewrite code challenges overview 
 - dev: code block consistent style lint rules 46 & 48
 - mkdocs: clojure-idiom admonition style
+- dev: gitleaks rules configuration for checking secrets in megalinter workflow
 
 # 2024-03-03
 
