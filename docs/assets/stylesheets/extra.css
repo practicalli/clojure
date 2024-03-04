@@ -6,3 +6,25 @@
   --md-typeset-kbd-color: hsla(208, 100%, 98%, 0.98);
 }
 
+/* Custom Admonitions */
+
+/* Clojure Idiom*/
+
+:root {
+  --md-admonition-icon--clojure-idiom: url(https://raw.githubusercontent.com/practicalli/graphic-design/c40cc063cc5bb07525b524d8a3d638e2f42bc38a/logos/clojure-logo-bullet.svg);
+}
+.md-typeset .admonition.clojure-idiom,
+.md-typeset details.clojure-idiom {
+  border-color: rgb(43, 155, 70);
+}
+.md-typeset .clojure-idiom > .admonition-title,
+.md-typeset .clojure-idiom > summary {
+  background-color: rgba(43, 155, 70, 0.1);
+}
+.md-typeset .clojure-idiom > .admonition-title::before,
+.md-typeset .clojure-idiom > summary::before {
+  background-color: rgb(250, 250, 250);
+  background-image: var(--md-admonition-icon--clojure-idiom);
+  -webkit-mask-image: var(--md-admonition-icon--clojure-idiom);
+  mask-image: var(--md-admonition-icon--clojure-idiom);
+}

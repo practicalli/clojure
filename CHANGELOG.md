@@ -5,6 +5,7 @@
 - clojure-cli: enhance built-in commands description
 - code-challenge: rewrite code challenges overview 
 - dev: code block consistent style lint rules 46 & 48
+- mkdocs: clojure-idiom admonition style
 
 # 2024-03-03
 
