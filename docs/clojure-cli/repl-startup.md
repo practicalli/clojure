@@ -1,6 +1,6 @@
 # Configure REPL on Startup
 
-A Clojure REPL starts in the `user` namespace and automatically loads common tools to support REPL based development. 
+A Clojure REPL starts in the `user` namespace and automatically loads common tools to support REPL based development.
 
 When interacting with the REPL prompt directly, use `require` expressions to include additional functions into the `user` nameapace rather than use potentially complex commands to set the namespace.
 
@@ -18,7 +18,7 @@ When interacting with the REPL prompt directly, use `require` expressions to inc
 
     - [:globe_with_meridians: apropos](https://clojuredocs.org/clojure.repl/apropos) - function names fuzzy matching a given regex pattern
     - [:globe_with_meridians: dir](https://clojuredocs.org/clojure.repl/dir) - sorted list of public vars (functions) in a given namespace
-    - [:globe_with_meridians: doc](https://clojuredocs.org/clojure.repl/doc) - doc-string of a give Clojure function / symbol 
+    - [:globe_with_meridians: doc](https://clojuredocs.org/clojure.repl/doc) - doc-string of a give Clojure function / symbol
     - [:globe_with_meridians: find-doc](https://clojuredocs.org/clojure.repl/find-doc) - doc-string of matching functions, given a string or regex pattern
     - [:globe_with_meridians: source](https://clojuredocs.org/clojure.repl/source) - source code of a given function
     - [:globe_with_meridians: pst](https://clojuredocs.org/clojure.repl/pst) print stack trace, optionally setting depth
@@ -74,7 +74,7 @@ Create an alias to include the `dev` path when running a REPL process
       {:extra-paths ["dev"]}
     ```
     Review [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) for further alias examples.
- 
+
 
 Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:dev/env`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
@@ -139,7 +139,7 @@ Printing a menu of functions provided by the custom user namespace helps with th
 
 Define a `help` function that prints out commands with a breif explination of their purpose.
 
-Add a `(help)` expression to call the help function on REPL startup, displaying the help menu. 
+Add a `(help)` expression to call the help function on REPL startup, displaying the help menu.
 
 !!! EXAMPLE "REPL Help menu for custom user namespace"
     ```clojure title="dev/user.clj"
@@ -193,7 +193,7 @@ mulog is a very effective event log tool that also provides a range of log publi
 
 
 !!! EXAMPLE "Mulog configuration and publishers"
-    
+
     ```clojure title="dev/mulog_events.clj"
     ;; ---------------------------------------------------------
     ;; Mulog Global Context and Custom Publisher
@@ -291,7 +291,7 @@ Rather than restart the repl, clojure.tools.namespace.repl provides functions th
 ??? WARNING "Hotload libraries is SNAPSHOT feature - this guide will change when Clojure 1.12 is released"
     Functions to hotload libraries are part of the Clojure 1.12 development releases and an official feature as of the stable 1.12 release.
 
-    For Clojure 1.11 and similar functions are available in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.  
+    For Clojure 1.11 and similar functions are available in the [add-libs3 branch](https://github.com/clojure/tools.deps.alpha/tree/add-lib3) of the now deprecated `clojure.tools.deps.alpha` library.
 
     [clojure/tools.deps](https://github.com/clojure/tools.deps) is the official library for all released functions from the alpha library
 
@@ -389,22 +389,22 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     !!! EXAMPLE "Restart an HTTP server for Clojure Web Service & Refresh namespaces"
         ```clojure title="dev/system_repl.clj"
         ;; ---------------------------------------------------------
-        ;; System REPL - Atom Restart 
+        ;; System REPL - Atom Restart
         ;;
-        ;; Tools for REPl workflow with Aton reference to HTTP server 
+        ;; Tools for REPl workflow with Aton reference to HTTP server
         ;; https://practical.li/clojure-web-services/app-servers/simple-restart/
         ;; ---------------------------------------------------------
 
         (ns system-repl
-          (:require 
+          (:require
             [clojure.tools.namespace.repl :refer [refresh]]
             [practicalli.todo-basic.service :as service]))
-                    
+
         ;; ---------------------------------------------------------
         ;; HTTP Server State
 
-        (defonce http-server-instance 
-          (atom nil))  ; (1)! 
+        (defonce http-server-instance
+          (atom nil))  ; (1)!
         ;; ---------------------------------------------------------
 
         ;; ---------------------------------------------------------
@@ -412,7 +412,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 
         (defn stop
           "Gracefully shutdown the server, waiting 100ms.
-           Check if an http server isntance exists and 
+           Check if an http server isntance exists and
            send a `:timeout` key and time in milliseconds to shutdown the server.
            Reset the atom to nil to indicate no http server is running."
           []
@@ -439,7 +439,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
           "Stop the http server, refresh changed namespace and start the http server again"
           []
           (stop)
-          (refresh)  ; (5)! 
+          (refresh)  ; (5)!
           (start))
         ;; ---------------------------------------------------------
 
@@ -521,7 +521,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     Configuration is a Clojure hash-map with functions to start and stop components.
 
     [Basic usage guide](https://github.com/donut-party/system#basic-usage){target=_blank .md-button}
-    
+
     [:fontawesome-brands-github: donut-party/system](https://github.com/donut-party/system){target=_blank .md-button}
 
     <p style="text-align:center">
@@ -543,8 +543,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
            [donut.system :as donut]
            [donut.system.repl :as donut-repl]
            [donut.system.repl.state :as donut-repl-state]
-           [{{top/ns}}.{{main/ns}}.system :as system]))
-
+           [practicalli.gameboard.system :as system]))
 
         (defmethod donut/named-system :donut.system/repl
           [_] system/main)
@@ -574,83 +573,92 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 
         ```clojure title="src/gameboard/system.clj"
 
-        ;; --------------------------------------------------
-        ;; Donut System environment configuration
+        ;; ---------------------------------------------------------
+        ;; practicalli.gameboard
         ;;
-        ;; - Event logging with mulog
-        ;; - HTTP Server
-        ;; - Request routing (reitit)
-        ;; - Persistence (relational) connection
+        ;; TODO: Provide a meaningful description of the project
         ;;
-        ;; Components managed in practicalli.gameboard.service namespace
-        ;;
-        ;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)
-        ;; #long defines Long Integer type (required for Java HTTP server port)
-        ;; #env reads the environment variable of the given name
-        ;; #or uses first non nil value in sequence
-        ;;
-        ;; Environment variables should be defined locally and in deployment provisioner tooling
-        ;; --------------------------------------------------
+        ;; Start the service using donut configuration and an environment profile.
+        ;; ---------------------------------------------------------
 
-        {:env
-         {:http-server
-          #profile
-          {:dev  {:port #or [#env "HTTP_PORT" "8080"]}
-           :prod {:port #env "PORT"}}
-          :persistence
-          #profile
-          {:dev
-           {:database-host     #or [#env "POSTGRES_HOST"     "http://localhost"]
-            :database-port     #or [#env "POSTGRES_PORT"     "5432"]
-            :database-username #or [#env "POSTGRES_USERNAME" "clojure"]
-            :database-password #or [#env "POSTGRES_PASSWORD" "clojure"]
-            :database-schema   #or [#env "POSTGRES_SCHEMA"   "clojure"]}
-           :prod
-           {:database-host     #env "POSTGRES_HOST"
-            :database-port     #env "POSTGRES_PORT"
-            :database-username #env "POSTGRES_USERNAME"
-            :database-password #env "POSTGRES_PASSWORD"
-            :database-schema   #env "POSTGRES_SCHEMA"}}
+        (ns practicalli.gameboard.system
+          "Service component lifecycle management"
+          (:gen-class)
+          (:require
+           ;; Application dependencies
+           [practicalli.gameboard.router :as router]
 
-          ;; Type of publisher to use for mulog events
-          ;; Publish json format logs, captured by fluentd and exposed via OpenDirectory
-          :mulog
-          #profile
-          {:dev
-           {:type :console-json :pretty? true}
+           ;; Component system
+           [donut.system :as donut]
+           ;; [practicalli.gameboard.parse-system :as parse-system]
 
-           ;; Multiple publishers using Open Zipkin service (started via docker-compose)
-           :docker
-           {:type :multi
-            :publishers
-            [{:type :console-json :pretty? false}
-             {:type :zipkin :url "http://localhost:9411/"}]}
+           ;; System dependencies
+           [org.httpkit.server     :as http-server]
+           [com.brunobonacci.mulog :as mulog]))
 
-           :prod
-           {:type :console-json :pretty? false}}
+        ;; ---------------------------------------------------------
+        ;; Donut Party System configuration
 
-          ;; Configure data API connections
-          :data-api
-          #profile
-          {:dev
-           {:game-service-base-url  #or [#env GAME_SERVICE_BASE_URL "http://localhost"]
-            :llamasoft-api-uri      #or [#env LAMASOFT_API_URI "http://localhost"]
+        (def main
+          "System Component management with Donut"
+          {::donut/defs
+           ;; Option: move :env data to resources/config.edn and parse with aero reader
+           {:env
+            {:http-port 8080
+             :persistence
+             {:database-host (or (System/getenv "POSTGRES_HOST") "http://localhost")
+              :database-port (or (System/getenv "POSTGRES_PORT") "5432")
+              :database-username (or (System/getenv "POSTGRES_USERNAME") "clojure")
+              :database-password (or (System/getenv "POSTGRES_PASSWORD") "clojure")
+              :database-schema (or (System/getenv "POSTGRES_SCHEMA") "clojure")}}
 
-            :polybus-report-uri               "/report/polybus"
-            :moose-life-report-uri            "/api/v1/report/moose-life"
-            :minotaur-arcade-report-uri       "/api/v2/minotar-arcade"
-            :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
-            :space-giraffe-report-uri         "/api/v1/games/space-giraffe"}
+            ;; mulog publisher for a given publisher type, i.e. console, cloud-watch
+            :event-log
+            {:publisher
+             #::donut{:start (fn mulog-publisher-start
+                               [{{:keys [publisher]} ::donut/config}]
+                               (mulog/log ::log-publish-component
+                                          :publisher-config publisher
+                                          :local-time (java.time.LocalDateTime/now))
+                               (mulog/start-publisher! publisher))
 
-           :prod
-           {:game-service-base-url  #or [#env GAME_SERVICE_BASE_URL "http://localhost"]
-            :llamasoft-api-uri      #or [#env LAMASOFT_API_URI "http://localhost"]
+                      :stop (fn mulog-publisher-stop
+                              [{::donut/keys [instance]}]
+                              (mulog/log ::log-publish-component-shutdown :publisher instance :local-time (java.time.LocalDateTime/now))
+                              ;; Pause so final messages have chance to be published
+                              (Thread/sleep 250)
+                              (instance))
 
-            :polybus-report-uri               "/report/polybus"
-            :moose-life-report-uri            "/api/v1/report/moose-life"
-            :minotaur-arcade-report-uri       "/api/v2/minotar-arcade"
-            :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
-            :space-giraffe-report-uri         "/api/v1/games/space-giraffe"}}}}
+                      :config {:publisher {:type :console :pretty? true}}}}
+
+            ;; HTTP server start - returns function to stop the server
+            :http
+            {:server
+             #::donut{:start (fn http-kit-run-server
+                               [{{:keys [handler options]} ::donut/config}]
+                               (mulog/log ::http-server-component
+                                          :handler handler
+                                          :port (options :port)
+                                          :local-time (java.time.LocalDateTime/now))
+                               (http-server/run-server handler options))
+
+                      :stop  (fn http-kit-stop-server
+                               [{::donut/keys [instance]}]
+                               (mulog/log ::http-server-component-shutdown
+                                          :http-server-instance instance
+                                          :local-time (java.time.LocalDateTime/now))
+                               (instance))
+
+                      :config {:handler (donut/local-ref [:handler])
+                               :options {:port  (donut/ref [:env :http-port])
+                                         :join? false}}}
+
+             ;; Function handling all requests, passing system environment
+             ;; Configure environment for router application, e.g. database connection details, etc.
+             :handler (router/app (donut/ref [:env :persistence]))}}})
+
+        ;; End of Donut Party System configuration
+        ;; ---------------------------------------------------------
         ```
 
 
@@ -663,7 +671,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 === "Component"
 
     [:fontawesome-brands-github: Component](https://github.com/stuartsierra/component){target=_blank} framework for managing the lifecycle and dependencies of software components which have runtime state, using a style of dependency injection using immutable data structures.
-    
+
     Clojure services may be composed of stateful processes that must be started and stopped in a particular order. The component model makes those relationships explicit and declarative,
 
 
@@ -673,7 +681,7 @@ Start, stop and restart the components that a system is composed of, e.g. app se
 
     <p style="text-align:center">
       <iframe width="560" height="315" src="https://www.youtube.com/embed/v=13cmHf_kt-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </p> 
+    </p>
 
 
 ## Reference
