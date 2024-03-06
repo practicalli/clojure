@@ -109,8 +109,13 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
             `sudo apt install emacs-snapshot` package to use the latest nightly build of Emacs, although be aware that some things may break.
 
 
-            ??? HINT "Build Emacs 29 from source"
-                [Building Emacs 29 from source code on Ubuntu](https://practical.li/blog/posts/build-emacs-28-on-ubuntu/) is relatively straight forward task, although it will take a little time to compile.  Building Emacs allows customisation of some features, such as native compilatin of elisp to enhance the performance of Emacs.
+            ??? HINT "Build Emacs from source"
+                [Building Emacs from source code](https://practical.li/blog/build-emacs-from-source-on-debian-linux/) has a few steps to ensure dependencies are present.
+
+                Building Emacs allows customisation of features included in Emacs, e.g. JSON support, XWidgets or native compilatin of elisp to enhance the performance of Emacs.
+
+                Emacs will take 15-30 minutes to compile, then the binary created can be installed.  
+
 
 
         === "Homebrew / MacOSX"

@@ -46,6 +46,7 @@
 - dev: spell lychee config file for megalinter config
 - dev: extend lychee exclusion rules and base url
 - dev: allow `a` and `img` html elements in markdown linter
+- editor: update link to build emacs from source code
 
 
 # 2023-08-14
