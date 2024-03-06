@@ -226,9 +226,7 @@
   "MD042": true,
 
   // MD043/required-headings/required-headers - Required heading structure
-  "MD043": {
-
-  },
+  "MD043": {},
 
   // MD044/proper-names - Proper names should have the correct capitalization
   "MD044": {
@@ -279,8 +277,6 @@
   // MD053/link-image-reference-definitions - Link and image reference definitions should be needed
   "MD053": {
     // Ignored definitions
-    "ignored_definitions": [
-      "//"
-    ]
+    "ignored_definitions": ["//"]
   }
 }
