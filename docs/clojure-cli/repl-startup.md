@@ -78,7 +78,7 @@ Create an alias to include the `dev` path when running a REPL process
 
 Run a Clojure REPL with the `:repl/reloaded` alias (or `:dev/reloaded` `:dev/env`)  to add the `dev` directory to the class path and load the code in `dev/user.clj` file into the REPL.
 
-```shell
+```bash
 clojure -M:repl/reloaded
 ```
 
@@ -141,8 +141,9 @@ Define a `help` function that prints out commands with a breif explination of th
 
 Add a `(help)` expression to call the help function on REPL startup, displaying the help menu. 
 
-!!! EXAMPLE "REPL Help menu"
-    ```clojure
+!!! EXAMPLE "REPL Help menu for custom user namespace"
+    ```clojure title="dev/user.clj"
+
     ;; ---------------------------------------------------------
     ;; Help
 
@@ -174,7 +175,8 @@ Add a `(help)` expression to call the help function on REPL startup, displaying 
       (println "(inspect/close)                ; close portal")
       (println)
       (println "(help)                         ; print help text")
-      (println "---------------------------------------------------------"))
+
+    (println "---------------------------------------------------------"))
 
     (help)
 
@@ -191,12 +193,7 @@ mulog is a very effective event log tool that also provides a range of log publi
 
 
 !!! EXAMPLE "Mulog configuration and publishers"
-    Require the mulog namespaces.
-
-    Set the global context for all mulog events, setting common key/value pairs that appear in every event created after the global context was evaluated.
-
-    Define a custom publisher to send all mulog events to the registered tap> sources, e.g. Portal data inspector.
-
+    
     ```clojure title="dev/mulog_events.clj"
     ;; ---------------------------------------------------------
     ;; Mulog Global Context and Custom Publisher
@@ -320,7 +317,7 @@ Rather than restart the repl, clojure.tools.namespace.repl provides functions th
 
 Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases
 
-```shell
+```bash
 clojure -M:repl/reloaded
 ```
 
@@ -355,10 +352,10 @@ Components can include an http server, routing, persistence, logging publisher, 
 
 Example system component management libraries included
 
-* [mount](https://github.com/tolitius/mount) - manage system state in an atom
-* [integrant](https://github.com/weavejester/integrant) and [Integrant REPL](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant) - data definition of system and init & halt defmethod interface
-* [donut system](https://github.com/donut-party/system)
-* [component](https://github.com/stuartsierra/component)
+* [:fontawesome-brands-github: mount](https://github.com/tolitius/mount) - manage system state in an atom
+* [:fontawesome-brands-github: donut-party system](https://github.com/donut-party/system)
+* [:fontawesome-brands-github: integrant](https://github.com/weavejester/integrant) and [Integrant REPL](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant) - data definition of system and init & halt defmethod interface
+* [:fontawesome-brands-github: component](https://github.com/stuartsierra/component)
 
 !!! EXAMPLE "Require system namespace in user ns expression"
     Require the system namespace and use `start`, `restart` and `stop` functions to manage the components in the system
@@ -377,7 +374,7 @@ Define code in the `dev/system.clj` file which controls the component life-cycle
 
 Create a `dev/system.clj` to manage the components, optionally using one of the system component management libraries.
 
-#### life-cycle functions
+### life-cycle libraries
 
 Start, stop and restart the components that a system is composed of, e.g. app server, database pool, log publisher, message queue, etc.
 
@@ -513,22 +510,69 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     !!! Hint "Use `dev` namespace during development"
         Require `practicalli.app.dev` namespace rather than main, to start components in a development environment.
 
-=== "Integrant REPL"
-    [:fontawesome-solid-book-open: Integrant REPL - Practicalli Clojure Web Services](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant){target=_blank .md-button}
 
-    [User manager - Integrant](https://github.com/prestancedesign/usermanager-reitit-example){target=_blank .md-button}
+     [:fontawesome-brands-github: Mount project on GitHub](https://github.com/tolitius/mount){target=_blank .md-button}
+     [:fontawesome-brands-github: Mount - collection of Clojure/Script mount apps](https://github.com/tolitius/stater){target=_blank .md-button}
+
 
 === "Donut System"
     [donut.system](https://github.com/donut-party/system) is a dependency injection library for Clojure and ClojureScript using system and component abstractions to organise and manage startup & shutdown behaviour.
 
-    [Basic usage guide](https://github.com/donut-party/system#basic-usage) shows how to define a donut.system
+    Configuration is a Clojure hash-map with functions to start and stop components.
+
+    [Basic usage guide](https://github.com/donut-party/system#basic-usage){target=_blank .md-button}
+    
+    [:fontawesome-brands-github: donut-party/system](https://github.com/donut-party/system){target=_blank .md-button}
 
     <p style="text-align:center">
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PMat9Wdt-pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
 
+    !!! EXAMPLE "Practicalli Gameboard Service - REPL tooling"
+
+        ```clojure title="dev/system_repl.clj"
+        ;; ---------------------------------------------------------
+        ;; Donut System REPL
+        ;;
+        ;; Tools for REPl workflow with Donut system components
+        ;; ---------------------------------------------------------
+
+        (ns system-repl
+          "Tools for REPl workflow with Donut system components"
+          (:require
+           [donut.system :as donut]
+           [donut.system.repl :as donut-repl]
+           [donut.system.repl.state :as donut-repl-state]
+           [{{top/ns}}.{{main/ns}}.system :as system]))
+
+
+        (defmethod donut/named-system :donut.system/repl
+          [_] system/main)
+
+        (defn start
+          "Start system with donut, optionally passing a named system"
+          ([] (donut-repl/start))
+          ([system-config] (donut-repl/start system-config)))
+
+        (defn stop
+          "Stop the currently running system"
+          []  (donut-repl/stop))
+
+        (defn restart
+          "Restart the system with donut repl,
+          Uses clojure.tools.namespace.repl to reload namespaces
+          `(clojure.tools.namespace.repl/refresh :after 'donut.system.repl/start)`"
+          [] (donut-repl/restart))
+
+        (defn system
+          "Return: fully qualified hash-map of system state"
+          [] donut-repl-state/system)
+        ```
+
+
     !!! EXAMPLE "Practicalli Gameboard Service - System configuration"
-        ```clojure
+
+        ```clojure title="src/gameboard/system.clj"
 
         ;; --------------------------------------------------
         ;; Donut System environment configuration
@@ -610,16 +654,30 @@ Start, stop and restart the components that a system is composed of, e.g. app se
         ```
 
 
+=== "Integrant REPL"
+    [:fontawesome-solid-book-open: Integrant REPL - Practicalli Clojure Web Services](https://practical.li/clojure-web-services/service-repl-workflow/integrant-repl/#aero-and-integrant){target=_blank .md-button}
+
+    [User manager - Integrant](https://github.com/prestancedesign/usermanager-reitit-example){target=_blank .md-button}
+
+
 === "Component"
-    [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
+
+    [:fontawesome-brands-github: Component](https://github.com/stuartsierra/component){target=_blank} framework for managing the lifecycle and dependencies of software components which have runtime state, using a style of dependency injection using immutable data structures.
+    
+    Clojure services may be composed of stateful processes that must be started and stopped in a particular order. The component model makes those relationships explicit and declarative,
+
+
+    [:fontawesome-brands-github: seancorfield/usermanager-example Component project](https://github.com/seancorfield/usermanager-example){target=_blank .md-button}
+
+    [A tutorial - Stuart Sierra's Component](https://www.cbui.dev/a-tutorial-to-stuart-sierras-component/){target=_blank .md-button}
+
+    <p style="text-align:center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/v=13cmHf_kt-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </p> 
+
 
 ## Reference
 
-* [Mount project on GitHub](https://github.com/tolitius/mount)
-* [Mount - collection of Clojure/Script mount apps](https://github.com/tolitius/stater)
-* [donut.system](https://github.com/donut-party/system)
-* [Component](https://github.com/stuartsierra/component)
-* [A tutorial to Stuart Sierra's Component](https://www.cbui.dev/a-tutorial-of-stuart-sierras-component-for-clojure/)
 * [Refactoring to Components](https://lacinia.readthedocs.io/en/latest/tutorial/component.html) - Walmart Labs Lacinia
 * [Integrant](https://github.com/weavejester/integrant)
 * [Compojure and Integrant](https://the-frey.github.io/2017/12/14/compojure-and-integrant)
