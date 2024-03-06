@@ -8279,7 +8279,7 @@
 
 
 <h1 id="configure-repl-on-startup">Configure REPL on Startup<a class="headerlink" href="#configure-repl-on-startup" title="Permanent link">λ︎</a></h1>
-<p>A Clojure REPL starts in the <code>user</code> namespace and automatically loads common tools to support REPL based development. </p>
+<p>A Clojure REPL starts in the <code>user</code> namespace and automatically loads common tools to support REPL based development.</p>
 <p>When interacting with the REPL prompt directly, use <code>require</code> expressions to include additional functions into the <code>user</code> nameapace rather than use potentially complex commands to set the namespace.</p>
 <details class="warning">
 <summary>Clojure REPL only starts in user namespace</summary>
@@ -8293,7 +8293,7 @@
 <ul>
 <li><a href="https://clojuredocs.org/clojure.repl/apropos"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> apropos</a> - function names fuzzy matching a given regex pattern</li>
 <li><a href="https://clojuredocs.org/clojure.repl/dir"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> dir</a> - sorted list of public vars (functions) in a given namespace</li>
-<li><a href="https://clojuredocs.org/clojure.repl/doc"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> doc</a> - doc-string of a give Clojure function / symbol </li>
+<li><a href="https://clojuredocs.org/clojure.repl/doc"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> doc</a> - doc-string of a give Clojure function / symbol</li>
 <li><a href="https://clojuredocs.org/clojure.repl/find-doc"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> find-doc</a> - doc-string of matching functions, given a string or regex pattern</li>
 <li><a href="https://clojuredocs.org/clojure.repl/source"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> source</a> - source code of a given function</li>
 <li><a href="https://clojuredocs.org/clojure.repl/pst"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f310.svg" title=":globe_with_meridians:" /> pst</a> print stack trace, optionally setting depth</li>
@@ -8393,7 +8393,7 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 <h3 id="repl-help-menu">REPL Help menu<a class="headerlink" href="#repl-help-menu" title="Permanent link">λ︎</a></h3>
 <p>Printing a menu of functions provided by the custom user namespace helps with the usability of a project.</p>
 <p>Define a <code>help</code> function that prints out commands with a breif explination of their purpose.</p>
-<p>Add a <code>(help)</code> expression to call the help function on REPL startup, displaying the help menu. </p>
+<p>Add a <code>(help)</code> expression to call the help function on REPL startup, displaying the help menu.</p>
 <div class="admonition example">
 <p class="admonition-title">REPL Help menu for custom user namespace</p>
 <div class="highlight"><span class="filename">dev/user.clj</span><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1">;; ---------------------------------------------------------</span>
@@ -8527,7 +8527,7 @@ Review <a href="/clojure/clojure-cli/practicalli-config/"><span class="twemoji">
 <details class="warning">
 <summary>Hotload libraries is SNAPSHOT feature - this guide will change when Clojure 1.12 is released</summary>
 <p>Functions to hotload libraries are part of the Clojure 1.12 development releases and an official feature as of the stable 1.12 release.</p>
-<p>For Clojure 1.11 and similar functions are available in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.  </p>
+<p>For Clojure 1.11 and similar functions are available in the <a href="https://github.com/clojure/tools.deps.alpha/tree/add-lib3">add-libs3 branch</a> of the now deprecated <code>clojure.tools.deps.alpha</code> library.</p>
 <p><a href="https://github.com/clojure/tools.deps">clojure/tools.deps</a> is the official library for all released functions from the alpha library</p>
 <p>This guide will be significantly rewritten once Clojure 1.12 is released.</p>
 </details>
@@ -8608,22 +8608,22 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <div class="admonition example">
 <p class="admonition-title">Restart an HTTP server for Clojure Web Service &amp; Refresh namespaces</p>
 <div class="highlight"><span class="filename">dev/system_repl.clj</span><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">;; ---------------------------------------------------------</span>
-<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">;; System REPL - Atom Restart </span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">;; System REPL - Atom Restart</span>
 <a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="c1">;;</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1">;; Tools for REPl workflow with Aton reference to HTTP server </span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1">;; Tools for REPl workflow with Aton reference to HTTP server</span>
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="c1">;; https://practical.li/clojure-web-services/app-servers/simple-restart/</span>
 <a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="c1">;; ---------------------------------------------------------</span>
 <a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
 <a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">system-repl</span>
-<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span><span class="w"> </span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
 <a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.tools.namespace.repl</span><span class="w"> </span><span class="ss">:refer</span><span class="w"> </span><span class="p">[</span><span class="nv">refresh</span><span class="p">]]</span>
 <a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="w">    </span><span class="p">[</span><span class="nv">practicalli.todo-basic.service</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">service</span><span class="p">]))</span>
 <a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>
 <a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a><span class="c1">;; ---------------------------------------------------------</span>
 <a id="__codelineno-18-14" name="__codelineno-18-14" href="#__codelineno-18-14"></a><span class="c1">;; HTTP Server State</span>
 <a id="__codelineno-18-15" name="__codelineno-18-15" href="#__codelineno-18-15"></a>
-<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">(</span><span class="kd">defonce </span><span class="nv">http-server-instance</span><span class="w"> </span>
-<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span><span class="w">  </span><span class="c1">; (1)! </span>
+<a id="__codelineno-18-16" name="__codelineno-18-16" href="#__codelineno-18-16"></a><span class="p">(</span><span class="kd">defonce </span><span class="nv">http-server-instance</span>
+<a id="__codelineno-18-17" name="__codelineno-18-17" href="#__codelineno-18-17"></a><span class="w">  </span><span class="p">(</span><span class="nf">atom</span><span class="w"> </span><span class="nv">nil</span><span class="p">))</span><span class="w">  </span><span class="c1">; (1)!</span>
 <a id="__codelineno-18-18" name="__codelineno-18-18" href="#__codelineno-18-18"></a><span class="c1">;; ---------------------------------------------------------</span>
 <a id="__codelineno-18-19" name="__codelineno-18-19" href="#__codelineno-18-19"></a>
 <a id="__codelineno-18-20" name="__codelineno-18-20" href="#__codelineno-18-20"></a><span class="c1">;; ---------------------------------------------------------</span>
@@ -8631,7 +8631,7 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <a id="__codelineno-18-22" name="__codelineno-18-22" href="#__codelineno-18-22"></a>
 <a id="__codelineno-18-23" name="__codelineno-18-23" href="#__codelineno-18-23"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
 <a id="__codelineno-18-24" name="__codelineno-18-24" href="#__codelineno-18-24"></a><span class="w">  </span><span class="s">&quot;Gracefully shutdown the server, waiting 100ms.</span>
-<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="s">   Check if an http server isntance exists and </span>
+<a id="__codelineno-18-25" name="__codelineno-18-25" href="#__codelineno-18-25"></a><span class="s">   Check if an http server isntance exists and</span>
 <a id="__codelineno-18-26" name="__codelineno-18-26" href="#__codelineno-18-26"></a><span class="s">   send a `:timeout` key and time in milliseconds to shutdown the server.</span>
 <a id="__codelineno-18-27" name="__codelineno-18-27" href="#__codelineno-18-27"></a><span class="s">   Reset the atom to nil to indicate no http server is running.&quot;</span>
 <a id="__codelineno-18-28" name="__codelineno-18-28" href="#__codelineno-18-28"></a><span class="w">  </span><span class="p">[]</span>
@@ -8658,7 +8658,7 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <a id="__codelineno-18-49" name="__codelineno-18-49" href="#__codelineno-18-49"></a><span class="w">  </span><span class="s">&quot;Stop the http server, refresh changed namespace and start the http server again&quot;</span>
 <a id="__codelineno-18-50" name="__codelineno-18-50" href="#__codelineno-18-50"></a><span class="w">  </span><span class="p">[]</span>
 <a id="__codelineno-18-51" name="__codelineno-18-51" href="#__codelineno-18-51"></a><span class="w">  </span><span class="p">(</span><span class="nf">stop</span><span class="p">)</span>
-<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a><span class="w">  </span><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span><span class="w">  </span><span class="c1">; (5)! </span>
+<a id="__codelineno-18-52" name="__codelineno-18-52" href="#__codelineno-18-52"></a><span class="w">  </span><span class="p">(</span><span class="nf">refresh</span><span class="p">)</span><span class="w">  </span><span class="c1">; (5)!</span>
 <a id="__codelineno-18-53" name="__codelineno-18-53" href="#__codelineno-18-53"></a><span class="w">  </span><span class="p">(</span><span class="nf">start</span><span class="p">))</span>
 <a id="__codelineno-18-54" name="__codelineno-18-54" href="#__codelineno-18-54"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
@@ -8744,111 +8744,119 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">   </span><span class="p">[</span><span class="nv">donut.system</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">donut</span><span class="p">]</span>
 <a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">   </span><span class="p">[</span><span class="nv">donut.system.repl</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">donut-repl</span><span class="p">]</span>
 <a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">   </span><span class="p">[</span><span class="nv">donut.system.repl.state</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">donut-repl-state</span><span class="p">]</span>
-<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">   </span><span class="p">[{{</span><span class="nv">top/ns</span><span class="p">}}</span><span class="nv">.</span><span class="p">{{</span><span class="nv">main/ns</span><span class="p">}}</span><span class="nv">.system</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">system</span><span class="p">]))</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a><span class="w">   </span><span class="p">[</span><span class="nv">practicalli.gameboard.system</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">system</span><span class="p">]))</span>
 <a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>
-<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
-<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="p">(</span><span class="kd">defmethod </span><span class="nv">donut/named-system</span><span class="w"> </span><span class="ss">:donut.system/repl</span>
-<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">  </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="nv">system/main</span><span class="p">)</span>
-<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a>
-<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span>
-<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">  </span><span class="s">&quot;Start system with donut, optionally passing a named system&quot;</span>
-<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/start</span><span class="p">))</span>
-<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a><span class="w">  </span><span class="p">([</span><span class="nv">system-config</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/start</span><span class="w"> </span><span class="nv">system-config</span><span class="p">)))</span>
-<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a>
-<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
-<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">  </span><span class="s">&quot;Stop the currently running system&quot;</span>
-<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a><span class="w">  </span><span class="p">[]</span><span class="w">  </span><span class="p">(</span><span class="nf">donut-repl/stop</span><span class="p">))</span>
-<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a>
-<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">restart</span>
-<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="w">  </span><span class="s">&quot;Restart the system with donut repl,</span>
-<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="s">  Uses clojure.tools.namespace.repl to reload namespaces</span>
-<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="s">  `(clojure.tools.namespace.repl/refresh :after &#39;donut.system.repl/start)`&quot;</span>
-<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a><span class="w">  </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/restart</span><span class="p">))</span>
-<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a>
-<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">system</span>
-<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">  </span><span class="s">&quot;Return: fully qualified hash-map of system state&quot;</span>
-<a id="__codelineno-24-36" name="__codelineno-24-36" href="#__codelineno-24-36"></a><span class="w">  </span><span class="p">[]</span><span class="w"> </span><span class="nv">donut-repl-state/system</span><span class="p">)</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="p">(</span><span class="kd">defmethod </span><span class="nv">donut/named-system</span><span class="w"> </span><span class="ss">:donut.system/repl</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">  </span><span class="p">[</span><span class="nv">_</span><span class="p">]</span><span class="w"> </span><span class="nv">system/main</span><span class="p">)</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">start</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="w">  </span><span class="s">&quot;Start system with donut, optionally passing a named system&quot;</span>
+<a id="__codelineno-24-20" name="__codelineno-24-20" href="#__codelineno-24-20"></a><span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/start</span><span class="p">))</span>
+<a id="__codelineno-24-21" name="__codelineno-24-21" href="#__codelineno-24-21"></a><span class="w">  </span><span class="p">([</span><span class="nv">system-config</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/start</span><span class="w"> </span><span class="nv">system-config</span><span class="p">)))</span>
+<a id="__codelineno-24-22" name="__codelineno-24-22" href="#__codelineno-24-22"></a>
+<a id="__codelineno-24-23" name="__codelineno-24-23" href="#__codelineno-24-23"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">stop</span>
+<a id="__codelineno-24-24" name="__codelineno-24-24" href="#__codelineno-24-24"></a><span class="w">  </span><span class="s">&quot;Stop the currently running system&quot;</span>
+<a id="__codelineno-24-25" name="__codelineno-24-25" href="#__codelineno-24-25"></a><span class="w">  </span><span class="p">[]</span><span class="w">  </span><span class="p">(</span><span class="nf">donut-repl/stop</span><span class="p">))</span>
+<a id="__codelineno-24-26" name="__codelineno-24-26" href="#__codelineno-24-26"></a>
+<a id="__codelineno-24-27" name="__codelineno-24-27" href="#__codelineno-24-27"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">restart</span>
+<a id="__codelineno-24-28" name="__codelineno-24-28" href="#__codelineno-24-28"></a><span class="w">  </span><span class="s">&quot;Restart the system with donut repl,</span>
+<a id="__codelineno-24-29" name="__codelineno-24-29" href="#__codelineno-24-29"></a><span class="s">  Uses clojure.tools.namespace.repl to reload namespaces</span>
+<a id="__codelineno-24-30" name="__codelineno-24-30" href="#__codelineno-24-30"></a><span class="s">  `(clojure.tools.namespace.repl/refresh :after &#39;donut.system.repl/start)`&quot;</span>
+<a id="__codelineno-24-31" name="__codelineno-24-31" href="#__codelineno-24-31"></a><span class="w">  </span><span class="p">[]</span><span class="w"> </span><span class="p">(</span><span class="nf">donut-repl/restart</span><span class="p">))</span>
+<a id="__codelineno-24-32" name="__codelineno-24-32" href="#__codelineno-24-32"></a>
+<a id="__codelineno-24-33" name="__codelineno-24-33" href="#__codelineno-24-33"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">system</span>
+<a id="__codelineno-24-34" name="__codelineno-24-34" href="#__codelineno-24-34"></a><span class="w">  </span><span class="s">&quot;Return: fully qualified hash-map of system state&quot;</span>
+<a id="__codelineno-24-35" name="__codelineno-24-35" href="#__codelineno-24-35"></a><span class="w">  </span><span class="p">[]</span><span class="w"> </span><span class="nv">donut-repl-state/system</span><span class="p">)</span>
 </code></pre></div>
 </div>
 <div class="admonition example">
 <p class="admonition-title">Practicalli Gameboard Service - System configuration</p>
-<div class="highlight"><span class="filename">src/gameboard/system.clj</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">;; --------------------------------------------------</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1">;; Donut System environment configuration</span>
+<div class="highlight"><span class="filename">src/gameboard/system.clj</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="c1">;; practicalli.gameboard</span>
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="c1">;;</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1">;; - Event logging with mulog</span>
-<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1">;; - HTTP Server</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1">;; - Request routing (reitit)</span>
-<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1">;; - Persistence (relational) connection</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="c1">;;</span>
-<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="c1">;; Components managed in practicalli.gameboard.service namespace</span>
-<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="c1">;;</span>
-<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="c1">;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)</span>
-<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="c1">;; #long defines Long Integer type (required for Java HTTP server port)</span>
-<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="c1">;; #env reads the environment variable of the given name</span>
-<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="c1">;; #or uses first non nil value in sequence</span>
-<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="c1">;;</span>
-<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="c1">;; Environment variables should be defined locally and in deployment provisioner tooling</span>
-<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="c1">;; --------------------------------------------------</span>
-<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
-<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="p">{</span><span class="ss">:env</span>
-<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w"> </span><span class="p">{</span><span class="ss">:http-server</span>
-<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="w">  </span><span class="o">#</span><span class="nv">profile</span>
-<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="w">  </span><span class="p">{</span><span class="ss">:dev</span><span class="w">  </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;HTTP_PORT&quot;</span><span class="w"> </span><span class="s">&quot;8080&quot;</span><span class="p">]}</span>
-<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="w">   </span><span class="ss">:prod</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w"> </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;PORT&quot;</span><span class="p">}}</span>
-<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="w">  </span><span class="ss">:persistence</span>
-<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="w">  </span><span class="o">#</span><span class="nv">profile</span>
-<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="w">  </span><span class="p">{</span><span class="ss">:dev</span>
-<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="w">   </span><span class="p">{</span><span class="ss">:database-host</span><span class="w">     </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_HOST&quot;</span><span class="w">     </span><span class="s">&quot;http://localhost&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="w">    </span><span class="ss">:database-port</span><span class="w">     </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_PORT&quot;</span><span class="w">     </span><span class="s">&quot;5432&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="w">    </span><span class="ss">:database-username</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_USERNAME&quot;</span><span class="w"> </span><span class="s">&quot;clojure&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="w">    </span><span class="ss">:database-password</span><span class="w"> </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_PASSWORD&quot;</span><span class="w"> </span><span class="s">&quot;clojure&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a><span class="w">    </span><span class="ss">:database-schema</span><span class="w">   </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_SCHEMA&quot;</span><span class="w">   </span><span class="s">&quot;clojure&quot;</span><span class="p">]}</span>
-<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a><span class="w">   </span><span class="ss">:prod</span>
-<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a><span class="w">   </span><span class="p">{</span><span class="ss">:database-host</span><span class="w">     </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_HOST&quot;</span>
-<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="w">    </span><span class="ss">:database-port</span><span class="w">     </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_PORT&quot;</span>
-<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a><span class="w">    </span><span class="ss">:database-username</span><span class="w"> </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_USERNAME&quot;</span>
-<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a><span class="w">    </span><span class="ss">:database-password</span><span class="w"> </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_PASSWORD&quot;</span>
-<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a><span class="w">    </span><span class="ss">:database-schema</span><span class="w">   </span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="s">&quot;POSTGRES_SCHEMA&quot;</span><span class="p">}}</span>
-<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>
-<a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a><span class="w">  </span><span class="c1">;; Type of publisher to use for mulog events</span>
-<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a><span class="w">  </span><span class="c1">;; Publish json format logs, captured by fluentd and exposed via OpenDirectory</span>
-<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a><span class="w">  </span><span class="ss">:mulog</span>
-<a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a><span class="w">  </span><span class="o">#</span><span class="nv">profile</span>
-<a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a><span class="w">  </span><span class="p">{</span><span class="ss">:dev</span>
-<a id="__codelineno-25-44" name="__codelineno-25-44" href="#__codelineno-25-44"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}</span>
-<a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a>
-<a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a><span class="w">   </span><span class="c1">;; Multiple publishers using Open Zipkin service (started via docker-compose)</span>
-<a id="__codelineno-25-47" name="__codelineno-25-47" href="#__codelineno-25-47"></a><span class="w">   </span><span class="ss">:docker</span>
-<a id="__codelineno-25-48" name="__codelineno-25-48" href="#__codelineno-25-48"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:multi</span>
-<a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a><span class="w">    </span><span class="ss">:publishers</span>
-<a id="__codelineno-25-50" name="__codelineno-25-50" href="#__codelineno-25-50"></a><span class="w">    </span><span class="p">[{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}</span>
-<a id="__codelineno-25-51" name="__codelineno-25-51" href="#__codelineno-25-51"></a><span class="w">     </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:zipkin</span><span class="w"> </span><span class="ss">:url</span><span class="w"> </span><span class="s">&quot;http://localhost:9411/&quot;</span><span class="p">}]}</span>
-<a id="__codelineno-25-52" name="__codelineno-25-52" href="#__codelineno-25-52"></a>
-<a id="__codelineno-25-53" name="__codelineno-25-53" href="#__codelineno-25-53"></a><span class="w">   </span><span class="ss">:prod</span>
-<a id="__codelineno-25-54" name="__codelineno-25-54" href="#__codelineno-25-54"></a><span class="w">   </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console-json</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}</span>
-<a id="__codelineno-25-55" name="__codelineno-25-55" href="#__codelineno-25-55"></a>
-<a id="__codelineno-25-56" name="__codelineno-25-56" href="#__codelineno-25-56"></a><span class="w">  </span><span class="c1">;; Configure data API connections</span>
-<a id="__codelineno-25-57" name="__codelineno-25-57" href="#__codelineno-25-57"></a><span class="w">  </span><span class="ss">:data-api</span>
-<a id="__codelineno-25-58" name="__codelineno-25-58" href="#__codelineno-25-58"></a><span class="w">  </span><span class="o">#</span><span class="nv">profile</span>
-<a id="__codelineno-25-59" name="__codelineno-25-59" href="#__codelineno-25-59"></a><span class="w">  </span><span class="p">{</span><span class="ss">:dev</span>
-<a id="__codelineno-25-60" name="__codelineno-25-60" href="#__codelineno-25-60"></a><span class="w">   </span><span class="p">{</span><span class="ss">:game-service-base-url</span><span class="w">  </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">GAME_SERVICE_BASE_URL</span><span class="w"> </span><span class="s">&quot;http://localhost&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-61" name="__codelineno-25-61" href="#__codelineno-25-61"></a><span class="w">    </span><span class="ss">:llamasoft-api-uri</span><span class="w">      </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">LAMASOFT_API_URI</span><span class="w"> </span><span class="s">&quot;http://localhost&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-62" name="__codelineno-25-62" href="#__codelineno-25-62"></a>
-<a id="__codelineno-25-63" name="__codelineno-25-63" href="#__codelineno-25-63"></a><span class="w">    </span><span class="ss">:polybus-report-uri</span><span class="w">               </span><span class="s">&quot;/report/polybus&quot;</span>
-<a id="__codelineno-25-64" name="__codelineno-25-64" href="#__codelineno-25-64"></a><span class="w">    </span><span class="ss">:moose-life-report-uri</span><span class="w">            </span><span class="s">&quot;/api/v1/report/moose-life&quot;</span>
-<a id="__codelineno-25-65" name="__codelineno-25-65" href="#__codelineno-25-65"></a><span class="w">    </span><span class="ss">:minotaur-arcade-report-uri</span><span class="w">       </span><span class="s">&quot;/api/v2/minotar-arcade&quot;</span>
-<a id="__codelineno-25-66" name="__codelineno-25-66" href="#__codelineno-25-66"></a><span class="w">    </span><span class="ss">:gridrunner-revolution-report-uri</span><span class="w"> </span><span class="s">&quot;/api/v1.1/gridrunner&quot;</span>
-<a id="__codelineno-25-67" name="__codelineno-25-67" href="#__codelineno-25-67"></a><span class="w">    </span><span class="ss">:space-giraffe-report-uri</span><span class="w">         </span><span class="s">&quot;/api/v1/games/space-giraffe&quot;</span><span class="p">}</span>
-<a id="__codelineno-25-68" name="__codelineno-25-68" href="#__codelineno-25-68"></a>
-<a id="__codelineno-25-69" name="__codelineno-25-69" href="#__codelineno-25-69"></a><span class="w">   </span><span class="ss">:prod</span>
-<a id="__codelineno-25-70" name="__codelineno-25-70" href="#__codelineno-25-70"></a><span class="w">   </span><span class="p">{</span><span class="ss">:game-service-base-url</span><span class="w">  </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">GAME_SERVICE_BASE_URL</span><span class="w"> </span><span class="s">&quot;http://localhost&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-71" name="__codelineno-25-71" href="#__codelineno-25-71"></a><span class="w">    </span><span class="ss">:llamasoft-api-uri</span><span class="w">      </span><span class="o">#</span><span class="nb">or </span><span class="p">[</span><span class="o">#</span><span class="nv">env</span><span class="w"> </span><span class="nv">LAMASOFT_API_URI</span><span class="w"> </span><span class="s">&quot;http://localhost&quot;</span><span class="p">]</span>
-<a id="__codelineno-25-72" name="__codelineno-25-72" href="#__codelineno-25-72"></a>
-<a id="__codelineno-25-73" name="__codelineno-25-73" href="#__codelineno-25-73"></a><span class="w">    </span><span class="ss">:polybus-report-uri</span><span class="w">               </span><span class="s">&quot;/report/polybus&quot;</span>
-<a id="__codelineno-25-74" name="__codelineno-25-74" href="#__codelineno-25-74"></a><span class="w">    </span><span class="ss">:moose-life-report-uri</span><span class="w">            </span><span class="s">&quot;/api/v1/report/moose-life&quot;</span>
-<a id="__codelineno-25-75" name="__codelineno-25-75" href="#__codelineno-25-75"></a><span class="w">    </span><span class="ss">:minotaur-arcade-report-uri</span><span class="w">       </span><span class="s">&quot;/api/v2/minotar-arcade&quot;</span>
-<a id="__codelineno-25-76" name="__codelineno-25-76" href="#__codelineno-25-76"></a><span class="w">    </span><span class="ss">:gridrunner-revolution-report-uri</span><span class="w"> </span><span class="s">&quot;/api/v1.1/gridrunner&quot;</span>
-<a id="__codelineno-25-77" name="__codelineno-25-77" href="#__codelineno-25-77"></a><span class="w">    </span><span class="ss">:space-giraffe-report-uri</span><span class="w">         </span><span class="s">&quot;/api/v1/games/space-giraffe&quot;</span><span class="p">}}}}</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="c1">;; TODO: Provide a meaningful description of the project</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="c1">;;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="c1">;; Start the service using donut configuration and an environment profile.</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.gameboard.system</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">  </span><span class="s">&quot;Service component lifecycle management&quot;</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">  </span><span class="p">(</span><span class="ss">:gen-class</span><span class="p">)</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">  </span><span class="p">(</span><span class="ss">:require</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">   </span><span class="c1">;; Application dependencies</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">   </span><span class="p">[</span><span class="nv">practicalli.gameboard.router</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">router</span><span class="p">]</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">   </span><span class="c1">;; Component system</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">   </span><span class="p">[</span><span class="nv">donut.system</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">donut</span><span class="p">]</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">   </span><span class="c1">;; [practicalli.gameboard.parse-system :as parse-system]</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">   </span><span class="c1">;; System dependencies</span>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="w">   </span><span class="p">[</span><span class="nv">org.httpkit.server</span><span class="w">     </span><span class="ss">:as</span><span class="w"> </span><span class="nv">http-server</span><span class="p">]</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="w">   </span><span class="p">[</span><span class="nv">com.brunobonacci.mulog</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">mulog</span><span class="p">]))</span>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="c1">;; ---------------------------------------------------------</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="c1">;; Donut Party System configuration</span>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="p">(</span><span class="k">def </span><span class="nv">main</span>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="w">  </span><span class="s">&quot;System Component management with Donut&quot;</span>
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a><span class="w">  </span><span class="p">{</span><span class="ss">::donut/defs</span>
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a><span class="w">   </span><span class="c1">;; Option: move :env data to resources/config.edn and parse with aero reader</span>
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a><span class="w">   </span><span class="p">{</span><span class="ss">:env</span>
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a><span class="w">    </span><span class="p">{</span><span class="ss">:http-port</span><span class="w"> </span><span class="mi">8080</span>
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a><span class="w">     </span><span class="ss">:persistence</span>
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a><span class="w">     </span><span class="p">{</span><span class="ss">:database-host</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;POSTGRES_HOST&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;http://localhost&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a><span class="w">      </span><span class="ss">:database-port</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;POSTGRES_PORT&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;5432&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a><span class="w">      </span><span class="ss">:database-username</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;POSTGRES_USERNAME&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;clojure&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a><span class="w">      </span><span class="ss">:database-password</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;POSTGRES_PASSWORD&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;clojure&quot;</span><span class="p">)</span>
+<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a><span class="w">      </span><span class="ss">:database-schema</span><span class="w"> </span><span class="p">(</span><span class="nb">or </span><span class="p">(</span><span class="nf">System/getenv</span><span class="w"> </span><span class="s">&quot;POSTGRES_SCHEMA&quot;</span><span class="p">)</span><span class="w"> </span><span class="s">&quot;clojure&quot;</span><span class="p">)}}</span>
+<a id="__codelineno-25-39" name="__codelineno-25-39" href="#__codelineno-25-39"></a>
+<a id="__codelineno-25-40" name="__codelineno-25-40" href="#__codelineno-25-40"></a><span class="w">    </span><span class="c1">;; mulog publisher for a given publisher type, i.e. console, cloud-watch</span>
+<a id="__codelineno-25-41" name="__codelineno-25-41" href="#__codelineno-25-41"></a><span class="w">    </span><span class="ss">:event-log</span>
+<a id="__codelineno-25-42" name="__codelineno-25-42" href="#__codelineno-25-42"></a><span class="w">    </span><span class="p">{</span><span class="ss">:publisher</span>
+<a id="__codelineno-25-43" name="__codelineno-25-43" href="#__codelineno-25-43"></a><span class="w">     </span><span class="o">#</span><span class="ss">::donut</span><span class="p">{</span><span class="ss">:start</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="nv">mulog-publisher-start</span>
+<a id="__codelineno-25-44" name="__codelineno-25-44" href="#__codelineno-25-44"></a><span class="w">                       </span><span class="p">[{{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">publisher</span><span class="p">]}</span><span class="w"> </span><span class="ss">::donut/config</span><span class="p">}]</span>
+<a id="__codelineno-25-45" name="__codelineno-25-45" href="#__codelineno-25-45"></a><span class="w">                       </span><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::log-publish-component</span>
+<a id="__codelineno-25-46" name="__codelineno-25-46" href="#__codelineno-25-46"></a><span class="w">                                  </span><span class="ss">:publisher-config</span><span class="w"> </span><span class="nv">publisher</span>
+<a id="__codelineno-25-47" name="__codelineno-25-47" href="#__codelineno-25-47"></a><span class="w">                                  </span><span class="ss">:local-time</span><span class="w"> </span><span class="p">(</span><span class="nf">java.time.LocalDateTime/now</span><span class="p">))</span>
+<a id="__codelineno-25-48" name="__codelineno-25-48" href="#__codelineno-25-48"></a><span class="w">                       </span><span class="p">(</span><span class="nf">mulog/start-publisher!</span><span class="w"> </span><span class="nv">publisher</span><span class="p">))</span>
+<a id="__codelineno-25-49" name="__codelineno-25-49" href="#__codelineno-25-49"></a>
+<a id="__codelineno-25-50" name="__codelineno-25-50" href="#__codelineno-25-50"></a><span class="w">              </span><span class="ss">:stop</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="nv">mulog-publisher-stop</span>
+<a id="__codelineno-25-51" name="__codelineno-25-51" href="#__codelineno-25-51"></a><span class="w">                      </span><span class="p">[{</span><span class="ss">::donut/keys</span><span class="w"> </span><span class="p">[</span><span class="nv">instance</span><span class="p">]}]</span>
+<a id="__codelineno-25-52" name="__codelineno-25-52" href="#__codelineno-25-52"></a><span class="w">                      </span><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::log-publish-component-shutdown</span><span class="w"> </span><span class="ss">:publisher</span><span class="w"> </span><span class="nv">instance</span><span class="w"> </span><span class="ss">:local-time</span><span class="w"> </span><span class="p">(</span><span class="nf">java.time.LocalDateTime/now</span><span class="p">))</span>
+<a id="__codelineno-25-53" name="__codelineno-25-53" href="#__codelineno-25-53"></a><span class="w">                      </span><span class="c1">;; Pause so final messages have chance to be published</span>
+<a id="__codelineno-25-54" name="__codelineno-25-54" href="#__codelineno-25-54"></a><span class="w">                      </span><span class="p">(</span><span class="nf">Thread/sleep</span><span class="w"> </span><span class="mi">250</span><span class="p">)</span>
+<a id="__codelineno-25-55" name="__codelineno-25-55" href="#__codelineno-25-55"></a><span class="w">                      </span><span class="p">(</span><span class="nf">instance</span><span class="p">))</span>
+<a id="__codelineno-25-56" name="__codelineno-25-56" href="#__codelineno-25-56"></a>
+<a id="__codelineno-25-57" name="__codelineno-25-57" href="#__codelineno-25-57"></a><span class="w">              </span><span class="ss">:config</span><span class="w"> </span><span class="p">{</span><span class="ss">:publisher</span><span class="w"> </span><span class="p">{</span><span class="ss">:type</span><span class="w"> </span><span class="ss">:console</span><span class="w"> </span><span class="ss">:pretty?</span><span class="w"> </span><span class="nv">true</span><span class="p">}}}}</span>
+<a id="__codelineno-25-58" name="__codelineno-25-58" href="#__codelineno-25-58"></a>
+<a id="__codelineno-25-59" name="__codelineno-25-59" href="#__codelineno-25-59"></a><span class="w">    </span><span class="c1">;; HTTP server start - returns function to stop the server</span>
+<a id="__codelineno-25-60" name="__codelineno-25-60" href="#__codelineno-25-60"></a><span class="w">    </span><span class="ss">:http</span>
+<a id="__codelineno-25-61" name="__codelineno-25-61" href="#__codelineno-25-61"></a><span class="w">    </span><span class="p">{</span><span class="ss">:server</span>
+<a id="__codelineno-25-62" name="__codelineno-25-62" href="#__codelineno-25-62"></a><span class="w">     </span><span class="o">#</span><span class="ss">::donut</span><span class="p">{</span><span class="ss">:start</span><span class="w"> </span><span class="p">(</span><span class="k">fn </span><span class="nv">http-kit-run-server</span>
+<a id="__codelineno-25-63" name="__codelineno-25-63" href="#__codelineno-25-63"></a><span class="w">                       </span><span class="p">[{{</span><span class="ss">:keys</span><span class="w"> </span><span class="p">[</span><span class="nv">handler</span><span class="w"> </span><span class="nv">options</span><span class="p">]}</span><span class="w"> </span><span class="ss">::donut/config</span><span class="p">}]</span>
+<a id="__codelineno-25-64" name="__codelineno-25-64" href="#__codelineno-25-64"></a><span class="w">                       </span><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::http-server-component</span>
+<a id="__codelineno-25-65" name="__codelineno-25-65" href="#__codelineno-25-65"></a><span class="w">                                  </span><span class="ss">:handler</span><span class="w"> </span><span class="nv">handler</span>
+<a id="__codelineno-25-66" name="__codelineno-25-66" href="#__codelineno-25-66"></a><span class="w">                                  </span><span class="ss">:port</span><span class="w"> </span><span class="p">(</span><span class="nf">options</span><span class="w"> </span><span class="ss">:port</span><span class="p">)</span>
+<a id="__codelineno-25-67" name="__codelineno-25-67" href="#__codelineno-25-67"></a><span class="w">                                  </span><span class="ss">:local-time</span><span class="w"> </span><span class="p">(</span><span class="nf">java.time.LocalDateTime/now</span><span class="p">))</span>
+<a id="__codelineno-25-68" name="__codelineno-25-68" href="#__codelineno-25-68"></a><span class="w">                       </span><span class="p">(</span><span class="nf">http-server/run-server</span><span class="w"> </span><span class="nv">handler</span><span class="w"> </span><span class="nv">options</span><span class="p">))</span>
+<a id="__codelineno-25-69" name="__codelineno-25-69" href="#__codelineno-25-69"></a>
+<a id="__codelineno-25-70" name="__codelineno-25-70" href="#__codelineno-25-70"></a><span class="w">              </span><span class="ss">:stop</span><span class="w">  </span><span class="p">(</span><span class="k">fn </span><span class="nv">http-kit-stop-server</span>
+<a id="__codelineno-25-71" name="__codelineno-25-71" href="#__codelineno-25-71"></a><span class="w">                       </span><span class="p">[{</span><span class="ss">::donut/keys</span><span class="w"> </span><span class="p">[</span><span class="nv">instance</span><span class="p">]}]</span>
+<a id="__codelineno-25-72" name="__codelineno-25-72" href="#__codelineno-25-72"></a><span class="w">                       </span><span class="p">(</span><span class="nf">mulog/log</span><span class="w"> </span><span class="ss">::http-server-component-shutdown</span>
+<a id="__codelineno-25-73" name="__codelineno-25-73" href="#__codelineno-25-73"></a><span class="w">                                  </span><span class="ss">:http-server-instance</span><span class="w"> </span><span class="nv">instance</span>
+<a id="__codelineno-25-74" name="__codelineno-25-74" href="#__codelineno-25-74"></a><span class="w">                                  </span><span class="ss">:local-time</span><span class="w"> </span><span class="p">(</span><span class="nf">java.time.LocalDateTime/now</span><span class="p">))</span>
+<a id="__codelineno-25-75" name="__codelineno-25-75" href="#__codelineno-25-75"></a><span class="w">                       </span><span class="p">(</span><span class="nf">instance</span><span class="p">))</span>
+<a id="__codelineno-25-76" name="__codelineno-25-76" href="#__codelineno-25-76"></a>
+<a id="__codelineno-25-77" name="__codelineno-25-77" href="#__codelineno-25-77"></a><span class="w">              </span><span class="ss">:config</span><span class="w"> </span><span class="p">{</span><span class="ss">:handler</span><span class="w"> </span><span class="p">(</span><span class="nf">donut/local-ref</span><span class="w"> </span><span class="p">[</span><span class="ss">:handler</span><span class="p">])</span>
+<a id="__codelineno-25-78" name="__codelineno-25-78" href="#__codelineno-25-78"></a><span class="w">                       </span><span class="ss">:options</span><span class="w"> </span><span class="p">{</span><span class="ss">:port</span><span class="w">  </span><span class="p">(</span><span class="nf">donut/ref</span><span class="w"> </span><span class="p">[</span><span class="ss">:env</span><span class="w"> </span><span class="ss">:http-port</span><span class="p">])</span>
+<a id="__codelineno-25-79" name="__codelineno-25-79" href="#__codelineno-25-79"></a><span class="w">                                 </span><span class="ss">:join?</span><span class="w"> </span><span class="nv">false</span><span class="p">}}}</span>
+<a id="__codelineno-25-80" name="__codelineno-25-80" href="#__codelineno-25-80"></a>
+<a id="__codelineno-25-81" name="__codelineno-25-81" href="#__codelineno-25-81"></a><span class="w">     </span><span class="c1">;; Function handling all requests, passing system environment</span>
+<a id="__codelineno-25-82" name="__codelineno-25-82" href="#__codelineno-25-82"></a><span class="w">     </span><span class="c1">;; Configure environment for router application, e.g. database connection details, etc.</span>
+<a id="__codelineno-25-83" name="__codelineno-25-83" href="#__codelineno-25-83"></a><span class="w">     </span><span class="ss">:handler</span><span class="w"> </span><span class="p">(</span><span class="nf">router/app</span><span class="w"> </span><span class="p">(</span><span class="nf">donut/ref</span><span class="w"> </span><span class="p">[</span><span class="ss">:env</span><span class="w"> </span><span class="ss">:persistence</span><span class="p">]))}}})</span>
+<a id="__codelineno-25-84" name="__codelineno-25-84" href="#__codelineno-25-84"></a>
+<a id="__codelineno-25-85" name="__codelineno-25-85" href="#__codelineno-25-85"></a><span class="c1">;; End of Donut Party System configuration</span>
+<a id="__codelineno-25-86" name="__codelineno-25-86" href="#__codelineno-25-86"></a><span class="c1">;; ---------------------------------------------------------</span>
 </code></pre></div>
 </div>
 </div>
@@ -8863,7 +8871,7 @@ Enter an expression using the <code>hiccup/html</code> function to convert a clo
 <p><a class="md-button" href="https://www.cbui.dev/a-tutorial-to-stuart-sierras-component/" target="_blank">A tutorial - Stuart Sierra's Component</a></p>
 <p><p style="text-align:center">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/v=13cmHf_kt-Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</p> </p>
+</p></p>
 </div>
 </div>
 </div>
