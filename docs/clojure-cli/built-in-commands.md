@@ -15,7 +15,7 @@ The `:deps` aliases provides tools for managing library dependencies.
 
 The Clojure CLI `-X` flag is used to call these tools via `clojure.exec` and take key value pairs as arguments
 
-| aliases                                             | Description                                                                                              |
+| Aliases                                             | Description                                                                                              |
 | --------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | `clojure -X:deps list`                              | List full transitive deps set and licenses                                                               |
 | `clojure -X:deps tree`                              | download dependencies & print dependency tree, indenting libraries that are dependencies of dependencies |
@@ -480,5 +480,6 @@ Generate or update pom.xml with deps and paths
 
 [tools.deps and cli guide](https://clojure.org/reference/deps_and_cli){target=_blank .md-button}
 [clojure.main guide](https://clojure.org/reference/repl_and_main){target=_blank .md-button}
+
 [clojure.main API Reference](https://clojure.github.io/clojure/clojure.main-api.html){target=_blank .md-button}
 [tools.deps.alpha API Reference](https://clojure.github.io/tools.deps.alpha/){target=_blank .md-button}
