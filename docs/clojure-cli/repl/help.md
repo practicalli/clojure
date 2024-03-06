@@ -22,17 +22,18 @@ Moving the cursor after the name of a function will show the signatures availabl
 
 > `clojure.repl/doc` function also shows the docstring of a function `(clojure.repl/doc doc)`
 
-++ctrl+c+ctrl+"a"++ on a name shows all the possible matching functions to help you discover what is available.  ++tab++ through the list of matches, ++enter++ to select a function
+++ctrl+x++ ++ctrl+"a"++ on a name shows all the possible matching functions to help you discover what is available.  ++tab++ through the list of matches, ++enter++ to select a function
 
-![clojure repl rebel - apropos on function showing all variations](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-apropos-map-dark.png?raw=true)
+![clojure repl rebel - apropos on function showing all variations](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-apropos-map-dark.png?raw=true#only-dark)
+![clojure repl rebel - apropos on function showing all variations](https://github.com/practicalli/graphic-design/blob/live/clojure/rebel/clojure-repl-rebel-function-apropos-map-light.png?raw=true#only-light)
 
 
 ## Rebel Commands
 
-Type `:repl/help` or `:repl` TAB to see a list of available commands.
+Type `:repl/help` or `:repl` followed by ++tab++ to see a list of available commands.
 
 | Keybinding                | Description                                                       |
-|---------------------------|-------------------------------------------------------------------|
+|-------------------------- | ----------------------------------------------------------------- |
 | `:repl/help`              | Prints the documentation for all available commands.              |
 | `:repl/key-bindings`      | search or list current key bindings                               |
 | `:repl/quit`              | Quits the REPL                                                    |
@@ -44,16 +45,17 @@ Type `:repl/help` or `:repl` TAB to see a list of available commands.
 | `:repl/toggle-highlight`  | Toggle readline syntax highlighting on and off                    |
 | `:repl/toggle-indent`     | Toggle the automatic indenting of Clojure code on and off         |
 
+
 ## Key-bindings
 
-| Keybinding      | Description                                                                   |
-|-----------------|-------------------------------------------------------------------------------|
-| `Ctrl-C`        | aborts editing the current line                                               |
-| `Ctrl-D`        | at the start of a line => sends an end of stream message                      |
-| `TAB`           | word completion or code indent when cursor in whitespace at the start of line |
-| `Ctrl-X_Ctrl-D` | Show documentation for word at point                                          |
-| `Ctrl-X_Ctrl-S` | Show source for word at point                                                 |
-| `Ctrl-X_Ctrl-A` | Show apropos for word at point                                                |
-| `Ctrl-X_Ctrl-E` | Inline eval for SEXP before the point                                         |
+| Keybinding                | Description                                                                     |
+| ------------------------- | ------------------------------------------------------------------------------- |
+| ++ctrl+"c"++              | aborts editing the current line                                                 |
+| ++ctrl+"d"++              | at the start of a line => sends an end of stream message                        |
+| ++tab++                   | word completion or code indent when cursor in whitespace at the start of line   |
+| ++ctrl+"x"++ ++ctrl+"d"++ | Show documentation for word at point                                            |
+| ++ctrl+"x"++ ++ctrl+"s"++ | Show source for word at point                                                   |
+| ++ctrl+"x"++ ++ctrl+"a"++ | Show apropos for word at point                                                  |
+| ++ctrl+"x"++ ++ctrl+"e"++ | Inline eval for SEXP before the point                                           |
 
 Examine key-bindings with the `:repl/key-bindings` command.

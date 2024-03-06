@@ -3,14 +3,14 @@
 Clojure code can be typed into the REPL directly and the result instantly returned.  Code can also be loaded from a project source code files, to run pre-written code.
 
 ??? HINT "Clojure Editors are the main tool for writing code"
-    An [editor connected to a Clojure REPL](/clojure-editors/) and evaluating from source code files is the most effective way for writing Clojure code.  
+    An [editor connected to a Clojure REPL](/clojure/clojure-editors/) and evaluating from source code files is the most effective way for writing Clojure code.
 
-    Evaluating code in an editor automatically uses the correct namespace, avoiding the need to change namespaces or fully qualify function calls. Evaluation results can be shown in-line, as comments next to the code or in a data inspector.  
+    Evaluating code in an editor automatically uses the correct namespace, avoiding the need to change namespaces or fully qualify function calls. Evaluation results can be shown in-line, as comments next to the code or in a data inspector.
 
-    Editors provide structural editing and Clojure syntax checking, along with general editor features. and 
+    Editors provide structural editing and Clojure syntax checking, along with general editor features.
 
 
-## Using the REPL 
+## Using the REPL
 
 Use the `clojure` command to start a REPL with Rebel, or the `clj` wrapper with the Clojure CLI REPL ([requires `rlwrap` binary](/clojure/install/clojure-cli/#optional-rlwrap-readline)).
 
@@ -137,4 +137,3 @@ Use the `:verbose` option when issues occur loading a particular namespace.  As 
 ## Next steps
 
 [Managing Library dependencies in REPL](libraries.md){.md-button}
-

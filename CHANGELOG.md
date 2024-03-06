@@ -3,7 +3,7 @@
 # Unreleased
 ## Changed
 - clojure-cli: enhance built-in commands description
-- code-challenge: rewrite code challenges overview 
+- code-challenge: rewrite code challenges overview
 - dev: code block consistent style lint rules 46 & 48
 - mkdocs: clojure-idiom admonition style
 - dev: gitleaks rules configuration for checking secrets in megalinter workflow
@@ -29,7 +29,7 @@
 - dev: changelog-check remove paths-ignore
 - clojure-cli: install deps.edn configuration
 - clojure-cli: `clojure -X:deps tree` examples
-- clojure-cli: `clojure -X:deps pom` 
+- clojure-cli: `clojure -X:deps pom`
 - install: debian packages approach for OpenJDK rather than a specific Ubuntu tab
 - install: recommended OpenJDK versions of 17 and 21 as hint
 - editor: refactor Clojure LSP page and format for Material for MkDocs
@@ -43,7 +43,7 @@
 - dev: sparse checkout scheduled version workflow
 - dev: upload-artefact v4 & remove explicit token from megalinter
 - format: use shell for code blocks, add missing clojure language to code blocks
-- dev: megalinter local runner - validate all files 
+- dev: megalinter local runner - validate all files
 - dev: spell lychee config file for megalinter config set as warnings
 - dev: extend lychee exclusion rules and base url
 - dev: allow `a` and `img` html elements in markdown linter
