@@ -79,6 +79,8 @@ If errors occur when loading or reloading the namespace with require, the `:verb
 
 ## Hotload libraries
 
+!!! WARNING "Approach to be deprecated once Clojure 1.12.0 released"
+
 ??? INFO "Hotload Libraries in the REPL"
     `add-libs` function from the `clojure.tools.deps.alpha` library is an experimental approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
 
