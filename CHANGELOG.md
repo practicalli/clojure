@@ -45,6 +45,7 @@
 - dev: megalinter local runner - validate all files 
 - dev: spell lychee config file for megalinter config
 - dev: extend lychee exclusion rules and base url
+- dev: allow `a` and `img` html elements in markdown linter
 
 
 # 2023-08-14
