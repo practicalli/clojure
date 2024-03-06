@@ -251,6 +251,8 @@ Add highlight line meta data to a code block after the opening backticks and cod
 
 `hl_lines="2"` highlights line 2 in the codeblock
 
+`hl_lines="2 3 4"` highlights line 2, 3 and 4 in the codeblock
+
 ```clojure hl_lines="4 5 6"
 (defn my-function
   "With a lovely doc-string"
