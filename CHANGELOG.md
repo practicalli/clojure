@@ -43,7 +43,7 @@
 - dev: upload-artefact v4 & remove explicit token from megalinter
 - format: use shell for code blocks, add missing clojure language to code blocks
 - dev: megalinter local runner - validate all files 
-- dev: spell lychee config file for megalinter config
+- dev: spell lychee config file for megalinter config set as warnings
 - dev: extend lychee exclusion rules and base url
 - dev: allow `a` and `img` html elements in markdown linter
 - editor: update link to build emacs from source code
