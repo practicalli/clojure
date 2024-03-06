@@ -527,6 +527,89 @@ Start, stop and restart the components that a system is composed of, e.g. app se
     <iframe width="560" height="315" src="https://www.youtube.com/embed/PMat9Wdt-pk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </p>
 
+    !!! EXAMPLE "Practicalli Gameboard Service - System configuration"
+        ```clojure
+
+        ;; --------------------------------------------------
+        ;; Donut System environment configuration
+        ;;
+        ;; - Event logging with mulog
+        ;; - HTTP Server
+        ;; - Request routing (reitit)
+        ;; - Persistence (relational) connection
+        ;;
+        ;; Components managed in practicalli.gameboard.service namespace
+        ;;
+        ;; #profile used by aero to select the configuration to use for a given profile (dev, test, prod)
+        ;; #long defines Long Integer type (required for Java HTTP server port)
+        ;; #env reads the environment variable of the given name
+        ;; #or uses first non nil value in sequence
+        ;;
+        ;; Environment variables should be defined locally and in deployment provisioner tooling
+        ;; --------------------------------------------------
+
+        {:env
+         {:http-server
+          #profile
+          {:dev  {:port #or [#env "HTTP_PORT" "8080"]}
+           :prod {:port #env "PORT"}}
+          :persistence
+          #profile
+          {:dev
+           {:database-host     #or [#env "POSTGRES_HOST"     "http://localhost"]
+            :database-port     #or [#env "POSTGRES_PORT"     "5432"]
+            :database-username #or [#env "POSTGRES_USERNAME" "clojure"]
+            :database-password #or [#env "POSTGRES_PASSWORD" "clojure"]
+            :database-schema   #or [#env "POSTGRES_SCHEMA"   "clojure"]}
+           :prod
+           {:database-host     #env "POSTGRES_HOST"
+            :database-port     #env "POSTGRES_PORT"
+            :database-username #env "POSTGRES_USERNAME"
+            :database-password #env "POSTGRES_PASSWORD"
+            :database-schema   #env "POSTGRES_SCHEMA"}}
+
+          ;; Type of publisher to use for mulog events
+          ;; Publish json format logs, captured by fluentd and exposed via OpenDirectory
+          :mulog
+          #profile
+          {:dev
+           {:type :console-json :pretty? true}
+
+           ;; Multiple publishers using Open Zipkin service (started via docker-compose)
+           :docker
+           {:type :multi
+            :publishers
+            [{:type :console-json :pretty? false}
+             {:type :zipkin :url "http://localhost:9411/"}]}
+
+           :prod
+           {:type :console-json :pretty? false}}
+
+          ;; Configure data API connections
+          :data-api
+          #profile
+          {:dev
+           {:game-service-base-url  #or [#env GAME_SERVICE_BASE_URL "http://localhost"]
+            :llamasoft-api-uri      #or [#env LAMASOFT_API_URI "http://localhost"]
+
+            :polybus-report-uri               "/report/polybus"
+            :moose-life-report-uri            "/api/v1/report/moose-life"
+            :minotaur-arcade-report-uri       "/api/v2/minotar-arcade"
+            :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
+            :space-giraffe-report-uri         "/api/v1/games/space-giraffe"}
+
+           :prod
+           {:game-service-base-url  #or [#env GAME_SERVICE_BASE_URL "http://localhost"]
+            :llamasoft-api-uri      #or [#env LAMASOFT_API_URI "http://localhost"]
+
+            :polybus-report-uri               "/report/polybus"
+            :moose-life-report-uri            "/api/v1/report/moose-life"
+            :minotaur-arcade-report-uri       "/api/v2/minotar-arcade"
+            :gridrunner-revolution-report-uri "/api/v1.1/gridrunner"
+            :space-giraffe-report-uri         "/api/v1/games/space-giraffe"}}}}
+        ```
+
+
 === "Component"
     [seancorfield/usermanager-example](https://github.com/seancorfield/usermanager-example) is an example project that uses Component for lifecycle management
 
