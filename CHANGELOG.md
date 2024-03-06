@@ -44,6 +44,7 @@
 - format: use shell for code blocks, add missing clojure language to code blocks
 - dev: megalinter local runner - validate all files 
 - dev: spell lychee config file for megalinter config
+- dev: extend lychee exclusion rules and base url
 
 
 # 2023-08-14
