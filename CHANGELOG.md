@@ -47,6 +47,7 @@
 - dev: extend lychee exclusion rules and base url
 - dev: allow `a` and `img` html elements in markdown linter
 - editor: update link to build emacs from source code
+- clojure-cli: update rebel help screenshots
 
 
 # 2023-08-14
