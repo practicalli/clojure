@@ -12,7 +12,7 @@ A 8 to 24 character passwords that can include any lower case character or digit
 
 Breakdown the regex pattern:
 
-```
+```regex
 ^[a-z0-9_-]{8,24}$
 
 ^                    # Start of the line
@@ -33,7 +33,7 @@ The order of the grouping formulas does not matter
 
 Breakdown the regex pattern:
 
-```
+```regex
 ((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,24})
 
 (   # Start of group
@@ -58,7 +58,7 @@ The string must start with a `#`symbol , follow by a letter from `a` to `f`, `A`
 
 Breakdown the regex pattern:
 
-```
+```regex
 ^#([A-Fa-f0-9]{3}|[A-Fa-f0-9]{6})$
 
 ^   #start of the line
@@ -83,12 +83,12 @@ The  domain starts with `A-Za-z0-9-`, follow by first level domain, e.g `.org`, 
   "jenny.jenn@jetpack.com.au")
 ```
 
-> ####Hint::Double escaping special characters
-> Double escaping of special characters is not required in the Clojure syntax.
+!!! HINT "Double escaping special characters"
+    Double escaping of special characters is not required in the Clojure syntax.
 
 Breakdown the regex pattern:
 
-```
+```regex
 ^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$
 
 ^   #start of the line
@@ -117,13 +117,14 @@ Change the combination `(jpg|png|gif|bmp)` for other file extension.
 (re-matches #"(?i)([^\s]+(\.(jpg|png|gif|bmp))$)" "clojure-logo.png")
 ```
 
-> #### Hint::in-line modifiers not supported in JavaScript
->
-> The REPL above uses ClojureScript, hosted on JavaScript. JavaScript does not support in-line modifier flags such as `(?i)` for a case insensitive pattern.  In-line flags will be [converted by the ClojureScript reader if they are the first element in the literal regular expression pattern](https://stackoverflow.com/a/23187290/1762872), or if the `js/RegExp` function is used to create the regular expression.
+??? HINT "In-line modifiers indirectly supported in ClojureScript"
+    ClojureScript is hosted on JavaScript which does not support in-line modifier flags such as `(?i)` for a case insensitive pattern.  
+
+    In-line flags will be [converted by the ClojureScript reader if they are the first element in the literal regular expression pattern](https://stackoverflow.com/a/23187290/1762872), or if the `js/RegExp` function is used to create the regular expression.
 
 Breakdown the regex pattern:
 
-```
+```regex
 ([^\s]+(\.(?i)(jpg|png|gif|bmp))$)
 
 (   #Start of the group #1
@@ -159,7 +160,7 @@ Example IP address are: `192.168.0.1`, `127.0.0.1`, `192.120.240.100`
 
 Breakdown the regex pattern:
 
-```
+```regex
 ^([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.
 ([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.([01]?\\d\\d?|2[0-4]\\d|25[0-5])$
 
@@ -187,7 +188,7 @@ Time in 12-Hour Format Regular Expression Pattern.  The 12-hour clock format sta
 
 Breakdown the regex pattern:
 
-```
+```regex
 (1[012]|[1-9]):[0-5][0-9](\\s)?(?i)(am|pm)
 
 (    #start of group #1
@@ -212,7 +213,7 @@ The 24-hour clock format start between 0-23 or 00-23, then a semi colon `:` and 
 
 Breakdown the regex pattern:
 
-```
+```regex
 ([01]?[0-9]|2[0-3]):[0-5][0-9]
 
 (    #start of group #1
@@ -224,7 +225,7 @@ Breakdown the regex pattern:
   [0-5][0-9]   #    follow by 0..5 and 0..9, which means 00 to 59
 ```
 
-## Date Format (dd/mm/yyyy) Regular Expression Pattern
+## Date Format Pattern
 
 Date format in the form `dd/mm/yyyy`. Validating a leap year and if there is 30 or 31 days in a month is not simple though.
 
@@ -234,7 +235,7 @@ Date format in the form `dd/mm/yyyy`. Validating a leap year and if there is 30 
 
 Breakdown the regex pattern:
 
-```
+```regex
 (0?[1-9]|[12][0-9]|3[01])/(0?[1-9]|1[012])/((19|20)\\d\\d)
 
 (   #start of group #1
@@ -256,63 +257,70 @@ Breakdown the regex pattern:
        )  #   end of group #3
 ```
 
-<!-- ## HTML tag Regular Expression Pattern -->
-<!-- HTML code uses tags to define structure of content. HTML tag, start with an opening tag “<" , follow by double quotes "string", or single quotes 'string' but does not allow one double quotes (") "string, one single quote (') 'string or a closing tag > without single or double quotes enclosed. At last , end with a closing tag “>” -->
+## HTML tag Pattern 
 
-<!-- ```eval-cloure -->
-<!-- (re-matches -->
-<!--   #"<("[^"]*"|'[^']*'|[^'">])*>" -->
-<!--   "<body><h1>Title</h1><p>Loreum ipsum</p></body>") -->
-<!-- ``` -->
+HTML code uses tags to define structure of content. HTML tag, start with an opening tag “<" , follow by double quotes "string", or single quotes 'string' but does not allow one double quotes (") "string, one single quote (') 'string or a closing tag > without single or double quotes enclosed. At last , end with a closing tag “>” 
 
-<!-- Breakdown the regex pattern: -->
-<!-- ``` -->
-<!-- <("[^"]*"|'[^']*'|[^'">])*> -->
+```clojure 
+(re-matches 
+  #"<("[^"]*"|'[^']*'|[^'">])*>" 
+  "<body><h1>Title</h1><p>Loreum ipsum</p></body>") 
+``` 
 
-<!-- <       #start with opening tag "<" -->
-<!--  (		#   start of group #1 -->
-<!--    "[^"]*"	#	only two double quotes are allow - "string" -->
-<!--    |		#	..or -->
-<!--    '[^']*'	#	only two single quotes are allow - 'string' -->
-<!--    |		#	..or -->
-<!--    [^'">]	#	cant contains one single quotes, double quotes and ">" -->
-<!--  )		#   end of group #1 -->
-<!--  *		# 0 or more -->
-<!-- >		#end with closing tag ">" -->
-<!-- ``` -->
+Breakdown the regex pattern: 
 
-<!-- ## HTML links Regular Expression Pattern -->
-<!-- HTML A tag Regular Expression Pattern -->
+```regex
+<("[^"]*"|'[^']*'|[^'">])*> 
 
-<!-- (?i)<a([^>]+)>(.+?)</a> -->
+<       #start with opening tag "<" 
+ (		#   start of group #1 
+   "[^"]*"	#	only two double quotes are allow - "string" 
+   |		#	..or 
+   '[^']*'	#	only two single quotes are allow - 'string' 
+   |		#	..or 
+   [^'">]	#	cant contains one single quotes, double quotes and ">" 
+ )		#   end of group #1 
+ *		# 0 or more 
+>		#end with closing tag ">" 
+``` 
 
-<!-- (		#start of group #1 -->
-<!--  ?i		#  all checking are case insensitive -->
-<!-- )		#end of group #1 -->
-<!-- <a              #start with "<a" -->
-<!--   (		#  start of group #2 -->
-<!--     [^>]+	#     anything except (">"), at least one character -->
-<!--    )		#  end of group #2 -->
-<!--   >		#     follow by ">" -->
-<!--     (.+?)	#	match anything -->
-<!--          </a>	#	  end with "</a> -->
+## HTML links Regular Expression Pattern 
 
-<!-- ## Extract HTML link Regular Expression Pattern -->
+HTML A tag Regular Expression Pattern 
 
-<!-- \s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'">\s]+)); -->
+```regex
+(?i)<a([^>]+)>(.+?)</a> 
 
-<!-- \s*			   #can start with whitespace -->
-<!--   (?i)			   # all checking are case insensive -->
-<!--      href		   #  follow by "href" word -->
-<!--         \s*=\s*		   #   allows spaces on either side of the equal sign, -->
-<!--               (		   #    start of group #1 -->
-<!--                "([^"]*")   #      only two double quotes are allow - "string" -->
-<!--                |	   #	  ..or -->
-<!--                '[^']*'	   #      only two single quotes are allow - 'string' -->
-<!--                |           #	  ..or -->
-<!--                ([^'">]+)   #     cant contains one single / double quotes and ">" -->
-<!--           )		   #    end of group #1 -->
+(		#start of group #1 
+ ?i		#  all checking are case insensitive 
+)		#end of group #1 
+<a              #start with "<a" 
+  (		#  start of group #2 
+    [^>]+	#     anything except (">"), at least one character 
+   )		#  end of group #2 
+  >		#     follow by ">" 
+    (.+?)	#	match anything 
+         </a>	#	  end with "</a> 
+```
+
+## Extract HTML link Regular Expression Pattern 
+
+```regex
+\s*(?i)href\s*=\s*(\"([^"]*\")|'[^']*'|([^'">\s]+)); 
+
+\s*			   #can start with whitespace 
+  (?i)			   # all checking are case insensive 
+     href		   #  follow by "href" word 
+        \s*=\s*		   #   allows spaces on either side of the equal sign, 
+              (		   #    start of group #1 
+               "([^"]*")   #      only two double quotes are allow - "string" 
+               |	   #	  ..or 
+               '[^']*'	   #      only two single quotes are allow - 'string' 
+               |           #	  ..or 
+               ([^'">]+)   #     cant contains one single / double quotes and ">" 
+          )		   #    end of group #1 
+```
 
 ## Reference
 
-* <https://mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know>
+* [10 Java regular expression examples](https://mkyong.com/regular-expressions/10-java-regular-expression-examples-you-should-know)

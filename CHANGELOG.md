@@ -8,6 +8,7 @@
 - mkdocs: clojure-idiom admonition style
 - dev: gitleaks rules configuration for checking secrets in megalinter workflow
 - clojure-cli: update donut system and system-repl examples
+- reference: code block and admonition for common regular expression examples
 
 # 2024-03-03
 
