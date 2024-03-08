@@ -34,7 +34,7 @@
     
     
       
-        <title>With Maps - Practicalli Clojure</title>
+        <title>Design with Maps - Practicalli Clojure</title>
       
     
     
@@ -81,7 +81,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="With Maps - Practicalli Clojure" >
+        <meta  property="og:title"  content="Design with Maps - Practicalli Clojure" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -97,7 +97,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="With Maps - Practicalli Clojure" >
+        <meta  name="twitter:title"  content="Design with Maps - Practicalli Clojure" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -133,7 +133,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#with-maps" class="md-skip">
+        <a href="#design-with-maps" class="md-skip">
           Skip to content
         </a>
       
@@ -203,7 +203,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             With Maps 
+             Design with Maps 
           </span>
         </div>
       </div>
@@ -6757,7 +6757,7 @@
         
   
   <span class="md-ellipsis">
-    With Maps
+    Design with Maps
   </span>
   
 
@@ -7986,27 +7986,28 @@
   
 
 
-<h1 id="with-maps">With Maps<a class="headerlink" href="#with-maps" title="Permanent link">λ︎</a></h1>
+<h1 id="design-with-maps">Design with Maps<a class="headerlink" href="#design-with-maps" title="Permanent link">λ︎</a></h1>
 <p>Maps allow you to model data with its contextual meaning.  The keys of a map can give the context and the values are the specific data.</p>
-<blockquote>
-<p><strong>Note</strong> Define a shopping list of items you want, including how many of each item you want to buy</p>
-</blockquote>
-<!--sec data-title="Reveal answer" data-id="answer001" data-collapse=true ces-->
-
+<div class="admonition note">
+<p>Define a shopping list of items you want, including how many of each item you want to buy</p>
+</div>
+<details class="example">
+<summary></summary>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">shopping-list</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="p">{</span><span class="s">&quot;cat food&quot;</span><span class="w">  </span><span class="mi">10</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">   </span><span class="s">&quot;soya milk&quot;</span><span class="w"> </span><span class="mi">4</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">   </span><span class="s">&quot;bread&quot;</span><span class="w">     </span><span class="mi">1</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">   </span><span class="s">&quot;cheese&quot;</span><span class="w">    </span><span class="mi">2</span><span class="p">})</span>
 </code></pre></div>
-<!--endsec-->
-
+</details>
+<div class="admonition note">
+<p>Define a star-wars characters, eg. luke skywalker, jarjar binks.  The star-wars character should include a name and a skill (it doesn't matter what these are).</p>
 <blockquote>
-<p><strong>Note</strong> Define a star-wars characters, eg. luke skywalker, jarjar binks.  The star-wars character should include a name and a skill (it doesn't matter what these are).</p>
 <p>Use the 'get' function to return the value of a given key, eg. name.  Use keywords to return a given value if you used keywords for the map keys.</p>
 </blockquote>
-<!--sec data-title="Reveal answer" data-id="answer002" data-collapse=true ces-->
-
+</div>
+<details class="example">
+<summary></summary>
 <p>In this answer we have defined three different star-wars characters, all using the same map keys.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="k">def </span><span class="nv">luke</span><span class="w">   </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Luke Skywalker&quot;</span><span class="w"> </span><span class="ss">:skill</span><span class="w"> </span><span class="s">&quot;Targeting Swamp Rats&quot;</span><span class="p">})</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">(</span><span class="k">def </span><span class="nv">darth</span><span class="w">  </span><span class="p">{</span><span class="ss">:name</span><span class="w"> </span><span class="s">&quot;Darth Vader&quot;</span><span class="w">    </span><span class="ss">:skill</span><span class="w"> </span><span class="s">&quot;Crank phone calls&quot;</span><span class="p">})</span>
@@ -8023,7 +8024,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="nb">keys </span><span class="nv">luke</span><span class="p">)</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span><span class="nb">vals </span><span class="nv">luke</span><span class="p">)</span>
 </code></pre></div>
-<!--endsec-->
+</details>
 
 
 
@@ -8044,7 +8045,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 8, 2024</span>
   </span>
 
     
