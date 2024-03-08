@@ -18,7 +18,7 @@
    {:date "2020-05-015" :city "Amsterdam" :temperature-max 25 :temperature-min 14 :rainfall 0}])
 ```
 
-## Write easily understandable docstrings
+## Write clear docstrings
 
 Practically recommends including specific details of the arguments passed to a function and the expected return type.  Including this at the end of the docstring makes that information very quick to find.
 
@@ -40,26 +40,22 @@ Reading the source code for `clojure.core` functions is a good way to learn thos
 
 [Source code for clojure.core is available online](https://github.com/clojure/clojure/blob/clojure-1.10.1/src/clj/clojure/core.clj) and is also linked to from the function descriptions on [clojuredocs.org](https://clojuredocs.org/).
 
+
 ## Writing your own documentation
 
 Writing good documentation for your own functions take practice which pays off in the long run.
 
-> #### Note::Define your own function
->
-> Practice writing a meaningful documentation in the doc string
+!!! NOTE "Define your own function"
+    Practice writing a meaningful documentation in the doc string
 
-```clojure
-()
-```
 
-<!--sec data-title="Reveal answer..." data-id="answer001" data-collapse=true ces-->
-```clojure
-(defn my-function
-  "I should practice writing clear and meaningful documentation for my functions.
-  Arguments: brief description of arguments"
-  [arguments]
-  (str "I should write pure functions where ever possible. "
-       "Each function should have a specific purpose. "
-       "A function should be clean and easy to read."))
-```
-<!--endsec-->
+??? EXAMPLE ""
+    ```clojure
+    (defn my-function
+      "I should practice writing clear and meaningful documentation for my functions.
+      Arguments: brief description of arguments"
+      [arguments]
+      (str "I should write pure functions where ever possible. "
+           "Each function should have a specific purpose. "
+           "A function should be clean and easy to read."))
+    ```
