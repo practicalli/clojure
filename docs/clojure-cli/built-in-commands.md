@@ -1,6 +1,6 @@
 # Clojure CLI Built-in commands
 
-`clojure` without any other arguments will run a REPL with a basic terminal prompt.  
+`clojure` without any other arguments will run a REPL with a basic terminal prompt.
 
 `clj` is a wrapper script for the `clojure` command (`rlwrap` required) to add command history to the basic REPL prompt.
 
@@ -440,7 +440,7 @@ Including the top-level key `:deps/prep-lib` tells the tools.deps classpath cons
 
 Add a library dependency as with any other library (git or local/root):
 
-!!! EXAMPLE
+!!! EXAMPLE ""
     ```clojure
     {:deps {practicalli/library-name {:local/root "../needs-prep"}
             practicalli/library-name {:git/sha "../needs-prep"}}}
