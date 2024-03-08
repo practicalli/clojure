@@ -457,8 +457,5 @@ nav:
       - Alternative Tools:
           - alternative-tools/index.md
           - alternative-tools/clojure-cli/basic-repl.md
-          - alternative-tools/clojure-cli/compare-with-leiningen.md
-          # - alternative-tools/data-inspector/reveal.md
           - alternative-tools/clojure-cli/evaluate-an-expression.md
           - alternative-tools/clojure-cli/set-namespace-on-repl-startup.md
-          - alternative-tools/leiningen/index.md
