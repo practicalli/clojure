@@ -1,6 +1,9 @@
 # Changelog
 
 # Unreleased
+## Added
+- dev: set markdown as repository language with `.gitattributes`
+
 ## Changed
 - clojure-cli: enhance built-in commands description
 - code-challenge: rewrite code challenges overview

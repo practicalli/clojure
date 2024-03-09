@@ -1,0 +1,8 @@
+# Configure Languages for GitHub repository using Linguist
+
+# ignore all files, except for markdown
+docs/** linguist-detectable
+*.md linguist-detectable=true 
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*.html linguist-detectable=false  
