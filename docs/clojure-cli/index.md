@@ -33,7 +33,7 @@ The Clojure CLI has several built-in tasks.  Additional tasks are provided via a
 | [Run unit tests / watch for changes](https://practical.li/clojure/testing/test-runners/) | `clojure -X:test/run` or `clojure -X:test/watch`                            | Practicalli |
 | Run the project (clojure.main)                                                           | `clojure -M -m domain.main-namespace`                                       | *No Alias*  |
 | Find libraries (maven & git)                                                             | `clojure -M:search/library library-name`                                    | Practicalli |
-| Find library versions (maven)                                                            | `clojure -X:deps find-versions domain/library-name`                         | CLojure CLI |
+| Find library versions (maven)                                                            | `clojure -X:deps find-versions :lib domain/library-name`                         | CLojure CLI |
 | Download dependencies                                                                    | `clojure -P`  (plus optional execution flags with aliases)                  | CLojure CLI |
 | Check for new dependency versions                                                        | `clojure -T:search/outdated`                                                | Practicalli |
 | Package library                                                                          | `clojure -X:build/jar` and `clojure -X:build/uberjar`                       | Practicalli |
