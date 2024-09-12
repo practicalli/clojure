@@ -3,6 +3,7 @@
 # Unreleased
 ## Added
 - dev: set markdown as repository language with `.gitattributes`
+- dev: megalinter runner upgrade make task
 
 ## Changed
 - clojure-cli: enhance built-in commands description
