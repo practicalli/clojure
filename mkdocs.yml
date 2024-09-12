@@ -140,8 +140,8 @@ nav:
           # - introduction/concepts/purpose.md
       # - introduction/learning-clojure.md
       # - introduction/who-uses-clojure.md
-      - Contributing: introduction/contributing.md
-      - Writing Tips: introduction/writing-tips.md
+      - Contributing: https://practical.li/contributing/
+      - Writing Tips: https://practical.li/writing-tips/
   - Install:
       - install/index.md
       - Java Host: install/java.md
