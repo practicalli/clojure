@@ -36,6 +36,7 @@ jobs:
           fetch-depth: 0
           sparse-checkout: |
             docs
+            includes
             overrides
       - run: echo "🐙 ${{ github.repository }} repository sparse-checkout to the CI runner."
 
