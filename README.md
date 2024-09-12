@@ -82,7 +82,7 @@ Publish book workflow installs Material for MkDocs version 9
 Install mkdocs version 9 using the Python pip package manager
 
 ```shell
-pip install mkdocs-material=="9.*"
+pip install mkdocs-material=="9.5"
 ```
 
 Install the plugins used by the Practicalli site using Pip (these are also installed in the GitHub Action workflow)
@@ -108,7 +108,10 @@ make docs
 The website will open at <http://localhost:8000>
 
 If making smaller changes, then only rebuild the content that changes, speeding up the local development process
+
 ```shell
 make docs-changed
 ```
+
+> NOTE: navigation changes may not be correctly reflected without reloading the page in the web browser or carrying out a full `make docs` build
 
