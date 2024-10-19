@@ -2,1322 +2,1322 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://practical.li/clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/core-async/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/explaining-macros/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/io/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/lazy-evaluation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing-in-clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/alternative-tools/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/alternative-tools/clojure-cli/basic-repl/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/alternative-tools/clojure-cli/evaluate-an-expression/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/alternative-tools/clojure-cli/set-namespace-on-repl-startup/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/assets/images/social/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/automation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/automation/make/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/built-in-commands/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/clojure-style/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/defining-aliases/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/design-journal/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/execution-options/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/practicalli-config/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl-reloaded/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl-startup/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/add-libraries/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/hotload-in-project/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/migrate-project/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/namespace/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/rich-comments/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/package/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/package/tools-build/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/design-templates/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/practicalli/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/practicalli/application/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/practicalli/landing-page/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/practicalli/minimal/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/projects/templates/practicalli/service/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/coding/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/help/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/libraries/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/repl-uncovered/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-cli/repl/troubleshooting/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/clojure-lsp/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/clojure-lsp/practicalli-snippets/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-editors/clojure-lsp/snippets/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/add-spec-to-projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/organising-specs/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/using-spec-in-the-repl/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/and-or-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/composite-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/conform/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/defining-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/entity-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/explain/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/hierarchical-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/literal-values/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/map-literals/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/predicate-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/registry/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/data/valid-q/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/functions/documentation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/functions/function-definition-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/functions/higher-order-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/generative-testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/generative-testing/predicate-generators/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/generative-testing/example-projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/generative-testing/example-projects/next-jdbc/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/account-holder-specification/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/customer-details-specification/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/function-specifications/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/generate-test-data/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/rebel-readline/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/test-functions-against-spec/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/unit-tests-with-spec/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/validate-customer-details-specification/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/bank-account/write-failing-tests/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/projects/card-game/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/clojure-spec/testing/checking%20arguments/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/advent-of-code/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/koans/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/4clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/codewars/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/nucleotide-count/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/rna-transcription/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/space-age/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/bob/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/bob/bob-regular-expression-approach/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/exercism/bob/bob-string-approach/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/palindrome/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/coding-challenges/palindrome/simple-palindrome-test/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/circle-ci/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/circle-ci/circle-ci-sample-project/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/circle-ci/detailed-config/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/circle-ci/random-clojure-function/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/circle-ci/status-monitor/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/continuous-integration/github-workflow/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/control-flow/cond/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/control-flow/if/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/control-flow/when/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/core.async/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/core.async/bike-assembly-line/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/core.async/clacks-messages/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/core.async/toy-car-assembly-line/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-inspector/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-inspector/clojure-inspector/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-inspector/portal/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/alternatives/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/list/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/naming/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/pretty-printing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/set/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/shared-memory/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/vector/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/hash-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/hash-maps/access/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/hash-maps/accessing-nested-hash-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/hash-maps/create/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/data-structures/hash-maps/update/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/anonymous-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/calling-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/examples/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/parameters/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/defining-behaviour-with-functions/syntax/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/modeling-alphabet-codes/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/modeling-name-generation-map/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/with-maps-of-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/with-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/with-vectors-of-maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/with-vectors-of-vectors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/designing-data-structures/with-vectors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/development-environments/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/development-environments/java/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/development-environments/leiningen/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/development-environments/lighttable/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/development-environments/other-tools/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/games/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/games/tictactoe-cli/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/games/tictactoe-cli/create-project/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/install/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/install/clojure-cli/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/install/java/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/clojure-in-15-minutes/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/first-taste-of-clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/five-steps-to-clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/learning-clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/repl-workflow/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/who-uses-clojure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/all-bytecode-in-the-end/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/clojure-made-simple/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/design/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/features/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/functional-reactive-programming/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/misc/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/naming-local/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/naming-things/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/purpose/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/rationale/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/introduction/concepts/what-is-functional-programming/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/apply/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/comp/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/filter-remove/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/map-fn/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/map-partial/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/map/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/reduce/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/iterate-over-data/transduce/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/clojars/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/clojure-core-lisp-comprehension/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/clojure-core/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/edn/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/libraries/om/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/modifying-data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/modifying-data-structures/lists/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/modifying-data-structures/maps/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/modifying-data-structures/sets/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/modifying-data-structures/vectors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/performance/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/performance/load-testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/performance/testing-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/puzzles/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/puzzles/random-seat-assignment/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/quickstart/quick-reference/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/basic-syntax/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/books/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/changing-state/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/code-analysis/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/control-flow/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/core-async/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/doc-and-source-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/kebab-case/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/naming-conventions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/naming/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/prasmatic-schema/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/reader-macros/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/recursion/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/threading-macros/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-cli/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-cli/example-alias-definitions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-cli/jvm-options/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-svg/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/assigning-names/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/code-documentation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/comments/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/control-flow/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/defining-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/global-definitions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/java-interop/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/local-bindings/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/more-java-fun/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/naming/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/numbers-maths/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/parenthesis/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/private-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/quick-look-at-types/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/ratios/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/strings/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/syntax/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/threading-syntactic-sugar/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/whats-my-environment/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/clojure-syntax/syntax/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/common-options/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/experimental-options/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/java-17-flags/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/profile-tools/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/jvm/understanding-memory-usage/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/performance/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/collections/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/cond-thread-macro/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/destructuring/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/predicate-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/common-regex-patterns/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/matching-sub-sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/matching-sub-strings/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/matching-with-groups/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/string-replace-with-regex/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/string-split-with-regex/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/standard-library/regular-expressions/sub-expression-matches/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/tagged-literals/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/reference/tagged-literals/uuid/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/generate-web-page/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/random-clojure-function/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/split-the-bill/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/tripple-lock/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/data-transformation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/data-transformation/most-common-word/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/encode-decode/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/encode-decode/caesar-cipher-rot13/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/encode-decode/clacks/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/encode-decode/convert-boolean-values/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/encode-decode/rna-dna/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/mutating-state/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/mutating-state/mutants-assemble/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/tdd-kata/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/tdd-kata/recent-song-list/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/simple-projects/tdd-kata/salary-slip-generator/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/clojure-test/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/integration-testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/test-runners/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/test-runners/aero/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/test-runners/congnitect-labs-test-runner/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/test-runners/example-projects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/test-runners/kaocha-test-runner/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/clojure-test-expectations/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/configure-projects-for-tests/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/fixtures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/test-selectors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/testing/unit-testing/writing-unit-tests/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/arity/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/example-hitchhikers-guide/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/first-class-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/function-composition/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/functors/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/higher-order-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/homoiconicity/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/immutability/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/immutable-collections/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/immutable-local-bindings/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/immutable-values/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/impure-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/iterate-over-values/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/lazy-evaluation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/list-comprehension/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/managing-state-changes/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/map-with-partial/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/partial-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/pattern-matching/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/persistent-data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/polymorphism/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/pure-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/recursion-polymorphism/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/recursion/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/sequence-abstractions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/side-effects/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/tail-recursion/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/threading-macros/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/thinking-functionally/transducers/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/applying-functions/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/destructuring/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/lazy-sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/mapping-data-structures/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
     <url>
          <loc>https://practical.li/clojure/using-data-structures/sequences/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-10-19</lastmod>
     </url>
 </urlset>
