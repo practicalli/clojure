@@ -4,6 +4,7 @@
 ## Added
 - dev: set markdown as repository language with `.gitattributes`
 - dev: megalinter runner upgrade make task
+- readme: star history for project on github
 
 ## Changed
 - clojure-cli: enhance built-in commands description
