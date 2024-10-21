@@ -25,11 +25,11 @@ Example from Banking on Clojure
   (testing "New customer generative testing")
   (is (spec/valid?
         :customer/id
-        (:customer/id (SUT/new-customer
+        (:customer/id (namespace/new-customer
                         (spec-gen/generate (spec/gen :customer/unregistered)))))))
 ```
 
-## Test Selectors
+## Using test selectors
 
 Start a test selective category of tests running by specifying test selectors to include or exclude.
 
