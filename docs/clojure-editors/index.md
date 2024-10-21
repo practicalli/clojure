@@ -114,7 +114,7 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 
                 Building Emacs allows customisation of features included in Emacs, e.g. JSON support, XWidgets or native compilatin of elisp to enhance the performance of Emacs.
 
-                Emacs will take 15-30 minutes to compile, then the binary created can be installed.  
+                Emacs will take 15-30 minutes to compile, then the binary created can be installed.
 
 
 
@@ -188,35 +188,19 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
     `:q` to quit the tutorial.
 
 
-    === "Practicalli AstroNvim"
+    === "Practicalli Astro"
 
-        [:fontawesome-solid-book-open: Practicalli Neovim - AstroNvim install](https://practical.li/neovim/configuration/astronvim/){target=_blank .md-button}
+        [:fontawesome-solid-book-open: Practicalli Neovim - Astro install](https://practical.li/neovim/install/neovim/){target=_blank .md-button}
 
         AstroNvim community configuration for Neovim provides an engaging UI, using Lazy plugin manger and Mason to manage LSP servers, format & lint tools.
 
-        [:fontawesome-brands-github: Practicalli AstroNvim Config](https://github.com/practicalli/astronvim-config) provides a user configuration for Astronvim, including Conjure, parinfer, LSP server and treesitter parser for Clojure development.
+        [:fontawesome-brands-github: Practicalli Astro](https://github.com/practicalli/astronvim-config) provides a user configuration for Astronvim, including Conjure, parinfer, LSP server and treesitter parser for Clojure development.
 
         [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
 
         ![Practicalli Neovim in action](https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-clojure-development-example-light.png?raw=true#only-light)
         ![Practicalli Neovim in action](https://github.com/practicalli/graphic-design/blob/live/editors/neovim/astronvim/astronvim-clojure-development-example-dark.png?raw=true#only-dark)
 
-
-    === "Practicalli Neovim"
-
-        **Archived project** - to be reimplemented using nfnl rather than aniseed.  Recommend using AstroNvim instead.
-
-        [:fontawesome-brands-github: Practicalli Neovim Config Redux](https://github.com/practicalli/neovim-config-redux) configuration for Neovim which adds [:fontawesome-solid-book-open: a range of Neovim plugins](https://practical.li/neovim/install/packages/) for a rich development experience.
-
-        * mnemonic of key bindings to make adoptiong Neovim easier
-        * visual navigation for files, project, environment variables and any other list items
-        * version control and GitHub issue & pull request management
-
-        [:fontawesome-brands-github: Conjure](https://github.com/Olical/conjure){target=_blank} provides interactive environment for evaluating Clojure code and providing inline results (or see results in an Heads Up Display or Log buffer).
-
-        [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim/) provides an install and user guide for Neovim and Conjure for Clojure development, folloiwng a REPL driven workflow.
-
-        ![Practicalli Neovim in action](https://raw.githubusercontent.com/practicalli/graphic-design/live/editors/neovim/screenshots/neovim-clojure-development-tree-whichkey.png)
 
     === "SpaceVim"
         [SpaceVim](https://spacevim.org/) is a fully featured vim experience that includes [a minimal Clojure development environment](https://spacevim.org/layers/lang/clojure/) based around [vim-fireplace](https://github.com/tpope/vim-fireplace)
