@@ -15,6 +15,7 @@
 - clojure-cli: update donut system and system-repl examples
 - reference: code block and admonition for common regular expression examples
 - intro: use link for contribute and writing tips in practical.li main website
+- dev: use python virtual env for mkdocs tasks in Makefile
 
 # 2024-03-03
 

@@ -11,6 +11,7 @@
 # ------- Makefile Variables --------- #
 # run help if no target specified
 .DEFAULT_GOAL := help
+SHELL := /usr/bin/zsh
 
 # Column the target description is printed from
 HELP-DESCRIPTION-SPACING := 24
@@ -44,17 +45,21 @@ megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
 # ------------------------------------ #
 
 # --- Documentation Generation  ------ #
-docs:  ## Build and run mkdocs in local server
+python-venv:  ## Enable Python Virtual Environment for MkDocs
 	$(info --------- Mkdocs Local Server ---------)
-	$(MKDOCS_SERVER)
+	source ~/.local/venv/bin/activate
 
-docs-changed:  ## Build only changed files and run mkdocs in local server
+docs: ## Build and run mkdocs in local server (python venv)
 	$(info --------- Mkdocs Local Server ---------)
-	$(MKDOCS_SERVER) --dirtyreload
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER)
 
-docs-build:  ## Build mkdocs
+docs-changed:  ## Build only changed files and run mkdocs in local server (python venv)
 	$(info --------- Mkdocs Local Server ---------)
-	mkdocs build
+	source ~/.local/venv/bin/activate && $(MKDOCS_SERVER) --dirtyreload
+
+docs-build:  ## Build mkdocs (python venv)
+	$(info --------- Mkdocs Local Server ---------)
+	source ~/.local/venv/bin/activate && mkdocs build
 # ------------------------------------ #
 
 # ------------ Help ------------------ #
