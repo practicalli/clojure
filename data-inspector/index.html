@@ -34,7 +34,7 @@
     
     
       
-        <title>Clojure Data Browsers - Practicalli Clojure</title>
+        <title>Clojure Data Inspector tools - Practicalli Clojure</title>
       
     
     
@@ -81,7 +81,7 @@
       
         <meta  property="og:type"  content="website" >
       
-        <meta  property="og:title"  content="Clojure Data Browsers - Practicalli Clojure" >
+        <meta  property="og:title"  content="Clojure Data Inspector tools - Practicalli Clojure" >
       
         <meta  property="og:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -97,7 +97,7 @@
       
         <meta  name="twitter:card"  content="summary_large_image" >
       
-        <meta  name="twitter:title"  content="Clojure Data Browsers - Practicalli Clojure" >
+        <meta  name="twitter:title"  content="Clojure Data Inspector tools - Practicalli Clojure" >
       
         <meta  name="twitter:description"  content="Practical guide to Clojure programming language and Clojure REPL driven development" >
       
@@ -133,7 +133,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#clojure-data-browsers" class="md-skip">
+        <a href="#clojure-data-inspector-tools" class="md-skip">
           Skip to content
         </a>
       
@@ -203,7 +203,7 @@
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
-             Clojure Data Browsers 
+             Clojure Data Inspector tools 
           </span>
         </div>
       </div>
@@ -7989,18 +7989,22 @@
   
 
 
-<h1 id="clojure-data-browsers">Clojure Data Browsers<a class="headerlink" href="#clojure-data-browsers" title="Permanent link">λ︎</a></h1>
-<p>Clojure has a strong focus on using the built in data structures (list, vector, hash-map, set) to represent information in the system.  Tools to inspect data and browse through nested or large data sets is invaluable in understanding what the system is doing.</p>
+<h1 id="clojure-data-inspector-tools">Clojure Data Inspector tools<a class="headerlink" href="#clojure-data-inspector-tools" title="Permanent link">λ︎</a></h1>
+<p>Clojure has a strong focus on built in data structures (list, vector, hash-map, set) to represent information in the system.  Tools to inspect data and browse through nested or large data sets are invaluable in understanding what the system is doing.</p>
 <p>There are many <code>clojure.core</code> functions that can be used to explore data structures and transform them to produce specific views on data.</p>
-<p><code>tap&gt;</code> and <code>datafy</code> are recent additions to Clojure that provide a more elegant way of exploring data than the classic <code>println</code> statement.</p>
-<p>New tools are being created to capture and visualize results from evaluated expressions (REBL, Reveal) as well as tools to specifically visualize <code>tap&gt;</code> expressions (Reveal, Portal).</p>
+<p><code>tap&gt;</code> and <code>datafy</code> provide an elegant way of exploring data, rather than a classic <code>println</code> expression.</p>
+<p>Data Inspector tools capture and visualize results from evaluated expressions as well as tools to specifically visualize <code>tap&gt;</code> expressions (Reveal, Portal).</p>
 <h2 id="common-approaches">Common approaches<a class="headerlink" href="#common-approaches" title="Permanent link">λ︎</a></h2>
 <ul>
-<li>Editor data browsers - e.g. <a href="https://practical.li/spacemacs/evaluating-clojure/inspect/" target="_blank">cider-inspect</a></li>
-<li><a href="portal/">Portal</a> - tool to navigate and visualise data via <code>tap&gt;</code></li>
-<li><a href="clojure-inspector/">Clojure inspector</a> - built-in Java Swing based inspector</li>
-<li><a href="https://vlaaad.github.io/reveal/">Reveal</a> repl with data browser, also a <code>tap&gt;</code> source (semi-commercial project)</li>
+<li><a href="portal/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Portal</a> tool to navigate and visualise data via <code>tap&gt;</code> for use with any editor or directly with a REPL prompt</li>
+<li><a href="clojure-inspector/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Clojure inspector</a> built-in Java Swing based inspector</li>
+<li><a href="https://practical.li/spacemacs/evaluating-clojure/inspect/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> CIDER inspect</a> Emacs specific tool (Practicalli Spacemacs)</li>
 </ul>
+<div class="admonition tip">
+<p class="admonition-title">Practicalli recommends Portal</p>
+<p><a href="portal/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Portal</a>  works with any Clojure connected editor and can inspect <code>tap&gt;</code> expressions and automatically inspect all evaluation results over nREPL for a complete REPL history.</p>
+<p>Practicalli sends all log events to Portal using a custom mulog publisher.</p>
+</div>
 
 
 
@@ -8021,7 +8025,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 25, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">December 20, 2024</span>
   </span>
 
     
