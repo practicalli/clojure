@@ -2,9 +2,9 @@
 
 ![Practicalli Portal logo](https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true){align=right loading=lazy style="height:150px;width:150px"}
 
-Portal inspector is a tool for exploration of Clojure data using a browser window to visualise and inspect Clojure, JSON, Transit, Logs, Yaml, etc.
+[Portal inspector](https://cljdoc.org/d/djblue/portal/) is a tool to visualise and inspect Clojure, JSON, Transit, Logs, Yaml, etc.
 
-Registered Portal as a tap source and wrap code with `(tap> ,,,)` to see the results in Portal, providing a more advanced approach to debuging than println.
+Registered Portal as a tap source and wrap code with a `(tap> ,,,)` expression to see the results in Portal, providing a more advanced approach to debuging than println.
 
 Send all evaluation results to Portal for a complete history using the [portal-wrap nREPL middleware](#editor-nrepl-middleware)
 
@@ -12,17 +12,7 @@ Add a [custom Mulog publisher](#tap-logs-to-portal) to send all logs to Portal t
 
 Open Portal from the REPL or [configure Portal to open on REPL startup](#open-portal-on-repl-startup).
 
-!!! HINT "Practicalli Project Templates"
-    Clojure projects created with [Practicalli Project Templates]() include Portal configuration to recieve all evaluation results and Mulog event logs.
-
-    A custom `dev/user.clj` file loads `dev/portal.clj` and `dev/mulog-events.clj` configurations on REPL startup, when the `dev` directory is included on the path.
-
-    Use the `:repl/reloaded` for a complete REPL reloaded workflow and tooling on REPL startup
-
-
-![Portal - explore your Clojure data](https://user-images.githubusercontent.com/1986211/196015562-238cf450-6467-451c-a985-04c7a9b49dba.png){loading=lazy}
-
-??? INFO "Clojure 1.10 onward required"
+!!! INFO "Clojure 1.10 onward required"
 
 ??? INFO "tap sources and tap>"
     tap is a shared, globally accessible system for distributing values (log, debug, function results) to registered tap sources.
@@ -33,7 +23,20 @@ Open Portal from the REPL or [configure Portal to open on REPL startup](#open-po
 
     `(deref (deref #'clojure.core/tapset))` will show the tap sources. `tapset` is a Clojure set defined as private var and not meant to be accessed directly.
 
+
+
+??? TIP "Portal configuration included in Practicalli Project Templates"
+    Clojure projects created with [Practicalli Project Templates]() include Portal configuration to recieve all evaluation results and Mulog event logs.
+
+    A custom `dev/user.clj` file loads `dev/portal.clj` and `dev/mulog-events.clj` configurations on REPL startup, when the `dev` directory is included on the path.
+
+    Use the `:repl/reloaded` for a complete REPL reloaded workflow and tooling on REPL startup
+
+
 [Online Portal demo](https://djblue.github.io/portal/){target=_blank .md-button}
+
+![Portal - explore your Clojure data](https://user-images.githubusercontent.com/1986211/196015562-238cf450-6467-451c-a985-04c7a9b49dba.png){loading=lazy}
+
 
 <!-- TODO: practicalli video of using Portal in action -->
 
