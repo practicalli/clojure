@@ -262,65 +262,65 @@ Control Portal from a Clojure Editor by wrapping the portal commands.
 
     Add key bindings to call the helper functions, ideally from the Clojure major mode menu.
 
-    === "Spacemacs"
-        Add key bindings specifically for Clojure mode, available via the `, d p` debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
-        !!! EXAMPLE "Spacemacs Key bindings for Portal"
-            Add key bindings to Clojure major mode, e.g. ++comma++ ++"d"++ ++"p"++ ++"c"++ to clear values from Portal
-            ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
-            (spacemacs/declare-prefix-for-mode 'clojure-mode "dp" "Portal")
-            (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpp" 'portal.api/open)
-            (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpc" 'portal.api/clear)
-            (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpD" 'portal.api/close)
-            ```
+=== "Spacemacs"
+    Add key bindings specifically for Clojure mode, available via the `, d p` debug portal menu when a Clojure file (clj, edn, cljc, cljs) is open in the current buffer.
+    !!! EXAMPLE "Spacemacs Key bindings for Portal"
+        Add key bindings to Clojure major mode, e.g. ++comma++ ++"d"++ ++"p"++ ++"c"++ to clear values from Portal
+        ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+        (spacemacs/declare-prefix-for-mode 'clojure-mode "dp" "Portal")
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpp" 'portal.api/open)
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpc" 'portal.api/clear)
+        (spacemacs/set-leader-keys-for-major-mode 'clojure-mode "dpD" 'portal.api/close)
+        ```
 
-            Or add user key bindings to user menu, `SPC o` avoiding potential clash with Spacemacs Clojure layer key bindings.
-            e.g. ++spc++ ++"o"++ ++"p"++ ++"c"++ to clear values from Portal
-            ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
-            (spacemacs/declare-prefix "op" "Clojure Portal")
-            (spacemacs/set-leader-keys "opp" 'portal.api/open)
-            (spacemacs/set-leader-keys "opc" 'portal.api/clear)
-            (spacemacs/set-leader-keys "opD" 'portal.api/close)
-            ```
+        Or add user key bindings to user menu, `SPC o` avoiding potential clash with Spacemacs Clojure layer key bindings.
+        e.g. ++spc++ ++"o"++ ++"p"++ ++"c"++ to clear values from Portal
+        ```emacs title="Spacemacs Configuration - dotspacemacs/user-config"
+        (spacemacs/declare-prefix "op" "Clojure Portal")
+        (spacemacs/set-leader-keys "opp" 'portal.api/open)
+        (spacemacs/set-leader-keys "opc" 'portal.api/clear)
+        (spacemacs/set-leader-keys "opD" 'portal.api/close)
+        ```
 
-    === "Doom Emacs"
-        Use the `map!` macro to add keys to the `clojure-mode-map`, using `:after` to ensure cider is loaded before binding the keys
-        !!! EXAMPLE "Doom Configuration"
-            ```emacs
-            (map! :map clojure-mode-map
-                  :n "s-o" #'portal.api/open
-                  :n "C-l" #'portal.api/clear)
-            ```
+=== "Doom Emacs"
+    Use the `map!` macro to add keys to the `clojure-mode-map`, using `:after` to ensure cider is loaded before binding the keys
+    !!! EXAMPLE "Doom Configuration"
+        ```emacs
+        (map! :map clojure-mode-map
+              :n "s-o" #'portal.api/open
+              :n "C-l" #'portal.api/clear)
+        ```
 
-        !!! EXAMPLE "Practicalli Doom Emacs configuration"
-            [Practicalli Doom Emacs config](https://practical.li/doom-emacs/install/) includes Portal key bindings in the Clojure major mode menu, under the debug menu.
-            * `, d p o` to open portal
-            * `, d p c` to clear results from portal
+    !!! EXAMPLE "Practicalli Doom Emacs configuration"
+        [Practicalli Doom Emacs config](https://practical.li/doom-emacs/install/) includes Portal key bindings in the Clojure major mode menu, under the debug menu.
+        * `, d p o` to open portal
+        * `, d p c` to clear results from portal
 
-            ```
-            (map! :after cider
-                  :map clojure-mode-map
-                  :localleader
-                  :desc "REPL session" "'" #'sesman-start
+        ```
+        (map! :after cider
+              :map clojure-mode-map
+              :localleader
+              :desc "REPL session" "'" #'sesman-start
 
-                  ;; Debug Clojure
-                  (:prefix ("d" . "debug/inspect")
-                   :desc "debug" "d" #'cider-debug-defun-at-point
-                   (:prefix ("i" . "inspect")
-                    :desc "last expression" "e" #'cider-inspect-last-sexp
-                    :desc "expression" "f" #'cider-inspect-defun-at-point
-                    :desc "inspector" "i" #'cider-inspect
-                    :desc "last result" "l" #'cider-inspect-last-result
-                    (:prefix ("p" . "portal")
-                     :desc "Clear" "c" #'portal.api/clear
-                     :desc "Open" "D" #'portal.api/close
-                     :desc "Open" "p" #'portal.api/open)
-                    :desc "value" "v" #'cider-inspect-expr))
+              ;; Debug Clojure
+              (:prefix ("d" . "debug/inspect")
+               :desc "debug" "d" #'cider-debug-defun-at-point
+               (:prefix ("i" . "inspect")
+                :desc "last expression" "e" #'cider-inspect-last-sexp
+                :desc "expression" "f" #'cider-inspect-defun-at-point
+                :desc "inspector" "i" #'cider-inspect
+                :desc "last result" "l" #'cider-inspect-last-result
+                (:prefix ("p" . "portal")
+                 :desc "Clear" "c" #'portal.api/clear
+                 :desc "Open" "D" #'portal.api/close
+                 :desc "Open" "p" #'portal.api/open)
+                :desc "value" "v" #'cider-inspect-expr))
 
-                    ; truncated...
-                    )
-            ```
+                ; truncated...
+                )
+        ```
 
-        [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
+    [Practicalli Doom Emacs Config - +clojure.el](https://github.com/practicalli/doom-emacs-config/blob/main/%2Bclojure.el){target=_blank .md-button}
 
 [Portal Documentation - Editors](https://cljdoc.org/d/djblue/portal/0.37.1/doc/editors){target=_blank .md-button}
 
