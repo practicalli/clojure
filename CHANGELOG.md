@@ -16,6 +16,7 @@
 - reference: code block and admonition for common regular expression examples
 - intro: use link for contribute and writing tips in practical.li main website
 - dev: use python virtual env for mkdocs tasks in Makefile
+- dev: upgrade megalinter to version 8
 
 # 2024-03-03
 
