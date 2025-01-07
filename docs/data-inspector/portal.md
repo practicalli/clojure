@@ -2,7 +2,7 @@
 
 ![Practicalli Portal logo](https://github.com/practicalli/graphic-design/blob/live/logos/practicalli-portal-logo.png?raw=true){align=right loading=lazy style="height:150px;width:150px"}
 
-[Portal inspector](https://cljdoc.org/d/djblue/portal/) is a tool to visualise and inspect Clojure, JSON, Transit, Logs, Yaml, etc.
+[:globe_with_meridians: Portal inspector](https://cljdoc.org/d/djblue/portal/){target=_blank} is a tool to visualise and inspect Clojure, JSON, Transit, Logs, Yaml, etc.
 
 Registered Portal as a tap source and wrap code with a `(tap> ,,,)` expression to see the results in Portal, providing a more advanced approach to debuging than println.
 
