@@ -75,7 +75,7 @@ clojure -Stree
 Use the antq tool to check for a newer version of a dependency
 
 ```shell
-clojure -T:project/outdated
+clojure -T:search/outdated
 ```
 
-> If libraries are likely to become unavailable (i.e. old versions) then consider creating a local repository service with Artefactory or Nexus, which can share library depenencies between development teams of an organisation.
+> If libraries are likely to become unavailable (i.e. old versions) then consider creating a local repository service with Artefactory or Nexus, which can share library dependencies between development teams of an organisation.
