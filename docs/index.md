@@ -22,7 +22,7 @@ Clojure programming language has a strong dynamic type system and a [simple synt
 
 Clojure has an open source license and a large number of open source libraries and tools.  Simple host interoperability allows a even more libraries to be leveraged.
 
-!!! QUOTE "Adrian Cockcroft - formally Cloud Architect, Netflix"
+!!! QUOTE "Adrian Cockcroft - as Cloud Architect at Netflix"
     The most productive programmers I know are writing everything in Clojure ... producing ridiculously sophisticated things in a very short time. And that programmer productivity matters.
 
 [Clojure REPL Workflow overview](introduction/repl-workflow.md){.md-button}
@@ -47,6 +47,7 @@ Use the search box to quickly find a specific topic
 ## Resources
 
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config - additional tools via aliases](/clojure/clojure-cli/practicalli-config/){target=_blank .md-button}
+
 [Clojure Aware Editors](/clojure/clojure-editors){target=_blank .md-button}
 [Practicalli YouTube channel](https://youtube.co/practicalli){target=_blank .md-button}
 
@@ -66,4 +67,3 @@ Thanks to [Cognitect](https://www.cognitect.com/){target=_blank}, [Nubank](https
   <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
   This work is licensed under a Creative Commons Attribution 4.0 ShareAlike License (including images & stylesheets).
 </div>
- 
