@@ -17,6 +17,7 @@
 - intro: use link for contribute and writing tips in practical.li main website
 - dev: use python virtual env for mkdocs tasks in Makefile
 - dev: upgrade megalinter to version 8
+- dev: set markdown and make as git attributes of repo
 
 # 2024-03-03
 
