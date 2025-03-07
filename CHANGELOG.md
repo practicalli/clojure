@@ -5,6 +5,7 @@
 - dev: set markdown as repository language with `.gitattributes`
 - dev: megalinter runner upgrade make task
 - readme: star history for project on github
+- mkdocs: CSS for round corners on buttons, etc.
 
 ## Changed
 - clojure-cli: enhance built-in commands description
