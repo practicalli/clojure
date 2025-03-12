@@ -9,6 +9,10 @@ Practical code examples are supported by discussions of the concepts behind Cloj
 !!! QUOTE - "John Stevenson, Practical.li"
     Clojure - an elegant language for a more civilised development experience
 
+
+[:fontawesome-solid-book-open: Why Clojure - Concepts of the Clojure Language](introduction/concepts/index.md){.md-button}
+
+
 ## Clojure REPL Driven Development
 
 ![Clojure Repl workflow - concept](https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-repl-workflow-concept.png?raw=true){loading=lazy}
