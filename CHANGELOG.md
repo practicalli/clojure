@@ -6,6 +6,7 @@
 - dev: megalinter runner upgrade make task
 - readme: star history for project on github
 - mkdocs: CSS for round corners on buttons, etc.
+- reference: creative coding overview
 
 ## Changed
 - clojure-cli: enhance built-in commands description
