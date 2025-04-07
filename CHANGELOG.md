@@ -20,6 +20,7 @@
 - dev: use python virtual env for mkdocs tasks in Makefile
 - dev: upgrade megalinter to version 8
 - dev: set markdown and make as git attributes of repo
+- testing: update links to code challenges on overview page
 
 # 2024-03-03
 

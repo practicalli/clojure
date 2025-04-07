@@ -110,11 +110,17 @@ As with file names, the namespaces for each test code file is the same as the so
 
 ## Project Examples: Code challenges with unit tests
 
-* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
-* [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
-* [practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
-* [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
-* [practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
+Code walk-through:
+
+- [:fontawesome-solid-book-open: TDD Kata: Recent Song-list](/clojure/simple-projects/tdd-kata/recent-song-list/)
+- [:fontawesome-solid-book-open: TDD Kata: Salary Slip Generator](/clojure/simple-projects/tdd-kata/salary-slip-generator/)
+
+GitHub repositories:
+
+- [:fontawesome-brands-github: Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
+- [:fontawesome-brands-github: practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
+- [:fontawesome-brands-github: practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
+- [:fontawesome-brands-github: practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
 
 ## References
 
