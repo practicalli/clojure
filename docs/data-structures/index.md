@@ -84,3 +84,8 @@ walk the hierarchy to get the appropriate values
 extract only the values required by a function and pass as arguments
 
 hierachiecy can become too complex to manage, the flatest possible structure is usually simpler to work with (transform)
+
+
+## Reference
+
+[InfoQ article on [An In-Depth Look at Clojure Collections](http://www.infoq.com/articles/in-depth-look-clojure-collections){target=_blank .md-button}
