@@ -7,6 +7,7 @@
 - readme: star history for project on github
 - mkdocs: CSS for round corners on buttons, etc.
 - reference: creative coding overview
+- dev: add scheduled stale issue & pull request check
 
 ## Changed
 - clojure-cli: enhance built-in commands description
