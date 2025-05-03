@@ -16,6 +16,8 @@
  ╚═════╝╚══════╝ ╚═════╝  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 ```
 
+> NOTE: Ascii Art Generator: https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Astro%205
+
 ## Book Overview
 
 A guide to software development with the Clojure programming language, using Clojure CLI and a wide range of community tools for a REPL focused workflow.
