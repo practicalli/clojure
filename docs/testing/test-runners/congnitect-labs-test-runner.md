@@ -21,7 +21,7 @@ Make test-runner available to all projects by adding it to `~/.clojure/deps.edn`
                       :sha     "f7ef16dc3b8332b0d77bc0274578ad5270fbfedd"}}
        :main-opts   ["-m" "cognitect.test-runner"]}
 
-```
+    ```
 
 ## Run test runner
 
