@@ -328,13 +328,34 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
         Consider using VSCode with Clover or Calva plugin or help support the evolution of the Pulsar project
 
 === "Intellij"
-    [Cursive](https://cursive-ide.com/) may be an appropriate choice for people from a Java background who are already familiar with IntelliJ.  Cursive will run static analysis of Clojure code when opening a Clojure project, as IntelliJ does with other languages.
 
-    Follow the [Cursive user guide](https://cursive-ide.com/userguide/){target=_blank} to configure IntelliJ and install Cursive.
+    [:globe_with_meridians: IntelliJ IDEA](https://www.jetbrains.com/idea/) is a commercial product that provides an editor for Java and Kotlin.  An IntelliJ IDEA Community Edition is a version of the product that is distributed under the Apache 2.0 licence and can be used for commercial and non-commercial work.
 
-    !!! HINT "Requires license for commercial development"
-        There is a free license when development is not for commercial projects, however, a license must be purchased for each developer working on a commercial project.
+    IntelliJ may be an appropriate choice when working with Java and Clojure projects or where there is already familiar with IntelliJ.
 
-    [IntelliJ & Cursive install guide](https://cursive-ide.com/userguide/){target=_blank .md-button}
+    Clojure support is avaialbe via plugins, either open source or commercial closed source (requiring license key).
 
-    ![Cursive IDE](https://cursive-ide.com/images/cursive-screenshot.png)
+    === "Open Source plugins"
+        [:fontawesome-brands-github: Clojure-REPL-Intellij](https://github.com/afucher/clojure-repl-intellij) plugin provides a Clojure REPL client which can start an nREPL server from IntelliJ or connect to an existing nREPL process.  The REPL client can evaluate code, run tests, reload / refresh namespaces, interupt evaluation and navigate the history of commands sent to the REPL.
+
+        ![IntelliJ IDEA Open Source REPL plugin](https://github.com/afucher/clojure-repl-intellij/raw/master/images/demo.png){loading=lazy}
+
+        [:fontawesome-brands-github: Clojure-LSP-Intellij](https://github.com/clojure-lsp/clojure-lsp-intellij) plugin provides an Language Server Protocol (LSP) server implementation for Clojure and ClojureScript, providing static analysis of a code base to show diagnostics and provide code completion data.  The LSP server also enables tools to refactor Clojure and ClojureScript code.
+
+        ![IntelliJ IDEA Open Source LSP Server plugin](https://github.com/clojure-lsp/clojure-lsp-intellij/raw/master/images/demo.png){loading=lazy}
+
+
+    === "Commercial Closed Source plugin"
+
+        [:globe_with_meridians: Cursive](https://cursive-ide.com/){target=_blank} is a commercial and closed source plugin for IntelliJ which provides a Clojure REPL client, evaluation and test running tools.
+
+        Cursive uses the IntelliJ proprietary static analysis tools (rather than the Language Server Protocol standard).
+
+        Follow the [:globe_with_meridians: Cursive user guide](https://cursive-ide.com/userguide/){target=_blank} to configure IntelliJ and install Cursive.
+
+        !!! HINT "Requires license for commercial development"
+            There is a free license when development is not for commercial projects, however, a Cursive license must be purchased for each developer working on a commercial project.
+
+        [:globe_with_meridians: IntelliJ & Cursive install guide](https://cursive-ide.com/userguide/){target=_blank .md-button}
+
+        ![Cursive IDE](https://cursive-ide.com/images/cursive-screenshot.png)
