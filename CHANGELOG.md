@@ -1,6 +1,6 @@
 # Changelog
 
-# Unreleased
+# 2025-05-16
 ## Added
 - dev: set markdown as repository language with `.gitattributes`
 - dev: megalinter runner upgrade make task
