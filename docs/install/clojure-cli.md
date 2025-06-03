@@ -4,10 +4,10 @@
 
 Clojure CLI is a command line tool for running a Clojure REPL, project or tool.
 
-Clojure CLI automatically downloads required library dependencies, including the Clojure Standard library. 
+Clojure CLI automatically downloads required library dependencies, including the Clojure Standard library.
 
 ??? INFO "Clojure distributed as a library"
-    Clojure is distributed as a library (`.jar` Java ARchive) via Maven Central. 
+    Clojure is distributed as a library (`.jar` Java ARchive) via Maven Central.
 
     A `deps.edn` file specifies the version of Clojure to be used with a project.
 
@@ -17,7 +17,7 @@ Clojure CLI automatically downloads required library dependencies, including the
 
     The Clojure CLI tool provides a default Clojure library version if not specified in the project or user `deps.edn` files.
 
-    [Clojure releases](https://clojure.org/releases/downloads){target=_blank .md-button} 
+    [Clojure releases](https://clojure.org/releases/downloads){target=_blank .md-button}
 
 [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](#practicalli-clojure-cli-config) extends the Clojure CLI with a range of development tools as well as configuration for Clojure LSP and cljstyle code format tool.
 
@@ -42,11 +42,11 @@ Clojure CLI automatically downloads required library dependencies, including the
         chmod +x linux-install.sh && \
         ./linux-install.sh --prefix $HOME/.local/
         ```
-    
+
     ??? INFO "Include version number for specific release"
         Each Clojure CLI version is a number that represents the version of Clojure used and the build version of the Clojure CLI tool, e.g. `1.11.1.1413`.
 
-        [Clojure CLI Releases page](https://clojure.org/releases/tools){target=_blank .md-button} 
+        [Clojure CLI Releases page](https://clojure.org/releases/tools){target=_blank .md-button}
 
         Include the version in the script name for repeatable environments, e.g. in Dockerfile configuration and Continuous Integraion workflows.
         ```shell title="Clojure CLI install specific version"
@@ -112,9 +112,9 @@ Clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://git
     `CLJ_CONFIG` environment variable can be used to set a custom location, overriding any other location.
 
 !!! HINT "Practicalli recommends FreeDesktop XDG location"
-    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory to simplify versioning of configuration. 
+    Practically recommends setting `XDG_CONFIG_HOME` to the `.config` directory to simplify versioning of configuration.
 
-    Configure `~/.bashrc` for the bash shell 
+    Configure `~/.bashrc` for the bash shell
     ```shell title="Bash .bashrc file"
     export XDG_CONFIG_HOME="$HOME/.config"
     ```
@@ -146,8 +146,7 @@ Clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://git
     Via SSH
     ```shell
     git clone git@github.com:practicalli/clojure-cli-config.git $HOME/.clojure
-
-```
+    ```
 
     Via HTTPS
     ```shell
