@@ -96,7 +96,8 @@ Clojure CLI automatically downloads required library dependencies, including the
     scoop install git 7zip pshazz temurin-lts-jdk clj-deps leiningen clj-kondo vscode coreutils windows-terminal
     ```
 
-> Reference: [Clojure CLI Install - Clojure.org Getting Started](https://clojure.org/guides/install_clojure){target=_blank} - official guide
+> Reference: [Clojure CLI Install - Clojure.org](https://clojure.org/guides/install_clojure){target=_blank} - official guide
+
 
 ## Practicalli Clojure CLI Config
 
