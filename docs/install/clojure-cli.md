@@ -156,29 +156,17 @@ Clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://git
 
 ## Check Configuration
 
-`clojure -Sdescribe` shows the version of Clojure CLI installed and configuration locations used.
+The `--version` flag shows prints the current version of Clojure CLI.
 
 ```shell
-clojure -Sdescribe
+clojure --version
 ```
 
-The output of the command includes the version of Clojure CLI in the `:version` key
+![Clojure CLI version](https://github.com/practicalli/graphic-design/blob/live/clojure/clojure-cli/clojure-cli-install-check-version.png?raw=true){loading=lazy}
 
-```shell
-{:version "1.11.1.1386"
- :config-files ["/usr/local/lib/clojure/deps.edn" "/home/practicalli/.config/clojure/deps.edn" ]
- :config-user "/home/practicalli/.config/clojure/deps.edn"
- :config-project "deps.edn"
- :install-dir "/usr/local/lib/clojure"
- :config-dir "/home/practicalli/.config/clojure"
- :cache-dir "/home/practicalli/.cache/clojure"
- :force false
- :repro false
- :main-aliases ""
- :repl-aliases ""}
-```
 
-> `clojure -Sversion` will shows the version of Clojure CLI being when the `clojure` command is used to run a REPL or other Clojure command.
+> NOTE:  `clojure -Sdescribe` is now deprecated and will be removed.  Use tools.build API if more details are required about the configuration of Clojure CLI.
+
 
 ## Optional rlwrap readline
 
@@ -194,3 +182,7 @@ Pressing the ++arrow-up++ and ++arrow-down++ keys will scroll through the code p
     Rebel is a much richer experience than the `clj` wrapper with `rlwrap`.  Rebel should not be used with `clj`.
 
     Rebel Readline is part of the [Practicalli Clojure CLI config](#practicalli-clojure-cli-config).
+
+    ```shell
+    clojure -M:repl/rebel
+    ```

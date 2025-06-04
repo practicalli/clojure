@@ -9,6 +9,7 @@
 - reference: creative coding overview
 - dev: add scheduled stale issue & pull request check
 - editors: open source plugins for Intellij IDEA editor
+- install: remove -Sdescribe (deprecated), use --version
 
 ## Changed
 - clojure-cli: enhance built-in commands description
