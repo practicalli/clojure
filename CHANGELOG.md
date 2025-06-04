@@ -1,5 +1,11 @@
 # Changelog
 
+# Unreleased
+
+## Added
+- install: remove -Sdescribe (deprecated), use --version
+- cli: add run repl as an explicit section
+
 # 2025-05-16
 ## Added
 - dev: set markdown as repository language with `.gitattributes`
@@ -9,8 +15,6 @@
 - reference: creative coding overview
 - dev: add scheduled stale issue & pull request check
 - editors: open source plugins for Intellij IDEA editor
-- install: remove -Sdescribe (deprecated), use --version
-- cli: add run repl as an explicit section
 
 ## Changed
 - clojure-cli: enhance built-in commands description
