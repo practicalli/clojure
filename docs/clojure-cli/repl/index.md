@@ -95,6 +95,15 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
         clj -M:repl/headless
         ```
 
+### Run Rebel REPL
+
+Using the aliase defined above, use the `clojure` command to start a REPL process and nREPl server (to connect a Clojure editor).
+
+!!! NOTE "Run Rebel Readline & nREPL server"
+
+    ```shell
+    clojure -M:repl/rebel
+    ```
 
 ??? INFO "Terminal REPL and Editor"
     Including an nREPL server when starting the REPL allows [clojure ware editors](/clojure/clojure-editors/) to connect to the REPL process, providing a more effective way to write and extend Clojure code.

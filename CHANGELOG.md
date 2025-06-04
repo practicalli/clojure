@@ -10,6 +10,7 @@
 - dev: add scheduled stale issue & pull request check
 - editors: open source plugins for Intellij IDEA editor
 - install: remove -Sdescribe (deprecated), use --version
+- cli: add run repl as an explicit section
 
 ## Changed
 - clojure-cli: enhance built-in commands description
