@@ -2,12 +2,12 @@
 
 The REPL is the environment in which all Clojure code runs, whether that be during development, testing or in production systems.
 
-A Terminal REPL provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results. 
+A Terminal REPL provides a simple way to interact with the REPL, sending code expressions for evaluation and returning results.
 
-Use a  terminal REPL for 
+Use a  terminal REPL for
 
 * quick experiments
-* long running processes (e.g. http severs running Clojure) 
+* long running processes (e.g. http severs running Clojure)
 * interact with the REPL state and manage components (e.g restarting system components, querying UI component state or services system state).
 * a REPL process separate from a specific editor control
 
@@ -23,7 +23,7 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U19TWMsg0s0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
 
-### Install Rebel 
+### Install Rebel
 
 === "Practicalli Clojure CLI Config"
     `:repl/rebel` alias is provided by [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/#practicalli-clojure-cli-config) to run rebel readline.
@@ -39,7 +39,7 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
     Add an alias called `:repl/rebel`to the user `deps.edn` configuration, e.g. `~/.config/clojure/deps.edn`
     !!! EXAMPLE "Basic Rebel terminal UI alias"
         ```clojure title="~/.config/clojure/deps.edn"
-        :repl/rebel 
+        :repl/rebel
         {:extra-deps {com.bhauman/rebel-readline {:mvn/version "0.1.5"}}
          :main-opts  ["-m" "rebel-readline.main"]}
         ```
@@ -127,46 +127,42 @@ Set configuration options in a `rebel_readline.edn` file, in `$XDG_CONFIG_HOME/c
     ;;
     ;; Customise use and appearance
     ;; ---------------------------------------------------------
-    
+
     {;; Vi or Emacs style key-map
      ;; :viins or :emacs. Default :emacs
      :key-map     :viins
-    
+
      ;; Color theme - light or dark
      ;; :color-theme :light-screen-theme
      :color-theme :dark-screen-theme
-    
+
      ;; Enable syntax highlight. Default true}
      :hihighlight true
-    
+
      ;; Enable complete on tab. Default true}
      :completion  true
-    
+
      ;; Enable function documentation Default true
      :eldoc  true
      ;; auto indent code on newline. Default true}
      :indent true
-    
+
      ;; rebind root *out* during read to protect linereader, Default true}
      :redirect-output true
-    
-     ;; Custom key-bindings applied after all other 
+
+     ;; Custom key-bindings applied after all other
      :key-bindings {}}
     ```
 
 
 ## Next Steps
 
-[:fontawesome-solid-book-open: Code In The REPL](coding.md){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Code In The REPL](coding.md){target=_blank .md-button}
 
-[:fontawesome-solid-book-open: Managing Libraries In The REPL](libraries.md){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Managing Libraries In The REPL](libraries.md){target=_blank .md-button}
 
-[:fontawesome-solid-book-open: Help In The REPL](help.md){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Help In The REPL](help.md){target=_blank .md-button}
 
-[:fontawesome-solid-book-open: Custom REPL Startup](../repl-startup.md){target=_blank .md-button} 
+[:fontawesome-solid-book-open: Custom REPL Startup](../repl-startup.md){target=_blank .md-button}
 
-[:fontawesome-solid-book-open: REPL Uncovered](repl-uncovered.md){target=_blank .md-button} 
-
-
-
-
+[:fontawesome-solid-book-open: REPL Uncovered](repl-uncovered.md){target=_blank .md-button}
