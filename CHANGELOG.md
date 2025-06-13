@@ -5,6 +5,7 @@
 ## Added
 - install: remove -Sdescribe (deprecated), use --version
 - cli: add run repl as an explicit section
+- mkdocs: add automatic light/dark mode
 
 # 2025-05-16
 ## Added
