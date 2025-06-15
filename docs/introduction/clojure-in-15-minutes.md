@@ -153,7 +153,7 @@ A predicate is a function that returns a boolean `true` or `false` value and by 
 The most common data collections in Clojure:
 
 * `(1 2 "three")` or `(list 1 2 "three")` - a list of values read from start to end (sequential access)
-* `[1 2 "three"]` or `(list 1 2 "three")` - a vector of values with index (random access)
+* `[1 2 "three"]` or `(vector 1 2 "three")` - a vector of values with index (random access)
 * `{:key "value"}` or `(hash-map :key "value")` - a hash-map with zero or more key value pairs (associative relation)
 * `#{1 2 "three"}` or `(set 1 2 "three")` - a unique set of values
 
