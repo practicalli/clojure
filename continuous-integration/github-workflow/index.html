@@ -8464,15 +8464,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -8506,15 +8497,10 @@
 
 
 <h1 id="github-workflows">GitHub Workflows<a class="headerlink" href="#github-workflows" title="Permanent link">λ︎</a></h1>
-<!-- ![GitHub Actions banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/github-actions-banner.png) -->
-
-<p>Automate tasks, such as running unit tests or lint code, whenever code is committed to a  GitHub repository.</p>
-<p>GitHub Actions can run one or more tasks after specific events, such as commits, raising issues or pull requests.</p>
+<p>GitHub workflows can run one or more tasks when triggered by specific events, e.g. pushing commits, raising issues or pull requests.</p>
 <p>An event triggers a configured workflow which contains one or more jobs. A job contains a one or more steps which defines actions to run.</p>
-<p><a class="md-button" href="https://practical.li/engineering-playbook/continuous-integration/github-workflow/" target="_blank">Practicalli GitHub Workflow Examples</a>
-<a class="md-button" href="https://practical.li/engineering-playbook/continuous-integration/github-actions/" target="_blank">Practicalli recommended GitHub Actions</a></p>
-<p><a class="md-button" href="https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions" target="_blank">Introduction to GitHub Actions</a>
-<a class="md-button" href="https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#understanding-the-workflow-file" target="_blank">Understanding the workflow file</a></p>
+<p><a class="md-button" href="https://practical.li/engineering-playbook/continuous-integration/github/workflows/practicalli/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Practicalli GitHub Workflows</a></p>
+<p><a class="md-button" href="https://docs.github.com/en/actions/about-github-actions/understanding-github-actions" target="_blank"><img alt="🌐" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.1.0/assets/svg/1f310.svg" title=":globe_with_meridians:" /> Understanding GitHub Actions</a></p>
 <h2 id="anatomy-of-a-workflow">Anatomy of a workflow<a class="headerlink" href="#anatomy-of-a-workflow" title="Permanent link">λ︎</a></h2>
 <table>
 <thead>
@@ -8552,8 +8538,11 @@
 </table>
 <h2 id="example-github-action">Example GitHub Action<a class="headerlink" href="#example-github-action" title="Permanent link">λ︎</a></h2>
 <p><code>.github/workflows/workflow-name.yaml</code> is a file that contains the workflow definition.</p>
-<p><a href="https://github.com/actions/setup-java" target="_blank">Setup Java</a> adds an OpenJDK distribution, i.e. Eclipse Temurin, at a specified version (Java 17 recommended).</p>
-<p><a href="https://github.com/DeLaGuardo/setup-clojure" target="_blank">Setup Clojure</a> provides Clojure via Clojure CLI, Leiningen or Boot.  Clojure CLI is recommended.</p>
+<blockquote>
+<p>NOTE: Practicalli recommends including additional configuration in <code>.github/config/</code> files where required, rather than the root directory of a project</p>
+</blockquote>
+<p><a href="https://github.com/actions/setup-java" target="_blank">Setup Java</a> adds an OpenJDK distribution, i.e. Eclipse Temurin, at a specified version.</p>
+<p><a href="https://github.com/DeLaGuardo/setup-clojure" target="_blank">Setup Clojure</a> provides Clojure via Clojure CLI or Leiningen.</p>
 <p><a href="https://github.com/actions/cache" target="_blank">Cache</a> is used to cache Clojure and Java libraries</p>
 <ul>
 <li>The example workflow runs on Ubuntu.</li>
@@ -8591,7 +8580,7 @@
 <a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/setup-java@v3</span>
 <a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="w">        </span><span class="nt">with</span><span class="p">:</span>
 <a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="w">          </span><span class="nt">distribution</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;temurin&#39;</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;17&#39;</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="w">          </span><span class="nt">java-version</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;21&#39;</span>
 <a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
 <a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Install clojure tools</span>
 <a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DeLaGuardo/setup-clojure@9.5</span>
@@ -8613,12 +8602,6 @@
 <a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">clojure -X:project/uberjar</span>
 </code></pre></div>
 </div>
-<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">λ︎</a></h2>
-<ul>
-<li><a href="https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog.yml">Practicalli Blog - publish blog workflow</a> - build publish a Cryogen project with Clojure CLI and publish the generated website with GitHub pages (also <a href="https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog-staging.yml">a Staging workflow that runs on pull requests</a>)</li>
-<li><a href="https://github.com/practicalli/practicalli.github.io/blob/live/.github/workflows/deploy.yml">Practicalli Landing Page GitHub workflow</a> - build a ClojureScript &amp; Figwheel project with Clojure CLI and publish the generated site to GitHub pages</li>
-<li><a href="https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml">Practicalli Clojure CLI config - lint with clj-kondo workflow</a> - lint the <code>deps.edn</code> file with clj-kondo</li>
-</ul>
 
 
 
@@ -8639,7 +8622,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="October 2, 2023 17:14:01 UTC">October 2, 2023</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 18:39:16 UTC">June 16, 2025</span>
   </span>
 
     
