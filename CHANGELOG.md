@@ -7,6 +7,9 @@
 - cli: add run repl as an explicit section
 - mkdocs: add automatic light/dark mode
 
+## Changed
+- intro: update 15 mins intro to Clojure
+
 # 2025-05-16
 ## Added
 - dev: set markdown as repository language with `.gitattributes`
