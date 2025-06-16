@@ -1,18 +1,12 @@
 # GitHub Workflows
 
-<!-- ![GitHub Actions banner](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/github-actions-banner.png) -->
-
-Automate tasks, such as running unit tests or lint code, whenever code is committed to a  GitHub repository.
-
-GitHub Actions can run one or more tasks after specific events, such as commits, raising issues or pull requests.
+GitHub workflows can run one or more tasks when triggered by specific events, e.g. pushing commits, raising issues or pull requests.
 
 An event triggers a configured workflow which contains one or more jobs. A job contains a one or more steps which defines actions to run.
 
-[Practicalli GitHub Workflow Examples](https://practical.li/engineering-playbook/continuous-integration/github-workflow/){target=_blank .md-button}
-[Practicalli recommended GitHub Actions](https://practical.li/engineering-playbook/continuous-integration/github-actions/){target=_blank .md-button}
+[:fontawesome-solid-book-open: Practicalli GitHub Workflows](https://practical.li/engineering-playbook/continuous-integration/github/workflows/practicalli/){target=_blank .md-button}
 
-[Introduction to GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions){target=_blank .md-button}
-[Understanding the workflow file](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#understanding-the-workflow-file){target=_blank .md-button}
+[:globe_with_meridians: Understanding GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions){target=_blank .md-button}
 
 ## Anatomy of a workflow
 
@@ -29,9 +23,12 @@ An event triggers a configured workflow which contains one or more jobs. A job c
 
 `.github/workflows/workflow-name.yaml` is a file that contains the workflow definition.
 
-[Setup Java](https://github.com/actions/setup-java){target=_blank} adds an OpenJDK distribution, i.e. Eclipse Temurin, at a specified version (Java 17 recommended).
+> NOTE: Practicalli recommends including additional configuration in `.github/config/` files where required, rather than the root directory of a project
 
-[Setup Clojure](https://github.com/DeLaGuardo/setup-clojure){target=_blank} provides Clojure via Clojure CLI, Leiningen or Boot.  Clojure CLI is recommended.
+
+[Setup Java](https://github.com/actions/setup-java){target=_blank} adds an OpenJDK distribution, i.e. Eclipse Temurin, at a specified version.
+
+[Setup Clojure](https://github.com/DeLaGuardo/setup-clojure){target=_blank} provides Clojure via Clojure CLI or Leiningen.
 
 [Cache](https://github.com/actions/cache){target=_blank} is used to cache Clojure and Java libraries
 
@@ -70,7 +67,7 @@ An event triggers a configured workflow which contains one or more jobs. A job c
             uses: actions/setup-java@v3
             with:
               distribution: 'temurin'
-              java-version: '17'
+              java-version: '21'
 
           - name: Install clojure tools
             uses: DeLaGuardo/setup-clojure@9.5
@@ -91,9 +88,3 @@ An event triggers a configured workflow which contains one or more jobs. A job c
           - name: Package Clojure project
             run: clojure -X:project/uberjar
     ```
-
-## References
-
-* [Practicalli Blog - publish blog workflow](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog.yml) - build publish a Cryogen project with Clojure CLI and publish the generated website with GitHub pages (also [a Staging workflow that runs on pull requests](https://github.com/practicalli/blog/blob/live/.github/workflows/publish-blog-staging.yml))
-* [Practicalli Landing Page GitHub workflow](https://github.com/practicalli/practicalli.github.io/blob/live/.github/workflows/deploy.yml) - build a ClojureScript & Figwheel project with Clojure CLI and publish the generated site to GitHub pages
-* [Practicalli Clojure CLI config - lint with clj-kondo workflow](https://github.com/practicalli/clojure-deps-edn/blob/live/.github/workflows/lint-with-clj-kondo.yml) - lint the `deps.edn` file with clj-kondo
