@@ -526,18 +526,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
+  <a href="#clojure-expressions" class="md-nav__link">
     <span class="md-ellipsis">
-      Comments
+      Clojure expressions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clojure-expressions" class="md-nav__link">
+  <a href="#comment" class="md-nav__link">
     <span class="md-ellipsis">
-      Clojure expressions
+      Comment
     </span>
   </a>
   
@@ -604,9 +604,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annonymous-functions" class="md-nav__link">
+  <a href="#anonymous-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Annonymous Functions
+      Anonymous Functions
     </span>
   </a>
   
@@ -8637,18 +8637,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
+  <a href="#clojure-expressions" class="md-nav__link">
     <span class="md-ellipsis">
-      Comments
+      Clojure expressions
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#clojure-expressions" class="md-nav__link">
+  <a href="#comment" class="md-nav__link">
     <span class="md-ellipsis">
-      Clojure expressions
+      Comment
     </span>
   </a>
   
@@ -8715,9 +8715,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#annonymous-functions" class="md-nav__link">
+  <a href="#anonymous-functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Annonymous Functions
+      Anonymous Functions
     </span>
   </a>
   
@@ -8819,18 +8819,15 @@
 
 
 <h1 id="clojure-in-15-minutes">Clojure in 15 minutes<a class="headerlink" href="#clojure-in-15-minutes" title="Permanent link">λ︎</a></h1>
-<p>A quick tour of the Clojure syntax and common functions, which is so terse you can read through this page in around 15 minutes and have a basic understanding of the language.</p>
+<p>A quick tour of the Clojure syntax and common functions. The syntax is quite minimal so this should take around 15 minutest to read through (it may take longer to get comfortable with).</p>
 <div class="admonition hint">
 <p class="admonition-title">Try the code out in the REPL</p>
 <p><a href="/clojure/clojure-cli/repl/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Start a Clojure REPL</a> or use a <a href="/clojure/clojure-editors/"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> Clojure aware editor</a> connected to a REPL and experiment with these code examples.</p>
 <p>Using the REPL provides instant feedback on each expression as they are evaluated, greatly increasing your understanding.</p>
 </div>
-<h2 id="comments">Comments<a class="headerlink" href="#comments" title="Permanent link">λ︎</a></h2>
-<p><code>;;</code> two semi-colons for a line comment, <code>;</code> single semi-colon to comment the rest of the line</p>
-<p><code>#_</code> comment reader macro to comment out the next form</p>
-<p><code>(comment ,,,)</code> form to comment all the containing forms, useful to <a href="/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> separate experimental and established code</a> in a namespace.</p>
 <h2 id="clojure-expressions">Clojure expressions<a class="headerlink" href="#clojure-expressions" title="Permanent link">λ︎</a></h2>
-<p>Clojure is mostly written with "expressions", a lists of elements inside parentheses, <code>()</code>, separated by space characters.</p>
+<p>Clojure is written with "expressions", a lists of elements inside parentheses, <code>()</code>, separated by space characters.</p>
+<p>An expression is made of one or more forms, a form is a general term for anything that legally evaluates in Clojure, e.g. a number, string function definition, etc.</p>
 <p>Clojure evaluates the first element in an expression as a function call.  Additional elements in the expression are passed as value arguments to the called function.</p>
 <div class="admonition example">
 <p class="admonition-title">Function call with value and expression as arguments</p>
@@ -8842,6 +8839,10 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">(</span><span class="nb">range </span><span class="mi">0</span><span class="w"> </span><span class="mi">99</span><span class="p">))</span>
 </code></pre></div>
 </div>
+<h2 id="comment">Comment<a class="headerlink" href="#comment" title="Permanent link">λ︎</a></h2>
+<p><code>;;</code> two semi-colons for a line comment, <code>;</code> single semi-colon to comment the rest of the line</p>
+<p><code>#_</code> comment reader macro to skip specific parts of code, e.g. <code>(+ 1 2 #_(* 3 4))</code> is read as <code>(+ 1 2)</code></p>
+<p><code>(comment ,,,)</code> form to comment all the containing forms, useful to <a href="/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5V78.6c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32 93.5 32 46.3 45.3 18.1 56.1 6.8 60.5 0 71.7 0 83.8v370.3c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5m76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6 11.3 3.8 24.1-4.6 24.1-16.5V83.8c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6-3.3 2.6-5 6.8-5 11V456c0 11.4 11.7 19.3 22.4 15.5"/></svg></span> separate experimental and established code</a> in a namespace.  Note that <code>(comment )</code> returns <code>nil</code> when evaluated so shouldn't be used inside other code.</p>
 <h2 id="organising-clojure">Organising Clojure<a class="headerlink" href="#organising-clojure" title="Permanent link">λ︎</a></h2>
 <p>Clojure code is organised into one or more namespaces. The namespace represents the directory path and file name that contains the code of the particular namespace.</p>
 <p>A company name or community repository name is often used making the namespace unique and easier to share &amp; reuse.</p>
@@ -8934,15 +8935,15 @@
 <h2 id="collections-sequences">Collections &amp; Sequences<a class="headerlink" href="#collections-sequences" title="Permanent link">λ︎</a></h2>
 <p>The most common data collections in Clojure:</p>
 <ul>
-<li><code>(1 2 "three")</code> or <code>(list 1 2 "three")</code> - a list of values read from start to end (sequential access)</li>
-<li><code>[1 2 "three"]</code> or <code>(list 1 2 "three")</code> - a vector of values with index (random access)</li>
-<li><code>{:key "value"}</code> or <code>(hash-map :key "value")</code> - a hash-map with zero or more key value pairs (associative relation)</li>
-<li><code>#{1 2 "three"}</code> or <code>(set 1 2 "three")</code> - a unique set of values</li>
+<li>List literal <code>(1 2 "three")</code> or function call <code>(list 1 2 "three")</code> - a list of values read from start to end (sequential access)</li>
+<li>Vector literal <code>[1 2 "three"]</code> or function call <code>(vector 1 2 "three")</code> - a vector of values with index (random access)</li>
+<li>Hash-map literal <code>{:key "value"}</code> or function call <code>(hash-map :key "value")</code> - a hash-map with zero or more key value pairs (associative relation)</li>
+<li>Set literal <code>#{1 2 "three"}</code> or function call <code>(set 1 2 "three")</code> - a unique set of values</li>
 </ul>
-<p>A list <code>()</code> is evaluated as a function call. The first element of the list the name of the function to call and additional values are arguments to the function.</p>
-<p>The <code>'</code> quote function informs the Clojure reader to treat the list as data only.</p>
+<p>A literal list <code>()</code> expression is evaluated as a function call. The first element in the list is the name of the function to call and additional values are arguments to the function (assuming the function takes arguments).</p>
+<p>The <code>'</code> is syntax short-cut for the <code>quote</code> function which informs the Clojure reader to treat a list as data only. A quoted list is not evaluated as a function.</p>
 <div class="admonition example">
-<p class="admonition-title">A quoted list is treated as data</p>
+<p class="admonition-title">Evaluating a quoted list returns that list as data</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; (1 2 3)</span>
 </code></pre></div>
 </div>
@@ -8956,11 +8957,11 @@
 <a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="p">(</span><span class="nb">seq? </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; false</span>
 </code></pre></div>
 <p>Sequences are an interface for logical lists, which can be lazy. "Lazy" means that a sequence of values are not evaluated until accessed.</p>
-<p>A lazy sequence enables the use of large or even an infinite series, like so:</p>
+<p>The <code>range</code> function generates an 'infinite' series of numbers, e.g. <code>(range) ; =&gt; (0 1 2 3 4 ...)</code></p>
+<p>Lazily evaluating a sequence enables the use of large or even an infinite series without consuming all the computer memory, like so:</p>
 <div class="admonition example">
 <p class="admonition-title">Lazy sequences</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nf">range</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; (0 1 2 3 4 ...) - an infinite series</span>
-<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="p">(</span><span class="nb">take </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nf">range</span><span class="p">))</span><span class="w"> </span><span class="c1">;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="nb">take </span><span class="mi">4</span><span class="w"> </span><span class="p">(</span><span class="nf">range</span><span class="p">))</span><span class="w"> </span><span class="c1">;  (0 1 2 3) - lazyily evaluate range and stop when enough values are taken</span>
 </code></pre></div>
 </div>
 <p>Use cons to add an item to the beginning of a list or vector</p>
@@ -8971,14 +8972,14 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="nb">conj </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; [1 2 3 4]</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="p">(</span><span class="nb">conj </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; (4 1 2 3)</span>
 </code></pre></div>
-<p>Use concat to add lists or vectors together</p>
+<p>Use <code>concat</code> (concatenate) to add sequences (lists or vectors) together</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="p">(</span><span class="nb">concat </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; (1 2 3 4)</span>
 </code></pre></div>
-<p>Use filter, map to interact with collections</p>
+<p><code>filter</code> maps another function over a collection of values, returning the values that returned true from the function used by filter</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">(</span><span class="nb">map inc </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; (2 3 4)</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="p">(</span><span class="nb">filter </span><span class="nv">even?</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; (2)</span>
 </code></pre></div>
-<p>Use reduce to reduce them</p>
+<p><code>reduce</code> uses a function over a collection of values to return a combined result</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">(</span><span class="nb">reduce + </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">])</span>
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="c1">; = (+ (+ (+ 1 2) 3) 4)</span>
 <a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="c1">; =&gt; 10</span>
@@ -8987,12 +8988,12 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="p">(</span><span class="nb">reduce conj </span><span class="p">[]</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
 <a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="c1">; =&gt; [3 2 1]</span>
 </code></pre></div>
-<p>Equivalent of <code>(conj (conj (conj [] 3) 2) 1)</code></p>
-<h2 id="annonymous-functions">Annonymous Functions<a class="headerlink" href="#annonymous-functions" title="Permanent link">λ︎</a></h2>
-<p>Use <code>fn</code> to create new functions that defines some behaviour. <code>fn</code> is referred to as an anonymous fuction as it has no external name to be referenced by and must be called within a list form.</p>
+<p>The above is the equivalent of <code>(conj (conj (conj [] 3) 2) 1)</code></p>
+<h2 id="anonymous-functions">Anonymous Functions<a class="headerlink" href="#anonymous-functions" title="Permanent link">λ︎</a></h2>
+<p>Use <code>fn</code> to create new functions that defines some behaviour. <code>fn</code> is referred to as an anonymous function as it has no external name to be referenced by and must be called within a list form.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">(</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
 </code></pre></div>
-<p>Wrap a <code>(fn ,,,)</code> form in parens to call it and return the result.</p>
+<p>Wrap an anonymous function <code>(fn ,,,)</code> expression in another list to call it and return the result.</p>
 <div class="admonition example">
 <p class="admonition-title">Call an anonymous function</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">((</span><span class="k">fn </span><span class="nv">hello</span><span class="w"> </span><span class="p">[]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; &quot;Hello World&quot;</span>
@@ -9016,7 +9017,7 @@
 </code></pre></div>
 </div>
 <div class="admonition example">
-<p class="admonition-title">Evaluate annonymous function by evaluating its name</p>
+<p class="admonition-title">Evaluate anonymous function by evaluating its name</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">hello-world</span>
 </code></pre></div>
 </div>
@@ -9033,7 +9034,7 @@
 <a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span>
 </code></pre></div>
 </div>
-<p><code>#'user/hello-world</code> is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a differnt namespace than <code>user</code>.</p>
+<p><code>#'user/hello-world</code> is the value returned from evaluating the expression, showing the fully qualified name of the function.  Note: the fully qualified name will be different when defined in a different namespace than <code>user</code>.</p>
 <blockquote>
 <p>A <code>defn</code> function has the scope of the current namespace, so can be called anywhere in the namespace or in a namepace that has used <code>require</code> to include this namespace.</p>
 </blockquote>
@@ -9069,7 +9070,7 @@
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">  </span><span class="p">(</span><span class="nf">transform</span><span class="w"> </span><span class="nv">body</span><span class="p">))</span>
 </code></pre></div></p>
 </details>
-<p>Clojure supports  multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments.  This provides a simple form of polymorphism based on the number of arguments.</p>
+<p>Clojure supports multi-variadic functions, allowing one function definition to respond to a function call with different number of arguments.  This provides a simple form of polymorphism based on the number of arguments.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">hello-polly</span>
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">  </span><span class="p">([]</span><span class="w"> </span><span class="s">&quot;Hello World&quot;</span><span class="p">)</span><span class="w">  </span><span class="c1">; (1)!</span>
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">  </span><span class="p">([</span><span class="nv">name</span><span class="p">]</span><span class="w"> </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">)))</span><span class="w"> </span><span class="c1">; (2)!</span>
@@ -9130,20 +9131,20 @@
 <p>Use assoc to add new keys to hash-maps</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="p">(</span><span class="nb">assoc </span><span class="nv">keymap</span><span class="w"> </span><span class="ss">:d</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; {:a 1, :b 2, :c 3, :d 4}</span>
 </code></pre></div>
-<p>But remember, clojure types are immutable!</p>
+<p>But remember, Clojure types are immutable!</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a><span class="nv">keymap</span><span class="w"> </span><span class="c1">; =&gt; {:a 1, :b 2, :c 3}</span>
 </code></pre></div>
-<p>Use dissoc to remove keys</p>
+<p>Use <code>dissoc</code> function to remove keys from a hash-map</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="p">(</span><span class="nb">dissoc </span><span class="nv">keymap</span><span class="w"> </span><span class="ss">:a</span><span class="w"> </span><span class="ss">:b</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; {:c 3}</span>
 </code></pre></div>
 <h2 id="sets">Sets<a class="headerlink" href="#sets" title="Permanent link">λ︎</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a><span class="p">(</span><span class="nb">class </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; clojure.lang.PersistentHashSet</span>
 <a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a><span class="p">(</span><span class="nb">set </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">1</span><span class="p">])</span><span class="w"> </span><span class="c1">; =&gt; #{1 2 3}</span>
 </code></pre></div>
-<p>Add a member with conj</p>
+<p>Add a value to a set with <code>conj</code> (conjoin)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="p">(</span><span class="nb">conj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; #{1 2 3 4}</span>
 </code></pre></div>
-<p>Remove one with disj</p>
+<p>Remove one value from a set with <code>disj</code> (disjoin)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a><span class="p">(</span><span class="nb">disj </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; #{2 3}</span>
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a><span class="o">````</span>
 <a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>
@@ -9153,7 +9154,7 @@
 <a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a><span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; 1</span>
 <a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a><span class="p">(</span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="mi">4</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; nil</span>
 </code></pre></div>
-<p>There are more functions in the clojure.sets namespace.</p>
+<p>There are more functions in the <a href="https://clojure.github.io/clojure/clojure.set-api.html">clojure.sets namespace</a>.</p>
 <h2 id="useful-forms">Useful forms<a class="headerlink" href="#useful-forms" title="Permanent link">λ︎</a></h2>
 <p>Logic constructs in clojure are just macros, and look like everything else</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="p">(</span><span class="k">if </span><span class="nv">false</span><span class="w"> </span><span class="s">&quot;a&quot;</span><span class="w"> </span><span class="s">&quot;b&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; &quot;b&quot;</span>
@@ -9168,22 +9169,22 @@
 <a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">&quot;Hello&quot;</span><span class="p">)</span>
 <a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="w">  </span><span class="s">&quot;World&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">; =&gt; &quot;World&quot; (prints &quot;Hello&quot;)</span>
 </code></pre></div>
-<p>Functions have an implicit do</p>
+<p>Functions have an implicit <code>do</code> function that will call every expression within a function definition.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="p">(</span><span class="kd">defn </span><span class="nv">print-and-say-hello</span><span class="w"> </span><span class="p">[</span><span class="nv">name</span><span class="p">]</span>
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">&quot;Saying hello to &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span>
 <a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span>
 <a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a><span class="p">(</span><span class="nf">print-and-say-hello</span><span class="w"> </span><span class="s">&quot;Jeff&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">;=&gt; &quot;Hello Jeff&quot; (prints &quot;Saying hello to Jeff&quot;)</span>
 </code></pre></div>
-<p>So does let</p>
+<p>The <code>let</code> function also has an implicit <code>do</code> function.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a><span class="p">(</span><span class="k">let </span><span class="p">[</span><span class="nb">name </span><span class="s">&quot;Urkel&quot;</span><span class="p">]</span>
 <a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a><span class="w">  </span><span class="p">(</span><span class="nb">print </span><span class="s">&quot;Saying hello to &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">)</span>
 <a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="w">  </span><span class="p">(</span><span class="nb">str </span><span class="s">&quot;Hello &quot;</span><span class="w"> </span><span class="nv">name</span><span class="p">))</span><span class="w"> </span><span class="c1">; =&gt; &quot;Hello Urkel&quot; (prints &quot;Saying hello to Urkel&quot;)</span>
 </code></pre></div>
 <h2 id="namespaces-and-libraries">Namespaces and Libraries<a class="headerlink" href="#namespaces-and-libraries" title="Permanent link">λ︎</a></h2>
-<p>Namespaces are used to organise code into logical groups.  The top of each Clojure file has an <code>ns</code> form that defines the namespace name.  The domain part of the namespace name is typically the organisation or community name (e.g. GitHub user/organisation)</p>
+<p>Namespaces are used to organise code into logical groups.  The top of each Clojure file has an <code>ns</code> form that defines the namespace name.  The domain part of the namespace name is typically the organisation or community name (e.g. GitHub organisation or user account name)</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">domain.namespace-name</span><span class="p">)</span>
 </code></pre></div>
-<p>All Practicalli projects have namespace domains of <code>practicalli</code></p>
+<p>Practicalli projects use a namespace domain of <code>practicalli</code> followed by the project name</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.service-name</span><span class="p">)</span>
 </code></pre></div>
 <p><code>require</code> allows code from one namespace to be accessed from another namespace, either from a the same Clojure project or from a library added to the project classpath.</p>
@@ -9193,7 +9194,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">practicalli.service-name</span>
 <a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="p">[</span><span class="nv">clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">]))</span>
 </code></pre></div>
-<p>The functions from clojure.set can be used via the alias name, rather than the fully qualified name, i.e. <code>clojure.set/intersection</code></p>
+<p>Functions from <code>clojure.set</code> can be used via the alias name, <code>set/intersection</code>, rather than the fully qualified name, <code>clojure.set/intersection</code></p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="p">(</span><span class="nf">set/intersection</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; #{2 3}</span>
 <a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a><span class="p">(</span><span class="nf">set/difference</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">}</span><span class="w"> </span><span class="o">#</span><span class="p">{</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="p">})</span><span class="w"> </span><span class="c1">; =&gt; #{1}</span>
 </code></pre></div>
@@ -9203,13 +9204,13 @@
 <a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.string</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">string</span><span class="p">]</span>
 <a id="__codelineno-59-4" name="__codelineno-59-4" href="#__codelineno-59-4"></a><span class="w">    </span><span class="p">[</span><span class="nv">clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">]))</span>
 </code></pre></div>
-<p><code>require</code> can be used by itself, usually within a rich code block</p>
+<p><code>require</code> can be used as a top level expression (not in an <code>ns</code> expression).  Requires are often used within a rich code block for experimenting with code.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="p">(</span><span class="nf">comment</span>
 <a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">require</span><span class="w"> </span><span class="ss">&#39;clojure.set</span><span class="w"> </span><span class="ss">:as</span><span class="w"> </span><span class="nv">set</span><span class="p">))</span>
 </code></pre></div>
 <h2 id="strong-dynamic-types">Strong Dynamic Types<a class="headerlink" href="#strong-dynamic-types" title="Permanent link">λ︎</a></h2>
 <p>Clojure is strongly typed, so everything is a type in Clojure.</p>
-<p>Clojure is dynamically typed, so Clojure infers the type.  A type does not need to be specified in the code, making the code simpler and more concise.</p>
+<p>Clojure is dynamically typed, so Clojure infers the type.  An explicit type name does not need to be specified in the code, making the code simpler and more concise.</p>
 <p>Clojure is a hosted language and uses the type system of the platform it runs upon.  For example, Clojure uses Java object types for booleans, strings and numbers under the covers.</p>
 <p>Use <code>class</code> or <code>type</code> function to inspect the type of some code in Clojure.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="c1">; Integer literals are java.lang.Long by default</span>
@@ -9218,7 +9219,7 @@
 <a id="__codelineno-61-4" name="__codelineno-61-4" href="#__codelineno-61-4"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="nv">false</span><span class="p">)</span><span class="w"> </span><span class="c1">; Booleans are java.lang.Boolean</span>
 <a id="__codelineno-61-5" name="__codelineno-61-5" href="#__codelineno-61-5"></a><span class="p">(</span><span class="nf">type</span><span class="w"> </span><span class="nv">nil</span><span class="p">)</span><span class="c1">; The &quot;null&quot; value is called nil</span>
 </code></pre></div>
-<p>Vectors and Lists are java classes too!</p>
+<p>Collections in Clojure have their own type too.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>(type [1 2 3]); =&gt; clojure.lang.PersistentVector
 <a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>(type &#39;(1 2 3)); =&gt; clojure.lang.PersistentList
 </code></pre></div>
@@ -9228,11 +9229,11 @@
 <a class="md-button" href="https://clojure.org/reference/java_interop#typehints" target="_blank">Clojure Type Hints</a></p>
 </div>
 <h2 id="java-interop">Java Interop<a class="headerlink" href="#java-interop" title="Permanent link">λ︎</a></h2>
-<p>Java has a huge and useful standard library, so you'll want to learn how to get at it.</p>
+<p>Java has a large and very useful standard library which is easily accessible from Clojure.  The <code>java.lang</code> library is available by default.</p>
 <p>Use import to load a java package</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="p">(</span><span class="nb">import </span><span class="nv">java.util.Date</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="p">(</span><span class="nb">import </span><span class="nv">java.util.*</span><span class="p">)</span>
 </code></pre></div>
-<p>Or import from a java package name</p>
+<p>Import specific Java classes</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="p">(</span><span class="kd">ns </span><span class="nv">test</span>
 <a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="w">  </span><span class="p">(</span><span class="ss">:import</span>
 <a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="w">    </span><span class="nv">java.util.Date</span>
@@ -9274,7 +9275,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="February 11, 2024 23:18:42 UTC">February 11, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="June 16, 2025 17:53:49 UTC">June 16, 2025</span>
   </span>
 
     
