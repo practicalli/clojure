@@ -9,7 +9,7 @@
 !!! INFO "Practicalli Clojure Config community tools"
     [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure-cli/#practicalli-clojure-cli-config) is a user configuration providing aliases for a wide range of community tools which extends the features of Clojure CLI.  The aliases include tools to create, develop, build and deploy Clojure code.  Aliases are used heavily in the Practicalli books.
 
-    If the Practicalli Clojure CLI config is not used, review the [:fontawesome-brands-github: `deps.edn` file](https://github.com/practicalli/clojure-deps-edn/blob/live/deps.edn){target=_blank} from the GitHub repository and add relevant aliases definitions to your own Clojure CLI configuration.
+    If the Practicalli Clojure CLI config is not used, review the [:fontawesome-brands-github: `deps.edn` file](https://github.com/practicalli/clojure-cli-config/blob/live/deps.edn){target=_blank} from the GitHub repository and add relevant aliases definitions to your own Clojure CLI configuration.
 
 ## "Pre-requisites"
     

@@ -22,8 +22,8 @@ Aliases can be used to :
 
 * `:paths` - directories included by default as a vector of directory names, e.g. `["src" "resources"]`
 * `:deps` - library dependencies included by default as a map  ([practicalli/banking-on-clojure example](https://github.com/practicalli/banking-on-clojure-webapp/blob/live/deps.edn#L4-L19))
-* `:mvn/repos` - a map of [repositories to download Maven dependencies](https://github.com/practicalli/clojure-deps-edn#library-hosting-services), Maven Central and Clojars included by default
-* `:mvn/local-repo` to [specify an alternative location for the Maven cache](https://github.com/practicalli/clojure-deps-edn#maven-local-repository)
+* `:mvn/repos` - a map of [repositories to download Maven dependencies](https://github.com/practicalli/clojure-cli-config#library-hosting-services), Maven Central and Clojars included by default
+* `:mvn/local-repo` to [specify an alternative location for the Maven cache](https://github.com/practicalli/clojure-cli-config#maven-local-repository)
 * `:aliases` - a map of optional libraries and tools, the key being the alias name and its value the configuration
 
 The installation of Clojure CLI contains a configuration

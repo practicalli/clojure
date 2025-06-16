@@ -28,7 +28,7 @@ Create a `Makefile` in the root of a project and define a target by typing a sui
 
 Insert a tab on the next line and type a command to be called.  Further commands can be added on new lines so long as each line is tab indented.
 
-The `repl` target prints out an information message and then uses the [Clojure CLI](https://clojure.org/guides/install_clojure) with aliases from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) to run a Clojure REPL process with a rich terminal UI ([Rebel Readline](https://github.com/bhauman/rebel-readline))
+The `repl` target prints out an information message and then uses the [Clojure CLI](https://clojure.org/guides/install_clojure) with aliases from [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-cli-config) to run a Clojure REPL process with a rich terminal UI ([Rebel Readline](https://github.com/bhauman/rebel-readline))
 
 ```makefile
 repl:  ## Run Clojure REPL with rich terminal UI (Rebel Readline)

@@ -95,7 +95,7 @@ Comment an existing form with the Clojure Comment macro, `_#`
 
 ## Hot loading library dependencies
 
-Clojure CLI projects can [hotload library dependencies into a running Clojure REPL](/clojure/clojure-cli/repl-reloaded/).  This requires starting a REPL with the `clojure.tools.deps.alpha` library as a dependency which can be done by including the [`:lib/hotload` alias from practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn#hotload-libraries-into-a-running-repl).  Note this library is alpha and the API could change in future.
+Clojure CLI projects can [hotload library dependencies into a running Clojure REPL](/clojure/clojure-cli/repl-reloaded/).  This requires starting a REPL with the `clojure.tools.deps.alpha` library as a dependency which can be done by including the [`:lib/hotload` alias from practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-cli-config#hotload-libraries-into-a-running-repl).  Note this library is alpha and the API could change in future.
 
 Create a rich comment block that requires the `clojure.tools.deps.alpha` namespace and an `add-libs` expression to hotload one or more libraries in a hash-map.  Tab stops with placeholders are included for adding the first library to hotload.
 

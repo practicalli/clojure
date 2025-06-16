@@ -313,7 +313,7 @@ Rather than restart the repl, clojure.tools.namespace.repl provides functions th
                     :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
     ```
 
-    > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+    > Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/)
 
 Start a REPL session using Clojure CLI with `:repl/reloaded`, `dev/reloaded` or `:lib/hotload` aliases
 

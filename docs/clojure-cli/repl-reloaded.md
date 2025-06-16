@@ -72,7 +72,7 @@ Portal Inspector window opens and is connected to all evaluation results and Mul
 
     Include the `:dev/reloaded` or `:lib/hotload` aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
 
-    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/)
 
 
 ??? EXAMPLE "Clojure 1.11 Hotload Support"
@@ -88,7 +88,7 @@ Portal Inspector window opens and is connected to all evaluation results and Mul
     ```
     Include the `:dev/reloaded` or `:lib/hotload` aliases when starting the REPL with other aliases, using any of the available Clojure CLI execution options (`-A`,`-M`,`-X`,`-T`).
 
-    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn/)
+    Alias example from [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config/)
 
 
 ## Custom REPL startup

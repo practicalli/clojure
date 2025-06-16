@@ -12,7 +12,7 @@ Create a new project or clone [:fontawesome-brands-github: practicalli/leveragin
         ```
 
     ??? HINT ":fontawesome-solid-book-open: Practicalli Clojure CLI Config - :project/create alias"
-        [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-deps-edn#clojure-projects) repository includes the `:project/create` alias for creating new Clojure projects from a template using [`deps-new`](https://github.com/seancorfield/deps-new).
+        [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](https://github.com/practicalli/clojure-cli-config#clojure-projects) repository includes the `:project/create` alias for creating new Clojure projects from a template using [`deps-new`](https://github.com/seancorfield/deps-new).
 
     The project is created with Clojure as a dependency, which includes the `clojure.spec.alpha` library.
 
