@@ -52,7 +52,7 @@ An event triggers a configured workflow which contains one or more jobs. A job c
         runs-on: ubuntu-latest
         steps:
           - name: Checkout
-            uses: actions/checkout@v4
+            uses: actions/checkout@v5
 
           - name: Cache Clojure Dependencies
             uses: actions/cache@v3
