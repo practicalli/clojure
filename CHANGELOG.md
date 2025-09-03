@@ -6,6 +6,7 @@
 - install: remove -Sdescribe (deprecated), use --version
 - cli: add run repl as an explicit section
 - mkdocs: add automatic light/dark mode
+- dev: `dependencies-update` & `dependencies-outdated` make tasks
 
 ## Changed
 - intro: update 15 mins intro to Clojure

@@ -19,6 +19,7 @@ HELP-DESCRIPTION-SPACING := 24
 # Tool Commands
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'"  --remove-container
 MKDOCS_SERVER := mkdocs serve --dev-addr localhost:7777
+OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 
 # Makefile file and directory name wildcard
 EDN-FILES := $(wildcard *.edn)
@@ -42,6 +43,14 @@ lint-clean:  ## Clean MegaLinter report information
 megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
 	$(info --------- MegaLinter Upgrade Config ---------)
 	npx mega-linter-runner@latest --upgrade
+
+dependencies-outdated: ## Report new versions of library dependencies and GitHub action
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:search/outdated > $(OUTDATED_FILE)
+
+dependencies-update: ## Update all library dependencies and GitHub action
+	$(info -- Search for outdated libraries ---------)
+	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------ #
 
 # --- Documentation Generation  ------ #
