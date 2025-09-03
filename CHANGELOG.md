@@ -8,6 +8,16 @@
 - mkdocs: add automatic light/dark mode
 - dev: `dependencies-update` & `dependencies-outdated` make tasks
 
+## Updated
+- dev: updated GitHub action versions in all workflows
+
+| :file                                          | :name            | :current | :latest |
+|------------------------------------------------|------------------|----------|---------|
+| .github/workflows/changelog-check.yaml         | actions/checkout | v4       | v5      |
+| .github/workflows/megalinter.yaml              | actions/checkout | v4       | v5      |
+| .github/workflows/publish-book.yaml            | actions/checkout | v4       | v5      |
+| .github/workflows/scheduled-version-check.yaml | actions/checkout | v4       | v5      |
+
 ## Changed
 - intro: update 15 mins intro to Clojure
 
