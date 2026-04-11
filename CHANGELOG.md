@@ -2,6 +2,9 @@
 
 # Unreleased
 
+
+# 2026-04-11
+
 ## Added
 - install: remove -Sdescribe (deprecated), use --version
 - cli: add run repl as an explicit section
