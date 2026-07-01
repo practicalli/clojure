@@ -2,7 +2,7 @@
 
 Code is easier to read and work with when it is consistent format that follows common rules.
 
-[Clojure community style guide](https://github.com/bbatsov/clojure-style-guide) provides a common style for Clojure code.  While most style recommendations are widely used, others are more contentious.  Ultimately the development team for the project should define a workable set of style rules that makes them productions, ideally using much of those rules from the style guide.
+[:fontawesome-brands-github: Clojure community style guide](https://github.com/bbatsov/clojure-style-guide) provides a common style for Clojure code.  While most style recommendations are widely used, others are more contentious.  Ultimately the development team for the project should define a workable set of style rules that makes them productions, ideally using much of those rules from the style guide.
 
 A consistent format between editors also minimises version control changes not related to code design.  The following format tools for clojure can all be configured to be consistent with each other (although zprint defaults will require more customisation):
 
@@ -12,9 +12,9 @@ A consistent format between editors also minimises version control changes not r
 
 
 ??? INFO "Tooling that uses the Clojure Style Guide"
-    Emacs `clojure-mode` and Clojure LSP (via cljfmt) format code following the most common Clojure style guide rules, although cljfmt rules are quite strick so Practicalli disables many of them.
+    Emacs `clojure-mode` and Clojure LSP (via cljfmt) format code following the most common Clojure style guide rules, although cljfmt rules seem restrictive around line spacing so Practicalli disables those rules.
 
-    cljstyle default configuration follows the majority of styles and has the same defaults as cljfmt. :fontawesome-solid-book-open: Practicalli Clojure CLI Config tweaks a few rules to make code more readable and allow for repl design experiments.
+    cljstyle default configuration follows the majority of styles and has the same defaults as cljfmt. [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config.md) tweaks a few rules to make code more readable and allow for repl design experiments.
 
 
 ## cljstyle
@@ -51,7 +51,7 @@ Cljstyle will examine all files in the current directory and any sub-directories
 
 
 === ":fontawesome-solid-book-open: Practicalli Clojure CLI Config"
-    cljstyle can be used as a library without installing the cljstyle binary.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/clojure-cli/practicalli-config/) defines the `:format/cljstyle` alias which should be passed wither the `check` or `format` option
+    cljstyle can be used as a library without installing the cljstyle binary.  [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](practicalli-config.md) defines the `:format/cljstyle` alias which should be passed wither the `check` or `format` option
 
     Check all the Clojure files (.clj .cljc .edn .cljs) in the current project
     ```shell
