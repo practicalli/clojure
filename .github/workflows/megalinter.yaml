@@ -41,10 +41,11 @@ jobs:
       - name: MegaLinter Run
         id: ml
         ## latest release of major version
-        uses: oxsecurity/megalinter/flavors/documentation@v9
+        # uses: oxsecurity/megalinter/flavors/documentation@v9
+        uses: practicalli-johnny/megalinter-custom-flavor-zensical@main
         env:
           # ADD CUSTOM ENV VARIABLES OR DEFINE IN MEGALINTER_CONFIG file
-          MEGALINTER_CONFIG: .github/config/megalinter.yaml
+          MEGALINTER_CONFIG: .github/config/mega-linter.yaml
 
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}" # report individual linter status
           # Validate all source when push on main, else just the git diff with live.
