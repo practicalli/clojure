@@ -5,6 +5,7 @@
 ## Changed
 
 - ci(github): practicalli workflows and config for zensical project
+- build(make): practicalli tasks for zensical project
 
 ## Updated
 
