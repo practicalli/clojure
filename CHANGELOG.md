@@ -6,6 +6,7 @@
 
 - ci(github): practicalli workflows and config for zensical project
 - build(make): practicalli tasks for zensical project
+- docs(readme): update local dev workflow for zensical
 
 ## Updated
 
