@@ -62,7 +62,7 @@ Use the search box to quickly find a specific topic
 
 All sponsorship funds are used to support the continued development of [:fontawesome-solid-book-open: Practicalli series of books and videos](https://practical.li/){target=_blank}, although most work is done at personal cost and time.
 
-Thanks to [:globe_with_meridians: Cognitect](https://www.cognitect.com/){target=_blank}, [:globe_with_meridians: Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [:fontawesome-brands-github: sponsors](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} from the Clojure community for your continued support
+Thanks to the official Clojure team, [:globe_with_meridians: Nubank](https://nubank.com.br/){target=_blank} and a wide range of other [sponsors from the community](https://github.com/sponsors/practicalli-johnny#sponsors){target=_blank} for there continued support
 
 
 ## Creative commons license
