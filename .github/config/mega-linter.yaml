@@ -1,103 +1,47 @@
 ---
-# Configuration file for MegaLinter
+# Configuration file for MegaLinter: Zensical custom flavor
 #
 # General configuration:
-# https://megalinter.io/latest/configuration/
+# https://megalinter.io/latest/config-file/
 #
 # Specific Linters:
 # https://megalinter.io/latest/supported-linters/
 
-# ------------------------
-# Validate all files if true
-# or new / edited files if false
-VALIDATE_ALL_CODEBASE: false
+# ----------------------------------------
+# Linters in Zensical custom Flavor
 
-# ------------------------
-# Linters
+# - MARKDOWN_MARKDOWN_TABLE_FORMATTER
+# - MARKDOWN_RUMDL
+# - REPOSITORY_BETTERLEAKS
+# - SPELL_LYCHEE
+# - YAML_V8R
 
-# Run linters in parallel
-PARALLEL: true
 
-# ENABLE specific linters, all other linters automatically disabled
-ENABLE:
-  #  - CLOJURE
-  - CREDENTIALS
-  - DOCKERFILE
-  - MAKEFILE
-  - MARKDOWN
-  - GIT
-  - SPELL
-  - YAML
-  - REPOSITORY
+PARALLEL: true  # Run linters in parallel
+
+EXCLUDED_DIRECTORIES: ".github/|CHANGELOG.md|README.md|overrides/|docs/assets/"
+
+# Ignore all errors and return without error status, e.g. for CI
+# DISABLE_ERRORS: true
 
 # Linter specific configuration
 
-# CLOJURE_CLJ_KONDO_CONFIG_FILE: ".github/config/clj-kondo-ci-config.edn"
-# CLOJURE_CLJ_KONDO_ARGUMENTS: "--lint deps.edn"
-# CLOJURE_CLJ_KONDO_FILTER_REGEX_EXCLUDE: "dev|develop"
-# CLOJURE_CLJ_KONDO_FILTER_REGEX_EXCLUDE: "resources"
+MARKDOWN_DEFAULT_STYLE: "rumdl"
+MARKDOWN_MARKDOWN_TABLE_FORMATTER_DISABLE_ERRORS: true # Errors are only warnings
+MARKDOWN_RUMDL_CONFIG_FILE: ".github/config/markdown-rumdl.toml"
+MARKDOWN_RUMDL_DISABLE_ERRORS: true
 
-# CREDENTIALS_SECRETLINT_DISABLE_ERRORS: true
-CREDENTIALS_SECRETLINT_CONFIG_FILE: ".github/config/secretlintrc.json"
+REPOSITORY_BETTERLEAKS_DISABLE_ERRORS: true # Errors are only warnings
 
-MARKDOWN_MARKDOWNLINT_CONFIG_FILE: ".github/config/markdown-lint.jsonc"
-MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: ".github/pull_request_template.md|CHANGELOG.md|README.md|GLOSSARY.md|java-17-flags.md|abbreviations.md"
-# MARKDOWN_MARKDOWNLINT_DISABLE_ERRORS: true
-MARKDOWN_MARKDOWN_LINK_CHECK_CONFIG_FILE: ".github/config/markdown-link-check.json"
-# MARKDOWN_MARKDOWN_LINK_CHECK_CLI_LINT_MODE: "project"
-# MARKDOWN_MARKDOWN_LINK_CHECK_DISABLE_ERRORS: false
-MARKDOWN_REMARK_LINT_DISABLE_ERRORS: true
-# MARKDOWN_MARKDOWN_TABLE_FORMATTER_DISABLE_ERRORS: false
-
-REPOSITORY_GITLEAKS_CONFIG_FILE: ".github/config/gitleaks.toml"
-REPOSITORY_TRUFFLEHOG_DISABLE_ERRORS: true # Errors only as warnings
-
-# SPELL_CSPELL_DISABLE_ERRORS: true
-SPELL_MISSPELL_DISABLE_ERRORS: true
 SPELL_LYCHEE_CONFIG_FILE: ".github/config/lychee.toml"
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: ".github/config/"
 SPELL_LYCHEE_DISABLE_ERRORS: true # Errors are only warnings
 
-# YAML_PRETTIER_FILTER_REGEX_EXCLUDE: (docs/)
-# YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: (docs/)
+YAML_V8R_DISABLE_ERRORS: true # Errors are only warnings
 
-# Explicitly disable linters to ensure they are never run
-# DISABLE:
-#   - COPYPASTE # checks for excessive copy-pastes
-#   - SPELL # spell checking - often creates many false positives
-#   - CSS #
-
-# Disable linter features
-DISABLE_LINTERS:
-  - YAML_PRETTIER # draconian format rules
-  - SPELL_CSPELL # many clojure references causing false positives
-  - YAML_YAMLLINT # vague error mesages, investigation required
-  - REPOSITORY_GIT_DIFF # warnings about LF to CRLF
-  - REPOSITORY_SECRETLINT # reporting errors in its own config file
-  # - REPOSITORY_DEVSKIM # unnecessary URL TLS checks
-  - REPOSITORY_CHECKOV # fails on root user in Dockerfile
-  - REPOSITORY_SECRETLINT
-
-# Ignore all errors and return without error status
-# DISABLE_ERRORS: true
-
-# ------------------------
-
-# ------------------------
+# ----------------------------------------
 # Reporting
-
-# Activate sources reporter
-UPDATED_SOURCES_REPORTER: false
 
 # Show Linter timings in summary table at end of run
 SHOW_ELAPSED_TIME: true
-
-# Upload reports to file.io
-FILEIO_REPORTER: false
-# ------------------------
-
-# ------------------------
-# Over-ride errors
-
-# detect errors but do not block CI passing
-# DISABLE_ERRORS: true
-# ------------------------
+# ----------------------------------------

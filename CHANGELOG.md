@@ -2,6 +2,10 @@
 
 # Unreleased
 
+## Changed
+
+- ci(github): practicalli workflows and config for zensical project
+
 ## Updated
 
 - dev: updated GitHub action via `make dependencies-update`
