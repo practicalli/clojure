@@ -13,7 +13,6 @@ header = { "accept" = "text/html", "accept" = "application/json" }
 
 # Only test links with the given schemes (e.g. http, https, file, and mailto.
 scheme = ["https"]
-# ----------------------
 
 # Website timeout from connect to response finished.
 timeout = 10
