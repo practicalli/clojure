@@ -29,7 +29,7 @@ HELP-DESCRIPTION-SPACING := 24
 # SHELL := /usr/bin/zsh
 
 # Tool variables
-MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --remove-container
+MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'" --remove-container
 DOCS_SERVER := zensical serve --dev-addr localhost:7777
 OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
 # ------------------------------------------------ #
