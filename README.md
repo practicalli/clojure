@@ -7,13 +7,6 @@
 ██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║
 ██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║
 ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
-
- ██████╗██╗      ██████╗      ██╗██╗   ██╗██████╗ ███████╗
-██╔════╝██║     ██╔═══██╗     ██║██║   ██║██╔══██╗██╔════╝
-██║     ██║     ██║   ██║     ██║██║   ██║██████╔╝█████╗
-██║     ██║     ██║   ██║██   ██║██║   ██║██╔══██╗██╔══╝
-╚██████╗███████╗╚██████╔╝╚█████╔╝╚██████╔╝██║  ██║███████╗
- ╚═════╝╚══════╝ ╚═════╝  ╚════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 ```
 
 > NOTE: Ascii Art Generator: https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Practicalli%205
@@ -57,8 +50,7 @@ Please read the [detailed Practicalli contributing page](https://practical.li/co
 
 [Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) provides a user level configuration providing aliases for community tools used throughout this guide.  Issues and pull requests can also be made via its GitHub repository.
 
-By submitting content ideas and corrections you are agreeing they can be used in this workshop under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/engineering-playbook/graphs/contributors).
-
+By submitting content ideas and corrections you are agreeing they can be used in any work by Practicalli under the [Creative Commons Attribution ShareAlike 4.0 International license](https://creativecommons.org/licenses/by-sa/4.0/).  Attribution will be detailed via [GitHub contributors](https://github.com/practicalli/clojure/graphs/contributors).
 
 ## Sponsor Practicalli
 
@@ -67,11 +59,6 @@ By submitting content ideas and corrections you are agreeing they can be used in
 All sponsorship funds are used to support the continued development of [Practicalli series of books and videos](https://practical.li/), although most work is done at personal cost and time.
 
 Thanks to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-johnny#sponsors) for your continued support
-
-
-## Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=practicalli/clojure&type=Date)](https://star-history.com/#practicalli/clojure&Date)
 
 
 ## GitHub Actions
@@ -96,7 +83,7 @@ CLI Commands are wrapped in tasks defined within the `Makefile`, providing a sim
 Clone the repository and change into the root of the project.
 
 ```shell
-git clone https://github.com/practicalli/cycling
+git clone https://github.com/practicalli/clojure
 ```
 
 Install Zensical as a tool using `uv` (updating if there is a new version).
