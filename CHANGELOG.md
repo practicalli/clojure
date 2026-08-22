@@ -1,15 +1,21 @@
 # Changelog
 
-# Unreleased
+## Unreleased
 
-## Changed
+## 2026-08-22
 
-- ci(github): practicalli workflows and config for zensical project
+### Changed
+
 - build(make): practicalli tasks for zensical project
+- build(make): 🔧 check all codebase when running megalinter locally
+- build(overrides) 💄 remove duplication on page not found template
+- ci(github): practicalli workflows and config for zensical project
+- ci(megalinter): update format of lychee config
 - docs(readme): update local dev workflow for zensical
-- build(zensical): change references from mkdocs to zensical
+- docs(readme): ✏️ simplify logo text, remove star history
 
-## Updated
+
+### Updated
 
 - dev: updated GitHub action via `make dependencies-update`
 
