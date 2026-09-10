@@ -11,6 +11,7 @@
 - build(overrides) 💄 remove duplication on page not found template
 - ci(github): practicalli workflows and config for zensical project
 - ci(megalinter): update format of lychee config
+- ci(github): zensical workflow with setup-uv
 - docs(readme): update local dev workflow for zensical
 - docs(readme): ✏️ simplify logo text, remove star history
 
