@@ -11,7 +11,7 @@
 # - uv
 # - clojure & practicalli cli config (dependency check)
 # - docker (run megalinter locally)
-# - mega-linter-runner
+# - node.js (mega-linter-runner via npx)
 # ------------------------------------------------ #
 
 # -- Makefile task config ------------------------ #
@@ -62,7 +62,7 @@ deps-upgrade: ## Update all library dependencies and GitHub action
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------------------ #
 
-# --- Documentation Generation  ------------------ #
+# -- Documentation Generation  ------------------- #
 docs-install:  ## Install or upgrade Zensical with Catppuccin theme plugin
 	uv tool install zensical --with catppuccin-zensical --upgrade
 
