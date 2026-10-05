@@ -53,11 +53,11 @@ megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
 	$(info -- MegaLinter Upgrade Config -------------)
 	npx mega-linter-runner@latest --upgrade
 
-dependencies-outdated: ## Report new versions of library dependencies and GitHub action
+deps-update: ## Report new versions of library dependencies and GitHub action
 	$(info -- Search for outdated libraries ---------)
 	- clojure -T:search/outdated > $(OUTDATED_FILE)
 
-dependencies-update: ## Update all library dependencies and GitHub action
+deps-upgrade: ## Update all library dependencies and GitHub action
 	$(info -- Search for outdated libraries ---------)
 	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
 # ------------------------------------------------ #
