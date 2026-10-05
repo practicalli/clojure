@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+
+- ci(zensical): ⬆️ update uv to 10.2.0
+
+
 ## 2026-08-22
 
 ### Changed
