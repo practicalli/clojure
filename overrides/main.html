@@ -8,9 +8,15 @@
 
 {% extends "base.html" %}
 
+{% block extrahead %}
+  <link rel="me" href="https://mastodon.social/@practicalli_johnny" />
+  {{ super() }}
+{% endblock %}
+
+
 <!-- Content -->
 {% block announce %}
 
-<a href="https://practical.li/clojure">Practicalli Clojure</a> is migrating to Zensical
+Practicalli Clojure is migrating to Zensical Static Site Generator
 
 {% endblock %}
