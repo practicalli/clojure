@@ -7,6 +7,7 @@
 - ci(zensical): ⬆️ update uv to 10.2.0
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - build(zensical): ✏️ update announcement content
+- build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 
 ## 2026-08-22
 

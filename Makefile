@@ -7,8 +7,7 @@
 # ------------------------------------------------ #
 
 # Requirements
-# - python
-# - uv
+# - python & uv (local book generation)
 # - clojure & practicalli cli config (dependency check)
 # - docker (run megalinter locally)
 # - node.js (mega-linter-runner via npx)
@@ -31,7 +30,7 @@ HELP-DESCRIPTION-SPACING := 24
 # Tool variables
 MEGALINTER_RUNNER := npx mega-linter-runner --flavor documentation --env "'MEGALINTER_CONFIG=.github/config/megalinter.yaml'" --env "'VALIDATE_ALL_CODEBASE=true'" --remove-container
 DOCS_SERVER := zensical serve --dev-addr localhost:7777
-OUTDATED_FILE := outdated-$(shell date +%y-%m-%d-%T).md
+DEPS_UPDATE_REPORT := deps-update-report-$(shell date +%y-%m-%d-%T).md
 # ------------------------------------------------ #
 
 # -- Code Quality -------------------------------- #
@@ -55,11 +54,11 @@ megalinter-upgrade:  ## Upgrade MegaLinter config to latest version
 
 deps-update: ## Report new versions of library dependencies and GitHub action
 	$(info -- Search for outdated libraries ---------)
-	- clojure -T:search/outdated > $(OUTDATED_FILE)
+	- clojure -T:search/outdated > $(DEPS_UPDATE_REPORT)
 
 deps-upgrade: ## Update all library dependencies and GitHub action
 	$(info -- Search for outdated libraries ---------)
-	- clojure -T:update/dependency-versions > $(OUTDATED_FILE)
+	- clojure -T:update/dependency-versions > $(DEPS_UPDATE_REPORT)
 # ------------------------------------------------ #
 
 # -- Documentation Generation  ------------------- #
