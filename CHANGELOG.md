@@ -8,6 +8,7 @@
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - build(zensical): ✏️ update announcement content
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
+- build(make): 🔧 `git-sr` & `git-rebase` tasks for mgitstatus
 
 ## 2026-08-22
 
