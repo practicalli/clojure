@@ -1,0 +1,657 @@
+# ----------------------------------------------------------------------------
+# Practicalli Configuration for Zensical Static Site Generator
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+[project]
+
+# The site_name is shown in the page header and the browser window title
+site_name = "Practicalli Neovim"
+
+# The site_description is included in the HTML head and should contain a
+# meaningful description of the site content for use by search engines.
+site_description = "Practical guides to install, configure and use Neovim for software development, with support for the Clojure programming language"
+
+# The site_author attribute is used in the HTML head element.
+site_author = "Practicalli Johnny"
+
+# The site_url is the canonical URL for your site
+site_url = "https://practical.li/neovim"
+
+# The copyright notice appears in the page footer and can contain an HTML fragment.
+copyright = """
+Copyright &copy; 2026 Practicalli
+"""
+
+# Explicitly defined navigation (comment for Implicit navigation)
+nav = [
+  { "Introduction" = [
+    "index.md",
+    { "Clojure in Fifteen Mins" = "introduction/clojure-in-15-minutes.md" },
+    { "REPL Workflow" = "introduction/repl-workflow.md" },
+    { "Concepts" = [
+      "introduction/concepts/index.md",
+      { "Functional vs Imperative" = "introduction/concepts/what-is-functional-programming.md" },
+      { "From The Author" = "introduction/concepts/clojure-made-simple.md" },
+      # "introduction/concepts/purpose.md",
+    ] },
+    "introduction/learning-clojure.md",
+    "introduction/who-uses-clojure.md",
+    { "Install" = [
+      "install/index.md",
+      { "Java Host" = "install/java.md" },
+      { "Clojure CLI" = "install/clojure-cli.md" },
+    ] },
+    { "Clojure CLI Overview" = [
+      "clojure-cli/index.md",
+      { "Practicalli Config" = "clojure-cli/practicalli-config.md" },
+      { "Built-in Commands" = "clojure-cli/built-in-commands.md" },
+      { "Defining aliases" = "clojure-cli/defining-aliases.md" },
+      { "Execution Options" = "clojure-cli/execution-options.md" },
+      { "REPL Reloaded" = "clojure-cli/repl-reloaded.md" },
+      { "Clojure Style" = "clojure-cli/clojure-style.md" },
+    ] },
+    { "Clojure Editors" = [
+      "clojure-editors/index.md",
+      { "Clojure LSP" = [
+        "clojure-editors/clojure-lsp/index.md",
+        { "Clojure LSP Snippets" = "clojure-editors/clojure-lsp/snippets.md" },
+        { "Practicalli Snippets" = "clojure-editors/clojure-lsp/practicalli-snippets.md" },
+      ] },
+    ] },
+  ] },
+  { "Clojure REPL" = [
+    "clojure-cli/repl/index.md",
+    { "Coding" = "clojure-cli/repl/coding.md" },
+    { "Managing Libraries" = "clojure-cli/repl/libraries.md" },
+    { "Help" = "clojure-cli/repl/help.md" },
+    { "Custom Startup" = "clojure-cli/repl-startup.md" },
+    { "Troubleshoot" = "clojure-cli/repl/troubleshooting.md" },
+    { "Theory REPL Uncovered" = "clojure-cli/repl/repl-uncovered.md" },
+  ] },
+  { "Clojure Projects" = [
+    "clojure-cli/projects/index.md",
+    { "Template Projects" = [
+      "clojure-cli/projects/templates/index.md",
+      { "Practicalli Templates" = [
+        "clojure-cli/projects/templates/practicalli/index.md",
+        { "Minimal" = "clojure-cli/projects/templates/practicalli/minimal.md" },
+        { "Application" = "clojure-cli/projects/templates/practicalli/application.md" },
+        { "Service" = "clojure-cli/projects/templates/practicalli/service.md" },
+        { "Landing Page" = "clojure-cli/projects/templates/practicalli/landing-page.md" },
+      ] },
+      { "Design Templates" = "clojure-cli/projects/templates/design-templates.md" },
+    ] },
+    { "Add Libraries" = "clojure-cli/projects/add-libraries.md" },
+    { "Namespaces" = "clojure-cli/projects/namespace.md" },
+    { "Rich Comment" = "clojure-cli/projects/rich-comments.md" },
+    { "Hotload in Project" = "clojure-cli/projects/hotload-in-project.md" },
+    { "Migrate projects" = "clojure-cli/projects/migrate-project.md" },
+    { "Package" = [
+      "clojure-cli/projects/package/index.md",
+      { "tools.build" = "clojure-cli/projects/package/tools-build.md" },
+    ] },
+    { "Task Runners" = [
+      "automation/index.md",
+      { "Make" = "automation/make.md" },
+      # { "Shell Scripts" = "automation/shell-scripts.md" },
+      # { "Babashka" = "automation/babashka.md" },
+    ] },
+  ] },
+  { "Data Inspectors" = [
+    "data-inspector/index.md",
+    "data-inspector/clojure-inspector.md",
+    { "Portal" = "data-inspector/portal.md" },
+  ] },
+  { "Code Challenges" = [
+    "coding-challenges/index.md",
+    # { "Palindrome" = [
+    #   "coding-challenges/palindrome/index.md",
+    #   "coding-challenges/palindrome/simple-palindrome-test.md",
+    # ] },
+    { "4 Ever Clojure" = [
+      "coding-challenges/4clojure/index.md",
+    ] },
+    { "Exercism" = [
+      "coding-challenges/exercism/index.md",
+      { "RNA Transcription" = "coding-challenges/exercism/rna-transcription.md" },
+      { "Nucleotide Count" = "coding-challenges/exercism/nucleotide-count.md" },
+      "coding-challenges/exercism/hamming.md",
+      "coding-challenges/exercism/space-age.md",
+      { "Bob" = [
+        "coding-challenges/exercism/bob/index.md",
+        "coding-challenges/exercism/bob/bob-string-approach.md",
+        "coding-challenges/exercism/bob/bob-regular-expression-approach.md",
+      ] },
+    ] },
+    { "Simple projects" = [
+      "simple-projects/index.md",
+      { "Random Function" = "simple-projects/random-clojure-function.md" },
+      { "Tripple Lock" = "simple-projects/tripple-lock.md" },
+      # { "Salary Calculator" = "simple-projects/salary-calculator.md" },
+      # "simple-projects/generate-web-page.md",
+      { "Encoder Decode" = [
+        "simple-projects/encode-decode/index.md",
+        "simple-projects/encode-decode/convert-boolean-values.md",
+        "simple-projects/encode-decode/caesar-cipher-rot13.md",
+        "simple-projects/encode-decode/rna-dna.md",
+        "simple-projects/encode-decode/clacks.md",
+      ] },
+      { "Data Transform" = [
+        "simple-projects/data-transformation/index.md",
+        "simple-projects/data-transformation/most-common-word.md",
+      ] },
+      { "Mutating State" = [
+        "simple-projects/mutating-state/index.md",
+        "simple-projects/mutating-state/mutants-assemble.md",
+      ] },
+    ] },
+    { "TDD Kata" = [
+      "simple-projects/tdd-kata/index.md",
+      { "Recent Song list" = "simple-projects/tdd-kata/recent-song-list.md" },
+      { "Salary Slip Generator" = "simple-projects/tdd-kata/salary-slip-generator.md" },
+      # "simple-projects/split-the-bill.md",
+    ] },
+    { "CodeWars" = "coding-challenges/codewars/index.md" },
+    { "Advent Of Code" = "coding-challenges/advent-of-code.md" },
+    { "Games" = [
+      "games/index.md",
+      # Convert to deps.edn
+      { "TicTacToe" = [
+        "games/tictactoe-cli/index.md",
+      ] },
+    ] },
+  ] },
+  { "Testing" = [
+    "testing/index.md",
+    { "Unit Testing" = [
+      "testing/unit-testing/index.md",
+      { "Writing Tests" = "testing/unit-testing/writing-unit-tests.md" },
+      { "Fixtures" = "testing/unit-testing/fixtures.md" },
+      { "Test Selectors" = "testing/unit-testing/test-selectors.md" },
+      # <!-- - [TDD Kata: Recent Song-ltesting/unit-testing/tdd-kata/recent-song-list.md -->
+      # <!-- - testing/unit-testing/clojure-test-expectations.md -->
+    ] },
+    { "Test runners" = [
+      "testing/test-runners/index.md",
+      { "Kaocha" = "testing/test-runners/kaocha-test-runner.md" },
+      { "Cognitect Labs" = "testing/test-runners/congnitect-labs-test-runner.md" },
+      { "Example Projects" = "testing/test-runners/example-projects.md" },
+    ] },
+  ] },
+  { "Clojure Spec" = [
+    "clojure-spec/index.md",
+    { "REPL Experiments" = "clojure-spec/using-spec-in-the-repl.md" },
+    { "Project config" = "clojure-spec/add-spec-to-projects.md" },
+    { "Organise spec" = "clojure-spec/organising-specs.md" },
+    { "Data Specs" = [
+      "clojure-spec/data/index.md",
+      "clojure-spec/data/predicate-specifications.md",
+      "clojure-spec/data/literal-values.md",
+      "clojure-spec/data/conform.md",
+      "clojure-spec/data/valid-q.md",
+      "clojure-spec/data/explain.md",
+      "clojure-spec/data/defining-specifications.md",
+      "clojure-spec/data/registry.md",
+      "clojure-spec/data/entity-maps.md",
+      "clojure-spec/data/map-literals.md",
+      "clojure-spec/data/and-or-specifications.md",
+      "clojure-spec/data/composite-specifications.md",
+      "clojure-spec/data/hierarchical-specifications.md",
+    ] },
+    { "Function Specs" = [
+      "clojure-spec/functions/index.md",
+      "clojure-spec/functions/function-definition-specifications.md",
+      "clojure-spec/functions/documentation.md",
+      "clojure-spec/functions/higher-order-functions.md",
+    ] },
+    { "Testing" = [
+      "clojure-spec/testing/index.md",
+      "clojure-spec/testing/checking-arguments.md",
+      # <!-- - clojure-spec/defining-specifications/index.md -->
+      { "Generative Testing" = [
+        "clojure-spec/generative-testing/index.md",
+        "clojure-spec/generative-testing/predicate-generators.md",
+        # <!-- - clojure-spec/generative-testing/generating-generators.md -->
+        "clojure-spec/generative-testing/example-projects/index.md",
+        "clojure-spec/generative-testing/example-projects/next-jdbc.md",
+      ] },
+    ] },
+    { "Spec Project" = [
+      "clojure-spec/projects/index.md",
+      # <!-- Checking for bad names in ns declarations, lets, etc. -->
+      # <!-- - clojure-spec/projects/convention-checks.md -->
+      { "Playing Cards" = [
+        "clojure-spec/projects/card-game/index.md",
+      ] },
+      { "Bank Account" = [
+        "clojure-spec/projects/bank-account/index.md",
+        # <!-- - clojure-spec/projects/bank-account/create-project.md -->
+        "clojure-spec/projects/bank-account/write-failing-tests.md",
+        "clojure-spec/projects/bank-account/customer-details-specification.md",
+        "clojure-spec/projects/bank-account/validate-customer-details-specification.md",
+        "clojure-spec/projects/bank-account/account-holder-specification.md",
+        "clojure-spec/projects/bank-account/generate-test-data.md",
+        "clojure-spec/projects/bank-account/unit-tests-with-spec.md",
+        "clojure-spec/projects/bank-account/function-specifications.md",
+        "clojure-spec/projects/bank-account/test-functions-against-spec.md",
+      ] },
+    ] },
+  ] },
+  { "Continuous Integration" = [
+    "continuous-integration/index.md",
+    { "Circle CI" = [
+      "continuous-integration/circle-ci/index.md",
+      "continuous-integration/circle-ci/random-clojure-function.md",
+      "continuous-integration/circle-ci/status-monitor.md",
+      # <!-- - continuous-integration/circle-ci/circle-ci-sample-project.md -->
+    ] },
+    { "GitHub Workflow" = [
+      "continuous-integration/github-workflow/index.md",
+    ] },
+  ] },
+  # <!-- - testing/performance-testing/index.md -->
+  # <!-- - testing/load-stress-testing/index.md -->
+  { "Reference" = [
+    "reference/index.md",
+    "quickstart/quick-reference.md",
+    { "Clojure CLI" = [
+      "reference/clojure-cli/index.md",
+      # <!-- - [deps.edn aliases](clojure-cli/configure/deps-edn-aliases.md) -->
+      "reference/clojure-cli/defining-aliases.md",
+      "reference/clojure-cli/example-alias-definitions.md",
+      "reference/clojure-cli/jvm-options.md",
+      # "clojure-cli/configure/common-tasks.md",
+      # "clojure-cli/configure/defining-aliases.md",
+    ] },
+    { "Code Analysis" = "reference/code-analysis.md" },
+    { "Standard Library" = [
+      "reference/standard-library/index.md",
+      "reference/standard-library/destructuring.md",
+      "reference/standard-library/predicate-functions.md",
+      { "Regular Expressions" = [
+        "reference/standard-library/regular-expressions/index.md",
+        "reference/standard-library/regular-expressions/matching-with-groups.md",
+        "reference/standard-library/regular-expressions/matching-sub-strings.md",
+        "reference/standard-library/regular-expressions/matching-sub-sequences.md",
+        "reference/standard-library/regular-expressions/common-regex-patterns.md",
+        "reference/standard-library/regular-expressions/string-replace-with-regex.md",
+        "reference/standard-library/regular-expressions/string-split-with-regex.md",
+        "reference/standard-library/regular-expressions/sub-expression-matches.md",
+      ] },
+      "reference/standard-library/cond-thread-macro.md",
+    ] },
+    { "Java" = [
+      "reference/clojure-syntax/java-interop.md",
+      { "More Java fun" = "reference/clojure-syntax/more-java-fun.md" },
+    ] },
+    # Move syntax into a reference section and use projects to expose audience to Clojure syntax
+    # Basic syntax and calling functions
+    { "Clojure Syntax" = [
+      "reference/clojure-syntax/index.md",
+      "reference/clojure-syntax/syntax.md",
+      "reference/clojure-syntax/parenthesis.md",
+      "reference/clojure-syntax/code-documentation.md",
+      "reference/clojure-syntax/comments.md",
+      "reference/clojure-syntax/strings.md",
+      "reference/clojure-syntax/numbers-maths.md",
+      "reference/clojure-syntax/ratios.md",
+      "reference/clojure-syntax/control-flow.md",
+      "reference/doc-and-source-functions.md",
+      "reference/clojure-syntax/assigning-names.md",
+      "reference/clojure-syntax/naming.md",
+      "reference/kebab-case.md",
+      "reference/threading-macros.md",
+      "reference/tagged-literals/index.md",
+      "reference/tagged-literals/uuid.md",
+    ] },
+    # Persistent data structures list vector map set -->
+    { "Data Structures" = [
+      "data-structures/index.md",
+      "data-structures/list.md",
+      "data-structures/hash-maps/index.md",
+      "data-structures/hash-maps/create.md",
+      "data-structures/hash-maps/access.md",
+      # "data-structures/hash-maps/update.md",
+      "data-structures/vector.md",
+      "data-structures/set.md",
+      "data-structures/naming.md",
+      "data-structures/shared-memory.md",
+      { "Pretty Printing" = "data-structures/pretty-printing.md" },
+      { "Using Data Structures" = [
+        "using-data-structures/index.md",
+        "using-data-structures/sequences.md",
+        "using-data-structures/lazy-sequences.md",
+        "using-data-structures/destructuring.md",
+        "using-data-structures/applying-functions.md",
+        "using-data-structures/mapping-data-structures.md",
+      ] },
+      { "Modifying" = [
+        "modifying-data-structures/index.md",
+        "modifying-data-structures/lists.md",
+        "modifying-data-structures/maps.md",
+        "modifying-data-structures/vectors.md",
+        "modifying-data-structures/sets.md",
+      ] },
+      "iterate-over-data/index.md",
+      "iterate-over-data/map.md",
+      "iterate-over-data/map-partial.md",
+      "iterate-over-data/map-fn.md",
+      "iterate-over-data/filter-remove.md",
+      "iterate-over-data/apply.md",
+      "iterate-over-data/reduce.md",
+      { "Design" = [
+        "designing-data-structures/index.md",
+        "designing-data-structures/with-vectors.md",
+        "designing-data-structures/with-vectors-of-vectors.md",
+        "designing-data-structures/with-maps.md",
+        "designing-data-structures/with-maps-of-maps.md",
+        "designing-data-structures/with-vectors-of-maps.md",
+        "designing-data-structures/modeling-alphabet-codes.md",
+        "designing-data-structures/modeling-name-generation-map.md",
+      ] },
+    ] },
+    { "Thinking Functionally" = [
+      "thinking-functionally/index.md",
+      "thinking-functionally/side-effects.md",
+      "thinking-functionally/pure-functions.md",
+      "thinking-functionally/impure-functions.md",
+      "thinking-functionally/first-class-functions.md",
+      "thinking-functionally/homoiconicity.md",
+      "thinking-functionally/function-composition.md",
+      "thinking-functionally/example-hitchhikers-guide.md",
+      # <!-- TODO - thinking-functionally/iterate-over-values.md -->
+      "thinking-functionally/higher-order-functions.md",
+      "thinking-functionally/immutability.md",
+      "thinking-functionally/immutable-values.md",
+      "thinking-functionally/immutable-collections.md",
+      "thinking-functionally/immutable-local-bindings.md",
+      "thinking-functionally/partial-functions.md",
+      "thinking-functionally/map-with-partial.md",
+      "thinking-functionally/list-comprehension.md",
+      # <!-- - thinking-functionally/lazy-evaluation.md -->
+      "thinking-functionally/sequences.md",
+      "sequence-abstractions.md",
+      "thinking-functionally/functors.md",
+      "thinking-functionally/arity.md",
+      "thinking-functionally/pattern-matching.md",
+      "thinking-functionally/polymorphism.md",
+      "thinking-functionally/recursion.md",
+      "thinking-functionally/recursion-polymorphism.md",
+      "thinking-functionally/tail-recursion.md",
+    ] },
+    { "Crreative Coding" = [
+      "reference/creative-coding/index.md",
+      { "SVG" = [
+        "reference/clojure-svg/index.md",
+      ] },
+    ] },
+    { "JVM" = [
+      "reference/jvm/index.md",
+      "reference/jvm/understanding-memory-usage.md",
+      "reference/jvm/common-options.md",
+      "reference/jvm/java-17-flags.md",
+      "reference/jvm/experimental-options.md",
+      { "Profile tools" = "reference/jvm/profile-tools.md" },
+      "reference/performance/index.md",
+    ] },
+    { "Alternative Tools" = [
+      "alternative-tools/index.md",
+      "alternative-tools/clojure-cli/basic-repl.md",
+      "alternative-tools/clojure-cli/evaluate-an-expression.md",
+      "alternative-tools/clojure-cli/set-namespace-on-repl-startup.md",
+    ] },
+  ] },
+]
+
+
+# Add custom CSS styling to customize the Zensical theme
+# The path is relative to the "docs_dir".
+#extra_css = ["assets/stylesheets/extra.css"]
+
+# Add custom JavaScript to customize site behavior
+# The path is relative to the "docs_dir".
+#extra_javascript = ["assets/javascript/extra.js"]
+
+# ----------------------------------------------------------------------------
+# Theme options
+# ----------------------------------------------------------------------------
+[project.theme]
+# https://jonathan343.github.io/catppuccin-zensical/
+name = "catppuccin"
+
+# Use the traditional Material for MkDocs look.
+# variant = "classic"
+
+# Override specific blocks, partials, or whole templates.
+# - https://zensical.org/docs/customization/#extending-the-theme
+#custom_dir = "overrides"
+
+# Set image to use as the icon browsers use in their title bar or tab bar.
+# The path is relative to the "docs_dir".
+# - https://zensical.org/docs/setup/logo-and-icons/#favicon
+# - https://developer.mozilla.org/en-US/docs/Glossary/Favicon
+favicon = "assets/images/practicalli-logo.png"
+
+# The default language is "en" (English). It is possible to create
+# sites with multiple languages and configure a language selector. See
+# the documentation for details.
+# - https://zensical.org/docs/setup/language/
+language = "en"
+
+# Zensical feature toggles to change the behavior of the documentation site.
+features = [
+    # Allow user to dismiss the Zensical announcement bar.
+    "announce.dismiss",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate an edit button for the page. This works for common
+    # repository hosting services.
+    # https://zensical.org/docs/setup/repository/#content-actions
+    #"content.action.edit",
+
+    # If you have a repository configured and turn on this feature, Zensical
+    # will generate a button that allows the user to view the Markdown
+    # code for the current page.
+    # https://zensical.org/docs/setup/repository/#content-actions
+    #"content.action.view",
+
+    # Code annotations adds an icon with a tooltip to your
+    # code blocks to provide explanations at crucial points.
+    # https://zensical.org/docs/authoring/code-blocks/#code-annotations
+    "content.code.annotate",
+
+    # Add a button in code blocks that allow users to copy the content
+    # to their clipboard without first selecting it.
+    # https://zensical.org/docs/authoring/code-blocks/#code-copy-button
+    "content.code.copy",
+
+    # Code blocks can include a button to allow for the selection of line
+    # ranges by the user.
+    # https://zensical.org/docs/authoring/code-blocks/#code-selection-button
+    "content.code.select",
+
+    # Zensical can render footnotes as inline tooltips, so the user can read
+    # the footnote without leaving the context of the document.
+    # https://zensical.org/docs/authoring/footnotes/#footnote-tooltips
+    "content.footnote.tooltips",
+
+    # If you have many content tabs that have the same titles (e.g., "Python",
+    # "JavaScript", "Cobol"), this feature causes all of them to switch to
+    # at the same time when the user chooses their language in one.
+    # https://zensical.org/docs/authoring/content-tabs/#linked-content-tabs
+    "content.tabs.link",
+
+    # With this feature enabled users can add tooltips to links that will be
+    # displayed when the mouse pointer hovers the link.
+    # https://zensical.org/docs/authoring/tooltips/#improved-tooltips
+    "content.tooltips",
+
+    # With this feature enabled, Zensical will automatically hide parts
+    # of the header when the user scrolls past a certain point.
+    # https://zensical.org/docs/setup/header/#automatic-hiding
+    # "header.autohide",
+
+    # Turn on this feature to expand all collapsible sections in the
+    # navigation sidebar by default.
+    # https://zensical.org/docs/setup/navigation/#navigation-expansion
+    # "navigation.expand",
+
+    # This feature turns on navigation elements in the footer that allow the
+    # user to navigate to a next or previous page.
+    # https://zensical.org/docs/setup/footer/#navigation
+    "navigation.footer",
+
+    # When section index pages are enabled, documents can be directly attached
+    # to sections, which is particularly useful for providing overview pages.
+    # https://zensical.org/docs/setup/navigation/#section-index-pages
+    "navigation.indexes",
+
+    # When instant navigation is enabled, clicks on all internal links will be
+    # intercepted and dispatched via XHR without fully reloading the page.
+    # https://zensical.org/docs/setup/navigation/#instant-navigation
+    "navigation.instant",
+
+    # With instant prefetching, your site will start to fetch a page once the
+    # user hovers over a link. This will reduce the perceived loading time
+    # for the user.
+    # https://zensical.org/docs/setup/navigation/#instant-prefetching
+    "navigation.instant.prefetch",
+
+    # In order to provide a better user experience on slow connections when
+    # using instant navigation, a progress indicator can be enabled.
+    # https://zensical.org/docs/setup/navigation/#progress-indicator
+    #"navigation.instant.progress",
+
+    # When navigation paths are activated, a breadcrumb navigation is rendered
+    # above the title of each page
+    # https://zensical.org/docs/setup/navigation/#navigation-path
+    "navigation.path",
+
+    # When pruning is enabled, only the visible navigation items are included
+    # in the rendered HTML, reducing the size of the built site by 33% or more.
+    # https://zensical.org/docs/setup/navigation/#navigation-pruning
+    #"navigation.prune",
+
+    # When sections are enabled, top-level sections are rendered as groups in
+    # the sidebar for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-sections
+    # "navigation.sections",
+
+    # When tabs are enabled, top-level sections are rendered in a menu layer
+    # below the header for viewports above 1220px, but remain as-is on mobile.
+    # https://zensical.org/docs/setup/navigation/#navigation-tabs
+    "navigation.tabs",
+
+    # When sticky tabs are enabled, navigation tabs will lock below the header
+    # and always remain visible when scrolling down.
+    # https://zensical.org/docs/setup/navigation/#sticky-navigation-tabs
+    "navigation.tabs.sticky",
+
+    # A back-to-top button can be shown when the user, after scrolling down,
+    # starts to scroll up again.
+    # https://zensical.org/docs/setup/navigation/#back-to-top-button
+    "navigation.top",
+
+    # When anchor tracking is enabled, the URL in the address bar is
+    # automatically updated with the active anchor as highlighted in the table
+    # of contents.
+    # https://zensical.org/docs/setup/navigation/#anchor-tracking
+    "navigation.tracking",
+
+    # When search highlighting is enabled and a user clicks on a search result,
+    # Zensical will highlight all occurrences after following the link.
+    # https://zensical.org/docs/setup/search/#search-highlighting
+    "search.highlight",
+
+    # When anchor following for the table of contents is enabled, the sidebar
+    # is automatically scrolled so that the active anchor is always visible.
+    # https://zensical.org/docs/setup/navigation/#anchor-following
+    # "toc.follow",
+
+    # When navigation integration for the table of contents is enabled, it is
+    # always rendered as part of the navigation sidebar on the left.
+    # https://zensical.org/docs/setup/navigation/#navigation-integration
+    #"toc.integrate",
+]
+
+# ----------------------------------------------------------------------------
+# Light and dark palette from the Catppuccin theme
+[[project.theme.palette]]
+scheme = "catppuccin-mocha"
+primary = "slate"
+accent = "teal"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to Latte"
+
+[[project.theme.palette]]
+scheme = "catppuccin-latte"
+primary = "indigo"
+accent = "teal"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to Mocha"
+
+[project.theme.icon]
+logo = "lucide/book-open-text"
+repo = "lucide/book-open-text"
+
+# ----------------------------------------------------------------------------
+# Font Family to use when generating the website
+# Fonts are loaded from Google Fonts by default
+[project.theme.font]
+text = "Ubuntu"
+code = "Ubuntu Mono"
+
+# Custom Admonition icons
+[project.theme.icon.admonition]
+note = "fontawesome/solid/pencil"
+abstract = "fontawesome/solid/book"
+info = "fontawesome/solid/circle-info"
+tip = "fontawesome/solid/bullhorn"
+success = "fontawesome/solid/check"
+question = "fontawesome/solid/circle-question"
+warning = "fontawesome/solid/triangle-exclamation"
+failure = "fontawesome/solid/bomb"
+danger = "fontawesome/solid/skull"
+bug = "fontawesome/solid/robot"
+example = "fontawesome/solid/flask"
+quote = "fontawesome/solid/quote-left"
+# exercise = "fontawesome/solid/pencil"
+
+# ----------------------------------------------------------------------------
+# Social Icons and links in footer of website
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/practicalli/neovim"
+[[project.extra.social]]
+icon = "material/web"
+link = "https://practical.li/"
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/jr0cket/"
+[[project.extra.social]]
+icon = "fontawesome/brands/slack"
+link = "https://clojurians.slack.com/messages/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/mastodon"
+link = "https://mastodon.social/@practicalli_johnny"
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/practicalli"
+[[project.extra.social]]
+icon = "fontawesome/brands/docker"
+link = "https://hub.docker.com/u/practicalli"
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Social Cards
+[project.plugins.social]
+# cards_layout_options = { font_family = "Ubuntu" } # uses site font by default
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# Website Analytics Tracking
+[project.extra.analytics]
+provider = "google"
+property = "G-P29SSN0GV6"
+# ----------------------------------------------------------------------------
