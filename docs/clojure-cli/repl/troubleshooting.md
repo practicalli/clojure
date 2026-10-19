@@ -32,6 +32,7 @@ Then require the main namespace and see if there are issues, optionally using :v
 
 If the REPL runs correctly, it is likely the editor configuration is missing something or is incorrect.  Check the configuration for running a Clojure project with the editor.
 
+
 ## Terminal UI REPL fails in project
 
 If the REPL does not run correctly or the namespace fails to load, run a repl without any extra development dependencies (tooling, dev libraries, etc) and load the main namespace
@@ -39,6 +40,7 @@ If the REPL does not run correctly or the namespace fails to load, run a repl wi
 ```shell
 clj
 ```
+
 
 ## REPL doesnt start in any project
 
@@ -48,11 +50,12 @@ Run `clojure -Sdescribe` to check that the Clojure CLI is using the correct conf
 
 If a REPL prompt appears, then Clojure CLI is working.  If a REPL prompt does not appear, then reinstall the Clojure CLI or upgrade to a newer version.
 
-[Clojure CLI install - Practicalli Guide](/clojure/install/clojure-cli.md){target=_blank .md-button}
+[Clojure CLI install - Practicalli Guide](../../install/clojure-cli.md){target=_blank .md-button}
+
 
 ## REPL starts but requiring code fails
 
-Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with `clojure -T:project/create` (with [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](/clojure/install/clojure-cli/) installed)
+Creating a new project is a fast way to check development tooling is working correctly.  A project can be created with `clojure -T:project/create` (with [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](../../install/clojure-cli.md) installed)
 
 If a REPL process starts correctly for a new project but not the existing project, then its most likely one or more expressions in the existing project that are causing an error or the project `deps.edn` configuration.
 

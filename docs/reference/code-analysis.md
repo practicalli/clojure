@@ -35,7 +35,13 @@ Follow the **[clj-kondo install guide](https://github.com/borkdude/clj-kondo/blo
     [Add the respective LSP server implementation](https://practical.li/doom-emacs/install/#language-servers) to the operating system
 
 === "Neovim"
-    [Practicalli Neovim](https://practical.li/neovim/install/clojure/#clojure-lsp) provides a guide to configure Neovim with Treesitter as an LSP client, as well as a fennel based configuration for Neovim.
+
+    Use [:fontawesome-solid-book-open: Mason](https://practical.li/neovim/using-neovim/mason/){target=_blank} to install clj-kondo as a linter.
+
+    [:fontawesome-brands-github: Practicalli nvim-astro configuration](https://github.com/practicalli/nvim-config){target=_blank} includes Clojure LSP and clj-kondo, integrating these tools with LSP diagnostics.
+
+    [:fontawesome-solid-book-open: Practicalli Neovim](https://practical.li/neovim/){target=_blank} is a guide to configure and use Neovim for Clojure software development.
+
 
 ## Command Line analysis
 
@@ -44,17 +50,11 @@ Run `clj-kondo` with the --lint option and specify a file or path
 To analyse a specific file
 
 ```shell
-clj-kondon --lint ~/.config/deps.edn
+clj-kondo --lint ~/.config/deps.edn
 ```
 
 Analyse a project, running the clj-kondo command from the root of the project
 
 ```shell
-clj-kondon --lint .
+clj-kondo --lint .
 ```
-
-## clj-kondo with GitHub actions
-
-Add [clj-kondo linting to continuous integration workflow](/continuous-integration/github-actions/clj-kondo-lint.md).
-
-![clj-kondo with GitHub actions](https://rymndhng.github.io/assets/clj-kondo-1.png)

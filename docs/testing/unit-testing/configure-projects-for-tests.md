@@ -73,5 +73,4 @@ clojure -X:test/kaocha
 ## References
 
 * [Practicalli Spacemacs - Unit testing with Cider and Kaocha in Emacs](https://practical.li/spacemacs/testing/unit-testing)
-* [lambdaisland/kaocha](/testing/test-runners/kaocha-test-runner.md) is a test runner that supports Clojure CLI, Leiningen and Boot project configuration.
-* [Leiningen project configuration for unit testing](/alternative-tools/leiningen/testing/configure-project.md)
+* [lambdaisland/kaocha](../../testing/test-runners/kaocha-test-runner.md) is a test runner that supports Clojure CLI, Leiningen and Boot project configuration.

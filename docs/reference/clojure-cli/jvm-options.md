@@ -1,26 +1,24 @@
 # Reference: Clojure CLI JVM Options
 
-!!! HINT "`JDK_JAVA_OPTIONS` Environment Variable"
-    `JDK_JAVA_OPTIONS` is the official Environment Variable for setting options when calling `java`, `javac` and other Java commands to start running a Java Virtual Machine (Java version 9 onward).
+Java Virtual Machine options can be passed to the REPL during starup
 
-[Java Virtual Machine options can be passed using the Clojure CLI](https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment), either via the `-J` command line flag or `:jvm-opts` in a `deps.edn` alias.
+- `:jvm-opts` key in a `deps.edn` alias
+- `-J` option on the command line
+- `JDK_JAVA_OPTIONS` environment variable used when calling `java`, `javac`
 
-<!-- TODO: reference: clojure CLI JVM options - common options and there use (e.g. manage heap size, garbage collection, etc.) -->
+
+[:globe_with_meridians: Prepare JVM environment -Clojure.org](https://clojure.org/reference/deps_and_cli#_prepare_jvm_environment){target=_blank}
+
 
 !!! HINT "Java Virtual Machine configuration and reporting"
-    [Java Virtual Machine section](/reference/jvm/index.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
+    [Java Virtual Machine section](../jvm/common-options.md) covers commonly used options, reporting JVM metrics and optimisation of the JVM process.
 
-## Clojure CLI command line options
 
-Clojure CLI `-J` flag passes configuration options to the JVM. When there are multiple, each must be prefixed with `-J`.
+## deps.edn configuration
 
-```shell
-clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
-```
+`:jvm-opts` key in an alias adds JVM options to a deps.edn configuration.
 
-## Clojure CLI deps.edn configuration
-
-`:jvm-opts` key in an alias adds JVM options to Clojure CLI deps.edn configuration.  The `:jvm-opts` key has a value that is a collection of string JVM options `["-Xms2048m" "-Xmx4096"]`
+The `:jvm-opts` key has a value that is a collection of JVM options as strings, `["-Xms2048m" "-Xmx4096"]`
 
 Alias to set a large heap size
 
@@ -52,22 +50,24 @@ The aliases can be used with the Clojure CLI execution options: `-A` (for built-
 
 > `-J` JVM options specified on the command line are concatenated after the alias options
 
-<!-- ## Optimising JVM for a container -->
 
-<!-- TODO: JVM options useful when running in a container, e.g. docker -->
+## Command line options
 
-## Calling A Clojure Uberjar
+Clojure CLI `-J` flag passes configuration options to the JVM. When there are multiple, each must be prefixed with `-J`.
+
+```shell
+clojure -J-XX:+UnlockDiagnosticVMOptions -J‑XX:NativeMemoryTracking=summary -J‑XX:+PrintNMTStatistics
+```
+
+
+### Running an Uberjar
 
 JVM options must be specified when calling an uberjar with the `java` command, `:jvm-opts` in the project `deps.edn` are not used with the `java` command
 
-```
+```shell
 java -jar project-uberjar.jar -J...
 ```
 
-!!! HINT "Use `JDK_JAVA_OPTIONS` to define JVM options"
-    `JDK_JAVA_OPTIONS` environment variable is used to define options that are used whenever the `java` command is called, greatly simplifying `java` commands.
-
-    The `JDK_JAVA_OPTIONS` environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.
 
 ## Clojure related JVM options
 
@@ -120,9 +120,16 @@ ENV JDK_JAVA_OPTIONS "-XshowSettings:system -XX:+UseContainerSupport -XX:MaxRAMP
 CMD ["java", "-jar", "/opt/practicalli-service.jar"]
 ```
 
+
+!!! HINT "Use `JDK_JAVA_OPTIONS` to define JVM options"
+    `JDK_JAVA_OPTIONS` environment variable is used to define options that are used whenever the `java` command is called, greatly simplifying `java` commands.
+
+    The `JDK_JAVA_OPTIONS` environment variable can be used with deployment systems and passed to container environments to simplify adjustment of resources used by the JVM process.
+
+
 ## Low latency systems
 
-For systems that require very low latency, use the Z Garbage collector
+The Z Garbage collector is an excellecnt choice for systems requiring low latency.
 
 ```
 "-XX:+UnlockExperimentalVMOptions -XX:+UseZGC"
@@ -142,13 +149,15 @@ For systems that require very low latency, use the Z Garbage collector
 "-Xverify:none"
 ```
 
-> The verification process is a valuable check, especially for code that has not been run before.  So the code should be run through the verification process before deploying to production.
+> The verification process is a valuable check, especially for code which has not been run before. So the code should be run through the verification process before deploying to production.
+
 
 ### Benchmark options
 
 Enable various optimizations, for guaranteeing accurate benchmarking (at the cost of slower startup):
 
 `"-server"`
+
 
 ### Graphical UI related options
 
@@ -158,9 +167,10 @@ Enable various optimizations, for guaranteeing accurate benchmarking (at the cos
 
 `-Dclash.dev.expound=true` - ?
 
+
 ### Garbage Collection
 
-Setup GC with short STW pauses which can be relevant for very high web server workloads
+Setup GC with short STW pauses which can be relevant for high web server workloads.
 
 ```clojure
 :jvm/g1gc
@@ -171,7 +181,8 @@ Setup GC with short STW pauses which can be relevant for very high web server wo
             "-XX:InitiatingHeapOccupancyPercent=70"]}
 ```
 
-* Source: [Tuning Garbage Collection with Oracle JDK](https://docs.oracle.com/cd/E40972_01/doc.70/e40973/cnf_jvmgc.htm#autoId2)
+[Source: Tuning Garbage Collection with Oracle JDK](https://docs.oracle.com/cd/E40972_01/doc.70/e40973/cnf_jvmgc.htm#autoId2){target=_blank .md-button}
+
 
 ### View JVM options of a running JVM process
 
@@ -183,6 +194,7 @@ On Linux `ps -ef | grep java` which includes the options to run the JVM process,
 
 [Getting the parameters of a running JVM](https://stackoverflow.com/questions/5317152/getting-the-parameters-of-a-running-jvm){target=_blank .md-button}
 
-### References
+
+## Reference
 
 [JVM Options cheatsheet - JRebel](https://www.jrebel.com/blog/jvm-options-cheat-sheet){target=_blank .md-button}

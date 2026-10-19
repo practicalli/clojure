@@ -10,19 +10,19 @@ The function is the unit under test in Clojure.  All public functions that form 
 
 ## Unit Test Principles
 
-* A `test` namespace for each `src` namespace under test
-* A `deftest` function for each function under test, named after the function its testing with `-test` at the end of the name
-* Multiple assertions (`is` `are`) for one function
-  * `is` defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call
-  * `are` to testing similar functionality with different data sets (or use generative testing)
-* `testing` to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)
-* `use-fixtures` to call [fixture functions](fixtures.md "Define and run functions that set up and tear down state required for a test or collection of tests") that setup and tear down any state required for test(s) to run
-* Test API rather than implementation
-  * test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)
-  * `^:helper` meta-data on `deftest` for more generic functions, to skip those tests via a test selector
-* Use [generative testing](/clojure-spec/) to create more maintainable test code with more extensive range of data
-* Use [test selectors](test-selectors.md) with a [test runner](/testing/test-runners/) to selectively run tests and optimise speed of test runs
-* Limit mocking of systems to integration tests (although mocking data is good everywhere)
+- A `test` namespace for each `src` namespace under test
+- A `deftest` function for each function under test, named after the function its testing with `-test` at the end of the name
+- Multiple assertions (`is` `are`) for one function
+  - `is` defines an assertion returning true (test pass) or false (test fail), typically a comparison between a known value and the result of a function call
+  - `are` to testing similar functionality with different data sets (or use generative testing)
+- `testing` to logically group assertions and provide a meaningful description of that grouping (easier to identify tests when they fail)
+- `use-fixtures` to call [fixture functions](fixtures.md "Define and run functions that set up and tear down state required for a test or collection of tests") that setup and tear down any state required for test(s) to run
+- Test API rather than implementation
+  - test generic helper or private functions through public functions of each namespace (minimise test churn and time to run all tests)
+  - `^:helper` meta-data on `deftest` for more generic functions, to skip those tests via a test selector
+- Use [generative testing](../../clojure-spec/generative-testing/index.md) to create more maintainable test code with more extensive range of data
+- Use [test selectors](./test-selectors.md) with a [test runner](../test-runners/index.md) to selectively run tests and optimise speed of test runs
+- Limit mocking of systems to integration tests (although mocking data is good everywhere)
 
 ??? HINT "Code should evaluate or have line comments"
     All Clojure code should be valid syntax and able to be evaluated (compiled), even code within a `(comment )` expression or after a `#_` reader comment.
@@ -120,7 +120,8 @@ GitHub repositories:
 - [:fontawesome-brands-github: Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
 - [:fontawesome-brands-github: practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
 - [:fontawesome-brands-github: practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
-- [:fontawesome-brands-github: practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides) - Leiningen projects
+- [:fontawesome-brands-github: practicalli/exercism-clojure-guides](https://github.com/practicalli/exercism-clojure-guides)
+
 
 ## References
 

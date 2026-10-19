@@ -20,7 +20,7 @@ Set the namespace for the page and require clojure.spec.alpha library, setting t
 
 ## Using valid?
 
-If the value is valid then a boolean true is returned.  Experiment with different values and [predicate functions](/reference/clojure/predicate-functions.md).
+If the value is valid then a boolean true is returned. Experiment with different values and [predicate functions](../../reference/standard-library/predicate-functions.md).
 
 ```clojure
 (spec/valid? even? 180)

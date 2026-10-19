@@ -16,7 +16,9 @@ A test namespace has a singular purpose to test a matching src namespace.
 
 The idiomatic approach is to `:refer` specific functions from `clojure.test` as those functions are used.
 
-The namespace to be tested is referred using a meaningful alias. The alias highlight the exact functions being tested in the body of the code.  This provides a visual way to separate functions under test with other test functions, especially if there are helper functions or vars used for test data.
+The namespace to be tested is referred using a meaningful alias.
+
+The alias highlight the exact functions being tested in the body of the code.  This provides a visual way to separate functions under test with other test functions, especially if there are helper functions or vars used for test data.
 
 === "REPL"
     ```clojure
@@ -34,6 +36,7 @@ The namespace to be tested is referred using a meaningful alias. The alias highl
       (:require '[clojure.test :refer [are deftest is testing]]
                  [practicalli.gameboard.spec :as gameboard-spec]))
     ```
+
 
 ## Simple Example
 
@@ -101,7 +104,7 @@ This is equivalent to writing
 
 ### Code challenges with tests
 
-[TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md){.md-button}
+[TDD Kata: Recent Song-list](../../simple-projects/tdd-kata/recent-song-list.md){.md-button}
 [TDD Kata: Numbers in words](https://github.com/practicalli/numbers-to-words){.md-button}
 [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors){.md-button}
 [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides){.md-button}

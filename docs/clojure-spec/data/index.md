@@ -4,9 +4,11 @@ Specifications can be defined for any data in Clojure, be that simple values or 
 
 ## What is a specification
 
-Specifications can be [predicates](predicate-functions.md) (return true or false), [literal values](literal-values.md) in sets and [entity maps](entity-maps.md).
+Specifications can be [predicates](predicate-functions.md) (return true or false), [literal values](./literal-values.md) in sets and [entity maps](./entity-maps.md).
 
-There are many [predicate functions that come with Clojure](/reference/standard-library/predicate-functions.md) which help speed the creation of specifications.  Clojure function definitions (`fn`, `defn`) can be used to define custom predicate functions too.
+There are many [predicate functions that come with Clojure](../../reference/standard-library/predicate-functions.md) which help speed the creation of specifications.
+
+Clojure function definitions (`fn`, `defn`) can be used to define custom predicate functions too.
 
 ## Do values meet a specification
 
@@ -20,11 +22,11 @@ There are variations on explain, that present the results in different formats.
 
 ## Workflow for data specifications
 
-Using Clojure Specification is very flexible, they can be used as much or as little as required.
+Specifications are created when data structures are being modeled, which can be done via experimenting in the REPL or taking a test first approach.
 
-Typically Specifications are created when data structures are being modeled, which can be done via experimenting in the REPL or taking a test first approach.  Either way is viable.
+The generative tests use specifications generate mock test data.
 
-The generative tests section shows how specifications are used to generate mock data, so creating specifications earlier on in the development process will provide a wider range of data for unit tests and repl experimentation.
+Creating specifications at the start of a project or new feature provides a wider range of data for unit tests and REPL experimentation.
 
 
 !!! HINT "Spec and nil values"
@@ -40,7 +42,3 @@ The generative tests section shows how specifications are used to generate mock 
 
     (spec/valid? (spec/nilable string?) nil)
     ```
-
-<!--
-;; Question: when use valid? rather than conform?
- -->

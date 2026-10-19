@@ -2,9 +2,9 @@
 
 ![Exercism.io challenge - Bob](https://raw.githubusercontent.com/practicalli/graphic-design/live/banners/exercism/exercisim-exercise-bob-banner.png)
 
-The Bob challenge involves writing a very basics example of a text parser, something that would be used for [a text based adventure game](https://en.wikipedia.org/wiki/Text-based_game).
+The Bob challenge involves writing a simple text parser, something that would be used for [a text based adventure game](https://en.wikipedia.org/wiki/Text-based_game).
 
-Bob is described as a [lackadaisical](https://en.wiktionary.org/wiki/lackadaisical) teenager, so responses are very limited.  To create the Bob text parser we need to identify the rules that determine Bob's response.
+Bob is described as a [lackadaisical](https://en.wiktionary.org/wiki/lackadaisical) teenager, so responses are limited.  To create the Bob text parser we need to identify the rules that determine Bob's response.
 
 The instructions provide some basic rules:
 
@@ -24,7 +24,6 @@ Download the Bob transcription exercise using the exercism CLI tool
 exercism download --exercise=bob --track=clojure
 ```
 
-> To use the Clojure CLI tool instead of Leiningen, create a `deps.edn` file containing an empty hash-map, `{}` and clone [:fontawesome-solid-book-open: Practicalli Clojure CLI Config](clojure/clojure-cli/practicalli-config.md) to `~/.clojure/`.
 
 ## Rules derived from the Unit tests
 

@@ -16,11 +16,15 @@ Press the **Run** button to see if the code satisfies the tests
 
 A dialog box is displayed showing how many tests have passed and failed
 
-!!! HINT "Start learning the Clojure API"
-    There are over 600 functions in the `clojure.core` namespace alone, with additional functions in many other namespaces that make up the [https://clojure.github.io/clojure/](https://clojure.github.io/clojure/).  It is not required to learn all these functions to be productive in Clojure.
+!!! HINT "Learning Clojure functions incrementally"
+    There are over 600 functions in the `clojure.core` namespace alone, with additional functions in many other namespaces that make up the [https://clojure.github.io/clojure/](https://clojure.github.io/clojure/).
+
+    It is not neccessary to learn all these functions to be productive in Clojure.
+
 
 ??? INFO "4ever-clojure replaces 4Clojure"
     [4Ever-Clojure](https://4clojure.oxal.org/) is a new implementation of 4Clojure.com which has now been decommissioned
+
 
 ## Help completing the challenges
 
@@ -74,7 +78,7 @@ It is common to combine `fn` and `let` to solve the challenges as they grow in c
 
 4Ever Clojure uses [babashka/sci](https://github.com/babashka/sci){target=_blank} project to evaluate code on a JavaScript host.  Whist this should cover 99.9% of the Clojure API there may be some code that works in a Clojure (JVM) REPL that is not supported.
 
-Try the code in a [Clojure REPL](/clojure/clojure-cli/rebel-repl/) or [create a Clojure project](/clojure/clojure-cli/create-projects.md) using the latest version of Clojure (1.11.x).
+Try the code in a [Clojure REPL](../../clojure-cli/rebel-repl/) or [create a Clojure project](../../clojure-cli/projects/index.md) using the latest version of Clojure (1.11.x).
 
 ## References
 

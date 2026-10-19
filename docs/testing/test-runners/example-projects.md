@@ -1,6 +1,6 @@
 # Example projects
 
-* [TDD Kata: Recent Song-list](/simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
+* [TDD Kata: Recent Song-list](../../simple-projects/tdd-kata/recent-song-list.md) - simple tests examples
 * [Codewars: Rock Paper Scissors (lizard spock) solution](https://github.com/practicalli/codewars-guides/tree/develop/rock-paper-scissors) - `and` examples
 * [practicalli/numbers-to-words](https://github.com/practicalli/numbers-to-words) - overly verbose example, ripe for refactor
 * [practicalli/codewars-guides](https://github.com/practicalli/codewars-guides) - deps.edn projects
@@ -45,5 +45,5 @@ Include a `:kaocha` profile in the `project.clj` file, adding the koacha depende
 
 `lein kaocha` will run all the tests
 
-<!-- ### Adding deps.edn to status monitor project -->
+<!-- TODO: Adding deps.edn to status monitor project -->
 <!-- Need to add a -main function to the project for deps.edn as the project was using Leiningen ring plugin to run -->

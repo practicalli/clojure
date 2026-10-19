@@ -12,16 +12,19 @@ Use a  terminal REPL for
 * a REPL process separate from a specific editor control
 
 !!! INFO "REPL connected Editor"
-    A [Clojure aware editor](/clojure/clojure-editors/) connected to the REPL is used for the majority of Clojure development.  One or more expressions from a source code file can be sent to the REPL for evaluation, displaying the results inline.
+    A [Clojure aware editor](../../clojure-editors/index.md) connected to the REPL is used for the majority of Clojure development.
+
+    One or more expressions from a source code file can be sent to the REPL for evaluation, displaying the results inline.
 
 
 ## Rebel Terminal REPL UI
 
-Rebel is a REPL terminal UI that provides auto-completion, function call syntax help and documentation, themes and key binding styles to enhance the development experience.  Clojure tools also include [a REPL with a minimal interface](/alternative-tools/clojure-cli/basic-repl.md) by default.
+Rebel is a REPL terminal UI that provides auto-completion, function call syntax help and documentation, themes and key binding styles to enhance the development experience.
 
 <p style="text-align:center">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/U19TWMsg0s0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
+
 
 ### Install Rebel
 
@@ -88,7 +91,9 @@ Rebel is a REPL terminal UI that provides auto-completion, function call syntax 
         clj -M:repl/basic
         ```
 
-    To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.  This approach is useful to separate the REPL output from the editor whilst keeping all the interaction with the REPL via the editor.
+    To only have the REPL process without a REPL prompt, use the `:repl/headless` aliase to start a REPL process with nREPL connection.
+
+    This approach is useful to separate the REPL output from the editor whilst keeping all the interaction with the REPL via the editor.
 
     !!! NOTE ""
         ```shell

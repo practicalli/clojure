@@ -6,10 +6,10 @@ A Clojure command line application that shows a random function from the namespa
 
 This guide shows how to develop this project alongside CircleCI as the continuous integration service.
 
-1. Create a new project - using the [Random Clojure Function guide](/simple-projects/random-clojure-function.md)
+1. Create a new project - using the [Random Clojure Function guide](../../simple-projects/random-clojure-function.md)
 2. Create a repository on GitHub
 3. Commit the project early and push changes to GitHub
-4. Add a .circleci/config.yml file and push to GitHub, choosing the relevant image
+4. Add a `.circleci/config.yml` file and push to GitHub, choosing the relevant image
 5. Login to CircleCI dashboard and add project, choosing manual configuration
 6. Continue developing the random clojure function project, including tests
 7. After each push to GitHub, check the build status
@@ -24,7 +24,7 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 
     Arguments are key value pairs and can specify the `:template`, project `:name` and outpug directory `:output-dir`.
     ```shell
-    clojure -T:project/new :template app :name practicalli/playground`
+    clojure -T:project/create`
     ```
 
 ## Create a new project
@@ -32,19 +32,21 @@ This guide shows how to develop this project alongside CircleCI as the continuou
 Start following the guide to create the random clojure function project, using a deps.edn for the Clojure project configuration
 
 ```shell
-clojure -T:project/new :template app :name practicalli/random-clojure-function
+clojure -T:project/create
 ```
 
-Version control the Clojure project using Git (or [magit in Spacemacs](https://practical.li/spacemacs/source-control/){target=_blank})
+Version control the Clojure project using Git (e.g [magit in Spacemacs](https://practical.li/spacemacs/source-control/){target=_blank} or [neogit in Neovim](https://practical.li/neovim/source-control))
 
 ## Add a test run alias
 
-Edit the `deps.edn` file in the root of the project and add a `:test/run` alias, to run the kaocha test runner which will stop if a failing test is detected.  Stopping on a failed test saves running the full test suite and make the CI workflow more effective.
+Edit the `deps.edn` file in the root of the project and add a `:test/run` alias, to run the kaocha test runner which will stop if a failing test is detected.
+
+Stopping on a failed test saves running the full test suite and make the CI workflow more effective.
 
 ```clojure title="Project deps.edn"
 :test/run
 {:extra-paths ["test"]
- :extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}
+ :extra-deps {lambdaisland/kaocha {:mvn/version "1.91.1392"}}
  :exec-fn kaocha.runner/exec-fn
  :exec-args {:randomize? false
              :fail-fast? true}}

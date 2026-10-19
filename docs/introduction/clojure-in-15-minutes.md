@@ -1,8 +1,10 @@
 # Clojure in 15 minutes
 
-A quick tour of the Clojure syntax and common functions. The syntax is quite minimal so this should take around 15 minutest to read through (it may take longer to get comfortable with).
+Clojure syntax is minimal compared to most programming languages and can take as little as 15 minutes to read through
 
-!!! HINT "Try the code out in the REPL"
+Thinking in the functional paradigm can take longer to become comfortable with.
+
+!!! HINT "Experiment with code in a Clojure REPL"
     [:fontawesome-solid-book-open: Start a Clojure REPL](/clojure/clojure-cli/repl/) or use a [:fontawesome-solid-book-open: Clojure aware editor](/clojure/clojure-editors/) connected to a REPL and experiment with these code examples.
 
     Using the REPL provides instant feedback on each expression as they are evaluated, greatly increasing your understanding.
@@ -10,13 +12,13 @@ A quick tour of the Clojure syntax and common functions. The syntax is quite min
 
 ## Clojure expressions
 
-Clojure is written with "expressions", a lists of elements inside parentheses, `()`, separated by space characters.
+Clojure is written as "expressions", a lists of elements (forms) inside parentheses, `()`, separated by space characters.
 
-An expression is made of one or more forms, a form is a general term for anything that legally evaluates in Clojure, e.g. a number, string function definition, etc.
+An expression is made of one or more forms, a form is a general term for anything that legally evaluates in Clojure, e.g. a number, string, function call, function definition, etc.
 
-Clojure evaluates the first element in an expression as a function call.  Additional elements in the expression are passed as value arguments to the called function.
+Clojure evaluates the first element in an expression as a function call. Additional elements in the expression are passed as value arguments to the called function.
 
-!!! EXAMPLE "Function call with value and expression as arguments"
+!!! EXAMPLE "Function call with value and an expression as arguments"
     ```clojure
     (+ 2007 (* 1 16))
     ```
@@ -29,11 +31,13 @@ Clojure evaluates the first element in an expression as a function call.  Additi
 
 ## Comment
 
-`;;` two semi-colons for a line comment, `;` single semi-colon to comment the rest of the line
+`;;` two semi-colons represent a line comment, a `;` single semi-colon to comment the rest of a line
 
 `#_` comment reader macro to skip specific parts of code, e.g. `(+ 1 2 #_(* 3 4))` is read as `(+ 1 2)`
 
-`(comment ,,,)` form to comment all the containing forms, useful to [:fontawesome-solid-book-open: separate experimental and established code](/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation) in a namespace.  Note that `(comment )` returns `nil` when evaluated so shouldn't be used inside other code.
+`(comment ,,,)` form to comment all the containing forms, useful to [:fontawesome-solid-book-open: separate experimental and established code](/clojure/introduction/repl-workflow/#rich-comment-blocks-living-documentation) in a namespace.
+
+> NOTE: `(comment )` returns `nil` when evaluated so shouldn't be used inside other code forms.
 
 
 ## Organising Clojure

@@ -4,7 +4,7 @@ As well as the classic line comments, Clojure also can comment specific parts of
 
 `;;` to comment a whole line and `;` to add a comment after the start of a line
 
-`(comment )` wraps forms and returns `nil` when evaluated, referred to as [rich comments](#rich-comments)
+`(comment )` wraps forms and returns `nil` when evaluated, referred to as [rich comments](#rich-comment)
 
 `#_` to ignore the next form as if it has not been written, commonly used for debugging
 
@@ -34,11 +34,13 @@ The `#_` is the appropriate comment style for this example
 
 ### Rich comment
 
-The `comment` expression is referred to a a rich comment, as it is often used to evaluate expressions it contains as part of a [REPL driven development workflow](/repl-driven-development.md).
+The `comment` expression is referred to a a rich comment, as it is often used to evaluate expressions it contains as part of a [REPL driven development workflow](../../introduction/repl-workflow.md).
 
 Unlike line comments, forms inside a comment block can be evaluated in a [Clojure aware editor](/clojure-editors/) to help the developer work with a project.
 
-Rich comment are useful for rapidly iterating over different design decisions by including the same function but with different implementations. Hide clj-kondo linter](/clojure-cli/install/install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
+Rich comment are useful for rapidly iterating over different design decisions by including the same function but with different implementations.
+
+Hide clj-kondo linter](../../install/clojure-cli.md   install-clojure.html#clj-kondo-static-analyser--linter) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 ```clojure
 ;; Rich comment block with redefined vars ignored

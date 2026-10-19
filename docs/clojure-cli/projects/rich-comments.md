@@ -13,7 +13,9 @@ When a namespace is evaluted, code within the `(comment ,,,)` form is not automa
 
 Most editors support evaluation of Clojure code within the `(comment ,,,)` form, allowing a range of design implementations to be evaluated against each other.
 
-Rich comment blocks are very useful for rapidly iterating over different design decisions by including the same function but with different implementations.  Hide [clj-kondo linter](/clojure/reference/code-analysis.md) warnings for redefined vars (`def`, `defn`) when using this approach.
+Use a rich comment block to rapidly iterating over different design decisions, by including the same function but with different implementations.
+
+Hide [clj-kondo linter](../../reference/code-analysis.md) warnings for redefined vars (`def`, `defn`) when using this approach.
 
 !!! HINT "Practicalli Clojure LSP Config - rich-comment-hotload snippet"
 

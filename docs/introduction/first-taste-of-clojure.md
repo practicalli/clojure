@@ -1,17 +1,22 @@
 # Clojure Quick Reference
 
-The basic Clojure syntax and a few common functions you should probably learn first.
+The examples are editable (using an embedded REPL) so feel free to experiment and watch as the return value changes as you change the code.
 
-The examples are editable (using an embedded REPL) so feel free to experiment and watch as the return value changes as you change the code.  Reload the page if you want to reset all the code back to the starting point.
+Reload the page if you want to reset all the code back to the starting point.
 
 [Install Clojure](/clojure-cli/install/) on your computer if you want to experiment even further.
 
 !!! HINT "Want to go deeper already?"
-    Watch [the Clojure language video series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) for a detailed introduction to key parts of the language.  Or discover Clojure core functions by completing challenges on [4Clojure.org](https://4clojure.oxal.org/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
+   [The Clojure language series by Brian Will](https://www.youtube.com/playlist?list=PLAC43CFB134E85266) provides an introduction to key parts of the language.
+
+   Discover Clojure core functions by completing challenges on [4Clojure.org](https://4clojure.oxal.org/) and then [watching how Practicalli solved them](https://www.youtube.com/playlist?list=PLpr9V-R8ZxiDB_KGrbliCsCUrmcBvdW16).
+
 
 ## Calling functions
 
-The first element in a list, `()`, is a call to a function.  Any other elements are passed to the function as arguments. The examples show how to call functions with multiple arguments.
+The first element in a list, `()`, is a call to a function. Any other elements are passed to the function call as arguments.
+
+The examples show how to call functions with multiple arguments.
 
 ```clojure
 (+ 1 2)
@@ -22,7 +27,7 @@ The first element in a list, `()`, is a call to a function.  Any other elements 
 ```
 
 ```clojure
-(str "Clojure is " (- 2021 2007) " years old")
+(str "Clojure is " (- 2026 2007) " years old")
 ```
 
 ```clojure
@@ -81,7 +86,10 @@ A set, `#{}`, use as a unique set of values. Sets are used to test if a value is
 ```
 
 !!! Hint "Persistent data types"
-    Values are immutable so when a function changes a value a new immutable value is created. When creating new collection values, unchanged values are shared with the original collection.  This [sharing model is called persistent data types]( /data-structures/shared-memory.md) and enables immutable data to be used efficiently.
+    Values in Clojure are immutable. When a function changes a value a new immutable value is created.
+
+    When creating new collection values, unchanged values are shared with the original collection. This [sharing model is called persistent data types](../data-structures/shared-memory.md) and enables immutable data to be used efficiently.
+
 
 ## Using data structures
 
@@ -120,6 +128,7 @@ The `conj` function creates a new collection by combining a collection and one o
 !!! HINT "Many Clojure core functions for collections"
     `map`, `reduce`, `apply`, `filter`, `remove` are just a few examples of Clojure core functions that work with data structures.
 
+
 ## Defining custom functions
 
 ```clojure
@@ -136,6 +145,7 @@ Function definitions can also be used within other expressions, useful for mappi
 ```clojure
 (map (fn [number] (* number number)) [1 2 3 4 5])
 ```
+
 
 ## Defining local names
 
@@ -159,9 +169,12 @@ Define local names to remove duplication in function definitions, or to simplify
 (square-of 9)
 ```
 
+
 ## Defining names for values (vars)
 
-A name bound to a value can be used to represent that value throughout the code.  Names can be bound to simple values (numbers, strings, etc.), collections or even function calls.
+A name bound to a value can be used to represent that value throughout the code.
+
+Names can be bound to simple values (numbers, strings, etc.), collections or even function calls.
 
 `def` binds a name to a value with the scope of the current namespace.  `def` is useful for data that is passed to multiple functions within a namespace.
 
@@ -177,7 +190,9 @@ public-health-data
 ```
 
 !!! HINT "def for shared values, let for locally scoped values"
-    `let` function is used to bind names to values locally, such as within a function definition.  Names bound with `def` have namespace scope so can be used with any code in that namespace.
+    `let` function binds names to values locally scoped, e.g. within a function definition.
+
+    Names bound with `def` have namespace scope so can be used with any code in that namespace.
 
 ## Iterating over collections
 
@@ -203,7 +218,9 @@ Reducing functions are function definitions used by the `reduce` function over a
         (range 1 20))
 ```
 
-Functions can call themselves to iterate over a collection.  Using a lazy sequence means only the required numbers are generated, ensuring efficiency of operation and making the function usable in many different scenarios.
+Functions can call themselves to iterate over a collection.
+
+Using a lazy sequence means only the required numbers are generated, ensuring efficiency of operation and making the function usable in many different scenarios.
 
 ```clojure
 (defn fibonacci-sequence
@@ -214,6 +231,7 @@ Functions can call themselves to iterate over a collection.  Using a lazy sequen
 
 (take 10 (fibonacci-sequence 0 1))
 ```
+
 
 ## Host Interoperability
 

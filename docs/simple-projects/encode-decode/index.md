@@ -11,7 +11,7 @@ These projects show several ways to transform data in Clojure.
 | Project                                              | Topics           | Description                                     |
 |------------------------------------------------------|------------------|-------------------------------------------------|
 | [Boolean names to 0 or 1](convert-boolean-values.md) | hash-map get     | Convert boolean values to classic 1 or 0 values |
-| [Caesar cipher - ROT13](caesar-cipher rot13.md)      | seq cycle zipmap | A simple alphabet rotation cipher               |
+| [Caesar cipher - ROT13](caesar-cipher-rot13.md)      | seq cycle zipmap | A simple alphabet rotation cipher               |
 | [RNA / DNA converter](rna-dna.md)                    |                  | Convert between DNA and RNA                     |
 | [Clacks telegram](clacks.md)                         |                  | Encoding and decoding messages with Clacks      |
 
