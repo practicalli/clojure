@@ -6,17 +6,17 @@
 [project]
 
 # The site_name is shown in the page header and the browser window title
-site_name = "Practicalli Neovim"
+site_name = "Practicalli Clojure"
 
 # The site_description is included in the HTML head and should contain a
 # meaningful description of the site content for use by search engines.
-site_description = "Practical guides to install, configure and use Neovim for software development, with support for the Clojure programming language"
+site_description = "Practical guide to Clojure programming language and Clojure REPL driven development"
 
 # The site_author attribute is used in the HTML head element.
 site_author = "Practicalli Johnny"
 
 # The site_url is the canonical URL for your site
-site_url = "https://practical.li/neovim"
+site_url = "https://practical.li/clojure"
 
 # The copyright notice appears in the page footer and can contain an HTML fragment.
 copyright = """
@@ -622,7 +622,7 @@ quote = "fontawesome/solid/quote-left"
 # Social Icons and links in footer of website
 [[project.extra.social]]
 icon = "fontawesome/brands/github"
-link = "https://github.com/practicalli/neovim"
+link = "https://github.com/practicalli/clojure"
 [[project.extra.social]]
 icon = "material/web"
 link = "https://practical.li/"
