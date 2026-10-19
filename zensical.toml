@@ -82,10 +82,10 @@ nav = [
       ] },
       { "Design Templates" = "clojure-cli/projects/templates/design-templates.md" },
     ] },
-    { "Add Libraries" = "clojure-cli/projects/add-libraries.md" },
     { "Namespaces" = "clojure-cli/projects/namespace.md" },
+    { "Add Libraries" = "clojure-cli/projects/add-libraries.md" },
     { "Rich Comment" = "clojure-cli/projects/rich-comments.md" },
-    { "Hotload in Project" = "clojure-cli/projects/hotload-in-project.md" },
+    { "Hot-load Libraries" = "clojure-cli/projects/hotload-libraries.md" },
     { "Migrate projects" = "clojure-cli/projects/migrate-project.md" },
     { "Package" = [
       "clojure-cli/projects/package/index.md",

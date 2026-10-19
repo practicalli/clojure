@@ -10,7 +10,7 @@
 - build(make): 🔧 `deps-update` & `deps-upgrade` tasks
 - build(make): 🔧 `git-sr` & `git-rebase` tasks for mgitstatus
 - build(zensical): 🔧 switch to `zensical.toml` configuration
-
+- docs(clojure-cli): ✏️ update hot-load content & examples for Clojure 0.12
 
 ## 2026-08-22
 

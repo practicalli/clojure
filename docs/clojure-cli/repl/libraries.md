@@ -1,10 +1,14 @@
-# Using Clojure libraries in the REPL
+# Using libraries in the REPL
 
-A library should be included as a dependency in order to use it within the REPL.
+A library should be defined as a dependency in order to call its functions from within the REPL.
 
-Add library dependencies to the top level `:deps` key in a project `deps.edn` configuration file, or add via an alias if the library is use at development time.
+In the `deps.edn` file, the `:deps` key defines libraries that are always part of the project.
 
-Aliases from a user configuration can also add optional libraries when running a REPL, e.g. [Practicalli Clojure CLI config](clojure/clojure-cli/practicalli-config.md)
+Optional libraries are defined via `:aliases`, only included when the alias is used in the command to to start the REPL, e.g. `clojure -M:alias/name`
+
+From Clojure 0.12 [libraries can be hot-loaded into a REPL](#hot-load-library) without restarting it.
+
+
 
 ```clojure
 {:paths ["src" "resources"]
@@ -20,20 +24,26 @@ Aliases from a user configuration can also add optional libraries when running a
  #_()}
 ```
 
-??? HINT "Finding libraries"
+
+??? TIP "Aliases for all projects"
+    Aliases can also be defined in a user configuration, e.g. [Practicalli Clojure CLI config](../practicalli-config.md)
+
+
+??? TIP "Find libraries"
     Search for community libraries via the [Clojars.org website](https://clojars.org/)
 
-    `clojure -M:search/libraries pattern` where pattern is the name of the library to search for.  Copy the relevant results into the project `deps.edn` file.
+    `clojure -M:search/libraries pattern` where pattern is the name of the library to search for. Copy the relevant results into the project `deps.edn` file.
 
     `clojure -M:search/libraries --format:merge pattern` will automatically add the library into the `deps.edn` file.
 
     `clojure -X:deps find-versions :lib fully.qualified/library-name :n 5` returns the last 5 versions of the given library.
 
+
 ## Include library
 
 Open a terminal and change to the root of the Clojure project directory, where the `deps.edn` file can be found.
 
-Start the REPL including the `:database/h2` alias to include every library defined in the `:deps` key and libraries in the `:database/h2` alias.  This example is using rebel readline rich terminal UI
+Start the REPL including the `:database/h2` alias to include every library defined in the `:deps` key and libraries in the `:database/h2` alias. This example is using rebel readline rich terminal UI
 
 ```shell
 clojure -M:repl/rebel
@@ -41,7 +51,7 @@ clojure -M:repl/rebel
 
 This command will include
 
-Add aliases to include optional libraries, such as those used for development.  In this example, the H2 database and next.jdbc libraries are included along with those libraries in the `:deps` key of `deps.edn`
+Add aliases to include optional libraries, such as those used for development. In this example, the H2 database and next.jdbc libraries are included along with those libraries in the `:deps` key of `deps.edn`
 
 ```shell
 clojure -M:database/h2:repl/rebel
@@ -57,13 +67,13 @@ If a project was created with the command `clojure -T:project/new :template app 
 (require '[practicalli.status-monitor])
 ```
 
-The `require` function loads all the code from the main namespace.  When an `ns` form is read, required namespaces in the `ns` form are also loaded.
+The `require` function loads all the code from the main namespace. When an `ns` form is read, required namespaces in the `ns` form are also loaded.
 
-## Reloading namespace
+## Reload namespace
 
 Clojure is a dynamic environment, so changes to function definitions (`defn`) and shared symbol names (`def`) can be updated without restarting the REPL.
 
-`require` loads the code from the specified namespace.  Using the `:reload` option forces the namespace to be loaded again, even if it was already loaded.
+`require` loads the code from the specified namespace. Using the `:reload` option forces the namespace to be loaded again, even if it was already loaded.
 
 When changes are made to a namespace in the source code file, `:reload` ensures those changes become the code running in the REPL
 
@@ -71,39 +81,27 @@ When changes are made to a namespace in the source code file, `:reload` ensures 
 (require '[practicalli.status-monitor] :reload)
 ```
 
-If errors occur when loading or reloading the namespace with require, the `:verbose` option will show all the namespaces that are loaded.  This may show issues or help track down conflicting namespaces or functions.
+If errors occur when loading or reloading the namespace with require, the `:verbose` option will show all the namespaces that are loaded. This may show issues or help track down conflicting namespaces or functions.
 
 ```clojure
 (require '[practicalli.status-monitor] :reload :verbose)
 ```
 
-## Hotload libraries
 
-!!! WARNING "Approach to be deprecated once Clojure 1.12.0 released"
+## Hot-load library
 
-??? INFO "Hotload Libraries in the REPL"
-    `add-libs` function from the `clojure.tools.deps.alpha` library is an experimental approach to hot-loading library dependencies without having to restart the REPL or add those dependencies to the project `deps.edn`.  This provides a simple way to try out libraries.
+From Clojure 0.12 onward, libraries can be added to a running REPL session without having to restart it.
 
-    [hotload libraries secion](/clojure/clojure-cli/repl-reloaded/) for more details and how to use with Clojure editors.
-
-Start a REPL session using Clojure CLI with the [`:lib/hotload alias`](/clojure/clojure-cli/repl-reloaded/), including rebel readline for an enhance REPL terminal UI.
-
-```shell
-clojure -M:lib/hotload:repl/rebel
-```
-
-![Clojure REPL - hot load library dependencies](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-rich-comment-block.png)
-
-Require the `clojure.tools.deps.alpha` library and refer the `add-libs` function.  The `add-libs` function can then be called without having to use an alias or the fully qualified name.
+Require the `clojure.repl.deps` library and refer the `add-lib` and `add-libs` functions.
 
 ```clojure
-(require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
+(require '[clojure.repl.deps.:refer [add-lib add-libs]])
 ```
 
-Hotload a library into the REPL using the `add-lib` function in the following form, where `domain/library` is the fully qualified name of the library and `RELEASE` is a string of the version number of that library to use.
+Hot-load a library into the REPL using the fully qualified name of the library. If a version (coord) is not provided, the latest release of that library will be used.
 
 ```clojure
-(add-libs '{domain/library {:mvn/version "RELEASE"}})
+(add-lib 'domain/library {:mvn/version "release-version"}})
 ```
 
 Multiple libraries can be hot-loaded in a single `add-libs` expression
@@ -113,14 +111,26 @@ Multiple libraries can be hot-loaded in a single `add-libs` expression
             eternity/room  {:mvn/version "1.0.1"}})
 ```
 
-### Hotload hiccup in a terminal REPL
+![Hot-load libraries into a Clojure Editor](https://raw.githubusercontent.com/practicalli/graphic-design/live/clojure/clojure-repl-hotload-libraries-editors.png){loading=lazy}
 
-The hiccup library converts clojure structures into html, where vectors represent the scope of keywords that represent html tags.
 
-Load the hiccup library using add-libs
+??? TIP "Changes to libraries in deps.edn can be [syncronised with a running REPL](../projects/hotload-libraries.md#synchronising-library-dependencies)"
+
+
+### Hot-load hiccup in a terminal REPL
+
+The hiccup library converts Clojure structures into html, where a keyword in a vector represent an html tag, optionally with CSS classes for styling.
+
+Require the Clojure REPL library
 
 ```clojure
-(add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
+(require '[clojure.repl.deps :refer [add-lib]])
+```
+
+Load the hiccup library using the `add-lib` function, specifying a specific release version.
+
+```clojure
+(add-lib 'hiccup/hiccup {:mvn/version "2.0.0-RC1"})
 ```
 
 Require the hiccup library so its functions are accessible from the current namespace in the REPL.

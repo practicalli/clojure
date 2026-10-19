@@ -12,14 +12,14 @@ There are thousands of community Clojure and ClojureScript libraries available v
 
 ```clojure title="Project deps.edn"
 {:deps
- {org.clojure/clojure {:mvn/version "1.11.1"}
+ {org.clojure/clojure {:mvn/version "1.12.1"}
   hiccup/hiccup       {:mvn/version "2.0.0-alpha2"}}}
 ```
 
 ??? HINT "Finding libraries"
     Search for community libraries via the [Clojars.org website](https://clojars.org/) or visit [the Clojure Toolbox](https://www.clojure-toolbox.com/) to browse some of the community libraries available
 
-    `clojure -M:search/libraries pattern` where pattern is the name of the library to search for.  Copy the relevant results into the project `deps.edn` file.
+    `clojure -M:search/libraries pattern` where pattern is the name of the library to search for. Copy the relevant results into the project `deps.edn` file.
 
     `clojure -M:search/libraries --format:merge pattern` will automatically add the library into the `deps.edn` file.
 
@@ -32,120 +32,57 @@ There are thousands of community Clojure and ClojureScript libraries available v
 
 Each alias has a unique name with `:aliases` and is represented by a Clojure keyword associated with a Clojure hash-map, `{}`
 
-`:extra-deps` keyword is associated with hash-map that contains one or more fully qualified library names and the version of the library to use.  The version of the library is defined with the maven form `{:mvn/version "0.4.2"}` or Git form `{:git/url "https://github.com/clojure/tools.deps.alpha" :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}`
+`:extra-deps` keyword is associated with hash-map that contains one or more fully qualified library names and the version of the library to use.
+
+The version of the library can be defined as the maven release or a Git repository
+
+- **Maven**   `qualified/name {:mvn/version "release"}`
+- **Git SHA** `qualified/name {:git/tag "tag-id" :git/sha "sha-short"}`
+- **Git URL** `qualified/name {:git/url "qualified/name" :git/sha "sha-full"}`
+- **Local Project** `qualified/name {:local/root "full/path/to/project/root/"}`
+
 
 The following example can be added to a project `deps.edn`, within the `:aliases {}` form.
 
-```clojure title="deps.edn alias definition with maven and git versions"
-:dev/reloaded
-{:extra-deps {djblue/portal {:mvn/version "0.34.2"}
-              lambdaisland/kaocha {:mvn/version "1.71.1119"}
-              org.clojure/test.check {:mvn/version "1.1.1"}
-              org.clojure/tools.namespace {:mvn/version "1.3.0"}
-              org.clojure/tools.deps.alpha {:git/url "https://github.com/clojure/tools.deps.alpha"
-                                            :git/sha "e4fb92eef724fa39e29b39cc2b1a850567d490dd"}}}
-```
+??? EXAMPLE "deps.edn aliases with maven, git and local root"
+    ```clojure title="deps.edn"
+    :aliases {
 
-When the alias is included in the command to start the REPL, the libraries are placed on the class path and can be required for use.
+      ;; Local testing of Practicalli Project Templates
+      :project/create-local
+      {:replace-deps {io.github.seancorfield/deps-new
+                      {:git/tag "v0.14.1" :git/sha "39d257c"}
+                      practicalli/project-templates
+                      {:local/root "/home/practicalli/projects/practicalli/code/project-templates/"}}
+       :exec-fn      org.corfield.new/create
+       :exec-args    {:template practicalli/minimal
+                      :name practicalli/playground}}
+
+      ;; deps-new and Practicalli Project Teamplates
+      ;; clojure -T:project/create :template template/name :name project/name
+      :project/create
+      {:replace-deps {io.github.seancorfield/deps-new
+                      {:git/tag "v0.14.1" :git/sha "39d257c"}
+                      io.github.practicalli/project-templates
+                      {:git/tag "2026-02-05" :git/sha "d414973"}}
+       :exec-fn      org.corfield.new/create
+       :exec-args    {:template practicalli/minimal
+                      :name practicalli/playground}}
+
+      :search/unused-vars
+      {:extra-deps {borkdude/carve
+                    {:git/url "https://github.com/borkdude/carve"
+                     :sha     "fdd1d0bc432f63db69e3a72167ef5e46f10dfba7"}}
+       :main-opts  ["--main" "carve.main"]}
+    }
+    ```
+
+Start `clojure` with the alias name and the dependencies defined are included in the JVM classpath and can be required via the Clojure REPL.
 
 ```shell
-clojure -M:dev/reloaded:repl/rebel
+clojure -M:search/unused-vars
 ```
 
-
-## Hotload libraries
-
-`add-libs` is a function to load one or more libraries into a running REPL, negating the need to restart the REPL process.
-
-Start a REPL process with `clojure -M:repl/reloaded` to include the add-libs librar. Alternatively, include `:dev/reloaded` or `:lib/hotload` alias with any Clojure command to start a REPL.
-
-!!! INFO "Hotload Libraries explained"
-    [REPL Reloaded - Hotload Libraries](/clojure/clojure-cli/repl-reloaded/) details all the options for including the clojure.tools.deps.alpha library that contains the `add-libs` function
-
-Use a rich comment block or [a `dev/user.clj` file](/clojure-cli/projects/configure-repl-startup.md) to require the `clojure.tools.deps.alpha.repl` namespace and write `add-libs` expressions to hot-load libraries.
-
-A rich comment block ensures `add-libs` code is only evaluated manually by a developer.
-
-```clojure
-(comment
-  (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-  (add-libs '{http-kit/http-kit {:mvn/version "2.5.1"}})
-)
-```
-
-??? HINT "rich-comment-hotload Clojure LSP snippet"
-    [Snippets provided by Clojure LSP](https://clojure-lsp.io/features/#snippets) include `rich-comment-hotload`, to add a rich comment block with a require for `clojure.tools.deps.alpha` and an `add-libs` expression, making it very quick to add this code.
-
-    `deps-maven` and `deps-git` snippets help ensure the correct syntax is used for the `add-libs` expression for each library dependency to be added.
-
-    [Practicalli Clojure LSP Config](/clojure/clojure-editors/clojure-lsp/practicalli-snippets/) contains a wide range of snippets
-
-
-### Hotload Example
-
-Create a web server from scratch, serving pages generated from hiccup, with all libraries hot-loaded as the code is being written.  Demonstrates that it is possible to write an application when only starting the REPL once.
-
-??? EXAMPLE "Web server from scratch"
-    ```clojure
-    (comment
-      ;; run REPL with :lib/hotload alias
-      (require '[clojure.tools.deps.alpha.repl :refer [add-libs]])
-
-      ;; hotload the libraries required for the server
-      (add-libs
-        '{http-kit/http-kit {:mvn/version "2.5.1"}})
-      ;; => (http-kit/http-kit)
-
-
-      ;; Require the namespace from the http-kit library
-      (require '[org.httpkit.server :as app-server])
-
-       ;; Define a handler for http requests
-      (defn welcome-page
-        [request]
-        {:status  200
-         :body    "Welcome to the world of Clojure CLI hotloading"
-         :headers {}})
-
-      ;; Start the application server with the handler
-      (app-server/run-server #'welcome-page {:port (or (System/getenv "PORT") 8888)})
-
-      ;; Visit http://localhost:8888/ to see the welcome-page
-
-      ;; Hotload Hiccup to generate html for the welcome page
-      (add-libs '{hiccup/hiccup {:mvn/version "2.0.0-alpha2"}})
-
-      (require '[hiccup.core :as hiccup])
-      (require '[hiccup.page :as hiccup-page])
-
-      ;; Create a page template
-      (defn page-template [content]
-        (hiccup-page/html5
-          {:lang "en"}
-          [:head (hiccup-page/include-css "https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")]
-          [:body
-           [:section {:class "hero is-info"}
-            [:div {:class "hero-body"}
-             [:div {:class "container"}
-              [:h1 {:class "title"} (:title content) ]
-              [:p {:class "subtitle"} (:sub-title content)]]]]]))
-
-      ;; Check the page template returns HTML
-      (page-template {:title     "Hotload Libraries in the REPL"
-                      :sub-title "REPL driven development enables experimentation with designs"})
-
-
-      ;; redefine the welcome page to call the page template
-      (defn welcome-page
-        [request]
-        {:status  200
-         :body    (page-template {:title     "Hotload Libraries in the REPL"
-                                  :sub-title "REPL driven development enables experimentation with designs"})
-         :headers {}})
-
-      ;; Visit http://localhost:8888/ and refresh the page to see the new welcome-page
-      )
-    ```
 
 
 ## Excluding dependencies
@@ -161,4 +98,3 @@ A Library that is self-contained and does not itself include any dependencies on
         :cheshire/cheshire  {:mvn/version "5.10.0"
             :exclusions "com.fasterxml.jackson.core/jackson-core"}}}
 ```
-
