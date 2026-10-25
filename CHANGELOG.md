@@ -11,6 +11,7 @@
 - build(make): 🔧 `git-sr` & `git-rebase` tasks for mgitstatus
 - build(zensical): 🔧 switch to `zensical.toml` configuration
 - docs(clojure-cli): ✏️ update hot-load content & examples for Clojure 0.12
+- docs(intro): ✏️ update navigation keys information
 
 ## 2026-08-22
 
