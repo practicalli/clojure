@@ -12,6 +12,7 @@
 - build(zensical): 🔧 switch to `zensical.toml` configuration
 - docs(clojure-cli): ✏️ update hot-load content & examples for Clojure 0.12
 - docs(intro): ✏️ update navigation keys information
+- ci(zensical): ⬆️ update uv to 10.3.3 release
 
 ## 2026-08-22
 
