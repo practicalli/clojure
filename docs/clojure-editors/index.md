@@ -1,8 +1,16 @@
 # Editors for Clojure development
 
-The best editor to use for learning Clojure is the editor already familiar with (or want to learn).
+The best editor for learning Clojure is the editor already familiar with (or want to learn).
 
-Use SublimeText & ClojureSublimed if unsure where to start as it will be the simplest tool to use.
+> Consider using SublimeText & ClojureSublimed if you've never used an editor before.
+
+??? INFO "Complete Emacs and Neovim Guides"
+    If you have the desire to learn Emacs or Neovim, follow the step-by-step guides written by Practicalli.
+
+    [Practicalli Spacemacs (Emacs)](https://practical.li/spacemacs){target=_blank .md-button}
+
+    [Practicalli Neovim](https://practical.li/neovim){target=_blank .md-button}
+
 
 ## Clojure editor features
 
@@ -25,34 +33,57 @@ SublimeText and IntelliJ are commercial editors (with limited free editions) whi
 === "Emacs"
     ![GNU Emacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/emacs-icon.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-    Emacs is a very powerful editor with thousands of packages enabling a person to do almost any digital task concievable.  Emacs is highly extensible via the ELisp programming language used to write configuration and the numerous Emacs packages. Native Compilation of Emacs packages dramatically speeds up many common tasks.
+    Emacs is a powerful editor (operating system) with thousands of packages, enabling almost any digital task concievable.
+
+    Emacs is highly configurable via the ELisp programming language, which is used to write custom configuration and the numerous Emacs packages.
+
+    Native Compilation of Emacs packages dramatically speeds up many common tasks.
 
     Emacs uses CIDER and Clojure LSP for a feature rich clojure development experience.
 
-    Use one of the popular community configurations for Emacs or visit the [:fontawesome-solid-globe: CIDER documentation](https://docs.cider.mx/) to learn how to add Clojure support to Emacs.
+    Use one of the community configurations to kick-start your experience, or visit the [:fontawesome-solid-globe: CIDER documentation](https://docs.cider.mx/) to learn how to add Clojure support to Emacs.
 
     === "Spacemacs"
         ![Spacemacs logo](https://raw.githubusercontent.com/practicalli/graphic-design/live/logos/spacemacs-logo.svg){align=right loading=lazy style="height:128px;width:128px"}
 
-        [:fontawesome-solid-globe: Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [:fontawesome-solid-globe: Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [:fontawesome-solid-book-open: Vim style editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.  Spacemacs uses a mnemonic menu system that makes it easy to learn and provides detailed documentation for configuring and using Emacs.
+        [:fontawesome-solid-globe: Spacemacs](https://spacemacs.org/){target=_blank} is a community configuration bringing [:fontawesome-solid-globe: Emacs](https://www.gnu.org/software/emacs/){target=_blank} features and [:fontawesome-solid-book-open: Vim style editing](https://practical.li/spacemacs/spacemacs-basics/evil/){target=_blank} together.
+
+        The [Clojure Layer](https://www.spacemacs.org/layers/+lang/clojure/README.html){target=_blank} provides the CIDER REPL, syntax highlighting via `clojure-mode` and structural editing with `smartparens` (and `evil-cleverparens` for Evil mode).
+
+        Spacemacs uses a mnemonic menu to make discovery of commands simple and consistent across all programming languages.
+
+        - ++spc++ key menu for general commands (hence the Spacemacs name)
+        - ++meta+"x"++ or ++comma++ (comma) for language specific commands
 
         [:fontawesome-solid-book-open: Practicalli Spacemacs](https://practical.li/spacemacs){target=_blank} provides a guide to Clojure development, vim-style editing, documenting with org-mode, Git version control with Magit, Issues & Pull Requests with Forge and dozens of other features.
 
         [:fontawesome-brands-github: Practicalli Spacemacs Config](https://github.com/practicalli/spacemacs-config){target=_blank} contains a customised configuration for Clojure development and supporting tools.
 
         === "Free Desktop XDG Config"
+            Clone Spacemacs:
+            ```shell
+            git clone git clone https://github.com/syl20bnr/spacemacs $XDG_CONFIG_HOME/emacs`
+            ```
+
+            Clone Practicalli Spacemacs Config:
             ```shell
             git clone https://github.com/practicalli/spacemacs.d.git $XDG_CONFIG_HOME/spacemacs`
             ```
 
         === "Classic Config"
+            Clone Spacemacs:
+            ```shell
+            git clone git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d`
+            ```
+
+            Clone Practicalli Spacemacs Config:
             ```shell
             git clone https://github.com/practicalli/spacemacs.d.git $HOME/.spacemacs.d`
             ```
 
-        The Practicalli configuration should replace the `~/.spacemacs` file if it exists
+        Remove a `~/.spacemacs` file if it exists, to use the Practicalli configuration.
 
-        [Spacemacs install guide - Practicalli Spacemacs](https://practicalli.github.io/spacemacs/install-spacemacs/){target=_blank .md-button}
+        [Install Guide: Practicalli Spacemacs](https://practicalli.github.io/spacemacs/install-spacemacs/){target=_blank .md-button}
 
         <p style="text-align:center">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/NDrpclY54E0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
