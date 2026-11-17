@@ -14,6 +14,7 @@
 - docs(intro): ✏️ update navigation keys information
 - ci(zensical): ⬆️ update uv to 10.3.3 release
 - docs(editors): ♻️ enhance editor overview page
+- docs(editors): ♻️ enhance clojure lsp page
 
 ## 2026-08-22
 
