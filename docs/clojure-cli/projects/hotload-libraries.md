@@ -1,6 +1,6 @@
 # Hot-load libraries in Projects
 
-From Clojure 0.12 onward, libraries can be hot-loaded into the running REPL using [clojure.repl.deps functions](https://clojuredocs.org/clojure.repl.deps){target=_blank}.
+From Clojure 1.12 onward, libraries can be hot-loaded into the running REPL using [clojure.repl.deps functions](https://clojuredocs.org/clojure.repl.deps){target=_blank}.
 
 Use a [rich comment block](#rich-comment-block) when using source code files to evaluate code in the REPL, i.e. a REPL connected editor.
 
